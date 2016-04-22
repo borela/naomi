@@ -1,0 +1,148 @@
+// SYNTAX TEST "Packages/naomi/syntaxes/php7.sublime-syntax"
+
+<?php
+    use \Namespace\Namespace\Target;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^ keyword.structure.import.php
+//      ^ punctuation.delimiter.structure.namespace.a.php
+//                ^ punctuation.delimiter.structure.namespace.b.php
+//                          ^ punctuation.delimiter.type.php
+//                                 ^ punctuation.delimiter.structure.import.end.php
+//       ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                 ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                           ^^^^^ entity.name.type.php
+
+    use \Namespace\Namespace\Target as Alias;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^ keyword.structure.import.php
+//                                  ^^ keyword.structure.import.alias.php
+//      ^ punctuation.delimiter.structure.namespace.a.php
+//                ^ punctuation.delimiter.structure.namespace.b.php
+//                          ^ punctuation.delimiter.type.php
+//                                          ^ punctuation.delimiter.structure.import.end.php
+//       ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                 ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                           ^^^^^ entity.name.type.php
+//                                     ^^^^^ entity.name.structure.import.alias.php
+
+    use Namespace\Namespace\Target;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^ keyword.structure.import.php
+//               ^ punctuation.delimiter.structure.namespace.b.php
+//                         ^ punctuation.delimiter.type.php
+//                                ^ punctuation.delimiter.structure.import.end.php
+//      ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                          ^^^^^ entity.name.type.php
+
+    use Namespace\Namespace\Target as Alias;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^ keyword.structure.import.php
+//                                 ^^ keyword.structure.import.alias.php
+//               ^ punctuation.delimiter.structure.namespace.b.php
+//                         ^ punctuation.delimiter.type.php
+//                                         ^ punctuation.delimiter.structure.import.end.php
+//      ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                          ^^^^^ entity.name.type.php
+//                                    ^^^^^ entity.name.structure.import.alias.php
+
+    use function \Namespace\Namespace\MyFunction;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^ keyword.structure.import.php
+//      ^^^^^^^^ keyword.structure.import.function.php
+//               ^ punctuation.delimiter.structure.namespace.a.php
+//                         ^ punctuation.delimiter.structure.namespace.b.php
+//                                   ^ punctuation.delimiter.type.php
+//                                              ^ punctuation.delimiter.structure.import.end.php
+//                ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                          ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                                    ^^^^^^^^^^ entity.name.type.php
+
+    use function \Namespace\Namespace\MyFunction as Alias;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^ keyword.structure.import.php
+//      ^^^^^^^^ keyword.structure.import.function.php
+//                                               ^^ keyword.structure.import.alias.php
+//               ^ punctuation.delimiter.structure.namespace.a.php
+//                         ^ punctuation.delimiter.structure.namespace.b.php
+//                                   ^ punctuation.delimiter.type.php
+//                                                       ^ punctuation.delimiter.structure.import.end.php
+//                ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                          ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                                    ^^^^^^^^^ entity.name.type.php
+//                                                  ^^^^^ entity.name.structure.import.alias.php
+
+    use function Namespace\Namespace\MyFunction;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^ keyword.structure.import.php
+//      ^^^^^^^^ keyword.structure.import.function.php
+//                        ^ punctuation.delimiter.structure.namespace.b.php
+//                                  ^ punctuation.delimiter.type.php
+//                                             ^ punctuation.delimiter.structure.import.end.php
+//               ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                         ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                                   ^^^^^^^^^^ entity.name.type.php
+
+    use function Namespace\Namespace\MyFunction as Alias;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^ keyword.structure.import.php
+//      ^^^^^^^^ keyword.structure.import.function.php
+//                                              ^^ keyword.structure.import.alias.php
+//                        ^ punctuation.delimiter.structure.namespace.b.php
+//                                  ^ punctuation.delimiter.type.php
+//                                                      ^ punctuation.delimiter.structure.import.end.php
+//               ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                         ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                                   ^^^^^^^^^^ entity.name.type.php
+//                                                 ^^^^^ entity.name.structure.import.alias.php
+
+    use const \Namespace\Namespace\MyConstant;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^ keyword.structure.import.php
+//      ^^^^^ keyword.structure.import.constant.php
+//            ^ punctuation.delimiter.structure.namespace.a.php
+//                      ^ punctuation.delimiter.structure.namespace.b.php
+//                                ^ punctuation.delimiter.type.php
+//                                           ^ punctuation.delimiter.structure.import.end.php
+//             ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                       ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                                 ^^^^^^^^^^ entity.name.type.php
+
+    use const \Namespace\Namespace\MyConstant as Alias;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^ keyword.structure.import.php
+//      ^^^^^ keyword.structure.import.constant.php
+//                                            ^^ keyword.structure.import.alias.php
+//            ^ punctuation.delimiter.structure.namespace.a.php
+//                      ^ punctuation.delimiter.structure.namespace.b.php
+//                                ^ punctuation.delimiter.type.php
+//                                                    ^ punctuation.delimiter.structure.import.end.php
+//             ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                       ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                                 ^^^^^^^^^^ entity.name.type.php
+//                                               ^^^^^ entity.name.structure.import.alias.php
+
+    use const Namespace\Namespace\MyConstant;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^ keyword.structure.import.php
+//      ^^^^^ keyword.structure.import.constant.php
+//                     ^ punctuation.delimiter.structure.namespace.b.php
+//                               ^ punctuation.delimiter.type.php
+//                                          ^ punctuation.delimiter.structure.import.end.php
+//            ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                      ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                                ^^^^^^^^^^ entity.name.type.php
+
+    use const Namespace\Namespace\MyConstant as Alias;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^ keyword.structure.import.php
+//      ^^^^^ keyword.structure.import.constant.php
+//                                           ^^ keyword.structure.import.alias.php
+//                     ^ punctuation.delimiter.structure.namespace.b.php
+//                               ^ punctuation.delimiter.type.php
+//                                                   ^ punctuation.delimiter.structure.import.end.php
+//            ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                      ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                                ^^^^^^^^^^ entity.name.type.php
+//                                              ^^^^^ entity.name.structure.import.alias.php

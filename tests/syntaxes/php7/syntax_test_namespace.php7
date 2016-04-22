@@ -1,0 +1,72 @@
+// SYNTAX TEST "Packages/naomi/syntaxes/php7.tmLanguage"
+
+<?php
+    namespace \Namespace\Namespace\Namespace;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ namespace.php
+//  ^^^^^^^^^ keyword.structure.namespace.php
+//                                          ^ namespace.body.php
+//                                          ^ punctuation.delimiter.structure.namespace.body.begin.php
+//            ^ punctuation.delimiter.structure.namespace.a.php
+//                      ^ punctuation.delimiter.structure.namespace.b.php
+//                                ^ punctuation.delimiter.structure.namespace.a.php
+//             ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                       ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                                 ^^^^^^^^^ entity.name.structure.namespace.a.php
+    Something...
+//  ^^^^^^^^^^^^ namespace.php
+//  ^^^^^^^^^^^^ namespace.body.php
+//  ^^^^^^^^^^^^ namespace.body.content.php
+
+    namespace Namespace\Namespace\Namespace;
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ namespace.php
+//  ^^^^^^^^^ keyword.structure.namespace.php
+//                                         ^ namespace.body.php
+//                                         ^ punctuation.delimiter.structure.namespace.body.begin.php
+//                     ^ punctuation.delimiter.structure.namespace.b.php
+//                               ^ punctuation.delimiter.structure.namespace.a.php
+//            ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                      ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                                ^^^^^^^^^ entity.name.structure.namespace.a.php
+    Something...
+//  ^^^^^^^^^^^^ namespace.php
+//  ^^^^^^^^^^^^ namespace.body.php
+//  ^^^^^^^^^^^^ namespace.body.content.php
+
+    namespace \Namespace\Namespace\Namespace {
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ namespace.php
+//                                           ^ namespace.body.php
+//                                           ^ punctuation.delimiter.structure.namespace.body.begin.php
+//  ^^^^^^^^^ keyword.structure.namespace.php
+//            ^ punctuation.delimiter.structure.namespace.a.php
+//                      ^ punctuation.delimiter.structure.namespace.b.php
+//                                ^ punctuation.delimiter.structure.namespace.a.php
+//             ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                       ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                                 ^^^^^^^^^ entity.name.structure.namespace.a.php
+        Something...
+//      ^^^^^^^^^^^^ namespace.php
+//      ^^^^^^^^^^^^ namespace.body.php
+//      ^^^^^^^^^^^^ namespace.body.content.php
+    }
+//  ^ namespace.php
+//  ^ namespace.body.php
+//  ^ punctuation.delimiter.structure.namespace.body.end.php
+
+    namespace Namespace\Namespace\Namespace {
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ namespace.php
+//  ^^^^^^^^^ keyword.structure.namespace.php
+//                                          ^ namespace.body.php
+//                                          ^ punctuation.delimiter.structure.namespace.body.begin.php
+//                     ^ punctuation.delimiter.structure.namespace.b.php
+//                               ^ punctuation.delimiter.structure.namespace.a.php
+//            ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                      ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                                ^^^^^^^^^ entity.name.structure.namespace.a.php
+        Something...
+//      ^^^^^^^^^^^^ namespace.php
+//      ^^^^^^^^^^^^ namespace.body.php
+//      ^^^^^^^^^^^^ namespace.body.content.php
+    }
+//  ^ namespace.php
+//  ^ namespace.body.php
+//  ^ punctuation.delimiter.structure.namespace.body.end.php

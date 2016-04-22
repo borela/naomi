@@ -1,0 +1,121 @@
+// SYNTAX TEST "Packages/naomi/syntaxes/php7.sublime-syntax"
+
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+<?php
+    \Random
+//  ^^^^^^^ type.php
+//  ^ punctuation.delimiter.type.php
+//   ^^^^^^ entity.name.type.php
+    Random
+//  ^^^^^^ type.php
+//  ^^^^^^ entity.name.type.php
+
+    \Namespace\Namespace\Random
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php
+//  ^^^^^^^^^^^^^^^^^^^^ namespace.path.php
+//  ^ punctuation.delimiter.structure.namespace.a.php
+//            ^ punctuation.delimiter.structure.namespace.b.php
+//                      ^ punctuation.delimiter.type.php
+//   ^^^^^^^^^ entity.name.structure.namespace.a.php
+//             ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                       ^^^^^^ entity.name.type.php
+    Namespace\Namespace\Random
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php
+//  ^^^^^^^^^^^^^^^^^^^ namespace.path.php
+//           ^ punctuation.delimiter.structure.namespace.b.php
+//                     ^ punctuation.delimiter.type.php
+//  ^^^^^^^^^ entity.name.structure.namespace.a.php
+//            ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                      ^^^^^^ entity.name.type.php
+
+    array
+//  ^^^^^ support.type.php
+//  ^^^^^ entity.name.type.php
+    callable
+//  ^^^^^^^^ support.type.php
+//  ^^^^^^^^ entity.name.type.php
+    bool
+//  ^^^^ support.type.php
+//  ^^^^ entity.name.type.php
+    float
+//  ^^^^^ support.type.php
+//  ^^^^^ entity.name.type.php
+    int
+//  ^^^ support.type.php
+//  ^^^ entity.name.type.php
+    string
+//  ^^^^^^ support.type.php
+//  ^^^^^^ entity.name.type.php
+    self
+//  ^^^^ support.type.php
+//  ^^^^ entity.name.type.php
+
+    Traversable
+//  ^^^^^^^^^^^ support.interface.php
+//  ^^^^^^^^^^^ entity.name.type.php
+    \Traversable
+//  ^^^^^^^^^^^^ support.interface.php
+//  ^ punctuation.delimiter.type.php
+//   ^^^^^^^^^^^ entity.name.type.php
+    Iterator
+//  ^^^^^^^^ support.interface.php
+//  ^^^^^^^^ entity.name.type.php
+    \Iterator
+//  ^^^^^^^^^ support.interface.php
+//  ^ punctuation.delimiter.type.php
+//   ^^^^^^^^ entity.name.type.php
+    IteratorAggregate
+//  ^^^^^^^^^^^^^^^^^ support.interface.php
+//  ^^^^^^^^^^^^^^^^^ entity.name.type.php
+    \IteratorAggregate
+//  ^^^^^^^^^^^^^^^^^^ support.interface.php
+//  ^ punctuation.delimiter.type.php
+//   ^^^^^^^^^^^^^^^^^ entity.name.type.php
+    Throwable
+//  ^^^^^^^^^ support.interface.php
+//  ^^^^^^^^^ entity.name.type.php
+    \Throwable
+//  ^^^^^^^^^^ support.interface.php
+//  ^ punctuation.delimiter.type.php
+//   ^^^^^^^^^ entity.name.type.php
+    ArrayAccess
+//  ^^^^^^^^^^^ support.interface.php
+//  ^^^^^^^^^^^ entity.name.type.php
+    \ArrayAccess
+//  ^^^^^^^^^^^^ support.interface.php
+//  ^ punctuation.delimiter.type.php
+//   ^^^^^^^^^^^ entity.name.type.php
+    Serializable
+//  ^^^^^^^^^^^^ support.interface.php
+//  ^^^^^^^^^^^^ entity.name.type.php
+    \Serializable
+//  ^^^^^^^^^^^^^ support.interface.php
+//  ^ punctuation.delimiter.type.php
+//   ^^^^^^^^^^^^ entity.name.type.php
+
+    Closure
+//  ^^^^^^^ support.class.php
+//  ^^^^^^^ entity.name.type.php
+    \Closure
+//  ^^^^^^^^ support.class.php
+//  ^ punctuation.delimiter.type.php
+//   ^^^^^^^ entity.name.type.php
+    Generator
+//  ^^^^^^^^^ support.class.php
+//  ^^^^^^^^^ entity.name.type.php
+    \Generator
+//  ^^^^^^^^^^ support.class.php
+//  ^ punctuation.delimiter.type.php
+//   ^^^^^^^^^ entity.name.type.php
+?>

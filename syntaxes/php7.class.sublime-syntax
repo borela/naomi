@@ -1,0 +1,133 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+variables:
+  commonIdentifier: |
+    [a-z\x{7f}-\x{ff}_]
+    [a-z\x{7f}-\x{ff}0-9_]*
+
+scope: ...
+
+contexts:
+  comments:
+    - match: |
+        (?x)
+        (?=
+          (?>\/\/
+            |\/\*
+            |\#
+          )
+        )
+      push:
+        - include: php7.phpdoc.sublime-syntax
+        - include: php7.comment.sublime-syntax
+
+  main:
+    - match: (?i)\bclass(?!\\)\b
+      scope: keyword.structure.class.php
+      set: declaration
+
+  declaration:
+    - meta_scope: class.php
+    - include: comments
+    # Extends.
+    - match: (?i)\bextends\b
+      scope: keyword.structure.inherit.php
+      push: extend-target
+    # Implements.
+    - match: (?i)\bimplements\b
+      scope: keyword.structure.inherit.php
+      push: implement-targets
+    # Class's name.
+    - match: (?xi)\b{{commonIdentifier}}\b
+      scope: entity.name.structure.class.php
+    # Body.
+    - match: \{
+      scope: >-
+        class.body.php
+        punctuation.delimiter.structure.class.body.begin.php
+      set: body
+
+  body:
+    - meta_content_scope: >-
+        class.php
+        class.body.php
+        class.body.content.php
+    - match: \}
+      scope: >-
+        class.php
+        class.body.php
+        punctuation.delimiter.structure.class.body.end.php
+      pop: true
+    - include: expected-structures
+
+  extend-target:
+    - meta_scope: inherit.php
+    - include: comments
+    - match: (?=\{)
+      pop: true
+    - match: (?i)(?=\bimplements\b)
+      pop: true
+    - include: php7.type.sublime-syntax
+
+  implement-targets:
+    - meta_scope: implement.php
+    - include: comments
+    - match: (?=\{)
+      pop: true
+    - match: ""
+      push: [
+        implement-target-delimiter,
+        implement-target
+      ]
+
+  implement-target:
+    - include: comments
+    - include: php7.type.sublime-syntax
+
+  implement-target-delimiter:
+    - include: comments
+    - match: ","
+      scope: punctuation.delimiter.structure.implement.php
+      pop: true
+    - match: (?=\S)
+      pop: true
+
+  expected-structures:
+    - match: ""
+      push:
+        # Comments.
+        - include: php7.phpdoc.sublime-syntax
+        - include: php7.comment.sublime-syntax
+        # Structures.
+        - include: php7.use.sublime-syntax
+        - include: php7.function.sublime-syntax
+        # Constants.
+        - include: php7.constant.sublime-syntax
+        - include: php7.string.sublime-syntax
+        # Function call.
+        - include: php7.function-call.sublime-syntax
+        # Keywords.
+        - include: php7.modifier.sublime-syntax
+        - include: php7.keyword.sublime-syntax
+        # Variables.
+        - include: php7.variable.sublime-syntax
+        - include: php7.type.sublime-syntax
+        # Operators.
+        - include: php7.operator.sublime-syntax
+        - match: ""
+          pop: true

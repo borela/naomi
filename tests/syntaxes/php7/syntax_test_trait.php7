@@ -1,0 +1,32 @@
+// SYNTAX TEST "Packages/naomi/syntaxes/php7.sublime-syntax"
+
+<?php
+    trait MyTrait {
+//  ^^^^^^^^^^^^^^^ trait.php
+//  ^^^^^ keyword.structure.trait.php
+//        ^^^^^^^ entity.name.structure.trait.php
+//                ^ trait.body.php
+//                ^ punctuation.delimiter.structure.trait.body.begin.php
+    Something...
+//  ^^^^^^^^^^^^ trait.php
+//  ^^^^^^^^^^^^ trait.body.php
+//  ^^^^^^^^^^^^ trait.body.content.php
+    }
+//  ^ trait.php
+//  ^ trait.body.php
+//  ^ punctuation.delimiter.structure.trait.body.end.php
+
+    trait MyTrait {
+//  ^^^^^^^^^^^^^^^ trait.php
+//  ^^^^^ keyword.structure.trait.php
+//        ^^^^^^^ entity.name.structure.trait.php
+//                ^ trait.body.php
+//                ^ punctuation.delimiter.structure.trait.body.begin.php
+    Something...
+//  ^^^^^^^^^^^^ trait.php
+//  ^^^^^^^^^^^^ trait.body.php
+//  ^^^^^^^^^^^^ trait.body.content.php
+    }
+//  ^ trait.php
+//  ^ trait.body.php
+//  ^ punctuation.delimiter.structure.trait.body.end.php

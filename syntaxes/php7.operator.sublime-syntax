@@ -1,0 +1,164 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+contexts:
+  main:
+    - include: arithmetic-operators
+    - include: bitwise-operators
+    - include: assignment-operators
+    - include: comparison-operators
+    - include: logical-operators
+    - include: string-operators
+    - include: type-operators
+
+  # | Operator |  Description   |
+  # | :------: | :------------- |
+  # |    --    | Decrement      |
+  # |    -     | Subtraction    |
+  # |    ++    | Increment      |
+  # |    +     | Addition       |
+  # |    **    | Exponentiation |
+  # |    *     | Multiplication |
+  # |    /     | Division       |
+  # |    %     | Modulus        |
+  arithmetic-operators:
+    - match: >-
+        (?x)
+        (?> \-\-
+          | \-
+          | \+\+
+          | \+
+          | \*\*
+          | \*
+          | \/
+          | \%
+        )
+      scope: keyword.operator.arithmetic.php
+      pop: true
+
+  # | Operator | Description |
+  # | :------: | :-----------|
+  # |    &=    | Bitwise And |
+  # |    |=    | Bitwise Or  |
+  # |    ^=    | Bitwise Xor |
+  # |   <<=    | Left shift  |
+  # |   >>=    | Right shift |
+  bitwise-operators:
+    - match: >-
+        (?x)
+        (?> \&\=
+          | \|\=
+          | \^\=
+          | \<\<\=
+          | \>\>=
+        )
+      scope: keyword.operator.bitwise.php
+      pop: true
+
+  # | Operator |    Description    |
+  # | :------: | :---------------- |
+  # |    =     | Simple assignment |
+  # |    +=    |                   |
+  # |    *=    |                   |
+  # |    /=    |                   |
+  # |    %=    |                   |
+  assignment-operators:
+    - match: >-
+        (?x)
+        (?> \=
+          | \+\=
+          | \*\=
+          | \/\=
+          | \%\=
+        )
+      scope: keyword.operator.assignment.php
+      pop: true
+
+  # | Operator |       Description        |
+  # | :------: | :----------------------- |
+  # |   ===    | Identical                |
+  # |    ==    | Equal                    |
+  # |   !==    | Not identical            |
+  # |    !=    | Not equal                |
+  # |    <>    | Not equal                |
+  # |    >=    | Greater than or equal to |
+  # |    <=    | Less than or equal to    |
+  # |    >     | Greater than             |
+  # |    <     | Less than                |
+  comparison-operators:
+    - match: >-
+        (?x)
+        (?> \=\=\=
+          | \=\=
+          | \!\=\=
+          | \!\=
+          | \<\>
+          | \>\=
+          | \<\=
+          | \>
+          | \<
+        )
+      scope: keyword.operator.comparison.php
+      pop: true
+
+  # | Operator | Description |
+  # | :------: | :---------- |
+  # |   and    |             |
+  # |   xor    |             |
+  # |    or    |             |
+  # |    &&    | Same as and |
+  # |    ||    | Same as or  |
+  # |    !     | Not         |
+  logical-operators:
+    - match: >-
+        (?x)
+        (?>
+          (?:
+            \s+
+            (?> and
+              | xor
+              | or
+            )\s+
+          )
+          | \&\&
+          | \\
+          | \!
+        )
+      scope: keyword.operator.logical.php
+      pop: true
+
+  # | Operator |  Description  |
+  # | :------: | :------------ |
+  # |    .     | Concatenation |
+  # |    .=    | Append        |
+  string-operators:
+    - match: >-
+        (?x)
+        (?> \.\=
+          | \.
+        )
+      scope: keyword.operator.string.php
+      pop: true
+
+  type-operators:
+    - match: >-
+        (?x)
+        \binstanceof\b
+      scope: keyword.operator.type.php
+      pop: true

@@ -1,0 +1,109 @@
+// SYNTAX TEST "Packages/naomi/syntaxes/php7.sublime-syntax"
+
+<?php
+    'Something is "here"...'
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.php
+//   ^^^^^^^^^^^^^^^^^^^^^^ string.content.php
+//  ^ punctuation.delimiter.string.begin.php
+//                         ^ punctuation.delimiter.string.end.php
+
+    'Escaped: \\\''
+//            ^^ constant.character.escape.a.php
+//              ^^ constant.character.escape.b.php
+
+    "Something is 'here'..."
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.php
+//   ^^^^^^^^^^^^^^^^^^^^^^ string.content.php
+//  ^ punctuation.delimiter.string.begin.php
+//                         ^ punctuation.delimiter.string.end.php
+
+    "Escaped: \\\"\n\r\t\v\e\f\$\101\x41\u{0065}"
+//            ^^ constant.character.escape.a.php
+//              ^^ constant.character.escape.b.php
+//                ^^ constant.character.escape.a.php
+//                  ^^ constant.character.escape.b.php
+//                    ^^ constant.character.escape.a.php
+//                      ^^ constant.character.escape.b.php
+//                        ^^ constant.character.escape.a.php
+//                          ^^ constant.character.escape.b.php
+//                            ^^ constant.character.escape.a.php
+//                              ^^^^ constant.character.escape.b.php
+//                                  ^^^^ constant.character.escape.a.php
+//                                      ^^^^^^^^ constant.character.escape.b.php
+    "Variables: $var1$var2"
+//              ^^^^^ variable.a.php
+//              ^ punctuation.variable.begin.php
+//               ^^^^ entity.name.variable.php
+//                   ^^^^^ variable.b.php
+//                   ^ punctuation.variable.begin.php
+//                    ^^^^ entity.name.variable.php
+//
+    "Variables: $var1[123]$var2[abc]"
+//              ^^^^^^^^^^ variable.a.php
+//              ^ punctuation.variable.begin.php
+//               ^^^^ entity.name.variable.php
+//                   ^ operator.subscript.begin.php
+//                    ^^^ array.key.php
+//                       ^ operator.subscript.end.php
+//                        ^^^^^^^^^^ variable.b.php
+//                        ^ punctuation.variable.begin.php
+//                         ^^^^ entity.name.variable.php
+//                             ^ operator.subscript.begin.php
+//                              ^^^ array.key.php
+//                                 ^ operator.subscript.end.php
+
+    <<<Heredoc
+//  ^^^^^^^^^^ string.unquoted.heredoc.php
+//  ^^^^^^^^^^ punctuation.delimiter.string.begin.php
+    Something is here....
+//  ^^^^^^^^^^^^^^^^^^^^^ string.unquoted.heredoc.php
+//  ^^^^^^^^^^^^^^^^^^^^^ string.content.php
+    Escaped: \\\n\r\t\v\e\f\$\101\x41\u{0065}
+//           ^^ constant.character.escape.a.php
+//             ^^ constant.character.escape.b.php
+//               ^^ constant.character.escape.a.php
+//                 ^^ constant.character.escape.b.php
+//                   ^^ constant.character.escape.a.php
+//                     ^^ constant.character.escape.b.php
+//                       ^^ constant.character.escape.a.php
+//                         ^^ constant.character.escape.b.php
+//                           ^^^^ constant.character.escape.a.php
+//                               ^^^^ constant.character.escape.b.php
+//                                   ^^^^^^^^ constant.character.escape.a.php
+    Variables: $var1$var2
+//             ^^^^^ variable.a.php
+//             ^ punctuation.variable.begin.php
+//              ^^^^ entity.name.variable.php
+//                  ^^^^^ variable.b.php
+//                  ^ punctuation.variable.begin.php
+//                   ^^^^ entity.name.variable.php
+    Variables: $var1[123]$var2[abc]
+//             ^^^^^^^^^^ variable.a.php
+//             ^ punctuation.variable.begin.php
+//              ^^^^ entity.name.variable.php
+//                  ^ operator.subscript.begin.php
+//                   ^^^ array.key.php
+//                      ^ operator.subscript.end.php
+//                       ^^^^^^^^^^ variable.b.php
+//                       ^ punctuation.variable.begin.php
+//                        ^^^^ entity.name.variable.php
+//                            ^ operator.subscript.begin.php
+//                             ^^^ array.key.php
+//                                ^ operator.subscript.end.php
+Heredoc;
+// <- string.unquoted.heredoc.php
+//^^^^^^ string.unquoted.heredoc.php
+// <- punctuation.delimiter.string.end.php
+//^^^^^^ punctuation.delimiter.string.end.php
+
+    <<<'Nowdoc'
+//  ^^^^^^^^^^ string.unquoted.nowdoc.php
+//  ^^^^^^^^^^ punctuation.delimiter.string.begin.php
+    Something is here....
+//  ^^^^^^^^^^^^^^^^^^^^^ string.unquoted.nowdoc.php
+//  ^^^^^^^^^^^^^^^^^^^^^ string.content.php
+Nowdoc;
+// <- string.unquoted.nowdoc.php
+//^^^^^ string.unquoted.nowdoc.php
+// <- punctuation.delimiter.string.end.php
+//^^^^^ punctuation.delimiter.string.end.php

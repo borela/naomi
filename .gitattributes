@@ -1,0 +1,7 @@
+.gitattributes text eol=lf
+.gitignore text eol=lf
+*.sublime-syntax text eol=lf
+*.tmTheme text eol=lf
+*.md text eol=lf
+*.php text eol=lf
+*.php7 text eol=lf

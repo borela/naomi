@@ -6,7 +6,7 @@ easy to create the syntax files:
 ## 1: Read the docs
 
 There's a basic tutorial on how to write the syntax files and tests in sublime's
-[offical documentation](https://www.sublimetext.com/docs/3/syntax.html).
+[official documentation](https://www.sublimetext.com/docs/3/syntax.html).
 
 ## 2: Install Scope Hunter
 
@@ -60,7 +60,7 @@ Most languages are designed in a way that you can expect tokens to have some
 sort of sequence.
 
 For example, in PHP 7 you can declare the type hint before a function parameter,
-it is optional and after it, only a variable is expected and this is key to a
+it is optional and after it only a variable is expected, this is key to a
 good syntax highlighting.
 
 When you highlight like this, you don't need to mark regions as invalid, the
@@ -102,8 +102,7 @@ And the following syntax:
         scope: variable.php
         pop: true
 
-Basicly, the `main` context will try to match the beginning of the parameters
-list and if found, push the `parameters` context.
-
-The `parameters` context is a loop that will first check for the end of the list
-and then try to match the type followed by the variable.
+The `main` context will try to match the beginning of the parameters list and if
+found, push the `parameters` context. The `parameters` context is a loop that
+will first check for the end of the list and then try to match the type followed
+by the variable.

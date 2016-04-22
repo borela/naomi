@@ -8,9 +8,8 @@ Color schemes are going to be provided not only to test the highlighting, but
 to serve as a base to create new ones.
 
 Right now, only PHP 7 is supported but other languages are going to be added as
-soon as time allows it.
-
-Feel free to send pull requests, any help will be highly appreciated.
+soon as time allows it. Feel free to send pull requests, any help will be highly
+appreciated.
 
 ## Contributing
 

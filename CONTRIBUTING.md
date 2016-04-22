@@ -3,6 +3,11 @@
 Thank you for considering contributing to this project! Some tips that make it
 easy to create the syntax files:
 
+## 1: Read the docs
+
+There's a basic tutorial on how to write the syntax files and tests in sublime's
+[offical documentation](https://www.sublimetext.com/docs/3/syntax.html).
+
 ## 2: Install Scope Hunter
 
 This [tool](https://github.com/facelessuser/ScopeHunter) is essential when you

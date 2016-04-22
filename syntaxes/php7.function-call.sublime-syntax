@@ -31,7 +31,7 @@ contexts:
   function-call:
     - match: >-
         (?xi)
-        \s*(@)*({{commonIdentifier}})
+        (@)*({{commonIdentifier}})
         \s*(?=\()
       captures:
         1: keyword.operator.php

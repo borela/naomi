@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+ | Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ | use this file except in compliance with the License. You may obtain a copy of
+ | the License at
+ |
+ |     http://www.apache.org/licenses/LICENSE-2.0
+ |
+ | Unless required by applicable law or agreed to in writing, software
+ | distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ | WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ | License for the specific language governing permissions and limitations under
+ | the License.
+-->
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Candyman</string>
+
+        <key>uuid</key>
+        <string>0650d997-6078-42cc-ab2e-e9e90e9bfa91</string>
+
+        <key>settings</key>
+        <array>
+            <dict>
+                <key>settings</key>
+                <dict>
+                    <key>background</key>
+                    <string>#263238</string>
+
+                    <key>foreground</key>
+                    <string>#cfd8dc</string>
+
+                    <key>lineHighlight</key>
+                    <string>#37474f</string>
+
+                    <key>caret</key>
+                    <string>#cfd8dc</string>
+
+                    <key>gutterForeground</key>
+                    <string>#78909c</string>
+
+                    <key>guide</key>
+                    <string>#37474f</string>
+
+                    <key>stackGuide</key>
+                    <string>#37474f</string>
+
+                    <key>activeGuide</key>
+                    <string>#cfd8dc</string>
+
+                    <key>selection</key>
+                    <string>#37474f</string>
+
+                    <key>findHighlight</key>
+                    <string>#4db6ac</string>
+
+                    <key>findHighlightForeground</key>
+                    <string>#00695c</string>
+
+                    <key>bracketsOptions</key>
+                    <string>foreground</string>
+
+                    <key>bracketsForeground</key>
+                    <string>#ff80ab</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Comment</string>
+
+                <key>scope</key>
+                <string>comment</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#546e7a</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Keyword</string>
+
+                <key>scope</key>
+                <string>keyword</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string></string>
+
+                    <key>foreground</key>
+                    <string>#f48fb1</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Embedded delimiter</string>
+
+                <key>scope</key>
+                <string>punctuation.embedded</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f48fb1</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Documentation keyword</string>
+
+                <key>scope</key>
+                <string>keyword.documentation</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string></string>
+
+                    <key>foreground</key>
+                    <string>#90a4ae</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Documentation built-in type</string>
+
+                <key>scope</key>
+                <string>comment.block.phpdoc support.type</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string></string>
+
+                    <key>foreground</key>
+                    <string>#a1887f</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Documentation custom type</string>
+
+                <key>scope</key>
+                <string>comment.block.phpdoc type</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string></string>
+
+                    <key>foreground</key>
+                    <string>#4db6ac</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Documentation type delimiter</string>
+
+                <key>scope</key>
+                <string>comment.block.phpdoc punctuation.delimiter.types</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string></string>
+
+                    <key>foreground</key>
+                    <string>#bcaaa4</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Documentation's variable</string>
+
+                <key>scope</key>
+                <string>comment.block.phpdoc variable</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#90a4ae</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>String</string>
+
+                <key>scope</key>
+                <string>string</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#e57373</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>String's beginning</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.string.begin</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#fff9c4</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>String's ending</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.string.end</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#ff8a65</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Escaped character A</string>
+
+                <key>scope</key>
+                <string>constant.character.escape.a</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold italic</string>
+
+                    <key>foreground</key>
+                    <string>#80deea</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Escaped character B</string>
+
+                <key>scope</key>
+                <string>constant.character.escape.b</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold italic</string>
+
+                    <key>foreground</key>
+                    <string>#aed581</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Embedded variable A</string>
+
+                <key>scope</key>
+                <string>variable.a</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ce93d8</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Embedded variable B</string>
+
+                <key>scope</key>
+                <string>variable.b</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f06292</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Embedded variable's key</string>
+
+                <key>scope</key>
+                <string>variable array.key</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#a1887f</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Built-in types and constants</string>
+
+                <key>scope</key>
+                <string>support</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ff9e80</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Custom type</string>
+
+                <key>scope</key>
+                <string>type</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#64ffda</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Constant</string>
+
+                <key>scope</key>
+                <string>constant.variable</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ce93d8</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Function's name</string>
+
+                <key>scope</key>
+                <string>entity.name.structure.function.php</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#81d4fa</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Built-in functions</string>
+
+                <key>scope</key>
+                <string>support.function entity.name.structure.function.php</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ff9e80</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Variable</string>
+
+                <key>scope</key>
+                <string>variable</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#cfd8dc</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Namespace's name</string>
+
+                <key>scope</key>
+                <string>entity.name.structure.namespace</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#bcaaa4</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Namespace's delimiter</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.structure.namespace</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#fff9c4</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Inherit target</string>
+
+                <key>scope</key>
+                <string>inherit type</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ffecb3</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Implement target</string>
+
+                <key>scope</key>
+                <string>implement type</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ce93d8</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Alias</string>
+
+                <key>scope</key>
+                <string>entity.name.structure.import.alias</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#fff59d</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup tag</string>
+
+                <key>scope</key>
+                <string>meta.tag</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#0097a7</string>
+                </dict>
+            </dict>
+        </array>
+    </dict>
+</plist>

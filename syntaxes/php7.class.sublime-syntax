@@ -119,8 +119,6 @@ contexts:
         # Constants.
         - include: php7.constant.sublime-syntax
         - include: php7.string.sublime-syntax
-        # Function call.
-        - include: php7.function-call.sublime-syntax
         # Keywords.
         - include: php7.modifier.sublime-syntax
         - include: php7.keyword.sublime-syntax

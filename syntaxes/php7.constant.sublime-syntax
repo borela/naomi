@@ -20,18 +20,44 @@ scope: ...
 variables:
   constantIdentifier: |
     [A-Z\x{7f}-\x{ff}_]
-    [A-z\x{7f}-\x{ff}0-9_]*
+    [A-Z\x{7f}-\x{ff}0-9_]*
 
 contexts:
   main:
+    - include: magic-constant
     - include: static-constant
+    - include: generic-constant
 
   static-constant:
     - match: >-
         (?x)
         (::)
-        \s*({{constantIdentifier}})
+        \s*({{constantIdentifier}})\b
       captures:
         1: keyword.operator.php
         2: constant.php
+      pop: true
+
+  magic-constant:
+    - match: >-
+        (?x)
+        \b__
+        (?> LINE
+          | FILE
+          | DIR
+          | FUNCTION
+          | CLASS
+          | TRAIT
+          | METHOD
+          | NAMESPACE
+        )
+        __\b
+      scope: support.constant.preprocessor.php
+      pop: true
+
+  generic-constant:
+    - match: >-
+        (?x)
+        \b{{constantIdentifier}}\b
+      scope: constant.php
       pop: true

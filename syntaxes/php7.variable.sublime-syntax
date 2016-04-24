@@ -24,28 +24,33 @@ variables:
 
 contexts:
   main:
-    - include: member-variable
+    - include: property
     - include: static-variable
     - include: system-variable
+    - include: common-variable
 
-  member-variable:
+  property:
     - match: >-
         (?xi)
-        (\-\>)
+        (->)
         \s*({{commonIdentifier}})
       captures:
         1: keyword.operator.php
-        2: variable.php
+        2: >-
+          variable.property.php
+          entity.name.variable.php
       pop: true
 
   static-variable:
     - match: >-
         (?xi)
-        (\:\:)
-        \s*({{commonIdentifier}})
+        (::)
+        \s*((\$)({{commonIdentifier}}))
       captures:
         1: keyword.operator.php
-        2: variable.php
+        2: variable.static.php
+        3: punctuation.variable.begin.php
+        4: entity.name.variable.php
       pop: true
 
   system-variable:
@@ -63,6 +68,8 @@ contexts:
         1: punctuation.variable.begin.php
         2: entity.name.variable.php
       pop: true
+
+  common-variable:
     - match: |
         (?xi)
         \B(\$)({{commonIdentifier}})\b

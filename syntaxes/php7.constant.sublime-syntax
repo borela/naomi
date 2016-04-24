@@ -33,5 +33,5 @@ contexts:
         \s*({{constantIdentifier}})
       captures:
         1: keyword.operator.php
-        2: constant.variable.php
+        2: constant.php
       pop: true

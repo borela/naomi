@@ -38,10 +38,13 @@ contexts:
     - include: magic-functions
     - match: (?xi)\b{{commonIdentifier}}\b
       scope: entity.name.structure.function.php
-    # Parameters.
+    # Parameters followed by the function's return type-hint.
     - match: \(
       scope: punctuation.delimiter.structure.function.parameters.begin.php
-      push: parameters
+      push: [
+        return-type-hint,
+        parameters
+      ]
     # Body.
     - match: \{
       scope: >-
@@ -52,21 +55,21 @@ contexts:
   magic-functions:
     - match: |
         (?x)
-        (?>__construct
-          |__destruct
-          |__callStatic
-          |__call
-          |__get
-          |__set
-          |__isset
-          |__unset
-          |__sleep
-          |__wakeup
-          |__toString
-          |__invoke
-          |__set_state
-          |__clone
-          |__debugInfo
+        (?> __construct
+          | __destruct
+          | __callStatic
+          | __call
+          | __get
+          | __set
+          | __isset
+          | __unset
+          | __sleep
+          | __wakeup
+          | __toString
+          | __invoke
+          | __set_state
+          | __clone
+          | __debugInfo
         )
       scope: >-
         support.function.php
@@ -77,53 +80,66 @@ contexts:
     - meta_content_scope: function.parameters.content.php
     - match: \)
       scope: punctuation.delimiter.structure.function.parameters.end.php
-      set: return-typehint
-    - match: ""
+      pop: true
+    # Starts with a variable.
+    - match: (?=\$)
       push: [
         param-delimiter,
-        param-default-value,
+        param-optional-default-value,
+        param-variable
+      ]
+    # Starts with a variadic operator.
+    - match: (?=\.\.\.)
+      push: [
+        param-delimiter,
+        param-optional-default-value,
+        param-variable,
+        param-variadic-operator
+      ]
+    # Starts with a type hint.
+    - match: (?!\s)
+      push: [
+        param-delimiter,
+        param-optional-default-value,
         param-variable,
         param-variadic-operator,
         param-type
       ]
 
   param-type:
-    - match: (?=\.\.\.)
-      pop: true
     - include: php7.type.sublime-syntax
-    - match: (?=\$)
-      pop: true
 
   param-variadic-operator:
-    - match: \.\.\.
-      scope: keyword.operator.php
-      pop: true
     - match: (?=\$)
+      pop: true
+    - match: \.\.\.
+      scope: keyword.operator.variadic.php
       pop: true
 
   param-variable:
     - include: php7.variable.sublime-syntax
 
-  param-default-value:
+  param-optional-default-value:
     - match: (?=,|\))
       pop: true
     - match: \=
       scope: keyword.operator.php
-      set: param-constant-default-value
+      set: param-default-value
 
-  param-constant-default-value:
+  param-default-value:
     - match: (?=,|\))
       pop: true
+    - include: php7.constant.sublime-syntax
     - include: php7.string.sublime-syntax
 
   param-delimiter:
+    - match: (?=\))
+      pop: true
     - match: ","
       scope: punctuation.delimiter.structure.function.parameters.php
       pop: true
-    - match: (?=\S)
-      pop: true
 
-  return-typehint:
+  return-type-hint:
     - match: (?={|;)
       pop: true
     - match: ":"

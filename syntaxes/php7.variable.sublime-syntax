@@ -55,7 +55,7 @@ contexts:
 
   system-variable:
     - match: |
-        (?xi)
+        (?x)
         \B(\$)(
           (?>this
             |_GET

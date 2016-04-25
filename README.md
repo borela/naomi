@@ -11,10 +11,19 @@ Right now, only PHP 7 is supported but other languages are going to be added as
 soon as time allows it. Feel free to send pull requests, any help will be highly
 appreciated.
 
+## Usage
+
+After the package is installed, the PHP 7 syntax will be available under the
+menu `View / Syntax / PHP 7`. You'll need to use a color scheme provided to see
+the new syntax in action. It is available under the menu `Preferences / Color
+Scheme / Naomi`.
+
+If you don't like the color schemes provided, feel free to create your own and
+send a pull request.
+
 ## Contributing
 
-Thank you for considering contributing to this project! There are some tips on
-how to create the syntax files in [CONTRIBUTING.md](CONTRIBUTING.md)
+Thank you for considering contributing to this project! See: [CONTRIBUTING](CONTRIBUTING.md).
 
 ## License
 

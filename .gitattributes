@@ -1,7 +1,18 @@
-.gitattributes text eol=lf
-.gitignore text eol=lf
 *.sublime-syntax text eol=lf
 *.tmTheme text eol=lf
 *.md text eol=lf
+*.html text eol=lf
+*.html5 text eol=lf
+*.css text eol=lf
+*.css3 text eol=lf
+*.json text eol=lf
+*.js text eol=lf
 *.php text eol=lf
 *.php7 text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+tests export-ignore
+.gitattributes text eol=lf export-ignore
+.gitignore text eol=lf export-ignore
+CONTRIBUTING.md export-ignore

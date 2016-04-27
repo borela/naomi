@@ -51,13 +51,13 @@ contexts:
         (?x)
         ((?>\\|\b))
         (
-          (?>array
-            |callable
-            |bool
-            |float
-            |int
-            |string
-            |self
+          (?> array
+            | callable
+            | bool
+            | float
+            | int
+            | string
+            | self
           )
         )\b
       captures:
@@ -71,12 +71,12 @@ contexts:
         (?x)
         ((?>\\|\b))
         (
-          (?>Traversable
-            |IteratorAggregate
-            |Iterator
-            |Throwable
-            |ArrayAccess
-            |Serializable
+          (?> Traversable
+            | IteratorAggregate
+            | Iterator
+            | Throwable
+            | ArrayAccess
+            | Serializable
           )
         )\b
       captures:
@@ -90,8 +90,8 @@ contexts:
         (?x)
         ((?>\\|\b))
         (
-          (?>Closure
-            |Generator
+          (?> Closure
+            | Generator
           )
         )\b
       captures:

@@ -24,9 +24,66 @@ variables:
 
 contexts:
   main:
+    - include: array-constants
+    - include: php7.string.sublime-syntax
     - include: magic-constant
     - include: static-constant
     - include: generic-constant
+
+  array-constants:
+    - match: |
+        (?x)
+        \b(?> CASE_
+              (?> UPPER
+                | LOWER
+              )
+            # SORT_ASC
+            # SORT_DESC
+            # SORT_REGULAR
+            # SORT_NUMERIC
+            # SORT_STRING
+            # SORT_LOCALE_STRING
+            # SORT_NATURAL
+            # SORT_FLAG_CASE
+            | SORT_
+              (?> ASC
+                | DESC
+                | REGULAR
+                | NUMERIC
+                | STRING
+                | LOCALE_STRING
+                | NATURAL
+                | FLAG_CASE
+              )
+            | ARRAY_
+              (?> FILTER_USE_KEY
+                | FILTER_USE_BOTH
+              )
+            | COUNT_
+              (?> NORMAL
+                | RECURSIVE
+              )
+            # EXTR_OVERWRITE
+            # EXTR_SKIP
+            # EXTR_PREFIX_SAME
+            # EXTR_PREFIX_ALL
+            # EXTR_PREFIX_INVALID
+            # EXTR_PREFIX_IF_EXISTS
+            # EXTR_IF_EXISTS
+            # EXTR_REFS
+            | EXTR_
+              (?> OVERWRITE
+                | SKIP
+                | PREFIX_SAME
+                | PREFIX_ALL
+                | PREFIX_INVALID
+                | PREFIX_IF_EXISTS
+                | IF_EXISTS
+                | REFS
+              )
+        )\b
+      scope: support.constant.php
+      pop: true
 
   static-constant:
     - match: >-

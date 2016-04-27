@@ -97,22 +97,14 @@ contexts:
   expected-structures:
     - match: ""
       push:
-        # Comments.
-        - include: php7.phpdoc.sublime-syntax
-        - include: php7.comment.sublime-syntax
-        # Structures.
-        - include: php7.use.sublime-syntax
-        - include: php7.function.sublime-syntax
-        # Constants.
+        - include: php7.comments.sublime-syntax
+        - include: php7.operator.sublime-syntax
         - include: php7.constant.sublime-syntax
-        - include: php7.string.sublime-syntax
-        # Keywords.
+        - include: php7.use.sublime-syntax
         - include: php7.modifier.sublime-syntax
         - include: php7.keyword.sublime-syntax
-        # Variables.
+        - include: php7.function.sublime-syntax
         - include: php7.variable.sublime-syntax
         - include: php7.type.sublime-syntax
-        # Operators.
-        - include: php7.operator.sublime-syntax
         - match: ""
           pop: true

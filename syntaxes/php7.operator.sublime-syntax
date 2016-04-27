@@ -78,6 +78,7 @@ contexts:
   # |    *=    |                   |
   # |    /=    |                   |
   # |    %=    |                   |
+  # |    ??    | Null coalescing   |
   assignment-operators:
     - match: >-
         (?x)
@@ -86,6 +87,7 @@ contexts:
           | \*\=
           | \/\=
           | \%\=
+          | \?\?
         )
       scope: keyword.operator.assignment.php
       pop: true
@@ -98,6 +100,7 @@ contexts:
   # |    !=    | Not equal                |
   # |    <>    | Not equal                |
   # |    >=    | Greater than or equal to |
+  # |   <=>    | Spaceship operator       |
   # |    <=    | Less than or equal to    |
   # |    >     | Greater than             |
   # |    <     | Less than                |
@@ -110,6 +113,7 @@ contexts:
           | \!\=
           | \<\>
           | \>\=
+          | \<\=\>
           | \<\=
           | \>
           | \<

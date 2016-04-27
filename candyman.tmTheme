@@ -100,23 +100,6 @@
 
             <dict>
                 <key>name</key>
-                <string>Public modifier</string>
-
-                <key>scope</key>
-                <string>keyword.modifier.public</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>fontStyle</key>
-                    <string></string>
-
-                    <key>foreground</key>
-                    <string>#64ffda</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
                 <string>Protected modifier</string>
 
                 <key>scope</key>
@@ -145,7 +128,7 @@
                     <string></string>
 
                     <key>foreground</key>
-                    <string>#ff9e80</string>
+                    <string>#e57373</string>
                 </dict>
             </dict>
 

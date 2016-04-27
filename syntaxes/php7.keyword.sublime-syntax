@@ -22,16 +22,17 @@ contexts:
     - match: |
         (?xi)
         \b(
-          (?>as
-            |if
-            |else
-            |do
-            |while
-            |until
-            |foreach
-            |continue
-            |return
-            |new
+          (?> as
+            | if
+            | else
+            | do
+            | goto
+            | while
+            | until
+            | foreach
+            | continue
+            | return
+            | yield
           )
         )\b
       scope: keyword.other.php

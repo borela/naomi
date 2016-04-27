@@ -19,7 +19,7 @@
 
     Type::CONSTANT
 //  ^^^^ type.php
-//      ^^ keyword.operator.php
+//      ^^ keyword.operator.scope.resolution.php
 //        ^^^^^^^^ constant.php
 
     __LINE__
@@ -39,4 +39,47 @@
     __NAMESPACE__
 //  ^^^^^^^^^^^^^ support.constant.preprocessor.php
 
-?>
+    CASE_LOWER
+//  ^^^^^^^^^^ support.constant.php
+    CASE_UPPER
+//  ^^^^^^^^^^ support.constant.php
+    SORT_ASC
+//  ^^^^^^^^ support.constant.php
+    SORT_DESC
+//  ^^^^^^^^^ support.constant.php
+    SORT_REGULAR
+//  ^^^^^^^^^^^^ support.constant.php
+    SORT_NUMERIC
+//  ^^^^^^^^^^^^ support.constant.php
+    SORT_STRING
+//  ^^^^^^^^^^^ support.constant.php
+    SORT_LOCALE_STRING
+//  ^^^^^^^^^^^^^^^^^^ support.constant.php
+    SORT_NATURAL
+//  ^^^^^^^^^^^^ support.constant.php
+    SORT_FLAG_CASE
+//  ^^^^^^^^^^^^^^ support.constant.php
+    ARRAY_FILTER_USE_KEY
+//  ^^^^^^^^^^^^^^^^^^^^ support.constant.php
+    ARRAY_FILTER_USE_BOTH
+//  ^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+    COUNT_NORMAL
+//  ^^^^^^^^^^^^ support.constant.php
+    COUNT_RECURSIVE
+//  ^^^^^^^^^^^^^^^ support.constant.php
+    EXTR_OVERWRITE
+//  ^^^^^^^^^^^^^^ support.constant.php
+    EXTR_SKIP
+//  ^^^^^^^^^ support.constant.php
+    EXTR_PREFIX_SAME
+//  ^^^^^^^^^^^^^^^^ support.constant.php
+    EXTR_PREFIX_ALL
+//  ^^^^^^^^^^^^^^^ support.constant.php
+    EXTR_PREFIX_INVALID
+//  ^^^^^^^^^^^^^^^^^^^ support.constant.php
+    EXTR_PREFIX_IF_EXISTS
+//  ^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+    EXTR_IF_EXISTS
+//  ^^^^^^^^^^^^^^ support.constant.php
+    EXTR_REFS
+//  ^^^^^^^^^ support.constant.php

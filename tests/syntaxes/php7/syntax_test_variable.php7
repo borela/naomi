@@ -21,13 +21,13 @@
 //  ^^^^^^^ variable.php
 //  ^ punctuation.variable.begin.php
 //   ^^^^^^ entity.name.variable.php
-//         ^^ keyword.operator.php
+//         ^^ keyword.operator.member.access.php
 //           ^^^^^^^^ variable.property.php
 //           ^^^^^^^^ entity.name.variable.php
     Type::$variable
 //  ^^^^ type.php
 //  ^^^^ entity.name.type.php
-//      ^^ keyword.operator.php
+//      ^^ keyword.operator.scope.resolution.php
 //        ^^^^^^^^^ variable.static.php
 //        ^ punctuation.variable.begin.php
 //         ^^^^^^^^ entity.name.variable.php

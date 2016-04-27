@@ -40,14 +40,14 @@ contexts:
   arithmetic-operators:
     - match: >-
         (?x)
-        (?> \-\-
-          | \-
+        (?> --
+          | -
           | \+\+
           | \+
           | \*\*
           | \*
-          | \/
-          | \%
+          | /
+          | %
         )
       scope: keyword.operator.arithmetic.php
       pop: true
@@ -62,11 +62,11 @@ contexts:
   bitwise-operators:
     - match: >-
         (?x)
-        (?> \&\=
-          | \|\=
-          | \^\=
-          | \<\<\=
-          | \>\>=
+        (?> &=
+          | \|=
+          | \^=
+          | <<=
+          | >>=
         )
       scope: keyword.operator.bitwise.php
       pop: true
@@ -82,11 +82,11 @@ contexts:
   assignment-operators:
     - match: >-
         (?x)
-        (?> \=
-          | \+\=
-          | \*\=
-          | \/\=
-          | \%\=
+        (?> =
+          | \+=
+          | \*=
+          | /=
+          | %=
           | \?\?
         )
       scope: keyword.operator.assignment.php
@@ -107,16 +107,16 @@ contexts:
   comparison-operators:
     - match: >-
         (?x)
-        (?> \=\=\=
-          | \=\=
-          | \!\=\=
-          | \!\=
-          | \<\>
-          | \>\=
-          | \<\=\>
-          | \<\=
-          | \>
-          | \<
+        (?> ===
+          | ==
+          | !==
+          | !=
+          | <>
+          | >=
+          | <=>
+          | <=
+          | >
+          | <(?!<<)
         )
       scope: keyword.operator.comparison.php
       pop: true
@@ -140,9 +140,9 @@ contexts:
               | or
             )\s+
           )
-          | \&\&
-          | \\
-          | \!
+          | &&
+          | \|\|
+          | !
         )
       scope: keyword.operator.logical.php
       pop: true
@@ -154,7 +154,7 @@ contexts:
   string-operators:
     - match: >-
         (?x)
-        (?> \.\=
+        (?> \.=
           | \.
         )
       scope: keyword.operator.string.php

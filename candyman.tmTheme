@@ -416,7 +416,7 @@
                 <string>Function's name</string>
 
                 <key>scope</key>
-                <string>entity.name.structure.function.php</string>
+                <string>entity.name.structure.function</string>
 
                 <key>settings</key>
                 <dict>
@@ -427,13 +427,47 @@
 
             <dict>
                 <key>name</key>
-                <string>Built-in functions</string>
+                <string>Function call namespace delimiter</string>
 
                 <key>scope</key>
-                <string>support.function entity.name.structure.function.php</string>
+                <string>function.call punctuation.delimiter.structure.function</string>
 
                 <key>settings</key>
                 <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#81d4fa</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Built-in functions</string>
+
+                <key>scope</key>
+                <string>support.function entity.name.structure.function</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ff9e80</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Built-in function call namespace delimiter</string>
+
+                <key>scope</key>
+                <string>support.function.call punctuation.delimiter.structure.function</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
                     <key>foreground</key>
                     <string>#ff9e80</string>
                 </dict>

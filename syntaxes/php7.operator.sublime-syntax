@@ -19,24 +19,24 @@ scope: ...
 
 contexts:
   main:
+    - include: type-operators
     - include: arithmetic-operators
     - include: bitwise-operators
     - include: assignment-operators
     - include: comparison-operators
     - include: logical-operators
     - include: string-operators
-    - include: type-operators
 
-  # | Operator |  Description   |
-  # | :------: | :------------- |
-  # |    --    | Decrement      |
-  # |    -     | Subtraction    |
-  # |    ++    | Increment      |
-  # |    +     | Addition       |
-  # |    **    | Exponentiation |
-  # |    *     | Multiplication |
-  # |    /     | Division       |
-  # |    %     | Modulus        |
+  # | Operator |  Description    |
+  # | :------: | :-------------- |
+  # |    --    | Decrement.      |
+  # |    -     | Subtraction.    |
+  # |    ++    | Increment.      |
+  # |    +     | Addition.       |
+  # |    **    | Exponentiation. |
+  # |    *     | Multiplication. |
+  # |    /     | Division.       |
+  # |    %     | Modulus.        |
   arithmetic-operators:
     - match: >-
         (?x)
@@ -52,13 +52,13 @@ contexts:
       scope: keyword.operator.arithmetic.php
       pop: true
 
-  # | Operator | Description |
-  # | :------: | :-----------|
-  # |    &=    | Bitwise And |
-  # |    |=    | Bitwise Or  |
-  # |    ^=    | Bitwise Xor |
-  # |   <<=    | Left shift  |
-  # |   >>=    | Right shift |
+  # | Operator | Description  |
+  # | :------: | :------------|
+  # |    &=    | Bitwise And. |
+  # |    |=    | Bitwise Or.  |
+  # |    ^=    | Bitwise Xor. |
+  # |   <<=    | Left shift.  |
+  # |   >>=    | Right shift. |
   bitwise-operators:
     - match: >-
         (?x)
@@ -71,14 +71,14 @@ contexts:
       scope: keyword.operator.bitwise.php
       pop: true
 
-  # | Operator |    Description    |
-  # | :------: | :---------------- |
-  # |    =     | Simple assignment |
-  # |    +=    |                   |
-  # |    *=    |                   |
-  # |    /=    |                   |
-  # |    %=    |                   |
-  # |    ??    | Null coalescing   |
+  # | Operator |    Description     |
+  # | :------: | :----------------- |
+  # |    =     | Simple assignment. |
+  # |    +=    |                    |
+  # |    *=    |                    |
+  # |    /=    |                    |
+  # |    %=    |                    |
+  # |    ??    | Null coalescing.   |
   assignment-operators:
     - match: >-
         (?x)
@@ -92,18 +92,18 @@ contexts:
       scope: keyword.operator.assignment.php
       pop: true
 
-  # | Operator |       Description        |
-  # | :------: | :----------------------- |
-  # |   ===    | Identical                |
-  # |    ==    | Equal                    |
-  # |   !==    | Not identical            |
-  # |    !=    | Not equal                |
-  # |    <>    | Not equal                |
-  # |    >=    | Greater than or equal to |
-  # |   <=>    | Spaceship operator       |
-  # |    <=    | Less than or equal to    |
-  # |    >     | Greater than             |
-  # |    <     | Less than                |
+  # | Operator |       Description         |
+  # | :------: | :------------------------ |
+  # |   ===    | Identical.                |
+  # |    ==    | Equal.                    |
+  # |   !==    | Not identical.            |
+  # |    !=    | Not equal.                |
+  # |    <>    | Not equal.                |
+  # |    >=    | Greater than or equal to. |
+  # |   <=>    | Spaceship operator.       |
+  # |    <=    | Less than or equal to.    |
+  # |    >     | Greater than.             |
+  # |    <     | Less than.                |
   comparison-operators:
     - match: >-
         (?x)
@@ -121,14 +121,14 @@ contexts:
       scope: keyword.operator.comparison.php
       pop: true
 
-  # | Operator | Description |
-  # | :------: | :---------- |
-  # |   and    |             |
-  # |   xor    |             |
-  # |    or    |             |
-  # |    &&    | Same as and |
-  # |    ||    | Same as or  |
-  # |    !     | Not         |
+  # | Operator | Description  |
+  # | :------: | :----------- |
+  # |   and    |              |
+  # |   xor    |              |
+  # |    or    |              |
+  # |    &&    | Same as and. |
+  # |    ||    | Same as or.  |
+  # |    !     | Not.         |
   logical-operators:
     - match: >-
         (?x)
@@ -147,10 +147,10 @@ contexts:
       scope: keyword.operator.logical.php
       pop: true
 
-  # | Operator |  Description  |
-  # | :------: | :------------ |
-  # |    .     | Concatenation |
-  # |    .=    | Append        |
+  # | Operator |  Description   |
+  # | :------: | :------------- |
+  # |    .     | Concatenation. |
+  # |    .=    | Append.        |
   string-operators:
     - match: >-
         (?x)
@@ -160,9 +160,20 @@ contexts:
       scope: keyword.operator.string.php
       pop: true
 
+  # |  Operator  |  Description      |
+  # | :--------: | :---------------- |
+  # | instanceof |                   |
+  # |     ::     | Scope resolution. |
+  # |     ->     | Member access.    |
   type-operators:
     - match: >-
-        (?x)
-        \binstanceof\b
-      scope: keyword.operator.type.php
+        (?xi)
+        (?> (\binstanceof\b)
+          | (::)
+          | (->)
+        )
+      captures:
+        1: keyword.operator.type.php
+        2: keyword.operator.scope.resolution.php
+        3: keyword.operator.member.access.php
       pop: true

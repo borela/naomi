@@ -50,7 +50,7 @@ contexts:
     - include: method-call
 
   array-support-function:
-    - match: >-
+    - match: |
         (?x)
         ((?>\\|\b))
         (
@@ -147,7 +147,7 @@ contexts:
       pop: true
 
   class-object-support-functions:
-    - match: >-
+    - match: |
         (?x)
         ((?>\\|\b))
         (
@@ -262,7 +262,7 @@ contexts:
       pop: true
 
   method-call:
-    - match: >-
+    - match: |
         (?xi)
         (->)
         \s*({{commonIdentifier}})

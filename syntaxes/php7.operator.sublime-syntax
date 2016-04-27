@@ -38,7 +38,7 @@ contexts:
   # |    /     | Division.       |
   # |    %     | Modulus.        |
   arithmetic-operators:
-    - match: >-
+    - match: |
         (?x)
         (?> --
           | -
@@ -60,7 +60,7 @@ contexts:
   # |   <<=    | Left shift.  |
   # |   >>=    | Right shift. |
   bitwise-operators:
-    - match: >-
+    - match: |
         (?x)
         (?> &=
           | \|=
@@ -80,7 +80,7 @@ contexts:
   # |    %=    |                    |
   # |    ??    | Null coalescing.   |
   assignment-operators:
-    - match: >-
+    - match: |
         (?x)
         (?> =
           | \+=
@@ -105,7 +105,7 @@ contexts:
   # |    >     | Greater than.             |
   # |    <     | Less than.                |
   comparison-operators:
-    - match: >-
+    - match: |
         (?x)
         (?> ===
           | ==
@@ -130,7 +130,7 @@ contexts:
   # |    ||    | Same as or.  |
   # |    !     | Not.         |
   logical-operators:
-    - match: >-
+    - match: |
         (?x)
         (?>
           (?:
@@ -152,7 +152,7 @@ contexts:
   # |    .     | Concatenation. |
   # |    .=    | Append.        |
   string-operators:
-    - match: >-
+    - match: |
         (?x)
         (?> \.=
           | \.
@@ -166,7 +166,7 @@ contexts:
   # |     ::     | Scope resolution. |
   # |     ->     | Member access.    |
   type-operators:
-    - match: >-
+    - match: |
         (?xi)
         (?> (\binstanceof\b)
           | (::)

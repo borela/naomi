@@ -86,7 +86,7 @@ contexts:
       pop: true
 
   static-constant:
-    - match: >-
+    - match: |
         (?x)
         (::)
         \s*({{constantIdentifier}})\b
@@ -96,7 +96,7 @@ contexts:
       pop: true
 
   magic-constant:
-    - match: >-
+    - match: |
         (?x)
         \b__
         (?> LINE
@@ -113,7 +113,7 @@ contexts:
       pop: true
 
   generic-constant:
-    - match: >-
+    - match: |
         (?x)
         \b{{constantIdentifier}}\b
       scope: constant.php

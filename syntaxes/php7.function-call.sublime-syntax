@@ -20,31 +20,243 @@ variables:
     [a-z\x{7f}-\x{ff}_]
     [a-z\x{7f}-\x{ff}0-9_]*
 
+  functionNamespacePath: |
+    (?>
+      (?:
+        ((?>\\|\b))
+        ({{commonIdentifier}})
+        (\\)
+        ({{commonIdentifier}})
+        (?=\\{{commonIdentifier}}\s*\()
+      )
+      |
+      (?:
+        ((?>\\|\b))
+        ({{commonIdentifier}})
+        (?=\\{{commonIdentifier}}\s*\()
+      )
+    )
+
 scope: ...
 
 contexts:
   main:
+    - include: array-support-function
+    - include: class-object-support-functions
+    - include: language-construct
     - include: function-call
+    - include: namespaced-function-call
     - include: static-function-call
     - include: method-call
 
-  function-call:
+  array-support-function:
     - match: >-
-        (?xi)
-        (@)*({{commonIdentifier}})
-        \s*(?=\()
+        (?x)
+        ((?>\\|\b))
+        (
+          (?> array
+              (?> _change_key_case
+                | _chunk
+                | _column
+                | _combine
+                | _count_values
+                | _diff
+                  (?> _assoc
+                    | _key
+                    | _uassoc
+                    | _ukey
+                  )?
+                | _fill(?:_keys)?
+                | _filter
+                | _flip
+                | _intersect
+                  (?> _assoc
+                    | _key
+                    | _uassoc
+                    | _ukey
+                  )?
+                | _key_exists
+                | _keys
+                | _map
+                | _merge(?:_recursive)?
+                | _multisort
+                | _pad
+                | _pop
+                | _product
+                | _push
+                | _rand
+                | _reduce
+                | _replace(?:_recursive)?
+                | _reverse
+                | _search
+                | _shift
+                | _slice
+                | _splice
+                | _sum
+                  (?> _assoc
+                    | _uassoc
+                  )?
+                | _udiff
+                  (?> _assoc
+                    | _uassoc
+                  )?
+                | _uintersect
+                  (?> _assoc
+                    | _uassoc
+                  )?
+                | _unique
+                | _unshift
+                | _values
+                | _walk_recursive
+                | _walk
+              )?
+            | arsort
+            | asort
+            | compact
+            | count
+            | current
+            | each
+            | end
+            | extract
+            | in_array
+            | key(?:_exists)?
+            | krsort
+            | ksort
+            | list
+            | natcasesort
+            | natsort
+            | next
+            | pos
+            | prev
+            | range
+            | reset
+            | rsort
+            | shuffle
+            | sizeof
+            | sort
+            | uasort
+            | uksort
+            | usort
+          )
+        )
+        (?=\s*\()
       captures:
-        1: keyword.operator.php
+        0: support.function.call.php
+        1: punctuation.delimiter.structure.function.php
         2: entity.name.structure.function.php
       pop: true
 
-  static-function-call:
+  class-object-support-functions:
     - match: >-
+        (?x)
+        ((?>\\|\b))
+        (
+          (?>
+            # class_alias
+            # class_exists
+            class_
+            (?> alias
+              | exists
+            )
+            # get_called_class
+            # get_class_methods
+            # get_class_vars
+            # get_class
+            # get_declared_classes
+            # get_declared_interfaces
+            # get_declared_traits
+            # get_object_vars
+            # get_parent_class
+            | get_
+              (?> called_class
+                | class
+                  (?> _methods
+                    | _vars
+                  )?
+                | declared_
+                  (?> classes
+                    | interfaces
+                    | traits
+                  )
+                | object_vars
+                | parent_class
+              )
+            | interface_exists
+            # is_a
+            # is_subclass_of
+            | is_
+              (?> a
+                | subclass_of
+              )
+            | method_exists
+            | property_exists
+            | trait_exists
+          )
+        )
+        (?=\s*\()
+      captures:
+        0: support.function.call.php
+        1: punctuation.delimiter.structure.function.php
+        2: entity.name.structure.function.php
+
+  language-construct:
+    - match: |
+        (?x)
+        ((?>\\|\b))
+        \b
+        (
+          (?> declare
+            | echo
+            | include_once
+            | include
+            | isset
+            | require_once
+            | require
+          )
+        )\b
+      captures:
+        0: support.function.call.php
+        1: punctuation.delimiter.structure.function.php
+        2: entity.name.structure.function.php
+
+  function-call:
+    - match: |
+        (?xi)
+        ((?>\\|\b))
+        ({{commonIdentifier}})
+        (?=\s*\()
+      captures:
+        0: function.call.php
+        1: punctuation.delimiter.structure.function.php
+        2: entity.name.structure.function.php
+
+  namespaced-function-call:
+    - match: |
+        (?xi)
+        ({{functionNamespacePath}})
+        (\\)?
+        ({{commonIdentifier}})
+        (?=\s*\()
+      captures:
+        0: function.call.php
+        1: namespace.path.php
+        2: punctuation.delimiter.structure.namespace.a.php
+        3: entity.name.structure.namespace.a.php
+        4: punctuation.delimiter.structure.namespace.b.php
+        5: entity.name.structure.namespace.b.php
+        6: punctuation.delimiter.structure.namespace.a.php
+        7: entity.name.structure.namespace.a.php
+        8: punctuation.delimiter.structure.function.php
+        9: entity.name.structure.function.php
+
+  static-function-call:
+    - match: |
         (?xi)
         (::)
         \s*({{commonIdentifier}})
-        \s*(?=\()
+        (?=\s*\()
       captures:
+        0: function.call.php
         1: keyword.operator.php
         2: entity.name.structure.function.php
       pop: true
@@ -54,8 +266,9 @@ contexts:
         (?xi)
         (->)
         \s*({{commonIdentifier}})
-        \s*(?=\()
+        (?=\s*\()
       captures:
+        0: function.call.php
         1: keyword.operator.php
         2: entity.name.structure.function.php
       pop: true

@@ -24,19 +24,34 @@ variables:
 
 contexts:
   main:
+    - include: support-variable
     - include: property
     - include: static-variable
-    - include: system-variable
     - include: common-variable
+
+  support-variable:
+    - match: |
+        (?x)
+        \B(\$)(
+          (?> this
+            | _GET
+            | _POST
+            | _COOKIE
+          )
+        )\b
+      captures:
+        0: support.variable.php
+        1: punctuation.variable.begin.php
+        2: entity.name.variable.php
+      pop: true
 
   property:
     - match: >-
         (?xi)
-        (->)
+        (?<=->)
         \s*({{commonIdentifier}})
       captures:
-        1: keyword.operator.php
-        2: >-
+        1: >-
           variable.property.php
           entity.name.variable.php
       pop: true
@@ -44,29 +59,12 @@ contexts:
   static-variable:
     - match: >-
         (?xi)
-        (::)
+        (?<=::)
         \s*((\$)({{commonIdentifier}}))
       captures:
-        1: keyword.operator.php
-        2: variable.static.php
-        3: punctuation.variable.begin.php
-        4: entity.name.variable.php
-      pop: true
-
-  system-variable:
-    - match: |
-        (?x)
-        \B(\$)(
-          (?>this
-            |_GET
-            |_POST
-            |_COOKIE
-          )
-        )\b
-      captures:
-        0: support.variable.php
-        1: punctuation.variable.begin.php
-        2: entity.name.variable.php
+        1: variable.static.php
+        2: punctuation.variable.begin.php
+        3: entity.name.variable.php
       pop: true
 
   common-variable:

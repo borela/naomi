@@ -23,21 +23,6 @@ variables:
 scope: ...
 
 contexts:
-  comments:
-    - match: |
-        (?x)
-        (?=
-          (?>\/\/
-            |\/\*
-            |\#
-          )
-        )
-      push:
-        - include: php7.phpdoc.sublime-syntax
-        - include: php7.comment.sublime-syntax
-        - match: ""
-          pop: true
-
   main:
     - match: (?xi)\btrait(?!\\)\b
       scope: keyword.structure.trait.php
@@ -45,7 +30,7 @@ contexts:
 
   declaration:
     - meta_scope: trait.php
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     # Body.
     - match: "{"
       scope: >-

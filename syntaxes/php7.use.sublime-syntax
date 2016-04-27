@@ -23,21 +23,6 @@ variables:
     [a-z\x{7f}-\x{ff}0-9_]*
 
 contexts:
-  comments:
-    - match: |
-        (?x)
-        (?=
-          (?>\/\/
-            |\/\*
-            |\#
-          )
-        )
-      push:
-        - include: php7.phpdoc.sublime-syntax
-        - include: php7.comment.sublime-syntax
-        - match: ""
-          pop: true
-
   main:
     - match: (?i)\buse(?!\\)\b
       scope: keyword.structure.import.php
@@ -45,7 +30,7 @@ contexts:
 
   declaration:
     - meta_scope: import.php
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: ;
       scope: punctuation.delimiter.structure.import.end.php
       pop: true
@@ -57,7 +42,7 @@ contexts:
       ]
 
   const-or-function:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: (?i)\bconst\b
       scope: keyword.structure.import.constant.php
       pop: true
@@ -68,11 +53,11 @@ contexts:
       pop: true
 
   target-type:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - include: php7.type.sublime-syntax
 
   alias:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: (?=;)
       pop: true
     - match: (?i)\bas\b
@@ -80,7 +65,7 @@ contexts:
       set: alias-name
 
   alias-name:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: (?=;)
       pop: true
     - match: "(?xi){{commonIdentifier}}"

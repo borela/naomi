@@ -23,21 +23,6 @@ variables:
 scope: ...
 
 contexts:
-  comments:
-    - match: |
-        (?x)
-        (?=
-          (?>\/\/
-            |\/\*
-            |\#
-          )
-        )
-      push:
-        - include: php7.phpdoc.sublime-syntax
-        - include: php7.comment.sublime-syntax
-        - match: ""
-          pop: true
-
   main:
     - match: (?i)\bfunction(?!\\)\b
       scope: keyword.structure.function.php
@@ -93,7 +78,7 @@ contexts:
   parameters:
     - meta_scope: function.parameters.php
     - meta_content_scope: function.parameters.content.php
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: \)
       scope: punctuation.delimiter.structure.function.parameters.end.php
       pop: true
@@ -123,11 +108,11 @@ contexts:
       ]
 
   param-type:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - include: php7.type.sublime-syntax
 
   param-variadic-operator:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: (?=\$)
       pop: true
     - match: \.\.\.
@@ -135,11 +120,11 @@ contexts:
       pop: true
 
   param-variable:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - include: php7.variable.sublime-syntax
 
   param-optional-default-value:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: (?=,|\))
       pop: true
     - match: \=
@@ -147,14 +132,14 @@ contexts:
       set: param-default-value
 
   param-default-value:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: (?=,|\))
       pop: true
     - include: php7.constant.sublime-syntax
     - include: php7.string.sublime-syntax
 
   param-delimiter:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: (?=\))
       pop: true
     - match: ","
@@ -162,7 +147,7 @@ contexts:
       pop: true
 
   return-type-hint:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: (?={|;)
       pop: true
     - match: ":"
@@ -170,7 +155,7 @@ contexts:
       set: return-type
 
   return-type:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: (?={|;)
       pop: true
     - include: php7.type.sublime-syntax

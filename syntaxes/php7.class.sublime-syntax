@@ -23,19 +23,6 @@ variables:
 scope: ...
 
 contexts:
-  comments:
-    - match: |
-        (?x)
-        (?=
-          (?>\/\/
-            |\/\*
-            |\#
-          )
-        )
-      push:
-        - include: php7.phpdoc.sublime-syntax
-        - include: php7.comment.sublime-syntax
-
   main:
     - match: (?i)\bclass(?!\\)\b
       scope: keyword.structure.class.php
@@ -43,7 +30,7 @@ contexts:
 
   declaration:
     - meta_scope: class.php
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     # Extends.
     - match: (?i)\bextends\b
       scope: keyword.structure.inherit.php
@@ -77,7 +64,7 @@ contexts:
 
   extend-target:
     - meta_scope: inherit.php
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: (?=\{)
       pop: true
     - match: (?i)(?=\bimplements\b)
@@ -86,7 +73,7 @@ contexts:
 
   implement-targets:
     - meta_scope: implement.php
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: (?=\{)
       pop: true
     - match: ""
@@ -96,11 +83,11 @@ contexts:
       ]
 
   implement-target:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - include: php7.type.sublime-syntax
 
   implement-target-delimiter:
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: ","
       scope: punctuation.delimiter.structure.implement.php
       pop: true

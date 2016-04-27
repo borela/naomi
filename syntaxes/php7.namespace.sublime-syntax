@@ -38,21 +38,6 @@ variables:
 scope: ...
 
 contexts:
-  comments:
-    - match: |
-        (?x)
-        (?=
-          (?>\/\/
-            |\/\*
-            |\#
-          )
-        )
-      push:
-        - include: php7.phpdoc.sublime-syntax
-        - include: php7.comment.sublime-syntax
-        - match: ""
-          pop: true
-
   main:
     - match: (?xi)\bnamespace(?!\\)\b
       scope: keyword.structure.namespace.php
@@ -60,7 +45,7 @@ contexts:
 
   declaration:
     - meta_scope: namespace.php
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     # Implicit body.
     - match: ";"
       scope: >-
@@ -89,7 +74,7 @@ contexts:
         namespace.php
         namespace.body.php
         namespace.body.content.php
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: (?=\bnamespace\b)
       pop: true
     - include: implicity-body-expected-structures
@@ -108,7 +93,7 @@ contexts:
         namespace.php
         namespace.body.php
         namespace.body.content.php
-    - include: comments
+    - include: php7.comments.no-pop.sublime-syntax
     - match: "}"
       scope: >-
         namespace.php

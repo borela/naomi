@@ -1,0 +1,66 @@
+// SYNTAX TEST "Packages/naomi/syntaxes/php7.tmLanguage"
+
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+<?php
+    class_alias ();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    class_exists ();
+//  ^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^ entity.name.structure.function.php
+    get_called_class ();
+//  ^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    get_class_methods ();
+//  ^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    get_class_vars ();
+//  ^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^ entity.name.structure.function.php
+    get_class ();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    get_declared_classes ();
+//  ^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    get_declared_interfaces ();
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    get_declared_traits ();
+//  ^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    get_object_vars ();
+//  ^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    get_parent_class ();
+//  ^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    interface_exists ();
+//  ^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    is_a ();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    is_subclass_of ();
+//  ^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^ entity.name.structure.function.php
+    method_exists ();
+//  ^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^ entity.name.structure.function.php
+    property_exists ();
+//  ^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    trait_exists ();
+//  ^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^ entity.name.structure.function.php

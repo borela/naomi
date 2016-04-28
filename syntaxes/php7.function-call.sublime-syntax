@@ -46,8 +46,6 @@ contexts:
     - include: language-construct
     - include: function-call
     - include: namespaced-function-call
-    - include: static-function-call
-    - include: method-call
 
   array-support-function:
     - match: |
@@ -248,27 +246,3 @@ contexts:
         7: entity.name.structure.namespace.a.php
         8: punctuation.delimiter.structure.function.php
         9: entity.name.structure.function.php
-
-  static-function-call:
-    - match: |
-        (?xi)
-        (::)
-        \s*({{commonIdentifier}})
-        (?=\s*\()
-      captures:
-        0: function.call.php
-        1: keyword.operator.php
-        2: entity.name.structure.function.php
-      pop: true
-
-  method-call:
-    - match: |
-        (?xi)
-        (->)
-        \s*({{commonIdentifier}})
-        (?=\s*\()
-      captures:
-        0: function.call.php
-        1: keyword.operator.php
-        2: entity.name.structure.function.php
-      pop: true

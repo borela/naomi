@@ -24,11 +24,11 @@ scope: text.html
 contexts:
   main:
     # Normal open tag.
-    - match: \<\?php
+    - match: <\?php
       scope: punctuation.embedded.begin.php
       set: embedded
     # Short open tag.
-    - match: \<\?\=
+    - match: <\?=
       scope: punctuation.embedded.begin.php
       set: embedded-short
 
@@ -43,7 +43,7 @@ contexts:
     - include: expected-structures
 
   closing-tag:
-    - match: \?\>
+    - match: \?>
       scope: punctuation.embedded.end.php
       pop: true
 

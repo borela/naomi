@@ -19,13 +19,16 @@ scope: ...
 
 contexts:
   main:
-    - include: type-operators
+    - match: "->"
+      scope: keyword.operator.member.access.php
+      pop: true
     - include: arithmetic-operators
     - include: bitwise-operators
     - include: assignment-operators
     - include: comparison-operators
     - include: logical-operators
     - include: string-operators
+    - include: other-operators
 
   # | Operator |  Description    |
   # | :------: | :-------------- |
@@ -163,17 +166,13 @@ contexts:
   # |  Operator  |  Description      |
   # | :--------: | :---------------- |
   # | instanceof |                   |
-  # |     ::     | Scope resolution. |
-  # |     ->     | Member access.    |
-  type-operators:
-    - match: |
-        (?xi)
-        (?> (\binstanceof\b)
-          | (::)
-          | (->)
-        )
-      captures:
-        1: keyword.operator.type.php
-        2: keyword.operator.scope.resolution.php
-        3: keyword.operator.member.access.php
+  other-operators:
+    - match: (?xi)\binstanceof\b
+      scope: keyword.operator.type.php
+      pop: true
+    - match: "->"
+      scope: keyword.operator.member.access.php
+      pop: true
+    - match: "::"
+      scope: keyword.operator.scope.resolution.php
       pop: true

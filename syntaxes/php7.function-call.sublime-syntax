@@ -42,7 +42,7 @@ scope: ...
 contexts:
   main:
     - include: array-support-function
-    - include: class-object-support-functions
+    - include: class-object-support-function
     - include: language-construct
     - include: function-call
     - include: namespaced-function-call
@@ -144,7 +144,7 @@ contexts:
         2: entity.name.structure.function.php
       pop: true
 
-  class-object-support-functions:
+  class-object-support-function:
     - match: |
         (?x)
         ((?>\\|\b))

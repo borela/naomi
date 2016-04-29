@@ -19,7 +19,7 @@ file_extensions:
   - php
   - php7
 
-scope: text.html
+scope: text.html5
 
 contexts:
   main:

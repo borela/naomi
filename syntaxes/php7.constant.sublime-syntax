@@ -29,6 +29,7 @@ contexts:
     - include: case-insenstive-core-constant
     - include: error-constant
     - include: array-support-constant
+    - include: string-support-constant
     - include: magic-constant
     - include: static-constant
     - include: generic-constant
@@ -128,13 +129,47 @@ contexts:
           | EXTR_
             (?> OVERWRITE
               | SKIP
-              | PREFIX_SAME
-              | PREFIX_ALL
-              | PREFIX_INVALID
-              | PREFIX_IF_EXISTS
+              | PREFIX_
+                (?>SAME|ALL|INVALID|IF_EXISTS)
               | IF_EXISTS
               | REFS
             )
+        )\b
+      scope: support.constant.php
+      pop: true
+
+  string-support-constant:
+    - match: |
+        (?x)
+        \b
+        (?> CRYPT_
+            (?>SALT_LENGTH|STD_DES|EXT_DES|MD5|BLOWFISH)
+          | HTML_
+            (?>SPECIALCHARS|ENTITIES)
+          | ENT_
+            (?> COMPAT
+              | QUOTES
+              | NOQUOTES
+              | IGNORE
+              | SUBSTITUTE
+              | DISALLOWED
+              | HTML401
+              | XML1
+              | XHTML
+              | HTML5
+            )
+          | CHAR_MAX
+          | LC_
+            (?> CTYPE
+              | NUMERIC
+              | TIME
+              | COLLATE
+              | MONETARY
+              | ALL
+              | MESSAGES
+            )
+          | STR_PAD_
+            (?>LEFT|RIGHT|BOTH)
         )\b
       scope: support.constant.php
       pop: true

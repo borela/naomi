@@ -44,6 +44,7 @@ contexts:
     - include: array-support-function
     - include: class-object-support-function
     - include: language-construct
+    - include: string-support-function
     - include: function-call
     - include: namespaced-function-call
 
@@ -174,6 +175,118 @@ contexts:
             | isset
             | require_once
             | require
+          )
+        )\b
+      captures:
+        0: support.function.call.php
+        1: punctuation.delimiter.structure.function.php
+        2: entity.name.structure.function.php
+
+  string-support-function:
+    - match: |
+        (?x)
+        ((?>\\|\b))
+        \b
+        (
+          (?> add
+              (?>cslashes|slashes)
+            | bin2hex
+            | chop
+            | chr
+            | chunk_split
+            | convert_
+              (?> cyr_string
+                | uu(?>decode|encode)
+              )
+            | count_chars
+            | crc32
+            | crypt
+            | explode
+            | fprintf
+            | get_html_translation_table
+            | hebrev(?:c)?
+            | hex2bin
+            | html_entity_decode
+            | htmlentities
+            | htmlspecialchars(?:_decode)?
+            | implode
+            | join
+            | lcfirst
+            | levenshtein
+            | localeconv
+            | ltrim
+            | md5_file
+            | md5
+            | metaphone
+            | money_format
+            | nl_langinfo
+            | nl2br
+            | number_format
+            | ord
+            | parse_str
+            | print(?:f)?
+            | quoted_printable_
+              (?>encode|decode)
+            | quotemeta
+            | rtrim
+            | setlocale
+            | sha1_file
+            | sha1
+            | similar_text
+            | soundex
+            | sprintf
+            | sscanf
+            | str
+              (?> _
+                  (?> getcsv
+                    | ireplace
+                    | pad
+                    | repeat
+                    | replace
+                    | rot13
+                    | shuffle
+                    | split
+                    | word_count
+                  )
+                | casecmp
+                | chr
+                | cmp
+                | coll
+                | cspn
+                | ip_tags
+                | ipcslashes
+                | ipos
+                | ipslashes
+                | istr
+                | len
+                | natcasecmp
+                | natcmp
+                | ncasecmp
+                | ncmp
+                | pbrk
+                | pos
+                | rchr
+                | rev
+                | ripos
+                | rpos
+                | spn
+                | str
+                | tok
+                | tolower
+                | toupper
+                | tr
+              )
+            | substr
+              (?:_
+                (?>compare|count|replace)
+              )?
+            | trim
+            | uc
+              (?>first|words)
+            | vfprintf
+            | vprintf
+            | vsprintf
+            | wordwrap
           )
         )\b
       captures:

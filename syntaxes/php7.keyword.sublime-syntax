@@ -23,15 +23,38 @@ contexts:
         (?xi)
         \b(
           (?> as
-            | if
-            | else
-            | do
-            | goto
-            | while
-            | until
-            | foreach
+            | break
+            | case
+            | catch
+            | clone
             | continue
+            | default
+            | die
+            | do
+            | else
+            | elseif
+            | empty
+            | enddeclare
+            | endforeach
+            | endfor
+            | endif
+            | endswitch
+            | endwhile
+            | eval
+            | exit
+            | finally
+            | foreach
+            | for
+            | global
+            | goto
+            | if
+            | insteadof
             | return
+            | switch
+            | throw
+            | try
+            | unset
+            | while
             | yield
           )
         )\b

@@ -31,20 +31,19 @@ contexts:
             | default
             | die
             | do
-            | else
-            | elseif
+            | else(?:if)?
             | empty
-            | enddeclare
-            | endforeach
-            | endfor
-            | endif
-            | endswitch
-            | endwhile
+            | end
+              (?> declare
+                | for(?:each)
+                | if
+                | switch
+                | while
+              )
             | eval
             | exit
             | finally
-            | foreach
-            | for
+            | for(?:each)
             | global
             | goto
             | if

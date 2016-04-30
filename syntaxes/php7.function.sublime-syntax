@@ -35,7 +35,7 @@ contexts:
       scope: punctuation.delimiter.structure.function.declaration.end.php
       pop: true
     # Function's name.
-    - include: magic-function
+    - include: magic-method
     - match: (?xi)\b{{commonIdentifier}}\b
       scope: entity.name.structure.function.php
     # Parameters followed by the function's return type-hint.
@@ -52,7 +52,7 @@ contexts:
         punctuation.delimiter.structure.function.body.begin.php
       set: body
 
-  magic-function:
+  magic-method:
     - match: |
         (?x)
         (?> __construct

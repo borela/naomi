@@ -53,60 +53,46 @@ contexts:
         ((?>\\|\b))
         (
           (?> array
-              (?> _change_key_case
-                | _chunk
-                | _column
-                | _combine
-                | _count_values
-                | _diff
-                  (?> _assoc
-                    | _key
-                    | _uassoc
-                    | _ukey
-                  )?
-                | _fill(?:_keys)?
-                | _filter
-                | _flip
-                | _intersect
-                  (?> _assoc
-                    | _key
-                    | _uassoc
-                    | _ukey
-                  )?
-                | _key_exists
-                | _keys
-                | _map
-                | _merge(?:_recursive)?
-                | _multisort
-                | _pad
-                | _pop
-                | _product
-                | _push
-                | _rand
-                | _reduce
-                | _replace(?:_recursive)?
-                | _reverse
-                | _search
-                | _shift
-                | _slice
-                | _splice
-                | _sum
-                  (?> _assoc
-                    | _uassoc
-                  )?
-                | _udiff
-                  (?> _assoc
-                    | _uassoc
-                  )?
-                | _uintersect
-                  (?> _assoc
-                    | _uassoc
-                  )?
-                | _unique
-                | _unshift
-                | _values
-                | _walk_recursive
-                | _walk
+              (?:_
+                (?> change_key_case
+                  | chunk
+                  | column
+                  | combine
+                  | count_values
+                  | diff
+                    (?:_(?>assoc|key|uassoc|ukey))?
+                  | fill(?:_keys)?
+                  | filter
+                  | flip
+                  | intersect
+                    (?:_(?>assoc|key|uassoc|ukey))?
+                  | key_exists
+                  | keys
+                  | map
+                  | merge(?:_recursive)?
+                  | multisort
+                  | pad
+                  | pop
+                  | product
+                  | push
+                  | rand
+                  | reduce
+                  | replace(?:_recursive)?
+                  | reverse
+                  | search
+                  | shift
+                  | slice
+                  | splice
+                  | sum
+                  | udiff
+                    (?:_(?>assoc|uassoc))?
+                  | uintersect
+                    (?:_(?>assoc|uassoc))?
+                  | unique
+                  | unshift
+                  | values
+                  | walk(?:_recursive)?
+                )
               )?
             | arsort
             | asort
@@ -150,42 +136,20 @@ contexts:
         ((?>\\|\b))
         (
           (?>
-            # class_alias
-            # class_exists
             class_
-            (?> alias
-              | exists
-            )
-            # get_called_class
-            # get_class_methods
-            # get_class_vars
-            # get_class
-            # get_declared_classes
-            # get_declared_interfaces
-            # get_declared_traits
-            # get_object_vars
-            # get_parent_class
+            (?>alias|exists)
             | get_
               (?> called_class
                 | class
-                  (?> _methods
-                    | _vars
-                  )?
+                  (?:_(?>methods|vars))?
                 | declared_
-                  (?> classes
-                    | interfaces
-                    | traits
-                  )
+                  (?>classes|interfaces|traits)
                 | object_vars
                 | parent_class
               )
             | interface_exists
-            # is_a
-            # is_subclass_of
             | is_
-              (?> a
-                | subclass_of
-              )
+              (?>a|subclass_of)
             | method_exists
             | property_exists
             | trait_exists

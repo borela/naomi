@@ -52,9 +52,9 @@ contexts:
         trait.body.php
         punctuation.delimiter.structure.trait.body.end.php
       pop: true
-    - include: expected-structures
+    - include: body-content
 
-  expected-structures:
+  body-content:
     - match: ""
       push:
         - include: php7.comments.sublime-syntax

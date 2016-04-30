@@ -35,7 +35,7 @@ contexts:
       scope: punctuation.delimiter.structure.function.declaration.end.php
       pop: true
     # Function's name.
-    - include: magic-functions
+    - include: magic-function
     - match: (?xi)\b{{commonIdentifier}}\b
       scope: entity.name.structure.function.php
     # Parameters followed by the function's return type-hint.
@@ -52,7 +52,7 @@ contexts:
         punctuation.delimiter.structure.function.body.begin.php
       set: body
 
-  magic-functions:
+  magic-function:
     - match: |
         (?x)
         (?> __construct
@@ -173,16 +173,9 @@ contexts:
         function.body.php
         punctuation.delimiter.structure.function.body.end.php
       pop: true
-    - include: expected-structures
+    - include: body-content
 
-  balance-brackets:
-    - match: \{
-      push: balance-brackets
-    - match: \}
-      pop: true
-    - include: expected-structures
-
-  expected-structures:
+  body-content:
     - match: ""
       push:
         - include: php7.comments.sublime-syntax
@@ -198,3 +191,9 @@ contexts:
         - match: ""
           pop: true
 
+  balance-brackets:
+    - match: \{
+      push: balance-brackets
+    - match: \}
+      pop: true
+    - include: body-content

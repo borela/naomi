@@ -60,7 +60,20 @@ contexts:
         class.body.php
         punctuation.delimiter.structure.class.body.end.php
       pop: true
-    - include: expected-structures
+    # Body's content.
+    - match: ""
+      push:
+        - include: php7.comments.sublime-syntax
+        - include: php7.operator.sublime-syntax
+        - include: php7.constant.sublime-syntax
+        - include: php7.use.sublime-syntax
+        - include: php7.modifier.sublime-syntax
+        - include: php7.keyword.sublime-syntax
+        - include: php7.function.sublime-syntax
+        - include: php7.variable.sublime-syntax
+        - include: php7.type.sublime-syntax
+        - match: ""
+          pop: true
 
   extend-target:
     - meta_scope: inherit.php
@@ -93,18 +106,3 @@ contexts:
       pop: true
     - match: (?=\S)
       pop: true
-
-  expected-structures:
-    - match: ""
-      push:
-        - include: php7.comments.sublime-syntax
-        - include: php7.operator.sublime-syntax
-        - include: php7.constant.sublime-syntax
-        - include: php7.use.sublime-syntax
-        - include: php7.modifier.sublime-syntax
-        - include: php7.keyword.sublime-syntax
-        - include: php7.function.sublime-syntax
-        - include: php7.variable.sublime-syntax
-        - include: php7.type.sublime-syntax
-        - match: ""
-          pop: true

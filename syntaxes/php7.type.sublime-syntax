@@ -41,12 +41,12 @@ variables:
 
 contexts:
   main:
-    - include: core-types
-    - include: support-classes
-    - include: support-interfaces
+    - include: core-type
+    - include: support-class
+    - include: support-interface
     - include: custom-type
 
-  core-types:
+  core-type:
     - match: |
         (?x)
         ((?>\\|\b))
@@ -66,7 +66,7 @@ contexts:
         2: entity.name.type.php
       pop: true
 
-  support-interfaces:
+  support-interface:
     - match: |
         (?x)
         ((?>\\|\b))
@@ -85,7 +85,7 @@ contexts:
         2: entity.name.type.php
       pop: true
 
-  support-classes:
+  support-class:
     - match: |
         (?x)
         ((?>\\|\b))

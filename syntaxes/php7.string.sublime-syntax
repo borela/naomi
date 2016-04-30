@@ -32,37 +32,37 @@ variables:
     \\u\{[a-f0-9]+\}
 
   singleQuotedEscapeSequences: |
-    (?>\\\\
-      |\\'
+    (?> \\\\
+      | \\'
     )
 
   doubleQuotedEscapeSequences: |
-    (?>\\\\
-      |\\"
-      |\\n
-      |\\r
-      |\\t
-      |\\v
-      |\\e
-      |\\f
-      |\\\$
-      |{{octalEscapedChar}}
-      |{{hexEscapedChar}}
-      |{{unicodeEscapedChar}}
+    (?> \\\\
+      | \\"
+      | \\n
+      | \\r
+      | \\t
+      | \\v
+      | \\e
+      | \\f
+      | \\\$
+      | {{octalEscapedChar}}
+      | {{hexEscapedChar}}
+      | {{unicodeEscapedChar}}
     )
 
   heredocEscapeSequences: |
-    (?>\\\\
-      |\\n
-      |\\r
-      |\\t
-      |\\v
-      |\\e
-      |\\f
-      |\\\$
-      |{{octalEscapedChar}}
-      |{{hexEscapedChar}}
-      |{{unicodeEscapedChar}}
+    (?> \\\\
+      | \\n
+      | \\r
+      | \\t
+      | \\v
+      | \\e
+      | \\f
+      | \\\$
+      | {{octalEscapedChar}}
+      | {{hexEscapedChar}}
+      | {{unicodeEscapedChar}}
     )
 
   simpleEmbeddedVariable: |
@@ -96,9 +96,9 @@ contexts:
     - match: (?<!\\)\'
       scope: punctuation.delimiter.string.end.php
       pop: true
-    - include: single-quoted-escaped-characters
+    - include: single-quoted-escaped-character
 
-  single-quoted-escaped-characters:
+  single-quoted-escaped-character:
     - match: |
         (?x)
         (?>
@@ -118,10 +118,10 @@ contexts:
     - match: (?<!\\)\"
       scope: punctuation.delimiter.string.end.php
       pop: true
-    - include: double-quoted-escaped-characters
-    - include: simple-embedded-variables
+    - include: double-quoted-escaped-character
+    - include: simple-embedded-variable
 
-  double-quoted-escaped-characters:
+  double-quoted-escaped-character:
     - match: |
         (?x)
         (?>
@@ -148,10 +148,10 @@ contexts:
     - match: ^\1;
       scope: punctuation.delimiter.string.end.php
       pop: true
-    - include: heredoc-escaped-characters
-    - include: simple-embedded-variables
+    - include: heredoc-escaped-character
+    - include: simple-embedded-variable
 
-  heredoc-escaped-characters:
+  heredoc-escaped-character:
     - match: |
         (?x)
         (?>
@@ -165,7 +165,7 @@ contexts:
         2: constant.character.escape.b.php
         3: constant.character.escape.a.php
 
-  simple-embedded-variables:
+  simple-embedded-variable:
     - match: |
         (?xi)
         (?>

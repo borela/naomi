@@ -13,7 +13,6 @@
 // the License.
 
 <?php
-
     myFunction()
 //  ^^^^^^^^^^ function.call.php
 
@@ -28,3 +27,4 @@
 //   ^^^^^^ entity.name.variable.php
 //         ^^ keyword.operator.member.access.php
 //           ^^^^^^^^^^ function.call.php
+?>

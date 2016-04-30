@@ -22,13 +22,13 @@ contexts:
     - match: "->"
       scope: keyword.operator.member.access.php
       pop: true
-    - include: arithmetic-operators
-    - include: bitwise-operators
-    - include: assignment-operators
-    - include: comparison-operators
-    - include: logical-operators
-    - include: string-operators
-    - include: other-operators
+    - include: arithmetic-operator
+    - include: bitwise-operator
+    - include: assignment-operator
+    - include: comparison-operator
+    - include: logical-operator
+    - include: string-operator
+    - include: other-operator
 
   # | Operator |  Description    |
   # | :------: | :-------------- |
@@ -40,7 +40,7 @@ contexts:
   # |    *     | Multiplication. |
   # |    /     | Division.       |
   # |    %     | Modulus.        |
-  arithmetic-operators:
+  arithmetic-operator:
     - match: |
         (?x)
         (?> --
@@ -62,7 +62,7 @@ contexts:
   # |    ^=    | Bitwise Xor. |
   # |   <<=    | Left shift.  |
   # |   >>=    | Right shift. |
-  bitwise-operators:
+  bitwise-operator:
     - match: |
         (?x)
         (?> &=
@@ -82,7 +82,7 @@ contexts:
   # |    /=    |                    |
   # |    %=    |                    |
   # |    ??    | Null coalescing.   |
-  assignment-operators:
+  assignment-operator:
     - match: |
         (?x)
         (?> =
@@ -107,7 +107,7 @@ contexts:
   # |    <=    | Less than or equal to.    |
   # |    >     | Greater than.             |
   # |    <     | Less than.                |
-  comparison-operators:
+  comparison-operator:
     - match: |
         (?x)
         (?> ===
@@ -132,7 +132,7 @@ contexts:
   # |    &&    | Same as and. |
   # |    ||    | Same as or.  |
   # |    !     | Not.         |
-  logical-operators:
+  logical-operator:
     - match: |
         (?x)
         (?>
@@ -154,7 +154,7 @@ contexts:
   # | :------: | :------------- |
   # |    .     | Concatenation. |
   # |    .=    | Append.        |
-  string-operators:
+  string-operator:
     - match: |
         (?x)
         (?> \.=
@@ -166,7 +166,7 @@ contexts:
   # |  Operator  |  Description      |
   # | :--------: | :---------------- |
   # | instanceof |                   |
-  other-operators:
+  other-operator:
     - match: (?xi)\binstanceof\b
       scope: keyword.operator.type.php
       pop: true

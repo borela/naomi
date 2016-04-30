@@ -158,3 +158,4 @@
 //                      ^^^^^^^^^ entity.name.structure.namespace.b.php
 //                                ^^^^^^^^^^ entity.name.type.php
 //                                              ^^^^^ entity.name.structure.import.alias.php
+?>

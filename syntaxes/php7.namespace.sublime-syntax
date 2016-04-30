@@ -47,7 +47,7 @@ contexts:
     - meta_scope: namespace.php
     - include: php7.comments.no-pop.sublime-syntax
     # Implicit body.
-    - match: ";"
+    - match: ;
       scope: >-
         namespace.body.php
         punctuation.delimiter.structure.namespace.body.begin.php
@@ -59,7 +59,7 @@ contexts:
         punctuation.delimiter.structure.namespace.body.begin.php
       set: bracketed-body
     # namespace's path.
-    - match: "(?xi){{namespacePath}}"
+    - match: (?xi){{namespacePath}}
       captures:
         0: namespace.path.php
         1: punctuation.delimiter.structure.namespace.a.php
@@ -69,47 +69,7 @@ contexts:
         5: punctuation.delimiter.structure.namespace.a.php
         6: entity.name.structure.namespace.a.php
 
-  implicit-body:
-    - meta_content_scope: >-
-        namespace.php
-        namespace.body.php
-        namespace.body.content.php
-    - include: php7.comments.no-pop.sublime-syntax
-    - match: (?=\bnamespace\b)
-      pop: true
-    - include: implicity-body-expected-structures
-
-  implicity-body-expected-structures:
-    - match: ""
-      push:
-        - match: (?=\bnamespace\b)
-          pop: true
-        - include: expected-structures
-        - match: ""
-          pop: true
-
-  bracketed-body:
-    - meta_content_scope: >-
-        namespace.php
-        namespace.body.php
-        namespace.body.content.php
-    - include: php7.comments.no-pop.sublime-syntax
-    - match: "}"
-      scope: >-
-        namespace.php
-        namespace.body.php
-        punctuation.delimiter.structure.namespace.body.end.php
-      pop: true
-    - include: bracketed-body-expected-structures
-
-  bracketed-body-expected-structures:
-    - match: ""
-      push:
-        - include: expected-structures
-        - match: ""
-          pop: true
-
-  expected-structures:
+  body-content:
     - include: php7.comments.sublime-syntax
     - include: php7.operator.sublime-syntax
     - include: php7.constant.sublime-syntax
@@ -125,3 +85,43 @@ contexts:
     - include: php7.function-call.sublime-syntax
     - include: php7.variable.sublime-syntax
     - include: php7.type.sublime-syntax
+
+  implicit-body:
+    - meta_content_scope: >-
+        namespace.php
+        namespace.body.php
+        namespace.body.content.php
+    - include: php7.comments.no-pop.sublime-syntax
+    - match: (?=\bnamespace\b)
+      pop: true
+    - include: implicity-body-content
+
+  implicity-body-content:
+    - match: ""
+      push:
+        - match: (?=\bnamespace\b)
+          pop: true
+        - include: body-content
+        - match: ""
+          pop: true
+
+  bracketed-body:
+    - meta_content_scope: >-
+        namespace.php
+        namespace.body.php
+        namespace.body.content.php
+    - include: php7.comments.no-pop.sublime-syntax
+    - match: "}"
+      scope: >-
+        namespace.php
+        namespace.body.php
+        punctuation.delimiter.structure.namespace.body.end.php
+      pop: true
+    - include: bracketed-body-content
+
+  bracketed-body-content:
+    - match: ""
+      push:
+        - include: body-content
+        - match: ""
+          pop: true

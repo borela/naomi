@@ -56,7 +56,16 @@ contexts:
         interface.body.php
         punctuation.delimiter.structure.interface.body.end.php
       pop: true
-    - include: expected-structures
+    # Body's content.
+    - match: ""
+      push:
+        - include: php7.comments.sublime-syntax
+        - include: php7.constant.sublime-syntax
+        - include: php7.use.sublime-syntax
+        - include: php7.modifier.sublime-syntax
+        - include: php7.function.sublime-syntax
+        - match: ""
+          pop: true
 
   extend-targets:
     - meta_scope: extend.php
@@ -80,14 +89,3 @@ contexts:
       pop: true
     - match: (?=\S)
       pop: true
-
-  expected-structures:
-    - match: ""
-      push:
-        - include: php7.comments.sublime-syntax
-        - include: php7.constant.sublime-syntax
-        - include: php7.use.sublime-syntax
-        - include: php7.modifier.sublime-syntax
-        - include: php7.function.sublime-syntax
-        - match: ""
-          pop: true

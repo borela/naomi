@@ -24,13 +24,13 @@ variables:
 
 contexts:
   main:
-    - include: array-constants
     - include: php7.string.sublime-syntax
+    - include: array-constant
     - include: magic-constant
     - include: static-constant
     - include: generic-constant
 
-  array-constants:
+  array-constant:
     - match: |
         (?x)
         \b(?> CASE_

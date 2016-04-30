@@ -53,39 +53,39 @@
 //  ^^^^^ keyword.structure.class.php
 //        ^^^^^^^ entity.name.structure.class.php
 //                ^^^^^^^ keyword.structure.inherit.php
-        \Namespace\Namespace\ParentClass2 {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php
-//                                        ^ class.body
-//                                        ^ punctuation.delimiter.structure.class.body.begin.php
-//      ^ punctuation.delimiter.structure.namespace.a.php
-//                ^ punctuation.delimiter.structure.namespace.b.php
-//                          ^ punctuation.delimiter.type.php
-//       ^^^^^^^^^ entity.name.structure.namespace.a.php
-//                 ^^^^^^^^^ entity.name.structure.namespace.b.php
-//                           ^^^^^^^^^^^^ entity.name.type.php
-        Something...
-//      ^^^^^^^^^^^^ class.php
-//      ^^^^^^^^^^^^ class.body.php
-//      ^^^^^^^^^^^^ class.body.content.php
-    }
-//  ^ class.php
-//  ^ class.body.php
-//  ^ punctuation.delimiter.structure.class.body.end.php
-
-    class MyClass extends
-//  ^^^^^^^^^^^^^^^^^^^^^ class.php
-//  ^^^^^ keyword.structure.class.php
-//        ^^^^^^^ entity.name.structure.class.php
-//                ^^^^^^^ keyword.structure.inherit.php
-        Namespace\Namespace\ParentClass2 {
+        \Namespace\Namespace\ParentClass {
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php
-//                                       ^ class.body.php
+//                                       ^ class.body
 //                                       ^ punctuation.delimiter.structure.class.body.begin.php
+//      ^ punctuation.delimiter.structure.namespace.a.php
+//                ^ punctuation.delimiter.structure.namespace.b.php
+//                          ^ punctuation.delimiter.type.php
+//       ^^^^^^^^^ entity.name.structure.namespace.a.php
+//                 ^^^^^^^^^ entity.name.structure.namespace.b.php
+//                           ^^^^^^^^^^^ entity.name.type.php
+        Something...
+//      ^^^^^^^^^^^^ class.php
+//      ^^^^^^^^^^^^ class.body.php
+//      ^^^^^^^^^^^^ class.body.content.php
+    }
+//  ^ class.php
+//  ^ class.body.php
+//  ^ punctuation.delimiter.structure.class.body.end.php
+
+    class MyClass extends
+//  ^^^^^^^^^^^^^^^^^^^^^ class.php
+//  ^^^^^ keyword.structure.class.php
+//        ^^^^^^^ entity.name.structure.class.php
+//                ^^^^^^^ keyword.structure.inherit.php
+        Namespace\Namespace\ParentClass {
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php
+//                                      ^ class.body.php
+//                                      ^ punctuation.delimiter.structure.class.body.begin.php
 //               ^ punctuation.delimiter.structure.namespace.b.php
 //                         ^ punctuation.delimiter.type.php
 //      ^^^^^^^^^ entity.name.structure.namespace.a.php
 //                ^^^^^^^^^ entity.name.structure.namespace.b.php
-//                          ^^^^^^^^^^^^ entity.name.type.php
+//                          ^^^^^^^^^^^ entity.name.type.php
         Something...
 //      ^^^^^^^^^^^^ class.php
 //      ^^^^^^^^^^^^ class.body.php
@@ -164,14 +164,14 @@
 //  ^^^^^ keyword.structure.class.php
 //        ^^^^^^^ entity.name.structure.class.php
 //                ^^^^^^^ keyword.structure.inherit.php
-        \Namespace\Namespace\ParentClass2
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php
+        \Namespace\Namespace\ParentClass
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php
 //      ^ punctuation.delimiter.structure.namespace.a.php
 //                ^ punctuation.delimiter.structure.namespace.b.php
 //                          ^ punctuation.delimiter.type.php
 //       ^^^^^^^^^ entity.name.structure.namespace.a.php
 //                 ^^^^^^^^^ entity.name.structure.namespace.b.php
-//                           ^^^^^^^^^^^^ entity.name.type.php
+//                           ^^^^^^^^^^^ entity.name.type.php
     implements
 //  ^^^^^^^^^^ keyword.structure.inherit.php
         \Namespace\Namespace\Interface1,
@@ -207,13 +207,13 @@
 //  ^^^^^ keyword.structure.class.php
 //        ^^^^^^^ entity.name.structure.class.php
 //                ^^^^^^^ keyword.structure.inherit.php
-        Namespace\Namespace\ParentClass2
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php
+        Namespace\Namespace\ParentClass
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php
 //               ^ punctuation.delimiter.structure.namespace.b.php
 //                         ^ punctuation.delimiter.type.php
 //      ^^^^^^^^^ entity.name.structure.namespace.a.php
 //                ^^^^^^^^^ entity.name.structure.namespace.b.php
-//                          ^^^^^^^^^^^^ entity.name.type.php
+//                          ^^^^^^^^^^^ entity.name.type.php
     implements
 //  ^^^^^^^^^^ keyword.structure.inherit.php
         Namespace\Namespace\Interface1,
@@ -241,3 +241,4 @@
 //  ^ class.php
 //  ^ class.body.php
 //  ^ punctuation.delimiter.structure.class.body.end.php
+?>

@@ -29,7 +29,6 @@ contexts:
     - match: \*\/
       scope: punctuation.comment.end.phpdoc
       pop: true
-    # Structures.
     - include: api
     - include: access
     - include: author

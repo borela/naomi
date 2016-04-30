@@ -35,20 +35,17 @@ contexts:
   embedded:
     - meta_scope: embedded.php
     - meta_content_scope: embedded.content.php
-    - include: expected-structures
+    - include: content
 
   embedded-short:
     - meta_scope: embedded.short.php
     - meta_content_scope: embedded.content.php
-    - include: expected-structures
+    - include: content
 
-  closing-tag:
+  content:
     - match: \?>
       scope: punctuation.embedded.end.php
       pop: true
-
-  expected-structures:
-    - include: closing-tag
     # All syntaxes were designed to match a single structure and then pop the
     # current context, this guard will prevent unnecessary pops to the main
     # context.

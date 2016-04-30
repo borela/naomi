@@ -250,3 +250,4 @@
     usort ();
 //  ^^^^^ support.function.call.php
 //  ^^^^^ entity.name.structure.function.php
+?>

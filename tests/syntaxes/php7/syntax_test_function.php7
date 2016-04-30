@@ -13,7 +13,6 @@
 // the License.
 
 <?php
-
     function Myfunction($param){   }
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ function.php
 //  ^^^^^^^^ keyword.structure.function.php
@@ -155,3 +154,4 @@
 //   ^^^^^ function.body.php
 //    ^^^ function.body.content.php
 //       ^ punctuation.delimiter.structure.function.body.end.php
+?>

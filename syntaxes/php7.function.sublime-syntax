@@ -38,11 +38,12 @@ contexts:
     - include: magic-method
     - match: (?xi)\b{{commonIdentifier}}\b
       scope: entity.name.structure.function.php
-    # Parameters followed by the function's return type-hint.
+    # Parameters, imported variables and return type.
     - match: \(
       scope: punctuation.delimiter.structure.function.parameters.begin.php
       push: [
         return-type-hint,
+        possible-imported-variables,
         parameters
       ]
     # Body.
@@ -89,13 +90,13 @@ contexts:
         param-optional-default-value,
         param-variable
       ]
-    # Starts with a variadic operator.
-    - match: (?=\.\.\.)
+    # Starts with a variadic or reference operator.
+    - match: (?=\.\.\.|&)
       push: [
         param-delimiter,
         param-optional-default-value,
         param-variable,
-        param-variadic-operator
+        variadic-or-reference-operator
       ]
     # Starts with a type hint.
     - match: (?=\S)
@@ -103,21 +104,70 @@ contexts:
         param-delimiter,
         param-optional-default-value,
         param-variable,
-        param-variadic-operator,
-        param-type
+        variadic-or-reference-operator,
+        variable-type
       ]
 
-  param-type:
+  possible-imported-variables:
+    - match: (?=;|:|{)
+      pop: true
+    - match: use
+      scope: keyword.import.variable.php
+      set: imported-variables-begin
+
+  imported-variables-begin:
+    - match: \(
+      scope: punctuation.delimiter.structure.imported.variables.begin.php
+      set: imported-variables
+
+  imported-variables:
+    - meta_scope: function.imported.variables.php
+    - meta_content_scope: function.imported.variables.content.php
+    - match: \)
+      scope: punctuation.delimiter.structure.imported.variables.end.php
+      pop: true
+    # Starts with a variable.
+    - match: (?=\$)
+      push: [
+        target-delimiter,
+        target-variable,
+      ]
+    # Starts with a reference operator.
+    - match: (?=&)
+      push: [
+        target-delimiter,
+        target-variable,
+        reference-operator
+      ]
+
+  reference-operator:
+    - include: php7.comments.no-pop.sublime-syntax
+    - match: (?=\$)
+      pop: true
+    - match: \&
+      scope: keyword.operator.reference.php
+      pop: true
+
+  variable-type:
     - include: php7.comments.no-pop.sublime-syntax
     - include: php7.type.sublime-syntax
 
-  param-variadic-operator:
+  variadic-or-reference-operator:
     - include: php7.comments.no-pop.sublime-syntax
     - match: (?=\$)
+      pop: true
+    - match: \&
+      scope: keyword.operator.reference.php
       pop: true
     - match: \.\.\.
       scope: keyword.operator.variadic.php
       pop: true
+
+  target-delimiter:
+    - include: param-delimiter
+
+  target-variable:
+    - include: param-variable
 
   param-variable:
     - include: php7.comments.no-pop.sublime-syntax

@@ -13,11 +13,16 @@
 // the License.
 
 <?php
-    GENERIC_CONSTANT
-//  ^^^^^^^^^^^^^^^^ constant.php
-
-    Type::CONSTANT
-//  ^^^^ type.php
-//      ^^ keyword.operator.scope.resolution.php
-//        ^^^^^^^^ constant.php
+    TRUE
+//  ^^^^ support.constant.php
+    true
+//  ^^^^ support.constant.php
+    FALSE
+//  ^^^^^ support.constant.php
+    false
+//  ^^^^^ support.constant.php
+    NULL
+//  ^^^^ support.constant.php
+    null
+//  ^^^^ support.constant.php
 ?>

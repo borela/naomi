@@ -25,62 +25,116 @@ variables:
 contexts:
   main:
     - include: php7.string.sublime-syntax
-    - include: array-constant
+    - include: core-constant
+    - include: case-insenstive-core-constant
+    - include: error-constant
+    - include: array-support-constant
     - include: magic-constant
     - include: static-constant
     - include: generic-constant
 
-  array-constant:
+  core-constant:
     - match: |
         (?x)
-        \b(?> CASE_
-              (?> UPPER
-                | LOWER
-              )
-            # SORT_ASC
-            # SORT_DESC
-            # SORT_REGULAR
-            # SORT_NUMERIC
-            # SORT_STRING
-            # SORT_LOCALE_STRING
-            # SORT_NATURAL
-            # SORT_FLAG_CASE
-            | SORT_
-              (?> ASC
-                | DESC
-                | REGULAR
-                | NUMERIC
-                | STRING
-                | LOCALE_STRING
-                | NATURAL
-                | FLAG_CASE
-              )
-            | ARRAY_
-              (?> FILTER_USE_KEY
-                | FILTER_USE_BOTH
-              )
-            | COUNT_
-              (?> NORMAL
-                | RECURSIVE
-              )
-            # EXTR_OVERWRITE
-            # EXTR_SKIP
-            # EXTR_PREFIX_SAME
-            # EXTR_PREFIX_ALL
-            # EXTR_PREFIX_INVALID
-            # EXTR_PREFIX_IF_EXISTS
-            # EXTR_IF_EXISTS
-            # EXTR_REFS
-            | EXTR_
-              (?> OVERWRITE
-                | SKIP
-                | PREFIX_SAME
-                | PREFIX_ALL
-                | PREFIX_INVALID
-                | PREFIX_IF_EXISTS
-                | IF_EXISTS
-                | REFS
-              )
+        \b
+        (?>
+          PHP_
+            (?> VERSION(?:_ID)?
+              | MAJOR_VERSION
+              | MINOR_VERSION
+              | RELEASE_VERSION
+              | EXTRA_VERSION
+              | ZTS
+              | DEBUG
+              | MAXPATHLEN
+              | OS
+              | SAPI
+              | EOL
+              | INT_
+                (?>MAX|MIN|SIZE)
+              | EXTENSION_DIR
+              | PREFIX
+              | BINDIR
+              | BINARY
+              | MANDIR
+              | LIBDIR
+              | DATADIR
+              | SYSCONFDIR
+              | LOCALSTATEDIR
+              | CONFIG_FILE_
+                (?> PATH | SCAN_DIR)
+              | SHLIB_SUFFIX
+            )
+          | PEAR_
+            (?>INSTALL_DIR|EXTENSION_DIR)
+          | DEFAULT_INCLUDE_PATH
+        )\b
+      scope: support.constant.php
+      pop: true
+
+  case-insenstive-core-constant:
+    - match: |
+        (?xi)
+        \b
+        (?> TRUE
+          | FALSE
+          | NULL
+        )\b
+      scope: support.constant.php
+      pop: true
+
+  error-constant:
+    - match: |
+        (?x)
+        \bE_
+        (?> ERROR
+          | WARNING
+          | PARSE
+          | NOTICE
+          | CORE_
+            (?>ERROR|WARNING)
+          | COMPILE_
+            (?>ERROR|WARNING)
+          | USER_
+            (?>ERROR|WARNING|NOTICE)
+          | DEPRECATED
+          | USER_DEPRECATED
+          | ALL
+          | STRICT
+        )\b
+      scope: support.constant.php
+      pop: true
+
+  array-support-constant:
+    - match: |
+        (?x)
+        \b
+        (?> CASE_
+            (?>UPPER|LOWER)
+          | SORT_
+            (?> ASC
+              | DESC
+              | REGULAR
+              | NUMERIC
+              | STRING
+              | LOCALE_STRING
+              | NATURAL
+              | FLAG_CASE
+            )
+          | ARRAY_FILTER_USE_
+            (?>KEY|BOTH)
+          | COUNT_
+            (?>NORMAL|RECURSIVE)
+          | EXTR_
+            (?> OVERWRITE
+              | SKIP
+              | PREFIX_SAME
+              | PREFIX_ALL
+              | PREFIX_INVALID
+              | PREFIX_IF_EXISTS
+              | IF_EXISTS
+              | REFS
+            )
         )\b
       scope: support.constant.php
       pop: true

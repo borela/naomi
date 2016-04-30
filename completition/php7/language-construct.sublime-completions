@@ -15,10 +15,10 @@
     "completions": [
         "declare",
         "echo",
-        "include_once",
         "include",
+        "include_once",
         "isset",
-        "require_once",
-        "require"
+        "require",
+        "require_once"
     ]
 }

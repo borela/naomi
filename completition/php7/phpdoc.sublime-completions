@@ -13,8 +13,8 @@
 
     "scope": "comment.block.phpdoc",
     "completions": [
-        "@api",
         "@access",
+        "@api",
         "@author",
         "@category",
         "@copyright",
@@ -29,9 +29,9 @@
         "@method",
         "@package",
         "@param",
+        "@property",
         "@property-read",
         "@property-write",
-        "@property",
         "@return",
         "@see",
         "@since",

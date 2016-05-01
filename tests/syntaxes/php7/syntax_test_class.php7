@@ -99,7 +99,7 @@
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ class.php
 //  ^^^^^ keyword.structure.class.php
 //        ^^^^^^^ entity.name.structure.class.php
-//                ^^^^^^^^^^ keyword.structure.inherit.php
+//                ^^^^^^^^^^ keyword.structure.implement.php
         \Namespace\Namespace\Interface1,
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php
 //                                     ^ punctuation.delimiter.structure.implement.php
@@ -132,7 +132,7 @@
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ class.php
 //  ^^^^^ keyword.structure.class.php
 //        ^^^^^^^ entity.name.structure.class.php
-//                ^^^^^^^^^^ keyword.structure.inherit.php
+//                ^^^^^^^^^^ keyword.structure.implement.php
         Namespace\Namespace\Interface1,
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php
 //                                    ^ punctuation.delimiter.structure.implement.php
@@ -173,7 +173,7 @@
 //                 ^^^^^^^^^ entity.name.structure.namespace.b.php
 //                           ^^^^^^^^^^^ entity.name.type.php
     implements
-//  ^^^^^^^^^^ keyword.structure.inherit.php
+//  ^^^^^^^^^^ keyword.structure.implement.php
         \Namespace\Namespace\Interface1,
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php
 //                                     ^ punctuation.delimiter.structure.implement.php
@@ -215,7 +215,7 @@
 //                ^^^^^^^^^ entity.name.structure.namespace.b.php
 //                          ^^^^^^^^^^^ entity.name.type.php
     implements
-//  ^^^^^^^^^^ keyword.structure.inherit.php
+//  ^^^^^^^^^^ keyword.structure.implement.php
         Namespace\Namespace\Interface1,
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php
 //                                    ^ punctuation.delimiter.structure.implement.php

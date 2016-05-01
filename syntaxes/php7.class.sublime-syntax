@@ -37,7 +37,7 @@ contexts:
       push: extend-target
     # Implements.
     - match: (?i)\bimplements\b
-      scope: keyword.structure.inherit.php
+      scope: keyword.structure.implement.php
       push: implement-targets
     # Class's name.
     - match: (?xi)\b{{commonIdentifier}}\b

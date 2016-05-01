@@ -45,8 +45,7 @@ contexts:
     - include: class-object-support-function
     - include: language-construct
     - include: string-support-function
-    - include: function-call
-    - include: namespaced-function-call
+    - include: php7.user-function-call.sublime-syntax
 
   array-support-function:
     - match: |
@@ -161,6 +160,7 @@ contexts:
         0: support.function.call.php
         1: punctuation.delimiter.structure.function.php
         2: entity.name.structure.function.php
+      pop: true
 
   language-construct:
     - match: |
@@ -182,6 +182,7 @@ contexts:
         0: support.function.call.php
         1: punctuation.delimiter.structure.function.php
         2: entity.name.structure.function.php
+      pop: true
 
   string-support-function:
     - match: |
@@ -294,33 +295,4 @@ contexts:
         0: support.function.call.php
         1: punctuation.delimiter.structure.function.php
         2: entity.name.structure.function.php
-
-  function-call:
-    - match: |
-        (?xi)
-        ((?>\\|\b))
-        ({{commonIdentifier}})
-        (?=\s*\()
-      captures:
-        0: function.call.php
-        1: punctuation.delimiter.structure.function.php
-        2: entity.name.structure.function.php
-
-  namespaced-function-call:
-    - match: |
-        (?xi)
-        ({{functionNamespacePath}})
-        (\\)?
-        ({{commonIdentifier}})
-        (?=\s*\()
-      captures:
-        0: function.call.php
-        1: namespace.path.php
-        2: punctuation.delimiter.structure.namespace.a.php
-        3: entity.name.structure.namespace.a.php
-        4: punctuation.delimiter.structure.namespace.b.php
-        5: entity.name.structure.namespace.b.php
-        6: punctuation.delimiter.structure.namespace.a.php
-        7: entity.name.structure.namespace.a.php
-        8: punctuation.delimiter.structure.function.php
-        9: entity.name.structure.function.php
+      pop: true

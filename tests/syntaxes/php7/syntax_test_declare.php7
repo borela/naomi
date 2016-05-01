@@ -15,11 +15,11 @@
 <?php
     declare(ticks=1);
 //  ^^^^^^^^^^^^^^^^^ declare.php
-//         ^^^^^^^^^ declare.params.php
-//          ^^^^^^^ declare.params.content.php
+//         ^^^^^^^^^ declare.parameters.php
+//          ^^^^^^^ declare.parameters.content.php
 //  ^^^^^^^ keyword.structure.declare.php
-//         ^ punctuation.delimiter.structure.declare.params.begin.php
-//                 ^ punctuation.delimiter.structure.declare.params.end.php
+//         ^ punctuation.delimiter.structure.declare.parameters.begin.php
+//                 ^ punctuation.delimiter.structure.declare.parameters.end.php
 //                  ^ punctuation.delimiter.structure.declare.body.begin.php
 
     Something...
@@ -29,11 +29,11 @@
 
     declare(ticks=1) {
 //  ^^^^^^^^^^^^^^^^^^ declare.php
-//         ^^^^^^^^^ declare.params.php
-//          ^^^^^^^ declare.params.content.php
+//         ^^^^^^^^^ declare.parameters.php
+//          ^^^^^^^ declare.parameters.content.php
 //  ^^^^^^^ keyword.structure.declare.php
-//         ^ punctuation.delimiter.structure.declare.params.begin.php
-//                 ^ punctuation.delimiter.structure.declare.params.end.php
+//         ^ punctuation.delimiter.structure.declare.parameters.begin.php
+//                 ^ punctuation.delimiter.structure.declare.parameters.end.php
 //                   ^ declare.body.php
 //                   ^ punctuation.delimiter.structure.declare.body.begin.php
     Something...

@@ -31,21 +31,25 @@ contexts:
   declaration:
     - meta_scope: declare.php
     - match: \(
-      scope: punctuation.delimiter.structure.declare.params.begin.php
-      push: params
+      scope: punctuation.delimiter.structure.declare.parameters.begin.php
+      push: parameters
     - match: \)
       scope: >-
-        declare.params.php
-        punctuation.delimiter.structure.declare.params.end.php
+        declare.parameters.php
+        punctuation.delimiter.structure.declare.parameters.end.php
       set: body
 
-  params:
-    - meta_scope: declare.params.php
-    - meta_content_scope: declare.params.content.php
-    - include: php7.operator.sublime-syntax
-    - include: php7.constant.sublime-syntax
+  parameters:
+    - meta_scope: declare.parameters.php
+    - meta_content_scope: declare.parameters.content.php
     - match: (?=\))
       pop: true
+    - match: ""
+      push:
+        - include: php7.operator.sublime-syntax
+        - include: php7.constant.sublime-syntax
+        - match: ""
+          pop: true
 
   body:
     - meta_content_scope: >-
@@ -95,6 +99,9 @@ contexts:
         declare.body.php
         declare.body.content.php
     - match: \}
-      scope: punctuation.delimiter.structure.declare.body.end.php
+      scope: >-
+        declare.php
+        declare.body.php
+        punctuation.delimiter.structure.declare.body.end.php
       pop: true
     - include: body-content

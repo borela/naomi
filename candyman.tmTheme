@@ -472,10 +472,10 @@
 
             <dict>
                 <key>name</key>
-                <string>Namespace's name</string>
+                <string>Namespace's name A</string>
 
                 <key>scope</key>
-                <string>entity.name.structure.namespace</string>
+                <string>entity.name.structure.namespace.a</string>
 
                 <key>settings</key>
                 <dict>
@@ -486,10 +486,24 @@
 
             <dict>
                 <key>name</key>
-                <string>Namespace's delimiter</string>
+                <string>Namespace's name B</string>
 
                 <key>scope</key>
-                <string>punctuation.delimiter.structure.namespace</string>
+                <string>entity.name.structure.namespace.b</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#d7ccc8</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Delimiter</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.structure</string>
 
                 <key>settings</key>
                 <dict>
@@ -539,7 +553,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#fff59d</string>
+                    <string>#ffecb3</string>
                 </dict>
             </dict>
 

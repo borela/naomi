@@ -33,7 +33,7 @@ shows the scopes in real time as you move the cursor.
 
 #### 3: Create the tests
 
-Try to create tests for the all cases and check if your changes broke any of the
+Try to create tests for all cases and check if your changes broke any of the
 previous ones.
 
 #### 4: Variables

@@ -1,82 +1,82 @@
 # Contributing
 
-Thank you for considering contributing to this project! Some tips that make it
-easy to create the syntax files:
+Thank you for considering contributing to this project!
 
-## 1: Read the docs
+1. Fork the repository.
+2. Do your changes on a separate branch.
+3. Send the pull request.
 
-There's a basic tutorial on how to write the syntax files and tests in sublime's
-[official documentation](https://www.sublimetext.com/docs/3/syntax.html).
+## Code style
 
-## 2: Install Scope Hunter
+* Indent with 4 spaces.
+* Try to limit to 80 characters.
+* Be descriptive as possible.
 
-This [tool](https://github.com/facelessuser/ScopeHunter) is essential when you
-are debugging the highlighting, it has an option "Toggle Instant Scoper" which
+## Color scheme tips
+
+Look at the color schemes provided to have an idea of how to create your own and
+use [ScopeHunter][1] to understand how
+the code is being highlighted.
+
+## Syntax tips
+
+#### 1: Read the [docs][0]
+
+There's a basic tutorial on how to write the syntax files and tests on sublime's
+[official documentation][0].
+
+#### 2: Install [ScopeHunter][1]
+
+This [tool][1] is essential when you
+are debugging the highlighting, it has an option `Toggle Instant Scoper` which
 shows the scopes in real time as you move the cursor.
 
-## 3: Create the tests
+#### 3: Create the tests
 
-This is an obvious one, it's a lot easier to write the syntax when you know what
-the end result must be.
+Try to create tests for the all cases and check if your changes broke any of the
+previous ones.
 
-## 4: Don't forget about the variables
+#### 4: Variables
 
 In syntax files you can declare variables at the top of the file, use them to
 prevent repetion.
 
-## 5: Break the regex into multiple lines
+#### 5: Break the regex into multiple lines
 
-Breaking the regular expressions into multiple lines will make it a lot easier
-to understand, just prepend it with `(?x)` and all whitespaces are going to be
-ignored.
+Break your regexes into multiple lines if it would make it clearer, just
+remeber to use the option `(?x)` to ignore the white spaces.
 
-## 6: Be awared of ignored spaces
+#### 6: Be awared of ignored spaces
 
 When you add the `(?x)` option to your regex, any whitespace is ignored, so, in
 those cases, if you need to represent a pattern that includes it, you have to
 use the `\s` pattern.
 
-## 7: Atomic groups
+#### 7: Atomic groups
 
 Often times you need to check against a list of keywords, symbols, etc... use
 atomic groups as it will stop after the first match is found, making the regex
 a lot faster.
 
-Bad example:
-
-    (?:Foo
-      |Bar
-    )
-
-Good example:
-
-    (?>Foo
-      |Bar
-    )
-
-## 8: Design for sequence
+#### 8: Design for sequence
 
 Most languages are designed in a way that you can expect tokens to have some
 sort of sequence.
 
 For example, in PHP 7 you can declare the type hint before a function parameter,
-it is optional and after it only a variable is expected, this is key to a
-good syntax highlighting.
+it is optional and after it only a variable is expected.
 
 When you highlight like this, you don't need to mark regions as invalid, the
 programmer will know something is wrong if the color isn't right, so it'll make
-the syntax file a lot simpler.
+the syntax file simpler.
 
-To simplify how it would work, imagine a php function:
+Here's how it would work, consider this function:
 
     function foo($paramter1, string $parameter2)
 
 And the following syntax:
 
     main:
-      - include: parameters-begin
-
-    parameters-begin:
       - match: \(
         scope: punctuation.structure.parameters.begin.php
         push: parameters
@@ -94,6 +94,7 @@ And the following syntax:
       - match: [a-z]*
         scope: type.php
         pop: true
+      # The type is optional, check it is a variable.
       - match: (?=\$)
         pop: true
 
@@ -106,3 +107,6 @@ The `main` context will try to match the beginning of the parameters list and if
 found, push the `parameters` context. The `parameters` context is a loop that
 will first check for the end of the list and then try to match the type followed
 by the variable.
+
+[0]: https://www.sublimetext.com/docs/3/syntax.html
+[1]: https://github.com/facelessuser/ScopeHunter

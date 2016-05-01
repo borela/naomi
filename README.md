@@ -1,25 +1,55 @@
 # Naomi
 
-This package was designed to provide a way to create maintainable and easy to
-extend syntax highlighting. It does so by breaking the syntaxes into multiple
-files and having lots of tests to assert the expected scenarios.
+This package was designed to provide a way to create easy to extend syntax
+highlighting. It does so by breaking the syntaxes into multiple files and having
+lots of tests to assert the expected scenarios.
 
-Color schemes are going to be provided not only to test the highlighting, but
-to serve as a base to create new ones.
+Color schemes are going to be provided not only to test the highlighting and
+show the new features, but to serve as a base to create new ones.
 
 Right now, only PHP 7 is supported but other languages are going to be added as
 soon as time allows it. Feel free to send pull requests, any help will be highly
 appreciated.
 
+## Features
+
+#### PHP 7
+
+* Scopes for phpDoc instructions.
+* Alternating scopes for namespace names.
+* Alternating scopes for escaped characters.
+* Alternating scopes for embedded variables.
+* Different scopes for extended class and implemented interfaces.
+* Different scopes for private and protected modifiers.
+
+## Installation
+
+#### Package Control
+
+1. Install [Package Control](https://packagecontrol.io/installation).
+2. Run **Package Control: Install Package** command.
+3. Find and install the **Naomi** plugin.
+4. Restart Sublime Text if there are issues.
+
+#### Manual
+
+Clone the repository in your Sublime Text “Packages” directory:
+
+    git clone https://github.com/borela/naomi.git
+
+The “Packages” directory is located at:
+
+* **OS X**: `~/Library/Application Support/Sublime Text 3/Packages`
+* **Linux**: `~/.config/sublime-text-3/Packages`
+* **Windows**: `%APPDATA%\Sublime Text 3\Packages`
+
 ## Usage
 
-After the package is installed, the PHP 7 syntax will be available under the
-menu `View / Syntax / PHP 7`. You'll need to use a color scheme provided to see
-the new syntax in action. It is available under the menu `Preferences / Color
-Scheme / Naomi`.
+1. Go to the menu `View / Syntax / PHP 7` to select the new syntax.
+2. Select a color scheme provided in `Preferences / Color Scheme / Naomi`.
 
-If you don't like the color schemes provided, feel free to create your own and
-send a pull request.
+Note: You aren't required to use the color schemes provided but keep in mind
+that not all features listed before are going to work with other color schemes.
 
 ## Contributing
 

@@ -31,7 +31,6 @@ contexts:
     - include: array-support-constant
     - include: string-support-constant
     - include: magic-constant
-    - include: static-constant
     - include: generic-constant
 
   core-constant:
@@ -172,16 +171,6 @@ contexts:
             (?>LEFT|RIGHT|BOTH)
         )\b
       scope: support.constant.php
-      pop: true
-
-  static-constant:
-    - match: |
-        (?x)
-        (::)
-        \s*({{constantIdentifier}})\b
-      captures:
-        1: keyword.operator.php
-        2: constant.php
       pop: true
 
   magic-constant:

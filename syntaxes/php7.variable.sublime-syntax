@@ -25,8 +25,6 @@ variables:
 contexts:
   main:
     - include: support-variable
-    - include: property
-    - include: static-variable
     - include: common-variable
 
   support-variable:
@@ -43,28 +41,6 @@ contexts:
         0: support.variable.php
         1: punctuation.variable.begin.php
         2: entity.name.variable.php
-      pop: true
-
-  property:
-    - match: |
-        (?xi)
-        (?<=->)
-        \s*({{commonIdentifier}})
-      captures:
-        1: >-
-          variable.property.php
-          entity.name.variable.php
-      pop: true
-
-  static-variable:
-    - match: |
-        (?xi)
-        (?<=::)
-        \s*((\$)({{commonIdentifier}}))
-      captures:
-        1: variable.static.php
-        2: punctuation.variable.begin.php
-        3: entity.name.variable.php
       pop: true
 
   common-variable:

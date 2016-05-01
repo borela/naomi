@@ -17,18 +17,24 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [a-z\x{7f}-\x{ff}_]
+    [a-z\x{7f}-\x{ff}0-9_]*
+
+  constantIdentifier: |
+    [A-Z\x{7f}-\x{ff}_]
+    [A-Z\x{7f}-\x{ff}0-9_]*
+
 contexts:
   main:
-    - match: "->"
-      scope: keyword.operator.member.access.php
-      pop: true
+    - include: other-operator
     - include: arithmetic-operator
     - include: bitwise-operator
     - include: assignment-operator
     - include: comparison-operator
     - include: logical-operator
     - include: string-operator
-    - include: other-operator
 
   # | Operator |  Description    |
   # | :------: | :-------------- |
@@ -166,13 +172,46 @@ contexts:
   # |  Operator  |  Description      |
   # | :--------: | :---------------- |
   # | instanceof |                   |
+  # |     ->     | Member access.    |
+  # |     ::     | Scope resolution. |
   other-operator:
     - match: (?xi)\binstanceof\b
       scope: keyword.operator.type.php
       pop: true
     - match: "->"
       scope: keyword.operator.member.access.php
-      pop: true
+      set: member-access
     - match: "::"
       scope: keyword.operator.scope.resolution.php
+      set: scope-resolution
+
+  member-access:
+    - include: php7.user-function-call.sublime-syntax
+    # Constant.
+    - match: (?x)\b{{constantIdentifier}}
+      scope: constant.php
+      pop: true
+    # Property.
+    - match: (?xi){{commonIdentifier}}
+      scope: >-
+        variable.property.php
+        entity.name.variable.php
+      pop: true
+
+  scope-resolution:
+    - include: php7.user-function-call.sublime-syntax
+    # Class name as string.
+    - match: \bclass\b
+      scope: keyword.other.class.name.php
+      pop: true
+    # Variable.
+    - match: (?xi)(\$)({{commonIdentifier}})
+      captures:
+        0: variable.static.php
+        1: punctuation.variable.begin.php
+        2: entity.name.variable.php
+      pop: true
+    # Constant.
+    - match: (?x)\b{{constantIdentifier}}
+      scope: constant.php
       pop: true

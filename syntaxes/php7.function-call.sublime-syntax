@@ -43,6 +43,7 @@ contexts:
   main:
     - include: array-support-function
     - include: class-object-support-function
+    - include: filesytem-support-function
     - include: language-construct
     - include: string-support-function
     - include: php7.user-function-call.sublime-syntax
@@ -153,6 +154,101 @@ contexts:
             | method_exists
             | property_exists
             | trait_exists
+          )
+        )
+        (?=\s*\()
+      captures:
+        0: support.function.call.php
+        1: punctuation.delimiter.structure.function.php
+        2: entity.name.structure.function.php
+      pop: true
+
+  filesytem-support-function:
+    - match: |
+        (?x)
+        ((?>\\|\b))
+        (
+          (?> basename
+            | ch(?>grp|mod|own)
+            | clearstatcache
+            | copy
+            | delete
+            | dirname
+            | disk
+              (?>_
+                  (?>free_space|total_space)
+                | freespace
+              )
+            | fclose
+            | feof
+            | fflush
+            | fgetc(?:sv)?
+            | fgets(?:s)?
+            | file
+              (?>_
+                  (?>exists|get_contents|put_contents)
+                | atime
+                | ctime
+                | group
+                | inode
+                | mtime
+                | owner
+                | perms
+                | size
+                | type
+              )?
+            | flock
+            | fnmatch
+            | fopen
+            | fpassthru
+            | fputcsv
+            | fputs
+            | fread
+            | fscanf
+            | fseek
+            | fstat
+            | ftell
+            | ftruncate
+            | fwrite
+            | glob
+            | is_
+              (?> dir
+                | executable
+                | file
+                | link
+                | readable
+                | uploaded_file
+                | writable
+                | writeable
+              )
+            | lchgrp
+            | lchown
+            | link(?:info)?
+            | lstat
+            | mkdir
+            | move_uploaded_file
+            | parse_ini_
+              (?>file|string)
+            | pathinfo
+            | pclose
+            | popen
+            | read
+              (?>file|link)
+            | realpath
+              (?>_cache_
+                (?>get|size)
+              )?
+            | rename
+            | rewind
+            | rmdir
+            | set_file_buffer
+            | stat
+            | symlink
+            | tempnam
+            | tmpfile
+            | touch
+            | umask
+            | unlink
           )
         )
         (?=\s*\()

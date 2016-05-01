@@ -1,0 +1,47 @@
+// SYNTAX TEST "Packages/naomi/syntaxes/php7.sublime-syntax"
+
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+<?php
+    declare(ticks=1);
+//  ^^^^^^^^^^^^^^^^^ declare.php
+//         ^^^^^^^^^ declare.params.php
+//          ^^^^^^^ declare.params.content.php
+//  ^^^^^^^ keyword.structure.declare.php
+//         ^ punctuation.delimiter.structure.declare.params.begin.php
+//                 ^ punctuation.delimiter.structure.declare.params.end.php
+//                  ^ punctuation.delimiter.structure.declare.body.begin.php
+
+    Something...
+//  ^^^^^^^^^^^^ declare.php
+//  ^^^^^^^^^^^^ declare.body.php
+//  ^^^^^^^^^^^^ declare.body.content.php
+
+    declare(ticks=1) {
+//  ^^^^^^^^^^^^^^^^^^ declare.php
+//         ^^^^^^^^^ declare.params.php
+//          ^^^^^^^ declare.params.content.php
+//  ^^^^^^^ keyword.structure.declare.php
+//         ^ punctuation.delimiter.structure.declare.params.begin.php
+//                 ^ punctuation.delimiter.structure.declare.params.end.php
+//                   ^ declare.body.php
+//                   ^ punctuation.delimiter.structure.declare.body.begin.php
+    Something...
+//  ^^^^^^^^^^^^ declare.php
+//  ^^^^^^^^^^^^ declare.body.php
+//  ^^^^^^^^^^^^ declare.body.content.php
+    }
+//  ^ declare.php
+//  ^ declare.body.php
+//  ^ punctuation.delimiter.structure.declare.body.end.php
+?>

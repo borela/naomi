@@ -46,14 +46,12 @@ contexts:
     - match: \?>
       scope: punctuation.embedded.end.php
       pop: true
-    # All syntaxes were designed to match a single structure and then pop the
-    # current context, this guard will prevent unnecessary pops to the main
-    # context.
     - match: ""
       push:
         - include: php7.comments.sublime-syntax
         - include: php7.operator.sublime-syntax
         - include: php7.constant.sublime-syntax
+        - include: php7.declare.sublime-syntax
         - include: php7.namespace.sublime-syntax
         - include: php7.use.sublime-syntax
         - include: php7.modifier.sublime-syntax
@@ -66,7 +64,5 @@ contexts:
         - include: php7.function-call.sublime-syntax
         - include: php7.variable.sublime-syntax
         - include: php7.type.sublime-syntax
-        # None of the expected structures matched, now it needs to check for the
-        # closing tag.
         - match: ""
           pop: true

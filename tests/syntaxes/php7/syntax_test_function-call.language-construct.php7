@@ -13,10 +13,19 @@
 // the License.
 
 <?php
-    declare
-//  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+    clone
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    die
+//  ^^^ support.function.call.php
+//  ^^^ entity.name.structure.function.php
     echo
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    eval
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    exit
 //  ^^^^ support.function.call.php
 //  ^^^^ entity.name.structure.function.php
     include_once
@@ -34,4 +43,7 @@
     require
 //  ^^^^^^^ support.function.call.php
 //  ^^^^^^^ entity.name.structure.function.php
+    unset
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
 ?>

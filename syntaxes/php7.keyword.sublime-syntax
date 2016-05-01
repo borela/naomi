@@ -26,22 +26,17 @@ contexts:
             | break
             | case
             | catch
-            | clone
             | continue
             | default
-            | die
             | do
             | else(?:if)?
             | empty
             | end
-              (?> declare
-                | for(?:each)
+              (?> for(?:each)
                 | if
                 | switch
                 | while
               )
-            | eval
-            | exit
             | finally
             | for(?:each)
             | global
@@ -52,7 +47,6 @@ contexts:
             | switch
             | throw
             | try
-            | unset
             | while
             | yield
           )

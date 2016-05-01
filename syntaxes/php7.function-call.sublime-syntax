@@ -168,13 +168,14 @@ contexts:
         ((?>\\|\b))
         \b
         (
-          (?> declare
-            | echo
-            | include_once
-            | include
+          (?> clone
+            | die
+            | e
+              (?>cho|val|xit)
+            | include(?:_once)?
             | isset
-            | require_once
-            | require
+            | require(?:_once)?
+            | unset
           )
         )\b
       captures:

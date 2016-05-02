@@ -8,9 +8,11 @@ Thank you for considering contributing to this project!
 
 ## Code style
 
-* Indent with 4 spaces.
-* Try to limit to 80 characters.
-* Be descriptive as possible.
+* Indent syntax files with 2 spaces.
+* Indent other files with 4 spaces.
+* Try to limit the line length to 80 characters, it's easier to scroll vertically
+than horizontally.
+* Avoid abbreviations and be descriptive as possible.
 
 ## Color scheme tips
 

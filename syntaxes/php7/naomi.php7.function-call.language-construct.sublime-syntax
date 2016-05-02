@@ -19,9 +19,23 @@ scope: ...
 
 contexts:
   main:
-    - include: naomi.php7.function-call.array-support-function.sublime-syntax
-    - include: naomi.php7.function-call.class-object-support-function.sublime-syntax
-    - include: naomi.php7.function-call.filesystem-support-function.sublime-syntax
-    - include: naomi.php7.function-call.string-support-function.sublime-syntax
-    - include: naomi.php7.function-call.language-construct.sublime-syntax
-    - include: naomi.php7.user-function-call.sublime-syntax
+    - match: |
+        (?x)
+        ((?>\\|\b))
+        \b
+        (
+          (?> clone
+            | die
+            | e
+              (?>cho|val|xit)
+            | include(?:_once)?
+            | isset
+            | require(?:_once)?
+            | unset
+          )
+        )\b
+      captures:
+        0: support.function.call.php
+        1: punctuation.delimiter.structure.function.php
+        2: entity.name.structure.function.php
+      pop: true

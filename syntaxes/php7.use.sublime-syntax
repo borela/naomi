@@ -31,6 +31,8 @@ contexts:
   declaration:
     - meta_scope: import.php
     - include: php7.comments.no-pop.sublime-syntax
+    - match: \,
+      scope: punctuation.delimiter.structure.import.php
     - match: ;
       scope: punctuation.delimiter.structure.import.end.php
       pop: true
@@ -58,7 +60,7 @@ contexts:
 
   alias:
     - include: php7.comments.no-pop.sublime-syntax
-    - match: (?=;)
+    - match: (?=,|;)
       pop: true
     - match: (?i)\bas\b
       scope: keyword.structure.import.alias.php

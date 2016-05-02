@@ -58,3 +58,8 @@ Thank you for considering contributing to this project! See: [CONTRIBUTING](CONT
 ## License
 
 Unless explicity stated all files are licensed under the [Apache 2.0 license](LICENSE.md).
+
+## Preview
+
+![Candyman PHP 7 preview 1](./preview/candyman.php7.1.png)
+![Candyman PHP 7 preview 2](./preview/candyman.php7.2.png)

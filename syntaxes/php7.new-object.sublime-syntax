@@ -26,4 +26,8 @@ contexts:
   main:
     - match: (?i)\bnew\b
       scope: keyword.other.php
-      set: php7.type.sublime-syntax
+      set: class-or-type
+
+  class-or-type:
+    - include: php7.class.sublime-syntax
+    - include: php7.type.sublime-syntax

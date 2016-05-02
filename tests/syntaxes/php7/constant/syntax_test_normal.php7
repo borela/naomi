@@ -13,9 +13,11 @@
 // the License.
 
 <?php
-    Type::class
+    GENERIC_CONSTANT
+//  ^^^^^^^^^^^^^^^^ constant.php
+
+    Type::CONSTANT
 //  ^^^^ type.php
-//  ^^^^ entity.name.type.php
 //      ^^ keyword.operator.scope.resolution.php
-//        ^^^^^ keyword.other.class.name.php
+//        ^^^^^^^^ constant.php
 ?>

@@ -1,0 +1,291 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+contexts:
+  main:
+    - match: \/\*\*
+      scope: punctuation.comment.begin.phpdoc
+      set: content
+
+  content:
+    - meta_scope: comment.block.phpdoc
+    - meta_content_scope: comment.content.phpdoc
+    - match: \*\/
+      scope: punctuation.comment.end.phpdoc
+      pop: true
+    - include: api
+    - include: access
+    - include: author
+    - include: category
+    - include: copyright
+    - include: deprecated
+    - include: example
+    - include: filesource
+    - include: global
+    - include: ignore
+    - include: internal
+    - include: license
+    - include: link
+    - include: method
+    - include: package
+    - include: param
+    - include: property-read
+    - include: property-write
+    - include: property
+    - include: return
+    - include: see
+    - include: since
+    - include: source
+    - include: subpackage
+    - include: throws
+    - include: todo
+    - include: tutorial
+    - include: uses
+    - include: var
+    - include: version
+
+  api:
+    - match: \B(@)api\b
+      captures:
+        0: keyword.documentation.api.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  access:
+    - match: \B(@)access\b
+      captures:
+        0: keyword.documentation.access.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  author:
+    - match: \B(@)author\b
+      captures:
+        0: keyword.documentation.author.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  category:
+    - match: \B(@)category\b
+      captures:
+        0: keyword.documentation.category.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  copyright:
+    - match: \B(@)copyright\b
+      captures:
+        0: keyword.documentation.copyright.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  deprecated:
+    - match: \B(@)deprecated\b
+      captures:
+        0: keyword.documentation.deprecated.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  example:
+    - match: \B(@)example\b
+      captures:
+        0: keyword.documentation.example.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  filesource:
+    - match: \B(@)filesource\b
+      captures:
+        0: keyword.documentation.filesource.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  global:
+    - match: \B(@)global\b
+      captures:
+        0: keyword.documentation.global.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  ignore:
+    - match: \B(@)ignore\b
+      captures:
+        0: keyword.documentation.ignore.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  internal:
+    - match: \B(@)internal\b
+      captures:
+        0: keyword.documentation.internal.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  license:
+    - match: \B(@)license\b
+      captures:
+        0: keyword.documentation.license.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  link:
+    - match: \B(@)link\b
+      captures:
+        0: keyword.documentation.link.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  method:
+    - match: \B(@)method\b
+      captures:
+        0: keyword.documentation.method.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  package:
+    - match: \B(@)package\b
+      captures:
+        0: keyword.documentation.package.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  param:
+    - match: \B(@)param\b
+      captures:
+        0: keyword.documentation.param.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+      push: [
+        param-variable,
+        param-types
+      ]
+
+  param-types:
+    - match: (?=\$|$)
+      pop: true
+    - match: ""
+      push: [
+        param-type-delimiter,
+        param-type
+      ]
+
+  param-type:
+    - match: (?=\$|$)
+      pop: true
+    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
+
+  param-type-delimiter:
+    - match: (?=\$|$)
+      pop: true
+    - match: \|
+      scope: punctuation.delimiter.types.phpdoc
+      pop: true
+
+  param-variable:
+    - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
+
+  property:
+    - match: \B(@)property\b
+      captures:
+        0: keyword.documentation.property.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  property-read:
+    - match: \B(@)property-read\b
+      captures:
+        0: keyword.documentation.property.read.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  property-write:
+    - match: \B(@)property-write\b
+      captures:
+        0: keyword.documentation.property.write.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  return:
+    - match: \B(@)return\b
+      captures:
+        0: keyword.documentation.return.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+      push: return-types
+
+  return-types:
+    - match: (?=$)
+      pop: true
+    - match: ""
+      push: [
+        return-type-delimiter,
+        return-type
+      ]
+
+  return-type:
+    - match: (?=$)
+      pop: true
+    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
+
+  return-type-delimiter:
+    - match: (?=$)
+      pop: true
+    - match: \|
+      scope: punctuation.delimiter.types.phpdoc
+      pop: true
+
+  see:
+    - match: \B(@)see\b
+      captures:
+        0: keyword.documentation.see.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  since:
+    - match: \B(@)since\b
+      captures:
+        0: keyword.documentation.since.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  source:
+    - match: \B(@)source\b
+      captures:
+        0: keyword.documentation.source.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  subpackage:
+    - match: \B(@)subpackage\b
+      captures:
+        0: keyword.documentation.subpackage.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  throws:
+    - match: \B(@)throws\b
+      captures:
+        0: keyword.documentation.throws.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  todo:
+    - match: \B(@)todo\b
+      captures:
+        0: keyword.documentation.todo.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  tutorial:
+    - match: \B(@)tutorial\b
+      captures:
+        0: keyword.documentation.tutorial.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  uses:
+    - match: \B(@)uses\b
+      captures:
+        0: keyword.documentation.uses.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  var:
+    - match: \B(@)var\b
+      captures:
+        0: keyword.documentation.var.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+
+  version:
+    - match: \B(@)version\b
+      captures:
+        0: keyword.documentation.version.phpdoc
+        1: punctuation.keyword.begin.phpdoc

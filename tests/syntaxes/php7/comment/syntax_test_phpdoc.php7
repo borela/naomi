@@ -1,0 +1,134 @@
+// SYNTAX TEST "Packages/Naomi/syntaxes/naomi.php7.sublime-syntax"
+
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+<?php
+    /** Test. */
+//  ^^^^^^^^^^^^ comment.block.phpdoc
+//     ^^^^^^^ comment.content.phpdoc
+//  ^^^ punctuation.comment.begin.phpdoc
+//            ^^ punctuation.comment.end.phpdoc
+
+    /**
+     * @param int $variable
+//     ^^^^^^ keyword.documentation.param.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+//            ^^^ support.type.php
+//                ^^^^^^^^^ variable.php
+//                ^ punctuation.variable.begin.php
+//                 ^^^^^^^^ entity.name.variable.php
+     * @param int|string $variable
+//     ^^^^^^ keyword.documentation.param.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+//            ^^^ support.type.php
+//               ^ punctuation.delimiter.types.phpdoc
+//                ^^^^^^ support.type.php
+//                       ^^^^^^^^^ variable.php
+//                       ^ punctuation.variable.begin.php
+//                        ^^^^^^^^ entity.name.variable.php
+     * @return int
+//     ^^^^^^^ keyword.documentation.return.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+//             ^^^ support.type.php
+     * @return int|bool
+//     ^^^^^^^ keyword.documentation.return.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+//             ^^^ support.type.php
+//                ^ punctuation.delimiter.types.phpdoc
+//                 ^^^^ support.type.php
+     * @api
+//     ^^^^ keyword.documentation.api.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @access
+//     ^^^^^^^ keyword.documentation.access.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @author
+//     ^^^^^^^ keyword.documentation.author.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @category
+//     ^^^^^^^^^ keyword.documentation.category.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @copyright
+//     ^^^^^^^^^^ keyword.documentation.copyright.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @deprecated
+//     ^^^^^^^^^^^ keyword.documentation.deprecated.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @example
+//     ^^^^^^^^ keyword.documentation.example.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @filesource
+//     ^^^^^^^^^^^ keyword.documentation.filesource.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @global
+//     ^^^^^^^ keyword.documentation.global.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @ignore
+//     ^^^^^^^ keyword.documentation.ignore.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @internal
+//     ^^^^^^^^^ keyword.documentation.internal.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @license
+//     ^^^^^^^^ keyword.documentation.license.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @link
+//     ^^^^^ keyword.documentation.link.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @method
+//     ^^^^^^^ keyword.documentation.method.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @package
+//     ^^^^^^^^ keyword.documentation.package.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @property
+//     ^^^^^^^^^ keyword.documentation.property.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @property-read
+//     ^^^^^^^^^^^^^^ keyword.documentation.property.read.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @property-write
+//     ^^^^^^^^^^^^^^^ keyword.documentation.property.write.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @see
+//     ^^^^ keyword.documentation.see.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @since
+//     ^^^^^^ keyword.documentation.since.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @source
+//     ^^^^^^^ keyword.documentation.source.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @subpackage
+//     ^^^^^^^^^^^ keyword.documentation.subpackage.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @throws
+//     ^^^^^^^ keyword.documentation.throws.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @todo
+//     ^^^^^ keyword.documentation.todo.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @tutorial
+//     ^^^^^^^^^ keyword.documentation.tutorial.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @uses
+//     ^^^^^ keyword.documentation.uses.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @var
+//     ^^^^ keyword.documentation.var.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     * @version
+//     ^^^^^^^^ keyword.documentation.version.phpdoc
+//     ^ punctuation.keyword.begin.phpdoc
+     */
+?>

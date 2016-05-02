@@ -13,9 +13,13 @@
 // the License.
 
 <?php
-    Type::class
-//  ^^^^ type.php
-//  ^^^^ entity.name.type.php
-//      ^^ keyword.operator.scope.resolution.php
-//        ^^^^^ keyword.other.class.name.php
+    'Something is "here"...'
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.php
+//   ^^^^^^^^^^^^^^^^^^^^^^ string.content.php
+//  ^ punctuation.delimiter.string.begin.php
+//                         ^ punctuation.delimiter.string.end.php
+
+    'Escaped: \\\''
+//            ^^ constant.character.escape.a.php
+//              ^^ constant.character.escape.b.php
 ?>

@@ -1,0 +1,307 @@
+// SYNTAX TEST "Packages/Naomi/syntaxes/naomi.php7.sublime-syntax"
+
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+<?php
+    addcslashes();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    addslashes();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    bin2hex();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    chop();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    chr();
+//  ^^^ support.function.call.php
+//  ^^^ entity.name.structure.function.php
+    chunk_split();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    convert_cyr_string();
+//  ^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    convert_uudecode();
+//  ^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    convert_uuencode();
+//  ^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    count_chars();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    crc32();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    crypt();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    explode();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    fprintf();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    get_html_translation_table();
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    hebrev();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    hebrevc();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    hex2bin();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    html_entity_decode();
+//  ^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    htmlentities();
+//  ^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^ entity.name.structure.function.php
+    htmlspecialchars_decode();
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    htmlspecialchars();
+//  ^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    implode();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    join();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    lcfirst();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    levenshtein();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    localeconv();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    ltrim();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    md5_file();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.structure.function.php
+    md5();
+//  ^^^ support.function.call.php
+//  ^^^ entity.name.structure.function.php
+    metaphone();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    money_format();
+//  ^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^ entity.name.structure.function.php
+    nl_langinfo();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    nl2br();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    number_format();
+//  ^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^ entity.name.structure.function.php
+    ord();
+//  ^^^ support.function.call.php
+//  ^^^ entity.name.structure.function.php
+    parse_str();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    print();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    printf();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    quoted_printable_decode();
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    quoted_printable_encode();
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    quotemeta();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    rtrim();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    setlocale();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    sha1_file();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    sha1();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    similar_text();
+//  ^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^ entity.name.structure.function.php
+    soundex();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    sprintf();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    sscanf();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    str_getcsv();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    str_ireplace();
+//  ^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^ entity.name.structure.function.php
+    str_pad();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    str_repeat();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    str_replace();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    str_rot13();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    str_shuffle();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    str_split();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    str_word_count();
+//  ^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^ entity.name.structure.function.php
+    strcasecmp();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    strchr();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    strcmp();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    strcoll();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    strcspn();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    strip_tags();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    stripcslashes();
+//  ^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^ entity.name.structure.function.php
+    stripos();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    stripslashes();
+//  ^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^ entity.name.structure.function.php
+    stristr();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    strlen();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    strnatcasecmp();
+//  ^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^ entity.name.structure.function.php
+    strnatcmp();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    strncasecmp();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    strncmp();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    strpbrk();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    strpos();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    strrchr();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    strrev();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    strripos();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.structure.function.php
+    strrpos();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    strspn();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    strstr();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    strtok();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    strtolower();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    strtoupper();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    strtr();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    substr_compare();
+//  ^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^ entity.name.structure.function.php
+    substr_count();
+//  ^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^ entity.name.structure.function.php
+    substr_replace();
+//  ^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^ entity.name.structure.function.php
+    substr();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    trim();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    ucfirst();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    ucwords();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    vfprintf();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.structure.function.php
+    vprintf();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    vsprintf();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.structure.function.php
+    wordwrap();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.structure.function.php
+?>

@@ -13,9 +13,20 @@
 // the License.
 
 <?php
-    Type::class
-//  ^^^^ type.php
-//  ^^^^ entity.name.type.php
-//      ^^ keyword.operator.scope.resolution.php
-//        ^^^^^ keyword.other.class.name.php
+    __LINE__
+//  ^^^^^^^^ support.constant.preprocessor.php
+    __FILE__
+//  ^^^^^^^^ support.constant.preprocessor.php
+    __DIR__
+//  ^^^^^^^ support.constant.preprocessor.php
+    __FUNCTION__
+//  ^^^^^^^^^^^^ support.constant.preprocessor.php
+    __CLASS__
+//  ^^^^^^^^^ support.constant.preprocessor.php
+    __TRAIT__
+//  ^^^^^^^^^ support.constant.preprocessor.php
+    __METHOD__
+//  ^^^^^^^^^^ support.constant.preprocessor.php
+    __NAMESPACE__
+//  ^^^^^^^^^^^^^ support.constant.preprocessor.php
 ?>

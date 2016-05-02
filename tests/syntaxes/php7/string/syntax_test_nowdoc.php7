@@ -13,9 +13,15 @@
 // the License.
 
 <?php
-    Type::class
-//  ^^^^ type.php
-//  ^^^^ entity.name.type.php
-//      ^^ keyword.operator.scope.resolution.php
-//        ^^^^^ keyword.other.class.name.php
+    <<<'Nowdoc'
+//  ^^^^^^^^^^ string.unquoted.nowdoc.php
+//  ^^^^^^^^^^ punctuation.delimiter.string.begin.php
+    Something is here....
+//  ^^^^^^^^^^^^^^^^^^^^^ string.unquoted.nowdoc.php
+//  ^^^^^^^^^^^^^^^^^^^^^ string.content.php
+Nowdoc;
+// <- string.unquoted.nowdoc.php
+//^^^^^ string.unquoted.nowdoc.php
+// <- punctuation.delimiter.string.end.php
+//^^^^^ punctuation.delimiter.string.end.php
 ?>

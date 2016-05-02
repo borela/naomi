@@ -1,0 +1,91 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+variables:
+  commonIdentifier: |
+    [a-z\x{7f}-\x{ff}_]
+    [a-z\x{7f}-\x{ff}0-9_]*
+
+scope: ...
+
+contexts:
+  main:
+    - match: (?i)\binterface(?!\\)\b
+      scope: keyword.structure.interface.php
+      set: declaration
+
+  declaration:
+    - meta_scope: interface.php
+    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    # Extends.
+    - match: (?i)\bextends\b
+      scope: keyword.structure.inherit.php
+      push: extend-targets
+    # interface's name.
+    - match: (?xi)\b{{commonIdentifier}}\b
+      scope: entity.name.structure.interface.php
+    # Body.
+    - match: \{
+      scope: >-
+        interface.body.php
+        punctuation.delimiter.structure.interface.body.begin.php
+      set: body
+
+  body:
+    - meta_content_scope: >-
+        interface.php
+        interface.body.php
+        interface.body.content.php
+    - match: \}
+      scope: >-
+        interface.php
+        interface.body.php
+        punctuation.delimiter.structure.interface.body.end.php
+      pop: true
+    # Body's content.
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/use.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/modifier.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
+        - match: ""
+          pop: true
+
+  extend-targets:
+    - meta_scope: extend.php
+    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - match: (?=\{)
+      pop: true
+    - match: ""
+      push: [
+        extend-target-delimiter,
+        extend-target
+      ]
+
+  extend-target:
+    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
+
+  extend-target-delimiter:
+    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - match: ","
+      scope: punctuation.delimiter.structure.extend.php
+      pop: true
+    - match: (?=\S)
+      pop: true

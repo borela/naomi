@@ -13,9 +13,18 @@
 // the License.
 
 <?php
-    Type::class
+    myFunction()
+//  ^^^^^^^^^^ function.call.php
+
+    Type::myFunction()
 //  ^^^^ type.php
-//  ^^^^ entity.name.type.php
 //      ^^ keyword.operator.scope.resolution.php
-//        ^^^^^ keyword.other.class.name.php
+//        ^^^^^^^^^^ function.call.php
+
+    $object->myFunction();
+//  ^^^^^^^ variable.php
+//  ^ punctuation.variable.begin.php
+//   ^^^^^^ entity.name.variable.php
+//         ^^ keyword.operator.member.access.php
+//           ^^^^^^^^^^ function.call.php
 ?>

@@ -16,3 +16,5 @@ tests export-ignore
 .gitattributes text eol=lf export-ignore
 .gitignore text eol=lf export-ignore
 CONTRIBUTING.md export-ignore
+naomi.sublime-project text eol=lf export-ignore
+README.md export-ignore

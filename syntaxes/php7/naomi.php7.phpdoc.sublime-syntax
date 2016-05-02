@@ -172,7 +172,7 @@ contexts:
   param-type:
     - match: (?=\$|$)
       pop: true
-    - include: php7.type.sublime-syntax
+    - include: naomi.php7.type.sublime-syntax
 
   param-type-delimiter:
     - match: (?=\$|$)
@@ -182,7 +182,7 @@ contexts:
       pop: true
 
   param-variable:
-    - include: php7.variable.sublime-syntax
+    - include: naomi.php7.variable.sublime-syntax
 
   property:
     - match: (?x)\B(@)property\b
@@ -221,7 +221,7 @@ contexts:
   return-type:
     - match: (?=$)
       pop: true
-    - include: php7.type.sublime-syntax
+    - include: naomi.php7.type.sublime-syntax
 
   return-type-delimiter:
     - match: (?=$)

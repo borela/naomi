@@ -186,7 +186,7 @@ contexts:
       set: scope-resolution
 
   member-access:
-    - include: php7.user-function-call.sublime-syntax
+    - include: naomi.php7.user-function-call.sublime-syntax
     # Constant.
     - match: (?x)\b{{constantIdentifier}}
       scope: constant.php
@@ -199,7 +199,7 @@ contexts:
       pop: true
 
   scope-resolution:
-    - include: php7.user-function-call.sublime-syntax
+    - include: naomi.php7.user-function-call.sublime-syntax
     # Class name as string.
     - match: \bclass\b
       scope: keyword.other.class.name.php

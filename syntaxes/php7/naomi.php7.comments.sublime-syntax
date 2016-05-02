@@ -19,13 +19,5 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        (?=
-          (?> \/\/
-            | \/\*
-            | \#
-          )
-        )
-      push:
-        - include: php7.comments.sublime-syntax
+    - include: naomi.php7.phpdoc.sublime-syntax
+    - include: naomi.php7.comment.sublime-syntax

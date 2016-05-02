@@ -79,7 +79,7 @@ contexts:
   parameters:
     - meta_scope: function.parameters.php
     - meta_content_scope: function.parameters.content.php
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     - match: \)
       scope: punctuation.delimiter.structure.function.parameters.end.php
       pop: true
@@ -141,7 +141,7 @@ contexts:
       ]
 
   reference-operator:
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     - match: (?=\$)
       pop: true
     - match: \&
@@ -149,11 +149,11 @@ contexts:
       pop: true
 
   variable-type:
-    - include: php7.comments.no-pop.sublime-syntax
-    - include: php7.type.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.type.sublime-syntax
 
   variadic-or-reference-operator:
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     - match: (?=\$)
       pop: true
     - match: \&
@@ -170,11 +170,11 @@ contexts:
     - include: param-variable
 
   param-variable:
-    - include: php7.comments.no-pop.sublime-syntax
-    - include: php7.variable.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.variable.sublime-syntax
 
   param-optional-default-value:
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     - match: (?=,|\))
       pop: true
     - match: \=
@@ -182,14 +182,14 @@ contexts:
       set: param-default-value
 
   param-default-value:
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     - match: (?=,|\))
       pop: true
-    - include: php7.constant.sublime-syntax
-    - include: php7.string.sublime-syntax
+    - include: naomi.php7.constant.sublime-syntax
+    - include: naomi.php7.string.sublime-syntax
 
   param-delimiter:
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     - match: (?=\))
       pop: true
     - match: ","
@@ -197,7 +197,7 @@ contexts:
       pop: true
 
   return-type-hint:
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     - match: (?={|;)
       pop: true
     - match: ":"
@@ -205,10 +205,10 @@ contexts:
       set: return-type
 
   return-type:
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     - match: (?={|;)
       pop: true
-    - include: php7.type.sublime-syntax
+    - include: naomi.php7.type.sublime-syntax
 
   body:
     - meta_content_scope: >-
@@ -228,16 +228,16 @@ contexts:
   body-content:
     - match: ""
       push:
-        - include: php7.comments.sublime-syntax
-        - include: php7.operator.sublime-syntax
-        - include: php7.constant.sublime-syntax
-        - include: php7.keyword.sublime-syntax
-        - include: php7.class.sublime-syntax
-        - include: php7.function.sublime-syntax
-        - include: php7.new-object.sublime-syntax
-        - include: php7.function-call.sublime-syntax
-        - include: php7.variable.sublime-syntax
-        - include: php7.type.sublime-syntax
+        - include: naomi.php7.comments.sublime-syntax
+        - include: naomi.php7.operator.sublime-syntax
+        - include: naomi.php7.constant.sublime-syntax
+        - include: naomi.php7.keyword.sublime-syntax
+        - include: naomi.php7.class.sublime-syntax
+        - include: naomi.php7.function.sublime-syntax
+        - include: naomi.php7.new-object.sublime-syntax
+        - include: naomi.php7.function-call.sublime-syntax
+        - include: naomi.php7.variable.sublime-syntax
+        - include: naomi.php7.type.sublime-syntax
         - match: ""
           pop: true
 

@@ -24,7 +24,7 @@ variables:
 
 contexts:
   main:
-    - include: php7.string.sublime-syntax
+    - include: naomi.php7.string.sublime-syntax
     - include: core-constant
     - include: case-insenstive-core-constant
     - include: error-constant

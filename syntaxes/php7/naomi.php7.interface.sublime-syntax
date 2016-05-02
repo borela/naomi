@@ -30,7 +30,7 @@ contexts:
 
   declaration:
     - meta_scope: interface.php
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     # Extends.
     - match: (?i)\bextends\b
       scope: keyword.structure.inherit.php
@@ -59,17 +59,17 @@ contexts:
     # Body's content.
     - match: ""
       push:
-        - include: php7.comments.sublime-syntax
-        - include: php7.constant.sublime-syntax
-        - include: php7.use.sublime-syntax
-        - include: php7.modifier.sublime-syntax
-        - include: php7.function.sublime-syntax
+        - include: naomi.php7.comments.sublime-syntax
+        - include: naomi.php7.constant.sublime-syntax
+        - include: naomi.php7.use.sublime-syntax
+        - include: naomi.php7.modifier.sublime-syntax
+        - include: naomi.php7.function.sublime-syntax
         - match: ""
           pop: true
 
   extend-targets:
     - meta_scope: extend.php
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     - match: (?=\{)
       pop: true
     - match: ""
@@ -79,11 +79,11 @@ contexts:
       ]
 
   extend-target:
-    - include: php7.comments.no-pop.sublime-syntax
-    - include: php7.type.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.type.sublime-syntax
 
   extend-target-delimiter:
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     - match: ","
       scope: punctuation.delimiter.structure.extend.php
       pop: true

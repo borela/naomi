@@ -45,7 +45,7 @@ contexts:
 
   declaration:
     - meta_scope: namespace.php
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     # Implicit body.
     - match: ;
       scope: >-
@@ -70,28 +70,28 @@ contexts:
         6: entity.name.structure.namespace.a.php
 
   body-content:
-    - include: php7.comments.sublime-syntax
-    - include: php7.operator.sublime-syntax
-    - include: php7.constant.sublime-syntax
-    - include: php7.namespace.sublime-syntax
-    - include: php7.use.sublime-syntax
-    - include: php7.modifier.sublime-syntax
-    - include: php7.keyword.sublime-syntax
-    - include: php7.trait.sublime-syntax
-    - include: php7.interface.sublime-syntax
-    - include: php7.class.sublime-syntax
-    - include: php7.function.sublime-syntax
-    - include: php7.new-object.sublime-syntax
-    - include: php7.function-call.sublime-syntax
-    - include: php7.variable.sublime-syntax
-    - include: php7.type.sublime-syntax
+    - include: naomi.php7.comments.sublime-syntax
+    - include: naomi.php7.operator.sublime-syntax
+    - include: naomi.php7.constant.sublime-syntax
+    - include: naomi.php7.namespace.sublime-syntax
+    - include: naomi.php7.use.sublime-syntax
+    - include: naomi.php7.modifier.sublime-syntax
+    - include: naomi.php7.keyword.sublime-syntax
+    - include: naomi.php7.trait.sublime-syntax
+    - include: naomi.php7.interface.sublime-syntax
+    - include: naomi.php7.class.sublime-syntax
+    - include: naomi.php7.function.sublime-syntax
+    - include: naomi.php7.new-object.sublime-syntax
+    - include: naomi.php7.function-call.sublime-syntax
+    - include: naomi.php7.variable.sublime-syntax
+    - include: naomi.php7.type.sublime-syntax
 
   implicit-body:
     - meta_content_scope: >-
         namespace.php
         namespace.body.php
         namespace.body.content.php
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     - match: (?=\bnamespace\b)
       pop: true
     - include: implicity-body-content
@@ -110,7 +110,7 @@ contexts:
         namespace.php
         namespace.body.php
         namespace.body.content.php
-    - include: php7.comments.no-pop.sublime-syntax
+    - include: naomi.php7.comments.no-pop.sublime-syntax
     - match: "}"
       scope: >-
         namespace.php

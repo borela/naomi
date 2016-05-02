@@ -15,19 +15,17 @@
 
 hidden: true
 
-variables:
-  commonIdentifier: |
-    [a-z\x{7f}-\x{ff}_]
-    [a-z\x{7f}-\x{ff}0-9_]*
-
 scope: ...
 
 contexts:
   main:
-    - match: (?i)\bnew\b
-      scope: keyword.other.php
-      set: class-or-type
-
-  class-or-type:
-    - include: php7.class.sublime-syntax
-    - include: php7.type.sublime-syntax
+    - match: |
+        (?x)
+        (?=
+          (?> \/\/
+            | \/\*
+            | \#
+          )
+        )
+      push:
+        - include: naomi.php7.comments.sublime-syntax

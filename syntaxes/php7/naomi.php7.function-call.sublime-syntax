@@ -46,7 +46,7 @@ contexts:
     - include: filesytem-support-function
     - include: language-construct
     - include: string-support-function
-    - include: php7.user-function-call.sublime-syntax
+    - include: naomi.php7.user-function-call.sublime-syntax
 
   array-support-function:
     - match: |

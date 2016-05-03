@@ -396,6 +396,76 @@
 
             <dict>
                 <key>name</key>
+                <string>Binary number</string>
+
+                <key>scope</key>
+                <string>constant.numeric.binary</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#80deea</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Octal number</string>
+
+                <key>scope</key>
+                <string>constant.numeric.octal</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#aed581</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Hexadecimal number</string>
+
+                <key>scope</key>
+                <string>constant.numeric.hex</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ff9e80</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Decimal number</string>
+
+                <key>scope</key>
+                <string>constant.numeric.decimal</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f06292</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Floating point number</string>
+
+                <key>scope</key>
+                <string>constant.numeric.float</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ce93d8</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Function's name</string>
 
                 <key>scope</key>

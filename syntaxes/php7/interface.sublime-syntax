@@ -61,7 +61,7 @@ contexts:
       push:
         - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/string.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/declare.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/use.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/modifier.sublime-syntax

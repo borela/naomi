@@ -58,7 +58,7 @@ contexts:
       scope: punctuation.delimiter.string.end.php
       pop: true
     - include: escaped-character
-    - include: Packages/Naomi/syntaxes/php7/string/embedded-variable/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/literal/string/embedded-variable/simple.sublime-syntax
 
   escaped-character:
     - match: |

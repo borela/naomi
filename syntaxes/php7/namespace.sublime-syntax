@@ -71,9 +71,9 @@ contexts:
 
   body-content:
     - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/string.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/declare.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/namespace.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/use.sublime-syntax

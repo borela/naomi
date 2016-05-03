@@ -19,7 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/php7/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/string/nowdoc.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/string/heredoc.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/literal/number.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/literal/string/nowdoc.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/literal/string/heredoc.sublime-syntax

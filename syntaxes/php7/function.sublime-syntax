@@ -186,7 +186,7 @@ contexts:
     - match: (?=,|\))
       pop: true
     - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/string.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
 
   param-delimiter:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
@@ -229,9 +229,9 @@ contexts:
     - match: ""
       push:
         - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/string.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/declare.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/keyword.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/class.sublime-syntax

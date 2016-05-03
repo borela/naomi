@@ -65,3 +65,4 @@ Unless explicity stated all files are licensed under the [Apache 2.0 license](LI
 
 ![Candyman PHP 7 preview 1](./preview/candyman.php7.1.png)
 ![Candyman PHP 7 preview 2](./preview/candyman.php7.2.png)
+![Candyman PHP 7 preview 3](./preview/candyman.php7.3.png)

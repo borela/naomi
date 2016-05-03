@@ -12,6 +12,7 @@
 *.yml text eol=lf
 *.yaml text eol=lf
 
+preview export-ignore
 tests export-ignore
 .gitattributes text eol=lf export-ignore
 .gitignore text eol=lf export-ignore

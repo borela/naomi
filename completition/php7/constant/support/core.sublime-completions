@@ -13,6 +13,9 @@
 
     "scope": "embedded.content.php - comment",
     "completions": [
+        "FALSE",
+        "NULL",
+        "TRUE",
         "DEFAULT_INCLUDE_PATH",
         "PEAR_EXTENSION_DIR",
         "PEAR_INSTALL_DIR",

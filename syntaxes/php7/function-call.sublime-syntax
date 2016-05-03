@@ -22,6 +22,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/function-call/support/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function-call/support/class-object.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function-call/support/filesystem.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/function-call/support/math.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function-call/support/string.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function-call/support/language-construct.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax

@@ -1,0 +1,163 @@
+// SYNTAX TEST "Packages/Naomi/syntaxes/naomi.php7.sublime-syntax"
+
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+<?php
+    abs();
+//  ^^^ support.function.call.php
+//  ^^^ entity.name.structure.function.php
+    acos();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    acosh();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    asin();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    asinh();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    atan2();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    atan();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    atanh();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    base_convert();
+//  ^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^ entity.name.structure.function.php
+    bindec();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    ceil();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    cos();
+//  ^^^ support.function.call.php
+//  ^^^ entity.name.structure.function.php
+    cosh();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    decbin();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    dechex();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    decoct();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    deg2rad();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    exp();
+//  ^^^ support.function.call.php
+//  ^^^ entity.name.structure.function.php
+    expm1();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    floor();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    fmod();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    getrandmax();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    hexdec();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    hypot();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    intdiv();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    is_finite();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    is_infinite();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    is_nan();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    lcg_value();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    log10();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    log1p();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    log();
+//  ^^^ support.function.call.php
+//  ^^^ entity.name.structure.function.php
+    max();
+//  ^^^ support.function.call.php
+//  ^^^ entity.name.structure.function.php
+    min();
+//  ^^^ support.function.call.php
+//  ^^^ entity.name.structure.function.php
+    mt_getrandmax();
+//  ^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^ entity.name.structure.function.php
+    mt_rand();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    mt_srand();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.structure.function.php
+    octdec();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    pi();
+//  ^^ support.function.call.php
+//  ^^ entity.name.structure.function.php
+    pow();
+//  ^^^ support.function.call.php
+//  ^^^ entity.name.structure.function.php
+    rad2deg();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    rand();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    round();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    sin();
+//  ^^^ support.function.call.php
+//  ^^^ entity.name.structure.function.php
+    sinh();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    sqrt();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+    srand();
+//  ^^^^^ support.function.call.php
+//  ^^^^^ entity.name.structure.function.php
+    tan();
+//  ^^^ support.function.call.php
+//  ^^^ entity.name.structure.function.php
+    tanh();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.structure.function.php
+?>

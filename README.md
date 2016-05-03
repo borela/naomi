@@ -16,6 +16,8 @@ appreciated.
 #### PHP 7
 
 * Scopes for phpDoc instructions.
+* Different scopes for decimal, floating point, binary, octal and hexadecimal
+literal.
 * Alternating scopes for namespace names.
 * Alternating scopes for escaped characters.
 * Alternating scopes for embedded variables.

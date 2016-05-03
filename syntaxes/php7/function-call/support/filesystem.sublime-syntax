@@ -38,7 +38,7 @@ contexts:
             | feof
             | fflush
             | fgetc(?:sv)?
-            | fgets(?:s)?
+            | fgetss?
             | file
               (?>_
                   (?>exists|get_contents|put_contents)

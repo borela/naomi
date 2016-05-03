@@ -18,7 +18,13 @@
 //   ^^^^^^^^^^^^^^^^^^^^^^ string.content.php
 //  ^ punctuation.delimiter.string.begin.php
 //                         ^ punctuation.delimiter.string.end.php
-
+    'Something is \'here\'...'
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.php
+//   ^^^^^^^^^^^^^^^^^^^^^^^^ string.content.php
+//  ^ punctuation.delimiter.string.begin.php
+//                ^^ constant.character.escape.a.php
+//                      ^^ constant.character.escape.a.php
+//                           ^ punctuation.delimiter.string.end.php
     'Escaped: \\\''
 //            ^^ constant.character.escape.a.php
 //              ^^ constant.character.escape.b.php

@@ -39,7 +39,7 @@ contexts:
             | explode
             | fprintf
             | get_html_translation_table
-            | hebrev(?:c)?
+            | hebrevc?
             | hex2bin
             | html_entity_decode
             | htmlentities
@@ -59,7 +59,7 @@ contexts:
             | number_format
             | ord
             | parse_str
-            | print(?:f)?
+            | printf?
             | quoted_printable_
               (?>encode|decode)
             | quotemeta

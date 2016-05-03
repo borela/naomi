@@ -32,7 +32,7 @@ contexts:
   string:
     - meta_scope: string.quoted.single.php
     - meta_content_scope: string.content.php
-    - match: (?<!\\)\'
+    - match: (?<!\\)'
       scope: punctuation.delimiter.string.end.php
       pop: true
     - include: escaped-character

@@ -18,7 +18,13 @@
 //   ^^^^^^^^^^^^^^^^^^^^^^ string.content.php
 //  ^ punctuation.delimiter.string.begin.php
 //                         ^ punctuation.delimiter.string.end.php
-
+    "Something is \"here\"..."
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.php
+//   ^^^^^^^^^^^^^^^^^^^^^^^^ string.content.php
+//  ^ punctuation.delimiter.string.begin.php
+//                ^^ constant.character.escape.a.php
+//                      ^^ constant.character.escape.a.php
+//                           ^ punctuation.delimiter.string.end.php
     "Escaped: \\\"\n\r\t\v\e\f\$\101\x41\u{0065}"
 //            ^^ constant.character.escape.a.php
 //              ^^ constant.character.escape.b.php

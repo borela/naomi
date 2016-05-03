@@ -44,12 +44,33 @@ contexts:
     - meta_content_scope: declare.parameters.content.php
     - match: (?=\))
       pop: true
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-        - match: ""
-          pop: true
+    - match: (?=\S)
+      push: [
+        value,
+        operator,
+        directive
+      ]
+
+  directive:
+    - match: (?==)
+      pop: true
+    - match: |
+        (?x)\b
+        (?> ticks
+          | encoding
+          | strict
+        )\b
+      scope: keyword.directive.php
+      pop: true
+
+  operator:
+    - match: =
+      scope: keyword.operator.assignment.php
+      pop: true
+
+  value:
+    - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
 
   body:
     - meta_content_scope: >-
@@ -66,9 +87,9 @@ contexts:
     - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/string.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/declare.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/namespace.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/use.sublime-syntax

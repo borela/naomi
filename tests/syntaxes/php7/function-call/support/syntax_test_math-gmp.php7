@@ -1,0 +1,160 @@
+// SYNTAX TEST "Packages/Naomi/syntaxes/naomi.php7.sublime-syntax"
+
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+<?php
+    gmp_abs();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    gmp_add();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    gmp_and();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    gmp_clrbit();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    gmp_cmp();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    gmp_com();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    gmp_div_q();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    gmp_div_qr();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    gmp_div_r();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    gmp_div();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    gmp_divexact();
+//  ^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^ entity.name.structure.function.php
+    gmp_export();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    gmp_fact();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.structure.function.php
+    gmp_gcd();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    gmp_gcdext();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    gmp_hamdist();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    gmp_import();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    gmp_init();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.structure.function.php
+    gmp_intval();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    gmp_invert();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    gmp_jacobi();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    gmp_legendre();
+//  ^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^ entity.name.structure.function.php
+    gmp_mod();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    gmp_mul();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    gmp_neg();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    gmp_nextprime();
+//  ^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^ entity.name.structure.function.php
+    gmp_or();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.structure.function.php
+    gmp_perfect_square();
+//  ^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    gmp_popcount();
+//  ^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^ entity.name.structure.function.php
+    gmp_pow();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    gmp_powm();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.structure.function.php
+    gmp_prob_prime();
+//  ^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^ entity.name.structure.function.php
+    gmp_random_bits();
+//  ^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    gmp_random_range();
+//  ^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    gmp_random_seed();
+//  ^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^ entity.name.structure.function.php
+    gmp_random();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    gmp_root();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.structure.function.php
+    gmp_rootrem();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    gmp_scan0();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    gmp_scan1();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.structure.function.php
+    gmp_setbit();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    gmp_sign();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.structure.function.php
+    gmp_sqrt();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.structure.function.php
+    gmp_sqrtrem();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    gmp_strval();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.structure.function.php
+    gmp_sub();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+    gmp_testbit();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.structure.function.php
+    gmp_xor();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.structure.function.php
+?>

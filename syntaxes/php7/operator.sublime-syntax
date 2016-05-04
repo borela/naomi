@@ -169,14 +169,22 @@ contexts:
       scope: keyword.operator.string.php
       pop: true
 
-  # |  Operator  |  Description      |
-  # | :--------: | :---------------- |
-  # | instanceof |                   |
-  # |     ->     | Member access.    |
-  # |     ::     | Scope resolution. |
+  # |  Operator  |  Description        |
+  # | :--------: | :------------------ |
+  # | instanceof |                     |
+  # |     =>     | Key association.    |
+  # |     ->     | Member access.      |
+  # |     ::     | Scope resolution.   |
+  # |    ...     | Argument unpacking. |
   other-operator:
     - match: (?xi)\binstanceof\b
       scope: keyword.operator.type.php
+      pop: true
+    - match: "\\.\\.\\."
+      scope: keyword.operator.argument.unpacking.php
+      pop: true
+    - match: "=>"
+      scope: keyword.operator.key.association.php
       pop: true
     - match: "->"
       scope: keyword.operator.member.access.php

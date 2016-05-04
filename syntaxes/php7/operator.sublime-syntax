@@ -172,6 +172,7 @@ contexts:
   # |  Operator  |  Description        |
   # | :--------: | :------------------ |
   # | instanceof |                     |
+  # |     &      | Reference.          |
   # |     =>     | Key association.    |
   # |     ->     | Member access.      |
   # |     ::     | Scope resolution.   |
@@ -179,6 +180,9 @@ contexts:
   other-operator:
     - match: (?xi)\binstanceof\b
       scope: keyword.operator.type.php
+      pop: true
+    - match: "&(?![&=])"
+      scope: keyword.operator.reference.php
       pop: true
     - match: "\\.\\.\\."
       scope: keyword.operator.argument.unpacking.php

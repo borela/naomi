@@ -22,7 +22,8 @@ contexts:
     - match: |
         (?xi)
         \b(
-          (?> break
+          (?> as
+            | break
             | case
             | catch
             | continue

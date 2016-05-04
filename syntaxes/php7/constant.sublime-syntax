@@ -24,4 +24,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/constant/support/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/constant/support/string.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/constant/support/magic.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/constant/support/math.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/constant/support/math-gmp.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/constant/normal.sublime-syntax

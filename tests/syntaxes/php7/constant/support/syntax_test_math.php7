@@ -1,0 +1,62 @@
+// SYNTAX TEST "Packages/Naomi/syntaxes/naomi.php7.sublime-syntax"
+
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+<?php
+    M_PI
+//  ^^^^ support.constant.php
+    M_E
+//  ^^^ support.constant.php
+    M_LOG2E
+//  ^^^^^^^ support.constant.php
+    M_LOG10E
+//  ^^^^^^^^ support.constant.php
+    M_LN2
+//  ^^^^^ support.constant.php
+    M_LN10
+//  ^^^^^^ support.constant.php
+    M_PI_2
+//  ^^^^^^ support.constant.php
+    M_PI_4
+//  ^^^^^^ support.constant.php
+    M_1_PI
+//  ^^^^^^ support.constant.php
+    M_2_PI
+//  ^^^^^^ support.constant.php
+    M_SQRTPI
+//  ^^^^^^^^ support.constant.php
+    M_2_SQRTPI
+//  ^^^^^^^^^^ support.constant.php
+    M_SQRT2
+//  ^^^^^^^ support.constant.php
+    M_SQRT3
+//  ^^^^^^^ support.constant.php
+    M_SQRT1_2
+//  ^^^^^^^^^ support.constant.php
+    M_LNPI
+//  ^^^^^^ support.constant.php
+    M_EULER
+//  ^^^^^^^ support.constant.php
+    PHP_ROUND_HALF_UP
+//  ^^^^^^^^^^^^^^^^^ support.constant.php
+    PHP_ROUND_HALF_DOWN
+//  ^^^^^^^^^^^^^^^^^^^ support.constant.php
+    PHP_ROUND_HALF_EVEN
+//  ^^^^^^^^^^^^^^^^^^^ support.constant.php
+    PHP_ROUND_HALF_ODD
+//  ^^^^^^^^^^^^^^^^^^ support.constant.php
+    NAN
+//  ^^^ support.constant.php
+    INF
+//  ^^^ support.constant.php
+?>

@@ -1,0 +1,65 @@
+{
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not
+    // use this file except in compliance with the License. You may obtain a copy of
+    // the License at
+    //
+    //     http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software
+    // distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    // WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+    // License for the specific language governing permissions and limitations under
+    // the License.
+
+    "scope": "embedded.content.php - comment",
+    "completions": [
+        "gmp_abs",
+        "gmp_add",
+        "gmp_and",
+        "gmp_clrbit",
+        "gmp_cmp",
+        "gmp_com",
+        "gmp_div",
+        "gmp_div_q",
+        "gmp_div_qr",
+        "gmp_div_r",
+        "gmp_divexact",
+        "gmp_export",
+        "gmp_fact",
+        "gmp_gcd",
+        "gmp_gcdext",
+        "gmp_hamdist",
+        "gmp_import",
+        "gmp_init",
+        "gmp_intval",
+        "gmp_invert",
+        "gmp_jacobi",
+        "gmp_legendre",
+        "gmp_mod",
+        "gmp_mul",
+        "gmp_neg",
+        "gmp_nextprime",
+        "gmp_or",
+        "gmp_perfect_square",
+        "gmp_popcount",
+        "gmp_pow",
+        "gmp_powm",
+        "gmp_prob_prime",
+        "gmp_random",
+        "gmp_random_bits",
+        "gmp_random_range",
+        "gmp_random_seed",
+        "gmp_root",
+        "gmp_rootrem",
+        "gmp_scan0",
+        "gmp_scan1",
+        "gmp_setbit",
+        "gmp_sign",
+        "gmp_sqrt",
+        "gmp_sqrtrem",
+        "gmp_strval",
+        "gmp_sub",
+        "gmp_testbit",
+        "gmp_xor"
+    ]
+}

@@ -1,0 +1,38 @@
+// SYNTAX TEST "Packages/Naomi/syntaxes/naomi.php7.sublime-syntax"
+
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+<?php
+    PHP_OUTPUT_HANDLER_START
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+    PHP_OUTPUT_HANDLER_WRITE
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+    PHP_OUTPUT_HANDLER_FLUSH
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+    PHP_OUTPUT_HANDLER_CLEAN
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+    PHP_OUTPUT_HANDLER_FINAL
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+    PHP_OUTPUT_HANDLER_CONT
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+    PHP_OUTPUT_HANDLER_END
+//  ^^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+    PHP_OUTPUT_HANDLER_CLEANABLE
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+    PHP_OUTPUT_HANDLER_FLUSHABLE
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+    PHP_OUTPUT_HANDLER_REMOVABLE
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+    PHP_OUTPUT_HANDLER_STDFLAGS
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+?>

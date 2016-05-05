@@ -163,7 +163,7 @@ contexts:
   param-types:
     - match: (?=\$|$)
       pop: true
-    - match: ""
+    - match: (?=\S)
       push: [
         param-type-delimiter,
         param-type
@@ -212,7 +212,7 @@ contexts:
   return-types:
     - match: (?=$)
       pop: true
-    - match: ""
+    - match: (?=\S)
       push: [
         return-type-delimiter,
         return-type

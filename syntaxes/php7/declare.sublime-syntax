@@ -84,36 +84,37 @@ contexts:
       set: bracketed-body
 
   body-content:
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/declare.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/namespace.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/use.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/modifier.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/keyword.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/trait.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/interface.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/class.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/new-object.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
-        - match: ""
-          pop: true
+    - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/declare.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/namespace.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/use.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/modifier.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/keyword.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/trait.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/interface.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/new-object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
 
   implicit-body:
     - meta_content_scope:
         declare.php
         declare.body.php
         declare.body.content.php
-    - match: (?=\bdeclare\b)
-      pop: true
-    - include: body-content
+    - include: implicit-body-content
+
+  implicit-body-content:
+    - match: (?=\S)
+      push:
+        - include: body-content
+        - match: (?=\bdeclare\b)
+          pop: true
 
   bracketed-body:
     - meta_content_scope: >-
@@ -126,4 +127,11 @@ contexts:
         declare.body.php
         punctuation.delimiter.structure.declare.body.end.php
       pop: true
-    - include: body-content
+    - include: bracketed-body-content
+
+  bracketed-body-content:
+    - match: (?=\S)
+      push:
+        - include: body-content
+        - match: (?=\})
+          pop: true

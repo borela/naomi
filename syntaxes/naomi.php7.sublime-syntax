@@ -46,7 +46,7 @@ contexts:
     - match: \?>
       scope: punctuation.embedded.end.php
       pop: true
-    - match: ""
+    - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
@@ -65,5 +65,5 @@ contexts:
         - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
-        - match: ""
+        - match: (?=\?>)
           pop: true

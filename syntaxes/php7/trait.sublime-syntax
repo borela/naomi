@@ -55,7 +55,7 @@ contexts:
     - include: body-content
 
   body-content:
-    - match: ""
+    - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
@@ -68,5 +68,5 @@ contexts:
         - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
-        - match: ""
+        - match: (?=\})
           pop: true

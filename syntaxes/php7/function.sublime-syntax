@@ -185,6 +185,26 @@ contexts:
       pop: true
     - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
+    # Constant inside class.
+    - match: |
+        (?xi)
+        (?={{commonIdentifier}})
+      push: [
+        default-value-constant,
+        default-value-scope-operator,
+        default-value-type
+      ]
+
+  default-value-type:
+    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
+
+  default-value-scope-operator:
+    - match: "::"
+      scope: keyword.operator.scope.resolution.php
+      pop: true
+
+  default-value-constant:
+    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
 
   param-delimiter:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax

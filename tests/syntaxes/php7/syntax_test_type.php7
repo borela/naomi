@@ -54,6 +54,9 @@
     int
 //  ^^^ support.type.php
 //  ^^^ entity.name.type.php
+    parent
+//  ^^^^^^ support.type.php
+//  ^^^^^^ entity.name.type.php
     string
 //  ^^^^^^ support.type.php
 //  ^^^^^^ entity.name.type.php

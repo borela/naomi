@@ -31,10 +31,21 @@ contexts:
     - match: |
         (?x)
         \B(\$)(
-          (?> this
-            | _GET
-            | _POST
-            | _COOKIE
+          (?> argc
+            | argv
+            | php_errormsg
+            | http_response_header
+            | this
+            | GLOBALS
+            | _
+              (?> SERVER
+                | GET
+                | POST
+                | FILES
+                | REQUEST
+                | SESSION
+                | COOKIE
+              )
           )
         )\b
       captures:

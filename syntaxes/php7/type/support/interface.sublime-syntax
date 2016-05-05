@@ -19,7 +19,20 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/php7/type/support/core.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/type/support/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/type/support/interface.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/type/normal.sublime-syntax
+    - match: |
+        (?x)
+        ((?>\\|\b))
+        (
+          (?> Traversable
+            | IteratorAggregate
+            | Iterator
+            | Throwable
+            | ArrayAccess
+            | Serializable
+          )
+        )\b
+      captures:
+        0: support.interface.php
+        1: punctuation.delimiter.type.php
+        2: entity.name.type.php
+      pop: true

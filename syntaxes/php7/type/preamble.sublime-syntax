@@ -1,0 +1,54 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [a-z\x{7f}-\x{ff}_]
+    [a-z\x{7f}-\x{ff}0-9_]*
+
+  namespacePath: |
+    (?>
+      (?:
+        ((?>\\|\b))
+        ({{commonIdentifier}})
+        (\\)
+        ({{commonIdentifier}})
+        (?=\\{{commonIdentifier}})
+      )
+      |
+      (?:
+        ((?>\\|\b))
+        ({{commonIdentifier}})
+        (?=\\{{commonIdentifier}})
+      )
+    )
+
+contexts:
+  main:
+    - match: (?xi){{namespacePath}}
+      captures:
+        0: >-
+          type.php
+          namespace.path.php
+        1: punctuation.delimiter.structure.namespace.a.php
+        2: entity.name.structure.namespace.a.php
+        3: punctuation.delimiter.structure.namespace.b.php
+        4: entity.name.structure.namespace.b.php
+        5: punctuation.delimiter.structure.namespace.a.php
+        6: entity.name.structure.namespace.a.php

@@ -19,7 +19,16 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/php7/type/support/core.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/type/support/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/type/support/interface.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/type/normal.sublime-syntax
+    - match: |
+        (?x)
+        ((?>\\|\b))
+        (
+          (?> Closure
+            | Generator
+          )
+        )\b
+      captures:
+        0: support.class.php
+        1: punctuation.delimiter.type.php
+        2: entity.name.type.php
+      pop: true

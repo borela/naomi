@@ -14,24 +14,30 @@ Thank you for considering contributing to this project!
 than horizontally.
 * Avoid abbreviations and be descriptive as possible.
 
+## Commit messages
+
+Commit messages will follow [Tim Pope's guidelines][20], I did the mistake of not
+following correctly and [now][21] [some][22] [messages][23] cannot be visualized
+perfectly on some tools, so, learn from my mistakes.
+
 ## Color scheme tips
 
 Look at the color schemes provided to have an idea of how to create your own and
-use [ScopeHunter][1] to understand how
+use [ScopeHunter][11] to understand how
 the code is being highlighted.
 
 ## Syntax tips
 
-#### 1: Read the [docs][0]
+#### 1: Read the [docs][10]
 
 There's a basic tutorial on how to write the syntax files and tests on sublime's
-[official documentation][0].
+[official documentation][10].
 
-#### 2: Install [ScopeHunter][1]
+#### 2: Install [ScopeHunter][11]
 
-This [tool][1] is essential when you
-are debugging the highlighting, it has an option `Toggle Instant Scoper` which
-shows the scopes in real time as you move the cursor.
+This [tool][11] is essential when you are debugging the highlighting, it has an
+option `Toggle Instant Scoper` which shows the scopes in real time as you move
+the cursor.
 
 #### 3: Create the tests
 
@@ -110,5 +116,10 @@ found, push the `parameters` context. The `parameters` context is a loop that
 will first check for the end of the list and then try to match the type followed
 by the variable.
 
-[0]: https://www.sublimetext.com/docs/3/syntax.html
-[1]: https://github.com/facelessuser/ScopeHunter
+[10]: https://www.sublimetext.com/docs/3/syntax.html
+[11]: https://github.com/facelessuser/ScopeHunter
+
+[20]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+[21]: https://github.com/borela/naomi/commit/91cc07753bff53c7f003d674a6e607b0979f3eae
+[22]: https://github.com/borela/naomi/commit/e1e95cc0279614e92938d1181391217cbcaf2b07
+[23]: https://github.com/borela/naomi/commit/84af9160bc57dd607ed9afda58338e50c09fc080

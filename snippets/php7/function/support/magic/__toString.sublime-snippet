@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmtostring</tabTrigger>
+    <description>__toString declaration.</description>
+    <content><![CDATA[
+public function __toString (): string
+{
+    ${1}
+}
+]]></content>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decminvoke</tabTrigger>
+    <description>__invoke declaration.</description>
+    <content><![CDATA[
+public function __invoke (...\$parameters)
+{
+    ${1}
+}
+]]></content>
+</snippet>

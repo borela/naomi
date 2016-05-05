@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmclone</tabTrigger>
+    <description>__clone declaration.</description>
+    <content><![CDATA[
+public function __clone()
+{
+    ${1}
+}
+]]></content>
+</snippet>

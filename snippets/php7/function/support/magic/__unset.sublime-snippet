@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmunset</tabTrigger>
+    <description>__unset declaration.</description>
+    <content><![CDATA[
+public function __unset (string \$name)
+{
+    ${1}
+}
+]]></content>
+</snippet>

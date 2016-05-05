@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmwakeup</tabTrigger>
+    <description>__wakeup declaration.</description>
+    <content><![CDATA[
+public function __wakeup()
+{
+    ${1}
+}
+]]></content>
+</snippet>

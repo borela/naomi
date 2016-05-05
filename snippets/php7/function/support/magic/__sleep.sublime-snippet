@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmsleep</tabTrigger>
+    <description>__sleep declaration.</description>
+    <content><![CDATA[
+public function __sleep()
+{
+    ${1}
+}
+]]></content>
+</snippet>

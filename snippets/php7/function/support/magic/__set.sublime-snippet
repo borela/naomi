@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmset</tabTrigger>
+    <description>__set declaration.</description>
+    <content><![CDATA[
+public function __set (string \$name, \$value)
+{
+    ${1}
+}
+]]></content>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmdestruct</tabTrigger>
+    <description>__destruct declaration.</description>
+    <content><![CDATA[
+public function __destruct()
+{
+    ${1}
+}
+]]></content>
+</snippet>

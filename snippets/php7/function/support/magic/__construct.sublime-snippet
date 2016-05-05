@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmconstruct</tabTrigger>
+    <description>__construct declaration.</description>
+    <content><![CDATA[
+public function __construct(${1:parameters})
+{
+    ${2}
+}
+]]></content>
+</snippet>

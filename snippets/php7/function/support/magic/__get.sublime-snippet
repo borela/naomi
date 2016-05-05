@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmget</tabTrigger>
+    <description>__get declaration.</description>
+    <content><![CDATA[
+public function __get (string \$name)
+{
+    ${1}
+}
+]]></content>
+</snippet>

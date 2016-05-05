@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmdebuginfo</tabTrigger>
+    <description>__debugInfo declaration.</description>
+    <content><![CDATA[
+public function __debugInfo(): array
+{
+    ${1}
+}
+]]></content>
+</snippet>

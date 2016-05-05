@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmcallstatic</tabTrigger>
+    <description>__callStatic declaration.</description>
+    <content><![CDATA[
+public static function __callStatic(string \$name, array \$parameters)
+{
+    ${1}
+}
+]]></content>
+</snippet>

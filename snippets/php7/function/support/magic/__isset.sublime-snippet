@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmisset</tabTrigger>
+    <description>__isset declaration.</description>
+    <content><![CDATA[
+public function __isset (string \$name): bool
+{
+    ${1}
+}
+]]></content>
+</snippet>

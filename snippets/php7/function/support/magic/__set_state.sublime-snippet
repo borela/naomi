@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmsetstate</tabTrigger>
+    <description>__set_state declaration.</description>
+    <content><![CDATA[
+public static function __set_state (array \$properties)
+{
+    ${1}
+}
+]]></content>
+</snippet>

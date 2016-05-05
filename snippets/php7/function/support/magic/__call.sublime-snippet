@@ -1,0 +1,11 @@
+<snippet>
+    <scope>embedded.content.php</scope>
+    <tabTrigger>decmcall</tabTrigger>
+    <description>__call declaration.</description>
+    <content><![CDATA[
+public function __call(string \$name, array \$parameters)
+{
+    ${1}
+}
+]]></content>
+</snippet>

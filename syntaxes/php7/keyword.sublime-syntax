@@ -26,6 +26,7 @@ contexts:
             | break
             | case
             | catch
+            | const
             | continue
             | default
             | do

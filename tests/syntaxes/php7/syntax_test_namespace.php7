@@ -15,6 +15,7 @@
 <?php
     namespace \Namespace\Namespace\Namespace;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ namespace.php
+//            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ namespace.path.php
 //  ^^^^^^^^^ keyword.structure.namespace.php
 //                                          ^ namespace.body.php
 //                                          ^ punctuation.delimiter.structure.namespace.body.begin.php
@@ -31,6 +32,7 @@
 
     namespace Namespace\Namespace\Namespace;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ namespace.php
+//            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ namespace.path.php
 //  ^^^^^^^^^ keyword.structure.namespace.php
 //                                         ^ namespace.body.php
 //                                         ^ punctuation.delimiter.structure.namespace.body.begin.php
@@ -46,6 +48,7 @@
 
     namespace \Namespace\Namespace\Namespace {
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ namespace.php
+//            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ namespace.path.php
 //                                           ^ namespace.body.php
 //                                           ^ punctuation.delimiter.structure.namespace.body.begin.php
 //  ^^^^^^^^^ keyword.structure.namespace.php
@@ -66,6 +69,7 @@
 
     namespace Namespace\Namespace\Namespace {
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ namespace.php
+//            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ namespace.path.php
 //  ^^^^^^^^^ keyword.structure.namespace.php
 //                                          ^ namespace.body.php
 //                                          ^ punctuation.delimiter.structure.namespace.body.begin.php

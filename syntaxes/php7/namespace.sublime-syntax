@@ -20,21 +20,6 @@ variables:
     [a-z\x{7f}-\x{ff}_]
     [a-z\x{7f}-\x{ff}0-9_]*
 
-  namespacePath: |
-    (?>
-      (?:
-        ((?>\\|\b))
-        ({{commonIdentifier}})
-        (\\)
-        ({{commonIdentifier}})
-      )
-      |
-      (?:
-        ((?>\\|\b))
-        ({{commonIdentifier}})
-      )
-    )
-
 scope: ...
 
 contexts:
@@ -59,15 +44,7 @@ contexts:
         punctuation.delimiter.structure.namespace.body.begin.php
       set: bracketed-body
     # namespace's path.
-    - match: (?xi){{namespacePath}}
-      captures:
-        0: namespace.path.php
-        1: punctuation.delimiter.structure.namespace.a.php
-        2: entity.name.structure.namespace.a.php
-        3: punctuation.delimiter.structure.namespace.b.php
-        4: entity.name.structure.namespace.b.php
-        5: punctuation.delimiter.structure.namespace.a.php
-        6: entity.name.structure.namespace.a.php
+    - include: Packages/Naomi/syntaxes/php7/namespace/path.sublime-syntax
 
   body-content:
     - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
@@ -99,12 +76,10 @@ contexts:
     - include: implicity-body-content
 
   implicity-body-content:
-    - match: ""
+    - match: (?=\S)
       push:
-        - match: (?=\bnamespace\b)
-          pop: true
         - include: body-content
-        - match: ""
+        - match: (?=\bnamespace\b)
           pop: true
 
   bracketed-body:
@@ -122,8 +97,8 @@ contexts:
     - include: bracketed-body-content
 
   bracketed-body-content:
-    - match: ""
+    - match: (?=\S)
       push:
         - include: body-content
-        - match: ""
+        - match: (?=\})
           pop: true

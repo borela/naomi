@@ -55,10 +55,10 @@ contexts:
   string:
     - meta_scope: string.quoted.double.php
     - meta_content_scope: string.content.php
-    - match: (?<!\\)"
+    - include: escaped-character
+    - match: \"
       scope: punctuation.delimiter.string.end.php
       pop: true
-    - include: escaped-character
     - include: Packages/Naomi/syntaxes/php7/literal/string/embedded-variable/simple.sublime-syntax
 
   escaped-character:

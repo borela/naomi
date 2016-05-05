@@ -58,17 +58,15 @@ contexts:
         (?x)
         (?> __construct
           | __destruct
-          | __callStatic
-          | __call
+          | __call(?:Static)?
           | __get
-          | __set
+          | __set(?:_state)?
           | __isset
           | __unset
           | __sleep
           | __wakeup
           | __toString
           | __invoke
-          | __set_state
           | __clone
           | __debugInfo
         )

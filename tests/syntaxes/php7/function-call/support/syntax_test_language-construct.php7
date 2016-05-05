@@ -34,16 +34,10 @@
     include
 //  ^^^^^^^ support.function.call.php
 //  ^^^^^^^ entity.name.structure.function.php
-    isset
-//  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
     require_once
 //  ^^^^^^^^^^^^ support.function.call.php
 //  ^^^^^^^^^^^^ entity.name.structure.function.php
     require
 //  ^^^^^^^ support.function.call.php
 //  ^^^^^^^ entity.name.structure.function.php
-    unset
-//  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
 ?>

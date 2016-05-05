@@ -23,12 +23,41 @@ contexts:
         (?x)
         ((?>\\|\b))
         (
-          (?> clone
-            | die
-            | e
-              (?>cho|val|xit)
-            | include(?:_once)?
-            | require(?:_once)?
+          (?> boolval
+            | debug_zval_dump
+            | doubleval
+            | empty
+            | floatval
+            | get_defined_vars
+            | get_resource_type
+            | gettype
+            | import_request_variables
+            | intval
+            | is_
+              (?> array
+                | bool
+                | callable
+                | double
+                | float
+                | int(?:eger)?
+                | long
+                | null
+                | numeric
+                | object
+                | real
+                | resource
+                | scalar
+                | string
+              )
+            | isset
+            | print_r
+            | serialize
+            | settype
+            | strval
+            | unserialize
+            | unset
+            | var_
+              (?>dump|export)
           )
         )\b
       captures:

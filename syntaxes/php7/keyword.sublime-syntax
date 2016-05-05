@@ -30,7 +30,6 @@ contexts:
             | default
             | do
             | else(?:if)?
-            | empty
             | end
               (?> for(?:each)
                 | if

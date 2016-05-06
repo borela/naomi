@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "Naomi: Run syntax tests",
+        "command": "naomi_run_syntax_tests"
+    }
+]

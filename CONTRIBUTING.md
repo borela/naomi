@@ -1,125 +1,317 @@
 # Contributing
 
-Thank you for considering contributing to this project!
+Thank you for considering contributing to this project! The following is a set
+of guidelines not rules, use your best judgment and feel free to propose changes
+to this document in a pull request.
 
-1. Fork the repository.
-2. Do your changes on a separate branch.
-3. Send the pull request.
+## Table of contents
 
-## Code style
+[How can I contribute?](#how-can-i-contribute)
+  * [Reporting bugs](#reporting-bugs)
+    * [How do I submit a good bug report?](#how-do-i-submit-a-good-bug-report)
+    * [Template for submitting bug reports](#template-for-submitting-bug-reports)
+  * [Suggesting enhancements](#suggesting-enhancements)
+    * [How do I submit a good enhancement suggestion?](#how-do-i-submit-a-good-enhancement-suggestion)
+    * [Template for submitting enhancement suggestions](#template-for-submitting-enhancement-suggestions)
+  * [Pull requests](#pull-requests)
 
-* Indent syntax files with 2 spaces.
-* Indent other files with 4 spaces.
-* Try to limit the line length to 80 characters, it's easier to scroll vertically
-than horizontally.
-* Avoid abbreviations and be descriptive as possible.
+[Style guides](#style-guides)
+  * [Commit messages](#commit-messages)
+    * [Example of a commit message](#example-of-a-commit-message)
+  * [Color schemes](#color-schemes-style-guide)
+  * [Syntaxes](#syntaxes-style-guide)
+  * [Tests](#tests-style-guide)
 
-## Commit messages
+[License headers](#license-headers)
+[Useful links](#useful-links)
 
-Commit messages will follow [Tim Pope's guidelines][20], I did the mistake of not
-following correctly and [now][21] [some][22] [messages][23] cannot be visualized
-perfectly on some tools, so, learn from my mistakes.
+## How can I contribute?
 
-## Color scheme tips
+### Reporting bugs
 
-Look at the color schemes provided to have an idea of how to create your own and
-use [ScopeHunter][11] to understand how
-the code is being highlighted.
+When you are creating a bug report, please [include as many details as possible]
+(#how-do-i-submit-a-good-bug-report) and, If you’d like, you can use
+[this template](#template-for-submitting-bug-reports) to structure the
+information.
 
-## Syntax tips
+#### How do I submit a good bug report?
 
-#### 1: Read the [docs][10]
+Bugs are tracked as [GitHub issues][issues], explain the problem and include
+additional details to help maintainers reproduce it:
 
-There's a basic tutorial on how to write the syntax files and tests on sublime's
-[official documentation][10].
+* Use a clear and descriptive title for the issue.
 
-#### 2: Install [ScopeHunter][11]
+* Describe the exact steps which reproduce the problem in as many details as
+  possible.
 
-This [tool][11] is essential when you are debugging the highlighting, it has an
-option `Toggle Instant Scoper` which shows the scopes in real time as you move
-the cursor.
+* Provide specific examples to demonstrate those steps.
 
-#### 3: Create the tests
+* Describe the behavior you observed after following them.
 
-Try to create tests for all cases and check if your changes broke any of the
-previous ones.
+* Explain which behavior you expected to see and why.
 
-#### 4: Variables
+* Include screenshots and animated GIFs which shows the described steps and
+  clearly demonstrates the problem.
 
-In syntax files you can declare variables at the top of the file, use them to
-prevent repetion.
+* If it wasn’t triggered by a specific action, describe what you were doing
+  before the it happened and share more information using the guidelines below.
 
-#### 5: Break the regex into multiple lines
+Provide more context by answering these questions:
 
-Break your regexes into multiple lines if it would make it clearer, just
-remeber to use the option `(?x)` to ignore the white spaces.
+* Did the problem start happening recently or has it always existed?
 
-#### 6: Be awared of ignored spaces
+* If it started happening recently, can you reproduce the problem in an
+  older version? You can download them from [the releases page][releases].
 
-When you add the `(?x)` option to your regex, any whitespace is ignored, so, in
-those cases, if you need to represent a pattern that includes it, you have to
-use the `\s` pattern.
+* Can you reliably reproduce the issue? If not, provide details about how often
+  it happens and under which conditions it normally happens.
 
-#### 7: Atomic groups
+Include details about your configuration and environment:
 
-Often times you need to check against a list of keywords, symbols, etc... use
-atomic groups as it will stop after the first match is found, making the regex
-a lot faster.
+* Which version are you using?
 
-#### 8: Design for sequence
+* What’s the name and version of the OS you’re using?
 
-Most languages are designed in a way that you can expect tokens to have some
-sort of sequence.
+#### Template for submitting bug reports
 
-For example, in PHP 7 you can declare the type hint before a function parameter,
-it is optional and after it only a variable is expected.
+    [Short description of problem...]
 
-When you highlight like this, you don't need to mark regions as invalid, the
-programmer will know something is wrong if the color isn't right, so it'll make
-the syntax file simpler.
+    **Reproduction steps:**
 
-Here's how it would work, consider this function:
+    1. [...]
+    2. [...]
+    3. [...]
 
-    function foo($paramter1, string $parameter2)
+    **Expected behavior:**
 
-And the following syntax:
+    [Describe the expected behavior...]
 
-    main:
-      - match: \(
-        scope: punctuation.structure.parameters.begin.php
-        push: parameters
+    **Observed behavior:**
 
-    parameters:
-      - match: \)
-        pop: true
-      - match: ""
-        push: [
-          variable,
-          type
-        ]
+    [Describe the observed behavior...]
 
-    type:
-      - match: [a-z]*
-        scope: type.php
-        pop: true
-      # The type is optional, check it is a variable.
-      - match: (?=\$)
-        pop: true
+    **Screenshots and GIFs**
 
-    variable:
-      - match: \$[a-z]*
-        scope: variable.php
-        pop: true
+    ![Screenshots and GIFs which shows the steps and the issue...](URL)
 
-The `main` context will try to match the beginning of the parameters list and if
-found, push the `parameters` context. The `parameters` context is a loop that
-will first check for the end of the list and then try to match the type followed
-by the variable.
+    **Version:** [Version...]
+    **OS and version:** [OS name and version...]
 
-[10]: https://www.sublimetext.com/docs/3/syntax.html
-[11]: https://github.com/facelessuser/ScopeHunter
+    **Additional information:**
 
-[20]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
-[21]: https://github.com/borela/naomi/commit/91cc07753bff53c7f003d674a6e607b0979f3eae
-[22]: https://github.com/borela/naomi/commit/e1e95cc0279614e92938d1181391217cbcaf2b07
-[23]: https://github.com/borela/naomi/commit/84af9160bc57dd607ed9afda58338e50c09fc080
+    * It started happening recently: [Yes/No]
+
+    * It can be reliably reproduced: [Yes/No]
+
+### Suggesting Enhancements
+
+When you are creating an enhancement suggestion, please [include as many details
+as possible](#how-do-i-submit-a-good-enhancement-suggestion) and, If you’d like,
+you can use [this template](#template-for-submitting-enhancement-suggestions) to
+structure the information.
+
+#### How do I submit a good enhancement suggestion?
+
+Enhancement suggestions are tracked as [GitHub issues][issues], create an issue
+as follows:
+
+* Use a clear and descriptive title.
+
+* Provide a step-by-step description of the suggested enhancement.
+
+* Provide examples.
+
+* Describe the current behavior, explain which one you expected to see and why.
+
+* Include screenshots and animated GIFs which help you demonstrate your idea.
+
+* Explain why this enhancement would be useful.
+
+* Specify which version you’re using.
+
+* Specify the name and version of the OS you’re using.
+
+#### Template for submitting enhancement suggestions
+
+    [Short description of suggestion...]
+
+    **Steps which explain the enhancement**
+
+    1. [...]
+    2. [...]
+    3. [...]
+
+    **Suggested behavior**
+
+    [Describe the suggested behavior...]
+
+    **Current behavior**
+
+    [Describe the current behavior...]
+
+    **Why would the enhancement be useful to most users**
+
+    [Explain why the enhancement would be useful to most users...]
+
+    **Screenshots and GIFs**
+
+    ![Screenshots and GIFs which shows the steps and the suggestion...](URL)
+
+    **Version:** [Version...]
+    **OS and version:** [OS name and version...]
+
+### Pull requests
+
+* Include screenshots and animated GIFs in your pull request whenever possible.
+
+* Follow the style guides.
+
+* Use your real name and email in the commits.
+
+## Style guides
+
+### Commit messages
+
+In the beginning of the project, there were no guides on commit messages and
+[now][badCommit1] [some][badCommit2] [messages][badCommit3] cannot be visualized
+perfectly on some tools and github, to prevent further mistakes, use the
+following style:
+
+* Use the present tense: “*Add feature.*” instead of “*Added feature.*”.
+
+* Use the imperative mood: “*Move file to...*” instead of “*Moves file to...*”.
+
+* Limit the first line to 50 characters or less.
+
+* Limit the details to 70 characters.
+
+* Use asterisks for bullet points.
+
+* Use a hanging indent for bullet points that goes through multiple lines.
+
+* Reference issues and pull requests liberally.
+
+#### Example of a commit message:
+
+    Capitalized, short (50 chars or less) summary.
+
+    More detailed explanatory text, if necessary.  Wrap it to about 70
+    characters. In some contexts, the first line is treated as the
+    subject of an email and the rest of the text as the body. The blank
+    line separating the summary from the body is critical unless you omit
+    the body entirely.
+
+    Further paragraphs come after blank lines.
+
+    * An asterisk followed by a single space is used for bullet points
+      with blank lines in between them.
+
+    * Use a hanging indent for bullet points that goes through multiple
+      lines.
+
+### Color schemes style guide
+
+* Create an unique uuid for your color scheme.
+
+* Indent with 4 spaces.
+
+* Use blank lines to group related sections of code.
+
+* Add the appropriate [license header](#license-headers).
+
+### Syntaxes style guide
+
+* Name the main syntax file using the following format
+  `naomi.[language][version].sublime-syntax`.
+
+* Additional files must not have the `name` or `file_extension` keys in the
+  header. Also, they must have the key `hidden` set to `true` and the `scope`
+  set to `...`.
+
+* Break the syntax into multiple files to make it easier to maintain and extend.
+
+* Break the regexes into multiple lines. This rule can be broken if the having
+  the patterns on the same line will make it clearer.
+
+* Design for sequence. It means that you must never use the look behind pattern
+  and matches usually pop the current context from the stack.
+
+* Add the appropriate [license header](#license-headers).
+
+### Tests style guide
+
+* Create multiple files to group related tests.
+
+* Test as much as possible.
+
+* Add the appropriate [license header](#license-headers).
+
+### License headers
+
+This project uses the [Apache 2.0 license][license] and one of its requirements
+is a header which makes it easier for other people to know which license was
+used without having to look into the root of the project.
+
+In the original header it has the author and an email, but in this case it won't
+be necessary as one of the requirements is that you use your real name and email
+in the commits so that we can track the author easily.
+
+Keep in mind that not all files need a license header, configuration files are a
+good example of that. So, if a file required careful design on your part, use
+of these:
+
+    # Licensed under the Apache License, Version 2.0 (the "License"); you may not
+    # use this file except in compliance with the License. You may obtain a copy of
+    # the License at
+    #
+    #     http://www.apache.org/licenses/LICENSE-2.0
+    #
+    # Unless required by applicable law or agreed to in writing, software
+    # distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+    # License for the specific language governing permissions and limitations under
+    # the License.
+
+    <!--
+     | Licensed under the Apache License, Version 2.0 (the "License"); you may not
+     | use this file except in compliance with the License. You may obtain a copy of
+     | the License at
+     |
+     |     http://www.apache.org/licenses/LICENSE-2.0
+     |
+     | Unless required by applicable law or agreed to in writing, software
+     | distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+     | WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+     | License for the specific language governing permissions and limitations under
+     | the License.
+    -->
+
+    // Licensed under the Apache License, Version 2.0 (the "License"); you may not
+    // use this file except in compliance with the License. You may obtain a copy of
+    // the License at
+    //
+    //     http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software
+    // distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    // WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+    // License for the specific language governing permissions and limitations under
+    // the License.
+
+## Useful links
+
+* [Sublime text API][sublimeApiDocs]
+* [Sublime text syntax][sublimeSynDocs]
+* [Scope hunter][scopeHunter]
+
+[sublimeApiDocs]: https://www.sublimetext.com/docs/3/syntax.html
+[sublimeSynDocs]: https://www.sublimetext.com/docs/3/syntax.html
+[scopeHunter]: https://github.com/facelessuser/ScopeHunter
+
+[badCommit1]: https://github.com/borela/naomi/commit/91cc07753bff53c7f003d674a6e607b0979f3eae
+[badCommit2]: https://github.com/borela/naomi/commit/e1e95cc0279614e92938d1181391217cbcaf2b07
+[badCommit3]: https://github.com/borela/naomi/commit/84af9160bc57dd607ed9afda58338e50c09fc080
+
+[license]: http://www.apache.org/licenses/LICENSE-2.0
+[issues]: https://guides.github.com/features/issues/
+[releases]: https://github.com/borela/naomi/releases

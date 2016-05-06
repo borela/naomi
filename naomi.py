@@ -15,10 +15,6 @@ import sublime
 import sublime_api
 import sublime_plugin
 
-naomiPath = sublime.packages_path() + '/Naomi';
-naomiTestsPath = naomiPath + '/tests';
-naomiSyntaxTestsPath = naomiTestsPath + '/syntaxes';
-
 class OutputPanel(object):
     def __init__(self, window, name):
         self.name = name
@@ -55,7 +51,7 @@ class NaomiRunSyntaxTestsCommand(sublime_plugin.WindowCommand):
         totalFailedAssertions = 0
         messages = ''
 
-        for root, directories, files in os.walk(naomiSyntaxTestsPath):
+        for root, directories, files in os.walk(sublime.packages_path() + '/Naomi/tests/syntaxes'):
             for file in files:
                 totalFiles += 1
                 target = os.path.join(root, file)

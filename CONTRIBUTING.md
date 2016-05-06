@@ -225,8 +225,8 @@ following style:
   `naomi.[language][version].sublime-syntax`.
 
 * Additional files must not have the `name` or `file_extension` keys in the
-  header. Also, they must have the key `hidden` set to `true` and the `scope`
-  set to `...`.
+  header. Also, they must have the key `scope` set to `...` and the key `hidden`
+  set to `true`.
 
 * Break the syntax into multiple files to make it easier to maintain and extend.
 
@@ -235,6 +235,9 @@ following style:
 
 * Design for sequence. It means that you must never use the look behind pattern
   and matches usually pop the current context from the stack.
+
+* Execute the command `Naomi: Run syntax tests` to check if your changes broke
+  anything.
 
 * Add the appropriate [license header](#license-headers).
 

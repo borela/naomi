@@ -269,7 +269,7 @@ of these:
 * [Sublime text syntax][sublimeSynDocs]
 * [Scope hunter][scopeHunter]
 
-[sublimeApiDocs]: https://www.sublimetext.com/docs/3/syntax.html
+[sublimeApiDocs]: https://www.sublimetext.com/docs/3/api_reference.html
 [sublimeSynDocs]: https://www.sublimetext.com/docs/3/syntax.html
 [scopeHunter]: https://github.com/facelessuser/ScopeHunter
 

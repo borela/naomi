@@ -38,36 +38,27 @@ Bugs are tracked as [GitHub issues][issues], explain the problem and include
 additional details to help maintainers reproduce it:
 
 * Use a clear and descriptive title for the issue.
-
 * Describe the exact steps which reproduce the problem in as many details as
   possible.
-
 * Provide specific examples to demonstrate those steps.
-
 * Describe the behavior you observed after following them.
-
 * Explain which behavior you expected to see and why.
-
 * Include screenshots and animated GIFs which shows the described steps and
   clearly demonstrates the problem.
-
 * If it wasn’t triggered by a specific action, describe what you were doing
   before the it happened and share more information using the guidelines below.
 
 Provide more context by answering these questions:
 
 * Did the problem start happening recently or has it always existed?
-
 * If it started happening recently, can you reproduce the problem in an
   older version? You can download them from [the releases page][releases].
-
 * Can you reliably reproduce the issue? If not, provide details about how often
   it happens and under which conditions it normally happens.
 
 Include details about your configuration and environment:
 
 * Which version are you using?
-
 * What’s the name and version of the OS you’re using?
 
 #### Template for submitting bug reports
@@ -113,19 +104,12 @@ Enhancement suggestions are tracked as [GitHub issues][issues], create an issue
 as follows:
 
 * Use a clear and descriptive title.
-
 * Provide a step-by-step description of the suggested enhancement.
-
 * Provide examples.
-
 * Describe the current behavior, explain which one you expected to see and why.
-
 * Include screenshots and animated GIFs which help you demonstrate your idea.
-
 * Explain why this enhancement would be useful.
-
 * Specify which version you’re using.
-
 * Specify the name and version of the OS you’re using.
 
 #### Template for submitting enhancement suggestions
@@ -160,9 +144,7 @@ as follows:
 ### Pull requests
 
 * Include screenshots and animated GIFs in your pull request whenever possible.
-
 * Follow the style guides.
-
 * Use your real name and email in the commits.
 
 ## Style guides
@@ -175,17 +157,11 @@ perfectly on some tools and github, to prevent further mistakes, use the
 following style:
 
 * Use the present tense: “*Add feature.*” instead of “*Added feature.*”.
-
 * Use the imperative mood: “*Move file to...*” instead of “*Moves file to...*”.
-
 * Limit the first line to 50 characters or less.
-
 * Limit the details to 70 characters.
-
 * Use asterisks for bullet points.
-
 * Use a hanging indent for bullet points that goes through multiple lines.
-
 * Reference issues and pull requests liberally.
 
 #### Example of a commit message:
@@ -209,41 +185,30 @@ following style:
 ### Color schemes style guide
 
 * Create an unique uuid for your color scheme.
-
 * Indent with 4 spaces.
-
 * Use blank lines to group related sections of code.
-
 * Add the appropriate [license header](#license-headers).
 
 ### Syntaxes style guide
 
 * Name the main syntax file using the following format
   `naomi.[language][version].sublime-syntax`.
-
 * Additional files must not have the `name` or `file_extension` keys in the
   header. Also, they must have the key `scope` set to `...` and the key `hidden`
   set to `true`.
-
 * Break the syntax into multiple files to make it easier to maintain and extend.
-
 * Break the regexes into multiple lines. This rule can be broken if the having
   the patterns on the same line will make it clearer.
-
 * Design for sequence. It means that you must never use the look behind pattern
   and matches usually pop the current context from the stack.
-
 * Execute the command `Naomi: Run syntax tests` to check if your changes broke
   anything.
-
 * Add the appropriate [license header](#license-headers).
 
 ### Tests style guide
 
 * Create multiple files to group related tests.
-
 * Test as much as possible.
-
 * Add the appropriate [license header](#license-headers).
 
 ### License headers

@@ -6,24 +6,22 @@ to this document in a pull request.
 
 ## Table of contents
 
-[How can I contribute?](#how-can-i-contribute)
-  * [Reporting bugs](#reporting-bugs)
-    * [How do I submit a good bug report?](#how-do-i-submit-a-good-bug-report)
-    * [Template for submitting bug reports](#template-for-submitting-bug-reports)
-  * [Suggesting enhancements](#suggesting-enhancements)
-    * [How do I submit a good enhancement suggestion?](#how-do-i-submit-a-good-enhancement-suggestion)
-    * [Template for submitting enhancement suggestions](#template-for-submitting-enhancement-suggestions)
-  * [Pull requests](#pull-requests)
-
-[Style guides](#style-guides)
-  * [Commit messages](#commit-messages)
-    * [Example of a commit message](#example-of-a-commit-message)
-  * [Color schemes](#color-schemes-style-guide)
-  * [Syntaxes](#syntaxes-style-guide)
-  * [Tests](#tests-style-guide)
-
-[License headers](#license-headers)
-[Useful links](#useful-links)
+1. [How can I contribute?](#how-can-i-contribute)
+  1. [Reporting bugs](#reporting-bugs)
+    1. [How do I submit a good bug report?](#how-do-i-submit-a-good-bug-report)
+    2. [Template for submitting bug reports](#template-for-submitting-bug-reports)
+  2. [Suggesting enhancements](#suggesting-enhancements)
+    1. [How do I submit a good enhancement suggestion?](#how-do-i-submit-a-good-enhancement-suggestion)
+    2. [Template for submitting enhancement suggestions](#template-for-submitting-enhancement-suggestions)
+  3. [Pull requests](#pull-requests)
+2. [Style guides](#style-guides)
+  1. [Commit messages](#commit-messages)
+    1. [Example of a commit message](#example-of-a-commit-message)
+  2. [Color schemes](#color-schemes-style-guide)
+  3. [Syntaxes](#syntaxes-style-guide)
+  4. [Tests](#tests-style-guide)
+3. [License headers](#license-headers)
+4. [Useful links](#useful-links)
 
 ## How can I contribute?
 
@@ -100,7 +98,6 @@ Include details about your configuration and environment:
     **Additional information:**
 
     * It started happening recently: [Yes/No]
-
     * It can be reliably reproduced: [Yes/No]
 
 ### Suggesting Enhancements

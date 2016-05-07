@@ -1,15 +1,8 @@
 # Naomi
 
-This package was designed to provide a way to create easy to extend syntax
-highlighting. It does so by breaking the syntaxes into multiple files and having
-lots of tests to assert the expected scenarios.
-
-Color schemes are going to be provided not only to test the highlighting and
-show the new features, but to serve as a base to create new ones.
-
-Right now, only PHP 7 is supported but other languages are going to be added as
-soon as time allows it. Feel free to send pull requests, any help will be highly
-appreciated.
+Package designed to provide easy to extend syntax highlighting. Color schemes
+are provided not only to test the highlighting and show the new features, but to
+serve as a template to create new ones.
 
 ## Features
 
@@ -37,7 +30,7 @@ literal.
 
 Clone the repository in your Sublime Text “Packages” directory:
 
-    git clone https://github.com/borela/naomi.git
+    git clone https://github.com/borela/naomi.git Naomi
 
 The “Packages” directory is located at:
 

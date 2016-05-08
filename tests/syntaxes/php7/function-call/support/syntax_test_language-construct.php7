@@ -15,29 +15,29 @@
 <?php
     clone
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     die
 //  ^^^ support.function.call.php
-//  ^^^ entity.name.structure.function.php
+//  ^^^ entity.name.statement.function.php
     echo
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     eval
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     exit
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     include_once
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     include
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     require_once
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     require
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
 ?>

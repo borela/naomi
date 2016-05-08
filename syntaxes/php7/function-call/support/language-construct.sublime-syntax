@@ -33,6 +33,6 @@ contexts:
         )\b
       captures:
         0: support.function.call.php
-        1: punctuation.delimiter.structure.function.php
-        2: entity.name.structure.function.php
+        1: punctuation.delimiter.statement.function.php
+        2: entity.name.statement.function.php
       pop: true

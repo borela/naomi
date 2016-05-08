@@ -25,18 +25,18 @@ scope: ...
 contexts:
   main:
     - match: (?i)\bdeclare\b
-      scope: keyword.structure.declare.php
+      scope: keyword.statement.declare.php
       push: declaration
 
   declaration:
     - meta_scope: declare.php
     - match: \(
-      scope: punctuation.delimiter.structure.declare.parameters.begin.php
+      scope: punctuation.delimiter.statement.declare.parameters.begin.php
       push: parameters
     - match: \)
       scope: >-
         declare.parameters.php
-        punctuation.delimiter.structure.declare.parameters.end.php
+        punctuation.delimiter.statement.declare.parameters.end.php
       set: body
 
   parameters:
@@ -77,10 +77,10 @@ contexts:
         declare.php
         declare.body.php
     - match: ;
-      scope: punctuation.delimiter.structure.declare.body.begin.php
+      scope: punctuation.delimiter.statement.declare.body.begin.php
       set: implicit-body
     - match: \{
-      scope: punctuation.delimiter.structure.declare.body.begin.php
+      scope: punctuation.delimiter.statement.declare.body.begin.php
       set: bracketed-body
 
   body-content:
@@ -125,7 +125,7 @@ contexts:
       scope: >-
         declare.php
         declare.body.php
-        punctuation.delimiter.structure.declare.body.end.php
+        punctuation.delimiter.statement.declare.body.end.php
       pop: true
     - include: bracketed-body-content
 

@@ -25,22 +25,22 @@ scope: ...
 contexts:
   main:
     - match: (?i)\bfunction(?!\\)\b
-      scope: keyword.structure.function.php
+      scope: keyword.statement.function.php
       set: declaration
 
   declaration:
     - meta_scope: function.php
     # Function without body.
     - match: ;
-      scope: punctuation.delimiter.structure.function.declaration.end.php
+      scope: punctuation.delimiter.statement.function.declaration.end.php
       pop: true
     # Function's name.
     - include: magic-method
     - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.structure.function.php
+      scope: entity.name.statement.function.php
     # Parameters, imported variables and return type.
     - match: \(
-      scope: punctuation.delimiter.structure.function.parameters.begin.php
+      scope: punctuation.delimiter.statement.function.parameters.begin.php
       push: [
         return-type-hint,
         possible-imported-variables,
@@ -50,7 +50,7 @@ contexts:
     - match: \{
       scope: >-
         function.body.php
-        punctuation.delimiter.structure.function.body.begin.php
+        punctuation.delimiter.statement.function.body.begin.php
       set: body
 
   magic-method:
@@ -72,14 +72,14 @@ contexts:
         )
       scope: >-
         support.function.php
-        entity.name.structure.function.php
+        entity.name.statement.function.php
 
   parameters:
     - meta_scope: function.parameters.php
     - meta_content_scope: function.parameters.content.php
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: \)
-      scope: punctuation.delimiter.structure.function.parameters.end.php
+      scope: punctuation.delimiter.statement.function.parameters.end.php
       pop: true
     # Starts with a variable.
     - match: (?=\$)
@@ -115,14 +115,14 @@ contexts:
 
   imported-variables-begin:
     - match: \(
-      scope: punctuation.delimiter.structure.imported.variables.begin.php
+      scope: punctuation.delimiter.statement.imported.variables.begin.php
       set: imported-variables
 
   imported-variables:
     - meta_scope: function.imported.variables.php
     - meta_content_scope: function.imported.variables.content.php
     - match: \)
-      scope: punctuation.delimiter.structure.imported.variables.end.php
+      scope: punctuation.delimiter.statement.imported.variables.end.php
       pop: true
     # Starts with a variable.
     - match: (?=\$)
@@ -211,7 +211,7 @@ contexts:
     - match: (?=\))
       pop: true
     - match: ","
-      scope: punctuation.delimiter.structure.function.parameters.php
+      scope: punctuation.delimiter.statement.function.parameters.php
       pop: true
 
   return-type-hint:
@@ -219,7 +219,7 @@ contexts:
     - match: (?={|;)
       pop: true
     - match: ":"
-      scope: punctuation.delimiter.structure.function.php
+      scope: punctuation.delimiter.statement.function.php
       set: return-type
 
   return-type:
@@ -239,7 +239,7 @@ contexts:
       scope: >-
         function.php
         function.body.php
-        punctuation.delimiter.structure.function.body.end.php
+        punctuation.delimiter.statement.function.body.end.php
       pop: true
     - include: body-content
 

@@ -25,7 +25,7 @@ scope: ...
 contexts:
   main:
     - match: (?i)\binterface(?!\\)\b
-      scope: keyword.structure.interface.php
+      scope: keyword.statement.interface.php
       set: declaration
 
   declaration:
@@ -33,16 +33,16 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     # Extends.
     - match: (?i)\bextends\b
-      scope: keyword.structure.inherit.php
+      scope: keyword.statement.inherit.php
       push: extend-targets
     # interface's name.
     - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.structure.interface.php
+      scope: entity.name.statement.interface.php
     # Body.
     - match: \{
       scope: >-
         interface.body.php
-        punctuation.delimiter.structure.interface.body.begin.php
+        punctuation.delimiter.statement.interface.body.begin.php
       set: body
 
   body:
@@ -54,7 +54,7 @@ contexts:
       scope: >-
         interface.php
         interface.body.php
-        punctuation.delimiter.structure.interface.body.end.php
+        punctuation.delimiter.statement.interface.body.end.php
       pop: true
     # Body's content.
     - match: (?=\S)
@@ -87,7 +87,7 @@ contexts:
   extend-target-delimiter:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: ","
-      scope: punctuation.delimiter.structure.extend.php
+      scope: punctuation.delimiter.statement.extend.php
       pop: true
     - match: (?=\S)
       pop: true

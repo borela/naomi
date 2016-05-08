@@ -15,53 +15,53 @@
 <?php
     flush();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     ob_clean();
 //  ^^^^^^^^ support.function.call.php
-//  ^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^ entity.name.statement.function.php
     ob_end_clean();
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     ob_end_flush();
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     ob_flush();
 //  ^^^^^^^^ support.function.call.php
-//  ^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^ entity.name.statement.function.php
     ob_get_clean();
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     ob_get_contents();
 //  ^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php
     ob_get_flush();
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     ob_get_length();
 //  ^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^ entity.name.statement.function.php
     ob_get_level();
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     ob_get_status();
 //  ^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^ entity.name.statement.function.php
     ob_gzhandler();
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     ob_implicit_flush();
 //  ^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     ob_list_handlers();
 //  ^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     ob_start();
 //  ^^^^^^^^ support.function.call.php
-//  ^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^ entity.name.statement.function.php
     output_add_rewrite_var();
 //  ^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     output_reset_rewrite_vars();
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
 ?>

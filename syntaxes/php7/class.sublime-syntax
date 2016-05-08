@@ -25,7 +25,7 @@ scope: ...
 contexts:
   main:
     - match: (?i)\bclass(?!\\)\b
-      scope: keyword.structure.class.php
+      scope: keyword.statement.class.php
       set: declaration
 
   declaration:
@@ -33,20 +33,20 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     # Extends.
     - match: (?i)\bextends\b
-      scope: keyword.structure.inherit.php
+      scope: keyword.statement.inherit.php
       push: extend-target
     # Implements.
     - match: (?i)\bimplements\b
-      scope: keyword.structure.implement.php
+      scope: keyword.statement.implement.php
       push: implement-targets
     # Class's name.
     - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.structure.class.php
+      scope: entity.name.statement.class.php
     # Body.
     - match: \{
       scope: >-
         class.body.php
-        punctuation.delimiter.structure.class.body.begin.php
+        punctuation.delimiter.statement.class.body.begin.php
       set: body
 
   body:
@@ -58,7 +58,7 @@ contexts:
       scope: >-
         class.php
         class.body.php
-        punctuation.delimiter.structure.class.body.end.php
+        punctuation.delimiter.statement.class.body.end.php
       pop: true
     # Body's content.
     - match: (?=\S)
@@ -104,7 +104,7 @@ contexts:
   implement-target-delimiter:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: ","
-      scope: punctuation.delimiter.structure.implement.php
+      scope: punctuation.delimiter.statement.implement.php
       pop: true
     - match: (?=\S)
       pop: true

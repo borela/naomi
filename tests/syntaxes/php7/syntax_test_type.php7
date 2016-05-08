@@ -24,19 +24,19 @@
     \Namespace\Namespace\Random
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php
 //  ^^^^^^^^^^^^^^^^^^^^ namespace.path.php
-//  ^ punctuation.delimiter.structure.namespace.a.php
-//            ^ punctuation.delimiter.structure.namespace.b.php
+//  ^ punctuation.delimiter.statement.namespace.a.php
+//            ^ punctuation.delimiter.statement.namespace.b.php
 //                      ^ punctuation.delimiter.type.php
-//   ^^^^^^^^^ entity.name.structure.namespace.a.php
-//             ^^^^^^^^^ entity.name.structure.namespace.b.php
+//   ^^^^^^^^^ entity.name.statement.namespace.a.php
+//             ^^^^^^^^^ entity.name.statement.namespace.b.php
 //                       ^^^^^^ entity.name.type.php
     Namespace\Namespace\Random
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php
 //  ^^^^^^^^^^^^^^^^^^^ namespace.path.php
-//           ^ punctuation.delimiter.structure.namespace.b.php
+//           ^ punctuation.delimiter.statement.namespace.b.php
 //                     ^ punctuation.delimiter.type.php
-//  ^^^^^^^^^ entity.name.structure.namespace.a.php
-//            ^^^^^^^^^ entity.name.structure.namespace.b.php
+//  ^^^^^^^^^ entity.name.statement.namespace.a.php
+//            ^^^^^^^^^ entity.name.statement.namespace.b.php
 //                      ^^^^^^ entity.name.type.php
 
     array

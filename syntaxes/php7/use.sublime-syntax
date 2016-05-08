@@ -25,16 +25,16 @@ variables:
 contexts:
   main:
     - match: (?i)\buse(?!\\)\b
-      scope: keyword.structure.import.php
+      scope: keyword.statement.import.php
       set: declaration
 
   declaration:
     - meta_scope: import.php
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: \,
-      scope: punctuation.delimiter.structure.import.php
+      scope: punctuation.delimiter.statement.import.php
     - match: ;
-      scope: punctuation.delimiter.structure.import.end.php
+      scope: punctuation.delimiter.statement.import.end.php
       pop: true
     - match: ""
       push: [
@@ -46,10 +46,10 @@ contexts:
   const-or-function:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: (?i)\bconst\b
-      scope: keyword.structure.import.constant.php
+      scope: keyword.statement.import.constant.php
       pop: true
     - match: (?i)\bfunction\b
-      scope: keyword.structure.import.function.php
+      scope: keyword.statement.import.function.php
       pop: true
     - match: ""
       pop: true
@@ -63,7 +63,7 @@ contexts:
     - match: (?=,|;)
       pop: true
     - match: (?i)\bas\b
-      scope: keyword.structure.import.alias.php
+      scope: keyword.statement.import.alias.php
       set: alias-name
 
   alias-name:
@@ -71,5 +71,5 @@ contexts:
     - match: (?=;)
       pop: true
     - match: "(?xi){{commonIdentifier}}"
-      scope: entity.name.structure.import.alias.php
+      scope: entity.name.statement.import.alias.php
       pop: true

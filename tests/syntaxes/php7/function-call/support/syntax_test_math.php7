@@ -15,149 +15,149 @@
 <?php
     abs();
 //  ^^^ support.function.call.php
-//  ^^^ entity.name.structure.function.php
+//  ^^^ entity.name.statement.function.php
     acos();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     acosh();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     asin();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     asinh();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     atan2();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     atan();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     atanh();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     base_convert();
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     bindec();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     ceil();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     cos();
 //  ^^^ support.function.call.php
-//  ^^^ entity.name.structure.function.php
+//  ^^^ entity.name.statement.function.php
     cosh();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     decbin();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     dechex();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     decoct();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     deg2rad();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     exp();
 //  ^^^ support.function.call.php
-//  ^^^ entity.name.structure.function.php
+//  ^^^ entity.name.statement.function.php
     expm1();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     floor();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     fmod();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     getrandmax();
 //  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
     hexdec();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     hypot();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     intdiv();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     is_finite();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     is_infinite();
 //  ^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
     is_nan();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     lcg_value();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     log10();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     log1p();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     log();
 //  ^^^ support.function.call.php
-//  ^^^ entity.name.structure.function.php
+//  ^^^ entity.name.statement.function.php
     max();
 //  ^^^ support.function.call.php
-//  ^^^ entity.name.structure.function.php
+//  ^^^ entity.name.statement.function.php
     min();
 //  ^^^ support.function.call.php
-//  ^^^ entity.name.structure.function.php
+//  ^^^ entity.name.statement.function.php
     mt_getrandmax();
 //  ^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^ entity.name.statement.function.php
     mt_rand();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     mt_srand();
 //  ^^^^^^^^ support.function.call.php
-//  ^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^ entity.name.statement.function.php
     octdec();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     pi();
 //  ^^ support.function.call.php
-//  ^^ entity.name.structure.function.php
+//  ^^ entity.name.statement.function.php
     pow();
 //  ^^^ support.function.call.php
-//  ^^^ entity.name.structure.function.php
+//  ^^^ entity.name.statement.function.php
     rad2deg();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     rand();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     round();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     sin();
 //  ^^^ support.function.call.php
-//  ^^^ entity.name.structure.function.php
+//  ^^^ entity.name.statement.function.php
     sinh();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     sqrt();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     srand();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     tan();
 //  ^^^ support.function.call.php
-//  ^^^ entity.name.structure.function.php
+//  ^^^ entity.name.statement.function.php
     tanh();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
 ?>

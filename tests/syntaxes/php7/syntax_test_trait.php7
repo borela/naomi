@@ -15,10 +15,10 @@
 <?php
     trait MyTrait {
 //  ^^^^^^^^^^^^^^^ trait.php
-//  ^^^^^ keyword.structure.trait.php
-//        ^^^^^^^ entity.name.structure.trait.php
+//  ^^^^^ keyword.statement.trait.php
+//        ^^^^^^^ entity.name.statement.trait.php
 //                ^ trait.body.php
-//                ^ punctuation.delimiter.structure.trait.body.begin.php
+//                ^ punctuation.delimiter.statement.trait.body.begin.php
     Something...
 //  ^^^^^^^^^^^^ trait.php
 //  ^^^^^^^^^^^^ trait.body.php
@@ -26,14 +26,14 @@
     }
 //  ^ trait.php
 //  ^ trait.body.php
-//  ^ punctuation.delimiter.structure.trait.body.end.php
+//  ^ punctuation.delimiter.statement.trait.body.end.php
 
     trait MyTrait {
 //  ^^^^^^^^^^^^^^^ trait.php
-//  ^^^^^ keyword.structure.trait.php
-//        ^^^^^^^ entity.name.structure.trait.php
+//  ^^^^^ keyword.statement.trait.php
+//        ^^^^^^^ entity.name.statement.trait.php
 //                ^ trait.body.php
-//                ^ punctuation.delimiter.structure.trait.body.begin.php
+//                ^ punctuation.delimiter.statement.trait.body.begin.php
     Something...
 //  ^^^^^^^^^^^^ trait.php
 //  ^^^^^^^^^^^^ trait.body.php
@@ -41,5 +41,5 @@
     }
 //  ^ trait.php
 //  ^ trait.body.php
-//  ^ punctuation.delimiter.structure.trait.body.end.php
+//  ^ punctuation.delimiter.statement.trait.body.end.php
 ?>

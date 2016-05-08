@@ -15,293 +15,293 @@
 <?php
     addcslashes();
 //  ^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
     addslashes();
 //  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
     bin2hex();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     chop();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     chr();
 //  ^^^ support.function.call.php
-//  ^^^ entity.name.structure.function.php
+//  ^^^ entity.name.statement.function.php
     chunk_split();
 //  ^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
     convert_cyr_string();
 //  ^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     convert_uudecode();
 //  ^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     convert_uuencode();
 //  ^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     count_chars();
 //  ^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
     crc32();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     crypt();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     explode();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     fprintf();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     get_html_translation_table();
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     hebrev();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     hebrevc();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     hex2bin();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     html_entity_decode();
 //  ^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     htmlentities();
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     htmlspecialchars_decode();
 //  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     htmlspecialchars();
 //  ^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     implode();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     join();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     lcfirst();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     levenshtein();
 //  ^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
     localeconv();
 //  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
     ltrim();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     md5_file();
 //  ^^^^^^^^ support.function.call.php
-//  ^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^ entity.name.statement.function.php
     md5();
 //  ^^^ support.function.call.php
-//  ^^^ entity.name.structure.function.php
+//  ^^^ entity.name.statement.function.php
     metaphone();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     money_format();
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     nl_langinfo();
 //  ^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
     nl2br();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     number_format();
 //  ^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^ entity.name.statement.function.php
     ord();
 //  ^^^ support.function.call.php
-//  ^^^ entity.name.structure.function.php
+//  ^^^ entity.name.statement.function.php
     parse_str();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     print();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     printf();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     quoted_printable_decode();
 //  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     quoted_printable_encode();
 //  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     quotemeta();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     rtrim();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     setlocale();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     sha1_file();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     sha1();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     similar_text();
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     soundex();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     sprintf();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     sscanf();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     str_getcsv();
 //  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
     str_ireplace();
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     str_pad();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     str_repeat();
 //  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
     str_replace();
 //  ^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
     str_rot13();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     str_shuffle();
 //  ^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
     str_split();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     str_word_count();
 //  ^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^ entity.name.statement.function.php
     strcasecmp();
 //  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
     strchr();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     strcmp();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     strcoll();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     strcspn();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     strip_tags();
 //  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
     stripcslashes();
 //  ^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^ entity.name.statement.function.php
     stripos();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     stripslashes();
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     stristr();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     strlen();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     strnatcasecmp();
 //  ^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^ entity.name.statement.function.php
     strnatcmp();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     strncasecmp();
 //  ^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
     strncmp();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     strpbrk();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     strpos();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     strrchr();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     strrev();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     strripos();
 //  ^^^^^^^^ support.function.call.php
-//  ^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^ entity.name.statement.function.php
     strrpos();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     strspn();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     strstr();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     strtok();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     strtolower();
 //  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
     strtoupper();
 //  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
     strtr();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     substr_compare();
 //  ^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^ entity.name.statement.function.php
     substr_count();
 //  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
     substr_replace();
 //  ^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^ entity.name.statement.function.php
     substr();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     trim();
 //  ^^^^ support.function.call.php
-//  ^^^^ entity.name.structure.function.php
+//  ^^^^ entity.name.statement.function.php
     ucfirst();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     ucwords();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     vfprintf();
 //  ^^^^^^^^ support.function.call.php
-//  ^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^ entity.name.statement.function.php
     vprintf();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     vsprintf();
 //  ^^^^^^^^ support.function.call.php
-//  ^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^ entity.name.statement.function.php
     wordwrap();
 //  ^^^^^^^^ support.function.call.php
-//  ^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^ entity.name.statement.function.php
 ?>

@@ -25,7 +25,7 @@ scope: ...
 contexts:
   main:
     - match: (?xi)\btrait(?!\\)\b
-      scope: keyword.structure.trait.php
+      scope: keyword.statement.trait.php
       set: declaration
 
   declaration:
@@ -35,11 +35,11 @@ contexts:
     - match: "{"
       scope: >-
         trait.body.php
-        punctuation.delimiter.structure.trait.body.begin.php
+        punctuation.delimiter.statement.trait.body.begin.php
       set: body
     # Trait's name.
     - match: "(?xi){{commonIdentifier}}"
-      scope: entity.name.structure.trait.php
+      scope: entity.name.statement.trait.php
 
   body:
     - meta_content_scope: >-
@@ -50,7 +50,7 @@ contexts:
       scope: >-
         trait.php
         trait.body.php
-        punctuation.delimiter.structure.trait.body.end.php
+        punctuation.delimiter.statement.trait.body.end.php
       pop: true
     - include: body-content
 

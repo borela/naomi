@@ -25,7 +25,7 @@ scope: ...
 contexts:
   main:
     - match: (?xi)\bnamespace(?!\\)\b
-      scope: keyword.structure.namespace.php
+      scope: keyword.statement.namespace.php
       set: declaration
 
   declaration:
@@ -35,13 +35,13 @@ contexts:
     - match: ;
       scope: >-
         namespace.body.php
-        punctuation.delimiter.structure.namespace.body.begin.php
+        punctuation.delimiter.statement.namespace.body.begin.php
       set: implicit-body
     # Bracketed body.
     - match: "{"
       scope: >-
         namespace.body.php
-        punctuation.delimiter.structure.namespace.body.begin.php
+        punctuation.delimiter.statement.namespace.body.begin.php
       set: bracketed-body
     # namespace's path.
     - include: Packages/Naomi/syntaxes/php7/namespace/path.sublime-syntax
@@ -92,7 +92,7 @@ contexts:
       scope: >-
         namespace.php
         namespace.body.php
-        punctuation.delimiter.structure.namespace.body.end.php
+        punctuation.delimiter.statement.namespace.body.end.php
       pop: true
     - include: bracketed-body-content
 

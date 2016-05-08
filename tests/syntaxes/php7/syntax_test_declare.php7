@@ -17,10 +17,10 @@
 //  ^^^^^^^^^^^^^^^^^ declare.php
 //         ^^^^^^^^^ declare.parameters.php
 //          ^^^^^^^ declare.parameters.content.php
-//  ^^^^^^^ keyword.structure.declare.php
-//         ^ punctuation.delimiter.structure.declare.parameters.begin.php
-//                 ^ punctuation.delimiter.structure.declare.parameters.end.php
-//                  ^ punctuation.delimiter.structure.declare.body.begin.php
+//  ^^^^^^^ keyword.statement.declare.php
+//         ^ punctuation.delimiter.statement.declare.parameters.begin.php
+//                 ^ punctuation.delimiter.statement.declare.parameters.end.php
+//                  ^ punctuation.delimiter.statement.declare.body.begin.php
 
     Something...
 //  ^^^^^^^^^^^^ declare.php
@@ -31,11 +31,11 @@
 //  ^^^^^^^^^^^^^^^^^^ declare.php
 //         ^^^^^^^^^ declare.parameters.php
 //          ^^^^^^^ declare.parameters.content.php
-//  ^^^^^^^ keyword.structure.declare.php
-//         ^ punctuation.delimiter.structure.declare.parameters.begin.php
-//                 ^ punctuation.delimiter.structure.declare.parameters.end.php
+//  ^^^^^^^ keyword.statement.declare.php
+//         ^ punctuation.delimiter.statement.declare.parameters.begin.php
+//                 ^ punctuation.delimiter.statement.declare.parameters.end.php
 //                   ^ declare.body.php
-//                   ^ punctuation.delimiter.structure.declare.body.begin.php
+//                   ^ punctuation.delimiter.statement.declare.body.begin.php
     Something...
 //  ^^^^^^^^^^^^ declare.php
 //  ^^^^^^^^^^^^ declare.body.php
@@ -43,5 +43,5 @@
     }
 //  ^ declare.php
 //  ^ declare.body.php
-//  ^ punctuation.delimiter.structure.declare.body.end.php
+//  ^ punctuation.delimiter.statement.declare.body.end.php
 ?>

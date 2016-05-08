@@ -15,38 +15,38 @@
 <?php
     debug_backtrace();
 //  ^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php
     debug_print_backtrace();
 //  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     error_clear_last();
 //  ^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     error_get_last();
 //  ^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^ entity.name.statement.function.php
     error_log();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     error_reporting();
 //  ^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php
     restore_error_handler();
 //  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     restore_exception_handler();
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     set_error_handler();
 //  ^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     set_exception_handler();
 //  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     trigger_error();
 //  ^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^ entity.name.statement.function.php
     user_error();
 //  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
 ?>

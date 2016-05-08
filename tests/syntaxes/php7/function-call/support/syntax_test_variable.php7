@@ -15,101 +15,101 @@
 <?php
     boolval();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     debug_zval_dump();
 //  ^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php
     doubleval();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     empty();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     floatval();
 //  ^^^^^^^^ support.function.call.php
-//  ^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^ entity.name.statement.function.php
     get_defined_vars();
 //  ^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     get_resource_type();
 //  ^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
     gettype();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     intval();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     is_array();
 //  ^^^^^^^^ support.function.call.php
-//  ^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^ entity.name.statement.function.php
     is_bool();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     is_callable();
 //  ^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
     is_double();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     is_float();
 //  ^^^^^^^^ support.function.call.php
-//  ^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^ entity.name.statement.function.php
     is_int();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     is_integer();
 //  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
     is_long();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     is_null();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     is_numeric();
 //  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
     is_object();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     is_real();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     is_resource();
 //  ^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
     is_scalar();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     is_string();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     isset();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     print_r();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     serialize();
 //  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^ entity.name.statement.function.php
     settype();
 //  ^^^^^^^ support.function.call.php
-//  ^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^ entity.name.statement.function.php
     strval();
 //  ^^^^^^ support.function.call.php
-//  ^^^^^^ entity.name.structure.function.php
+//  ^^^^^^ entity.name.statement.function.php
     unserialize();
 //  ^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
     unset();
 //  ^^^^^ support.function.call.php
-//  ^^^^^ entity.name.structure.function.php
+//  ^^^^^ entity.name.statement.function.php
     var_dump();
 //  ^^^^^^^^ support.function.call.php
-//  ^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^ entity.name.statement.function.php
     var_export();
 //  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.structure.function.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
 ?>

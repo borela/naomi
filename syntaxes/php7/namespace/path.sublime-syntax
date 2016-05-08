@@ -44,9 +44,9 @@ contexts:
         0: >-
           type.php
           namespace.path.php
-        1: punctuation.delimiter.structure.namespace.a.php
-        2: entity.name.structure.namespace.a.php
-        3: punctuation.delimiter.structure.namespace.b.php
-        4: entity.name.structure.namespace.b.php
-        5: punctuation.delimiter.structure.namespace.a.php
-        6: entity.name.structure.namespace.a.php
+        1: punctuation.delimiter.statement.namespace.a.php
+        2: entity.name.statement.namespace.a.php
+        3: punctuation.delimiter.statement.namespace.b.php
+        4: entity.name.statement.namespace.b.php
+        5: punctuation.delimiter.statement.namespace.a.php
+        6: entity.name.statement.namespace.a.php

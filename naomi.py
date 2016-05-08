@@ -17,17 +17,17 @@ import sublime_plugin
 
 class OutputPanel(object):
     def __init__(self, window, name):
-        self.name = name
         self.window = window
-        self.outputPanel = self.window.create_output_panel(self.name)
-        self.outputPanel.settings().set('word_wrap', False)
-        self.outputPanel.settings().set('line_numbers', True)
+        self.panelName = name
+        self.panel = window.create_output_panel(name)
+        self.panel.settings().set('word_wrap', False)
+        self.panel.settings().set('line_numbers', True)
 
     def append(self, text):
-        self.outputPanel.run_command(
+        self.panel.run_command(
             'append',
             {
-                'characters': text
+                'characters': text + '\n'
             }
         )
 
@@ -35,35 +35,39 @@ class OutputPanel(object):
         self.window.run_command(
             'show_panel',
             {
-                'panel': 'output.' + self.name
+                'panel': 'output.' + self.panelName
             }
         )
 
 class NaomiRunSyntaxTestsCommand(sublime_plugin.WindowCommand):
+    def __init__(self, window):
+        self.outputPanel = OutputPanel(window, 'naomi')
+
     def run(self):
-        self.outputPanel = OutputPanel(self.window, 'naomi')
-        self.outputPanel.show()
-
-        self.outputPanel.append('Naomi: Running syntax tests...\n')
-
         totalFiles = 0
         totalAssertions = 0
         totalFailedAssertions = 0
-        messages = ''
+        testsPath = sublime.packages_path() + '/Naomi/tests/syntaxes';
 
-        for root, directories, files in os.walk(sublime.packages_path() + '/Naomi/tests/syntaxes'):
+        self.outputPanel.show()
+        self.outputPanel.append('Naomi: Running syntax tests...')
+
+        # Find the test files and run them.
+        for path, directories, files in os.walk(testsPath):
             for file in files:
-                totalFiles += 1
-                target = os.path.join(root, file)
+                # Get the full path to the file.
+                target = os.path.join(path, file)
+                # Remove anything before "Packages/Naomi".
                 target = target[target.index('Packages/Naomi'):]
-
+                # Run the tests.
                 assertionsFound, messagesFound = sublime_api.run_syntax_test(target)
-                totalAssertions += assertionsFound
-
+                # Print the error messages and update the counters.
                 if messagesFound != '':
-                    totalFailedAssertions += len(messagesFound)
                     for message in messagesFound:
-                        messages += message + '\n'
+                        self.outputPanel.append(message)
+                        totalFailedAssertions += 1
+                totalFiles += 1
+                totalAssertions += assertionsFound
 
         if totalFailedAssertions < 1:
             self.outputPanel.append(
@@ -74,7 +78,6 @@ class NaomiRunSyntaxTestsCommand(sublime_plugin.WindowCommand):
                 )
             )
         else:
-            self.outputPanel.append(messages)
             self.outputPanel.append(
                 'Error: %d/%d assertion(s) in %d file(s) failed.' %
                 (

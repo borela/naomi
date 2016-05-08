@@ -88,6 +88,8 @@ contexts:
   # |    /=    |                    |
   # |    %=    |                    |
   # |    ??    | Null coalescing.   |
+  # |    ?     |                    |
+  # |    :     |                    |
   assignment-operator:
     - match: |
         (?x)
@@ -96,7 +98,8 @@ contexts:
           | \*=
           | /=
           | %=
-          | \?\?
+          | \?(\?)?
+          | :
         )
       scope: keyword.operator.assignment.php
       pop: true

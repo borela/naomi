@@ -371,7 +371,7 @@
                 <string>Custom type</string>
 
                 <key>scope</key>
-                <string>type</string>
+                <string>type, entity.name.statement</string>
 
                 <key>settings</key>
                 <dict>
@@ -573,7 +573,7 @@
                 <string>Delimiter</string>
 
                 <key>scope</key>
-                <string>punctuation.delimiter.statement</string>
+                <string>punctuation.delimiter</string>
 
                 <key>settings</key>
                 <dict>
@@ -582,6 +582,40 @@
 
                     <key>foreground</key>
                     <string>#fff9c4</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Class, interface and trait's delimiter</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.statement.class, punctuation.delimiter.statement.interface, punctuation.delimiter.statement.trait</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#64ffda</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Function's delimiter</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.statement.function</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#81d4fa</string>
                 </dict>
             </dict>
 

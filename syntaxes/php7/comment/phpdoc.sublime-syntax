@@ -60,6 +60,25 @@ contexts:
     - include: var
     - include: version
 
+  types:
+    - match: (?=\$|$)
+      pop: true
+    - match: (?=\S)
+      push: [
+        type-delimiter,
+        type
+      ]
+
+  type:
+    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
+
+  type-delimiter:
+    - match: (?=\$|$)
+      pop: true
+    - match: \|
+      scope: punctuation.delimiter.types.phpdoc
+      pop: true
+
   api:
     - match: \B(@)api\b
       captures:
@@ -157,29 +176,8 @@ contexts:
         1: punctuation.keyword.begin.phpdoc
       push: [
         param-variable,
-        param-types
+        types
       ]
-
-  param-types:
-    - match: (?=\$|$)
-      pop: true
-    - match: (?=\S)
-      push: [
-        param-type-delimiter,
-        param-type
-      ]
-
-  param-type:
-    - match: (?=\$|$)
-      pop: true
-    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
-
-  param-type-delimiter:
-    - match: (?=\$|$)
-      pop: true
-    - match: \|
-      scope: punctuation.delimiter.types.phpdoc
-      pop: true
 
   param-variable:
     - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
@@ -207,28 +205,7 @@ contexts:
       captures:
         0: keyword.documentation.return.phpdoc
         1: punctuation.keyword.begin.phpdoc
-      push: return-types
-
-  return-types:
-    - match: (?=$)
-      pop: true
-    - match: (?=\S)
-      push: [
-        return-type-delimiter,
-        return-type
-      ]
-
-  return-type:
-    - match: (?=$)
-      pop: true
-    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
-
-  return-type-delimiter:
-    - match: (?=$)
-      pop: true
-    - match: \|
-      scope: punctuation.delimiter.types.phpdoc
-      pop: true
+      push: types
 
   see:
     - match: \B(@)see\b
@@ -283,6 +260,7 @@ contexts:
       captures:
         0: keyword.documentation.var.phpdoc
         1: punctuation.keyword.begin.phpdoc
+      push: types
 
   version:
     - match: \B(@)version\b

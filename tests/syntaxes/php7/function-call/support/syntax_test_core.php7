@@ -1,0 +1,175 @@
+// SYNTAX TEST "Packages/Naomi/syntaxes/naomi.php7.sublime-syntax"
+
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+<?php
+    assert_options();
+//  ^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^ entity.name.statement.function.php
+    assert();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.statement.function.php
+    cli_get_process_title();
+//  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    cli_set_process_title();
+//  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    dl();
+//  ^^ support.function.call.php
+//  ^^ entity.name.statement.function.php
+    extension_loaded();
+//  ^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    gc_collect_cycles();
+//  ^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    gc_disable();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
+    gc_enable();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.statement.function.php
+    gc_enabled();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
+    gc_mem_caches();
+//  ^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^ entity.name.statement.function.php
+    get_cfg_var();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
+    get_current_user();
+//  ^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    get_defined_constants();
+//  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    get_extension_funcs();
+//  ^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    get_include_path();
+//  ^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    get_included_files();
+//  ^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    get_loaded_extensions();
+//  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    get_magic_quotes_gpc();
+//  ^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    get_magic_quotes_runtime();
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    get_required_files();
+//  ^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    get_resources();
+//  ^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^ entity.name.statement.function.php
+    getenv();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.statement.function.php
+    getlastmod();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
+    getmygid();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.statement.function.php
+    getmyinode();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
+    getmypid();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.statement.function.php
+    getmyuid();
+//  ^^^^^^^^ support.function.call.php
+//  ^^^^^^^^ entity.name.statement.function.php
+    getopt();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.statement.function.php
+    getrusage();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.statement.function.php
+    ini_alter();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.statement.function.php
+    ini_get_all();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
+    ini_get();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.statement.function.php
+    ini_restore();
+//  ^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^ entity.name.statement.function.php
+    ini_set();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.statement.function.php
+    main();
+//  ^^^^ support.function.call.php
+//  ^^^^ entity.name.statement.function.php
+    memory_get_peak_usage();
+//  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    memory_get_usage();
+//  ^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    php_ini_loaded_file();
+//  ^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    php_ini_scanned_files();
+//  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    php_sapi_name();
+//  ^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^ entity.name.statement.function.php
+    php_uname();
+//  ^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^ entity.name.statement.function.php
+    phpcredits();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
+    phpinfo();
+//  ^^^^^^^ support.function.call.php
+//  ^^^^^^^ entity.name.statement.function.php
+    phpversion();
+//  ^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^ entity.name.statement.function.php
+    putenv();
+//  ^^^^^^ support.function.call.php
+//  ^^^^^^ entity.name.statement.function.php
+    restore_include_path();
+//  ^^^^^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    set_include_path();
+//  ^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    set_time_limit();
+//  ^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^ entity.name.statement.function.php
+    sys_get_temp_dir();
+//  ^^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    version_compare();
+//  ^^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php
+    zend_thread_id();
+//  ^^^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^^^ entity.name.statement.function.php
+    zend_version();
+//  ^^^^^^^^^^^^ support.function.call.php
+//  ^^^^^^^^^^^^ entity.name.statement.function.php
+?>

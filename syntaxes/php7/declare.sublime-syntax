@@ -29,19 +29,19 @@ contexts:
       push: declaration
 
   declaration:
-    - meta_scope: declare.php
+    - meta_scope: statement.declare.php
     - match: \(
       scope: punctuation.delimiter.statement.declare.parameters.begin.php
       push: parameters
     - match: \)
       scope: >-
-        declare.parameters.php
+        statement.declare.parameters.php
         punctuation.delimiter.statement.declare.parameters.end.php
       set: body
 
   parameters:
-    - meta_scope: declare.parameters.php
-    - meta_content_scope: declare.parameters.content.php
+    - meta_scope: statement.declare.parameters.php
+    - meta_content_scope: statement.declare.parameters.content.php
     - match: (?=\))
       pop: true
     - match: (?=\S)
@@ -74,8 +74,8 @@ contexts:
 
   body:
     - meta_content_scope: >-
-        declare.php
-        declare.body.php
+        statement.declare.php
+        statement.declare.body.php
     - match: ;
       scope: punctuation.delimiter.statement.declare.body.begin.php
       set: implicit-body
@@ -104,9 +104,9 @@ contexts:
 
   implicit-body:
     - meta_content_scope:
-        declare.php
-        declare.body.php
-        declare.body.content.php
+        statement.declare.php
+        statement.declare.body.php
+        statement.declare.body.content.php
     - include: implicit-body-content
 
   implicit-body-content:
@@ -118,13 +118,13 @@ contexts:
 
   bracketed-body:
     - meta_content_scope: >-
-        declare.php
-        declare.body.php
-        declare.body.content.php
+        statement.declare.php
+        statement.declare.body.php
+        statement.declare.body.content.php
     - match: \}
       scope: >-
-        declare.php
-        declare.body.php
+        statement.declare.php
+        statement.declare.body.php
         punctuation.delimiter.statement.declare.body.end.php
       pop: true
     - include: bracketed-body-content

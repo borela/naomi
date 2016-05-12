@@ -14,37 +14,37 @@
 
 <?php
     interface MyInterface {   }
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ interface.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.interface.php
 //  ^^^^^^^^^ keyword.statement.interface.php
 //            ^^^^^^^^^^^ entity.name.statement.interface.php
 //                        ^ punctuation.delimiter.statement.interface.body.begin.php
-//                        ^^^^^ interface.body.php
-//                         ^^^ interface.body.content.php
+//                        ^^^^^ statement.interface.body.php
+//                         ^^^ statement.interface.body.content.php
 //                            ^ punctuation.delimiter.statement.interface.body.end.php
 
     interface MyInterface {
-//  ^^^^^^^^^^^^^^^^^^^^^^^ interface.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^ statement.interface.php
 //  ^^^^^^^^^ keyword.statement.interface.php
 //            ^^^^^^^^^^^ entity.name.statement.interface.php
-//                        ^ interface.body.php
+//                        ^ statement.interface.body.php
 //                        ^ punctuation.delimiter.statement.interface.body.begin.php
         Something...
-//      ^^^^^^^^^^^^ interface.php
-//      ^^^^^^^^^^^^ interface.body.php
-//      ^^^^^^^^^^^^ interface.body.content.php
+//      ^^^^^^^^^^^^ statement.interface.php
+//      ^^^^^^^^^^^^ statement.interface.body.php
+//      ^^^^^^^^^^^^ statement.interface.body.content.php
     }
-//  ^ interface.php
-//  ^ interface.body.php
+//  ^ statement.interface.php
+//  ^ statement.interface.body.php
 //  ^ punctuation.delimiter.statement.interface.body.end.php
 
     interface MyInterface extends
-//  ^^^^^^^^^^^^^^^^^^^^^ interface.php
+//  ^^^^^^^^^^^^^^^^^^^^^ statement.interface.php
 //  ^^^^^^^^^ keyword.statement.interface.php
 //            ^^^^^^^^^^^ entity.name.statement.interface.php
 //                        ^^^^^^^ keyword.statement.inherit.php
         \Namespace\Namespace\ParentInterface2 {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ interface.php
-//                                            ^ interface.body
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.interface.php
+//                                            ^ statement.interface.body
 //                                            ^ punctuation.delimiter.statement.interface.body.begin.php
 //      ^ punctuation.delimiter.statement.namespace.a.php
 //                ^ punctuation.delimiter.statement.namespace.b.php
@@ -53,22 +53,22 @@
 //                 ^^^^^^^^^ entity.name.statement.namespace.b.php
 //                           ^^^^^^^^^^^^^^^^ entity.name.type.php
         Something...
-//      ^^^^^^^^^^^^ interface.php
-//      ^^^^^^^^^^^^ interface.body.php
-//      ^^^^^^^^^^^^ interface.body.content.php
+//      ^^^^^^^^^^^^ statement.interface.php
+//      ^^^^^^^^^^^^ statement.interface.body.php
+//      ^^^^^^^^^^^^ statement.interface.body.content.php
     }
-//  ^ interface.php
-//  ^ interface.body.php
+//  ^ statement.interface.php
+//  ^ statement.interface.body.php
 //  ^ punctuation.delimiter.statement.interface.body.end.php
 
     interface MyInterface extends
-//  ^^^^^^^^^^^^^^^^^^^^^ interface.php
+//  ^^^^^^^^^^^^^^^^^^^^^ statement.interface.php
 //  ^^^^^^^^^ keyword.statement.interface.php
 //            ^^^^^^^^^^^ entity.name.statement.interface.php
 //                        ^^^^^^^ keyword.statement.inherit.php
         Namespace\Namespace\ParentInterface2 {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ interface.php
-//                                           ^ interface.body.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.interface.php
+//                                           ^ statement.interface.body.php
 //                                           ^ punctuation.delimiter.statement.interface.body.begin.php
 //               ^ punctuation.delimiter.statement.namespace.b.php
 //                         ^ punctuation.delimiter.type.php
@@ -76,21 +76,21 @@
 //                ^^^^^^^^^ entity.name.statement.namespace.b.php
 //                          ^^^^^^^^^^^^^^^^ entity.name.type.php
         Something...
-//      ^^^^^^^^^^^^ interface.php
-//      ^^^^^^^^^^^^ interface.body.php
-//      ^^^^^^^^^^^^ interface.body.content.php
+//      ^^^^^^^^^^^^ statement.interface.php
+//      ^^^^^^^^^^^^ statement.interface.body.php
+//      ^^^^^^^^^^^^ statement.interface.body.content.php
     }
-//  ^ interface.php
-//  ^ interface.body.php
+//  ^ statement.interface.php
+//  ^ statement.interface.body.php
 //  ^ punctuation.delimiter.statement.interface.body.end.php
 
     interface MyInterface extends
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ interface.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ statement.interface.php
 //  ^^^^^^^^^ keyword.statement.interface.php
 //            ^^^^^^^^^^^ entity.name.statement.interface.php
 //                        ^^^^^^^ keyword.statement.inherit.php
         \Namespace\Namespace\Interface1,
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ interface.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.interface.php
 //                                     ^ punctuation.delimiter.statement.extend.php
 //      ^ punctuation.delimiter.statement.namespace.a.php
 //                ^ punctuation.delimiter.statement.namespace.b.php
@@ -99,8 +99,8 @@
 //                 ^^^^^^^^^ entity.name.statement.namespace.b.php
 //                           ^^^^^^^^^^ entity.name.type.php
         \Namespace\Namespace\Interface2 {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ interface.php
-//                                      ^ interface.body.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.interface.php
+//                                      ^ statement.interface.body.php
 //                                      ^ punctuation.delimiter.statement.interface.body.begin.php
 //      ^ punctuation.delimiter.statement.namespace.a.php
 //                ^ punctuation.delimiter.statement.namespace.b.php
@@ -109,21 +109,21 @@
 //                 ^^^^^^^^^ entity.name.statement.namespace.b.php
 //                           ^^^^^^^^^^ entity.name.type.php
         Something...
-//      ^^^^^^^^^^^^ interface.php
-//      ^^^^^^^^^^^^ interface.body.php
-//      ^^^^^^^^^^^^ interface.body.content.php
+//      ^^^^^^^^^^^^ statement.interface.php
+//      ^^^^^^^^^^^^ statement.interface.body.php
+//      ^^^^^^^^^^^^ statement.interface.body.content.php
     }
-//  ^ interface.php
-//  ^ interface.body.php
+//  ^ statement.interface.php
+//  ^ statement.interface.body.php
 //  ^ punctuation.delimiter.statement.interface.body.end.php
 
     interface MyInterface extends
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ interface.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ statement.interface.php
 //  ^^^^^^^^^ keyword.statement.interface.php
 //            ^^^^^^^^^^^ entity.name.statement.interface.php
 //                        ^^^^^^^ keyword.statement.inherit.php
         Namespace\Namespace\Interface1,
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ interface.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.interface.php
 //                                    ^ punctuation.delimiter.statement.extend.php
 //               ^ punctuation.delimiter.statement.namespace.b.php
 //                         ^ punctuation.delimiter.type.php
@@ -131,8 +131,8 @@
 //                ^^^^^^^^^ entity.name.statement.namespace.b.php
 //                          ^^^^^^^^^^ entity.name.type.php
         Namespace\Namespace\Interface2 {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ interface.php
-//                                     ^ interface.body.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.interface.php
+//                                     ^ statement.interface.body.php
 //                                     ^ punctuation.delimiter.statement.interface.body.begin.php
 //               ^ punctuation.delimiter.statement.namespace.b.php
 //                         ^ punctuation.delimiter.type.php
@@ -140,11 +140,11 @@
 //                ^^^^^^^^^ entity.name.statement.namespace.b.php
 //                          ^^^^^^^^^^ entity.name.type.php
         Something...
-//      ^^^^^^^^^^^^ interface.php
-//      ^^^^^^^^^^^^ interface.body.php
-//      ^^^^^^^^^^^^ interface.body.content.php
+//      ^^^^^^^^^^^^ statement.interface.php
+//      ^^^^^^^^^^^^ statement.interface.body.php
+//      ^^^^^^^^^^^^ statement.interface.body.content.php
     }
-//  ^ interface.php
-//  ^ interface.body.php
+//  ^ statement.interface.php
+//  ^ statement.interface.body.php
 //  ^ punctuation.delimiter.statement.interface.body.end.php
 ?>

@@ -51,7 +51,7 @@ contexts:
         ({{commonIdentifier}})
         (?=\s*\()
       captures:
-        0: function.call.php
+        0: statement.function.call.php
         1: punctuation.delimiter.statement.function.php
         2: entity.name.statement.function.php
       pop: true
@@ -64,8 +64,8 @@ contexts:
         ({{commonIdentifier}})
         (?=\s*\()
       captures:
-        0: function.call.php
-        1: namespace.path.php
+        0: statement.function.call.php
+        1: statement.namespace.path.php
         2: punctuation.delimiter.statement.namespace.a.php
         3: entity.name.statement.namespace.a.php
         4: punctuation.delimiter.statement.namespace.b.php

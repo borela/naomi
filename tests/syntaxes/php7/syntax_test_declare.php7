@@ -14,34 +14,34 @@
 
 <?php
     declare(ticks=1);
-//  ^^^^^^^^^^^^^^^^^ declare.php
-//         ^^^^^^^^^ declare.parameters.php
-//          ^^^^^^^ declare.parameters.content.php
+//  ^^^^^^^^^^^^^^^^^ statement.declare.php
+//         ^^^^^^^^^ statement.declare.parameters.php
+//          ^^^^^^^ statement.declare.parameters.content.php
 //  ^^^^^^^ keyword.statement.declare.php
 //         ^ punctuation.delimiter.statement.declare.parameters.begin.php
 //                 ^ punctuation.delimiter.statement.declare.parameters.end.php
 //                  ^ punctuation.delimiter.statement.declare.body.begin.php
 
     Something...
-//  ^^^^^^^^^^^^ declare.php
-//  ^^^^^^^^^^^^ declare.body.php
-//  ^^^^^^^^^^^^ declare.body.content.php
+//  ^^^^^^^^^^^^ statement.declare.php
+//  ^^^^^^^^^^^^ statement.declare.body.php
+//  ^^^^^^^^^^^^ statement.declare.body.content.php
 
     declare(ticks=1) {
-//  ^^^^^^^^^^^^^^^^^^ declare.php
-//         ^^^^^^^^^ declare.parameters.php
-//          ^^^^^^^ declare.parameters.content.php
+//  ^^^^^^^^^^^^^^^^^^ statement.declare.php
+//         ^^^^^^^^^ statement.declare.parameters.php
+//          ^^^^^^^ statement.declare.parameters.content.php
 //  ^^^^^^^ keyword.statement.declare.php
 //         ^ punctuation.delimiter.statement.declare.parameters.begin.php
 //                 ^ punctuation.delimiter.statement.declare.parameters.end.php
-//                   ^ declare.body.php
+//                   ^ statement.declare.body.php
 //                   ^ punctuation.delimiter.statement.declare.body.begin.php
     Something...
-//  ^^^^^^^^^^^^ declare.php
-//  ^^^^^^^^^^^^ declare.body.php
-//  ^^^^^^^^^^^^ declare.body.content.php
+//  ^^^^^^^^^^^^ statement.declare.php
+//  ^^^^^^^^^^^^ statement.declare.body.php
+//  ^^^^^^^^^^^^ statement.declare.body.content.php
     }
-//  ^ declare.php
-//  ^ declare.body.php
+//  ^ statement.declare.php
+//  ^ statement.declare.body.php
 //  ^ punctuation.delimiter.statement.declare.body.end.php
 ?>

@@ -29,18 +29,18 @@ contexts:
       set: declaration
 
   declaration:
-    - meta_scope: namespace.php
+    - meta_scope: statement.namespace.php
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     # Implicit body.
     - match: ;
       scope: >-
-        namespace.body.php
+        statement.namespace.body.php
         punctuation.delimiter.statement.namespace.body.begin.php
       set: implicit-body
     # Bracketed body.
     - match: "{"
       scope: >-
-        namespace.body.php
+        statement.namespace.body.php
         punctuation.delimiter.statement.namespace.body.begin.php
       set: bracketed-body
     # namespace's path.
@@ -67,9 +67,9 @@ contexts:
 
   implicit-body:
     - meta_content_scope: >-
-        namespace.php
-        namespace.body.php
-        namespace.body.content.php
+        statement.namespace.php
+        statement.namespace.body.php
+        statement.namespace.body.content.php
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: (?=\bnamespace\b)
       pop: true
@@ -84,14 +84,14 @@ contexts:
 
   bracketed-body:
     - meta_content_scope: >-
-        namespace.php
-        namespace.body.php
-        namespace.body.content.php
+        statement.namespace.php
+        statement.namespace.body.php
+        statement.namespace.body.content.php
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: "}"
       scope: >-
-        namespace.php
-        namespace.body.php
+        statement.namespace.php
+        statement.namespace.body.php
         punctuation.delimiter.statement.namespace.body.end.php
       pop: true
     - include: bracketed-body-content

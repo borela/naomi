@@ -14,7 +14,7 @@
 
 <?php
     use \Namespace\Namespace\Target;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php
 //  ^^^ keyword.statement.import.php
 //      ^ punctuation.delimiter.statement.namespace.a.php
 //                ^ punctuation.delimiter.statement.namespace.b.php
@@ -25,7 +25,7 @@
 //                           ^^^^^ entity.name.type.php
 
     use \Namespace\Namespace\Target as Alias;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php
 //  ^^^ keyword.statement.import.php
 //                                  ^^ keyword.statement.import.alias.php
 //      ^ punctuation.delimiter.statement.namespace.a.php
@@ -38,7 +38,7 @@
 //                                     ^^^^^ entity.name.statement.import.alias.php
 
     use Namespace\Namespace\Target;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php
 //  ^^^ keyword.statement.import.php
 //               ^ punctuation.delimiter.statement.namespace.b.php
 //                         ^ punctuation.delimiter.type.php
@@ -48,7 +48,7 @@
 //                          ^^^^^ entity.name.type.php
 
     use Namespace\Namespace\Target as Alias;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php
 //  ^^^ keyword.statement.import.php
 //                                 ^^ keyword.statement.import.alias.php
 //               ^ punctuation.delimiter.statement.namespace.b.php
@@ -60,7 +60,7 @@
 //                                    ^^^^^ entity.name.statement.import.alias.php
 
     use function \Namespace\Namespace\MyFunction;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php
 //  ^^^ keyword.statement.import.php
 //      ^^^^^^^^ keyword.statement.import.function.php
 //               ^ punctuation.delimiter.statement.namespace.a.php
@@ -72,7 +72,7 @@
 //                                    ^^^^^^^^^^ entity.name.type.php
 
     use function \Namespace\Namespace\MyFunction as Alias;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php
 //  ^^^ keyword.statement.import.php
 //      ^^^^^^^^ keyword.statement.import.function.php
 //                                               ^^ keyword.statement.import.alias.php
@@ -86,7 +86,7 @@
 //                                                  ^^^^^ entity.name.statement.import.alias.php
 
     use function Namespace\Namespace\MyFunction;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php
 //  ^^^ keyword.statement.import.php
 //      ^^^^^^^^ keyword.statement.import.function.php
 //                        ^ punctuation.delimiter.statement.namespace.b.php
@@ -97,7 +97,7 @@
 //                                   ^^^^^^^^^^ entity.name.type.php
 
     use function Namespace\Namespace\MyFunction as Alias;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php
 //  ^^^ keyword.statement.import.php
 //      ^^^^^^^^ keyword.statement.import.function.php
 //                                              ^^ keyword.statement.import.alias.php
@@ -110,7 +110,7 @@
 //                                                 ^^^^^ entity.name.statement.import.alias.php
 
     use const \Namespace\Namespace\MyConstant;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php
 //  ^^^ keyword.statement.import.php
 //      ^^^^^ keyword.statement.import.constant.php
 //            ^ punctuation.delimiter.statement.namespace.a.php
@@ -122,7 +122,7 @@
 //                                 ^^^^^^^^^^ entity.name.type.php
 
     use const \Namespace\Namespace\MyConstant as Alias;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php
 //  ^^^ keyword.statement.import.php
 //      ^^^^^ keyword.statement.import.constant.php
 //                                            ^^ keyword.statement.import.alias.php
@@ -136,7 +136,7 @@
 //                                               ^^^^^ entity.name.statement.import.alias.php
 
     use const Namespace\Namespace\MyConstant;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php
 //  ^^^ keyword.statement.import.php
 //      ^^^^^ keyword.statement.import.constant.php
 //                     ^ punctuation.delimiter.statement.namespace.b.php
@@ -147,7 +147,7 @@
 //                                ^^^^^^^^^^ entity.name.type.php
 
     use const Namespace\Namespace\MyConstant as Alias;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ import.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php
 //  ^^^ keyword.statement.import.php
 //      ^^^^^ keyword.statement.import.constant.php
 //                                           ^^ keyword.statement.import.alias.php

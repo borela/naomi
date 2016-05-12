@@ -29,7 +29,7 @@ contexts:
       set: declaration
 
   declaration:
-    - meta_scope: import.php
+    - meta_scope: statement.import.php
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: \,
       scope: punctuation.delimiter.statement.import.php

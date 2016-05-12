@@ -29,7 +29,7 @@ contexts:
       set: declaration
 
   declaration:
-    - meta_scope: function.php
+    - meta_scope: statement.function.php
     # Function without body.
     - match: ;
       scope: punctuation.delimiter.statement.function.declaration.end.php
@@ -49,7 +49,7 @@ contexts:
     # Body.
     - match: \{
       scope: >-
-        function.body.php
+        statement.function.body.php
         punctuation.delimiter.statement.function.body.begin.php
       set: body
 
@@ -75,8 +75,8 @@ contexts:
         entity.name.statement.function.php
 
   parameters:
-    - meta_scope: function.parameters.php
-    - meta_content_scope: function.parameters.content.php
+    - meta_scope: statement.function.parameters.php
+    - meta_content_scope: statement.function.parameters.content.php
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: \)
       scope: punctuation.delimiter.statement.function.parameters.end.php
@@ -119,8 +119,8 @@ contexts:
       set: imported-variables
 
   imported-variables:
-    - meta_scope: function.imported.variables.php
-    - meta_content_scope: function.imported.variables.content.php
+    - meta_scope: statement.function.imported.variables.php
+    - meta_content_scope: statement.function.imported.variables.content.php
     - match: \)
       scope: punctuation.delimiter.statement.imported.variables.end.php
       pop: true
@@ -185,7 +185,7 @@ contexts:
       pop: true
     - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
-    # Constant inside class.
+    # Constant inside statement.class.
     - match: |
         (?xi)
         (?={{commonIdentifier}})
@@ -230,15 +230,15 @@ contexts:
 
   body:
     - meta_content_scope: >-
-        function.php
-        function.body.php
-        function.body.content.php
+        statement.function.php
+        statement.function.body.php
+        statement.function.body.content.php
     - match: \{
       push: balance-brackets
     - match: \}
       scope: >-
-        function.php
-        function.body.php
+        statement.function.php
+        statement.function.body.php
         punctuation.delimiter.statement.function.body.end.php
       pop: true
     - include: body-content

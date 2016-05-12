@@ -23,7 +23,7 @@
 
     \Namespace\Namespace\Random
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php
-//  ^^^^^^^^^^^^^^^^^^^^ namespace.path.php
+//  ^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php
 //  ^ punctuation.delimiter.statement.namespace.a.php
 //            ^ punctuation.delimiter.statement.namespace.b.php
 //                      ^ punctuation.delimiter.type.php
@@ -32,7 +32,7 @@
 //                       ^^^^^^ entity.name.type.php
     Namespace\Namespace\Random
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php
-//  ^^^^^^^^^^^^^^^^^^^ namespace.path.php
+//  ^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php
 //           ^ punctuation.delimiter.statement.namespace.b.php
 //                     ^ punctuation.delimiter.type.php
 //  ^^^^^^^^^ entity.name.statement.namespace.a.php

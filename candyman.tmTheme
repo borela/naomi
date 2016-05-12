@@ -168,7 +168,7 @@
                 <string>String</string>
 
                 <key>scope</key>
-                <string>string</string>
+                <string>string, constant.character</string>
 
                 <key>settings</key>
                 <dict>
@@ -182,7 +182,7 @@
                 <string>String's beginning</string>
 
                 <key>scope</key>
-                <string>punctuation.delimiter.string.begin</string>
+                <string>punctuation.delimiter.string.begin, punctuation.delimiter.constant.character.begin</string>
 
                 <key>settings</key>
                 <dict>
@@ -199,7 +199,7 @@
                 <string>String's ending</string>
 
                 <key>scope</key>
-                <string>punctuation.delimiter.string.end</string>
+                <string>punctuation.delimiter.string.end, punctuation.delimiter.constant.character.end</string>
 
                 <key>settings</key>
                 <dict>
@@ -216,7 +216,7 @@
                 <string>Escaped character A</string>
 
                 <key>scope</key>
-                <string>constant.character.escape.a</string>
+                <string>constant.character.escape</string>
 
                 <key>settings</key>
                 <dict>
@@ -556,6 +556,99 @@
 
             <dict>
                 <key>name</key>
+                <string>Color's beginning</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.color.begin</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#fff9c4</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Color's ending</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.color.end</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#ff8a65</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Color's separator</string>
+
+                <key>scope</key>
+                <string>punctuation.separator.color</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#fff9c4</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Color's red component</string>
+
+                <key>scope</key>
+                <string>color.value.r</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ef9a9a</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Color's green component</string>
+
+                <key>scope</key>
+                <string>color.value.g</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#a5d6a7</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Color's blue component</string>
+
+                <key>scope</key>
+                <string>color.value.b</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#80deea</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Inherit target</string>
 
                 <key>scope</key>
@@ -584,6 +677,48 @@
 
             <dict>
                 <key>name</key>
+                <string>Import target</string>
+
+                <key>scope</key>
+                <string>statement.import type</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ffecb3</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Import target function</string>
+
+                <key>scope</key>
+                <string>statement.import.function type, statement.import.function punctuation.delimiter.type</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#81d4fa</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Import target constant</string>
+
+                <key>scope</key>
+                <string>statement.import.constant type, statement.import.constant punctuation.delimiter.type</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ce93d8</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Alias</string>
 
                 <key>scope</key>
@@ -593,6 +728,34 @@
                 <dict>
                     <key>foreground</key>
                     <string>#ffecb3</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>MQL's index A</string>
+
+                <key>scope</key>
+                <string>index.a.mql</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ce93d8</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>MQL's index B</string>
+
+                <key>scope</key>
+                <string>index.b.mql</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f06292</string>
                 </dict>
             </dict>
 

@@ -39,7 +39,6 @@ contexts:
     - match: ""
       push: [
         alias,
-        target-type,
         const-or-function
       ]
 
@@ -47,14 +46,25 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: (?i)\bconst\b
       scope: keyword.statement.import.constant.php
-      pop: true
+      set: namespaced-const
     - match: (?i)\bfunction\b
       scope: keyword.statement.import.function.php
-      pop: true
-    - match: ""
-      pop: true
+      set: namespaced-function
+    - match: (?=\S)
+      set: namespace-or-type
 
-  target-type:
+  namespaced-const:
+    - meta_scope: statement.import.constant.php
+    - include: target
+
+  namespaced-function:
+    - meta_scope: statement.import.function.php
+    - include: target
+
+  namespace-or-type:
+    - include: target
+
+  target:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
 

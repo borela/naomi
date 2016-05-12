@@ -14,17 +14,17 @@
 
 <?php
     myFunction()
-//  ^^^^^^^^^^ statement.function.call.php
+//  ^^^^^^^^^^ function.call.php
 
     Type::myFunction()
 //  ^^^^ type.php
 //      ^^ keyword.operator.scope.resolution.php
-//        ^^^^^^^^^^ statement.function.call.php
+//        ^^^^^^^^^^ function.call.php
 
     $object->myFunction();
 //  ^^^^^^^ variable.php
 //  ^ punctuation.variable.begin.php
 //   ^^^^^^ entity.name.variable.php
 //         ^^ keyword.operator.member.access.php
-//           ^^^^^^^^^^ statement.function.call.php
+//           ^^^^^^^^^^ function.call.php
 ?>

@@ -18,10 +18,6 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [a-z\x{7f}-\x{ff}_]
-    [a-z\x{7f}-\x{ff}0-9_]*
-
   octalEscapedChar: |
     \\[0-7]{1,3}
 

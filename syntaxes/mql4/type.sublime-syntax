@@ -20,4 +20,5 @@ scope: ...
 contexts:
   main:
     - include: Packages/Naomi/syntaxes/mql4/type/support/core.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/type/support/enums.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/type/normal.sublime-syntax

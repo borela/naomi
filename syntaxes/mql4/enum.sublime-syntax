@@ -25,10 +25,13 @@ variables:
 contexts:
   main:
     - match: \benum\b
-      scope: keyword.statement.enum.mql.4
+      scope: >-
+        statement.enum.mql.4
+        keyword.statement.enum.mql.4
       set: identifier
 
   identifier:
+    - meta_content_scope: statement.enum.mql.4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: |
         (?xi)
@@ -37,15 +40,24 @@ contexts:
       set: body
 
   body:
+    - meta_content_scope: >-
+        statement.enum.mql.4
+        statement.enum.body.mql.4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: \{
       scope: punctuation.delimiter.statement.enum.body.begin.mql.4
       set: body-content
 
   body-content:
+    - meta_content_scope: >-
+        statement.enum.mql.4
+        statement.enum.body.mql.4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: \};
-      scope: punctuation.delimiter.statement.enum.body.end.mql.4
+      scope: >-
+        statement.enum.mql.4
+        statement.enum.body.mql.4
+        punctuation.delimiter.statement.enum.body.end.mql.4
       pop: true
     - match: (?=\S)
       push: [

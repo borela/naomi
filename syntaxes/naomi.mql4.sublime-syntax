@@ -31,4 +31,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/mql4/preprocessor.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/input.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/enum.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/variable-declaration.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/function-call.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax

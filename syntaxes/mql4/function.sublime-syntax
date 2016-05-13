@@ -116,6 +116,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/operator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/keyword.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/preprocessor.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/variable-declaration.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/function-call.sublime-syntax

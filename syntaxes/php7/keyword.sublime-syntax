@@ -32,13 +32,13 @@ contexts:
             | do
             | else(?:if)?
             | end
-              (?> for(?:each)
+              (?> for(?:each)?
                 | if
                 | switch
                 | while
               )
             | finally
-            | for(?:each)
+            | for(?:each)?
             | global
             | goto
             | if

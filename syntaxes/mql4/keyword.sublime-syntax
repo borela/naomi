@@ -38,7 +38,7 @@ contexts:
                 | while
               )
             | finally
-            | for(?:each)
+            | for
             | global
             | goto
             | if

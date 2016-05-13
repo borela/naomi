@@ -1,0 +1,232 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [a-z\x{7f}-\x{ff}_]
+    [a-z\x{7f}-\x{ff}0-9_]*
+
+  constantIdentifier: |
+    [A-Z\x{7f}-\x{ff}_]
+    [A-Z\x{7f}-\x{ff}0-9_]*
+
+contexts:
+  main:
+    - include: other-operator
+    - include: arithmetic-operator
+    - include: bitwise-operator
+    - include: assignment-operator
+    - include: comparison-operator
+    - include: logical-operator
+    - include: string-operator
+
+  # | Operator |  Description    |
+  # | :------: | :-------------- |
+  # |    --    | Decrement.      |
+  # |    -     | Subtraction.    |
+  # |    ++    | Increment.      |
+  # |    +     | Addition.       |
+  # |    **    | Exponentiation. |
+  # |    *     | Multiplication. |
+  # |    /     | Division.       |
+  # |    %     | Modulus.        |
+  arithmetic-operator:
+    - match: |
+        (?x)
+        (?> --
+          | -
+          | \+\+
+          | \+
+          | \*\*
+          | \*
+          | /
+          | %
+        )
+      scope: keyword.operator.arithmetic.mql.4
+      pop: true
+
+  # | Operator | Description  |
+  # | :------: | :------------|
+  # |    &=    | Bitwise And. |
+  # |    |=    | Bitwise Or.  |
+  # |    ^=    | Bitwise Xor. |
+  # |   <<=    | Left shift.  |
+  # |   >>=    | Right shift. |
+  bitwise-operator:
+    - match: |
+        (?x)
+        (?> &=
+          | \|=
+          | \^=
+          | <<=
+          | >>=
+        )
+      scope: keyword.operator.bitwise.mql.4
+      pop: true
+
+  # | Operator |    Description     |
+  # | :------: | :----------------- |
+  # |    =     | Simple assignment. |
+  # |    +=    |                    |
+  # |    *=    |                    |
+  # |    /=    |                    |
+  # |    %=    |                    |
+  # |    ??    | Null coalescing.   |
+  # |    ?     |                    |
+  # |    :     |                    |
+  assignment-operator:
+    - match: |
+        (?x)
+        (?> =
+          | \+=
+          | \*=
+          | /=
+          | %=
+          | \?(\?)?
+          | :
+        )
+      scope: keyword.operator.assignment.mql.4
+      pop: true
+
+  # | Operator |       Description         |
+  # | :------: | :------------------------ |
+  # |   ===    | Identical.                |
+  # |    ==    | Equal.                    |
+  # |   !==    | Not identical.            |
+  # |    !=    | Not equal.                |
+  # |    <>    | Not equal.                |
+  # |    >=    | Greater than or equal to. |
+  # |   <=>    | Spaceship operator.       |
+  # |    <=    | Less than or equal to.    |
+  # |    >     | Greater than.             |
+  # |    <     | Less than.                |
+  comparison-operator:
+    - match: |
+        (?x)
+        (?> ===
+          | ==
+          | !==
+          | !=
+          | <>
+          | >=
+          | <=>
+          | <=
+          | >
+          | <(?!<<)
+        )
+      scope: keyword.operator.comparison.mql.4
+      pop: true
+
+  # | Operator | Description  |
+  # | :------: | :----------- |
+  # |   and    |              |
+  # |   xor    |              |
+  # |    or    |              |
+  # |    &&    | Same as and. |
+  # |    ||    | Same as or.  |
+  # |    !     | Not.         |
+  logical-operator:
+    - match: |
+        (?x)
+        (?>
+          (?:
+            \s+
+            (?> and
+              | xor
+              | or
+            )\s+
+          )
+          | &&
+          | \|\|
+          | !
+        )
+      scope: keyword.operator.logical.mql.4
+      pop: true
+
+  # | Operator |  Description   |
+  # | :------: | :------------- |
+  # |    .     | Concatenation. |
+  # |    .=    | Append.        |
+  string-operator:
+    - match: |
+        (?x)
+        (?> \.=
+          | \.
+        )
+      scope: keyword.operator.string.mql.4
+      pop: true
+
+  # |  Operator  |  Description        |
+  # | :--------: | :------------------ |
+  # | instanceof |                     |
+  # |     &      | Reference.          |
+  # |     =>     | Key association.    |
+  # |     ->     | Member access.      |
+  # |     ::     | Scope resolution.   |
+  # |    ...     | Argument unpacking. |
+  other-operator:
+    - match: (?xi)\binstanceof\b
+      scope: keyword.operator.type.mql.4
+      pop: true
+    - match: "&(?![&=])"
+      scope: keyword.operator.reference.mql.4
+      pop: true
+    - match: "\\.\\.\\."
+      scope: keyword.operator.argument.unpacking.mql.4
+      pop: true
+    - match: "=>"
+      scope: keyword.operator.key.association.mql.4
+      pop: true
+    - match: "->"
+      scope: keyword.operator.member.access.mql.4
+      set: member-access
+    - match: "::"
+      scope: keyword.operator.scope.resolution.mql.4
+      set: scope-resolution
+
+  member-access:
+    - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
+    # Constant.
+    - match: (?x)\b{{constantIdentifier}}
+      scope: constant.mql.4
+      pop: true
+    # Property.
+    - match: (?xi){{commonIdentifier}}
+      scope: >-
+        variable.property.mql.4
+        entity.name.variable.mql.4
+      pop: true
+
+  scope-resolution:
+    - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
+    # Class name as string.
+    - match: \bclass\b
+      scope: keyword.other.class.name.mql.4
+      pop: true
+    # Variable.
+    - match: (?xi)(\$)({{commonIdentifier}})
+      captures:
+        0: variable.static.mql.4
+        1: punctuation.variable.begin.mql.4
+        2: entity.name.variable.mql.4
+      pop: true
+    # Constant.
+    - match: (?x)\b{{constantIdentifier}}
+      scope: constant.mql.4
+      pop: true

@@ -1,0 +1,138 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+contexts:
+  main:
+    - match: (\#)(property)
+      scope: keyword.preprocessor.mql.4
+      set: identifier
+
+  identifier:
+    - meta_scope: statement.preprocessor.mql.4
+    - include: identifier-without-value
+    - include: identifier-with-color-value
+    - include: identifier-with-string-value
+    - include: identifier-with-number-value
+
+  identifier-without-value:
+    - match: |
+        (?x)
+        (?> strict
+          | library
+          | script_show_
+            (?>confirm|inputs)
+          | indicator_
+            (?>chart_window|separate_window)
+        )
+      scope: keyword.preprocessor.mql.4
+      pop: true
+
+  identifier-with-color-value:
+    - match: |
+        (?x)
+        indicator_
+        (?>color|levelcolor)
+        (?> ([1357])
+          | ([2468])
+        )
+      captures:
+        0: keyword.preprocessor.mql.4
+        1: index.a.mql.4
+        2: index.b.mql.4
+      set: color-value
+
+  identifier-with-string-value:
+    - match: |
+        (?x)
+        (?> icon
+          | link
+          | copyright
+          | version
+          | description
+          | indicator_label
+            (?> ([1357])
+              | ([2468])
+            )
+          | tester_
+            (?>file|indicator|library)
+        )
+      captures:
+        0: keyword.preprocessor.mql.4
+        1: index.a.mql.4
+        2: index.b.mql.4
+      set: string-value
+
+  identifier-with-number-value:
+    - match: |
+        (?x)
+        (?> stacksize
+          | indicator_
+            (?> height
+              | buffers
+              | minimum
+              | maximum
+              | (?> width
+                  | style
+                  | type
+                  | level
+                    (?>width|style)?
+                )
+                (?> ([1357])
+                  | ([2468])
+                )
+            )
+        )
+      captures:
+        0: keyword.preprocessor.mql.4
+        1: index.a.mql.4
+        2: index.b.mql.4
+      set: number-value
+
+  color-value:
+    - meta_scope: statement.preprocessor.mql.4
+    - match: $
+      pop: true
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/mql4/constant/support/color.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/literal/color.sublime-syntax
+        - match: (?=$)
+          pop: true
+
+  string-value:
+    - meta_scope: statement.preprocessor.mql.4
+    - match: $
+      pop: true
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/literal/string.sublime-syntax
+        - match: (?=$)
+          pop: true
+
+  number-value:
+    - meta_scope: statement.preprocessor.mql.4
+    - match: $
+      pop: true
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/literal/number.sublime-syntax
+        - match: (?=$)
+          pop: true

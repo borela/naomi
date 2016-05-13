@@ -24,13 +24,38 @@ variables:
 
 contexts:
   main:
-    - include: common-variable
-
-  common-variable:
     - match: |
         (?xi)
-        \b{{commonIdentifier}}\b
-      scope: >-
-        variable.mql.4
-        entity.name.variable.mql.4
+        (?=
+          {{commonIdentifier}}\s+
+          {{commonIdentifier}}\s*[\[=;]
+        )
+      push: [
+        punctuation,
+        variable,
+        type
+      ]
+
+  type:
+    - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
+
+  variable:
+    - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
+
+  punctuation:
+    - match: =
+      scope: keyword.operator.assignment.mql.4
+      set: value
+    - match: ;
+      scope: punctuation.delimiter.statement.variable.declaration.end.mql.4
       pop: true
+
+  value:
+    - match: ;
+      scope: punctuation.delimiter.statement.variable.declaration.end.mql.4
+      pop: true
+    - include: Packages/Naomi/syntaxes/mql4/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/operator.sublime-syntax

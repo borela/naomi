@@ -1,0 +1,130 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [a-z\x{7f}-\x{ff}_]
+    [a-z\x{7f}-\x{ff}0-9_]*
+
+contexts:
+  main:
+    - match: |
+        (?xi)
+        (?=
+          {{commonIdentifier}}\s+
+          {{commonIdentifier}}\s*\(
+        )
+      push: [
+        body-begin,
+        parameters-begin,
+        identifier,
+        type
+      ]
+
+  type:
+    - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
+
+  identifier:
+    - match: |
+        (?xi)
+        {{commonIdentifier}}
+      scope: entity.name.statement.function.mql.4
+      pop: true
+
+  parameters-begin:
+    - match: \(
+      scope: punctuation.delimiter.statement.function.parameters.begin.mql.4
+      set: parameters
+
+  parameters:
+    - match: \)
+      scope: punctuation.delimiter.statement.function.parameters.end.mql.4
+      pop: true
+    - match: (?=\S)
+      push: parameter
+
+  parameter:
+    - match: (?=[)])
+      pop: true
+    - match: (?=\S)
+      push: [
+        parameter-delimiter,
+        variable,
+        optional-reference-operator,
+        type,
+        optional-const
+      ]
+
+  optional-const:
+    - match: const
+      scope: keyword.modifier.mql.4
+      pop: true
+    - match: (?=\S)
+      pop: true
+
+  optional-reference-operator:
+    - match: \&
+      scope: keyword.operator.reference.mql.4
+      pop: true
+    - match: (?=\S)
+      pop: true
+
+  variable:
+    - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
+
+  parameter-delimiter:
+    - match: \,
+      scope: punctuation.statement.function.paramters.delimiter.mql.4
+      pop: true
+    - match: (?=[)])
+      pop: true
+
+  body-begin:
+    - match: \{
+      scope: punctuation.delimiter.statement.function.body.begin.mql.4
+      set: body
+
+  body:
+    - match: \}
+      scope: punctuation.delimiter.statement.function.body.end.mql.4
+      pop: true
+    - match: (?=\S)
+      push:
+        - include: body-content
+        - match: (?=\})
+          pop: true
+
+  body-content:
+    - include: balance-brackets
+    - include: Packages/Naomi/syntaxes/mql4/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/operator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/preprocessor.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/variable-declaration.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
+
+  balance-brackets:
+    - match: \{
+      push:
+        - include: body-content
+        - match: \}
+          pop: true

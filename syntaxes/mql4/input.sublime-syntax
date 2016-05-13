@@ -25,16 +25,12 @@ contexts:
 
   input:
     - meta_scope: statement.input.mql.4
-    - match: ;
-      scope: punctuation.delimiter.statement.input.end.mql.4
-      pop: true
+    - include: assignment-operator
     - match: (?=\S)
       push: [
-          value,
-          operator,
-          identifier,
-          type
-        ]
+        identifier,
+        type
+      ]
 
   type:
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
@@ -42,11 +38,22 @@ contexts:
   identifier:
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
 
-  operator:
+  assignment-operator:
     - match: =
       scope: keyword.operator.assignment.mql.4
-      pop: true
+      set: value
 
   value:
-    - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
+    - meta_content_scope: statement.input.mql.4
+    - match: ;
+      scope: >-
+        statement.input.mql.4
+        punctuation.delimiter.statement.input.end.mql.4
+      pop: true
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/operator.sublime-syntax
+        - match: (?=;)
+          pop: true

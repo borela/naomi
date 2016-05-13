@@ -90,7 +90,7 @@ contexts:
 
   parameter-delimiter:
     - match: \,
-      scope: punctuation.statement.function.paramters.delimiter.mql.4
+      scope: punctuation.delimiter.statement.function.paramters.mql.4
       pop: true
     - match: (?=[)])
       pop: true

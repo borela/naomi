@@ -159,7 +159,7 @@ following style:
 * Use the present tense: “*Add feature.*” instead of “*Added feature.*”.
 * Use the imperative mood: “*Move file to...*” instead of “*Moves file to...*”.
 * Limit the first line to 50 characters or less.
-* Limit the details to 70 characters.
+* Limit each line in the description to 72 characters.
 * Use asterisks for bullet points.
 * Use a hanging indent for bullet points that goes through multiple lines.
 * Reference issues and pull requests liberally.

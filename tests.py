@@ -41,7 +41,7 @@ class OutputPanel(object):
 
 class NaomiRunSyntaxTestsCommand(sublime_plugin.WindowCommand):
     def __init__(self, window):
-        self.outputPanel = OutputPanel(window, 'naomi')
+        self.window = window
 
     def run(self):
         totalFiles = 0
@@ -49,6 +49,7 @@ class NaomiRunSyntaxTestsCommand(sublime_plugin.WindowCommand):
         totalFailedAssertions = 0
         testsPath = sublime.packages_path() + '/Naomi/tests/syntaxes';
 
+        self.outputPanel = OutputPanel(self.window, 'naomi')
         self.outputPanel.show()
         self.outputPanel.append('Naomi: Running syntax tests...')
 

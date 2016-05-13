@@ -17,6 +17,12 @@ literal.
 * Different scopes for extended class and implemented interfaces.
 * Different scopes for private and protected modifiers.
 
+#### MQL4
+
+* Different scopes for decimal, floating point and hexadecimal literal.
+* Different scopes for RGB literal.
+* Alternating scopes for escaped characters.
+
 ## Installation
 
 #### Package Control

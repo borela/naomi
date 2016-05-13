@@ -30,9 +30,9 @@ contexts:
       set: [
         end,
         blue-value,
-        separator,
+        delimiter,
         green-value,
-        separator,
+        delimiter,
         red-value
       ]
 
@@ -43,11 +43,11 @@ contexts:
         punctuation.delimiter.color.end.mql.4
       pop: true
 
-  separator:
+  delimiter:
     - match: \,
       scope: >-
         constant.color.mql.4
-        punctuation.separator.color.mql.4
+        punctuation.delimiter.color.mql.4
       pop: true
 
   red-value:

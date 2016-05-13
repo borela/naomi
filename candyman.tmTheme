@@ -590,10 +590,10 @@
 
             <dict>
                 <key>name</key>
-                <string>Color's separator</string>
+                <string>Color's delimiter</string>
 
                 <key>scope</key>
-                <string>punctuation.separator.color</string>
+                <string>punctuation.delimiter.color</string>
 
                 <key>settings</key>
                 <dict>

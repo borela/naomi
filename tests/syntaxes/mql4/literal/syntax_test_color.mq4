@@ -18,8 +18,8 @@
 //       ^^ color.value.g.mql.4
 //          ^^ color.value.b.mql.4
 //  ^^ punctuation.delimiter.color.begin.mql.4
-//      ^ punctuation.separator.color.mql.4
-//         ^ punctuation.separator.color.mql.4
+//      ^ punctuation.delimiter.color.mql.4
+//         ^ punctuation.delimiter.color.mql.4
 //            ^ punctuation.delimiter.color.end.mql.4
     C'0x42,0x42,0x42'
 //  ^^^^^^^^^^^^^^^^^ constant.color.mql.4
@@ -27,6 +27,6 @@
 //         ^^^^ color.value.g.mql.4
 //              ^^^^ color.value.b.mql.4
 //  ^^ punctuation.delimiter.color.begin.mql.4
-//        ^ punctuation.separator.color.mql.4
-//             ^ punctuation.separator.color.mql.4
+//        ^ punctuation.delimiter.color.mql.4
+//             ^ punctuation.delimiter.color.mql.4
 //                  ^ punctuation.delimiter.color.end.mql.4

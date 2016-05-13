@@ -110,8 +110,8 @@
 //                                  ^^ color.value.g.mql.4
 //                                     ^^ color.value.b.mql.4
 //                             ^^ punctuation.delimiter.color.begin.mql.4
-//                                 ^ punctuation.separator.color.mql.4
-//                                    ^ punctuation.separator.color.mql.4
+//                                 ^ punctuation.delimiter.color.mql.4
+//                                    ^ punctuation.delimiter.color.mql.4
 //                                       ^ punctuation.delimiter.color.end.mql.4
     #property indicator_color1 C'0x42,0x42,0x42'
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.preprocessor.mql.4
@@ -122,8 +122,8 @@
 //                                    ^^^^ color.value.g.mql.4
 //                                         ^^^^ color.value.b.mql.4
 //                             ^^ punctuation.delimiter.color.begin.mql.4
-//                                   ^ punctuation.separator.color.mql.4
-//                                        ^ punctuation.separator.color.mql.4
+//                                   ^ punctuation.delimiter.color.mql.4
+//                                        ^ punctuation.delimiter.color.mql.4
 //                                             ^ punctuation.delimiter.color.end.mql.4
     #property indicator_color1 clrRed
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.preprocessor.mql.4
@@ -164,8 +164,8 @@
 //                                       ^^ color.value.g.mql.4
 //                                          ^^ color.value.b.mql.4
 //                                  ^^ punctuation.delimiter.color.begin.mql.4
-//                                      ^ punctuation.separator.color.mql.4
-//                                         ^ punctuation.separator.color.mql.4
+//                                      ^ punctuation.delimiter.color.mql.4
+//                                         ^ punctuation.delimiter.color.mql.4
 //                                            ^ punctuation.delimiter.color.end.mql.4
     #property indicator_levelcolor1 C'0x42,0x42,0x42'
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.preprocessor.mql.4
@@ -176,8 +176,8 @@
 //                                         ^^^^ color.value.g.mql.4
 //                                              ^^^^ color.value.b.mql.4
 //                                  ^^ punctuation.delimiter.color.begin.mql.4
-//                                        ^ punctuation.separator.color.mql.4
-//                                             ^ punctuation.separator.color.mql.4
+//                                        ^ punctuation.delimiter.color.mql.4
+//                                             ^ punctuation.delimiter.color.mql.4
 //                                                  ^ punctuation.delimiter.color.end.mql.4
     #property indicator_levelcolor1 clrRed
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.preprocessor.mql.4

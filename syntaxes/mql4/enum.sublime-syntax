@@ -61,7 +61,7 @@ contexts:
       pop: true
     - match: (?=\S)
       push: [
-        separator,
+        delimiter,
         assignment,
         item
       ]
@@ -85,10 +85,10 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
 
-  separator:
+  delimiter:
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: (?=\};)
       pop: true
     - match: \,
-      scope: punctuation.separator.enum.items.mql.4
+      scope: punctuation.delimiter.enum.items.mql.4
       pop: true

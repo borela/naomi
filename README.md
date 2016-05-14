@@ -46,7 +46,7 @@ The “Packages” directory is located at:
 
 ## Usage
 
-1. Go to the menu `View / Syntax / PHP 7` to select the new syntax.
+1. Go to the menu `View / Syntax / Naomi / ...` to select the new syntax.
 2. Select a color scheme provided in `Preferences / Color Scheme / Naomi`.
 
 Note: You aren't required to use the color schemes provided but keep in mind

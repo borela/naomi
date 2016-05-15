@@ -15,7 +15,7 @@
             {
                 "key": "preceding_text",
                 "operator": "regex_contains",
-                "operand": "^/\\*\\*",
+                "operand": "^\\s*/\\*\\*",
                 "match_all": true
             }
         ],

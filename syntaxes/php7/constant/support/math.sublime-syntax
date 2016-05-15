@@ -41,5 +41,5 @@ contexts:
           | PHP_ROUND_HALF_
             (?>DOWN|EVEN|ODD|UP)
         )\b
-      scope: support.constant.php
+      scope: support.constant.php.7
       pop: true

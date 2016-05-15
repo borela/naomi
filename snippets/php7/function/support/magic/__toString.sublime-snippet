@@ -12,7 +12,7 @@
  | the License.
 -->
 <snippet>
-    <scope>embedded.content.php</scope>
+    <scope>embedded.content.php.7</scope>
     <tabTrigger>decmtostring</tabTrigger>
     <description>__toString declaration.</description>
     <content><![CDATA[

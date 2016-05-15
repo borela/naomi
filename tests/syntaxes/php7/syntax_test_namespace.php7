@@ -14,76 +14,76 @@
 
 <?php
     namespace \Namespace\Namespace\Namespace;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.php
-//            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php
-//  ^^^^^^^^^ keyword.statement.namespace.php
-//                                          ^ statement.namespace.body.php
-//                                          ^ punctuation.delimiter.statement.namespace.body.begin.php
-//            ^ punctuation.delimiter.statement.namespace.a.php
-//                      ^ punctuation.delimiter.statement.namespace.b.php
-//                                ^ punctuation.delimiter.statement.namespace.a.php
-//             ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                       ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                                 ^^^^^^^^^ entity.name.statement.namespace.a.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.php.7
+//            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//  ^^^^^^^^^ keyword.statement.namespace.php.7
+//                                          ^ statement.namespace.body.php.7
+//                                          ^ punctuation.delimiter.statement.namespace.body.begin.php.7
+//            ^ punctuation.delimiter.statement.namespace.a.php.7
+//                      ^ punctuation.delimiter.statement.namespace.b.php.7
+//                                ^ punctuation.delimiter.statement.namespace.a.php.7
+//             ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                       ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                 ^^^^^^^^^ entity.name.statement.namespace.a.php.7
     Something...
-//  ^^^^^^^^^^^^ statement.namespace.php
-//  ^^^^^^^^^^^^ statement.namespace.body.php
-//  ^^^^^^^^^^^^ statement.namespace.body.content.php
+//  ^^^^^^^^^^^^ statement.namespace.php.7
+//  ^^^^^^^^^^^^ statement.namespace.body.php.7
+//  ^^^^^^^^^^^^ statement.namespace.body.content.php.7
 
     namespace Namespace\Namespace\Namespace;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.php
-//            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php
-//  ^^^^^^^^^ keyword.statement.namespace.php
-//                                         ^ statement.namespace.body.php
-//                                         ^ punctuation.delimiter.statement.namespace.body.begin.php
-//                     ^ punctuation.delimiter.statement.namespace.b.php
-//                               ^ punctuation.delimiter.statement.namespace.a.php
-//            ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                      ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                                ^^^^^^^^^ entity.name.statement.namespace.a.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.php.7
+//            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//  ^^^^^^^^^ keyword.statement.namespace.php.7
+//                                         ^ statement.namespace.body.php.7
+//                                         ^ punctuation.delimiter.statement.namespace.body.begin.php.7
+//                     ^ punctuation.delimiter.statement.namespace.b.php.7
+//                               ^ punctuation.delimiter.statement.namespace.a.php.7
+//            ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                      ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                ^^^^^^^^^ entity.name.statement.namespace.a.php.7
     Something...
-//  ^^^^^^^^^^^^ statement.namespace.php
-//  ^^^^^^^^^^^^ statement.namespace.body.php
-//  ^^^^^^^^^^^^ statement.namespace.body.content.php
+//  ^^^^^^^^^^^^ statement.namespace.php.7
+//  ^^^^^^^^^^^^ statement.namespace.body.php.7
+//  ^^^^^^^^^^^^ statement.namespace.body.content.php.7
 
     namespace \Namespace\Namespace\Namespace {
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.php
-//            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php
-//                                           ^ statement.namespace.body.php
-//                                           ^ punctuation.delimiter.statement.namespace.body.begin.php
-//  ^^^^^^^^^ keyword.statement.namespace.php
-//            ^ punctuation.delimiter.statement.namespace.a.php
-//                      ^ punctuation.delimiter.statement.namespace.b.php
-//                                ^ punctuation.delimiter.statement.namespace.a.php
-//             ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                       ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                                 ^^^^^^^^^ entity.name.statement.namespace.a.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.php.7
+//            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//                                           ^ statement.namespace.body.php.7
+//                                           ^ punctuation.delimiter.statement.namespace.body.begin.php.7
+//  ^^^^^^^^^ keyword.statement.namespace.php.7
+//            ^ punctuation.delimiter.statement.namespace.a.php.7
+//                      ^ punctuation.delimiter.statement.namespace.b.php.7
+//                                ^ punctuation.delimiter.statement.namespace.a.php.7
+//             ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                       ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                 ^^^^^^^^^ entity.name.statement.namespace.a.php.7
         Something...
-//      ^^^^^^^^^^^^ statement.namespace.php
-//      ^^^^^^^^^^^^ statement.namespace.body.php
-//      ^^^^^^^^^^^^ statement.namespace.body.content.php
+//      ^^^^^^^^^^^^ statement.namespace.php.7
+//      ^^^^^^^^^^^^ statement.namespace.body.php.7
+//      ^^^^^^^^^^^^ statement.namespace.body.content.php.7
     }
-//  ^ statement.namespace.php
-//  ^ statement.namespace.body.php
-//  ^ punctuation.delimiter.statement.namespace.body.end.php
+//  ^ statement.namespace.php.7
+//  ^ statement.namespace.body.php.7
+//  ^ punctuation.delimiter.statement.namespace.body.end.php.7
 
     namespace Namespace\Namespace\Namespace {
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.php
-//            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php
-//  ^^^^^^^^^ keyword.statement.namespace.php
-//                                          ^ statement.namespace.body.php
-//                                          ^ punctuation.delimiter.statement.namespace.body.begin.php
-//                     ^ punctuation.delimiter.statement.namespace.b.php
-//                               ^ punctuation.delimiter.statement.namespace.a.php
-//            ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                      ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                                ^^^^^^^^^ entity.name.statement.namespace.a.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.php.7
+//            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//  ^^^^^^^^^ keyword.statement.namespace.php.7
+//                                          ^ statement.namespace.body.php.7
+//                                          ^ punctuation.delimiter.statement.namespace.body.begin.php.7
+//                     ^ punctuation.delimiter.statement.namespace.b.php.7
+//                               ^ punctuation.delimiter.statement.namespace.a.php.7
+//            ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                      ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                ^^^^^^^^^ entity.name.statement.namespace.a.php.7
         Something...
-//      ^^^^^^^^^^^^ statement.namespace.php
-//      ^^^^^^^^^^^^ statement.namespace.body.php
-//      ^^^^^^^^^^^^ statement.namespace.body.content.php
+//      ^^^^^^^^^^^^ statement.namespace.php.7
+//      ^^^^^^^^^^^^ statement.namespace.body.php.7
+//      ^^^^^^^^^^^^ statement.namespace.body.content.php.7
     }
-//  ^ statement.namespace.php
-//  ^ statement.namespace.body.php
-//  ^ punctuation.delimiter.statement.namespace.body.end.php
+//  ^ statement.namespace.php.7
+//  ^ statement.namespace.body.php.7
+//  ^ punctuation.delimiter.statement.namespace.body.end.php.7
 ?>

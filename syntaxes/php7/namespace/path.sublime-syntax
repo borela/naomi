@@ -42,11 +42,11 @@ contexts:
     - match: (?xi){{namespacePath}}
       captures:
         0: >-
-          type.php
-          statement.namespace.path.php
-        1: punctuation.delimiter.statement.namespace.a.php
-        2: entity.name.statement.namespace.a.php
-        3: punctuation.delimiter.statement.namespace.b.php
-        4: entity.name.statement.namespace.b.php
-        5: punctuation.delimiter.statement.namespace.a.php
-        6: entity.name.statement.namespace.a.php
+          type.php.7
+          statement.namespace.path.php.7
+        1: punctuation.delimiter.statement.namespace.a.php.7
+        2: entity.name.statement.namespace.a.php.7
+        3: punctuation.delimiter.statement.namespace.b.php.7
+        4: entity.name.statement.namespace.b.php.7
+        5: punctuation.delimiter.statement.namespace.a.php.7
+        6: entity.name.statement.namespace.a.php.7

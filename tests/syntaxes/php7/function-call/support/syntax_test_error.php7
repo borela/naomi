@@ -14,39 +14,39 @@
 
 <?php
     debug_backtrace();
-//  ^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     debug_print_backtrace();
-//  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     error_clear_last();
-//  ^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     error_get_last();
-//  ^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     error_log();
-//  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^ entity.name.statement.function.php.7
     error_reporting();
-//  ^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     restore_error_handler();
-//  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     restore_exception_handler();
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     set_error_handler();
-//  ^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     set_exception_handler();
-//  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     trigger_error();
-//  ^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^ entity.name.statement.function.php.7
     user_error();
-//  ^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^ entity.name.statement.function.php.7
 ?>

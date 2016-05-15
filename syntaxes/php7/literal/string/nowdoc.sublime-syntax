@@ -25,12 +25,12 @@ variables:
 contexts:
   main:
     - match: (?xi)<<<'({{commonIdentifier}})'
-      scope: punctuation.delimiter.string.begin.php
+      scope: punctuation.delimiter.string.begin.php.7
       set: nowdoc-string
 
   nowdoc-string:
-    - meta_scope: string.unquoted.nowdoc.php
-    - meta_content_scope: string.content.php
+    - meta_scope: string.unquoted.nowdoc.php.7
+    - meta_content_scope: string.content.php.7
     - match: ^\1;
-      scope: punctuation.delimiter.string.end.php
+      scope: punctuation.delimiter.string.end.php.7
       pop: true

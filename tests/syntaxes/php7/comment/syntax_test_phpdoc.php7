@@ -23,29 +23,29 @@
      * @param int $variable
 //     ^^^^^^ keyword.documentation.param.phpdoc
 //     ^ punctuation.keyword.begin.phpdoc
-//            ^^^ support.type.php
-//                ^^^^^^^^^ variable.php
-//                ^ punctuation.variable.begin.php
-//                 ^^^^^^^^ entity.name.variable.php
+//            ^^^ support.type.php.7
+//                ^^^^^^^^^ variable.php.7
+//                ^ punctuation.variable.begin.php.7
+//                 ^^^^^^^^ entity.name.variable.php.7
      * @param int|string $variable
 //     ^^^^^^ keyword.documentation.param.phpdoc
 //     ^ punctuation.keyword.begin.phpdoc
-//            ^^^ support.type.php
+//            ^^^ support.type.php.7
 //               ^ punctuation.delimiter.types.phpdoc
-//                ^^^^^^ support.type.php
-//                       ^^^^^^^^^ variable.php
-//                       ^ punctuation.variable.begin.php
-//                        ^^^^^^^^ entity.name.variable.php
+//                ^^^^^^ support.type.php.7
+//                       ^^^^^^^^^ variable.php.7
+//                       ^ punctuation.variable.begin.php.7
+//                        ^^^^^^^^ entity.name.variable.php.7
      * @return int
 //     ^^^^^^^ keyword.documentation.return.phpdoc
 //     ^ punctuation.keyword.begin.phpdoc
-//             ^^^ support.type.php
+//             ^^^ support.type.php.7
      * @return int|bool
 //     ^^^^^^^ keyword.documentation.return.phpdoc
 //     ^ punctuation.keyword.begin.phpdoc
-//             ^^^ support.type.php
+//             ^^^ support.type.php.7
 //                ^ punctuation.delimiter.types.phpdoc
-//                 ^^^^ support.type.php
+//                 ^^^^ support.type.php.7
      * @api
 //     ^^^^ keyword.documentation.api.phpdoc
 //     ^ punctuation.keyword.begin.phpdoc

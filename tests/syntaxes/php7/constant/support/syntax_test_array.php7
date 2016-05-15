@@ -14,47 +14,47 @@
 
 <?php
     CASE_LOWER
-//  ^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^ support.constant.php.7
     CASE_UPPER
-//  ^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^ support.constant.php.7
     SORT_ASC
-//  ^^^^^^^^ support.constant.php
+//  ^^^^^^^^ support.constant.php.7
     SORT_DESC
-//  ^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^ support.constant.php.7
     SORT_REGULAR
-//  ^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^ support.constant.php.7
     SORT_NUMERIC
-//  ^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^ support.constant.php.7
     SORT_STRING
-//  ^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^ support.constant.php.7
     SORT_LOCALE_STRING
-//  ^^^^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^^^^ support.constant.php.7
     SORT_NATURAL
-//  ^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^ support.constant.php.7
     SORT_FLAG_CASE
-//  ^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^ support.constant.php.7
     ARRAY_FILTER_USE_KEY
-//  ^^^^^^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
     ARRAY_FILTER_USE_BOTH
-//  ^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
     COUNT_NORMAL
-//  ^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^ support.constant.php.7
     COUNT_RECURSIVE
-//  ^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^ support.constant.php.7
     EXTR_OVERWRITE
-//  ^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^ support.constant.php.7
     EXTR_SKIP
-//  ^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^ support.constant.php.7
     EXTR_PREFIX_SAME
-//  ^^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^^ support.constant.php.7
     EXTR_PREFIX_ALL
-//  ^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^ support.constant.php.7
     EXTR_PREFIX_INVALID
-//  ^^^^^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^^^^^ support.constant.php.7
     EXTR_PREFIX_IF_EXISTS
-//  ^^^^^^^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
     EXTR_IF_EXISTS
-//  ^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^ support.constant.php.7
     EXTR_REFS
-//  ^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^ support.constant.php.7
 ?>

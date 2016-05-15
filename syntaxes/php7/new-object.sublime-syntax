@@ -25,7 +25,7 @@ scope: ...
 contexts:
   main:
     - match: (?i)\bnew\b
-      scope: keyword.other.php
+      scope: keyword.other.php.7
       set: class-or-type
 
   class-or-type:

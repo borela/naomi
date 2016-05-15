@@ -14,33 +14,33 @@
 
 <?php
     E_ERROR
-//  ^^^^^^^ support.constant.php
+//  ^^^^^^^ support.constant.php.7
     E_WARNING
-//  ^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^ support.constant.php.7
     E_PARSE
-//  ^^^^^^^ support.constant.php
+//  ^^^^^^^ support.constant.php.7
     E_NOTICE
-//  ^^^^^^^^ support.constant.php
+//  ^^^^^^^^ support.constant.php.7
     E_CORE_ERROR
-//  ^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^ support.constant.php.7
     E_CORE_WARNING
-//  ^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^ support.constant.php.7
     E_COMPILE_ERROR
-//  ^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^ support.constant.php.7
     E_COMPILE_WARNING
-//  ^^^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^^^ support.constant.php.7
     E_USER_ERROR
-//  ^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^ support.constant.php.7
     E_USER_WARNING
-//  ^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^ support.constant.php.7
     E_USER_NOTICE
-//  ^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^ support.constant.php.7
     E_DEPRECATED
-//  ^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^ support.constant.php.7
     E_USER_DEPRECATED
-//  ^^^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^^^ support.constant.php.7
     E_ALL
-//  ^^^^^ support.constant.php
+//  ^^^^^ support.constant.php.7
     E_STRICT
-//  ^^^^^^^^ support.constant.php
+//  ^^^^^^^^ support.constant.php.7
 ?>

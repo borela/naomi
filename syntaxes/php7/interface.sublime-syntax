@@ -25,36 +25,36 @@ scope: ...
 contexts:
   main:
     - match: (?i)\binterface(?!\\)\b
-      scope: keyword.statement.interface.php
+      scope: keyword.statement.interface.php.7
       set: declaration
 
   declaration:
-    - meta_scope: statement.interface.php
+    - meta_scope: statement.interface.php.7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     # Extends.
     - match: (?i)\bextends\b
-      scope: keyword.statement.inherit.php
+      scope: keyword.statement.inherit.php.7
       push: extend-targets
     # interface's name.
     - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.statement.interface.php
+      scope: entity.name.statement.interface.php.7
     # Body.
     - match: \{
       scope: >-
-        statement.interface.body.php
-        punctuation.delimiter.statement.interface.body.begin.php
+        statement.interface.body.php.7
+        punctuation.delimiter.statement.interface.body.begin.php.7
       set: body
 
   body:
     - meta_content_scope: >-
-        statement.interface.php
-        statement.interface.body.php
-        statement.interface.body.content.php
+        statement.interface.php.7
+        statement.interface.body.php.7
+        statement.interface.body.content.php.7
     - match: \}
       scope: >-
-        statement.interface.php
-        statement.interface.body.php
-        punctuation.delimiter.statement.interface.body.end.php
+        statement.interface.php.7
+        statement.interface.body.php.7
+        punctuation.delimiter.statement.interface.body.end.php.7
       pop: true
     # Body's content.
     - match: (?=\S)
@@ -70,7 +70,7 @@ contexts:
           pop: true
 
   extend-targets:
-    - meta_scope: extend.php
+    - meta_scope: extend.php.7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: (?=\{)
       pop: true
@@ -87,7 +87,7 @@ contexts:
   extend-target-delimiter:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: ","
-      scope: punctuation.delimiter.statement.extend.php
+      scope: punctuation.delimiter.statement.extend.php.7
       pop: true
     - match: (?=\S)
       pop: true

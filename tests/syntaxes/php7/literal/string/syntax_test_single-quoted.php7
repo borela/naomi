@@ -14,18 +14,18 @@
 
 <?php
     'Something is "here"...'
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.php
-//   ^^^^^^^^^^^^^^^^^^^^^^ string.content.php
-//  ^ punctuation.delimiter.string.begin.php
-//                         ^ punctuation.delimiter.string.end.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.php.7
+//   ^^^^^^^^^^^^^^^^^^^^^^ string.content.php.7
+//  ^ punctuation.delimiter.string.begin.php.7
+//                         ^ punctuation.delimiter.string.end.php.7
     'Something is \'here\'...'
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.php
-//   ^^^^^^^^^^^^^^^^^^^^^^^^ string.content.php
-//  ^ punctuation.delimiter.string.begin.php
-//                ^^ constant.character.escape.a.php
-//                      ^^ constant.character.escape.a.php
-//                           ^ punctuation.delimiter.string.end.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.php.7
+//   ^^^^^^^^^^^^^^^^^^^^^^^^ string.content.php.7
+//  ^ punctuation.delimiter.string.begin.php.7
+//                ^^ constant.character.escape.a.php.7
+//                      ^^ constant.character.escape.a.php.7
+//                           ^ punctuation.delimiter.string.end.php.7
     'Escaped: \\\''
-//            ^^ constant.character.escape.a.php
-//              ^^ constant.character.escape.b.php
+//            ^^ constant.character.escape.a.php.7
+//              ^^ constant.character.escape.b.php.7
 ?>

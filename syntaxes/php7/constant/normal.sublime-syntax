@@ -27,5 +27,5 @@ contexts:
     - match: |
         (?x)
         \b{{constantIdentifier}}\b
-      scope: constant.php
+      scope: constant.php.7
       pop: true

@@ -51,5 +51,5 @@ contexts:
             | yield
           )
         )\b
-      scope: keyword.other.php
+      scope: keyword.other.php.7
       pop: true

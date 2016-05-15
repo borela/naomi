@@ -20,21 +20,21 @@ scope: ...
 contexts:
   main:
     - match: \/\/|#
-      scope: punctuation.comment.begin.php
+      scope: punctuation.comment.begin.php.7
       set: line
     - match: \/\*
-      scope: punctuation.comment.begin.php
+      scope: punctuation.comment.begin.php.7
       set: block
 
   line:
-    - meta_scope: comment.line.php
-    - meta_content_scope: comment.content.php
+    - meta_scope: comment.line.php.7
+    - meta_content_scope: comment.content.php.7
     - match: $
       pop: true
 
   block:
-    - meta_scope: comment.block.php
-    - meta_content_scope: comment.content.php
+    - meta_scope: comment.block.php.7
+    - meta_content_scope: comment.content.php.7
     - match: \*\/
-      scope: punctuation.comment.end.php
+      scope: punctuation.comment.end.php.7
       pop: true

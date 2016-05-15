@@ -39,23 +39,23 @@ contexts:
           ({{simpleEmbeddedVariable}})
         )
       captures:
-        1: variable.a.php
-        2: punctuation.variable.begin.php
-        3: entity.name.variable.php
-        4: operator.subscript.begin.php
-        5: array.key.php
-        6: operator.subscript.end.php
+        1: variable.a.php.7
+        2: punctuation.variable.begin.php.7
+        3: entity.name.variable.php.7
+        4: operator.subscript.begin.php.7
+        5: array.key.php.7
+        6: operator.subscript.end.php.7
 
-        7: variable.b.php
-        8: punctuation.variable.begin.php
-        9: entity.name.variable.php
-        10: operator.subscript.begin.php
-        11: array.key.php
-        12: operator.subscript.end.php
+        7: variable.b.php.7
+        8: punctuation.variable.begin.php.7
+        9: entity.name.variable.php.7
+        10: operator.subscript.begin.php.7
+        11: array.key.php.7
+        12: operator.subscript.end.php.7
 
-        13: variable.a.php
-        14: punctuation.variable.begin.php
-        15: entity.name.variable.php
-        16: operator.subscript.begin.php
-        17: array.key.php
-        18: operator.subscript.end.php
+        13: variable.a.php.7
+        14: punctuation.variable.begin.php.7
+        15: entity.name.variable.php.7
+        16: operator.subscript.begin.php.7
+        17: array.key.php.7
+        18: operator.subscript.end.php.7

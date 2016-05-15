@@ -25,32 +25,32 @@ scope: ...
 contexts:
   main:
     - match: (?xi)\btrait(?!\\)\b
-      scope: keyword.statement.trait.php
+      scope: keyword.statement.trait.php.7
       set: declaration
 
   declaration:
-    - meta_scope: statement.trait.php
+    - meta_scope: statement.trait.php.7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     # Body.
     - match: "{"
       scope: >-
-        statement.trait.body.php
-        punctuation.delimiter.statement.trait.body.begin.php
+        statement.trait.body.php.7
+        punctuation.delimiter.statement.trait.body.begin.php.7
       set: body
     # Trait's name.
     - match: "(?xi){{commonIdentifier}}"
-      scope: entity.name.statement.trait.php
+      scope: entity.name.statement.trait.php.7
 
   body:
     - meta_content_scope: >-
-        statement.trait.php
-        statement.trait.body.php
-        statement.trait.body.content.php
+        statement.trait.php.7
+        statement.trait.body.php.7
+        statement.trait.body.content.php.7
     - match: "}"
       scope: >-
-        statement.trait.php
-        statement.trait.body.php
-        punctuation.delimiter.statement.trait.body.end.php
+        statement.trait.php.7
+        statement.trait.body.php.7
+        punctuation.delimiter.statement.trait.body.end.php.7
       pop: true
     - include: body-content
 

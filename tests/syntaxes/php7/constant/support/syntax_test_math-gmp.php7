@@ -14,21 +14,21 @@
 
 <?php
     GMP_ROUND_ZERO
-//  ^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^ support.constant.php.7
     GMP_ROUND_PLUSINF
-//  ^^^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^^^ support.constant.php.7
     GMP_ROUND_MINUSINF
-//  ^^^^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^^^^ support.constant.php.7
     GMP_MSW_FIRST
-//  ^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^ support.constant.php.7
     GMP_LSW_FIRST
-//  ^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^ support.constant.php.7
     GMP_LITTLE_ENDIAN
-//  ^^^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^^^ support.constant.php.7
     GMP_BIG_ENDIAN
-//  ^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^ support.constant.php.7
     GMP_NATIVE_ENDIAN
-//  ^^^^^^^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^^^^^^^ support.constant.php.7
     GMP_VERSION
-//  ^^^^^^^^^^^ support.constant.php
+//  ^^^^^^^^^^^ support.constant.php.7
 ?>

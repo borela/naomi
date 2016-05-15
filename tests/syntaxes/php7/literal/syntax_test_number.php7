@@ -14,27 +14,27 @@
 
 <?php
     0
-//  ^ constant.numeric.decimal.php
+//  ^ constant.numeric.decimal.php.7
     123
-//  ^^^ constant.numeric.decimal.php
+//  ^^^ constant.numeric.decimal.php.7
     123.
-//  ^^^^ constant.numeric.float.php
+//  ^^^^ constant.numeric.float.php.7
     123.0
-//  ^^^^^ constant.numeric.float.php
+//  ^^^^^ constant.numeric.float.php.7
     .123
-//  ^^^^ constant.numeric.float.php
+//  ^^^^ constant.numeric.float.php.7
     0.123
-//  ^^^^^ constant.numeric.float.php
+//  ^^^^^ constant.numeric.float.php.7
     123e10
-//  ^^^^^^ constant.numeric.float.scientific.php
+//  ^^^^^^ constant.numeric.float.scientific.php.7
     123e+10
-//  ^^^^^^^ constant.numeric.float.scientific.php
+//  ^^^^^^^ constant.numeric.float.scientific.php.7
     123e-10
-//  ^^^^^^^ constant.numeric.float.scientific.php
+//  ^^^^^^^ constant.numeric.float.scientific.php.7
     0b1010
-//  ^^^^^^ constant.numeric.binary.php
+//  ^^^^^^ constant.numeric.binary.php.7
     0123
-//  ^^^^ constant.numeric.octal.php
+//  ^^^^ constant.numeric.octal.php.7
     0x123
-//  ^^^^^ constant.numeric.hex.php
+//  ^^^^^ constant.numeric.hex.php.7
 ?>

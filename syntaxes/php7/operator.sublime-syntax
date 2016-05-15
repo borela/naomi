@@ -58,7 +58,7 @@ contexts:
           | /
           | %
         )
-      scope: keyword.operator.arithmetic.php
+      scope: keyword.operator.arithmetic.php.7
       pop: true
 
   # | Operator | Description  |
@@ -77,7 +77,7 @@ contexts:
           | <<=
           | >>=
         )
-      scope: keyword.operator.bitwise.php
+      scope: keyword.operator.bitwise.php.7
       pop: true
 
   # | Operator |    Description     |
@@ -101,7 +101,7 @@ contexts:
           | \?(\?)?
           | :
         )
-      scope: keyword.operator.assignment.php
+      scope: keyword.operator.assignment.php.7
       pop: true
 
   # | Operator |       Description         |
@@ -130,7 +130,7 @@ contexts:
           | >
           | <(?!<<)
         )
-      scope: keyword.operator.comparison.php
+      scope: keyword.operator.comparison.php.7
       pop: true
 
   # | Operator | Description  |
@@ -156,7 +156,7 @@ contexts:
           | \|\|
           | !
         )
-      scope: keyword.operator.logical.php
+      scope: keyword.operator.logical.php.7
       pop: true
 
   # | Operator |  Description   |
@@ -169,7 +169,7 @@ contexts:
         (?> \.=
           | \.
         )
-      scope: keyword.operator.string.php
+      scope: keyword.operator.string.php.7
       pop: true
 
   # |  Operator  |  Description        |
@@ -182,51 +182,51 @@ contexts:
   # |    ...     | Argument unpacking. |
   other-operator:
     - match: (?xi)\binstanceof\b
-      scope: keyword.operator.type.php
+      scope: keyword.operator.type.php.7
       pop: true
     - match: "&(?![&=])"
-      scope: keyword.operator.reference.php
+      scope: keyword.operator.reference.php.7
       pop: true
     - match: "\\.\\.\\."
-      scope: keyword.operator.argument.unpacking.php
+      scope: keyword.operator.argument.unpacking.php.7
       pop: true
     - match: "=>"
-      scope: keyword.operator.key.association.php
+      scope: keyword.operator.key.association.php.7
       pop: true
     - match: "->"
-      scope: keyword.operator.member.access.php
+      scope: keyword.operator.member.access.php.7
       set: member-access
     - match: "::"
-      scope: keyword.operator.scope.resolution.php
+      scope: keyword.operator.scope.resolution.php.7
       set: scope-resolution
 
   member-access:
     - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
     # Constant.
     - match: (?x)\b{{constantIdentifier}}
-      scope: constant.php
+      scope: constant.php.7
       pop: true
     # Property.
     - match: (?xi){{commonIdentifier}}
       scope: >-
-        variable.property.php
-        entity.name.variable.php
+        variable.property.php.7
+        entity.name.variable.php.7
       pop: true
 
   scope-resolution:
     - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
     # Class name as string.
     - match: \bclass\b
-      scope: keyword.other.class.name.php
+      scope: keyword.other.class.name.php.7
       pop: true
     # Variable.
     - match: (?xi)(\$)({{commonIdentifier}})
       captures:
-        0: variable.static.php
-        1: punctuation.variable.begin.php
-        2: entity.name.variable.php
+        0: variable.static.php.7
+        1: punctuation.variable.begin.php.7
+        2: entity.name.variable.php.7
       pop: true
     # Constant.
     - match: (?x)\b{{constantIdentifier}}
-      scope: constant.php
+      scope: constant.php.7
       pop: true

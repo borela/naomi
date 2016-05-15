@@ -51,9 +51,9 @@ contexts:
         ({{commonIdentifier}})
         (?=\s*\()
       captures:
-        0: function.call.php
-        1: punctuation.delimiter.statement.function.php
-        2: entity.name.statement.function.php
+        0: function.call.php.7
+        1: punctuation.delimiter.statement.function.php.7
+        2: entity.name.statement.function.php.7
       pop: true
 
   namespaced-function-call:
@@ -64,14 +64,14 @@ contexts:
         ({{commonIdentifier}})
         (?=\s*\()
       captures:
-        0: function.call.php
-        1: statement.namespace.path.php
-        2: punctuation.delimiter.statement.namespace.a.php
-        3: entity.name.statement.namespace.a.php
-        4: punctuation.delimiter.statement.namespace.b.php
-        5: entity.name.statement.namespace.b.php
-        6: punctuation.delimiter.statement.namespace.a.php
-        7: entity.name.statement.namespace.a.php
-        8: punctuation.delimiter.statement.function.php
-        9: entity.name.statement.function.php
+        0: function.call.php.7
+        1: statement.namespace.path.php.7
+        2: punctuation.delimiter.statement.namespace.a.php.7
+        3: entity.name.statement.namespace.a.php.7
+        4: punctuation.delimiter.statement.namespace.b.php.7
+        5: entity.name.statement.namespace.b.php.7
+        6: punctuation.delimiter.statement.namespace.a.php.7
+        7: entity.name.statement.namespace.a.php.7
+        8: punctuation.delimiter.statement.function.php.7
+        9: entity.name.statement.function.php.7
       pop: true

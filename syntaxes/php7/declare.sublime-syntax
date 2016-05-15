@@ -25,23 +25,23 @@ scope: ...
 contexts:
   main:
     - match: (?i)\bdeclare\b
-      scope: keyword.statement.declare.php
+      scope: keyword.statement.declare.php.7
       push: declaration
 
   declaration:
-    - meta_scope: statement.declare.php
+    - meta_scope: statement.declare.php.7
     - match: \(
-      scope: punctuation.delimiter.statement.declare.parameters.begin.php
+      scope: punctuation.delimiter.statement.declare.parameters.begin.php.7
       push: parameters
     - match: \)
       scope: >-
-        statement.declare.parameters.php
-        punctuation.delimiter.statement.declare.parameters.end.php
+        statement.declare.parameters.php.7
+        punctuation.delimiter.statement.declare.parameters.end.php.7
       set: body
 
   parameters:
-    - meta_scope: statement.declare.parameters.php
-    - meta_content_scope: statement.declare.parameters.content.php
+    - meta_scope: statement.declare.parameters.php.7
+    - meta_content_scope: statement.declare.parameters.content.php.7
     - match: (?=\))
       pop: true
     - match: (?=\S)
@@ -60,12 +60,12 @@ contexts:
           | encoding
           | strict
         )\b
-      scope: keyword.directive.php
+      scope: keyword.directive.php.7
       pop: true
 
   operator:
     - match: =
-      scope: keyword.operator.assignment.php
+      scope: keyword.operator.assignment.php.7
       pop: true
 
   value:
@@ -74,13 +74,13 @@ contexts:
 
   body:
     - meta_content_scope: >-
-        statement.declare.php
-        statement.declare.body.php
+        statement.declare.php.7
+        statement.declare.body.php.7
     - match: ;
-      scope: punctuation.delimiter.statement.declare.body.begin.php
+      scope: punctuation.delimiter.statement.declare.body.begin.php.7
       set: implicit-body
     - match: \{
-      scope: punctuation.delimiter.statement.declare.body.begin.php
+      scope: punctuation.delimiter.statement.declare.body.begin.php.7
       set: bracketed-body
 
   body-content:
@@ -104,9 +104,9 @@ contexts:
 
   implicit-body:
     - meta_content_scope:
-        statement.declare.php
-        statement.declare.body.php
-        statement.declare.body.content.php
+        statement.declare.php.7
+        statement.declare.body.php.7
+        statement.declare.body.content.php.7
     - include: implicit-body-content
 
   implicit-body-content:
@@ -118,14 +118,14 @@ contexts:
 
   bracketed-body:
     - meta_content_scope: >-
-        statement.declare.php
-        statement.declare.body.php
-        statement.declare.body.content.php
+        statement.declare.php.7
+        statement.declare.body.php.7
+        statement.declare.body.content.php.7
     - match: \}
       scope: >-
-        statement.declare.php
-        statement.declare.body.php
-        punctuation.delimiter.statement.declare.body.end.php
+        statement.declare.php.7
+        statement.declare.body.php.7
+        punctuation.delimiter.statement.declare.body.end.php.7
       pop: true
     - include: bracketed-body-content
 

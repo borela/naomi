@@ -14,32 +14,32 @@
 
 <?php
     trait MyTrait {
-//  ^^^^^^^^^^^^^^^ statement.trait.php
-//  ^^^^^ keyword.statement.trait.php
-//        ^^^^^^^ entity.name.statement.trait.php
-//                ^ statement.trait.body.php
-//                ^ punctuation.delimiter.statement.trait.body.begin.php
+//  ^^^^^^^^^^^^^^^ statement.trait.php.7
+//  ^^^^^ keyword.statement.trait.php.7
+//        ^^^^^^^ entity.name.statement.trait.php.7
+//                ^ statement.trait.body.php.7
+//                ^ punctuation.delimiter.statement.trait.body.begin.php.7
     Something...
-//  ^^^^^^^^^^^^ statement.trait.php
-//  ^^^^^^^^^^^^ statement.trait.body.php
-//  ^^^^^^^^^^^^ statement.trait.body.content.php
+//  ^^^^^^^^^^^^ statement.trait.php.7
+//  ^^^^^^^^^^^^ statement.trait.body.php.7
+//  ^^^^^^^^^^^^ statement.trait.body.content.php.7
     }
-//  ^ statement.trait.php
-//  ^ statement.trait.body.php
-//  ^ punctuation.delimiter.statement.trait.body.end.php
+//  ^ statement.trait.php.7
+//  ^ statement.trait.body.php.7
+//  ^ punctuation.delimiter.statement.trait.body.end.php.7
 
     trait MyTrait {
-//  ^^^^^^^^^^^^^^^ statement.trait.php
-//  ^^^^^ keyword.statement.trait.php
-//        ^^^^^^^ entity.name.statement.trait.php
-//                ^ statement.trait.body.php
-//                ^ punctuation.delimiter.statement.trait.body.begin.php
+//  ^^^^^^^^^^^^^^^ statement.trait.php.7
+//  ^^^^^ keyword.statement.trait.php.7
+//        ^^^^^^^ entity.name.statement.trait.php.7
+//                ^ statement.trait.body.php.7
+//                ^ punctuation.delimiter.statement.trait.body.begin.php.7
     Something...
-//  ^^^^^^^^^^^^ statement.trait.php
-//  ^^^^^^^^^^^^ statement.trait.body.php
-//  ^^^^^^^^^^^^ statement.trait.body.content.php
+//  ^^^^^^^^^^^^ statement.trait.php.7
+//  ^^^^^^^^^^^^ statement.trait.body.php.7
+//  ^^^^^^^^^^^^ statement.trait.body.content.php.7
     }
-//  ^ statement.trait.php
-//  ^ statement.trait.body.php
-//  ^ punctuation.delimiter.statement.trait.body.end.php
+//  ^ statement.trait.php.7
+//  ^ statement.trait.body.php.7
+//  ^ punctuation.delimiter.statement.trait.body.end.php.7
 ?>

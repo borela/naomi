@@ -33,7 +33,7 @@ contexts:
           {{commonIdentifier}}
         )\b
       captures:
-        0: type.php
-        1: punctuation.delimiter.type.php
-        2: entity.name.type.php
+        0: type.php.7
+        1: punctuation.delimiter.type.php.7
+        2: entity.name.type.php.7
       pop: true

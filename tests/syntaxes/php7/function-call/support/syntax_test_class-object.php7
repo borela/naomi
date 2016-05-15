@@ -14,54 +14,54 @@
 
 <?php
     class_alias ();
-//  ^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^ entity.name.statement.function.php.7
     class_exists ();
-//  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^ entity.name.statement.function.php.7
     get_called_class ();
-//  ^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     get_class_methods ();
-//  ^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     get_class_vars ();
-//  ^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     get_class ();
-//  ^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^ entity.name.statement.function.php.7
     get_declared_classes ();
-//  ^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     get_declared_interfaces ();
-//  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     get_declared_traits ();
-//  ^^^^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     get_object_vars ();
-//  ^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     get_parent_class ();
-//  ^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     interface_exists ();
-//  ^^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     is_a ();
-//  ^^^^ support.function.call.php
-//  ^^^^ entity.name.statement.function.php
+//  ^^^^ support.function.call.php.7
+//  ^^^^ entity.name.statement.function.php.7
     is_subclass_of ();
-//  ^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     method_exists ();
-//  ^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^ entity.name.statement.function.php.7
     property_exists ();
-//  ^^^^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
     trait_exists ();
-//  ^^^^^^^^^^^^ support.function.call.php
-//  ^^^^^^^^^^^^ entity.name.statement.function.php
+//  ^^^^^^^^^^^^ support.function.call.php.7
+//  ^^^^^^^^^^^^ entity.name.statement.function.php.7
 ?>

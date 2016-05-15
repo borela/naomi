@@ -13,21 +13,21 @@
 // the License.
 
     <?php
-//  ^^^^^ embedded.php
-//  ^^^^^ punctuation.embedded.begin.php
+//  ^^^^^ embedded.php.7
+//  ^^^^^ punctuation.embedded.begin.php.7
         $var = 123;
-//      ^^^^^^^^^^^ embedded.php
-//      ^^^^^^^^^^^ embedded.content.php
+//      ^^^^^^^^^^^ embedded.php.7
+//      ^^^^^^^^^^^ embedded.content.php.7
     ?>
-//  ^^ embedded.php
-//  ^^ punctuation.embedded.end.php
+//  ^^ embedded.php.7
+//  ^^ punctuation.embedded.end.php.7
 
     <?=
-//  ^^^ embedded.short.php
-//  ^^^ punctuation.embedded.begin.php
+//  ^^^ embedded.short.php.7
+//  ^^^ punctuation.embedded.begin.php.7
         $var = 123;
-//      ^^^^^^^^^^^ embedded.short.php
-//      ^^^^^^^^^^^ embedded.content.php
+//      ^^^^^^^^^^^ embedded.short.php.7
+//      ^^^^^^^^^^^ embedded.content.php.7
     ?>
-//  ^^ embedded.short.php
-//  ^^ punctuation.embedded.end.php
+//  ^^ embedded.short.php.7
+//  ^^ punctuation.embedded.end.php.7

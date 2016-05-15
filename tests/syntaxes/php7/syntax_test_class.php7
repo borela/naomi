@@ -14,231 +14,231 @@
 
 <?php
     abstract class MyClass {   }
-//           ^^^^^^^^^^^^^^^^^^^ statement.class.php
-//  ^^^^^^^^ keyword.modifier.abstract.php
-//           ^^^^^ keyword.statement.class.php
-//                 ^^^^^^^ entity.name.statement.class.php
-//                         ^ punctuation.delimiter.statement.class.body.begin.php
-//                         ^^^^^ statement.class.body.php
-//                          ^^^ statement.class.body.content.php
-//                             ^ punctuation.delimiter.statement.class.body.end.php
+//           ^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//  ^^^^^^^^ keyword.modifier.abstract.php.7
+//           ^^^^^ keyword.statement.class.php.7
+//                 ^^^^^^^ entity.name.statement.class.php.7
+//                         ^ punctuation.delimiter.statement.class.body.begin.php.7
+//                         ^^^^^ statement.class.body.php.7
+//                          ^^^ statement.class.body.content.php.7
+//                             ^ punctuation.delimiter.statement.class.body.end.php.7
 
     final class MyClass {   }
-//        ^^^^^^^^^^^^^ statement.class.php
-//  ^^^^^ keyword.modifier.final.php
-//        ^^^^^ keyword.statement.class.php
-//              ^^^^^^^ entity.name.statement.class.php
-//                      ^ punctuation.delimiter.statement.class.body.begin.php
-//                      ^^^^^ statement.class.body.php
-//                       ^^^ statement.class.body.content.php
-//                          ^ punctuation.delimiter.statement.class.body.end.php
+//        ^^^^^^^^^^^^^ statement.class.php.7
+//  ^^^^^ keyword.modifier.final.php.7
+//        ^^^^^ keyword.statement.class.php.7
+//              ^^^^^^^ entity.name.statement.class.php.7
+//                      ^ punctuation.delimiter.statement.class.body.begin.php.7
+//                      ^^^^^ statement.class.body.php.7
+//                       ^^^ statement.class.body.content.php.7
+//                          ^ punctuation.delimiter.statement.class.body.end.php.7
 
     class MyClass {
-//  ^^^^^^^^^^^^^^^ statement.class.php
-//  ^^^^^ keyword.statement.class.php
-//        ^^^^^^^ entity.name.statement.class.php
-//                ^ statement.class.body.php
-//                ^ punctuation.delimiter.statement.class.body.begin.php
+//  ^^^^^^^^^^^^^^^ statement.class.php.7
+//  ^^^^^ keyword.statement.class.php.7
+//        ^^^^^^^ entity.name.statement.class.php.7
+//                ^ statement.class.body.php.7
+//                ^ punctuation.delimiter.statement.class.body.begin.php.7
         Something...
-//      ^^^^^^^^^^^^ statement.class.php
-//      ^^^^^^^^^^^^ statement.class.body.php
-//      ^^^^^^^^^^^^ statement.class.body.content.php
+//      ^^^^^^^^^^^^ statement.class.php.7
+//      ^^^^^^^^^^^^ statement.class.body.php.7
+//      ^^^^^^^^^^^^ statement.class.body.content.php.7
     }
-//  ^ statement.class.php
-//  ^ statement.class.body.php
-//  ^ punctuation.delimiter.statement.class.body.end.php
+//  ^ statement.class.php.7
+//  ^ statement.class.body.php.7
+//  ^ punctuation.delimiter.statement.class.body.end.php.7
 
     class MyClass extends
-//  ^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//  ^^^^^ keyword.statement.class.php
-//        ^^^^^^^ entity.name.statement.class.php
-//                ^^^^^^^ keyword.statement.inherit.php
+//  ^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//  ^^^^^ keyword.statement.class.php.7
+//        ^^^^^^^ entity.name.statement.class.php.7
+//                ^^^^^^^ keyword.statement.inherit.php.7
         \Namespace\Namespace\ParentClass {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
 //                                       ^ statement.class.body
-//                                       ^ punctuation.delimiter.statement.class.body.begin.php
-//      ^ punctuation.delimiter.statement.namespace.a.php
-//                ^ punctuation.delimiter.statement.namespace.b.php
-//                          ^ punctuation.delimiter.type.php
-//       ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                 ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                           ^^^^^^^^^^^ entity.name.type.php
+//                                       ^ punctuation.delimiter.statement.class.body.begin.php.7
+//      ^ punctuation.delimiter.statement.namespace.a.php.7
+//                ^ punctuation.delimiter.statement.namespace.b.php.7
+//                          ^ punctuation.delimiter.type.php.7
+//       ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                 ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                           ^^^^^^^^^^^ entity.name.type.php.7
         Something...
-//      ^^^^^^^^^^^^ statement.class.php
-//      ^^^^^^^^^^^^ statement.class.body.php
-//      ^^^^^^^^^^^^ statement.class.body.content.php
+//      ^^^^^^^^^^^^ statement.class.php.7
+//      ^^^^^^^^^^^^ statement.class.body.php.7
+//      ^^^^^^^^^^^^ statement.class.body.content.php.7
     }
-//  ^ statement.class.php
-//  ^ statement.class.body.php
-//  ^ punctuation.delimiter.statement.class.body.end.php
+//  ^ statement.class.php.7
+//  ^ statement.class.body.php.7
+//  ^ punctuation.delimiter.statement.class.body.end.php.7
 
     class MyClass extends
-//  ^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//  ^^^^^ keyword.statement.class.php
-//        ^^^^^^^ entity.name.statement.class.php
-//                ^^^^^^^ keyword.statement.inherit.php
+//  ^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//  ^^^^^ keyword.statement.class.php.7
+//        ^^^^^^^ entity.name.statement.class.php.7
+//                ^^^^^^^ keyword.statement.inherit.php.7
         Namespace\Namespace\ParentClass {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//                                      ^ statement.class.body.php
-//                                      ^ punctuation.delimiter.statement.class.body.begin.php
-//               ^ punctuation.delimiter.statement.namespace.b.php
-//                         ^ punctuation.delimiter.type.php
-//      ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                          ^^^^^^^^^^^ entity.name.type.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//                                      ^ statement.class.body.php.7
+//                                      ^ punctuation.delimiter.statement.class.body.begin.php.7
+//               ^ punctuation.delimiter.statement.namespace.b.php.7
+//                         ^ punctuation.delimiter.type.php.7
+//      ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                          ^^^^^^^^^^^ entity.name.type.php.7
         Something...
-//      ^^^^^^^^^^^^ statement.class.php
-//      ^^^^^^^^^^^^ statement.class.body.php
-//      ^^^^^^^^^^^^ statement.class.body.content.php
+//      ^^^^^^^^^^^^ statement.class.php.7
+//      ^^^^^^^^^^^^ statement.class.body.php.7
+//      ^^^^^^^^^^^^ statement.class.body.content.php.7
     }
-//  ^ statement.class.php
-//  ^ statement.class.body.php
-//  ^ punctuation.delimiter.statement.class.body.end.php
+//  ^ statement.class.php.7
+//  ^ statement.class.body.php.7
+//  ^ punctuation.delimiter.statement.class.body.end.php.7
 
     class MyClass implements
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//  ^^^^^ keyword.statement.class.php
-//        ^^^^^^^ entity.name.statement.class.php
-//                ^^^^^^^^^^ keyword.statement.implement.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//  ^^^^^ keyword.statement.class.php.7
+//        ^^^^^^^ entity.name.statement.class.php.7
+//                ^^^^^^^^^^ keyword.statement.implement.php.7
         \Namespace\Namespace\Interface1,
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//                                     ^ punctuation.delimiter.statement.implement.php
-//      ^ punctuation.delimiter.statement.namespace.a.php
-//                ^ punctuation.delimiter.statement.namespace.b.php
-//                          ^ punctuation.delimiter.type.php
-//       ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                 ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                           ^^^^^^^^^^ entity.name.type.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//                                     ^ punctuation.delimiter.statement.implement.php.7
+//      ^ punctuation.delimiter.statement.namespace.a.php.7
+//                ^ punctuation.delimiter.statement.namespace.b.php.7
+//                          ^ punctuation.delimiter.type.php.7
+//       ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                 ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                           ^^^^^^^^^^ entity.name.type.php.7
         \Namespace\Namespace\Interface2 {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//                                      ^ statement.class.body.php
-//                                      ^ punctuation.delimiter.statement.class.body.begin.php
-//      ^ punctuation.delimiter.statement.namespace.a.php
-//                ^ punctuation.delimiter.statement.namespace.b.php
-//                          ^ punctuation.delimiter.type.php
-//       ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                 ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                           ^^^^^^^^^^ entity.name.type.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//                                      ^ statement.class.body.php.7
+//                                      ^ punctuation.delimiter.statement.class.body.begin.php.7
+//      ^ punctuation.delimiter.statement.namespace.a.php.7
+//                ^ punctuation.delimiter.statement.namespace.b.php.7
+//                          ^ punctuation.delimiter.type.php.7
+//       ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                 ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                           ^^^^^^^^^^ entity.name.type.php.7
         Something...
-//      ^^^^^^^^^^^^ statement.class.php
-//      ^^^^^^^^^^^^ statement.class.body.php
-//      ^^^^^^^^^^^^ statement.class.body.content.php
+//      ^^^^^^^^^^^^ statement.class.php.7
+//      ^^^^^^^^^^^^ statement.class.body.php.7
+//      ^^^^^^^^^^^^ statement.class.body.content.php.7
     }
-//  ^ statement.class.php
-//  ^ statement.class.body.php
-//  ^ punctuation.delimiter.statement.class.body.end.php
+//  ^ statement.class.php.7
+//  ^ statement.class.body.php.7
+//  ^ punctuation.delimiter.statement.class.body.end.php.7
 
     class MyClass implements
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//  ^^^^^ keyword.statement.class.php
-//        ^^^^^^^ entity.name.statement.class.php
-//                ^^^^^^^^^^ keyword.statement.implement.php
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//  ^^^^^ keyword.statement.class.php.7
+//        ^^^^^^^ entity.name.statement.class.php.7
+//                ^^^^^^^^^^ keyword.statement.implement.php.7
         Namespace\Namespace\Interface1,
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//                                    ^ punctuation.delimiter.statement.implement.php
-//               ^ punctuation.delimiter.statement.namespace.b.php
-//                         ^ punctuation.delimiter.type.php
-//      ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                          ^^^^^^^^^^ entity.name.type.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//                                    ^ punctuation.delimiter.statement.implement.php.7
+//               ^ punctuation.delimiter.statement.namespace.b.php.7
+//                         ^ punctuation.delimiter.type.php.7
+//      ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                          ^^^^^^^^^^ entity.name.type.php.7
         Namespace\Namespace\Interface2 {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//                                     ^ statement.class.body.php
-//                                     ^ punctuation.delimiter.statement.class.body.begin.php
-//               ^ punctuation.delimiter.statement.namespace.b.php
-//                         ^ punctuation.delimiter.type.php
-//      ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                          ^^^^^^^^^^ entity.name.type.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//                                     ^ statement.class.body.php.7
+//                                     ^ punctuation.delimiter.statement.class.body.begin.php.7
+//               ^ punctuation.delimiter.statement.namespace.b.php.7
+//                         ^ punctuation.delimiter.type.php.7
+//      ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                          ^^^^^^^^^^ entity.name.type.php.7
         Something...
-//      ^^^^^^^^^^^^ statement.class.php
-//      ^^^^^^^^^^^^ statement.class.body.php
-//      ^^^^^^^^^^^^ statement.class.body.content.php
+//      ^^^^^^^^^^^^ statement.class.php.7
+//      ^^^^^^^^^^^^ statement.class.body.php.7
+//      ^^^^^^^^^^^^ statement.class.body.content.php.7
     }
-//  ^ statement.class.php
-//  ^ statement.class.body.php
-//  ^ punctuation.delimiter.statement.class.body.end.php
+//  ^ statement.class.php.7
+//  ^ statement.class.body.php.7
+//  ^ punctuation.delimiter.statement.class.body.end.php.7
 
     class MyClass extends
-//  ^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//  ^^^^^ keyword.statement.class.php
-//        ^^^^^^^ entity.name.statement.class.php
-//                ^^^^^^^ keyword.statement.inherit.php
+//  ^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//  ^^^^^ keyword.statement.class.php.7
+//        ^^^^^^^ entity.name.statement.class.php.7
+//                ^^^^^^^ keyword.statement.inherit.php.7
         \Namespace\Namespace\ParentClass
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//      ^ punctuation.delimiter.statement.namespace.a.php
-//                ^ punctuation.delimiter.statement.namespace.b.php
-//                          ^ punctuation.delimiter.type.php
-//       ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                 ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                           ^^^^^^^^^^^ entity.name.type.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//      ^ punctuation.delimiter.statement.namespace.a.php.7
+//                ^ punctuation.delimiter.statement.namespace.b.php.7
+//                          ^ punctuation.delimiter.type.php.7
+//       ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                 ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                           ^^^^^^^^^^^ entity.name.type.php.7
     implements
-//  ^^^^^^^^^^ keyword.statement.implement.php
+//  ^^^^^^^^^^ keyword.statement.implement.php.7
         \Namespace\Namespace\Interface1,
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//                                     ^ punctuation.delimiter.statement.implement.php
-//      ^ punctuation.delimiter.statement.namespace.a.php
-//                ^ punctuation.delimiter.statement.namespace.b.php
-//                          ^ punctuation.delimiter.type.php
-//       ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                 ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                           ^^^^^^^^^^ entity.name.type.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//                                     ^ punctuation.delimiter.statement.implement.php.7
+//      ^ punctuation.delimiter.statement.namespace.a.php.7
+//                ^ punctuation.delimiter.statement.namespace.b.php.7
+//                          ^ punctuation.delimiter.type.php.7
+//       ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                 ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                           ^^^^^^^^^^ entity.name.type.php.7
         \Namespace\Namespace\Interface2 {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//                                      ^ statement.class.body.php
-//                                      ^ punctuation.delimiter.statement.class.body.begin.php
-//      ^ punctuation.delimiter.statement.namespace.a.php
-//                ^ punctuation.delimiter.statement.namespace.b.php
-//                          ^ punctuation.delimiter.type.php
-//       ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                 ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                           ^^^^^^^^^^ entity.name.type.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//                                      ^ statement.class.body.php.7
+//                                      ^ punctuation.delimiter.statement.class.body.begin.php.7
+//      ^ punctuation.delimiter.statement.namespace.a.php.7
+//                ^ punctuation.delimiter.statement.namespace.b.php.7
+//                          ^ punctuation.delimiter.type.php.7
+//       ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                 ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                           ^^^^^^^^^^ entity.name.type.php.7
         Something...
-//      ^^^^^^^^^^^^ statement.class.php
-//      ^^^^^^^^^^^^ statement.class.body.php
-//      ^^^^^^^^^^^^ statement.class.body.content.php
+//      ^^^^^^^^^^^^ statement.class.php.7
+//      ^^^^^^^^^^^^ statement.class.body.php.7
+//      ^^^^^^^^^^^^ statement.class.body.content.php.7
     }
-//  ^ statement.class.php
-//  ^ statement.class.body.php
-//  ^ punctuation.delimiter.statement.class.body.end.php
+//  ^ statement.class.php.7
+//  ^ statement.class.body.php.7
+//  ^ punctuation.delimiter.statement.class.body.end.php.7
 
     class MyClass extends
-//  ^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//  ^^^^^ keyword.statement.class.php
-//        ^^^^^^^ entity.name.statement.class.php
-//                ^^^^^^^ keyword.statement.inherit.php
+//  ^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//  ^^^^^ keyword.statement.class.php.7
+//        ^^^^^^^ entity.name.statement.class.php.7
+//                ^^^^^^^ keyword.statement.inherit.php.7
         Namespace\Namespace\ParentClass
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//               ^ punctuation.delimiter.statement.namespace.b.php
-//                         ^ punctuation.delimiter.type.php
-//      ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                          ^^^^^^^^^^^ entity.name.type.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//               ^ punctuation.delimiter.statement.namespace.b.php.7
+//                         ^ punctuation.delimiter.type.php.7
+//      ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                          ^^^^^^^^^^^ entity.name.type.php.7
     implements
-//  ^^^^^^^^^^ keyword.statement.implement.php
+//  ^^^^^^^^^^ keyword.statement.implement.php.7
         Namespace\Namespace\Interface1,
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//                                    ^ punctuation.delimiter.statement.implement.php
-//               ^ punctuation.delimiter.statement.namespace.b.php
-//                         ^ punctuation.delimiter.type.php
-//      ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                          ^^^^^^^^^^ entity.name.type.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//                                    ^ punctuation.delimiter.statement.implement.php.7
+//               ^ punctuation.delimiter.statement.namespace.b.php.7
+//                         ^ punctuation.delimiter.type.php.7
+//      ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                          ^^^^^^^^^^ entity.name.type.php.7
         Namespace\Namespace\Interface2 {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php
-//                                     ^ statement.class.body.php
-//                                     ^ punctuation.delimiter.statement.class.body.begin.php
-//               ^ punctuation.delimiter.statement.namespace.b.php
-//                         ^ punctuation.delimiter.type.php
-//      ^^^^^^^^^ entity.name.statement.namespace.a.php
-//                ^^^^^^^^^ entity.name.statement.namespace.b.php
-//                          ^^^^^^^^^^ entity.name.type.php
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
+//                                     ^ statement.class.body.php.7
+//                                     ^ punctuation.delimiter.statement.class.body.begin.php.7
+//               ^ punctuation.delimiter.statement.namespace.b.php.7
+//                         ^ punctuation.delimiter.type.php.7
+//      ^^^^^^^^^ entity.name.statement.namespace.a.php.7
+//                ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                          ^^^^^^^^^^ entity.name.type.php.7
         Something...
-//      ^^^^^^^^^^^^ statement.class.php
-//      ^^^^^^^^^^^^ statement.class.body.php
-//      ^^^^^^^^^^^^ statement.class.body.content.php
+//      ^^^^^^^^^^^^ statement.class.php.7
+//      ^^^^^^^^^^^^ statement.class.body.php.7
+//      ^^^^^^^^^^^^ statement.class.body.content.php.7
     }
-//  ^ statement.class.php
-//  ^ statement.class.body.php
-//  ^ punctuation.delimiter.statement.class.body.end.php
+//  ^ statement.class.php.7
+//  ^ statement.class.body.php.7
+//  ^ punctuation.delimiter.statement.class.body.end.php.7
 ?>

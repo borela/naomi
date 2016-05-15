@@ -14,21 +14,21 @@
 
 <?php
     $variable
-//  ^^^^^^^^^ variable.php
-//  ^ punctuation.variable.begin.php
-//   ^^^^^^^^ entity.name.variable.php
+//  ^^^^^^^^^ variable.php.7
+//  ^ punctuation.variable.begin.php.7
+//   ^^^^^^^^ entity.name.variable.php.7
     $object->variable
-//  ^^^^^^^ variable.php
-//  ^ punctuation.variable.begin.php
-//   ^^^^^^ entity.name.variable.php
-//         ^^ keyword.operator.member.access.php
-//           ^^^^^^^^ variable.property.php
-//           ^^^^^^^^ entity.name.variable.php
+//  ^^^^^^^ variable.php.7
+//  ^ punctuation.variable.begin.php.7
+//   ^^^^^^ entity.name.variable.php.7
+//         ^^ keyword.operator.member.access.php.7
+//           ^^^^^^^^ variable.property.php.7
+//           ^^^^^^^^ entity.name.variable.php.7
     Type::$variable
-//  ^^^^ type.php
-//  ^^^^ entity.name.type.php
-//      ^^ keyword.operator.scope.resolution.php
-//        ^^^^^^^^^ variable.static.php
-//        ^ punctuation.variable.begin.php
-//         ^^^^^^^^ entity.name.variable.php
+//  ^^^^ type.php.7
+//  ^^^^ entity.name.type.php.7
+//      ^^ keyword.operator.scope.resolution.php.7
+//        ^^^^^^^^^ variable.static.php.7
+//        ^ punctuation.variable.begin.php.7
+//         ^^^^^^^^ entity.name.variable.php.7
 ?>

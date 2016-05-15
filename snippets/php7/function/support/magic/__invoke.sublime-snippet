@@ -12,7 +12,7 @@
  | the License.
 -->
 <snippet>
-    <scope>embedded.content.php</scope>
+    <scope>embedded.content.php.7</scope>
     <tabTrigger>decminvoke</tabTrigger>
     <description>__invoke declaration.</description>
     <content><![CDATA[

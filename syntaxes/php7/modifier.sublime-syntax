@@ -20,20 +20,20 @@ scope: ...
 contexts:
   main:
     - match: (?i)\babstract\b
-      scope: keyword.modifier.abstract.php
+      scope: keyword.modifier.abstract.php.7
       pop: true
     - match: (?i)\bstatic\b
-      scope: keyword.modifier.static.php
+      scope: keyword.modifier.static.php.7
       pop: true
     - match: (?i)\bfinal\b
-      scope: keyword.modifier.final.php
+      scope: keyword.modifier.final.php.7
       pop: true
     - match: (?i)\bpublic\b
-      scope: keyword.modifier.public.php
+      scope: keyword.modifier.public.php.7
       pop: true
     - match: (?i)\bprotected\b
-      scope: keyword.modifier.protected.php
+      scope: keyword.modifier.protected.php.7
       pop: true
     - match: (?i)\bprivate\b
-      scope: keyword.modifier.private.php
+      scope: keyword.modifier.private.php.7
       pop: true

@@ -25,26 +25,26 @@ contexts:
   main:
     # Normal open tag.
     - match: <\?php
-      scope: punctuation.embedded.begin.php
+      scope: punctuation.embedded.begin.php.7
       set: embedded
     # Short open tag.
     - match: <\?=
-      scope: punctuation.embedded.begin.php
+      scope: punctuation.embedded.begin.php.7
       set: embedded-short
 
   embedded:
-    - meta_scope: embedded.php
-    - meta_content_scope: embedded.content.php
+    - meta_scope: embedded.php.7
+    - meta_content_scope: embedded.content.php.7
     - include: content
 
   embedded-short:
-    - meta_scope: embedded.short.php
-    - meta_content_scope: embedded.content.php
+    - meta_scope: embedded.short.php.7
+    - meta_content_scope: embedded.content.php.7
     - include: content
 
   content:
     - match: \?>
-      scope: punctuation.embedded.end.php
+      scope: punctuation.embedded.end.php.7
       pop: true
     - match: (?=\S)
       push:

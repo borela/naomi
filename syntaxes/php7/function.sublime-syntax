@@ -25,22 +25,22 @@ scope: ...
 contexts:
   main:
     - match: (?i)\bfunction(?!\\)\b
-      scope: keyword.statement.function.php
+      scope: keyword.statement.function.php.7
       set: declaration
 
   declaration:
-    - meta_scope: statement.function.php
+    - meta_scope: statement.function.php.7
     # Function without body.
     - match: ;
-      scope: punctuation.delimiter.statement.function.declaration.end.php
+      scope: punctuation.delimiter.statement.function.declaration.end.php.7
       pop: true
     # Function's name.
     - include: magic-method
     - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.statement.function.php
+      scope: entity.name.statement.function.php.7
     # Parameters, imported variables and return type.
     - match: \(
-      scope: punctuation.delimiter.statement.function.parameters.begin.php
+      scope: punctuation.delimiter.statement.function.parameters.begin.php.7
       push: [
         return-type-hint,
         possible-imported-variables,
@@ -49,8 +49,8 @@ contexts:
     # Body.
     - match: \{
       scope: >-
-        statement.function.body.php
-        punctuation.delimiter.statement.function.body.begin.php
+        statement.function.body.php.7
+        punctuation.delimiter.statement.function.body.begin.php.7
       set: body
 
   magic-method:
@@ -71,15 +71,15 @@ contexts:
           | __debugInfo
         )
       scope: >-
-        support.function.php
-        entity.name.statement.function.php
+        support.function.php.7
+        entity.name.statement.function.php.7
 
   parameters:
-    - meta_scope: statement.function.parameters.php
-    - meta_content_scope: statement.function.parameters.content.php
+    - meta_scope: statement.function.parameters.php.7
+    - meta_content_scope: statement.function.parameters.content.php.7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: \)
-      scope: punctuation.delimiter.statement.function.parameters.end.php
+      scope: punctuation.delimiter.statement.function.parameters.end.php.7
       pop: true
     # Starts with a variable.
     - match: (?=\$)
@@ -110,19 +110,19 @@ contexts:
     - match: (?=;|:|{)
       pop: true
     - match: use
-      scope: keyword.import.variable.php
+      scope: keyword.import.variable.php.7
       set: imported-variables-begin
 
   imported-variables-begin:
     - match: \(
-      scope: punctuation.delimiter.statement.imported.variables.begin.php
+      scope: punctuation.delimiter.statement.imported.variables.begin.php.7
       set: imported-variables
 
   imported-variables:
-    - meta_scope: statement.function.imported.variables.php
-    - meta_content_scope: statement.function.imported.variables.content.php
+    - meta_scope: statement.function.imported.variables.php.7
+    - meta_content_scope: statement.function.imported.variables.content.php.7
     - match: \)
-      scope: punctuation.delimiter.statement.imported.variables.end.php
+      scope: punctuation.delimiter.statement.imported.variables.end.php.7
       pop: true
     # Starts with a variable.
     - match: (?=\$)
@@ -143,7 +143,7 @@ contexts:
     - match: (?=\$)
       pop: true
     - match: \&
-      scope: keyword.operator.reference.php
+      scope: keyword.operator.reference.php.7
       pop: true
 
   variable-type:
@@ -155,10 +155,10 @@ contexts:
     - match: (?=\$)
       pop: true
     - match: \&
-      scope: keyword.operator.reference.php
+      scope: keyword.operator.reference.php.7
       pop: true
     - match: \.\.\.
-      scope: keyword.operator.variadic.php
+      scope: keyword.operator.variadic.php.7
       pop: true
 
   target-delimiter:
@@ -176,7 +176,7 @@ contexts:
     - match: (?=,|\))
       pop: true
     - match: \=
-      scope: keyword.operator.php
+      scope: keyword.operator.php.7
       set: param-default-value
 
   param-default-value:
@@ -200,7 +200,7 @@ contexts:
 
   default-value-scope-operator:
     - match: "::"
-      scope: keyword.operator.scope.resolution.php
+      scope: keyword.operator.scope.resolution.php.7
       pop: true
 
   default-value-constant:
@@ -211,7 +211,7 @@ contexts:
     - match: (?=\))
       pop: true
     - match: ","
-      scope: punctuation.delimiter.statement.function.parameters.php
+      scope: punctuation.delimiter.statement.function.parameters.php.7
       pop: true
 
   return-type-hint:
@@ -219,7 +219,7 @@ contexts:
     - match: (?={|;)
       pop: true
     - match: ":"
-      scope: punctuation.delimiter.statement.function.php
+      scope: punctuation.delimiter.statement.function.php.7
       set: return-type
 
   return-type:
@@ -230,16 +230,16 @@ contexts:
 
   body:
     - meta_content_scope: >-
-        statement.function.php
-        statement.function.body.php
-        statement.function.body.content.php
+        statement.function.php.7
+        statement.function.body.php.7
+        statement.function.body.content.php.7
     - match: \{
       push: balance-brackets
     - match: \}
       scope: >-
-        statement.function.php
-        statement.function.body.php
-        punctuation.delimiter.statement.function.body.end.php
+        statement.function.php.7
+        statement.function.body.php.7
+        punctuation.delimiter.statement.function.body.end.php.7
       pop: true
     - include: body-content
 

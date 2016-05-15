@@ -14,10 +14,10 @@
 
 <?php
     GENERIC_CONSTANT
-//  ^^^^^^^^^^^^^^^^ constant.php
+//  ^^^^^^^^^^^^^^^^ constant.php.7
 
     Type::CONSTANT
-//  ^^^^ type.php
-//      ^^ keyword.operator.scope.resolution.php
-//        ^^^^^^^^ constant.php
+//  ^^^^ type.php.7
+//      ^^ keyword.operator.scope.resolution.php.7
+//        ^^^^^^^^ constant.php.7
 ?>

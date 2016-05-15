@@ -25,16 +25,16 @@ variables:
 contexts:
   main:
     - match: (?i)\buse(?!\\)\b
-      scope: keyword.statement.import.php
+      scope: keyword.statement.import.php.7
       set: declaration
 
   declaration:
-    - meta_scope: statement.import.php
+    - meta_scope: statement.import.php.7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: \,
-      scope: punctuation.delimiter.statement.import.php
+      scope: punctuation.delimiter.statement.import.php.7
     - match: ;
-      scope: punctuation.delimiter.statement.import.end.php
+      scope: punctuation.delimiter.statement.import.end.php.7
       pop: true
     - match: ""
       push: [
@@ -45,20 +45,20 @@ contexts:
   const-or-function:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: (?i)\bconst\b
-      scope: keyword.statement.import.constant.php
+      scope: keyword.statement.import.constant.php.7
       set: namespaced-const
     - match: (?i)\bfunction\b
-      scope: keyword.statement.import.function.php
+      scope: keyword.statement.import.function.php.7
       set: namespaced-function
     - match: (?=\S)
       set: namespace-or-type
 
   namespaced-const:
-    - meta_scope: statement.import.constant.php
+    - meta_scope: statement.import.constant.php.7
     - include: target
 
   namespaced-function:
-    - meta_scope: statement.import.function.php
+    - meta_scope: statement.import.function.php.7
     - include: target
 
   namespace-or-type:
@@ -73,7 +73,7 @@ contexts:
     - match: (?=,|;)
       pop: true
     - match: (?i)\bas\b
-      scope: keyword.statement.import.alias.php
+      scope: keyword.statement.import.alias.php.7
       set: alias-name
 
   alias-name:
@@ -81,5 +81,5 @@ contexts:
     - match: (?=;)
       pop: true
     - match: "(?xi){{commonIdentifier}}"
-      scope: entity.name.statement.import.alias.php
+      scope: entity.name.statement.import.alias.php.7
       pop: true

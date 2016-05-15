@@ -23,7 +23,7 @@
 //   ^^^^^^^^^^^^^^^^^^^^^^^^ string.content.php.7
 //  ^ punctuation.delimiter.string.begin.php.7
 //                ^^ constant.character.escape.a.php.7
-//                      ^^ constant.character.escape.a.php.7
+//                      ^^ constant.character.escape.b.php.7
 //                           ^ punctuation.delimiter.string.end.php.7
     "Escaped: \\\"\n\r\t\v\e\f\$\101\x41\u{0065}"
 //            ^^ constant.character.escape.a.php.7
@@ -45,7 +45,6 @@
 //                   ^^^^^ variable.b.php.7
 //                   ^ punctuation.variable.begin.php.7
 //                    ^^^^ entity.name.variable.php.7
-//
     "Variables: $var1[123]$var2[abc]"
 //              ^^^^^^^^^^ variable.a.php.7
 //              ^ punctuation.variable.begin.php.7
@@ -59,4 +58,28 @@
 //                             ^ operator.subscript.begin.php.7
 //                              ^^^ array.key.php.7
 //                                 ^ operator.subscript.end.php.7
+    "Variables: $var1\n$var2\n"
+//              ^^^^^ variable.a.php.7
+//              ^ punctuation.variable.begin.php.7
+//               ^^^^ entity.name.variable.php.7
+//                   ^^ constant.character.escape.a.php.7
+//                     ^^^^^ variable.b.php.7
+//                     ^ punctuation.variable.begin.php.7
+//                      ^^^^ entity.name.variable.php.7
+//                          ^^ constant.character.escape.b.php.7
+    "Variables: $var1[123]\n$var2[abc]\n"
+//              ^^^^^^^^^^ variable.a.php.7
+//              ^ punctuation.variable.begin.php.7
+//               ^^^^ entity.name.variable.php.7
+//                   ^ operator.subscript.begin.php.7
+//                    ^^^ array.key.php.7
+//                       ^ operator.subscript.end.php.7
+//                        ^^ constant.character.escape.a.php.7
+//                          ^^^^^^^^^^ variable.b.php.7
+//                          ^ punctuation.variable.begin.php.7
+//                           ^^^^ entity.name.variable.php.7
+//                               ^ operator.subscript.begin.php.7
+//                                ^^^ array.key.php.7
+//                                   ^ operator.subscript.end.php.7
+//                                    ^^ constant.character.escape.b.php.7
 ?>

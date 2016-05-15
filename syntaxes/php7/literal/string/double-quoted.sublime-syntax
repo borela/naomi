@@ -17,56 +17,20 @@ hidden: true
 
 scope: ...
 
-variables:
-  octalEscapedChar: |
-    \\[0-7]{1,3}
-
-  hexEscapedChar: |
-    \\x[a-f0-9]{1,2}
-
-  unicodeEscapedChar: |
-    \\u\{[a-f0-9]+\}
-
-  doubleQuotedEscapeSequences: |
-    (?> \\\\
-      | \\"
-      | \\n
-      | \\r
-      | \\t
-      | \\v
-      | \\e
-      | \\f
-      | \\\$
-      | {{octalEscapedChar}}
-      | {{hexEscapedChar}}
-      | {{unicodeEscapedChar}}
-    )
-
 contexts:
   main:
     - match: \"
       scope: punctuation.delimiter.string.begin.php.7
-      set: string
+      push: string
 
   string:
     - meta_scope: string.quoted.double.php.7
     - meta_content_scope: string.content.php.7
-    - include: escaped-character
     - match: \"
       scope: punctuation.delimiter.string.end.php.7
       pop: true
-    - include: Packages/Naomi/syntaxes/php7/literal/string/embedded-variable/simple.sublime-syntax
-
-  escaped-character:
-    - match: |
-        (?x)
-        (?>
-          ({{doubleQuotedEscapeSequences}})\s*
-          ({{doubleQuotedEscapeSequences}})
-          |
-          ({{doubleQuotedEscapeSequences}})
-        )
-      captures:
-        1: constant.character.escape.a.php.7
-        2: constant.character.escape.b.php.7
-        3: constant.character.escape.a.php.7
+    - match: (?=\S)
+      push: Packages/Naomi/syntaxes/php7/literal/string/alternating-escape-and-variable.sublime-syntax
+      with_prototype:
+        - match: (?=\")
+          pop: true

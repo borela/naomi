@@ -1,5 +1,7 @@
 [
-    // Insert phpDoc block.
+    /**
+     * Insert documentation block.
+     */
     {
         "keys": [
             "enter"
@@ -9,7 +11,7 @@
             {
                 "key": "selector",
                 "operator": "equal",
-                "operand": "comment.block.phpdoc",
+                "operand": "comment",
                 "match_all": true
             },
             {
@@ -24,7 +26,10 @@
             "contents": "\n * ${1}\n */"
         }
     },
-    // Insert line to phpDoc block.
+
+    /**
+     * Insert line to documentation block.
+     */
     {
         "keys": [
             "enter"
@@ -34,7 +39,7 @@
             {
                 "key": "selector",
                 "operator": "equal",
-                "operand": "comment.block.phpdoc",
+                "operand": "comment",
                 "match_all": true
             },
             {
@@ -49,7 +54,10 @@
             "contents": "\n* "
         }
     },
-    // Remove line from phpDoc block.
+
+    /**
+     * Remove line from documentation block.
+     */
     {
         "keys": [
             "backspace"
@@ -59,7 +67,7 @@
             {
                 "key": "selector",
                 "operator": "equal",
-                "operand": "comment.block.phpdoc",
+                "operand": "comment",
                 "match_all": true
             },
             {

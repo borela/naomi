@@ -1,0 +1,12 @@
+[
+    {
+        "command": "cut"
+    },
+    {
+        "command": "move",
+        "args": {
+            "by": "characters",
+            "forward": false
+        }
+    }
+]

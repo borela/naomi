@@ -8,6 +8,7 @@ serve as a template to create new ones.
 
 #### PHP 7
 
+* Auto completion for asterisks in phpDoc blocks.
 * Scopes for phpDoc instructions.
 * Different scopes for decimal, floating point, binary, octal and hexadecimal
 literal.

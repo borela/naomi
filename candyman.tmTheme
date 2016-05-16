@@ -148,23 +148,6 @@
 
             <dict>
                 <key>name</key>
-                <string>Documentation type delimiter</string>
-
-                <key>scope</key>
-                <string>comment.block.phpdoc punctuation.delimiter.types</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>fontStyle</key>
-                    <string></string>
-
-                    <key>foreground</key>
-                    <string>#f48fb1</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
                 <string>String</string>
 
                 <key>scope</key>
@@ -179,10 +162,10 @@
 
             <dict>
                 <key>name</key>
-                <string>String's beginning</string>
+                <string>String, color and datetime's beginning</string>
 
                 <key>scope</key>
-                <string>punctuation.delimiter.string.begin, punctuation.delimiter.constant.character.begin</string>
+                <string>punctuation.delimiter.string.begin, punctuation.delimiter.constant.character.begin, punctuation.delimiter.datetime.begin, punctuation.delimiter.color.begin</string>
 
                 <key>settings</key>
                 <dict>
@@ -196,10 +179,10 @@
 
             <dict>
                 <key>name</key>
-                <string>String's ending</string>
+                <string>String, color and datetime's ending</string>
 
                 <key>scope</key>
-                <string>punctuation.delimiter.string.end, punctuation.delimiter.constant.character.end</string>
+                <string>punctuation.delimiter.string.end, punctuation.delimiter.constant.character.end, punctuation.delimiter.datetime.end, punctuation.delimiter.color.end</string>
 
                 <key>settings</key>
                 <dict>
@@ -505,7 +488,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Delimiter</string>
+                <string>Generic delimiter</string>
 
                 <key>scope</key>
                 <string>punctuation.delimiter</string>
@@ -556,52 +539,43 @@
 
             <dict>
                 <key>name</key>
-                <string>Color's beginning</string>
+                <string>Datetime's year and hour</string>
 
                 <key>scope</key>
-                <string>punctuation.delimiter.color.begin</string>
+                <string>datetime.year, datetime.hour</string>
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
                     <key>foreground</key>
-                    <string>#fff9c4</string>
+                    <string>#ef9a9a</string>
                 </dict>
             </dict>
 
             <dict>
                 <key>name</key>
-                <string>Color's ending</string>
+                <string>Datetime's month and minute</string>
 
                 <key>scope</key>
-                <string>punctuation.delimiter.color.end</string>
+                <string>datetime.month, datetime.minute</string>
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
                     <key>foreground</key>
-                    <string>#ff8a65</string>
+                    <string>#a5d6a7</string>
                 </dict>
             </dict>
 
             <dict>
                 <key>name</key>
-                <string>Color's delimiter</string>
+                <string>Datetime's day and second</string>
 
                 <key>scope</key>
-                <string>punctuation.delimiter.color</string>
+                <string>datetime.day, datetime.second</string>
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
                     <key>foreground</key>
-                    <string>#fff9c4</string>
+                    <string>#80deea</string>
                 </dict>
             </dict>
 

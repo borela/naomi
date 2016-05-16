@@ -1,0 +1,110 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  colorValue: |
+    (?:0x)?[0-9]+
+
+contexts:
+  main:
+    - match: "D'"
+      scope: >-
+        constant.datetime.mql.4
+        punctuation.delimiter.datetime.begin.mql.4
+      set: year-value
+
+  end:
+    - match: "'"
+      scope: >-
+        constant.datetime.mql.4
+        punctuation.delimiter.datetime.end.mql.4
+      pop: true
+
+  date-delimiter:
+    - match: (?=\')
+      pop: true
+    - match: "\\."
+      scope: >-
+        constant.datetime.mql.4
+        punctuation.delimiter.date.mql.4
+      pop: true
+
+  time-delimiter:
+    - meta_content_scope: constant.datetime.mql.4
+    - match: (?=')
+      pop: true
+    - match: ":"
+      scope: >-
+        constant.datetime.mql.4
+        punctuation.delimiter.time.mql.4
+      pop: true
+
+  year-value:
+    - meta_content_scope: constant.datetime.mql.4
+    - include: end
+    - match: "[0-9]{4}"
+      scope: datetime.year.mql.4
+      set: [
+        month-value,
+        date-delimiter
+      ]
+
+  month-value:
+    - meta_content_scope: constant.datetime.mql.4
+    - include: end
+    - match: "[0-9]{2}"
+      scope: datetime.month.mql.4
+      set: [
+        day-value,
+        date-delimiter
+      ]
+
+  day-value:
+    - meta_content_scope: constant.datetime.mql.4
+    - include: end
+    - match: "[0-9]{2}"
+      scope: datetime.day.mql.4
+      set: hour-value
+
+  hour-value:
+    - meta_content_scope: constant.datetime.mql.4
+    - include: end
+    - match: "[0-9]{2}"
+      scope: datetime.hour.mql.4
+      set: [
+        minute-value,
+        time-delimiter
+      ]
+
+  minute-value:
+    - meta_content_scope: constant.datetime.mql.4
+    - include: end
+    - match: "[0-9]{2}"
+      scope: datetime.minute.mql.4
+      set: [
+        second-value,
+        time-delimiter
+      ]
+
+  second-value:
+    - meta_content_scope: constant.datetime.mql.4
+    - include: end
+    - match: "[0-9]{2}"
+      scope: datetime.second.mql.4
+      set: end

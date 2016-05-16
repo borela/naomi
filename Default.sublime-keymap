@@ -78,7 +78,7 @@
             }
         ],
         "args": {
-            "file": "res://Packages/Naomi/macros/phpdoc/deleteLine.sublime-macro"
+            "file": "res://Packages/Naomi/macros/docblock/delete-to-line-before.sublime-macro"
         }
     }
 ]

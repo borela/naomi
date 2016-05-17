@@ -21,8 +21,8 @@
 //                  ^^ datetime.minute.mql.4
 //                     ^^ datetime.second.mql.4
 //  ^^ punctuation.delimiter.datetime.begin.mql.4
-//        ^ punctuation.delimiter.datetime.mql.4
-//           ^ punctuation.delimiter.datetime.mql.4
-//                 ^ punctuation.delimiter.datetime.end.mql.4
-//                    ^ punctuation.delimiter.datetime.end.mql.4
+//        ^ punctuation.delimiter.date.mql.4
+//           ^ punctuation.delimiter.date.mql.4
+//                 ^ punctuation.delimiter.time.mql.4
+//                    ^ punctuation.delimiter.time.mql.4
 //                       ^ punctuation.delimiter.datetime.end.mql.4

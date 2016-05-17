@@ -1,6 +1,6 @@
 [
     /**
-     * Insert documentation block.
+     * Close documentation block.
      */
     {
         "keys": [
@@ -8,6 +8,12 @@
         ],
         "command": "insert_snippet",
         "context": [
+            {
+                "key": "selection_empty",
+                "operator": "equal",
+                "operand": true,
+                "match_all": true
+            },
             {
                 "key": "selector",
                 "operator": "equal",
@@ -23,7 +29,7 @@
         ],
         "args":
         {
-            "contents": "\n * ${1}\n */"
+            "contents": "\n * ${0}\n */"
         }
     },
 
@@ -36,6 +42,12 @@
         ],
         "command": "insert_snippet",
         "context": [
+            {
+                "key": "selection_empty",
+                "operator": "equal",
+                "operand": true,
+                "match_all": true
+            },
             {
                 "key": "selector",
                 "operator": "equal",
@@ -64,6 +76,12 @@
         ],
         "command": "run_macro_file",
         "context": [
+            {
+                "key": "selection_empty",
+                "operator": "equal",
+                "operand": true,
+                "match_all": true
+            },
             {
                 "key": "selector",
                 "operator": "equal",

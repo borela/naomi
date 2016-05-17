@@ -34,12 +34,16 @@ contexts:
 
   embedded:
     - meta_scope: embedded.php.7
-    - meta_content_scope: embedded.content.php.7
+    - meta_content_scope: >-
+        embedded.content.php.7
+        source.php.7
     - include: content
 
   embedded-short:
     - meta_scope: embedded.short.php.7
-    - meta_content_scope: embedded.content.php.7
+    - meta_content_scope: >-
+        embedded.content.php.7
+        source.php.7
     - include: content
 
   content:

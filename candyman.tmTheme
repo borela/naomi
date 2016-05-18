@@ -286,6 +286,54 @@
 
             <dict>
                 <key>name</key>
+                <string>Array</string>
+
+                <key>scope</key>
+                <string>entity.name.type.array</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ffecb3</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Array's delimiter</string>
+
+                <key>scope</key>
+                <string>support.array punctuation.delimiter</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#ffecb3</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>New object's delimiter</string>
+
+                <key>scope</key>
+                <string>expression.new.object punctuation.delimiter</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#f48fb1</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Custom type</string>
 
                 <key>scope</key>
@@ -387,7 +435,7 @@
                 <string>Function's name</string>
 
                 <key>scope</key>
-                <string>entity.name.statement.function</string>
+                <string>entity.name.statement.function, entity.name.expression.function</string>
 
                 <key>settings</key>
                 <dict>
@@ -398,10 +446,10 @@
 
             <dict>
                 <key>name</key>
-                <string>Function call namespace delimiter</string>
+                <string>Function's delimiter</string>
 
                 <key>scope</key>
-                <string>function.call punctuation.delimiter.statement.function</string>
+                <string>punctuation.delimiter.statement.function, punctuation.delimiter.expression.function</string>
 
                 <key>settings</key>
                 <dict>
@@ -418,7 +466,7 @@
                 <string>Built-in functions</string>
 
                 <key>scope</key>
-                <string>support.function entity.name.statement.function</string>
+                <string>entity.name.statement.support.function, entity.name.expression.support.function</string>
 
                 <key>settings</key>
                 <dict>
@@ -429,10 +477,10 @@
 
             <dict>
                 <key>name</key>
-                <string>Built-in function call namespace delimiter</string>
+                <string>Built-in function delimiter</string>
 
                 <key>scope</key>
-                <string>support.function.call punctuation.delimiter.statement.function</string>
+                <string>support punctuation.delimiter.statement.function, support punctuation.delimiter.expression.function</string>
 
                 <key>settings</key>
                 <dict>

@@ -24,10 +24,52 @@ scope: ...
 
 contexts:
   main:
+    - match: (?i)\bnew\s+class\b
+      scope: keyword.other.php.7
+      set: Packages/Naomi/syntaxes/php7/class.sublime-syntax
     - match: (?i)\bnew\b
       scope: keyword.other.php.7
-      set: class-or-type
+      set: [
+        arguments,
+        Packages/Naomi/syntaxes/php7/type.sublime-syntax
+      ]
 
-  class-or-type:
-    - include: Packages/Naomi/syntaxes/php7/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
+  arguments:
+    - meta_scope: expression.new.object.php.7
+    - match: \(
+      scope: punctuation.delimiter.expression.arguments.begin.php.7
+      set: arguments-content
+
+  arguments-content:
+    - meta_content_scope: expression.new.object.php.7
+    - match: \)
+      scope: >-
+        expression.new.object.php.7
+        punctuation.delimiter.expression.arguments.end.php.7
+      pop: true
+    - match: (?=\S)
+      push: [
+        argument-delimiter,
+        argument-value
+      ]
+
+  argument-delimiter:
+    - match: (?=\))
+      pop: true
+    - match: \,
+      scope: punctuation.delimiter.expression.arguments.php.7
+      pop: true
+
+  argument-value:
+    - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/new-object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
+
+  balance-parenthesis:
+    - match: \(
+      push: balance-parenthesis
+    - match: \)
+      pop: true
+    - include: value

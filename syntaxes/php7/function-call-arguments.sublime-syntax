@@ -19,20 +19,24 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        ((?>\\|\b))
-        (
-          (?> clone
-            | die
-            | e
-              (?>cho|val|xit)
-            | include(?:_once)?
-            | require(?:_once)?
-          )
-        )\b
-      captures:
-        0: expression.function.call.php.7
-        1: punctuation.delimiter.expression.function.php.7
-        2: entity.name.expression.support.function.php.7
+    - match: \(
+      scope: punctuation.delimiter.expression.function.arguments.begin.php.7
+      set: arguments
+
+  arguments:
+    - meta_scope: expression.function.call.php.7
+    - match: \)
+      scope: punctuation.delimiter.expression.function.arguments.end.php.7
       pop: true
+    - match: (?=\S)
+      push: argument
+
+  argument:
+    - match: (?=\))
+      pop: true
+    - match: \,
+      scope: >-
+        expression.function.call.php.7
+        punctuation.delimiter.expression.arguments.php.7
+      pop: true
+    - include: Packages/Naomi/syntaxes/php7/expression.no-pop.sublime-syntax

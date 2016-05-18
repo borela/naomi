@@ -71,8 +71,8 @@ contexts:
           | __debugInfo
         )
       scope: >-
-        support.function.php.7
-        entity.name.statement.function.php.7
+        statement.function.php.7
+        entity.name.statement.support.function.php.7
 
   parameters:
     - meta_scope: statement.function.parameters.php.7

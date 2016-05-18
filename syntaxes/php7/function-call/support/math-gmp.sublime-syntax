@@ -69,7 +69,10 @@ contexts:
         )
         (?=\s*\()
       captures:
-        0: support.function.call.php.7
+        0: expression.function.call.php.7
         1: punctuation.delimiter.expression.function.php.7
-        2: entity.name.expression.function.php.7
-      pop: true
+        2: entity.name.expression.support.function.php.7
+      set: arguments
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/php7/function-call-arguments.sublime-syntax

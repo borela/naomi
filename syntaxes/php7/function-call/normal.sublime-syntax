@@ -51,10 +51,10 @@ contexts:
         ({{commonIdentifier}})
         (?=\s*\()
       captures:
-        0: function.call.php.7
+        0: expression.function.call.php.7
         1: punctuation.delimiter.expression.function.php.7
         2: entity.name.expression.function.php.7
-      pop: true
+      set: arguments
 
   namespaced-function-call:
     - match: |
@@ -64,7 +64,7 @@ contexts:
         ({{commonIdentifier}})
         (?=\s*\()
       captures:
-        0: function.call.php.7
+        0: expression.function.call.php.7
         1: expression.namespace.path.php.7
         2: punctuation.delimiter.expression.namespace.a.php.7
         3: entity.name.expression.namespace.a.php.7
@@ -74,4 +74,7 @@ contexts:
         7: entity.name.expression.namespace.a.php.7
         8: punctuation.delimiter.expression.function.php.7
         9: entity.name.expression.function.php.7
-      pop: true
+      set: arguments
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/php7/function-call-arguments.sublime-syntax

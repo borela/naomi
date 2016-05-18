@@ -14,30 +14,30 @@
 
 <?php
     clone
-//  ^^^^^ support.function.call.php.7
-//  ^^^^^ entity.name.statement.function.php.7
+//  ^^^^^ expression.function.call.php.7
+//  ^^^^^ entity.name.expression.support.function.php.7
     die
-//  ^^^ support.function.call.php.7
-//  ^^^ entity.name.statement.function.php.7
+//  ^^^ expression.function.call.php.7
+//  ^^^ entity.name.expression.support.function.php.7
     echo
-//  ^^^^ support.function.call.php.7
-//  ^^^^ entity.name.statement.function.php.7
+//  ^^^^ expression.function.call.php.7
+//  ^^^^ entity.name.expression.support.function.php.7
     eval
-//  ^^^^ support.function.call.php.7
-//  ^^^^ entity.name.statement.function.php.7
+//  ^^^^ expression.function.call.php.7
+//  ^^^^ entity.name.expression.support.function.php.7
     exit
-//  ^^^^ support.function.call.php.7
-//  ^^^^ entity.name.statement.function.php.7
+//  ^^^^ expression.function.call.php.7
+//  ^^^^ entity.name.expression.support.function.php.7
     include_once
-//  ^^^^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^ entity.name.expression.support.function.php.7
     include
-//  ^^^^^^^ support.function.call.php.7
-//  ^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ entity.name.expression.support.function.php.7
     require_once
-//  ^^^^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^ entity.name.expression.support.function.php.7
     require
-//  ^^^^^^^ support.function.call.php.7
-//  ^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ entity.name.expression.support.function.php.7
 ?>

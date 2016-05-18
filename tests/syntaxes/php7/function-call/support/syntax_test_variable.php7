@@ -14,102 +14,102 @@
 
 <?php
     boolval();
-//  ^^^^^^^ support.function.call.php.7
-//  ^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ entity.name.expression.support.function.php.7
     debug_zval_dump();
-//  ^^^^^^^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
     doubleval();
-//  ^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^ entity.name.expression.support.function.php.7
     empty();
-//  ^^^^^ support.function.call.php.7
-//  ^^^^^ entity.name.statement.function.php.7
+//  ^^^^^ expression.function.call.php.7
+//  ^^^^^ entity.name.expression.support.function.php.7
     floatval();
-//  ^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^ entity.name.expression.support.function.php.7
     get_defined_vars();
-//  ^^^^^^^^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
     get_resource_type();
-//  ^^^^^^^^^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
     gettype();
-//  ^^^^^^^ support.function.call.php.7
-//  ^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ entity.name.expression.support.function.php.7
     intval();
-//  ^^^^^^ support.function.call.php.7
-//  ^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^ expression.function.call.php.7
+//  ^^^^^^ entity.name.expression.support.function.php.7
     is_array();
-//  ^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^ entity.name.expression.support.function.php.7
     is_bool();
-//  ^^^^^^^ support.function.call.php.7
-//  ^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ entity.name.expression.support.function.php.7
     is_callable();
-//  ^^^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^ entity.name.expression.support.function.php.7
     is_double();
-//  ^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^ entity.name.expression.support.function.php.7
     is_float();
-//  ^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^ entity.name.expression.support.function.php.7
     is_int();
-//  ^^^^^^ support.function.call.php.7
-//  ^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^ expression.function.call.php.7
+//  ^^^^^^ entity.name.expression.support.function.php.7
     is_integer();
-//  ^^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^ entity.name.expression.support.function.php.7
     is_long();
-//  ^^^^^^^ support.function.call.php.7
-//  ^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ entity.name.expression.support.function.php.7
     is_null();
-//  ^^^^^^^ support.function.call.php.7
-//  ^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ entity.name.expression.support.function.php.7
     is_numeric();
-//  ^^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^ entity.name.expression.support.function.php.7
     is_object();
-//  ^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^ entity.name.expression.support.function.php.7
     is_real();
-//  ^^^^^^^ support.function.call.php.7
-//  ^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ entity.name.expression.support.function.php.7
     is_resource();
-//  ^^^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^ entity.name.expression.support.function.php.7
     is_scalar();
-//  ^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^ entity.name.expression.support.function.php.7
     is_string();
-//  ^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^ entity.name.expression.support.function.php.7
     isset();
-//  ^^^^^ support.function.call.php.7
-//  ^^^^^ entity.name.statement.function.php.7
+//  ^^^^^ expression.function.call.php.7
+//  ^^^^^ entity.name.expression.support.function.php.7
     print_r();
-//  ^^^^^^^ support.function.call.php.7
-//  ^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ entity.name.expression.support.function.php.7
     serialize();
-//  ^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^ entity.name.expression.support.function.php.7
     settype();
-//  ^^^^^^^ support.function.call.php.7
-//  ^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ entity.name.expression.support.function.php.7
     strval();
-//  ^^^^^^ support.function.call.php.7
-//  ^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^ expression.function.call.php.7
+//  ^^^^^^ entity.name.expression.support.function.php.7
     unserialize();
-//  ^^^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^ entity.name.expression.support.function.php.7
     unset();
-//  ^^^^^ support.function.call.php.7
-//  ^^^^^ entity.name.statement.function.php.7
+//  ^^^^^ expression.function.call.php.7
+//  ^^^^^ entity.name.expression.support.function.php.7
     var_dump();
-//  ^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^ entity.name.expression.support.function.php.7
     var_export();
-//  ^^^^^^^^^^ support.function.call.php.7
-//  ^^^^^^^^^^ entity.name.statement.function.php.7
+//  ^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^ entity.name.expression.support.function.php.7
 ?>

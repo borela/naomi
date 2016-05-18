@@ -19,6 +19,7 @@ scope: ...
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/php7/literal/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/literal/number.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/literal/string/double-quoted.sublime-syntax

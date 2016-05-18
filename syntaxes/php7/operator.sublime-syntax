@@ -175,6 +175,7 @@ contexts:
   # |  Operator  |  Description        |
   # | :--------: | :------------------ |
   # | instanceof |                     |
+  # |     @      | Error suppression.  |
   # |     &      | Reference.          |
   # |     =>     | Key association.    |
   # |     ->     | Member access.      |
@@ -183,6 +184,9 @@ contexts:
   other-operator:
     - match: (?xi)\binstanceof\b
       scope: keyword.operator.type.php.7
+      pop: true
+    - match: "@"
+      scope: keyword.operator.error.suppression.php.7
       pop: true
     - match: "&(?![&=])"
       scope: keyword.operator.reference.php.7

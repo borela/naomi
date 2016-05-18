@@ -177,7 +177,6 @@ contexts:
   # | instanceof |                     |
   # |     @      | Error suppression.  |
   # |     &      | Reference.          |
-  # |     =>     | Key association.    |
   # |     ->     | Member access.      |
   # |     ::     | Scope resolution.   |
   # |    ...     | Argument unpacking. |
@@ -193,9 +192,6 @@ contexts:
       pop: true
     - match: "\\.\\.\\."
       scope: keyword.operator.argument.unpacking.php.7
-      pop: true
-    - match: "=>"
-      scope: keyword.operator.key.association.php.7
       pop: true
     - match: "->"
       scope: keyword.operator.member.access.php.7

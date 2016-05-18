@@ -52,8 +52,8 @@ contexts:
         (?=\s*\()
       captures:
         0: function.call.php.7
-        1: punctuation.delimiter.statement.function.php.7
-        2: entity.name.statement.function.php.7
+        1: punctuation.delimiter.expression.function.php.7
+        2: entity.name.expression.function.php.7
       pop: true
 
   namespaced-function-call:
@@ -65,13 +65,13 @@ contexts:
         (?=\s*\()
       captures:
         0: function.call.php.7
-        1: statement.namespace.path.php.7
-        2: punctuation.delimiter.statement.namespace.a.php.7
-        3: entity.name.statement.namespace.a.php.7
-        4: punctuation.delimiter.statement.namespace.b.php.7
-        5: entity.name.statement.namespace.b.php.7
-        6: punctuation.delimiter.statement.namespace.a.php.7
-        7: entity.name.statement.namespace.a.php.7
-        8: punctuation.delimiter.statement.function.php.7
-        9: entity.name.statement.function.php.7
+        1: expression.namespace.path.php.7
+        2: punctuation.delimiter.expression.namespace.a.php.7
+        3: entity.name.expression.namespace.a.php.7
+        4: punctuation.delimiter.expression.namespace.b.php.7
+        5: entity.name.expression.namespace.b.php.7
+        6: punctuation.delimiter.expression.namespace.a.php.7
+        7: entity.name.expression.namespace.a.php.7
+        8: punctuation.delimiter.expression.function.php.7
+        9: entity.name.expression.function.php.7
       pop: true

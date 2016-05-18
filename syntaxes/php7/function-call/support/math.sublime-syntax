@@ -64,6 +64,6 @@ contexts:
         )\b
       captures:
         0: support.function.call.php.7
-        1: punctuation.delimiter.statement.function.php.7
-        2: entity.name.statement.function.php.7
+        1: punctuation.delimiter.expression.function.php.7
+        2: entity.name.expression.function.php.7
       pop: true

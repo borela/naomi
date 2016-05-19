@@ -13,84 +13,321 @@
 
     "scope": "embedded.content.php.7 - comment",
     "completions": [
-        "array",
-        "array_change_key_case",
-        "array_chunk",
-        "array_column",
-        "array_combine",
-        "array_count_values",
-        "array_diff",
-        "array_diff_assoc",
-        "array_diff_key",
-        "array_diff_uassoc",
-        "array_diff_ukey",
-        "array_fill",
-        "array_fill_keys",
-        "array_filter",
-        "array_flip",
-        "array_intersect",
-        "array_intersect_assoc",
-        "array_intersect_key",
-        "array_intersect_uassoc",
-        "array_intersect_ukey",
-        "array_key_exists",
-        "array_keys",
-        "array_map",
-        "array_merge",
-        "array_merge_recursive",
-        "array_multisort",
-        "array_pad",
-        "array_pop",
-        "array_product",
-        "array_push",
-        "array_rand",
-        "array_reduce",
-        "array_replace",
-        "array_replace_recursive",
-        "array_reverse",
-        "array_search",
-        "array_shift",
-        "array_slice",
-        "array_splice",
-        "array_sum",
-        "array_udiff",
-        "array_udiff_assoc",
-        "array_udiff_uassoc",
-        "array_uintersect",
-        "array_uintersect_assoc",
-        "array_uintersect_uassoc",
-        "array_unique",
-        "array_unshift",
-        "array_values",
-        "array_walk",
-        "array_walk_recursive",
-        "arsort",
-        "asort",
-        "compact",
-        "count",
-        "current",
-        "each",
-        "end",
-        "extract",
-        "in_array",
-        "key",
-        "key_exists",
-        "krsort",
-        "ksort",
-        "list",
-        "natcasesort",
-        "natsort",
-        "next",
-        "pos",
-        "prev",
-        "range",
-        "reset",
-        "rsort",
-        "shuffle",
-        "sizeof",
-        "sort",
-        "uasort",
-        "uksort",
-        "usort"
+        {
+            "trigger": "array",
+            "contents": "array(${1:items})"
+        },
+        {
+            "trigger": "array_change_key_case",
+            "contents": "array_change_key_case(${1:array})"
+        },
+        {
+            "trigger": "array_chunk ",
+            "contents": "array_chunk(${1:array}, ${2:size})"
+        },
+        {
+            "trigger": "array_column",
+            "contents": "array_column(${1:array}, ${2:columnKey})"
+        },
+        {
+            "trigger": "array_combine",
+            "contents": "array_combine(${1:keys}, ${2:values})"
+        },
+        {
+            "trigger": "array_count_values",
+            "contents": "array_count_values(${1:array})"
+        },
+        {
+            "trigger": "array_diff",
+            "contents": "array_diff(${1:array1}, ${2:array2}${3:, arrayN})"
+        },
+        {
+            "trigger": "array_diff_assoc",
+            "contents": "array_diff_assoc(${1:array1}, ${2:array2}${3:, arrayN})"
+        },
+        {
+            "trigger": "array_diff_key",
+            "contents": "array_diff_key(${1:array1}, ${2:array2}${3:, arrayN})"
+        },
+        {
+            "trigger": "array_diff_uassoc",
+            "contents": "array_diff_uassoc(${1:array1}, ${2:array2}${3:, arrayN}, ${4:comparisonFunction})"
+        },
+        {
+            "trigger": "array_diff_ukey",
+            "contents": "array_diff_ukey(${1:array1}, ${2:array2}${3:, arrayN}, ${4:comparisonFunction})"
+        },
+        {
+            "trigger": "array_fill",
+            "contents": "array_fill(${1:startIndex}, ${2:count}, ${3:value})"
+        },
+        {
+            "trigger": "array_fill_keys",
+            "contents": "array_fill_keys(${1:keys}, ${2:value})"
+        },
+        {
+            "trigger": "array_filter",
+            "contents": "array_filter(${1:array})"
+        },
+        {
+            "trigger": "array_flip",
+            "contents": "array_flip(${1:array})"
+        },
+        {
+            "trigger": "array_intersect",
+            "contents": "array_intersect(${1:array1}, ${2:array2}${3:, arrayN})"
+        },
+        {
+            "trigger": "array_intersect_assoc",
+            "contents": "array_intersect_assoc(${1:array1}, ${2:array2}${3:, arrayN})"
+        },
+        {
+            "trigger": "array_intersect_key",
+            "contents": "array_intersect_key(${1:array1}, ${2:array2}${3:, arrayN})"
+        },
+        {
+            "trigger": "array_intersect_uassoc",
+            "contents": "array_intersect_uassoc(${1:array1}, ${2:array2}${3:, arrayN}, ${4:comparisonFunction})"
+        },
+        {
+            "trigger": "array_intersect_ukey",
+            "contents": "array_intersect_ukey(${1:array1}, ${2:array2}${3:, arrayN}, ${4:comparisonFunction})"
+        },
+        {
+            "trigger": "array_key_exists",
+            "contents": "array_key_exists(${1:key}, ${2:array})"
+        },
+        {
+            "trigger": "array_keys",
+            "contents": "array_keys(${1:array})"
+        },
+        {
+            "trigger": "array_map",
+            "contents": "array_map(${1:function}, ${2:array1}${3:, array2}${4:, arrayN})"
+        },
+        {
+            "trigger": "array_merge",
+            "contents": "array_merge(${1:array1}, ${2:array2}${3:, arrayN})"
+        },
+        {
+            "trigger": "array_merge_recursive",
+            "contents": "array_merge_recursive(${1:array1}, ${2:array2}${3:, arrayN})"
+        },
+        {
+            "trigger": "array_multisort",
+            "contents": "array_multisort(${1:array1}${2:, array2}${3:, arrayN})"
+        },
+        {
+            "trigger": "array_pad",
+            "contents": "array_pad(${1:array1}, ${2:size}, ${3:value})"
+        },
+        {
+            "trigger": "array_pop",
+            "contents": "array_pop(${1:array})"
+        },
+        {
+            "trigger": "array_product",
+            "contents": "array_product(${1:array})"
+        },
+        {
+            "trigger": "array_push",
+            "contents": "array_push(${1:array}, ${2:value1}${3:, value2}${4:, valueN})"
+        },
+        {
+            "trigger": "array_rand",
+            "contents": "array_rand(${1:array}, ${2:count})"
+        },
+        {
+            "trigger": "array_reduce",
+            "contents": "array_reduce(${1:array}, ${2:function})"
+        },
+        {
+            "trigger": "array_replace",
+            "contents": "array_replace(${1:targetArray}, ${2:replacements1}${3:, replacementsN})"
+        },
+        {
+            "trigger": "array_replace_recursive",
+            "contents": "array_replace_recursive(${1:targetArray}, ${2:replacements1}${3:, replacementsN})"
+        },
+        {
+            "trigger": "array_reverse",
+            "contents": "array_reverse(${1:array})"
+        },
+        {
+            "trigger": "array_search",
+            "contents": "array_search(${1:target}, ${2:array})"
+        },
+        {
+            "trigger": "array_shift",
+            "contents": "array_shift(${1:array})"
+        },
+        {
+            "trigger": "array_slice",
+            "contents": "array_slice(${1:array}, ${2:offset}${3:, length})"
+        },
+        {
+            "trigger": "array_splice",
+            "contents": "array_splice(${1:array}, ${2:offset}${3:, length}${4:, replacements})"
+        },
+        {
+            "trigger": "array_sum",
+            "contents": "array_sum(${1:array})"
+        },
+        {
+            "trigger": "array_udiff",
+            "contents": "array_udiff(${1:array1}, ${2:array2}${3:, arrayN}${4:, valueComparisonFunction})"
+        },
+        {
+            "trigger": "array_udiff_assoc",
+            "contents": "array_udiff_assoc(${1:array1}, ${2:array2}${3:, arrayN}${4:, valueComparisonFunction})"
+        },
+        {
+            "trigger": "array_udiff_uassoc",
+            "contents": "array_udiff_uassoc(${1:array1}, ${2:array2}${3:, arrayN}${4:, valueComparisonFunction}${5:, keyComparisonFunction})"
+        },
+        {
+            "trigger": "array_uintersect",
+            "contents": "array_uintersect(${1:array1}, ${2:array2}${3:, arrayN}${4:, valueComparisonFunction})"
+        },
+        {
+            "trigger": "array_uintersect_assoc",
+            "contents": "array_uintersect_assoc(${1:array1}, ${2:array2}${3:, arrayN}${4:, valueComparisonFunction})"
+        },
+        {
+            "trigger": "array_uintersect_uassoc",
+            "contents": "array_uintersect_uassoc(${1:array1}, ${2:array2}${3:, arrayN}${4:, valueComparisonFunction}${5:, keyComparisonFunction})"
+        },
+        {
+            "trigger": "array_unique",
+            "contents": "array_unique(${1:array})"
+        },
+        {
+            "trigger": "array_unshift",
+            "contents": "array_unshift(${1:array}, ${2:value1}${3:, value2}${4:, valueN})"
+        },
+        {
+            "trigger": "array_values",
+            "contents": "array_values(${1:array})"
+        },
+        {
+            "trigger": "array_walk",
+            "contents": "array_walk(${1:array}, ${2:function}${3:, parameters})"
+        },
+        {
+            "trigger": "array_walk_recursive",
+            "contents": "array_walk_recursive(${1:array}, ${2:function}${3:, parameters})"
+        },
+        {
+            "trigger": "arsort",
+            "contents": "arsort(${1:array})"
+        },
+        {
+            "trigger": "asort",
+            "contents": "asort(${1:array})"
+        },
+        {
+            "trigger": "compact",
+            "contents": "compact(${1:variableName1}${2:, variableName2}${3:, variableNameN})"
+        },
+        {
+            "trigger": "count",
+            "contents": "count(${1:array})"
+        },
+        {
+            "trigger": "current",
+            "contents": "current(${1:array})"
+        },
+        {
+            "trigger": "each",
+            "contents": "each(${1:array})"
+        },
+        {
+            "trigger": "end",
+            "contents": "end(${1:array})"
+        },
+        {
+            "trigger": "extract",
+            "contents": "extract(${1:array})"
+        },
+        {
+            "trigger": "in_array",
+            "contents": "in_array(${1:target}, ${2:array})"
+        },
+        {
+            "trigger": "key",
+            "contents": "key(${1:array})"
+        },
+        {
+            "trigger": "key_exists",
+            "contents": "key_exists(${1:array1}, ${2:array2})"
+        },
+        {
+            "trigger": "krsort",
+            "contents": "krsort(${1:array})"
+        },
+        {
+            "trigger": "ksort",
+            "contents": "ksort(${1:array})"
+        },
+        {
+            "trigger": "list",
+            "contents": "list(${1:variable1}${2:, variable2}${3:, variableN})"
+        },
+        {
+            "trigger": "natcasesort",
+            "contents": "natcasesort(${1:array})"
+        },
+        {
+            "trigger": "natsort",
+            "contents": "natsort(${1:array})"
+        },
+        {
+            "trigger": "next",
+            "contents": "next(${1:array})"
+        },
+        {
+            "trigger": "pos",
+            "contents": "pos(${1:array})"
+        },
+        {
+            "trigger": "prev",
+            "contents": "prev(${1:array})"
+        },
+        {
+            "trigger": "range",
+            "contents": "range(${1:start}, ${2:end}${3:, step})"
+        },
+        {
+            "trigger": "reset",
+            "contents": "reset(${1:array})"
+        },
+        {
+            "trigger": "rsort",
+            "contents": "rsort(${1:array})"
+        },
+        {
+            "trigger": "shuffle",
+            "contents": "shuffle(${1:array})"
+        },
+        {
+            "trigger": "sizeof",
+            "contents": "sizeof(${1:array})"
+        },
+        {
+            "trigger": "sort",
+            "contents": "sort(${1:array})"
+        },
+        {
+            "trigger": "uasort",
+            "contents": "uasort(${1:array}, ${2:valueComparisonFunction})"
+        },
+        {
+            "trigger": "uksort",
+            "contents": "uksort(${1:array}, ${2:keyComparisonFunction})"
+        },
+        {
+            "trigger": "usort",
+            "contents": "usort(${1:array}, ${2:valueComparisonFunction})"
+        }
     ]
 }

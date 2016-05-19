@@ -13,7 +13,6 @@
 
     "scope": "embedded.content.php.7 - comment",
     "completions": [
-        "array",
         "ArrayAccess",
         "bool",
         "callable",

@@ -148,6 +148,23 @@
 
             <dict>
                 <key>name</key>
+                <string>String's operator</string>
+
+                <key>scope</key>
+                <string>keyword.operator.string</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#ea80fc</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>String</string>
 
                 <key>scope</key>

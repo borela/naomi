@@ -18,11 +18,22 @@ hidden: true
 scope: ...
 
 contexts:
+  # | Operator | Description  |
+  # | :------: | :------------|
+  # |    &=    | Bitwise And. |
+  # |    |=    | Bitwise Or.  |
+  # |    ^=    | Bitwise Xor. |
+  # |   <<=    | Left shift.  |
+  # |   >>=    | Right shift. |
   main:
-    - include: Packages/Naomi/syntaxes/php7/operator/other.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/arithmetic.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/bitwise.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/assignment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/comparison.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/logical.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/string.sublime-syntax
+  bitwise-operator:
+    - match: |
+        (?x)
+        (?> &=
+          | \|=
+          | \^=
+          | <<=
+          | >>=
+        )
+      scope: keyword.operator.bitwise.php.7
+      pop: true

@@ -18,11 +18,28 @@ hidden: true
 scope: ...
 
 contexts:
+  # | Operator | Description  |
+  # | :------: | :----------- |
+  # |   and    |              |
+  # |   xor    |              |
+  # |    or    |              |
+  # |    &&    | Same as and. |
+  # |    ||    | Same as or.  |
+  # |    !     | Not.         |
   main:
-    - include: Packages/Naomi/syntaxes/php7/operator/other.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/arithmetic.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/bitwise.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/assignment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/comparison.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/logical.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/string.sublime-syntax
+    - match: |
+        (?x)
+        (?>
+          (?:
+            \s+
+            (?> and
+              | xor
+              | or
+            )\s+
+          )
+          | &&
+          | \|\|
+          | !
+        )
+      scope: keyword.operator.logical.php.7
+      pop: true

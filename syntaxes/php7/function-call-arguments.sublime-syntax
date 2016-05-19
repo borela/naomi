@@ -37,6 +37,6 @@ contexts:
     - match: \,
       scope: >-
         expression.function.call.php.7
-        punctuation.delimiter.expression.arguments.php.7
+        punctuation.delimiter.expression.function.arguments.php.7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/expression.no-pop.sublime-syntax

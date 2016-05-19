@@ -21,11 +21,11 @@ contexts:
   main:
     - match: (?=\S)
       push:
+        - match: (?=\,|\;|\))
+          scope: punctuation.delimiter.expression.end.php.7
+          pop: true
         - include: balance-parenthesis
         - include: content
-        - match: (?=\,|\;|\))
-          scope: punctuation.delimiter.expression.php.7
-          pop: true
 
   content:
     - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax

@@ -10,8 +10,8 @@
 *.php text eol=lf
 *.php7 text eol=lf
 *.py text eol=lf
-*.sublime-commands eol=lf
-*.sublime-project eol=lf
+*.sublime-commands text eol=lf
+*.sublime-project text eol=lf
 *.sublime-syntax text eol=lf
 *.tmTheme text eol=lf
 *.yaml text eol=lf

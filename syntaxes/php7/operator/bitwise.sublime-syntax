@@ -20,20 +20,21 @@ scope: ...
 contexts:
   # | Operator | Description  |
   # | :------: | :------------|
+  # |    ~     | Bitwise not. |
   # |    &=    | Bitwise And. |
   # |    |=    | Bitwise Or.  |
   # |    ^=    | Bitwise Xor. |
   # |   <<=    | Left shift.  |
   # |   >>=    | Right shift. |
   main:
-  bitwise-operator:
     - match: |
         (?x)
-        (?> &=
-          | \|=
-          | \^=
-          | <<=
-          | >>=
+        (?> ~
+          | &=?
+          | \|=?
+          | \^=?
+          | <<=?
+          | >>=?
         )
       scope: keyword.operator.bitwise.php.7
       pop: true

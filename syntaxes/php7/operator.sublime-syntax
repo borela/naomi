@@ -21,8 +21,8 @@ contexts:
   main:
     - include: Packages/Naomi/syntaxes/php7/operator/other.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/operator/arithmetic.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/bitwise.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/operator/assignment.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/operator/comparison.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/operator/logical.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/operator/bitwise.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/operator/assignment.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/operator/string.sublime-syntax

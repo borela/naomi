@@ -22,7 +22,6 @@ contexts:
     - match: (?=\S)
       push:
         - match: (?=\,|\;|\))
-          scope: punctuation.delimiter.expression.end.php.7
           pop: true
         - include: balance-parenthesis
         - include: content

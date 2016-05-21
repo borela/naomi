@@ -31,7 +31,6 @@ contexts:
   # | :--------: | :------------------ |
   # | instanceof |                     |
   # |     @      | Error suppression.  |
-  # |     &      | Reference.          |
   # |     ->     | Member access.      |
   # |     ::     | Scope resolution.   |
   # |    ...     | Argument unpacking. |
@@ -41,9 +40,6 @@ contexts:
       pop: true
     - match: "@"
       scope: keyword.operator.error.suppression.php.7
-      pop: true
-    - match: "&(?![&=])"
-      scope: keyword.operator.reference.php.7
       pop: true
     - match: "\\.\\.\\."
       scope: keyword.operator.argument.unpacking.php.7

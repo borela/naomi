@@ -100,6 +100,57 @@
 
             <dict>
                 <key>name</key>
+                <string>Comparison's operator</string>
+
+                <key>scope</key>
+                <string>keyword.operator.comparison</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#aed581</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Bitwise's operator</string>
+
+                <key>scope</key>
+                <string>keyword.operator.bitwise</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#80deea</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>String's operator</string>
+
+                <key>scope</key>
+                <string>keyword.operator.string</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+
+                    <key>foreground</key>
+                    <string>#ffecb3</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Protected modifier</string>
 
                 <key>scope</key>
@@ -143,23 +194,6 @@
                 <dict>
                     <key>foreground</key>
                     <string>#f48fb1</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>String's operator</string>
-
-                <key>scope</key>
-                <string>keyword.operator.string</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
-                    <key>foreground</key>
-                    <string>#ea80fc</string>
                 </dict>
             </dict>
 
@@ -292,7 +326,7 @@
                 <string>Built-in types and constants</string>
 
                 <key>scope</key>
-                <string>support</string>
+                <string>support, support punctuation.delimiter.type</string>
 
                 <key>settings</key>
                 <dict>
@@ -677,7 +711,7 @@
                 <string>Inherit target</string>
 
                 <key>scope</key>
-                <string>inherit type</string>
+                <string>inherit type, inherit punctuation.delimiter.type</string>
 
                 <key>settings</key>
                 <dict>
@@ -691,7 +725,7 @@
                 <string>Implement target</string>
 
                 <key>scope</key>
-                <string>implement type</string>
+                <string>implement type, implement punctuation.delimiter.type</string>
 
                 <key>settings</key>
                 <dict>
@@ -753,6 +787,20 @@
                 <dict>
                     <key>foreground</key>
                     <string>#ffecb3</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Git pattern</string>
+
+                <key>scope</key>
+                <string>expression.pattern.git</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#aed581</string>
                 </dict>
             </dict>
 

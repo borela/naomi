@@ -1,23 +1,29 @@
-*.sublime-syntax text eol=lf
-*.tmTheme text eol=lf
-*.md text eol=lf
-*.html text eol=lf
-*.html5 text eol=lf
 *.css text eol=lf
 *.css3 text eol=lf
-*.json text eol=lf
+*.gitattributes text eol=lf
+*.gitignore text eol=lf
+*.html text eol=lf
+*.html5 text eol=lf
 *.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
 *.php text eol=lf
 *.php7 text eol=lf
-*.yml text eol=lf
+*.py text eol=lf
+*.sublime-commands eol=lf
+*.sublime-project eol=lf
+*.sublime-syntax text eol=lf
+*.tmTheme text eol=lf
 *.yaml text eol=lf
+*.yml text eol=lf
 
 preview export-ignore
 tests export-ignore
-.gitattributes text eol=lf export-ignore
-.gitignore text eol=lf export-ignore
+
+.gitattributes export-ignore
+.gitignore export-ignore
 CONTRIBUTING.md export-ignore
-naomi.sublime-project text eol=lf export-ignore
-naomi.sublime-commands text eol=lf export-ignore
+naomi.sublime-commands export-ignore
+naomi.sublime-project export-ignore
 README.md export-ignore
-tests.py text eol=lf export-ignore
+tests.py export-ignore

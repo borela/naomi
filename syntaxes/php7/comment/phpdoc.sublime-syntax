@@ -17,6 +17,11 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [a-z\x{7f}-\x{ff}_]
+    [a-z\x{7f}-\x{ff}0-9_]*
+
 contexts:
   main:
     - match: \/\*\*
@@ -59,6 +64,7 @@ contexts:
     - include: uses
     - include: var
     - include: version
+    - include: phpunit
 
   types:
     - match: (?=\$|$)
@@ -267,3 +273,15 @@ contexts:
       captures:
         0: keyword.documentation.version.phpdoc
         1: punctuation.keyword.begin.phpdoc
+
+  phpunit:
+    - match: \B(@)dataProvider\b
+      captures:
+        0: keyword.documentation.version.phpdoc
+        1: punctuation.keyword.begin.phpdoc
+      push:
+        - match: |
+            (?xi)
+            {{commonIdentifier}}
+          scope: entity.name.statement.function.php.7
+          pop: true

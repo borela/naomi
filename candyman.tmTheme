@@ -69,6 +69,20 @@
 
             <dict>
                 <key>name</key>
+                <string>Generic delimiter</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string>bold</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Comment</string>
 
                 <key>scope</key>
@@ -83,6 +97,104 @@
 
             <dict>
                 <key>name</key>
+                <string>Comment's keyword</string>
+
+                <key>scope</key>
+                <string>comment keyword</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f48fb17f</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Comment's variable</string>
+
+                <key>scope</key>
+                <string>comment variable</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#cfd8dc90</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Comment's namespace path</string>
+
+                <key>scope</key>
+                <string>comment entity.name.statement.namespace</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#bcaaa47f</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Comment's namespace delimiter</string>
+
+                <key>scope</key>
+                <string>comment statement.namespace.path punctuation.delimiter</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#fff9c47f</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Comment's builtin type</string>
+
+                <key>scope</key>
+                <string>comment support, comment support punctuation.delimiter.type</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ff9e807f</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Comment's custom type</string>
+
+                <key>scope</key>
+                <string>comment type, comment punctuation.delimiter.type</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#aed5817f</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Comment's function name</string>
+
+                <key>scope</key>
+                <string>comment entity.name.statement.function</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#81d4fa7f</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Keyword</string>
 
                 <key>scope</key>
@@ -90,9 +202,6 @@
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string></string>
-
                     <key>foreground</key>
                     <string>#f48fb1</string>
                 </dict>
@@ -158,9 +267,6 @@
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string></string>
-
                     <key>foreground</key>
                     <string>#ffecb3</string>
                 </dict>
@@ -175,9 +281,6 @@
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string></string>
-
                     <key>foreground</key>
                     <string>#e57373</string>
                 </dict>
@@ -220,9 +323,6 @@
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
                     <key>foreground</key>
                     <string>#fff9c4</string>
                 </dict>
@@ -237,9 +337,6 @@
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
                     <key>foreground</key>
                     <string>#ff8a65</string>
                 </dict>
@@ -250,7 +347,7 @@
                 <string>Escaped character A</string>
 
                 <key>scope</key>
-                <string>constant.character.escape</string>
+                <string>constant.character.escape.a</string>
 
                 <key>settings</key>
                 <dict>
@@ -337,30 +434,27 @@
 
             <dict>
                 <key>name</key>
-                <string>Array</string>
+                <string>Custom type</string>
 
                 <key>scope</key>
-                <string>entity.name.type.array</string>
+                <string>type, entity.name.statement, punctuation.delimiter.type</string>
 
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#ffecb3</string>
+                    <string>#aed581</string>
                 </dict>
             </dict>
 
             <dict>
                 <key>name</key>
-                <string>Array's delimiter</string>
+                <string>Array</string>
 
                 <key>scope</key>
-                <string>support.array punctuation.delimiter</string>
+                <string>entity.name.type.array, punctuation.delimiter.expression.array</string>
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
                     <key>foreground</key>
                     <string>#ffecb3</string>
                 </dict>
@@ -375,25 +469,8 @@
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
                     <key>foreground</key>
                     <string>#f48fb1</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Custom type</string>
-
-                <key>scope</key>
-                <string>type, entity.name.statement</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#aed581</string>
                 </dict>
             </dict>
 
@@ -413,7 +490,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Binary number</string>
+                <string>Binary</string>
 
                 <key>scope</key>
                 <string>constant.numeric.binary</string>
@@ -427,7 +504,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Octal number</string>
+                <string>Octal</string>
 
                 <key>scope</key>
                 <string>constant.numeric.octal</string>
@@ -441,7 +518,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Hexadecimal number</string>
+                <string>Hexadecimal</string>
 
                 <key>scope</key>
                 <string>constant.numeric.hex</string>
@@ -455,7 +532,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Decimal number</string>
+                <string>Decimal</string>
 
                 <key>scope</key>
                 <string>constant.numeric.decimal</string>
@@ -469,7 +546,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Floating point number</string>
+                <string>Floating point</string>
 
                 <key>scope</key>
                 <string>constant.numeric.float</string>
@@ -486,7 +563,7 @@
                 <string>Function's name</string>
 
                 <key>scope</key>
-                <string>entity.name.statement.function, entity.name.expression.function</string>
+                <string>entity.name.statement.function, entity.name.expression.function, punctuation.delimiter.statement.function, punctuation.delimiter.expression.function</string>
 
                 <key>settings</key>
                 <dict>
@@ -500,13 +577,10 @@
                 <string>Function's delimiter</string>
 
                 <key>scope</key>
-                <string>punctuation.delimiter.statement.function, punctuation.delimiter.expression.function</string>
+                <string>punctuation.delimiter.statement.function</string>
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
                     <key>foreground</key>
                     <string>#81d4fa</string>
                 </dict>
@@ -517,27 +591,10 @@
                 <string>Built-in functions</string>
 
                 <key>scope</key>
-                <string>entity.name.statement.support.function, entity.name.expression.support.function</string>
+                <string>entity.name.statement.support.function, entity.name.expression.support.function, support punctuation.delimiter.statement.function, support punctuation.delimiter.expression.function</string>
 
                 <key>settings</key>
                 <dict>
-                    <key>foreground</key>
-                    <string>#ff9e80</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Built-in function delimiter</string>
-
-                <key>scope</key>
-                <string>support punctuation.delimiter.statement.function, support punctuation.delimiter.expression.function</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
                     <key>foreground</key>
                     <string>#ff9e80</string>
                 </dict>
@@ -573,16 +630,13 @@
 
             <dict>
                 <key>name</key>
-                <string>Generic delimiter</string>
+                <string>Namespace's delimiter</string>
 
                 <key>scope</key>
-                <string>punctuation.delimiter</string>
+                <string>punctuation.delimiter.statement.namespace - comment</string>
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
                     <key>foreground</key>
                     <string>#fff9c4</string>
                 </dict>
@@ -597,28 +651,8 @@
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
                     <key>foreground</key>
                     <string>#aed581</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Function's delimiter</string>
-
-                <key>scope</key>
-                <string>punctuation.delimiter.statement.function</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
-                    <key>foreground</key>
-                    <string>#81d4fa</string>
                 </dict>
             </dict>
 

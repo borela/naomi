@@ -39,6 +39,7 @@ contexts:
               )
             | finally
             | for(?:each)?
+            | from
             | global
             | goto
             | if

@@ -14,121 +14,133 @@
 
 <?php
     /** Test. */
-//  ^^^^^^^^^^^^ comment.block.phpdoc
-//     ^^^^^^^ comment.content.phpdoc
-//  ^^^ punctuation.comment.begin.phpdoc
-//            ^^ punctuation.comment.end.phpdoc
+//  ^^^^^^^^^^^^ comment.documentation.php.7
+//     ^^^^^^^ comment.documentation.content.php.7
+//  ^^^ punctuation.comment.documentation.begin.php.7
+//            ^^ punctuation.comment.documentation.end.php.7
 
     /**
      * @param int $variable
-//     ^^^^^^ keyword.documentation.param.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
 //            ^^^ support.type.php.7
 //                ^^^^^^^^^ variable.php.7
 //                ^ punctuation.variable.begin.php.7
 //                 ^^^^^^^^ entity.name.variable.php.7
      * @param int|string $variable
-//     ^^^^^^ keyword.documentation.param.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
 //            ^^^ support.type.php.7
-//               ^ punctuation.delimiter.types.phpdoc
+//               ^ punctuation.delimiter.types.php.7
 //                ^^^^^^ support.type.php.7
 //                       ^^^^^^^^^ variable.php.7
 //                       ^ punctuation.variable.begin.php.7
 //                        ^^^^^^^^ entity.name.variable.php.7
      * @return int
-//     ^^^^^^^ keyword.documentation.return.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
 //             ^^^ support.type.php.7
      * @return int|bool
-//     ^^^^^^^ keyword.documentation.return.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
 //             ^^^ support.type.php.7
-//                ^ punctuation.delimiter.types.phpdoc
+//                ^ punctuation.delimiter.types.php.7
 //                 ^^^^ support.type.php.7
      * @api
-//     ^^^^ keyword.documentation.api.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @access
-//     ^^^^^^^ keyword.documentation.access.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @author
-//     ^^^^^^^ keyword.documentation.author.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @category
-//     ^^^^^^^^^ keyword.documentation.category.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @copyright
-//     ^^^^^^^^^^ keyword.documentation.copyright.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @deprecated
-//     ^^^^^^^^^^^ keyword.documentation.deprecated.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @example
-//     ^^^^^^^^ keyword.documentation.example.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @filesource
-//     ^^^^^^^^^^^ keyword.documentation.filesource.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @global
-//     ^^^^^^^ keyword.documentation.global.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @ignore
-//     ^^^^^^^ keyword.documentation.ignore.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @internal
-//     ^^^^^^^^^ keyword.documentation.internal.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @license
-//     ^^^^^^^^ keyword.documentation.license.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @link
-//     ^^^^^ keyword.documentation.link.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @method
-//     ^^^^^^^ keyword.documentation.method.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @package
-//     ^^^^^^^^ keyword.documentation.package.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @property
-//     ^^^^^^^^^ keyword.documentation.property.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @property-read
-//     ^^^^^^^^^^^^^^ keyword.documentation.property.read.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @property-write
-//     ^^^^^^^^^^^^^^^ keyword.documentation.property.write.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @see
-//     ^^^^ keyword.documentation.see.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @since
-//     ^^^^^^ keyword.documentation.since.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @source
-//     ^^^^^^^ keyword.documentation.source.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @subpackage
-//     ^^^^^^^^^^^ keyword.documentation.subpackage.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
-     * @throws
-//     ^^^^^^^ keyword.documentation.throws.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
+     * @throws \Namespace\Namespace\TargetClass
+//     ^^^^^^^ keyword.documentation.php.7
+//             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
+//             ^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//     ^ punctuation.keyword.begin.php.7
+//             ^ punctuation.delimiter.statement.namespace.a.php.7
+//                       ^ punctuation.delimiter.statement.namespace.b.php.7
+//                                 ^ punctuation.delimiter.type.php.7
+//                                  ^^^^^^^^^^^ entity.name.type.php.7
+     * @throws Namespace\Namespace\TargetClass
+//     ^^^^^^^ keyword.documentation.php.7
+//             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
+//             ^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//     ^ punctuation.keyword.begin.php.7
+//                      ^ punctuation.delimiter.statement.namespace.b.php.7
+//                                ^ punctuation.delimiter.type.php.7
+//                                 ^^^^^^^^^^^ entity.name.type.php.7
      * @todo
-//     ^^^^^ keyword.documentation.todo.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      * @tutorial
-//     ^^^^^^^^^ keyword.documentation.tutorial.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
-     * @uses
-//     ^^^^^ keyword.documentation.uses.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
-     * @var
-//     ^^^^ keyword.documentation.var.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
+     * @var int
+//     ^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
+//          ^^^ support.type.php.7
      * @version
-//     ^^^^^^^^ keyword.documentation.version.phpdoc
-//     ^ punctuation.keyword.begin.phpdoc
+//     ^^^^^^^^ keyword.documentation.php.7
+//     ^ punctuation.keyword.begin.php.7
      */
 ?>

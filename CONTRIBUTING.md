@@ -143,9 +143,11 @@ as follows:
 
 ### Pull requests
 
-* Include screenshots and animated GIFs in your pull request whenever possible.
-* Follow the style guides.
-* Use your real name and email in the commits.
+1. Fork.
+2. Follow the style guides.
+3. Do your changes on a separate branch.
+4. Use your real name and email in the commits.
+5. Include screenshots and animated GIFs in your pull request whenever possible.
 
 ## Style guides
 

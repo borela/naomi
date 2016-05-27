@@ -1,14 +1,20 @@
 # Naomi
 
-Package designed to provide easy to extend syntax highlighting. Color schemes
-are provided not only to test the highlighting and show the new features, but to
-serve as a template to create new ones.
+Package designed to provide easy to extend syntax highlighting and other tools.
 
 ## Features
 
+#### General
+
+* Auto complete asterisks in documentation blocks.
+* Add Mac's curly quotes shortcuts for Windows and Linux:
+    1. Alt+[ produces “.
+    2. Alt+Shift+[ produces ”.
+    3. Alt+] produces ‘.
+    4. Alt+Shift+] produces ’.
+
 #### PHP 7
 
-* Auto completion for asterisks in phpDoc blocks.
 * Scopes for phpDoc instructions.
 * Different scopes for decimal, floating point, binary, octal and hexadecimal
 literal.

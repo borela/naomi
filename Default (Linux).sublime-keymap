@@ -1,0 +1,57 @@
+[
+    /**
+     * Opening single curly quote.
+     */
+     {
+        "keys": [
+            "alt+]"
+        ],
+        "command": "insert_snippet",
+        "args":
+        {
+            "contents": "‘"
+        }
+     },
+
+     /**
+     * Closing single curly quote.
+     */
+     {
+        "keys": [
+            "alt+shift+]"
+        ],
+        "command": "insert_snippet",
+        "args":
+        {
+            "contents": "’"
+        }
+     },
+
+     /**
+     * Opening double curly quote.
+     */
+     {
+        "keys": [
+            "alt+["
+        ],
+        "command": "insert_snippet",
+        "args":
+        {
+            "contents": "“"
+        }
+     },
+
+     /**
+     * Closing double curly quote.
+     */
+     {
+        "keys": [
+            "alt+shift+["
+        ],
+        "command": "insert_snippet",
+        "args":
+        {
+            "contents": "”"
+        }
+     }
+]

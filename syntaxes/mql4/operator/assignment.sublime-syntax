@@ -18,10 +18,26 @@ hidden: true
 scope: ...
 
 contexts:
+  # | Operator |    Description     |
+  # | :------: | :----------------- |
+  # |    =     | Simple assignment. |
+  # |    +=    |                    |
+  # |    *=    |                    |
+  # |    /=    |                    |
+  # |    %=    |                    |
+  # |    ??    | Null coalescing.   |
+  # |    ?     |                    |
+  # |    :     |                    |
   main:
-    - include: Packages/Naomi/syntaxes/mql4/operator/other.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/operator/arithmetic.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/operator/bitwise.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/operator/assignment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/operator/comparison.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/operator/logical.sublime-syntax
+    - match: |
+        (?x)
+        (?> =
+          | \+=
+          | \*=
+          | /=
+          | %=
+          | \?(\?)?
+          | :
+        )
+      scope: keyword.operator.assignment.mql.4
+      pop: true

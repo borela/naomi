@@ -34,6 +34,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/new-object.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
 
   balance-parenthesis:
     - match: \(

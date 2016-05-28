@@ -1,6 +1,7 @@
 # Naomi
 
-Package designed to provide easy to extend syntax highlighting and other tools.
+Package designed to provide easy to extend syntax highlighting and other stuff
+that makes writting more fun.
 
 ## Features
 
@@ -56,7 +57,7 @@ The “Packages” directory is located at:
 1. Go to the menu `View / Syntax / Naomi / ...` to select the new syntax.
 2. Select a color scheme provided in `Preferences / Color Scheme / Naomi`.
 
-Note: You aren't required to use the color schemes provided but keep in mind
+Note: You aren’t required to use the color schemes provided but keep in mind
 that not all features listed before are going to work with other color schemes.
 
 ## Contributing

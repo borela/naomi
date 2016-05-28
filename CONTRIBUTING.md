@@ -219,47 +219,47 @@ This project uses the [Apache 2.0 license][license] and one of its requirements
 is a header which makes it easier for other people to know which license was
 used without having to look into the root of the project.
 
-In the original header it has the author and an email, but in this case it won't
-be necessary as one of the project's requirements is that you use your real name
+In the original header it has the author and an email, but in this case it won’t
+be necessary as one of the project’s requirements is that you use your real name
 and email in the commits so that we can track the author easily.
 
 Keep in mind that not all files need a license header, configuration files are a
 good example of that, so, if a file required careful design on your part, use
 one of these:
 
-    // Licensed under the Apache License, Version 2.0 (the "License"); you may not
+    // Licensed under the Apache License, Version 2.0 (the “License”); you may not
     // use this file except in compliance with the License. You may obtain a copy of
     // the License at
     //
     //     http://www.apache.org/licenses/LICENSE-2.0
     //
     // Unless required by applicable law or agreed to in writing, software
-    // distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    // distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
     // WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
     // License for the specific language governing permissions and limitations under
     // the License.
 
-    # Licensed under the Apache License, Version 2.0 (the "License"); you may not
+    # Licensed under the Apache License, Version 2.0 (the “License”); you may not
     # use this file except in compliance with the License. You may obtain a copy of
     # the License at
     #
     #     http://www.apache.org/licenses/LICENSE-2.0
     #
     # Unless required by applicable law or agreed to in writing, software
-    # distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    # distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
     # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
     # License for the specific language governing permissions and limitations under
     # the License.
 
     <!--
-     | Licensed under the Apache License, Version 2.0 (the "License"); you may not
+     | Licensed under the Apache License, Version 2.0 (the “License”); you may not
      | use this file except in compliance with the License. You may obtain a copy of
      | the License at
      |
      |     http://www.apache.org/licenses/LICENSE-2.0
      |
      | Unless required by applicable law or agreed to in writing, software
-     | distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+     | distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
      | WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
      | License for the specific language governing permissions and limitations under
      | the License.

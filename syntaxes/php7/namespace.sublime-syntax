@@ -43,7 +43,7 @@ contexts:
         statement.namespace.body.php.7
         punctuation.delimiter.statement.namespace.body.begin.php.7
       set: bracketed-body
-    # namespace's path.
+    # namespace’s path.
     - include: Packages/Naomi/syntaxes/php7/namespace/path.sublime-syntax
 
   body-content:

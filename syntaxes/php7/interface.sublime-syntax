@@ -35,7 +35,7 @@ contexts:
     - match: (?i)\bextends\b
       scope: keyword.statement.inherit.php.7
       push: extend-targets
-    # interface's name.
+    # interface’s name.
     - match: (?xi)\b{{commonIdentifier}}\b
       scope: entity.name.statement.interface.php.7
     # Body.
@@ -56,7 +56,7 @@ contexts:
         statement.interface.body.php.7
         punctuation.delimiter.statement.interface.body.end.php.7
       pop: true
-    # Body's content.
+    # Body’s content.
     - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax

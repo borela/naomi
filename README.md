@@ -8,7 +8,7 @@ that makes writting more fun.
 #### General
 
 * Auto complete asterisks in documentation blocks.
-* Add Mac's curly quotes shortcuts for Windows and Linux:
+* Add Mac’s curly quotes shortcuts for Windows and Linux:
     1. Alt+[ produces “.
     2. Alt+Shift+[ produces ”.
     3. Alt+] produces ‘.

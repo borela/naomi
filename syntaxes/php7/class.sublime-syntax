@@ -39,7 +39,7 @@ contexts:
     - match: (?i)\bimplements\b
       scope: keyword.statement.implement.php.7
       push: implement-targets
-    # Class's name.
+    # Class’s name.
     - match: (?xi)\b{{commonIdentifier}}\b
       scope: entity.name.statement.class.php.7
     # Body.
@@ -60,7 +60,7 @@ contexts:
         statement.class.body.php.7
         punctuation.delimiter.statement.class.body.end.php.7
       pop: true
-    # Body's content.
+    # Body’s content.
     - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax

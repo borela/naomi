@@ -34,7 +34,7 @@ contexts:
     - match: ;
       scope: punctuation.delimiter.statement.function.declaration.end.php.7
       pop: true
-    # Function's name.
+    # Function’s name.
     - include: magic-method
     - match: (?xi)\b{{commonIdentifier}}\b
       scope: entity.name.statement.function.php.7

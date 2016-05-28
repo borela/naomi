@@ -209,7 +209,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Comparison's operator</string>
+                <string>Comparison’s operator</string>
 
                 <key>scope</key>
                 <string>keyword.operator.comparison</string>
@@ -226,7 +226,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Bitwise's operator</string>
+                <string>Bitwise’s operator</string>
 
                 <key>scope</key>
                 <string>keyword.operator.bitwise</string>
@@ -243,7 +243,7 @@
 
             <dict>
                 <key>name</key>
-                <string>String's operator</string>
+                <string>String’s operator</string>
 
                 <key>scope</key>
                 <string>keyword.operator.string</string>
@@ -316,7 +316,7 @@
 
             <dict>
                 <key>name</key>
-                <string>String, color and datetime's beginning</string>
+                <string>String, color and datetime’s beginning</string>
 
                 <key>scope</key>
                 <string>punctuation.delimiter.string.begin, punctuation.delimiter.constant.character.begin, punctuation.delimiter.datetime.begin, punctuation.delimiter.color.begin</string>
@@ -330,7 +330,7 @@
 
             <dict>
                 <key>name</key>
-                <string>String, color and datetime's ending</string>
+                <string>String, color and datetime’s ending</string>
 
                 <key>scope</key>
                 <string>punctuation.delimiter.string.end, punctuation.delimiter.constant.character.end, punctuation.delimiter.datetime.end, punctuation.delimiter.color.end</string>
@@ -406,7 +406,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Embedded variable's key</string>
+                <string>Embedded variable’s key</string>
 
                 <key>scope</key>
                 <string>variable array.key</string>
@@ -560,7 +560,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Function's name</string>
+                <string>Function’s name</string>
 
                 <key>scope</key>
                 <string>entity.name.statement.function, entity.name.expression.function, punctuation.delimiter.statement.function, punctuation.delimiter.expression.function</string>
@@ -574,7 +574,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Function's delimiter</string>
+                <string>Function’s delimiter</string>
 
                 <key>scope</key>
                 <string>punctuation.delimiter.statement.function</string>
@@ -616,7 +616,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Namespace's name</string>
+                <string>Namespace’s name</string>
 
                 <key>scope</key>
                 <string>entity.name.statement.namespace</string>
@@ -630,7 +630,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Namespace's delimiter</string>
+                <string>Namespace’s delimiter</string>
 
                 <key>scope</key>
                 <string>punctuation.delimiter.statement.namespace - comment</string>
@@ -658,7 +658,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Datetime's year and hour</string>
+                <string>Datetime’s year and hour</string>
 
                 <key>scope</key>
                 <string>datetime.year, datetime.hour</string>
@@ -672,7 +672,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Datetime's month and minute</string>
+                <string>Datetime’s month and minute</string>
 
                 <key>scope</key>
                 <string>datetime.month, datetime.minute</string>
@@ -686,7 +686,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Datetime's day and second</string>
+                <string>Datetime’s day and second</string>
 
                 <key>scope</key>
                 <string>datetime.day, datetime.second</string>
@@ -700,7 +700,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Color's red component</string>
+                <string>Color’s red component</string>
 
                 <key>scope</key>
                 <string>color.value.r</string>
@@ -714,7 +714,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Color's green component</string>
+                <string>Color’s green component</string>
 
                 <key>scope</key>
                 <string>color.value.g</string>
@@ -728,7 +728,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Color's blue component</string>
+                <string>Color’s blue component</string>
 
                 <key>scope</key>
                 <string>color.value.b</string>
@@ -840,7 +840,7 @@
 
             <dict>
                 <key>name</key>
-                <string>MQL's index A</string>
+                <string>MQL’s index A</string>
 
                 <key>scope</key>
                 <string>index.a.mql</string>
@@ -854,7 +854,7 @@
 
             <dict>
                 <key>name</key>
-                <string>MQL's index B</string>
+                <string>MQL’s index B</string>
 
                 <key>scope</key>
                 <string>index.b.mql</string>

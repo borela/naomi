@@ -13,10 +13,10 @@
 -->
 <snippet>
     <scope>embedded.content.php.7</scope>
-    <tabTrigger>decmsetstate</tabTrigger>
+    <tabTrigger>funsetstate</tabTrigger>
     <description>__set_state declaration.</description>
     <content><![CDATA[
-public static function __set_state (array \$properties)
+public static function __set_state(array \$properties)
 {
     ${1}
 }

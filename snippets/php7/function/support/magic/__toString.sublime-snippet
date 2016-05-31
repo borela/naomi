@@ -13,10 +13,10 @@
 -->
 <snippet>
     <scope>embedded.content.php.7</scope>
-    <tabTrigger>decmtostring</tabTrigger>
+    <tabTrigger>funtostring</tabTrigger>
     <description>__toString declaration.</description>
     <content><![CDATA[
-public function __toString (): string
+public function __toString(): string
 {
     ${1}
 }

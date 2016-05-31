@@ -13,10 +13,10 @@
 -->
 <snippet>
     <scope>embedded.content.php.7</scope>
-    <tabTrigger>decmisset</tabTrigger>
+    <tabTrigger>funisset</tabTrigger>
     <description>__isset declaration.</description>
     <content><![CDATA[
-public function __isset (string \$name): bool
+public function __isset(string \$name): bool
 {
     ${1}
 }

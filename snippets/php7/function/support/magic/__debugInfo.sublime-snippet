@@ -13,7 +13,7 @@
 -->
 <snippet>
     <scope>embedded.content.php.7</scope>
-    <tabTrigger>decmdebuginfo</tabTrigger>
+    <tabTrigger>fundebuginfo</tabTrigger>
     <description>__debugInfo declaration.</description>
     <content><![CDATA[
 public function __debugInfo(): array

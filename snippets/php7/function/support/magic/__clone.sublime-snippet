@@ -13,7 +13,7 @@
 -->
 <snippet>
     <scope>embedded.content.php.7</scope>
-    <tabTrigger>decmclone</tabTrigger>
+    <tabTrigger>funclone</tabTrigger>
     <description>__clone declaration.</description>
     <content><![CDATA[
 public function __clone()

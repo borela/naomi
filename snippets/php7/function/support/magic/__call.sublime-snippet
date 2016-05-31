@@ -13,7 +13,7 @@
 -->
 <snippet>
     <scope>embedded.content.php.7</scope>
-    <tabTrigger>decmcall</tabTrigger>
+    <tabTrigger>funcall</tabTrigger>
     <description>__call declaration.</description>
     <content><![CDATA[
 public function __call(string \$name, array \$parameters)

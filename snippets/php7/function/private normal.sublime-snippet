@@ -13,12 +13,12 @@
 -->
 <snippet>
     <scope>embedded.content.php.7</scope>
-    <tabTrigger>funconstruct</tabTrigger>
-    <description>__construct declaration.</description>
+    <tabTrigger>prifun</tabTrigger>
+    <description>Function.</description>
     <content><![CDATA[
-public function __construct(${1:parameters})
+private function ${1:name}(${2:parameters})${3:: returnType}
 {
-    ${2}
+    ${4}
 }
 ]]></content>
 </snippet>

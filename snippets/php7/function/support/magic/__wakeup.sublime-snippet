@@ -13,7 +13,7 @@
 -->
 <snippet>
     <scope>embedded.content.php.7</scope>
-    <tabTrigger>decmwakeup</tabTrigger>
+    <tabTrigger>funwakeup</tabTrigger>
     <description>__wakeup declaration.</description>
     <content><![CDATA[
 public function __wakeup()

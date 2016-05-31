@@ -13,10 +13,10 @@
 -->
 <snippet>
     <scope>embedded.content.php.7</scope>
-    <tabTrigger>decminvoke</tabTrigger>
+    <tabTrigger>funinvoke</tabTrigger>
     <description>__invoke declaration.</description>
     <content><![CDATA[
-public function __invoke (...\$parameters)
+public function __invoke(...\$parameters)
 {
     ${1}
 }

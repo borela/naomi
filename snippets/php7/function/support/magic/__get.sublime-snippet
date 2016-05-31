@@ -13,10 +13,10 @@
 -->
 <snippet>
     <scope>embedded.content.php.7</scope>
-    <tabTrigger>decmget</tabTrigger>
+    <tabTrigger>funget</tabTrigger>
     <description>__get declaration.</description>
     <content><![CDATA[
-public function __get (string \$name)
+public function __get(string \$name)
 {
     ${1}
 }

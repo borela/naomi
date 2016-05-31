@@ -13,10 +13,10 @@
 -->
 <snippet>
     <scope>embedded.content.php.7</scope>
-    <tabTrigger>decmunset</tabTrigger>
+    <tabTrigger>fununset</tabTrigger>
     <description>__unset declaration.</description>
     <content><![CDATA[
-public function __unset (string \$name)
+public function __unset(string \$name)
 {
     ${1}
 }

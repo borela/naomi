@@ -13,10 +13,10 @@
 -->
 <snippet>
     <scope>embedded.content.php.7</scope>
-    <tabTrigger>decmset</tabTrigger>
+    <tabTrigger>funset</tabTrigger>
     <description>__set declaration.</description>
     <content><![CDATA[
-public function __set (string \$name, \$value)
+public function __set(string \$name, \$value)
 {
     ${1}
 }

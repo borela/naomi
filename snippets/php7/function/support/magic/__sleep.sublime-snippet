@@ -13,7 +13,7 @@
 -->
 <snippet>
     <scope>embedded.content.php.7</scope>
-    <tabTrigger>decmsleep</tabTrigger>
+    <tabTrigger>funsleep</tabTrigger>
     <description>__sleep declaration.</description>
     <content><![CDATA[
 public function __sleep()

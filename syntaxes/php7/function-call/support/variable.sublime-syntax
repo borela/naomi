@@ -62,7 +62,7 @@ contexts:
         )\b
       captures:
         0: expression.function.call.php.7
-        1: punctuation.delimiter.expression.function.php.7
+        1: punctuation.delimiter.expression.support.function.php.7
         2: entity.name.expression.support.function.php.7
       set: arguments
 

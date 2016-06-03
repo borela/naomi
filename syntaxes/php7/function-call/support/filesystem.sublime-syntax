@@ -34,37 +34,39 @@ contexts:
                   (?>free_space|total_space)
                 | freespace
               )
-            | fclose
-            | feof
-            | fflush
-            | fgetc(?:sv)?
-            | fgetss?
-            | file
-              (?>_
-                  (?>exists|get_contents|put_contents)
-                | atime
-                | ctime
-                | group
-                | inode
-                | mtime
-                | owner
-                | perms
-                | size
-                | type
-              )?
-            | flock
-            | fnmatch
-            | fopen
-            | fpassthru
-            | fputcsv
-            | fputs
-            | fread
-            | fscanf
-            | fseek
-            | fstat
-            | ftell
-            | ftruncate
-            | fwrite
+            | f
+              (?> close
+                | eof
+                | flush
+                | getc(?:sv)?
+                | getss?
+                | ile
+                  (?>_
+                      (?>exists|get_contents|put_contents)
+                    | atime
+                    | ctime
+                    | group
+                    | inode
+                    | mtime
+                    | owner
+                    | perms
+                    | size
+                    | type
+                  )?
+                | lock
+                | nmatch
+                | open
+                | passthru
+                | putcsv
+                | puts
+                | read
+                | scanf
+                | seek
+                | stat
+                | tell
+                | truncate
+                | write
+              )
             | glob
             | is_
               (?> dir
@@ -109,7 +111,7 @@ contexts:
         (?=\s*\()
       captures:
         0: expression.function.call.php.7
-        1: punctuation.delimiter.expression.function.php.7
+        1: punctuation.delimiter.expression.support.function.php.7
         2: entity.name.expression.support.function.php.7
       set: arguments
 

@@ -31,14 +31,17 @@ contexts:
       scope: keyword.other.php.7
       set: [
         arguments,
-        type
+        type-or-var
       ]
 
-  type:
+  type-or-var:
     - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
 
   arguments:
     - meta_scope: expression.new.object.php.7
+    - match: (?=\;)
+      pop: true
     - match: \(
       scope: punctuation.delimiter.expression.arguments.begin.php.7
       set: arguments-content

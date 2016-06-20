@@ -246,6 +246,8 @@ contexts:
   body-content:
     - match: (?=\S)
       push:
+        - match: ;
+          scope: punctuation.terminator.expression.php.7
         - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax

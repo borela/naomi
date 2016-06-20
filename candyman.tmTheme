@@ -83,6 +83,40 @@
 
             <dict>
                 <key>name</key>
+                <string>Expression terminator</string>
+
+                <key>scope</key>
+                <string>punctuation.terminator.expression</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f48fb1</string>
+
+                    <key>fontStyle</key>
+                    <string>bold</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Statement terminator</string>
+
+                <key>scope</key>
+                <string>punctuation.terminator.statement</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#fff9c4</string>
+
+                    <key>fontStyle</key>
+                    <string>bold</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Comment</string>
 
                 <key>scope</key>

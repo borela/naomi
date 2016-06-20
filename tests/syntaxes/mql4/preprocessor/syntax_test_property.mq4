@@ -97,6 +97,16 @@
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.preprocessor.mql.4
 //  ^^^^^^^^^ keyword.preprocessor.mql.4
 //            ^^^^^^^^^^^^^^^^ keyword.preprocessor.mql.4
+//                           ^ index.a.mql.4
+//                             ^^^^^ string.quoted.double.mql.4
+//                              ^^^ string.content.mql.4
+//                             ^ punctuation.delimiter.string.begin.mql.4
+//                                 ^ punctuation.delimiter.string.end.mql.4
+    #property indicator_label2 "..."
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.preprocessor.mql.4
+//  ^^^^^^^^^ keyword.preprocessor.mql.4
+//            ^^^^^^^^^^^^^^^^ keyword.preprocessor.mql.4
+//                           ^ index.b.mql.4
 //                             ^^^^^ string.quoted.double.mql.4
 //                              ^^^ string.content.mql.4
 //                             ^ punctuation.delimiter.string.begin.mql.4
@@ -105,6 +115,20 @@
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.preprocessor.mql.4
 //  ^^^^^^^^^ keyword.preprocessor.mql.4
 //            ^^^^^^^^^^^^^^^^ keyword.preprocessor.mql.4
+//                           ^ index.a.mql.4
+//                             ^^^^^^^^^^^ constant.color.mql.4
+//                               ^^ color.value.r.mql.4
+//                                  ^^ color.value.g.mql.4
+//                                     ^^ color.value.b.mql.4
+//                             ^^ punctuation.delimiter.color.begin.mql.4
+//                                 ^ punctuation.delimiter.color.mql.4
+//                                    ^ punctuation.delimiter.color.mql.4
+//                                       ^ punctuation.delimiter.color.end.mql.4
+    #property indicator_color2 C'42,42,42'
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.preprocessor.mql.4
+//  ^^^^^^^^^ keyword.preprocessor.mql.4
+//            ^^^^^^^^^^^^^^^^ keyword.preprocessor.mql.4
+//                           ^ index.b.mql.4
 //                             ^^^^^^^^^^^ constant.color.mql.4
 //                               ^^ color.value.r.mql.4
 //                                  ^^ color.value.g.mql.4

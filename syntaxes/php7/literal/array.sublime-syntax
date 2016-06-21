@@ -21,12 +21,27 @@ contexts:
   main:
     - match: |
         (?x)
+        \[
+      scope: punctuation.delimiter.expression.array.begin.php.7
+      set: short-array-items
+    - match: |
+        (?x)
         (array)
         \s*(\()
       captures:
         1: entity.name.type.array.php.7
         2: punctuation.delimiter.expression.array.begin.php.7
       set: items
+
+  short-array-items:
+    - meta_scope: support.type.array.php.7
+    - match: |
+        (?x)
+        \]
+      scope: punctuation.delimiter.expression.array.end.php.7
+      pop: true
+    - match: (?=\S)
+      push: key-or-value
 
   items:
     - meta_scope: support.type.array.php.7
@@ -55,5 +70,5 @@ contexts:
       pop: true
 
   end:
-    - match: (?=\))
+    - match: (?=\)|\])
       pop: true

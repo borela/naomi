@@ -32,12 +32,15 @@ contexts:
   # | instanceof |                     |
   # |     @      | Error suppression.  |
   # |     ->     | Member access.      |
+  # |     =>     | Array association.  |
   # |     ::     | Scope resolution.   |
   # |    ...     | Argument unpacking. |
   main:
     - match: (?xi)\binstanceof\b
       scope: keyword.operator.type.php.7
       pop: true
+    - match: "=>"
+      scope: keyword.operator.key.association.php.7
     - match: "@"
       scope: keyword.operator.error.suppression.php.7
       pop: true

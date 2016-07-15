@@ -31,5 +31,7 @@ contexts:
           | REMOVABLE
           | STDFLAGS
         )\b
-      scope: support.constant.php.7
+      scope: >-
+        support.constant.php.7
+        entity.name.constant.php.7
       pop: true

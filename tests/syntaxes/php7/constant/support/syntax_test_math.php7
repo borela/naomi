@@ -15,48 +15,71 @@
 <?php
     M_PI
 //  ^^^^ support.constant.php.7
+//  ^^^^ entity.name.constant.php.7
     M_E
 //  ^^^ support.constant.php.7
+//  ^^^ entity.name.constant.php.7
     M_LOG2E
 //  ^^^^^^^ support.constant.php.7
+//  ^^^^^^^ entity.name.constant.php.7
     M_LOG10E
 //  ^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^ entity.name.constant.php.7
     M_LN2
 //  ^^^^^ support.constant.php.7
+//  ^^^^^ entity.name.constant.php.7
     M_LN10
 //  ^^^^^^ support.constant.php.7
+//  ^^^^^^ entity.name.constant.php.7
     M_PI_2
 //  ^^^^^^ support.constant.php.7
+//  ^^^^^^ entity.name.constant.php.7
     M_PI_4
 //  ^^^^^^ support.constant.php.7
+//  ^^^^^^ entity.name.constant.php.7
     M_1_PI
 //  ^^^^^^ support.constant.php.7
+//  ^^^^^^ entity.name.constant.php.7
     M_2_PI
 //  ^^^^^^ support.constant.php.7
+//  ^^^^^^ entity.name.constant.php.7
     M_SQRTPI
 //  ^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^ entity.name.constant.php.7
     M_2_SQRTPI
 //  ^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^ entity.name.constant.php.7
     M_SQRT2
 //  ^^^^^^^ support.constant.php.7
+//  ^^^^^^^ entity.name.constant.php.7
     M_SQRT3
 //  ^^^^^^^ support.constant.php.7
+//  ^^^^^^^ entity.name.constant.php.7
     M_SQRT1_2
 //  ^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^ entity.name.constant.php.7
     M_LNPI
 //  ^^^^^^ support.constant.php.7
+//  ^^^^^^ entity.name.constant.php.7
     M_EULER
 //  ^^^^^^^ support.constant.php.7
+//  ^^^^^^^ entity.name.constant.php.7
     PHP_ROUND_HALF_UP
 //  ^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     PHP_ROUND_HALF_DOWN
 //  ^^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     PHP_ROUND_HALF_EVEN
 //  ^^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     PHP_ROUND_HALF_ODD
 //  ^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     NAN
 //  ^^^ support.constant.php.7
+//  ^^^ entity.name.constant.php.7
     INF
 //  ^^^ support.constant.php.7
+//  ^^^ entity.name.constant.php.7
 ?>

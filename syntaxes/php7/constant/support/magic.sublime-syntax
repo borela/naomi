@@ -30,5 +30,7 @@ contexts:
           | METHOD
           | NAMESPACE
         )__\b
-      scope: support.constant.preprocessor.php.7
+      scope: >-
+        support.constant.preprocessor.php.7
+        entity.name.constant.php.7
       pop: true

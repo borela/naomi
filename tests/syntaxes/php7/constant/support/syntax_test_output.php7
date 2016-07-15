@@ -15,24 +15,35 @@
 <?php
     PHP_OUTPUT_HANDLER_START
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     PHP_OUTPUT_HANDLER_WRITE
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     PHP_OUTPUT_HANDLER_FLUSH
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     PHP_OUTPUT_HANDLER_CLEAN
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     PHP_OUTPUT_HANDLER_FINAL
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     PHP_OUTPUT_HANDLER_CONT
 //  ^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     PHP_OUTPUT_HANDLER_END
 //  ^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     PHP_OUTPUT_HANDLER_CLEANABLE
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     PHP_OUTPUT_HANDLER_FLUSHABLE
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     PHP_OUTPUT_HANDLER_REMOVABLE
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
     PHP_OUTPUT_HANDLER_STDFLAGS
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
 ?>

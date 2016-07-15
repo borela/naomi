@@ -15,18 +15,26 @@
 <?php
     __LINE__
 //  ^^^^^^^^ support.constant.preprocessor.php.7
+//  ^^^^^^^^ entity.name.constant.php.7
     __FILE__
 //  ^^^^^^^^ support.constant.preprocessor.php.7
+//  ^^^^^^^^ entity.name.constant.php.7
     __DIR__
 //  ^^^^^^^ support.constant.preprocessor.php.7
+//  ^^^^^^^ entity.name.constant.php.7
     __FUNCTION__
 //  ^^^^^^^^^^^^ support.constant.preprocessor.php.7
+//  ^^^^^^^^^^^^ entity.name.constant.php.7
     __CLASS__
 //  ^^^^^^^^^ support.constant.preprocessor.php.7
+//  ^^^^^^^^^ entity.name.constant.php.7
     __TRAIT__
 //  ^^^^^^^^^ support.constant.preprocessor.php.7
+//  ^^^^^^^^^ entity.name.constant.php.7
     __METHOD__
 //  ^^^^^^^^^^ support.constant.preprocessor.php.7
+//  ^^^^^^^^^^ entity.name.constant.php.7
     __NAMESPACE__
 //  ^^^^^^^^^^^^^ support.constant.preprocessor.php.7
+//  ^^^^^^^^^^^^^ entity.name.constant.php.7
 ?>

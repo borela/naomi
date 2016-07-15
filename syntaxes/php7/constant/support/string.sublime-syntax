@@ -50,5 +50,7 @@ contexts:
           | STR_PAD_
             (?>LEFT|RIGHT|BOTH)
         )\b
-      scope: support.constant.php.7
+      scope: >-
+        support.constant.php.7
+        entity.name.constant.php.7
       pop: true

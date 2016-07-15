@@ -57,7 +57,9 @@ contexts:
             (?>INSTALL_DIR|EXTENSION_DIR)
           | DEFAULT_INCLUDE_PATH
         )\b
-      scope: support.constant.php.7
+      scope: >-
+        support.constant.php.7
+        entity.name.constant.php.7
       pop: true
 
   case-insenstive:
@@ -67,5 +69,7 @@ contexts:
           | FALSE
           | NULL
         )\b
-      scope: support.constant.php.7
+      scope: >-
+        support.constant.php.7
+        entity.name.constant.php.7
       pop: true

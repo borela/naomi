@@ -36,6 +36,9 @@ contexts:
   # |     =>     | Array association.  |
   # |     ::     | Scope resolution.   |
   # |    ...     | Argument unpacking. |
+  # |     ??     | Null coalescing.    |
+  # |     ?      |                     |
+  # |     :      |                     |
   main:
     - match: (?xi)\bas\b
       scope: keyword.operator.alias.php.7
@@ -57,6 +60,8 @@ contexts:
     - match: "::"
       scope: keyword.operator.scope.resolution.php.7
       set: scope-resolution
+    - match: "\\?\\??|:"
+      scope: keyword.operator.php.7
 
   member-access:
     - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
@@ -86,5 +91,7 @@ contexts:
       pop: true
     # Constant.
     - match: (?x)\b{{constantIdentifier}}
-      scope: constant.php.7
+      scope: >-
+        constant.php.7
+        entity.name.constant.php.7
       pop: true

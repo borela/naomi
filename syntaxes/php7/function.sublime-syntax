@@ -24,9 +24,29 @@ scope: ...
 
 contexts:
   main:
+    - match: |
+        (?xi)
+        (?=
+          \b
+          (?:
+            (?> private
+              | protected
+              | public
+            )\s+
+          )?
+          (?:static\s+)?
+          function\b
+        )
+      set: [
+        declaration,
+        keyword
+      ]
+
+  keyword:
     - match: (?i)\bfunction(?!\\)\b
       scope: keyword.statement.function.php.7
-      set: declaration
+      pop: true
+    - include: Packages/Naomi/syntaxes/php7/modifier.no-pop.sublime-syntax
 
   declaration:
     - meta_scope: statement.function.php.7
@@ -233,8 +253,6 @@ contexts:
         statement.function.php.7
         statement.function.body.php.7
         statement.function.body.content.php.7
-    - match: \{
-      push: balance-brackets
     - match: \}
       scope: >-
         statement.function.php.7
@@ -246,26 +264,5 @@ contexts:
   body-content:
     - match: (?=\S)
       push:
-        - match: ;
-          scope: punctuation.terminator.expression.php.7
-        - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/declare.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/keyword.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/class.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/new-object.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
-        - match: (?=\{|\})
-          pop: true
-
-  balance-brackets:
-    - match: \{
-      push: balance-brackets
-    - match: \}
-      pop: true
-    - include: body-content
+        - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax

@@ -18,21 +18,7 @@ hidden: true
 scope: ...
 
 contexts:
-  # | Operator |    Description     |
-  # | :------: | :----------------- |
-  # |    =     | Simple assignment. |
-  # |    +=    |                    |
-  # |    *=    |                    |
-  # |    /=    |                    |
-  # |    %=    |                    |
   main:
-    - match: |
-        (?x)
-        (?> =
-          | \+=
-          | \*=
-          | /=
-          | %=
-        )
-      scope: keyword.operator.assignment.php.7
-      pop: true
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax

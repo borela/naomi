@@ -18,21 +18,26 @@ hidden: true
 scope: ...
 
 contexts:
-  # | Operator |    Description     |
-  # | :------: | :----------------- |
-  # |    =     | Simple assignment. |
-  # |    +=    |                    |
-  # |    *=    |                    |
-  # |    /=    |                    |
-  # |    %=    |                    |
   main:
     - match: |
         (?x)
-        (?> =
-          | \+=
-          | \*=
-          | /=
-          | %=
+        (?=
+          (?:
+            (?> private
+              | protected
+              | public
+            )\s+
+          )?
+          \s*\$
         )
-      scope: keyword.operator.assignment.php.7
-      pop: true
+      set: [
+        expression,
+        declaration
+      ]
+
+  declaration:
+    - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/modifier.no-pop.sublime-syntax
+
+  expression:
+    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax

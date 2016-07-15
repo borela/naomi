@@ -57,17 +57,7 @@ contexts:
         punctuation.delimiter.interface.body.end.php.7
       pop: true
     # Body’s content.
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/declare.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/use.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/modifier.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
-        - match: (?=\})
-          pop: true
+    - include: Packages/Naomi/syntaxes/php7/statement.no-pop.sublime-syntax
 
   extend-targets:
     - meta_scope: extend.php.7

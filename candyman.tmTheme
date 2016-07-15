@@ -76,37 +76,6 @@
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Expression terminator</string>
-
-                <key>scope</key>
-                <string>punctuation.terminator.expression</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#f48fb1</string>
-
-                    <key>fontStyle</key>
-                    <string>bold</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Statement terminator</string>
-
-                <key>scope</key>
-                <string>punctuation.terminator.statement</string>
-
-                <key>settings</key>
-                <dict>
                     <key>foreground</key>
                     <string>#fff9c4</string>
 
@@ -117,113 +86,18 @@
 
             <dict>
                 <key>name</key>
-                <string>Comment</string>
+                <string>Generic terminator</string>
 
                 <key>scope</key>
-                <string>comment</string>
+                <string>punctuation.terminator</string>
 
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#546e7a</string>
-                </dict>
-            </dict>
+                    <string>#f48fb1</string>
 
-            <dict>
-                <key>name</key>
-                <string>Comment’s keyword</string>
-
-                <key>scope</key>
-                <string>comment keyword</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#f48fb17f</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Comment’s variable</string>
-
-                <key>scope</key>
-                <string>comment variable</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#cfd8dc90</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Comment’s namespace path</string>
-
-                <key>scope</key>
-                <string>comment entity.name.statement.namespace</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#bcaaa47f</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Comment’s namespace delimiter</string>
-
-                <key>scope</key>
-                <string>comment statement.namespace.path punctuation.delimiter</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#fff9c47f</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Comment’s builtin type</string>
-
-                <key>scope</key>
-                <string>comment support, comment support punctuation.delimiter.type</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#ff9e807f</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Comment’s custom type</string>
-
-                <key>scope</key>
-                <string>comment type, comment punctuation.delimiter.type</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#aed5817f</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Comment’s function name</string>
-
-                <key>scope</key>
-                <string>comment entity.name.statement.function</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#81d4fa7f</string>
+                    <key>fontStyle</key>
+                    <string>bold</string>
                 </dict>
             </dict>
 
@@ -243,16 +117,27 @@
 
             <dict>
                 <key>name</key>
-                <string>Comparison’s operator</string>
+                <string>Built-in types, constants, functions and variables</string>
 
                 <key>scope</key>
-                <string>keyword.operator.comparison</string>
+                <string>support entity.name.type, support punctuation.delimiter.type, support entity.name.constant, support entity.name.function, support entity.name.variable, support punctuation.variable</string>
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
+                    <key>foreground</key>
+                    <string>#ff9e80</string>
+                </dict>
+            </dict>
 
+            <dict>
+                <key>name</key>
+                <string>Type</string>
+
+                <key>scope</key>
+                <string>entity.name, punctuation.delimiter.type, punctuation.delimiter.enum, punctuation.delimiter.class, punctuation.delimiter.interface, punctuation.delimiter.trait</string>
+
+                <key>settings</key>
+                <dict>
                     <key>foreground</key>
                     <string>#aed581</string>
                 </dict>
@@ -260,35 +145,99 @@
 
             <dict>
                 <key>name</key>
-                <string>Bitwise’s operator</string>
+                <string>Array</string>
 
                 <key>scope</key>
-                <string>keyword.operator.bitwise</string>
+                <string>entity.name.type.array, punctuation.delimiter.expression.array</string>
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
                     <key>foreground</key>
-                    <string>#80deea</string>
+                    <string>#ffecb3</string>
                 </dict>
             </dict>
 
             <dict>
                 <key>name</key>
-                <string>String’s operator</string>
+                <string>Inherited type</string>
 
                 <key>scope</key>
-                <string>keyword.operator.string</string>
+                <string>inherit entity.name.type</string>
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold</string>
-
                     <key>foreground</key>
-                    <string>#ffecb3</string>
+                    <string>#fff9c4</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Implemented interface</string>
+
+                <key>scope</key>
+                <string>implement entity.name.type</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ce93d8</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Function</string>
+
+                <key>scope</key>
+                <string>entity.name.function, punctuation.delimiter.function</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#81d4fa</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Variable</string>
+
+                <key>scope</key>
+                <string>entity.name.variable</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#b0bec5</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Namespace</string>
+
+                <key>scope</key>
+                <string>entity.name.namespace</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#bcaaa4</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Alias</string>
+
+                <key>scope</key>
+                <string>entity.name.alias</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#fff9c4</string>
                 </dict>
             </dict>
 
@@ -322,15 +271,15 @@
 
             <dict>
                 <key>name</key>
-                <string>Embedded delimiter</string>
+                <string>Constant</string>
 
                 <key>scope</key>
-                <string>punctuation.embedded</string>
+                <string>entity.name.constant, punctuation.delimiter.constant, entity.name.enum.item</string>
 
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#f48fb1</string>
+                    <string>#ce93d8</string>
                 </dict>
             </dict>
 
@@ -345,20 +294,6 @@
                 <dict>
                     <key>foreground</key>
                     <string>#e57373</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>String, color and datetime’s beginning</string>
-
-                <key>scope</key>
-                <string>punctuation.delimiter.string.begin, punctuation.delimiter.constant.character.begin, punctuation.delimiter.datetime.begin, punctuation.delimiter.color.begin</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#fff9c4</string>
                 </dict>
             </dict>
 
@@ -381,7 +316,7 @@
                 <string>Escaped character A</string>
 
                 <key>scope</key>
-                <string>constant.character.escape.a</string>
+                <string>constant.character.escape</string>
 
                 <key>settings</key>
                 <dict>
@@ -402,9 +337,6 @@
 
                 <key>settings</key>
                 <dict>
-                    <key>fontStyle</key>
-                    <string>bold italic</string>
-
                     <key>foreground</key>
                     <string>#aed581</string>
                 </dict>
@@ -415,7 +347,7 @@
                 <string>Embedded variable A</string>
 
                 <key>scope</key>
-                <string>variable.a</string>
+                <string>string entity.name.variable, string punctuation.variable</string>
 
                 <key>settings</key>
                 <dict>
@@ -429,7 +361,7 @@
                 <string>Embedded variable B</string>
 
                 <key>scope</key>
-                <string>variable.b</string>
+                <string>string variable.b entity.name.variable, string variable.b punctuation.variable</string>
 
                 <key>settings</key>
                 <dict>
@@ -443,7 +375,7 @@
                 <string>Embedded variable’s key</string>
 
                 <key>scope</key>
-                <string>variable array.key</string>
+                <string>string variable array.key</string>
 
                 <key>settings</key>
                 <dict>
@@ -454,77 +386,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Built-in types and constants</string>
-
-                <key>scope</key>
-                <string>support, support punctuation.delimiter.type</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#ff9e80</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Custom type</string>
-
-                <key>scope</key>
-                <string>type, entity.name.statement, punctuation.delimiter.type</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#aed581</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Array</string>
-
-                <key>scope</key>
-                <string>entity.name.type.array, punctuation.delimiter.expression.array</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#ffecb3</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>New object’s delimiter</string>
-
-                <key>scope</key>
-                <string>expression.new.object punctuation.delimiter</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#f48fb1</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Constant</string>
-
-                <key>scope</key>
-                <string>constant</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#ce93d8</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Binary</string>
+                <string>Binary constant</string>
 
                 <key>scope</key>
                 <string>constant.numeric.binary</string>
@@ -538,7 +400,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Octal</string>
+                <string>Octal constant</string>
 
                 <key>scope</key>
                 <string>constant.numeric.octal</string>
@@ -552,7 +414,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Hexadecimal</string>
+                <string>Hexadecimal constant</string>
 
                 <key>scope</key>
                 <string>constant.numeric.hex</string>
@@ -566,7 +428,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Decimal</string>
+                <string>Decimal constant</string>
 
                 <key>scope</key>
                 <string>constant.numeric.decimal</string>
@@ -580,7 +442,7 @@
 
             <dict>
                 <key>name</key>
-                <string>Floating point</string>
+                <string>Floating point constant</string>
 
                 <key>scope</key>
                 <string>constant.numeric.float</string>
@@ -589,104 +451,6 @@
                 <dict>
                     <key>foreground</key>
                     <string>#ce93d8</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Function’s name</string>
-
-                <key>scope</key>
-                <string>entity.name.statement.function, entity.name.expression.function, punctuation.delimiter.statement.function, punctuation.delimiter.expression.function</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#81d4fa</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Function’s delimiter</string>
-
-                <key>scope</key>
-                <string>punctuation.delimiter.statement.function</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#81d4fa</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Built-in functions</string>
-
-                <key>scope</key>
-                <string>entity.name.statement.support.function, entity.name.expression.support.function, punctuation.delimiter.expression.support.function</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#ff9e80</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Variable</string>
-
-                <key>scope</key>
-                <string>variable</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#cfd8dc</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Namespace’s name</string>
-
-                <key>scope</key>
-                <string>entity.name.statement.namespace</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#bcaaa4</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Namespace’s delimiter</string>
-
-                <key>scope</key>
-                <string>punctuation.delimiter.statement.namespace - comment</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#fff9c4</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Class, interface and trait’s delimiter</string>
-
-                <key>scope</key>
-                <string>punctuation.delimiter.statement.class, punctuation.delimiter.statement.interface, punctuation.delimiter.statement.trait</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#aed581</string>
                 </dict>
             </dict>
 
@@ -776,85 +540,113 @@
 
             <dict>
                 <key>name</key>
-                <string>Inherit target</string>
+                <string>Comment</string>
 
                 <key>scope</key>
-                <string>inherit type, inherit punctuation.delimiter.type</string>
+                <string>comment</string>
 
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#ffecb3</string>
+                    <string>#546e7a</string>
                 </dict>
             </dict>
 
             <dict>
                 <key>name</key>
-                <string>Implement target</string>
+                <string>Comment’s generic delimiter</string>
 
                 <key>scope</key>
-                <string>implement type, implement punctuation.delimiter.type</string>
+                <string>comment punctuation.delimiter</string>
 
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#ce93d8</string>
+                    <string>#fff9c47f</string>
                 </dict>
             </dict>
 
             <dict>
                 <key>name</key>
-                <string>Import target</string>
+                <string>Comment’s keyword</string>
 
                 <key>scope</key>
-                <string>statement.import type, statement.import punctuation.delimiter.type</string>
+                <string>comment keyword</string>
 
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#aed581</string>
+                    <string>#f48fb17f</string>
                 </dict>
             </dict>
 
             <dict>
                 <key>name</key>
-                <string>Import target function</string>
+                <string>Comment’s built-in types, constants and functions</string>
 
                 <key>scope</key>
-                <string>statement.import.function type, statement.import.function punctuation.delimiter.type</string>
+                <string>comment support entity.name.type, comment support entity.name.constant, comment support entity.name.function</string>
 
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#81d4fa</string>
+                    <string>#ff9e807f</string>
                 </dict>
             </dict>
 
             <dict>
                 <key>name</key>
-                <string>Import target constant</string>
+                <string>Comment’s type</string>
 
                 <key>scope</key>
-                <string>statement.import.constant type, statement.import.constant punctuation.delimiter.type</string>
+                <string>comment entity.name.type, comment punctuation.delimiter.type</string>
 
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#ce93d8</string>
+                    <string>#aed5817f</string>
                 </dict>
             </dict>
 
             <dict>
                 <key>name</key>
-                <string>Alias</string>
+                <string>Comment’s function</string>
 
                 <key>scope</key>
-                <string>entity.name.statement.import.alias</string>
+                <string>comment entity.name.function</string>
 
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#ffecb3</string>
+                    <string>#81d4fa7f</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Comment’s namespace</string>
+
+                <key>scope</key>
+                <string>comment entity.name.namespace</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#bcaaa47f</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Comment’s variable</string>
+
+                <key>scope</key>
+                <string>comment variable</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#b0bec590</string>
                 </dict>
             </dict>
 
@@ -897,20 +689,6 @@
                 <dict>
                     <key>foreground</key>
                     <string>#f06292</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>Markup tag</string>
-
-                <key>scope</key>
-                <string>meta.tag</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#0097a7</string>
                 </dict>
             </dict>
         </array>

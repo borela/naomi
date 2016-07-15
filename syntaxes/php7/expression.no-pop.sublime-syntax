@@ -19,36 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        (?=
-          \s*
-          (?> \,
-            | \;
-            | \)
-          )
-        )
-      pop: true
-    - include: balance-parenthesis
-    - include: content
-
-  content:
     - match: (?=\S)
       push:
-        - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/new-object.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
-        - match: ""
-          pop: true
-
-  balance-parenthesis:
-    - match: \(
-      push: balance-parenthesis
-    - match: \)
-      pop: true
-    - include: content
+        - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax

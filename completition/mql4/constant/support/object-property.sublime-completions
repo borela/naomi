@@ -1,0 +1,73 @@
+{
+    // Licensed under the Apache License, Version 2.0 (the “License”); you may not
+    // use this file except in compliance with the License. You may obtain a copy of
+    // the License at
+    //
+    //     http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software
+    // distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+    // WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+    // License for the specific language governing permissions and limitations under
+    // the License.
+
+    "scope": "source.mql.4 - comment",
+    "completions": [
+        "OBJPROP_ALIGN",
+        "OBJPROP_ANCHOR",
+        "OBJPROP_ANGLE",
+        "OBJPROP_ARROWCODE",
+        "OBJPROP_BACK",
+        "OBJPROP_BGCOLOR",
+        "OBJPROP_BMPFILE",
+        "OBJPROP_BORDER_COLOR",
+        "OBJPROP_BORDER_TYPE",
+        "OBJPROP_COLOR",
+        "OBJPROP_CORNER",
+        "OBJPROP_CREATETIME",
+        "OBJPROP_DEVIATION",
+        "OBJPROP_DRAWLINES",
+        "OBJPROP_ELLIPSE",
+        "OBJPROP_FIBOLEVELS",
+        "OBJPROP_FIRSTLEVEL",
+        "OBJPROP_FONT",
+        "OBJPROP_FONTSIZE",
+        "OBJPROP_HIDDEN",
+        "OBJPROP_LEVELCOLOR",
+        "OBJPROP_LEVELS",
+        "OBJPROP_LEVELSTYLE",
+        "OBJPROP_LEVELTEXT",
+        "OBJPROP_LEVELVALUE",
+        "OBJPROP_LEVELWIDTH",
+        "OBJPROP_NAME",
+        "OBJPROP_PRICE",
+        "OBJPROP_PRICE1",
+        "OBJPROP_PRICE2",
+        "OBJPROP_PRICE3",
+        "OBJPROP_RAY",
+        "OBJPROP_RAY_RIGHT",
+        "OBJPROP_READONLY",
+        "OBJPROP_SCALE",
+        "OBJPROP_SELECTABLE",
+        "OBJPROP_SELECTED",
+        "OBJPROP_STATE",
+        "OBJPROP_STYLE",
+        "OBJPROP_SYMBOL",
+        "OBJPROP_TEXT",
+        "OBJPROP_TIME",
+        "OBJPROP_TIME1",
+        "OBJPROP_TIME2",
+        "OBJPROP_TIME3",
+        "OBJPROP_TIMEFRAMES",
+        "OBJPROP_TOOLTIP",
+        "OBJPROP_TYPE",
+        "OBJPROP_WIDTH",
+        "OBJPROP_XDISTANCE",
+        "OBJPROP_XOFFSET",
+        "OBJPROP_XSIZE",
+        "OBJPROP_YDISTANCE",
+        "OBJPROP_YOFFSET",
+        "OBJPROP_YSIZE",
+        "OBJPROP_ZORDER"
+    ]
+}

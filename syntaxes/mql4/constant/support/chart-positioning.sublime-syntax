@@ -85,5 +85,7 @@ contexts:
                 )
             )
         )\b
-      scope: support.constant.mql.4
+      scope: >-
+        support.constant.mql.4
+        entity.name.constant.mql.4
       pop: true

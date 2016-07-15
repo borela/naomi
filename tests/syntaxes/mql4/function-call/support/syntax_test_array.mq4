@@ -14,58 +14,58 @@
 
     ArrayBsearch();
 //  ^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^^^ entity.name.function.mql.4
     ArrayCompare();
 //  ^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^^^ entity.name.function.mql.4
     ArrayCopy();
 //  ^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^ entity.name.function.mql.4
     ArrayCopyRates();
 //  ^^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^^^^^ entity.name.function.mql.4
     ArrayCopySeries();
 //  ^^^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^^^^^^ entity.name.function.mql.4
     ArrayDimension();
 //  ^^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^^^^^ entity.name.function.mql.4
     ArrayFill();
 //  ^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^ entity.name.function.mql.4
     ArrayFree();
 //  ^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^ entity.name.function.mql.4
     ArrayGetAsSeries();
 //  ^^^^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
     ArrayInitialize();
 //  ^^^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^^^^^^ entity.name.function.mql.4
     ArrayIsDynamic();
 //  ^^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^^^^^ entity.name.function.mql.4
     ArrayIsSeries();
 //  ^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^^^^ entity.name.function.mql.4
     ArrayMaximum();
 //  ^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^^^ entity.name.function.mql.4
     ArrayMinimum();
 //  ^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^^^ entity.name.function.mql.4
     ArrayRange();
 //  ^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^ entity.name.function.mql.4
     ArrayResize();
 //  ^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^^ entity.name.function.mql.4
     ArraySetAsSeries();
 //  ^^^^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
     ArraySize();
 //  ^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^ entity.name.function.mql.4
     ArraySort();
 //  ^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^ entity.name.statement.function.mql.4
+//  ^^^^^^^^^ entity.name.function.mql.4

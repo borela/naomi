@@ -36,7 +36,7 @@ contexts:
     - match: |
         (?xi)
         {{commonIdentifier}}
-      scope: entity.name.statement.enum.mql.4
+      scope: entity.name.enum.mql.4
       set: body
 
   body:
@@ -45,7 +45,7 @@ contexts:
         statement.enum.body.mql.4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: \{
-      scope: punctuation.delimiter.statement.enum.body.begin.mql.4
+      scope: punctuation.delimiter.enum.body.begin.mql.4
       set: body-content
 
   body-content:
@@ -57,7 +57,7 @@ contexts:
       scope: >-
         statement.enum.mql.4
         statement.enum.body.mql.4
-        punctuation.delimiter.statement.enum.body.end.mql.4
+        punctuation.delimiter.enum.body.end.mql.4
       pop: true
     - match: (?=\S)
       push: [

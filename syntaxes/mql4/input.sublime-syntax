@@ -48,7 +48,7 @@ contexts:
     - match: ;
       scope: >-
         statement.input.mql.4
-        punctuation.delimiter.statement.input.end.mql.4
+        punctuation.delimiter.input.end.mql.4
       pop: true
     - match: (?=\S)
       push:

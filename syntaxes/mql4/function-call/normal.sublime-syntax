@@ -52,8 +52,8 @@ contexts:
         (?=\s*\()
       captures:
         0: function.call.mql.4
-        1: punctuation.delimiter.statement.function.mql.4
-        2: entity.name.statement.function.mql.4
+        1: punctuation.delimiter.function.mql.4
+        2: entity.name.function.mql.4
       pop: true
 
   namespaced-function-call:
@@ -66,12 +66,12 @@ contexts:
       captures:
         0: function.call.mql.4
         1: statement.namespace.path.mql.4
-        2: punctuation.delimiter.statement.namespace.a.mql.4
-        3: entity.name.statement.namespace.a.mql.4
-        4: punctuation.delimiter.statement.namespace.b.mql.4
-        5: entity.name.statement.namespace.b.mql.4
-        6: punctuation.delimiter.statement.namespace.a.mql.4
-        7: entity.name.statement.namespace.a.mql.4
-        8: punctuation.delimiter.statement.function.mql.4
-        9: entity.name.statement.function.mql.4
+        2: punctuation.delimiter.namespace.a.mql.4
+        3: entity.name.namespace.a.mql.4
+        4: punctuation.delimiter.namespace.b.mql.4
+        5: entity.name.namespace.b.mql.4
+        6: punctuation.delimiter.namespace.a.mql.4
+        7: entity.name.namespace.a.mql.4
+        8: punctuation.delimiter.function.mql.4
+        9: entity.name.function.mql.4
       pop: true

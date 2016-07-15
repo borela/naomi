@@ -47,12 +47,12 @@ contexts:
       scope: keyword.operator.assignment.mql.4
       set: value
     - match: ;
-      scope: punctuation.delimiter.statement.variable.declaration.end.mql.4
+      scope: punctuation.delimiter.variable.declaration.end.mql.4
       pop: true
 
   value:
     - match: ;
-      scope: punctuation.delimiter.statement.variable.declaration.end.mql.4
+      scope: punctuation.delimiter.variable.declaration.end.mql.4
       pop: true
     - include: Packages/Naomi/syntaxes/mql4/comment.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax

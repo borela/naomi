@@ -23,7 +23,7 @@
 //                             ^^^ string.content.mql.4
 //                            ^ punctuation.delimiter.string.begin.mql.4
 //                                ^ punctuation.delimiter.string.end.mql.4
-//                                 ^ punctuation.delimiter.statement.input.end.mql.4
+//                                 ^ punctuation.delimiter.input.end.mql.4
     input Custom identifier = "...";
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.input.mql.4
 //  ^^^^^ keyword.input.mql.4
@@ -35,4 +35,4 @@
 //                             ^^^ string.content.mql.4
 //                            ^ punctuation.delimiter.string.begin.mql.4
 //                                ^ punctuation.delimiter.string.end.mql.4
-//                                 ^ punctuation.delimiter.statement.input.end.mql.4
+//                                 ^ punctuation.delimiter.input.end.mql.4

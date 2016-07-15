@@ -29,6 +29,7 @@ variables:
 contexts:
   # |  Operator  |  Description        |
   # | :--------: | :------------------ |
+  # |     as     |                     |
   # | instanceof |                     |
   # |     @      | Error suppression.  |
   # |     ->     | Member access.      |
@@ -36,6 +37,9 @@ contexts:
   # |     ::     | Scope resolution.   |
   # |    ...     | Argument unpacking. |
   main:
+    - match: (?xi)\bas\b
+      scope: keyword.operator.alias.php.7
+      pop: true
     - match: (?xi)\binstanceof\b
       scope: keyword.operator.type.php.7
       pop: true

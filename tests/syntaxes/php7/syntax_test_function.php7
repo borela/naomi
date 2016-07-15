@@ -16,86 +16,86 @@
     function Myfunction($param){   }
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.function.php.7
 //  ^^^^^^^^ keyword.statement.function.php.7
-//           ^^^^^^^^^^ entity.name.statement.function.php.7
-//                     ^ punctuation.delimiter.statement.function.parameters.begin.php.7
+//           ^^^^^^^^^^ entity.name.function.php.7
+//                     ^ punctuation.delimiter.function.parameters.begin.php.7
 //                     ^^^^^^^^ statement.function.parameters.php.7
 //                      ^^^^^^ statement.function.parameters.content.php.7
 //                      ^^^^^^ variable.php.7
 //                      ^ punctuation.variable.begin.php.7
 //                       ^^^^^ entity.name.variable.php.7
-//                            ^ punctuation.delimiter.statement.function.parameters.end.php.7
-//                             ^ punctuation.delimiter.statement.function.body.begin.php.7
+//                            ^ punctuation.delimiter.function.parameters.end.php.7
+//                             ^ punctuation.delimiter.function.body.begin.php.7
 //                             ^^^^^ statement.function.body.php.7
 //                              ^^^ statement.function.body.content.php.7
-//                                 ^ punctuation.delimiter.statement.function.body.end.php.7
+//                                 ^ punctuation.delimiter.function.body.end.php.7
 
     function Myfunction(...$param){   }
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.function.php.7
 //  ^^^^^^^^ keyword.statement.function.php.7
-//           ^^^^^^^^^^ entity.name.statement.function.php.7
-//                     ^ punctuation.delimiter.statement.function.parameters.begin.php.7
+//           ^^^^^^^^^^ entity.name.function.php.7
+//                     ^ punctuation.delimiter.function.parameters.begin.php.7
 //                     ^^^^^^^^^^^ statement.function.parameters.php.7
 //                      ^^^^^^^^^ statement.function.parameters.content.php.7
 //                      ^^^ keyword.operator.variadic.php.7
 //                         ^^^^^^ variable.php.7
 //                         ^ punctuation.variable.begin.php.7
 //                          ^^^^^ entity.name.variable.php.7
-//                               ^ punctuation.delimiter.statement.function.parameters.end.php.7
-//                                ^ punctuation.delimiter.statement.function.body.begin.php.7
+//                               ^ punctuation.delimiter.function.parameters.end.php.7
+//                                ^ punctuation.delimiter.function.body.begin.php.7
 //                                ^^^^^ statement.function.body.php.7
 //                                 ^^^ statement.function.body.content.php.7
-//                                    ^ punctuation.delimiter.statement.function.body.end.php.7
+//                                    ^ punctuation.delimiter.function.body.end.php.7
 
     function Myfunction($param1, int ...$param2){   }
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.function.php.7
 //  ^^^^^^^^ keyword.statement.function.php.7
-//           ^^^^^^^^^^ entity.name.statement.function.php.7
-//                     ^ punctuation.delimiter.statement.function.parameters.begin.php.7
+//           ^^^^^^^^^^ entity.name.function.php.7
+//                     ^ punctuation.delimiter.function.parameters.begin.php.7
 //                     ^^^^^^^^^^^^^^^^^^^^^^^^^ statement.function.parameters.php.7
 //                      ^^^^^^^^^^^^^^^^^^^^^^^ statement.function.parameters.content.php.7
 //                      ^^^^^^^ variable.php.7
 //                      ^ punctuation.variable.begin.php.7
 //                       ^^^^^^ entity.name.variable.php.7
-//                             ^ punctuation.delimiter.statement.function.parameters.php.7
+//                             ^ punctuation.delimiter.function.parameters.php.7
 //                               ^^^ support.type.php.7
 //                                   ^^^ keyword.operator.variadic.php.7
 //                                      ^^^^^^^ variable.php.7
 //                                      ^ punctuation.variable.begin.php.7
 //                                       ^^^^^^ entity.name.variable.php.7
-//                                             ^ punctuation.delimiter.statement.function.parameters.end.php.7
-//                                              ^ punctuation.delimiter.statement.function.body.begin.php.7
+//                                             ^ punctuation.delimiter.function.parameters.end.php.7
+//                                              ^ punctuation.delimiter.function.body.begin.php.7
 //                                              ^^^^^ statement.function.body.php.7
 //                                               ^^^ statement.function.body.content.php.7
-//                                                  ^ punctuation.delimiter.statement.function.body.end.php.7
+//                                                  ^ punctuation.delimiter.function.body.end.php.7
 
     function Myfunction(int $param1, string $param2){   }
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.function.php.7
 //  ^^^^^^^^ keyword.statement.function.php.7
-//           ^^^^^^^^^^ entity.name.statement.function.php.7
+//           ^^^^^^^^^^ entity.name.function.php.7
 //                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.function.parameters.php.7
 //                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.function.parameters.content.php.7
-//                     ^ punctuation.delimiter.statement.function.parameters.begin.php.7
+//                     ^ punctuation.delimiter.function.parameters.begin.php.7
 //                      ^^^ support.type.php.7
 //                          ^^^^^^^ variable.php.7
 //                          ^ punctuation.variable.begin.php.7
 //                           ^^^^^ entity.name.variable.php.7
-//                                 ^ punctuation.delimiter.statement.function.parameters.php.7
+//                                 ^ punctuation.delimiter.function.parameters.php.7
 //                                   ^^^^^^ support.type.php.7
 //                                          ^^^^^^^ variable.php.7
 //                                          ^ punctuation.variable.begin.php.7
 //                                           ^^^^^ entity.name.variable.php.7
-//                                                 ^ punctuation.delimiter.statement.function.parameters.end.php.7
-//                                                  ^ punctuation.delimiter.statement.function.body.begin.php.7
+//                                                 ^ punctuation.delimiter.function.parameters.end.php.7
+//                                                  ^ punctuation.delimiter.function.body.begin.php.7
 //                                                  ^^^^^ statement.function.body.php.7
 //                                                   ^^^ statement.function.body.content.php.7
-//                                                      ^ punctuation.delimiter.statement.function.body.end.php.7
+//                                                      ^ punctuation.delimiter.function.body.end.php.7
 
     function Myfunction(
 //  ^^^^^^^^^^^^^^^^^^^^ statement.function.php.7
 //  ^^^^^^^^ keyword.statement.function.php.7
-//           ^^^^^^^^^^ entity.name.statement.function.php.7
+//           ^^^^^^^^^^ entity.name.function.php.7
 //                     ^ statement.function.parameters.php.7
-//                     ^ punctuation.delimiter.statement.function.parameters.begin.php.7
+//                     ^ punctuation.delimiter.function.parameters.begin.php.7
         int $param1,
 //      ^^^^^^^^^^^^ statement.function.php.7
 //      ^^^^^^^^^^^^ statement.function.parameters.php.7
@@ -104,7 +104,7 @@
 //          ^^^^^^^ variable.php.7
 //          ^ punctuation.variable.begin.php.7
 //           ^^^^^ entity.name.variable.php.7
-//                 ^ punctuation.delimiter.statement.function.parameters.php.7
+//                 ^ punctuation.delimiter.function.parameters.php.7
         ...$param2
 //      ^^^^^^^^^^ statement.function.php.7
 //      ^^^^^^^^^^ statement.function.parameters.php.7
@@ -116,19 +116,19 @@
     ){   }
 //  ^^^^^^ statement.function.php.7
 //  ^ statement.function.parameters.php.7
-//  ^ punctuation.delimiter.statement.function.parameters.end.php.7
-//   ^ punctuation.delimiter.statement.function.body.begin.php.7
+//  ^ punctuation.delimiter.function.parameters.end.php.7
+//   ^ punctuation.delimiter.function.body.begin.php.7
 //   ^^^^^ statement.function.body.php.7
 //    ^^^ statement.function.body.content.php.7
-//       ^ punctuation.delimiter.statement.function.body.end.php.7
+//       ^ punctuation.delimiter.function.body.end.php.7
 
 
     function Myfunction(
 //  ^^^^^^^^^^^^^^^^^^^^ statement.function.php.7
 //  ^^^^^^^^ keyword.statement.function.php.7
-//           ^^^^^^^^^^ entity.name.statement.function.php.7
+//           ^^^^^^^^^^ entity.name.function.php.7
 //                     ^ statement.function.parameters.php.7
-//                     ^ punctuation.delimiter.statement.function.parameters.begin.php.7
+//                     ^ punctuation.delimiter.function.parameters.begin.php.7
         int $param1,
 //      ^^^^^^^^^^^^ statement.function.php.7
 //      ^^^^^^^^^^^^ statement.function.parameters.php.7
@@ -137,7 +137,7 @@
 //          ^^^^^^^ variable.php.7
 //          ^ punctuation.variable.begin.php.7
 //           ^^^^^ entity.name.variable.php.7
-//                 ^ punctuation.delimiter.statement.function.parameters.php.7
+//                 ^ punctuation.delimiter.function.parameters.php.7
         string ...$param2
 //      ^^^^^^^^^^^^^^^^^ statement.function.php.7
 //      ^^^^^^^^^^^^^^^^^ statement.function.parameters.php.7
@@ -149,9 +149,9 @@
     ){   }
 //  ^^^^^^ statement.function.php.7
 //  ^ statement.function.parameters.php.7
-//  ^ punctuation.delimiter.statement.function.parameters.end.php.7
-//   ^ punctuation.delimiter.statement.function.body.begin.php.7
+//  ^ punctuation.delimiter.function.parameters.end.php.7
+//   ^ punctuation.delimiter.function.body.begin.php.7
 //   ^^^^^ statement.function.body.php.7
 //    ^^^ statement.function.body.content.php.7
-//       ^ punctuation.delimiter.statement.function.body.end.php.7
+//       ^ punctuation.delimiter.function.body.end.php.7
 ?>

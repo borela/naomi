@@ -15,53 +15,70 @@
 <?php
     flush();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     ob_clean();
 //  ^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^ support.function.php.7
+//  ^^^^^^^^ entity.name.function.php.7
     ob_end_clean();
 //  ^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^ entity.name.function.php.7
     ob_end_flush();
 //  ^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^ entity.name.function.php.7
     ob_flush();
 //  ^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^ support.function.php.7
+//  ^^^^^^^^ entity.name.function.php.7
     ob_get_clean();
 //  ^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^ entity.name.function.php.7
     ob_get_contents();
 //  ^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^ entity.name.function.php.7
     ob_get_flush();
 //  ^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^ entity.name.function.php.7
     ob_get_length();
 //  ^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^ entity.name.function.php.7
     ob_get_level();
 //  ^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^ entity.name.function.php.7
     ob_get_status();
 //  ^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^ entity.name.function.php.7
     ob_gzhandler();
 //  ^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^ entity.name.function.php.7
     ob_implicit_flush();
 //  ^^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     ob_list_handlers();
 //  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^ entity.name.function.php.7
     ob_start();
 //  ^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^ support.function.php.7
+//  ^^^^^^^^ entity.name.function.php.7
     output_add_rewrite_var();
 //  ^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     output_reset_rewrite_vars();
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
 ?>

@@ -35,11 +35,11 @@ contexts:
     - match: "{"
       scope: >-
         statement.trait.body.php.7
-        punctuation.delimiter.statement.trait.body.begin.php.7
+        punctuation.delimiter.trait.body.begin.php.7
       set: body
     # Trait’s name.
     - match: "(?xi){{commonIdentifier}}"
-      scope: entity.name.statement.trait.php.7
+      scope: entity.name.trait.php.7
 
   body:
     - meta_content_scope: >-
@@ -50,7 +50,7 @@ contexts:
       scope: >-
         statement.trait.php.7
         statement.trait.body.php.7
-        punctuation.delimiter.statement.trait.body.end.php.7
+        punctuation.delimiter.trait.body.end.php.7
       pop: true
     - include: body-content
 

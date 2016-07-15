@@ -46,8 +46,8 @@ contexts:
         (?=\s*\()
       captures:
         0: expression.function.call.php.7
-        1: punctuation.delimiter.expression.support.function.php.7
-        2: entity.name.expression.support.function.php.7
+        1: punctuation.delimiter.support.function.php.7
+        2: entity.name.function.php.7
       set: arguments
 
   arguments:

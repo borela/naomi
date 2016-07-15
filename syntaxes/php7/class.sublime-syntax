@@ -41,12 +41,12 @@ contexts:
       push: implement-targets
     # Class’s name.
     - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.statement.class.php.7
+      scope: entity.name.class.php.7
     # Body.
     - match: \{
       scope: >-
         statement.class.body.php.7
-        punctuation.delimiter.statement.class.body.begin.php.7
+        punctuation.delimiter.class.body.begin.php.7
       set: body
 
   body:
@@ -58,7 +58,7 @@ contexts:
       scope: >-
         statement.class.php.7
         statement.class.body.php.7
-        punctuation.delimiter.statement.class.body.end.php.7
+        punctuation.delimiter.class.body.end.php.7
       pop: true
     # Body’s content.
     - match: (?=\S)
@@ -106,7 +106,7 @@ contexts:
   implement-target-delimiter:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: ","
-      scope: punctuation.delimiter.statement.implement.php.7
+      scope: punctuation.delimiter.implement.php.7
       pop: true
     - match: (?=\S)
       pop: true

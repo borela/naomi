@@ -20,13 +20,13 @@ scope: ...
 contexts:
   main:
     - match: \(
-      scope: punctuation.delimiter.expression.function.arguments.begin.php.7
+      scope: punctuation.delimiter.function.arguments.begin.php.7
       set: arguments
 
   arguments:
     - meta_scope: expression.function.call.php.7
     - match: \)
-      scope: punctuation.delimiter.expression.function.arguments.end.php.7
+      scope: punctuation.delimiter.function.arguments.end.php.7
       pop: true
     - match: (?=\S)
       push: argument
@@ -37,6 +37,6 @@ contexts:
     - match: \,
       scope: >-
         expression.function.call.php.7
-        punctuation.delimiter.expression.function.arguments.php.7
+        punctuation.delimiter.function.arguments.php.7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/expression.no-pop.sublime-syntax

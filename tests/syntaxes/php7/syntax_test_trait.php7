@@ -16,9 +16,9 @@
     trait MyTrait {
 //  ^^^^^^^^^^^^^^^ statement.trait.php.7
 //  ^^^^^ keyword.statement.trait.php.7
-//        ^^^^^^^ entity.name.statement.trait.php.7
+//        ^^^^^^^ entity.name.trait.php.7
 //                ^ statement.trait.body.php.7
-//                ^ punctuation.delimiter.statement.trait.body.begin.php.7
+//                ^ punctuation.delimiter.trait.body.begin.php.7
     Something...
 //  ^^^^^^^^^^^^ statement.trait.php.7
 //  ^^^^^^^^^^^^ statement.trait.body.php.7
@@ -26,14 +26,14 @@
     }
 //  ^ statement.trait.php.7
 //  ^ statement.trait.body.php.7
-//  ^ punctuation.delimiter.statement.trait.body.end.php.7
+//  ^ punctuation.delimiter.trait.body.end.php.7
 
     trait MyTrait {
 //  ^^^^^^^^^^^^^^^ statement.trait.php.7
 //  ^^^^^ keyword.statement.trait.php.7
-//        ^^^^^^^ entity.name.statement.trait.php.7
+//        ^^^^^^^ entity.name.trait.php.7
 //                ^ statement.trait.body.php.7
-//                ^ punctuation.delimiter.statement.trait.body.begin.php.7
+//                ^ punctuation.delimiter.trait.body.begin.php.7
     Something...
 //  ^^^^^^^^^^^^ statement.trait.php.7
 //  ^^^^^^^^^^^^ statement.trait.body.php.7
@@ -41,5 +41,5 @@
     }
 //  ^ statement.trait.php.7
 //  ^ statement.trait.body.php.7
-//  ^ punctuation.delimiter.statement.trait.body.end.php.7
+//  ^ punctuation.delimiter.trait.body.end.php.7
 ?>

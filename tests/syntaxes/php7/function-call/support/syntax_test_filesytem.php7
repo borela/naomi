@@ -15,245 +15,326 @@
 <?php
     basename();
 //  ^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^ support.function.php.7
+//  ^^^^^^^^ entity.name.function.php.7
     chgrp();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     chmod();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     chown();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     clearstatcache();
 //  ^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^ entity.name.function.php.7
     copy();
 //  ^^^^ expression.function.call.php.7
-//  ^^^^ entity.name.expression.support.function.php.7
+//  ^^^^ support.function.php.7
+//  ^^^^ entity.name.function.php.7
     delete();
 //  ^^^^^^ expression.function.call.php.7
-//  ^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^ support.function.php.7
+//  ^^^^^^ entity.name.function.php.7
     dirname();
 //  ^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^ support.function.php.7
+//  ^^^^^^^ entity.name.function.php.7
     disk_free_space();
 //  ^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^ entity.name.function.php.7
     disk_total_space();
 //  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^ entity.name.function.php.7
     diskfreespace();
 //  ^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^ entity.name.function.php.7
     fclose();
 //  ^^^^^^ expression.function.call.php.7
-//  ^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^ support.function.php.7
+//  ^^^^^^ entity.name.function.php.7
     feof();
 //  ^^^^ expression.function.call.php.7
-//  ^^^^ entity.name.expression.support.function.php.7
+//  ^^^^ support.function.php.7
+//  ^^^^ entity.name.function.php.7
     fflush();
 //  ^^^^^^ expression.function.call.php.7
-//  ^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^ support.function.php.7
+//  ^^^^^^ entity.name.function.php.7
     fgetc();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     fgetcsv();
 //  ^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^ support.function.php.7
+//  ^^^^^^^ entity.name.function.php.7
     fgets();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     fgetss();
 //  ^^^^^^ expression.function.call.php.7
-//  ^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^ support.function.php.7
+//  ^^^^^^ entity.name.function.php.7
     file_exists();
 //  ^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^ entity.name.function.php.7
     file_get_contents();
 //  ^^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     file_put_contents();
 //  ^^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     file();
 //  ^^^^ expression.function.call.php.7
-//  ^^^^ entity.name.expression.support.function.php.7
+//  ^^^^ support.function.php.7
+//  ^^^^ entity.name.function.php.7
     fileatime();
 //  ^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^ entity.name.function.php.7
     filectime();
 //  ^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^ entity.name.function.php.7
     filegroup();
 //  ^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^ entity.name.function.php.7
     fileinode();
 //  ^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^ entity.name.function.php.7
     filemtime();
 //  ^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^ entity.name.function.php.7
     fileowner();
 //  ^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^ entity.name.function.php.7
     fileperms();
 //  ^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^ entity.name.function.php.7
     filesize();
 //  ^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^ support.function.php.7
+//  ^^^^^^^^ entity.name.function.php.7
     filetype();
 //  ^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^ support.function.php.7
+//  ^^^^^^^^ entity.name.function.php.7
     flock();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     fnmatch();
 //  ^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^ support.function.php.7
+//  ^^^^^^^ entity.name.function.php.7
     fopen();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     fpassthru();
 //  ^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^ entity.name.function.php.7
     fputcsv();
 //  ^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^ support.function.php.7
+//  ^^^^^^^ entity.name.function.php.7
     fputs();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     fread();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     fscanf();
 //  ^^^^^^ expression.function.call.php.7
-//  ^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^ support.function.php.7
+//  ^^^^^^ entity.name.function.php.7
     fseek();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     fstat();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     ftell();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     ftruncate();
 //  ^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^ entity.name.function.php.7
     fwrite();
 //  ^^^^^^ expression.function.call.php.7
-//  ^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^ support.function.php.7
+//  ^^^^^^ entity.name.function.php.7
     glob();
 //  ^^^^ expression.function.call.php.7
-//  ^^^^ entity.name.expression.support.function.php.7
+//  ^^^^ support.function.php.7
+//  ^^^^ entity.name.function.php.7
     is_dir();
 //  ^^^^^^ expression.function.call.php.7
-//  ^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^ support.function.php.7
+//  ^^^^^^ entity.name.function.php.7
     is_executable();
 //  ^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^ entity.name.function.php.7
     is_file();
 //  ^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^ support.function.php.7
+//  ^^^^^^^ entity.name.function.php.7
     is_link();
 //  ^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^ support.function.php.7
+//  ^^^^^^^ entity.name.function.php.7
     is_readable();
 //  ^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^ entity.name.function.php.7
     is_uploaded_file();
 //  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^ entity.name.function.php.7
     is_writable();
 //  ^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^ entity.name.function.php.7
     is_writeable();
 //  ^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^ entity.name.function.php.7
     lchgrp();
 //  ^^^^^^ expression.function.call.php.7
-//  ^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^ support.function.php.7
+//  ^^^^^^ entity.name.function.php.7
     lchown();
 //  ^^^^^^ expression.function.call.php.7
-//  ^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^ support.function.php.7
+//  ^^^^^^ entity.name.function.php.7
     link();
 //  ^^^^ expression.function.call.php.7
-//  ^^^^ entity.name.expression.support.function.php.7
+//  ^^^^ support.function.php.7
+//  ^^^^ entity.name.function.php.7
     linkinfo();
 //  ^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^ support.function.php.7
+//  ^^^^^^^^ entity.name.function.php.7
     lstat();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     mkdir();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     move_uploaded_file();
 //  ^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     parse_ini_file();
 //  ^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^ entity.name.function.php.7
     parse_ini_string();
 //  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^ entity.name.function.php.7
     pathinfo();
 //  ^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^ support.function.php.7
+//  ^^^^^^^^ entity.name.function.php.7
     pclose();
 //  ^^^^^^ expression.function.call.php.7
-//  ^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^ support.function.php.7
+//  ^^^^^^ entity.name.function.php.7
     popen();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     readfile();
 //  ^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^ support.function.php.7
+//  ^^^^^^^^ entity.name.function.php.7
     readlink();
 //  ^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^ support.function.php.7
+//  ^^^^^^^^ entity.name.function.php.7
     realpath_cache_get();
 //  ^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     realpath_cache_size();
 //  ^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     realpath();
 //  ^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^ support.function.php.7
+//  ^^^^^^^^ entity.name.function.php.7
     rename();
 //  ^^^^^^ expression.function.call.php.7
-//  ^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^ support.function.php.7
+//  ^^^^^^ entity.name.function.php.7
     rewind();
 //  ^^^^^^ expression.function.call.php.7
-//  ^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^ support.function.php.7
+//  ^^^^^^ entity.name.function.php.7
     rmdir();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     set_file_buffer();
 //  ^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^ entity.name.function.php.7
     stat();
 //  ^^^^ expression.function.call.php.7
-//  ^^^^ entity.name.expression.support.function.php.7
+//  ^^^^ support.function.php.7
+//  ^^^^ entity.name.function.php.7
     symlink();
 //  ^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^ support.function.php.7
+//  ^^^^^^^ entity.name.function.php.7
     tempnam();
 //  ^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^ support.function.php.7
+//  ^^^^^^^ entity.name.function.php.7
     tmpfile();
 //  ^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^ support.function.php.7
+//  ^^^^^^^ entity.name.function.php.7
     touch();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     umask();
 //  ^^^^^ expression.function.call.php.7
-//  ^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^ support.function.php.7
+//  ^^^^^ entity.name.function.php.7
     unlink();
 //  ^^^^^^ expression.function.call.php.7
-//  ^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^ support.function.php.7
+//  ^^^^^^ entity.name.function.php.7
 ?>

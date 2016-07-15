@@ -32,9 +32,9 @@ contexts:
     - meta_scope: statement.import.php.7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: \,
-      scope: punctuation.delimiter.statement.import.php.7
+      scope: punctuation.delimiter.import.php.7
     - match: ;
-      scope: punctuation.delimiter.statement.import.end.php.7
+      scope: punctuation.delimiter.import.end.php.7
       pop: true
     - match: ""
       push: [
@@ -81,5 +81,5 @@ contexts:
     - match: (?=;)
       pop: true
     - match: "(?xi){{commonIdentifier}}"
-      scope: entity.name.statement.import.alias.php.7
+      scope: entity.name.alias.php.7
       pop: true

@@ -50,7 +50,7 @@ contexts:
 
   function:
     - match: (?xi){{commonIdentifier}}
-      scope: entity.name.statement.function.php.7
+      scope: entity.name.function.php.7
       pop: true
 
   covers:

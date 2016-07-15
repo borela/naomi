@@ -15,53 +15,70 @@
 <?php
     class_alias ();
 //  ^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^ entity.name.function.php.7
     class_exists ();
 //  ^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^ entity.name.function.php.7
     get_called_class ();
 //  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_class_methods ();
 //  ^^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_class_vars ();
 //  ^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^ entity.name.function.php.7
     get_class ();
 //  ^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^ entity.name.function.php.7
     get_declared_classes ();
 //  ^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_declared_interfaces ();
 //  ^^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_declared_traits ();
 //  ^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_object_vars ();
 //  ^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_parent_class ();
 //  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^ entity.name.function.php.7
     interface_exists ();
 //  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^^ entity.name.function.php.7
     is_a ();
 //  ^^^^ expression.function.call.php.7
-//  ^^^^ entity.name.expression.support.function.php.7
+//  ^^^^ support.function.php.7
+//  ^^^^ entity.name.function.php.7
     is_subclass_of ();
 //  ^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^ entity.name.function.php.7
     method_exists ();
 //  ^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^ entity.name.function.php.7
     property_exists ();
 //  ^^^^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^^^^ entity.name.function.php.7
     trait_exists ();
 //  ^^^^^^^^^^^^ expression.function.call.php.7
-//  ^^^^^^^^^^^^ entity.name.expression.support.function.php.7
+//  ^^^^^^^^^^^^ support.function.php.7
+//  ^^^^^^^^^^^^ entity.name.function.php.7
 ?>

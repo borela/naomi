@@ -35,13 +35,13 @@ contexts:
     - match: ;
       scope: >-
         statement.namespace.body.php.7
-        punctuation.delimiter.statement.namespace.body.begin.php.7
+        punctuation.delimiter.namespace.body.begin.php.7
       set: implicit-body
     # Bracketed body.
     - match: "{"
       scope: >-
         statement.namespace.body.php.7
-        punctuation.delimiter.statement.namespace.body.begin.php.7
+        punctuation.delimiter.namespace.body.begin.php.7
       set: bracketed-body
     # namespace’s path.
     - include: Packages/Naomi/syntaxes/php7/namespace/path.sublime-syntax
@@ -92,7 +92,7 @@ contexts:
       scope: >-
         statement.namespace.php.7
         statement.namespace.body.php.7
-        punctuation.delimiter.statement.namespace.body.end.php.7
+        punctuation.delimiter.namespace.body.end.php.7
       pop: true
     - include: bracketed-body-content
 

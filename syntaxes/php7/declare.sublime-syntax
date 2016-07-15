@@ -31,12 +31,12 @@ contexts:
   declaration:
     - meta_scope: statement.declare.php.7
     - match: \(
-      scope: punctuation.delimiter.statement.declare.parameters.begin.php.7
+      scope: punctuation.delimiter.declare.parameters.begin.php.7
       push: parameters
     - match: \)
       scope: >-
         statement.declare.parameters.php.7
-        punctuation.delimiter.statement.declare.parameters.end.php.7
+        punctuation.delimiter.declare.parameters.end.php.7
       set: body
 
   parameters:
@@ -77,10 +77,10 @@ contexts:
         statement.declare.php.7
         statement.declare.body.php.7
     - match: ;
-      scope: punctuation.delimiter.statement.declare.body.begin.php.7
+      scope: punctuation.delimiter.declare.body.begin.php.7
       set: implicit-body
     - match: \{
-      scope: punctuation.delimiter.statement.declare.body.begin.php.7
+      scope: punctuation.delimiter.declare.body.begin.php.7
       set: bracketed-body
 
   body-content:
@@ -125,7 +125,7 @@ contexts:
       scope: >-
         statement.declare.php.7
         statement.declare.body.php.7
-        punctuation.delimiter.statement.declare.body.end.php.7
+        punctuation.delimiter.declare.body.end.php.7
       pop: true
     - include: bracketed-body-content
 

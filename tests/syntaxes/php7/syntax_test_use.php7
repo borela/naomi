@@ -16,59 +16,59 @@
     use \Namespace\Namespace\Target;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.statement.import.php.7
-//      ^ punctuation.delimiter.statement.namespace.a.php.7
-//                ^ punctuation.delimiter.statement.namespace.b.php.7
+//      ^ punctuation.delimiter.namespace.a.php.7
+//                ^ punctuation.delimiter.namespace.b.php.7
 //                          ^ punctuation.delimiter.type.php.7
-//                                 ^ punctuation.delimiter.statement.import.end.php.7
-//       ^^^^^^^^^ entity.name.statement.namespace.a.php.7
-//                 ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                 ^ punctuation.delimiter.import.end.php.7
+//       ^^^^^^^^^ entity.name.namespace.a.php.7
+//                 ^^^^^^^^^ entity.name.namespace.b.php.7
 //                           ^^^^^ entity.name.type.php.7
 
     use \Namespace\Namespace\Target as Alias;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.statement.import.php.7
 //                                  ^^ keyword.statement.import.alias.php.7
-//      ^ punctuation.delimiter.statement.namespace.a.php.7
-//                ^ punctuation.delimiter.statement.namespace.b.php.7
+//      ^ punctuation.delimiter.namespace.a.php.7
+//                ^ punctuation.delimiter.namespace.b.php.7
 //                          ^ punctuation.delimiter.type.php.7
-//                                          ^ punctuation.delimiter.statement.import.end.php.7
-//       ^^^^^^^^^ entity.name.statement.namespace.a.php.7
-//                 ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                          ^ punctuation.delimiter.import.end.php.7
+//       ^^^^^^^^^ entity.name.namespace.a.php.7
+//                 ^^^^^^^^^ entity.name.namespace.b.php.7
 //                           ^^^^^ entity.name.type.php.7
-//                                     ^^^^^ entity.name.statement.import.alias.php.7
+//                                     ^^^^^ entity.name.alias.php.7
 
     use Namespace\Namespace\Target;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.statement.import.php.7
-//               ^ punctuation.delimiter.statement.namespace.b.php.7
+//               ^ punctuation.delimiter.namespace.b.php.7
 //                         ^ punctuation.delimiter.type.php.7
-//                                ^ punctuation.delimiter.statement.import.end.php.7
-//      ^^^^^^^^^ entity.name.statement.namespace.a.php.7
-//                ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                ^ punctuation.delimiter.import.end.php.7
+//      ^^^^^^^^^ entity.name.namespace.a.php.7
+//                ^^^^^^^^^ entity.name.namespace.b.php.7
 //                          ^^^^^ entity.name.type.php.7
 
     use Namespace\Namespace\Target as Alias;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.statement.import.php.7
 //                                 ^^ keyword.statement.import.alias.php.7
-//               ^ punctuation.delimiter.statement.namespace.b.php.7
+//               ^ punctuation.delimiter.namespace.b.php.7
 //                         ^ punctuation.delimiter.type.php.7
-//                                         ^ punctuation.delimiter.statement.import.end.php.7
-//      ^^^^^^^^^ entity.name.statement.namespace.a.php.7
-//                ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                         ^ punctuation.delimiter.import.end.php.7
+//      ^^^^^^^^^ entity.name.namespace.a.php.7
+//                ^^^^^^^^^ entity.name.namespace.b.php.7
 //                          ^^^^^ entity.name.type.php.7
-//                                    ^^^^^ entity.name.statement.import.alias.php.7
+//                                    ^^^^^ entity.name.alias.php.7
 
     use function \Namespace\Namespace\MyFunction;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.statement.import.php.7
 //      ^^^^^^^^ keyword.statement.import.function.php.7
-//               ^ punctuation.delimiter.statement.namespace.a.php.7
-//                         ^ punctuation.delimiter.statement.namespace.b.php.7
+//               ^ punctuation.delimiter.namespace.a.php.7
+//                         ^ punctuation.delimiter.namespace.b.php.7
 //                                   ^ punctuation.delimiter.type.php.7
-//                                              ^ punctuation.delimiter.statement.import.end.php.7
-//                ^^^^^^^^^ entity.name.statement.namespace.a.php.7
-//                          ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                              ^ punctuation.delimiter.import.end.php.7
+//                ^^^^^^^^^ entity.name.namespace.a.php.7
+//                          ^^^^^^^^^ entity.name.namespace.b.php.7
 //                                    ^^^^^^^^^^ entity.name.type.php.7
 
     use function \Namespace\Namespace\MyFunction as Alias;
@@ -76,24 +76,24 @@
 //  ^^^ keyword.statement.import.php.7
 //      ^^^^^^^^ keyword.statement.import.function.php.7
 //                                               ^^ keyword.statement.import.alias.php.7
-//               ^ punctuation.delimiter.statement.namespace.a.php.7
-//                         ^ punctuation.delimiter.statement.namespace.b.php.7
+//               ^ punctuation.delimiter.namespace.a.php.7
+//                         ^ punctuation.delimiter.namespace.b.php.7
 //                                   ^ punctuation.delimiter.type.php.7
-//                                                       ^ punctuation.delimiter.statement.import.end.php.7
-//                ^^^^^^^^^ entity.name.statement.namespace.a.php.7
-//                          ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                                       ^ punctuation.delimiter.import.end.php.7
+//                ^^^^^^^^^ entity.name.namespace.a.php.7
+//                          ^^^^^^^^^ entity.name.namespace.b.php.7
 //                                    ^^^^^^^^^ entity.name.type.php.7
-//                                                  ^^^^^ entity.name.statement.import.alias.php.7
+//                                                  ^^^^^ entity.name.alias.php.7
 
     use function Namespace\Namespace\MyFunction;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.statement.import.php.7
 //      ^^^^^^^^ keyword.statement.import.function.php.7
-//                        ^ punctuation.delimiter.statement.namespace.b.php.7
+//                        ^ punctuation.delimiter.namespace.b.php.7
 //                                  ^ punctuation.delimiter.type.php.7
-//                                             ^ punctuation.delimiter.statement.import.end.php.7
-//               ^^^^^^^^^ entity.name.statement.namespace.a.php.7
-//                         ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                             ^ punctuation.delimiter.import.end.php.7
+//               ^^^^^^^^^ entity.name.namespace.a.php.7
+//                         ^^^^^^^^^ entity.name.namespace.b.php.7
 //                                   ^^^^^^^^^^ entity.name.type.php.7
 
     use function Namespace\Namespace\MyFunction as Alias;
@@ -101,24 +101,24 @@
 //  ^^^ keyword.statement.import.php.7
 //      ^^^^^^^^ keyword.statement.import.function.php.7
 //                                              ^^ keyword.statement.import.alias.php.7
-//                        ^ punctuation.delimiter.statement.namespace.b.php.7
+//                        ^ punctuation.delimiter.namespace.b.php.7
 //                                  ^ punctuation.delimiter.type.php.7
-//                                                      ^ punctuation.delimiter.statement.import.end.php.7
-//               ^^^^^^^^^ entity.name.statement.namespace.a.php.7
-//                         ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                                      ^ punctuation.delimiter.import.end.php.7
+//               ^^^^^^^^^ entity.name.namespace.a.php.7
+//                         ^^^^^^^^^ entity.name.namespace.b.php.7
 //                                   ^^^^^^^^^^ entity.name.type.php.7
-//                                                 ^^^^^ entity.name.statement.import.alias.php.7
+//                                                 ^^^^^ entity.name.alias.php.7
 
     use const \Namespace\Namespace\MyConstant;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.statement.import.php.7
 //      ^^^^^ keyword.statement.import.constant.php.7
-//            ^ punctuation.delimiter.statement.namespace.a.php.7
-//                      ^ punctuation.delimiter.statement.namespace.b.php.7
+//            ^ punctuation.delimiter.namespace.a.php.7
+//                      ^ punctuation.delimiter.namespace.b.php.7
 //                                ^ punctuation.delimiter.type.php.7
-//                                           ^ punctuation.delimiter.statement.import.end.php.7
-//             ^^^^^^^^^ entity.name.statement.namespace.a.php.7
-//                       ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                           ^ punctuation.delimiter.import.end.php.7
+//             ^^^^^^^^^ entity.name.namespace.a.php.7
+//                       ^^^^^^^^^ entity.name.namespace.b.php.7
 //                                 ^^^^^^^^^^ entity.name.type.php.7
 
     use const \Namespace\Namespace\MyConstant as Alias;
@@ -126,24 +126,24 @@
 //  ^^^ keyword.statement.import.php.7
 //      ^^^^^ keyword.statement.import.constant.php.7
 //                                            ^^ keyword.statement.import.alias.php.7
-//            ^ punctuation.delimiter.statement.namespace.a.php.7
-//                      ^ punctuation.delimiter.statement.namespace.b.php.7
+//            ^ punctuation.delimiter.namespace.a.php.7
+//                      ^ punctuation.delimiter.namespace.b.php.7
 //                                ^ punctuation.delimiter.type.php.7
-//                                                    ^ punctuation.delimiter.statement.import.end.php.7
-//             ^^^^^^^^^ entity.name.statement.namespace.a.php.7
-//                       ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                                    ^ punctuation.delimiter.import.end.php.7
+//             ^^^^^^^^^ entity.name.namespace.a.php.7
+//                       ^^^^^^^^^ entity.name.namespace.b.php.7
 //                                 ^^^^^^^^^^ entity.name.type.php.7
-//                                               ^^^^^ entity.name.statement.import.alias.php.7
+//                                               ^^^^^ entity.name.alias.php.7
 
     use const Namespace\Namespace\MyConstant;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.statement.import.php.7
 //      ^^^^^ keyword.statement.import.constant.php.7
-//                     ^ punctuation.delimiter.statement.namespace.b.php.7
+//                     ^ punctuation.delimiter.namespace.b.php.7
 //                               ^ punctuation.delimiter.type.php.7
-//                                          ^ punctuation.delimiter.statement.import.end.php.7
-//            ^^^^^^^^^ entity.name.statement.namespace.a.php.7
-//                      ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                          ^ punctuation.delimiter.import.end.php.7
+//            ^^^^^^^^^ entity.name.namespace.a.php.7
+//                      ^^^^^^^^^ entity.name.namespace.b.php.7
 //                                ^^^^^^^^^^ entity.name.type.php.7
 
     use const Namespace\Namespace\MyConstant as Alias;
@@ -151,11 +151,11 @@
 //  ^^^ keyword.statement.import.php.7
 //      ^^^^^ keyword.statement.import.constant.php.7
 //                                           ^^ keyword.statement.import.alias.php.7
-//                     ^ punctuation.delimiter.statement.namespace.b.php.7
+//                     ^ punctuation.delimiter.namespace.b.php.7
 //                               ^ punctuation.delimiter.type.php.7
-//                                                   ^ punctuation.delimiter.statement.import.end.php.7
-//            ^^^^^^^^^ entity.name.statement.namespace.a.php.7
-//                      ^^^^^^^^^ entity.name.statement.namespace.b.php.7
+//                                                   ^ punctuation.delimiter.import.end.php.7
+//            ^^^^^^^^^ entity.name.namespace.a.php.7
+//                      ^^^^^^^^^ entity.name.namespace.b.php.7
 //                                ^^^^^^^^^^ entity.name.type.php.7
-//                                              ^^^^^ entity.name.statement.import.alias.php.7
+//                                              ^^^^^ entity.name.alias.php.7
 ?>

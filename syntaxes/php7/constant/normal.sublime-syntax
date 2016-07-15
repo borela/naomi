@@ -26,6 +26,12 @@ contexts:
   main:
     - match: |
         (?x)
-        \b{{constantIdentifier}}\b
-      scope: constant.php.7
+        ((?>\\|\b))
+        (
+          {{constantIdentifier}}
+        )\b
+      captures:
+        0: constant.php.7
+        1: punctuation.delimiter.constant.php.7
+        2: entity.name.constant.php.7
       pop: true

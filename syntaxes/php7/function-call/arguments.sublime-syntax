@@ -19,16 +19,16 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*\(
+    - match: \(
       scope: punctuation.delimiter.function.arguments.begin.php.7
       set: arguments
 
   arguments:
     - meta_scope: expression.function.call.php.7
-    - match: \s*\)
+    - match: \)
       scope: punctuation.delimiter.function.arguments.end.php.7
       pop: true
-    - match: \s*\,
+    - match: \,
       scope: >-
         expression.function.call.php.7
         punctuation.delimiter.function.arguments.php.7

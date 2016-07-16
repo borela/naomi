@@ -19,13 +19,13 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(;)
+    - match: (;)
       captures:
         1: punctuation.terminator.php.7
       pop: true
     - match: |
         (?x)
-        (?=\s*
+        (?=
           (?> \,
             | \)
             | \{
@@ -37,7 +37,7 @@ contexts:
     - include: content
 
   content:
-    - match: ""
+    - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax

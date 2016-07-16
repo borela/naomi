@@ -25,11 +25,11 @@ contexts:
   main:
     # Normal open tag.
     - match: <\?php
-      scope: punctuation.embedded.begin.php.7
+      scope: keyword.embedded.begin.php.7
       set: embedded
     # Short open tag.
     - match: <\?=
-      scope: punctuation.embedded.begin.php.7
+      scope: keyword.embedded.begin.php.7
       set: embedded-short
 
   embedded:
@@ -48,10 +48,12 @@ contexts:
 
   content:
     - match: \?>
-      scope: punctuation.embedded.end.php.7
+      scope: keyword.embedded.end.php.7
       pop: true
-
     - match: (?=\S)
+      with_prototype:
+        - match: (?=\?>)
+          pop: true
       push:
         - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax

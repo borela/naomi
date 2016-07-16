@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?xi)\s*\b
+        (?xi)\b
         (?> if
           | else(?:if)?
           | for(?:each)?

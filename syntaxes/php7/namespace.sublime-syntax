@@ -15,11 +15,6 @@
 
 hidden: true
 
-variables:
-  commonIdentifier: |
-    [a-z\x{7f}-\x{ff}_]
-    [a-z\x{7f}-\x{ff}0-9_]*
-
 scope: ...
 
 contexts:
@@ -30,7 +25,6 @@ contexts:
 
   declaration:
     - meta_scope: statement.namespace.php.7
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     # Implicit body.
     - match: ;
       scope: >-
@@ -47,42 +41,26 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/namespace/path.sublime-syntax
 
   body-content:
-    - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/statement.no-pop.sublime-syntax
 
   implicit-body:
     - meta_content_scope: >-
         statement.namespace.php.7
         statement.namespace.body.php.7
         statement.namespace.body.content.php.7
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: (?=\bnamespace\b)
       pop: true
-    - include: implicity-body-content
-
-  implicity-body-content:
-    - match: (?=\S)
-      push:
-        - include: body-content
-        - match: (?=\bnamespace\b)
-          pop: true
+    - include: body-content
 
   bracketed-body:
     - meta_content_scope: >-
         statement.namespace.php.7
         statement.namespace.body.php.7
         statement.namespace.body.content.php.7
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: "}"
       scope: >-
         statement.namespace.php.7
         statement.namespace.body.php.7
         punctuation.delimiter.namespace.body.end.php.7
       pop: true
-    - include: bracketed-body-content
-
-  bracketed-body-content:
-    - match: (?=\S)
-      push:
-        - include: body-content
-        - match: (?=\})
-          pop: true
+    - include: body-content

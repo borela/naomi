@@ -162,7 +162,7 @@
                 <string>Inherited type</string>
 
                 <key>scope</key>
-                <string>inherit entity.name.type</string>
+                <string>inherit entity.name.type, inherit punctuation.delimiter.type</string>
 
                 <key>settings</key>
                 <dict>
@@ -176,7 +176,7 @@
                 <string>Implemented interface</string>
 
                 <key>scope</key>
-                <string>implement entity.name.type</string>
+                <string>implement entity.name.type, implement punctuation.delimiter.type</string>
 
                 <key>settings</key>
                 <dict>

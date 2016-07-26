@@ -30,5 +30,57 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/member-variable.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/bodied-statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/simple-statement.sublime-syntax
+    - include: bodied-statement
+    - include: simple-statement
+
+  expression:
+    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+
+  simple-statement:
+    - match: |
+        (?xi)\b
+        (?> break
+          | case
+          | const
+          | continue
+          | default
+          | goto
+          | return
+          | throw
+          | yield(\s+from)?
+        )\b
+      scope: keyword.control.simple.php.7
+      set: expression
+
+  bodied-statement:
+    - match: |
+        (?xi)\b
+        (?> if
+          | else(?:if)?
+          | for(?:each)?
+          | do
+          | while
+          | try
+          | catch
+          | finally
+          | switch
+        )\b
+      scope: keyword.control.php.7
+      push: [
+        body,
+        expression
+      ]
+
+  body:
+    - match: \{
+      scope: punctuation.delimiter.control.body.begin.php.7
+      set: body-content
+
+  body-content:
+    - match: \}
+      scope: punctuation.delimiter.control.body.end.php.7
+      pop: true
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax

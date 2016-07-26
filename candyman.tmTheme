@@ -103,6 +103,23 @@
 
             <dict>
                 <key>name</key>
+                <string>Parenthesis B</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.expression.group.b</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#bcaaa4</string>
+
+                    <key>fontStyle</key>
+                    <string>bold</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Keyword</string>
 
                 <key>scope</key>
@@ -641,7 +658,7 @@
                 <string>Comment’s variable</string>
 
                 <key>scope</key>
-                <string>comment variable</string>
+                <string>comment variable, comment entity.name.variable</string>
 
                 <key>settings</key>
                 <dict>

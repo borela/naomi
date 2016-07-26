@@ -33,7 +33,7 @@ contexts:
           )
         )
       pop: true
-    - include: balance-parenthesis
+    - include: balance-parenthesis-a
     - include: content
 
   content:
@@ -51,9 +51,20 @@ contexts:
         - match: ""
           pop: true
 
-  balance-parenthesis:
+  balance-parenthesis-a:
     - match: \(
-      push: balance-parenthesis
+      scope: punctuation.delimiter.expression.group.a.begin.php.7
+      push: balance-parenthesis-b
     - match: \)
+      scope: punctuation.delimiter.expression.group.b.end.php.7
+      pop: true
+    - include: content
+
+  balance-parenthesis-b:
+    - match: \(
+      scope: punctuation.delimiter.expression.group.b.begin.php.7
+      push: balance-parenthesis-a
+    - match: \)
+      scope: punctuation.delimiter.expression.group.a.end.php.7
       pop: true
     - include: content

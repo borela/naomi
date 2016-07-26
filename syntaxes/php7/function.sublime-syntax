@@ -51,7 +51,6 @@ contexts:
       pop: true
     - include: Packages/Naomi/syntaxes/php7/modifier.no-pop.sublime-syntax
 
-
   name:
     - include: Packages/Naomi/syntaxes/php7/function/support/magic.sublime-syntax
     - match: (?xi)\b{{commonIdentifier}}\b
@@ -67,8 +66,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/function/return-type-hint.sublime-syntax
 
   body:
-    - meta_scope: statement.function.body.php.7
-    - meta_content_scope: statement.function.body.content.php.7
+    - meta_scope: statement.function.php.7
     # Function without body.
     - match: ;
       scope: punctuation.delimiter.function.declaration.end.php.7
@@ -79,6 +77,10 @@ contexts:
       set: body-content
 
   body-content:
+    - meta_scope: >-
+        statement.function.php.7
+        statement.function.body.php.7
+    - meta_content_scope: statement.function.body.content.php.7
     - match: \}
       scope: punctuation.delimiter.function.body.end.php.7
       pop: true

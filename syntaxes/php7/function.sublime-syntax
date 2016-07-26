@@ -38,7 +38,10 @@ contexts:
           function\b
         )
       set: [
-        declaration,
+        body,
+        optional-return-type-hint,
+        parameters,
+        name,
         keyword
       ]
 
@@ -48,220 +51,37 @@ contexts:
       pop: true
     - include: Packages/Naomi/syntaxes/php7/modifier.no-pop.sublime-syntax
 
-  declaration:
-    - meta_scope: statement.function.php.7
+
+  name:
+    - include: Packages/Naomi/syntaxes/php7/function/support/magic.sublime-syntax
+    - match: (?xi)\b{{commonIdentifier}}\b
+      scope: entity.name.function.php.7
+      pop: true
+
+  parameters:
+    - include: Packages/Naomi/syntaxes/php7/function/parameters.sublime-syntax
+
+  optional-return-type-hint:
+    - match: (?=;|{)
+      pop: true
+    - include: Packages/Naomi/syntaxes/php7/function/return-type-hint.sublime-syntax
+
+  body:
+    - meta_scope: statement.function.body.php.7
+    - meta_content_scope: statement.function.body.content.php.7
     # Function without body.
     - match: ;
       scope: punctuation.delimiter.function.declaration.end.php.7
       pop: true
-    # Function’s name.
-    - include: magic-method
-    - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.function.php.7
-    # Parameters, imported variables and return type.
-    - match: \(
-      scope: punctuation.delimiter.function.parameters.begin.php.7
-      push: [
-        return-type-hint,
-        possible-imported-variables,
-        parameters
-      ]
-    # Body.
+    # Normal body.
     - match: \{
-      scope: >-
-        statement.function.body.php.7
-        punctuation.delimiter.function.body.begin.php.7
-      set: body
-
-  magic-method:
-    - match: |
-        (?x)
-        (?> __construct
-          | __destruct
-          | __call(?:Static)?
-          | __get
-          | __set(?:_state)?
-          | __isset
-          | __unset
-          | __sleep
-          | __wakeup
-          | __toString
-          | __invoke
-          | __clone
-          | __debugInfo
-        )
-      scope: >-
-        support.function.php.7
-        entity.name.function.php.7
-
-  parameters:
-    - meta_scope: statement.function.parameters.php.7
-    - meta_content_scope: statement.function.parameters.content.php.7
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: \)
-      scope: punctuation.delimiter.function.parameters.end.php.7
-      pop: true
-    # Starts with a variable.
-    - match: (?=\$)
-      push: [
-        param-delimiter,
-        param-optional-default-value,
-        param-variable
-      ]
-    # Starts with a variadic or reference operator.
-    - match: (?=\.\.\.|&)
-      push: [
-        param-delimiter,
-        param-optional-default-value,
-        param-variable,
-        variadic-or-reference-operator
-      ]
-    # Starts with a type hint.
-    - match: (?=\S)
-      push: [
-        param-delimiter,
-        param-optional-default-value,
-        param-variable,
-        variadic-or-reference-operator,
-        variable-type
-      ]
-
-  possible-imported-variables:
-    - match: (?=;|:|{)
-      pop: true
-    - match: use
-      scope: keyword.import.variable.php.7
-      set: imported-variables-begin
-
-  imported-variables-begin:
-    - match: \(
-      scope: punctuation.delimiter.imported.variables.begin.php.7
-      set: imported-variables
-
-  imported-variables:
-    - meta_scope: statement.function.imported.variables.php.7
-    - meta_content_scope: statement.function.imported.variables.content.php.7
-    - match: \)
-      scope: punctuation.delimiter.imported.variables.end.php.7
-      pop: true
-    # Starts with a variable.
-    - match: (?=\$)
-      push: [
-        target-delimiter,
-        target-variable,
-      ]
-    # Starts with a reference operator.
-    - match: (?=&)
-      push: [
-        target-delimiter,
-        target-variable,
-        reference-operator
-      ]
-
-  reference-operator:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?=\$)
-      pop: true
-    - match: \&
-      scope: keyword.operator.reference.php.7
-      pop: true
-
-  variable-type:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
-
-  variadic-or-reference-operator:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?=\$)
-      pop: true
-    - match: \&
-      scope: keyword.operator.reference.php.7
-      pop: true
-    - match: \.\.\.
-      scope: keyword.operator.variadic.php.7
-      pop: true
-
-  target-delimiter:
-    - include: param-delimiter
-
-  target-variable:
-    - include: param-variable
-
-  param-variable:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
-
-  param-optional-default-value:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?=,|\))
-      pop: true
-    - match: \=
-      scope: keyword.operator.php.7
-      set: param-default-value
-
-  param-default-value:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?=,|\))
-      pop: true
-    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
-    # Constant inside statement.class.
-    - match: |
-        (?xi)
-        (?={{commonIdentifier}})
-      push: [
-        default-value-constant,
-        default-value-scope-operator,
-        default-value-type
-      ]
-
-  default-value-type:
-    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
-
-  default-value-scope-operator:
-    - match: "::"
-      scope: keyword.operator.scope.resolution.php.7
-      pop: true
-
-  default-value-constant:
-    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-
-  param-delimiter:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?=\))
-      pop: true
-    - match: ","
-      scope: punctuation.delimiter.function.parameters.php.7
-      pop: true
-
-  return-type-hint:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?={|;)
-      pop: true
-    - match: ":"
-      scope: punctuation.delimiter.function.php.7
-      set: return-type
-
-  return-type:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?={|;)
-      pop: true
-    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
-
-  body:
-    - meta_content_scope: >-
-        statement.function.php.7
-        statement.function.body.php.7
-        statement.function.body.content.php.7
-    - match: \}
-      scope: >-
-        statement.function.php.7
-        statement.function.body.php.7
-        punctuation.delimiter.function.body.end.php.7
-      pop: true
-    - include: body-content
+      scope: punctuation.delimiter.function.body.begin.php.7
+      set: body-content
 
   body-content:
+    - match: \}
+      scope: punctuation.delimiter.function.body.end.php.7
+      pop: true
     - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax

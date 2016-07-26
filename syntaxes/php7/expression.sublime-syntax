@@ -44,6 +44,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/new.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/closure.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax

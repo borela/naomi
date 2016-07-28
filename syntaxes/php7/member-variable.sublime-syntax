@@ -28,6 +28,7 @@ contexts:
               | public
             )\s+
           )?
+          (?:static\s+)?
           \s*\$
         )
       set: [

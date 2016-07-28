@@ -137,7 +137,7 @@
                 <string>Built-in types, constants, functions and variables</string>
 
                 <key>scope</key>
-                <string>support entity.name.type, support punctuation.delimiter.type, support entity.name.constant, support entity.name.function, support entity.name.variable, support punctuation.variable</string>
+                <string>support entity.name.type, support punctuation.delimiter.type, support entity.name.constant, support entity.name.function, support.variable entity.name.variable, support.variable punctuation.variable</string>
 
                 <key>settings</key>
                 <dict>

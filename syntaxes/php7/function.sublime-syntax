@@ -73,16 +73,21 @@ contexts:
       pop: true
     # Normal body.
     - match: \{
-      scope: punctuation.delimiter.function.body.begin.php.7
+      scope: >-
+        statement.function.body.php.7
+        punctuation.delimiter.function.body.begin.php.7
       set: body-content
 
   body-content:
-    - meta_scope: >-
+    - meta_content_scope: >-
         statement.function.php.7
         statement.function.body.php.7
-    - meta_content_scope: statement.function.body.content.php.7
+        statement.function.body.content.php.7
     - match: \}
-      scope: punctuation.delimiter.function.body.end.php.7
+      scope: >-
+        statement.function.php.7
+        statement.function.body.php.7
+        punctuation.delimiter.function.body.end.php.7
       pop: true
     - match: (?=\S)
       push:

@@ -27,16 +27,8 @@ variables:
   unicodeEscapedChar: |
     \\u\{[a-f0-9]+\}
 
-  doubleQuotedEscapeSequences: |
-    (?> \\\\
-      | \\"
-      | \\n
-      | \\r
-      | \\t
-      | \\v
-      | \\e
-      | \\f
-      | \\\$
+  heredocEscapeSequences: |
+    (?> \\[\\nrtvef$]
       | {{octalEscapedChar}}
       | {{hexEscapedChar}}
       | {{unicodeEscapedChar}}
@@ -67,13 +59,13 @@ contexts:
             string.unquoted.heredoc.php.7
             punctuation.delimiter.string.end.php.7
           pop: true
-      set: escape-a-variable-a
+      push: escape-a-variable-a
 
   escape-a-variable-a:
     - meta_content_scope: >-
         string.unquoted.heredoc.php.7
         string.content.php.7
-    - match: (?x)(?={{doubleQuotedEscapeSequences}})
+    - match: (?x)(?={{heredocEscapeSequences}})
       set: [
         escape-b-variable-a,
         escape-a
@@ -88,7 +80,7 @@ contexts:
     - meta_content_scope: >-
         string.unquoted.heredoc.php.7
         string.content.php.7
-    - match: (?x)(?={{doubleQuotedEscapeSequences}})
+    - match: (?x)(?={{heredocEscapeSequences}})
       set: [
         escape-a-variable-a,
         escape-b
@@ -103,7 +95,7 @@ contexts:
     - meta_content_scope: >-
         string.unquoted.heredoc.php.7
         string.content.php.7
-    - match: (?x)(?={{doubleQuotedEscapeSequences}})
+    - match: (?x)(?={{heredocEscapeSequences}})
       set: [
         escape-b-variable-b,
         escape-a
@@ -118,7 +110,7 @@ contexts:
     - meta_content_scope: >-
         string.unquoted.heredoc.php.7
         string.content.php.7
-    - match: (?x)(?={{doubleQuotedEscapeSequences}})
+    - match: (?x)(?={{heredocEscapeSequences}})
       set: [
         escape-a-variable-b,
         escape-b
@@ -130,10 +122,14 @@ contexts:
       ]
 
   escape-a:
-    - include: Packages/Naomi/syntaxes/php7/literal/string/escape-a.sublime-syntax
+    - match: (?x){{heredocEscapeSequences}}
+      scope: constant.character.escape.a.php.7
+      pop: true
 
   escape-b:
-    - include: Packages/Naomi/syntaxes/php7/literal/string/escape-b.sublime-syntax
+    - match: (?x){{heredocEscapeSequences}}
+      scope: constant.character.escape.b.php.7
+      pop: true
 
   variable-a:
     - include: Packages/Naomi/syntaxes/php7/literal/string/variable-a.sublime-syntax

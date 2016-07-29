@@ -18,10 +18,7 @@ hidden: true
 scope: ...
 
 variables:
-  singleQuotedEscapeSequences: |
-    (?> \\\\
-      | \\'
-    )
+  singleQuotedEscapeSequences: \\[\\']
 
 contexts:
   main:

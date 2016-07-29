@@ -28,15 +28,7 @@ variables:
     \\u\{[a-f0-9]+\}
 
   doubleQuotedEscapeSequences: |
-    (?> \\\\
-      | \\"
-      | \\n
-      | \\r
-      | \\t
-      | \\v
-      | \\e
-      | \\f
-      | \\\$
+    (?> \\[\\"nrtvef$]
       | {{octalEscapedChar}}
       | {{hexEscapedChar}}
       | {{unicodeEscapedChar}}
@@ -127,10 +119,14 @@ contexts:
       ]
 
   escape-a:
-    - include: Packages/Naomi/syntaxes/php7/literal/string/escape-a.sublime-syntax
+    - match: (?x){{doubleQuotedEscapeSequences}}
+      scope: constant.character.escape.a.php.7
+      pop: true
 
   escape-b:
-    - include: Packages/Naomi/syntaxes/php7/literal/string/escape-b.sublime-syntax
+    - match: (?x){{doubleQuotedEscapeSequences}}
+      scope: constant.character.escape.b.php.7
+      pop: true
 
   variable-a:
     - include: Packages/Naomi/syntaxes/php7/literal/string/variable-a.sublime-syntax

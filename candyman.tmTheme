@@ -364,7 +364,7 @@
                 <string>Embedded variable A</string>
 
                 <key>scope</key>
-                <string>string entity.name.variable, string punctuation.variable</string>
+                <string>string entity.name.variable, string punctuation.variable, string operator.subscript</string>
 
                 <key>settings</key>
                 <dict>
@@ -378,7 +378,7 @@
                 <string>Embedded variable B</string>
 
                 <key>scope</key>
-                <string>string variable.b entity.name.variable, string variable.b punctuation.variable</string>
+                <string>string variable.b entity.name.variable, string variable.b punctuation.variable, string variable.b operator.subscript</string>
 
                 <key>settings</key>
                 <dict>

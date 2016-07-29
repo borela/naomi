@@ -23,7 +23,7 @@
 //   ^^^^^^^^^^^^^^^^^^^^^^^^ string.content.php.7
 //  ^ punctuation.delimiter.string.begin.php.7
 //                ^^ constant.character.escape.a.php.7
-//                      ^^ constant.character.escape.a.php.7
+//                      ^^ constant.character.escape.b.php.7
 //                           ^ punctuation.delimiter.string.end.php.7
     'Escaped: \\\''
 //            ^^ constant.character.escape.a.php.7

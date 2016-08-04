@@ -1,5 +1,8 @@
 # Naomi
 
+[![Sublime version](https://img.shields.io/badge/ST3-3084-orange.svg?style=flat-square)][sublime]
+[![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](LICENSE.md)
+
 Package designed to provide easy to extend syntax highlighting and other stuff
 that makes writting more fun.
 
@@ -64,10 +67,9 @@ that not all features listed before are going to work with other color schemes.
 
 Thank you for considering contributing to this project! See: [CONTRIBUTING](CONTRIBUTING.md).
 
-## License
-
-Unless explicity stated all files are licensed under the [Apache 2.0 license](LICENSE.md).
-
 ## Preview
 
 ![Candyman PHP 7 preview 1](./preview/php7/candyman-1.png)
+![Candyman PHP 7 preview 2](./preview/php7/candyman-2.png)
+
+[sublime]: http://www.sublimetext.com/

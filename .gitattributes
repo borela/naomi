@@ -1,21 +1,5 @@
-*.css text eol=lf
-*.css3 text eol=lf
-*.gitattributes text eol=lf
-*.gitignore text eol=lf
-*.html text eol=lf
-*.html5 text eol=lf
-*.js text eol=lf
-*.json text eol=lf
-*.md text eol=lf
-*.php text eol=lf
-*.php7 text eol=lf
-*.py text eol=lf
-*.sublime-commands text eol=lf
-*.sublime-project text eol=lf
-*.sublime-syntax text eol=lf
-*.tmTheme text eol=lf
-*.yaml text eol=lf
-*.yml text eol=lf
+* text eol=lf
+*.png binary
 
 preview export-ignore
 tests export-ignore

@@ -19,16 +19,17 @@ scope: ...
 
 variables:
   octalEscapedChar: |
-    \\[0-7]{1,3}
+    [0-7]{1,3}
 
   hexEscapedChar: |
-    \\x[a-f0-9]{1,2}
+    x[a-f0-9]{1,2}
 
   unicodeEscapedChar: |
-    \\u\{[a-f0-9]+\}
+    u\{[a-f0-9]+\}
 
   doubleQuotedEscapeSequences: |
-    (?> \\[\\"nrtvef$]
+    \\
+    (?> [\\"nrtvef$]
       | {{octalEscapedChar}}
       | {{hexEscapedChar}}
       | {{unicodeEscapedChar}}

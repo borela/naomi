@@ -33,9 +33,6 @@ contexts:
     - include: bodied-statement
     - include: simple-statement
 
-  expression:
-    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
-
   simple-statement:
     - match: |
         (?xi)\b
@@ -50,7 +47,10 @@ contexts:
           | yield(\s+from)?
         )\b
       scope: keyword.control.simple.php.7
-      set: expression
+      set: simple-expression
+
+  simple-expression:
+    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
 
   bodied-statement:
     - match: |
@@ -84,3 +84,7 @@ contexts:
       push:
         - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+
+  expression:
+    - meta_scope: statement.control.php.7
+    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax

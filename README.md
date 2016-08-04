@@ -25,6 +25,7 @@ literal.
 * Alternating scopes for namespace names.
 * Alternating scopes for escaped characters.
 * Alternating scopes for embedded variables.
+* Alternating scopes for parenthesis in expressions.
 * Different scopes for extended class and implemented interfaces.
 * Different scopes for private and protected modifiers.
 

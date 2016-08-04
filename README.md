@@ -72,5 +72,7 @@ Thank you for considering contributing to this project! See: [CONTRIBUTING](CONT
 
 ![Candyman PHP 7 preview 1](./preview/php7/candyman-1.png)
 ![Candyman PHP 7 preview 2](./preview/php7/candyman-2.png)
+![Candyman PHP 7 preview 3](./preview/php7/candyman-3.png)
+![Candyman PHP 7 preview 4](./preview/php7/candyman-4.png)
 
 [sublime]: http://www.sublimetext.com/

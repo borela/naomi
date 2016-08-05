@@ -34,7 +34,7 @@ contexts:
       set: items
 
   short-array-items:
-    - meta_scope: support.type.array.php.7
+    - meta_scope: type.array.php.7
     - match: |
         (?x)
         \]
@@ -44,7 +44,7 @@ contexts:
       push: key-or-value
 
   items:
-    - meta_scope: support.type.array.php.7
+    - meta_scope: type.array.php.7
     - match: \)
       scope: punctuation.delimiter.array.end.php.7
       pop: true

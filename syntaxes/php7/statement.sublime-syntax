@@ -30,6 +30,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/member-variable.sublime-syntax
+    - include: hanging-statement
     - include: bodied-statement
     - include: simple-statement
 
@@ -37,7 +38,6 @@ contexts:
     - match: |
         (?xi)\b
         (?> break
-          | case
           | const
           | continue
           | default
@@ -51,6 +51,15 @@ contexts:
 
   simple-expression:
     - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+
+  hanging-statement:
+    - match: |
+        (?xi)\b
+        (?> case
+          | default
+        )\b
+      scope: keyword.control.hanging.php.7
+      pop: true
 
   bodied-statement:
     - match: |

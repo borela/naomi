@@ -1,6 +1,6 @@
 # Naomi
 
-[![Sublime version](https://img.shields.io/badge/ST3->%3D3084-orange.svg?style=flat-square)][sublime]
+[![Sublime version](https://img.shields.io/badge/st3->%3D3084-orange.svg?style=flat-square)][sublime]
 [![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](LICENSE.md)
 
 Package designed to provide easy to extend syntax highlighting and other stuff
@@ -63,10 +63,6 @@ The “Packages” directory is located at:
 
 Note: You aren’t required to use the color schemes provided but keep in mind
 that not all features listed before are going to work with other color schemes.
-
-## Contributing
-
-Thank you for considering contributing to this project! See: [CONTRIBUTING](CONTRIBUTING.md).
 
 ## Preview
 

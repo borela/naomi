@@ -33,6 +33,7 @@ contexts:
     - include: hanging-statement
     - include: bodied-statement
     - include: simple-statement
+    - include: other-statements
 
   simple-statement:
     - match: |
@@ -49,8 +50,32 @@ contexts:
       scope: keyword.control.simple.php.7
       set: simple-expression
 
+  other-statements:
+    - match: |
+        (?xi)\b
+        (?> clone
+          | die
+          | e(?>cho|val|xit)
+          | include(?:_once)?
+          | require(?:_once)?
+        )\b
+      scope: keyword.other.php.7
+      set: multi-expression
+
   simple-expression:
     - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+
+  multi-expression:
+    - match: ;
+      scope: punctuation.terminator.php.7
+      pop: true
+    - match: \,
+      scope: punctuation.delimiter.expression.php.7
+    - match: (?=\S)
+      push:
+        - match: (?=\s*;)
+          pop: true
+        - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
 
   hanging-statement:
     - match: |

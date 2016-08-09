@@ -29,6 +29,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/function-call/support/math-gmp.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function-call/support/output.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function-call/support/string.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/function-call/support/language-construct.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function-call/support/variable.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax

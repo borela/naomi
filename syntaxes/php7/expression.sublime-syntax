@@ -19,9 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: (;)
-      captures:
-        1: punctuation.terminator.php.7
+    - match: ;
+      scope: punctuation.terminator.php.7
       pop: true
     - match: |
         (?x)

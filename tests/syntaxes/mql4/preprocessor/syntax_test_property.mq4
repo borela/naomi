@@ -153,7 +153,7 @@
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.preprocessor.mql.4
 //  ^^^^^^^^^ keyword.preprocessor.mql.4
 //            ^^^^^^^^^^^^^^^^ keyword.preprocessor.mql.4
-//                             ^^^^^^ support.constant.color.mql.4
+//                             ^^^^^^ support.constant.mql.4
     #property indicator_width1 1
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.preprocessor.mql.4
 //  ^^^^^^^^^ keyword.preprocessor.mql.4
@@ -207,7 +207,7 @@
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.preprocessor.mql.4
 //  ^^^^^^^^^ keyword.preprocessor.mql.4
 //            ^^^^^^^^^^^^^^^^^^^^^ keyword.preprocessor.mql.4
-//                                  ^^^^^^ support.constant.color.mql.4
+//                                  ^^^^^^ support.constant.mql.4
     #property indicator_levelwidth1 1
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.preprocessor.mql.4
 //  ^^^^^^^^^ keyword.preprocessor.mql.4

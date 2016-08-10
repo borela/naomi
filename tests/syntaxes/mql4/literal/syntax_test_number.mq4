@@ -30,9 +30,5 @@
 //  ^^^^^^^ constant.numeric.float.scientific.mql.4
     123e-10
 //  ^^^^^^^ constant.numeric.float.scientific.mql.4
-    0b1010
-//  ^^^^^^ constant.numeric.binary.mql.4
-    0123
-//  ^^^^ constant.numeric.octal.mql.4
     0x123
 //  ^^^^^ constant.numeric.hex.mql.4

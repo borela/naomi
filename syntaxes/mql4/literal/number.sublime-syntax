@@ -49,12 +49,6 @@ contexts:
       pop: true
 
   integer:
-    - match: "0b[01]+"
-      scope: constant.numeric.binary.mql.4
-      pop: true
-    - match: "0[0-7]+"
-      scope: constant.numeric.octal.mql.4
-      pop: true
     - match: "(?i)0[x][0-9a-f]+"
       scope: constant.numeric.hex.mql.4
       pop: true

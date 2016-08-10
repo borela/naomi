@@ -221,7 +221,7 @@
                 <string>Variable</string>
 
                 <key>scope</key>
-                <string>entity.name.variable</string>
+                <string>variable entity.name.variable, variable punctuation.variable</string>
 
                 <key>settings</key>
                 <dict>
@@ -364,7 +364,7 @@
                 <string>Embedded variable A</string>
 
                 <key>scope</key>
-                <string>string entity.name.variable, string punctuation.variable, string operator.subscript</string>
+                <string>string variable entity.name.variable, string variable punctuation.variable, string variable operator.subscript</string>
 
                 <key>settings</key>
                 <dict>
@@ -658,7 +658,7 @@
                 <string>Comment’s variable</string>
 
                 <key>scope</key>
-                <string>comment variable, comment entity.name.variable</string>
+                <string>comment variable entity.name.variable, comment variable punctuation.variable</string>
 
                 <key>settings</key>
                 <dict>

@@ -22,7 +22,7 @@
 //   ^^^^^^^^^^^^^^^^^^^^^^^^ string.content.mql.4
 //  ^ punctuation.delimiter.string.begin.mql.4
 //                ^^ constant.character.escape.a.mql.4
-//                      ^^ constant.character.escape.a.mql.4
+//                      ^^ constant.character.escape.b.mql.4
 //                           ^ punctuation.delimiter.string.end.mql.4
     "Escaped: \\\"\n\r\t\x0065\d65535"
 //            ^^ constant.character.escape.a.mql.4

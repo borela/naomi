@@ -27,6 +27,7 @@ contexts:
     - match: |
         (?xi)
         (?=
+          (?:extern\s+)?
           {{commonIdentifier}}\s+
           {{commonIdentifier}}\b
         )
@@ -37,6 +38,8 @@ contexts:
       ]
 
   type:
+    - match: extern
+      scope: keyword.other.mql.4
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   variable:

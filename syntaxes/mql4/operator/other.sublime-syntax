@@ -30,30 +30,28 @@ contexts:
   # |  Operator  |  Description        |
   # | :--------: | :------------------ |
   # | instanceof |                     |
-  # |     @      | Error suppression.  |
   # |     &      | Reference.          |
+  # |     .     | Member access.       |
   # |     ->     | Member access.      |
   # |     ::     | Scope resolution.   |
-  # |    ...     | Argument unpacking. |
+  # |     ?      |                     |
+  # |     :      |                     |
   main:
-    - match: (?xi)\binstanceof\b
-      scope: keyword.operator.type.mql.4
-      pop: true
-    - match: "@"
-      scope: keyword.operator.error.suppression.mql.4
-      pop: true
     - match: "&(?![&=])"
       scope: keyword.operator.reference.mql.4
       pop: true
-    - match: "\\.\\.\\."
-      scope: keyword.operator.argument.unpacking.mql.4
-      pop: true
-    - match: "->"
+    - match: |
+        (?x)
+        (?> ->
+          | \.
+        )
       scope: keyword.operator.member.access.mql.4
       set: member-access
     - match: "::"
       scope: keyword.operator.scope.resolution.mql.4
       set: scope-resolution
+    - match: "\\?|:"
+      scope: keyword.operator.php.7
 
   member-access:
     - include: Packages/Naomi/syntaxes/mql.4/function-call/normal.sublime-syntax

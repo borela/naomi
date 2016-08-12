@@ -79,7 +79,7 @@ contexts:
     - match: (?=,|\))
       pop: true
     - match: \[\]
-      scope: keyword.operator.array.access.mql.4
+      scope: punctuation.delimiter.array.mql.4
     - match: \=
       scope: keyword.operator.mql.4
       set: param-default-value

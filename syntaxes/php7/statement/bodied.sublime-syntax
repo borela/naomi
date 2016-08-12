@@ -38,12 +38,10 @@ contexts:
       ]
 
   header:
-    - meta_scope: statement.control.php.7
     - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
 
   body:
-    - meta_scope: statement.control.php.7
     - match: \{
       scope: punctuation.delimiter.control.body.begin.php.7
       set: body-content

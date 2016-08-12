@@ -34,5 +34,4 @@ contexts:
       set: expression
 
   expression:
-    - meta_scope: statement.control.php.7
     - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax

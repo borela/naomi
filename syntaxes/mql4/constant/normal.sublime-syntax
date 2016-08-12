@@ -27,5 +27,7 @@ contexts:
     - match: |
         (?x)
         \b{{constantIdentifier}}\b
-      scope: constant.mql.4
+      scope: >-
+        constant.mql.4
+        entity.name.constant.mql.4
       pop: true

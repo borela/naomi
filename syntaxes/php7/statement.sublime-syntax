@@ -48,7 +48,7 @@ contexts:
           | yield(\s+from)?
         )\b
       scope: keyword.control.simple.php.7
-      set: simple-expression
+      set: expression
 
   other-statements:
     - match: |
@@ -61,9 +61,6 @@ contexts:
         )\b
       scope: keyword.other.php.7
       set: multi-expression
-
-  simple-expression:
-    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
 
   multi-expression:
     - match: ;
@@ -100,15 +97,18 @@ contexts:
           | switch
         )\b
       scope: keyword.control.php.7
-      push: [
+      set: [
         body,
         expression
       ]
 
   body:
+    - meta_scope: statement.control.php.7
     - match: \{
       scope: punctuation.delimiter.control.body.begin.php.7
       set: body-content
+    - match: (?=\S)
+      pop: true
 
   body-content:
     - match: \}

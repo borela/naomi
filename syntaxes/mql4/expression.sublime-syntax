@@ -60,6 +60,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/operator.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/function-call.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/variable-declaration.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
         - match: ""
           pop: true
@@ -68,14 +69,29 @@ contexts:
     - match: |
         (?xi)
         (?=
+          \s*\(\s*
           {{commonIdentifier}}
           \s*\)\s*
           {{commonIdentifier}}
         )
-      push: type
+      push: [
+        casting-close,
+        type,
+        casting-open
+      ]
+
+  casting-open:
+    - match: \(
+      scope: keyword.operator.cating.mql.4
+      pop: true
 
   type:
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
+
+  casting-close:
+    - match: \)
+      scope: keyword.operator.cating.mql.4
+      pop: true
 
   terminators:
     - match: ;

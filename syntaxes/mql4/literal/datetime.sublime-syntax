@@ -17,10 +17,6 @@ hidden: true
 
 scope: ...
 
-variables:
-  colorValue: |
-    (?:0x)?[0-9]+
-
 contexts:
   main:
     - match: "D'"

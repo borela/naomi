@@ -15,27 +15,21 @@
 
 hidden: true
 
-variables:
-  commonIdentifier: |
-    [a-z\x{7f}-\x{ff}_]
-    [a-z\x{7f}-\x{ff}0-9_]*
-
 scope: ...
 
 contexts:
   main:
-    - include: function-call
-
-  function-call:
-    - match: |
-        (?xi)\b
-        ({{commonIdentifier}})
-        (?=\s*\()
-      captures:
-        0: function.call.mql.4
-        1: entity.name.function.mql.4
+    - match: \(
+      scope: punctuation.delimiter.function.arguments.begin.mql.4
       set: arguments
 
   arguments:
-    - include: Packages/Naomi/syntaxes/mql4/function-call/arguments.sublime-syntax
-
+    - meta_scope: expression.function.call.mql.4
+    - match: \)
+      scope: punctuation.delimiter.function.arguments.end.mql.4
+      pop: true
+    - match: \,
+      scope: >-
+        expression.function.call.mql.4
+        punctuation.delimiter.function.arguments.mql.4
+    - include: Packages/Naomi/syntaxes/mql4/expression.no-pop.sublime-syntax

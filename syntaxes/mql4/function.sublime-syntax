@@ -22,110 +22,144 @@ variables:
     [a-z\x{7f}-\x{ff}_]
     [a-z\x{7f}-\x{ff}0-9_]*
 
+  typeIdentifier: |
+    {{commonIdentifier}}
+
 contexts:
   main:
+     # Member function.
     - match: |
         (?xi)
         (?=
-          {{commonIdentifier}}\s+
-          {{commonIdentifier}}\s*\(
+          \b
+          (?:
+            (?> virtual
+              | static
+            )\s+
+          )?
+          {{typeIdentifier}}\s+
+          {{commonIdentifier}}::{{commonIdentifier}}
+          \s*\(
         )
-      push: [
-        body-begin,
-        parameters-begin,
-        identifier,
-        type
+      set: [
+        body,
+        parameters,
+        name,
+        scope-operator,
+        class,
+        return-type,
+        modifier
       ]
-
-  type:
-    - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
-
-  identifier:
+    # Free function.
     - match: |
         (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.statement.function.mql.4
-      pop: true
-
-  parameters-begin:
-    - match: \(
-      scope: punctuation.delimiter.statement.function.parameters.begin.mql.4
-      set: parameters
-
-  parameters:
-    - match: \)
-      scope: punctuation.delimiter.statement.function.parameters.end.mql.4
-      pop: true
-    - match: (?=\S)
-      push: parameter
-
-  parameter:
-    - match: (?=[)])
-      pop: true
-    - match: (?=\S)
-      push: [
-        parameter-delimiter,
-        variable,
-        optional-reference-operator,
-        type,
-        optional-const
+        (?=
+          \b
+          (?:
+            (?> virtual
+              | static
+            )\s+
+          )?
+          {{typeIdentifier}}
+          \s+{{commonIdentifier}}
+          \s*\(
+        )
+      set: [
+        body,
+        parameters,
+        name,
+        return-type,
+        modifier
       ]
 
-  optional-const:
-    - match: const
+  modifier:
+    - match: |
+        (?xi)\s*
+        (?> virtual
+          | static
+        )
       scope: keyword.modifier.mql.4
       pop: true
-    - match: (?=\S)
+    - match: ""
       pop: true
 
-  optional-reference-operator:
-    - match: \&
-      scope: keyword.operator.reference.mql.4
-      pop: true
-    - match: (?=\S)
-      pop: true
+  return-type:
+    - include: type
 
-  variable:
-    - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
-
-  parameter-delimiter:
-    - match: \,
-      scope: punctuation.delimiter.statement.function.paramters.mql.4
-      pop: true
-    - match: (?=[)])
+  class:
+    - match: (?xi)\b{{commonIdentifier}}\b
+      scope: entity.name.class.mql.4
       pop: true
 
-  body-begin:
-    - match: \{
-      scope: punctuation.delimiter.statement.function.body.begin.mql.4
-      set: body
-
-  body:
-    - match: \}
-      scope: punctuation.delimiter.statement.function.body.end.mql.4
-      pop: true
-    - match: (?=\S)
-      push:
-        - include: body-content
-        - match: (?=\})
-          pop: true
-
-  body-content:
-    - include: balance-brackets
-    - include: Packages/Naomi/syntaxes/mql4/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/operator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/keyword.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/preprocessor.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/variable-declaration.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
+  type:
+    - meta_content_scope: statement.function.mql.4
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
-  balance-brackets:
+  scope-operator:
+    - match: |
+        (?x)::
+      scope: keyword.operator.scope.mql.4
+      pop: true
+
+  name:
+    - match: (?xi)\b{{commonIdentifier}}\b
+      scope: entity.name.function.mql.4
+      pop: true
+
+  parameters:
+    # Function without parameters.
+    - match: |
+        (?x)
+        (\()
+        (?:
+          \s*(void)\s*
+        )?
+        (\))
+      captures:
+        1: punctuation.delimiter.function.parameters.begin.mql.4
+        2: >-
+          support.type.mql.4
+          entity.name.type.mql.4
+        3: punctuation.delimiter.function.parameters.end.mql.4
+      pop: true
+    # Parameters.
+    - include: Packages/Naomi/syntaxes/mql4/function/parameters.sublime-syntax
+
+  body:
+    - meta_scope: statement.function.mql.4
+    # Pure virtual.
+    - match: |
+        (?x)\s*
+        (
+          =\s*
+          (?> 0
+            | NULL
+          )\s*
+        )?
+        (;)
+      captures:
+        1: keyword.function.virtual.mql.4
+        2: punctuation.delimiter.function.declaration.end.mql.4
+      pop: true
+    # Normal body.
     - match: \{
+      scope: >-
+        statement.function.body.mql.4
+        punctuation.delimiter.function.body.begin.mql.4
+      set: body-content
+
+  body-content:
+    - meta_content_scope: >-
+        statement.function.mql.4
+        statement.function.body.mql.4
+        statement.function.body.content.mql.4
+    - match: \}
+      scope: >-
+        statement.function.mql.4
+        statement.function.body.mql.4
+        punctuation.delimiter.function.body.end.mql.4
+      pop: true
+    - match: ""
       push:
-        - include: body-content
-        - match: \}
-          pop: true
+        - include: Packages/Naomi/syntaxes/mql4/statement.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

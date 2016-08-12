@@ -23,12 +23,9 @@ contexts:
         (?xi)\b
         (?> if
           | else(?:if)?
-          | for(?:each)?
+          | for
           | do
           | while
-          | try
-          | catch
-          | finally
           | switch
         )\b
       scope: keyword.control.mql.4
@@ -38,12 +35,10 @@ contexts:
       ]
 
   header:
-    - meta_content_scope: statement.control.mql.4
     - include: Packages/Naomi/syntaxes/mql4/statement.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
 
   body:
-    - meta_scope: statement.control.mql.4
     - match: \{
       scope: punctuation.delimiter.control.body.begin.mql.4
       set: body-content

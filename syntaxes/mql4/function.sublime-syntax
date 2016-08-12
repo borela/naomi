@@ -111,16 +111,20 @@ contexts:
     - match: |
         (?x)
         (\()
-        (?:
-          \s*(void)\s*
-        )?
+        (
+          (?:
+            \s*(void)\s*
+          )?
+        )
         (\))
       captures:
+        0: statement.function.parameters.mql.4
         1: punctuation.delimiter.function.parameters.begin.mql.4
-        2: >-
+        2: statement.function.parameters.content.mql.4
+        3: >-
           support.type.mql.4
           entity.name.type.mql.4
-        3: punctuation.delimiter.function.parameters.end.mql.4
+        4: punctuation.delimiter.function.parameters.end.mql.4
       pop: true
     # Parameters.
     - include: Packages/Naomi/syntaxes/mql4/function/parameters.sublime-syntax

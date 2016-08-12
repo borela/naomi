@@ -17,6 +17,7 @@ name: MQL 4
 
 file_extensions:
   - mq4
+  - mqh4
 
 scope: source.mql.4
 

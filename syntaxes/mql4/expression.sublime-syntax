@@ -59,10 +59,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/operator.sublime-syntax
-        # - include: Packages/Naomi/syntaxes/mql4/new.sublime-syntax
-        # - include: Packages/Naomi/syntaxes/mql4/closure.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/function-call.sublime-syntax
-        #- include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
         - match: ""
           pop: true

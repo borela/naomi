@@ -33,5 +33,4 @@ contexts:
       set: expression
 
   expression:
-    - meta_content_scope: statement.control.mql.4
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

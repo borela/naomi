@@ -89,7 +89,7 @@ contexts:
         statement.function.body.php.7
         punctuation.delimiter.function.body.end.php.7
       pop: true
-    - match: (?=\S)
+    - match: ""
       push:
         - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax

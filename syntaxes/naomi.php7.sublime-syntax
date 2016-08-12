@@ -50,7 +50,7 @@ contexts:
     - match: \?>
       scope: keyword.embedded.end.php.7
       pop: true
-    - match: (?=\S)
+    - match: ""
       with_prototype:
         - match: (?=\?>)
           pop: true

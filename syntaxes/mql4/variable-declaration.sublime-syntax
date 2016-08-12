@@ -43,9 +43,23 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
 
   punctuation:
+    - match: ;
+      scope: punctuation.terminator.mql.4
+      pop: true
+    - match: \[
+      scope: punctuation.delimiter.array.index.begin.mql.4
+      push: array-index
     - match: =
       scope: keyword.operator.assignment.mql.4
       set: value
+
+  array-index:
+    - match: \,
+      scope: punctuation.delimiter.array.index.mql.4
+    - match: \]
+      scope: punctuation.delimiter.array.index.end.mql.4
+      pop: true
+    - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
 
   value:
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

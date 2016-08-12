@@ -19,21 +19,30 @@ scope: ...
 
 contexts:
   main:
-    - match: ;
-      scope: punctuation.terminator.php.7
+    - match: \(
+      scope: punctuation.delimiter.expression.group.a.begin.php.7
+      push: open-b-close-a
+    - include: terminators
+    - include: content
+
+  open-b-close-a:
+    - match: \(
+      scope: punctuation.delimiter.expression.group.b.begin.php.7
+      push: open-a-close-b
+    - match: \)
+      scope: punctuation.delimiter.expression.group.a.end.php.7
       pop: true
-    - match: |
-        (?x)
-        (?=
-          (?> \,
-            | \]
-            | \)
-            | \{
-            | \}
-          )
-        )
+    - include: terminators
+    - include: content
+
+  open-a-close-b:
+    - match: \(
+      scope: punctuation.delimiter.expression.group.a.begin.php.7
+      push: open-b-close-a
+    - match: \)
+      scope: punctuation.delimiter.expression.group.b.end.php.7
       pop: true
-    - include: balance-parenthesis-a
+    - include: terminators
     - include: content
 
   content:
@@ -51,20 +60,18 @@ contexts:
         - match: ""
           pop: true
 
-  balance-parenthesis-a:
-    - match: \(
-      scope: punctuation.delimiter.expression.group.a.begin.php.7
-      push: balance-parenthesis-b
-    - match: \)
-      scope: punctuation.delimiter.expression.group.b.end.php.7
+  terminators:
+    - match: ;
+      scope: punctuation.terminator.php.7
       pop: true
-    - include: content
-
-  balance-parenthesis-b:
-    - match: \(
-      scope: punctuation.delimiter.expression.group.b.begin.php.7
-      push: balance-parenthesis-a
-    - match: \)
-      scope: punctuation.delimiter.expression.group.a.end.php.7
+    - match: |
+        (?x)
+        (?=
+          (?> \,
+            | \]
+            | \)
+            | \{
+            | \}
+          )
+        )
       pop: true
-    - include: content

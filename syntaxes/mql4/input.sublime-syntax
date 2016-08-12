@@ -50,10 +50,4 @@ contexts:
         statement.input.mql.4
         punctuation.delimiter.input.end.mql.4
       pop: true
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
-        - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
-        - include: Packages/Naomi/syntaxes/mql4/operator.sublime-syntax
-        - match: (?=;)
-          pop: true
+    - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

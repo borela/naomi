@@ -21,6 +21,11 @@ contexts:
   main:
     - match: (?=\s*\})
       pop: true
+    # Basic statements.
+    - include: Packages/Naomi/syntaxes/mql4/statement/hanging.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/statement/bodied.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/statement/simple.sublime-syntax
+    # Complex statements.
     - include: Packages/Naomi/syntaxes/mql4/comment.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/preprocessor.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/input.sublime-syntax
@@ -28,6 +33,3 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/comment.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/variable-declaration.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/statement/hanging.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/statement/bodied.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/statement/simple.sublime-syntax

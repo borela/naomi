@@ -17,8 +17,8 @@ hidden: true
 
 variables:
   commonIdentifier: |
-    [a-z\x{7f}-\x{ff}_]
-    [a-z\x{7f}-\x{ff}0-9_]*
+    [_[:alpha:]]
+    [_[:alnum:]]*
 
 scope: ...
 
@@ -52,21 +52,6 @@ contexts:
 
   parameters:
     - include: Packages/Naomi/syntaxes/php7/function/parameters.sublime-syntax
-
-  body:
-    - match: \{
-      scope: punctuation.delimiter.function.body.begin.php.7
-      set: body-content
-
-  body-content:
-    - meta_content_scope: expression.function.body.content.php.7
-    - match: \}
-      scope: punctuation.delimiter.function.body.end.php.7
-      pop: true
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
 
   optional-imported-variables-and-return-type-hint:
     - match: (?=:|{)
@@ -120,3 +105,7 @@ contexts:
   target-variable:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
+
+  body:
+    - meta_scope: statement.function.php.7
+    - include: Packages/Naomi/syntaxes/php7/function/body.sublime-syntax

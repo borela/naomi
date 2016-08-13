@@ -17,8 +17,8 @@ hidden: true
 
 variables:
   commonIdentifier: |
-    [a-z\x{7f}-\x{ff}_]
-    [a-z\x{7f}-\x{ff}0-9_]*
+    [_[:alpha:]]
+    [_[:alnum:]]*
 
 scope: ...
 
@@ -67,29 +67,4 @@ contexts:
 
   body:
     - meta_scope: statement.function.php.7
-    # Function without body.
-    - match: ;
-      scope: punctuation.delimiter.function.declaration.end.php.7
-      pop: true
-    # Normal body.
-    - match: \{
-      scope: >-
-        statement.function.body.php.7
-        punctuation.delimiter.function.body.begin.php.7
-      set: body-content
-
-  body-content:
-    - meta_content_scope: >-
-        statement.function.php.7
-        statement.function.body.php.7
-        statement.function.body.content.php.7
-    - match: \}
-      scope: >-
-        statement.function.php.7
-        statement.function.body.php.7
-        punctuation.delimiter.function.body.end.php.7
-      pop: true
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/function/body.sublime-syntax

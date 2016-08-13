@@ -19,8 +19,8 @@ scope: ...
 
 variables:
   constantIdentifier: |
-    [A-Z\x{7f}-\x{ff}_]
-    [A-Z\x{7f}-\x{ff}0-9_]*
+    [_[:upper:]]
+    [_[:upper:][:digit:]]*
 
 contexts:
   main:

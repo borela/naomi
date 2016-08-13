@@ -80,7 +80,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
     # Class name as string.
     - match: \bclass\b
-      scope: keyword.other.class.name.php.7
+      scope: keyword.other.php.7
       pop: true
     # Variable.
     - match: (?xi)(\$)({{commonIdentifier}})

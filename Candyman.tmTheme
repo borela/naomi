@@ -247,6 +247,9 @@
 
                 <key>settings</key>
                 <dict>
+                    <key>fontStyle</key>
+                    <string></string>
+
                     <key>foreground</key>
                     <string>#b0bec5</string>
                 </dict>

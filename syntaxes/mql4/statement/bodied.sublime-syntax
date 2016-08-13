@@ -19,6 +19,11 @@ scope: ...
 
 contexts:
   main:
+    # Without header.
+    - match: (?i)\belse(?!if)\b
+      scope: keyword.control.mql.4
+      set: body
+    # With header.
     - match: |
         (?xi)\b
         (?> if

@@ -25,6 +25,7 @@ contexts:
           | const
           | continue
           | default
+          | else
           | goto
           | return
           | throw

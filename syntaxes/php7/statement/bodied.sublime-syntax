@@ -22,7 +22,7 @@ contexts:
     - match: |
         (?xi)\b
         (?> if
-          | else(?:if)?
+          | elseif
           | for(?:each)?
           | do
           | while
@@ -38,15 +38,27 @@ contexts:
       ]
 
   header:
-    - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+    - match: \(
+      scope: punctuation.delimiter.control.header.begin.php.7
+      set: header-content
+
+  header-content:
+    - match: \)
+      scope: punctuation.delimiter.control.header.end.mql.4
+      pop: true
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+        - match: (?=\))
+          pop: true
 
   body:
     - match: \{
       scope: punctuation.delimiter.control.body.begin.php.7
       set: body-content
-    - match: (?=\S)
-      pop: true
+    - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
 
   body-content:
     - match: \}

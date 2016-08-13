@@ -52,7 +52,7 @@ contexts:
         0: support.variable.php.7
         1: punctuation.variable.begin.php.7
         2: entity.name.variable.php.7
-      pop: true
+      set: array-item-access-begin
 
   common-variable:
     - match: |
@@ -62,4 +62,25 @@ contexts:
         0: variable.php.7
         1: punctuation.variable.begin.php.7
         2: entity.name.variable.php.7
+      set: array-item-access-begin
+
+  array-item-access-begin:
+    # No array item access found.
+    - match: (?!\s*\[)
+      pop: true
+    # Array item access.
+    - match: \[
+      scope: punctuation.delimiter.array.item.access.begin.php.7
+      push: [
+        array-item-access-end,
+        array-index
+      ]
+
+  array-index:
+    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+
+  array-item-access-end:
+    - meta_scope: array.item.access.php.7
+    - match: \]
+      scope: punctuation.delimiter.array.item.access.end.php.7
       pop: true

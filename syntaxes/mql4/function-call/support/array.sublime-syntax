@@ -43,4 +43,7 @@ contexts:
       scope: >-
         support.function.call.mql.4
         entity.name.function.mql.4
-      pop: true
+      set: arguments
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/mql4/function-call/arguments.sublime-syntax

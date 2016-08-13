@@ -19,9 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        \[
+    - match: \[
       scope: punctuation.delimiter.array.begin.php.7
       set: short-array-items
     - match: |
@@ -35,9 +33,7 @@ contexts:
 
   short-array-items:
     - meta_scope: type.array.php.7
-    - match: |
-        (?x)
-        \]
+    - match: \]
       scope: punctuation.delimiter.array.end.php.7
       pop: true
     - match: (?=\S)

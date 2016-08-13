@@ -19,5 +19,12 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/mql4/preprocessor/include.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/preprocessor/property.sublime-syntax
+    - match: \#include
+      scope: keyword.preprocessor.mql.4
+      set: value
+
+  value:
+    - match: \<.+?\>
+      scope: string.unquoted.mql.4
+      pop: true
+    - include: Packages/Naomi/syntaxes/mql4/literal/string.sublime-syntax

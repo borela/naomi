@@ -23,6 +23,9 @@ contexts:
         (?xi)\b
         (?> case
           | default
+          | private
+          | protected
+          | public
         )\b
       scope: keyword.control.hanging.mql.4
       pop: true

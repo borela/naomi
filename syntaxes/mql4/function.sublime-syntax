@@ -19,8 +19,8 @@ scope: ...
 
 variables:
   commonIdentifier: |
-    [a-z\x{7f}-\x{ff}_]
-    [a-z\x{7f}-\x{ff}0-9_]*
+    [_[:alpha:]]
+    [_[:alnum:]]*
 
   typeIdentifier: |
     {{commonIdentifier}}
@@ -84,7 +84,6 @@ contexts:
       pop: true
 
   return-type:
-    - meta_content_scope: statement.function.mql.4
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   class:
@@ -107,4 +106,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/function/parameters.sublime-syntax
 
   body:
+    - meta_scope: statement.function.mql.4
     - include: Packages/Naomi/syntaxes/mql4/function/body.sublime-syntax

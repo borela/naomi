@@ -19,12 +19,11 @@ scope: ...
 
 variables:
   commonIdentifier: |
-    [a-z\x{7f}-\x{ff}_]
-    [a-z\x{7f}-\x{ff}0-9_]*
+    [_[:alpha:]]
+    [_[:alnum:]]*
 
 contexts:
   main:
-    - meta_scope: statement.function.mql.4
     # End.
     - match: ;
       scope: punctuation.delimiter.function.declaration.end.mql.4
@@ -75,6 +74,7 @@ contexts:
   body-start:
     - match: \{
       scope: >-
+        statement.function.mql.4
         statement.function.body.mql.4
         punctuation.delimiter.function.body.begin.mql.4
       set: body-content

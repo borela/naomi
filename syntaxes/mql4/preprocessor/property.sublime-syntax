@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: (\#)(property)
+    - match: \#property
       scope: keyword.preprocessor.mql.4
       set: identifier
 

@@ -47,9 +47,7 @@ contexts:
         )
       scope: keyword.operator.member.access.mql.4
       set: member-access
-    - match: "::"
-      scope: keyword.operator.scope.resolution.mql.4
-      set: scope-resolution
+    # Other.
     - match: "\\?|:"
       scope: keyword.operator.php.7
 
@@ -64,22 +62,4 @@ contexts:
       scope: >-
         variable.property.mql.4
         entity.name.variable.mql.4
-      pop: true
-
-  scope-resolution:
-    - include: Packages/Naomi/syntaxes/mql.4/function-call/normal.sublime-syntax
-    # Class name as string.
-    - match: \bclass\b
-      scope: keyword.other.class.name.mql.4
-      pop: true
-    # Variable.
-    - match: (?xi)(\$)({{commonIdentifier}})
-      captures:
-        0: variable.static.mql.4
-        1: punctuation.variable.begin.mql.4
-        2: entity.name.variable.mql.4
-      pop: true
-    # Constant.
-    - match: (?x)\b{{constantIdentifier}}
-      scope: constant.mql.4
       pop: true

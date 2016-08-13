@@ -1,6 +1,6 @@
 # Naomi
 
-[![Sublime version](https://img.shields.io/badge/st3->%3D3084-orange.svg?style=flat-square)][sublime]
+[![Sublime version](https://img.shields.io/badge/Sublime 3->%3D3084-orange.svg?style=flat-square)][sublime]
 [![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](LICENSE.md)
 
 Package designed to provide easy to extend syntax highlighting and other stuff
@@ -56,12 +56,26 @@ The “Packages” directory is located at:
 * **Linux**: `~/.config/sublime-text-3/Packages`
 * **Windows**: `%APPDATA%\Sublime Text 3\Packages`
 
+## Configuration
+
+It is recommended that you disable the default PHP package to prevent conflicts
+with the auto completition:
+
+1. Go to `Preferences / Settings - User`.
+2. Add it to the ignored packages:
+
+```json
+"ignored_packages": [
+    "PHP"
+]
+```
+
 ## Usage
 
 1. Go to the menu `View / Syntax / Naomi / ...` to select the new syntax.
 2. Select a color scheme provided in `Preferences / Color Scheme / Naomi`.
 
-Note: You aren’t required to use the color schemes provided but keep in mind
+**Note:** You aren’t required to use the color schemes provided but keep in mind
 that not all features listed before are going to work with other color schemes.
 
 ## Preview

@@ -42,12 +42,10 @@ contexts:
       ]
 
   type:
-    - match: |
-        (?xi)
-        (?> extern
-          | static
-        )
-      scope: keyword.other.mql.4
+    - match: extern
+      scope: keyword.modifier.extern.mql.4
+    - match: static
+      scope: keyword.modifier.static.mql.4
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   variable:

@@ -27,7 +27,7 @@ variables:
 
 contexts:
   main:
-     # Member function.
+    # Member function.
     - match: |
         (?xi)
         (?=
@@ -37,8 +37,8 @@ contexts:
               | static
             )\s+
           )?
-          {{typeIdentifier}}\s+
-          {{commonIdentifier}}::{{commonIdentifier}}
+          {{typeIdentifier}}
+          \s+{{commonIdentifier}}::{{commonIdentifier}}
           \s*\(
         )
       set: [
@@ -84,16 +84,13 @@ contexts:
       pop: true
 
   return-type:
-    - include: type
+    - meta_content_scope: statement.function.mql.4
+    - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   class:
     - match: (?xi)\b{{commonIdentifier}}\b
       scope: entity.name.class.mql.4
       pop: true
-
-  type:
-    - meta_content_scope: statement.function.mql.4
-    - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   scope-operator:
     - match: |
@@ -107,63 +104,7 @@ contexts:
       pop: true
 
   parameters:
-    # Function without parameters.
-    - match: |
-        (?x)
-        (\()
-        (
-          (?:
-            \s*(void)\s*
-          )?
-        )
-        (\))
-      captures:
-        0: statement.function.parameters.mql.4
-        1: punctuation.delimiter.function.parameters.begin.mql.4
-        2: statement.function.parameters.content.mql.4
-        3: >-
-          support.type.mql.4
-          entity.name.type.mql.4
-        4: punctuation.delimiter.function.parameters.end.mql.4
-      pop: true
-    # Parameters.
     - include: Packages/Naomi/syntaxes/mql4/function/parameters.sublime-syntax
 
   body:
-    - meta_scope: statement.function.mql.4
-    # Pure virtual.
-    - match: |
-        (?x)\s*
-        (
-          =\s*
-          (?> 0
-            | NULL
-          )\s*
-        )?
-        (;)
-      captures:
-        1: keyword.function.virtual.mql.4
-        2: punctuation.delimiter.function.declaration.end.mql.4
-      pop: true
-    # Normal body.
-    - match: \{
-      scope: >-
-        statement.function.body.mql.4
-        punctuation.delimiter.function.body.begin.mql.4
-      set: body-content
-
-  body-content:
-    - meta_content_scope: >-
-        statement.function.mql.4
-        statement.function.body.mql.4
-        statement.function.body.content.mql.4
-    - match: \}
-      scope: >-
-        statement.function.mql.4
-        statement.function.body.mql.4
-        punctuation.delimiter.function.body.end.mql.4
-      pop: true
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/mql4/statement.sublime-syntax
-        - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/function/body.sublime-syntax

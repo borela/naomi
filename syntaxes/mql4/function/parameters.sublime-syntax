@@ -27,6 +27,26 @@ variables:
 
 contexts:
   main:
+    # Function without parameters.
+    - match: |
+        (?x)
+        (\()
+        (
+          (?:
+            \s*(void)\s*
+          )?
+        )
+        (\))
+      captures:
+        0: statement.function.parameters.mql.4
+        1: punctuation.delimiter.function.parameters.begin.mql.4
+        2: statement.function.parameters.content.mql.4
+        3: >-
+          support.type.mql.4
+          entity.name.type.mql.4
+        4: punctuation.delimiter.function.parameters.end.mql.4
+      pop: true
+    # Parameters.
     - match: \(
       scope: punctuation.delimiter.function.parameters.begin.mql.4
       set: parameters

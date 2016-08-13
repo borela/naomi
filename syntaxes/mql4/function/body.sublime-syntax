@@ -1,0 +1,96 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [a-z\x{7f}-\x{ff}_]
+    [a-z\x{7f}-\x{ff}0-9_]*
+
+contexts:
+  main:
+    - meta_scope: statement.function.mql.4
+    # End.
+    - match: ;
+      scope: punctuation.delimiter.function.declaration.end.mql.4
+      pop: true
+    # Virtual or const.
+    - match: |
+        (?x)\s*
+        (?> (const)\s*
+          |
+          (
+            =\s*
+            (?> 0
+              | NULL
+            )\s*
+          )?
+        )
+        (?=:|;|{)
+      captures:
+        1: keyword.function.const.mql.4
+        2: keyword.function.virtual.mql.4
+    # Member variable initialization.
+    - match: ":"
+      scope: keyword.other.mql.4
+      set: variables-initialization
+    # Normal body.
+    - include: body-start
+
+  variables-initialization:
+    - match: ""
+      set: [
+        delimiter,
+        expression,
+        variable
+      ]
+
+  variable:
+    - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
+
+  expression:
+    - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
+
+  delimiter:
+    - include: body-start
+    - match: \,
+      scope: punctuation.delimiter.variable.initialization.mql.4
+      set: variables-initialization
+
+  body-start:
+    - match: \{
+      scope: >-
+        statement.function.body.mql.4
+        punctuation.delimiter.function.body.begin.mql.4
+      set: body-content
+
+  body-content:
+    - meta_content_scope: >-
+        statement.function.mql.4
+        statement.function.body.mql.4
+        statement.function.body.content.mql.4
+    - match: \}
+      scope: >-
+        statement.function.mql.4
+        statement.function.body.mql.4
+        punctuation.delimiter.function.body.end.mql.4
+      pop: true
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/mql4/statement.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

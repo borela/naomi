@@ -20,7 +20,11 @@ scope: ...
 contexts:
   main:
     # Without header.
-    - match: (?i)\belse(?!if)\b
+    - match: |
+        (?xi)\b
+        (?> do
+          | else
+        )\b
       scope: keyword.control.mql.4
       set: body
     # With header.
@@ -29,7 +33,6 @@ contexts:
         (?> if
           | elseif
           | for
-          | do
           | while
           | switch
         )\b

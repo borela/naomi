@@ -21,9 +21,69 @@ contexts:
   main:
     - match: |
         (?x)\bCHART_
-        (?> BEGIN
-          | CURRENT_POS
-          | END
+        (?> AUTOSCROLL
+          | BRING_TO_TOP
+          | COLOR_
+            (?> ASK
+              | BACKGROUND
+              | BID
+              | CANDLE_
+                (?>BEAR|BULL)
+              | CHART_
+                (?>DOWN|LINE|UP)
+              | FOREGROUND
+              | GRID
+              | LAST
+              | STOP_LEVEL
+              | VOLUME
+            )
+          | COMMENT
+          | DRAG_TRADE_LEVELS
+          | EVENT_
+            (?> MOUSE_MOVE
+              | OBJECT_
+                (?>CREATE|DELETE)
+            )
+          | FIRST_VISIBLE_BAR
+          | FIXED_
+            (?>MAX|MIN|POSITION)
+          | FOREGROUND
+          | HEIGHT_IN_PIXELS
+          | IS_OFFLINE
+          | MODE
+          | MOUSE_SCROLL
+          | POINTS_PER_BAR
+          | PRICE_
+            (?>MAX|MIN)
+          | SCALE
+            (?> _PT_PER_BAR
+              | FIX(?:_11)?
+            )?
+          | SHIFT(?:_SIZE)?
+          | SHOW_
+            (?> ASK_LINE
+              | BID_LINE
+              | DATE_SCALE
+              | GRID
+              | LAST_LINE
+              | OBJECT_DESCR
+              | OHLC
+              | PERIOD_SEP
+              | PRICE_SCALE
+              | TRADE_LEVELS
+              | VOLUMES
+            )
+          | VISIBLE_BARS
+          | WIDTH_IN_
+            (?:BARS|PIXELS)
+          | WINDOW
+            (?> S_TOTAL
+              | _
+                (?> HANDLE
+                  | IS_VISIBLE
+                  | YDISTANCE
+                )
+            )
         )\b
       scope: >-
         support.constant.mql.4

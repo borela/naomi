@@ -19,5 +19,14 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/mql4/comment/documentation.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/comment/normal.sublime-syntax
+    - match: \/\*\*
+      scope: punctuation.comment.documentation.begin.mql.4
+      set: content
+
+  content:
+    - meta_scope: comment.documentation.mql.4
+    - meta_content_scope: comment.documentation.content.mql.4
+    - match: \*\/
+      scope: punctuation.comment.documentation.end.mql.4
+      pop: true
+    - include: Packages/Naomi/syntaxes/mql4/mql4Doc/tags.no-pop.sublime-syntax

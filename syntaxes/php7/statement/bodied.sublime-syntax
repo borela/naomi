@@ -20,7 +20,12 @@ scope: ...
 contexts:
   main:
     # Without header.
-    - match: (?i)\belse(?!if)\b
+    - match: |
+        (?xi)\b
+        (?> else
+          | try
+          | finally
+        )\b
       scope: keyword.control.mql.4
       set: body
     # With header.
@@ -31,9 +36,7 @@ contexts:
           | for(?:each)?
           | do
           | while
-          | try
           | catch
-          | finally
           | switch
         )\b
       scope: keyword.control.php.7

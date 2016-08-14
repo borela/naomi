@@ -22,7 +22,8 @@ contexts:
     # Without header.
     - match: |
         (?xi)\b
-        (?> else
+        (?> do
+          | else
           | try
           | finally
         )\b
@@ -34,7 +35,6 @@ contexts:
         (?> if
           | elseif
           | for(?:each)?
-          | do
           | while
           | catch
           | switch

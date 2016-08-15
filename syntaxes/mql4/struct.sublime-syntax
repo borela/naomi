@@ -27,7 +27,7 @@ contexts:
     - match: \bstruct\b
       scope: >-
         statement.struct.mql.4
-        keyword.statement.struct.mql.4
+        keyword.struct.mql.4
       set: identifier
 
   identifier:

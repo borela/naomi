@@ -27,7 +27,7 @@ contexts:
     - match: \benum\b
       scope: >-
         statement.enum.mql.4
-        keyword.statement.enum.mql.4
+        keyword.enum.mql.4
       set: identifier
 
   identifier:

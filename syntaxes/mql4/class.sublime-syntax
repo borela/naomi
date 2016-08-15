@@ -27,7 +27,7 @@ contexts:
     - match: \bclass\b
       scope: >-
         statement.class.mql.4
-        keyword.statement.class.mql.4
+        keyword.class.mql.4
       set: identifier
 
   identifier:

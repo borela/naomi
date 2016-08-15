@@ -65,33 +65,13 @@ contexts:
 
   member-access:
     - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
-    # Constant.
-    - match: (?x)\b{{constantIdentifier}}
-      scope: constant.php.7
-      pop: true
-    # Property.
-    - match: (?xi){{commonIdentifier}}
-      scope: >-
-        variable.property.php.7
-        entity.name.variable.php.7
-      pop: true
+    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/variable.no-dollar-sign.sublime-syntax
 
   scope-resolution:
-    - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
-    # Class name as string.
     - match: \bclass\b
       scope: keyword.other.php.7
       pop: true
-    # Variable.
-    - match: (?xi)(\$)({{commonIdentifier}})
-      captures:
-        0: variable.static.php.7
-        1: punctuation.variable.begin.php.7
-        2: entity.name.variable.php.7
-      pop: true
-    # Constant.
-    - match: (?x)\b{{constantIdentifier}}
-      scope: >-
-        constant.php.7
-        entity.name.constant.php.7
-      pop: true
+    - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax

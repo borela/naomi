@@ -28,4 +28,10 @@ contexts:
           | public
         )\b
       scope: keyword.control.hanging.mql.4
+      set: operator
+
+  operator:
+    - match: ":"
+      scope: keyword.operator.mql.4
       pop: true
+    - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

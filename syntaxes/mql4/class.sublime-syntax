@@ -79,8 +79,6 @@ contexts:
         statement.class.body.mql.4
         punctuation.delimiter.class.body.end.mql.4
       pop: true
-    - match: ":"
-      scope: keyword.operator.mql.4
     - match: ""
       push:
         - include: Packages/Naomi/syntaxes/mql4/cd-tor.inside-class.sublime-syntax

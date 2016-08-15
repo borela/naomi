@@ -25,4 +25,10 @@ contexts:
           | default
         )\b
       scope: keyword.control.hanging.php.7
+      set: operator
+
+  operator:
+    - match: ":"
+      scope: keyword.operator.php.7
       pop: true
+    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax

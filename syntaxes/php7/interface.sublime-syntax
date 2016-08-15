@@ -25,7 +25,7 @@ scope: ...
 contexts:
   main:
     - match: (?i)\binterface(?!\\)\b
-      scope: keyword.statement.interface.php.7
+      scope: keyword.interface.php.7
       set: declaration
 
   declaration:
@@ -33,7 +33,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     # Extends.
     - match: (?i)\bextends\b
-      scope: keyword.statement.inherit.php.7
+      scope: keyword.inherit.php.7
       push: extend-targets
     # interface’s name.
     - match: (?xi)\b{{commonIdentifier}}\b

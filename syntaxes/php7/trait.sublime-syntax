@@ -25,7 +25,7 @@ scope: ...
 contexts:
   main:
     - match: (?xi)\btrait(?!\\)\b
-      scope: keyword.statement.trait.php.7
+      scope: keyword.trait.php.7
       set: declaration
 
   declaration:

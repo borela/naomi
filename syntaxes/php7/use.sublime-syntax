@@ -25,7 +25,7 @@ variables:
 contexts:
   main:
     - match: (?i)\buse(?!\\)\b
-      scope: keyword.statement.import.php.7
+      scope: keyword.import.php.7
       set: declaration
 
   declaration:
@@ -45,10 +45,10 @@ contexts:
   const-or-function:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: (?i)\bconst\b
-      scope: keyword.statement.import.constant.php.7
+      scope: keyword.import.constant.php.7
       set: namespaced-const
     - match: (?i)\bfunction\b
-      scope: keyword.statement.import.function.php.7
+      scope: keyword.import.function.php.7
       set: namespaced-function
     - match: (?=\S)
       set: namespace-or-type
@@ -73,7 +73,7 @@ contexts:
     - match: (?=,|;)
       pop: true
     - match: (?i)\bas\b
-      scope: keyword.statement.import.alias.php.7
+      scope: keyword.import.alias.php.7
       set: alias-name
 
   alias-name:

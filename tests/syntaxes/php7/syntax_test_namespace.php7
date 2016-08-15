@@ -16,7 +16,7 @@
     namespace \Namespace\Namespace\Namespace;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.php.7
 //            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
-//  ^^^^^^^^^ keyword.statement.namespace.php.7
+//  ^^^^^^^^^ keyword.namespace.php.7
 //                                          ^ statement.namespace.body.php.7
 //                                          ^ punctuation.delimiter.namespace.body.begin.php.7
 //            ^ punctuation.delimiter.namespace.a.php.7
@@ -33,7 +33,7 @@
     namespace Namespace\Namespace\Namespace;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.php.7
 //            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
-//  ^^^^^^^^^ keyword.statement.namespace.php.7
+//  ^^^^^^^^^ keyword.namespace.php.7
 //                                         ^ statement.namespace.body.php.7
 //                                         ^ punctuation.delimiter.namespace.body.begin.php.7
 //                     ^ punctuation.delimiter.namespace.b.php.7
@@ -51,7 +51,7 @@
 //            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
 //                                           ^ statement.namespace.body.php.7
 //                                           ^ punctuation.delimiter.namespace.body.begin.php.7
-//  ^^^^^^^^^ keyword.statement.namespace.php.7
+//  ^^^^^^^^^ keyword.namespace.php.7
 //            ^ punctuation.delimiter.namespace.a.php.7
 //                      ^ punctuation.delimiter.namespace.b.php.7
 //                                ^ punctuation.delimiter.namespace.a.php.7
@@ -70,7 +70,7 @@
     namespace Namespace\Namespace\Namespace {
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.php.7
 //            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
-//  ^^^^^^^^^ keyword.statement.namespace.php.7
+//  ^^^^^^^^^ keyword.namespace.php.7
 //                                          ^ statement.namespace.body.php.7
 //                                          ^ punctuation.delimiter.namespace.body.begin.php.7
 //                     ^ punctuation.delimiter.namespace.b.php.7

@@ -25,7 +25,7 @@ scope: ...
 contexts:
   main:
     - match: (?i)\bdeclare\b
-      scope: keyword.statement.declare.php.7
+      scope: keyword.declare.php.7
       push: declaration
 
   declaration:

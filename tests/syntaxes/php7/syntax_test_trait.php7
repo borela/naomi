@@ -15,7 +15,7 @@
 <?php
     trait MyTrait {
 //  ^^^^^^^^^^^^^^^ statement.trait.php.7
-//  ^^^^^ keyword.statement.trait.php.7
+//  ^^^^^ keyword.trait.php.7
 //        ^^^^^^^ entity.name.trait.php.7
 //                ^ statement.trait.body.php.7
 //                ^ punctuation.delimiter.trait.body.begin.php.7
@@ -30,7 +30,7 @@
 
     trait MyTrait {
 //  ^^^^^^^^^^^^^^^ statement.trait.php.7
-//  ^^^^^ keyword.statement.trait.php.7
+//  ^^^^^ keyword.trait.php.7
 //        ^^^^^^^ entity.name.trait.php.7
 //                ^ statement.trait.body.php.7
 //                ^ punctuation.delimiter.trait.body.begin.php.7

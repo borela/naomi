@@ -47,7 +47,7 @@ contexts:
 
   keyword:
     - match: (?i)\bfunction(?!\\)\b
-      scope: keyword.statement.function.php.7
+      scope: keyword.function.php.7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/modifier.no-pop.sublime-syntax
 

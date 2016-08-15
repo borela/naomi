@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: (?xi)\bnamespace(?!\\)\b
-      scope: keyword.statement.namespace.php.7
+      scope: keyword.namespace.php.7
       set: declaration
 
   declaration:

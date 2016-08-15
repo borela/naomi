@@ -62,7 +62,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/mql4/function-call.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/variable-declaration.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
-        - match: ""
+        - match: (?=[()\[\]{},;])
           pop: true
 
   casting:

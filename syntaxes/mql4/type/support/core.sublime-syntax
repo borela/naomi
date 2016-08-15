@@ -31,10 +31,7 @@ contexts:
           | long
           | short
           | string
-          | uchar
-          | uint
-          | ulong
-          | ushort
+          | u(?>char|int|long|short)
           | void
         )\b
       scope: >-

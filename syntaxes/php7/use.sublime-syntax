@@ -36,7 +36,7 @@ contexts:
     - match: ;
       scope: punctuation.delimiter.import.end.php.7
       pop: true
-    - match: ""
+    - match: (?=\S)
       push: [
         alias,
         const-or-function

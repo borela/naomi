@@ -54,7 +54,7 @@ contexts:
     - match: \)
       scope: punctuation.delimiter.control.header.end.mql.4
       pop: true
-    - match: ""
+    - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
         - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax

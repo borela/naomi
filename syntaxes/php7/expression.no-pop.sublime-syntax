@@ -19,6 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: ""
+    - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax

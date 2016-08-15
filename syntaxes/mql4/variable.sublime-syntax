@@ -29,10 +29,14 @@ contexts:
   common-variable:
     - match: |
         (?xi)
-        \b{{commonIdentifier}}\b
-      scope: >-
-        variable.mql.4
-        entity.name.variable.mql.4
+        (?> \s*(\**)\b
+          | \b
+        )
+        ({{commonIdentifier}})\b
+      captures:
+        0: variable.mql.4
+        1: keyword.operator.pointer.mql.4
+        2: entity.name.variable.mql.4
       set: array-item-access-begin
 
   array-item-access-begin:

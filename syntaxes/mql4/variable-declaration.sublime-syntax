@@ -56,6 +56,12 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
 
   punctuation:
+    - match: \,
+      scope: punctuation.delimiter.mql.4
+      set: [
+        punctuation,
+        variable
+      ]
     - match: ;
       scope: punctuation.terminator.mql.4
       pop: true
@@ -64,7 +70,7 @@ contexts:
       push: array-index
     - match: =
       scope: keyword.operator.assignment.mql.4
-      set: value
+      push: value
 
   array-index:
     - match: \,
@@ -75,4 +81,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
 
   value:
+    - match: (?=;)
+      pop: true
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

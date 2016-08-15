@@ -173,7 +173,7 @@
                 <string>Type</string>
 
                 <key>scope</key>
-                <string>entity.name, punctuation.delimiter.type, punctuation.delimiter.enum, punctuation.delimiter.class, punctuation.delimiter.interface, punctuation.delimiter.trait</string>
+                <string>entity.name, punctuation.delimiter.type, punctuation.delimiter.enum, punctuation.delimiter.class, punctuation.delimiter.struct, punctuation.delimiter.interface, punctuation.delimiter.trait</string>
 
                 <key>settings</key>
                 <dict>

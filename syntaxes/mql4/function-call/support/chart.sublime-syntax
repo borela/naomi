@@ -27,7 +27,7 @@ contexts:
               | First
               | Get(?>Double|Integer|String)
               | ID
-              | Indicator(?>Delete|Name|Total)
+              | Indicator(?>Delete|Name|sTotal)
               | Navigate
               | Next
               | Open

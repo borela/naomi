@@ -40,7 +40,6 @@ contexts:
             )\s*
           )?
         )
-        (?=:|;|{)
       captures:
         1: keyword.function.const.mql.4
         2: keyword.function.virtual.mql.4

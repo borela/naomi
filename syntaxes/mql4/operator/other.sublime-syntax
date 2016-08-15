@@ -52,14 +52,6 @@ contexts:
       scope: keyword.operator.php.7
 
   member-access:
-    - include: Packages/Naomi/syntaxes/mql.4/function-call/normal.sublime-syntax
-    # Constant.
-    - match: (?x)\b{{constantIdentifier}}
-      scope: constant.mql.4
-      pop: true
-    # Property.
-    - match: (?xi){{commonIdentifier}}
-      scope: >-
-        variable.property.mql.4
-        entity.name.variable.mql.4
-      pop: true
+    - include: Packages/Naomi/syntaxes/mql4/function-call/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/constant/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax

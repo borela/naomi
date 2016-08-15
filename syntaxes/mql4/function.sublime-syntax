@@ -24,6 +24,7 @@ variables:
 
   typeIdentifier: |
     {{commonIdentifier}}
+    (?:\s*\**)?
 
 contexts:
   main:
@@ -37,8 +38,8 @@ contexts:
               | static
             )\s+
           )?
-          {{typeIdentifier}}
-          \s+{{commonIdentifier}}::{{commonIdentifier}}
+          {{typeIdentifier}}\b
+          {{commonIdentifier}}::{{commonIdentifier}}
           \s*\(
         )
       set: [
@@ -60,8 +61,8 @@ contexts:
               | static
             )\s+
           )?
-          {{typeIdentifier}}
-          \s+{{commonIdentifier}}
+          {{typeIdentifier}}\b
+          {{commonIdentifier}}
           \s*\(
         )
       set: [

@@ -56,4 +56,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/function/parameters.sublime-syntax
 
   body:
+    - meta_scope: statement.function.mql.4
     - include: Packages/Naomi/syntaxes/mql4/function/body.sublime-syntax

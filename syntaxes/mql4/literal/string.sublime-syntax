@@ -43,7 +43,7 @@ contexts:
             string.quoted.double.mql.4
             punctuation.delimiter.string.end.mql.4
           pop: true
-      push: escape-a
+      set: escape-a
 
   escape-a:
     - meta_content_scope: >-

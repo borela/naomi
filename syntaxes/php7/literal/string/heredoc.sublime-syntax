@@ -60,7 +60,7 @@ contexts:
             string.unquoted.heredoc.php.7
             punctuation.delimiter.string.end.php.7
           pop: true
-      push: escape-a-variable-a
+      set: escape-a-variable-a
 
   escape-a-variable-a:
     - meta_content_scope: >-

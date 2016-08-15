@@ -32,7 +32,7 @@ contexts:
             string.quoted.single.php.7
             punctuation.delimiter.string.end.php.7
           pop: true
-      push: escape-a
+      set: escape-a
 
   escape-a:
     - meta_content_scope: >-

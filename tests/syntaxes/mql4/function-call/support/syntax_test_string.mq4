@@ -12,60 +12,79 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-    StringAdd();
-//  ^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^ entity.name.function.mql.4
-    StringBufferLen();
-//  ^^^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^^^ entity.name.function.mql.4
-    StringCompare();
-//  ^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^ entity.name.function.mql.4
-    StringConcatenate();
-//  ^^^^^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
-    StringFill();
-//  ^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^ entity.name.function.mql.4
-    StringFind();
-//  ^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^ entity.name.function.mql.4
-    StringGetChar();
-//  ^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^ entity.name.function.mql.4
-    StringGetCharacter();
-//  ^^^^^^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
-    StringInit();
-//  ^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^ entity.name.function.mql.4
-    StringLen();
-//  ^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^ entity.name.function.mql.4
-    StringReplace();
-//  ^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^ entity.name.function.mql.4
-    StringSetChar();
-//  ^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^ entity.name.function.mql.4
-    StringSetCharacter();
-//  ^^^^^^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
-    StringSplit();
-//  ^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^ entity.name.function.mql.4
-    StringSubstr();
-//  ^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^ entity.name.function.mql.4
-    StringToLower();
-//  ^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^ entity.name.function.mql.4
-    StringToUpper();
-//  ^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^ entity.name.function.mql.4
-    StringTrimLeft();
-//  ^^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^^ entity.name.function.mql.4
-    StringTrimRight();
-//  ^^^^^^^^^^^^^^^ support.function.call.mql.4
-//  ^^^^^^^^^^^^^^^ entity.name.function.mql.4
+   StringAdd();
+// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^ entity.name.function.mql.4
+   StringBufferLen();
+// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^^^^^ entity.name.function.mql.4
+   StringCompare();
+// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^^^ entity.name.function.mql.4
+   StringConcatenate();
+// ^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+   StringFill();
+// ^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^ entity.name.function.mql.4
+   StringFind();
+// ^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^ entity.name.function.mql.4
+   StringGetCharacter();
+// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+   StringInit();
+// ^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^ entity.name.function.mql.4
+   StringLen();
+// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^ entity.name.function.mql.4
+   StringReplace();
+// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^^^ entity.name.function.mql.4
+   StringSetCharacter();
+// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+   StringSplit();
+// ^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^ entity.name.function.mql.4
+   StringSubstr();
+// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^^ entity.name.function.mql.4
+   StringToLower();
+// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^^^ entity.name.function.mql.4
+   StringToUpper();
+// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^^^ entity.name.function.mql.4
+   StringTrimLeft();
+// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^^^^ entity.name.function.mql.4
+   StringTrimRight();
+// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^^^^^ entity.name.function.mql.4
+   StringGetChar();
+// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^^^ entity.name.function.mql.4
+   StringSetChar();
+// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^ support.function.mql.4
+// ^^^^^^^^^^^^^ entity.name.function.mql.4

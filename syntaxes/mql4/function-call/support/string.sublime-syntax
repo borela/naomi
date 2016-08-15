@@ -38,9 +38,10 @@ contexts:
             (?:Lower|Upper)
           | Trim
             (?:Left|Right)
-        )\b
+        )(?=\s*\()
       scope: >-
-        support.function.call.mql.4
+        expression.function.call.mql.4
+        support.function.mql.4
         entity.name.function.mql.4
       set: arguments
 

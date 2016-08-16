@@ -31,37 +31,11 @@ contexts:
       scope: keyword.other.php.7
       set: [
         arguments,
-        type-or-var
+        type
       ]
 
-  type-or-var:
-    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
-
   arguments:
-    - meta_scope: expression.new.object.php.7
-    - match: (?=\;)
-      pop: true
-    - match: \(
-      scope: punctuation.delimiter.arguments.begin.php.7
-      set: arguments-content
+    - include: Packages/Naomi/syntaxes/php7/function-call/arguments.sublime-syntax
 
-  arguments-content:
-    - meta_content_scope: expression.new.object.php.7
-    - match: \)
-      scope: >-
-        expression.new.object.php.7
-        punctuation.delimiter.arguments.end.php.7
-      pop: true
-    - match: (?=\S)
-      push: argument
-
-  argument:
-    - match: (?=\))
-      pop: true
-    - match: \,
-      scope: >-
-        expression.new.object.php.7
-        punctuation.delimiter.arguments.php.7
-      pop: true
-    - include: Packages/Naomi/syntaxes/php7/expression.no-pop.sublime-syntax
+  type:
+    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax

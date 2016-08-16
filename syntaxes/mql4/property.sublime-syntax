@@ -17,21 +17,6 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]]*
-
 contexts:
   main:
-    - match: |
-        (?xi)
-        \b({{commonIdentifier}})
-        (?> \s*(\**)
-          | \b
-        )
-      captures:
-        0: type.mql.4
-        1: entity.name.type.mql.4
-        2: keyword.operator.pointer.mql.4
-      pop: true
+    - include: Packages/Naomi/syntaxes/mql4/variable-declaration.sublime-syntax

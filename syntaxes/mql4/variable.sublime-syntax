@@ -29,7 +29,7 @@ contexts:
   common-variable:
     - match: |
         (?xi)
-        (?> \s*(\**)\b
+        (?> \s*(\**)\s*\b
           | \b
         )
         ({{commonIdentifier}})\b

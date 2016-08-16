@@ -24,7 +24,7 @@ variables:
 
   typeIdentifier: |
     {{commonIdentifier}}
-    (?:\s*\**)?
+    (?:\s*\**\s*)?
 
 contexts:
   main:
@@ -56,6 +56,8 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
 
   punctuation:
+    - match: (?=\))
+      pop: true
     - match: \,
       scope: punctuation.delimiter.mql.4
       set: [

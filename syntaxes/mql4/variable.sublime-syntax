@@ -27,6 +27,9 @@ contexts:
     - include: common-variable
 
   common-variable:
+    - match: (?i)\bthis\b
+      scope: keyword.other.mql.4
+      set: array-item-access-begin
     - match: |
         (?xi)
         (?> \s*(\**)\s*\b

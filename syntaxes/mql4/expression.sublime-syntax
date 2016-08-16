@@ -57,6 +57,7 @@ contexts:
       push:
         - include: Packages/Naomi/syntaxes/mql4/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/new.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/sizeof.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/function-call.sublime-syntax

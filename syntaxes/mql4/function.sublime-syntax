@@ -88,6 +88,9 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   class:
+    - match: \s*(\*+)
+      captures:
+        1: keyword.operator.pointer.mql.4
     - match: (?xi)\b{{commonIdentifier}}\b
       scope: entity.name.class.mql.4
       pop: true

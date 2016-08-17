@@ -1,0 +1,57 @@
+{
+    // Licensed under the Apache License, Version 2.0 (the “License”); you may not
+    // use this file except in compliance with the License. You may obtain a copy of
+    // the License at
+    //
+    //     http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software
+    // distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+    // WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+    // License for the specific language governing permissions and limitations under
+    // the License.
+
+    "scope": "source.mql.4 - comment",
+    "completions": [
+        "OBJ_ARROW",
+        "OBJ_ARROW_BUY",
+        "OBJ_ARROW_CHECK",
+        "OBJ_ARROW_DOWN",
+        "OBJ_ARROW_LEFT_PRICE",
+        "OBJ_ARROW_RIGHT_PRICE",
+        "OBJ_ARROW_SELL",
+        "OBJ_ARROW_STOP",
+        "OBJ_ARROW_THUMB_DOWN",
+        "OBJ_ARROW_THUMB_UP",
+        "OBJ_ARROW_UP",
+        "OBJ_BITMAP",
+        "OBJ_BITMAP_LABEL",
+        "OBJ_BUTTON",
+        "OBJ_CHANNEL",
+        "OBJ_CYCLES",
+        "OBJ_EDIT",
+        "OBJ_ELLIPSE",
+        "OBJ_EVENT",
+        "OBJ_EXPANSION",
+        "OBJ_FIBO",
+        "OBJ_FIBOARC",
+        "OBJ_FIBOCHANNEL",
+        "OBJ_FIBOFAN",
+        "OBJ_FIBOTIMES",
+        "OBJ_GANNFAN",
+        "OBJ_GANNGRID",
+        "OBJ_GANNLINE",
+        "OBJ_HLINE",
+        "OBJ_LABEL",
+        "OBJ_PITCHFORK",
+        "OBJ_RECTANGLE",
+        "OBJ_RECTANGLE_LABEL",
+        "OBJ_REGRESSION",
+        "OBJ_STDDEVCHANNEL",
+        "OBJ_TEXT",
+        "OBJ_TREND",
+        "OBJ_TRENDBYANGLE",
+        "OBJ_TRIANGLE",
+        "OBJ_VLINE"
+    ]
+}

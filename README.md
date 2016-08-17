@@ -1,6 +1,6 @@
 # Naomi
 
-[![Sublime version](https://img.shields.io/badge/sublime->%3D3084-orange.svg?style=flat-square)][sublime]
+[![Sublime version](https://img.shields.io/badge/sublime%203->%3D3084-orange.svg?style=flat-square)][sublime]
 [![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](LICENSE.md)
 
 Package designed to provide easy to extend syntax highlighting and other stuff

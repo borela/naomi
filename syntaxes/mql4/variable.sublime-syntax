@@ -32,7 +32,7 @@ contexts:
       set: array-item-access-begin
     - match: |
         (?xi)
-        (?> \s*(\**)\s*\b
+        (?> \s*(\**)\b
           | \b
         )
         ({{commonIdentifier}})\b

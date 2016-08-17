@@ -31,5 +31,8 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/constant/support/drawing-styles.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/object-property.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/object-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/constant/support/order-selection.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/constant/support/order-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/constant/support/symbol-properties.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/timeframes.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/normal.sublime-syntax

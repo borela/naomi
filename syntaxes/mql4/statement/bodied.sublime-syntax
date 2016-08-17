@@ -19,7 +19,14 @@ scope: ...
 
 contexts:
   main:
-    # Without header.
+    # Header only.
+    - match: (?xi)\breturn\b
+      scope: keyword.control.mql.4
+      set: [
+        terminator,
+        header
+      ]
+    # Body only.
     - match: |
         (?xi)\b
         (?> do
@@ -27,7 +34,7 @@ contexts:
         )\b
       scope: keyword.control.mql.4
       set: body
-    # With header.
+    # Header and body.
     - match: |
         (?xi)\b
         (?> if
@@ -57,6 +64,11 @@ contexts:
         - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
         - match: (?=\))
           pop: true
+
+  terminator:
+    - match: \;
+      scope: punctuation.terminator.mql.4
+      pop: true
 
   body:
     - match: \{

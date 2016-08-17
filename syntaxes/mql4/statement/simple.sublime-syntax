@@ -26,7 +26,6 @@ contexts:
           | continue
           | default
           | goto
-          | return
           | throw
         )\b
       scope: keyword.control.simple.mql.4

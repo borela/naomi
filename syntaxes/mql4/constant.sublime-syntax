@@ -22,6 +22,7 @@ contexts:
     # Types that look like constants.
     - include: Packages/Naomi/syntaxes/mql4/type/support/enums.sublime-syntax
     # Actual constants.
+    - include: Packages/Naomi/syntaxes/mql4/constant/support/applied-price.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/chart-events.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/chart-properties.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/chart-positioning.sublime-syntax
@@ -29,10 +30,12 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/constant/support/color.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/core.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/drawing-styles.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/constant/support/indicator-lines.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/object-property.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/object-type.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/order-selection.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/order-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/constant/support/smoothing-methods.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/symbol-properties.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/timeframes.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/normal.sublime-syntax

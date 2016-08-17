@@ -19,11 +19,17 @@ scope: ...
 
 contexts:
   main:
+    - match: \bNULL\b
+      scope: >-
+        support.constant.mql.4
+        entity.name.constant.mql.4
+    - include: case-insentive
+
+  case-insentive:
     - match: |
-        (?x)\b
+        (?xi)\b
         (?> true
           | false
-          | null
         )\b
       scope: >-
         support.constant.mql.4

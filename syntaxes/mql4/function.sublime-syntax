@@ -24,6 +24,7 @@ variables:
 
   typeIdentifier: |
     {{commonIdentifier}}
+    (?:\s*<.*?>\s+)?
     (?:\s*\**)?
 
 contexts:

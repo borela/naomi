@@ -330,26 +330,12 @@
                 <string>String</string>
 
                 <key>scope</key>
-                <string>string, constant.character</string>
+                <string>string, punctuation.delimiter.string, constant.character, punctuation.delimiter.constant.character</string>
 
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
                     <string>#e57373</string>
-                </dict>
-            </dict>
-
-            <dict>
-                <key>name</key>
-                <string>String, color and datetime’s ending</string>
-
-                <key>scope</key>
-                <string>punctuation.delimiter.string.end, punctuation.delimiter.constant.character.end, punctuation.delimiter.datetime.end, punctuation.delimiter.color.end</string>
-
-                <key>settings</key>
-                <dict>
-                    <key>foreground</key>
-                    <string>#ff8a65</string>
                 </dict>
             </dict>
 

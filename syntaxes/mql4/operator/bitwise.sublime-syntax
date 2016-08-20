@@ -20,20 +20,24 @@ scope: ...
 contexts:
   # | Operator | Description  |
   # | :------: | :------------|
+  # |    &     | Bitwise And. |
   # |    &=    | Bitwise And. |
+  # |    |     | Bitwise Or.  |
   # |    |=    | Bitwise Or.  |
+  # |    ^     | Bitwise Xor. |
   # |    ^=    | Bitwise Xor. |
+  # |    <<    | Left shift.  |
   # |   <<=    | Left shift.  |
+  # |    >>    | Right shift. |
   # |   >>=    | Right shift. |
   main:
-  bitwise-operator:
     - match: |
         (?x)
-        (?> &=
-          | \|=
-          | \^=
-          | <<=
-          | >>=
+        (?> &=?
+          | \|=?
+          | \^=?
+          | <<=?
+          | >>=?
         )
       scope: keyword.operator.bitwise.mql.4
       pop: true

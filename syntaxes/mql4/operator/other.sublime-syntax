@@ -50,6 +50,7 @@ contexts:
     # Other.
     - match: "\\?|:"
       scope: keyword.operator.php.7
+      pop: true
 
   member-access:
     - include: Packages/Naomi/syntaxes/mql4/function-call/normal.sublime-syntax

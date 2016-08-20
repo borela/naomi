@@ -24,6 +24,7 @@ variables:
 
 contexts:
   main:
+    - include: casting
     - match: \(
       scope: punctuation.delimiter.expression.group.a.begin.mql.4
       push: open-b-close-a
@@ -71,9 +72,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          \s*\(\s*
-          {{commonIdentifier}}
-          \s*\)\s*
+          \s*\(.*?\)\s*
           {{commonIdentifier}}
         )
       push: [

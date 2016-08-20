@@ -59,10 +59,11 @@ contexts:
         statement.enum.body.mql.4
         punctuation.delimiter.enum.body.end.mql.4
       pop: true
+    - match: \,
+      scope: punctuation.delimiter.enum.items.mql.4
     - match: (?=\S)
       push: [
-        delimiter,
-        assignment,
+        optional-value,
         item
       ]
 
@@ -74,21 +75,17 @@ contexts:
       scope: entity.name.enum.item.mql.4
       pop: true
 
-  assignment:
+  optional-value:
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
+    - match: (?=[,}])
+      pop: true
     - match: =
       scope: keyword.operator.assignment.mql.4
       set: value
 
   value:
+    - match: (?=[,}])
+      pop: true
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
-
-  delimiter:
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: (?=\};)
-      pop: true
-    - match: \,
-      scope: punctuation.delimiter.enum.items.mql.4
-      pop: true

@@ -21,10 +21,15 @@ contexts:
   # | Operator | Description  |
   # | :------: | :------------|
   # |    ~     | Bitwise not. |
+  # |    &     | Bitwise And. |
   # |    &=    | Bitwise And. |
+  # |    |     | Bitwise Or.  |
   # |    |=    | Bitwise Or.  |
+  # |    ^     | Bitwise Xor. |
   # |    ^=    | Bitwise Xor. |
+  # |    <<    | Left shift.  |
   # |   <<=    | Left shift.  |
+  # |    >>    | Right shift. |
   # |   >>=    | Right shift. |
   main:
     - match: |

@@ -103,6 +103,21 @@ contexts:
       pop: true
 
   name:
+    # Special function name.
+    - match: |
+        (?x)
+        (?> On
+            (?> Calculate
+              | Deinit
+              | Init
+              | Start
+            )
+        )
+      scope: >-
+        support.function.mql.4
+        entity.name.function.mql.4
+      pop: true
+    # Common function name.
     - match: (?xi)\b{{commonIdentifier}}\b
       scope: entity.name.function.mql.4
       pop: true

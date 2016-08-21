@@ -21,13 +21,16 @@ contexts:
   main:
     - match: |
         (?x)\bENUM_
-        (?> CHART_
-            (?> EVENT
+        (?> APPLIED_PRICE
+          | CHART_
+            (?>
+              | EVENT
               | MODE
               | POSITION
               | PROPERTY_
                 (?>DOUBLE|INTEGER|STRING)
             )
+          | MA_METHOD
           | TIMEFRAMES
         )\b
       scope: >-

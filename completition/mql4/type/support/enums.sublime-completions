@@ -13,12 +13,14 @@
 
     "scope": "source.mql.4 - comment",
     "completions": [
+        "ENUM_APPLIED_PRICE",
         "ENUM_CHART_EVENT",
         "ENUM_CHART_MODE",
         "ENUM_CHART_POSITION",
         "ENUM_CHART_PROPERTY_DOUBLE",
         "ENUM_CHART_PROPERTY_INTEGER",
         "ENUM_CHART_PROPERTY_STRING",
+        "ENUM_MA_METHOD",
         "ENUM_TIMEFRAMES"
     ]
 }

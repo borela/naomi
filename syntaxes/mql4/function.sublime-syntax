@@ -22,29 +22,16 @@ variables:
     [_[:alpha:]]
     [_[:alnum:]]*
 
-  arithmeticOperators: |
+  basicOperators: |
     (?> --
-      | -
       | \+\+
-      | \+
-      | \*\*
-      | \*
-      | /
-      | %
-    )
-
-  assignmentOperators: |
-    (?> =
-      | \+=
-      | \*=
-      | /=
-      | %=
-      | \?(\?)?
-      | :
-    )
-
-  bitwiseOperators: |
-    (?> &=?
+      | =
+      | -=?
+      | \+=?
+      | \*=?
+      | /=?
+      | %=?
+      | &=?
       | \|=?
       | \^=?
       | <<=?
@@ -54,30 +41,26 @@ variables:
   comparisonOperators: |
     (?> ===
       | ==
-      | !==
-      | !=
+      | \!==
+      | \!=
       | <>
       | >=
-      | <=>
       | <=
       | >(?!>)
       | <(?!<)
     )
 
   logicalOperators: |
-    (?>
-      | &&
+    (?> &&
       | \|\|
-      | !
+      | \!
     )
 
   functionIdentifier: |
     {{commonIdentifier}}
-    (?> {{arithmeticOperators}}
-      | {{assignmentOperators}}
-      | {{bitwiseOperators}}
+    (?> {{logicalOperators}}
       | {{comparisonOperators}}
-      | {{logicalOperators}}
+      | {{basicOperators}}
       | \[\]
     )?
 

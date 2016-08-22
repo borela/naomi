@@ -159,7 +159,7 @@
                 <string>Built-in types, constants, functions and variables</string>
 
                 <key>scope</key>
-                <string>support entity.name.type, support punctuation.delimiter.type, support.constant entity.name.constant, support.function entity.name.function, support.variable entity.name.variable, support.variable punctuation.variable</string>
+                <string>support entity.name.type, support punctuation.delimiter.type, support.constant entity.name.constant, support.function entity.name.function, support.variable entity.name.variable, support.variable punctuation.variable, entity.name.type.array, punctuation.delimiter.array</string>
 
                 <key>settings</key>
                 <dict>
@@ -184,10 +184,10 @@
 
             <dict>
                 <key>name</key>
-                <string>Array</string>
+                <string>Ambiguous types</string>
 
                 <key>scope</key>
-                <string>entity.name.type.array, punctuation.delimiter.array</string>
+                <string>entity.name.other</string>
 
                 <key>settings</key>
                 <dict>

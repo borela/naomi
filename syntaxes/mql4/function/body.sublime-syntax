@@ -105,5 +105,10 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/mql4/statement.sublime-syntax
+        # Statements.
+        - include: Packages/Naomi/syntaxes/mql4/statement/hanging.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/statement/bodied.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/statement/simple.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/preprocessor.sublime-syntax
+        # Expressions.
         - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

@@ -20,20 +20,107 @@ variables:
     [_[:alpha:]]
     [_[:alnum:]]*
 
+  basicOperators: |
+    (?> --
+      | \+\+
+      | =
+      | -=?
+      | \+=?
+      | \*=?
+      | /=?
+      | %=?
+      | &=?
+      | \|=?
+      | \^=?
+      | <<=?
+      | >>=?
+    )
+
+  comparisonOperators: |
+    (?> ===
+      | ==
+      | \!==
+      | \!=
+      | <>
+      | >=
+      | <=
+      | >(?!>)
+      | <(?!<)
+    )
+
+  logicalOperators: |
+    (?> &&
+      | \|\|
+      | \!
+    )
+
+  functionIdentifier: |
+    {{commonIdentifier}}
+    (?> {{logicalOperators}}
+      | {{comparisonOperators}}
+      | {{basicOperators}}
+      | \[\]
+    )?
+
+  typeIdentifier: |
+    {{commonIdentifier}}
+    (?:\s*<.*?>\s+)?
+    (?:\s*\**)?
+
 scope: ...
 
 contexts:
   main:
-    - include: function-call
-
-  function-call:
+    # Scoped function call.
     - match: |
-        (?xi)\b
-        ({{commonIdentifier}})
-        (?=\s*\()
-      captures:
-        0: function.call.mql.4
-        1: entity.name.function.mql.4
+        (?xi)
+        (?=\b
+          {{typeIdentifier}}::{{functionIdentifier}}
+          \s*\(
+        )
+      set: [
+        name,
+        scope-operator,
+        class
+      ]
+    # Normal function call.
+    - match: |
+        (?xi)
+        (?=\b
+          {{functionIdentifier}}
+          \s*\(
+        )
+      set: name
+
+  class:
+    - match: (?xi)\b{{typeIdentifier}}\b
+      scope: entity.name.class.mql.4
+      pop: true
+
+  scope-operator:
+    - match: "::"
+      scope: keyword.operator.scope.mql.4
+      pop: true
+
+  name:
+    - meta_scope: expression.function.call.mql.4
+    # Special function name.
+    - match: |
+        (?x)
+        (?> On
+            (?> Calculate
+              | Deinit
+              | Init
+              | Start
+            )
+        )
+      scope: >-
+        support.function.mql.4
+        entity.name.function.mql.4
+      set: arguments
+    # Common function name.
+    - match: (?xi){{functionIdentifier}}
+      scope: entity.name.function.mql.4
       set: arguments
 
   arguments:

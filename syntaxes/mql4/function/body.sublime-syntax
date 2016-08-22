@@ -28,7 +28,7 @@ contexts:
     - match: ;
       scope: punctuation.delimiter.function.declaration.end.mql.4
       pop: true
-    # Virtual or const.
+    # Pure virtual or const.
     - match: |
         (?x)\s*
         (?> (const)\s*
@@ -43,33 +43,47 @@ contexts:
       captures:
         1: keyword.function.const.mql.4
         2: keyword.function.virtual.mql.4
-    # Member variable initialization.
+    # Initialization.
     - match: ":"
       scope: keyword.other.mql.4
-      set: variables-initialization
+      set: initializations
     # Normal body.
     - include: body-start
 
-  variables-initialization:
+  initializations:
     - match: ""
       set: [
         delimiter,
+        end-initialization,
         expression,
-        variable
+        begin-initialization,
+        identifier
       ]
 
-  variable:
-    - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
+  identifier:
+    - match: (?xi){{commonIdentifier}}
+      scope: entity.name.other.mql.4
+      pop: true
+
+  begin-initialization:
+    - match: \(
+      scope: punctuation.delimiter.initialization.begin.mql.4
+      pop: true
 
   expression:
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
+
+  end-initialization:
+    - match: \)
+      scope: punctuation.delimiter.initialization.end.mql.4
+      pop: true
 
   delimiter:
     - meta_content_scope: statement.function.mql.4
     - include: body-start
     - match: \,
-      scope: punctuation.delimiter.variable.initialization.mql.4
-      set: variables-initialization
+      scope: punctuation.delimiter.initialization.mql.4
+      set: initializations
 
   body-start:
     - match: \{

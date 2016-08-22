@@ -40,7 +40,7 @@ contexts:
           {{typeIdentifier}}\b
           {{commonIdentifier}}\b
         )
-      push: [
+      set: [
         punctuation,
         variable,
         type

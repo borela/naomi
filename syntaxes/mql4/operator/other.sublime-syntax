@@ -49,7 +49,7 @@ contexts:
       set: member-access
     # Other.
     - match: "\\?|:"
-      scope: keyword.operator.php.7
+      scope: keyword.operator.mql.4
       pop: true
 
   member-access:

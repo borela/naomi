@@ -22,6 +22,65 @@ variables:
     [_[:alpha:]]
     [_[:alnum:]]*
 
+  arithmeticOperators: |
+    (?> --
+      | -
+      | \+\+
+      | \+
+      | \*\*
+      | \*
+      | /
+      | %
+    )
+
+  assignmentOperators: |
+    (?> =
+      | \+=
+      | \*=
+      | /=
+      | %=
+      | \?(\?)?
+      | :
+    )
+
+  bitwiseOperators: |
+    (?> &=?
+      | \|=?
+      | \^=?
+      | <<=?
+      | >>=?
+    )
+
+  comparisonOperators: |
+    (?> ===
+      | ==
+      | !==
+      | !=
+      | <>
+      | >=
+      | <=>
+      | <=
+      | >(?!>)
+      | <(?!<)
+    )
+
+  logicalOperators: |
+    (?>
+      | &&
+      | \|\|
+      | !
+    )
+
+  functionIdentifier: |
+    {{commonIdentifier}}
+    (?> {{arithmeticOperators}}
+      | {{assignmentOperators}}
+      | {{bitwiseOperators}}
+      | {{comparisonOperators}}
+      | {{logicalOperators}}
+      | \[\]
+    )?
+
   typeIdentifier: |
     {{commonIdentifier}}
     (?:\s*<.*?>\s+)?
@@ -40,7 +99,7 @@ contexts:
             )\s+
           )?
           {{typeIdentifier}}\b
-          {{commonIdentifier}}::{{commonIdentifier}}
+          {{commonIdentifier}}::{{functionIdentifier}}
           \s*\(
         )
       set: [
@@ -63,7 +122,7 @@ contexts:
             )\s+
           )?
           {{typeIdentifier}}\b
-          {{commonIdentifier}}
+          {{functionIdentifier}}
           \s*\(
         )
       set: [
@@ -118,7 +177,7 @@ contexts:
         entity.name.function.mql.4
       pop: true
     # Common function name.
-    - match: (?xi)\b{{commonIdentifier}}\b
+    - match: (?xi){{functionIdentifier}}
       scope: entity.name.function.mql.4
       pop: true
 

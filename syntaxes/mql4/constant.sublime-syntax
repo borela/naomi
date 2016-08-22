@@ -36,6 +36,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/constant/support/object-type.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/order-selection.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/order-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/constant/support/other.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/series-identifiers.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/smoothing-methods.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/symbol-properties.sublime-syntax

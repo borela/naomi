@@ -25,6 +25,7 @@ contexts:
           | const
           | continue
           | default
+          | delete
           | goto
           | throw
         )\b

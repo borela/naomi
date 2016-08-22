@@ -29,7 +29,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/comment.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/preprocessor.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/input.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/delete.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/template.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/struct.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/class.sublime-syntax

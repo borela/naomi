@@ -22,6 +22,11 @@ variables:
     [_[:alpha:]]
     [_[:alnum:]]*
 
+  typeIdentifier: |
+    {{commonIdentifier}}
+    (?:\s*<.*?>\s*)?
+    (?:\s*\**)?
+
 contexts:
   main:
     - include: casting
@@ -72,8 +77,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          \s*\(.*?\)\s*
-          {{commonIdentifier}}
+          \s*\({{typeIdentifier}}\)
         )
       push: [
         casting-close,

@@ -24,7 +24,7 @@ contexts:
       scope: keyword.control.mql.4
       set: [
         terminator,
-        header
+        optional-header
       ]
     # Body only.
     - match: |
@@ -48,6 +48,12 @@ contexts:
         body,
         header
       ]
+
+  optional-header:
+    - match: (?=;)
+      pop: true
+    - match: (?=\()
+      set: header
 
   header:
     - match: \(

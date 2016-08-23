@@ -13,23 +13,9 @@
 
     "scope": "source.mql.4 - comment",
     "completions": [
-        "ENUM_ALIGN_MODE",
-        "ENUM_ANCHOR_POINT",
-        "ENUM_APPLIED_PRICE",
-        "ENUM_ARROW_ANCHOR",
-        "ENUM_BASE_CORNER",
-        "ENUM_BORDER_TYPE",
-        "ENUM_CHART_EVENT",
-        "ENUM_CHART_MODE",
-        "ENUM_CHART_POSITION",
-        "ENUM_CHART_PROPERTY_DOUBLE",
-        "ENUM_CHART_PROPERTY_INTEGER",
-        "ENUM_CHART_PROPERTY_STRING",
-        "ENUM_GANN_DIRECTION",
-        "ENUM_MA_METHOD",
-        "ENUM_OBJECT_PROPERTY_DOUBLE",
-        "ENUM_OBJECT_PROPERTY_INTEGER",
-        "ENUM_OBJECT_PROPERTY_STRING",
-        "ENUM_TIMEFRAMES"
+        "CORNER_LEFT_UPPER",
+        "CORNER_LEFT_LOWER",
+        "CORNER_RIGHT_LOWER",
+        "CORNER_RIGHT_UPPER"
     ]
 }

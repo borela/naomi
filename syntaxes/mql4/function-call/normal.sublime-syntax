@@ -113,7 +113,7 @@ contexts:
               | Init
               | Start
             )
-        )
+        )(?=\s*\()
       scope: >-
         support.function.mql.4
         entity.name.function.mql.4

@@ -341,6 +341,20 @@
 
             <dict>
                 <key>name</key>
+                <string>String delimiter</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.string, punctuation.delimiter.constant.character</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#e5737390</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Escaped character A</string>
 
                 <key>scope</key>

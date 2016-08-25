@@ -27,6 +27,7 @@ contexts:
             | cli_
               (?>get_process_title|set_process_title)
             | dl
+            | define
             | extension_loaded
             | gc_
               (?> collect_cycles

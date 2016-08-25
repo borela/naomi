@@ -34,6 +34,7 @@ contexts:
               | PROPERTY_(?>DOUBLE|INTEGER|STRING)
             )
           | GANN_DIRECTION
+          | LINE_STYLE
           | MA_METHOD
           | OBJECT_PROPERTY_(?>DOUBLE|INTEGER|STRING)
           | TIMEFRAMES

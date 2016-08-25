@@ -41,7 +41,10 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/namespace/path.sublime-syntax
 
   body-content:
-    - include: Packages/Naomi/syntaxes/php7/statement.no-pop.sublime-syntax
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
 
   implicit-body:
     - meta_content_scope: >-

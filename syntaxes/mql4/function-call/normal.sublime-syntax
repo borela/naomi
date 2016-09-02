@@ -56,8 +56,8 @@ variables:
 
   functionIdentifier: |
     {{commonIdentifier}}
-    (?> {{logicalOperators}}
-      | {{comparisonOperators}}
+    (?> {{comparisonOperators}}
+      | {{logicalOperators}}
       | {{basicOperators}}
       | \[\]
     )?

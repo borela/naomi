@@ -159,7 +159,7 @@
                 <string>Built-in types, constants, functions and variables</string>
 
                 <key>scope</key>
-                <string>support entity.name.type, support punctuation.delimiter.type, support.constant entity.name.constant, support.function entity.name.function, support.variable entity.name.variable, support.variable punctuation.variable, entity.name.type.array, punctuation.delimiter.array</string>
+                <string>support.type entity.name.type, support punctuation.delimiter.type, support.constant entity.name.constant, support.function entity.name.function, support.variable entity.name.variable, support.variable punctuation.variable, entity.name.type.array, punctuation.delimiter.array, support.attribute entity.name.attribute</string>
 
                 <key>settings</key>
                 <dict>
@@ -627,7 +627,7 @@
                 <string>Comment’s built-in types, constants and functions</string>
 
                 <key>scope</key>
-                <string>comment support entity.name.type, comment support entity.name.constant, comment support entity.name.function</string>
+                <string>comment support.type entity.name.type, comment support punctuation.delimiter.type, comment support.constant entity.name.constant, comment support.function entity.name.function, comment support.variable entity.name.variable, comment support.variable punctuation.variable</string>
 
                 <key>settings</key>
                 <dict>

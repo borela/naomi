@@ -23,11 +23,11 @@ contexts:
         (?x)
         ((?>\\|\b))
         (
-          (?> Traversable
-            | IteratorAggregate
-            | Iterator
+          (?> ArrayAccess
+            | Countable
+            | Iterator(?:Aggregate)?
             | Throwable
-            | ArrayAccess
+            | Traversable
             | Serializable
           )
         )\b

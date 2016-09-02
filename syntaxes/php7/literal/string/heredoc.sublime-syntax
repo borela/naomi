@@ -55,7 +55,7 @@ contexts:
           # HACK: This pattern is not matching the one captured when the heredoc
           # was opened, it’ll work in most cases but another solution must be
           # used.
-        - match: (?i)^[a-z\x{7f}-\x{ff}_][a-z\x{7f}-\x{ff}0-9_]*;$
+        - match: (?i)^[a-z\x{7f}-\x{ff}_][a-z\x{7f}-\x{ff}0-9_]*(?=;$)
           scope: >-
             string.unquoted.heredoc.php.7
             punctuation.delimiter.string.end.php.7

@@ -20,60 +20,20 @@ variables:
     [_[:alpha:]]
     [_[:alnum:]]*
 
-  functionNamespacePath: |
-    (?>
-      (?:
-        ((?>\\|\b))
-        ({{commonIdentifier}})
-        (\\)
-        ({{commonIdentifier}})
-        (?=\\{{commonIdentifier}}\s*\()
-      )
-      |
-      (?:
-        ((?>\\|\b))
-        ({{commonIdentifier}})
-        (?=\\{{commonIdentifier}}\s*\()
-      )
-    )
-
 scope: ...
 
 contexts:
   main:
-    - include: function-call
-    - include: namespaced-function-call
-
-  function-call:
     - match: |
         (?xi)
         ((?>\\|\b))
-        ({{commonIdentifier}})
-        (?=\s*\()
+        (
+          {{commonIdentifier}}
+        )(?=\s*\()
       captures:
         0: expression.function.call.php.7
         1: punctuation.delimiter.function.php.7
         2: entity.name.function.php.7
-      set: arguments
-
-  namespaced-function-call:
-    - match: |
-        (?xi)
-        ({{functionNamespacePath}})
-        (\\)?
-        ({{commonIdentifier}})
-        (?=\s*\()
-      captures:
-        0: expression.function.call.php.7
-        1: expression.namespace.path.php.7
-        2: punctuation.delimiter.namespace.a.php.7
-        3: entity.name.namespace.a.php.7
-        4: punctuation.delimiter.namespace.b.php.7
-        5: entity.name.namespace.b.php.7
-        6: punctuation.delimiter.namespace.a.php.7
-        7: entity.name.namespace.a.php.7
-        8: punctuation.delimiter.function.php.7
-        9: entity.name.function.php.7
       set: arguments
 
   arguments:

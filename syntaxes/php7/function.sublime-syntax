@@ -34,7 +34,11 @@ contexts:
               | public
             )\s+
           )?
-          (?:static\s+)?
+          (?:
+            (?> abstract
+              | static
+            )\s+
+          )?
           function\b
         )
       set: [
@@ -52,10 +56,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/modifier.no-pop.sublime-syntax
 
   name:
-    - include: Packages/Naomi/syntaxes/php7/function/support/magic.sublime-syntax
-    - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.function.php.7
-      pop: true
+    - include: Packages/Naomi/syntaxes/php7/function/name.sublime-syntax
 
   parameters:
     - include: Packages/Naomi/syntaxes/php7/function/parameters.sublime-syntax

@@ -22,33 +22,18 @@ variables:
     [_[:alpha:]]
     [_[:alnum:]]*
 
-  namespacePath: |
-    (?>
-      (?:
-        ((?>\\|\b))
-        ({{commonIdentifier}})
-        (\\)
-        ({{commonIdentifier}})
-        (?=\\{{commonIdentifier}})
-      )
-      |
-      (?:
-        ((?>\\|\b))
-        ({{commonIdentifier}})
-        (?=\\{{commonIdentifier}})
-      )
-    )
-
 contexts:
   main:
-    - match: (?xi){{namespacePath}}
+    - include: Packages/Naomi/syntaxes/php7/namespace-path.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/function/support/magic.sublime-syntax
+    - match: |
+        (?xi)
+        ((?>\\|\b))
+        (
+          {{commonIdentifier}}
+        )\b
       captures:
-        0: >-
-          type.php.7
-          statement.namespace.path.php.7
-        1: punctuation.delimiter.namespace.a.php.7
-        2: entity.name.namespace.a.php.7
-        3: punctuation.delimiter.namespace.b.php.7
-        4: entity.name.namespace.b.php.7
-        5: punctuation.delimiter.namespace.a.php.7
-        6: entity.name.namespace.a.php.7
+        0: expression.function.call.php.7
+        1: punctuation.delimiter.function.php.7
+        2: entity.name.function.php.7
+      pop: true

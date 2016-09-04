@@ -21,5 +21,6 @@ contexts:
   main:
     - include: Packages/Naomi/syntaxes/php7/type/support/core.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/type/support/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/type/support/exception.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/type/support/interface.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/type/normal.sublime-syntax

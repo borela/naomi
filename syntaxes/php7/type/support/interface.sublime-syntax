@@ -26,6 +26,9 @@ contexts:
           (?> ArrayAccess
             | Countable
             | Iterator(?:Aggregate)?
+            | OuterIterator
+            | RecursiveIterator
+            | SeekableIterator
             | Throwable
             | Traversable
             | Serializable

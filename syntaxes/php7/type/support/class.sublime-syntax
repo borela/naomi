@@ -23,8 +23,45 @@ contexts:
         (?x)
         ((?>\\|\b))
         (
-          (?> Closure
+          (?> ArrayIterator
+            | AppendIterator
+            | CachingIterator
+            | CallbackFilterIterator
+            | Closure
+            | DirectoryIterator
+            | EmptyIterator
+            | FilesystemIterator
+            | FilterIterator
             | Generator
+            | GlobIterator
+            | InfiniteIterator
+            | IteratorIterator
+            | LimitIterator
+            | MultipleIterator
+            | NoRewindIterator
+            | ParentIterator
+            | Recursive
+              (?> ArrayIterator
+                | CachingIterator
+                | CallbackFilterIterator
+                | DirectoryIterator
+                | FilterIterator
+                | IteratorIterator
+                | RegexIterator
+                | TreeIterator
+              )
+            | RegexIterator
+            | Spl
+              (?> DoublyLinkedList
+                | Stack
+                | Queue
+                | Heap
+                | MaxHeap
+                | MinHeap
+                | PriorityQueue
+                | FixedArray
+                | ObjectStorage
+              )
           )
         )\b
       captures:

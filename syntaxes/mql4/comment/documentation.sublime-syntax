@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: \/\*\*
+    - match: \/\*\*(?!\/)
       scope: punctuation.comment.documentation.begin.mql.4
       set: content
 

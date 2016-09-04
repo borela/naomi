@@ -72,6 +72,6 @@ contexts:
     - match: \bclass\b
       scope: keyword.other.php.7
       pop: true
-    - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax

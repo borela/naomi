@@ -55,18 +55,26 @@ contexts:
 
   namespaced-const:
     - meta_scope: statement.import.constant.php.7
-    - include: target
+    - include: target-const
 
   namespaced-function:
     - meta_scope: statement.import.function.php.7
-    - include: target
+    - include: target-function
 
   namespace-or-type:
-    - include: target
+    - include: target-type
 
-  target:
+  target-type:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
+
+  target-const:
+    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
+
+  target-function:
+    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/function/name.sublime-syntax
 
   alias:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax

@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: \/\*\*
+    - match: \/\*\*(?!\/)
       scope: punctuation.comment.documentation.begin.php.7
       set: content
 

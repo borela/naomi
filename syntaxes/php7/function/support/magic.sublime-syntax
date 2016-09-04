@@ -20,20 +20,20 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)
-        (?> __construct
-          | __destruct
-          | __call(?:Static)?
-          | __get
-          | __set(?:_state)?
-          | __isset
-          | __unset
-          | __sleep
-          | __wakeup
-          | __toString
-          | __invoke
-          | __clone
-          | __debugInfo
+        (?x)__
+        (?> call(?:Static)?
+          | clone
+          | construct
+          | debugInfo
+          | destruct
+          | get
+          | invoke
+          | isset
+          | set(?:_state)?
+          | sleep
+          | toString
+          | unset
+          | wakeup
         )
       scope: >-
         support.function.php.7

@@ -243,7 +243,7 @@
                 <string>Variable</string>
 
                 <key>scope</key>
-                <string>variable entity.name.variable, variable punctuation.variable</string>
+                <string>variable entity.name.variable, punctuation.variable</string>
 
                 <key>settings</key>
                 <dict>

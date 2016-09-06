@@ -26,8 +26,8 @@ contexts:
   main:
     - match: |
         (?xi)
-        (?=
-          \b
+        (?=\b
+          (?:abstract\s+)?
           (?:
             (?> private
               | protected

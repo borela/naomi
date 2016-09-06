@@ -34,6 +34,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/constant/support/core.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/corner.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/drawing-styles.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/constant/support/error-codes.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/indicator-lines.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/init-ret-code.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/support/gann.sublime-syntax

@@ -1,0 +1,235 @@
+// SYNTAX TEST "Packages/Naomi/syntaxes/naomi.php7.sublime-syntax"
+
+// Licensed under the Apache License, Version 2.0 (the “License”); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+<?php
+   mb_check_encoding();
+// ^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_convert_case();
+// ^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_convert_encoding();
+// ^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_convert_kana();
+// ^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_convert_variables();
+// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_decode_mimeheader();
+// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_decode_numericentity();
+// ^^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_detect_encoding();
+// ^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_detect_order();
+// ^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_encode_mimeheader();
+// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_encode_numericentity();
+// ^^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_encoding_aliases();
+// ^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_ereg();
+// ^^^^^^^ expression.function.call.php.7
+// ^^^^^^^ support.function.php.7
+// ^^^^^^^ entity.name.function.php.7
+   mb_ereg_match();
+// ^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_ereg_replace();
+// ^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_ereg_replace_callback();
+// ^^^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_ereg_search();
+// ^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_ereg_search_getpos();
+// ^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_ereg_search_getregs();
+// ^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_ereg_search_init();
+// ^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_ereg_search_pos();
+// ^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_ereg_search_regs();
+// ^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_ereg_search_setpos();
+// ^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_eregi();
+// ^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^ support.function.php.7
+// ^^^^^^^^ entity.name.function.php.7
+   mb_eregi_replace();
+// ^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_get_info();
+// ^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^ entity.name.function.php.7
+   mb_http_input();
+// ^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_http_output();
+// ^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_internal_encoding();
+// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_language();
+// ^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^ entity.name.function.php.7
+   mb_list_encodings();
+// ^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_output_handler();
+// ^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_parse_str();
+// ^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^ entity.name.function.php.7
+   mb_preferred_mime_name();
+// ^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_regex_encoding();
+// ^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_regex_set_options();
+// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_send_mail();
+// ^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^ entity.name.function.php.7
+   mb_split();
+// ^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^ support.function.php.7
+// ^^^^^^^^ entity.name.function.php.7
+   mb_strcut();
+// ^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^ entity.name.function.php.7
+   mb_strimwidth();
+// ^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_stripos();
+// ^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^ entity.name.function.php.7
+   mb_stristr();
+// ^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^ entity.name.function.php.7
+   mb_strlen();
+// ^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^ entity.name.function.php.7
+   mb_strpos();
+// ^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^ entity.name.function.php.7
+   mb_strrchr();
+// ^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^ entity.name.function.php.7
+   mb_strrichr();
+// ^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^ entity.name.function.php.7
+   mb_strripos();
+// ^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^ entity.name.function.php.7
+   mb_strrpos();
+// ^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^ entity.name.function.php.7
+   mb_strstr();
+// ^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^ entity.name.function.php.7
+   mb_strtolower();
+// ^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_strtoupper();
+// ^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_strwidth();
+// ^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^ entity.name.function.php.7
+   mb_substitute_character();
+// ^^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   mb_substr();
+// ^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^ entity.name.function.php.7
+   mb_substr_count();
+// ^^^^^^^^^^^^^^^ expression.function.call.php.7
+// ^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^ entity.name.function.php.7

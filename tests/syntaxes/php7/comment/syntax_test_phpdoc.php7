@@ -114,8 +114,8 @@
 //     ^ punctuation.keyword.begin.php.7
      * @throws \Namespace\Namespace\TargetClass
 //     ^^^^^^^ keyword.documentation.php.7
-//             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//             ^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//             ^^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
+//                                 ^^^^^^^^^^^^ type.php.7
 //     ^ punctuation.keyword.begin.php.7
 //             ^ punctuation.delimiter.namespace.a.php.7
 //                       ^ punctuation.delimiter.namespace.b.php.7
@@ -123,8 +123,8 @@
 //                                  ^^^^^^^^^^^ entity.name.type.php.7
      * @throws Namespace\Namespace\TargetClass
 //     ^^^^^^^ keyword.documentation.php.7
-//             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//             ^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//             ^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
+//                                ^^^^^^^^^^^^ type.php.7
 //     ^ punctuation.keyword.begin.php.7
 //                      ^ punctuation.delimiter.namespace.b.php.7
 //                                ^ punctuation.delimiter.type.php.7

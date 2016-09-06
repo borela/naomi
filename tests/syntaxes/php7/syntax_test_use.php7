@@ -65,11 +65,11 @@
 //      ^^^^^^^^ keyword.import.function.php.7
 //               ^ punctuation.delimiter.namespace.a.php.7
 //                         ^ punctuation.delimiter.namespace.b.php.7
-//                                   ^ punctuation.delimiter.type.php.7
+//                                   ^ punctuation.delimiter.function.php.7
 //                                              ^ punctuation.delimiter.import.end.php.7
 //                ^^^^^^^^^ entity.name.namespace.a.php.7
 //                          ^^^^^^^^^ entity.name.namespace.b.php.7
-//                                    ^^^^^^^^^^ entity.name.type.php.7
+//                                    ^^^^^^^^^^ entity.name.function.php.7
 
     use function \Namespace\Namespace\MyFunction as Alias;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
@@ -78,11 +78,11 @@
 //                                               ^^ keyword.import.alias.php.7
 //               ^ punctuation.delimiter.namespace.a.php.7
 //                         ^ punctuation.delimiter.namespace.b.php.7
-//                                   ^ punctuation.delimiter.type.php.7
+//                                   ^ punctuation.delimiter.function.php.7
 //                                                       ^ punctuation.delimiter.import.end.php.7
 //                ^^^^^^^^^ entity.name.namespace.a.php.7
 //                          ^^^^^^^^^ entity.name.namespace.b.php.7
-//                                    ^^^^^^^^^ entity.name.type.php.7
+//                                    ^^^^^^^^^ entity.name.function.php.7
 //                                                  ^^^^^ entity.name.alias.php.7
 
     use function Namespace\Namespace\MyFunction;
@@ -90,11 +90,11 @@
 //  ^^^ keyword.import.php.7
 //      ^^^^^^^^ keyword.import.function.php.7
 //                        ^ punctuation.delimiter.namespace.b.php.7
-//                                  ^ punctuation.delimiter.type.php.7
+//                                  ^ punctuation.delimiter.function.php.7
 //                                             ^ punctuation.delimiter.import.end.php.7
 //               ^^^^^^^^^ entity.name.namespace.a.php.7
 //                         ^^^^^^^^^ entity.name.namespace.b.php.7
-//                                   ^^^^^^^^^^ entity.name.type.php.7
+//                                   ^^^^^^^^^^ entity.name.function.php.7
 
     use function Namespace\Namespace\MyFunction as Alias;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
@@ -102,60 +102,60 @@
 //      ^^^^^^^^ keyword.import.function.php.7
 //                                              ^^ keyword.import.alias.php.7
 //                        ^ punctuation.delimiter.namespace.b.php.7
-//                                  ^ punctuation.delimiter.type.php.7
+//                                  ^ punctuation.delimiter.function.php.7
 //                                                      ^ punctuation.delimiter.import.end.php.7
 //               ^^^^^^^^^ entity.name.namespace.a.php.7
 //                         ^^^^^^^^^ entity.name.namespace.b.php.7
-//                                   ^^^^^^^^^^ entity.name.type.php.7
+//                                   ^^^^^^^^^^ entity.name.function.php.7
 //                                                 ^^^^^ entity.name.alias.php.7
 
-    use const \Namespace\Namespace\MyConstant;
+    use const \Namespace\Namespace\MYCONSTANT;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.import.php.7
 //      ^^^^^ keyword.import.constant.php.7
 //            ^ punctuation.delimiter.namespace.a.php.7
 //                      ^ punctuation.delimiter.namespace.b.php.7
-//                                ^ punctuation.delimiter.type.php.7
+//                                ^ punctuation.delimiter.constant.php.7
 //                                           ^ punctuation.delimiter.import.end.php.7
 //             ^^^^^^^^^ entity.name.namespace.a.php.7
 //                       ^^^^^^^^^ entity.name.namespace.b.php.7
-//                                 ^^^^^^^^^^ entity.name.type.php.7
+//                                 ^^^^^^^^^^ entity.name.constant.php.7
 
-    use const \Namespace\Namespace\MyConstant as Alias;
+    use const \Namespace\Namespace\MYCONSTANT as Alias;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.import.php.7
 //      ^^^^^ keyword.import.constant.php.7
 //                                            ^^ keyword.import.alias.php.7
 //            ^ punctuation.delimiter.namespace.a.php.7
 //                      ^ punctuation.delimiter.namespace.b.php.7
-//                                ^ punctuation.delimiter.type.php.7
+//                                ^ punctuation.delimiter.constant.php.7
 //                                                    ^ punctuation.delimiter.import.end.php.7
 //             ^^^^^^^^^ entity.name.namespace.a.php.7
 //                       ^^^^^^^^^ entity.name.namespace.b.php.7
-//                                 ^^^^^^^^^^ entity.name.type.php.7
+//                                 ^^^^^^^^^^ entity.name.constant.php.7
 //                                               ^^^^^ entity.name.alias.php.7
 
-    use const Namespace\Namespace\MyConstant;
+    use const Namespace\Namespace\MYCONSTANT;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.import.php.7
 //      ^^^^^ keyword.import.constant.php.7
 //                     ^ punctuation.delimiter.namespace.b.php.7
-//                               ^ punctuation.delimiter.type.php.7
+//                               ^ punctuation.delimiter.constant.php.7
 //                                          ^ punctuation.delimiter.import.end.php.7
 //            ^^^^^^^^^ entity.name.namespace.a.php.7
 //                      ^^^^^^^^^ entity.name.namespace.b.php.7
-//                                ^^^^^^^^^^ entity.name.type.php.7
+//                                ^^^^^^^^^^ entity.name.constant.php.7
 
-    use const Namespace\Namespace\MyConstant as Alias;
+    use const Namespace\Namespace\MYCONSTANT as Alias;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.import.php.7
 //      ^^^^^ keyword.import.constant.php.7
 //                                           ^^ keyword.import.alias.php.7
 //                     ^ punctuation.delimiter.namespace.b.php.7
-//                               ^ punctuation.delimiter.type.php.7
+//                               ^ punctuation.delimiter.constant.php.7
 //                                                   ^ punctuation.delimiter.import.end.php.7
 //            ^^^^^^^^^ entity.name.namespace.a.php.7
 //                      ^^^^^^^^^ entity.name.namespace.b.php.7
-//                                ^^^^^^^^^^ entity.name.type.php.7
+//                                ^^^^^^^^^^ entity.name.constant.php.7
 //                                              ^^^^^ entity.name.alias.php.7
 ?>

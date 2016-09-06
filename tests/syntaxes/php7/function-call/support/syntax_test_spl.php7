@@ -14,45 +14,45 @@
 
 <?php
    class_implements();
-// ^^^^^^^^^^^^^^^^^^^ support.function.php.7
-// ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
-   class_parents();
 // ^^^^^^^^^^^^^^^^ support.function.php.7
 // ^^^^^^^^^^^^^^^^ entity.name.function.php.7
-   class_uses();
+   class_parents();
 // ^^^^^^^^^^^^^ support.function.php.7
 // ^^^^^^^^^^^^^ entity.name.function.php.7
+   class_uses();
+// ^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^ entity.name.function.php.7
    iterator_apply();
-// ^^^^^^^^^^^^^^^^^ support.function.php.7
-// ^^^^^^^^^^^^^^^^^ entity.name.function.php.7
-   iterator_count();
-// ^^^^^^^^^^^^^^^^^ support.function.php.7
-// ^^^^^^^^^^^^^^^^^ entity.name.function.php.7
-   iterator_to_array();
-// ^^^^^^^^^^^^^^^^^^^^ support.function.php.7
-// ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
-   spl_autoload_call();
-// ^^^^^^^^^^^^^^^^^^^^ support.function.php.7
-// ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
-   spl_autoload_extensions();
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
-   spl_autoload_functions();
-// ^^^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
-// ^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
-   spl_autoload_register();
-// ^^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
-// ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
-   spl_autoload_unregister();
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
-   spl_autoload();
-// ^^^^^^^^^^^^^^^ support.function.php.7
-// ^^^^^^^^^^^^^^^ entity.name.function.php.7
-   spl_classes();
 // ^^^^^^^^^^^^^^ support.function.php.7
 // ^^^^^^^^^^^^^^ entity.name.function.php.7
+   iterator_count();
+// ^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^ entity.name.function.php.7
+   iterator_to_array();
+// ^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   spl_autoload_call();
+// ^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   spl_autoload_extensions();
+// ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   spl_autoload_functions();
+// ^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   spl_autoload_register();
+// ^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   spl_autoload_unregister();
+// ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+   spl_autoload();
+// ^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^ entity.name.function.php.7
+   spl_classes();
+// ^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^ entity.name.function.php.7
    spl_object_hash();
-// ^^^^^^^^^^^^^^^^^^ support.function.php.7
-// ^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
+// ^^^^^^^^^^^^^^^ support.function.php.7
+// ^^^^^^^^^^^^^^^ entity.name.function.php.7
 ?>

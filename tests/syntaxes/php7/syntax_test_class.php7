@@ -55,8 +55,7 @@
 //                ^^^^^^^ keyword.inherit.php.7
         \Namespace\Namespace\ParentClass {
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//      ^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//      ^^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
 //                                       ^ statement.class.body.php.7
 //                                       ^ punctuation.delimiter.class.body.begin.php.7
 //      ^ punctuation.delimiter.namespace.a.php.7
@@ -81,8 +80,7 @@
 //                ^^^^^^^ keyword.inherit.php.7
         Namespace\Namespace\ParentClass {
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//      ^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//      ^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
 //                                      ^ statement.class.body.php.7
 //                                      ^ punctuation.delimiter.class.body.begin.php.7
 //               ^ punctuation.delimiter.namespace.b.php.7
@@ -106,8 +104,7 @@
 //                ^^^^^^^^^^ keyword.implement.php.7
         \Namespace\Namespace\Interface1,
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//      ^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//      ^^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
 //                                     ^ punctuation.delimiter.implement.php.7
 //      ^ punctuation.delimiter.namespace.a.php.7
 //                ^ punctuation.delimiter.namespace.b.php.7
@@ -117,8 +114,7 @@
 //                           ^^^^^^^^^^ entity.name.type.php.7
         \Namespace\Namespace\Interface2 {
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//      ^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//      ^^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
 //                                      ^ statement.class.body.php.7
 //                                      ^ punctuation.delimiter.class.body.begin.php.7
 //      ^ punctuation.delimiter.namespace.a.php.7
@@ -143,8 +139,7 @@
 //                ^^^^^^^^^^ keyword.implement.php.7
         Namespace\Namespace\Interface1,
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//      ^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//      ^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
 //                                    ^ punctuation.delimiter.implement.php.7
 //               ^ punctuation.delimiter.namespace.b.php.7
 //                         ^ punctuation.delimiter.type.php.7
@@ -153,8 +148,7 @@
 //                          ^^^^^^^^^^ entity.name.type.php.7
         Namespace\Namespace\Interface2 {
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//      ^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//      ^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
 //                                     ^ statement.class.body.php.7
 //                                     ^ punctuation.delimiter.class.body.begin.php.7
 //               ^ punctuation.delimiter.namespace.b.php.7
@@ -178,8 +172,7 @@
 //                ^^^^^^^ keyword.inherit.php.7
         \Namespace\Namespace\ParentClass
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//      ^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//      ^^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
 //      ^ punctuation.delimiter.namespace.a.php.7
 //                ^ punctuation.delimiter.namespace.b.php.7
 //                          ^ punctuation.delimiter.type.php.7
@@ -190,8 +183,7 @@
 //  ^^^^^^^^^^ keyword.implement.php.7
         \Namespace\Namespace\Interface1,
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//      ^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//      ^^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
 //                                     ^ punctuation.delimiter.implement.php.7
 //      ^ punctuation.delimiter.namespace.a.php.7
 //                ^ punctuation.delimiter.namespace.b.php.7
@@ -201,8 +193,7 @@
 //                           ^^^^^^^^^^ entity.name.type.php.7
         \Namespace\Namespace\Interface2 {
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//      ^^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//      ^^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
 //                                      ^ statement.class.body.php.7
 //                                      ^ punctuation.delimiter.class.body.begin.php.7
 //      ^ punctuation.delimiter.namespace.a.php.7
@@ -227,8 +218,7 @@
 //                ^^^^^^^ keyword.inherit.php.7
         Namespace\Namespace\ParentClass
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//      ^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//      ^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
 //               ^ punctuation.delimiter.namespace.b.php.7
 //                         ^ punctuation.delimiter.type.php.7
 //      ^^^^^^^^^ entity.name.namespace.a.php.7
@@ -238,8 +228,7 @@
 //  ^^^^^^^^^^ keyword.implement.php.7
         Namespace\Namespace\Interface1,
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//      ^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//      ^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
 //                                    ^ punctuation.delimiter.implement.php.7
 //               ^ punctuation.delimiter.namespace.b.php.7
 //                         ^ punctuation.delimiter.type.php.7
@@ -248,8 +237,7 @@
 //                          ^^^^^^^^^^ entity.name.type.php.7
         Namespace\Namespace\Interface2 {
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.class.php.7
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type.php.7
-//      ^^^^^^^^^^^^^^^^^^^ statement.namespace.path.php.7
+//      ^^^^^^^^^^^^^^^^^^^ expression.namespace.path.php.7
 //                                     ^ statement.class.body.php.7
 //                                     ^ punctuation.delimiter.class.body.begin.php.7
 //               ^ punctuation.delimiter.namespace.b.php.7

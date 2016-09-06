@@ -28,7 +28,9 @@ contexts:
 
   common-variable:
     - match: (?i)\bthis\b
-      scope: keyword.other.mql.4
+      scope: >-
+        support.variable.mql.4
+        entity.name.variable.mql.4
       set: array-item-access-begin
     - match: |
         (?xi)

@@ -49,7 +49,7 @@ contexts:
     - match: (?=\$|$)
       pop: true
     - match: \|
-      scope: punctuation.delimiter.types.php.7
+      scope: keyword.operator.php.7
       pop: true
 
   param:

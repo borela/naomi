@@ -62,7 +62,19 @@ contexts:
     - include: target-function
 
   namespace-or-type:
-    - include: target-type
+    - include: Packages/Naomi/syntaxes/php7/namespace-path.no-pop.sublime-syntax
+    # Target namespace or type.
+    - match: |
+        (?xi)
+        ((?>\\|\b))
+        (
+          {{commonIdentifier}}
+        )\b
+      captures:
+        0: ambiguous.php.7
+        1: punctuation.delimiter.ambiguous.php.7
+        2: entity.name.ambiguous.php.7
+      pop: true
 
   target-type:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax

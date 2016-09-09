@@ -187,7 +187,7 @@
                 <string>Ambiguous types</string>
 
                 <key>scope</key>
-                <string>entity.name.other</string>
+                <string>entity.name.ambiguous</string>
 
                 <key>settings</key>
                 <dict>

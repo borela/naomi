@@ -57,12 +57,12 @@ contexts:
         end-initialization,
         expression,
         begin-initialization,
-        identifier
+        initialized-identifier
       ]
 
-  identifier:
+  initialized-identifier:
     - match: (?xi){{commonIdentifier}}
-      scope: entity.name.other.mql.4
+      scope: entity.name.ambiguous.mql.4
       pop: true
 
   begin-initialization:

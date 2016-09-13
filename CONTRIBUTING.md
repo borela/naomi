@@ -160,17 +160,16 @@ following style:
 
 * Use the present tense: “*Add feature.*” instead of “*Added feature.*”.
 * Use the imperative mood: “*Move file to...*” instead of “*Moves file to...*”.
-* Limit the first line to 50 characters or less.
-* Limit each line in the description to 72 characters.
+* Lines must not exceed 72 characters.
 * Use asterisks for bullet points.
 * Use a hanging indent for bullet points that goes through multiple lines.
 * Reference issues and pull requests liberally.
 
 #### Example of a commit message:
 
-    Capitalized, short (50 chars or less) summary.
+    Summary (72 chars or less).
 
-    More detailed explanatory text, if necessary.  Wrap it to about 70
+    More detailed explanatory text, if necessary.  Wrap it to about 72
     characters. In some contexts, the first line is treated as the
     subject of an email and the rest of the text as the body. The blank
     line separating the summary from the body is critical unless you omit

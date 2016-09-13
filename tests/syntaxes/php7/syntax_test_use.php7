@@ -18,11 +18,11 @@
 //  ^^^ keyword.import.php.7
 //      ^ punctuation.delimiter.namespace.a.php.7
 //                ^ punctuation.delimiter.namespace.b.php.7
-//                          ^ punctuation.delimiter.type.php.7
+//                          ^ punctuation.delimiter.ambiguous.php.7
 //                                 ^ punctuation.delimiter.import.end.php.7
 //       ^^^^^^^^^ entity.name.namespace.a.php.7
 //                 ^^^^^^^^^ entity.name.namespace.b.php.7
-//                           ^^^^^ entity.name.type.php.7
+//                           ^^^^^ entity.name.ambiguous.php.7
 
     use \Namespace\Namespace\Target as Alias;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
@@ -30,33 +30,33 @@
 //                                  ^^ keyword.import.alias.php.7
 //      ^ punctuation.delimiter.namespace.a.php.7
 //                ^ punctuation.delimiter.namespace.b.php.7
-//                          ^ punctuation.delimiter.type.php.7
+//                          ^ punctuation.delimiter.ambiguous.php.7
 //                                          ^ punctuation.delimiter.import.end.php.7
 //       ^^^^^^^^^ entity.name.namespace.a.php.7
 //                 ^^^^^^^^^ entity.name.namespace.b.php.7
-//                           ^^^^^ entity.name.type.php.7
+//                           ^^^^^ entity.name.ambiguous.php.7
 //                                     ^^^^^ entity.name.alias.php.7
 
     use Namespace\Namespace\Target;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.import.php.7
 //               ^ punctuation.delimiter.namespace.b.php.7
-//                         ^ punctuation.delimiter.type.php.7
+//                         ^ punctuation.delimiter.ambiguous.php.7
 //                                ^ punctuation.delimiter.import.end.php.7
 //      ^^^^^^^^^ entity.name.namespace.a.php.7
 //                ^^^^^^^^^ entity.name.namespace.b.php.7
-//                          ^^^^^ entity.name.type.php.7
+//                          ^^^^^ entity.name.ambiguous.php.7
 
     use Namespace\Namespace\Target as Alias;
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.import.php.7
 //  ^^^ keyword.import.php.7
 //                                 ^^ keyword.import.alias.php.7
 //               ^ punctuation.delimiter.namespace.b.php.7
-//                         ^ punctuation.delimiter.type.php.7
+//                         ^ punctuation.delimiter.ambiguous.php.7
 //                                         ^ punctuation.delimiter.import.end.php.7
 //      ^^^^^^^^^ entity.name.namespace.a.php.7
 //                ^^^^^^^^^ entity.name.namespace.b.php.7
-//                          ^^^^^ entity.name.type.php.7
+//                          ^^^^^ entity.name.ambiguous.php.7
 //                                    ^^^^^ entity.name.alias.php.7
 
     use function \Namespace\Namespace\MyFunction;

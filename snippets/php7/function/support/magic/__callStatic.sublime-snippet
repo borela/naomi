@@ -16,7 +16,7 @@
     <tabTrigger>funcallstatic</tabTrigger>
     <description>__callStatic declaration.</description>
     <content><![CDATA[
-public static function __callStatic(string \$name, array \$parameters)
+public static function __callStatic(string \$name, array \$arguments)
 {
     ${1}
 }

@@ -16,7 +16,7 @@
     <tabTrigger>funcall</tabTrigger>
     <description>__call declaration.</description>
     <content><![CDATA[
-public function __call(string \$name, array \$parameters)
+public function __call(string \$name, array \$arguments)
 {
     ${1}
 }

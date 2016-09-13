@@ -55,7 +55,7 @@ contexts:
       set: [
         delimiter,
         end-initialization,
-        expression,
+        initialization-expression,
         begin-initialization,
         initialized-identifier
       ]
@@ -70,8 +70,12 @@ contexts:
       scope: punctuation.delimiter.initialization.begin.mql.4
       pop: true
 
-  expression:
-    - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
+  initialization-expression:
+    - match: (?=\))
+      pop: true
+    - match: \,
+      scope: punctuation.delimiter.initialization.mql.4
+    - include: Packages/Naomi/syntaxes/mql4/expression.no-pop.sublime-syntax
 
   end-initialization:
     - match: \)

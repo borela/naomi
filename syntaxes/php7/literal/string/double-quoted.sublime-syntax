@@ -35,15 +35,8 @@ variables:
       | {{unicodeEscapedChar}}
     )
 
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]]*
-
-  simpleEmbeddedVariable: |
-    (\$)({{commonIdentifier}})
-    (?:
-      (\[)([^\]]*)(\])
-    )*
+  embeddedVariableStart: |
+    \$
 
 contexts:
   main:
@@ -68,7 +61,7 @@ contexts:
         escape-b-variable-a,
         escape-a
       ]
-    - match: (?x)(?={{simpleEmbeddedVariable}})
+    - match: (?x)(?={{embeddedVariableStart}})
       set: [
         escape-a-variable-b,
         variable-a
@@ -83,7 +76,7 @@ contexts:
         escape-a-variable-a,
         escape-b
       ]
-    - match: (?x)(?={{simpleEmbeddedVariable}})
+    - match: (?x)(?={{embeddedVariableStart}})
       set: [
         escape-b-variable-b,
         variable-a
@@ -98,7 +91,7 @@ contexts:
         escape-b-variable-b,
         escape-a
       ]
-    - match: (?x)(?={{simpleEmbeddedVariable}})
+    - match: (?x)(?={{embeddedVariableStart}})
       set: [
         escape-a-variable-a,
         variable-b
@@ -113,7 +106,7 @@ contexts:
         escape-a-variable-b,
         escape-b
       ]
-    - match: (?x)(?={{simpleEmbeddedVariable}})
+    - match: (?x)(?={{embeddedVariableStart}})
       set: [
         escape-b-variable-a,
         variable-b
@@ -130,7 +123,9 @@ contexts:
       pop: true
 
   variable-a:
-    - include: Packages/Naomi/syntaxes/php7/literal/string/variable-a.sublime-syntax
+    - meta_scope: variable.a.php.7
+    - include: Packages/Naomi/syntaxes/php7/literal/string/embedded-variable.sublime-syntax
 
   variable-b:
-    - include: Packages/Naomi/syntaxes/php7/literal/string/variable-b.sublime-syntax
+    - meta_scope: variable.b.php.7
+    - include: Packages/Naomi/syntaxes/php7/literal/string/embedded-variable.sublime-syntax

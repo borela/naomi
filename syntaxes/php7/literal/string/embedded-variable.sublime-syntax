@@ -22,17 +22,21 @@ variables:
     [_[:alpha:]]
     [_[:alnum:]]*
 
-  simpleEmbeddedVariable: |
-    (\$)({{commonIdentifier}})
+  simpleVariableIdentifier: |
+    (?> \{{{commonIdentifier}}\}
+      | {{commonIdentifier}}
+    )
+
+  simpleVariable: |
+    (\$)({{simpleVariableIdentifier}})
     (?:
       (\[)([^\]]*)(\])
     )*
 
 contexts:
   main:
-    - match: (?xi){{simpleEmbeddedVariable}}
+    - match: (?xi){{simpleVariable}}
       captures:
-        0: variable.a.php.7
         1: punctuation.variable.begin.php.7
         2: entity.name.variable.php.7
         3: operator.subscript.begin.php.7

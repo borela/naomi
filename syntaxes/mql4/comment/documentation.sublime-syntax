@@ -29,4 +29,59 @@ contexts:
     - match: \*\/
       scope: punctuation.comment.documentation.end.mql.4
       pop: true
-    - include: Packages/Naomi/syntaxes/mql4/mql4Doc/tags.no-pop.sublime-syntax
+    - include: tags
+
+  tags:
+    - include: param
+    - include: return
+    - include: other-tags
+
+  variable:
+    - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
+
+  param:
+    - match: \B(@)param\b
+      captures:
+        0: keyword.documentation.mql.4
+        1: punctuation.keyword.begin.mql.4
+      push: variable
+
+  return:
+    - match: \B(@)return\b
+      captures:
+        0: keyword.documentation.mql.4
+        1: punctuation.keyword.begin.mql.4
+
+  other-tags:
+    - match: |
+        (?x)\B(@)
+        (?> api
+          | access
+          | author
+          | category
+          | copyright
+          | deprecated
+          | example
+          | filesource
+          | global
+          | ignore
+          | internal
+          | license
+          | link
+          | method
+          | package
+          | property
+            (?>-
+              (?>read|write)
+            )?
+          | see
+          | since
+          | source
+          | subpackage
+          | todo
+          | tutorial
+          | version
+        )\b
+      captures:
+        0: keyword.documentation.mql.4
+        1: punctuation.keyword.begin.mql.4

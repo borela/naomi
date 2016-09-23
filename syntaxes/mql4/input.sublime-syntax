@@ -48,6 +48,6 @@ contexts:
     - match: ;
       scope: >-
         statement.input.mql.4
-        punctuation.delimiter.input.end.mql.4
+        punctuation.terminator.mql.4
       pop: true
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

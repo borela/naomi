@@ -91,7 +91,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#fff9c4</string>
+                    <string>#ffecb3</string>
 
                     <key>fontStyle</key>
                     <string>bold</string>
@@ -268,7 +268,7 @@
                     <string></string>
 
                     <key>foreground</key>
-                    <string>#b0bec5B0</string>
+                    <string>#ffecb3</string>
                 </dict>
             </dict>
 

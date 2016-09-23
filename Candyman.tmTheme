@@ -257,6 +257,23 @@
 
             <dict>
                 <key>name</key>
+                <string>Member variable</string>
+
+                <key>scope</key>
+                <string>member variable entity.name.variable, member punctuation.variable</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>fontStyle</key>
+                    <string></string>
+
+                    <key>foreground</key>
+                    <string>#b0bec5B0</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Namespace</string>
 
                 <key>scope</key>

@@ -53,6 +53,7 @@ contexts:
       pop: true
 
   member-access:
+    - meta_content_scope: member.mql.4
     - include: Packages/Naomi/syntaxes/mql4/function-call/normal.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/normal.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax

@@ -64,6 +64,7 @@ contexts:
       scope: keyword.operator.php.7
 
   member-access:
+    - meta_content_scope: member.php.7
     - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/variable.no-dollar-sign.sublime-syntax

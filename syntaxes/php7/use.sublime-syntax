@@ -34,7 +34,7 @@ contexts:
     - match: \,
       scope: punctuation.delimiter.import.php.7
     - match: ;
-      scope: punctuation.delimiter.import.end.php.7
+      scope: punctuation.terminator.php.7
       pop: true
     - match: (?=\S)
       push: [

@@ -192,7 +192,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#ffecb3</string>
+                    <string>#ffecb4</string>
                 </dict>
             </dict>
 
@@ -229,7 +229,7 @@
                 <string>Function</string>
 
                 <key>scope</key>
-                <string>entity.name.function, punctuation.delimiter.function</string>
+                <string>entity.name.function, punctuation.delimiter.function, punctuation.initialization.list</string>
 
                 <key>settings</key>
                 <dict>

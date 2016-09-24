@@ -45,7 +45,7 @@ contexts:
         2: keyword.function.virtual.mql.4
     # Initialization.
     - match: ":"
-      scope: keyword.other.mql.4
+      scope: punctuation.initialization.list.begin.mql.4
       set: initializations
     # Normal body.
     - include: body-start

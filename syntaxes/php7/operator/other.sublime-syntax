@@ -52,7 +52,7 @@ contexts:
       scope: keyword.operator.error.suppression.php.7
       pop: true
     - match: "\\.\\.\\."
-      scope: keyword.operator.argument.unpacking.php.7
+      scope: keyword.operator.argument.unpack.php.7
       pop: true
     - match: "->"
       scope: keyword.operator.member.access.php.7

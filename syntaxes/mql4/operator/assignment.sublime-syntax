@@ -36,8 +36,6 @@ contexts:
           | \*=
           | /=
           | %=
-          | \?(\?)?
-          | :
         )
       scope: keyword.operator.assignment.mql.4
       pop: true

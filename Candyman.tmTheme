@@ -607,7 +607,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#546e7a</string>
+                    <string>#607d8b</string>
                 </dict>
             </dict>
 
@@ -630,10 +630,13 @@
                 <string>Comment’s keyword</string>
 
                 <key>scope</key>
-                <string>comment keyword</string>
+                <string>comment keyword, comment punctuation.keyword</string>
 
                 <key>settings</key>
                 <dict>
+                    <key>fontStyle</key>
+                    <string></string>
+
                     <key>foreground</key>
                     <string>#f48fb17f</string>
                 </dict>
@@ -649,7 +652,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#ff9e807f</string>
+                    <string>#ff9e8090</string>
                 </dict>
             </dict>
 
@@ -663,7 +666,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#aed5817f</string>
+                    <string>#aed58190</string>
                 </dict>
             </dict>
 
@@ -677,7 +680,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#81d4fa7f</string>
+                    <string>#81d4fa90</string>
                 </dict>
             </dict>
 
@@ -691,7 +694,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#bcaaa47f</string>
+                    <string>#bcaaa490</string>
                 </dict>
             </dict>
 
@@ -705,7 +708,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#b0bec590</string>
+                    <string>#bdbdbda0</string>
                 </dict>
             </dict>
 

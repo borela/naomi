@@ -22,12 +22,14 @@ variables:
     [0-9]+
 
   literalFloat: |
+    -?
     (?> [0-9]*[.]{{literalDecimal}}
       | {{literalDecimal}}[.][0-9]*
     )
 
   scientificNotation: |
     (
+      -?
       (?> {{literalFloat}}
         | {{literalDecimal}}
       )
@@ -49,15 +51,15 @@ contexts:
       pop: true
 
   integer:
-    - match: "0b[01]+"
+    - match: "-?0b[01]+"
       scope: constant.numeric.binary.html.5
       pop: true
-    - match: "0[0-7]+"
+    - match: "-?0[0-7]+"
       scope: constant.numeric.octal.html.5
       pop: true
-    - match: "(?i)0[x][0-9a-f]+"
+    - match: "(?i)-?0[x][0-9a-f]+"
       scope: constant.numeric.hex.html.5
       pop: true
-    - match: "[1-9][0-9]*|0"
+    - match: "-?[1-9][0-9]*|0"
       scope: constant.numeric.decimal.html.5
       pop: true

@@ -19,6 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: \S.*?(?=\s)
+    - match: \S.*?(?=\s|>)
       scope: string.unquoted.html.5
       pop: true

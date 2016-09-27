@@ -28,11 +28,18 @@ contexts:
         (<)
         (
           (?> area
-            | br
+            | b
+              (?> ase
+                | r
+              )
+            | col
             | hr
             | keygen
             | link
             | meta
+            | param
+            | source
+            | track
             | wbr
           )
         )\b
@@ -54,12 +61,18 @@ contexts:
             | c
               (?> aption
                 | ite
-                | ode
+                | o
+                  (?> lgroup
+                    | de
+                  )
               )
             | d
               (?> ata(?:list)?
                 | [dlt]
-                | el
+                | e
+                  (?> l
+                    | tails
+                  )
                 | iv
                 | fn
               )
@@ -72,16 +85,17 @@ contexts:
               (?> [1-6]
                 | eader
               )
-            | ins
+            | i(?:ns)?
             | kbd
             | li
             | m
-              (?> a(?>p|ark)
+              (?> a(?>in|p|rk)
                 | eter
               )
             | noscript
             | o
               (?> l
+                | ptgroup
                 | utput
               )
             | p
@@ -91,14 +105,22 @@ contexts:
                 )
               )?
             | q
-            | ruby
+            | r
+              (?> [bp]
+                | tc?
+                | uby
+              )
             | s
               (?> amp
                 | cript
                 | mall
                 | pan
+                | tyle
                 | trong
-                | u[bp]
+                | u
+                  (?> [bp]
+                    | mmary
+                  )
               )?
             | t
               (?> able
@@ -112,7 +134,7 @@ contexts:
                   )
                 | r
               )
-            | ul
+            | ul?
             | var
           )
         )\b

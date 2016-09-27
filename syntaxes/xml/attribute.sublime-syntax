@@ -40,4 +40,3 @@ contexts:
   value:
     - include: Packages/Naomi/syntaxes/xml/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/xml/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/xml/literal/integer.sublime-syntax

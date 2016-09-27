@@ -25,6 +25,7 @@ contexts:
   void-elements:
     - match: (<)(input)\b
       captures:
+        0: tag.open.form.html.5
         1: punctuation.delimiter.tag.begin.html.5
         2: entity.name.tag.form.html.5
       set: attributes
@@ -46,6 +47,7 @@ contexts:
           )
         )\b
       captures:
+        0: tag.open.form.html.5
         1: punctuation.delimiter.tag.begin.html.5
         2: entity.name.tag.form.html.5
       set: [

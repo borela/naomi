@@ -32,6 +32,7 @@ contexts:
           )
         )\b
       captures:
+        0: tag.open.embedded.html.5
         1: punctuation.delimiter.tag.begin.html.5
         2: entity.name.tag.embedded.html.5
       set: attributes
@@ -51,6 +52,7 @@ contexts:
           )
         )\b
       captures:
+        0: tag.open.embedded.html.5
         1: punctuation.delimiter.tag.begin.html.5
         2: entity.name.tag.embedded.html.5
       set: [

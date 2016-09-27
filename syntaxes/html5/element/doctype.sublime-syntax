@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: (<!)(DOCTYPE) html(>)
+    - match: (?i)(<!)(DOCTYPE) html(>)
       captures:
         0: tag.doctype.html.5
         1: punctuation.delimiter.tag.begin.html.5

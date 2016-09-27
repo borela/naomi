@@ -19,12 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: \"
-      scope: punctuation.delimiter.string.begin.html.5
-      set: string
-
-  string:
-    - meta_scope: string.quoted.double.html.5
-    - match: \"
-      scope: punctuation.delimiter.string.end.html.5
+    - match: \S.*?(?=\s)
+      scope: string.unquoted.html.5
       pop: true

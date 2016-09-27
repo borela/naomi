@@ -40,4 +40,5 @@ contexts:
   value:
     - include: Packages/Naomi/syntaxes/html5/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/html5/literal/integer.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/literal/number.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/literal/string/unquoted.sublime-syntax

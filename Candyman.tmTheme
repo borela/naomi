@@ -251,7 +251,7 @@
                     <string></string>
 
                     <key>foreground</key>
-                    <string>#b0bec5</string>
+                    <string>#bdbdbd</string>
                 </dict>
             </dict>
 
@@ -748,6 +748,272 @@
                 <dict>
                     <key>foreground</key>
                     <string>#f06292</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup text</string>
+
+                <key>scope</key>
+                <string>text.html, text.xml</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#9e9e9edf</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup prolog</string>
+
+                <key>scope</key>
+                <string>entity.name.tag.instruction.prolog</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f48fb1</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup prolog’s delimiter</string>
+
+                <key>scope</key>
+                <string>tag.prolog punctuation</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f48fb190</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup doctype</string>
+
+                <key>scope</key>
+                <string>tag.doctype, tag.doctype entity.name.tag</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f48fb1</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup doctype’s delimiter</string>
+
+                <key>scope</key>
+                <string>tag.doctype punctuation.delimiter.tag</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f48fb190</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup attribute</string>
+
+                <key>scope</key>
+                <string>entity.name.attribute</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#4db6ac</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup tag</string>
+
+                <key>scope</key>
+                <string>entity.name.tag</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#81d4fa</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup tag’s delimiter</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.tag</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#81d4fa90</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup tag’s void terminator</string>
+
+                <key>scope</key>
+                <string>tag.open.void punctuation.delimiter.tag</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ffecb3</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup root element</string>
+
+                <key>scope</key>
+                <string>entity.name.tag.root</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f48fb1</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup root element’s delimiter</string>
+
+                <key>scope</key>
+                <string>tag.open.root punctuation.delimiter.tag, tag.close.root punctuation.delimiter.tag</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f48fb190</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup section</string>
+
+                <key>scope</key>
+                <string>entity.name.tag.sectioning</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#aed581</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup section’s delimiter</string>
+
+                <key>scope</key>
+                <string>tag.open.sectioning punctuation.delimiter.tag, tag.close.sectioning punctuation.delimiter.tag</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#aed58190</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup section root</string>
+
+                <key>scope</key>
+                <string>entity.name.tag.sectioning.root</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ce93d8</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup section root’s delimiter</string>
+
+                <key>scope</key>
+                <string>tag.open.sectioning.root punctuation.delimiter.tag, tag.close.sectioning.root punctuation.delimiter.tag</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ce93d890</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup embedded</string>
+
+                <key>scope</key>
+                <string>entity.name.tag.embedded</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#81d4fa</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup embedded’s delimiter</string>
+
+                <key>scope</key>
+                <string>tag.open.embedded punctuation.delimiter.tag, tag.close.embedded punctuation.delimiter.tag</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#81d4fa90</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup form</string>
+
+                <key>scope</key>
+                <string>entity.name.tag.form</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ffecb3</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Markup form’s delimiter</string>
+
+                <key>scope</key>
+                <string>tag.open.form punctuation.delimiter.tag, tag.close.form punctuation.delimiter.tag</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ffecb390</string>
                 </dict>
             </dict>
         </array>

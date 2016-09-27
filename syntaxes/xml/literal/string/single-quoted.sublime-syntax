@@ -1,0 +1,65 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  singleQuotedEscapeSequences: \\[\\']
+
+contexts:
+  main:
+    - match: \'
+      scope: >-
+        string.quoted.single.php.7
+        punctuation.delimiter.string.begin.php.7
+      with_prototype:
+        - match: \'
+          scope: >-
+            string.quoted.single.php.7
+            punctuation.delimiter.string.end.php.7
+          pop: true
+      set: escape-a
+
+  escape-a:
+    - meta_content_scope: >-
+        string.quoted.single.php.7
+        string.content.php.7
+    - match: (?x)(?={{singleQuotedEscapeSequences}})
+      set: [
+        escape-b,
+        escape-a-match
+      ]
+
+  escape-b:
+    - meta_content_scope: >-
+        string.quoted.single.php.7
+        string.content.php.7
+    - match: (?x)(?={{singleQuotedEscapeSequences}})
+      set: [
+        escape-a,
+        escape-b-match
+      ]
+
+  escape-a-match:
+    - match: (?x){{singleQuotedEscapeSequences}}
+      scope: constant.character.escape.a.php.7
+      pop: true
+
+  escape-b-match:
+    - match: (?x){{singleQuotedEscapeSequences}}
+      scope: constant.character.escape.b.php.7
+      pop: true

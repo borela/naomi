@@ -1,0 +1,145 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+contexts:
+  main:
+    - include: void-elements
+    - include: other-elements
+
+  void-elements:
+    - match: |
+        (?x)
+        (<)
+        (
+          (?> area
+            | br
+            | hr
+            | keygen
+            | link
+            | meta
+            | wbr
+          )
+        )\b
+      captures:
+        1: punctuation.delimiter.tag.begin.html.5
+        2: entity.name.tag.other.html.5
+      set: attributes
+
+  other-elements:
+    - match: |
+        (?x)
+        (<)
+        (
+          (?> a
+              (?> bbr
+                | ddress
+              )?
+            | b(?:d[io])?
+            | c
+              (?> aption
+                | ite
+                | ode
+              )
+            | d
+              (?> ata(?:list)?
+                | [dlt]
+                | el
+                | iv
+                | fn
+              )
+            | em
+            | f
+              (?> igcaption
+                | ooter
+              )
+            | h
+              (?> [1-6]
+                | eader
+              )
+            | ins
+            | kbd
+            | li
+            | m
+              (?> a(?>p|ark)
+                | eter
+              )
+            | noscript
+            | o
+              (?> l
+                | utput
+              )
+            | p
+              (?:r
+                (?> e
+                  | ogress
+                )
+              )?
+            | q
+            | ruby
+            | s
+              (?> amp
+                | cript
+                | mall
+                | pan
+                | trong
+                | u[bp]
+              )?
+            | t
+              (?> able
+                | body
+                | emplate
+                | foot
+                | h(?:ead)?
+                | i
+                  (?> me
+                    | tle
+                  )
+                | r
+              )
+            | ul
+            | var
+          )
+        )\b
+      captures:
+        1: punctuation.delimiter.tag.begin.html.5
+        2: entity.name.tag.other.html.5
+      set: [
+        content,
+        attributes
+      ]
+
+  attributes:
+    - match: \>
+      scope: >-
+        tag.open.other.html.5
+        punctuation.delimiter.tag.end.html.5
+      pop: true
+    - include: Packages/Naomi/syntaxes/html5/attribute.no-pop.sublime-syntax
+
+  content:
+    - match: |
+        (?x)
+        (</)(\2)(>)
+      captures:
+        0: tag.close.other.html.5
+        1: punctuation.delimiter.tag.begin.html.5
+        2: entity.name.tag.other.html.5
+        3: punctuation.delimiter.tag.end.html.5
+      pop: true
+    - include: Packages/Naomi/syntaxes/html5/element.no-pop.sublime-syntax

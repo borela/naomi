@@ -24,14 +24,10 @@ variables:
 
 contexts:
   main:
+    - include: support-variable
     - include: common-variable
 
   common-variable:
-    - match: (?i)\bthis\b
-      scope: >-
-        support.variable.mql.4
-        entity.name.variable.mql.4
-      set: array-item-access-begin
     - match: |
         (?xi)
         (?> \s*(\**)\b
@@ -42,6 +38,13 @@ contexts:
         0: variable.mql.4
         1: keyword.operator.pointer.mql.4
         2: entity.name.variable.mql.4
+      set: array-item-access-begin
+
+  support-variable:
+    - match: (?i)\bthis\b
+      scope: >-
+        support.variable.mql.4
+        entity.name.variable.mql.4
       set: array-item-access-begin
 
   array-item-access-begin:

@@ -1,83 +1,84 @@
-// SYNTAX TEST "Packages/Naomi/syntaxes/naomi.php7.sublime-syntax"
+# SYNTAX TEST "Packages/Naomi/syntaxes/naomi.php7.sublime-syntax"
 
-// Licensed under the Apache License, Version 2.0 (the “License”); you may not
-// use this file except in compliance with the License. You may obtain a copy of
-// the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
-// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-// License for the specific language governing permissions and limitations under
-// the License.
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
 
 <?php
-    <<<Heredoc
-//  ^^^^^^^^^^ string.unquoted.heredoc.php.7
-//  ^^^^^^^^^^ punctuation.delimiter.string.begin.php.7
-    Something is here....
-//  ^^^^^^^^^^^^^^^^^^^^^ string.unquoted.heredoc.php.7
-//  ^^^^^^^^^^^^^^^^^^^^^ string.content.php.7
-    Escaped: \\\n\r\t\v\e\f\$\101\x41\u{0065}
-//           ^^ constant.character.escape.a.php.7
-//             ^^ constant.character.escape.b.php.7
-//               ^^ constant.character.escape.a.php.7
-//                 ^^ constant.character.escape.b.php.7
-//                   ^^ constant.character.escape.a.php.7
-//                     ^^ constant.character.escape.b.php.7
-//                       ^^ constant.character.escape.a.php.7
-//                         ^^ constant.character.escape.b.php.7
-//                           ^^^^ constant.character.escape.a.php.7
-//                               ^^^^ constant.character.escape.b.php.7
-//                                   ^^^^^^^^ constant.character.escape.a.php.7
-    Variables: $var1$var2
-//             ^^^^^ variable.a.php.7
-//             ^ punctuation.variable.begin.php.7
-//              ^^^^ entity.name.variable.php.7
-//                  ^^^^^ variable.b.php.7
-//                  ^ punctuation.variable.begin.php.7
-//                   ^^^^ entity.name.variable.php.7
-    Variables: $var1\n$var2\n
-//             ^^^^^ variable.a.php.7
-//             ^ punctuation.variable.begin.php.7
-//              ^^^^ entity.name.variable.php.7
-//                  ^^ constant.character.escape.b.php.7
-//                    ^^^^^ variable.b.php.7
-//                    ^ punctuation.variable.begin.php.7
-//                     ^^^^ entity.name.variable.php.7
-//                         ^^ constant.character.escape.a.php.7
-    Variables: $var1[123]$var2[abc]
-//             ^^^^^^^^^^ variable.a.php.7
-//             ^ punctuation.variable.begin.php.7
-//              ^^^^ entity.name.variable.php.7
-//                  ^ operator.subscript.begin.php.7
-//                   ^^^ array.key.php.7
-//                      ^ operator.subscript.end.php.7
-//                       ^^^^^^^^^^ variable.b.php.7
-//                       ^ punctuation.variable.begin.php.7
-//                        ^^^^ entity.name.variable.php.7
-//                            ^ operator.subscript.begin.php.7
-//                             ^^^ array.key.php.7
-//                                ^ operator.subscript.end.php.7
-    Variables: $var1[123]\n$var2[abc]\n
-//             ^^^^^^^^^^ variable.a.php.7
-//             ^ punctuation.variable.begin.php.7
-//              ^^^^ entity.name.variable.php.7
-//                  ^ operator.subscript.begin.php.7
-//                   ^^^ array.key.php.7
-//                      ^ operator.subscript.end.php.7
-//                       ^^ constant.character.escape.b.php.7
-//                         ^^^^^^^^^^ variable.b.php.7
-//                         ^ punctuation.variable.begin.php.7
-//                          ^^^^ entity.name.variable.php.7
-//                              ^ operator.subscript.begin.php.7
-//                               ^^^ array.key.php.7
-//                                  ^ operator.subscript.end.php.7
-//                                   ^^ constant.character.escape.a.php.7
+   <<<Heredoc
+#  ^^^^^^^^^^ string.unquoted.heredoc.php.7
+#  ^^^^^^^^^^ punctuation.delimiter.string.begin.php.7
+   Something is here....
+#  ^^^^^^^^^^^^^^^^^^^^^ string.unquoted.heredoc.php.7
+#  ^^^^^^^^^^^^^^^^^^^^^ string.content.php.7
+   Escaped: \\\n\r\t\v\e\f\$\101\x41\u{0065}
+#           ^^ constant.character.escape.a.php.7
+#             ^^ constant.character.escape.b.php.7
+#               ^^ constant.character.escape.a.php.7
+#                 ^^ constant.character.escape.b.php.7
+#                   ^^ constant.character.escape.a.php.7
+#                     ^^ constant.character.escape.b.php.7
+#                       ^^ constant.character.escape.a.php.7
+#                         ^^ constant.character.escape.b.php.7
+#                           ^^^^ constant.character.escape.a.php.7
+#                               ^^^^ constant.character.escape.b.php.7
+#                                   ^^^^^^^^ constant.character.escape.a.php.7
+   Variables: $var1$var2
+#             ^^^^^ variable.a.php.7
+#             ^ punctuation.variable.begin.php.7
+#              ^^^^ entity.name.variable.php.7
+#                  ^^^^^ variable.b.php.7
+#                  ^ punctuation.variable.begin.php.7
+#                   ^^^^ entity.name.variable.php.7
+   Variables: $var1\n$var2\n
+#             ^^^^^ variable.a.php.7
+#             ^ punctuation.variable.begin.php.7
+#              ^^^^ entity.name.variable.php.7
+#                  ^^ constant.character.escape.b.php.7
+#                    ^^^^^ variable.b.php.7
+#                    ^ punctuation.variable.begin.php.7
+#                     ^^^^ entity.name.variable.php.7
+#                         ^^ constant.character.escape.a.php.7
+   Variables: $var1[123]$var2[abc]
+#             ^^^^^^^^^^ variable.a.php.7
+#             ^ punctuation.variable.begin.php.7
+#              ^^^^ entity.name.variable.php.7
+#                  ^ operator.subscript.begin.php.7
+#                   ^^^ array.key.php.7
+#                      ^ operator.subscript.end.php.7
+#                       ^^^^^^^^^^ variable.b.php.7
+#                       ^ punctuation.variable.begin.php.7
+#                        ^^^^ entity.name.variable.php.7
+#                            ^ operator.subscript.begin.php.7
+#                             ^^^ array.key.php.7
+#                                ^ operator.subscript.end.php.7
+   Variables: $var1[123]\n$var2[abc]\n
+#             ^^^^^^^^^^ variable.a.php.7
+#             ^ punctuation.variable.begin.php.7
+#              ^^^^ entity.name.variable.php.7
+#                  ^ operator.subscript.begin.php.7
+#                   ^^^ array.key.php.7
+#                      ^ operator.subscript.end.php.7
+#                       ^^ constant.character.escape.b.php.7
+#                         ^^^^^^^^^^ variable.b.php.7
+#                         ^ punctuation.variable.begin.php.7
+#                          ^^^^ entity.name.variable.php.7
+#                              ^ operator.subscript.begin.php.7
+#                               ^^^ array.key.php.7
+#                                  ^ operator.subscript.end.php.7
+#                                   ^^ constant.character.escape.a.php.7
 Heredoc;
-// <- string.unquoted.heredoc.php.7
-//^^^^^ string.unquoted.heredoc.php.7
-// <- punctuation.delimiter.string.end.php.7
-//^^^^^ punctuation.delimiter.string.end.php.7
+# <- string.unquoted.heredoc.php.7
+#^^^^^^ string.unquoted.heredoc.php.7
+# <- punctuation.delimiter.string.end.php.7
+#^^^^^^ punctuation.delimiter.string.end.php.7
+#      ^ punctuation.terminator.php.7
 ?>

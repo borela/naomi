@@ -18,14 +18,13 @@ hidden: true
 scope: ...
 
 contexts:
-  # | Operator | Description  |
-  # | :------: | :----------- |
-  # |   and    |              |
-  # |   xor    |              |
-  # |    or    |              |
-  # |    &&    | Same as and. |
-  # |    ||    | Same as or.  |
-  # |    !     | Not.         |
+  # | Operator | Description |
+  # |:--------:|:------------|
+  # |   and    |             |
+  # |    or    |             |
+  # |    &&    | And.        |
+  # |    ||    | Or.         |
+  # |    !     | Not.        |
   main:
     - match: |
         (?x)
@@ -33,7 +32,6 @@ contexts:
           (?:
             \s+
             (?> and
-              | xor
               | or
             )\s+
           )

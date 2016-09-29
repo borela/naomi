@@ -28,7 +28,7 @@ variables:
 
 contexts:
   # |  Operator  |  Description        |
-  # | :--------: | :------------------ |
+  # |:----------:|:--------------------|
   # |     as     |                     |
   # | instanceof |                     |
   # |     @      | Error suppression.  |

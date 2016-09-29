@@ -19,14 +19,10 @@ scope: ...
 
 contexts:
   # | Operator |  Description   |
-  # | :------: | :------------- |
+  # |:--------:|:---------------|
   # |    .     | Concatenation. |
   # |    .=    | Append.        |
   main:
-    - match: |
-        (?x)
-        (?> \.=
-          | \.
-        )
+    - match: \.=?
       scope: keyword.operator.string.php.7
       pop: true

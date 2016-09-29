@@ -21,13 +21,13 @@ contexts:
   main:
     - match: (?=\s*\})
       pop: true
+    - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
     # Basic statements.
     - include: Packages/Naomi/syntaxes/php7/statement/hanging.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/statement/bodied.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/statement/simple.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/statement/other.sublime-syntax
     # Complex statements.
-    - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/declare.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/namespace.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/use.sublime-syntax

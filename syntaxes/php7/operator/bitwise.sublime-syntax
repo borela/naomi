@@ -18,27 +18,33 @@ hidden: true
 scope: ...
 
 contexts:
-  # | Operator | Description  |
-  # | :------: | :------------|
-  # |    ~     | Bitwise not. |
-  # |    &     | Bitwise And. |
-  # |    &=    | Bitwise And. |
-  # |    |     | Bitwise Or.  |
-  # |    |=    | Bitwise Or.  |
-  # |    ^     | Bitwise Xor. |
-  # |    ^=    | Bitwise Xor. |
-  # |    <<    | Left shift.  |
-  # |   <<=    | Left shift.  |
-  # |    >>    | Right shift. |
-  # |   >>=    | Right shift. |
+  # | Operator | Description                      |
+  # |:--------:|:---------------------------------|
+  # |    ~     | Bitwise not.                     |
+  # |    ~=    | Bitwise not assignment.          |
+  # |    &     | Bitwise AND.                     |
+  # |    &=    | Bitwise AND assignment.          |
+  # |    |     | Bitwise OR.                      |
+  # |    |=    | Bitwise OR assignment.           |
+  # |    xor   | Bitwise XOR.                     |
+  # |    ^     | Bitwise XOR.                     |
+  # |    ^=    | Bitwise XOR assignment.          |
+  # |    <<    | Left shift.                      |
+  # |   <<=    | Left shift assignment.           |
+  # |    >>    | Right shift.                     |
+  # |   >>=    | Right shift assignment.          |
+  # |   >>>    | Unsigned right shift.            |
+  # |  >>>=    | Unsigned right shift assignment. |
   main:
     - match: |
         (?x)
-        (?> ~
+        (?> xor
+          | ~=?
           | &=?
           | \|=?
           | \^=?
           | <<=?
+          | >>>=?
           | >>=?
         )
       scope: keyword.operator.bitwise.php.7

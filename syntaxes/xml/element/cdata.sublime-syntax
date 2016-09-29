@@ -19,8 +19,17 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/xml/element/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/xml/element/prolog.sublime-syntax
-    - include: Packages/Naomi/syntaxes/xml/element/doctype.sublime-syntax
-    - include: Packages/Naomi/syntaxes/xml/element/cdata.sublime-syntax
-    - include: Packages/Naomi/syntaxes/xml/element/normal.sublime-syntax
+    - match: (<!\[)(CDATA)(\[)
+      captures:
+        0: tag.cdata.xml.1.0
+        1: punctuation.delimiter.tag.begin.xml.1.0
+        2: entity.name.tag.cdata.xml.1.0
+        3: punctuation.delimiter.tag.begin.xml.1.0
+      set: content
+
+  content:
+    - match: \]\]\>
+      scope: >-
+        tag.cdata.xml.1.0
+        punctuation.delimiter.tag.end.xml.1.0
+      pop: true

@@ -798,10 +798,10 @@
 
             <dict>
                 <key>name</key>
-                <string>Markup doctype</string>
+                <string>Markup doctype and cdata</string>
 
                 <key>scope</key>
-                <string>tag.doctype, tag.doctype entity.name.tag</string>
+                <string>tag.doctype, tag.doctype entity.name.tag, tag.cdata, tag.cdata entity.name.tag</string>
 
                 <key>settings</key>
                 <dict>
@@ -812,10 +812,10 @@
 
             <dict>
                 <key>name</key>
-                <string>Markup doctype’s delimiter</string>
+                <string>Markup doctype and cdata’s delimiter</string>
 
                 <key>scope</key>
-                <string>tag.doctype punctuation.delimiter.tag</string>
+                <string>tag.doctype punctuation.delimiter.tag, tag.cdata punctuation.delimiter.tag</string>
 
                 <key>settings</key>
                 <dict>

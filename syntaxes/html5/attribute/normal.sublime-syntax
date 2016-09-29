@@ -17,27 +17,20 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [._\-[:alnum:]]*
+
 contexts:
   main:
-    - include: boolean
     - match: |
         (?xi)
-        (?> accesskey
-          | c
-            (?>lass|contenteditable)
-          | dir
-          | id
-          | lang
-          | s
-            (?>pellcheck|tyle)
-          | t
-            (?> abindex
-              | itle
-              | ranslate
-            )
-        )
-      scope: punctuation.comment.block.begin.html.5
-
-  boolean:
-    - match: hidden
+        {{commonIdentifier}}
       scope: entity.name.attribute.html.5
+      set: value
+
+  value:
+    - include: Packages/Naomi/syntaxes/html5/attribute/value.sublime-syntax
+
+

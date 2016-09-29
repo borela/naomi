@@ -19,5 +19,14 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/html5/attribute/support/global.sublime-syntax
-    - include: Packages/Naomi/syntaxes/html5/attribute/normal.sublime-syntax
+    - match: \=
+      scope: keyword.operator.assignment.html.5
+      set: value
+    - match: (?=\S)
+      pop: true
+
+  value:
+    - include: Packages/Naomi/syntaxes/html5/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/literal/number.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/literal/string/unquoted.sublime-syntax

@@ -19,26 +19,29 @@ scope: ...
 
 contexts:
   # | Operator |  Description    |
-  # | :------: | :-------------- |
+  # |:--------:|:----------------|
   # |    --    | Decrement.      |
   # |    -     | Subtraction.    |
   # |    ++    | Increment.      |
   # |    +     | Addition.       |
-  # |    **    | Exponentiation. |
+  # |    +=    |                 |
   # |    *     | Multiplication. |
+  # |    *=    |                 |
   # |    /     | Division.       |
+  # |    /=    |                 |
   # |    %     | Modulus.        |
+  # |    %=    |                 |
   main:
     - match: |
         (?x)
         (?> --
-          | -
+          | -=?
           | \+\+
-          | \+
+          | \+=?
           | \*\*
-          | \*
-          | /
-          | %
+          | \*=?
+          | /=?
+          | %=?
         )
       scope: keyword.operator.arithmetic.mql.4
       pop: true

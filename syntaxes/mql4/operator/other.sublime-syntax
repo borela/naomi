@@ -17,18 +17,9 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]]*
-
-  constantIdentifier: |
-    [_[:upper:]]
-    [_[:upper:][:digit:]]*
-
 contexts:
   # |  Operator  |  Description        |
-  # | :--------: | :------------------ |
+  # |:----------:|:--------------------|
   # | instanceof |                     |
   # |     &      | Reference.          |
   # |     .      | Member access.      |

@@ -20,46 +20,49 @@ variables:
     [_[:alpha:]]
     [_[:alnum:]]*
 
-  basicOperators: |
-    (?> --
-      | \+\+
-      | =
-      | -=?
-      | \+=?
-      | \*=?
-      | /=?
-      | %=?
-      | &=?
-      | \|=?
-      | \^=?
-      | <<=?
-      | >>=?
+  logicalOperators: |
+    (?> &&
+      | \|\|
+      | !
     )
 
   comparisonOperators: |
-    (?> ===
-      | ==
-      | \!==
-      | \!=
-      | <>
+    (?> ==
+      | !=
       | >=
       | <=
       | >(?!>)
       | <(?!<)
     )
 
-  logicalOperators: |
-    (?> &&
-      | \|\|
-      | \!
+  bitwiseOperators: |
+    (?> ~=?
+      | &=?
+      | \|=?
+      | \^=?
+      | <<=?
+      | >>>=?
+      | >>=?
+    )
+
+  arithmeticOperators: |
+    (?> --
+      | -=?
+      | \+\+
+      | \+=?
+      | \*\*
+      | \*=?
+      | /=?
+      | %=?
     )
 
   functionIdentifier: |
     {{commonIdentifier}}
     (?> {{comparisonOperators}}
       | {{logicalOperators}}
-      | {{basicOperators}}
-      | \[\]
+      | {{bitwiseOperators}}
+      | {{arithmeticOperators}}
+      | =
     )?
 
   typeIdentifier: |

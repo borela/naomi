@@ -19,27 +19,19 @@ scope: ...
 
 contexts:
   # | Operator |       Description         |
-  # | :------: | :------------------------ |
-  # |   ===    | Identical.                |
+  # |:--------:|:--------------------------|
   # |    ==    | Equal.                    |
-  # |   !==    | Not identical.            |
   # |    !=    | Not equal.                |
-  # |    <>    | Not equal.                |
   # |    >=    | Greater than or equal to. |
-  # |   <=>    | Spaceship operator.       |
   # |    <=    | Less than or equal to.    |
   # |    >     | Greater than.             |
   # |    <     | Less than.                |
   main:
     - match: |
         (?x)
-        (?> ===
-          | ==
-          | !==
+        (?> ==
           | !=
-          | <>
           | >=
-          | <=>
           | <=
           | >(?!>)
           | <(?!<)

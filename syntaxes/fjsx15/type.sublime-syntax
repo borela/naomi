@@ -19,12 +19,45 @@ scope: ...
 
 contexts:
   main:
+    # Enveloped nullable.
+    - match: (\?)\s*(\()
+      captures:
+        1: keyword.type.nullable.flowtype
+        2: punctuation.delimiter.nullable.begin.flowtype
+      set: [
+        nullable-end,
+        type
+      ]
+    # Nullable followed by a type.
     - match: \?
-      scope: keyword.type.nullable.js.2015
-      set: types
-    - include: types
+      scope: keyword.type.nullable.flowtype
+      set: [
+        operator,
+        type
+      ]
+    # Type.
+    - match: (?=\S)
+      set: [
+        operator,
+        type
+      ]
 
-  types:
+  nullable-end:
+    - match: \)
+      scope: punctuation.delimiter.nullable.end.flowtype
+      pop: true
+
+  operator:
+    - match: \|
+      scope: keyword.operator.flowtype
+      set: [
+        operator,
+        type
+      ]
+    - match: (?=\S)
+      pop: true
+
+  type:
     - include: Packages/Naomi/syntaxes/fjsx15/type/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/type/object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/type/tuple.sublime-syntax

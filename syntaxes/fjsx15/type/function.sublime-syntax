@@ -24,7 +24,7 @@ variables:
 
 contexts:
   main:
-    - match: (?=\()
+    - match: (?=\([^\(])
       set: [
         return,
         parameters

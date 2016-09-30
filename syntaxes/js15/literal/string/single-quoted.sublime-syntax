@@ -1,0 +1,65 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  hexEscapedChar: |
+    x[a-f0-9]{2}
+
+  unicodeEscapedChar: |
+    (?> u[a-f0-9]{4}
+      | u\{[a-f0-9]+\}
+    )
+
+  singleQuotedEscapeSequences: |
+    \\
+    (?> ['\\bfnrtv]
+      | {{hexEscapedChar}}
+      | {{unicodeEscapedChar}}
+    )
+
+contexts:
+  main:
+    - match: \'
+      scope: >-
+        string.quoted.single.js.2015
+        punctuation.delimiter.string.begin.js.2015
+      with_prototype:
+        - match: (?<!\\)\n
+          set: trap
+        - match: \'
+          scope: >-
+            string.quoted.single.js.2015
+            punctuation.delimiter.string.end.js.2015
+          pop: true
+      set: escape-a
+
+  trap:
+    - meta_content_scope: context.trap
+
+  escape-a:
+    - meta_content_scope: string.quoted.single.js.2015
+    - match: (?x){{singleQuotedEscapeSequences}}
+      scope: constant.character.escape.a.js.2015
+      set: escape-b
+
+  escape-b:
+    - meta_content_scope: string.quoted.single.js.2015
+    - match: (?x){{singleQuotedEscapeSequences}}
+      scope: constant.character.escape.b.js.2015
+      set: escape-a

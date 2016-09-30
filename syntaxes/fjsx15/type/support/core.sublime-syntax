@@ -1,0 +1,61 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+contexts:
+  main:
+    - include: basic
+    - include: other
+
+  basic:
+    - match: |
+        (?x)\b
+        (?> any
+          | boolean
+          | Function
+          | mixed
+          | number
+          | Object
+          | string
+        )\b
+      scope: >-
+        support.type.flowtype
+        entity.name.type.flowtype
+      set: optional-array-shorthand
+
+  optional-array-shorthand:
+    - match: |
+        (?x)
+        (\[)(\])
+      captures:
+        1: punctuation.delimiter.array.begin.flowtype
+        2: punctuation.delimiter.array.end.flowtype
+      pop: true
+    - match: (?=\S)
+      pop: true
+
+  other:
+    - match: |
+        (?x)\b
+        (?> null
+          | void
+        )\b
+      scope: >-
+        support.type.flowtype
+        entity.name.type.flowtype
+      pop: true

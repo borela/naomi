@@ -1,0 +1,69 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [_[:alnum:]]*
+
+  constantIdentifier: |
+    [_[:upper:]]
+    [_[:upper:][:digit:]]*
+
+contexts:
+  # |  Operator  |  Description        |
+  # |:----------:|:--------------------|
+  # |   typeof   |                     |
+  # |    ...     | Destructure.        |
+  # |     .      | Member access.      |
+  # |     ?      | Ternary.            |
+  main:
+    - match: \btypeof\b
+      scope: keyword.operator.js.2015
+      pop: true
+    - match: \.\.\.
+      scope: keyword.operator.argument.destructure.js.2015
+      pop: true
+    - match: \?
+      scope: keyword.operator.js.2015
+      set: [
+        ternary-value-b,
+        ternary-value-a
+      ]
+    - match: \.
+      scope: keyword.operator.member.access.js.2015
+      set: member-access
+
+  ternary-value-a:
+    - match: ":"
+      scope: keyword.operator.js.2015
+      pop: true
+    - include: expression
+
+  ternary-value-b:
+    - include: expression
+
+  member-access:
+    - meta_content_scope: member.js.2015
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/js15/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+
+  expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

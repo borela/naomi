@@ -1,0 +1,49 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+contexts:
+  main:
+    - match: \[
+      scope: punctuation.delimiter.array.begin.js.2015
+      set: array-items
+
+  array-items:
+    - include: terminator
+    - match: (?=\S)
+      set: [
+        punctuation,
+        value
+      ]
+
+  punctuation:
+    - include: terminator
+    - match: \,
+      scope: punctuation.delimiter.array.js.2015
+      set: [
+        punctuation,
+        value
+      ]
+
+  terminator:
+    - match: \]
+      scope: punctuation.delimiter.array.end.js.2015
+      pop: true
+
+  value:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

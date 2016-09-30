@@ -1,0 +1,87 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [_[:alnum:]]*
+
+contexts:
+  main:
+    - match: \{
+      scope: >-
+        type.flowtype
+        punctuation.delimiter.class.begin.flowtype
+      set: [
+        punctuation,
+        property
+      ]
+
+  property:
+    - match: \[
+      scope: punctuation.delimiter.class.flowtype
+      set: [
+        type,
+        type-operator,
+        lookup
+      ]
+    - match: |
+        (?xi)
+        {{commonIdentifier}}
+      scope: >-
+        variable.flowtype
+        entity.name.variable.flowtype
+      set: [
+        type,
+        type-operator
+      ]
+
+  lookup:
+    - match: \]
+      scope: punctuation.delimiter.class.flowtype
+      pop: true
+    - match: (?=\S)
+      push: [
+        punctuation,
+        property
+      ]
+
+  type-operator:
+    - match: ":"
+      scope: keyword.operator.type.flowtype
+      pop: true
+
+  type:
+    - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax
+
+  punctuation:
+    - meta_content_scope: type.flowtype
+    - match: (?=\])
+      pop: true
+    - match: \,
+      scope: punctuation.delimiter.class.flowtype
+      set: [
+        punctuation,
+        property
+      ]
+    - match: \}
+      scope: >-
+        type.flowtype
+        punctuation.delimiter.class.end.flowtype
+      pop: true

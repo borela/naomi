@@ -1,0 +1,68 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [_[:alnum:]]*
+
+contexts:
+  main:
+    - match: \{
+      scope: punctuation.delimiter.destructure.object.begin.js.2015
+      set: [
+        punctuation,
+        variable
+      ]
+
+  variable:
+    - match: |
+        (?x)
+        (?=
+          {{commonIdentifier}}\s*:
+        )
+      set: [
+        actual-variable,
+        alias-operator,
+        alias
+      ]
+    - match: (?=\S)
+      set: actual-variable
+
+  actual-variable:
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+
+  alias-operator:
+    - match: ":"
+      scope: keyword.operator.alias.js.2015
+      pop: true
+
+  alias:
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+
+  punctuation:
+    - match: \,
+      scope: punctuation.delimiter.destructure.item.js.2015
+      set: [
+        punctuation,
+        variable
+      ]
+    - match: \}
+      scope: punctuation.delimiter.destructure.object.end.js.2015
+      pop: true

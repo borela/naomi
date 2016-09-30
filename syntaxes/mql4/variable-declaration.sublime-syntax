@@ -57,6 +57,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
 
   punctuation:
+    - include: Packages/Naomi/syntaxes/mql4/terminator.sublime-syntax
     - match: (?=\))
       pop: true
     - match: \,
@@ -65,9 +66,6 @@ contexts:
         punctuation,
         variable
       ]
-    - match: ;
-      scope: punctuation.terminator.mql.4
-      pop: true
     - match: \[
       scope: punctuation.delimiter.array.index.begin.mql.4
       push: array-index

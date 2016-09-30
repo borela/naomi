@@ -44,10 +44,5 @@ contexts:
       set: value
 
   value:
-    - meta_content_scope: statement.input.mql.4
-    - match: ;
-      scope: >-
-        statement.input.mql.4
-        punctuation.terminator.mql.4
-      pop: true
+    - meta_scope: statement.input.mql.4
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

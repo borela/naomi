@@ -83,7 +83,7 @@ contexts:
       pop: true
 
   delimiter:
-    - meta_content_scope: statement.function.mql.4
+    - meta_content_scope: function.mql.4
     - include: body-start
     - match: \,
       scope: punctuation.delimiter.initialization.mql.4
@@ -92,19 +92,19 @@ contexts:
   body-start:
     - match: \{
       scope: >-
-        statement.function.body.mql.4
+        function.body.mql.4
         punctuation.delimiter.function.body.begin.mql.4
       set: body-content
 
   body-content:
     - meta_content_scope: >-
-        statement.function.mql.4
-        statement.function.body.mql.4
-        statement.function.body.content.mql.4
+        function.mql.4
+        function.body.mql.4
+        function.body.content.mql.4
     - match: \}
       scope: >-
-        statement.function.mql.4
-        statement.function.body.mql.4
+        function.mql.4
+        function.body.mql.4
         punctuation.delimiter.function.body.end.mql.4
       pop: true
     - match: ""

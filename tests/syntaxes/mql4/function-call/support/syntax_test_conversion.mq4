@@ -13,98 +13,98 @@
 // the License.
 
    CharArrayToString();
-// ^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    CharToStr();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    CharToString();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    ColorToARGB();
-// ^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^ entity.name.function.mql.4
    ColorToString();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    DoubleToStr();
-// ^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^ entity.name.function.mql.4
    DoubleToString();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    EnumToString();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    IntegerToString();
-// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.4
    NormalizeDouble();
-// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.4
    ShortArrayToString();
-// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    ShortToString();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    StringFormat();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    StringToCharArray();
-// ^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    StringToColor();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    StringToDouble();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    StringToInteger();
-// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.4
    StringToShortArray();
-// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    StringToTime();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    StrToDouble();
-// ^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^ entity.name.function.mql.4
    StrToInteger();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    StrToTime();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    TimeToStr();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    TimeToString();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4

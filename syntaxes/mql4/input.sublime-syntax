@@ -24,7 +24,7 @@ contexts:
       set: input
 
   input:
-    - meta_scope: statement.input.mql.4
+    - meta_scope: input.mql.4
     - include: assignment-operator
     - match: (?=\S)
       push: [
@@ -44,5 +44,5 @@ contexts:
       set: value
 
   value:
-    - meta_scope: statement.input.mql.4
+    - meta_scope: input.mql.4
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

@@ -106,7 +106,7 @@ contexts:
       pop: true
 
   name:
-    - meta_scope: expression.function.call.mql.4
+    - meta_scope: function.call.mql.4
     # Special function name.
     - match: |
         (?x)

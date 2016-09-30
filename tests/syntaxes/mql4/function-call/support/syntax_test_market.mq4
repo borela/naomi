@@ -13,42 +13,42 @@
 // the License.
 
    MarketInfo();
-// ^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^ entity.name.function.mql.4
    SymbolInfoDouble();
-// ^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    SymbolInfoInteger();
-// ^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    SymbolInfoSessionQuote();
-// ^^^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    SymbolInfoSessionTrade();
-// ^^^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    SymbolInfoString();
-// ^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    SymbolInfoTick();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    SymbolName();
-// ^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^ entity.name.function.mql.4
    SymbolSelect();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    SymbolsTotal();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4

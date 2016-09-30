@@ -13,78 +13,78 @@
 // the License.
 
    ArrayBsearch();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    ArrayCompare();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    ArrayCopy();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    ArrayCopyRates();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    ArrayCopySeries();
-// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.4
    ArrayDimension();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    ArrayFill();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    ArrayFree();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    ArrayGetAsSeries();
-// ^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    ArrayInitialize();
-// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.4
    ArrayIsDynamic();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    ArrayIsSeries();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    ArrayMaximum();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    ArrayMinimum();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    ArrayRange();
-// ^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^ entity.name.function.mql.4
    ArrayResize();
-// ^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^ entity.name.function.mql.4
    ArraySetAsSeries();
-// ^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    ArraySize();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    ArraySort();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4

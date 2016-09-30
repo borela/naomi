@@ -24,7 +24,7 @@ contexts:
       set: identifier
 
   identifier:
-    - meta_scope: statement.preprocessor.mql.4
+    - meta_scope: preprocessor.mql.4
     - include: identifier-without-value
     - include: identifier-with-color-value
     - include: identifier-with-string-value
@@ -105,7 +105,7 @@ contexts:
       set: number-value
 
   color-value:
-    - meta_scope: statement.preprocessor.mql.4
+    - meta_scope: preprocessor.mql.4
     - match: $
       pop: true
     - match: (?=\S)
@@ -116,7 +116,7 @@ contexts:
           pop: true
 
   string-value:
-    - meta_scope: statement.preprocessor.mql.4
+    - meta_scope: preprocessor.mql.4
     - match: $
       pop: true
     - match: (?=\S)
@@ -127,7 +127,7 @@ contexts:
           pop: true
 
   number-value:
-    - meta_scope: statement.preprocessor.mql.4
+    - meta_scope: preprocessor.mql.4
     - match: $
       pop: true
     - match: (?=\S)

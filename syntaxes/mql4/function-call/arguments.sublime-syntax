@@ -24,12 +24,12 @@ contexts:
       set: arguments
 
   arguments:
-    - meta_scope: expression.function.call.mql.4
+    - meta_scope: function.call.mql.4
     - match: \)
       scope: punctuation.delimiter.function.arguments.end.mql.4
       pop: true
     - match: \,
       scope: >-
-        expression.function.call.mql.4
+        function.call.mql.4
         punctuation.delimiter.function.arguments.mql.4
     - include: Packages/Naomi/syntaxes/mql4/expression.no-pop.sublime-syntax

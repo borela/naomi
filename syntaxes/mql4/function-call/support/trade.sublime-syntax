@@ -49,7 +49,7 @@ contexts:
           | Type
         )(?=\s*\()
       scope: >-
-        expression.function.call.mql.4
+        function.call.mql.4
         support.function.mql.4
         entity.name.function.mql.4
       set: arguments

@@ -13,70 +13,70 @@
 // the License.
 
    HideTestIndicators();
-// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    IndicatorBuffers();
-// ^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    IndicatorCounted();
-// ^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    IndicatorDigits();
-// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.4
    IndicatorSetDouble();
-// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    IndicatorSetInteger();
-// ^^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    IndicatorSetString();
-// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    IndicatorShortName();
-// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    SetIndexArrow();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    SetIndexBuffer();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    SetIndexDrawBegin();
-// ^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    SetIndexEmptyValue();
-// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    SetIndexLabel();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    SetIndexShift();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    SetIndexStyle();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    SetLevelStyle();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    SetLevelValue();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4

@@ -26,7 +26,7 @@ contexts:
   main:
     - match: \btemplate\b
       scope: >-
-        statement.template.mql.4
+        template.mql.4
         keyword.template.mql.4
       set: parameters
 

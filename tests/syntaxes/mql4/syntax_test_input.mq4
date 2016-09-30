@@ -13,7 +13,7 @@
 // the License.
 
     input string identifier = "...";
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.input.mql.4
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ input.mql.4
 //  ^^^^^ keyword.input.mql.4
 //        ^^^^^^ support.type.mql.4
 //        ^^^^^^ entity.name.type.mql.4
@@ -25,7 +25,7 @@
 //                                ^ punctuation.delimiter.string.end.mql.4
 //                                 ^ punctuation.terminator.mql.4
     input Custom identifier = "...";
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.input.mql.4
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ input.mql.4
 //  ^^^^^ keyword.input.mql.4
 //        ^^^^^^ type.mql.4
 //        ^^^^^^ entity.name.type.mql.4

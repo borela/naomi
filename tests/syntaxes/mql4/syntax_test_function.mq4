@@ -13,47 +13,47 @@
 // the License.
 
     virtual void Myfunction(   ) = 0;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.function.mql.4
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ function.mql.4
 //  ^^^^^^^ keyword.modifier.mql.4
 //          ^^^^ support.type.mql.4
 //          ^^^^ entity.name.type.mql.4
 //               ^^^^^^^^^^ entity.name.function.mql.4
-//                         ^^^^^ statement.function.parameters.mql.4
-//                          ^^^ statement.function.parameters.content.mql.4
+//                         ^^^^^ function.parameters.mql.4
+//                          ^^^ function.parameters.content.mql.4
 
     virtual void Myfunction(   ) = NULL;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.function.mql.4
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ function.mql.4
 //  ^^^^^^^ keyword.modifier.mql.4
 //          ^^^^ support.type.mql.4
 //          ^^^^ entity.name.type.mql.4
 //               ^^^^^^^^^^ entity.name.function.mql.4
-//                         ^^^^^ statement.function.parameters.mql.4
-//                          ^^^ statement.function.parameters.content.mql.4
+//                         ^^^^^ function.parameters.mql.4
+//                          ^^^ function.parameters.content.mql.4
 
 
     static void Myfunction(   ){   }
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.function.mql.4
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ function.mql.4
 //  ^^^^^^ keyword.modifier.mql.4
 //         ^^^^ support.type.mql.4
 //         ^^^^ entity.name.type.mql.4
 //              ^^^^^^^^^^ entity.name.function.mql.4
-//                        ^^^^^ statement.function.parameters.mql.4
-//                         ^^^ statement.function.parameters.content.mql.4
+//                        ^^^^^ function.parameters.mql.4
+//                         ^^^ function.parameters.content.mql.4
 
 
     void Myfunction(   ){   }
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^ statement.function.mql.4
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^ function.mql.4
 //  ^^^^ support.type.mql.4
 //  ^^^^ entity.name.type.mql.4
 //       ^^^^^^^^^^ entity.name.function.mql.4
-//                 ^^^^^ statement.function.parameters.mql.4
-//                  ^^^ statement.function.parameters.content.mql.4
+//                 ^^^^^ function.parameters.mql.4
+//                  ^^^ function.parameters.content.mql.4
 
 
     void Myfunction(void){   }
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ statement.function.mql.4
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ function.mql.4
 //  ^^^^ support.type.mql.4
 //  ^^^^ entity.name.type.mql.4
 //       ^^^^^^^^^^ entity.name.function.mql.4
-//                 ^^^^^ statement.function.parameters.mql.4
-//                  ^^^ statement.function.parameters.content.mql.4
+//                 ^^^^^ function.parameters.mql.4
+//                  ^^^ function.parameters.content.mql.4

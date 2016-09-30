@@ -26,12 +26,12 @@ contexts:
   main:
     - match: \bstruct\b
       scope: >-
-        statement.struct.mql.4
+        struct.mql.4
         keyword.struct.mql.4
       set: identifier
 
   identifier:
-    - meta_content_scope: statement.struct.mql.4
+    - meta_content_scope: struct.mql.4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: |
         (?xi)
@@ -61,8 +61,8 @@ contexts:
 
   body:
     - meta_content_scope: >-
-        statement.struct.mql.4
-        statement.struct.body.mql.4
+        struct.mql.4
+        struct.body.mql.4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: \{
       scope: punctuation.delimiter.struct.body.begin.mql.4
@@ -70,13 +70,13 @@ contexts:
 
   body-content:
     - meta_content_scope: >-
-        statement.struct.mql.4
-        statement.struct.body.mql.4
+        struct.mql.4
+        struct.body.mql.4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: \};
       scope: >-
-        statement.struct.mql.4
-        statement.struct.body.mql.4
+        struct.mql.4
+        struct.body.mql.4
         punctuation.delimiter.struct.body.end.mql.4
       pop: true
     - match: ""

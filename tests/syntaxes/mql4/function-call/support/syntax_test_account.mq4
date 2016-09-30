@@ -13,78 +13,78 @@
 // the License.
 
    AccountBalance();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountCompany();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountCredit();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountCurrency();
-// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountEquity();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountFreeMargin();
-// ^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountFreeMarginCheck();
-// ^^^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountFreeMarginMode();
-// ^^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountInfoDouble();
-// ^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountInfoInteger();
-// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountInfoString();
-// ^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountLeverage();
-// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountMargin();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountName();
-// ^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^ entity.name.function.mql.4
    AccountNumber();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountProfit();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountServer();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountStopoutLevel();
-// ^^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    AccountStopoutMode();
-// ^^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4

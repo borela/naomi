@@ -13,82 +13,82 @@
 // the License.
 
    Bars();
-// ^^^^^^ expression.function.call.mql.4
+// ^^^^^^ function.call.mql.4
 // ^^^^ support.function.mql.4
 // ^^^^ entity.name.function.mql.4
    CopyClose();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    CopyHigh();
-// ^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^ support.function.mql.4
 // ^^^^^^^^ entity.name.function.mql.4
    CopyLow();
-// ^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ function.call.mql.4
 // ^^^^^^^ support.function.mql.4
 // ^^^^^^^ entity.name.function.mql.4
    CopyOpen();
-// ^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^ support.function.mql.4
 // ^^^^^^^^ entity.name.function.mql.4
    CopyRates();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    CopyTickVolume();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    CopyTime();
-// ^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^ support.function.mql.4
 // ^^^^^^^^ entity.name.function.mql.4
    iBars();
-// ^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^ function.call.mql.4
 // ^^^^^ support.function.mql.4
 // ^^^^^ entity.name.function.mql.4
    iBarShift();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    iClose();
-// ^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^ function.call.mql.4
 // ^^^^^^ support.function.mql.4
 // ^^^^^^ entity.name.function.mql.4
    iHigh();
-// ^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^ function.call.mql.4
 // ^^^^^ support.function.mql.4
 // ^^^^^ entity.name.function.mql.4
    iHighest();
-// ^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^ support.function.mql.4
 // ^^^^^^^^ entity.name.function.mql.4
    iLow();
-// ^^^^^^ expression.function.call.mql.4
+// ^^^^^^ function.call.mql.4
 // ^^^^ support.function.mql.4
 // ^^^^ entity.name.function.mql.4
    iLowest();
-// ^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ function.call.mql.4
 // ^^^^^^^ support.function.mql.4
 // ^^^^^^^ entity.name.function.mql.4
    iOpen();
-// ^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^ function.call.mql.4
 // ^^^^^ support.function.mql.4
 // ^^^^^ entity.name.function.mql.4
    iTime();
-// ^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^ function.call.mql.4
 // ^^^^^ support.function.mql.4
 // ^^^^^ entity.name.function.mql.4
    iVolume();
-// ^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ function.call.mql.4
 // ^^^^^^^ support.function.mql.4
 // ^^^^^^^ entity.name.function.mql.4
    RefreshRates();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    SeriesInfoInteger();
-// ^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^ entity.name.function.mql.4

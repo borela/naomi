@@ -13,86 +13,86 @@
 // the License.
 
    MathAbs();
-// ^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ function.call.mql.4
 // ^^^^^^^ support.function.mql.4
 // ^^^^^^^ entity.name.function.mql.4
    MathArccos();
-// ^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^ entity.name.function.mql.4
    MathArcsin();
-// ^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^ entity.name.function.mql.4
    MathArctan();
-// ^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^ entity.name.function.mql.4
    MathCeil();
-// ^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^ support.function.mql.4
 // ^^^^^^^^ entity.name.function.mql.4
    MathCos();
-// ^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ function.call.mql.4
 // ^^^^^^^ support.function.mql.4
 // ^^^^^^^ entity.name.function.mql.4
    MathExp();
-// ^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ function.call.mql.4
 // ^^^^^^^ support.function.mql.4
 // ^^^^^^^ entity.name.function.mql.4
    MathFloor();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    MathIsValidNumber();
-// ^^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    MathLog();
-// ^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ function.call.mql.4
 // ^^^^^^^ support.function.mql.4
 // ^^^^^^^ entity.name.function.mql.4
    MathLog10();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    MathMax();
-// ^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ function.call.mql.4
 // ^^^^^^^ support.function.mql.4
 // ^^^^^^^ entity.name.function.mql.4
    MathMin();
-// ^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ function.call.mql.4
 // ^^^^^^^ support.function.mql.4
 // ^^^^^^^ entity.name.function.mql.4
    MathMod();
-// ^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ function.call.mql.4
 // ^^^^^^^ support.function.mql.4
 // ^^^^^^^ entity.name.function.mql.4
    MathPow();
-// ^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ function.call.mql.4
 // ^^^^^^^ support.function.mql.4
 // ^^^^^^^ entity.name.function.mql.4
    MathRand();
-// ^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^ support.function.mql.4
 // ^^^^^^^^ entity.name.function.mql.4
    MathRound();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    MathSin();
-// ^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ function.call.mql.4
 // ^^^^^^^ support.function.mql.4
 // ^^^^^^^ entity.name.function.mql.4
    MathSqrt();
-// ^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^ support.function.mql.4
 // ^^^^^^^^ entity.name.function.mql.4
    MathSrand();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    MathTan();
-// ^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^ function.call.mql.4
 // ^^^^^^^ support.function.mql.4
 // ^^^^^^^ entity.name.function.mql.4

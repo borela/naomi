@@ -38,9 +38,9 @@ contexts:
         )
         (\))
       captures:
-        0: statement.function.parameters.mql.4
+        0: function.parameters.mql.4
         1: punctuation.delimiter.function.parameters.begin.mql.4
-        2: statement.function.parameters.content.mql.4
+        2: function.parameters.content.mql.4
         3: >-
           support.type.mql.4
           entity.name.type.mql.4
@@ -52,8 +52,8 @@ contexts:
       set: parameters
 
   parameters:
-    - meta_scope: statement.function.parameters.mql.4
-    - meta_content_scope: statement.function.parameters.content.mql.4
+    - meta_scope: function.parameters.mql.4
+    - meta_content_scope: function.parameters.content.mql.4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: \)
       scope: punctuation.delimiter.function.parameters.end.mql.4

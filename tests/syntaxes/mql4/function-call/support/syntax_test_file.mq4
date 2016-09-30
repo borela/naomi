@@ -13,154 +13,154 @@
 // the License.
 
    FileFindFirst();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    FileFindNext();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    FileFindClose();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    FileIsExist();
-// ^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^ entity.name.function.mql.4
    FileOpen();
-// ^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^ support.function.mql.4
 // ^^^^^^^^ entity.name.function.mql.4
    FileClose();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    FileCopy();
-// ^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^ support.function.mql.4
 // ^^^^^^^^ entity.name.function.mql.4
    FileDelete();
-// ^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^ entity.name.function.mql.4
    FileMove();
-// ^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^ support.function.mql.4
 // ^^^^^^^^ entity.name.function.mql.4
    FileFlush();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    FileGetInteger();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    FileIsEnding();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    FileIsLineEnding();
-// ^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    FileReadArray();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    FileReadBool();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    FileReadDatetime();
-// ^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    FileReadDouble();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    FileReadFloat();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    FileReadInteger();
-// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.4
    FileReadLong();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    FileReadNumber();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    FileReadString();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    FileReadStruct();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    FileSeek();
-// ^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^ support.function.mql.4
 // ^^^^^^^^ entity.name.function.mql.4
    FileSize();
-// ^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^ support.function.mql.4
 // ^^^^^^^^ entity.name.function.mql.4
    FileTell();
-// ^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^ support.function.mql.4
 // ^^^^^^^^ entity.name.function.mql.4
    FileWrite();
-// ^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^ entity.name.function.mql.4
    FileWriteArray();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    FileWriteDouble();
-// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.4
    FileWriteFloat();
-// ^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.4
    FileWriteInteger();
-// ^^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
    FileWriteLong();
-// ^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^ entity.name.function.mql.4
    FileWriteString();
-// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.4
    FileWriteStruct();
-// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.4
    FolderCreate();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    FolderDelete();
-// ^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^ entity.name.function.mql.4
    FolderClean();
-// ^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^ entity.name.function.mql.4
    FileOpenHistory();
-// ^^^^^^^^^^^^^^^^^ expression.function.call.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.4
 // ^^^^^^^^^^^^^^^ support.function.mql.4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.4

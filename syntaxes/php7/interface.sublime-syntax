@@ -29,7 +29,7 @@ contexts:
       set: declaration
 
   declaration:
-    - meta_scope: statement.interface.php.7
+    - meta_scope: interface.php.7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     # Extends.
     - match: (?i)\bextends\b
@@ -41,19 +41,19 @@ contexts:
     # Body.
     - match: \{
       scope: >-
-        statement.interface.body.php.7
+        interface.body.php.7
         punctuation.delimiter.interface.body.begin.php.7
       set: body
 
   body:
     - meta_content_scope: >-
-        statement.interface.php.7
-        statement.interface.body.php.7
-        statement.interface.body.content.php.7
+        interface.php.7
+        interface.body.php.7
+        interface.body.content.php.7
     - match: \}
       scope: >-
-        statement.interface.php.7
-        statement.interface.body.php.7
+        interface.php.7
+        interface.body.php.7
         punctuation.delimiter.interface.body.end.php.7
       pop: true
     # Body’s content.

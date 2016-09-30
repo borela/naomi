@@ -33,7 +33,7 @@ contexts:
   expressions:
     - include: Packages/Naomi/syntaxes/php7/terminator.sublime-syntax
     - match: \,
-      scope: punctuation.delimiter.expression.php.7
+      scope: punctuation.delimiter.php.7
     - match: (?=\S)
       push:
         - match: (?=\s*;)

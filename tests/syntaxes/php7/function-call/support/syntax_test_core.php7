@@ -14,215 +14,215 @@
 
 <?php
     assert_options();
-//  ^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^ entity.name.function.php.7
     assert();
-//  ^^^^^^ expression.function.call.php.7
+//  ^^^^^^ function.call.php.7
 //  ^^^^^^ support.function.php.7
 //  ^^^^^^ entity.name.function.php.7
     cli_get_process_title();
-//  ^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     cli_set_process_title();
-//  ^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     dl();
-//  ^^ expression.function.call.php.7
+//  ^^ function.call.php.7
 //  ^^ support.function.php.7
 //  ^^ entity.name.function.php.7
     extension_loaded();
-//  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.7
     gc_collect_cycles();
-//  ^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     gc_disable();
-//  ^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^ entity.name.function.php.7
     gc_enable();
-//  ^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^ entity.name.function.php.7
     gc_enabled();
-//  ^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^ entity.name.function.php.7
     gc_mem_caches();
-//  ^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^ entity.name.function.php.7
     get_cfg_var();
-//  ^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^ entity.name.function.php.7
     get_current_user();
-//  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_defined_constants();
-//  ^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_extension_funcs();
-//  ^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_include_path();
-//  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_included_files();
-//  ^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_loaded_extensions();
-//  ^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_magic_quotes_gpc();
-//  ^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_magic_quotes_runtime();
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_required_files();
-//  ^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     get_resources();
-//  ^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^ entity.name.function.php.7
     getenv();
-//  ^^^^^^ expression.function.call.php.7
+//  ^^^^^^ function.call.php.7
 //  ^^^^^^ support.function.php.7
 //  ^^^^^^ entity.name.function.php.7
     getlastmod();
-//  ^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^ entity.name.function.php.7
     getmygid();
-//  ^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^ function.call.php.7
 //  ^^^^^^^^ support.function.php.7
 //  ^^^^^^^^ entity.name.function.php.7
     getmyinode();
-//  ^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^ entity.name.function.php.7
     getmypid();
-//  ^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^ function.call.php.7
 //  ^^^^^^^^ support.function.php.7
 //  ^^^^^^^^ entity.name.function.php.7
     getmyuid();
-//  ^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^ function.call.php.7
 //  ^^^^^^^^ support.function.php.7
 //  ^^^^^^^^ entity.name.function.php.7
     getopt();
-//  ^^^^^^ expression.function.call.php.7
+//  ^^^^^^ function.call.php.7
 //  ^^^^^^ support.function.php.7
 //  ^^^^^^ entity.name.function.php.7
     getrusage();
-//  ^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^ entity.name.function.php.7
     ini_alter();
-//  ^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^ entity.name.function.php.7
     ini_get_all();
-//  ^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^ entity.name.function.php.7
     ini_get();
-//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ function.call.php.7
 //  ^^^^^^^ support.function.php.7
 //  ^^^^^^^ entity.name.function.php.7
     ini_restore();
-//  ^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^ entity.name.function.php.7
     ini_set();
-//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ function.call.php.7
 //  ^^^^^^^ support.function.php.7
 //  ^^^^^^^ entity.name.function.php.7
     main();
-//  ^^^^ expression.function.call.php.7
+//  ^^^^ function.call.php.7
 //  ^^^^ support.function.php.7
 //  ^^^^ entity.name.function.php.7
     memory_get_peak_usage();
-//  ^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     memory_get_usage();
-//  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.7
     php_ini_loaded_file();
-//  ^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     php_ini_scanned_files();
-//  ^^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     php_sapi_name();
-//  ^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^ entity.name.function.php.7
     php_uname();
-//  ^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^ entity.name.function.php.7
     phpcredits();
-//  ^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^ entity.name.function.php.7
     phpinfo();
-//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ function.call.php.7
 //  ^^^^^^^ support.function.php.7
 //  ^^^^^^^ entity.name.function.php.7
     phpversion();
-//  ^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^ entity.name.function.php.7
     putenv();
-//  ^^^^^^ expression.function.call.php.7
+//  ^^^^^^ function.call.php.7
 //  ^^^^^^ support.function.php.7
 //  ^^^^^^ entity.name.function.php.7
     restore_include_path();
-//  ^^^^^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.7
     set_include_path();
-//  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.7
     set_time_limit();
-//  ^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^ entity.name.function.php.7
     sys_get_temp_dir();
-//  ^^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.7
     version_compare();
-//  ^^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^^ entity.name.function.php.7
     zend_thread_id();
-//  ^^^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^^^ entity.name.function.php.7
     zend_version();
-//  ^^^^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^^^^ entity.name.function.php.7
 ?>

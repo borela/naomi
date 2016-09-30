@@ -43,7 +43,7 @@ contexts:
   main:
     - match: (?xi){{namespacePath}}
       captures:
-        0: expression.namespace.path.php.7
+        0: namespace.path.php.7
         1: punctuation.delimiter.namespace.a.php.7
         2: entity.name.namespace.a.php.7
         3: punctuation.delimiter.namespace.b.php.7

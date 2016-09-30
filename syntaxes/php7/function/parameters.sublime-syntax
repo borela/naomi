@@ -29,8 +29,8 @@ contexts:
       set: parameters
 
   parameters:
-    - meta_scope: statement.function.parameters.php.7
-    - meta_content_scope: statement.function.parameters.content.php.7
+    - meta_scope: function.parameters.php.7
+    - meta_content_scope: function.parameters.content.php.7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: \)
       scope: punctuation.delimiter.function.parameters.end.php.7
@@ -101,7 +101,7 @@ contexts:
       pop: true
     - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
-    # Constant inside statement.class.
+    # Constant inside class.
     - match: |
         (?xi)
         (?={{commonIdentifier}})

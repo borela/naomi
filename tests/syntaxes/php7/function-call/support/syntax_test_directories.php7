@@ -14,39 +14,39 @@
 
 <?php
     chdir();
-//  ^^^^^ expression.function.call.php.7
+//  ^^^^^ function.call.php.7
 //  ^^^^^ support.function.php.7
 //  ^^^^^ entity.name.function.php.7
     chroot();
-//  ^^^^^^ expression.function.call.php.7
+//  ^^^^^^ function.call.php.7
 //  ^^^^^^ support.function.php.7
 //  ^^^^^^ entity.name.function.php.7
     closedir();
-//  ^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^ function.call.php.7
 //  ^^^^^^^^ support.function.php.7
 //  ^^^^^^^^ entity.name.function.php.7
     dir();
-//  ^^^ expression.function.call.php.7
+//  ^^^ function.call.php.7
 //  ^^^ support.function.php.7
 //  ^^^ entity.name.function.php.7
     getcwd();
-//  ^^^^^^ expression.function.call.php.7
+//  ^^^^^^ function.call.php.7
 //  ^^^^^^ support.function.php.7
 //  ^^^^^^ entity.name.function.php.7
     opendir();
-//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ function.call.php.7
 //  ^^^^^^^ support.function.php.7
 //  ^^^^^^^ entity.name.function.php.7
     readdir();
-//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ function.call.php.7
 //  ^^^^^^^ support.function.php.7
 //  ^^^^^^^ entity.name.function.php.7
     rewinddir();
-//  ^^^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^^^ function.call.php.7
 //  ^^^^^^^^^ support.function.php.7
 //  ^^^^^^^^^ entity.name.function.php.7
     scandir();
-//  ^^^^^^^ expression.function.call.php.7
+//  ^^^^^^^ function.call.php.7
 //  ^^^^^^^ support.function.php.7
 //  ^^^^^^^ entity.name.function.php.7
 ?>

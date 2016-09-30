@@ -29,7 +29,7 @@ contexts:
       set: declaration
 
   declaration:
-    - meta_scope: statement.import.php.7
+    - meta_scope: import.php.7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/terminator.sublime-syntax
     - match: \,
@@ -52,11 +52,11 @@ contexts:
       set: namespace-or-type
 
   namespaced-const:
-    - meta_scope: statement.import.constant.php.7
+    - meta_scope: import.constant.php.7
     - include: target-const
 
   namespaced-function:
-    - meta_scope: statement.import.function.php.7
+    - meta_scope: import.function.php.7
     - include: target-function
 
   namespace-or-type:

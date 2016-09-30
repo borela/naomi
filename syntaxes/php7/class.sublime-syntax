@@ -53,7 +53,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/modifier.no-pop.sublime-syntax
 
   declaration:
-    - meta_scope: statement.class.php.7
+    - meta_scope: class.php.7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     # Extends.
     - match: (?i)\bextends\b
@@ -69,19 +69,19 @@ contexts:
     # Body.
     - match: \{
       scope: >-
-        statement.class.body.php.7
+        class.body.php.7
         punctuation.delimiter.class.body.begin.php.7
       set: body
 
   body:
     - meta_content_scope: >-
-        statement.class.php.7
-        statement.class.body.php.7
-        statement.class.body.content.php.7
+        class.php.7
+        class.body.php.7
+        class.body.content.php.7
     - match: \}
       scope: >-
-        statement.class.php.7
-        statement.class.body.php.7
+        class.php.7
+        class.body.php.7
         punctuation.delimiter.class.body.end.php.7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/statement.no-pop.sublime-syntax

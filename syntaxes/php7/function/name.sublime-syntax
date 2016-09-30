@@ -33,7 +33,7 @@ contexts:
           {{commonIdentifier}}
         )\b
       captures:
-        0: expression.function.call.php.7
+        0: function.call.php.7
         1: punctuation.delimiter.function.php.7
         2: entity.name.function.php.7
       pop: true

@@ -31,19 +31,19 @@ contexts:
     # Normal body.
     - match: \{
       scope: >-
-        statement.function.body.php.7
+        function.body.php.7
         punctuation.delimiter.function.body.begin.php.7
       set: body-content
 
   body-content:
     - meta_content_scope: >-
-        statement.function.php.7
-        statement.function.body.php.7
-        statement.function.body.content.php.7
+        function.php.7
+        function.body.php.7
+        function.body.content.php.7
     - match: \}
       scope: >-
-        statement.function.php.7
-        statement.function.body.php.7
+        function.php.7
+        function.body.php.7
         punctuation.delimiter.function.body.end.php.7
       pop: true
     - match: ""

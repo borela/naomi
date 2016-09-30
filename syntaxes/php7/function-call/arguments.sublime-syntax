@@ -24,12 +24,12 @@ contexts:
       set: arguments
 
   arguments:
-    - meta_scope: expression.function.call.php.7
+    - meta_scope: function.call.php.7
     - match: \)
       scope: punctuation.delimiter.function.arguments.end.php.7
       pop: true
     - match: \,
       scope: >-
-        expression.function.call.php.7
+        function.call.php.7
         punctuation.delimiter.function.arguments.php.7
     - include: Packages/Naomi/syntaxes/php7/expression.no-pop.sublime-syntax

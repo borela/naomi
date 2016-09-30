@@ -29,12 +29,12 @@ contexts:
       set: declaration
 
   declaration:
-    - meta_scope: statement.trait.php.7
+    - meta_scope: trait.php.7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     # Body.
     - match: "{"
       scope: >-
-        statement.trait.body.php.7
+        trait.body.php.7
         punctuation.delimiter.trait.body.begin.php.7
       set: body
     # Trait’s name.
@@ -43,16 +43,16 @@ contexts:
 
   body:
     - meta_content_scope: >-
-        statement.trait.php.7
-        statement.trait.body.php.7
-        statement.trait.body.content.php.7
+        trait.php.7
+        trait.body.php.7
+        trait.body.content.php.7
     - match: "}"
       scope: >-
-        statement.trait.php.7
-        statement.trait.body.php.7
+        trait.php.7
+        trait.body.php.7
         punctuation.delimiter.trait.body.end.php.7
       pop: true
     - include: body-content
 
   body-content:
-    - include: Packages/Naomi/syntaxes/php7/statement.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/no-pop.sublime-syntax

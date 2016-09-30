@@ -17,33 +17,47 @@ hidden: true
 
 scope: ...
 
+variables:
+  arrowFunctionContinuation: |
+    [^(]*?\)
+    .*?=>
+
 contexts:
   main:
-    - include: terminators
-    - include: content
-    - match: \(
+    - match: |
+        (?x)
+        \(
+        (?!{{arrowFunctionContinuation}})
       scope: punctuation.delimiter.expression.group.a.begin.js.2015
       push: open-b-close-a
-
-  open-b-close-a:
     - include: terminators
     - include: content
-    - match: \(
+
+  open-b-close-a:
+    - match: |
+        (?x)
+        \(
+        (?!{{arrowFunctionContinuation}})
       scope: punctuation.delimiter.expression.group.b.begin.js.2015
       push: open-a-close-b
     - match: \)
       scope: punctuation.delimiter.expression.group.a.end.js.2015
       pop: true
-
-  open-a-close-b:
     - include: terminators
     - include: content
-    - match: \(
+
+  open-a-close-b:
+    - match: |
+        (?x)
+        \(
+        (?!{{arrowFunctionContinuation}})
       scope: punctuation.delimiter.expression.group.a.begin.js.2015
       push: open-b-close-a
     - match: \)
       scope: punctuation.delimiter.expression.group.b.end.js.2015
       pop: true
+    - include: terminators
+    - include: content
 
   content:
     - match: (?=\S)

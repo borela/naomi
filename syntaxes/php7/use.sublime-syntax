@@ -31,11 +31,9 @@ contexts:
   declaration:
     - meta_scope: statement.import.php.7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/terminator.sublime-syntax
     - match: \,
       scope: punctuation.delimiter.import.php.7
-    - match: ;
-      scope: punctuation.terminator.php.7
-      pop: true
     - match: (?=\S)
       push: [
         alias,

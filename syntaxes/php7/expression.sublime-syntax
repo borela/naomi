@@ -61,9 +61,7 @@ contexts:
           pop: true
 
   terminators:
-    - match: ;
-      scope: punctuation.terminator.php.7
-      pop: true
+    - include: Packages/Naomi/syntaxes/php7/terminator.sublime-syntax
     - match: |
         (?x)
         (?=

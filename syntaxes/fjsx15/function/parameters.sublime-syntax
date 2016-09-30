@@ -32,11 +32,13 @@ contexts:
       ]
 
   parameter:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
     - match: (?=\))
       pop: true
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameter.sublime-syntax
 
   punctuation:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
     - match: \,
       scope: punctuation.delimiter.function.parameters.js.2015
       set: [

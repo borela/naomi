@@ -54,11 +54,7 @@ contexts:
       pop: true
     - match: ""
       push:
-        # Statements.
-        - include: Packages/Naomi/syntaxes/js15/statement/hanging.sublime-syntax
-        - include: Packages/Naomi/syntaxes/js15/statement/bodied.sublime-syntax
-        - include: Packages/Naomi/syntaxes/js15/statement/simple.sublime-syntax
-        # Expressions.
+        - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   arrow-body:

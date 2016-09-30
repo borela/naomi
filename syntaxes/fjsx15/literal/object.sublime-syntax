@@ -29,6 +29,7 @@ contexts:
       set: property
 
   property:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
     - include: object-end
     - match: |
         (?xi)
@@ -43,14 +44,17 @@ contexts:
       ]
 
   assignment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
     - match: ":"
       scope: keyword.operator.js.2015
       pop: true
 
   value:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   delimiter:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
     - include: object-end
     - match: \,
       scope: punctuation.delimiter.object.js.2015

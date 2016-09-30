@@ -128,6 +128,34 @@
 
             <dict>
                 <key>name</key>
+                <string>Template’s delimiter</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.template</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ffffff</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Destructure delimiters</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.destructure</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ffffff</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Parenthesis B</string>
 
                 <key>scope</key>
@@ -173,7 +201,7 @@
                 <string>Type</string>
 
                 <key>scope</key>
-                <string>entity.name, punctuation.delimiter.type, punctuation.delimiter.enum, punctuation.delimiter.class, punctuation.delimiter.struct, punctuation.delimiter.interface, punctuation.delimiter.trait</string>
+                <string>entity.name, punctuation.delimiter.type, punctuation.delimiter.enum, punctuation.delimiter.class, punctuation.delimiter.struct, punctuation.delimiter.interface, punctuation.delimiter.trait, punctuation.delimiter.object</string>
 
                 <key>settings</key>
                 <dict>
@@ -717,7 +745,7 @@
                 <string>Git pattern</string>
 
                 <key>scope</key>
-                <string>expression.pattern.git</string>
+                <string>pattern.git</string>
 
                 <key>settings</key>
                 <dict>
@@ -1017,6 +1045,20 @@
                 <dict>
                     <key>foreground</key>
                     <string>#ffecb390</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>FlowType’s delimiter</string>
+
+                <key>scope</key>
+                <string>type.flowtype punctuation.delimiter.class, type.flowtype punctuation.delimiter.function, type.flowtype punctuation.delimiter.array</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f48fb1</string>
                 </dict>
             </dict>
         </array>

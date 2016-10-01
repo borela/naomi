@@ -52,7 +52,7 @@
 //                       ^ punctuation.delimiter.namespace.b.php.7
 //                                 ^ punctuation.delimiter.type.php.7
 //                                  ^^^^^^^^^^^ entity.name.type.php.7
-//                                             ^^ keyword.operator.scope.resolution.php.7
+//                                             ^^ operator.scope.resolution.php.7
 //                                               ^^^^^^^^^^^^ entity.name.function.php.7
      * @covers Namespace\Namespace\TargetClass::TargetMethod
 //     ^^^^^^^ keyword.documentation.php.7
@@ -62,7 +62,7 @@
 //                      ^ punctuation.delimiter.namespace.b.php.7
 //                                ^ punctuation.delimiter.type.php.7
 //                                 ^^^^^^^^^^^ entity.name.type.php.7
-//                                            ^^ keyword.operator.scope.resolution.php.7
+//                                            ^^ operator.scope.resolution.php.7
 //                                              ^^^^^^^^^^^^ entity.name.function.php.7
      * @coversDefaultClass \Namespace\Namespace\TargetClass
 //     ^^^^^^^^^^^^^^^^^^^ keyword.documentation.php.7
@@ -126,7 +126,7 @@
 //                                         ^ punctuation.delimiter.namespace.b.php.7
 //                                                   ^ punctuation.delimiter.type.php.7
 //                                                    ^^^^^^^^^^^ entity.name.type.php.7
-//                                                               ^^ keyword.operator.scope.resolution.php.7
+//                                                               ^^ operator.scope.resolution.php.7
 //                                                                 ^^^^^^^^^^^^ constant.php.7
      * @expectedExceptionMessage Namespace\Namespace\TargetClass::TARGET_CONST
 //     ^^^^^^^^^^^^^^^^^^^^^^^^^ keyword.documentation.php.7
@@ -136,7 +136,7 @@
 //                                        ^ punctuation.delimiter.namespace.b.php.7
 //                                                  ^ punctuation.delimiter.type.php.7
 //                                                   ^^^^^^^^^^^ entity.name.type.php.7
-//                                                              ^^ keyword.operator.scope.resolution.php.7
+//                                                              ^^ operator.scope.resolution.php.7
 //                                                                ^^^^^^^^^^^^ constant.php.7
      * @expectedExceptionMessageRegExp /Some pattern/
 //     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ keyword.documentation.php.7

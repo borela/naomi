@@ -91,7 +91,7 @@ contexts:
     - match: (?=\$)
       pop: true
     - match: \&
-      scope: keyword.operator.reference.php.7
+      scope: operator.reference.php.7
       pop: true
 
   target-delimiter:

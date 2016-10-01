@@ -69,10 +69,10 @@ contexts:
     - match: (?=\$)
       pop: true
     - match: \&
-      scope: keyword.operator.reference.php.7
+      scope: operator.reference.php.7
       pop: true
     - match: \.\.\.
-      scope: keyword.operator.variadic.php.7
+      scope: operator.variadic.php.7
       pop: true
 
   reference-operator:
@@ -80,7 +80,7 @@ contexts:
     - match: (?=\$)
       pop: true
     - match: \&
-      scope: keyword.operator.reference.php.7
+      scope: operator.reference.php.7
       pop: true
 
   param-variable:
@@ -92,7 +92,7 @@ contexts:
     - match: (?=,|\))
       pop: true
     - match: \=
-      scope: keyword.operator.php.7
+      scope: operator.php.7
       set: param-default-value
 
   param-default-value:
@@ -124,7 +124,7 @@ contexts:
 
   default-value-scope-operator:
     - match: "::"
-      scope: keyword.operator.scope.resolution.php.7
+      scope: operator.scope.resolution.php.7
       pop: true
 
   default-value-constant:

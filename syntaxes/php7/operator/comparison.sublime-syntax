@@ -42,5 +42,5 @@ contexts:
           | >(?!>)
           | <(?!<)
         )
-      scope: keyword.operator.comparison.php.7
+      scope: operator.comparison.php.7
       pop: true

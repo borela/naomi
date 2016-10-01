@@ -41,27 +41,27 @@ contexts:
   # |     :      |                     |
   main:
     - match: (?xi)\bas\b
-      scope: keyword.operator.alias.php.7
+      scope: operator.alias.php.7
       pop: true
     - match: (?xi)\binstanceof\b
-      scope: keyword.operator.type.php.7
+      scope: operator.type.php.7
       pop: true
     - match: "=>"
-      scope: keyword.operator.key.association.php.7
+      scope: operator.key.association.php.7
     - match: "@"
-      scope: keyword.operator.error.suppression.php.7
+      scope: operator.error.suppression.php.7
       pop: true
     - match: "\\.\\.\\."
-      scope: keyword.operator.argument.unpack.php.7
+      scope: operator.argument.unpack.php.7
       pop: true
     - match: "->"
-      scope: keyword.operator.member.access.php.7
+      scope: operator.member.access.php.7
       set: member-access
     - match: "::"
-      scope: keyword.operator.scope.resolution.php.7
+      scope: operator.scope.resolution.php.7
       set: scope-resolution
     - match: "\\?\\??|:"
-      scope: keyword.operator.php.7
+      scope: operator.php.7
 
   member-access:
     - meta_content_scope: member.php.7

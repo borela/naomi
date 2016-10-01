@@ -49,7 +49,7 @@ contexts:
     - match: (?=\$|$)
       pop: true
     - match: \|
-      scope: keyword.operator.php.7
+      scope: operator.php.7
       pop: true
 
   param:

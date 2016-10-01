@@ -31,7 +31,7 @@
 //     ^^^^^^ keyword.documentation.php.7
 //     ^ punctuation.keyword.begin.php.7
 //            ^^^ support.type.php.7
-//               ^ keyword.operator.php.7
+//               ^ operator.php.7
 //                ^^^^^^ support.type.php.7
 //                       ^^^^^^^^^ variable.php.7
 //                       ^ punctuation.variable.begin.php.7
@@ -44,7 +44,7 @@
 //     ^^^^^^^ keyword.documentation.php.7
 //     ^ punctuation.keyword.begin.php.7
 //             ^^^ support.type.php.7
-//                ^ keyword.operator.php.7
+//                ^ operator.php.7
 //                 ^^^^ support.type.php.7
      * @api
 //     ^^^^ keyword.documentation.php.7

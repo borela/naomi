@@ -65,7 +65,7 @@ contexts:
 
   operator:
     - match: =
-      scope: keyword.operator.assignment.php.7
+      scope: operator.assignment.php.7
       pop: true
 
   value:

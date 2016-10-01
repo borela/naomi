@@ -32,6 +32,8 @@ contexts:
       ]
 
   variable:
+    - match: (?=,)
+      pop: true
     # Alias.
     - match: |
         (?x)

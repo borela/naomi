@@ -17,49 +17,14 @@ hidden: true
 
 scope: ...
 
-variables:
-  singleQuotedEscapeSequences: \\[\\']
-
 contexts:
   main:
     - match: \'
-      scope: >-
-        string.quoted.single.php.7
-        punctuation.delimiter.string.begin.php.7
-      with_prototype:
-        - match: \'
-          scope: >-
-            string.quoted.single.php.7
-            punctuation.delimiter.string.end.php.7
-          pop: true
-      set: escape-a
+      scope: punctuation.delimiter.string.begin.xml.1.0
+      set: string
 
-  escape-a:
-    - meta_content_scope: >-
-        string.quoted.single.php.7
-        string.content.php.7
-    - match: (?x)(?={{singleQuotedEscapeSequences}})
-      set: [
-        escape-b,
-        escape-a-match
-      ]
-
-  escape-b:
-    - meta_content_scope: >-
-        string.quoted.single.php.7
-        string.content.php.7
-    - match: (?x)(?={{singleQuotedEscapeSequences}})
-      set: [
-        escape-a,
-        escape-b-match
-      ]
-
-  escape-a-match:
-    - match: (?x){{singleQuotedEscapeSequences}}
-      scope: constant.character.escape.a.php.7
-      pop: true
-
-  escape-b-match:
-    - match: (?x){{singleQuotedEscapeSequences}}
-      scope: constant.character.escape.b.php.7
+  string:
+    - meta_scope: string.quoted.single.xml.1.0
+    - match: \'
+      scope: punctuation.delimiter.string.end.xml.1.0
       pop: true

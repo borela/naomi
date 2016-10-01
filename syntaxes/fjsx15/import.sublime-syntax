@@ -1,0 +1,103 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [_[:alnum:]]*
+
+contexts:
+  main:
+    # Import the entire module.
+    - match: |
+        (?x)\b
+        import
+        (?=
+          \s*
+          (?>"|')
+        )\b
+      scope: keyword.import.js.2015
+      set: origin-path
+    # Selective.
+    - match: \bimport\b
+      scope: keyword.import.js.2015
+      set: [
+        end,
+        origin,
+        target-list
+      ]
+
+  end:
+    - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
+
+  origin:
+    - match: \bfrom\b
+      scope: keyword.import.origin.js.2015
+      set: origin-path
+
+  origin-path:
+    - include: Packages/Naomi/syntaxes/js15/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/js15/literal/string/single-quoted.sublime-syntax
+
+  target-list:
+    - match: \*
+      scope: operator.import.all.js.2015
+      set: alias
+    - match: \{
+      scope: punctuation.delimiter.import.target-list.begin.js.2015
+      set: target-list-content
+    - include: target
+
+  target-list-content:
+    - match: \}
+      scope: punctuation.delimiter.import.target-list.end.js.2015
+      pop: true
+    - match: ""
+      push:
+        - include: target-list
+        - match: (?=\})
+          pop: true
+
+  target:
+    - match: |
+        (?xi)
+        {{commonIdentifier}}
+      scope: entity.name.ambiguous.js.2015
+      set: alias-or-sibling
+
+  alias-or-sibling:
+    - include: alias
+    - match: \,
+      scope: punctuation.delimiter.import.item.js.2015
+      set: target-list
+    - match: (?=\S)
+      pop: true
+
+  alias:
+    - match: \bas\b
+      scope: keyword.alias.begin.js.2015
+      set: alias-name
+
+  alias-name:
+    - match: |
+        (?xi)
+        {{commonIdentifier}}
+      scope: entity.name.alias.js.2015
+      pop: true
+

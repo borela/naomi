@@ -33,7 +33,7 @@ contexts:
       captures:
         0: type.mql.4
         1: entity.name.type.mql.4
-        2: keyword.operator.pointer.mql.4
+        2: operator.pointer.mql.4
       set: template-arguments
 
   template-arguments:

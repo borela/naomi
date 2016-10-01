@@ -18,7 +18,7 @@
 //        ^^^^^^ support.type.mql.4
 //        ^^^^^^ entity.name.type.mql.4
 //               ^^^^^^^^^^ entity.name.variable.mql.4
-//                          ^ keyword.operator.assignment.mql.4
+//                          ^ operator.assignment.mql.4
 //                            ^^^^^ string.quoted.double.mql.4
 //                             ^^^ string.content.mql.4
 //                            ^ punctuation.delimiter.string.begin.mql.4
@@ -30,7 +30,7 @@
 //        ^^^^^^ type.mql.4
 //        ^^^^^^ entity.name.type.mql.4
 //               ^^^^^^^^^^ entity.name.variable.mql.4
-//                          ^ keyword.operator.assignment.mql.4
+//                          ^ operator.assignment.mql.4
 //                            ^^^^^ string.quoted.double.mql.4
 //                             ^^^ string.content.mql.4
 //                            ^ punctuation.delimiter.string.begin.mql.4

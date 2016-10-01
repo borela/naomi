@@ -91,7 +91,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: \s*(&)
       captures:
-        1: keyword.operator.reference.mql.4
+        1: operator.reference.mql.4
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
 
   param-operators:
@@ -101,7 +101,7 @@ contexts:
     - match: \[\]
       scope: punctuation.delimiter.array.mql.4
     - match: \=
-      scope: keyword.operator.mql.4
+      scope: operator.mql.4
       set: param-default-value
 
   param-default-value:

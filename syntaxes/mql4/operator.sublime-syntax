@@ -25,5 +25,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/operator/bitwise.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/operator/arithmetic.sublime-syntax
     - match: =
-      scope: keyword.operator.assignment.mql.4
+      scope: operator.assignment.mql.4
       pop: true

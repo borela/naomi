@@ -87,7 +87,7 @@ contexts:
 
   casting-open:
     - match: \(
-      scope: keyword.operator.cating.mql.4
+      scope: operator.cating.mql.4
       pop: true
 
   type:
@@ -95,7 +95,7 @@ contexts:
 
   casting-close:
     - match: \)
-      scope: keyword.operator.cating.mql.4
+      scope: operator.cating.mql.4
       pop: true
 
   terminators:

@@ -55,7 +55,7 @@ contexts:
           )
         )\s*
       captures:
-        1: keyword.operator.inherit.mql.4
+        1: operator.inherit.mql.4
         2: keyword.modifier.mql.4
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 

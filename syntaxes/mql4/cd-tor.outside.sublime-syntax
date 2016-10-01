@@ -50,7 +50,7 @@ contexts:
   scope-operator:
     - match: |
         (?x)::
-      scope: keyword.operator.scope.mql.4
+      scope: operator.scope.mql.4
       pop: true
 
   name:

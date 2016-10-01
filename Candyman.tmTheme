@@ -307,10 +307,10 @@
                 <key>settings</key>
                 <dict>
                     <key>fontStyle</key>
-                    <string></string>
+                    <string>bold</string>
 
                     <key>foreground</key>
-                    <string>#ffecb3</string>
+                    <string>#bdbdbd</string>
                 </dict>
             </dict>
 
@@ -1072,7 +1072,21 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#f48fb1</string>
+                    <string>#26a69a</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>FlowType’s operators</string>
+
+                <key>scope</key>
+                <string>operator.cast.flowtype, operator.type.flowtype</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#26a69a</string>
                 </dict>
             </dict>
         </array>

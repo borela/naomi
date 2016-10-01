@@ -52,7 +52,7 @@ contexts:
   punctuation:
     - include: terminator
     - match: ":"
-      scope: keyword.operator.type.flowtype
+      scope: operator.type.flowtype
       set: [
         optional-value,
         type
@@ -62,7 +62,7 @@ contexts:
   optional-value:
     - include: terminator
     - match: =
-      scope: keyword.operator.assignment.js.2015
+      scope: operator.assignment.js.2015
       set: value
 
   type:

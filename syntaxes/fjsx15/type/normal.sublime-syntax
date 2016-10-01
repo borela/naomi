@@ -30,7 +30,7 @@ contexts:
       captures:
         0: type.flowtype
         1: entity.name.type.flowtype
-        2: keyword.operator.pointer.flowtype
+        2: operator.pointer.flowtype
       set: optional-punctuation
 
   optional-punctuation:

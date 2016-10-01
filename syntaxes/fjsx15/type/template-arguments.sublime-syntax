@@ -44,7 +44,7 @@ contexts:
       pop: true
     - match: \s*(\*+)
       captures:
-        1: keyword.operator.pointer.flowtype
+        1: operator.pointer.flowtype
 
   delimiter:
     - match: \>
@@ -68,7 +68,7 @@ contexts:
   final-pointer-operator:
     - match: \s*(\*+)
       captures:
-        1: keyword.operator.pointer.flowtype
+        1: operator.pointer.flowtype
       pop: true
     - match: ""
       pop: true

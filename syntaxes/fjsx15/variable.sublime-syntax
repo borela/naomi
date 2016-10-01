@@ -37,7 +37,7 @@ contexts:
       captures:
         0: variable.js.2015
         1: entity.name.variable.js.2015
-        2: keyword.operator.optional.js.2015
+        2: operator.optional.js.2015
       set: array-item-access-begin
 
   support-variable:

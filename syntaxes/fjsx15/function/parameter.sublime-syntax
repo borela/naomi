@@ -44,7 +44,7 @@ contexts:
 
   optional-rest-operator:
     - match: \.{3}
-      scope: keyword.operator.rest.js.2015
+      scope: operator.rest.js.2015
     - match: (?=\S)
       pop: true
 
@@ -54,7 +54,7 @@ contexts:
   punctuation:
     - include: terminators
     - match: ":"
-      scope: keyword.operator.type.flowtype
+      scope: operator.type.flowtype
       set: [
         optional-value,
         type
@@ -64,7 +64,7 @@ contexts:
   optional-value:
     - include: terminators
     - match: =
-      scope: keyword.operator.assignment.js.2015
+      scope: operator.assignment.js.2015
       set: value
 
   type:

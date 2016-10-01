@@ -49,7 +49,7 @@ contexts:
 
   operator:
     - match: \|
-      scope: keyword.operator.flowtype
+      scope: operator.flowtype
       set: [
         operator,
         type

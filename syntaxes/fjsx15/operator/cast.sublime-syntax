@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: ":"
-      scope: keyword.operator.cast.flowtype
+      scope: operator.cast.flowtype
       set: type
 
   type:

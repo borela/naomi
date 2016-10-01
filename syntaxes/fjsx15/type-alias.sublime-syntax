@@ -32,7 +32,7 @@ contexts:
 
   punctuation:
     - match: "="
-      scope: keyword.operator.type.alias.flowtype
+      scope: operator.type.alias.flowtype
       pop: true
 
   type:

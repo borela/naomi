@@ -102,7 +102,7 @@ contexts:
 
   # scope-operator:
   #   - match: "::"
-  #     scope: keyword.operator.scope.js.2015
+  #     scope: operator.scope.js.2015
   #     pop: true
 
   name:

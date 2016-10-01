@@ -50,7 +50,7 @@ contexts:
 
   alias-operator:
     - match: ":"
-      scope: keyword.operator.alias.js.2015
+      scope: operator.alias.js.2015
       pop: true
 
   alias:

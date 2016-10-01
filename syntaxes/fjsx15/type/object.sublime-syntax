@@ -64,7 +64,7 @@ contexts:
 
   type-operator:
     - match: ":"
-      scope: keyword.operator.type.flowtype
+      scope: operator.type.flowtype
       pop: true
 
   type:

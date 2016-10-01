@@ -32,18 +32,25 @@ contexts:
       ]
 
   variable:
+    # Alias.
     - match: |
         (?x)
         (?=
           {{commonIdentifier}}\s*:
         )
       set: [
-        actual-variable,
+        destination,
         alias-operator,
         alias
       ]
+    # Simple variable.
     - match: (?=\S)
       set: actual-variable
+
+  destination:
+    - include: Packages/Naomi/syntaxes/fjsx15/destructure-object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/destructure-array.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   actual-variable:
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

@@ -22,12 +22,12 @@ contexts:
     - match: (?=\{)
       set: [
         punctuation,
-        object-destructure
+        destructure-object
       ]
     - match: (?=\[)
       set: [
         punctuation,
-        array-destructure
+        destructure-array
       ]
     - match: (?=\S)
       set: [
@@ -36,11 +36,11 @@ contexts:
         optional-rest-operator
       ]
 
-  object-destructure:
-    - include: Packages/Naomi/syntaxes/fjsx15/object-destructure.sublime-syntax
+  destructure-object:
+    - include: Packages/Naomi/syntaxes/fjsx15/destructure-object.sublime-syntax
 
-  array-destructure:
-    - include: Packages/Naomi/syntaxes/fjsx15/array-destructure.sublime-syntax
+  destructure-array:
+    - include: Packages/Naomi/syntaxes/fjsx15/destructure-array.sublime-syntax
 
   optional-rest-operator:
     - match: \.{3}

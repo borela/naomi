@@ -24,6 +24,33 @@ variables:
 
 contexts:
   main:
+    # Destructure object.
+    - match: |
+        (?x)
+        (?=
+          (?> let
+            | var
+          )\s+\{
+        )
+      set: [
+        punctuation,
+        destructure-object,
+        keyword
+      ]
+    # Destructure array.
+    - match: |
+        (?x)
+        (?=
+          (?> let
+            | var
+          )\s+\[
+        )
+      set: [
+        punctuation,
+        destructure-array,
+        keyword
+      ]
+    # Simple variable.
     - match: |
         (?x)
         (?=
@@ -36,6 +63,12 @@ contexts:
         variable,
         keyword
       ]
+
+  destructure-object:
+    - include: Packages/Naomi/syntaxes/fjsx15/destructure-object.sublime-syntax
+
+  destructure-array:
+    - include: Packages/Naomi/syntaxes/fjsx15/destructure-array.sublime-syntax
 
   keyword:
     - match: |

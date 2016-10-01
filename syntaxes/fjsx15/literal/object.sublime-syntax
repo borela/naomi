@@ -24,7 +24,13 @@ variables:
 
 contexts:
   main:
-    - match: \{
+    - match: |
+        (?x)
+        \{
+        (?!
+          .*?\}
+          \s*=
+        )
       scope: punctuation.delimiter.object.begin.js.2015
       set: property-or-method
 

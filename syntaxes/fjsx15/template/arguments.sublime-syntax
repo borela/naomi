@@ -15,48 +15,36 @@
 
 hidden: true
 
+scope: ...
+
 variables:
   commonIdentifier: |
     [_[:alpha:]]
     [_[:alnum:]]*
 
-scope: ...
-
 contexts:
   main:
-    # Templated function.
-    - match: |
-        (?xi)
-        (?=
-          \b{{commonIdentifier}}
-          \s*<[^&|]*?>\s*\(
-        )
+    - match: \<
+      scope: punctuation.delimiter.template.arguments.begin.flowtype
       set: [
-        arguments,
-        template-arguments,
-        name
-      ]
-    # Simple function call.
-    - match: |
-        (?xi)
-        (?=
-          \b{{commonIdentifier}}
-          \s*\(
-        )
-      set: [
-        arguments,
-        name
+        punctuation,
+        argument
       ]
 
-  name:
-    - match: (?xi){{commonIdentifier}}
-      scope: entity.name.function.js.2015
+  argument:
+    - match: |
+        (?xi)
+        {{commonIdentifier}}
+      scope: entity.name.type.flowtype
       pop: true
 
-  template-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/template/arguments.sublime-syntax
-
-  arguments:
-    - meta_scope: function.call.js.2015
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
-
+  punctuation:
+    - match: \>
+      scope: punctuation.delimiter.template.arguments.end.flowtype
+      pop: true
+    - match: \,
+      scope: punctuation.delimiter.template.argument.flowtype
+      set: [
+        punctuation,
+        argument
+      ]

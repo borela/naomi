@@ -17,23 +17,45 @@ that makes writting more fun.
     3. Alt+] produces ‘.
     4. Alt+Shift+] produces ’.
 
-#### PHP 7
+#### ES2015 + FlowType + React’s JSX (Experimental)
 
-* Scopes for phpDoc instructions.
-* Different scopes for decimal, floating point, binary, octal and hexadecimal
-literal.
-* Alternating scopes for namespace names.
-* Alternating scopes for escaped characters.
-* Alternating scopes for embedded variables.
-* Alternating scopes for parenthesis in expressions.
-* Different scopes for extended class and implemented interfaces.
-* Different scopes for private and protected modifiers.
+* Combines the 3 syntaxes.
+* Classes.
+* Interfaces.
+* Templates.
+* Destructure operator.
+* Generator functions.
+* Arrow functions.
+* Get, set and static functions.
+* Decimal, floating point and hexadecimal literal.
+
+#### HTML 5 (Experimental)
+
+* Balanced tags.
+* Section roots elements.
+* Embedded elements.
+* Form elements.
 
 #### MQL4
 
-* Different scopes for decimal, floating point and hexadecimal literal.
-* Different scopes for RGB literal.
-* Alternating scopes for escaped characters.
+* Decimal, floating point and hexadecimal literal.
+* RGB literal.
+* Alternating escaped characters.
+
+#### PHP 7
+
+* phpDoc instructions.
+* Decimal, floating point, binary, octal and hexadecimal literal.
+* Alternating namespace names.
+* Alternating escaped characters.
+* Alternating embedded variables.
+* Alternating parenthesis in expressions.
+* Extended class and implemented interfaces.
+* Specific scope for private and protected modifiers.
+
+#### XML 1.0 (Experimental)
+
+* Balanced tags.
 
 ## Installation
 
@@ -56,27 +78,18 @@ The “Packages” directory is located at:
 * **Linux**: `~/.config/sublime-text-3/Packages`
 * **Windows**: `%APPDATA%\Sublime Text 3\Packages`
 
-## Configuration
-
-It is recommended that you disable the default PHP package to prevent conflicts
-with the auto completition:
-
-1. Go to `Preferences / Settings - User`.
-2. Add it to the ignored packages:
-
-```json
-"ignored_packages": [
-    "PHP"
-]
-```
-
 ## Usage
 
 1. Go to the menu `View / Syntax / Naomi / ...` to select the new syntax.
 2. Select a color scheme provided in `Preferences / Color Scheme / Naomi`.
 
-**Note:** You aren’t required to use the color schemes provided but keep in mind
+## Notes
+
+You aren’t required to use the color schemes provided but keep in mind
 that not all features listed before are going to work with other color schemes.
+
+Also, be aware of auto completion conflicts provided by other packages, you may
+need to disable them.
 
 ## Preview
 

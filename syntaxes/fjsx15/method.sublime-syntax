@@ -34,13 +34,27 @@ contexts:
             )\s+
           | \b
         )
-        ({{commonIdentifier}})
-        (?=\s*\()
+        (?=
+          {{commonIdentifier}}
+          \s*\(
+        )
       captures:
-        1: entity.name.function.js.2015
-        2: keyword.property.js.2015
-        3: entity.name.function.js.2015
-      set: optional-template-parameters
+        1: >-
+          support.function.js.2015
+          entity.name.function.js.2015
+        2: keyword.modifier.js.2015
+      set: [
+        optional-template-parameters,
+        identifier
+      ]
+
+  identifier:
+    - include: Packages/Naomi/syntaxes/js15/function/support/class.sublime-syntax
+    - match: |
+        (?xi)
+        {{commonIdentifier}}
+      scope: entity.name.function
+      pop: true
 
   template-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/template/parameters.sublime-syntax

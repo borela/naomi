@@ -103,7 +103,7 @@ contexts:
     - match: \,
       scope: punctuation.delimiter.object.js.2015
       set: property-or-method
-    - match: \}
+    - match: \};?
       scope: punctuation.delimiter.object.end.js.2015
       pop: true
 

@@ -26,41 +26,64 @@ contexts:
   main:
     - match: \{
       scope: punctuation.delimiter.object.begin.js.2015
+      set: property-or-method
+
+  property-or-method:
+    - include: delimiter
+    # Method.
+    - match: |
+        (?xi)
+        (?=
+          (?> (?>get|set)\s+
+            | \*\s+
+            | \b
+          )
+          {{commonIdentifier}}\s*\(
+        )
+      set: [
+        delimiter,
+        method
+      ]
+    # Property.
+    - match: (?=\S)
       set: property
 
+  method:
+    - include: comment
+    - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
+
   property:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-    - include: object-end
+    - include: comment
     - match: |
         (?xi)
         {{commonIdentifier}}
       scope: >-
         variable.js.2015
         entity.name.variable.js.2015
+      set: optional-value
+
+  optional-value:
+    - include: comment
+    - include: delimiter
+    - match: ":"
+      scope: operator.association.js.2015
       set: [
         delimiter,
-        value,
-        assignment
+        value
       ]
 
-  assignment:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-    - match: ":"
-      scope: keyword.operator.js.2015
-      pop: true
-
   value:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+    - include: comment
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   delimiter:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-    - include: object-end
+    - include: comment
     - match: \,
       scope: punctuation.delimiter.object.js.2015
-      set: property
-
-  object-end:
+      set: property-or-method
     - match: \}
       scope: punctuation.delimiter.object.end.js.2015
       pop: true
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

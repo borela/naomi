@@ -33,6 +33,7 @@ contexts:
           | goto
           | return
           | throw
+          | yield
         )\b
       scope: keyword.control.simple.js.2015
       set: expression

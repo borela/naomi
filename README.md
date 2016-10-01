@@ -32,7 +32,7 @@ that makes writting more fun.
 #### HTML 5 (Experimental)
 
 * Balanced tags.
-* Section roots elements.
+* Section root elements.
 * Embedded elements.
 * Form elements.
 
@@ -83,11 +83,10 @@ The “Packages” directory is located at:
 1. Go to the menu `View / Syntax / Naomi / ...` to select the new syntax.
 2. Select a color scheme provided in `Preferences / Color Scheme / Naomi`.
 
-## Notes
+#### Notes
 
 You aren’t required to use the color schemes provided but keep in mind
 that not all features listed before are going to work with other color schemes.
-
 Also, be aware of auto completion conflicts provided by other packages, you may
 need to disable them.
 

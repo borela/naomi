@@ -32,5 +32,7 @@ contexts:
 
   targets:
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/interface.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/type-alias.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax

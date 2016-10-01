@@ -23,5 +23,5 @@ contexts:
         (?x)
         ^\s*(.+?)\s
       captures:
-        1: expression.pattern.git
+        1: pattern.git
       pop: true

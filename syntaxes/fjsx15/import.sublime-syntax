@@ -78,7 +78,7 @@ contexts:
     - match: |
         (?xi)
         {{commonIdentifier}}
-      scope: entity.name.ambiguous.js.2015
+      scope: entity.name.import.ambiguous.js.2015
       set: alias-or-sibling
 
   alias-or-sibling:

@@ -184,6 +184,20 @@
 
             <dict>
                 <key>name</key>
+                <string>Operator</string>
+
+                <key>scope</key>
+                <string>operator</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f48fb1</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Built-in types, constants, functions and variables</string>
 
                 <key>scope</key>

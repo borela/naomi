@@ -21,8 +21,16 @@ contexts:
   main:
     - match: \bexport\b
       scope: keyword.export.js.2015
+      set: optional-default
+
+  optional-default:
+    - match: \bdefault\b
+      scope: keyword.export.default.js.2015
+      set: targets
+    - match: (?=\S)
       set: targets
 
   targets:
+    - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax

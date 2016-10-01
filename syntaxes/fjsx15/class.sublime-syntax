@@ -1,0 +1,106 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [_[:alnum:]]*
+
+contexts:
+  main:
+    - match: \bclass\b
+      scope: keyword.class.js.2015
+      set: identifier
+
+  identifier:
+    - match: (?=\bextends\b)
+      set: [
+        body,
+        extension
+      ]
+    - match: (?=\{)
+      set: body
+    # Actual identifier.
+    - match: (?xi){{commonIdentifier}}
+      scope: entity.name.class.js.2015
+      set: optional-template-parameters
+
+  extension:
+    - match: \bextends\b
+      scope: keyword.extension.js.2015
+      set: type
+
+  type:
+    - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax
+
+  template-parameters:
+    - include: Packages/Naomi/syntaxes/fjsx15/template/parameters.sublime-syntax
+
+  optional-template-parameters:
+    - match: (?=<)
+      set: [
+        optional-extension,
+        template-parameters
+      ]
+    - match: (?=\bextends\b)
+      set: [
+        body,
+        extension
+      ]
+    - match: (?=\{)
+      set: body
+
+  optional-extension:
+    - match: (?=\bextends\b)
+      set: [
+        body,
+        extension
+      ]
+    - match: (?=\{)
+      set: body
+
+  body:
+    - meta_content_scope: >-
+        class.js.2015
+        class.body.js.2015
+    - include: comment
+    - match: \{
+      scope: punctuation.delimiter.class.body.begin.js.2015
+      set: body-content
+
+  body-content:
+    - meta_content_scope: >-
+        class.js.2015
+        class.body.js.2015
+    - include: comment
+    - match: \};?
+      scope: >-
+        class.js.2015
+        class.body.js.2015
+        punctuation.delimiter.class.body.end.js.2015
+      pop: true
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/member-variable.sublime-syntax
+        - match: ""
+          pop: true
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax

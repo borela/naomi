@@ -24,6 +24,7 @@ variables:
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/object.sublime-syntax
     - match: |
         (?x)
@@ -69,6 +70,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/js15/constant.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/new.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax

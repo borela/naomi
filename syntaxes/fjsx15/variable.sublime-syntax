@@ -41,7 +41,11 @@ contexts:
       set: array-item-access-begin
 
   support-variable:
-    - match: (?i)\bthis\b
+    - match: |
+        (?xi)\b
+        (?> super
+          | this
+        )\b
       scope: >-
         support.variable.js.2015
         entity.name.variable.js.2015

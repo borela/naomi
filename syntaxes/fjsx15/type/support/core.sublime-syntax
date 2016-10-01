@@ -21,6 +21,20 @@ contexts:
   main:
     - include: basic
     - include: other
+    - include: templates
+
+  templates:
+    - match: \bGenerator\b
+      scope: >-
+        support.type.flowtype
+        entity.name.type.flowtype
+      set: [
+        optional-array-shorthand,
+        template-arguments
+      ]
+
+  template-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/template/arguments.sublime-syntax
 
   basic:
     - match: |

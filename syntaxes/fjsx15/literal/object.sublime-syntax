@@ -54,6 +54,15 @@ contexts:
 
   property:
     - include: comment
+    # Computed property name.
+    - match: \[
+      scope: operator.property.computed.begin.js.2015
+      set: [
+        optional-value,
+        computed-property-end,
+        expression
+      ]
+    # Normal property.
     - match: |
         (?xi)
         {{commonIdentifier}}
@@ -61,6 +70,11 @@ contexts:
         variable.js.2015
         entity.name.variable.js.2015
       set: optional-value
+
+  computed-property-end:
+    - match: \]
+      scope: operator.property.computed.end.js.2015
+      pop: true
 
   optional-value:
     - include: comment
@@ -74,7 +88,7 @@ contexts:
 
   value:
     - include: comment
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: expression
 
   delimiter:
     - include: comment
@@ -87,3 +101,6 @@ contexts:
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

@@ -29,6 +29,12 @@ contexts:
       scope: punctuation.delimiter.function.declaration.end.js.2015
       pop: true
     # Arrow function.
+    - match: =>\s*\{
+      scope: >-
+        function.body.js.2015
+        punctuation.delimiter.function.body.js.2015
+      set: body-content
+    # Arrow simple body.
     - match: =>
       scope: >-
         function.body.js.2015

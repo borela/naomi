@@ -20,109 +20,21 @@ variables:
     [_[:alpha:]]
     [_[:alnum:]]*
 
-  logicalOperators: |
-    (?> &&
-      | \|\|
-      | !
-    )
-
-  comparisonOperators: |
-    (?> ==
-      | !=
-      | >=
-      | <=
-      | >(?!>)
-      | <(?!<)
-    )
-
-  bitwiseOperators: |
-    (?> ~=?
-      | &=?
-      | \|=?
-      | \^=?
-      | <<=?
-      | >>>=?
-      | >>=?
-    )
-
-  arithmeticOperators: |
-    (?> --
-      | -=?
-      | \+\+
-      | \+=?
-      | \*\*
-      | \*=?
-      | /=?
-      | %=?
-    )
-
-  functionIdentifier: |
-    {{commonIdentifier}}
-    (?> {{comparisonOperators}}
-      | {{logicalOperators}}
-      | {{bitwiseOperators}}
-      | {{arithmeticOperators}}
-      | =
-    )?
-
-  typeIdentifier: |
-    {{commonIdentifier}}
-    (?:\s*<.*?>\s+)?
-    (?:\s*\**)?
-
 scope: ...
 
 contexts:
   main:
-    # # Scoped function call.
-    # - match: |
-    #     (?xi)
-    #     (?=\b
-    #       {{typeIdentifier}}::{{functionIdentifier}}
-    #       \s*\(
-    #     )
-    #   set: [
-    #     name,
-    #     scope-operator,
-    #     class
-    #   ]
-    # Normal function call.
     - match: |
         (?xi)
-        (?=\b
-          {{functionIdentifier}}
+        (?=
+          \b{{commonIdentifier}}
           \s*\(
         )
       set: name
 
-  # class:
-  #   - match: (?xi)\b{{typeIdentifier}}\b
-  #     scope: entity.name.class.js.2015
-  #     pop: true
-
-  # scope-operator:
-  #   - match: "::"
-  #     scope: operator.scope.js.2015
-  #     pop: true
-
   name:
     - meta_scope: function.call.js.2015
-    # # Special function name.
-    # - match: |
-    #     (?x)
-    #     (?> On
-    #         (?> Calculate
-    #           | Deinit
-    #           | Init
-    #           | Start
-    #         )
-    #     )(?=\s*\()
-    #   scope: >-
-    #     support.function.js.2015
-    #     entity.name.function.js.2015
-    #   set: arguments
-    # Common function name.
-    - match: (?xi){{functionIdentifier}}
+    - match: (?xi){{commonIdentifier}}
       scope: entity.name.function.js.2015
       set: arguments
 

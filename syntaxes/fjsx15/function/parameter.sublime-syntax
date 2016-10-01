@@ -45,7 +45,7 @@ contexts:
   optional-rest-operator:
     - match: \.{3}
       scope: operator.rest.js.2015
-    - match: (?=\S)
+    - match: ""
       pop: true
 
   variable:

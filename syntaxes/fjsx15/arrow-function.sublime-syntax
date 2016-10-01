@@ -49,6 +49,18 @@ contexts:
         return-type,
         parameters
       ]
+    # Single parameter.
+    - match: |
+        (?xi)
+        (?=
+          {{commonIdentifier}}
+          \s*=>
+        )
+      set: [
+        body,
+        optional-parameter-type,
+        parameter
+      ]
 
   identifier:
     - match: (?=<)
@@ -70,6 +82,14 @@ contexts:
 
   template-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/template/parameters.sublime-syntax
+
+  parameter:
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+
+  optional-parameter-type:
+    - include: Packages/Naomi/syntaxes/fjsx15/template/parameter.sublime-syntax#punctuation
+    - match: ""
+      pop: true
 
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax

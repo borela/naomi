@@ -29,6 +29,7 @@ contexts:
       set: identifier
 
   identifier:
+    # Start of template parameters (no identifier).
     - match: (?=<)
       set: [
         body,
@@ -36,12 +37,14 @@ contexts:
         parameters,
         template-parameters
       ]
+    # Start of parameters (no identifier).
     - match: (?=\()
       set: [
         body,
         return-type,
         parameters
       ]
+    # Actual identifier.
     - match: (?xi){{commonIdentifier}}
       scope: entity.name.function.js.2015
       set: optional-template-parameters

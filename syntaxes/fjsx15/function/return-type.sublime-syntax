@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: ":"
-      scope: punctuation.delimiter.function.flowtype
+      scope: operator.type.flowtype
       set: return-type
 
   return-type:

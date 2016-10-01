@@ -1,0 +1,77 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [_[:alnum:]]*
+
+contexts:
+  main:
+    - match: |
+        (?xi)
+        <
+        (?=
+          {{commonIdentifier}}
+          .*?
+          >
+        )
+      scope: >-
+        tag.open.jsx
+        punctuation.delimiter.tag.begin.jsx
+      set: tag-name
+
+  tag-name:
+    - match: |
+        (?x)
+        ({{commonIdentifier}})
+      scope: >-
+        tag.open.jsx
+        entity.name.tag.jsx
+      set: [
+        content,
+        attributes
+      ]
+
+  attributes:
+    - match: />
+      scope: >-
+        tag.open.void.jsx
+        punctuation.delimiter.tag.end.jsx
+      pop: true
+    - match: \>
+      scope: >-
+        tag.open.jsx
+        punctuation.delimiter.tag.end.jsx
+      pop: true
+    - include: Packages/Naomi/syntaxes/jsx/attribute.no-pop.sublime-syntax
+
+  content:
+    - match: (?<=/>)
+      pop: true
+    - match: |
+        (?x)
+        (</)(\1)(>)
+      captures:
+        0: tag.close.xml.1
+        1: punctuation.delimiter.tag.begin.jsx
+        2: entity.name.tag.jsx
+        3: punctuation.delimiter.tag.end.jsx
+      pop: true
+    - include: Packages/Naomi/syntaxes/jsx/element.no-pop.sublime-syntax

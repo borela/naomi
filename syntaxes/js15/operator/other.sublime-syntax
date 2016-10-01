@@ -35,24 +35,24 @@ contexts:
   # |     ?      | Ternary.            |
   main:
     - match: \btypeof\b
-      scope: keyword.operator.js.2015
+      scope: operator.js.2015
       pop: true
     - match: \.\.\.
-      scope: keyword.operator.argument.destructure.js.2015
+      scope: operator.argument.destructure.js.2015
       pop: true
     - match: \?
-      scope: keyword.operator.js.2015
+      scope: operator.js.2015
       set: [
         ternary-value-b,
         ternary-value-a
       ]
     - match: \.
-      scope: keyword.operator.member.access.js.2015
+      scope: operator.member.access.js.2015
       set: member-access
 
   ternary-value-a:
     - match: ":"
-      scope: keyword.operator.js.2015
+      scope: operator.js.2015
       pop: true
     - include: expression
 

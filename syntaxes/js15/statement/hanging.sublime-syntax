@@ -32,6 +32,6 @@ contexts:
 
   operator:
     - match: ":"
-      scope: keyword.operator.js.2015
+      scope: operator.js.2015
       pop: true
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

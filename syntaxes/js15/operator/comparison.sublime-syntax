@@ -36,5 +36,5 @@ contexts:
           | >(?!>)
           | <(?!<)
         )
-      scope: keyword.operator.comparison.js.2015
+      scope: operator.comparison.js.2015
       pop: true

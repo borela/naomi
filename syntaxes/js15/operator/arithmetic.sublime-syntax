@@ -43,5 +43,5 @@ contexts:
           | /=?
           | %=?
         )
-      scope: keyword.operator.arithmetic.js.2015
+      scope: operator.arithmetic.js.2015
       pop: true

@@ -34,8 +34,10 @@ contexts:
     - match: |
         (?xi)
         (?=
-          (?> (?>get|set)\s+
-            | \*\s+
+          (?> \*\s+
+            | (?> get
+                | s(?>et|tatic)
+              )\s+
             | \b
           )
           {{commonIdentifier}}\s*\(

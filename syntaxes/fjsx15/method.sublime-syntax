@@ -26,14 +26,19 @@ contexts:
   main:
     - match: |
         (?xi)
-        (?> ((?>get|set))\s+
-          | (\*)\s+
+        (?> (\*)\s+
+          | (
+              (?> get
+                | s(?>et|tatic)
+              )
+            )\s+
           | \b
         )
-        ({{commonIdentifier}})\b
+        ({{commonIdentifier}})
+        (?=\s*\()
       captures:
-        1: keyword.property.js.2015
-        2: entity.name.function.js.2015
+        1: entity.name.function.js.2015
+        2: keyword.property.js.2015
         3: entity.name.function.js.2015
       set: optional-template-parameters
 

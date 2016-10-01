@@ -19,5 +19,14 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/js15/constant/support/core.sublime-syntax
-    - include: Packages/Naomi/syntaxes/js15/constant/normal.sublime-syntax
+    - match: |
+        (?x)
+        (?> false
+          | null
+          | true
+          | undefined
+        )
+      scope: >-
+        support.constant.js.2015
+        entity.name.constant.js.2015
+      pop: true

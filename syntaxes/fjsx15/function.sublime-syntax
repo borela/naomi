@@ -46,7 +46,7 @@ contexts:
         parameters
       ]
     # Actual identifier.
-    - match: (?xi)\*?{{commonIdentifier}}
+    - match: (?xi)\*?\s*{{commonIdentifier}}
       scope: entity.name.function.js.2015
       set: optional-template-parameters
 

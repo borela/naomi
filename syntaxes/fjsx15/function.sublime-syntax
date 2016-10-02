@@ -29,6 +29,7 @@ contexts:
       set: identifier
 
   identifier:
+    - meta_scope: function.js.2015
     # Start of template parameters (no identifier).
     - match: (?=<)
       set: [

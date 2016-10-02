@@ -24,7 +24,8 @@ contexts:
       set: arguments
 
   arguments:
-    - meta_scope: function.call.js.2015
+    - meta_scope: function.call.arguments.js.2015
+    - meta_content_scope: function.call.arguments.content.js.2015
     - match: \)
       scope: punctuation.delimiter.function.arguments.end.js.2015
       pop: true

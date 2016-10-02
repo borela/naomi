@@ -85,17 +85,7 @@ contexts:
   punctuation:
     - match: ":"
       scope: operator.type.flowtype
-      set: [
-        optional-value,
-        type
-      ]
-    - include: optional-value
-
-  optional-value:
-    - include: terminator
-    - match: =
-      scope: operator.assignment.js.2015
-      set: value
+      set: type
     - match: (?=\S)
       pop: true
 

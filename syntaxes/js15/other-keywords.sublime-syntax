@@ -19,6 +19,11 @@ scope: ...
 
 contexts:
   main:
-    - match: \bvoid\b
+    - match: |
+        (?x)\b
+        (?> in
+          | of
+          | void
+        )\b
       scope: keyword.other.js.2015
       pop: true

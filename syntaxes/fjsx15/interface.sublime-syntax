@@ -89,7 +89,7 @@ contexts:
         interface.js.2015
         interface.body.js.2015
     - include: comment
-    - match: \};?
+    - match: \}
       scope: >-
         interface.js.2015
         interface.body.js.2015

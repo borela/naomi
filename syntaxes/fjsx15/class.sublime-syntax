@@ -89,7 +89,7 @@ contexts:
         class.js.2015
         class.body.js.2015
     - include: comment
-    - match: \};?
+    - match: \}
       scope: >-
         class.js.2015
         class.body.js.2015

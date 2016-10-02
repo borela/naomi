@@ -66,18 +66,18 @@ contexts:
     - match: (?=\()
       set: [
         body,
-        return-type,
+        optional-return-type,
         parameters
       ]
     - match: (?=<)
       set: [
         body,
-        return-type,
+        optional-return-type,
         parameters,
         template-parameters
       ]
 
-  return-type:
+  optional-return-type:
     - match: |
         (?x)
         (?=

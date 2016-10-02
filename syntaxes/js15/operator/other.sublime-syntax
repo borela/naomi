@@ -30,15 +30,20 @@ contexts:
   # |  Operator  |  Description        |
   # |:----------:|:--------------------|
   # |   typeof   |                     |
-  # |    ...     | Destructure.        |
+  # |    void    |                     |
+  # |    ...     | Spread.             |
   # |     .      | Member access.      |
   # |     ?      | Ternary.            |
   main:
-    - match: \btypeof\b
+    - match: |
+        (?x)\b
+        (?> typeof
+          | void
+        )\b
       scope: operator.js.2015
       pop: true
     - match: \.\.\.
-      scope: operator.argument.destructure.js.2015
+      scope: operator.spread.js.2015
       pop: true
     - match: \?
       scope: operator.js.2015

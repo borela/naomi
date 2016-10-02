@@ -24,7 +24,6 @@ variables:
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/jsx.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/interface.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/object.sublime-syntax
@@ -67,19 +66,23 @@ contexts:
     - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/js15/other-keywords.sublime-syntax
-        - include: Packages/Naomi/syntaxes/js15/constant.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/jsx.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/jsx.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/destructure.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/instanceof.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
+        - include: Packages/Naomi/syntaxes/js15/keywords.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/instanceof.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/new.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax
+        # When it comes to constants and variables, there's no way to tell apart
+        # without an intellisense, so it’ll treat that anything that looks a
+        # uppercase variable as if it was a constant.
+        - include: Packages/Naomi/syntaxes/js15/constant.sublime-syntax
+        # Constant matching failed, so it could be a variable.
         - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
         - match: ""
           pop: true

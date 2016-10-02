@@ -19,11 +19,12 @@ scope: ...
 
 contexts:
   main:
+    # Loose keywords.
     - match: |
         (?x)\b
-        (?> in
+        (?> delete
+          | in
           | of
-          | void
         )\b
       scope: keyword.other.js.2015
       pop: true

@@ -95,12 +95,24 @@ contexts:
         class.body.js.2015
         punctuation.delimiter.class.body.end.js.2015
       pop: true
-    - match: (?=\S)
+    - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/member-variable.sublime-syntax
-        - match: ""
+        - include: allowed-expressions
+        - include: balance-braces
+        - match: (?=\})
           pop: true
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+
+  allowed-expressions:
+    - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/member-variable.sublime-syntax
+
+  balance-braces:
+    - match: \{
+      push:
+        - match: \}
+          pop: true
+        - include: allowed-expressions
+        - include: balance-braces

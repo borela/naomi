@@ -19,6 +19,7 @@ scope: ...
 
 contexts:
   main:
+    - include: yield
     - match: |
         (?xi)\b
         (?> break
@@ -33,10 +34,20 @@ contexts:
           | goto
           | return
           | throw
-          | yield
         )\b
       scope: keyword.control.simple.js.2015
       set: expression
 
   expression:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
+  yield:
+    - match: |
+        (?x)\b
+        (yield)
+        (?> \s*(\*)?
+          | \b
+        )
+      captures:
+        1: keyword.control.simple.js.2015
+        2: entity.name.function.js.2015

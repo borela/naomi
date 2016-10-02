@@ -1117,6 +1117,20 @@
                     <string>#26a69a</string>
                 </dict>
             </dict>
+
+            <dict>
+                <key>name</key>
+                <string>JSX text</string>
+
+                <key>scope</key>
+                <string>element.content.jsx</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#bdbdbd70</string>
+                </dict>
+            </dict>
         </array>
     </dict>
 </plist>

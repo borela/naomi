@@ -33,11 +33,13 @@ contexts:
           >
         )
       scope: >-
+        element.jsx
         tag.open.jsx
         punctuation.delimiter.tag.begin.jsx
       set: tag-name
 
   tag-name:
+    # - meta_scope: element.jsx
     - match: |
         (?x)
         ({{commonIdentifier}})
@@ -63,6 +65,8 @@ contexts:
     - include: Packages/Naomi/syntaxes/jsx/attribute.no-pop.sublime-syntax
 
   content:
+    - meta_scope: element.jsx
+    - meta_content_scope: element.content.jsx
     - match: (?<=/>)
       pop: true
     - match: |

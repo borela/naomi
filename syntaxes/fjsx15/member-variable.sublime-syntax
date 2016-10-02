@@ -17,9 +17,18 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [_[:alnum:]]*
+
 contexts:
   main:
-    - match: (?=\S)
+    - match: |
+        (?xi)
+        (?=
+          {{commonIdentifier}}
+        )
       set: [
         punctuation,
         variable

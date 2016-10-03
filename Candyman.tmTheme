@@ -403,7 +403,7 @@
                 <string>String delimiter</string>
 
                 <key>scope</key>
-                <string>punctuation.delimiter.string, punctuation.delimiter.constant.character</string>
+                <string>punctuation.delimiter.string, punctuation.delimiter.constant.character, regex</string>
 
                 <key>settings</key>
                 <dict>

@@ -448,7 +448,7 @@
                 <string>Embedded variable A</string>
 
                 <key>scope</key>
-                <string>string variable entity.name.variable, string variable punctuation.variable, string variable operator.subscript</string>
+                <string>string variable.a entity.name.variable, string variable.a punctuation.variable, string variable.a operator.subscript</string>
 
                 <key>settings</key>
                 <dict>

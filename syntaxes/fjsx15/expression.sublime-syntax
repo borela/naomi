@@ -27,6 +27,8 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/interface.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - match: |
         (?x)
         \(

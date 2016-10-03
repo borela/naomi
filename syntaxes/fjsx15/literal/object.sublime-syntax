@@ -24,6 +24,15 @@ variables:
 
 contexts:
   main:
+    # Empty object literal.
+    - match: |
+        (?x)
+        (\{)\s*(\})
+      captures:
+        1: punctuation.delimiter.object.begin.js.2015
+        2: punctuation.delimiter.object.end.js.2015
+      pop: true
+    # Normal object literal.
     - match: |
         (?x)
         \{
@@ -39,7 +48,6 @@ contexts:
 
   property-or-method:
     - include: comment
-    - include: punctuation
     - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
     - include: property
 

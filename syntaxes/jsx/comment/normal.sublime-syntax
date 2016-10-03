@@ -17,29 +17,25 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [$_[:alpha:]]
-    [$_[:alnum:]]*
-
 contexts:
   main:
-    - match: |
-        (?xi)
-        (?=
-          <{{commonIdentifier}}
-        )
-      with_prototype:
-        - match: \{
-          scope: operator.embedded.js.begin.jsx
-          push: embedded-js
-      set: jsx
+    - match: \/\/
+      scope: punctuation.comment.begin.jsx
+      set: line
+    - match: \/\*
+      scope: punctuation.comment.begin.jsx
+      set: block
 
-  jsx:
-    - include: Packages/Naomi/syntaxes/jsx/element.sublime-syntax
-
-  embedded-js:
-    - match: \}
-      scope: operator.embedded.js.end.jsx
+  line:
+    - meta_scope: comment.line.jsx
+    - meta_content_scope: comment.content.jsx
+    - match: $
       pop: true
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.no-pop.sublime-syntax
+
+  block:
+    - meta_scope: comment.block.jsx
+    - meta_content_scope: comment.content.jsx
+    - match: \*\/
+      scope: punctuation.comment.end.jsx
+      pop: true
+

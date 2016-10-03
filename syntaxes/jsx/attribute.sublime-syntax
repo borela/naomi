@@ -24,6 +24,7 @@ variables:
 
 contexts:
   main:
+    - include: comment
     - match: |
         (?xi)
         {{commonIdentifier}}
@@ -43,3 +44,6 @@ contexts:
   value:
     - include: Packages/Naomi/syntaxes/jsx/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx/literal/string/single-quoted.sublime-syntax
+
+  comment:
+    - include: Packages/Naomi/syntaxes/jsx/comment/normal.sublime-syntax

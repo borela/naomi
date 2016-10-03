@@ -17,11 +17,6 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]]*
-
 contexts:
   main:
     - match: \(

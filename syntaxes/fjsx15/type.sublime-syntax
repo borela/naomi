@@ -48,7 +48,11 @@ contexts:
       pop: true
 
   operator:
-    - match: \|
+    - match: |
+        (?x)
+        (?> \|
+          | &
+        )
       scope: operator.flowtype
       set: [
         operator,

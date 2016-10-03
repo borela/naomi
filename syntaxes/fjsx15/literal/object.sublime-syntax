@@ -67,13 +67,11 @@ contexts:
 
   optional-value:
     - include: comment
-    - include: punctuation
     - match: ":"
       scope: operator.association.js.2015
-      set: [
-        punctuation,
-        value
-      ]
+      set: value
+    - match: (?=\S)
+      pop: true
 
   value:
     - include: comment

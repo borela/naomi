@@ -41,7 +41,13 @@ contexts:
         (?xi)
         (
           (?> get
-            | s(?>et|tatic)
+            | s
+              (?> et
+                | tatic
+                  (?:
+                    \s+(?>get|set)
+                  )?
+              )
           )
         )
         (?=

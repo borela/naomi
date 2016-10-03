@@ -88,7 +88,6 @@ contexts:
     - meta_content_scope: >-
         class.js.2015
         class.body.js.2015
-    - include: comment
     - match: \}
       scope: >-
         class.js.2015
@@ -106,6 +105,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
 
   allowed-expressions:
+    - include: comment
     - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/member-variable.sublime-syntax
 

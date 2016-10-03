@@ -65,13 +65,12 @@ contexts:
   content:
     - match: (?=\S)
       push:
-        - include: Packages/Naomi/syntaxes/js15/literal/string/regex.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/jsx.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/destructure.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
         - include: Packages/Naomi/syntaxes/js15/keywords.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/instanceof.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/new.sublime-syntax

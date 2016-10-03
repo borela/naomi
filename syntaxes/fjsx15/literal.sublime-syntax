@@ -22,4 +22,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/js15/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/js15/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/js15/literal/string/regex.sublime-syntax
+    - include: Packages/Naomi/syntaxes/js15/literal/string/template.sublime-syntax
     - include: Packages/Naomi/syntaxes/js15/literal/number.sublime-syntax

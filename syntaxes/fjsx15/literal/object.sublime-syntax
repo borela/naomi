@@ -39,6 +39,7 @@ contexts:
 
   property-or-method:
     - include: comment
+    - include: punctuation
     - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
     - include: property
 

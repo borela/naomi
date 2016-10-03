@@ -32,36 +32,17 @@ contexts:
           \s*=
         )
       scope: punctuation.delimiter.object.begin.js.2015
-      set: property-or-method
+      set: [
+        punctuation,
+        property-or-method
+      ]
 
   property-or-method:
-    - include: delimiter
-    # Method.
-    - match: |
-        (?xi)
-        (?=
-          (?> \*\s+
-            | (?> get
-                | s(?>et|tatic)
-              )\s+
-            | \b
-          )
-          {{commonIdentifier}}\s*\(
-        )
-      set: [
-        delimiter,
-        method
-      ]
-    # Property.
-    - match: (?=\S)
-      set: property
-
-  method:
     - include: comment
     - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
+    - include: property
 
   property:
-    - include: comment
     # Computed property name.
     - match: \[
       scope: operator.property.computed.begin.js.2015
@@ -86,11 +67,11 @@ contexts:
 
   optional-value:
     - include: comment
-    - include: delimiter
+    - include: punctuation
     - match: ":"
       scope: operator.association.js.2015
       set: [
-        delimiter,
+        punctuation,
         value
       ]
 
@@ -98,11 +79,14 @@ contexts:
     - include: comment
     - include: expression
 
-  delimiter:
+  punctuation:
     - include: comment
     - match: \,
       scope: punctuation.delimiter.object.js.2015
-      set: property-or-method
+      set: [
+        punctuation,
+        property-or-method
+      ]
     - match: \}
       scope: punctuation.delimiter.object.end.js.2015
       pop: true

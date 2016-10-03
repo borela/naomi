@@ -24,25 +24,33 @@ variables:
 
 contexts:
   main:
+    # No modifiers.
     - match: |
         (?xi)
-        (?> (\*)\s+
-          | (
-              (?> get
-                | s(?>et|tatic)
-              )
-            )\s+
-          | \b
+        (?=
+          \*?\s*
+          {{commonIdentifier}}
+          \s*\(
+        )
+      set: [
+        optional-template-parameters,
+        identifier
+      ]
+    # With modifiers.
+    - match: |
+        (?xi)
+        (
+          (?> get
+            | s(?>et|tatic)
+          )
         )
         (?=
+          \s+\*?\s*
           {{commonIdentifier}}
           \s*\(
         )
       captures:
-        1: >-
-          support.function.js.2015
-          entity.name.function.js.2015
-        2: keyword.modifier.js.2015
+        1: keyword.modifier.js.2015
       set: [
         optional-template-parameters,
         identifier
@@ -52,8 +60,8 @@ contexts:
     - include: Packages/Naomi/syntaxes/js15/function/support/class.sublime-syntax
     - match: |
         (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.function
+        \*?\s*{{commonIdentifier}}
+      scope: entity.name.function.js.2015
       pop: true
 
   template-parameters:

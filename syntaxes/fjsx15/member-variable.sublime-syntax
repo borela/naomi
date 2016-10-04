@@ -60,4 +60,4 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   terminator:
-    - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/js15/terminator.sublime-syntax

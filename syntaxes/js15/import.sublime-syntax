@@ -38,8 +38,8 @@ contexts:
     - match: \bimport\b
       scope: keyword.import.js.2015
       set: [
-        origin,
-        target-list
+        punctuation,
+        target
       ]
 
   origin:
@@ -51,38 +51,44 @@ contexts:
     - include: Packages/Naomi/syntaxes/js15/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/js15/literal/string/single-quoted.sublime-syntax
 
-  target-list:
-    - match: \*
-      scope: operator.import.all.js.2015
-      set: alias
+  target:
+    # Multiple.
     - match: \{
       scope: punctuation.delimiter.import.list.begin.js.2015
-      set: target-list-content
-    - include: target
+      set: list
+    # All.
+    - match: \*
+      scope: operator.import.all.js.2015
+      set: optional-alias
+    # Simple.
+    - match: |
+        (?xi)
+        {{commonIdentifier}}
+      scope: entity.name.import.ambiguous.js.2015
+      set: optional-alias
 
-  target-list-content:
+  list:
     - match: \}
       scope: punctuation.delimiter.import.list.end.js.2015
       pop: true
     - match: ""
       push:
-        - include: target-list
+        - match: \,
+          scope: punctuation.delimiter.import.item.js.2015
+        - include: target
         - match: (?=\})
           pop: true
 
-  target:
-    - match: |
-        (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.import.ambiguous.js.2015
-      set: alias-or-sibling
-
-  alias-or-sibling:
+  optional-alias:
     - include: alias
-    - match: \,
-      scope: punctuation.delimiter.import.item.js.2015
-      set: target-list
-    - match: (?=\S)
+    - match: |
+        (?x)
+        (?=
+          (?> ,
+            | \}
+            | from
+          )
+        )
       pop: true
 
   alias:
@@ -97,3 +103,11 @@ contexts:
       scope: entity.name.alias.js.2015
       pop: true
 
+  punctuation:
+    - include: origin
+    - match: \,
+      scope: punctuation.delimiter.import.item.js.2015
+      set: [
+        punctuation,
+        target
+      ]

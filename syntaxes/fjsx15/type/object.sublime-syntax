@@ -30,8 +30,13 @@ contexts:
         punctuation.delimiter.class.begin.flowtype
       set: [
         punctuation,
-        property
+        optional-property
       ]
+
+  optional-property:
+    - match: (?=\})
+      pop: true
+    - include: property
 
   property:
     - match: \[
@@ -78,7 +83,7 @@ contexts:
       scope: punctuation.delimiter.class.flowtype
       set: [
         punctuation,
-        property
+        optional-property
       ]
     - match: \}
       scope: >-

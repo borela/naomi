@@ -50,10 +50,7 @@ contexts:
       ]
 
   attributes:
-    - match: />
-      scope: >-
-        tag.open.void.jsx
-        punctuation.delimiter.tag.end.jsx
+    - match: (?=/>)
       pop: true
     - match: \>
       scope: >-
@@ -65,7 +62,10 @@ contexts:
   content:
     - meta_scope: element.jsx
     - meta_content_scope: element.content.jsx
-    - match: (?<=/>)
+    - match: />
+      scope: >-
+        tag.open.void.jsx
+        punctuation.delimiter.tag.end.jsx
       pop: true
     - match: |
         (?x)

@@ -24,13 +24,15 @@ contexts:
         (?xi)\b
         (?> do
           | else
+          | try
         )\b
       scope: keyword.control.js.2015
       set: body
     # Header and body.
     - match: |
         (?xi)\b
-        (?> if
+        (?> catch
+          | if
           | elseif
           | for
           | while

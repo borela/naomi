@@ -48,6 +48,8 @@ contexts:
 
   property-or-method:
     - include: comment
+    - match: (?=})
+      pop: true
     - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
     - include: property
 

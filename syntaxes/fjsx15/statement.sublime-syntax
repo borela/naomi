@@ -30,5 +30,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/js15/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/declare.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
+    - include: Packages/Naomi/syntaxes/js15/import.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/type-alias.sublime-syntax

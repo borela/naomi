@@ -44,7 +44,7 @@ contexts:
       ]
 
   end:
-    - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/js15/terminator.sublime-syntax
 
   origin:
     - match: \bfrom\b
@@ -60,13 +60,13 @@ contexts:
       scope: operator.import.all.js.2015
       set: alias
     - match: \{
-      scope: punctuation.delimiter.import.target-list.begin.js.2015
+      scope: punctuation.delimiter.import.list.begin.js.2015
       set: target-list-content
     - include: target
 
   target-list-content:
     - match: \}
-      scope: punctuation.delimiter.import.target-list.end.js.2015
+      scope: punctuation.delimiter.import.list.end.js.2015
       pop: true
     - match: ""
       push:

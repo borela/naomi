@@ -1,0 +1,63 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+contexts:
+  main:
+    - match: |
+        (?x)
+        (<)
+        (script)
+        (?=
+          \s*type
+          \s*=
+          \s*"text/babel"
+        )
+      captures:
+        0: tag.open.other.html.5
+        1: punctuation.delimiter.tag.begin.html.5
+        2: entity.name.tag.other.html.5
+      set: [
+        embedded-fjsx15,
+        attributes
+      ]
+
+  embedded-fjsx15:
+    - match: |
+        (?x)
+        (</)(\2)(>)
+      captures:
+        0: tag.close.other.html.5
+        1: punctuation.delimiter.tag.begin.html.5
+        2: entity.name.tag.other.html.5
+        3: punctuation.delimiter.tag.end.html.5
+      pop: true
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+        - match: ""
+          pop: true
+
+  attributes:
+    - match: \>
+      scope: >-
+        tag.open.other.html.5
+        punctuation.delimiter.tag.end.html.5
+      pop: true
+    - include: Packages/Naomi/syntaxes/html5/attribute.no-pop.sublime-syntax

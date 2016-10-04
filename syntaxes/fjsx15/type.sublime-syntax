@@ -19,6 +19,7 @@ scope: ...
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/fjsx15/namespace/path.sublime-syntax
     # Enveloped nullable.
     - match: (\?)\s*(\()
       captures:

@@ -13,7 +13,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: ES2015 + FlowType + React’s JSX (Experimental)
+name: FJSX15 (Experimental)
 
 file_extensions:
   - fjsx

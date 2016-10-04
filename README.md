@@ -17,7 +17,7 @@ that makes writting more fun.
     3. Alt+] produces ‘.
     4. Alt+Shift+] produces ’.
 
-#### ES2015 + FlowType + React’s JSX (Experimental)
+#### FJSX15 (ES2015 + FlowType + React’s JSX - Experimental)
 
 * Combines the 3 syntaxes.
 * Classes.
@@ -31,6 +31,7 @@ that makes writting more fun.
 
 #### HTML 5 (Experimental)
 
+* Highlight FJSX15 inside `<script type="text/babel">` tags.
 * Balanced tags.
 * Section root elements.
 * Embedded elements.

@@ -38,13 +38,9 @@ contexts:
     - match: \bimport\b
       scope: keyword.import.js.2015
       set: [
-        end,
         origin,
         target-list
       ]
-
-  end:
-    - include: Packages/Naomi/syntaxes/js15/terminator.sublime-syntax
 
   origin:
     - match: \bfrom\b

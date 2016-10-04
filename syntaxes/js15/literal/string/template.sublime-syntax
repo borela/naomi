@@ -51,18 +51,19 @@ contexts:
 
   escape-a:
     - meta_content_scope: string.template.js.2015
-    - include: template-end
     - match: (?x){{escapeSequences}}
       scope: constant.character.escape.a.js.2015
       set: escape-b
     - include: embedded-expression
+    - include: template-end
 
   escape-b:
     - meta_content_scope: string.template.js.2015
-    - include: template-end
     - match: (?x){{escapeSequences}}
       scope: constant.character.escape.b.js.2015
       set: escape-a
+    - include: embedded-expression
+    - include: template-end
 
   embedded-expression:
     - match: \$\{

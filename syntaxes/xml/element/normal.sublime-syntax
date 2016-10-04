@@ -24,15 +24,21 @@ variables:
 
 contexts:
   main:
-    - match: <(?!/)
+    - match: |
+        (?xi)
+        <
+        (?=
+          {{commonIdentifier}}
+        )
       scope: >-
+        element.xml.1.0
         tag.open.xml.1.0
         punctuation.delimiter.tag.begin.xml.1.0
       set: tag-name
 
   tag-name:
     - match: |
-        (?x)
+        (?xi)
         ({{commonIdentifier}})
       scope: >-
         tag.open.xml.1.0
@@ -43,10 +49,7 @@ contexts:
       ]
 
   attributes:
-    - match: />
-      scope: >-
-        tag.open.void.xml.1.0
-        punctuation.delimiter.tag.end.xml.1.0
+    - match: (?=/>)
       pop: true
     - match: \>
       scope: >-
@@ -56,13 +59,18 @@ contexts:
     - include: Packages/Naomi/syntaxes/xml/attribute.no-pop.sublime-syntax
 
   content:
-    - match: (?<=/>)
+    - meta_scope: element.xml.1.0
+    - meta_content_scope: element.content.xml.1.0
+    - match: />
+      scope: >-
+        tag.open.void.xml.1.0
+        punctuation.delimiter.tag.end.xml.1.0aaaaaaaaaaaa
       pop: true
     - match: |
         (?x)
         (</)(\1)(>)
       captures:
-        0: tag.close.xml.1
+        0: tag.close.xml.1.0
         1: punctuation.delimiter.tag.begin.xml.1.0
         2: entity.name.tag.xml.1.0
         3: punctuation.delimiter.tag.end.xml.1.0

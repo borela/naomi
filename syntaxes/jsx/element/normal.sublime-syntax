@@ -37,9 +37,8 @@ contexts:
       set: tag-name
 
   tag-name:
-    # - meta_scope: element.jsx
     - match: |
-        (?x)
+        (?xi)
         ({{commonIdentifier}})
       scope: >-
         tag.open.jsx
@@ -71,7 +70,7 @@ contexts:
         (?x)
         (</)(\1)(>)
       captures:
-        0: tag.close.xml.1
+        0: tag.close.jsx
         1: punctuation.delimiter.tag.begin.jsx
         2: entity.name.tag.jsx
         3: punctuation.delimiter.tag.end.jsx

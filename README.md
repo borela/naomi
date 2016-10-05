@@ -103,6 +103,6 @@ need to disable them.
 
 #### PHP 7
 
-![Candyman PHP 7 preview 1](./preview/php7/candyman-3.png)
+![Candyman PHP 7 preview 1](./preview/php7/candyman-1.png)
 
 [sublime]: http://www.sublimetext.com/

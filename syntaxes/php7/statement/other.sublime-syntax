@@ -27,13 +27,13 @@ contexts:
           | include(?:_once)?
           | require(?:_once)?
         )\b
-      scope: keyword.other.php.7
+      scope: keyword.other.php.php7
       set: expressions
 
   expressions:
     - include: Packages/Naomi/syntaxes/php7/terminator.sublime-syntax
     - match: \,
-      scope: punctuation.delimiter.php.7
+      scope: punctuation.delimiter.php.php7
     - match: (?=\S)
       push:
         - match: (?=\s*;)

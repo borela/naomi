@@ -42,22 +42,22 @@ contexts:
 
   float:
     - match: (?xi){{scientificNotation}}
-      scope: constant.numeric.float.scientific.php.7
+      scope: constant.numeric.float.scientific.php.php7
       pop: true
     - match: (?x){{literalFloat}}
-      scope: constant.numeric.float.php.7
+      scope: constant.numeric.float.php.php7
       pop: true
 
   integer:
     - match: "0b[01]+"
-      scope: constant.numeric.binary.php.7
+      scope: constant.numeric.binary.php.php7
       pop: true
     - match: "0[0-7]+"
-      scope: constant.numeric.octal.php.7
+      scope: constant.numeric.octal.php.php7
       pop: true
     - match: "(?i)0[x][0-9a-f]+"
-      scope: constant.numeric.hex.php.7
+      scope: constant.numeric.hex.php.php7
       pop: true
     - match: "[1-9][0-9]*|0"
-      scope: constant.numeric.decimal.php.7
+      scope: constant.numeric.decimal.php.php7
       pop: true

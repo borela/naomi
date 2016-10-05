@@ -25,15 +25,15 @@ variables:
 contexts:
   main:
     - match: (?i)\buse(?!\\)\b
-      scope: keyword.import.php.7
+      scope: keyword.import.php.php7
       set: declaration
 
   declaration:
-    - meta_scope: import.php.7
+    - meta_scope: import.php.php7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/terminator.sublime-syntax
     - match: \,
-      scope: punctuation.delimiter.import.php.7
+      scope: punctuation.delimiter.import.php.php7
     - match: (?=\S)
       push: [
         alias,
@@ -43,20 +43,20 @@ contexts:
   const-or-function:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: (?i)\bconst\b
-      scope: keyword.import.constant.php.7
+      scope: keyword.import.constant.php.php7
       set: namespaced-const
     - match: (?i)\bfunction\b
-      scope: keyword.import.function.php.7
+      scope: keyword.import.function.php.php7
       set: namespaced-function
     - match: (?=\S)
       set: namespace-or-type
 
   namespaced-const:
-    - meta_scope: import.constant.php.7
+    - meta_scope: import.constant.php.php7
     - include: target-const
 
   namespaced-function:
-    - meta_scope: import.function.php.7
+    - meta_scope: import.function.php.php7
     - include: target-function
 
   namespace-or-type:
@@ -69,9 +69,9 @@ contexts:
           {{commonIdentifier}}
         )\b
       captures:
-        0: ambiguous.php.7
-        1: punctuation.delimiter.ambiguous.php.7
-        2: entity.name.ambiguous.php.7
+        0: ambiguous.php.php7
+        1: punctuation.delimiter.ambiguous.php.php7
+        2: entity.name.ambiguous.php.php7
       pop: true
 
   target-type:
@@ -91,7 +91,7 @@ contexts:
     - match: (?=,|;)
       pop: true
     - match: (?i)\bas\b
-      scope: keyword.import.alias.php.7
+      scope: keyword.import.alias.php.php7
       set: alias-name
 
   alias-name:
@@ -99,5 +99,5 @@ contexts:
     - match: (?=;)
       pop: true
     - match: "(?xi){{commonIdentifier}}"
-      scope: entity.name.alias.php.7
+      scope: entity.name.alias.php.php7
       pop: true

@@ -58,8 +58,8 @@ contexts:
           | DEFAULT_INCLUDE_PATH
         )\b
       scope: >-
-        support.constant.php.7
-        entity.name.constant.php.7
+        support.constant.php.php7
+        entity.name.constant.php.php7
       pop: true
 
   case-insenstive:
@@ -70,6 +70,6 @@ contexts:
           | NULL
         )\b
       scope: >-
-        support.constant.php.7
-        entity.name.constant.php.7
+        support.constant.php.php7
+        entity.name.constant.php.php7
       pop: true

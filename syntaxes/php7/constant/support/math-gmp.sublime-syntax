@@ -31,6 +31,6 @@ contexts:
           | VERSION
         )\b
       scope: >-
-        support.constant.php.7
-        entity.name.constant.php.7
+        support.constant.php.php7
+        entity.name.constant.php.php7
       pop: true

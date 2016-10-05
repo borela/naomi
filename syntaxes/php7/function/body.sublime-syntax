@@ -26,25 +26,25 @@ contexts:
   main:
     # Function without body.
     - match: ;
-      scope: punctuation.delimiter.function.declaration.end.php.7
+      scope: punctuation.delimiter.function.declaration.end.php.php7
       pop: true
     # Normal body.
     - match: \{
       scope: >-
-        function.body.php.7
-        punctuation.delimiter.function.body.begin.php.7
+        function.body.php.php7
+        punctuation.delimiter.function.body.begin.php.php7
       set: body-content
 
   body-content:
     - meta_content_scope: >-
-        function.php.7
-        function.body.php.7
-        function.body.content.php.7
+        function.php.php7
+        function.body.php.php7
+        function.body.content.php.php7
     - match: \}
       scope: >-
-        function.php.7
-        function.body.php.7
-        punctuation.delimiter.function.body.end.php.7
+        function.php.php7
+        function.body.php.php7
+        punctuation.delimiter.function.body.end.php.php7
       pop: true
     - match: ""
       push:

@@ -42,20 +42,20 @@ contexts:
   main:
     - match: \"
       scope: >-
-        string.quoted.double.php.7
-        punctuation.delimiter.string.begin.php.7
+        string.quoted.double.php.php7
+        punctuation.delimiter.string.begin.php.php7
       with_prototype:
         - match: \"
           scope: >-
-            string.quoted.double.php.7
-            punctuation.delimiter.string.end.php.7
+            string.quoted.double.php.php7
+            punctuation.delimiter.string.end.php.php7
           pop: true
       set: escape-a-variable-a
 
   escape-a-variable-a:
     - meta_content_scope: >-
-        string.quoted.double.php.7
-        string.content.php.7
+        string.quoted.double.php.php7
+        string.content.php.php7
     - match: (?x)(?={{doubleQuotedEscapeSequences}})
       set: [
         escape-b-variable-a,
@@ -69,8 +69,8 @@ contexts:
 
   escape-b-variable-a:
     - meta_content_scope: >-
-        string.quoted.double.php.7
-        string.content.php.7
+        string.quoted.double.php.php7
+        string.content.php.php7
     - match: (?x)(?={{doubleQuotedEscapeSequences}})
       set: [
         escape-a-variable-a,
@@ -84,8 +84,8 @@ contexts:
 
   escape-a-variable-b:
     - meta_content_scope: >-
-        string.quoted.double.php.7
-        string.content.php.7
+        string.quoted.double.php.php7
+        string.content.php.php7
     - match: (?x)(?={{doubleQuotedEscapeSequences}})
       set: [
         escape-b-variable-b,
@@ -99,8 +99,8 @@ contexts:
 
   escape-b-variable-b:
     - meta_content_scope: >-
-        string.quoted.double.php.7
-        string.content.php.7
+        string.quoted.double.php.php7
+        string.content.php.php7
     - match: (?x)(?={{doubleQuotedEscapeSequences}})
       set: [
         escape-a-variable-b,
@@ -114,18 +114,18 @@ contexts:
 
   escape-a:
     - match: (?x){{doubleQuotedEscapeSequences}}
-      scope: constant.character.escape.a.php.7
+      scope: constant.character.escape.a.php.php7
       pop: true
 
   escape-b:
     - match: (?x){{doubleQuotedEscapeSequences}}
-      scope: constant.character.escape.b.php.7
+      scope: constant.character.escape.b.php.php7
       pop: true
 
   variable-a:
-    - meta_scope: variable.a.php.7
+    - meta_scope: variable.a.php.php7
     - include: Packages/Naomi/syntaxes/php7/literal/string/embedded-variable.sublime-syntax
 
   variable-b:
-    - meta_scope: variable.b.php.7
+    - meta_scope: variable.b.php.php7
     - include: Packages/Naomi/syntaxes/php7/literal/string/embedded-variable.sublime-syntax

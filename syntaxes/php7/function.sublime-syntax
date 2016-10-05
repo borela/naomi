@@ -51,7 +51,7 @@ contexts:
 
   keyword:
     - match: (?i)\bfunction(?!\\)\b
-      scope: keyword.function.php.7
+      scope: keyword.function.php.php7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/modifier.no-pop.sublime-syntax
 
@@ -67,5 +67,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/function/return-type-hint.sublime-syntax
 
   body:
-    - meta_scope: function.php.7
+    - meta_scope: function.php.php7
     - include: Packages/Naomi/syntaxes/php7/function/body.sublime-syntax

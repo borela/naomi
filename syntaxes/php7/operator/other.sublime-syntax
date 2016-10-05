@@ -41,37 +41,37 @@ contexts:
   # |     :      |                     |
   main:
     - match: (?xi)\bas\b
-      scope: operator.alias.php.7
+      scope: operator.alias.php.php7
       pop: true
     - match: (?xi)\binstanceof\b
-      scope: operator.type.php.7
+      scope: operator.type.php.php7
       pop: true
     - match: "=>"
-      scope: operator.key.association.php.7
+      scope: operator.key.association.php.php7
     - match: "@"
-      scope: operator.error.suppression.php.7
+      scope: operator.error.suppression.php.php7
       pop: true
     - match: "\\.\\.\\."
-      scope: operator.argument.unpack.php.7
+      scope: operator.argument.unpack.php.php7
       pop: true
     - match: "->"
-      scope: operator.member.access.php.7
+      scope: operator.member.access.php.php7
       set: member-access
     - match: "::"
-      scope: operator.scope.resolution.php.7
+      scope: operator.scope.resolution.php.php7
       set: scope-resolution
     - match: "\\?\\??|:"
-      scope: operator.php.7
+      scope: operator.php.php7
 
   member-access:
-    - meta_content_scope: member.php.7
+    - meta_content_scope: member.php.php7
     - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/variable.no-dollar-sign.sublime-syntax
 
   scope-resolution:
     - match: \bclass\b
-      scope: keyword.other.php.7
+      scope: keyword.other.php.php7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax

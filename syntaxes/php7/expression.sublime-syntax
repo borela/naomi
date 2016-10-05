@@ -20,27 +20,27 @@ scope: ...
 contexts:
   main:
     - match: \(
-      scope: punctuation.delimiter.expression.group.a.begin.php.7
+      scope: punctuation.delimiter.expression.group.a.begin.php.php7
       push: open-b-close-a
     - include: terminators
     - include: content
 
   open-b-close-a:
     - match: \(
-      scope: punctuation.delimiter.expression.group.b.begin.php.7
+      scope: punctuation.delimiter.expression.group.b.begin.php.php7
       push: open-a-close-b
     - match: \)
-      scope: punctuation.delimiter.expression.group.a.end.php.7
+      scope: punctuation.delimiter.expression.group.a.end.php.php7
       pop: true
     - include: terminators
     - include: content
 
   open-a-close-b:
     - match: \(
-      scope: punctuation.delimiter.expression.group.a.begin.php.7
+      scope: punctuation.delimiter.expression.group.a.begin.php.php7
       push: open-b-close-a
     - match: \)
-      scope: punctuation.delimiter.expression.group.b.end.php.7
+      scope: punctuation.delimiter.expression.group.b.end.php.php7
       pop: true
     - include: terminators
     - include: content

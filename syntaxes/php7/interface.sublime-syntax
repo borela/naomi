@@ -25,42 +25,42 @@ scope: ...
 contexts:
   main:
     - match: (?i)\binterface(?!\\)\b
-      scope: keyword.interface.php.7
+      scope: keyword.interface.php.php7
       set: declaration
 
   declaration:
-    - meta_scope: interface.php.7
+    - meta_scope: interface.php.php7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     # Extends.
     - match: (?i)\bextends\b
-      scope: keyword.inherit.php.7
+      scope: keyword.inherit.php.php7
       push: extend-targets
     # interface’s name.
     - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.interface.php.7
+      scope: entity.name.interface.php.php7
     # Body.
     - match: \{
       scope: >-
-        interface.body.php.7
-        punctuation.delimiter.interface.body.begin.php.7
+        interface.body.php.php7
+        punctuation.delimiter.interface.body.begin.php.php7
       set: body
 
   body:
     - meta_content_scope: >-
-        interface.php.7
-        interface.body.php.7
-        interface.body.content.php.7
+        interface.php.php7
+        interface.body.php.php7
+        interface.body.content.php.php7
     - match: \}
       scope: >-
-        interface.php.7
-        interface.body.php.7
-        punctuation.delimiter.interface.body.end.php.7
+        interface.php.php7
+        interface.body.php.php7
+        punctuation.delimiter.interface.body.end.php.php7
       pop: true
     # Body’s content.
     - include: Packages/Naomi/syntaxes/php7/statement.no-pop.sublime-syntax
 
   extend-targets:
-    - meta_scope: extend.php.7
+    - meta_scope: extend.php.php7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: (?=\{)
       pop: true
@@ -77,7 +77,7 @@ contexts:
   extend-target-delimiter:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: ","
-      scope: punctuation.delimiter.extend.php.7
+      scope: punctuation.delimiter.extend.php.php7
       pop: true
     - match: (?=\S)
       pop: true

@@ -37,9 +37,9 @@ contexts:
   main:
     - match: (?xi){{simpleVariable}}
       captures:
-        1: punctuation.variable.begin.php.7
-        2: entity.name.variable.php.7
-        3: operator.subscript.begin.php.7
-        4: array.key.php.7
-        5: operator.subscript.end.php.7
+        1: punctuation.variable.begin.php.php7
+        2: entity.name.variable.php.php7
+        3: operator.subscript.begin.php.php7
+        4: array.key.php.php7
+        5: operator.subscript.end.php.php7
       pop: true

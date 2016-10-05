@@ -28,8 +28,8 @@ contexts:
         (?xi)
         \b({{commonIdentifier}})\b
       captures:
-        0: variable.php.7
-        1: entity.name.variable.php.7
+        0: variable.php.php7
+        1: entity.name.variable.php.php7
       set: array-item-access
 
   array-item-access:

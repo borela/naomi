@@ -46,7 +46,7 @@ contexts:
 
   keyword:
     - match: (?i)\bfunction(?!\\)\b
-      scope: keyword.function.php.7
+      scope: keyword.function.php.php7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/modifier.no-pop.sublime-syntax
 
@@ -58,19 +58,19 @@ contexts:
       pop: true
     - include: Packages/Naomi/syntaxes/php7/function/return-type-hint.sublime-syntax
     - match: use
-      scope: keyword.import.variable.php.7
+      scope: keyword.import.variable.php.php7
       set: imported-variables-begin
 
   imported-variables-begin:
     - match: \(
-      scope: punctuation.delimiter.imported.variables.begin.php.7
+      scope: punctuation.delimiter.imported.variables.begin.php.php7
       set: imported-variables
 
   imported-variables:
-    - meta_scope: function.imported.variables.php.7
-    - meta_content_scope: function.imported.variables.content.php.7
+    - meta_scope: function.imported.variables.php.php7
+    - meta_content_scope: function.imported.variables.content.php.php7
     - match: \)
-      scope: punctuation.delimiter.imported.variables.end.php.7
+      scope: punctuation.delimiter.imported.variables.end.php.php7
       pop: true
     # Starts with a variable.
     - match: (?=\$)
@@ -91,7 +91,7 @@ contexts:
     - match: (?=\$)
       pop: true
     - match: \&
-      scope: operator.reference.php.7
+      scope: operator.reference.php.php7
       pop: true
 
   target-delimiter:
@@ -99,7 +99,7 @@ contexts:
     - match: (?=\))
       pop: true
     - match: ","
-      scope: punctuation.delimiter.function.parameters.php.7
+      scope: punctuation.delimiter.function.parameters.php.php7
       pop: true
 
   target-variable:
@@ -107,5 +107,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
 
   body:
-    - meta_scope: function.php.7
+    - meta_scope: function.php.php7
     - include: Packages/Naomi/syntaxes/php7/function/body.sublime-syntax

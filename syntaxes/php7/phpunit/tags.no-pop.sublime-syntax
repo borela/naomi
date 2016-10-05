@@ -36,7 +36,7 @@ contexts:
 
   scope-operator:
     - match: "::"
-      scope: operator.scope.resolution.php.7
+      scope: operator.scope.resolution.php.php7
       pop: true
 
   constant:
@@ -50,15 +50,15 @@ contexts:
 
   function:
     - match: (?xi){{commonIdentifier}}
-      scope: entity.name.function.php.7
+      scope: entity.name.function.php.php7
       pop: true
 
   covers:
     - match: |
         (?x)\B(@)covers\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7
       push: [
         function,
         scope-operator,
@@ -69,32 +69,32 @@ contexts:
     - match: |
         (?x)\B(@)dataProvider\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7
       push: function
 
   depends:
     - match: |
         (?x)\B(@)depends\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7
       push: function
 
   expectedExceptionCode:
     - match: |
         (?x)\B(@)expectedExceptionCode\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7
       push: number
 
   expectedExceptionMessage:
     - match: |
         (?x)\B(@)expectedExceptionMessage\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7
       push:
         - match: (?=\s+[^ ]+\s*$)
           set: [
@@ -103,7 +103,7 @@ contexts:
             type
           ]
         - match: .+$
-          scope: string.php.7
+          scope: string.php.php7
           pop: true
 
   simple-tags:
@@ -126,8 +126,8 @@ contexts:
           | ticket
         )\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7
 
   boolean-tags:
     - match: |
@@ -138,15 +138,15 @@ contexts:
           | preserveGlobalState
         )\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7
       push:
         - match: |
             (?x)
             (?> enabled
               | disabled
             )
-          scope: keyword.documentation.php.7
+          scope: keyword.documentation.php.php7
           pop: true
 
   string-tags:
@@ -156,11 +156,11 @@ contexts:
           | group
         )\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7
       push:
         - match: .+$
-          scope: string.php.7
+          scope: string.php.php7
           pop: true
 
   type-tags:
@@ -171,6 +171,6 @@ contexts:
           | uses
         )\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7
       push: type

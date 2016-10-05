@@ -36,6 +36,6 @@ contexts:
           | wakeup
         )
       scope: >-
-        support.function.php.7
-        entity.name.function.php.7
+        support.function.php.php7
+        entity.name.function.php.php7
       pop: true

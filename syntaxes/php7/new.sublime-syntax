@@ -25,10 +25,10 @@ scope: ...
 contexts:
   main:
     - match: (?i)\bnew\s+class\b
-      scope: keyword.other.php.7
+      scope: keyword.other.php.php7
       set: Packages/Naomi/syntaxes/php7/class.sublime-syntax
     - match: (?i)\bnew\b
-      scope: keyword.other.php.7
+      scope: keyword.other.php.php7
       set: [
         arguments,
         type

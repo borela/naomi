@@ -20,22 +20,22 @@ scope: ...
 contexts:
   main:
     - match: (?xi)\bnamespace(?!\\)\b
-      scope: keyword.namespace.php.7
+      scope: keyword.namespace.php.php7
       set: declaration
 
   declaration:
-    - meta_scope: namespace.php.7
+    - meta_scope: namespace.php.php7
     # Implicit body.
     - match: ;
       scope: >-
-        namespace.body.php.7
-        punctuation.delimiter.namespace.body.begin.php.7
+        namespace.body.php.php7
+        punctuation.delimiter.namespace.body.begin.php.php7
       set: implicit-body
     # Bracketed body.
     - match: "{"
       scope: >-
-        namespace.body.php.7
-        punctuation.delimiter.namespace.body.begin.php.7
+        namespace.body.php.php7
+        punctuation.delimiter.namespace.body.begin.php.php7
       set: bracketed-body
     # namespace’s path.
     - include: Packages/Naomi/syntaxes/php7/namespace/path.sublime-syntax
@@ -48,22 +48,22 @@ contexts:
 
   implicit-body:
     - meta_content_scope: >-
-        namespace.php.7
-        namespace.body.php.7
-        namespace.body.content.php.7
+        namespace.php.php7
+        namespace.body.php.php7
+        namespace.body.content.php.php7
     - match: (?=\bnamespace\b)
       pop: true
     - include: body-content
 
   bracketed-body:
     - meta_content_scope: >-
-        namespace.php.7
-        namespace.body.php.7
-        namespace.body.content.php.7
+        namespace.php.php7
+        namespace.body.php.php7
+        namespace.body.content.php.php7
     - match: "}"
       scope: >-
-        namespace.php.7
-        namespace.body.php.7
-        punctuation.delimiter.namespace.body.end.php.7
+        namespace.php.php7
+        namespace.body.php.php7
+        punctuation.delimiter.namespace.body.end.php.php7
       pop: true
     - include: body-content

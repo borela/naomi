@@ -47,5 +47,5 @@ contexts:
           | >>>=?
           | >>=?
         )
-      scope: operator.bitwise.php.7
+      scope: operator.bitwise.php.php7
       pop: true

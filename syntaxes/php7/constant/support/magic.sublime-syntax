@@ -31,6 +31,6 @@ contexts:
           | NAMESPACE
         )__\b
       scope: >-
-        support.constant.preprocessor.php.7
-        entity.name.constant.php.7
+        support.constant.preprocessor.php.php7
+        entity.name.constant.php.php7
       pop: true

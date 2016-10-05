@@ -20,14 +20,14 @@ scope: ...
 contexts:
   main:
     - match: \/\*\*(?!\/)
-      scope: punctuation.comment.documentation.begin.php.7
+      scope: punctuation.comment.documentation.begin.php.php7
       set: content
 
   content:
-    - meta_scope: comment.documentation.php.7
-    - meta_content_scope: comment.documentation.content.php.7
+    - meta_scope: comment.documentation.php.php7
+    - meta_content_scope: comment.documentation.content.php.php7
     - match: \*\/
-      scope: punctuation.comment.documentation.end.php.7
+      scope: punctuation.comment.documentation.end.php.php7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/phpdoc/tags.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/phpunit/tags.no-pop.sublime-syntax

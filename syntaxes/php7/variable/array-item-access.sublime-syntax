@@ -29,7 +29,7 @@ contexts:
       pop: true
     # Array item access.
     - match: \[
-      scope: punctuation.delimiter.array.item.access.begin.php.7
+      scope: punctuation.delimiter.array.item.access.begin.php.php7
       push: [
         array-item-access-end,
         array-index
@@ -39,7 +39,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
 
   array-item-access-end:
-    - meta_scope: array.item.access.php.7
+    - meta_scope: array.item.access.php.php7
     - match: \]
-      scope: punctuation.delimiter.array.item.access.end.php.7
+      scope: punctuation.delimiter.array.item.access.end.php.php7
       pop: true

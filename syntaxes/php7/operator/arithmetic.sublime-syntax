@@ -43,5 +43,5 @@ contexts:
           | /=?
           | %=?
         )
-      scope: operator.arithmetic.php.7
+      scope: operator.arithmetic.php.php7
       pop: true

@@ -20,29 +20,29 @@ scope: ...
 contexts:
   main:
     - match: \[
-      scope: punctuation.delimiter.array.begin.php.7
+      scope: punctuation.delimiter.array.begin.php.php7
       set: short-array-items
     - match: |
         (?x)
         (array)
         \s*(\()
       captures:
-        1: entity.name.type.array.php.7
-        2: punctuation.delimiter.array.begin.php.7
+        1: entity.name.type.array.php.php7
+        2: punctuation.delimiter.array.begin.php.php7
       set: items
 
   short-array-items:
-    - meta_scope: type.array.php.7
+    - meta_scope: type.array.php.php7
     - match: \]
-      scope: punctuation.delimiter.array.end.php.7
+      scope: punctuation.delimiter.array.end.php.php7
       pop: true
     - match: (?=\S)
       push: key-or-value
 
   items:
-    - meta_scope: type.array.php.7
+    - meta_scope: type.array.php.php7
     - match: \)
-      scope: punctuation.delimiter.array.end.php.7
+      scope: punctuation.delimiter.array.end.php.php7
       pop: true
     - match: (?=\S)
       push: key-or-value
@@ -51,7 +51,7 @@ contexts:
     - include: end
     - include: item-delimiter
     - match: "=>"
-      scope: operator.key.association.php.7
+      scope: operator.key.association.php.php7
       set: value
     - include: Packages/Naomi/syntaxes/php7/expression.no-pop.sublime-syntax
 
@@ -62,7 +62,7 @@ contexts:
 
   item-delimiter:
     - match: \,
-      scope: punctuation.delimiter.array.php.7
+      scope: punctuation.delimiter.array.php.php7
       pop: true
 
   end:

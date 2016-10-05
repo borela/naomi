@@ -35,7 +35,7 @@ contexts:
           )
         )\b
       captures:
-        0: support.type.interface.php.7
-        1: punctuation.delimiter.type.php.7
-        2: entity.name.type.php.7
+        0: support.type.interface.php.php7
+        1: punctuation.delimiter.type.php.php7
+        2: entity.name.type.php.php7
       pop: true

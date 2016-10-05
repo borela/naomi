@@ -27,7 +27,7 @@ contexts:
           | try
           | finally
         )\b
-      scope: keyword.control.php.7
+      scope: keyword.control.php.php7
       set: body
     # With header.
     - match: |
@@ -39,7 +39,7 @@ contexts:
           | catch
           | switch
         )\b
-      scope: keyword.control.php.7
+      scope: keyword.control.php.php7
       set: [
         body,
         header
@@ -47,12 +47,12 @@ contexts:
 
   header:
     - match: \(
-      scope: punctuation.delimiter.control.header.begin.php.7
+      scope: punctuation.delimiter.control.header.begin.php.php7
       set: header-content
 
   header-content:
     - match: \)
-      scope: punctuation.delimiter.control.header.end.php.7
+      scope: punctuation.delimiter.control.header.end.php.php7
       pop: true
     - match: (?=\S)
       push:
@@ -63,14 +63,14 @@ contexts:
 
   body:
     - match: \{
-      scope: punctuation.delimiter.control.body.begin.php.7
+      scope: punctuation.delimiter.control.body.begin.php.php7
       set: body-content
     - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
 
   body-content:
     - match: \}
-      scope: punctuation.delimiter.control.body.end.php.7
+      scope: punctuation.delimiter.control.body.end.php.php7
       pop: true
     - match: (?=\S)
       push:

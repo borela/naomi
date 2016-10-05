@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: ":"
-      scope: punctuation.delimiter.function.php.7
+      scope: punctuation.delimiter.function.php.php7
       set: return-type
 
   return-type:

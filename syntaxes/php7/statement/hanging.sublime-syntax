@@ -24,11 +24,11 @@ contexts:
         (?> case
           | default
         )\b
-      scope: keyword.control.hanging.php.7
+      scope: keyword.control.hanging.php.php7
       set: operator
 
   operator:
     - match: ":"
-      scope: operator.php.7
+      scope: operator.php.php7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax

@@ -24,20 +24,20 @@ contexts:
   main:
     - match: \'
       scope: >-
-        string.quoted.single.php.7
-        punctuation.delimiter.string.begin.php.7
+        string.quoted.single.php.php7
+        punctuation.delimiter.string.begin.php.php7
       with_prototype:
         - match: \'
           scope: >-
-            string.quoted.single.php.7
-            punctuation.delimiter.string.end.php.7
+            string.quoted.single.php.php7
+            punctuation.delimiter.string.end.php.php7
           pop: true
       set: escape-a
 
   escape-a:
     - meta_content_scope: >-
-        string.quoted.single.php.7
-        string.content.php.7
+        string.quoted.single.php.php7
+        string.content.php.php7
     - match: (?x)(?={{singleQuotedEscapeSequences}})
       set: [
         escape-b,
@@ -46,8 +46,8 @@ contexts:
 
   escape-b:
     - meta_content_scope: >-
-        string.quoted.single.php.7
-        string.content.php.7
+        string.quoted.single.php.php7
+        string.content.php.php7
     - match: (?x)(?={{singleQuotedEscapeSequences}})
       set: [
         escape-a,
@@ -56,10 +56,10 @@ contexts:
 
   escape-a-match:
     - match: (?x){{singleQuotedEscapeSequences}}
-      scope: constant.character.escape.a.php.7
+      scope: constant.character.escape.a.php.php7
       pop: true
 
   escape-b-match:
     - match: (?x){{singleQuotedEscapeSequences}}
-      scope: constant.character.escape.b.php.7
+      scope: constant.character.escape.b.php.php7
       pop: true

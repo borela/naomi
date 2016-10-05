@@ -32,7 +32,7 @@ contexts:
           {{constantIdentifier}}
         )\b
       captures:
-        0: constant.php.7
-        1: punctuation.delimiter.constant.php.7
-        2: entity.name.constant.php.7
+        0: constant.php.php7
+        1: punctuation.delimiter.constant.php.php7
+        2: entity.name.constant.php.php7
       pop: true

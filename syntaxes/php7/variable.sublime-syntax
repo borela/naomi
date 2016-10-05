@@ -49,9 +49,9 @@ contexts:
           )
         )\b
       captures:
-        0: support.variable.php.7
-        1: punctuation.variable.begin.php.7
-        2: entity.name.variable.php.7
+        0: support.variable.php.php7
+        1: punctuation.variable.begin.php.php7
+        2: entity.name.variable.php.php7
       set: array-item-access
 
   common-variable:
@@ -59,9 +59,9 @@ contexts:
         (?xi)
         \B(\$)({{commonIdentifier}})\b
       captures:
-        0: variable.php.7
-        1: punctuation.variable.begin.php.7
-        2: entity.name.variable.php.7
+        0: variable.php.php7
+        1: punctuation.variable.begin.php.php7
+        2: entity.name.variable.php.php7
       set: array-item-access
 
   array-item-access:

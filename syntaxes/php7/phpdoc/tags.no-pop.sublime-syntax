@@ -49,14 +49,14 @@ contexts:
     - match: (?=\$|$)
       pop: true
     - match: \|
-      scope: operator.php.7
+      scope: operator.php.php7
       pop: true
 
   param:
     - match: \B(@)param\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7
       push: [
         variable,
         types
@@ -65,22 +65,22 @@ contexts:
   return:
     - match: \B(@)return\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7
       push: types
 
   throws:
     - match: \B(@)throws\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7
       push: type
 
   var:
     - match: \B(@)var\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7
       push: types
 
   other-tags:
@@ -114,5 +114,5 @@ contexts:
           | version
         )\b
       captures:
-        0: keyword.documentation.php.7
-        1: punctuation.keyword.begin.php.7
+        0: keyword.documentation.php.php7
+        1: punctuation.keyword.begin.php.php7

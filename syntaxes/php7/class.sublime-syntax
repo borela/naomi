@@ -48,46 +48,46 @@ contexts:
 
   keyword:
     - match: (?i)\bclass(?!\\)\b
-      scope: keyword.class.php.7
+      scope: keyword.class.php.php7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/modifier.no-pop.sublime-syntax
 
   declaration:
-    - meta_scope: class.php.7
+    - meta_scope: class.php.php7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     # Extends.
     - match: (?i)\bextends\b
-      scope: keyword.inherit.php.7
+      scope: keyword.inherit.php.php7
       push: extend-target
     # Implements.
     - match: (?i)\bimplements\b
-      scope: keyword.implement.php.7
+      scope: keyword.implement.php.php7
       push: implement-targets
     # Class’s name.
     - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.class.php.7
+      scope: entity.name.class.php.php7
     # Body.
     - match: \{
       scope: >-
-        class.body.php.7
-        punctuation.delimiter.class.body.begin.php.7
+        class.body.php.php7
+        punctuation.delimiter.class.body.begin.php.php7
       set: body
 
   body:
     - meta_content_scope: >-
-        class.php.7
-        class.body.php.7
-        class.body.content.php.7
+        class.php.php7
+        class.body.php.php7
+        class.body.content.php.php7
     - match: \}
       scope: >-
-        class.php.7
-        class.body.php.7
-        punctuation.delimiter.class.body.end.php.7
+        class.php.php7
+        class.body.php.php7
+        punctuation.delimiter.class.body.end.php.php7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/statement.no-pop.sublime-syntax
 
   extend-target:
-    - meta_scope: inherit.php.7
+    - meta_scope: inherit.php.php7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: (?=\{)
       pop: true
@@ -96,7 +96,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
 
   implement-targets:
-    - meta_scope: implement.php.7
+    - meta_scope: implement.php.php7
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: (?=\{)
       pop: true
@@ -113,7 +113,7 @@ contexts:
   implement-target-delimiter:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
     - match: ","
-      scope: punctuation.delimiter.implement.php.7
+      scope: punctuation.delimiter.implement.php.php7
       pop: true
     - match: (?=\S)
       pop: true

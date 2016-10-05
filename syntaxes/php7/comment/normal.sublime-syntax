@@ -20,23 +20,23 @@ scope: ...
 contexts:
   main:
     - match: \/\/|#
-      scope: punctuation.comment.begin.php.7
+      scope: punctuation.comment.begin.php.php7
       set: line
     - match: \/\*
-      scope: punctuation.comment.begin.php.7
+      scope: punctuation.comment.begin.php.php7
       set: block
 
   line:
-    - meta_scope: comment.line.php.7
-    - meta_content_scope: comment.content.php.7
+    - meta_scope: comment.line.php.php7
+    - meta_content_scope: comment.content.php.php7
     - match: $
       pop: true
     - include: Packages/Naomi/syntaxes/php7/phpunit/tags.no-pop.sublime-syntax
 
   block:
-    - meta_scope: comment.block.php.7
-    - meta_content_scope: comment.content.php.7
+    - meta_scope: comment.block.php.php7
+    - meta_content_scope: comment.content.php.php7
     - match: \*\/
-      scope: punctuation.comment.end.php.7
+      scope: punctuation.comment.end.php.php7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/phpunit/tags.no-pop.sublime-syntax

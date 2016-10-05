@@ -30,7 +30,7 @@ contexts:
           | throw
           | yield(\s+from)?
         )\b
-      scope: keyword.control.simple.php.7
+      scope: keyword.control.simple.php.php7
       set: expression
 
   expression:

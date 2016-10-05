@@ -17,9 +17,20 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
-    - match: \btype\b
+    - match: |
+        (?x)\b
+        type
+        (?=
+          \s+{{commonIdentifier}}
+          \s*=
+        )
       scope: keyword.type.alias.fjsx15
       set: [
         type,

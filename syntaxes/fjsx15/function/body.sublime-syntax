@@ -21,37 +21,37 @@ contexts:
   main:
     # End.
     - match: ;
-      scope: punctuation.delimiter.function.declaration.end.js.2015
+      scope: punctuation.delimiter.function.declaration.end.fjsx15
       pop: true
     # Arrow function.
     - match: =>\s*\{
       scope: >-
-        function.body.js.2015
-        punctuation.delimiter.function.body.js.2015
+        function.body.fjsx15
+        punctuation.delimiter.function.body.fjsx15
       set: body-content
     # Arrow simple body.
     - match: =>
       scope: >-
-        function.body.js.2015
-        punctuation.delimiter.function.body.js.2015
+        function.body.fjsx15
+        punctuation.delimiter.function.body.fjsx15
       set: arrow-body
     # Normal function.
     - match: \{
       scope: >-
-        function.body.js.2015
-        punctuation.delimiter.function.body.begin.js.2015
+        function.body.fjsx15
+        punctuation.delimiter.function.body.begin.fjsx15
       set: body-content
 
   body-content:
     - meta_content_scope: >-
-        function.js.2015
-        function.body.js.2015
-        function.body.content.js.2015
+        function.fjsx15
+        function.body.fjsx15
+        function.body.content.fjsx15
     - match: \}
       scope: >-
-        function.js.2015
-        function.body.js.2015
-        punctuation.delimiter.function.body.end.js.2015
+        function.fjsx15
+        function.body.fjsx15
+        punctuation.delimiter.function.body.end.fjsx15
       pop: true
     - match: ""
       push:
@@ -60,9 +60,9 @@ contexts:
 
   arrow-body:
     - meta_content_scope: >-
-        function.js.2015
-        function.body.js.2015
-        function.body.content.js.2015
+        function.fjsx15
+        function.body.fjsx15
+        function.body.content.fjsx15
     - match: |
         (?x)
         (?=

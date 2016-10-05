@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: \[
-      scope: punctuation.delimiter.destructure.array.begin.js.2015
+      scope: punctuation.delimiter.destructure.array.begin.fjsx15
       set: [
         punctuation,
         variable
@@ -28,13 +28,13 @@ contexts:
 
   punctuation:
     - match: \,
-      scope: punctuation.delimiter.destructure.item.js.2015
+      scope: punctuation.delimiter.destructure.item.fjsx15
       set: [
         punctuation,
         variable
       ]
     - match: \]
-      scope: punctuation.delimiter.destructure.array.end.js.2015
+      scope: punctuation.delimiter.destructure.array.end.fjsx15
       pop: true
 
   variable:

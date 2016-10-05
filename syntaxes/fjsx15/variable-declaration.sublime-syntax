@@ -71,7 +71,7 @@ contexts:
         (?> let
           | var
         )\b
-      scope: keyword.variable.declaration.js.2015
+      scope: keyword.variable.declaration.fjsx15
       pop: true
 
   variable:
@@ -97,7 +97,7 @@ contexts:
 
   sibling:
     - match: \,
-      scope: punctuation.delimiter.js.2015
+      scope: punctuation.delimiter.fjsx15
       set: [
         punctuation,
         variable

@@ -35,9 +35,9 @@ contexts:
           | \b
         )
       captures:
-        0: variable.js.2015
-        1: entity.name.variable.js.2015
-        2: operator.optional.js.2015
+        0: variable.fjsx15
+        1: entity.name.variable.fjsx15
+        2: operator.optional.fjsx15
       set: array-item-access-begin
 
   support-variable:
@@ -47,8 +47,8 @@ contexts:
           | this
         )\b
       scope: >-
-        support.variable.js.2015
-        entity.name.variable.js.2015
+        support.variable.fjsx15
+        entity.name.variable.fjsx15
       set: array-item-access-begin
 
   array-item-access-begin:
@@ -57,7 +57,7 @@ contexts:
       pop: true
     # Array item access.
     - match: \[
-      scope: punctuation.delimiter.array.item.access.begin.js.2015
+      scope: punctuation.delimiter.array.item.access.begin.fjsx15
       push: [
         array-item-access-end,
         array-index
@@ -67,7 +67,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   array-item-access-end:
-    - meta_scope: array.item.access.js.2015
+    - meta_scope: array.item.access.fjsx15
     - match: \]
-      scope: punctuation.delimiter.array.item.access.end.js.2015
+      scope: punctuation.delimiter.array.item.access.end.fjsx15
       pop: true

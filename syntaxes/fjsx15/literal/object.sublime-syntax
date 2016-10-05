@@ -29,8 +29,8 @@ contexts:
         (?x)
         (\{)\s*(\})
       captures:
-        1: punctuation.delimiter.object.begin.js.2015
-        2: punctuation.delimiter.object.end.js.2015
+        1: punctuation.delimiter.object.begin.fjsx15
+        2: punctuation.delimiter.object.end.fjsx15
       pop: true
     # Normal object literal.
     - match: |
@@ -40,7 +40,7 @@ contexts:
           .*?\}
           \s*=
         )
-      scope: punctuation.delimiter.object.begin.js.2015
+      scope: punctuation.delimiter.object.begin.fjsx15
       set: [
         punctuation,
         property-or-method
@@ -56,7 +56,7 @@ contexts:
   property:
     # Computed property name.
     - match: \[
-      scope: operator.property.computed.begin.js.2015
+      scope: operator.property.computed.begin.fjsx15
       set: [
         optional-value,
         computed-property-end,
@@ -67,19 +67,19 @@ contexts:
         (?xi)
         {{commonIdentifier}}
       scope: >-
-        variable.js.2015
-        entity.name.variable.js.2015
+        variable.fjsx15
+        entity.name.variable.fjsx15
       set: optional-value
 
   computed-property-end:
     - match: \]
-      scope: operator.property.computed.end.js.2015
+      scope: operator.property.computed.end.fjsx15
       pop: true
 
   optional-value:
     - include: comment
     - match: ":"
-      scope: operator.association.js.2015
+      scope: operator.association.fjsx15
       set: value
     - match: (?=\S)
       pop: true
@@ -91,13 +91,13 @@ contexts:
   punctuation:
     - include: comment
     - match: \,
-      scope: punctuation.delimiter.object.js.2015
+      scope: punctuation.delimiter.object.fjsx15
       set: [
         punctuation,
         property-or-method
       ]
     - match: \}
-      scope: punctuation.delimiter.object.end.js.2015
+      scope: punctuation.delimiter.object.end.fjsx15
       pop: true
 
   comment:

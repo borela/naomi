@@ -25,7 +25,7 @@ variables:
 contexts:
   main:
     - match: \bclass\b
-      scope: keyword.class.js.2015
+      scope: keyword.class.fjsx15
       set: identifier
 
   identifier:
@@ -38,12 +38,12 @@ contexts:
       set: body
     # Actual identifier.
     - match: (?xi){{commonIdentifier}}
-      scope: entity.name.class.js.2015
+      scope: entity.name.class.fjsx15
       set: optional-template-parameters
 
   extension:
     - match: \bextends\b
-      scope: keyword.extension.js.2015
+      scope: keyword.extension.fjsx15
       set: type
 
   type:
@@ -77,22 +77,22 @@ contexts:
 
   body:
     - meta_content_scope: >-
-        class.js.2015
-        class.body.js.2015
+        class.fjsx15
+        class.body.fjsx15
     - include: comment
     - match: \{
-      scope: punctuation.delimiter.class.body.begin.js.2015
+      scope: punctuation.delimiter.class.body.begin.fjsx15
       set: body-content
 
   body-content:
     - meta_content_scope: >-
-        class.js.2015
-        class.body.js.2015
+        class.fjsx15
+        class.body.fjsx15
     - match: \}
       scope: >-
-        class.js.2015
-        class.body.js.2015
-        punctuation.delimiter.class.body.end.js.2015
+        class.fjsx15
+        class.body.fjsx15
+        punctuation.delimiter.class.body.end.fjsx15
       pop: true
     - match: ""
       push:

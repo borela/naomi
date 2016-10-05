@@ -50,7 +50,7 @@ contexts:
   optional-value:
     - include: terminator
     - match: =
-      scope: operator.assignment.js.2015
+      scope: operator.assignment.fjsx15
       set: value
 
   type:

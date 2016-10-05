@@ -77,7 +77,7 @@ contexts:
         parameters
       ]
     - match: (?xi){{commonIdentifier}}
-      scope: entity.name.function.js.2015
+      scope: entity.name.function.fjsx15
       set: optional-template-parameters
 
   template-parameters:

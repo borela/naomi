@@ -25,11 +25,11 @@ variables:
 contexts:
   main:
     - match: \bfunction\b
-      scope: keyword.function.js.2015
+      scope: keyword.function.fjsx15
       set: identifier
 
   identifier:
-    - meta_scope: function.js.2015
+    - meta_scope: function.fjsx15
     # Start of template parameters (no identifier).
     - match: (?=<)
       set: [
@@ -53,7 +53,7 @@ contexts:
           \s*
           {{commonIdentifier}}
         )?
-      scope: entity.name.function.js.2015
+      scope: entity.name.function.fjsx15
       set: optional-template-parameters
 
   template-parameters:

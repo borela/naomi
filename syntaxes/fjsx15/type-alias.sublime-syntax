@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: \btype\b
-      scope: keyword.type.alias.js.2015
+      scope: keyword.type.alias.fjsx15
       set: [
         type,
         punctuation,

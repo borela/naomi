@@ -20,17 +20,17 @@ scope: ...
 contexts:
   main:
     - match: \(
-      scope: punctuation.delimiter.function.arguments.begin.js.2015
+      scope: punctuation.delimiter.function.arguments.begin.fjsx15
       set: arguments
 
   arguments:
-    - meta_scope: function.call.arguments.js.2015
-    - meta_content_scope: function.call.arguments.content.js.2015
+    - meta_scope: function.call.arguments.fjsx15
+    - meta_content_scope: function.call.arguments.content.fjsx15
     - match: \)
-      scope: punctuation.delimiter.function.arguments.end.js.2015
+      scope: punctuation.delimiter.function.arguments.end.fjsx15
       pop: true
     - match: \,
       scope: >-
-        function.call.js.2015
-        punctuation.delimiter.function.arguments.js.2015
+        function.call.fjsx15
+        punctuation.delimiter.function.arguments.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/expression.no-pop.sublime-syntax

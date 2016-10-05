@@ -56,7 +56,7 @@ contexts:
           \s*\(
         )
       captures:
-        1: keyword.modifier.js.2015
+        1: keyword.modifier.fjsx15
       set: [
         optional-template-parameters,
         identifier
@@ -68,8 +68,8 @@ contexts:
         (?xi)
         \*?\s*{{commonIdentifier}}
       scope: >-
-        function.js.2015
-        entity.name.function.js.2015
+        function.fjsx15
+        entity.name.function.fjsx15
       pop: true
 
   template-parameters:

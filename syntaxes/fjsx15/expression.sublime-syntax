@@ -33,7 +33,7 @@ contexts:
         (?x)
         \(
         (?!{{arrowFunctionContinuation}})
-      scope: punctuation.delimiter.expression.group.a.begin.js.2015
+      scope: punctuation.delimiter.expression.group.a.begin.fjsx15
       push: open-b-close-a
     - include: terminators
     - include: content
@@ -43,10 +43,10 @@ contexts:
         (?x)
         \(
         (?!{{arrowFunctionContinuation}})
-      scope: punctuation.delimiter.expression.group.b.begin.js.2015
+      scope: punctuation.delimiter.expression.group.b.begin.fjsx15
       push: open-a-close-b
     - match: \)
-      scope: punctuation.delimiter.expression.group.a.end.js.2015
+      scope: punctuation.delimiter.expression.group.a.end.fjsx15
       pop: true
     - include: terminators
     - include: content
@@ -56,10 +56,10 @@ contexts:
         (?x)
         \(
         (?!{{arrowFunctionContinuation}})
-      scope: punctuation.delimiter.expression.group.a.begin.js.2015
+      scope: punctuation.delimiter.expression.group.a.begin.fjsx15
       push: open-b-close-a
     - match: \)
-      scope: punctuation.delimiter.expression.group.b.end.js.2015
+      scope: punctuation.delimiter.expression.group.b.end.fjsx15
       pop: true
     - include: terminators
     - include: content

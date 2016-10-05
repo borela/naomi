@@ -41,11 +41,11 @@ contexts:
         )
       captures:
         0: >-
-          type.js.2015
-          namespace.path.js.2015
-        1: entity.name.namespace.a.js.2015
-        2: punctuation.delimiter.namespace.a.js.2015
-        3: entity.name.namespace.b.js.2015
-        4: punctuation.delimiter.namespace.b.js.2015
-        5: entity.name.namespace.a.js.2015
-        6: punctuation.delimiter.namespace.a.js.2015
+          type.fjsx15
+          namespace.path.fjsx15
+        1: entity.name.namespace.a.fjsx15
+        2: punctuation.delimiter.namespace.a.fjsx15
+        3: entity.name.namespace.b.fjsx15
+        4: punctuation.delimiter.namespace.b.fjsx15
+        5: entity.name.namespace.a.fjsx15
+        6: punctuation.delimiter.namespace.a.fjsx15

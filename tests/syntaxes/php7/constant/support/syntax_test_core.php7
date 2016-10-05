@@ -14,111 +14,111 @@
 
 <?php
     PHP_VERSION
-//  ^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_MAJOR_VERSION
-//  ^^^^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_MINOR_VERSION
-//  ^^^^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_RELEASE_VERSION
-//  ^^^^^^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_VERSION_ID
-//  ^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_EXTRA_VERSION
-//  ^^^^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_ZTS
-//  ^^^^^^^ support.constant.php.7
-//  ^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^ support.constant.php.php7
+//  ^^^^^^^ entity.name.constant.php.php7
     PHP_DEBUG
-//  ^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^ entity.name.constant.php.php7
     PHP_MAXPATHLEN
-//  ^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_OS
-//  ^^^^^^ support.constant.php.7
-//  ^^^^^^ entity.name.constant.php.7
+//  ^^^^^^ support.constant.php.php7
+//  ^^^^^^ entity.name.constant.php.php7
     PHP_SAPI
-//  ^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^ entity.name.constant.php.php7
     PHP_EOL
-//  ^^^^^^^ support.constant.php.7
-//  ^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^ support.constant.php.php7
+//  ^^^^^^^ entity.name.constant.php.php7
     PHP_INT_MAX
-//  ^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_INT_MIN
-//  ^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_INT_SIZE
-//  ^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^ entity.name.constant.php.php7
     DEFAULT_INCLUDE_PATH
-//  ^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PEAR_INSTALL_DIR
-//  ^^^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PEAR_EXTENSION_DIR
-//  ^^^^^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_EXTENSION_DIR
-//  ^^^^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_PREFIX
-//  ^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^ entity.name.constant.php.php7
     PHP_BINDIR
-//  ^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^ entity.name.constant.php.php7
     PHP_BINARY
-//  ^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^ entity.name.constant.php.php7
     PHP_MANDIR
-//  ^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^ entity.name.constant.php.php7
     PHP_LIBDIR
-//  ^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^ entity.name.constant.php.php7
     PHP_DATADIR
-//  ^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_SYSCONFDIR
-//  ^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_LOCALSTATEDIR
-//  ^^^^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_CONFIG_FILE_PATH
-//  ^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_CONFIG_FILE_SCAN_DIR
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_SHLIB_SUFFIX
-//  ^^^^^^^^^^^^^^^^ support.constant.php.7
-//  ^^^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     TRUE
-//  ^^^^ support.constant.php.7
-//  ^^^^ entity.name.constant.php.7
+//  ^^^^ support.constant.php.php7
+//  ^^^^ entity.name.constant.php.php7
     true
-//  ^^^^ support.constant.php.7
-//  ^^^^ entity.name.constant.php.7
+//  ^^^^ support.constant.php.php7
+//  ^^^^ entity.name.constant.php.php7
     FALSE
-//  ^^^^^ support.constant.php.7
-//  ^^^^^ entity.name.constant.php.7
+//  ^^^^^ support.constant.php.php7
+//  ^^^^^ entity.name.constant.php.php7
     false
-//  ^^^^^ support.constant.php.7
-//  ^^^^^ entity.name.constant.php.7
+//  ^^^^^ support.constant.php.php7
+//  ^^^^^ entity.name.constant.php.php7
     NULL
-//  ^^^^ support.constant.php.7
-//  ^^^^ entity.name.constant.php.7
+//  ^^^^ support.constant.php.php7
+//  ^^^^ entity.name.constant.php.php7
     null
-//  ^^^^ support.constant.php.7
-//  ^^^^ entity.name.constant.php.7
+//  ^^^^ support.constant.php.php7
+//  ^^^^ entity.name.constant.php.php7
 ?>

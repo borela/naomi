@@ -14,12 +14,12 @@
 
 <?php
     GENERIC_CONSTANT
-//  ^^^^^^^^^^^^^^^^ constant.php.7
-//  ^^^^^^^^^^^^^^^^ entity.name.constant.php.7
+//  ^^^^^^^^^^^^^^^^ constant.php.php7
+//  ^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
 
     Type::CONSTANT
-//  ^^^^ type.php.7
-//      ^^ operator.scope.resolution.php.7
-//        ^^^^^^^^ constant.php.7
-//        ^^^^^^^^ entity.name.constant.php.7
+//  ^^^^ type.php.php7
+//      ^^ operator.scope.resolution.php.php7
+//        ^^^^^^^^ constant.php.php7
+//        ^^^^^^^^ entity.name.constant.php.php7
 ?>

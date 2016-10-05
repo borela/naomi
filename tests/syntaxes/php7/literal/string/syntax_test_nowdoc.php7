@@ -14,14 +14,14 @@
 
 <?php
     <<<'Nowdoc'
-//  ^^^^^^^^^^ string.unquoted.nowdoc.php.7
-//  ^^^^^^^^^^ punctuation.delimiter.string.begin.php.7
+//  ^^^^^^^^^^ string.unquoted.nowdoc.php.php7
+//  ^^^^^^^^^^ punctuation.delimiter.string.begin.php.php7
     Something is here....
-//  ^^^^^^^^^^^^^^^^^^^^^ string.unquoted.nowdoc.php.7
-//  ^^^^^^^^^^^^^^^^^^^^^ string.content.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^ string.unquoted.nowdoc.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^ string.content.php.php7
 Nowdoc;
-// <- string.unquoted.nowdoc.php.7
-//^^^^^ string.unquoted.nowdoc.php.7
-// <- punctuation.delimiter.string.end.php.7
-//^^^^^ punctuation.delimiter.string.end.php.7
+// <- string.unquoted.nowdoc.php.php7
+//^^^^^ string.unquoted.nowdoc.php.php7
+// <- punctuation.delimiter.string.end.php.php7
+//^^^^^ punctuation.delimiter.string.end.php.php7
 ?>

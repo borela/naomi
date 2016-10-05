@@ -14,18 +14,18 @@
 
 <?php
     // Test...
-//  ^^^^^^^^^^ comment.line.php.7
-//    ^^^^^^^^ comment.content.php.7
-//  ^^ punctuation.comment.begin.php.7
+//  ^^^^^^^^^^ comment.line.php.php7
+//    ^^^^^^^^ comment.content.php.php7
+//  ^^ punctuation.comment.begin.php.php7
 
     # Test...
-//  ^^^^^^^^^ comment.line.php.7
-//    ^^^^^^^ comment.content.php.7
-//  ^ punctuation.comment.begin.php.7
+//  ^^^^^^^^^ comment.line.php.php7
+//    ^^^^^^^ comment.content.php.php7
+//  ^ punctuation.comment.begin.php.php7
 
     /* Test... */
-//  ^^^^^^^^^^^^^ comment.block.php.7
-//    ^^^^^^^^^ comment.content.php.7
-//  ^^ punctuation.comment.begin.php.7
-//             ^^ punctuation.comment.end.php.7
+//  ^^^^^^^^^^^^^ comment.block.php.php7
+//    ^^^^^^^^^ comment.content.php.php7
+//  ^^ punctuation.comment.begin.php.php7
+//             ^^ punctuation.comment.end.php.php7
 ?>

@@ -14,34 +14,34 @@
 
 <?php
     declare(ticks=1);
-//  ^^^^^^^^^^^^^^^^^ declare.php.7
-//         ^^^^^^^^^ declare.parameters.php.7
-//          ^^^^^^^ declare.parameters.content.php.7
-//  ^^^^^^^ keyword.declare.php.7
-//         ^ punctuation.delimiter.declare.parameters.begin.php.7
-//                 ^ punctuation.delimiter.declare.parameters.end.php.7
-//                  ^ punctuation.delimiter.declare.body.begin.php.7
+//  ^^^^^^^^^^^^^^^^^ declare.php.php7
+//         ^^^^^^^^^ declare.parameters.php.php7
+//          ^^^^^^^ declare.parameters.content.php.php7
+//  ^^^^^^^ keyword.declare.php.php7
+//         ^ punctuation.delimiter.declare.parameters.begin.php.php7
+//                 ^ punctuation.delimiter.declare.parameters.end.php.php7
+//                  ^ punctuation.delimiter.declare.body.begin.php.php7
 
     Something...
-//  ^^^^^^^^^^^^ declare.php.7
-//  ^^^^^^^^^^^^ declare.body.php.7
-//  ^^^^^^^^^^^^ declare.body.content.php.7
+//  ^^^^^^^^^^^^ declare.php.php7
+//  ^^^^^^^^^^^^ declare.body.php.php7
+//  ^^^^^^^^^^^^ declare.body.content.php.php7
 
     declare(ticks=1) {
-//  ^^^^^^^^^^^^^^^^^^ declare.php.7
-//         ^^^^^^^^^ declare.parameters.php.7
-//          ^^^^^^^ declare.parameters.content.php.7
-//  ^^^^^^^ keyword.declare.php.7
-//         ^ punctuation.delimiter.declare.parameters.begin.php.7
-//                 ^ punctuation.delimiter.declare.parameters.end.php.7
-//                   ^ declare.body.php.7
-//                   ^ punctuation.delimiter.declare.body.begin.php.7
+//  ^^^^^^^^^^^^^^^^^^ declare.php.php7
+//         ^^^^^^^^^ declare.parameters.php.php7
+//          ^^^^^^^ declare.parameters.content.php.php7
+//  ^^^^^^^ keyword.declare.php.php7
+//         ^ punctuation.delimiter.declare.parameters.begin.php.php7
+//                 ^ punctuation.delimiter.declare.parameters.end.php.php7
+//                   ^ declare.body.php.php7
+//                   ^ punctuation.delimiter.declare.body.begin.php.php7
     Something...
-//  ^^^^^^^^^^^^ declare.php.7
-//  ^^^^^^^^^^^^ declare.body.php.7
-//  ^^^^^^^^^^^^ declare.body.content.php.7
+//  ^^^^^^^^^^^^ declare.php.php7
+//  ^^^^^^^^^^^^ declare.body.php.php7
+//  ^^^^^^^^^^^^ declare.body.content.php.php7
     }
-//  ^ declare.php.7
-//  ^ declare.body.php.7
-//  ^ punctuation.delimiter.declare.body.end.php.7
+//  ^ declare.php.php7
+//  ^ declare.body.php.php7
+//  ^ punctuation.delimiter.declare.body.end.php.php7
 ?>

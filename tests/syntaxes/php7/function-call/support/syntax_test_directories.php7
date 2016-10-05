@@ -14,39 +14,39 @@
 
 <?php
     chdir();
-//  ^^^^^ function.call.php.7
-//  ^^^^^ support.function.php.7
-//  ^^^^^ entity.name.function.php.7
+//  ^^^^^ function.call.php.php7
+//  ^^^^^ support.function.php.php7
+//  ^^^^^ entity.name.function.php.php7
     chroot();
-//  ^^^^^^ function.call.php.7
-//  ^^^^^^ support.function.php.7
-//  ^^^^^^ entity.name.function.php.7
+//  ^^^^^^ function.call.php.php7
+//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ entity.name.function.php.php7
     closedir();
-//  ^^^^^^^^ function.call.php.7
-//  ^^^^^^^^ support.function.php.7
-//  ^^^^^^^^ entity.name.function.php.7
+//  ^^^^^^^^ function.call.php.php7
+//  ^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^ entity.name.function.php.php7
     dir();
-//  ^^^ function.call.php.7
-//  ^^^ support.function.php.7
-//  ^^^ entity.name.function.php.7
+//  ^^^ function.call.php.php7
+//  ^^^ support.function.php.php7
+//  ^^^ entity.name.function.php.php7
     getcwd();
-//  ^^^^^^ function.call.php.7
-//  ^^^^^^ support.function.php.7
-//  ^^^^^^ entity.name.function.php.7
+//  ^^^^^^ function.call.php.php7
+//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ entity.name.function.php.php7
     opendir();
-//  ^^^^^^^ function.call.php.7
-//  ^^^^^^^ support.function.php.7
-//  ^^^^^^^ entity.name.function.php.7
+//  ^^^^^^^ function.call.php.php7
+//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ entity.name.function.php.php7
     readdir();
-//  ^^^^^^^ function.call.php.7
-//  ^^^^^^^ support.function.php.7
-//  ^^^^^^^ entity.name.function.php.7
+//  ^^^^^^^ function.call.php.php7
+//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ entity.name.function.php.php7
     rewinddir();
-//  ^^^^^^^^^ function.call.php.7
-//  ^^^^^^^^^ support.function.php.7
-//  ^^^^^^^^^ entity.name.function.php.7
+//  ^^^^^^^^^ function.call.php.php7
+//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ entity.name.function.php.php7
     scandir();
-//  ^^^^^^^ function.call.php.7
-//  ^^^^^^^ support.function.php.7
-//  ^^^^^^^ entity.name.function.php.7
+//  ^^^^^^^ function.call.php.php7
+//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ entity.name.function.php.php7
 ?>

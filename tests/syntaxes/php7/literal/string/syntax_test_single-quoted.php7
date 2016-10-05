@@ -14,18 +14,18 @@
 
 <?php
     'Something is "here"...'
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.php.7
-//   ^^^^^^^^^^^^^^^^^^^^^^ string.content.php.7
-//  ^ punctuation.delimiter.string.begin.php.7
-//                         ^ punctuation.delimiter.string.end.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.php.php7
+//   ^^^^^^^^^^^^^^^^^^^^^^ string.content.php.php7
+//  ^ punctuation.delimiter.string.begin.php.php7
+//                         ^ punctuation.delimiter.string.end.php.php7
     'Something is \'here\'...'
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.php.7
-//   ^^^^^^^^^^^^^^^^^^^^^^^^ string.content.php.7
-//  ^ punctuation.delimiter.string.begin.php.7
-//                ^^ constant.character.escape.a.php.7
-//                      ^^ constant.character.escape.b.php.7
-//                           ^ punctuation.delimiter.string.end.php.7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.php.php7
+//   ^^^^^^^^^^^^^^^^^^^^^^^^ string.content.php.php7
+//  ^ punctuation.delimiter.string.begin.php.php7
+//                ^^ constant.character.escape.a.php.php7
+//                      ^^ constant.character.escape.b.php.php7
+//                           ^ punctuation.delimiter.string.end.php.php7
     'Escaped: \\\''
-//            ^^ constant.character.escape.a.php.7
-//              ^^ constant.character.escape.b.php.7
+//            ^^ constant.character.escape.a.php.php7
+//              ^^ constant.character.escape.b.php.php7
 ?>

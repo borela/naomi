@@ -14,8 +14,8 @@
 
 <?php
     Type::class
-//  ^^^^ type.php.7
-//  ^^^^ entity.name.type.php.7
-//      ^^ operator.scope.resolution.php.7
-//        ^^^^^ keyword.other.php.7
+//  ^^^^ type.php.php7
+//  ^^^^ entity.name.type.php.php7
+//      ^^ operator.scope.resolution.php.php7
+//        ^^^^^ keyword.other.php.php7
 ?>

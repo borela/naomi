@@ -14,21 +14,21 @@
 
 <?php
     clone;
-//  ^^^^^ keyword.other.php.7
+//  ^^^^^ keyword.other.php.php7
     die;
-//  ^^^ keyword.other.php.7
+//  ^^^ keyword.other.php.php7
     echo;
-//  ^^^^ keyword.other.php.7
+//  ^^^^ keyword.other.php.php7
     eval;
-//  ^^^^ keyword.other.php.7
+//  ^^^^ keyword.other.php.php7
     exit;
-//  ^^^^ keyword.other.php.7
+//  ^^^^ keyword.other.php.php7
     include_once;
-//  ^^^^^^^^^^^^ keyword.other.php.7
+//  ^^^^^^^^^^^^ keyword.other.php.php7
     include;
-//  ^^^^^^^ keyword.other.php.7
+//  ^^^^^^^ keyword.other.php.php7
     require_once;
-//  ^^^^^^^^^^^^ keyword.other.php.7
+//  ^^^^^^^^^^^^ keyword.other.php.php7
     require;
-//  ^^^^^^^ keyword.other.php.7
+//  ^^^^^^^ keyword.other.php.php7
 ?>

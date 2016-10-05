@@ -11,7 +11,7 @@
     // License for the specific language governing permissions and limitations under
     // the License.
 
-    "scope": "embedded.content.php.7 - comment",
+    "scope": "embedded.content.php.php7 - comment",
     "completions": [
         "debug_backtrace",
         "debug_print_backtrace",

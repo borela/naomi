@@ -11,7 +11,7 @@
     // License for the specific language governing permissions and limitations under
     // the License.
 
-    "scope": "source.php.7 - comment",
+    "scope": "source.php.php7 - comment",
     "completions": [
         "mb_check_encoding",
         "mb_convert_case",

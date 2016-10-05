@@ -389,7 +389,7 @@
                 <string>String</string>
 
                 <key>scope</key>
-                <string>string, punctuation.delimiter.string, constant.character, punctuation.delimiter.constant.character</string>
+                <string>string</string>
 
                 <key>settings</key>
                 <dict>
@@ -403,12 +403,40 @@
                 <string>String delimiter</string>
 
                 <key>scope</key>
-                <string>punctuation.delimiter.string, punctuation.delimiter.constant.character, regex</string>
+                <string>punctuation.delimiter.string</string>
 
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
                     <string>#e5737390</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Regex string</string>
+
+                <key>scope</key>
+                <string>string.unquoted.regex</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#fff9c4</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>Regex string delimiter</string>
+
+                <key>scope</key>
+                <string>string.unquoted.regex punctuation.delimiter.string</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#fff9c490</string>
                 </dict>
             </dict>
 

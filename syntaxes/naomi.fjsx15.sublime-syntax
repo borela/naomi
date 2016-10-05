@@ -21,7 +21,7 @@ file_extensions:
   - js
   - jsx15
 
-scope: source.js.2015
+scope: source.js.fjsx15
 
 contexts:
   main:

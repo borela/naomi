@@ -13,122 +13,122 @@
 // the License.
 
    OBJ_ARROW
-// ^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_ARROW_BUY
-// ^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_ARROW_CHECK
-// ^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_ARROW_DOWN
-// ^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_ARROW_LEFT_PRICE
-// ^^^^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_ARROW_RIGHT_PRICE
-// ^^^^^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_ARROW_SELL
-// ^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_ARROW_STOP
-// ^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_ARROW_THUMB_DOWN
-// ^^^^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_ARROW_THUMB_UP
-// ^^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_ARROW_UP
-// ^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_BITMAP
-// ^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_BITMAP_LABEL
-// ^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_BUTTON
-// ^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_CHANNEL
-// ^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_CYCLES
-// ^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_EDIT
-// ^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_ELLIPSE
-// ^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_EVENT
-// ^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_EXPANSION
-// ^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_FIBO
-// ^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_FIBOARC
-// ^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_FIBOCHANNEL
-// ^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_FIBOFAN
-// ^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_FIBOTIMES
-// ^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_GANNFAN
-// ^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_GANNGRID
-// ^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_GANNLINE
-// ^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_HLINE
-// ^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_LABEL
-// ^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_PITCHFORK
-// ^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_RECTANGLE
-// ^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_RECTANGLE_LABEL
-// ^^^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_REGRESSION
-// ^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_STDDEVCHANNEL
-// ^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_TEXT
-// ^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_TREND
-// ^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_TRENDBYANGLE
-// ^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_TRIANGLE
-// ^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_VLINE
-// ^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^ entity.name.constant.mql.mql4

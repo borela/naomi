@@ -13,44 +13,44 @@
 // the License.
 
    MODE_MAIN
-// ^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_CHIKOUSPAN
-// ^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_GATORJAW
-// ^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_GATORLIPS
-// ^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_GATORTEETH
-// ^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_KIJUNSEN
-// ^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_LOWER
-// ^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_MINUSDI
-// ^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_PLUSDI
-// ^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_SENKOUSPANA
-// ^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_SENKOUSPANB
-// ^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_SIGNAL
-// ^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_TENKANSEN
-// ^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_UPPER
-// ^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^ entity.name.constant.mql.mql4

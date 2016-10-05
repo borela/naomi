@@ -13,78 +13,78 @@
 // the License.
 
    ArrayBsearch();
-// ^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ entity.name.function.mql.mql4
    ArrayCompare();
-// ^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ entity.name.function.mql.mql4
    ArrayCopy();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    ArrayCopyRates();
-// ^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ArrayCopySeries();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ArrayDimension();
-// ^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ArrayFill();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    ArrayFree();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    ArrayGetAsSeries();
-// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ArrayInitialize();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ArrayIsDynamic();
-// ^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ArrayIsSeries();
-// ^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ArrayMaximum();
-// ^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ entity.name.function.mql.mql4
    ArrayMinimum();
-// ^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ entity.name.function.mql.mql4
    ArrayRange();
-// ^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^ entity.name.function.mql.mql4
    ArrayResize();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    ArraySetAsSeries();
-// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ArraySize();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    ArraySort();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4

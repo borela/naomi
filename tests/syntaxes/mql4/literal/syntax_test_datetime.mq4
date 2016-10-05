@@ -13,16 +13,16 @@
 // the License.
 
     D'2015.01.01 00:00:27'
-//  ^^^^^^^^^^^^^^^^^^^^^^ constant.datetime.mql.4
-//    ^^^^ datetime.year.mql.4
-//         ^^ datetime.month.mql.4
-//            ^^ datetime.day.mql.4
-//               ^^ datetime.hour.mql.4
-//                  ^^ datetime.minute.mql.4
-//                     ^^ datetime.second.mql.4
-//  ^^ punctuation.delimiter.datetime.begin.mql.4
-//        ^ punctuation.delimiter.date.mql.4
-//           ^ punctuation.delimiter.date.mql.4
-//                 ^ punctuation.delimiter.time.mql.4
-//                    ^ punctuation.delimiter.time.mql.4
-//                       ^ punctuation.delimiter.datetime.end.mql.4
+//  ^^^^^^^^^^^^^^^^^^^^^^ constant.datetime.mql.mql4
+//    ^^^^ datetime.year.mql.mql4
+//         ^^ datetime.month.mql.mql4
+//            ^^ datetime.day.mql.mql4
+//               ^^ datetime.hour.mql.mql4
+//                  ^^ datetime.minute.mql.mql4
+//                     ^^ datetime.second.mql.mql4
+//  ^^ punctuation.delimiter.datetime.begin.mql.mql4
+//        ^ punctuation.delimiter.date.mql.mql4
+//           ^ punctuation.delimiter.date.mql.mql4
+//                 ^ punctuation.delimiter.time.mql.mql4
+//                    ^ punctuation.delimiter.time.mql.mql4
+//                       ^ punctuation.delimiter.datetime.end.mql.mql4

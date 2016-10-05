@@ -13,14 +13,14 @@
 // the License.
 
    MODE_HISTORY
-// ^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_TRADES
-// ^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ entity.name.constant.mql.mql4
    SELECT_BY_POS
-// ^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    SELECT_BY_TICKET
-// ^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4

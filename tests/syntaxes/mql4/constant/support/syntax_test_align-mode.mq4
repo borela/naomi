@@ -13,11 +13,11 @@
 // the License.
 
    ALIGN_LEFT
-// ^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^ entity.name.constant.mql.mql4
    ALIGN_CENTER
-// ^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^ entity.name.constant.mql.mql4
    ALIGN_RIGHT
-// ^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ entity.name.constant.mql.mql4

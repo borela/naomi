@@ -13,32 +13,32 @@
 // the License.
 
    REASON_PROGRAM
-// ^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    REASON_REMOVE
-// ^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    REASON_RECOMPILE
-// ^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    REASON_CHARTCHANGE
-// ^^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    REASON_CHARTCLOSE
-// ^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    REASON_PARAMETERS
-// ^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    REASON_ACCOUNT
-// ^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    REASON_TEMPLATE
-// ^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    REASON_INITFAILED
-// ^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    REASON_CLOSE
-// ^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^ entity.name.constant.mql.mql4

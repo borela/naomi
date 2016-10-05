@@ -13,102 +13,102 @@
 // the License.
 
    OrderClose();
-// ^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^ entity.name.function.mql.mql4
    OrderCloseBy();
-// ^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderClosePrice();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderCloseTime();
-// ^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderComment();
-// ^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderCommission();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderDelete();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderExpiration();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderLots();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    OrderMagicNumber();
-// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderModify();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderOpenPrice();
-// ^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderOpenTime();
-// ^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderPrint();
-// ^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^ entity.name.function.mql.mql4
    OrderProfit();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderSelect();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderSend();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    OrdersHistoryTotal();
-// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderStopLoss();
-// ^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.function.mql.mql4
    OrdersTotal();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderSwap();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    OrderSymbol();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderTakeProfit();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderTicket();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    OrderType();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4

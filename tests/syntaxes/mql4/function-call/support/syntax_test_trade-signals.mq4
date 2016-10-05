@@ -13,50 +13,50 @@
 // the License.
 
    SignalBaseGetDouble();
-// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SignalBaseGetInteger();
-// ^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SignalBaseGetString();
-// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SignalBaseSelect();
-// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SignalBaseTotal();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SignalInfoGetDouble();
-// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SignalInfoGetInteger();
-// ^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SignalInfoGetString();
-// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SignalInfoSetDouble();
-// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SignalInfoSetInteger();
-// ^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SignalSubscribe();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SignalUnsubscribe();
-// ^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4

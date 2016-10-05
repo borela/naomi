@@ -13,150 +13,150 @@
 // the License.
 
    iAC();
-// ^^^^^ function.call.mql.4
-// ^^^ support.function.mql.4
-// ^^^ entity.name.function.mql.4
+// ^^^^^ function.call.mql.mql4
+// ^^^ support.function.mql.mql4
+// ^^^ entity.name.function.mql.mql4
    iAD();
-// ^^^^^ function.call.mql.4
-// ^^^ support.function.mql.4
-// ^^^ entity.name.function.mql.4
+// ^^^^^ function.call.mql.mql4
+// ^^^ support.function.mql.mql4
+// ^^^ entity.name.function.mql.mql4
    iADX();
-// ^^^^^^ function.call.mql.4
-// ^^^^ support.function.mql.4
-// ^^^^ entity.name.function.mql.4
+// ^^^^^^ function.call.mql.mql4
+// ^^^^ support.function.mql.mql4
+// ^^^^ entity.name.function.mql.mql4
    iAlligator();
-// ^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^ entity.name.function.mql.mql4
    iAO();
-// ^^^^^ function.call.mql.4
-// ^^^ support.function.mql.4
-// ^^^ entity.name.function.mql.4
+// ^^^^^ function.call.mql.mql4
+// ^^^ support.function.mql.mql4
+// ^^^ entity.name.function.mql.mql4
    iATR();
-// ^^^^^^ function.call.mql.4
-// ^^^^ support.function.mql.4
-// ^^^^ entity.name.function.mql.4
+// ^^^^^^ function.call.mql.mql4
+// ^^^^ support.function.mql.mql4
+// ^^^^ entity.name.function.mql.mql4
    iBands();
-// ^^^^^^^^ function.call.mql.4
-// ^^^^^^ support.function.mql.4
-// ^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^ function.call.mql.mql4
+// ^^^^^^ support.function.mql.mql4
+// ^^^^^^ entity.name.function.mql.mql4
    iBandsOnArray();
-// ^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.function.mql.mql4
    iBearsPower();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    iBullsPower();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    iBWMFI();
-// ^^^^^^^^ function.call.mql.4
-// ^^^^^^ support.function.mql.4
-// ^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^ function.call.mql.mql4
+// ^^^^^^ support.function.mql.mql4
+// ^^^^^^ entity.name.function.mql.mql4
    iCCI();
-// ^^^^^^ function.call.mql.4
-// ^^^^ support.function.mql.4
-// ^^^^ entity.name.function.mql.4
+// ^^^^^^ function.call.mql.mql4
+// ^^^^ support.function.mql.mql4
+// ^^^^ entity.name.function.mql.mql4
    iCCIOnArray();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    iCustom();
-// ^^^^^^^^^ function.call.mql.4
-// ^^^^^^^ support.function.mql.4
-// ^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^ support.function.mql.mql4
+// ^^^^^^^ entity.name.function.mql.mql4
    iDeMarker();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    iEnvelopes();
-// ^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^ entity.name.function.mql.mql4
    iEnvelopesOnArray();
-// ^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    iForce();
-// ^^^^^^^^ function.call.mql.4
-// ^^^^^^ support.function.mql.4
-// ^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^ function.call.mql.mql4
+// ^^^^^^ support.function.mql.mql4
+// ^^^^^^ entity.name.function.mql.mql4
    iFractals();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    iGator();
-// ^^^^^^^^ function.call.mql.4
-// ^^^^^^ support.function.mql.4
-// ^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^ function.call.mql.mql4
+// ^^^^^^ support.function.mql.mql4
+// ^^^^^^ entity.name.function.mql.mql4
    iIchimoku();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    iMA();
-// ^^^^^ function.call.mql.4
-// ^^^ support.function.mql.4
-// ^^^ entity.name.function.mql.4
+// ^^^^^ function.call.mql.mql4
+// ^^^ support.function.mql.mql4
+// ^^^ entity.name.function.mql.mql4
    iMACD();
-// ^^^^^^^ function.call.mql.4
-// ^^^^^ support.function.mql.4
-// ^^^^^ entity.name.function.mql.4
+// ^^^^^^^ function.call.mql.mql4
+// ^^^^^ support.function.mql.mql4
+// ^^^^^ entity.name.function.mql.mql4
    iMAOnArray();
-// ^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^ entity.name.function.mql.mql4
    iMFI();
-// ^^^^^^ function.call.mql.4
-// ^^^^ support.function.mql.4
-// ^^^^ entity.name.function.mql.4
+// ^^^^^^ function.call.mql.mql4
+// ^^^^ support.function.mql.mql4
+// ^^^^ entity.name.function.mql.mql4
    iMomentum();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    iMomentumOnArray();
-// ^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    iOBV();
-// ^^^^^^ function.call.mql.4
-// ^^^^ support.function.mql.4
-// ^^^^ entity.name.function.mql.4
+// ^^^^^^ function.call.mql.mql4
+// ^^^^ support.function.mql.mql4
+// ^^^^ entity.name.function.mql.mql4
    iOsMA();
-// ^^^^^^^ function.call.mql.4
-// ^^^^^ support.function.mql.4
-// ^^^^^ entity.name.function.mql.4
+// ^^^^^^^ function.call.mql.mql4
+// ^^^^^ support.function.mql.mql4
+// ^^^^^ entity.name.function.mql.mql4
    iRSI();
-// ^^^^^^ function.call.mql.4
-// ^^^^ support.function.mql.4
-// ^^^^ entity.name.function.mql.4
+// ^^^^^^ function.call.mql.mql4
+// ^^^^ support.function.mql.mql4
+// ^^^^ entity.name.function.mql.mql4
    iRSIOnArray();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    iRVI();
-// ^^^^^^ function.call.mql.4
-// ^^^^ support.function.mql.4
-// ^^^^ entity.name.function.mql.4
+// ^^^^^^ function.call.mql.mql4
+// ^^^^ support.function.mql.mql4
+// ^^^^ entity.name.function.mql.mql4
    iSAR();
-// ^^^^^^ function.call.mql.4
-// ^^^^ support.function.mql.4
-// ^^^^ entity.name.function.mql.4
+// ^^^^^^ function.call.mql.mql4
+// ^^^^ support.function.mql.mql4
+// ^^^^ entity.name.function.mql.mql4
    iStdDev();
-// ^^^^^^^^^ function.call.mql.4
-// ^^^^^^^ support.function.mql.4
-// ^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^ support.function.mql.mql4
+// ^^^^^^^ entity.name.function.mql.mql4
    iStdDevOnArray();
-// ^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    iStochastic();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    iWPR();
-// ^^^^^^ function.call.mql.4
-// ^^^^ support.function.mql.4
-// ^^^^ entity.name.function.mql.4
+// ^^^^^^ function.call.mql.mql4
+// ^^^^ support.function.mql.mql4
+// ^^^^ entity.name.function.mql.mql4

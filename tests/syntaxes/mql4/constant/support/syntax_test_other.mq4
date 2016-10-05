@@ -13,29 +13,29 @@
 // the License.
 
    CHARTS_MAX
-// ^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^ entity.name.constant.mql.mql4
    CLR_NONE
-// ^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^ entity.name.constant.mql.mql4
    EMPTY
-// ^^^^^ support.constant.mql.4
-// ^^^^^ entity.name.constant.mql.4
+// ^^^^^ support.constant.mql.mql4
+// ^^^^^ entity.name.constant.mql.mql4
    EMPTY_VALUE
-// ^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ entity.name.constant.mql.mql4
    INVALID_HANDLE
-// ^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    IS_DEBUG_MODE
-// ^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    IS_PROFILE_MODE
-// ^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    WHOLE_ARRAY
-// ^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ entity.name.constant.mql.mql4
    WRONG_VALUE
-// ^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ entity.name.constant.mql.mql4

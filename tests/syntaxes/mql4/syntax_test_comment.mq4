@@ -13,12 +13,12 @@
 // the License.
 
     // Test...
-//  ^^^^^^^^^^ comment.line.mql.4
-//    ^^^^^^^^ comment.content.mql.4
-//  ^^ punctuation.comment.begin.mql.4
+//  ^^^^^^^^^^ comment.line.mql.mql4
+//    ^^^^^^^^ comment.content.mql.mql4
+//  ^^ punctuation.comment.begin.mql.mql4
 
     /* Test... */
-//  ^^^^^^^^^^^^^ comment.block.mql.4
-//    ^^^^^^^^^ comment.content.mql.4
-//  ^^ punctuation.comment.begin.mql.4
-//             ^^ punctuation.comment.end.mql.4
+//  ^^^^^^^^^^^^^ comment.block.mql.mql4
+//    ^^^^^^^^^ comment.content.mql.mql4
+//  ^^ punctuation.comment.begin.mql.mql4
+//             ^^ punctuation.comment.end.mql.mql4

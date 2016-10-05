@@ -13,11 +13,11 @@
 // the License.
 
    MODE_CLOSE
-// ^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_OPEN
-// ^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_VOLUME
-// ^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ entity.name.constant.mql.mql4

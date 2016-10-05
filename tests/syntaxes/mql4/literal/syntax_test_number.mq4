@@ -13,22 +13,22 @@
 // the License.
 
     0
-//  ^ constant.numeric.decimal.mql.4
+//  ^ constant.numeric.decimal.mql.mql4
     123
-//  ^^^ constant.numeric.decimal.mql.4
+//  ^^^ constant.numeric.decimal.mql.mql4
     123.
-//  ^^^^ constant.numeric.float.mql.4
+//  ^^^^ constant.numeric.float.mql.mql4
     123.0
-//  ^^^^^ constant.numeric.float.mql.4
+//  ^^^^^ constant.numeric.float.mql.mql4
     .123
-//  ^^^^ constant.numeric.float.mql.4
+//  ^^^^ constant.numeric.float.mql.mql4
     0.123
-//  ^^^^^ constant.numeric.float.mql.4
+//  ^^^^^ constant.numeric.float.mql.mql4
     123e10
-//  ^^^^^^ constant.numeric.float.scientific.mql.4
+//  ^^^^^^ constant.numeric.float.scientific.mql.mql4
     123e+10
-//  ^^^^^^^ constant.numeric.float.scientific.mql.4
+//  ^^^^^^^ constant.numeric.float.scientific.mql.mql4
     123e-10
-//  ^^^^^^^ constant.numeric.float.scientific.mql.4
+//  ^^^^^^^ constant.numeric.float.scientific.mql.mql4
     0x123
-//  ^^^^^ constant.numeric.hex.mql.4
+//  ^^^^^ constant.numeric.hex.mql.mql4

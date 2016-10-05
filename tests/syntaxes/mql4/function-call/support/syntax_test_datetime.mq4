@@ -13,94 +13,94 @@
 // the License.
 
    Day();
-// ^^^^^ function.call.mql.4
-// ^^^ support.function.mql.4
-// ^^^ entity.name.function.mql.4
+// ^^^^^ function.call.mql.mql4
+// ^^^ support.function.mql.mql4
+// ^^^ entity.name.function.mql.mql4
    DayOfWeek();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    DayOfYear();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    Hour();
-// ^^^^^^ function.call.mql.4
-// ^^^^ support.function.mql.4
-// ^^^^ entity.name.function.mql.4
+// ^^^^^^ function.call.mql.mql4
+// ^^^^ support.function.mql.mql4
+// ^^^^ entity.name.function.mql.mql4
    Minute();
-// ^^^^^^^^ function.call.mql.4
-// ^^^^^^ support.function.mql.4
-// ^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^ function.call.mql.mql4
+// ^^^^^^ support.function.mql.mql4
+// ^^^^^^ entity.name.function.mql.mql4
    Month();
-// ^^^^^^^ function.call.mql.4
-// ^^^^^ support.function.mql.4
-// ^^^^^ entity.name.function.mql.4
+// ^^^^^^^ function.call.mql.mql4
+// ^^^^^ support.function.mql.mql4
+// ^^^^^ entity.name.function.mql.mql4
    Seconds();
-// ^^^^^^^^^ function.call.mql.4
-// ^^^^^^^ support.function.mql.4
-// ^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^ support.function.mql.mql4
+// ^^^^^^^ entity.name.function.mql.mql4
    StructToTime();
-// ^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ entity.name.function.mql.mql4
    TimeCurrent();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    TimeDay();
-// ^^^^^^^^^ function.call.mql.4
-// ^^^^^^^ support.function.mql.4
-// ^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^ support.function.mql.mql4
+// ^^^^^^^ entity.name.function.mql.mql4
    TimeDaylightSavings();
-// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    TimeDayOfWeek();
-// ^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.function.mql.mql4
    TimeDayOfYear();
-// ^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.function.mql.mql4
    TimeGMT();
-// ^^^^^^^^^ function.call.mql.4
-// ^^^^^^^ support.function.mql.4
-// ^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^ support.function.mql.mql4
+// ^^^^^^^ entity.name.function.mql.mql4
    TimeGMTOffset();
-// ^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.function.mql.mql4
    TimeHour();
-// ^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^ support.function.mql.4
-// ^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^ entity.name.function.mql.mql4
    TimeLocal();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    TimeMinute();
-// ^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^ entity.name.function.mql.mql4
    TimeMonth();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    TimeSeconds();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    TimeToStruct();
-// ^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ entity.name.function.mql.mql4
    TimeYear();
-// ^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^ support.function.mql.4
-// ^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^ entity.name.function.mql.mql4
    Year();
-// ^^^^^^ function.call.mql.4
-// ^^^^ support.function.mql.4
-// ^^^^ entity.name.function.mql.4
+// ^^^^^^ function.call.mql.mql4
+// ^^^^ support.function.mql.mql4
+// ^^^^ entity.name.function.mql.mql4

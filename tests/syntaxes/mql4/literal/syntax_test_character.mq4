@@ -13,34 +13,34 @@
 // the License.
 
     'a'
-//  ^^^ constant.character.mql.4
+//  ^^^ constant.character.mql.mql4
     '\\'
-//  ^^^^ constant.character.mql.4
-//   ^^ constant.character.escape.mql.4
-//  ^ punctuation.delimiter.constant.character.begin.mql.4
-//     ^ punctuation.delimiter.constant.character.end.mql.4
+//  ^^^^ constant.character.mql.mql4
+//   ^^ constant.character.escape.mql.mql4
+//  ^ punctuation.delimiter.constant.character.begin.mql.mql4
+//     ^ punctuation.delimiter.constant.character.end.mql.mql4
     '\n'
-//  ^^^^ constant.character.mql.4
-//   ^^ constant.character.escape.mql.4
-//  ^ punctuation.delimiter.constant.character.begin.mql.4
-//     ^ punctuation.delimiter.constant.character.end.mql.4
+//  ^^^^ constant.character.mql.mql4
+//   ^^ constant.character.escape.mql.mql4
+//  ^ punctuation.delimiter.constant.character.begin.mql.mql4
+//     ^ punctuation.delimiter.constant.character.end.mql.mql4
     '\t'
-//  ^^^^ constant.character.mql.4
-//   ^^ constant.character.escape.mql.4
-//  ^ punctuation.delimiter.constant.character.begin.mql.4
-//     ^ punctuation.delimiter.constant.character.end.mql.4
+//  ^^^^ constant.character.mql.mql4
+//   ^^ constant.character.escape.mql.mql4
+//  ^ punctuation.delimiter.constant.character.begin.mql.mql4
+//     ^ punctuation.delimiter.constant.character.end.mql.mql4
     '\r'
-//  ^^^^ constant.character.mql.4
-//   ^^ constant.character.escape.mql.4
-//  ^ punctuation.delimiter.constant.character.begin.mql.4
-//     ^ punctuation.delimiter.constant.character.end.mql.4
+//  ^^^^ constant.character.mql.mql4
+//   ^^ constant.character.escape.mql.mql4
+//  ^ punctuation.delimiter.constant.character.begin.mql.mql4
+//     ^ punctuation.delimiter.constant.character.end.mql.mql4
     '\x0065'
-//  ^^^^^^^^ constant.character.mql.4
-//   ^^^^^^ constant.character.escape.mql.4
-//  ^ punctuation.delimiter.constant.character.begin.mql.4
-//         ^ punctuation.delimiter.constant.character.end.mql.4
+//  ^^^^^^^^ constant.character.mql.mql4
+//   ^^^^^^ constant.character.escape.mql.mql4
+//  ^ punctuation.delimiter.constant.character.begin.mql.mql4
+//         ^ punctuation.delimiter.constant.character.end.mql.mql4
     '\d65535'
-//  ^^^^^^^^^ constant.character.mql.4
-//   ^^^^^^^ constant.character.escape.mql.4
-//  ^ punctuation.delimiter.constant.character.begin.mql.4
-//          ^ punctuation.delimiter.constant.character.end.mql.4
+//  ^^^^^^^^^ constant.character.mql.mql4
+//   ^^^^^^^ constant.character.escape.mql.mql4
+//  ^ punctuation.delimiter.constant.character.begin.mql.mql4
+//          ^ punctuation.delimiter.constant.character.end.mql.mql4

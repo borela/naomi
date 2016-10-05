@@ -13,98 +13,98 @@
 // the License.
 
    Digits();
-// ^^^^^^^^ function.call.mql.4
-// ^^^^^^ support.function.mql.4
-// ^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^ function.call.mql.mql4
+// ^^^^^^ support.function.mql.mql4
+// ^^^^^^ entity.name.function.mql.mql4
    GetLastError();
-// ^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ entity.name.function.mql.mql4
    IsConnected();
-// ^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ entity.name.function.mql.mql4
    IsDemo();
-// ^^^^^^^^ function.call.mql.4
-// ^^^^^^ support.function.mql.4
-// ^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^ function.call.mql.mql4
+// ^^^^^^ support.function.mql.mql4
+// ^^^^^^ entity.name.function.mql.mql4
    IsDllsAllowed();
-// ^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.function.mql.mql4
    IsExpertEnabled();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    IsLibrariesAllowed();
-// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    IsOptimization();
-// ^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    IsStopped();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    IsTesting();
-// ^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ entity.name.function.mql.mql4
    IsTradeAllowed();
-// ^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    IsTradeContextBusy();
-// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    IsVisualMode();
-// ^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ entity.name.function.mql.mql4
    MQLInfoInteger();
-// ^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    MQLInfoString();
-// ^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.function.mql.mql4
    MQLSetInteger();
-// ^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.function.mql.mql4
    Point();
-// ^^^^^^^ function.call.mql.4
-// ^^^^^ support.function.mql.4
-// ^^^^^ entity.name.function.mql.4
+// ^^^^^^^ function.call.mql.mql4
+// ^^^^^ support.function.mql.mql4
+// ^^^^^ entity.name.function.mql.mql4
    TerminalCompany();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    TerminalInfoDouble();
-// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    TerminalInfoInteger();
-// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    TerminalInfoString();
-// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    TerminalName();
-// ^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ entity.name.function.mql.mql4
    TerminalPath();
-// ^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ entity.name.function.mql.mql4
    UninitializeReason();
-// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.4
-// ^^^^^^^^^^^^^^^^^^ support.function.mql.4
-// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.4
+// ^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4

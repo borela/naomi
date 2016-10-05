@@ -13,12 +13,12 @@
 // the License.
 
     CHART_BARS
-//  ^^^^^^^^^^ support.constant.mql.4
+//  ^^^^^^^^^^ support.constant.mql.mql4
     CHART_CANDLES
-//  ^^^^^^^^^^^^^ support.constant.mql.4
+//  ^^^^^^^^^^^^^ support.constant.mql.mql4
     CHART_LINE
-//  ^^^^^^^^^^ support.constant.mql.4
+//  ^^^^^^^^^^ support.constant.mql.mql4
     CHART_VOLUME_HIDE
-//  ^^^^^^^^^^^^^^^^^ support.constant.mql.4
+//  ^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
     CHART_VOLUME_TICK
-//  ^^^^^^^^^^^^^^^^^ support.constant.mql.4
+//  ^^^^^^^^^^^^^^^^^ support.constant.mql.mql4

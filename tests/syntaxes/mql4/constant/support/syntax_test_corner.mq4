@@ -13,14 +13,14 @@
 // the License.
 
    CORNER_LEFT_UPPER
-// ^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    CORNER_LEFT_LOWER
-// ^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    CORNER_RIGHT_LOWER
-// ^^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    CORNER_RIGHT_UPPER
-// ^^^^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4

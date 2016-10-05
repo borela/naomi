@@ -13,8 +13,8 @@
 // the License.
 
    GANN_UP_TREND
-// ^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    GANN_DOWN_TREND
-// ^^^^^^^^^^^^^^^ support.constant.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.constant.mql.4
+// ^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4

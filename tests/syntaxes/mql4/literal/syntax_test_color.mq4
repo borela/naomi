@@ -13,20 +13,20 @@
 // the License.
 
     C'42,42,42'
-//  ^^^^^^^^^^^ constant.color.mql.4
-//    ^^ color.value.r.mql.4
-//       ^^ color.value.g.mql.4
-//          ^^ color.value.b.mql.4
-//  ^^ punctuation.delimiter.color.begin.mql.4
-//      ^ punctuation.delimiter.color.mql.4
-//         ^ punctuation.delimiter.color.mql.4
-//            ^ punctuation.delimiter.color.end.mql.4
+//  ^^^^^^^^^^^ constant.color.mql.mql4
+//    ^^ color.value.r.mql.mql4
+//       ^^ color.value.g.mql.mql4
+//          ^^ color.value.b.mql.mql4
+//  ^^ punctuation.delimiter.color.begin.mql.mql4
+//      ^ punctuation.delimiter.color.mql.mql4
+//         ^ punctuation.delimiter.color.mql.mql4
+//            ^ punctuation.delimiter.color.end.mql.mql4
     C'0x42,0x42,0x42'
-//  ^^^^^^^^^^^^^^^^^ constant.color.mql.4
-//    ^^^^ color.value.r.mql.4
-//         ^^^^ color.value.g.mql.4
-//              ^^^^ color.value.b.mql.4
-//  ^^ punctuation.delimiter.color.begin.mql.4
-//        ^ punctuation.delimiter.color.mql.4
-//             ^ punctuation.delimiter.color.mql.4
-//                  ^ punctuation.delimiter.color.end.mql.4
+//  ^^^^^^^^^^^^^^^^^ constant.color.mql.mql4
+//    ^^^^ color.value.r.mql.mql4
+//         ^^^^ color.value.g.mql.mql4
+//              ^^^^ color.value.b.mql.mql4
+//  ^^ punctuation.delimiter.color.begin.mql.mql4
+//        ^ punctuation.delimiter.color.mql.mql4
+//             ^ punctuation.delimiter.color.mql.mql4
+//                  ^ punctuation.delimiter.color.end.mql.mql4

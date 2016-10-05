@@ -13,59 +13,59 @@
 // the License.
 
    ENUM_ALIGN_MODE
-// ^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_ANCHOR_POINT
-// ^^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_APPLIED_PRICE
-// ^^^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_ARROW_ANCHOR
-// ^^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_BASE_CORNER
-// ^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_BORDER_TYPE
-// ^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_CHART_EVENT
-// ^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_CHART_MODE
-// ^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_CHART_POSITION
-// ^^^^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_CHART_PROPERTY_DOUBLE
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_CHART_PROPERTY_INTEGER
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_CHART_PROPERTY_STRING
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_GANN_DIRECTION
-// ^^^^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_LINE_STYLE
-// ^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_MA_METHOD
-// ^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_OBJECT_PROPERTY_DOUBLE
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_OBJECT_PROPERTY_INTEGER
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_OBJECT_PROPERTY_STRING
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.type.mql.mql4
    ENUM_TIMEFRAMES
-// ^^^^^^^^^^^^^^^ support.type.mql.4
-// ^^^^^^^^^^^^^^^ entity.name.type.mql.4
+// ^^^^^^^^^^^^^^^ support.type.mql.mql4
+// ^^^^^^^^^^^^^^^ entity.name.type.mql.mql4

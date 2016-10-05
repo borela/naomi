@@ -20,12 +20,15 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)
-        (?> constructor
-          | super
+        (?x)\s*
+        (
+          (?> constructor
+            | super
+          )
         )
-      scope: >-
-        function.js.2015
-        support.function.js.2015
-        entity.name.function.js.2015
+      captures:
+        1: >-
+          function.js.2015
+          support.function.js.2015
+          entity.name.function.js.2015
       pop: true

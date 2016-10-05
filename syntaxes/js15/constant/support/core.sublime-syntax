@@ -27,6 +27,6 @@ contexts:
           | undefined
         )
       scope: >-
-        support.constant.js.2015
-        entity.name.constant.js.2015
+        support.constant.js.js15
+        entity.name.constant.js.js15
       pop: true

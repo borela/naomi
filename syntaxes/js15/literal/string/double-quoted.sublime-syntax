@@ -37,15 +37,15 @@ contexts:
   main:
     - match: \"
       scope: >-
-        string.quoted.double.js.2015
-        punctuation.delimiter.string.begin.js.2015
+        string.quoted.double.js.js15
+        punctuation.delimiter.string.begin.js.js15
       with_prototype:
         - match: (?<!\\)\n
           set: trap
         - match: \"
           scope: >-
-            string.quoted.double.js.2015
-            punctuation.delimiter.string.end.js.2015
+            string.quoted.double.js.js15
+            punctuation.delimiter.string.end.js.js15
           pop: true
       set: escape-a
 
@@ -53,13 +53,13 @@ contexts:
     - meta_content_scope: context.trap
 
   escape-a:
-    - meta_content_scope: string.quoted.double.js.2015
+    - meta_content_scope: string.quoted.double.js.js15
     - match: (?x){{doubleQuotedEscapeSequences}}
-      scope: constant.character.escape.a.js.2015
+      scope: constant.character.escape.a.js.js15
       set: escape-b
 
   escape-b:
-    - meta_content_scope: string.quoted.double.js.2015
+    - meta_content_scope: string.quoted.double.js.js15
     - match: (?x){{doubleQuotedEscapeSequences}}
-      scope: constant.character.escape.b.js.2015
+      scope: constant.character.escape.b.js.js15
       set: escape-a

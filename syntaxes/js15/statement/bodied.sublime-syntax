@@ -26,7 +26,7 @@ contexts:
           | else
           | try
         )\b
-      scope: keyword.control.js.2015
+      scope: keyword.control.js.js15
       set: body
     # Header and body.
     - match: |
@@ -38,7 +38,7 @@ contexts:
           | while
           | switch
         )\b
-      scope: keyword.control.js.2015
+      scope: keyword.control.js.js15
       set: [
         body,
         header
@@ -52,12 +52,12 @@ contexts:
 
   header:
     - match: \(
-      scope: punctuation.delimiter.control.header.begin.js.2015
+      scope: punctuation.delimiter.control.header.begin.js.js15
       set: header-content
 
   header-content:
     - match: \)
-      scope: punctuation.delimiter.control.header.end.js.2015
+      scope: punctuation.delimiter.control.header.end.js.js15
       pop: true
     - match: (?=\S)
       push:
@@ -68,19 +68,19 @@ contexts:
 
   terminator:
     - match: \;
-      scope: punctuation.terminator.js.2015
+      scope: punctuation.terminator.js.js15
       pop: true
 
   body:
     - match: \{
-      scope: punctuation.delimiter.control.body.begin.js.2015
+      scope: punctuation.delimiter.control.body.begin.js.js15
       set: body-content
     - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   body-content:
     - match: \}
-      scope: punctuation.delimiter.control.body.end.js.2015
+      scope: punctuation.delimiter.control.body.end.js.js15
       pop: true
     - match: (?=\S)
       push:

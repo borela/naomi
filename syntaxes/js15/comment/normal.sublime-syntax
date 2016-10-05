@@ -20,22 +20,22 @@ scope: ...
 contexts:
   main:
     - match: \/\/
-      scope: punctuation.comment.begin.js.2015
+      scope: punctuation.comment.begin.js.js15
       set: line
     - match: \/\*
-      scope: punctuation.comment.begin.js.2015
+      scope: punctuation.comment.begin.js.js15
       set: block
 
   line:
-    - meta_scope: comment.line.js.2015
-    - meta_content_scope: comment.content.js.2015
+    - meta_scope: comment.line.js.js15
+    - meta_content_scope: comment.content.js.js15
     - match: $
       pop: true
 
   block:
-    - meta_scope: comment.block.js.2015
-    - meta_content_scope: comment.content.js.2015
+    - meta_scope: comment.block.js.js15
+    - meta_content_scope: comment.content.js.js15
     - match: \*\/
-      scope: punctuation.comment.end.js.2015
+      scope: punctuation.comment.end.js.js15
       pop: true
 

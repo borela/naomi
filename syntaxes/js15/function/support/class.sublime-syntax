@@ -28,7 +28,7 @@ contexts:
         )
       captures:
         1: >-
-          function.js.2015
-          support.function.js.2015
-          entity.name.function.js.2015
+          function.js.js15
+          support.function.js.js15
+          entity.name.function.js.js15
       pop: true

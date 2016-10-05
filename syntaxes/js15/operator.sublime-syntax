@@ -25,5 +25,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/js15/operator/bitwise.sublime-syntax
     - include: Packages/Naomi/syntaxes/js15/operator/arithmetic.sublime-syntax
     - match: =
-      scope: operator.assignment.js.2015
+      scope: operator.assignment.js.js15
       pop: true

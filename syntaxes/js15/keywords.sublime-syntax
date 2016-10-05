@@ -26,5 +26,5 @@ contexts:
           | in
           | of
         )\b
-      scope: keyword.other.js.2015
+      scope: keyword.other.js.js15
       pop: true

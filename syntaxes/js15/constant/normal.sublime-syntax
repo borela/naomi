@@ -28,6 +28,6 @@ contexts:
         (?x)
         \b{{constantIdentifier}}\b
       scope: >-
-        constant.js.2015
-        entity.name.constant.js.2015
+        constant.js.js15
+        entity.name.constant.js.js15
       pop: true

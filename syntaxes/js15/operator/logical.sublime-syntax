@@ -30,5 +30,5 @@ contexts:
           | \|\|
           | !
         )
-      scope: operator.logical.js.2015
+      scope: operator.logical.js.js15
       pop: true

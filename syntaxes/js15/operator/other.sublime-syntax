@@ -40,24 +40,24 @@ contexts:
         (?> typeof
           | void
         )\b
-      scope: operator.js.2015
+      scope: operator.js.js15
       pop: true
     - match: \.\.\.
-      scope: operator.spread.js.2015
+      scope: operator.spread.js.js15
       pop: true
     - match: \?
-      scope: operator.js.2015
+      scope: operator.js.js15
       set: [
         ternary-value-b,
         ternary-value-a
       ]
     - match: \.
-      scope: operator.member.access.js.2015
+      scope: operator.member.access.js.js15
       set: member-access
 
   ternary-value-a:
     - match: ":"
-      scope: operator.js.2015
+      scope: operator.js.js15
       pop: true
     - include: expression
 
@@ -65,7 +65,7 @@ contexts:
     - include: expression
 
   member-access:
-    - meta_content_scope: member.js.2015
+    - meta_content_scope: member.js.js15
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/js15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

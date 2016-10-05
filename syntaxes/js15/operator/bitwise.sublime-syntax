@@ -45,5 +45,5 @@ contexts:
           | >>>=?
           | >>=?
         )
-      scope: operator.bitwise.js.2015
+      scope: operator.bitwise.js.js15
       pop: true

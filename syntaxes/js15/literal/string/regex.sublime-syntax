@@ -28,8 +28,8 @@ contexts:
           [a-z]{0,5}
         )
       scope: >-
-        string.unquoted.regex.js.2015
-        punctuation.delimiter.string.begin.js.2015
+        string.unquoted.regex.js.js15
+        punctuation.delimiter.string.begin.js.js15
       with_prototype:
         - match: |
             (?x)
@@ -37,20 +37,20 @@ contexts:
             ([a-z]{0,5})
           captures:
             1:  >-
-              string.unquoted.regex.js.2015
-              punctuation.delimiter.string.end.js.2015
-            2: regex.flag.js.2015
+              string.unquoted.regex.js.js15
+              punctuation.delimiter.string.end.js.js15
+            2: regex.flag.js.js15
           pop: true
       set: escape-a
 
   escape-a:
-    - meta_content_scope: string.unquoted.regex.js.2015
+    - meta_content_scope: string.unquoted.regex.js.js15
     - match: \\.
-      scope: constant.character.escape.a.js.2015
+      scope: constant.character.escape.a.js.js15
       set: escape-b
 
   escape-b:
-    - meta_content_scope: string.unquoted.regex.js.2015
+    - meta_content_scope: string.unquoted.regex.js.js15
     - match: \\.
-      scope: constant.character.escape.b.js.2015
+      scope: constant.character.escape.b.js.js15
       set: escape-a

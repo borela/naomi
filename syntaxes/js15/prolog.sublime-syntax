@@ -20,8 +20,8 @@ scope: ...
 contexts:
   main:
     - match: ^\'use strict';$
-      scope: keyword.prolog.strict.js.2015
+      scope: keyword.prolog.strict.js.js15
       pop: true
     - match: ^\"use strict";$
-      scope: keyword.prolog.strict.js.2015
+      scope: keyword.prolog.strict.js.js15
       pop: true

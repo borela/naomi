@@ -20,5 +20,5 @@ scope: ...
 contexts:
   main:
     - match: ;
-      scope: punctuation.terminator.js.2015
+      scope: punctuation.terminator.js.js15
       pop: true

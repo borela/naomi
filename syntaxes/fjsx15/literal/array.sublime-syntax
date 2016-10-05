@@ -19,7 +19,13 @@ scope: ...
 
 contexts:
   main:
-    - match: \[
+    - match: |
+        (?x)
+        \[
+        (?!
+          .*?\]
+          \s*=[^=]
+        )
       scope: punctuation.delimiter.array.begin.fjsx15
       set: array-items
 

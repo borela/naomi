@@ -21,8 +21,8 @@ contexts:
   main:
     - match: \bNULL\b
       scope: >-
-        support.constant.mql.4
-        entity.name.constant.mql.4
+        support.constant.mql.mql4
+        entity.name.constant.mql.mql4
     - include: case-insentive
 
   case-insentive:
@@ -32,6 +32,6 @@ contexts:
           | false
         )\b
       scope: >-
-        support.constant.mql.4
-        entity.name.constant.mql.4
+        support.constant.mql.mql4
+        entity.name.constant.mql.mql4
       pop: true

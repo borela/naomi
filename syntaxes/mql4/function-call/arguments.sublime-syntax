@@ -20,16 +20,16 @@ scope: ...
 contexts:
   main:
     - match: \(
-      scope: punctuation.delimiter.function.arguments.begin.mql.4
+      scope: punctuation.delimiter.function.arguments.begin.mql.mql4
       set: arguments
 
   arguments:
-    - meta_scope: function.call.mql.4
+    - meta_scope: function.call.mql.mql4
     - match: \)
-      scope: punctuation.delimiter.function.arguments.end.mql.4
+      scope: punctuation.delimiter.function.arguments.end.mql.mql4
       pop: true
     - match: \,
       scope: >-
-        function.call.mql.4
-        punctuation.delimiter.function.arguments.mql.4
+        function.call.mql.mql4
+        punctuation.delimiter.function.arguments.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/expression.no-pop.sublime-syntax

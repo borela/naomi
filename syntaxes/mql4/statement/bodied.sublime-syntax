@@ -21,7 +21,7 @@ contexts:
   main:
     # Header only.
     - match: (?xi)\breturn\b
-      scope: keyword.control.mql.4
+      scope: keyword.control.mql.mql4
       set: [
         terminator,
         optional-header
@@ -32,7 +32,7 @@ contexts:
         (?> do
           | else
         )\b
-      scope: keyword.control.mql.4
+      scope: keyword.control.mql.mql4
       set: body
     # Header and body.
     - match: |
@@ -43,7 +43,7 @@ contexts:
           | while
           | switch
         )\b
-      scope: keyword.control.mql.4
+      scope: keyword.control.mql.mql4
       set: [
         body,
         header
@@ -57,12 +57,12 @@ contexts:
 
   header:
     - match: \(
-      scope: punctuation.delimiter.control.header.begin.mql.4
+      scope: punctuation.delimiter.control.header.begin.mql.mql4
       set: header-content
 
   header-content:
     - match: \)
-      scope: punctuation.delimiter.control.header.end.mql.4
+      scope: punctuation.delimiter.control.header.end.mql.mql4
       pop: true
     - match: (?=\S)
       push:
@@ -73,19 +73,19 @@ contexts:
 
   terminator:
     - match: \;
-      scope: punctuation.terminator.mql.4
+      scope: punctuation.terminator.mql.mql4
       pop: true
 
   body:
     - match: \{
-      scope: punctuation.delimiter.control.body.begin.mql.4
+      scope: punctuation.delimiter.control.body.begin.mql.mql4
       set: body-content
     - include: Packages/Naomi/syntaxes/mql4/statement.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
 
   body-content:
     - match: \}
-      scope: punctuation.delimiter.control.body.end.mql.4
+      scope: punctuation.delimiter.control.body.end.mql.mql4
       pop: true
     - match: (?=\S)
       push:

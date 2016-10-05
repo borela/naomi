@@ -29,7 +29,7 @@ contexts:
           | goto
           | throw
         )\b
-      scope: keyword.control.simple.mql.4
+      scope: keyword.control.simple.mql.mql4
       set: expression
 
   expression:

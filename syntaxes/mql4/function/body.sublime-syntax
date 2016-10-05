@@ -26,7 +26,7 @@ contexts:
   main:
     # End.
     - match: ;
-      scope: punctuation.delimiter.function.declaration.end.mql.4
+      scope: punctuation.delimiter.function.declaration.end.mql.mql4
       pop: true
     # Pure virtual or const.
     - match: |
@@ -41,11 +41,11 @@ contexts:
           )?
         )
       captures:
-        1: keyword.function.const.mql.4
-        2: keyword.function.virtual.mql.4
+        1: keyword.function.const.mql.mql4
+        2: keyword.function.virtual.mql.mql4
     # Initialization.
     - match: ":"
-      scope: punctuation.initialization.list.begin.mql.4
+      scope: punctuation.initialization.list.begin.mql.mql4
       set: initializations
     # Normal body.
     - include: body-start
@@ -62,50 +62,50 @@ contexts:
 
   initialized-identifier:
     - match: (?xi){{commonIdentifier}}
-      scope: entity.name.ambiguous.mql.4
+      scope: entity.name.ambiguous.mql.mql4
       pop: true
 
   begin-initialization:
     - match: \(
-      scope: punctuation.delimiter.initialization.begin.mql.4
+      scope: punctuation.delimiter.initialization.begin.mql.mql4
       pop: true
 
   initialization-expression:
     - match: (?=\))
       pop: true
     - match: \,
-      scope: punctuation.delimiter.initialization.mql.4
+      scope: punctuation.delimiter.initialization.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/expression.no-pop.sublime-syntax
 
   end-initialization:
     - match: \)
-      scope: punctuation.delimiter.initialization.end.mql.4
+      scope: punctuation.delimiter.initialization.end.mql.mql4
       pop: true
 
   delimiter:
-    - meta_content_scope: function.mql.4
+    - meta_content_scope: function.mql.mql4
     - include: body-start
     - match: \,
-      scope: punctuation.delimiter.initialization.mql.4
+      scope: punctuation.delimiter.initialization.mql.mql4
       set: initializations
 
   body-start:
     - match: \{
       scope: >-
-        function.body.mql.4
-        punctuation.delimiter.function.body.begin.mql.4
+        function.body.mql.mql4
+        punctuation.delimiter.function.body.begin.mql.mql4
       set: body-content
 
   body-content:
     - meta_content_scope: >-
-        function.mql.4
-        function.body.mql.4
-        function.body.content.mql.4
+        function.mql.mql4
+        function.body.mql.mql4
+        function.body.content.mql.mql4
     - match: \}
       scope: >-
-        function.mql.4
-        function.body.mql.4
-        punctuation.delimiter.function.body.end.mql.4
+        function.mql.mql4
+        function.body.mql.mql4
+        punctuation.delimiter.function.body.end.mql.mql4
       pop: true
     - match: ""
       push:

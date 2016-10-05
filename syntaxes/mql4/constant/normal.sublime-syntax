@@ -28,6 +28,6 @@ contexts:
         (?x)
         \b{{constantIdentifier}}\b
       scope: >-
-        constant.mql.4
-        entity.name.constant.mql.4
+        constant.mql.mql4
+        entity.name.constant.mql.mql4
       pop: true

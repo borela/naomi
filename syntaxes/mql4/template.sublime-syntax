@@ -26,18 +26,18 @@ contexts:
   main:
     - match: \btemplate\b
       scope: >-
-        template.mql.4
-        keyword.template.mql.4
+        template.mql.mql4
+        keyword.template.mql.mql4
       set: parameters
 
   parameters:
     - match: \<
-      scope: punctuation.delimiter.template.parameters.begin.mql.4
+      scope: punctuation.delimiter.template.parameters.begin.mql.mql4
       set: parameters-content
 
   parameters-content:
     - match: \>
-      scope: punctuation.delimiter.template.parameters.end.mql.4
+      scope: punctuation.delimiter.template.parameters.end.mql.mql4
       set: target
     - match: |
         (?xi)
@@ -45,9 +45,9 @@ contexts:
         \s*({{commonIdentifier}})
         \s*(,)?
       captures:
-        1: keyword.other.mql.4
-        2: entity.name.type.mql.4
-        3: punctuation.delimiter.template.parameter.mql.4
+        1: keyword.other.mql.mql4
+        2: entity.name.type.mql.mql4
+        3: punctuation.delimiter.template.parameter.mql.mql4
 
   target:
     - include: Packages/Naomi/syntaxes/mql4/function.sublime-syntax

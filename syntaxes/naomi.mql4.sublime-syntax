@@ -19,7 +19,7 @@ file_extensions:
   - mq4
   - mqh4
 
-scope: source.mql.4
+scope: source.mql.mql4
 
 contexts:
   main:

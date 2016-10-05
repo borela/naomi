@@ -26,7 +26,7 @@ contexts:
   main:
     - match: \s*(<)
       captures:
-        1: punctuation.delimiter.template.arguments.begin.mql.4
+        1: punctuation.delimiter.template.arguments.begin.mql.mql4
       set: [
         final-pointer-operator,
         delimiter,
@@ -44,21 +44,21 @@ contexts:
       pop: true
     - match: \s*(\*+)
       captures:
-        1: operator.pointer.mql.4
+        1: operator.pointer.mql.mql4
 
   delimiter:
     - match: \>
-      scope: punctuation.delimiter.template.arguments.end.mql.4
+      scope: punctuation.delimiter.template.arguments.end.mql.mql4
       pop: true
     - match: \,
-      scope: punctuation.delimiter.template.arguments.mql.4
+      scope: punctuation.delimiter.template.arguments.mql.mql4
       set: [
         delimiter,
         argument-pointer-operator,
         argument
       ]
     - match: \<
-      scope: punctuation.delimiter.template.arguments.begin.mql.4
+      scope: punctuation.delimiter.template.arguments.begin.mql.mql4
       push: [
         delimiter,
         argument-pointer-operator,
@@ -68,7 +68,7 @@ contexts:
   final-pointer-operator:
     - match: \s*(\*+)
       captures:
-        1: operator.pointer.mql.4
+        1: operator.pointer.mql.mql4
       pop: true
     - match: ""
       pop: true

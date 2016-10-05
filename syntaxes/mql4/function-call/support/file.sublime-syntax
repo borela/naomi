@@ -59,9 +59,9 @@ contexts:
         | Folder(?>Clean|Create|Delete)
         )(?=\s*\()
       scope: >-
-        function.call.mql.4
-        support.function.mql.4
-        entity.name.function.mql.4
+        function.call.mql.mql4
+        support.function.mql.mql4
+        entity.name.function.mql.mql4
       set: arguments
 
   arguments:

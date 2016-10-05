@@ -20,14 +20,14 @@ scope: ...
 contexts:
   main:
     - match: \/\*\*(?!\/)
-      scope: punctuation.comment.documentation.begin.mql.4
+      scope: punctuation.comment.documentation.begin.mql.mql4
       set: content
 
   content:
-    - meta_scope: comment.documentation.mql.4
-    - meta_content_scope: comment.documentation.content.mql.4
+    - meta_scope: comment.documentation.mql.mql4
+    - meta_content_scope: comment.documentation.content.mql.mql4
     - match: \*\/
-      scope: punctuation.comment.documentation.end.mql.4
+      scope: punctuation.comment.documentation.end.mql.mql4
       pop: true
     - include: tags
 
@@ -42,15 +42,15 @@ contexts:
   param:
     - match: \B(@)param\b
       captures:
-        0: keyword.documentation.mql.4
-        1: punctuation.keyword.begin.mql.4
+        0: keyword.documentation.mql.mql4
+        1: punctuation.keyword.begin.mql.mql4
       push: variable
 
   return:
     - match: \B(@)return\b
       captures:
-        0: keyword.documentation.mql.4
-        1: punctuation.keyword.begin.mql.4
+        0: keyword.documentation.mql.mql4
+        1: punctuation.keyword.begin.mql.mql4
 
   other-tags:
     - match: |
@@ -83,5 +83,5 @@ contexts:
           | version
         )\b
       captures:
-        0: keyword.documentation.mql.4
-        1: punctuation.keyword.begin.mql.4
+        0: keyword.documentation.mql.mql4
+        1: punctuation.keyword.begin.mql.mql4

@@ -48,9 +48,9 @@ contexts:
 
   type:
     - match: extern
-      scope: keyword.modifier.extern.mql.4
+      scope: keyword.modifier.extern.mql.mql4
     - match: static
-      scope: keyword.modifier.static.mql.4
+      scope: keyword.modifier.static.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   variable:
@@ -61,23 +61,23 @@ contexts:
     - match: (?=\))
       pop: true
     - match: \,
-      scope: punctuation.delimiter.mql.4
+      scope: punctuation.delimiter.mql.mql4
       set: [
         punctuation,
         variable
       ]
     - match: \[
-      scope: punctuation.delimiter.array.index.begin.mql.4
+      scope: punctuation.delimiter.array.index.begin.mql.mql4
       push: array-index
     - match: =
-      scope: operator.assignment.mql.4
+      scope: operator.assignment.mql.mql4
       push: value
 
   array-index:
     - match: \,
-      scope: punctuation.delimiter.array.index.mql.4
+      scope: punctuation.delimiter.array.index.mql.mql4
     - match: \]
-      scope: punctuation.delimiter.array.index.end.mql.4
+      scope: punctuation.delimiter.array.index.end.mql.mql4
       pop: true
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
 

@@ -43,5 +43,5 @@ contexts:
           | /=?
           | %=?
         )
-      scope: operator.arithmetic.mql.4
+      scope: operator.arithmetic.mql.mql4
       pop: true

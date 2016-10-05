@@ -20,11 +20,11 @@ scope: ...
 contexts:
   main:
     - match: \#property
-      scope: keyword.preprocessor.mql.4
+      scope: keyword.preprocessor.mql.mql4
       set: identifier
 
   identifier:
-    - meta_scope: preprocessor.mql.4
+    - meta_scope: preprocessor.mql.mql4
     - include: identifier-without-value
     - include: identifier-with-color-value
     - include: identifier-with-string-value
@@ -40,7 +40,7 @@ contexts:
           | indicator_
             (?>chart_window|separate_window)
         )
-      scope: keyword.preprocessor.mql.4
+      scope: keyword.preprocessor.mql.mql4
       pop: true
 
   identifier-with-color-value:
@@ -52,9 +52,9 @@ contexts:
           | ([2468])
         )
       captures:
-        0: keyword.preprocessor.mql.4
-        1: index.a.mql.4
-        2: index.b.mql.4
+        0: keyword.preprocessor.mql.mql4
+        1: index.a.mql.mql4
+        2: index.b.mql.mql4
       set: color-value
 
   identifier-with-string-value:
@@ -73,9 +73,9 @@ contexts:
             (?>file|indicator|library)
         )
       captures:
-        0: keyword.preprocessor.mql.4
-        1: index.a.mql.4
-        2: index.b.mql.4
+        0: keyword.preprocessor.mql.mql4
+        1: index.a.mql.mql4
+        2: index.b.mql.mql4
       set: string-value
 
   identifier-with-number-value:
@@ -99,13 +99,13 @@ contexts:
             )
         )
       captures:
-        0: keyword.preprocessor.mql.4
-        1: index.a.mql.4
-        2: index.b.mql.4
+        0: keyword.preprocessor.mql.mql4
+        1: index.a.mql.mql4
+        2: index.b.mql.mql4
       set: number-value
 
   color-value:
-    - meta_scope: preprocessor.mql.4
+    - meta_scope: preprocessor.mql.mql4
     - match: $
       pop: true
     - match: (?=\S)
@@ -116,7 +116,7 @@ contexts:
           pop: true
 
   string-value:
-    - meta_scope: preprocessor.mql.4
+    - meta_scope: preprocessor.mql.mql4
     - match: $
       pop: true
     - match: (?=\S)
@@ -127,7 +127,7 @@ contexts:
           pop: true
 
   number-value:
-    - meta_scope: preprocessor.mql.4
+    - meta_scope: preprocessor.mql.mql4
     - match: $
       pop: true
     - match: (?=\S)

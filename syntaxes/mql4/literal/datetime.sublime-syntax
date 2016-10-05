@@ -21,15 +21,15 @@ contexts:
   main:
     - match: "D'"
       scope: >-
-        constant.datetime.mql.4
-        punctuation.delimiter.datetime.begin.mql.4
+        constant.datetime.mql.mql4
+        punctuation.delimiter.datetime.begin.mql.mql4
       set: year-value
 
   end:
     - match: "'"
       scope: >-
-        constant.datetime.mql.4
-        punctuation.delimiter.datetime.end.mql.4
+        constant.datetime.mql.mql4
+        punctuation.delimiter.datetime.end.mql.mql4
       pop: true
 
   date-delimiter:
@@ -37,70 +37,70 @@ contexts:
       pop: true
     - match: "\\."
       scope: >-
-        constant.datetime.mql.4
-        punctuation.delimiter.date.mql.4
+        constant.datetime.mql.mql4
+        punctuation.delimiter.date.mql.mql4
       pop: true
 
   time-delimiter:
-    - meta_content_scope: constant.datetime.mql.4
+    - meta_content_scope: constant.datetime.mql.mql4
     - match: (?=')
       pop: true
     - match: ":"
       scope: >-
-        constant.datetime.mql.4
-        punctuation.delimiter.time.mql.4
+        constant.datetime.mql.mql4
+        punctuation.delimiter.time.mql.mql4
       pop: true
 
   year-value:
-    - meta_content_scope: constant.datetime.mql.4
+    - meta_content_scope: constant.datetime.mql.mql4
     - include: end
     - match: "[0-9]{4}"
-      scope: datetime.year.mql.4
+      scope: datetime.year.mql.mql4
       set: [
         month-value,
         date-delimiter
       ]
 
   month-value:
-    - meta_content_scope: constant.datetime.mql.4
+    - meta_content_scope: constant.datetime.mql.mql4
     - include: end
     - match: "[0-9]{2}"
-      scope: datetime.month.mql.4
+      scope: datetime.month.mql.mql4
       set: [
         day-value,
         date-delimiter
       ]
 
   day-value:
-    - meta_content_scope: constant.datetime.mql.4
+    - meta_content_scope: constant.datetime.mql.mql4
     - include: end
     - match: "[0-9]{2}"
-      scope: datetime.day.mql.4
+      scope: datetime.day.mql.mql4
       set: hour-value
 
   hour-value:
-    - meta_content_scope: constant.datetime.mql.4
+    - meta_content_scope: constant.datetime.mql.mql4
     - include: end
     - match: "[0-9]{2}"
-      scope: datetime.hour.mql.4
+      scope: datetime.hour.mql.mql4
       set: [
         minute-value,
         time-delimiter
       ]
 
   minute-value:
-    - meta_content_scope: constant.datetime.mql.4
+    - meta_content_scope: constant.datetime.mql.mql4
     - include: end
     - match: "[0-9]{2}"
-      scope: datetime.minute.mql.4
+      scope: datetime.minute.mql.mql4
       set: [
         second-value,
         time-delimiter
       ]
 
   second-value:
-    - meta_content_scope: constant.datetime.mql.4
+    - meta_content_scope: constant.datetime.mql.mql4
     - include: end
     - match: "[0-9]{2}"
-      scope: datetime.second.mql.4
+      scope: datetime.second.mql.mql4
       set: end

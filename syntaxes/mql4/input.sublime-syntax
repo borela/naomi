@@ -20,11 +20,11 @@ scope: ...
 contexts:
   main:
     - match: \b(input)\s
-      scope: keyword.input.mql.4
+      scope: keyword.input.mql.mql4
       set: input
 
   input:
-    - meta_scope: input.mql.4
+    - meta_scope: input.mql.mql4
     - include: assignment-operator
     - match: (?=\S)
       push: [
@@ -40,9 +40,9 @@ contexts:
 
   assignment-operator:
     - match: =
-      scope: operator.assignment.mql.4
+      scope: operator.assignment.mql.mql4
       set: value
 
   value:
-    - meta_scope: input.mql.4
+    - meta_scope: input.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

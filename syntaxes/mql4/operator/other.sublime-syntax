@@ -29,22 +29,22 @@ contexts:
   # |     :      |                     |
   main:
     - match: "&(?![&=])"
-      scope: operator.reference.mql.4
+      scope: operator.reference.mql.mql4
       pop: true
     - match: |
         (?x)
         (?> ->
           | \.
         )
-      scope: operator.member.access.mql.4
+      scope: operator.member.access.mql.mql4
       set: member-access
     # Other.
     - match: "\\?|:"
-      scope: operator.mql.4
+      scope: operator.mql.mql4
       pop: true
 
   member-access:
-    - meta_content_scope: member.mql.4
+    - meta_content_scope: member.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/function-call/normal.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/normal.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax

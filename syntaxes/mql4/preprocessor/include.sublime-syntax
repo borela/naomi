@@ -20,11 +20,11 @@ scope: ...
 contexts:
   main:
     - match: \#include
-      scope: keyword.preprocessor.mql.4
+      scope: keyword.preprocessor.mql.mql4
       set: value
 
   value:
     - match: \<.+?\>
-      scope: string.unquoted.mql.4
+      scope: string.unquoted.mql.mql4
       pop: true
     - include: Packages/Naomi/syntaxes/mql4/literal/string.sublime-syntax

@@ -44,8 +44,8 @@ contexts:
         )
         (')
       captures:
-        0: constant.character.mql.4
-        1: punctuation.delimiter.constant.character.begin.mql.4
-        2: constant.character.escape.mql.4
-        3: punctuation.delimiter.constant.character.end.mql.4
+        0: constant.character.mql.mql4
+        1: punctuation.delimiter.constant.character.begin.mql.mql4
+        2: constant.character.escape.mql.mql4
+        3: punctuation.delimiter.constant.character.end.mql.mql4
       pop: true

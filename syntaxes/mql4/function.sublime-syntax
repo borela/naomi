@@ -123,7 +123,7 @@ contexts:
         (?> virtual
           | static
         )
-      scope: keyword.modifier.mql.4
+      scope: keyword.modifier.mql.mql4
       pop: true
     - match: ""
       pop: true
@@ -134,15 +134,15 @@ contexts:
   class:
     - match: \s*(\*+)
       captures:
-        1: operator.pointer.mql.4
+        1: operator.pointer.mql.mql4
     - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.class.mql.4
+      scope: entity.name.class.mql.mql4
       pop: true
 
   scope-operator:
     - match: |
         (?x)::
-      scope: operator.scope.mql.4
+      scope: operator.scope.mql.mql4
       pop: true
 
   name:
@@ -157,17 +157,17 @@ contexts:
             )
         )(?=\s*\()
       scope: >-
-        support.function.mql.4
-        entity.name.function.mql.4
+        support.function.mql.mql4
+        entity.name.function.mql.mql4
       pop: true
     # Common function name.
     - match: (?xi){{functionIdentifier}}
-      scope: entity.name.function.mql.4
+      scope: entity.name.function.mql.mql4
       pop: true
 
   parameters:
     - include: Packages/Naomi/syntaxes/mql4/function/parameters.sublime-syntax
 
   body:
-    - meta_scope: function.mql.4
+    - meta_scope: function.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/function/body.sublime-syntax

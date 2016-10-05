@@ -22,7 +22,7 @@ contexts:
     - match: |
         (?xi)\b
         sizeof\s*\(
-      scope: keyword.other.mql.4
+      scope: keyword.other.mql.mql4
       set: [
         delimiter,
         type
@@ -33,5 +33,5 @@ contexts:
 
   delimiter:
     - match: \)
-      scope: keyword.other.mql.4
+      scope: keyword.other.mql.mql4
       pop: true

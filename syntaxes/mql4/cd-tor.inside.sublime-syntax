@@ -49,12 +49,12 @@ contexts:
           | \B(?:~)?
         )
         {{commonIdentifier}}\b
-      scope: entity.name.function.mql.4
+      scope: entity.name.function.mql.mql4
       pop: true
 
   parameters:
     - include: Packages/Naomi/syntaxes/mql4/function/parameters.sublime-syntax
 
   body:
-    - meta_scope: function.mql.4
+    - meta_scope: function.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/function/body.sublime-syntax

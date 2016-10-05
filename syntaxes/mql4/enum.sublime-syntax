@@ -26,41 +26,41 @@ contexts:
   main:
     - match: \benum\b
       scope: >-
-        enum.mql.4
-        keyword.enum.mql.4
+        enum.mql.mql4
+        keyword.enum.mql.mql4
       set: identifier
 
   identifier:
-    - meta_content_scope: enum.mql.4
+    - meta_content_scope: enum.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: |
         (?xi)
         {{commonIdentifier}}
-      scope: entity.name.enum.mql.4
+      scope: entity.name.enum.mql.mql4
       set: body
 
   body:
     - meta_content_scope: >-
-        enum.mql.4
-        enum.body.mql.4
+        enum.mql.mql4
+        enum.body.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: \{
-      scope: punctuation.delimiter.enum.body.begin.mql.4
+      scope: punctuation.delimiter.enum.body.begin.mql.mql4
       set: body-content
 
   body-content:
     - meta_content_scope: >-
-        enum.mql.4
-        enum.body.mql.4
+        enum.mql.mql4
+        enum.body.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: \};
       scope: >-
-        enum.mql.4
-        enum.body.mql.4
-        punctuation.delimiter.enum.body.end.mql.4
+        enum.mql.mql4
+        enum.body.mql.mql4
+        punctuation.delimiter.enum.body.end.mql.mql4
       pop: true
     - match: \,
-      scope: punctuation.delimiter.enum.items.mql.4
+      scope: punctuation.delimiter.enum.items.mql.mql4
     - match: (?=\S)
       push: [
         optional-value,
@@ -72,7 +72,7 @@ contexts:
     - match: |
         (?xi)
         {{commonIdentifier}}
-      scope: entity.name.enum.item.mql.4
+      scope: entity.name.enum.item.mql.mql4
       pop: true
 
   optional-value:
@@ -80,7 +80,7 @@ contexts:
     - match: (?=[,}])
       pop: true
     - match: =
-      scope: operator.assignment.mql.4
+      scope: operator.assignment.mql.mql4
       set: value
 
   value:

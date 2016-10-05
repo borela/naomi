@@ -36,5 +36,5 @@ contexts:
           | >(?!>)
           | <(?!<)
         )
-      scope: operator.comparison.mql.4
+      scope: operator.comparison.mql.mql4
       pop: true

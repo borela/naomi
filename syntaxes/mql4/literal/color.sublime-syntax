@@ -25,8 +25,8 @@ contexts:
   main:
     - match: C'
       scope: >-
-        constant.color.mql.4
-        punctuation.delimiter.color.begin.mql.4
+        constant.color.mql.mql4
+        punctuation.delimiter.color.begin.mql.mql4
       set: [
         end,
         blue-value,
@@ -39,15 +39,15 @@ contexts:
   end:
     - match: \'
       scope: >-
-        constant.color.mql.4
-        punctuation.delimiter.color.end.mql.4
+        constant.color.mql.mql4
+        punctuation.delimiter.color.end.mql.mql4
       pop: true
 
   delimiter:
     - match: \,
       scope: >-
-        constant.color.mql.4
-        punctuation.delimiter.color.mql.4
+        constant.color.mql.mql4
+        punctuation.delimiter.color.mql.mql4
       pop: true
 
   red-value:
@@ -55,8 +55,8 @@ contexts:
         (?x)
         {{colorValue}}
       scope: >-
-        constant.color.mql.4
-        color.value.r.mql.4
+        constant.color.mql.mql4
+        color.value.r.mql.mql4
       pop: true
 
   green-value:
@@ -64,8 +64,8 @@ contexts:
         (?x)
         {{colorValue}}
       scope: >-
-        constant.color.mql.4
-        color.value.g.mql.4
+        constant.color.mql.mql4
+        color.value.g.mql.mql4
       pop: true
 
   blue-value:
@@ -73,6 +73,6 @@ contexts:
         (?x)
         {{colorValue}}
       scope: >-
-        constant.color.mql.4
-        color.value.b.mql.4
+        constant.color.mql.mql4
+        color.value.b.mql.mql4
       pop: true

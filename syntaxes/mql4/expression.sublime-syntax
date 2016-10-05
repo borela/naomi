@@ -31,7 +31,7 @@ contexts:
   main:
     - include: casting
     - match: \(
-      scope: punctuation.delimiter.expression.group.a.begin.mql.4
+      scope: punctuation.delimiter.expression.group.a.begin.mql.mql4
       push: open-b-close-a
     - include: terminators
     - include: content
@@ -39,10 +39,10 @@ contexts:
   open-b-close-a:
     - include: casting
     - match: \(
-      scope: punctuation.delimiter.expression.group.b.begin.mql.4
+      scope: punctuation.delimiter.expression.group.b.begin.mql.mql4
       push: open-a-close-b
     - match: \)
-      scope: punctuation.delimiter.expression.group.a.end.mql.4
+      scope: punctuation.delimiter.expression.group.a.end.mql.mql4
       pop: true
     - include: terminators
     - include: content
@@ -50,10 +50,10 @@ contexts:
   open-a-close-b:
     - include: casting
     - match: \(
-      scope: punctuation.delimiter.expression.group.a.begin.mql.4
+      scope: punctuation.delimiter.expression.group.a.begin.mql.mql4
       push: open-b-close-a
     - match: \)
-      scope: punctuation.delimiter.expression.group.b.end.mql.4
+      scope: punctuation.delimiter.expression.group.b.end.mql.mql4
       pop: true
     - include: terminators
     - include: content
@@ -87,7 +87,7 @@ contexts:
 
   casting-open:
     - match: \(
-      scope: operator.cating.mql.4
+      scope: operator.cating.mql.mql4
       pop: true
 
   type:
@@ -95,7 +95,7 @@ contexts:
 
   casting-close:
     - match: \)
-      scope: operator.cating.mql.4
+      scope: operator.cating.mql.mql4
       pop: true
 
   terminators:

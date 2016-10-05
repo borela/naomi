@@ -38,25 +38,25 @@ contexts:
         )
         (\))
       captures:
-        0: function.parameters.mql.4
-        1: punctuation.delimiter.function.parameters.begin.mql.4
-        2: function.parameters.content.mql.4
+        0: function.parameters.mql.mql4
+        1: punctuation.delimiter.function.parameters.begin.mql.mql4
+        2: function.parameters.content.mql.mql4
         3: >-
-          support.type.mql.4
-          entity.name.type.mql.4
-        4: punctuation.delimiter.function.parameters.end.mql.4
+          support.type.mql.mql4
+          entity.name.type.mql.mql4
+        4: punctuation.delimiter.function.parameters.end.mql.mql4
       pop: true
     # Parameters.
     - match: \(
-      scope: punctuation.delimiter.function.parameters.begin.mql.4
+      scope: punctuation.delimiter.function.parameters.begin.mql.mql4
       set: parameters
 
   parameters:
-    - meta_scope: function.parameters.mql.4
-    - meta_content_scope: function.parameters.content.mql.4
+    - meta_scope: function.parameters.mql.mql4
+    - meta_content_scope: function.parameters.content.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: \)
-      scope: punctuation.delimiter.function.parameters.end.mql.4
+      scope: punctuation.delimiter.function.parameters.end.mql.mql4
       pop: true
     # Constant parameters.
     - match: |
@@ -80,7 +80,7 @@ contexts:
 
   const-keyword:
     - match: const
-      scope: keyword.constant.mql.4
+      scope: keyword.constant.mql.mql4
       pop: true
 
   type:
@@ -91,7 +91,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: \s*(&)
       captures:
-        1: operator.reference.mql.4
+        1: operator.reference.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
 
   param-operators:
@@ -99,9 +99,9 @@ contexts:
     - match: (?=,|\))
       pop: true
     - match: \[\]
-      scope: punctuation.delimiter.array.mql.4
+      scope: punctuation.delimiter.array.mql.mql4
     - match: \=
-      scope: operator.mql.4
+      scope: operator.mql.mql4
       set: param-default-value
 
   param-default-value:
@@ -116,5 +116,5 @@ contexts:
     - match: (?=\))
       pop: true
     - match: ","
-      scope: punctuation.delimiter.function.parameters.mql.4
+      scope: punctuation.delimiter.function.parameters.mql.mql4
       pop: true

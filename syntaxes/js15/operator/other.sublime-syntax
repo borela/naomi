@@ -47,28 +47,24 @@ contexts:
       pop: true
     - match: \?
       scope: operator.js.js15
-      set: [
-        ternary-value-b,
-        ternary-value-a
-      ]
+      set: ternary-condition
     - match: \.
       scope: operator.member.access.js.js15
       set: member-access
 
-  ternary-value-a:
-    - match: ":"
-      scope: operator.js.js15
+  ternary-condition:
+    - match: \s*(:)
+      captures:
+        1: operator.js.js15
       pop: true
-    - include: expression
-
-  ternary-value-b:
-    - include: expression
+    - match: (?=\S)
+      push:
+        - match: (?=:)
+          pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   member-access:
     - meta_content_scope: member.js.js15
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/js15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
-
-  expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

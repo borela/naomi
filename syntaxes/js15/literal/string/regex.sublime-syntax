@@ -27,14 +27,18 @@ contexts:
           (?<!\\)/
           [a-z]{0,5}
         )
-      scope: punctuation.delimiter.string.begin.js.2015
+      scope: >-
+        string.unquoted.regex.js.2015
+        punctuation.delimiter.string.begin.js.2015
       with_prototype:
         - match: |
             (?x)
             (/)
             ([a-z]{0,5})
           captures:
-            1: punctuation.delimiter.string.end.js.2015
+            1:  >-
+              string.unquoted.regex.js.2015
+              punctuation.delimiter.string.end.js.2015
             2: regex.flag.js.2015
           pop: true
       set: escape-a

@@ -27,7 +27,7 @@ contexts:
           | try
           | finally
         )\b
-      scope: keyword.control.mql.4
+      scope: keyword.control.php.7
       set: body
     # With header.
     - match: |
@@ -52,7 +52,7 @@ contexts:
 
   header-content:
     - match: \)
-      scope: punctuation.delimiter.control.header.end.mql.4
+      scope: punctuation.delimiter.control.header.end.php.7
       pop: true
     - match: (?=\S)
       push:

@@ -53,7 +53,7 @@ contexts:
         (?x)
         (?> \|
           | &
-        )
+        )\b
       scope: operator.flowtype
       set: [
         operator,

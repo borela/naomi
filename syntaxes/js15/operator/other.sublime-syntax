@@ -46,7 +46,7 @@ contexts:
       scope: operator.spread.js.js15
       pop: true
     - match: \?
-      scope: operator.js.js15
+      scope: operator.ternary.js.js15
       set: ternary-condition
     - match: \.
       scope: operator.member.access.js.js15
@@ -55,11 +55,11 @@ contexts:
   ternary-condition:
     - match: \s*(:)
       captures:
-        1: operator.js.js15
+        1: operator.ternary.js.js15
       pop: true
-    - match: (?=\S)
+    - match: ""
       push:
-        - match: (?=:)
+        - match: (?=\s*:)
           pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 

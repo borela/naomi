@@ -68,6 +68,7 @@ contexts:
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/jsx.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/destructure.sublime-syntax

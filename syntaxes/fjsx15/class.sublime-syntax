@@ -106,6 +106,7 @@ contexts:
 
   allowed-expressions:
     - include: comment
+    - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/member-variable.sublime-syntax
 

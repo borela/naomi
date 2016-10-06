@@ -268,6 +268,20 @@
 
             <dict>
                 <key>name</key>
+                <string>Decorator</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.decorator, entity.name.decorator</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f06292</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Function</string>
 
                 <key>scope</key>

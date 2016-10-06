@@ -50,8 +50,15 @@ contexts:
     - include: comment
     - match: (?=})
       pop: true
-    - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
+    - include: decorator
+    - include: method
     - include: property
+
+  decorator:
+    - include: Packages/Naomi/syntaxes/fjsx15/decorator.no-pop.sublime-syntax
+
+  method:
+    - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
 
   property:
     # Computed property name.

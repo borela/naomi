@@ -12,47 +12,59 @@ that makes writting more fun.
 
 * Auto complete asterisks in documentation blocks.
 * Add Mac’s curly quotes shortcuts for Windows and Linux:
-    1. Alt+[ produces “.
-    2. Alt+Shift+[ produces ”.
-    3. Alt+] produces ‘.
-    4. Alt+Shift+] produces ’.
+  1. Alt+[ produces “.
+  2. Alt+Shift+[ produces ”.
+  3. Alt+] produces ‘.
+  4. Alt+Shift+] produces ’.
 
-#### FJSX15 (ES2015 + FlowType + React’s JSX - Experimental)
+#### FJSX15 (Experimental)
 
-* Combines the 3 syntaxes.
-* Classes.
-* Interfaces.
-* Templates.
-* Destructure operator.
-* Generator functions.
-* Arrow functions.
-* Get, set and static functions.
-* Decimal, floating point and hexadecimal literal.
+Combines ES2015+, flow and React’s JSX:
+  * Templates.
+  * Interfaces.
+  * Classes.
+  * Get and set class methods.
+  * Static variables and functions.
+  * Simple functions.
+  * Generator functions.
+  * Arrow functions.
+  * Decorators.
+  * Destructure operators.
+  * Alternating parenthesis in expressions.
+  * Alternating escaped characters.
+  * Decimal, floating point and hexadecimal literals.
 
 #### HTML 5 (Experimental)
 
-* Highlight FJSX15 inside `<script type="text/babel">` tags.
-* Balanced tags.
-* Section root elements.
-* Embedded elements.
-* Form elements.
+Scopes for:
+  * Highlight FJSX15 inside `<script type="text/babel">` tags.
+  * Balanced tags.
+  * Section root elements.
+  * Embedded elements.
+  * Form elements.
 
 #### MQL4
 
-* Decimal, floating point and hexadecimal literal.
-* RGB literal.
-* Alternating escaped characters.
+Scopes for:
+  * Templates.
+  * Classes.
+  * Datetime literals.
+  * RGB literals.
+  * Alternating parenthesis in expressions.
+  * Alternating escaped characters.
+  * Decimal, floating point and hexadecimal literals.
 
 #### PHP 7
 
-* phpDoc instructions.
-* Decimal, floating point, binary, octal and hexadecimal literal.
-* Alternating namespace names.
-* Alternating escaped characters.
-* Alternating embedded variables.
-* Alternating parenthesis in expressions.
-* Extended class and implemented interfaces.
-* Specific scope for private and protected modifiers.
+Scopes for:
+  * phpDoc instructions.
+  * Alternating namespace names.
+  * Alternating escaped characters.
+  * Alternating embedded variables.
+  * Alternating parenthesis in expressions.
+  * Extended class and implemented interfaces.
+  * Private and protected modifiers.
+  * Decimal, floating point, binary, octal and hexadecimal literals.
 
 #### XML 1.0 (Experimental)
 

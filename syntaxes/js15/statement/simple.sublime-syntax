@@ -24,10 +24,7 @@ contexts:
         (?xi)\b
         (?> await
           | break
-          | con
-            (?> st
-              | tinue
-            )
+          | continue
           | de
             (?> fault
               | lete

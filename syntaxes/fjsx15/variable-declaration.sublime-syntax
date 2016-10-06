@@ -23,7 +23,8 @@ contexts:
     - match: |
         (?x)
         (?=
-          (?> let
+          (?> const
+            | let
             | var
           )\s+\{
         )
@@ -36,7 +37,8 @@ contexts:
     - match: |
         (?x)
         (?=
-          (?> let
+          (?> const
+            | let
             | var
           )\s+\[
         )
@@ -68,7 +70,8 @@ contexts:
   keyword:
     - match: |
         (?x)
-        (?> let
+        (?> const
+          | let
           | var
         )\b
       scope: keyword.variable.declaration.fjsx15

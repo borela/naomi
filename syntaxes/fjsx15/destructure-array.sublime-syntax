@@ -52,6 +52,8 @@ contexts:
   variable:
     - match: (?=,)
       pop: true
+    - match: \.{3}
+      scope: operator.rest.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/destructure-object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructure-array.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

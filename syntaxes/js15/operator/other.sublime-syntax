@@ -32,6 +32,7 @@ contexts:
   # |   typeof   |                     |
   # |    void    |                     |
   # |    ...     | Spread.             |
+  # |     ::     | Bind.               |
   # |     .      | Member access.      |
   # |     ?      | Ternary.            |
   main:
@@ -42,7 +43,10 @@ contexts:
         )\b
       scope: operator.js.js15
       pop: true
-    - match: \.\.\.
+    - match: \:{2}
+      scope: operator.bind.js.js15
+      pop: true
+    - match: \.{3}
       scope: operator.spread.js.js15
       pop: true
     - match: \?

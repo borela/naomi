@@ -19,16 +19,29 @@ scope: ...
 
 contexts:
   main:
+    # Variable declaration.
     - match: |
         (?x)
         (?=
-          \s*
-          (?> \[.*?\]
-            | \{.*?\}
+          (?>let|var)\s*
+          (?> \[
+            | \{
           )
-          \s*=[^=]
+        )
+      set: variable
+    # First token in the line.
+    - match: |
+        (?x)
+        (?=
+          ^\s*
+          (?> \[
+            | \{
+          )
         )
       set: destructure
+
+  variable:
+    - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax
 
   destructure:
     - include: Packages/Naomi/syntaxes/fjsx15/destructure-object.sublime-syntax

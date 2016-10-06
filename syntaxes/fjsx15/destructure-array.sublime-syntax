@@ -23,14 +23,26 @@ contexts:
       scope: punctuation.delimiter.destructure.array.begin.fjsx15
       set: [
         punctuation,
+        optional-value,
         variable
       ]
+
+  optional-value:
+    - match: =
+      scope: keyword.operator.assignment.fjsx15
+      set: value
+    - match: (?=\S)
+      pop: true
+
+  value:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   punctuation:
     - match: \,
       scope: punctuation.delimiter.destructure.item.fjsx15
       set: [
         punctuation,
+        optional-value,
         variable
       ]
     - match: \]

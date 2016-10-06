@@ -64,7 +64,7 @@ contexts:
     - include: content
 
   content:
-    - match: (?=\S)
+    - match: ""
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax

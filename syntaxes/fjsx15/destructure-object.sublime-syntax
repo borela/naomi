@@ -47,12 +47,25 @@ contexts:
       ]
     # Simple variable.
     - match: (?=\S)
-      set: actual-variable
+      set: [
+        optional-value,
+        actual-variable
+      ]
+
+  optional-value:
+    - match: =
+      scope: keyword.operator.assignment.fjsx15
+      set: value
+    - match: (?=\S)
+      pop: true
+
+  value:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   destination:
     - include: Packages/Naomi/syntaxes/fjsx15/destructure-object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructure-array.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+    - include: variable
 
   actual-variable:
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

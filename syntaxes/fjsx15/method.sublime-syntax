@@ -40,7 +40,8 @@ contexts:
     - match: |
         (?xi)
         (
-          (?> get
+          (?> async
+            | get
             | s
               (?> et
                 | tatic

@@ -22,7 +22,8 @@ contexts:
     - include: yield
     - match: |
         (?xi)\b
-        (?> break
+        (?> await
+          | break
           | con
             (?> st
               | tinue

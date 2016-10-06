@@ -24,8 +24,15 @@ variables:
 
 contexts:
   main:
-    - match: \bfunction\b
-      scope: keyword.function.fjsx15
+    - match: |
+        (?x)\b
+        (?:
+          (async)\s+
+        )?
+        (function)\b
+      captures:
+        1: keyword.modifier.fjsx15
+        2: keyword.function.fjsx15
       set: identifier
 
   identifier:

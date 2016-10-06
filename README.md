@@ -19,7 +19,7 @@ that makes writting more fun.
 
 #### FJSX15 (Experimental)
 
-Combines ES2015+, flow and React’s JSX:
+Combines ES2015+, Flow and React’s JSX:
 
 * Templates.
 * Interfaces.

@@ -24,11 +24,25 @@ variables:
 
 contexts:
   main:
+    # Static variables.
+    - match: |
+        (?xi)
+        static
+        (?=
+          \s+{{commonIdentifier}}
+        )
+      scope: keyword.other.js.fjsx15
+      set: [
+        punctuation,
+        variable
+      ]
+    # Normal variable.
     - match: |
         (?xi)
         (?=
           {{commonIdentifier}}
         )
+      scope: keyword.other.js.fjsx15
       set: [
         punctuation,
         variable

@@ -18,9 +18,9 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [$_[:alpha:]]
-    [$_[:alnum:]]*
+  decoratorIdentifier: |
+    [$._[:alpha:]]
+    [$._[:alnum:]]*
 
 contexts:
   main:
@@ -28,7 +28,7 @@ contexts:
     - match: |
         (?xi)
         (@)
-        ({{commonIdentifier}})
+        ({{decoratorIdentifier}})
         \s*(\()
       captures:
         0: decorator.fjsx15
@@ -40,7 +40,7 @@ contexts:
     - match: |
         (?xi)
         (@)
-        ({{commonIdentifier}})
+        ({{decoratorIdentifier}})
       captures:
         0: decorator.fjsx15
         1: punctuation.delimiter.decorator.fjsx15

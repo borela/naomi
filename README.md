@@ -20,51 +20,55 @@ that makes writting more fun.
 #### FJSX15 (Experimental)
 
 Combines ES2015+, flow and React’s JSX:
-  * Templates.
-  * Interfaces.
-  * Classes.
-  * Get and set class methods.
-  * Static variables and functions.
-  * Simple functions.
-  * Generator functions.
-  * Arrow functions.
-  * Decorators.
-  * Destructure operators.
-  * Alternating parenthesis in expressions.
-  * Alternating escaped characters.
-  * Decimal, floating point and hexadecimal literals.
+
+* Templates.
+* Interfaces.
+* Classes.
+* Get and set class methods.
+* Static variables and functions.
+* Simple functions.
+* Generator functions.
+* Arrow functions.
+* Decorators.
+* Destructure operators.
+* Alternating parenthesis in expressions.
+* Alternating escaped characters.
+* Decimal, floating point and hexadecimal literals.
 
 #### HTML 5 (Experimental)
 
 Scopes for:
-  * Highlight FJSX15 inside `<script type="text/babel">` tags.
-  * Balanced tags.
-  * Section root elements.
-  * Embedded elements.
-  * Form elements.
+
+* Highlight FJSX15 inside `<script type="text/babel">` tags.
+* Balanced tags.
+* Section root elements.
+* Embedded elements.
+* Form elements.
 
 #### MQL4
 
 Scopes for:
-  * Templates.
-  * Classes.
-  * Datetime literals.
-  * RGB literals.
-  * Alternating parenthesis in expressions.
-  * Alternating escaped characters.
-  * Decimal, floating point and hexadecimal literals.
+
+* Templates.
+* Classes.
+* Datetime literals.
+* RGB literals.
+* Alternating parenthesis in expressions.
+* Alternating escaped characters.
+* Decimal, floating point and hexadecimal literals.
 
 #### PHP 7
 
 Scopes for:
-  * phpDoc instructions.
-  * Alternating namespace names.
-  * Alternating escaped characters.
-  * Alternating embedded variables.
-  * Alternating parenthesis in expressions.
-  * Extended class and implemented interfaces.
-  * Private and protected modifiers.
-  * Decimal, floating point, binary, octal and hexadecimal literals.
+
+* phpDoc instructions.
+* Alternating namespace names.
+* Alternating escaped characters.
+* Alternating embedded variables.
+* Alternating parenthesis in expressions.
+* Extended class and implemented interfaces.
+* Private and protected modifiers.
+* Decimal, floating point, binary, octal and hexadecimal literals.
 
 #### XML 1.0 (Experimental)
 

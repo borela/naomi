@@ -34,6 +34,8 @@ contexts:
   variable:
     - match: (?=,)
       pop: true
+    - match: \.{3}
+      scope: operator.rest.fjsx15
     # Alias.
     - match: |
         (?x)

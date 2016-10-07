@@ -20,7 +20,7 @@ scope: ...
 variables:
   commonIdentifier: |
     [$_[:alpha:]]
-    [$_[:alnum:]]*
+    [$_.:[:alnum:]]*
 
 contexts:
   main:
@@ -28,6 +28,10 @@ contexts:
         (?xi)
         (?=
           <{{commonIdentifier}}
+          (?> \s
+            | >
+            | />
+          )
         )
       with_prototype:
         - match: \{

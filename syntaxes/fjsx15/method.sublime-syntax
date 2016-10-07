@@ -46,7 +46,7 @@ contexts:
               (?> et
                 | tatic
                   (?:
-                    \s+(?>get|set)
+                    \s+(?>async|get|set)
                   )?
               )
           )

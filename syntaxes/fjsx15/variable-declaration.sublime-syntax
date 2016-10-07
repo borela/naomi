@@ -51,7 +51,8 @@ contexts:
     - match: |
         (?x)
         (?=
-          (?> let
+          (?> const
+            | let
             | var
           )\b
         )

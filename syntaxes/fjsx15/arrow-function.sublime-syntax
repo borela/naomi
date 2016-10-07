@@ -27,10 +27,15 @@ contexts:
     # Templated arrow function.
     - match: |
         (?x)
+        (?> (async)\s+
+          | \s+
+        )
         (?=
           <[^&|]*?>
           \s*\(
         )
+      captures:
+        1: keyword.modifier.fjsx15
       set: [
         body,
         return-type,
@@ -40,10 +45,15 @@ contexts:
     # Normal arrow function.
     - match: |
         (?x)
+        (?> (async)\s+
+          | \s+
+        )
         (?=
           \([^(]*?\)
           .*?=>
         )
+      captures:
+        1: keyword.modifier.fjsx15
       set: [
         body,
         return-type,
@@ -52,10 +62,15 @@ contexts:
     # Single parameter.
     - match: |
         (?xi)
+        (?> (async)\s+
+          | \s+
+        )
         (?=
           {{commonIdentifier}}
           \s*=>
         )
+      captures:
+        1: keyword.modifier.fjsx15
       set: [
         body,
         optional-parameter-type,

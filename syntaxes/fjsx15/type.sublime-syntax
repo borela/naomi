@@ -50,9 +50,13 @@ contexts:
 
   operator:
     - match: |
-        (?x)
-        (?> \|
-          | &
+        (?xi)
+        (?> &
+          | \|
+        )
+        (?= \s
+          | \{
+          | [$_[:alnum]]
         )
       scope: operator.union.flowtype
       set: [

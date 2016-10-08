@@ -30,6 +30,9 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - match: |
         (?x)
+        (?<!
+          \]|\)|\}
+        )
         \(
         (?!{{arrowFunctionContinuation}})
       scope: punctuation.delimiter.expression.group.a.begin.fjsx15
@@ -40,10 +43,14 @@ contexts:
   open-b-close-a:
     - match: |
         (?x)
+        (?<!
+          \]|\)|\}
+        )
         \(
         (?!{{arrowFunctionContinuation}})
       scope: punctuation.delimiter.expression.group.b.begin.fjsx15
       push: open-a-close-b
+    - include: comma-operator
     - match: \)
       scope: punctuation.delimiter.expression.group.a.end.fjsx15
       pop: true
@@ -53,10 +60,14 @@ contexts:
   open-a-close-b:
     - match: |
         (?x)
+        (?<!
+          \]|\)|\}
+        )
         \(
         (?!{{arrowFunctionContinuation}})
       scope: punctuation.delimiter.expression.group.a.begin.fjsx15
       push: open-b-close-a
+    - include: comma-operator
     - match: \)
       scope: punctuation.delimiter.expression.group.b.end.fjsx15
       pop: true
@@ -88,6 +99,10 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
         - match: ""
           pop: true
+
+  comma-operator:
+    - match: \,
+      scope: operator.comma.fjsx15
 
   terminators:
     - include: Packages/Naomi/syntaxes/js15/terminator.sublime-syntax

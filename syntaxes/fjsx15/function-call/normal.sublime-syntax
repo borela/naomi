@@ -24,11 +24,21 @@ scope: ...
 
 contexts:
   main:
+    # Function call at the result of an expression.
+    - match: |
+        (?x)
+        (?<=
+          \]|\)|\}
+        )
+        (?=
+          \s*\(
+        )
+      set: arguments
     # Templated function.
     - match: |
         (?xi)
         (?=
-          \b{{commonIdentifier}}
+          {{commonIdentifier}}
           \s*<[^&|]*?>\s*\(
         )
       set: [
@@ -40,7 +50,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          \b{{commonIdentifier}}
+          {{commonIdentifier}}
           \s*\(
         )
       set: [

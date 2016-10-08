@@ -17,17 +17,33 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
-    - match: (?i)\b(new)\b
+    - match: |
+        (?xi)\b
+        (new)
+        (?=
+          \s+{{commonIdentifier}}
+        )
       scope: keyword.other.fjsx15
       set: [
         arguments,
         type
       ]
+    # Accept any expression after the keyword.
+    - match: (?i)\bnew\b
+      scope: keyword.other.fjsx15
+      pop: true
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+    - match: ""
+      pop: true
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax

@@ -26,11 +26,13 @@ contexts:
   main:
     - match: |
         (?xi)
-        \b({{commonIdentifier}})\b
-      captures:
-        0: type.flowtype
-        1: entity.name.type.flowtype
-        2: operator.pointer.flowtype
+        (?> \B\$
+          | \b
+        )
+        ({{commonIdentifier}})
+      scope: >-
+        type.flowtype
+        entity.name.type.flowtype
       set: optional-punctuation
 
   optional-punctuation:

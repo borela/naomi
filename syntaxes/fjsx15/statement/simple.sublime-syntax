@@ -21,7 +21,7 @@ contexts:
   main:
     - include: yield
     - match: |
-        (?xi)\b
+        (?x)\b
         (?> await
           | break
           | continue

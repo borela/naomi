@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: \(
+    - match: \s*\(
       scope: punctuation.delimiter.function.arguments.begin.fjsx15
       set: arguments
 

@@ -27,7 +27,7 @@ contexts:
     - match: \{
       scope: >-
         type.flowtype
-        punctuation.delimiter.class.begin.flowtype
+        punctuation.delimiter.object.begin.flowtype
       set: [
         punctuation,
         optional-property
@@ -40,7 +40,7 @@ contexts:
 
   property:
     - match: \[
-      scope: punctuation.delimiter.class.flowtype
+      scope: punctuation.delimiter.object.flowtype
       set: [
         type,
         type-operator,
@@ -48,10 +48,15 @@ contexts:
       ]
     - match: |
         (?xi)
-        {{commonIdentifier}}
-      scope: >-
-        variable.flowtype
-        entity.name.variable.flowtype
+        ({{commonIdentifier}})
+        (?> (\?)
+          | \b
+        )
+      captures:
+        1: >-
+          variable.flowtype
+          entity.name.variable.flowtype
+        2: operator.optional.flowtype
       set: [
         type,
         type-operator
@@ -59,7 +64,7 @@ contexts:
 
   lookup:
     - match: \]
-      scope: punctuation.delimiter.class.flowtype
+      scope: punctuation.delimiter.object.flowtype
       pop: true
     - match: (?=\S)
       push: [
@@ -80,7 +85,7 @@ contexts:
     - match: (?=\])
       pop: true
     - match: \,
-      scope: punctuation.delimiter.class.flowtype
+      scope: punctuation.delimiter.object.flowtype
       set: [
         punctuation,
         optional-property
@@ -88,5 +93,5 @@ contexts:
     - match: \}
       scope: >-
         type.flowtype
-        punctuation.delimiter.class.end.flowtype
+        punctuation.delimiter.object.end.flowtype
       pop: true

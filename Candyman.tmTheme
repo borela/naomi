@@ -1137,7 +1137,7 @@
                 <string>FlowType’s delimiter</string>
 
                 <key>scope</key>
-                <string>type.flowtype punctuation.delimiter.class, type.flowtype punctuation.delimiter.function, type.flowtype punctuation.delimiter.array</string>
+                <string>type.flowtype punctuation.delimiter.object.begin.flowtype, punctuation.delimiter.object.end.flowtype, punctuation.delimiter.object.flowtype, type.flowtype punctuation.delimiter.function, type.flowtype punctuation.delimiter.array</string>
 
                 <key>settings</key>
                 <dict>
@@ -1151,7 +1151,7 @@
                 <string>FlowType’s operators</string>
 
                 <key>scope</key>
-                <string>operator.cast.flowtype, operator.type.flowtype</string>
+                <string>operator.union.flowtype, operator.nullable.flowtype, operator.cast.flowtype, operator.type.flowtype, operator.optional.flowtype</string>
 
                 <key>settings</key>
                 <dict>

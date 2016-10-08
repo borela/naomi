@@ -20,4 +20,4 @@ scope: ...
 contexts:
   main:
     - include: Packages/Naomi/syntaxes/fjsx15/comment/prolog.sublime-syntax
-    - include: Packages/Naomi/syntaxes/js15/comment/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/normal.sublime-syntax

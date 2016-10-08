@@ -59,7 +59,7 @@ contexts:
       ]
 
   name:
-    - include: Packages/Naomi/syntaxes/js15/function-call/support/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/class.sublime-syntax
     - match: (?xi){{commonIdentifier}}
       scope: entity.name.function.fjsx15
       pop: true

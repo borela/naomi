@@ -84,7 +84,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/jsx.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/destructure.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
-        - include: Packages/Naomi/syntaxes/js15/keywords.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/keywords.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/instanceof.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/new.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
@@ -94,7 +94,7 @@ contexts:
         # When it comes to constants and variables, there's no way to tell apart
         # without an intellisense, so it’ll treat that anything that looks a
         # uppercase variable as if it was a constant.
-        - include: Packages/Naomi/syntaxes/js15/constant.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
         # Constant matching failed, so it could be a variable.
         - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
         - match: ""
@@ -105,7 +105,7 @@ contexts:
       scope: operator.comma.fjsx15
 
   terminators:
-    - include: Packages/Naomi/syntaxes/js15/terminator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
     - match: |
         (?x)
         (?=

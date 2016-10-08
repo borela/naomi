@@ -19,11 +19,11 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/js15/operator/other.sublime-syntax
-    - include: Packages/Naomi/syntaxes/js15/operator/comparison.sublime-syntax
-    - include: Packages/Naomi/syntaxes/js15/operator/logical.sublime-syntax
-    - include: Packages/Naomi/syntaxes/js15/operator/bitwise.sublime-syntax
-    - include: Packages/Naomi/syntaxes/js15/operator/arithmetic.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/other.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/comparison.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/logical.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/bitwise.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/arithmetic.sublime-syntax
     - match: =
       scope: operator.assignment.fjsx15
       pop: true

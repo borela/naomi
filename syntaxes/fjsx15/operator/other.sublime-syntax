@@ -61,5 +61,5 @@ contexts:
   member-access:
     - meta_content_scope: member.js.js15
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
-    - include: Packages/Naomi/syntaxes/js15/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

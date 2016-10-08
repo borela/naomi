@@ -72,7 +72,7 @@ contexts:
       pop: true
 
   body:
-    - match: \{
+    - match: \s*\{
       scope: punctuation.delimiter.control.body.begin.js.js15
       set: body-content
     - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
@@ -82,7 +82,7 @@ contexts:
     - match: \}
       scope: punctuation.delimiter.control.body.end.js.js15
       pop: true
-    - match: (?=\S)
+    - match: ""
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

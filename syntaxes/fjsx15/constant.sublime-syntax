@@ -17,17 +17,7 @@ hidden: true
 
 scope: ...
 
-variables:
-  constantIdentifier: |
-    [_[:upper:]]
-    [_[:upper:][:digit:]]*
-
 contexts:
   main:
-    - match: |
-        (?x)
-        \b{{constantIdentifier}}\b
-      scope: >-
-        constant.js.js15
-        entity.name.constant.js.js15
-      pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/constant/support/core.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/constant/normal.sublime-syntax

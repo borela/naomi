@@ -64,7 +64,7 @@ contexts:
       ]
 
   identifier:
-    - include: Packages/Naomi/syntaxes/js15/function/support/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/support/class.sublime-syntax
     - match: |
         (?xi)
         \*?\s*{{commonIdentifier}}

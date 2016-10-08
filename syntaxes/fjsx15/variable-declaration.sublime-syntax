@@ -79,25 +79,43 @@ contexts:
       pop: true
 
   variable:
+    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   punctuation:
+    - match: |
+        (?xi)
+        (?= \bin\b)
+      pop: true
+    - match: ;
+      scope: punctuation.terminator.fjsx15
+      pop: true
     - match: ":"
       scope: operator.type.flowtype
       set: type
-    - match: (?=\S)
-      pop: true
+    - match: \=
+      scope: operator.assignment.fjsx15
+      set: value
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax
 
   value:
     - include: sibling
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-
-  terminator:
-    - include: sibling
-    - include: Packages/Naomi/syntaxes/js15/terminator.sublime-syntax
+    - match: |
+        (?x)
+        (?=\s*
+          (?> ;
+            | \]
+            | \)
+            | \}
+          )
+        )
+      pop: true
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   sibling:
     - match: \,

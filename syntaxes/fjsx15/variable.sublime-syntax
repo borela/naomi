@@ -28,16 +28,27 @@ contexts:
     - include: common-variable
 
   common-variable:
+    # Single character.
     - match: |
         (?xi)
-        \b({{commonIdentifier}})
-        (?> (\?)?\B
+        (?> \B\$\B
+          | \b[_[:alpha:]]\b
+        )
+      scope: >-
+        variable.fjsx15
+        entity.name.variable.fjsx15
+      set: array-item-access-begin
+    # Two or more.
+    - match: |
+        (?xi)
+        (?> \B\$
           | \b
         )
-      captures:
-        0: variable.fjsx15
-        1: entity.name.variable.fjsx15
-        2: operator.optional.fjsx15
+        {{commonIdentifier}}
+        [_[:alnum:]]\b
+      scope: >-
+        variable.fjsx15
+        entity.name.variable.fjsx15
       set: array-item-access-begin
 
   support-variable:

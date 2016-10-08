@@ -51,17 +51,18 @@ contexts:
       set: header
 
   header:
-    - match: \(
+    - match: \s*\(
       scope: punctuation.delimiter.control.header.begin.js.js15
       set: header-content
 
   header-content:
-    - match: \)
+    - match: \s*\)
       scope: punctuation.delimiter.control.header.end.js.js15
       pop: true
-    - match: (?=\S)
+    - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
+        - match: \s*\,
+          scope: operator.comma.fjsx15
         - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
         - match: (?=\))
           pop: true

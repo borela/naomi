@@ -35,7 +35,7 @@ contexts:
           \s*\(
         )
       captures:
-        1: keyword.modifier.fjsx15
+        1: keyword.modifier.js.fjsx15
       set: [
         body,
         return-type,
@@ -53,7 +53,7 @@ contexts:
           .*?=>
         )
       captures:
-        1: keyword.modifier.fjsx15
+        1: keyword.modifier.js.fjsx15
       set: [
         body,
         return-type,
@@ -70,7 +70,7 @@ contexts:
           \s*=>
         )
       captures:
-        1: keyword.modifier.fjsx15
+        1: keyword.modifier.js.fjsx15
       set: [
         body,
         optional-parameter-type,
@@ -92,7 +92,7 @@ contexts:
         parameters
       ]
     - match: (?xi){{commonIdentifier}}
-      scope: entity.name.function.fjsx15
+      scope: entity.name.function.js.fjsx15
       set: optional-template-parameters
 
   template-parameters:

@@ -31,10 +31,10 @@ contexts:
         ({{decoratorIdentifier}})
         \s*(\()
       captures:
-        0: decorator.fjsx15
-        1: punctuation.delimiter.decorator.fjsx15
-        2: entity.name.decorator.fjsx15
-        3: punctuation.delimiter.decorator.parameters.begin.fjsx15
+        0: decorator.js.fjsx15
+        1: punctuation.delimiter.decorator.js.fjsx15
+        2: entity.name.decorator.js.fjsx15
+        3: punctuation.delimiter.decorator.parameters.begin.js.fjsx15
       set: arguments
     # Decorator without parameters.
     - match: |
@@ -42,19 +42,19 @@ contexts:
         (@)
         ({{decoratorIdentifier}})
       captures:
-        0: decorator.fjsx15
-        1: punctuation.delimiter.decorator.fjsx15
-        2: entity.name.decorator.fjsx15
+        0: decorator.js.fjsx15
+        1: punctuation.delimiter.decorator.js.fjsx15
+        2: entity.name.decorator.js.fjsx15
       pop: true
 
   arguments:
-    - meta_scope: decorator.arguments.fjsx15
-    - meta_content_scope: decorator.arguments.content.fjsx15
+    - meta_scope: decorator.arguments.js.fjsx15
+    - meta_content_scope: decorator.arguments.content.js.fjsx15
     - match: \)
-      scope: punctuation.delimiter.decorator.arguments.end.fjsx15
+      scope: punctuation.delimiter.decorator.arguments.end.js.fjsx15
       pop: true
     - match: \,
       scope: >-
-        decorator.fjsx15
-        punctuation.delimiter.decorator.arguments.fjsx15
+        decorator.js.fjsx15
+        punctuation.delimiter.decorator.arguments.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/expression.no-pop.sublime-syntax

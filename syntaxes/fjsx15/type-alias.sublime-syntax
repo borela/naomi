@@ -32,7 +32,7 @@ contexts:
           (?:<.*>)?
           \s*=
         )
-      scope: keyword.type.alias.fjsx15
+      scope: keyword.type.alias.js.fjsx15
       set: [
         type,
         punctuation,

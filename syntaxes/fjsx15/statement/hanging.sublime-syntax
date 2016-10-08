@@ -27,11 +27,11 @@ contexts:
           | protected
           | public
         )\b
-      scope: keyword.control.hanging.js.js15
+      scope: keyword.control.hanging.js.fjsx15
       set: operator
 
   operator:
     - match: ":"
-      scope: operator.js.js15
+      scope: operator.js.fjsx15
       pop: true
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

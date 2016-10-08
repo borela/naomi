@@ -35,7 +35,7 @@ contexts:
         )
         \(
         (?!{{arrowFunctionContinuation}})
-      scope: punctuation.delimiter.expression.group.a.begin.fjsx15
+      scope: punctuation.delimiter.expression.group.a.begin.js.fjsx15
       push: open-b-close-a
     - include: terminators
     - include: content
@@ -48,11 +48,11 @@ contexts:
         )
         \(
         (?!{{arrowFunctionContinuation}})
-      scope: punctuation.delimiter.expression.group.b.begin.fjsx15
+      scope: punctuation.delimiter.expression.group.b.begin.js.fjsx15
       push: open-a-close-b
     - include: comma-operator
     - match: \)
-      scope: punctuation.delimiter.expression.group.a.end.fjsx15
+      scope: punctuation.delimiter.expression.group.a.end.js.fjsx15
       pop: true
     - include: terminators
     - include: content
@@ -65,11 +65,11 @@ contexts:
         )
         \(
         (?!{{arrowFunctionContinuation}})
-      scope: punctuation.delimiter.expression.group.a.begin.fjsx15
+      scope: punctuation.delimiter.expression.group.a.begin.js.fjsx15
       push: open-b-close-a
     - include: comma-operator
     - match: \)
-      scope: punctuation.delimiter.expression.group.b.end.fjsx15
+      scope: punctuation.delimiter.expression.group.b.end.js.fjsx15
       pop: true
     - include: terminators
     - include: content
@@ -106,7 +106,7 @@ contexts:
 
   comma-operator:
     - match: \,
-      scope: operator.comma.fjsx15
+      scope: operator.comma.js.fjsx15
 
   terminators:
     - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax

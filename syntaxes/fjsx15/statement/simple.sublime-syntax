@@ -33,7 +33,7 @@ contexts:
           | return
           | throw
         )\b
-      scope: keyword.control.simple.js.js15
+      scope: keyword.control.simple.js.fjsx15
       set: expression
 
   expression:
@@ -47,5 +47,5 @@ contexts:
           | \b
         )
       captures:
-        1: keyword.control.simple.js.js15
-        2: entity.name.function.js.js15
+        1: keyword.control.simple.js.fjsx15
+        2: entity.name.function.js.fjsx15

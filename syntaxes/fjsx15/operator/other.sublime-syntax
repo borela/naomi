@@ -32,25 +32,25 @@ contexts:
         (?> typeof
           | void
         )\b
-      scope: operator.js.js15
+      scope: operator.js.fjsx15
       pop: true
     - match: \:{2}
-      scope: operator.bind.js.js15
+      scope: operator.bind.js.fjsx15
       pop: true
     - match: \.{3}
-      scope: operator.spread.js.js15
+      scope: operator.spread.js.fjsx15
       pop: true
     - match: \?
-      scope: operator.ternary.js.js15
+      scope: operator.ternary.js.fjsx15
       set: ternary-condition
     - match: \.
-      scope: operator.member.access.js.js15
+      scope: operator.member.access.js.fjsx15
       set: member-access
 
   ternary-condition:
     - match: \s*(:)
       captures:
-        1: operator.ternary.js.js15
+        1: operator.ternary.js.fjsx15
       pop: true
     - match: ""
       push:
@@ -61,7 +61,7 @@ contexts:
   member-access:
     # Only variables and constants are afected by the meta scope, this is the
     # intended result.
-    - meta_content_scope: member.js.js15
+    - meta_content_scope: member.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

@@ -43,7 +43,7 @@ contexts:
 
   extension:
     - match: \bextends\b
-      scope: keyword.extension.fjsx15
+      scope: keyword.extension.js.fjsx15
       set: type
 
   type:
@@ -77,23 +77,23 @@ contexts:
 
   body:
     - meta_content_scope: >-
-        interface.fjsx15
-        interface.body.fjsx15
+        interface.js.fjsx15
+        interface.body.js.fjsx15
     - include: comment
     - match: \{
-      scope: punctuation.delimiter.interface.body.begin.fjsx15
+      scope: punctuation.delimiter.interface.body.begin.js.fjsx15
       set: body-content
 
   body-content:
     - meta_content_scope: >-
-        interface.fjsx15
-        interface.body.fjsx15
+        interface.js.fjsx15
+        interface.body.js.fjsx15
     - include: comment
     - match: \}
       scope: >-
-        interface.fjsx15
-        interface.body.fjsx15
-        punctuation.delimiter.interface.body.end.fjsx15
+        interface.js.fjsx15
+        interface.body.js.fjsx15
+        punctuation.delimiter.interface.body.end.js.fjsx15
       pop: true
     - match: (?=\S)
       push:

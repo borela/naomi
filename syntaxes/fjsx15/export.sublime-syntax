@@ -20,12 +20,12 @@ scope: ...
 contexts:
   main:
     - match: \bexport\b
-      scope: keyword.export.fjsx15
+      scope: keyword.export.js.fjsx15
       set: optional-default
 
   optional-default:
     - match: \bdefault\b
-      scope: keyword.export.default.fjsx15
+      scope: keyword.export.default.js.fjsx15
       set: targets
     - match: (?=\S)
       set: targets

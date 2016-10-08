@@ -29,8 +29,8 @@ contexts:
         (?x)
         \b[_[:upper:]]\b
       scope: >-
-        constant.js.js15
-        entity.name.constant.js.js15
+        constant.js.fjsx15
+        entity.name.constant.js.fjsx15
       set: array-item-access-begin
     # Two or more.
     - match: |
@@ -43,8 +43,8 @@ contexts:
           | \$\B
         )
       scope: >-
-        constant.js.js15
-        entity.name.constant.js.js15
+        constant.js.fjsx15
+        entity.name.constant.js.fjsx15
       pop: true
 
   array-item-access-begin:
@@ -53,7 +53,7 @@ contexts:
       pop: true
     # Array item access.
     - match: \[
-      scope: punctuation.delimiter.array.item.access.begin.fjsx15
+      scope: punctuation.delimiter.array.item.access.begin.js.fjsx15
       push: [
         array-item-access-end,
         array-index
@@ -63,7 +63,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   array-item-access-end:
-    - meta_scope: array.item.access.fjsx15
+    - meta_scope: array.item.access.js.fjsx15
     - match: \]
-      scope: punctuation.delimiter.array.item.access.end.fjsx15
+      scope: punctuation.delimiter.array.item.access.end.js.fjsx15
       pop: true

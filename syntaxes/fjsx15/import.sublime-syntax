@@ -32,11 +32,11 @@ contexts:
           \s*
           (?>"|')
         )\b
-      scope: keyword.import.js.js15
+      scope: keyword.import.js.fjsx15
       set: origin-path
     # Selective.
     - match: \bimport\b
-      scope: keyword.import.js.js15
+      scope: keyword.import.js.fjsx15
       set: [
         punctuation,
         target
@@ -44,7 +44,7 @@ contexts:
 
   origin:
     - match: \bfrom\b
-      scope: keyword.import.origin.js.js15
+      scope: keyword.import.origin.js.fjsx15
       set: origin-path
 
   origin-path:
@@ -54,27 +54,27 @@ contexts:
   target:
     # Multiple.
     - match: \{
-      scope: punctuation.delimiter.import.list.begin.js.js15
+      scope: punctuation.delimiter.import.list.begin.js.fjsx15
       set: list
     # All.
     - match: \*
-      scope: operator.import.all.js.js15
+      scope: operator.import.all.js.fjsx15
       set: optional-alias
     # Simple.
     - match: |
         (?xi)
         {{commonIdentifier}}
-      scope: entity.name.import.ambiguous.js.js15
+      scope: entity.name.import.ambiguous.js.fjsx15
       set: optional-alias
 
   list:
     - match: \}
-      scope: punctuation.delimiter.import.list.end.js.js15
+      scope: punctuation.delimiter.import.list.end.js.fjsx15
       pop: true
     - match: ""
       push:
         - match: \,
-          scope: punctuation.delimiter.import.item.js.js15
+          scope: punctuation.delimiter.import.item.js.fjsx15
         - include: target
         - match: (?=\})
           pop: true
@@ -93,20 +93,20 @@ contexts:
 
   alias:
     - match: \bas\b
-      scope: keyword.alias.begin.js.js15
+      scope: keyword.alias.begin.js.fjsx15
       set: alias-name
 
   alias-name:
     - match: |
         (?xi)
         {{commonIdentifier}}
-      scope: entity.name.alias.js.js15
+      scope: entity.name.alias.js.fjsx15
       pop: true
 
   punctuation:
     - include: origin
     - match: \,
-      scope: punctuation.delimiter.import.item.js.js15
+      scope: punctuation.delimiter.import.item.js.fjsx15
       set: [
         punctuation,
         target

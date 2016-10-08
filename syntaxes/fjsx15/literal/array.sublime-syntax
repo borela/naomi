@@ -26,7 +26,7 @@ contexts:
           [^;]*?\]
           \s*=[^=]
         )
-      scope: punctuation.delimiter.array.begin.fjsx15
+      scope: punctuation.delimiter.array.begin.js.fjsx15
       set: array-items
 
   array-items:
@@ -41,7 +41,7 @@ contexts:
   punctuation:
     - include: terminator
     - match: \,
-      scope: punctuation.delimiter.array.fjsx15
+      scope: punctuation.delimiter.array.js.fjsx15
       set: [
         punctuation,
         value
@@ -49,7 +49,7 @@ contexts:
 
   terminator:
     - match: \]
-      scope: punctuation.delimiter.array.end.fjsx15
+      scope: punctuation.delimiter.array.end.js.fjsx15
       pop: true
 
   value:

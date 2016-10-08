@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: \bdeclare\b
-      scope: keyword.declaration.fjsx15
+      scope: keyword.declaration.js.fjsx15
       set: declarations
 
   declarations:

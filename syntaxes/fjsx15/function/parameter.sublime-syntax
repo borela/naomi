@@ -44,7 +44,7 @@ contexts:
 
   optional-rest-operator:
     - match: \.{3}
-      scope: operator.rest.fjsx15
+      scope: operator.rest.js.fjsx15
     - match: ""
       pop: true
 
@@ -64,7 +64,7 @@ contexts:
   optional-value:
     - include: terminators
     - match: =
-      scope: operator.assignment.fjsx15
+      scope: operator.assignment.js.fjsx15
       set: value
 
   type:

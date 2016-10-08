@@ -37,9 +37,9 @@ contexts:
   main:
     - match: (?xi){{simpleVariable}}
       captures:
-        1: punctuation.variable.begin.js.js15
-        2: entity.name.variable.js.js15
-        3: operator.subscript.begin.js.js15
-        4: array.key.js.js15
-        5: operator.subscript.end.js.js15
+        1: punctuation.variable.begin.js.fjsx15
+        2: entity.name.variable.js.fjsx15
+        3: operator.subscript.begin.js.fjsx15
+        4: array.key.js.fjsx15
+        5: operator.subscript.end.js.fjsx15
       pop: true

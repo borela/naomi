@@ -75,7 +75,7 @@ contexts:
           | let
           | var
         )\b
-      scope: keyword.variable.declaration.fjsx15
+      scope: keyword.variable.declaration.js.fjsx15
       pop: true
 
   variable:
@@ -89,13 +89,13 @@ contexts:
         (?= \bin\b)
       pop: true
     - match: ;
-      scope: punctuation.terminator.fjsx15
+      scope: punctuation.terminator.js.fjsx15
       pop: true
     - match: ":"
       scope: operator.type.flowtype
       set: type
     - match: \=
-      scope: operator.assignment.fjsx15
+      scope: operator.assignment.js.fjsx15
       set: value
 
   type:
@@ -120,7 +120,7 @@ contexts:
 
   sibling:
     - match: \,
-      scope: punctuation.delimiter.fjsx15
+      scope: punctuation.delimiter.js.fjsx15
       set: [
         punctuation,
         variable

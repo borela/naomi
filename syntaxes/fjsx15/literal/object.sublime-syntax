@@ -29,8 +29,8 @@ contexts:
         (?x)
         (\{)\s*(\})
       captures:
-        1: punctuation.delimiter.object.begin.fjsx15
-        2: punctuation.delimiter.object.end.fjsx15
+        1: punctuation.delimiter.object.begin.js.fjsx15
+        2: punctuation.delimiter.object.end.js.fjsx15
       pop: true
     # Normal object literal.
     - match: |
@@ -40,7 +40,7 @@ contexts:
           [^;]*?\}
           \s*=[^=]
         )
-      scope: punctuation.delimiter.object.begin.fjsx15
+      scope: punctuation.delimiter.object.begin.js.fjsx15
       set: [
         punctuation,
         property-or-method
@@ -69,7 +69,7 @@ contexts:
       ]
     # Computed property name.
     - match: \[
-      scope: operator.property.computed.begin.fjsx15
+      scope: operator.property.computed.begin.js.fjsx15
       set: [
         optional-value,
         computed-property-end,
@@ -80,13 +80,13 @@ contexts:
         (?xi)
         {{commonIdentifier}}
       scope: >-
-        variable.fjsx15
-        entity.name.variable.fjsx15
+        variable.js.fjsx15
+        entity.name.variable.js.fjsx15
       set: optional-value
 
   computed-property-end:
     - match: \]
-      scope: operator.property.computed.end.fjsx15
+      scope: operator.property.computed.end.js.fjsx15
       pop: true
 
   string:
@@ -97,7 +97,7 @@ contexts:
   optional-value:
     - include: comment
     - match: ":"
-      scope: operator.association.fjsx15
+      scope: operator.association.js.fjsx15
       set: value
     - match: (?=\S)
       pop: true
@@ -109,13 +109,13 @@ contexts:
   punctuation:
     - include: comment
     - match: \,
-      scope: punctuation.delimiter.object.fjsx15
+      scope: punctuation.delimiter.object.js.fjsx15
       set: [
         punctuation,
         property-or-method
       ]
     - match: \}
-      scope: punctuation.delimiter.object.end.fjsx15
+      scope: punctuation.delimiter.object.end.js.fjsx15
       pop: true
 
   comment:

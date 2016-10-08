@@ -61,13 +61,13 @@ contexts:
   name:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/class.sublime-syntax
     - match: (?xi){{commonIdentifier}}
-      scope: entity.name.function.fjsx15
+      scope: entity.name.function.js.fjsx15
       pop: true
 
   template-arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/template/arguments.sublime-syntax
 
   arguments:
-    - meta_scope: function.call.fjsx15
+    - meta_scope: function.call.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 

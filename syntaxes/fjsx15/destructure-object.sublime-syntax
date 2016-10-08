@@ -25,7 +25,7 @@ variables:
 contexts:
   main:
     - match: \{
-      scope: punctuation.delimiter.destructure.object.begin.fjsx15
+      scope: punctuation.delimiter.destructure.object.begin.js.fjsx15
       set: [
         punctuation,
         variable
@@ -35,7 +35,7 @@ contexts:
     - match: (?=,)
       pop: true
     - match: \.{3}
-      scope: operator.rest.fjsx15
+      scope: operator.rest.js.fjsx15
     # Alias.
     - match: |
         (?x)
@@ -56,7 +56,7 @@ contexts:
 
   optional-value:
     - match: =
-      scope: keyword.operator.assignment.fjsx15
+      scope: keyword.operator.assignment.js.fjsx15
       set: value
     - match: (?=\S)
       pop: true
@@ -74,7 +74,7 @@ contexts:
 
   alias-operator:
     - match: ":"
-      scope: operator.alias.fjsx15
+      scope: operator.alias.js.fjsx15
       pop: true
 
   alias:
@@ -82,11 +82,11 @@ contexts:
 
   punctuation:
     - match: \,
-      scope: punctuation.delimiter.destructure.item.fjsx15
+      scope: punctuation.delimiter.destructure.item.js.fjsx15
       set: [
         punctuation,
         variable
       ]
     - match: \}
-      scope: punctuation.delimiter.destructure.object.end.fjsx15
+      scope: punctuation.delimiter.destructure.object.end.js.fjsx15
       pop: true

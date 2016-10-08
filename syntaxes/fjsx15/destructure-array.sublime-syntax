@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: \[
-      scope: punctuation.delimiter.destructure.array.begin.fjsx15
+      scope: punctuation.delimiter.destructure.array.begin.js.fjsx15
       set: [
         punctuation,
         optional-value,
@@ -29,7 +29,7 @@ contexts:
 
   optional-value:
     - match: =
-      scope: keyword.operator.assignment.fjsx15
+      scope: keyword.operator.assignment.js.fjsx15
       set: value
     - match: (?=\S)
       pop: true
@@ -39,21 +39,21 @@ contexts:
 
   punctuation:
     - match: \,
-      scope: punctuation.delimiter.destructure.item.fjsx15
+      scope: punctuation.delimiter.destructure.item.js.fjsx15
       set: [
         punctuation,
         optional-value,
         variable
       ]
     - match: \]
-      scope: punctuation.delimiter.destructure.array.end.fjsx15
+      scope: punctuation.delimiter.destructure.array.end.js.fjsx15
       pop: true
 
   variable:
     - match: (?=,)
       pop: true
     - match: \.{3}
-      scope: operator.rest.fjsx15
+      scope: operator.rest.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/destructure-object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructure-array.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

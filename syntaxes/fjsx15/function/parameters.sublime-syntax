@@ -21,8 +21,8 @@ contexts:
   main:
     - match: \(
       scope: >-
-        function.parameters.fjsx15
-        punctuation.delimiter.function.parameters.begin.fjsx15
+        function.parameters.js.fjsx15
+        punctuation.delimiter.function.parameters.begin.js.fjsx15
       set: [
         punctuation,
         parameter
@@ -36,17 +36,17 @@ contexts:
 
   punctuation:
     - meta_content_scope: >-
-        function.parameters.fjsx15
-        function.parameters.content.fjsx15
+        function.parameters.js.fjsx15
+        function.parameters.content.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
     - match: \,
-      scope: punctuation.delimiter.function.parameters.fjsx15
+      scope: punctuation.delimiter.function.parameters.js.fjsx15
       set: [
         punctuation,
         parameter
       ]
     - match: \)
       scope: >-
-        function.parameters.fjsx15
-        punctuation.delimiter.function.parameters.end.fjsx15
+        function.parameters.js.fjsx15
+        punctuation.delimiter.function.parameters.end.js.fjsx15
       pop: true

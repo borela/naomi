@@ -26,5 +26,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/arithmetic.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/cast.sublime-syntax
     - match: =
-      scope: operator.assignment.free.fjsx15
+      scope: operator.assignment.free.js.fjsx15
       pop: true

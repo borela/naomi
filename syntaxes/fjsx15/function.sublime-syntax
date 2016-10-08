@@ -31,12 +31,12 @@ contexts:
         )?
         (function)\b
       captures:
-        1: keyword.modifier.fjsx15
-        2: keyword.function.fjsx15
+        1: keyword.modifier.js.fjsx15
+        2: keyword.function.js.fjsx15
       set: identifier
 
   identifier:
-    - meta_scope: function.fjsx15
+    - meta_scope: function.js.fjsx15
     # Start of template parameters (no identifier).
     - match: (?=<)
       set: [
@@ -60,7 +60,7 @@ contexts:
           \s*
           {{commonIdentifier}}
         )?
-      scope: entity.name.function.fjsx15
+      scope: entity.name.function.js.fjsx15
       set: optional-template-parameters
 
   template-parameters:

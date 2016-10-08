@@ -25,10 +25,11 @@ variables:
 contexts:
   main:
     - match: |
-        (?x)\b
+        (?xi)\b
         type
         (?=
           \s+{{commonIdentifier}}
+          (?:<.*>)?
           \s*=
         )
       scope: keyword.type.alias.fjsx15

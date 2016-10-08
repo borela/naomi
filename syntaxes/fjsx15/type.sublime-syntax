@@ -23,7 +23,7 @@ contexts:
     # Enveloped nullable.
     - match: (\?)\s*(\()
       captures:
-        1: keyword.type.nullable.flowtype
+        1: operator.nullable.flowtype
         2: punctuation.delimiter.nullable.begin.flowtype
       set: [
         nullable-end,
@@ -31,7 +31,7 @@ contexts:
       ]
     # Nullable followed by a type.
     - match: \?
-      scope: keyword.type.nullable.flowtype
+      scope: operator.nullable.flowtype
       set: [
         operator,
         type
@@ -53,11 +53,11 @@ contexts:
         (?x)
         (?> \|
           | &
-        )\b
-      scope: operator.flowtype
+        )
+      scope: operator.union.flowtype
       set: [
         operator,
-        type
+        main
       ]
     - match: (?=\S)
       pop: true

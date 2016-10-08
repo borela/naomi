@@ -59,6 +59,8 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   member-access:
+    # Only variables and constants are afected by the meta scope, this is the
+    # intended result.
     - meta_content_scope: member.js.js15
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax

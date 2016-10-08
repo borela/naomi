@@ -19,10 +19,10 @@ scope: ...
 
 contexts:
   main:
-    - match: \/\/
+    - match: \s*\/\/
       scope: punctuation.comment.begin.js.js15
       set: line
-    - match: \/\*
+    - match: \s*\/\*
       scope: punctuation.comment.begin.js.js15
       set: block
 

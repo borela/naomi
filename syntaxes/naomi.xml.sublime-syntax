@@ -28,7 +28,7 @@ file_extensions:
 
 first_line_match: <\?xml
 
-scope: text.xml.1.0
+scope: text.xml
 
 contexts:
   main:

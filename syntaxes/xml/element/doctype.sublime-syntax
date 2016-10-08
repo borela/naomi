@@ -21,8 +21,8 @@ contexts:
   main:
     - match: (<!)(DOCTYPE).*?(>)
       captures:
-        0: tag.doctype.xml.1.0
-        1: punctuation.delimiter.tag.begin.xml.1.0
-        2: entity.name.tag.doctype.xml.1.0
-        3: punctuation.delimiter.tag.end.xml.1.0
+        0: tag.doctype.xml
+        1: punctuation.delimiter.tag.begin.xml
+        2: entity.name.tag.doctype.xml
+        3: punctuation.delimiter.tag.end.xml
       pop: true

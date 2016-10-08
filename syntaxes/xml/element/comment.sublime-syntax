@@ -20,12 +20,12 @@ scope: ...
 contexts:
   main:
     - match: <!--
-      scope: punctuation.comment.begin.xml.1.0
+      scope: punctuation.comment.begin.xml
       set: comment
 
   comment:
-    - meta_scope: comment.block.xml.1.0
-    - meta_content_scope: comment.content.xml.1.0
+    - meta_scope: comment.block.xml
+    - meta_content_scope: comment.content.xml
     - match: -->
-      scope: punctuation.comment.end.xml.1.0
+      scope: punctuation.comment.end.xml
       pop: true

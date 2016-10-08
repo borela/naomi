@@ -20,11 +20,11 @@ scope: ...
 contexts:
   main:
     - match: \'
-      scope: punctuation.delimiter.string.begin.xml.1.0
+      scope: punctuation.delimiter.string.begin.xml
       set: string
 
   string:
-    - meta_scope: string.quoted.single.xml.1.0
+    - meta_scope: string.quoted.single.xml
     - match: \'
-      scope: punctuation.delimiter.string.end.xml.1.0
+      scope: punctuation.delimiter.string.end.xml
       pop: true

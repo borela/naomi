@@ -27,12 +27,12 @@ contexts:
     - match: |
         (?xi)
         {{commonIdentifier}}
-      scope: entity.name.attribute.xml.1.0
+      scope: entity.name.attribute.xml
       set: optional-value
 
   optional-value:
     - match: \=
-      scope: operator.assignment.xml.1.0
+      scope: operator.assignment.xml
       set: value
     - match: (?=\S)
       pop: true

@@ -21,15 +21,15 @@ contexts:
   main:
     - match: (<!\[)(CDATA)(\[)
       captures:
-        0: tag.cdata.xml.1.0
-        1: punctuation.delimiter.tag.begin.xml.1.0
-        2: entity.name.tag.cdata.xml.1.0
-        3: punctuation.delimiter.tag.begin.xml.1.0
+        0: tag.cdata.xml
+        1: punctuation.delimiter.tag.begin.xml
+        2: entity.name.tag.cdata.xml
+        3: punctuation.delimiter.tag.begin.xml
       set: content
 
   content:
     - match: \]\]\>
       scope: >-
-        tag.cdata.xml.1.0
-        punctuation.delimiter.tag.end.xml.1.0
+        tag.cdata.xml
+        punctuation.delimiter.tag.end.xml
       pop: true

@@ -21,30 +21,30 @@ contexts:
   main:
     - match: (<\?)(xml)
       captures:
-        0: tag.prolog.xml.1.0
-        1: punctuation.tag.instruction.begin.xml.1.0
-        2: entity.name.tag.instruction.prolog.xml.1.0
+        0: tag.prolog.xml
+        1: punctuation.tag.instruction.begin.xml
+        2: entity.name.tag.instruction.prolog.xml
       set: version
 
   terminator:
     - match: \s*\?>
       scope: >-
-        tag.prolog.xml.1.0
-        punctuation.tag.instruction.end.xml.1.0
+        tag.prolog.xml
+        punctuation.tag.instruction.end.xml
       pop: true
 
   assignment-operator:
     - match: \s*(=)
       captures:
-        1: operator.assignment.xml.1.0
+        1: operator.assignment.xml
       pop: true
 
   version:
     - include: terminator
     - match: version
       scope: >-
-        support.attribute.xml.1.0
-        entity.name.attribute.xml.1.0
+        support.attribute.xml
+        entity.name.attribute.xml
       set: [
         optional-attributes,
         version-value,
@@ -54,15 +54,15 @@ contexts:
   version-value:
     - match: (\")1.[0-9]+(\")
       captures:
-        0: string.quoted.double.xml.1.0
-        1: punctuation.delimiter.string.begin.xml.1.0
-        2: punctuation.delimiter.string.end.xml.1.0
+        0: string.quoted.double.xml
+        1: punctuation.delimiter.string.begin.xml
+        2: punctuation.delimiter.string.end.xml
       pop: true
     - match: (\')1.[0-9]+(\')
       captures:
-        0: string.quoted.single.xml.1.0
-        1: punctuation.delimiter.string.begin.xml.1.0
-        2: punctuation.delimiter.string.end.xml.1.0
+        0: string.quoted.single.xml
+        1: punctuation.delimiter.string.begin.xml
+        2: punctuation.delimiter.string.end.xml
       pop: true
 
   optional-attributes:
@@ -73,8 +73,8 @@ contexts:
     - include: terminator
     - match: encoding
       scope: >-
-        support.attribute.xml.1.0
-        entity.name.attribute.xml.1.0
+        support.attribute.xml
+        entity.name.attribute.xml
       set: [
         standalone,
         encoding-value,
@@ -86,25 +86,25 @@ contexts:
         (?xi)
         (\")[a-z][a-z0-9-._]+(\")
       captures:
-        0: string.quoted.double.xml.1.0
-        1: punctuation.delimiter.string.begin.xml.1.0
-        2: punctuation.delimiter.string.end.xml.1.0
+        0: string.quoted.double.xml
+        1: punctuation.delimiter.string.begin.xml
+        2: punctuation.delimiter.string.end.xml
       pop: true
     - match: |
         (?xi)
         (\')[a-z][a-z0-9-._]+(\')
       captures:
-        0: string.quoted.single.xml.1.0
-        1: punctuation.delimiter.string.begin.xml.1.0
-        2: punctuation.delimiter.string.end.xml.1.0
+        0: string.quoted.single.xml
+        1: punctuation.delimiter.string.begin.xml
+        2: punctuation.delimiter.string.end.xml
       pop: true
 
   standalone:
     - include: terminator
     - match: standalone
       scope: >-
-        support.attribute.xml.1.0
-        entity.name.attribute.xml.1.0
+        support.attribute.xml
+        entity.name.attribute.xml
       set: [
         terminator,
         standalone-value,
@@ -117,15 +117,15 @@ contexts:
         (?xi)
         (\")(?>yes|no)(\")
       captures:
-        0: string.quoted.double.xml.1.0
-        1: punctuation.delimiter.string.begin.xml.1.0
-        2: punctuation.delimiter.string.end.xml.1.0
+        0: string.quoted.double.xml
+        1: punctuation.delimiter.string.begin.xml
+        2: punctuation.delimiter.string.end.xml
       pop: true
     - match: |
         (?xi)
         (\')(?>yes|no)(\')
       captures:
-        0: string.quoted.single.xml.1.0
-        1: punctuation.delimiter.string.begin.xml.1.0
-        2: punctuation.delimiter.string.end.xml.1.0
+        0: string.quoted.single.xml
+        1: punctuation.delimiter.string.begin.xml
+        2: punctuation.delimiter.string.end.xml
       pop: true

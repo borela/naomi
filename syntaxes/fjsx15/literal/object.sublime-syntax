@@ -37,7 +37,7 @@ contexts:
         (?x)
         \{
         (?!
-          .*?\}
+          [^;]*?\}
           \s*=[^=]
         )
       scope: punctuation.delimiter.object.begin.fjsx15

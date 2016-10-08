@@ -23,13 +23,14 @@ contexts:
         (?x)
         \[
         (?!
-          .*?\]
+          [^;]*?\]
           \s*=[^=]
         )
       scope: punctuation.delimiter.array.begin.fjsx15
       set: array-items
 
   array-items:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
     - include: terminator
     - match: (?=\S)
       set: [

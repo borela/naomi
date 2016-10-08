@@ -77,6 +77,7 @@ contexts:
   content:
     - match: ""
       push:
+        - include: Packages/Naomi/syntaxes/fjsx15/prolog.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
@@ -97,6 +98,9 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
         # Constant matching failed, so it could be a variable.
         - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+        # If it’s not a delimiter from a parent context, then we can be sure that
+        # it is the comma operator.
+        - include: comma-operator
         - match: ""
           pop: true
 

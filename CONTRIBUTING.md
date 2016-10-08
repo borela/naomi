@@ -200,8 +200,8 @@ following style:
 * Break the syntax into multiple files to make it easier to maintain and extend.
 * Break the regexes into multiple lines. This rule can be broken if the having
   the patterns on the same line will make it clearer.
-* Design for sequence. It means that you must never use the look behind pattern
-  and matches usually pop the current context from the stack.
+* Design for sequence. It means that you should avoid look behind pattern at all
+  costs and matches pop the current context from the stack.
 * Execute the command `Naomi: Run syntax tests` to check if your changes broke
   anything.
 * Add the appropriate [license header](#license-headers).

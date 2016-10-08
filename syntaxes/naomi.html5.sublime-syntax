@@ -21,7 +21,7 @@ file_extensions:
 
 first_line_match: <!DOCTYPE html>
 
-scope: text.html.5
+scope: text.html.html5
 
 contexts:
   main:

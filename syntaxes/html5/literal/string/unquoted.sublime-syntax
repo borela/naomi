@@ -20,5 +20,5 @@ scope: ...
 contexts:
   main:
     - match: \S.*?(?=\s|>)
-      scope: string.unquoted.html.5
+      scope: string.unquoted.html.html5
       pop: true

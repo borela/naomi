@@ -20,11 +20,11 @@ scope: ...
 contexts:
   main:
     - match: \'
-      scope: punctuation.delimiter.string.begin.html.5
+      scope: punctuation.delimiter.string.begin.html.html5
       set: string
 
   string:
-    - meta_scope: string.quoted.single.html.5
+    - meta_scope: string.quoted.single.html.html5
     - match: \'
-      scope: punctuation.delimiter.string.end.html.5
+      scope: punctuation.delimiter.string.end.html.html5
       pop: true

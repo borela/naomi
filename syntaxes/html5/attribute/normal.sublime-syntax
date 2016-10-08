@@ -27,7 +27,7 @@ contexts:
     - match: |
         (?xi)
         {{commonIdentifier}}
-      scope: entity.name.attribute.html.5
+      scope: entity.name.attribute.html.html5
       set: value
 
   value:

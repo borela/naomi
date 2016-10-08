@@ -22,11 +22,11 @@ contexts:
     - match: |
         (?xi)
         <!--
-      scope: punctuation.comment.block.begin.html.5
+      scope: punctuation.comment.block.begin.html.html5
       set: comment
 
   comment:
-    - meta_scope: comment.block.html.5
+    - meta_scope: comment.block.html.html5
     - match: -->
-      scope: punctuation.comment.block.end.html.5
+      scope: punctuation.comment.block.end.html.html5
       pop: true

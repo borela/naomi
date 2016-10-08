@@ -37,15 +37,15 @@ contexts:
             )
         )
       scope: >-
-        support.attribute.html.5
-        entity.name.attribute.html.5
+        support.attribute.html.html5
+        entity.name.attribute.html.html5
       set: value
 
   boolean:
     - match: hidden
       scope: >-
-        support.attribute.html.5
-        entity.name.attribute.html.5
+        support.attribute.html.html5
+        entity.name.attribute.html.html5
       pop: true
 
   value:

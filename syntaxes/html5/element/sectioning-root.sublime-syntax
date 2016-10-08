@@ -31,9 +31,9 @@ contexts:
           )
         )\b
       captures:
-        0: tag.open.sectioning.root.html.5
-        1: punctuation.delimiter.tag.begin.html.5
-        2: entity.name.tag.sectioning.root.html.5
+        0: tag.open.sectioning.root.html.html5
+        1: punctuation.delimiter.tag.begin.html.html5
+        2: entity.name.tag.sectioning.root.html.html5
       set: [
         content,
         attributes
@@ -42,8 +42,8 @@ contexts:
   attributes:
     - match: \>
       scope: >-
-        tag.open.sectioning.root.html.5
-        punctuation.delimiter.tag.end.html.5
+        tag.open.sectioning.root.html.html5
+        punctuation.delimiter.tag.end.html.html5
       pop: true
     - include: Packages/Naomi/syntaxes/html5/attribute.no-pop.sublime-syntax
 
@@ -52,9 +52,9 @@ contexts:
         (?x)
         (</)(\2)(>)
       captures:
-        0: tag.close.sectioning.root.html.5
-        1: punctuation.delimiter.tag.begin.html.5
-        2: entity.name.tag.sectioning.root.html.5
-        3: punctuation.delimiter.tag.end.html.5
+        0: tag.close.sectioning.root.html.html5
+        1: punctuation.delimiter.tag.begin.html.html5
+        2: entity.name.tag.sectioning.root.html.html5
+        3: punctuation.delimiter.tag.end.html.html5
       pop: true
     - include: Packages/Naomi/syntaxes/html5/element.no-pop.sublime-syntax

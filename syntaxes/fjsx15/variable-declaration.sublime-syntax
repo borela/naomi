@@ -83,6 +83,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   punctuation:
+    - include: sibling
     - match: |
         (?xi)
         (?= \bin\b)

@@ -27,7 +27,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/statement/bodied.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/statement/simple.sublime-syntax
     # Complex statements.
-    - include: Packages/Naomi/syntaxes/fjsx15/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/declare.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax

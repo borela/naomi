@@ -51,7 +51,7 @@ contexts:
 
   escape-a:
     - meta_content_scope: string.template.js.js15
-    - match: (?x){{escapeSequences}}
+    - match: (?xi){{escapeSequences}}
       scope: constant.character.escape.a.js.js15
       set: escape-b
     - include: embedded-expression
@@ -59,7 +59,7 @@ contexts:
 
   escape-b:
     - meta_content_scope: string.template.js.js15
-    - match: (?x){{escapeSequences}}
+    - match: (?xi){{escapeSequences}}
       scope: constant.character.escape.b.js.js15
       set: escape-a
     - include: embedded-expression

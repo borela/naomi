@@ -54,12 +54,12 @@ contexts:
 
   escape-a:
     - meta_content_scope: string.quoted.double.js.js15
-    - match: (?x){{doubleQuotedEscapeSequences}}
+    - match: (?xi){{doubleQuotedEscapeSequences}}
       scope: constant.character.escape.a.js.js15
       set: escape-b
 
   escape-b:
     - meta_content_scope: string.quoted.double.js.js15
-    - match: (?x){{doubleQuotedEscapeSequences}}
+    - match: (?xi){{doubleQuotedEscapeSequences}}
       scope: constant.character.escape.b.js.js15
       set: escape-a

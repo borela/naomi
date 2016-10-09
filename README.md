@@ -6,6 +6,8 @@
 Package designed to provide easy to extend syntax highlighting and other stuff
 that makes writting more fun.
 
+#### Constants vs Variables
+
 Sublime highlighting system is amazing and fast, it uses only regular expressions
 and do a ton of optimizations, that alone made me stop using IDEs with systems
 that scans the project to perform the highlighting.

@@ -8,7 +8,7 @@ that makes writting more fun.
 
 Sublime highlighting system is amazing and fast, it uses only regular expressions
 and do a ton of optimizations, that alone made me stop using IDEs with systems
-that scans the project do perform the highlighting.
+that scans the project to perform the highlighting.
 
 The problem is that in some languages is not possible to differentiate constants
 and variables just using regular expressions, the solution then is that you must

@@ -6,6 +6,14 @@
 Package designed to provide easy to extend syntax highlighting and other stuff
 that makes writting more fun.
 
+Sublime highlighting system is amazing and fast, it uses only regular expressions
+and do a ton of optimizations, that alone made me stop using IDEs with systems
+that scans the project do perform the highlighting.
+
+The problem is that in some languages is not possible to differentiate constants
+and variables just using regular expressions, the solution then is that you must
+have a coding style where all your constants are uppercase.
+
 ## Features
 
 #### General
@@ -34,6 +42,7 @@ Combines ES2015+, Flow and React’s JSX:
 * Alternating parenthesis in expressions.
 * Alternating escaped characters.
 * Decimal, floating point and hexadecimal literals.
+
 
 #### HTML 5 (Experimental)
 

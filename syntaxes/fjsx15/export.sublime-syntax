@@ -26,10 +26,6 @@ contexts:
   optional-default:
     - match: \bdefault\b
       scope: keyword.export.default.js.fjsx15
-      set: targets
+      pop: true
     - match: (?=\S)
-      set: targets
-
-  targets:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+      pop: true

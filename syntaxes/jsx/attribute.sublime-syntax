@@ -33,10 +33,10 @@ contexts:
 
   optional-value:
     - match: \=(?=\s*\{)
-      scope: operator.assignment.jsx
+      scope: keyword.operator.other.assignment.jsx
       pop: true
     - match: \=
-      scope: operator.assignment.jsx
+      scope: keyword.operator.other.assignment.jsx
       set: value
     - match: (?=\S)
       pop: true

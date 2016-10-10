@@ -924,6 +924,20 @@
 
             <dict>
                 <key>name</key>
+                <string>Markup data attribute</string>
+
+                <key>scope</key>
+                <string>entity.name.attribute.data</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ffffff</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
                 <string>Markup tag</string>
 
                 <key>scope</key>
@@ -1002,7 +1016,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#aed581</string>
+                    <string>#ce93d8</string>
                 </dict>
             </dict>
 
@@ -1016,7 +1030,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#aed58190</string>
+                    <string>#ce93d890</string>
                 </dict>
             </dict>
 
@@ -1030,7 +1044,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#ce93d8</string>
+                    <string>#ffffff</string>
                 </dict>
             </dict>
 
@@ -1044,7 +1058,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#ce93d890</string>
+                    <string>#ffffff90</string>
                 </dict>
             </dict>
 
@@ -1171,6 +1185,104 @@
                 <dict>
                     <key>foreground</key>
                     <string>#bdbdbd70</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>CSS delimiter</string>
+
+                <key>scope</key>
+                <string>punctuation.delimiter.selector.css, punctuation.delimiter.body.begin.css, punctuation.delimiter.body.end.css</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#f48fb1</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>CSS id selector</string>
+
+                <key>scope</key>
+                <string>entity.name.selector.id.css</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#e57373</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>CSS tag selector</string>
+
+                <key>scope</key>
+                <string>entity.name.selector.tag.css</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#bcaaa4</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>CSS tag selector (section)</string>
+
+                <key>scope</key>
+                <string>entity.name.selector.tag.sectioning.css</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ce93d8</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>CSS tag selector (section root)</string>
+
+                <key>scope</key>
+                <string>entity.name.selector.tag.sectioning.root.css</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ffffff</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>CSS tag selector (embedded)</string>
+
+                <key>scope</key>
+                <string>entity.name.selector.tag.embedded.css</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#81d4fa</string>
+                </dict>
+            </dict>
+
+            <dict>
+                <key>name</key>
+                <string>CSS tag selector (form)</string>
+
+                <key>scope</key>
+                <string>entity.name.selector.tag.form.css</string>
+
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#ffecb3</string>
                 </dict>
             </dict>
         </array>

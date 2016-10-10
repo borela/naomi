@@ -39,5 +39,5 @@ contexts:
           | \|\|
           | !
         )
-      scope: operator.logical.php.php7
+      scope: keyword.operator.logical.php.php7
       pop: true

@@ -26,5 +26,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/operator/arithmetic.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/operator/string.sublime-syntax
     - match: =
-      scope: operator.assignment.php.php7
+      scope: keyword.operator.other.assignment.php.php7
       pop: true

@@ -50,7 +50,7 @@ contexts:
         )\b
       captures:
         0: support.variable.php.php7
-        1: punctuation.variable.begin.php.php7
+        1: punctuation.delimiter.variable.begin.php.php7
         2: entity.name.variable.php.php7
       set: array-item-access
 
@@ -60,7 +60,7 @@ contexts:
         \B(\$)({{commonIdentifier}})\b
       captures:
         0: variable.php.php7
-        1: punctuation.variable.begin.php.php7
+        1: punctuation.delimiter.variable.begin.php.php7
         2: entity.name.variable.php.php7
       set: array-item-access
 

@@ -29,6 +29,6 @@ contexts:
 
   operator:
     - match: ":"
-      scope: operator.php.php7
+      scope: keyword.operator.other.php.php7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax

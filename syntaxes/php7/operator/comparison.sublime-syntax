@@ -26,7 +26,7 @@ contexts:
   # |    !=    | Not equal.                |
   # |    <>    | Not equal.                |
   # |    >=    | Greater than or equal to. |
-  # |   <=>    | Spaceship operator.       |
+  # |   <=>    | Spaceship.                |
   # |    <=    | Less than or equal to.    |
   # |    >     | Greater than.             |
   # |    <     | Less than.                |
@@ -42,5 +42,5 @@ contexts:
           | >(?!>)
           | <(?!<)
         )
-      scope: operator.comparison.php.php7
+      scope: keyword.operator.comparison.php.php7
       pop: true

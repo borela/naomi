@@ -51,7 +51,7 @@ contexts:
     - include: end
     - include: item-delimiter
     - match: "=>"
-      scope: operator.key.association.php.php7
+      scope: keyword.operator.other.key.association.php.php7
       set: value
     - include: Packages/Naomi/syntaxes/php7/expression.no-pop.sublime-syntax
 

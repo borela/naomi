@@ -20,5 +20,5 @@ scope: ...
 contexts:
   main:
     - match: ;
-      scope: punctuation.terminator.php.php7
+      scope: keyword.operator.other.terminator.php.php7
       pop: true

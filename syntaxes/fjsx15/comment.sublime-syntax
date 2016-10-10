@@ -19,5 +19,5 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/prolog.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/flow-prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment/normal.sublime-syntax

@@ -85,9 +85,7 @@ contexts:
     - match: |
         (?xi)
         {{commonIdentifier}}
-      scope: >-
-        variable.js.fjsx15
-        entity.name.variable.js.fjsx15
+      scope: entity.name.variable.js.fjsx15
       set: optional-value
 
   computed-property:

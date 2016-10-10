@@ -25,7 +25,6 @@ contexts:
           | super
         )
       scope: >-
-        function.call.js.fjsx15
-        support.function.js.fjsx15
-        entity.name.function.js.fjsx15
+        support.js.fjsx15
+        entity.name.function.call.js.fjsx15
       pop: true

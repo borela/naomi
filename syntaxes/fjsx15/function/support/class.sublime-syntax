@@ -28,7 +28,6 @@ contexts:
         )
       captures:
         1: >-
-          function.js.fjsx15
-          support.function.js.fjsx15
+          support.js.fjsx15
           entity.name.function.js.fjsx15
       pop: true

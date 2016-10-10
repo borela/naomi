@@ -76,24 +76,15 @@ contexts:
       set: body
 
   body:
-    - meta_content_scope: >-
-        interface.js.fjsx15
-        interface.body.js.fjsx15
     - include: comment
     - match: \{
       scope: punctuation.delimiter.interface.body.begin.js.fjsx15
       set: body-content
 
   body-content:
-    - meta_content_scope: >-
-        interface.js.fjsx15
-        interface.body.js.fjsx15
     - include: comment
     - match: \}
-      scope: >-
-        interface.js.fjsx15
-        interface.body.js.fjsx15
-        punctuation.delimiter.interface.body.end.js.fjsx15
+      scope: punctuation.delimiter.interface.body.end.js.fjsx15
       pop: true
     - match: (?=\S)
       push:

@@ -30,9 +30,7 @@ contexts:
           | \b
         )
         ({{commonIdentifier}})
-      scope: >-
-        type.flowtype
-        entity.name.type.flowtype
+      scope: entity.name.type.flowtype
       set: optional-punctuation
 
   optional-punctuation:

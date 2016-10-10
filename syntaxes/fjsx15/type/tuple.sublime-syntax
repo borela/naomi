@@ -20,9 +20,7 @@ scope: ...
 contexts:
   main:
     - match: \[
-      scope: >-
-        type.flowtype
-        punctuation.delimiter.array.begin.flowtype
+      scope: punctuation.delimiter.array.begin.flowtype
       set: [
         punctuation,
         type
@@ -33,16 +31,12 @@ contexts:
 
   punctuation:
     - match: \,
-      scope: >-
-        type.flowtype
-        punctuation.delimiter.array.flowtype
+      scope: punctuation.delimiter.array.flowtype
       set: [
         punctuation,
         type
       ]
     - match: \]
-      scope:  >-
-        type.flowtype
-        punctuation.delimiter.array.end.flowtype
+      scope: punctuation.delimiter.array.end.flowtype
       pop: true
 

@@ -68,9 +68,7 @@ contexts:
     - match: |
         (?xi)
         \*?\s*{{commonIdentifier}}
-      scope: >-
-        function.js.fjsx15
-        entity.name.function.js.fjsx15
+      scope: entity.name.function.js.fjsx15
       pop: true
 
   template-parameters:

@@ -28,13 +28,11 @@ contexts:
 
   line:
     - meta_scope: comment.line.js.fjsx15
-    - meta_content_scope: comment.content.js.fjsx15
     - match: $
       pop: true
 
   block:
     - meta_scope: comment.block.js.fjsx15
-    - meta_content_scope: comment.content.js.fjsx15
     - match: \*\/
       scope: punctuation.comment.end.js.fjsx15
       pop: true

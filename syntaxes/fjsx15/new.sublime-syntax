@@ -42,7 +42,7 @@ contexts:
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
-    - match: ""
+    - match: (?=\S)
       pop: true
 
   type:

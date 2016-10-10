@@ -25,9 +25,7 @@ variables:
 contexts:
   main:
     - match: \{
-      scope: >-
-        type.flowtype
-        punctuation.delimiter.object.begin.flowtype
+      scope: punctuation.delimiter.object.begin.flowtype
       set: [
         punctuation,
         optional-property
@@ -53,9 +51,7 @@ contexts:
           | \b
         )
       captures:
-        1: >-
-          variable.flowtype
-          entity.name.variable.flowtype
+        1: entity.name.variable.flowtype
         2: operator.optional.flowtype
       set: [
         type,
@@ -81,7 +77,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax
 
   punctuation:
-    - meta_content_scope: type.flowtype
     - match: (?=\])
       pop: true
     - match: \,
@@ -91,7 +86,5 @@ contexts:
         optional-property
       ]
     - match: \}
-      scope: >-
-        type.flowtype
-        punctuation.delimiter.object.end.flowtype
+      scope: punctuation.delimiter.object.end.flowtype
       pop: true

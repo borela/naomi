@@ -30,19 +30,14 @@ contexts:
         (?=
           {{commonIdentifier}}
         )
-      scope: >-
-        element.jsx
-        tag.open.jsx
-        punctuation.delimiter.tag.begin.jsx
+      scope: punctuation.delimiter.tag.begin.jsx
       set: tag-name
 
   tag-name:
     - match: |
         (?xi)
         ({{commonIdentifier}})
-      scope: >-
-        tag.open.jsx
-        entity.name.tag.jsx
+      scope: entity.name.tag.jsx
       set: [
         content,
         attributes
@@ -52,25 +47,18 @@ contexts:
     - match: (?=/>)
       pop: true
     - match: \>
-      scope: >-
-        tag.open.jsx
-        punctuation.delimiter.tag.end.jsx
+      scope: punctuation.delimiter.tag.end.jsx
       pop: true
     - include: Packages/Naomi/syntaxes/jsx/attribute.no-pop.sublime-syntax
 
   content:
-    - meta_scope: element.jsx
-    - meta_content_scope: element.content.jsx
     - match: />
-      scope: >-
-        tag.open.void.jsx
-        punctuation.delimiter.tag.end.jsx
+      scope: punctuation.delimiter.tag.end.jsx
       pop: true
     - match: |
         (?x)
         (</)(\1)(>)
       captures:
-        0: tag.close.jsx
         1: punctuation.delimiter.tag.begin.jsx
         2: entity.name.tag.jsx
         3: punctuation.delimiter.tag.end.jsx

@@ -25,33 +25,20 @@ contexts:
       pop: true
     # Arrow function.
     - match: =>\s*\{
-      scope: >-
-        function.body.js.fjsx15
-        punctuation.delimiter.function.body.js.fjsx15
+      scope: punctuation.delimiter.function.body.js.fjsx15
       set: body-content
     # Arrow simple body.
     - match: =>
-      scope: >-
-        function.body.js.fjsx15
-        punctuation.delimiter.function.body.js.fjsx15
+      scope: punctuation.delimiter.function.body.js.fjsx15
       set: arrow-body
     # Normal function.
     - match: \{
-      scope: >-
-        function.body.js.fjsx15
-        punctuation.delimiter.function.body.begin.js.fjsx15
+      scope: punctuation.delimiter.function.body.begin.js.fjsx15
       set: body-content
 
   body-content:
-    - meta_content_scope: >-
-        function.js.fjsx15
-        function.body.js.fjsx15
-        function.body.content.js.fjsx15
     - match: \}
-      scope: >-
-        function.js.fjsx15
-        function.body.js.fjsx15
-        punctuation.delimiter.function.body.end.js.fjsx15
+      scope: punctuation.delimiter.function.body.end.js.fjsx15
       pop: true
     - match: ""
       push:
@@ -60,10 +47,6 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   arrow-body:
-    - meta_content_scope: >-
-        function.js.fjsx15
-        function.body.js.fjsx15
-        function.body.content.js.fjsx15
     - match: |
         (?x)
         (?=

@@ -158,7 +158,7 @@ contexts:
           | w(?>idth|rap)
         )
       scope: >-
-        support.attribute.html.html5
+        support.html.html5
         entity.name.attribute.html.html5
       set: value
 
@@ -166,8 +166,7 @@ contexts:
     - match: |
         (?x)
         data-[_:[:alnum:]\-.]*
-      scope: >-
-        entity.name.attribute.data.html.html5
+      scope: entity.name.attribute.data.html.html5
       set: value
 
   value:

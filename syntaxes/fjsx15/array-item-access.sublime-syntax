@@ -28,7 +28,6 @@ contexts:
       set: index
 
   index:
-    - meta_scope: array.item.access.js.fjsx15
     - match: \]
       scope: punctuation.delimiter.array.item.access.end.js.fjsx15
       set: main

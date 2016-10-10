@@ -26,7 +26,7 @@ contexts:
   templates:
     - match: \bGenerator\b
       scope: >-
-        support.type.flowtype
+        support.flowtype
         entity.name.type.flowtype
       set: [
         optional-array-shorthand,
@@ -48,7 +48,7 @@ contexts:
           | string
         )\b
       scope: >-
-        support.type.flowtype
+        support.flowtype
         entity.name.type.flowtype
       set: optional-array-shorthand
 
@@ -70,6 +70,6 @@ contexts:
           | void
         )\b
       scope: >-
-        support.type.flowtype
+        support.flowtype
         entity.name.type.flowtype
       pop: true

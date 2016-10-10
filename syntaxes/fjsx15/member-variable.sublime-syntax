@@ -74,4 +74,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   terminator:
-    - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
+    - match: \;
+      scope: operator.terminator.js.fjsx15
+      pop: true

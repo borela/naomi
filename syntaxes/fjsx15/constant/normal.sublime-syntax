@@ -28,9 +28,7 @@ contexts:
     - match: |
         (?x)
         \b[_[:upper:]]\b
-      scope: >-
-        constant.js.fjsx15
-        entity.name.constant.js.fjsx15
+      scope: entity.name.constant.js.fjsx15
       set: array-item-access
     # Two or more.
     - match: |
@@ -42,9 +40,7 @@ contexts:
         (?> [_[:upper:][:digit:]]\b
           | \$\B
         )
-      scope: >-
-        constant.js.fjsx15
-        entity.name.constant.js.fjsx15
+      scope: entity.name.constant.js.fjsx15
       set: array-item-access
 
   array-item-access:

@@ -34,9 +34,7 @@ contexts:
         (?> \B\$\B
           | \b[_[:alpha:]]\b
         )
-      scope: >-
-        variable.js.fjsx15
-        entity.name.variable.js.fjsx15
+      scope: entity.name.variable.js.fjsx15
       set: array-item-access
     # Two or more.
     - match: |
@@ -46,9 +44,7 @@ contexts:
         )
         {{commonIdentifier}}
         [_[:alnum:]]\b
-      scope: >-
-        variable.js.fjsx15
-        entity.name.variable.js.fjsx15
+      scope: entity.name.variable.js.fjsx15
       set: array-item-access
 
   support-variable:
@@ -58,7 +54,7 @@ contexts:
           | this
         )\b
       scope: >-
-        support.variable.js.fjsx15
+        support.js.fjsx15
         entity.name.variable.js.fjsx15
       set: array-item-access
 

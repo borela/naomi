@@ -24,15 +24,11 @@ contexts:
       set: arguments
 
   arguments:
-    - meta_scope: function.call.arguments.js.fjsx15
-    - meta_content_scope: function.call.arguments.content.js.fjsx15
     - match: \)
       scope: punctuation.delimiter.function.arguments.end.js.fjsx15
       pop: true
     - match: \,
-      scope: >-
-        function.call.js.fjsx15
-        punctuation.delimiter.function.arguments.js.fjsx15
+      scope: punctuation.delimiter.function.call.arguments.js.fjsx15
     - match: ""
       push:
         - match: (?=,|\))

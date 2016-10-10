@@ -68,6 +68,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/template/arguments.sublime-syntax
 
   arguments:
-    - meta_scope: function.call.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 

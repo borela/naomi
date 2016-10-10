@@ -29,11 +29,9 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
 
   return:
-    - meta_content_scope: type.flowtype
     - match: \=>
       scope: punctuation.delimiter.function.body.flowtype
       set: return-type
 
   return-type:
-    - meta_content_scope: type.flowtype
     - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax

@@ -37,7 +37,7 @@ contexts:
       scope: >-
         variable.js.fjsx15
         entity.name.variable.js.fjsx15
-      set: array-item-access-begin
+      set: array-item-access
     # Two or more.
     - match: |
         (?xi)
@@ -49,7 +49,7 @@ contexts:
       scope: >-
         variable.js.fjsx15
         entity.name.variable.js.fjsx15
-      set: array-item-access-begin
+      set: array-item-access
 
   support-variable:
     - match: |
@@ -60,24 +60,7 @@ contexts:
       scope: >-
         support.variable.js.fjsx15
         entity.name.variable.js.fjsx15
-      set: array-item-access-begin
+      set: array-item-access
 
-  array-item-access-begin:
-    # No array item access found.
-    - match: (?!\s*\[)
-      pop: true
-    # Array item access.
-    - match: \[
-      scope: punctuation.delimiter.array.item.access.begin.js.fjsx15
-      set: array-index
-
-  array-index:
-    - meta_scope: array.item.access.js.fjsx15
-    - match: \]
-      scope: punctuation.delimiter.array.item.access.end.js.fjsx15
-      pop: true
-    - match: ""
-      push:
-        - match: (?=\])
-          pop: true
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  array-item-access:
+    - include: Packages/Naomi/syntaxes/fjsx15/array-item-access.sublime-syntax

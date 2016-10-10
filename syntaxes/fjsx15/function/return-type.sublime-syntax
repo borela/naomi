@@ -20,9 +20,9 @@ scope: ...
 contexts:
   main:
     - match: ":"
-      scope: operator.type.flowtype
+      scope: keyword.operator.other.type.flowtype
       set: return-type
 
   return-type:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax

@@ -40,9 +40,6 @@ contexts:
           )
         )
       captures:
-        0: >-
-          type.js.fjsx15
-          namespace.path.js.fjsx15
         1: entity.name.namespace.a.js.fjsx15
         2: punctuation.delimiter.namespace.a.js.fjsx15
         3: entity.name.namespace.b.js.fjsx15

@@ -76,7 +76,7 @@ contexts:
       ]
     # Computed property name.
     - match: \[
-      scope: operator.property.computed.begin.js.fjsx15
+      scope: keyword.operator.other.property.computed.begin.js.fjsx15
       set: [
         optional-value,
         computed-property
@@ -90,7 +90,7 @@ contexts:
 
   computed-property:
     - match: \]
-      scope: operator.property.computed.end.js.fjsx15
+      scope: keyword.operator.other.property.computed.end.js.fjsx15
       pop: true
     - match: ""
       push:
@@ -103,7 +103,7 @@ contexts:
     - include: item-delimiter
     - include: object-end
     - match: ":"
-      scope: operator.association.js.fjsx15
+      scope: keyword.operator.other.association.js.fjsx15
       set: value
 
   item-delimiter:

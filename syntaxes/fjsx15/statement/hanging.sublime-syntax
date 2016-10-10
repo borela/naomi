@@ -23,15 +23,12 @@ contexts:
         (?x)\b
         (?> case
           | default
-          | private
-          | protected
-          | public
         )\b
-      scope: keyword.control.hanging.js.fjsx15
+      scope: keyword.control.js.fjsx15
       set: operator
 
   operator:
     - match: ":"
-      scope: operator.js.fjsx15
+      scope: keyword.operator.other.js.fjsx15
       pop: true
     - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

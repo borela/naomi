@@ -20,8 +20,8 @@ scope: ...
 contexts:
   main:
     - match: ":"
-      scope: operator.cast.flowtype
+      scope: keyword.operator.other.cast.flowtype
       set: type
 
   type:
-    - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax

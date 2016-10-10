@@ -35,7 +35,7 @@ contexts:
     - match: (?=,)
       pop: true
     - match: \.{3}
-      scope: operator.rest.js.fjsx15
+      scope: keyword.operator.other.rest.js.fjsx15
     # Alias.
     - match: |
         (?x)
@@ -56,7 +56,7 @@ contexts:
 
   optional-value:
     - match: =
-      scope: keyword.operator.assignment.js.fjsx15
+      scope: keyword.operator.other.assignment.js.fjsx15
       set: value
     - match: (?=\S)
       pop: true
@@ -74,7 +74,7 @@ contexts:
 
   alias-operator:
     - match: ":"
-      scope: operator.alias.js.fjsx15
+      scope: keyword.operator.other.alias.js.fjsx15
       pop: true
 
   alias:

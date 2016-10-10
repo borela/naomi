@@ -19,15 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)\s*
-        (
-          (?> constructor
-            | super
-          )
-        )
-      captures:
-        1: >-
-          support.js.fjsx15
-          entity.name.function.js.fjsx15
+    - match: \bconstructor\b
+      scope:
+        support.js.fjsx15
+        entity.name.function.js.fjsx15
       pop: true

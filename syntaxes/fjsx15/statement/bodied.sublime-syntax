@@ -67,7 +67,7 @@ contexts:
 
   terminator:
     - match: \;
-      scope: punctuation.terminator.js.fjsx15
+      scope: keyword.operator.other.terminator.js.fjsx15
       pop: true
 
   body:

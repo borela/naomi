@@ -19,19 +19,20 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\([^\(])
-      set: [
-        return,
-        parameters
-      ]
+    # No array item access found.
+    - match: (?!\s*\[)
+      pop: true
+    # Array item access.
+    - match: \[
+      scope: punctuation.delimiter.array.access.begin.js.fjsx15
+      set: index
 
-  parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
-
-  return:
-    - match: \=>
-      scope: punctuation.delimiter.function.body.flowtype
-      set: return-type
-
-  return-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax
+  index:
+    - match: \]
+      scope: punctuation.delimiter.array.access.end.js.fjsx15
+      set: main
+    - match: ""
+      push:
+        - match: (?=\])
+          pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

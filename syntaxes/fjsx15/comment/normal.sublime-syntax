@@ -20,10 +20,10 @@ scope: ...
 contexts:
   main:
     - match: \s*\/\/
-      scope: punctuation.comment.begin.js.fjsx15
+      scope: punctuation.delimiter.comment.begin.js.fjsx15
       set: line
     - match: \s*\/\*
-      scope: punctuation.comment.begin.js.fjsx15
+      scope: punctuation.delimiter.comment.begin.js.fjsx15
       set: block
 
   line:

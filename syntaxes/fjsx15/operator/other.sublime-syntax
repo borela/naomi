@@ -32,34 +32,34 @@ contexts:
         (?> typeof
           | void
         )\b
-      scope: operator.js.fjsx15
+      scope: keyword.operator.other.js.fjsx15
       pop: true
     - match: =
-      scope: operator.assignment.free.js.fjsx15
+      scope: keyword.operator.other.assignment.free.js.fjsx15
       pop: true
     - match: \,
-      scope: operator.comma.js.fjsx15
+      scope: keyword.operator.other.comma.js.fjsx15
       pop: true
     - match: \;
-      scope: operator.terminator.js.fjsx15
+      scope: keyword.operator.other.terminator.js.fjsx15
       pop: true
     - match: \:{2}
-      scope: operator.bind.js.fjsx15
+      scope: keyword.operator.other.bind.js.fjsx15
       pop: true
     - match: \.{3}
-      scope: operator.spread.js.fjsx15
+      scope: keyword.operator.other.spread.js.fjsx15
       pop: true
     - match: \?
-      scope: operator.ternary.js.fjsx15
+      scope: keyword.operator.other.ternary.js.fjsx15
       set: ternary-condition
     - match: \.
-      scope: operator.member.access.js.fjsx15
+      scope: keyword.operator.other.member.access.js.fjsx15
       set: member-access
 
   ternary-condition:
     - match: \s*(:)
       captures:
-        1: operator.ternary.js.fjsx15
+        1: keyword.operator.other.ternary.js.fjsx15
       pop: true
     - match: ""
       push:

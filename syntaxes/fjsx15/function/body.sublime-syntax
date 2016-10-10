@@ -24,12 +24,14 @@ contexts:
       scope: punctuation.delimiter.function.declaration.end.js.fjsx15
       pop: true
     # Arrow function.
-    - match: =>\s*\{
-      scope: punctuation.delimiter.function.body.js.fjsx15
+    - match: (=>)\s*(\{)
+      captures:
+        1: punctuation.delimiter.function.body.association.js.fjsx15
+        2: punctuation.delimiter.function.body.begin.js.fjsx15
       set: body-content
     # Arrow simple body.
     - match: =>
-      scope: punctuation.delimiter.function.body.js.fjsx15
+      scope: punctuation.delimiter.function.body.association.js.fjsx15
       set: arrow-body
     # Normal function.
     - match: \{

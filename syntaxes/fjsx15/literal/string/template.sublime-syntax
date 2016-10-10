@@ -67,14 +67,18 @@ contexts:
 
   embedded-expression:
     - match: \$\{
-      scope: operator.embedded.expression.begin.js.fjsx15
+      scope: keyword.operator.other.embedded.expression.begin.js.fjsx15
       push: embedded-content
 
   embedded-content:
     - match: \}
-      scope: operator.embedded.expression.end.js.fjsx15
+      scope: keyword.operator.other.embedded.expression.end.js.fjsx15
       pop: true
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.no-pop.sublime-syntax
+    - match: ""
+      push:
+        - match: (?=\})
+          pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   template-end:
     - match: \`

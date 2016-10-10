@@ -44,4 +44,4 @@ contexts:
       set: array-item-access
 
   array-item-access:
-    - include: Packages/Naomi/syntaxes/fjsx15/array-item-access.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/array-access.sublime-syntax

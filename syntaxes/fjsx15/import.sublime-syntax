@@ -32,11 +32,11 @@ contexts:
           \s*
           (?>"|')
         )\b
-      scope: keyword.import.js.fjsx15
+      scope: keyword.control.import.js.fjsx15
       set: origin-path
     # Selective.
     - match: \bimport\b
-      scope: keyword.import.js.fjsx15
+      scope: keyword.control.import.js.fjsx15
       set: [
         punctuation,
         target
@@ -44,7 +44,7 @@ contexts:
 
   origin:
     - match: \bfrom\b
-      scope: keyword.import.origin.js.fjsx15
+      scope: keyword.control.import.origin.js.fjsx15
       set: origin-path
 
   origin-path:
@@ -58,7 +58,7 @@ contexts:
       set: list
     # All.
     - match: \*
-      scope: operator.import.all.js.fjsx15
+      scope: keyword.operator.other.import.all.js.fjsx15
       set: optional-alias
     # Simple.
     - match: |
@@ -93,7 +93,7 @@ contexts:
 
   alias:
     - match: \bas\b
-      scope: keyword.alias.begin.js.fjsx15
+      scope: keyword.other.alias.begin.js.fjsx15
       set: alias-name
 
   alias-name:

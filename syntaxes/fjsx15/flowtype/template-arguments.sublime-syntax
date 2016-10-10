@@ -23,23 +23,14 @@ contexts:
       captures:
         1: punctuation.delimiter.template.arguments.begin.flowtype
       set: [
-        final-pointer-operator,
         delimiter,
-        argument-pointer-operator,
         argument
       ]
     - match: (?=\S)
       pop: true
 
   argument:
-    - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax
-
-  argument-pointer-operator:
-    - match: (?=[,>])
-      pop: true
-    - match: \s*(\*+)
-      captures:
-        1: operator.pointer.flowtype
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax
 
   delimiter:
     - match: \>
@@ -49,21 +40,11 @@ contexts:
       scope: punctuation.delimiter.template.arguments.flowtype
       set: [
         delimiter,
-        argument-pointer-operator,
         argument
       ]
     - match: \<
       scope: punctuation.delimiter.template.arguments.begin.flowtype
       push: [
         delimiter,
-        argument-pointer-operator,
         argument
       ]
-
-  final-pointer-operator:
-    - match: \s*(\*+)
-      captures:
-        1: operator.pointer.flowtype
-      pop: true
-    - match: ""
-      pop: true

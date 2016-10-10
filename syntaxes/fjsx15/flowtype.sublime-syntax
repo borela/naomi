@@ -23,23 +23,24 @@ contexts:
     # Enveloped nullable.
     - match: (\?)\s*(\()
       captures:
-        1: operator.nullable.flowtype
+        1: keyword.operator.other.nullable.flowtype
         2: punctuation.delimiter.nullable.begin.flowtype
       set: [
+        optional-operator,
         nullable-end,
         type
       ]
     # Nullable followed by a type.
     - match: \?
-      scope: operator.nullable.flowtype
+      scope: keyword.operator.other.nullable.flowtype
       set: [
-        operator,
+        optional-operator,
         type
       ]
     # Type.
     - match: (?=\S)
       set: [
-        operator,
+        optional-operator,
         type
       ]
 
@@ -48,7 +49,7 @@ contexts:
       scope: punctuation.delimiter.nullable.end.flowtype
       pop: true
 
-  operator:
+  optional-operator:
     - match: |
         (?xi)
         (?> &
@@ -58,17 +59,17 @@ contexts:
           | \{
           | [$_[:alnum]]
         )
-      scope: operator.union.flowtype
+      scope: keyword.operator.other.union.flowtype
       set: [
-        operator,
+        optional-operator,
         main
       ]
     - match: (?=\S)
       pop: true
 
   type:
-    - include: Packages/Naomi/syntaxes/fjsx15/type/function.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/type/object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/type/tuple.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/type/support/core.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/type/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/tuple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/support/core.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/normal.sublime-syntax

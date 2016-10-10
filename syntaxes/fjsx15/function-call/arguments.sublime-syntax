@@ -20,12 +20,12 @@ scope: ...
 contexts:
   main:
     - match: \s*\(
-      scope: punctuation.delimiter.function.arguments.begin.js.fjsx15
+      scope: punctuation.delimiter.function..call.arguments.begin.js.fjsx15
       set: arguments
 
   arguments:
     - match: \)
-      scope: punctuation.delimiter.function.arguments.end.js.fjsx15
+      scope: punctuation.delimiter.function.call.arguments.end.js.fjsx15
       pop: true
     - match: \,
       scope: punctuation.delimiter.function.call.arguments.js.fjsx15

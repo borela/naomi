@@ -54,7 +54,7 @@ contexts:
   punctuation:
     - include: terminator
     - match: ":"
-      scope: operator.type.flowtype
+      scope: keyword.operator.other.type.flowtype
       set: [
         optional-value,
         type
@@ -64,16 +64,16 @@ contexts:
   optional-value:
     - include: terminator
     - match: =
-      scope: operator.assignment.js.fjsx15
+      scope: keyword.operator.other.assignment.js.fjsx15
       set: value
 
   type:
-    - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax
 
   value:
     - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   terminator:
     - match: \;
-      scope: operator.terminator.js.fjsx15
+      scope: keyword.operator.other.terminator.js.fjsx15
       pop: true

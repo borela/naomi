@@ -32,7 +32,7 @@ contexts:
       ]
 
   argument:
-    - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax
     - match: |
         (?xi)
         {{commonIdentifier}}

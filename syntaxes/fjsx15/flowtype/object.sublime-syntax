@@ -52,7 +52,7 @@ contexts:
         )
       captures:
         1: entity.name.variable.flowtype
-        2: operator.optional.flowtype
+        2: keyword.operator.other.optional.flowtype
       set: [
         type,
         type-operator
@@ -70,11 +70,11 @@ contexts:
 
   type-operator:
     - match: ":"
-      scope: operator.type.flowtype
+      scope: keyword.operator.other.type.flowtype
       pop: true
 
   type:
-    - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax
 
   punctuation:
     - match: (?=\])

@@ -17,29 +17,22 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [$_[:alpha:]]
-    [$_[:alnum:]]*
-
-  simpleVariableIdentifier: |
-    (?> \{{{commonIdentifier}}\}
-      | {{commonIdentifier}}
-    )
-
-  simpleVariable: |
-    (\$)({{simpleVariableIdentifier}})
-    (?:
-      (\[)([^\]]*)(\])
-    )*
-
 contexts:
   main:
-    - match: (?xi){{simpleVariable}}
-      captures:
-        1: punctuation.variable.begin.js.fjsx15
-        2: entity.name.variable.js.fjsx15
-        3: operator.subscript.begin.js.fjsx15
-        4: array.key.js.fjsx15
-        5: operator.subscript.end.js.fjsx15
-      pop: true
+    - match: (?=\([^\(])
+      set: [
+        return,
+        parameters
+      ]
+
+  parameters:
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
+
+  return:
+    - meta_scope: type.flowtype
+    - match: \=>
+      scope: punctuation.delimiter.function.body.result.flowtype
+      set: return-type
+
+  return-type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax

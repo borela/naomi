@@ -87,7 +87,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/interface.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/type-alias.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/type-statement.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
     # Expression keywords.
     - include: Packages/Naomi/syntaxes/fjsx15/instanceof.sublime-syntax

@@ -44,8 +44,8 @@ contexts:
 
   optional-rest-operator:
     - match: \.{3}
-      scope: operator.rest.js.fjsx15
-    - match: ""
+      scope: keyword.operator.other.rest.js.fjsx15
+    - match: (?=\S)
       pop: true
 
   variable:
@@ -54,7 +54,7 @@ contexts:
   punctuation:
     - include: terminators
     - match: ":"
-      scope: operator.type.flowtype
+      scope: keyword.operator.other.type.flowtype
       set: [
         optional-value,
         type
@@ -64,11 +64,11 @@ contexts:
   optional-value:
     - include: terminators
     - match: =
-      scope: operator.assignment.js.fjsx15
+      scope: keyword.operator.other.assignment.js.fjsx15
       set: value
 
   type:
-    - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax
 
   value:
     - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

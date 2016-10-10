@@ -35,7 +35,7 @@ contexts:
         )
       with_prototype:
         - match: \{
-          scope: operator.embedded.js.begin.jsx
+          scope: keyword.operator.other.embedded.js.begin.jsx
           push: embedded-js
       set: jsx
 
@@ -44,7 +44,7 @@ contexts:
 
   embedded-js:
     - match: \}
-      scope: operator.embedded.js.end.jsx
+      scope: keyword.operator.other.embedded.js.end.jsx
       pop: true
     - match: ""
       push:

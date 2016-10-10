@@ -29,7 +29,7 @@ contexts:
 
   optional-value:
     - match: =
-      scope: keyword.operator.assignment.js.fjsx15
+      scope: keyword.operator.other.assignment.js.fjsx15
       set: value
     - match: (?=\S)
       pop: true
@@ -53,7 +53,7 @@ contexts:
     - match: (?=,)
       pop: true
     - match: \.{3}
-      scope: operator.rest.js.fjsx15
+      scope: keyword.operator.other.rest.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/destructure-object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructure-array.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

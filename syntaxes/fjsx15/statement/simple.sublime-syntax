@@ -34,10 +34,6 @@ contexts:
           | throw
         )\b
       scope: keyword.control.simple.js.fjsx15
-      set: expression
-
-  expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   yield:
     - match: |

@@ -1,0 +1,110 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  arrowFunctionContinuation: |
+    [^(]*?\)
+    .*?=>
+
+  expressionGroupBegin: |
+    (?<!
+      \]|\)|\}
+    )
+    \(
+    (?!
+      {{arrowFunctionContinuation}}
+    )
+
+contexts:
+  main:
+    - include: sequence
+    - match: |
+        (?x)
+        {{expressionGroupBegin}}
+      scope: punctuation.delimiter.expression.group.a.begin.js.fjsx15
+      push: open-b-close-a
+
+  open-a-close-b:
+    - match: |
+        (?x)
+        {{expressionGroupBegin}}
+      scope: punctuation.delimiter.expression.group.a.begin.js.fjsx15
+      push: open-b-close-a
+    - match: \)
+      scope: punctuation.delimiter.expression.group.b.end.js.fjsx15
+      pop: true
+    - match: ""
+      push:
+        - include: cast-operator
+        - include: sequence
+        - match: ""
+          pop: true
+
+  open-b-close-a:
+    - match: |
+        (?x)
+        {{expressionGroupBegin}}
+      scope: punctuation.delimiter.expression.group.b.begin.js.fjsx15
+      push: open-a-close-b
+    - match: \)
+      scope: punctuation.delimiter.expression.group.a.end.js.fjsx15
+      pop: true
+    - match: ""
+      push:
+        - include: cast-operator
+        - include: sequence
+        - match: ""
+          pop: true
+
+  cast-operator:
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/cast.sublime-syntax
+
+  sequence:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+    # Simple statements.
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/hanging.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/bodied.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/simple.sublime-syntax
+    # Complex statements.
+    - include: Packages/Naomi/syntaxes/fjsx15/declare.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/interface.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/type-alias.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
+    # Expression keywords.
+    - include: Packages/Naomi/syntaxes/fjsx15/instanceof.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/new.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/other-keywords.sublime-syntax
+    # Expression.
+    - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/destructure.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/jsx.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax
+    # When it comes to constants and variables, there's no way to tell apart
+    # without an intellisense, so it’ll treat that anything that looks a
+    # uppercase variable as if it was a constant.
+    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
+    # Constant matching failed, so it could be a variable.
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

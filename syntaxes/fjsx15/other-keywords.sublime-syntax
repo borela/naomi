@@ -19,6 +19,11 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
+    - match: |
+        (?x)\b
+        (?> delete
+          | in
+          | of
+        )\b
+      scope: keyword.other.js.fjsx15
+      pop: true

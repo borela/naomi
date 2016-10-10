@@ -57,4 +57,4 @@ contexts:
       scope: >-
         decorator.js.fjsx15
         punctuation.delimiter.decorator.arguments.js.fjsx15
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.no-pop.sublime-syntax

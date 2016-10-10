@@ -27,30 +27,19 @@ contexts:
           \s*=[^=]
         )
       scope: punctuation.delimiter.array.begin.js.fjsx15
-      set: array-items
+      set: items
 
-  array-items:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-    - include: terminator
-    - match: (?=\S)
-      set: [
-        punctuation,
-        value
-      ]
-
-  punctuation:
-    - include: terminator
+  items:
     - match: \,
       scope: punctuation.delimiter.array.js.fjsx15
-      set: [
-        punctuation,
-        value
-      ]
+    - include: end
+    - match: ""
+      push:
+        - match: (?=,|\])
+          pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
-  terminator:
+  end:
     - match: \]
       scope: punctuation.delimiter.array.end.js.fjsx15
       pop: true
-
-  value:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

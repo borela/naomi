@@ -60,7 +60,7 @@ contexts:
       ]
 
   array-index:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   array-item-access-end:
     - meta_scope: array.item.access.js.fjsx15

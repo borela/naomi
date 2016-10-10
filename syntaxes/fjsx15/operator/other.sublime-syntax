@@ -34,6 +34,15 @@ contexts:
         )\b
       scope: operator.js.fjsx15
       pop: true
+    - match: =
+      scope: operator.assignment.free.js.fjsx15
+      pop: true
+    - match: \,
+      scope: operator.comma.js.fjsx15
+      pop: true
+    - match: \;
+      scope: operator.terminator.js.fjsx15
+      pop: true
     - match: \:{2}
       scope: operator.bind.js.fjsx15
       pop: true
@@ -56,7 +65,7 @@ contexts:
       push:
         - match: (?=\s*:)
           pop: true
-        - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   member-access:
     # Only variables and constants are afected by the meta scope, this is the

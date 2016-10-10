@@ -58,7 +58,7 @@ contexts:
         )
       set: [
         punctuation,
-        variable,
+        variable-or-constant,
         keyword
       ]
 
@@ -78,50 +78,21 @@ contexts:
       scope: keyword.variable.declaration.js.fjsx15
       pop: true
 
-  variable:
+  variable-or-constant:
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   punctuation:
-    - include: sibling
     - match: |
-        (?xi)
+        (?x)
         (?= \bin\b)
-      pop: true
-    - match: ;
-      scope: punctuation.terminator.js.fjsx15
       pop: true
     - match: ":"
       scope: operator.type.flowtype
       set: type
-    - match: \=
+    - match: =
       scope: operator.assignment.js.fjsx15
-      set: value
+      pop: true
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax
-
-  value:
-    - include: sibling
-    - match: |
-        (?x)
-        (?=\s*
-          (?> ;
-            | \]
-            | \)
-            | \}
-          )
-        )
-      pop: true
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-
-  sibling:
-    - match: \,
-      scope: punctuation.delimiter.js.fjsx15
-      set: [
-        punctuation,
-        variable
-      ]

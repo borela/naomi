@@ -69,16 +69,15 @@ contexts:
     # Array item access.
     - match: \[
       scope: punctuation.delimiter.array.item.access.begin.js.fjsx15
-      push: [
-        array-item-access-end,
-        array-index
-      ]
+      set: array-index
 
   array-index:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-
-  array-item-access-end:
     - meta_scope: array.item.access.js.fjsx15
     - match: \]
       scope: punctuation.delimiter.array.item.access.end.js.fjsx15
       pop: true
+    - match: ""
+      push:
+        - match: (?=\])
+          pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

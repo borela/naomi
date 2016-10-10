@@ -55,8 +55,9 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+        - match: (?=\})
+          pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   arrow-body:
     - meta_content_scope: >-
@@ -73,4 +74,4 @@ contexts:
           )
         )
       pop: true
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

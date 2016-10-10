@@ -33,4 +33,8 @@ contexts:
       scope: >-
         function.call.js.fjsx15
         punctuation.delimiter.function.arguments.js.fjsx15
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.no-pop.sublime-syntax
+    - match: ""
+      push:
+        - match: (?=,|\))
+          pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

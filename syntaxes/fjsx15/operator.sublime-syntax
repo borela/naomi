@@ -24,7 +24,3 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/logical.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/bitwise.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/arithmetic.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/cast.sublime-syntax
-    - match: =
-      scope: operator.assignment.free.js.fjsx15
-      pop: true

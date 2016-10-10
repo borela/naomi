@@ -1,0 +1,133 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+variables:
+  commonIdentifier: |
+    [_\-[:alpha:]]
+    [_\-[:alnum:]]*
+
+scope: ...
+
+contexts:
+  main:
+    - include: comment
+    - include: operator
+    - include: delimiter
+    - include: id
+    - include: class
+    - include: tag
+
+  operator:
+    - include: Packages/Naomi/syntaxes/css3/selector/operator.sublime-syntax
+
+  comment:
+    - include: Packages/Naomi/syntaxes/css3/comment/normal.sublime-syntax
+
+  delimiter:
+    - match: \,
+      scope: punctuation.delimiter.selector.css.css3
+      pop: true
+
+  id:
+    - match: |
+        (?xi)
+        \#{{commonIdentifier}}
+      scope: >-
+        selector.id.css.css3
+        entity.name.selector.id.css.css3
+      pop: true
+
+  class:
+    - match: |
+        (?xi)
+        \.{{commonIdentifier}}
+      scope: >-
+        selector.class.css.css3
+        entity.name.selector.class.css.css3
+      pop: true
+
+  tag:
+    # Form elements.
+    - match: |
+        (?x)\b
+        (?> button
+          | form
+          | input
+          | l
+            (?> abel
+              | egend
+            )
+          | option
+          | select
+          | textarea
+        )
+        \b
+      scope: >-
+        selector.tag.form.css.css3
+        entity.name.selector.tag.form.css.css3
+      pop: true
+    # Embedded elements.
+    - match: |
+        (?x)\b
+        (?> audio
+          | canvas
+          | embed
+          | i
+            (?>frame|mg)
+          | math
+          | object
+          | svg
+          | video
+        )\b
+      scope: >-
+        selector.tag.embedded.css.css3
+        entity.name.selector.tag.embedded.css.css3
+      pop: true
+    # Section tags.
+    - match: |
+        (?x)\b
+        (?> a
+            (?>rticle|side)
+          | nav
+          | section
+        )\b
+      scope: >-
+        selector.tag.sectioning.css.css3
+        entity.name.selector.tag.sectioning.css.css3
+      pop: true
+    # Section root tags.
+    - match: |
+        (?x)\b
+        (?> b
+            (?>lockquote|ody)
+          | fi
+            (?>eldset|gure)
+          | td
+        )\b
+      scope: >-
+        selector.tag.sectioning.root.css.css3
+        entity.name.selector.tag.sectioning.root.css.css3
+      pop: true
+    # Other tags.
+    - match: |
+        (?xi)
+        {{commonIdentifier}}
+      scope: >-
+        selector.tag.css.css3
+        entity.name.selector.tag.css.css3
+      pop: true
+

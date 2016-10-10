@@ -45,6 +45,7 @@ contexts:
 
   property-method-decorator:
     - include: comment
+    - include: object-end
     - include: decorator
     - include: method
     - include: property

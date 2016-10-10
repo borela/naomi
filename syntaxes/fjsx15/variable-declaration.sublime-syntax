@@ -93,6 +93,9 @@ contexts:
     - match: =
       scope: operator.assignment.js.fjsx15
       pop: true
+    - match: \;
+      scope: operator.terminator.js.fjsx15
+      pop: true
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/type.sublime-syntax

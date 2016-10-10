@@ -134,7 +134,7 @@ contexts:
   class:
     - match: \s*(\*+)
       captures:
-        1: operator.pointer.mql.mql4
+        1: keyword.operator.other.pointer.mql.mql4
     - match: (?xi)\b{{commonIdentifier}}\b
       scope: entity.name.class.mql.mql4
       pop: true
@@ -142,7 +142,7 @@ contexts:
   scope-operator:
     - match: |
         (?x)::
-      scope: operator.scope.mql.mql4
+      scope: keyword.operator.other.scope.mql.mql4
       pop: true
 
   name:

@@ -29,18 +29,18 @@ contexts:
   # |     :      |                     |
   main:
     - match: "&(?![&=])"
-      scope: operator.reference.mql.mql4
+      scope: keyword.operator.other.reference.mql.mql4
       pop: true
     - match: |
         (?x)
         (?> ->
           | \.
         )
-      scope: operator.member.access.mql.mql4
+      scope: keyword.operator.other.member.access.mql.mql4
       set: member-access
     # Other.
     - match: "\\?|:"
-      scope: operator.mql.mql4
+      scope: keyword.operator.other.mql.mql4
       pop: true
 
   member-access:

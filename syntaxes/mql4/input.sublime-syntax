@@ -40,7 +40,7 @@ contexts:
 
   assignment-operator:
     - match: =
-      scope: operator.assignment.mql.mql4
+      scope: keyword.operator.other.assignment.mql.mql4
       set: value
 
   value:

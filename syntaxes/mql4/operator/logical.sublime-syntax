@@ -30,5 +30,5 @@ contexts:
           | \|\|
           | !
         )
-      scope: operator.logical.mql.mql4
+      scope: keyword.operator.logical.mql.mql4
       pop: true

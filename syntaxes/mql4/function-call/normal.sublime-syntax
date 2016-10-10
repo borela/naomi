@@ -102,7 +102,7 @@ contexts:
 
   scope-operator:
     - match: "::"
-      scope: operator.scope.mql.mql4
+      scope: keyword.operator.other.scope.mql.mql4
       pop: true
 
   name:

@@ -45,5 +45,5 @@ contexts:
           | >>>=?
           | >>=?
         )
-      scope: operator.bitwise.mql.mql4
+      scope: keyword.operator.bitwise.mql.mql4
       pop: true

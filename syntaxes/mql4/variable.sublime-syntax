@@ -36,7 +36,7 @@ contexts:
         ({{commonIdentifier}})\b
       captures:
         0: variable.mql.mql4
-        1: operator.pointer.mql.mql4
+        1: keyword.operator.other.pointer.mql.mql4
         2: entity.name.variable.mql.mql4
       set: array-item-access-begin
 

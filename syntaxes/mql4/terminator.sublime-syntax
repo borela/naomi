@@ -20,5 +20,5 @@ scope: ...
 contexts:
   main:
     - match: ;
-      scope: punctuation.terminator.mql.mql4
+      scope: keyword.operator.other.terminator.mql.mql4
       pop: true

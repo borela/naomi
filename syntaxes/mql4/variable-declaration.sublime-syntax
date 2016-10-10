@@ -70,7 +70,7 @@ contexts:
       scope: punctuation.delimiter.array.index.begin.mql.mql4
       push: array-index
     - match: =
-      scope: operator.assignment.mql.mql4
+      scope: keyword.operator.other.assignment.mql.mql4
       push: value
 
   array-index:

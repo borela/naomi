@@ -32,6 +32,6 @@ contexts:
 
   operator:
     - match: ":"
-      scope: operator.mql.mql4
+      scope: keyword.operator.other.mql.mql4
       pop: true
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

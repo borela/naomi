@@ -25,15 +25,15 @@ scope: ...
 contexts:
   main:
     - match: \*
-      scope: operator.selector.all.css.css3
+      scope: keyword.operator.other.selector.all.css.css3
       pop: true
     - match: \+
-      scope: operator.selector.adjacent.css.css3
+      scope: keyword.operator.other.selector.adjacent.css.css3
       pop: true
     - match: \>
-      scope: operator.selector.direct.css.css3
+      scope: keyword.operator.other.selector.direct.css.css3
       pop: true
     - match: ~
-      scope: operator.selector.sibling.css.css3
+      scope: keyword.operator.other.selector.sibling.css.css3
       pop: true
 

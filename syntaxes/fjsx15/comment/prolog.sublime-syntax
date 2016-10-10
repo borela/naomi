@@ -25,3 +25,4 @@ contexts:
           | \/\*\s@flow\s\*\/
         )
       scope: keyword.prolog.flowtype
+      pop: true

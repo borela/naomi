@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: \=
-      scope: operator.assignment.html.html5
+      scope: keyword.operator.other.assignment.html.html5
       set: value
     - match: (?=\S)
       pop: true

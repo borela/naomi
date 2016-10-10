@@ -41,24 +41,30 @@ contexts:
           \s*=[^=]
         )
       scope: punctuation.delimiter.object.begin.js.fjsx15
-      set: [
-        punctuation,
-        property-or-method
-      ]
+      set: property-method-decorator
 
-  property-or-method:
+  property-method-decorator:
     - include: comment
-    - match: (?=})
-      pop: true
     - include: decorator
     - include: method
     - include: property
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   decorator:
     - include: Packages/Naomi/syntaxes/fjsx15/decorator.no-pop.sublime-syntax
 
   method:
     - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
+
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+
+  string:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
   property:
     # String property name.
@@ -72,8 +78,7 @@ contexts:
       scope: operator.property.computed.begin.js.fjsx15
       set: [
         optional-value,
-        computed-property-end,
-        expression
+        computed-property
       ]
     # Normal property.
     - match: |
@@ -84,42 +89,39 @@ contexts:
         entity.name.variable.js.fjsx15
       set: optional-value
 
-  computed-property-end:
+  computed-property:
     - match: \]
       scope: operator.property.computed.end.js.fjsx15
       pop: true
-
-  string:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
+    - match: ""
+      push:
+        - match: (?=\])
+          pop: true
+        - include: statement-and-expression
 
   optional-value:
     - include: comment
+    - include: item-delimiter
+    - include: object-end
     - match: ":"
       scope: operator.association.js.fjsx15
       set: value
-    - match: (?=\S)
-      pop: true
 
-  value:
-    - include: comment
-    - include: expression
-
-  punctuation:
-    - include: comment
+  item-delimiter:
     - match: \,
       scope: punctuation.delimiter.object.js.fjsx15
-      set: [
-        punctuation,
-        property-or-method
-      ]
+      set: property-method-decorator
+
+  object-end:
     - match: \}
       scope: punctuation.delimiter.object.end.js.fjsx15
       pop: true
 
-  comment:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-
-  expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  value:
+    - include: item-delimiter
+    - include: object-end
+    - match: ""
+      push:
+        - match: (?=,|\})
+          pop: true
+        - include: statement-and-expression

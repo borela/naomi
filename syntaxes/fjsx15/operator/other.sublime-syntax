@@ -35,7 +35,7 @@ contexts:
       scope: keyword.operator.other.js.fjsx15
       pop: true
     - match: =
-      scope: keyword.operator.other.assignment.free.js.fjsx15
+      scope: keyword.operator.other.assignment.js.fjsx15
       pop: true
     - match: \,
       scope: keyword.operator.other.comma.js.fjsx15
@@ -53,7 +53,7 @@ contexts:
       scope: keyword.operator.other.ternary.js.fjsx15
       set: ternary-condition
     - match: \.
-      scope: keyword.operator.other.member.access.js.fjsx15
+      scope: keyword.operator.other.member-access.js.fjsx15
       set: member-access
 
   ternary-condition:

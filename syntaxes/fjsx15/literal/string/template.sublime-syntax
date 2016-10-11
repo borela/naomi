@@ -71,6 +71,7 @@ contexts:
       push: embedded-content
 
   embedded-content:
+    - clear_scopes: true
     - match: \}
       scope: keyword.operator.other.embedded.expression.end.js.fjsx15
       pop: true

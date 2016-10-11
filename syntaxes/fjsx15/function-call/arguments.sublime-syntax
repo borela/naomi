@@ -19,18 +19,30 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*\(
-      scope: punctuation.delimiter.function..call.arguments.begin.js.fjsx15
+    - match: \s*(\()
+      captures:
+        1: punctuation.delimiter.function.arguments.begin.js.fjsx15
       set: arguments
 
   arguments:
-    - match: \)
-      scope: punctuation.delimiter.function.call.arguments.end.js.fjsx15
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.function.arguments.end.js.fjsx15
       pop: true
-    - match: \,
-      scope: punctuation.delimiter.function.call.arguments.js.fjsx15
+    - match: \s*(\,)
+      captures:
+        1: punctuation.delimiter.function.arguments.js.fjsx15
     - match: ""
       push:
-        - match: (?=,|\))
+        - match: |
+            (?x)
+            (?=\s*
+              (?> ,
+                | \)
+              )
+            )
           pop: true
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+        - include: statement-and-expression
+
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

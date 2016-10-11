@@ -17,6 +17,71 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/normal.sublime-syntax
+    # Function call at the result of an expression.
+    - match: |
+        (?x)
+        (?<=
+          \]|\)|\}
+        )
+        (?=
+          \s*\(
+        )
+      set: arguments
+    # Templated function.
+    - match: |
+        (?xi)
+        (?=
+          {{commonIdentifier}}
+          \s*<.*>\s*\(
+        )
+      set: [
+        arguments,
+        template-arguments,
+        name
+      ]
+    # Simple function call.
+    - match: |
+        (?xi)
+        (?=
+          {{commonIdentifier}}
+          \s*\(
+        )
+      set: [
+        arguments,
+        name
+      ]
+
+  name:
+    # Support identifier.
+    - match: |
+        (?x)
+        \s*(
+          (?> constructor
+            | super
+          )
+        )\b
+      captures:
+        1: >-
+          support.js.fjsx15
+          entity.name.function.js.fjsx15
+      pop: true
+    # Identifier.
+    - match: |
+        (?xi)
+        \s*({{commonIdentifier}})
+      captures:
+        1: entity.name.function.js.fjsx15
+      pop: true
+
+  template-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax

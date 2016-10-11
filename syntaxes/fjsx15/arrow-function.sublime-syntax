@@ -27,92 +27,70 @@ contexts:
     # Templated arrow function.
     - match: |
         (?x)
-        (?> (async)\s+
-          | \s+
-        )
+        \s*(async)?
         (?=
-          <[^&|]*?>
-          \s*\(
-        )
-      captures:
-        1: keyword.modifier.js.fjsx15
-      set: [
-        body,
-        return-type,
-        parameters,
-        template-parameters
-      ]
-    # Normal arrow function.
-    - match: |
-        (?x)
-        (?> (async)\s+
-          | \s+
-        )
-        (?=
-          \([^(]*?\)
-          .*?=>
-        )
-      captures:
-        1: keyword.modifier.js.fjsx15
-      set: [
-        body,
-        return-type,
-        parameters
-      ]
-    # Single parameter.
-    - match: |
-        (?xi)
-        (?> (async)\s+
-          | \s+
-        )
-        (?=
-          {{commonIdentifier}}
+          \s*<.*>
+          \s*\(.*\)
+          (?:
+            \s*:.*?
+          )?
           \s*=>
         )
       captures:
         1: keyword.modifier.js.fjsx15
       set: [
         body,
-        optional-parameter-type,
-        parameter
-      ]
-
-  identifier:
-    - match: (?=<)
-      set: [
-        body,
-        return-type,
         parameters,
         template-parameters
       ]
-    - match: (?=\()
+    # Normal arrow function.
+    - match: |
+        (?x)
+        \s*(async)?
+        (?=
+          \s*\(.*\)
+          (?:
+            \s*:.*?
+          )?
+          \s*=>
+        )
+      captures:
+        1: keyword.modifier.js.fjsx15
       set: [
         body,
-        return-type,
         parameters
       ]
-    - match: (?xi){{commonIdentifier}}
-      scope: entity.name.function.js.fjsx15
-      set: optional-template-parameters
+    # Single parameter.
+    - match: |
+        (?x)
+        \s*(async)?
+        (?=
+          {{commonIdentifier}}
+          (?:
+            \s*:.*?
+          )?
+          \s*=>
+        )
+      captures:
+        1: keyword.modifier.js.fjsx15
+      set: [
+        body,
+        single-parameter
+      ]
+
+  single-parameter:
+    - match: (?=\s*=>)
+      pop: true
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   template-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/template/parameters.sublime-syntax
-
-  parameter:
-    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
-
-  optional-parameter-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/template/parameter.sublime-syntax#punctuation
-    - match: ""
-      pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
 
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
 
-  return-type:
-    - match: (?==>)
-      pop: true
-    - include: Packages/Naomi/syntaxes/fjsx15/function/return-type.sublime-syntax
-
   body:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/body.sublime-syntax

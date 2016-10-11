@@ -19,7 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax

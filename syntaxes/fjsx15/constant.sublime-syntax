@@ -17,7 +17,48 @@ hidden: true
 
 scope: ...
 
+variables:
+  constantIdentifier: |
+    [$_[:upper:]]
+    [$_[:upper:][:digit:]]*
+
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/constant/support/core.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/constant/normal.sublime-syntax
+    - include: support-constant
+    - include: common-constant
+
+  common-constant:
+    # Single character.
+    - match: |
+        (?x)
+        (?> \$\B
+          | [_[:upper:]]\b
+        )
+      scope: entity.name.constant.js.fjsx15
+      set: array-item-access
+    # Two or more characters.
+    - match: |
+        (?x)
+        {{constantIdentifier}}
+        (?> \$\B
+          | [_[:upper:]]\b
+        )
+      scope: entity.name.constant.js.fjsx15
+      set: array-item-access
+
+  support-constant:
+    - match: |
+        (?x)
+        (?> false
+          | Infinity
+          | NaN
+          | null
+          | true
+          | undefined
+        )
+      scope: >-
+        support.js.fjsx15
+        entity.name.constant.js.fjsx15
+
+  array-item-access:
+    - include: Packages/Naomi/syntaxes/fjsx15/array-access.sublime-syntax

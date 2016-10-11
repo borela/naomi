@@ -17,32 +17,32 @@ hidden: true
 
 scope: ...
 
-variables:
-  decoratorIdentifier: |
-    [$._[:alpha:]]
-    [$._[:alnum:]]*
-
 contexts:
   main:
-    # Decorator with arguments.
-    - match: |
-        (?xi)
-        (@)
-        ({{decoratorIdentifier}})
-        (?=\s*\()
+    - match: \s*(\()
       captures:
-        1: punctuation.delimiter.decorator.js.fjsx15
-        2: entity.name.decorator.js.fjsx15
+        1: punctuation.delimiter.decorator.arguments.begin.js.fjsx15
       set: arguments
-    # Decorator without arguments.
-    - match: |
-        (?xi)
-        (@)
-        ({{decoratorIdentifier}})
-      captures:
-        1: punctuation.delimiter.decorator.js.fjsx15
-        2: entity.name.decorator.js.fjsx15
-      pop: true
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/decorator/arguments.sublime-syntax
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.decorator.arguments.end.js.fjsx15
+      pop: true
+    - match: \s*(\,)
+      captures:
+        1: punctuation.delimiter.decorator.arguments.js.fjsx15
+    - match: ""
+      push:
+        - match: |
+            (?x)
+            (?=\s*
+              (?> ,
+                | \)
+              )
+            )
+          pop: true
+        - include: statement-and-expression
+
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

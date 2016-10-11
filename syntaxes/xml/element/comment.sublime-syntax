@@ -25,7 +25,6 @@ contexts:
 
   comment:
     - meta_scope: comment.block.xml
-    - meta_content_scope: comment.content.xml
     - match: -->
       scope: punctuation.comment.end.xml
       pop: true

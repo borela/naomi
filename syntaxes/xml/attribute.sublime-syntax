@@ -32,7 +32,7 @@ contexts:
 
   optional-value:
     - match: \=
-      scope: operator.assignment.xml
+      scope: keyword.operator.other.assignment.xml
       set: value
     - match: (?=\S)
       pop: true

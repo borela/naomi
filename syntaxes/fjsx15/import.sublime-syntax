@@ -93,7 +93,7 @@ contexts:
 
   alias:
     - match: \bas\b
-      scope: keyword.other.alias.begin.js.fjsx15
+      scope: keyword.other.alias.js.fjsx15
       set: alias-name
 
   alias-name:

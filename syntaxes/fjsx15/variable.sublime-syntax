@@ -31,19 +31,18 @@ contexts:
     # Single character.
     - match: |
         (?xi)
-        (?> \B\$\B
-          | \b[_[:alpha:]]\b
+        (?> \$\B
+          | [_[:alpha:]]\b
         )
       scope: entity.name.variable.js.fjsx15
       set: array-item-access
-    # Two or more.
+    # Two or more characters.
     - match: |
         (?xi)
-        (?> \B\$
-          | \b
-        )
         {{commonIdentifier}}
-        [_[:alnum:]]\b
+        (?> \$\B
+          | [_[:alnum:]]\b
+        )
       scope: entity.name.variable.js.fjsx15
       set: array-item-access
 

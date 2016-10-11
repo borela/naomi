@@ -29,7 +29,7 @@ have a coding style where all your constants are uppercase.
 
 #### FJSX15 (Experimental)
 
-Combines ES2015+, Flow and React’s JSX:
+Combines ES2015+, Flow, React’s JSX and contains scopes for:
 
 * Templates.
 * Interfaces.
@@ -40,11 +40,10 @@ Combines ES2015+, Flow and React’s JSX:
 * Generator functions.
 * Arrow functions.
 * Decorators.
-* Destructure operators.
+* Destructuring operators.
 * Alternating parenthesis in expressions.
 * Alternating escaped characters.
 * Decimal, floating point and hexadecimal literals.
-
 
 #### HTML 5 (Experimental)
 
@@ -53,6 +52,7 @@ Scopes for:
 * Highlight FJSX15 inside `<script type="text/babel">` tags.
 * Balanced tags.
 * Section root elements.
+* Section elements.
 * Embedded elements.
 * Form elements.
 

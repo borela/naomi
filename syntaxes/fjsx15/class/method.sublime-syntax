@@ -1,0 +1,95 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
+contexts:
+  main:
+    # No modifiers.
+    - match: |
+        (?xi)
+        (?=
+          \s*\*?
+          \s*{{commonIdentifier}}
+          \s*\(
+        )
+      set: declaration
+    # With modifiers.
+    - match: |
+        (?xi)
+        \s*
+        (
+          (?> async
+            | get
+            | s
+              (?> et
+                | tatic
+                  (?:
+                    \s+(?>async|get|set)
+                  )?
+              )
+          )
+        )
+        (?=
+          \s*\*?
+          \s*{{commonIdentifier}}
+          \s*\(
+        )
+      captures:
+        1: keyword.modifier.js.fjsx15
+      set: declaration
+
+  declaration:
+    # Body.
+    - match: (?=\s*\{)
+      set: body
+    # Template parameters.
+    - match: (?=\s*<)
+      push: template-parameters
+    # Parameters.
+    - match: (?=\s*\()
+      push: parameters
+    # Support identifier.
+    - match: |
+        (?x)
+        \s*(constructor)\b
+      captures:
+        1: >-
+          support.js.fjsx15
+          entity.name.function.js.fjsx15
+    # Identifier.
+    - match: |
+        (?xi)
+        \s*(\*)?
+        \s*({{commonIdentifier}})
+      captures:
+        1: keyword.modifier.generator.js.fjsx15
+        2: entity.name.function.js.fjsx15
+
+  template-parameters:
+    - include: Packages/Naomi/syntaxes/fjsx15/template/parameters.sublime-syntax
+
+  parameters:
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
+
+  body:
+    - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax

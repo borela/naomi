@@ -25,86 +25,31 @@ variables:
 contexts:
   main:
     - match: \bclass\b
-      scope: keyword.class.js.fjsx15
-      set: identifier
+      scope: keyword.declaration.class.js.fjsx15
+      set: declaration
 
-  identifier:
-    - match: (?=\bextends\b)
-      set: [
-        body,
-        extension
-      ]
-    - match: (?=\{)
+  declaration:
+    # Body.
+    - match: (?=\s*\{)
       set: body
-    # Actual identifier.
-    - match: (?xi){{commonIdentifier}}
+    # Template parameters.
+    - match: (?=\s*<)
+      push: template-parameters
+    # Extensions.
+    - match: \s*extends\b
+      scope: keyword.modifier.js.fjsx15
+      push: type
+    # Identifier.
+    - match: |
+        (?xi)
+        {{commonIdentifier}}
       scope: entity.name.class.js.fjsx15
-      set: optional-template-parameters
-
-  extension:
-    - match: \bextends\b
-      scope: keyword.extension.js.fjsx15
-      set: type
-
-  type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax
 
   template-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/template/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
 
-  optional-template-parameters:
-    - match: (?=<)
-      set: [
-        optional-extension,
-        template-parameters
-      ]
-    - match: (?=\bextends\b)
-      set: [
-        body,
-        extension
-      ]
-    - match: (?=\{)
-      set: body
-
-  optional-extension:
-    - match: (?=\bextends\b)
-      set: [
-        body,
-        extension
-      ]
-    - match: (?=\{)
-      set: body
+  type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
 
   body:
-    - include: comment
-    - match: \{
-      scope: punctuation.delimiter.class.body.begin.js.fjsx15
-      set: body-content
-
-  body-content:
-    - match: \}
-      scope: punctuation.delimiter.class.body.end.js.fjsx15
-      pop: true
-    - match: ""
-      push:
-        - include: allowed-expressions
-        - include: balance-braces
-        - match: (?=\})
-          pop: true
-
-  comment:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
-
-  allowed-expressions:
-    - include: comment
-    - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/member-variable.sublime-syntax
-
-  balance-braces:
-    - match: \{
-      push:
-        - match: \}
-          pop: true
-        - include: allowed-expressions
-        - include: balance-braces
+    - include: Packages/Naomi/syntaxes/fjsx15/class/body.sublime-syntax

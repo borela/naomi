@@ -29,7 +29,7 @@ contexts:
         (?x)
         \b[_[:upper:]]\b
       scope: entity.name.constant.js.fjsx15
-      set: array-item-access
+      set: array-access
     # Two or more.
     - match: |
         (?x)
@@ -41,7 +41,7 @@ contexts:
           | \$\B
         )
       scope: entity.name.constant.js.fjsx15
-      set: array-item-access
+      set: array-access
 
-  array-item-access:
+  array-access:
     - include: Packages/Naomi/syntaxes/fjsx15/array-access.sublime-syntax

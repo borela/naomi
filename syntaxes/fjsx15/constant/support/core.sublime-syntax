@@ -22,6 +22,8 @@ contexts:
     - match: |
         (?x)
         (?> false
+          | Infinity
+          | NaN
           | null
           | true
           | undefined

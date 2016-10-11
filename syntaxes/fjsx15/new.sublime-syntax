@@ -24,6 +24,7 @@ variables:
 
 contexts:
   main:
+    # Type after new.
     - match: |
         (?xi)\b
         (new)
@@ -42,8 +43,8 @@ contexts:
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
-    - match: (?=\S)
+    - match: ""
       pop: true
 
   type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax

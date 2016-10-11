@@ -18,21 +18,21 @@
 //        ^^^^^^ support.type.mql.mql4
 //        ^^^^^^ entity.name.type.mql.mql4
 //               ^^^^^^^^^^ entity.name.variable.mql.mql4
-//                          ^ operator.assignment.mql.mql4
+//                          ^ keyword.operator.other.assignment.mql.mql4
 //                            ^^^^^ string.quoted.double.mql.mql4
 //                             ^^^ string.content.mql.mql4
 //                            ^ punctuation.delimiter.string.begin.mql.mql4
 //                                ^ punctuation.delimiter.string.end.mql.mql4
-//                                 ^ punctuation.terminator.mql.mql4
+//                                 ^ keyword.operator.other.terminator.mql.mql4
     input Custom identifier = "...";
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ input.mql.mql4
 //  ^^^^^ keyword.input.mql.mql4
 //        ^^^^^^ type.mql.mql4
 //        ^^^^^^ entity.name.type.mql.mql4
 //               ^^^^^^^^^^ entity.name.variable.mql.mql4
-//                          ^ operator.assignment.mql.mql4
+//                          ^ keyword.operator.other.assignment.mql.mql4
 //                            ^^^^^ string.quoted.double.mql.mql4
 //                             ^^^ string.content.mql.mql4
 //                            ^ punctuation.delimiter.string.begin.mql.mql4
 //                                ^ punctuation.delimiter.string.end.mql.mql4
-//                                 ^ punctuation.terminator.mql.mql4
+//                                 ^ keyword.operator.other.terminator.mql.mql4

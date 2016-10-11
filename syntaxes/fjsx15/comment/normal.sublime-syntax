@@ -39,4 +39,3 @@ contexts:
       captures:
         1: punctuation.comment.end.js.fjsx15
       pop: true
-

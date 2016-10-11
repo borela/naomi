@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    # Destructure object.
+    # Destructuring object.
     - match: |
         (?x)
         (?=
@@ -30,10 +30,10 @@ contexts:
         )
       set: [
         punctuation,
-        destructure-object,
+        destructuring-object,
         keyword
       ]
-    # Destructure array.
+    # Destructuring array.
     - match: |
         (?x)
         (?=
@@ -44,7 +44,7 @@ contexts:
         )
       set: [
         punctuation,
-        destructure-array,
+        destructuring-array,
         keyword
       ]
     # Simple variable.
@@ -54,7 +54,7 @@ contexts:
           (?> const
             | let
             | var
-          )\b
+          )\s+
         )
       set: [
         punctuation,
@@ -62,11 +62,11 @@ contexts:
         keyword
       ]
 
-  destructure-object:
-    - include: Packages/Naomi/syntaxes/fjsx15/destructure-object.sublime-syntax
+  destructuring-object:
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
 
-  destructure-array:
-    - include: Packages/Naomi/syntaxes/fjsx15/destructure-array.sublime-syntax
+  destructuring-array:
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
 
   keyword:
     - match: |
@@ -74,8 +74,8 @@ contexts:
         (?> const
           | let
           | var
-        )\b
-      scope: keyword.variable.declaration.js.fjsx15
+        )
+      scope: keyword.declaration.variable.js.fjsx15
       pop: true
 
   variable-or-constant:
@@ -83,19 +83,10 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   punctuation:
-    - match: |
-        (?x)
-        (?= \bin\b)
-      pop: true
-    - match: ":"
-      scope: keyword.operator.other.type.flowtype
+    - match: (?=\s*:)
       set: type
-    - match: =
-      scope: keyword.operator.other.assignment.js.fjsx15
-      pop: true
-    - match: \;
-      scope: keyword.operator.other.terminator.js.fjsx15
+    - match: ""
       pop: true
 
   type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax

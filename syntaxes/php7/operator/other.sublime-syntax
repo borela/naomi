@@ -44,7 +44,7 @@ contexts:
       scope: keyword.operator.other.alias.php.php7
       pop: true
     - match: (?xi)\binstanceof\b
-      scope: keyword.operator.other.type.php.php7
+      scope: keyword.operator.other.php.php7
       pop: true
     - match: "=>"
       scope: keyword.operator.other.key.association.php.php7

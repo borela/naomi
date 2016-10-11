@@ -21,7 +21,7 @@
 //                     ^^^^^^^^ function.parameters.php.php7
 //                      ^^^^^^ function.parameters.content.php.php7
 //                      ^^^^^^ variable.php.php7
-//                      ^ punctuation.variable.begin.php.php7
+//                      ^ punctuation.delimiter.variable.begin.php.php7
 //                       ^^^^^ entity.name.variable.php.php7
 //                            ^ punctuation.delimiter.function.parameters.end.php.php7
 //                             ^ punctuation.delimiter.function.body.begin.php.php7
@@ -36,9 +36,9 @@
 //                     ^ punctuation.delimiter.function.parameters.begin.php.php7
 //                     ^^^^^^^^^^^ function.parameters.php.php7
 //                      ^^^^^^^^^ function.parameters.content.php.php7
-//                      ^^^ operator.variadic.php.php7
+//                      ^^^ keyword.operator.other.variadic.php.php7
 //                         ^^^^^^ variable.php.php7
-//                         ^ punctuation.variable.begin.php.php7
+//                         ^ punctuation.delimiter.variable.begin.php.php7
 //                          ^^^^^ entity.name.variable.php.php7
 //                               ^ punctuation.delimiter.function.parameters.end.php.php7
 //                                ^ punctuation.delimiter.function.body.begin.php.php7
@@ -54,13 +54,13 @@
 //                     ^^^^^^^^^^^^^^^^^^^^^^^^^ function.parameters.php.php7
 //                      ^^^^^^^^^^^^^^^^^^^^^^^ function.parameters.content.php.php7
 //                      ^^^^^^^ variable.php.php7
-//                      ^ punctuation.variable.begin.php.php7
+//                      ^ punctuation.delimiter.variable.begin.php.php7
 //                       ^^^^^^ entity.name.variable.php.php7
 //                             ^ punctuation.delimiter.function.parameters.php.php7
 //                               ^^^ support.type.php.php7
-//                                   ^^^ operator.variadic.php.php7
+//                                   ^^^ keyword.operator.other.variadic.php.php7
 //                                      ^^^^^^^ variable.php.php7
-//                                      ^ punctuation.variable.begin.php.php7
+//                                      ^ punctuation.delimiter.variable.begin.php.php7
 //                                       ^^^^^^ entity.name.variable.php.php7
 //                                             ^ punctuation.delimiter.function.parameters.end.php.php7
 //                                              ^ punctuation.delimiter.function.body.begin.php.php7
@@ -77,12 +77,12 @@
 //                     ^ punctuation.delimiter.function.parameters.begin.php.php7
 //                      ^^^ support.type.php.php7
 //                          ^^^^^^^ variable.php.php7
-//                          ^ punctuation.variable.begin.php.php7
+//                          ^ punctuation.delimiter.variable.begin.php.php7
 //                           ^^^^^ entity.name.variable.php.php7
 //                                 ^ punctuation.delimiter.function.parameters.php.php7
 //                                   ^^^^^^ support.type.php.php7
 //                                          ^^^^^^^ variable.php.php7
-//                                          ^ punctuation.variable.begin.php.php7
+//                                          ^ punctuation.delimiter.variable.begin.php.php7
 //                                           ^^^^^ entity.name.variable.php.php7
 //                                                 ^ punctuation.delimiter.function.parameters.end.php.php7
 //                                                  ^ punctuation.delimiter.function.body.begin.php.php7
@@ -102,16 +102,16 @@
 //      ^^^^^^^^^^^^ function.parameters.content.php.php7
 //      ^^^ support.type.php.php7
 //          ^^^^^^^ variable.php.php7
-//          ^ punctuation.variable.begin.php.php7
+//          ^ punctuation.delimiter.variable.begin.php.php7
 //           ^^^^^ entity.name.variable.php.php7
 //                 ^ punctuation.delimiter.function.parameters.php.php7
         ...$param2
 //      ^^^^^^^^^^ function.php.php7
 //      ^^^^^^^^^^ function.parameters.php.php7
 //      ^^^^^^^^^^ function.parameters.content.php.php7
-//      ^^^ operator.variadic.php.php7
+//      ^^^ keyword.operator.other.variadic.php.php7
 //         ^^^^^^^ variable.php.php7
-//         ^ punctuation.variable.begin.php.php7
+//         ^ punctuation.delimiter.variable.begin.php.php7
 //          ^^^^^ entity.name.variable.php.php7
     ){   }
 //  ^^^^^^ function.php.php7
@@ -135,16 +135,16 @@
 //      ^^^^^^^^^^^^ function.parameters.content.php.php7
 //      ^^^ support.type.php.php7
 //          ^^^^^^^ variable.php.php7
-//          ^ punctuation.variable.begin.php.php7
+//          ^ punctuation.delimiter.variable.begin.php.php7
 //           ^^^^^ entity.name.variable.php.php7
 //                 ^ punctuation.delimiter.function.parameters.php.php7
         string ...$param2
 //      ^^^^^^^^^^^^^^^^^ function.php.php7
 //      ^^^^^^^^^^^^^^^^^ function.parameters.php.php7
 //      ^^^^^^^^^^^^^^^^^ function.parameters.content.php.php7
-//             ^^^ operator.variadic.php.php7
+//             ^^^ keyword.operator.other.variadic.php.php7
 //                ^^^^^^^ variable.php.php7
-//                ^ punctuation.variable.begin.php.php7
+//                ^ punctuation.delimiter.variable.begin.php.php7
 //                 ^^^^^ entity.name.variable.php.php7
     ){   }
 //  ^^^^^^ function.php.php7

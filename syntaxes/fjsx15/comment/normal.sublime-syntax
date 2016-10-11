@@ -19,11 +19,13 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*\/\/
-      scope: punctuation.delimiter.comment.begin.js.fjsx15
+    - match: \s*(\/\/)
+      captures:
+        1: punctuation.delimiter.comment.begin.js.fjsx15
       set: line
-    - match: \s*\/\*
-      scope: punctuation.delimiter.comment.begin.js.fjsx15
+    - match: \s*(\/\*)
+      captures:
+        1: punctuation.delimiter.comment.begin.js.fjsx15
       set: block
 
   line:
@@ -33,7 +35,8 @@ contexts:
 
   block:
     - meta_scope: comment.block.js.fjsx15
-    - match: \*\/
-      scope: punctuation.comment.end.js.fjsx15
+    - match: \s*(\*\/)
+      captures:
+        1: punctuation.comment.end.js.fjsx15
       pop: true
 

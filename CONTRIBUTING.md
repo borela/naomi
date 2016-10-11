@@ -6,15 +6,10 @@ to this document in a pull request.
 
 ## Table of contents
 
-1. [How can I contribute?](#how-can-i-contribute)
-  1. [Reporting bugs](#reporting-bugs)
-    1. [How do I submit a good bug report?](#how-do-i-submit-a-good-bug-report)
-    2. [Template for submitting bug reports](#template-for-submitting-bug-reports)
-  2. [Suggesting enhancements](#suggesting-enhancements)
-    1. [How do I submit a good enhancement suggestion?](#how-do-i-submit-a-good-enhancement-suggestion)
-    2. [Template for submitting enhancement suggestions](#template-for-submitting-enhancement-suggestions)
-  3. [Pull requests](#pull-requests)
-2. [Style guides](#style-guides)
+1. [Template for submitting bug reports](#template-for-submitting-bug-reports)
+2. [Template for submitting enhancement suggestions](#template-for-submitting-enhancement-suggestions)
+3. [Pull requests](#pull-requests)
+4. [Style guides](#style-guides)
   1. [Commit messages](#commit-messages)
     1. [Example of a commit message](#example-of-a-commit-message)
   2. [Color schemes](#color-schemes-style-guide)
@@ -23,45 +18,7 @@ to this document in a pull request.
 3. [License headers](#license-headers)
 4. [Useful links](#useful-links)
 
-## How can I contribute?
-
-### Reporting bugs
-
-When you are creating a bug report, please [include as many details as possible]
-(#how-do-i-submit-a-good-bug-report) and, If you’d like, you can use
-[this template](#template-for-submitting-bug-reports) to structure the
-information.
-
-#### How do I submit a good bug report?
-
-Bugs are tracked as [GitHub issues][issues], explain the problem and include
-additional details to help maintainers reproduce it:
-
-* Use a clear and descriptive title for the issue.
-* Describe the exact steps which reproduce the problem in as many details as
-  possible.
-* Provide specific examples to demonstrate those steps.
-* Describe the behavior you observed after following them.
-* Explain which behavior you expected to see and why.
-* Include screenshots and animated GIFs which shows the described steps and
-  clearly demonstrates the problem.
-* If it wasn’t triggered by a specific action, describe what you were doing
-  before the it happened and share more information using the guidelines below.
-
-Provide more context by answering these questions:
-
-* Did the problem start happening recently or has it always existed?
-* If it started happening recently, can you reproduce the problem in an
-  older version? You can download them from [the releases page][releases].
-* Can you reliably reproduce the issue? If not, provide details about how often
-  it happens and under which conditions it normally happens.
-
-Include details about your configuration and environment:
-
-* Which version are you using?
-* What’s the name and version of the OS you’re using?
-
-#### Template for submitting bug reports
+## Template for submitting bug reports
 
     [Short description of problem...]
 
@@ -91,28 +48,7 @@ Include details about your configuration and environment:
     * It started happening recently: [Yes/No]
     * It can be reliably reproduced: [Yes/No]
 
-### Suggesting Enhancements
-
-When you are creating an enhancement suggestion, please [include as many details
-as possible](#how-do-i-submit-a-good-enhancement-suggestion) and, If you’d like,
-you can use [this template](#template-for-submitting-enhancement-suggestions) to
-structure the information.
-
-#### How do I submit a good enhancement suggestion?
-
-Enhancement suggestions are tracked as [GitHub issues][issues], create an issue
-as follows:
-
-* Use a clear and descriptive title.
-* Provide a step-by-step description of the suggested enhancement.
-* Provide examples.
-* Describe the current behavior, explain which one you expected to see and why.
-* Include screenshots and animated GIFs which help you demonstrate your idea.
-* Explain why this enhancement would be useful.
-* Specify which version you’re using.
-* Specify the name and version of the OS you’re using.
-
-#### Template for submitting enhancement suggestions
+## Template for submitting enhancement suggestions
 
     [Short description of suggestion...]
 
@@ -141,7 +77,7 @@ as follows:
     **Version:** [Version...]
     **OS and version:** [OS name and version...]
 
-### Pull requests
+## Pull requests
 
 1. Fork.
 2. Follow the style guides.
@@ -218,13 +154,12 @@ This project uses the [Apache 2.0 license][license] and one of its requirements
 is a header which makes it easier for other people to know which license was
 used without having to look into the root of the project.
 
-In the original header it has the author and an email, but in this case it won’t
-be necessary as one of the project’s requirements is that you use your real name
+The original header has the author and an email, but in this case it won’t be
+necessary as one of the project’s requirements is that you use your real name
 and email in the commits so that we can track the author easily.
 
-Keep in mind that not all files need a license header, configuration files are a
-good example of that, so, if a file required careful design on your part, use
-one of these:
+Not all files need a license header, configuration files are a  good example of
+that, so, if a file required careful design on your part, use one of these:
 
     // Licensed under the Apache License, Version 2.0 (the “License”); you may not
     // use this file except in compliance with the License. You may obtain a copy of
@@ -268,8 +203,10 @@ one of these:
 
 * [Sublime text API][sublimeApiDocs]
 * [Sublime text syntax][sublimeSynDocs]
+* [CSScheme][cssCheme]
 * [Scope hunter][scopeHunter]
 
+[cssCheme]: https://github.com/FichteFoll/CSScheme
 [sublimeApiDocs]: https://www.sublimetext.com/docs/3/api_reference.html
 [sublimeSynDocs]: https://www.sublimetext.com/docs/3/syntax.html
 [scopeHunter]: https://github.com/facelessuser/ScopeHunter

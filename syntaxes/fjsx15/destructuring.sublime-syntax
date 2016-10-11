@@ -19,42 +19,44 @@ scope: ...
 
 contexts:
   main:
+    - match: lolalalaolaoalaola
+      scope: lol
     # Variable declaration.
-    - match: |
-        (?x)
-        (?=
-          (?>let|var)\s*
-          (?> \[
-            | \{
-          )
-        )
-      set: variable
+    # - match: |
+    #     (?x)
+    #     (?=
+    #       (?>let|var)\s*
+    #       (?> \[
+    #         | \{
+    #       )
+    #     )
+    #   set: variable
     # Array.
-    - match: |
-        (?x)
-        (?=\s*
-          \[
-          [^;]*?
-          \]
-          \s*=[^=]
-        )
-      set: destructure-array
+    # - match: |
+    #     (?x)
+    #     (?=\s*
+    #       \[
+    #       [^;]*?
+    #       \]
+    #       \s*=[^=]
+    #     )
+    #   set: destructuring-array
     # Object.
-    - match: |
-        (?x)
-        (?=\s*
-          \{
-          [^;]*?
-          \}
-          \s*=[^=]
-        )
-      set: destructure-object
+    # - match: |
+    #     (?x)
+    #     (?=\s*
+    #       \{
+    #       [^;\}]*?
+    #       \}
+    #       \s*=[^=]
+    #     )
+    #   set: destructuring-object
 
   variable:
     - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax
 
-  destructure-array:
-    - include: Packages/Naomi/syntaxes/fjsx15/destructure-array.sublime-syntax
+  destructuring-array:
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
 
-  destructure-object:
-    - include: Packages/Naomi/syntaxes/fjsx15/destructure-object.sublime-syntax
+  destructuring-object:
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax

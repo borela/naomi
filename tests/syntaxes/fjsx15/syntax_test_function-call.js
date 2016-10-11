@@ -12,14 +12,6 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-   function<A,B>()
-   {
-   }
-
-   function ()
-   {
-   }
-
    super(1,2);
 // ^^^^^ support.js.fjsx15
 // ^^^^^ entity.name.function.js.fjsx15

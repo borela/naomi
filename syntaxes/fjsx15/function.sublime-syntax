@@ -24,76 +24,96 @@ variables:
 
 contexts:
   main:
+    # Simple function without identifier.
     - match: |
-        (?x)\b
+        (?x)
         (?:
           (async)\s+
         )?
-        (function)\b
+        (function)
+        (?=
+          \s*\*?
+          \s*\(
+        )
       captures:
-        1: keyword.modifier.js.fjsx15
-        2: keyword.function.js.fjsx15
-      set: identifier
-
-  identifier:
-    - meta_scope: function.js.fjsx15
-    # Start of template parameters (no identifier).
-    - match: (?=<)
-      set: [
-        body,
-        return-type,
-        parameters,
-        template-parameters
-      ]
-    # Start of parameters (no identifier).
-    - match: (?=\()
-      set: [
-        body,
-        return-type,
-        parameters
-      ]
-    # Actual identifier.
+        1: keyword.modifier.async.js.fjsx15
+        2: keyword.declaration.function.js.fjsx15
+      set: declaration
+    # Simple function with identifier.
     - match: |
-        (?xi)
-        \s*\*?
+        (?x)
+        (?:
+          (async)\s+
+        )?
+        (function)
+        (?=
+          \s*\*?
+          \s*{{commonIdentifier}}
+          \s*\(
+        )
+      captures:
+        1: keyword.modifier.async.js.fjsx15
+        2: keyword.declaration.function.js.fjsx15
+      set: declaration
+    # Templated function without identifier.
+    - match: |
+        (?x)
+        (?:
+          (async)\s+
+        )?
+        (function)
+        (?=
+          \s*\*?
+          \s*<.*>\s*\(
+        )
+      captures:
+        1: keyword.modifier.async.js.fjsx15
+        2: keyword.declaration.function.js.fjsx15
+      set: declaration
+    # Templated function with identifier.
+    - match: |
+        (?x)
+        (?:
+          (async)\s+
+        )?
+        (function)
+        (?=
+          \s*\*?
+          \s*{{commonIdentifier}}
+          \s*<.*>\s*\(
+        )
+      captures:
+        1: keyword.modifier.async.js.fjsx15
+        2: keyword.declaration.function.js.fjsx15
+      set: declaration
+
+  declaration:
+    # Body.
+    - match: (?=\s*\{)
+      set: body
+    # Template parameters.
+    - match: (?=\s*<)
+      push: template-parameters
+    # Parameters.
+    - match: (?=\s*\()
+      push: parameters
+    # Identifier.
+    - match: |
+        (?xi)\s*
+        (\*)?
         (?:
           \s*
-          {{commonIdentifier}}
+          ({{commonIdentifier}})
         )?
-      scope: entity.name.function.js.fjsx15
-      set: optional-template-parameters
+      captures:
+        1: keyword.modifier.generator.js.fjsx15
+        2: entity.name.function.js.fjsx15
 
   template-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/template/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
 
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
-
-  optional-template-parameters:
-    - match: (?=\()
-      set: [
-        body,
-        return-type,
-        parameters
-      ]
-    - match: (?=<)
-      set: [
-        body,
-        return-type,
-        parameters,
-        template-parameters
-      ]
-
-  return-type:
-    - match: |
-        (?x)
-        (?=
-          (?> ;
-            | {
-          )
-        )
-      pop: true
-    - include: Packages/Naomi/syntaxes/fjsx15/function/return-type.sublime-syntax
 
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax

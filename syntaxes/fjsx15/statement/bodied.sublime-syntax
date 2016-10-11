@@ -24,6 +24,7 @@ contexts:
         (?xi)\b
         (?> do
           | else
+          | finally
           | try
         )\b
       scope: keyword.control.js.fjsx15

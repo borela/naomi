@@ -19,7 +19,7 @@ scope: ...
 
 variables:
   arrowFunctionContinuation: |
-    [^(]*?\)
+    .*?\)
     .*?=>
 
   expressionGroupBegin: |
@@ -38,7 +38,7 @@ contexts:
         (?x)
         {{expressionGroupBegin}}
       scope: punctuation.delimiter.expression.group.a.begin.js.fjsx15
-      push: open-b-close-a
+      set: open-b-close-a
 
   open-a-close-b:
     - match: |
@@ -46,8 +46,9 @@ contexts:
         {{expressionGroupBegin}}
       scope: punctuation.delimiter.expression.group.a.begin.js.fjsx15
       push: open-b-close-a
-    - match: \)
-      scope: punctuation.delimiter.expression.group.b.end.js.fjsx15
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.expression.group.b.end.js.fjsx15
       pop: true
     - match: ""
       push:
@@ -62,8 +63,9 @@ contexts:
         {{expressionGroupBegin}}
       scope: punctuation.delimiter.expression.group.b.begin.js.fjsx15
       push: open-a-close-b
-    - match: \)
-      scope: punctuation.delimiter.expression.group.a.end.js.fjsx15
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.expression.group.a.end.js.fjsx15
       pop: true
     - match: ""
       push:
@@ -76,19 +78,20 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/cast.sublime-syntax
 
   sequence:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
-    # Simple statements.
-    - include: Packages/Naomi/syntaxes/fjsx15/statement/hanging.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/statement/bodied.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/statement/simple.sublime-syntax
     # Complex statements.
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/interface.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/declare.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/interface.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/type-statement.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
+    # Simple statements.
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/hanging.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/bodied.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/simple.sublime-syntax
     # Expression keywords.
     - include: Packages/Naomi/syntaxes/fjsx15/instanceof.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/new.sublime-syntax
@@ -98,7 +101,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/destructure.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/jsx.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax

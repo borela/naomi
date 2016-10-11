@@ -14,329 +14,329 @@
 
 <div
    accept
-// ^^^^^^ support.attribute.html.html5
+// ^^^^^^ support.html.html5
 // ^^^^^^ entity.name.attribute.html.html5
    accept-charset
-// ^^^^^^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^^^^^^ support.html.html5
 // ^^^^^^^^^^^^^^ entity.name.attribute.html.html5
    accesskey
-// ^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^ support.html.html5
 // ^^^^^^^^^ entity.name.attribute.html.html5
    action
-// ^^^^^^ support.attribute.html.html5
+// ^^^^^^ support.html.html5
 // ^^^^^^ entity.name.attribute.html.html5
    align
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    alt
-// ^^^ support.attribute.html.html5
+// ^^^ support.html.html5
 // ^^^ entity.name.attribute.html.html5
    async
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    autocomplete
-// ^^^^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^^^^ support.html.html5
 // ^^^^^^^^^^^^ entity.name.attribute.html.html5
    autofocus
-// ^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^ support.html.html5
 // ^^^^^^^^^ entity.name.attribute.html.html5
    autoplay
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    autosave
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    buffered
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    challenge
-// ^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^ support.html.html5
 // ^^^^^^^^^ entity.name.attribute.html.html5
    charset
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    checked
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    cite
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    class
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    code
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    codebase
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    cols
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    colspan
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    content
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    contenteditable
-// ^^^^^^^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^^^^^^^ support.html.html5
 // ^^^^^^^^^^^^^^^ entity.name.attribute.html.html5
    contextmenu
-// ^^^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^^^ support.html.html5
 // ^^^^^^^^^^^ entity.name.attribute.html.html5
    controls
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    coords
-// ^^^^^^ support.attribute.html.html5
+// ^^^^^^ support.html.html5
 // ^^^^^^ entity.name.attribute.html.html5
    data
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    datetime
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    default
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    defer
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    dir
-// ^^^ support.attribute.html.html5
+// ^^^ support.html.html5
 // ^^^ entity.name.attribute.html.html5
    dirname
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    disabled
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    download
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    draggable
-// ^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^ support.html.html5
 // ^^^^^^^^^ entity.name.attribute.html.html5
    dropzone
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    enctype
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    for
-// ^^^ support.attribute.html.html5
+// ^^^ support.html.html5
 // ^^^ entity.name.attribute.html.html5
    form
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    formaction
-// ^^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^^ support.html.html5
 // ^^^^^^^^^^ entity.name.attribute.html.html5
    headers
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    height
-// ^^^^^^ support.attribute.html.html5
+// ^^^^^^ support.html.html5
 // ^^^^^^ entity.name.attribute.html.html5
    hidden
-// ^^^^^^ support.attribute.html.html5
+// ^^^^^^ support.html.html5
 // ^^^^^^ entity.name.attribute.html.html5
    high
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    href
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    hreflang
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    http-equiv
-// ^^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^^ support.html.html5
 // ^^^^^^^^^^ entity.name.attribute.html.html5
    icon
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    id
-// ^^ support.attribute.html.html5
+// ^^ support.html.html5
 // ^^ entity.name.attribute.html.html5
    ismap
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    itemprop
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    keytype
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    kind
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    label
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    lang
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    language
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    list
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    loop
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    low
-// ^^^ support.attribute.html.html5
+// ^^^ support.html.html5
 // ^^^ entity.name.attribute.html.html5
    manifest
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    max
-// ^^^ support.attribute.html.html5
+// ^^^ support.html.html5
 // ^^^ entity.name.attribute.html.html5
    maxlength
-// ^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^ support.html.html5
 // ^^^^^^^^^ entity.name.attribute.html.html5
    media
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    method
-// ^^^^^^ support.attribute.html.html5
+// ^^^^^^ support.html.html5
 // ^^^^^^ entity.name.attribute.html.html5
    min
-// ^^^ support.attribute.html.html5
+// ^^^ support.html.html5
 // ^^^ entity.name.attribute.html.html5
    multiple
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    muted
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    name
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    novalidate
-// ^^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^^ support.html.html5
 // ^^^^^^^^^^ entity.name.attribute.html.html5
    open
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    optimum
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    pattern
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    ping
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    placeholder
-// ^^^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^^^ support.html.html5
 // ^^^^^^^^^^^ entity.name.attribute.html.html5
    poster
-// ^^^^^^ support.attribute.html.html5
+// ^^^^^^ support.html.html5
 // ^^^^^^ entity.name.attribute.html.html5
    preload
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    radiogroup
-// ^^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^^ support.html.html5
 // ^^^^^^^^^^ entity.name.attribute.html.html5
    readonly
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    rel
-// ^^^ support.attribute.html.html5
+// ^^^ support.html.html5
 // ^^^ entity.name.attribute.html.html5
    required
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    reversed
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    rows
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    rowspan
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    sandbox
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    scope
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    scoped
-// ^^^^^^ support.attribute.html.html5
+// ^^^^^^ support.html.html5
 // ^^^^^^ entity.name.attribute.html.html5
    seamless
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    selected
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    shape
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    size
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    sizes
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    span
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    spellcheck
-// ^^^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^^^ support.html.html5
 // ^^^^^^^^^^ entity.name.attribute.html.html5
    src
-// ^^^ support.attribute.html.html5
+// ^^^ support.html.html5
 // ^^^ entity.name.attribute.html.html5
    srcdoc
-// ^^^^^^ support.attribute.html.html5
+// ^^^^^^ support.html.html5
 // ^^^^^^ entity.name.attribute.html.html5
    srclang
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    srcset
-// ^^^^^^ support.attribute.html.html5
+// ^^^^^^ support.html.html5
 // ^^^^^^ entity.name.attribute.html.html5
    start
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    step
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    style
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    summary
-// ^^^^^^^ support.attribute.html.html5
+// ^^^^^^^ support.html.html5
 // ^^^^^^^ entity.name.attribute.html.html5
    tabindex
-// ^^^^^^^^ support.attribute.html.html5
+// ^^^^^^^^ support.html.html5
 // ^^^^^^^^ entity.name.attribute.html.html5
    target
-// ^^^^^^ support.attribute.html.html5
+// ^^^^^^ support.html.html5
 // ^^^^^^ entity.name.attribute.html.html5
    title
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    type
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5
    usemap
-// ^^^^^^ support.attribute.html.html5
+// ^^^^^^ support.html.html5
 // ^^^^^^ entity.name.attribute.html.html5
    value
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    width
-// ^^^^^ support.attribute.html.html5
+// ^^^^^ support.html.html5
 // ^^^^^ entity.name.attribute.html.html5
    wrap
-// ^^^^ support.attribute.html.html5
+// ^^^^ support.html.html5
 // ^^^^ entity.name.attribute.html.html5

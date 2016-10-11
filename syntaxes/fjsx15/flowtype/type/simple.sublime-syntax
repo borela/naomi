@@ -17,59 +17,65 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
-    - include: basic
-    - include: other
-    - include: templates
-
-  templates:
-    - match: \bGenerator\b
-      scope: >-
-        support.flowtype
-        entity.name.type.flowtype
-      set: [
-        optional-array-shorthand,
-        template-arguments
-      ]
-
-  template-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/template/arguments.sublime-syntax
-
-  basic:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/namespace/path.sublime-syntax
+    # Predefined types.
     - match: |
         (?x)\b
         (?> any
           | boolean
           | Function
+          | Generator
           | mixed
           | number
+          | null
           | Object
           | string
-        )\b
-      scope: >-
-        support.flowtype
-        entity.name.type.flowtype
-      set: optional-array-shorthand
-
-  optional-array-shorthand:
-    - match: |
-        (?x)
-        (\[)(\])
-      captures:
-        1: punctuation.delimiter.array.begin.flowtype
-        2: punctuation.delimiter.array.end.flowtype
-      pop: true
-    - match: (?=\S)
-      pop: true
-
-  other:
-    - match: |
-        (?x)\b
-        (?> null
           | void
         )\b
       scope: >-
         support.flowtype
         entity.name.type.flowtype
+      set: optional-template-or-array-shorthand
+    # Other types.
+    - match: |
+        (?xi)
+        {{commonIdentifier}}
+      scope: entity.name.type.flowtype
+      set: optional-template-or-array-shorthand
+
+  optional-template-or-array-shorthand:
+    - include: array-shorthand
+    - include: template
+    - match: (?=\S)
       pop: true
+
+  array-shorthand:
+    - match: |
+        (?x)
+        (\[)\s*(\])
+      captures:
+        1: punctuation.delimiter.array.begin.flowtype
+        2: punctuation.delimiter.array.end.flowtype
+      pop: true
+
+  template:
+    - match: (?=<)
+      set: [
+        optional-array-shorthand,
+        template-arguments
+      ]
+
+  optional-array-shorthand:
+    - include: array-shorthand
+    - match: (?=\S)
+      pop: true
+
+  template-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax

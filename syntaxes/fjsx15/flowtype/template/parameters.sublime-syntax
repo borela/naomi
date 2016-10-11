@@ -19,24 +19,24 @@ scope: ...
 
 contexts:
   main:
-    - match: \[
-      scope: punctuation.delimiter.array.begin.flowtype
-      set: [
-        punctuation,
-        type
-      ]
+    - match: <
+      scope: punctuation.delimiter.template.parameters.begin.flowtype
+      set: parameters
 
-  type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax
-
-  punctuation:
+  parameters:
     - match: \,
-      scope: punctuation.delimiter.array.flowtype
-      set: [
-        punctuation,
-        type
-      ]
-    - match: \]
-      scope: punctuation.delimiter.array.end.flowtype
+      scope: punctuation.delimiter.template.parameters.flowtype
+    - match: \>
+      scope: punctuation.delimiter.template.parameters.end.flowtype
       pop: true
-
+    - match: ""
+      push:
+        - match: |
+            (?x)
+            (?=\s*
+              (?> ,
+                | >
+              )
+            )
+          pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax

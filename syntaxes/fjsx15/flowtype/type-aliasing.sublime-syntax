@@ -25,39 +25,27 @@ variables:
 contexts:
   main:
     - match: |
-        (?xi)
-        (?> \B\$
-          | \b
+        (?xi)\b
+        type
+        (?=
+          \s+{{commonIdentifier}}
+          (?:\s*<.*>)?
+          \s*=
         )
-        ({{commonIdentifier}})
-      scope: entity.name.type.flowtype
-      set: optional-punctuation
-
-  optional-punctuation:
-    - match: (?=<)
+      scope: keyword.other.type-aliasing.flowtype
       set: [
-        optional-array-shorthand,
-        template-arguments
+        type,
+        punctuation,
+        identifier
       ]
-    - match: (?=\[)
-      set: array-shorthand
-    - match: (?=\S)
+
+  identifier:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/simple.sublime-syntax
+
+  punctuation:
+    - match: "="
+      scope: keyword.operator.other.assignment.flowtype
       pop: true
 
-  template-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template-arguments.sublime-syntax
-
-  optional-array-shorthand:
-    - match: (?=\[)
-      set: array-shorthand
-    - match: (?=\S)
-      pop: true
-
-  array-shorthand:
-    - match: |
-        (?x)
-        (\[)(\])
-      captures:
-        1: punctuation.delimiter.array.begin.flowtype
-        2: punctuation.delimiter.array.end.flowtype
-      pop: true
+  type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax

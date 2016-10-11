@@ -19,57 +19,64 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/namespace/path.sublime-syntax
     # Enveloped nullable.
-    - match: (\?)\s*(\()
+    - match: |
+        (?x)
+        \s*(\?)
+        \s*(\()
       captures:
         1: keyword.operator.other.nullable.flowtype
         2: punctuation.delimiter.nullable.begin.flowtype
       set: [
+        enveloped-nullable-end,
         optional-operator,
-        nullable-end,
         type
       ]
-    # Nullable followed by a type.
-    - match: \?
+    # Nullable.
+    - match: \s*\?
       scope: keyword.operator.other.nullable.flowtype
       set: [
         optional-operator,
         type
       ]
-    # Type.
-    - match: (?=\S)
+    # Normal type.
+    - match: ""
       set: [
         optional-operator,
         type
       ]
 
-  nullable-end:
-    - match: \)
-      scope: punctuation.delimiter.nullable.end.flowtype
-      pop: true
-
   optional-operator:
     - match: |
-        (?xi)
-        (?> &
-          | \|
-        )
+        (?x)
+        \s*(&)
         (?= \s
           | \{
           | [$_[:alnum]]
         )
-      scope: keyword.operator.other.union.flowtype
-      set: [
-        optional-operator,
-        main
-      ]
-    - match: (?=\S)
+      captures:
+        1: keyword.operator.other.intersection.flowtype
+      set: main
+    - match: |
+        (?x)
+        \s*(\|)
+        (?= \s
+          | \{
+          | [$_[:alnum]]
+        )
+      captures:
+        1: keyword.operator.other.union.flowtype
+      set: main
+    - match: ""
+      pop: true
+
+  enveloped-nullable-end:
+    - match: \)
+      scope: punctuation.delimiter.nullable.end.flowtype
       pop: true
 
   type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/tuple.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/support/core.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/tuple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/simple.sublime-syntax

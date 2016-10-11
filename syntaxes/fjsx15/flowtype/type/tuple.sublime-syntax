@@ -19,20 +19,18 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\([^\(])
-      set: [
-        return,
-        parameters
-      ]
+    - match: \[
+      scope: punctuation.delimiter.array.begin.flowtype
+      set: items
 
-  parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
-
-  return:
-    - meta_scope: type.flowtype
-    - match: \=>
-      scope: punctuation.delimiter.function.body.result.flowtype
-      set: return-type
-
-  return-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax
+  items:
+    - match: \,
+      scope: punctuation.delimiter.array.flowtype
+    - match: \]
+      scope: punctuation.delimiter.array.end.flowtype
+      pop: true
+    - match: ""
+      push:
+        - match: (?=\,|\])
+          pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax

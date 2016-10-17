@@ -75,7 +75,7 @@ contexts:
           pop: true
 
   cast-operator:
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/cast.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax
 
   sequence:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/prolog.sublime-syntax

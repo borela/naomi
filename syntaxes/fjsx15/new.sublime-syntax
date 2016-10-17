@@ -31,14 +31,14 @@ contexts:
         (?=
           \s+{{commonIdentifier}}
         )
-      scope: keyword.control.js.fjsx15
+      scope: keyword.other.js.fjsx15
       set: [
         arguments,
         type
       ]
     # Accept any expression after the keyword.
     - match: (?i)\bnew\b
-      scope: keyword.control.js.fjsx15
+      scope: keyword.other.js.fjsx15
       pop: true
 
   arguments:

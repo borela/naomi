@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: \binstanceof\b
-      scope: keyword.instance.js.fjsx15
+      scope: keyword.other.js.fjsx15
       set: type
 
   type:

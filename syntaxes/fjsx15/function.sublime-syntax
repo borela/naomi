@@ -88,6 +88,8 @@ contexts:
       set: declaration
 
   declaration:
+    - match: (?=\s*;)
+      pop: true
     # Body.
     - match: (?=\s*\{)
       set: body

@@ -24,7 +24,6 @@ variables:
 
 contexts:
   main:
-    - include: comment
     - match: |
         (?xi)
         {{commonIdentifier}}
@@ -32,18 +31,20 @@ contexts:
       set: optional-value
 
   optional-value:
-    - match: \=(?=\s*\{)
-      scope: keyword.operator.other.assignment.jsx
+    # Embedded javascript.
+    - match: \s*(=)(?=\s*\{)
+      captures:
+        1: keyword.operator.other.assignment.jsx
       pop: true
-    - match: \=
-      scope: keyword.operator.other.assignment.jsx
+    # Normal value.
+    - match: \s*(=)
+      captures:
+        1: keyword.operator.other.assignment.jsx
       set: value
-    - match: (?=\S)
+    # Anything else.
+    - match: ""
       pop: true
 
   value:
     - include: Packages/Naomi/syntaxes/jsx/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx/literal/string/single-quoted.sublime-syntax
-
-  comment:
-    - include: Packages/Naomi/syntaxes/jsx/comment/normal.sublime-syntax

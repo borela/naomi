@@ -19,23 +19,26 @@ scope: ...
 
 contexts:
   main:
-    - match: \/\/
-      scope: punctuation.comment.begin.jsx
+    - match: \s*(\/\/)
+      captures:
+        1: punctuation.delimiter.comment.begin.jsx
       set: line
-    - match: \/\*
-      scope: punctuation.comment.begin.jsx
+    - match: \s*(\/\*)
+      captures:
+        1: punctuation.delimiter.comment.begin.jsx
       set: block
 
   line:
     - meta_scope: comment.line.jsx
     - meta_content_scope: comment.content.jsx
-    - match: $
+    - match: \s*$
       pop: true
 
   block:
     - meta_scope: comment.block.jsx
     - meta_content_scope: comment.content.jsx
-    - match: \*\/
-      scope: punctuation.comment.end.jsx
+    - match: \s*(\*\/)
+      captures:
+        1: punctuation.comment.end.jsx
       pop: true
 

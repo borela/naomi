@@ -19,12 +19,14 @@ scope: ...
 
 contexts:
   main:
-    - match: \"
-      scope: punctuation.delimiter.string.begin.jsx
+    - match: \s*(\")
+      captures:
+        1: punctuation.delimiter.string.begin.jsx
       set: string
 
   string:
     - meta_scope: string.quoted.single.jsx
-    - match: \"
-      scope: punctuation.delimiter.string.end.jsx
+    - match: \s*(\")
+      captures:
+        1: punctuation.delimiter.string.end.jsx
       pop: true

@@ -17,6 +17,68 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_.:[:alnum:]]*
+
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/jsx/element/normal.sublime-syntax
+    - match: |
+        (?xi)\s*
+        (<)
+        ({{commonIdentifier}})
+      captures:
+        1: punctuation.delimiter.tag.begin.jsx
+        2: entity.name.tag.jsx
+      set: [
+        content,
+        attributes
+      ]
+
+  attributes:
+    # Self closing tag.
+    - match: (?=\s*/>)
+      pop: true
+    # Normal tag.
+    - match: \s*(>)
+      captures:
+        1: punctuation.delimiter.tag.end.jsx
+      pop: true
+    # Attributes.
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/jsx/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/jsx/attribute.sublime-syntax
+        - match: ""
+          pop: true
+
+  content:
+    # Self closing tag.
+    - match: \s*(/>)
+      captures:
+        1: punctuation.delimiter.tag.end.jsx
+      pop: true
+    # Closing tag.
+    - match: |
+        (?x)\s*
+        (</)(\2)(>)
+      captures:
+        1: punctuation.delimiter.tag.begin.jsx
+        2: entity.name.tag.jsx
+        3: punctuation.delimiter.tag.end.jsx
+      pop: true
+    # Sub tags.
+    - match: ""
+      push:
+        - include: main
+        - match: |
+            (?x)
+            (?=\s*
+              (?> />
+                | <
+              )
+            )
+          pop: true
+        - match: .
+          scope: source.jsx

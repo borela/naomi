@@ -30,7 +30,7 @@ contexts:
 
   line:
     - meta_scope: comment.line.js.fjsx15
-    - match: $
+    - match: \s*$
       pop: true
 
   block:

@@ -50,7 +50,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax
 
   template-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/template/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
 
   optional-template-parameters:
     - match: (?=<)
@@ -88,8 +88,11 @@ contexts:
       pop: true
     - match: (?=\S)
       push:
-        - include: Packages/Naomi/syntaxes/fjsx15/method.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/member-variable.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
         - match: ""
           pop: true
 

@@ -50,9 +50,10 @@ contexts:
     - match: |
         (?x)
         \s*(&)
-        (?= \s
-          | \{
-          | [$_[:alnum]]
+        (?!
+          (?> &
+            | =
+          )
         )
       captures:
         1: keyword.operator.other.intersection.flowtype
@@ -60,9 +61,10 @@ contexts:
     - match: |
         (?x)
         \s*(\|)
-        (?= \s
-          | \{
-          | [$_[:alnum]]
+        (?!
+          (?> \|
+            | =
+          )
         )
       captures:
         1: keyword.operator.other.union.flowtype

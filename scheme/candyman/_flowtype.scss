@@ -1,0 +1,46 @@
+// Licensed under the Apache License, Version 2.0 (the “License”); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+punctuation.delimiter {
+  &.array.flowtype,
+  &.array.begin.flowtype,
+  &.array.end.flowtype,
+  &.function.parameters.flowtype,
+  &.function.parameters.begin.flowtype,
+  &.function.parameters.end.flowtype,
+  &.function.result.flowtype,
+  &.nullable.begin.flowtype,
+  &.nullable.end.flowtype,
+  &.object.flowtype,
+  &.object.begin.flowtype,
+  &.object.end.flowtype,
+  &.template.parameters.flowtype,
+  &.template.parameters.begin.flowtype,
+  &.template.parameters.end.flowtype,
+  &.template.arguments.flowtype,
+  &.template.arguments.begin.flowtype,
+  &.template.arguments.end.flowtype {
+    foreground: $brown-200;
+  }
+}
+
+keyword.operator.other {
+  &.flowtype,
+  &.association.flowtype,
+  &.cast.flowtype,
+  &.intersection.flowtype,
+  &.nullable.flowtype,
+  &.optional.flowtype,
+  &.union.flowtype {
+    foreground: $brown-200;
+  }
+}

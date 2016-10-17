@@ -17,30 +17,34 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
-    - include: yield
+    # Type after throw.
     - match: |
-        (?x)\b
-        (?> await
-          | break
-          | continue
-          | de
-            (?> fault
-              | lete
-            )
-          | goto
-          | return
-        )\b
-      scope: keyword.control.js.fjsx15
-
-  yield:
-    - match: |
-        (?x)\b
-        (yield)
-        (?> \s*(\*)?
-          | \b
+        (?xi)\b
+        (throw)
+        (?=
+          \s+{{commonIdentifier}}
         )
-      captures:
-        1: keyword.control.js.fjsx15
-        2: keyword.other.generator.js.fjsx15
+      scope: keyword.control.js.fjsx15
+      set: [
+        arguments,
+        type
+      ]
+    # Accept any expression after the keyword.
+    - match: (?i)\bthrow\b
+      scope: keyword.control.js.fjsx15
+      pop: true
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+    - match: ""
+      pop: true
+
+  type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax

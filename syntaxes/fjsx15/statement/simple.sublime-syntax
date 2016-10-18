@@ -47,6 +47,8 @@ contexts:
       set: label
 
   label:
+    - match: (?=\s*;)
+      pop: true
     - match: |
         (?xi)
         {{commonIdentifier}}

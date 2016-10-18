@@ -26,6 +26,9 @@ contexts:
   main:
     - match: |
         (?xi)
-        {{commonIdentifier}}:
-      scope: entity.name.label.js.fjsx15
+        ({{commonIdentifier}})
+        \s*(:)
+      captures:
+        1: entity.name.label.js.fjsx15
+        2: punctuation.delimiter.label.js.fjsx15
       pop: true

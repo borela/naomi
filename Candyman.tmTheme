@@ -86,6 +86,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>entity.name.alias</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffecb3</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>entity.name.type.array, punctuation.delimiter.array</string>
 			<key>settings</key>
 			<dict>
@@ -277,6 +286,24 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>entity.name.import.ambiguous</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>punctuation.delimiter.import</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>entity.name.interface, punctuation.delimiter.interface</string>
 			<key>settings</key>
 			<dict>
@@ -286,7 +313,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.label</string>
+			<string>entity.name.label, punctuation.delimiter.label</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>

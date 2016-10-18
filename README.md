@@ -8,13 +8,15 @@ that makes writting more fun.
 
 #### Constants vs Variables
 
-Sublime highlighting system is amazing and fast, it uses only regular expressions
-and do a ton of optimizations, that alone made me stop using IDEs with systems
-that scans the project to perform the highlighting.
+Sublime highlighting system is amazing, it uses only regular expressions and do
+a ton of optimizations on them which makes it very fast. That alone made me stop
+using IDEs that scans the project to perform the highlighting as I value responsiveness
+a lot in a editor.
 
-The problem is that in some languages is not possible to differentiate constants
-and variables just using regular expressions, the solution then is that you must
-have a coding style where all your constants are uppercase.
+That problem is that it’s not without trade offs, in some languages is not possible
+to differentiate constants from variables just using regular expressions, the
+solution then is that you must have a coding style where all your constants are
+uppercase and you’ll be fine.
 
 ## Features
 

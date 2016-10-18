@@ -59,6 +59,7 @@ contexts:
       scope: >-
         support.js.fjsx15
         entity.name.constant.js.fjsx15
+      pop: true
 
   array-item-access:
     - include: Packages/Naomi/syntaxes/fjsx15/array-access.sublime-syntax

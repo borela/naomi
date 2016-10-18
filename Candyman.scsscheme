@@ -24,6 +24,7 @@
 @import "scheme/candyman/expression";
 @import "scheme/candyman/flowtype";
 @import "scheme/candyman/function";
+@import "scheme/candyman/import";
 @import "scheme/candyman/interface";
 @import "scheme/candyman/label";
 @import "scheme/candyman/markup";

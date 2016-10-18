@@ -34,8 +34,10 @@ contexts:
               | lete
             )
           | return
+          | throw
         )\b
       scope: keyword.control.js.fjsx15
+      pop: true
 
   break-continue:
     - match: |

@@ -103,7 +103,6 @@ contexts:
     # Expression keywords.
     - include: Packages/Naomi/syntaxes/fjsx15/instanceof.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/new.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/throw.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/other-keywords.sublime-syntax
     # Expression.
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax

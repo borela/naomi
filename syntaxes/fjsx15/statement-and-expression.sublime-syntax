@@ -34,6 +34,7 @@ variables:
 contexts:
   main:
     - include: sequence
+    # Open new expression group.
     - match: |
         (?x)
         {{expressionGroupBegin}}
@@ -41,15 +42,18 @@ contexts:
       set: open-b-close-a
 
   open-a-close-b:
+    # Open new expression group.
     - match: |
         (?x)
         {{expressionGroupBegin}}
       scope: punctuation.delimiter.expression.group.a.begin.js.fjsx15
       push: open-b-close-a
+    # Close current expression group.
     - match: \s*(\))
       captures:
         1: punctuation.delimiter.expression.group.b.end.js.fjsx15
       pop: true
+    # Expression contents.
     - match: ""
       push:
         - include: cast-operator
@@ -58,15 +62,18 @@ contexts:
           pop: true
 
   open-b-close-a:
+    # Open new expression group.
     - match: |
         (?x)
         {{expressionGroupBegin}}
       scope: punctuation.delimiter.expression.group.b.begin.js.fjsx15
       push: open-a-close-b
+    # Close current expression group.
     - match: \s*(\))
       captures:
         1: punctuation.delimiter.expression.group.a.end.js.fjsx15
       pop: true
+    # Expression contents.
     - match: ""
       push:
         - include: cast-operator

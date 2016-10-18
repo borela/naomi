@@ -121,15 +121,19 @@ following style:
 
 ### Color schemes style guide
 
-* Create an unique uuid for your color scheme.
-* Indent with 4 spaces.
+Color schemes are coded with scss, you will have one main file at the root of
+the project and as many partials as you need under `scheme/[name]`. To compile
+those files you will need [CSScheme][CSScheme].
+
+* Use SCSS.
+* Indent with 2 spaces.
 * Use blank lines to group related sections of code.
 * Add the appropriate [license header](#license-headers).
 
 ### Syntaxes style guide
 
 * Name the main syntax file using the following format
-  `naomi.[language][version].sublime-syntax`.
+  `naomi.[syntax].sublime-syntax`.
 * Additional files must not have the `name` or `file_extension` keys in the
   header. Also, they must have the key `scope` set to `...` and the key `hidden`
   set to `true`.
@@ -144,6 +148,9 @@ following style:
 
 ### Tests style guide
 
+* Feel free to use the `code-generator.xlsm` to generate tests for lists of
+  constants, it’s just a spreedsheet with macros where can click a button to
+  send the tests to the clipboard.
 * Create multiple files to group related tests.
 * Test as much as possible.
 * Add the appropriate [license header](#license-headers).
@@ -203,10 +210,10 @@ that, so, if a file required careful design on your part, use one of these:
 
 * [Sublime text API][sublimeApiDocs]
 * [Sublime text syntax][sublimeSynDocs]
-* [CSScheme][cssCheme]
+* [CSScheme][CSScheme]
 * [Scope hunter][scopeHunter]
 
-[cssCheme]: https://github.com/FichteFoll/CSScheme
+[CSScheme]: https://github.com/FichteFoll/CSScheme
 [sublimeApiDocs]: https://www.sublimetext.com/docs/3/api_reference.html
 [sublimeSynDocs]: https://www.sublimetext.com/docs/3/syntax.html
 [scopeHunter]: https://github.com/facelessuser/ScopeHunter

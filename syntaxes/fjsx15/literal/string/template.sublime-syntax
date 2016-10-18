@@ -72,6 +72,7 @@ contexts:
 
   embedded-content:
     - clear_scopes: true
+    - meta_scope: source.js.fjsx15
     - match: \}
       scope: keyword.operator.other.embedded.expression.end.js.fjsx15
       pop: true

@@ -79,6 +79,7 @@ contexts:
 
   sequence:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/prolog.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
     # Complex statements.
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/interface.sublime-syntax

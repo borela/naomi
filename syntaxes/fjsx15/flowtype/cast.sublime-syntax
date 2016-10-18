@@ -17,10 +17,38 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
-    - match: ":"
-      scope: keyword.operator.other.cast.flowtype
+    # Variable/constant cast. This is necessary to prevent labels to overpower
+    # cast operations.
+    - match: |
+        (?xi)
+        (?=
+          {{commonIdentifier}}
+          \s*:
+        )
+      set: [
+        operator,
+        variable-or-constant
+      ]
+    # Complex cast.
+    - include: operator
+
+  variable-or-constant:
+    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+
+  operator:
+    - match: |
+        (?x)
+        \s*(:)
+      captures:
+        1: keyword.operator.other.cast.flowtype
       set: type
 
   type:

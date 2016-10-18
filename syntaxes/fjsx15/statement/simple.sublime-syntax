@@ -17,22 +17,41 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
+    - include: break-continue
     - include: yield
     - match: |
         (?x)\b
         (?> await
-          | break
-          | continue
           | de
             (?> fault
               | lete
             )
-          | goto
           | return
         )\b
       scope: keyword.control.js.fjsx15
+
+  break-continue:
+    - match: |
+        (?x)\b
+        (?> break
+          | continue
+        )\b
+      scope: keyword.control.js.fjsx15
+      set: label
+
+  label:
+    - match: |
+        (?xi)
+        {{commonIdentifier}}
+      scope: entity.name.label.js.fjsx15
+      pop: true
 
   yield:
     - match: |

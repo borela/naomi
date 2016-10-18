@@ -114,6 +114,9 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/jsx.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax
+    # Labels can be confused with casting operators but they are matched in the
+    # beginning of the loop, so we can be sure is not a casting operator.
+    - include: Packages/Naomi/syntaxes/fjsx15/label.sublime-syntax
     # When it comes to constants and variables, there's no way to tell apart
     # without an intellisense, so it’ll treat that anything that looks a
     # uppercase variable as if it was a constant.

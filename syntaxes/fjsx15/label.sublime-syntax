@@ -17,21 +17,15 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
     - match: |
-        (?x)\b
-        (?> case
-          | default
-        )\b
-      scope: keyword.control.js.fjsx15
-      set: operator
-
-  operator:
-    - match: \s*(:)
-      captures:
-        1: keyword.operator.other.js.fjsx15
+        (?xi)
+        {{commonIdentifier}}:
+      scope: entity.name.label.js.fjsx15
       pop: true
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

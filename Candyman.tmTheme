@@ -86,6 +86,24 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>entity.name.type.array, punctuation.delimiter.array</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>entity.name.class, punctuation.delimiter.class</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>comment, comment punctuation.delimiter</string>
 			<key>settings</key>
 			<dict>
@@ -163,24 +181,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#FF9E80B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>entity.name.type.array, punctuation.delimiter.array</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff9e80</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>entity.name.class, punctuation.delimiter.class</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#aed581</string>
 			</dict>
 		</dict>
 		<dict>
@@ -282,6 +282,17 @@
 			<dict>
 				<key>foreground</key>
 				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>entity.name.label</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#ffffff</string>
 			</dict>
 		</dict>
 		<dict>

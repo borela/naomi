@@ -31,22 +31,17 @@
 }
 
 /**
- * Generic keyword.
+ * Generic keywords.
  */
+
 keyword {
   foreground: $pink-A100;
-
-  /**
-   * Generator modifier.
-   */
-  &.modifier.generator {
-    foreground: $light-blue-200;
-  }
 }
 
 /**
- * Generic delimiter.
+ * Generic delimiters.
  */
+
 punctuation.delimiter {
   foreground: $amber-100;
   fontStyle: bold;
@@ -55,6 +50,7 @@ punctuation.delimiter {
 /**
  * Control statement delimiter.
  */
+
 punctuation.delimiter.control {
   foreground: $pink-A100;
 }
@@ -62,13 +58,15 @@ punctuation.delimiter.control {
 /**
  * Ambiguous identifiers.
  */
+
 entity.name.ambiguous {
   foreground: $amber-100;
 }
 
 /**
- * Aliases.
+ * Generic aliases.
  */
+
 entity.name.alias {
   foreground: $amber-100;
 }

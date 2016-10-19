@@ -26,6 +26,4 @@ scope: source.js.fjsx15
 
 contexts:
   main:
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

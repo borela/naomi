@@ -19,38 +19,26 @@ scope: ...
 
 contexts:
   main:
-    - match: lolalalaolaoalaola
-      scope: lol
-    # Variable declaration.
-    # - match: |
-    #     (?x)
-    #     (?=
-    #       (?>let|var)\s*
-    #       (?> \[
-    #         | \{
-    #       )
-    #     )
-    #   set: variable
     # Array.
-    # - match: |
-    #     (?x)
-    #     (?=\s*
-    #       \[
-    #       [^;]*?
-    #       \]
-    #       \s*=[^=]
-    #     )
-    #   set: destructuring-array
+    - match: |
+        (?x)
+        (?=\s*
+          \[
+          [^;]*?
+          \]
+          \s*=[^=]
+        )
+      set: destructuring-array
     # Object.
-    # - match: |
-    #     (?x)
-    #     (?=\s*
-    #       \{
-    #       [^;\}]*?
-    #       \}
-    #       \s*=[^=]
-    #     )
-    #   set: destructuring-object
+    - match: |
+        (?x)
+        (?=\s*
+          \{
+          [^;\}]*?
+          \}
+          \s*=[^=]
+        )
+      set: destructuring-object
 
   variable:
     - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax

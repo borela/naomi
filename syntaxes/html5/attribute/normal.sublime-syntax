@@ -26,11 +26,10 @@ contexts:
   main:
     - match: |
         (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.attribute.html.html5
+        \s*({{commonIdentifier}})
+      captures:
+        1: entity.name.attribute.html.html5
       set: value
 
   value:
     - include: Packages/Naomi/syntaxes/html5/attribute/value.sublime-syntax
-
-

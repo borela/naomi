@@ -19,5 +19,6 @@ scope: ...
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/html5/attribute/data.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/attribute/support.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/attribute/normal.sublime-syntax

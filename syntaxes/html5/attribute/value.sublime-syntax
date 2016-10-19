@@ -19,10 +19,11 @@ scope: ...
 
 contexts:
   main:
-    - match: \=
-      scope: keyword.operator.other.assignment.html.html5
+    - match: \s*(\=)
+      captures:
+        1: keyword.operator.other.assignment.html.html5
       set: value
-    - match: (?=\S)
+    - match: (?=\s*\S)
       pop: true
 
   value:

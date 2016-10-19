@@ -19,154 +19,149 @@ scope: ...
 
 contexts:
   main:
-    - include: data
     - match: |
-        (?xi)
-        (?> a
-            (?> cce
-                (?> pt(?:-charset)?
-                  | sskey
-                )
-              | ction
-              | l(?>ign|t)
-              | sync
-              | uto
-                (?> complete
-                  | focus
-                  | play
-                  | save
-                )
-            )
-          | buffered
-          | c
-            (?> ha
-                (?> llenge
-                  | rset
-                )
-              | hecked
-              | ite
-              | lass
-              | o
-                (?> de(?:base)?
-                  | ls(?:pan)?
-                  | nt
-                    (?> e
-                        (?> nt(?:editable)?
-                          | xtmenu
-                        )
-                      | rols
-                    )
-                  | ords
-                )
-            )
-          | d
-            (?> at
-                (?> a
-                  | etime
-                )
-              | ef(?>ault|er)
-              | ir(?:name)?
-              | isabled
-              | ownload
-              | r
-                (?> aggable
-                  | opzone
-                )
-            )
-          | enctype
-          | for
-            (?:m
-              (?:action)?
-            )?
-          | h
-            (?> eaders
-              | eight
-              | idden
-              | igh
-              | ref(?:lang)?
-              | ttp-equiv
-            )
-          | i
-            (?> con
-              | d
-              | smap
-              | temprop
-            )
-          | k(?>eytype|ind)
-          | l
-            (?> abel
-              | ang(?:uage)?
-              | ist
-              | oop
-              | ow
-            )
-          | m
-            (?> anifest
-              | ax(?:length)?
-              | edia
-              | ethod
-              | in
-              | ultiple
-              | uted
-            )
-          | n(?>ame|ovalidate)
-          | op(?>en|timum)
-          | p
-            (?> attern
-              | ing
-              | laceholder
-              | oster
-              | reload
-            )
-          | r
-            (?> adiogroup
-              | e
-                (?> adonly
-                  | l
-                  | quired
-                  | versed
-                )
-              | ows(?:pan)?
-            )
-          | s
-            (?> andbox
-              | coped?
-              | eamless
-              | elected
-              | hape
-              | izes?
-              | pan
-              | pellcheck
-              | rc
-                (?> doc
-                  | lang
-                  | set
-                )?
-              | t(?>art|ep|yle)
-              | ummary
-            )
-          | t
-            (?> a
-                (?> bindex
-                  | rget
-                )
-              | itle
-              | ype
-            )
-          | usemap
-          | value
-          | w(?>idth|rap)
+        (?xi)\s*
+        (
+          (?> a
+              (?> cce
+                  (?> pt(?:-charset)?
+                    | sskey
+                  )
+                | ction
+                | l(?>ign|t)
+                | sync
+                | uto
+                  (?> complete
+                    | focus
+                    | play
+                    | save
+                  )
+              )
+            | buffered
+            | c
+              (?> ha
+                  (?> llenge
+                    | rset
+                  )
+                | hecked
+                | ite
+                | lass
+                | o
+                  (?> de(?:base)?
+                    | ls(?:pan)?
+                    | nt
+                      (?> e
+                          (?> nt(?:editable)?
+                            | xtmenu
+                          )
+                        | rols
+                      )
+                    | ords
+                  )
+              )
+            | d
+              (?> at
+                  (?> a
+                    | etime
+                  )
+                | ef(?>ault|er)
+                | ir(?:name)?
+                | isabled
+                | ownload
+                | r
+                  (?> aggable
+                    | opzone
+                  )
+              )
+            | enctype
+            | for
+              (?:m
+                (?:action)?
+              )?
+            | h
+              (?> eaders
+                | eight
+                | idden
+                | igh
+                | ref(?:lang)?
+                | ttp-equiv
+              )
+            | i
+              (?> con
+                | d
+                | smap
+                | temprop
+              )
+            | k(?>eytype|ind)
+            | l
+              (?> abel
+                | ang(?:uage)?
+                | ist
+                | oop
+                | ow
+              )
+            | m
+              (?> anifest
+                | ax(?:length)?
+                | edia
+                | ethod
+                | in
+                | ultiple
+                | uted
+              )
+            | n(?>ame|ovalidate)
+            | op(?>en|timum)
+            | p
+              (?> attern
+                | ing
+                | laceholder
+                | oster
+                | reload
+              )
+            | r
+              (?> adiogroup
+                | e
+                  (?> adonly
+                    | l
+                    | quired
+                    | versed
+                  )
+                | ows(?:pan)?
+              )
+            | s
+              (?> andbox
+                | coped?
+                | eamless
+                | elected
+                | hape
+                | izes?
+                | pan
+                | pellcheck
+                | rc
+                  (?> doc
+                    | lang
+                    | set
+                  )?
+                | t(?>art|ep|yle)
+                | ummary
+              )
+            | t
+              (?> a
+                  (?> bindex
+                    | rget
+                  )
+                | itle
+                | ype
+              )
+            | usemap
+            | value
+            | w(?>idth|rap)
+          )
         )
-      scope: >-
-        support.html.html5
-        entity.name.attribute.html.html5
-      set: value
-
-  data:
-    - match: |
-        (?x)
-        data-[_:[:alnum:]\-.]*
-      scope: entity.name.attribute.data.html.html5
+      captures:
+        1: >-
+          support.html.html5
+          entity.name.attribute.html.html5
       set: value
 
   value:

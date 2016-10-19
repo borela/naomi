@@ -19,9 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\S)
+    - match: ""
       push:
         - include: Packages/Naomi/syntaxes/html5/attribute.sublime-syntax
-        # Self closing tags are not allowed in HTML 5, ignore the slashes.
-        - match: /(?=>)
+        - match: \s*
           pop: true

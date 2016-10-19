@@ -19,10 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\S)
+    - match: ""
       push:
         - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
-        # It’s searching for an element but if a closing tag is found, it needs
-        # to stop so that the parent context can analyse it.
-        - match: (?=</)
+        - match: \s*
           pop: true

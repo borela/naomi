@@ -23,6 +23,6 @@ contexts:
       captures:
         0: tag.doctype.html.html5
         1: punctuation.delimiter.tag.begin.html.html5
-        2: entity.name.tag.doctype.html.html5
+        2: entity.name.tag.html.html5
         3: punctuation.delimiter.tag.end.html.html5
       pop: true

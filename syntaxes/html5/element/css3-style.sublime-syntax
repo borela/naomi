@@ -24,9 +24,9 @@ contexts:
         (<)
         (style)
       captures:
-        0: tag.open.other.html.html5
+        0: tag.style.html.html5
         1: punctuation.delimiter.tag.begin.html.html5
-        2: entity.name.tag.other.html.html5
+        2: entity.name.tag.html.html5
       set: [
         embedded-css3,
         attributes
@@ -34,24 +34,25 @@ contexts:
 
   embedded-css3:
     - match: |
-        (?x)
+        (?x)\s*
         (</)(\2)(>)
       captures:
-        0: tag.close.other.html.html5
+        0: tag.style.html.html5
         1: punctuation.delimiter.tag.begin.html.html5
-        2: entity.name.tag.other.html.html5
+        2: entity.name.tag.html.html5
         3: punctuation.delimiter.tag.end.html.html5
       pop: true
-    - match: (?=\S)
+    - match: ""
       push:
         - include: Packages/Naomi/syntaxes/naomi.css3.sublime-syntax
-        - match: ""
+        - match: \s*
           pop: true
 
   attributes:
-    - match: \>
-      scope: >-
-        tag.open.other.html.html5
-        punctuation.delimiter.tag.end.html.html5
+    - match: \s*(\>)
+      captures:
+        1: >-
+          tag.style.html.html5
+          punctuation.delimiter.tag.end.html.html5
       pop: true
-    - include: Packages/Naomi/syntaxes/html5/attribute.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/element/attributes.sublime-syntax

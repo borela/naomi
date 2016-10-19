@@ -31,30 +31,31 @@ contexts:
           )
         )\b
       captures:
-        0: tag.open.sectioning.root.html.html5
+        0: tag.sectioning.root.html.html5
         1: punctuation.delimiter.tag.begin.html.html5
-        2: entity.name.tag.sectioning.root.html.html5
+        2: entity.name.tag.html.html5
       set: [
         content,
         attributes
       ]
 
   attributes:
-    - match: \>
-      scope: >-
-        tag.open.sectioning.root.html.html5
-        punctuation.delimiter.tag.end.html.html5
+    - match: \s*(\>)
+      captures:
+        1: >-
+          tag.sectioning.root.html.html5
+          punctuation.delimiter.tag.end.html.html5
       pop: true
-    - include: Packages/Naomi/syntaxes/html5/attribute.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/element/attributes.sublime-syntax
 
   content:
     - match: |
-        (?x)
+        (?x)\s*
         (</)(\2)(>)
       captures:
-        0: tag.close.sectioning.root.html.html5
+        0: tag.sectioning.root.html.html5
         1: punctuation.delimiter.tag.begin.html.html5
-        2: entity.name.tag.sectioning.root.html.html5
+        2: entity.name.tag.html.html5
         3: punctuation.delimiter.tag.end.html.html5
       pop: true
-    - include: Packages/Naomi/syntaxes/html5/element.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/element/content.sublime-syntax

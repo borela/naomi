@@ -48,15 +48,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>keyword.modifier.generator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#81d4fa</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>punctuation.delimiter</string>
 			<key>settings</key>
 			<dict>
@@ -286,6 +277,24 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>keyword</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>keyword.modifier.generator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#81d4fa</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>entity.name.import.ambiguous</string>
 			<key>settings</key>
 			<dict>
@@ -333,6 +342,33 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>tag.doctype</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>tag.doctype entity.name.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>tag.doctype punctuation.delimiter.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF80ABB2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>entity.name.tag</string>
 			<key>settings</key>
 			<dict>
@@ -369,29 +405,83 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>tag.doctype</string>
+			<string>data entity.name.attribute</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff80ab</string>
+				<string>#ffffff</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>tag.doctype entity.name.tag</string>
+			<string>tag.sectioning entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff80ab</string>
+				<string>#f48fb1</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>tag.doctype punctuation.delimiter.tag</string>
+			<string>tag.sectioning punctuation.delimiter.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#FF80ABB2</string>
+				<string>#F48FB1B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>tag.sectioning.root entity.name.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ce93d8</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>tag.sectioning.root punctuation.delimiter.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#CE93D8B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>tag.form entity.name.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffecb3</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>tag.form punctuation.delimiter.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFECB3B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>tag.embedded entity.name.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#81d4fa</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>tag.embedded punctuation.delimiter.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#81D4FAB2</string>
 			</dict>
 		</dict>
 		<dict>

@@ -34,14 +34,11 @@ contexts:
         (?x)
         (?=\s*
           \{
-          [^;\}]*?
+          [^;]*?
           \}
           \s*=[^=]
         )
       set: destructuring-object
-
-  variable:
-    - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax
 
   destructuring-array:
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax

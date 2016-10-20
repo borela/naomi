@@ -10,5 +10,10 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "flowtype/delimiter";
-@import "flowtype/operator";
+entity.name.tag {
+  foreground: $brown-200;
+}
+
+punctuation.delimiter.tag {
+  foreground: rgba($brown-200,.7);
+}

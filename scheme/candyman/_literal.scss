@@ -10,5 +10,9 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "flowtype/delimiter";
-@import "flowtype/operator";
+@import "literal/array";
+@import "literal/color";
+@import "literal/number";
+@import "literal/object";
+@import "literal/regex";
+@import "literal/string";

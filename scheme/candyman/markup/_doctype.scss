@@ -10,5 +10,14 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "flowtype/delimiter";
-@import "flowtype/operator";
+declaration.doctype {
+  foreground: $pink-A100;
+
+  entity.name {
+    foreground: $pink-A100;
+  }
+
+  punctuation.delimiter.declaration {
+    foreground: rgba($pink-A100,.7);
+  }
+}

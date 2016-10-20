@@ -10,54 +10,10 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-comment,
-comment punctuation.delimiter {
-  foreground: $blue-grey-500;
-}
-
-comment {
-  keyword.documentation {
-    foreground: rgba($pink-A100,.5);
-  }
-
-  entity.name.constant,
-  punctuation.delimiter.constant {
-    foreground: rgba($grey-400,.7);
-  }
-
-  entity.name.variable,
-  punctuation.delimiter.variable {
-    foreground: rgba($grey-400,.7);
-  }
-
-  entity.name.type,
-  punctuation.delimiter.type {
-    foreground: rgba($light-green-300,.7);
-  }
-
-  entity.name.function,
-  punctuation.delimiter.function {
-    foreground: rgba($light-blue-200,.7);
-  }
-
-  entity.name.namespace {
-    foreground: rgba($brown-200,.7);
-  }
-
-  punctuation.delimiter.namespace {
-    foreground: rgba($brown-200,.4);
-  }
-}
-
-comment support {
-  entity.name.constant,
-  entity.name.function,
-  entity.name.type,
-  entity.name.variable,
-  punctuation.delimiter.constant,
-  punctuation.delimiter.function,
-  punctuation.delimiter.type,
-  punctuation.delimiter.variable {
-    foreground: rgba($deep-orange-A100,.7);
-  }
-}
+@import "comment/normal";
+@import "comment/documentation/constant";
+@import "comment/documentation/function";
+@import "comment/documentation/keyword";
+@import "comment/documentation/namespace";
+@import "comment/documentation/type";
+@import "comment/documentation/variable";

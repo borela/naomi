@@ -10,5 +10,8 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "flowtype/delimiter";
-@import "flowtype/operator";
+source.jsx,
+text.html,
+text.xml {
+  foreground: rgba($grey-400,.4);
+}

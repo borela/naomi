@@ -10,5 +10,16 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "flowtype/delimiter";
-@import "flowtype/operator";
+comment {
+  entity.name.constant,
+  punctuation.delimiter.constant {
+    foreground: rgba($grey-400,.7);
+  }
+}
+
+comment support {
+  entity.name.constant,
+  punctuation.delimiter.constant {
+    foreground: rgba($deep-orange-A100,.7);
+  }
+}

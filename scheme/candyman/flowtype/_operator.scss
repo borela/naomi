@@ -10,5 +10,14 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "flowtype/delimiter";
-@import "flowtype/operator";
+keyword.operator.other {
+  &.flowtype,
+  &.association.flowtype,
+  &.cast.flowtype,
+  &.intersection.flowtype,
+  &.nullable.flowtype,
+  &.optional.flowtype,
+  &.union.flowtype {
+    foreground: $brown-200;
+  }
+}

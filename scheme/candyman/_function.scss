@@ -20,13 +20,7 @@ support {
     foreground: $deep-orange-A100;
   }
 }
-keyword {
-  foreground: $pink-A100;
 
-  /**
-   * Generator modifier.
-   */
-  &.modifier.generator {
-    foreground: $light-blue-200;
-  }
+keyword.modifier.generator {
+  foreground: $light-blue-200;
 }

@@ -15,10 +15,10 @@
 @import "scheme/candyman/colors";
 @import "scheme/candyman/basic";
 
-@import "scheme/candyman/array";
 @import "scheme/candyman/class";
 @import "scheme/candyman/comment";
 @import "scheme/candyman/constant";
+@import "scheme/candyman/css";
 @import "scheme/candyman/decorator";
 @import "scheme/candyman/destructuring";
 @import "scheme/candyman/expression";
@@ -27,11 +27,8 @@
 @import "scheme/candyman/import";
 @import "scheme/candyman/interface";
 @import "scheme/candyman/label";
+@import "scheme/candyman/literal";
 @import "scheme/candyman/markup";
 @import "scheme/candyman/namespace";
-@import "scheme/candyman/number";
-@import "scheme/candyman/object";
-@import "scheme/candyman/regex";
-@import "scheme/candyman/string";
 @import "scheme/candyman/type";
 @import "scheme/candyman/variable";

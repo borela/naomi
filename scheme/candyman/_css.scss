@@ -10,5 +10,10 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "flowtype/delimiter";
-@import "flowtype/operator";
+@import "css/delimiter";
+@import "css/property";
+@import "css/selector/tag/embedded";
+@import "css/selector/tag/form";
+@import "css/selector/tag/other";
+@import "css/selector/tag/sectioning-root";
+@import "css/selector/tag/sectioning";

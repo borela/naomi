@@ -19,11 +19,13 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*\/\/
-      scope: punctuation.comment.begin.css.css3
+    - match: \s*(\/\/)
+      captures:
+        1: punctuation.comment.begin.css.css3
       set: line
-    - match: \s*\/\*
-      scope: punctuation.comment.begin.css.css3
+    - match: \s*(\/\*)
+      captures:
+        1: punctuation.comment.begin.css.css3
       set: block
 
   line:
@@ -34,8 +36,8 @@ contexts:
 
   block:
     - meta_scope: comment.block.css.css3
-    - meta_content_scope: comment.content.css.css3
-    - match: \*\/
-      scope: punctuation.comment.end.css.css3
+    - match: \s*(\*\/)
+      captures:
+        1: punctuation.comment.end.css.css3
       pop: true
 

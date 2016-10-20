@@ -15,28 +15,22 @@
 
 hidden: true
 
-variables:
-  commonIdentifier: |
-    [_\-[:alpha:]]
-    [_\-[:alnum:]]*
-
 scope: ...
 
 contexts:
   main:
-    - match: \{
-      scope: punctuation.delimiter.body.begin.css.css3
+    - match: \s*(\{)
+      captures:
+        1: punctuation.delimiter.body.begin.css.css3
       set: contents
 
   contents:
-    - match: \}
-      scope: punctuation.delimiter.body.end.css.css3
+    - match: \s*(\})
+      captures:
+        1: punctuation.delimiter.body.end.css.css3
       pop: true
     - match: ""
       push:
-        - match: (?=\})
+        - match: (?=\s*\})
           pop: true
-        - include: comment
-
-  comment:
-    - include: Packages/Naomi/syntaxes/css3/comment/normal.sublime-syntax
+        - include: Packages/Naomi/syntaxes/scss/comment.sublime-syntax

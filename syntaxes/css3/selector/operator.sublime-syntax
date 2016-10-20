@@ -15,11 +15,6 @@
 
 hidden: true
 
-variables:
-  commonIdentifier: |
-    [_\-[:alpha:]]
-    [_\-[:alnum:]]*
-
 scope: ...
 
 contexts:
@@ -36,4 +31,3 @@ contexts:
     - match: ~
       scope: keyword.operator.other.selector.sibling.css.css3
       pop: true
-

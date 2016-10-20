@@ -29,8 +29,8 @@ contexts:
         (<)
         ({{commonIdentifier}})
       captures:
-        1: punctuation.delimiter.tag.begin.jsx
-        2: entity.name.tag.jsx
+        1: punctuation.delimiter.tag.begin.jsx.jsx1
+        2: entity.name.tag.jsx.jsx1
       set: [
         content,
         attributes
@@ -43,13 +43,13 @@ contexts:
     # Normal tag.
     - match: \s*(>)
       captures:
-        1: punctuation.delimiter.tag.end.jsx
+        1: punctuation.delimiter.tag.end.jsx.jsx1
       pop: true
     # Attributes.
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/jsx/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/jsx/attribute.sublime-syntax
+        - include: Packages/Naomi/syntaxes/jsx1/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/jsx1/attribute.sublime-syntax
         - match: ""
           pop: true
 
@@ -57,16 +57,16 @@ contexts:
     # Self closing tag.
     - match: \s*(/>)
       captures:
-        1: punctuation.delimiter.tag.end.jsx
+        1: punctuation.delimiter.tag.end.jsx.jsx1
       pop: true
     # Closing tag.
     - match: |
         (?x)\s*
         (</)(\2)(>)
       captures:
-        1: punctuation.delimiter.tag.begin.jsx
-        2: entity.name.tag.jsx
-        3: punctuation.delimiter.tag.end.jsx
+        1: punctuation.delimiter.tag.begin.jsx.jsx1
+        2: entity.name.tag.jsx.jsx1
+        3: punctuation.delimiter.tag.end.jsx.jsx1
       pop: true
     # Sub tags.
     - match: ""
@@ -81,4 +81,4 @@ contexts:
             )
           pop: true
         - match: .
-          scope: source.jsx
+          scope: source.jsx.jsx1

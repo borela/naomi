@@ -19,35 +19,32 @@ scope: ...
 
 variables:
   commonIdentifier: |
-    [$_[:alpha:]]
-    [$_.:[:alnum:]]*
+    [_[:alpha:]]
+    [._\-[:alnum:]]*
 
 contexts:
   main:
     - match: |
         (?xi)
-        (?=
-          <{{commonIdentifier}}
-          (?> \s
-            | >
-            | />
-          )
-        )
-      with_prototype:
-        - match: \{
-          scope: keyword.operator.other.embedded.js.begin.jsx
-          push: embedded-js
-      set: jsx
+        {{commonIdentifier}}
+      scope: entity.name.attribute.jsx.jsx1
+      set: optional-value
 
-  jsx:
-    - include: Packages/Naomi/syntaxes/jsx/element.sublime-syntax
-
-  embedded-js:
-    - match: \}
-      scope: keyword.operator.other.embedded.js.end.jsx
+  optional-value:
+    # Embedded javascript.
+    - match: \s*(=)(?=\s*\{)
+      captures:
+        1: keyword.operator.other.assignment.jsx.jsx1
       pop: true
+    # Normal value.
+    - match: \s*(=)
+      captures:
+        1: keyword.operator.other.assignment.jsx.jsx1
+      set: value
+    # Anything else.
     - match: ""
-      push:
-        - match: (?=\})
-          pop: true
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+      pop: true
+
+  value:
+    - include: Packages/Naomi/syntaxes/jsx1/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/jsx1/literal/string/single-quoted.sublime-syntax

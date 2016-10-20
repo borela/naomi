@@ -110,7 +110,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/jsx.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax
     # When it comes to constants and variables, there's no way to tell apart

@@ -19,9 +19,12 @@ scope: ...
 
 contexts:
   main:
-    - match: (<!)(DOCTYPE).*?(>)
-      captures:
-        1: punctuation.delimiter.tag.doctype.begin.xml
-        2: entity.name.tag.doctype.xml
-        3: punctuation.delimiter.tag.doctype.end.xml
+    - match: <!--
+      scope: punctuation.comment.begin.xml.xml1
+      set: comment
+
+  comment:
+    - meta_scope: comment.block.xml.xml1
+    - match: -->
+      scope: punctuation.comment.end.xml.xml1
       pop: true

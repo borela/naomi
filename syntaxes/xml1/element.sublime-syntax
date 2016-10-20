@@ -19,15 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: (<!\[)(CDATA)(\[)
-      captures:
-        1: punctuation.delimiter.tag.begin.xml
-        2: entity.name.tag.cdata.xml
-        3: punctuation.delimiter.tag.begin.xml
-      set: content
-
-  content:
-    - meta_content_scope: cdata.content.html.html5
-    - match: \]\]\>
-      scope: punctuation.delimiter.tag.end.xml
-      pop: true
+    - include: Packages/Naomi/syntaxes/xml1/element/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/xml1/element/prolog.sublime-syntax
+    - include: Packages/Naomi/syntaxes/xml1/element/doctype.sublime-syntax
+    - include: Packages/Naomi/syntaxes/xml1/element/cdata.sublime-syntax
+    - include: Packages/Naomi/syntaxes/xml1/element/normal.sublime-syntax

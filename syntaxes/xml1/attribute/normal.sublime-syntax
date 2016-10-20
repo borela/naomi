@@ -19,24 +19,17 @@ scope: ...
 
 variables:
   commonIdentifier: |
-    [_[:alpha:]]
-    [._\-[:alnum:]]*
+    [_:[:alpha:]]
+    [_:[:alnum:]\-.]*
 
 contexts:
   main:
     - match: |
         (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.attribute.xml
-      set: optional-value
-
-  optional-value:
-    - match: \=
-      scope: keyword.operator.other.assignment.xml
+        \s*({{commonIdentifier}})
+      captures:
+        1: entity.name.attribute.xml.xml1
       set: value
-    - match: (?=\S)
-      pop: true
 
   value:
-    - include: Packages/Naomi/syntaxes/xml/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/xml/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/xml1/attribute/value.sublime-syntax

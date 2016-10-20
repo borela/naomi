@@ -19,10 +19,14 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/xml/element.sublime-syntax
-        # It’s searching for an element but if a closing tag is found, it needs
-        # to stop so that the parent context can analyse it.
-        - match: (?=</)
-          pop: true
+    - match: \s*(\")
+      captures:
+        1: punctuation.delimiter.string.begin.xml.xml1
+      set: string
+
+  string:
+    - meta_scope: string.quoted.double.xml.xml1
+    - match: \s*(\")
+      captures:
+        1: punctuation.delimiter.string.end.xml.xml1
+      pop: true

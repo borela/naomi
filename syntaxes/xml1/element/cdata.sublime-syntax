@@ -13,23 +13,21 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: XML 1.0 (Experimental)
+hidden: true
 
-file_extensions:
-  - dtml
-  - opml
-  - rss
-  - svg
-  - tld
-  - tmTheme
-  - xml
-  - xsd
-  - xslt
-
-first_line_match: <\?xml
-
-scope: text.xml
+scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/xml/element.sublime-syntax
+    - match: (<!\[)(CDATA)(\[)
+      captures:
+        1: punctuation.delimiter.section.begin.xml.xml1
+        2: entity.name.other.xml.xml1
+        3: punctuation.delimiter.section.begin.xml.xml1
+      set: content
+
+  content:
+    - meta_scope: section.cdata.html.html5
+    - match: \]\]\>
+      scope: punctuation.delimiter.section.end.xml.xml1
+      pop: true

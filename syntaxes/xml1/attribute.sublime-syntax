@@ -19,12 +19,4 @@ scope: ...
 
 contexts:
   main:
-    - match: \"
-      scope: punctuation.delimiter.string.begin.xml
-      set: string
-
-  string:
-    - meta_scope: string.quoted.double.xml
-    - match: \"
-      scope: punctuation.delimiter.string.end.xml
-      pop: true
+    - include: Packages/Naomi/syntaxes/xml1/attribute/normal.sublime-syntax

@@ -19,6 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\S)
+    - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/xml/attribute.sublime-syntax
+        - include: Packages/Naomi/syntaxes/xml1/attribute.sublime-syntax
+        - match: \s*
+          pop: true

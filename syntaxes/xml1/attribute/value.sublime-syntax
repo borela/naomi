@@ -19,12 +19,13 @@ scope: ...
 
 contexts:
   main:
-    - match: \'
-      scope: punctuation.delimiter.string.begin.xml
-      set: string
-
-  string:
-    - meta_scope: string.quoted.single.xml
-    - match: \'
-      scope: punctuation.delimiter.string.end.xml
+    - match: \s*(\=)
+      captures:
+        1: keyword.operator.other.assignment.xml.xml1
+      set: value
+    - match: (?=\s*\S)
       pop: true
+
+  value:
+    - include: Packages/Naomi/syntaxes/xml1/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/xml1/literal/string/single-quoted.sublime-syntax

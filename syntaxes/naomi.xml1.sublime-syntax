@@ -13,18 +13,25 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-hidden: true
+name: XML 1.0 (Experimental)
 
-scope: ...
+file_extensions:
+  - dtml
+  - opml
+  - rss
+  - svg
+  - tld
+  - tmTheme
+  - xml
+  - xsd
+  - xslt
+
+first_line_match: <\?xml
+
+scope: text.xml.xml1
 
 contexts:
   main:
-    - match: <!--
-      scope: punctuation.comment.begin.xml
-      set: comment
-
-  comment:
-    - meta_scope: comment.block.xml
-    - match: -->
-      scope: punctuation.comment.end.xml
-      pop: true
+    - match: lol
+      scope: lol
+    - include: Packages/Naomi/syntaxes/xml1/element.sublime-syntax

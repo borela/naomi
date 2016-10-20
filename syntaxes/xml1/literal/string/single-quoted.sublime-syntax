@@ -19,8 +19,14 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/xml/element/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/xml/element/prolog.sublime-syntax
-    - include: Packages/Naomi/syntaxes/xml/element/doctype.sublime-syntax
-    - include: Packages/Naomi/syntaxes/xml/element/cdata.sublime-syntax
-    - include: Packages/Naomi/syntaxes/xml/element/normal.sublime-syntax
+    - match: \s*(\')
+      captures:
+        1: punctuation.delimiter.string.begin.xml.xml1
+      set: string
+
+  string:
+    - meta_scope: string.quoted.single.xml.xml1
+    - match: \s*(\')
+      captures:
+        1: punctuation.delimiter.string.end.xml.xml1
+      pop: true

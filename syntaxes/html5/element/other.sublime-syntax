@@ -83,7 +83,8 @@ contexts:
               )
             | h
               (?> [1-6]
-                | eader
+                | ead(?:er)?
+                | tml
               )
             | i(?:ns)?
             | kbd

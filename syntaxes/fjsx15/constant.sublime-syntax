@@ -63,3 +63,5 @@ contexts:
 
   array-item-access:
     - include: Packages/Naomi/syntaxes/fjsx15/array-access.sublime-syntax
+    - match: ""
+      pop: true

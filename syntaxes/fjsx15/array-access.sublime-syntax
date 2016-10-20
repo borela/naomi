@@ -19,20 +19,25 @@ scope: ...
 
 contexts:
   main:
-    # No array item access found.
-    - match: (?!\s*\[)
-      pop: true
-    # Array item access.
-    - match: \[
-      scope: punctuation.delimiter.array.access.begin.js.fjsx15
+    - match: |
+        (?x)
+        (?<=
+          [$_[:alnum:]]
+          |
+          \)
+        )
+        \s*(\[)
+      captures:
+        1: punctuation.delimiter.array.access.begin.js.fjsx15
       set: index
 
   index:
-    - match: \]
-      scope: punctuation.delimiter.array.access.end.js.fjsx15
-      set: main
+    - match: \s*(\])
+      captures:
+        1: punctuation.delimiter.array.access.end.js.fjsx15
+      pop: true
     - match: ""
       push:
-        - match: (?=\])
+        - match: (?=\s*\])
           pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

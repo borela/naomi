@@ -85,6 +85,8 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax
 
   sequence:
+    - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax
+    # Comments.
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
@@ -105,6 +107,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/new.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/other-keywords.sublime-syntax
     # Expression.
+    - include: Packages/Naomi/syntaxes/fjsx15/array-access.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax

@@ -40,9 +40,6 @@ contexts:
     - match: \,
       scope: keyword.operator.other.comma.js.fjsx15
       pop: true
-    - match: \;
-      scope: keyword.operator.other.terminator.js.fjsx15
-      pop: true
     - match: \:{2}
       scope: keyword.operator.other.bind.js.fjsx15
       pop: true

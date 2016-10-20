@@ -13,16 +13,16 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: Git Attributes
+name: Git Ignore
 
 file_extensions:
-  - gitattributes
+  - gitignore
 
-scope: source.git.attributes
+scope: source.git.ignore
 
 contexts:
   main:
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/git/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/git/pattern.sublime-syntax
+        - include: Packages/Naomi/syntaxes/git2/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/git2/pattern.sublime-syntax

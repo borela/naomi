@@ -14,4 +14,5 @@
 
 <div
    data-test
-// ^^^^^^^^^ entity.name.attribute.data.html.html5
+// ^^^^^^^^^ data.html.html5
+// ^^^^^^^^^ entity.name.attribute.html.html5

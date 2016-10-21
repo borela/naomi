@@ -10,7 +10,7 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-string.unquoted.regex,
-string.unquoted.regex punctuation.delimiter {
+.string.unquoted.regex,
+.string.unquoted.regex .punctuation.delimiter {
   foreground: $teal-200;
 }

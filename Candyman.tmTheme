@@ -39,7 +39,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>keyword</string>
+			<string>.keyword</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -48,7 +48,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>punctuation.delimiter</string>
+			<string>.punctuation.delimiter</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -59,7 +59,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>punctuation.delimiter.control</string>
+			<string>.punctuation.delimiter.control</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -68,7 +68,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.ambiguous</string>
+			<string>.entity.name.ambiguous</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -77,7 +77,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.alias</string>
+			<string>.entity.name.alias</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -86,7 +86,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.class, punctuation.delimiter.class</string>
+			<string>.entity.name.class, .punctuation.delimiter.class</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -95,7 +95,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>comment, comment punctuation.delimiter</string>
+			<string>.comment, .comment .punctuation.delimiter</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -104,7 +104,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>comment entity.name.constant, comment punctuation.delimiter.constant</string>
+			<string>.comment .entity.name.constant, .comment .punctuation.delimiter.constant</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -113,7 +113,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>comment support entity.name.constant, comment support punctuation.delimiter.constant</string>
+			<string>.comment .support .entity.name.constant, .comment .support .punctuation.delimiter.constant</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -122,7 +122,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>comment entity.name.function, comment punctuation.delimiter.function</string>
+			<string>.comment .entity.name.function, .comment .punctuation.delimiter.function</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -131,7 +131,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>comment support entity.name.function, comment support punctuation.delimiter.function</string>
+			<string>.comment .support .entity.name.function, .comment .support .punctuation.delimiter.function</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -140,7 +140,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>comment keyword</string>
+			<string>.comment .keyword</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -149,7 +149,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>comment entity.name.namespace</string>
+			<string>.comment .entity.name.namespace</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -158,7 +158,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>comment punctuation.delimiter.namespace</string>
+			<string>.comment .punctuation.delimiter.namespace</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -167,7 +167,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>comment entity.name.type, comment punctuation.delimiter.type</string>
+			<string>.comment .entity.name.type, .comment .punctuation.delimiter.type</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -176,7 +176,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>comment support entity.name.type, comment support punctuation.delimiter.type</string>
+			<string>.comment .support .entity.name.type, .comment .support .punctuation.delimiter.type</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -185,7 +185,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>comment entity.name.variable, comment punctuation.delimiter.variable</string>
+			<string>.comment .entity.name.variable, .comment .punctuation.delimiter.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -194,7 +194,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>comment support entity.name.variable, comment support punctuation.delimiter.variable</string>
+			<string>.comment .support .entity.name.variable, .comment .support .punctuation.delimiter.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -203,7 +203,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.constant, punctuation.delimiter.constant</string>
+			<string>.entity.name.constant, .punctuation.delimiter.constant</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -212,7 +212,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>support entity.name.constant</string>
+			<string>.support .entity.name.constant</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -221,7 +221,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>punctuation.delimiter.selector, punctuation.delimiter.body.begin.css, punctuation.delimiter.body.end.css</string>
+			<string>.punctuation.delimiter.selector, .punctuation.delimiter.body.begin.css, .punctuation.delimiter.body.end.css</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -230,7 +230,16 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.property.css</string>
+			<string>.extension .keyword.control.directive.css</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.support .entity.name.property.css</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -239,63 +248,83 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>selector.embedded entity.name.selector</string>
+			<string>.extension .entity.name.property.css</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#81d4fa</string>
+				<string>#ffffff</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>selector.form entity.name.selector</string>
+			<string>.keyword.modifier.unit.css</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ffecb3</string>
+				<string>#ff9e80</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.selector</string>
+			<string>.selector.keyframe .entity.name.selector</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#bcaaa4</string>
+				<string>#ff9e80</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>selector.sectioning.root entity.name.selector</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ce93d8</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>selector.sectioning entity.name.selector</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#f48fb1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>punctuation.delimiter.decorator, entity.name.decorator</string>
+			<string>.selector.class .entity.name.selector</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>bold</string>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#4dd0e1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.selector.class .punctuation.delimiter.selector.begin</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4DD0E166</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.selector.id .entity.name.selector</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#ec407a</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.selector.id .punctuation.delimiter.selector.begin</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#EC407A66</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.delimiter.pseudo-class, .entity.name.pseudo-class</string>
+			<key>settings</key>
+			<dict>
 				<key>foreground</key>
 				<string>#ff80ab</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>destructuring keyword, destructuring keyword.operator.other.computed-property</string>
+			<string>.extension .entity.name.pseudo-class</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -304,7 +333,16 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>destructuring punctuation.delimiter, destructuring punctuation.delimiter.array, destructuring punctuation.delimiter.object, destructuring punctuation.delimiter.property</string>
+			<string>.entity.name.pseudo-element</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.extension .entity.name.pseudo-element</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -313,7 +351,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>punctuation.delimiter.expression.group.b</string>
+			<string>.entity.name.selector</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -322,7 +360,36 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>punctuation.delimiter.array.flowtype, punctuation.delimiter.array.begin.flowtype, punctuation.delimiter.array.end.flowtype, punctuation.delimiter.function.parameters.flowtype, punctuation.delimiter.function.parameters.begin.flowtype, punctuation.delimiter.function.parameters.end.flowtype, punctuation.delimiter.function.result.flowtype, punctuation.delimiter.nullable.begin.flowtype, punctuation.delimiter.nullable.end.flowtype, punctuation.delimiter.object.flowtype, punctuation.delimiter.object.begin.flowtype, punctuation.delimiter.object.end.flowtype, punctuation.delimiter.template.parameters.flowtype, punctuation.delimiter.template.parameters.begin.flowtype, punctuation.delimiter.template.parameters.end.flowtype, punctuation.delimiter.template.arguments.flowtype, punctuation.delimiter.template.arguments.begin.flowtype, punctuation.delimiter.template.arguments.end.flowtype</string>
+			<string>.punctuation.delimiter.decorator, .entity.name.decorator</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#ec407a</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.destructuring .keyword, .destructuring .keyword.operator.other.computed-property</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.destructuring .punctuation.delimiter, .destructuring .punctuation.delimiter.array, .destructuring .punctuation.delimiter.object, .destructuring .punctuation.delimiter.property</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.delimiter.expression.group.b</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -331,7 +398,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>keyword.operator.other.flowtype, keyword.operator.other.association.flowtype, keyword.operator.other.cast.flowtype, keyword.operator.other.intersection.flowtype, keyword.operator.other.nullable.flowtype, keyword.operator.other.optional.flowtype, keyword.operator.other.union.flowtype</string>
+			<string>.punctuation.delimiter.array.flowtype, .punctuation.delimiter.array.begin.flowtype, .punctuation.delimiter.array.end.flowtype, .punctuation.delimiter.function.parameters.flowtype, .punctuation.delimiter.function.parameters.begin.flowtype, .punctuation.delimiter.function.parameters.end.flowtype, .punctuation.delimiter.function.result.flowtype, .punctuation.delimiter.nullable.begin.flowtype, .punctuation.delimiter.nullable.end.flowtype, .punctuation.delimiter.object.flowtype, .punctuation.delimiter.object.begin.flowtype, .punctuation.delimiter.object.end.flowtype, .punctuation.delimiter.template.parameters.flowtype, .punctuation.delimiter.template.parameters.begin.flowtype, .punctuation.delimiter.template.parameters.end.flowtype, .punctuation.delimiter.template.arguments.flowtype, .punctuation.delimiter.template.arguments.begin.flowtype, .punctuation.delimiter.template.arguments.end.flowtype</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -340,7 +407,16 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.function, punctuation.delimiter.function</string>
+			<string>.keyword.operator.other.flowtype, .keyword.operator.other.association.flowtype, .keyword.operator.other.cast.flowtype, .keyword.operator.other.intersection.flowtype, .keyword.operator.other.nullable.flowtype, .keyword.operator.other.optional.flowtype, .keyword.operator.other.union.flowtype</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.function, .punctuation.delimiter.function</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -349,7 +425,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>support entity.name.function</string>
+			<string>.support .entity.name.function</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -358,7 +434,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>keyword.modifier.generator</string>
+			<string>.keyword.modifier.generator</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -367,7 +443,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.import.ambiguous</string>
+			<string>.entity.name.import.ambiguous</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -376,7 +452,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>punctuation.delimiter.import</string>
+			<string>.punctuation.delimiter.import</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -385,7 +461,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.interface, punctuation.delimiter.interface</string>
+			<string>.entity.name.interface, .punctuation.delimiter.interface</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -394,7 +470,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.label, punctuation.delimiter.label</string>
+			<string>.entity.name.label, .punctuation.delimiter.label</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -405,7 +481,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.type.array, punctuation.delimiter.array</string>
+			<string>.entity.name.type.array, .punctuation.delimiter.array</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -414,7 +490,16 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>string, string punctuation.delimiter, constant.color</string>
+			<string>.punctuation.delimiter.color</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f06292</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.color.red</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -423,16 +508,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>constant.character.escape.a</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#80deea</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>constant.character.escape.b</string>
+			<string>.constant.color.green</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -441,34 +517,16 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>string variable.a entity.name.variable, string variable.a punctuation.delimiter.variable, string variable.a keyword.operator</string>
+			<string>.constant.color.blue</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ce93d8</string>
+				<string>#4fc3f7</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>string variable.b entity.name.variable, string variable.b punctuation.delimiter.variable, string variable.b keyword.operator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#f06292</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>string variable array.key</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#a1887f</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>constant.numeric.binary</string>
+			<string>.constant.numeric.binary</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -477,7 +535,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>constant.numeric.octal</string>
+			<string>.constant.numeric.octal</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -486,7 +544,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>constant.numeric.hex</string>
+			<string>.constant.numeric.hex</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -495,7 +553,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>constant.numeric.decimal</string>
+			<string>.constant.numeric.decimal</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -504,7 +562,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>constant.numeric.float</string>
+			<string>.constant.numeric.float</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -513,7 +571,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>punctuation.delimiter.object</string>
+			<string>.punctuation.delimiter.object</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -522,7 +580,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>object keyword</string>
+			<string>.object .keyword</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -531,7 +589,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>object.property entity.name.variable</string>
+			<string>.object.property .entity.name.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -540,7 +598,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>keyword.operator.other.computed-property</string>
+			<string>.keyword.operator.other.computed-property</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -549,7 +607,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>string.unquoted.regex, string.unquoted.regex punctuation.delimiter</string>
+			<string>.string.unquoted.regex, .string.unquoted.regex .punctuation.delimiter</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -558,7 +616,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>string, string punctuation.delimiter</string>
+			<string>.string, .string punctuation.delimiter</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -567,7 +625,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>constant.character.escape.a</string>
+			<string>.constant.character.escape.a</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -576,7 +634,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>constant.character.escape.b</string>
+			<string>.constant.character.escape.b</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -585,7 +643,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>string variable.a entity.name.variable, string variable.a punctuation.delimiter.variable, string variable.a keyword.operator</string>
+			<string>.string .variable.a .entity.name.variable, .string .variable.a .punctuation.delimiter.variable, .string .variable.a .keyword.operator</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -594,7 +652,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>string variable.b entity.name.variable, string variable.b punctuation.delimiter.variable, string variable.b keyword.operator</string>
+			<string>.string .variable.b .entity.name.variable, .string .variable.b .punctuation.delimiter.variable, .string .variable.b .keyword.operator</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -603,7 +661,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>string variable array.key</string>
+			<string>.string .variable .array.key</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -612,7 +670,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.attribute</string>
+			<string>.entity.name.attribute</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -621,7 +679,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>support entity.name.attribute</string>
+			<string>.support .entity.name.attribute</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -630,7 +688,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>data entity.name.attribute</string>
+			<string>.data .entity.name.attribute</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -639,7 +697,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>declaration.doctype</string>
+			<string>.declaration.doctype</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -648,7 +706,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>declaration.doctype entity.name</string>
+			<string>.declaration.doctype .entity.name</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -657,7 +715,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>declaration.doctype punctuation.delimiter.declaration</string>
+			<string>.declaration.doctype .punctuation.delimiter.declaration</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -666,7 +724,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>instruction.prolog</string>
+			<string>.instruction.prolog</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -675,7 +733,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>instruction.prolog entity.name</string>
+			<string>.instruction.prolog .entity.name</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -684,7 +742,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>instruction.prolog punctuation.delimiter.instruction</string>
+			<string>.instruction.prolog .punctuation.delimiter.instruction</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -693,7 +751,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>source.jsx, text.html, text.xml</string>
+			<string>.source.jsx, .text.html, .text.xml</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -792,7 +850,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.namespace</string>
+			<string>.entity.name.namespace</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -801,7 +859,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>punctuation.delimiter.namespace</string>
+			<string>.punctuation.delimiter.namespace</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -810,7 +868,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.type, punctuation.delimiter.type</string>
+			<string>.entity.name.type, .punctuation.delimiter.type</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -819,7 +877,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>support entity.name.type, support punctuation.delimiter.type</string>
+			<string>.support .entity.name.type, .support .punctuation.delimiter.type</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -828,7 +886,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.variable, punctuation.delimiter.variable</string>
+			<string>.entity.name.variable, .punctuation.delimiter.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -839,7 +897,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>support entity.name.variable, support punctuation.delimiter.variable</string>
+			<string>.support .entity.name.variable, .support .punctuation.delimiter.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

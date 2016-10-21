@@ -10,16 +10,16 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-comment {
-  entity.name.type,
-  punctuation.delimiter.type {
+.comment {
+  .entity.name.type,
+  .punctuation.delimiter.type {
     foreground: rgba($light-green-300,.7);
   }
 }
 
-comment support {
-  entity.name.type,
-  punctuation.delimiter.type {
+.comment .support {
+  .entity.name.type,
+  .punctuation.delimiter.type {
     foreground: rgba($deep-orange-A100,.7);
   }
 }

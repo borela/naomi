@@ -10,17 +10,17 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-entity.name.function,
-punctuation.delimiter.function {
+.entity.name.function,
+.punctuation.delimiter.function {
   foreground: $light-blue-200;
 }
 
-support {
-  entity.name.function {
+.support {
+  .entity.name.function {
     foreground: $deep-orange-A100;
   }
 }
 
-keyword.modifier.generator {
+.keyword.modifier.generator {
   foreground: $light-blue-200;
 }

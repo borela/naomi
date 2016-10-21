@@ -10,14 +10,14 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-instruction.prolog {
+.instruction.prolog {
   foreground: $pink-A100;
 
-  entity.name {
+  .entity.name {
     foreground: $pink-A100;
   }
 
-  punctuation.delimiter.instruction {
+  .punctuation.delimiter.instruction {
     foreground: rgba($pink-A100,.7);
   }
 }

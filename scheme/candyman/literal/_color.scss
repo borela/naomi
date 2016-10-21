@@ -10,38 +10,18 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-string,
-string punctuation.delimiter,
-constant.color {
+.punctuation.delimiter.color {
+  foreground: $pink-300;
+}
+
+.constant.color.red {
   foreground: $red-300;
 }
 
-constant.character.escape.a {
-  foreground: $cyan-200;
-}
-
-constant.character.escape.b {
+.constant.color.green {
   foreground: $light-green-300;
 }
 
-string variable {
-  &.a {
-    entity.name.variable,
-    punctuation.delimiter.variable,
-    keyword.operator {
-      foreground: $purple-200;
-    }
-  }
-
-  &.b {
-    entity.name.variable,
-    punctuation.delimiter.variable,
-    keyword.operator {
-      foreground: $pink-300;
-    }
-  }
-
-  array.key {
-    foreground: $brown-300;
-  }
+.constant.color.blue {
+  foreground: $light-blue-300;
 }

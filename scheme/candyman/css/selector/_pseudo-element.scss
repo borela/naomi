@@ -10,8 +10,12 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-selector.form {
-  entity.name.selector {
-    foreground: $amber-100;
-  }
+.entity.name.pseudo-element {
+  foreground: $pink-A100;
+}
+
+.extension {
+    .entity.name.pseudo-element {
+      foreground: $grey-0;
+    }
 }

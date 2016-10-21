@@ -10,13 +10,6 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.entity.name.constant,
-.punctuation.delimiter.constant {
-  foreground: $purple-200;
-}
-
-.support {
-  .entity.name.constant {
-    foreground: $deep-orange-A100;
-  }
+.entity.name.selector {
+  foreground: $brown-200;
 }

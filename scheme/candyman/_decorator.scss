@@ -10,8 +10,8 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-punctuation.delimiter.decorator,
-entity.name.decorator {
-  foreground: $pink-A100;
-  fontStyle: bold;
+.punctuation.delimiter.decorator,
+.entity.name.decorator {
+  foreground: $pink-400;
+  fontStyle: italic;
 }

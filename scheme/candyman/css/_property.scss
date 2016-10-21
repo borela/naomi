@@ -10,6 +10,14 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-entity.name.property.css {
-  foreground: $light-green-300;
+.support {
+    .entity.name.property.css {
+      foreground: $light-green-300;
+    }
+}
+
+.extension {
+    .entity.name.property.css {
+      foreground: $grey-0;
+    }
 }

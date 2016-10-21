@@ -10,16 +10,16 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-destructuring {
-  keyword,
-  keyword.operator.other.computed-property {
+.destructuring {
+  .keyword,
+  .keyword.operator.other.computed-property {
     foreground: $grey-0;
   }
 
-  punctuation.delimiter,
-  punctuation.delimiter.array,
-  punctuation.delimiter.object,
-  punctuation.delimiter.property {
+  .punctuation.delimiter,
+  .punctuation.delimiter.array,
+  .punctuation.delimiter.object,
+  .punctuation.delimiter.property {
     foreground: $grey-0;
   }
 }

@@ -10,15 +10,15 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-entity.name.variable,
-punctuation.delimiter.variable {
+.entity.name.variable,
+.punctuation.delimiter.variable {
   foreground: $grey-400;
   fontStyle: none;
 }
 
-support {
-  entity.name.variable,
-  punctuation.delimiter.variable {
+.support {
+  .entity.name.variable,
+  .punctuation.delimiter.variable {
     foreground: $deep-orange-A100;
   }
 }

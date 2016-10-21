@@ -10,14 +10,14 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-declaration.doctype {
+.declaration.doctype {
   foreground: $pink-A100;
 
-  entity.name {
+  .entity.name {
     foreground: $pink-A100;
   }
 
-  punctuation.delimiter.declaration {
+  .punctuation.delimiter.declaration {
     foreground: rgba($pink-A100,.7);
   }
 }

@@ -10,14 +10,14 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-entity.name.type,
-punctuation.delimiter.type {
+.entity.name.type,
+.punctuation.delimiter.type {
   foreground: $light-green-300;
 }
 
-support {
-  entity.name.type,
-  punctuation.delimiter.type {
+.support {
+  .entity.name.type,
+  .punctuation.delimiter.type {
     foreground: $deep-orange-A100;
   }
 }

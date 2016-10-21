@@ -10,7 +10,7 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-comment,
-comment punctuation.delimiter {
+.comment,
+.comment .punctuation.delimiter {
   foreground: $blue-grey-500;
 }

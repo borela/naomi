@@ -10,12 +10,12 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-entity.name.attribute {
+.entity.name.attribute {
   foreground: $light-green-300;
 }
 
-support {
-  entity.name.attribute {
+.support {
+  .entity.name.attribute {
     foreground: $deep-orange-A100;
   }
 }

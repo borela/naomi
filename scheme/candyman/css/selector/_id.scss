@@ -10,8 +10,12 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-selector.sectioning.root {
-  entity.name.selector {
-    foreground: $purple-200;
+.selector.id {
+  .entity.name.selector {
+    foreground: $pink-400;
+    fontStyle: italic;
+  }
+  .punctuation.delimiter.selector.begin {
+    foreground: rgba($pink-400,.4);
   }
 }

@@ -10,8 +10,13 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-selector.sectioning {
-  entity.name.selector {
-    foreground: $pink-200;
-  }
+.punctuation.delimiter.pseudo-class,
+.entity.name.pseudo-class {
+  foreground: $pink-A100;
+}
+
+.extension {
+    .entity.name.pseudo-class {
+      foreground: $grey-0;
+    }
 }

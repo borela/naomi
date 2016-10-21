@@ -34,7 +34,7 @@
  * Generic keywords.
  */
 
-keyword {
+.keyword {
   foreground: $pink-A100;
 }
 
@@ -42,7 +42,7 @@ keyword {
  * Generic delimiters.
  */
 
-punctuation.delimiter {
+.punctuation.delimiter {
   foreground: $amber-100;
   fontStyle: bold;
 }
@@ -51,7 +51,7 @@ punctuation.delimiter {
  * Control statement delimiter.
  */
 
-punctuation.delimiter.control {
+.punctuation.delimiter.control {
   foreground: $pink-A100;
 }
 
@@ -59,7 +59,7 @@ punctuation.delimiter.control {
  * Ambiguous identifiers.
  */
 
-entity.name.ambiguous {
+.entity.name.ambiguous {
   foreground: $amber-100;
 }
 
@@ -67,6 +67,6 @@ entity.name.ambiguous {
  * Generic aliases.
  */
 
-entity.name.alias {
+.entity.name.alias {
   foreground: $amber-100;
 }

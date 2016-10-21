@@ -10,8 +10,8 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-selector.embedded {
-  entity.name.selector {
-    foreground: $light-blue-200;
-  }
+.extension {
+    .keyword.control.directive.css {
+      foreground: $grey-0;
+    }
 }

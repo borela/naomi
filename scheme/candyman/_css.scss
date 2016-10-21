@@ -11,9 +11,12 @@
 // the License.
 
 @import "css/delimiter";
+@import "css/directive";
 @import "css/property";
-@import "css/selector/tag/embedded";
-@import "css/selector/tag/form";
-@import "css/selector/tag/other";
-@import "css/selector/tag/sectioning-root";
-@import "css/selector/tag/sectioning";
+@import "css/unit";
+@import "css/selector/keyframe";
+@import "css/selector/class";
+@import "css/selector/id";
+@import "css/selector/pseudo-class";
+@import "css/selector/pseudo-element";
+@import "css/selector/other";

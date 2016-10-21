@@ -10,12 +10,12 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-comment {
-  entity.name.namespace {
+.comment {
+  .entity.name.namespace {
     foreground: rgba($brown-200,.7);
   }
 
-  punctuation.delimiter.namespace {
+  .punctuation.delimiter.namespace {
     foreground: rgba($brown-200,.4);
   }
 }

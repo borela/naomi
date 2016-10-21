@@ -25,8 +25,9 @@ variables:
 contexts:
   main:
     - match: |
-        (?x)\s*
-        ({{commonIdentifier}})\b
+        (?x)
+        \s*({{commonIdentifier}})\b
+        (?!\s*\()
       captures:
         1: entity.name.selector.css.scss3
       pop: true

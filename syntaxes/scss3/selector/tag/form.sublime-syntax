@@ -34,6 +34,7 @@ contexts:
             | textarea
           )
         )\b
+        (?!\s*\()
       captures:
         0: selector.form.css.scss3
         1: entity.name.selector.css.scss3

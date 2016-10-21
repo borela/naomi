@@ -18,24 +18,8 @@ hidden: true
 scope: ...
 
 contexts:
-  # | Operator |  Description    |
-  # |:--------:|:----------------|
-  # |    -     | Subtraction.    |
-  # |    +     | Addition.       |
-  # |    *     | Multiplication. |
-  # |    /     | Division.       |
-  # |    %     | Modulus.        |
   main:
-    - match: |
-        (?x)\s*
-        (
-          (?> -
-            | \+
-            | \*
-            | /
-            | %
-          )
-        )
+    - match: \s*(,)
       captures:
-        1: keyword.operator.arithmetic.css.scss3
+        1: keyword.operator.other.comma.js.fjsx15
       pop: true

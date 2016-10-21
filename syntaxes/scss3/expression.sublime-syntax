@@ -29,7 +29,7 @@ contexts:
     - include: sequence
     # Open new expression group.
     - match: |
-        (?x)
+        (?x)\s*
         {{expressionGroupBegin}}
       scope: punctuation.delimiter.expression.group.a.begin.css.scss3
       set: open-b-close-a
@@ -37,7 +37,7 @@ contexts:
   open-a-close-b:
     # Open new expression group.
     - match: |
-        (?x)
+        (?x)\s*
         {{expressionGroupBegin}}
       scope: punctuation.delimiter.expression.group.a.begin.css.scss3
       push: open-b-close-a
@@ -50,13 +50,13 @@ contexts:
     - match: ""
       push:
         - include: sequence
-        - match: ""
+        - match: \s*
           pop: true
 
   open-b-close-a:
     # Open new expression group.
     - match: |
-        (?x)
+        (?x)\s*
         {{expressionGroupBegin}}
       scope: punctuation.delimiter.expression.group.b.begin.css.scss3
       push: open-a-close-b
@@ -69,12 +69,15 @@ contexts:
     - match: ""
       push:
         - include: sequence
-        - match: ""
+        - match: \s*
           pop: true
 
   sequence:
+    - include: Packages/Naomi/syntaxes/scss3/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/body.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/operator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/property.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/literal.sublime-syntax

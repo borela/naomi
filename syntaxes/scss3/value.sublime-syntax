@@ -19,12 +19,30 @@ scope: ...
 
 contexts:
   main:
+    # Expression terminator.
     - include: terminator
+    # End of a body.
+    - match: |
+        (?x)
+        (?=\s*
+          (?> \)
+            | \}
+          )
+        )
+      pop: true
+    # Expression.
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/scss3/expression.sublime-syntax
-        - match: (?=\s*;)
+        - match: |
+            (?x)
+            (?=\s*
+              (?> ;
+                | \)
+                | \}
+              )
+            )
           pop: true
+        - include: Packages/Naomi/syntaxes/scss3/expression.sublime-syntax
 
   terminator:
     - include: Packages/Naomi/syntaxes/scss3/greedy-terminator.sublime-syntax

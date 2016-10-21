@@ -18,24 +18,16 @@ hidden: true
 scope: ...
 
 contexts:
-  # | Operator |  Description    |
-  # |:--------:|:----------------|
-  # |    -     | Subtraction.    |
-  # |    +     | Addition.       |
-  # |    *     | Multiplication. |
-  # |    /     | Division.       |
-  # |    %     | Modulus.        |
   main:
+    - include: directive
+
+  directive:
     - match: |
-        (?x)\s*
-        (
-          (?> -
-            | \+
-            | \*
-            | /
-            | %
-          )
-        )
+        (?x)
+        \s*(@import)\b
       captures:
-        1: keyword.operator.arithmetic.css.scss3
-      pop: true
+        1: keyword.control.directive.css.scss3
+      set: value
+
+  value:
+    - include: Packages/Naomi/syntaxes/scss3/value.sublime-syntax

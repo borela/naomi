@@ -18,24 +18,12 @@ hidden: true
 scope: ...
 
 contexts:
-  # | Operator |  Description    |
-  # |:--------:|:----------------|
-  # |    -     | Subtraction.    |
-  # |    +     | Addition.       |
-  # |    *     | Multiplication. |
-  # |    /     | Division.       |
-  # |    %     | Modulus.        |
   main:
     - match: |
-        (?x)\s*
-        (
-          (?> -
-            | \+
-            | \*
-            | /
-            | %
-          )
-        )
+        (?xi)\s*
+        ([0-9]+%)
       captures:
-        1: keyword.operator.arithmetic.css.scss3
+        1: >-
+          selector.keyframe.css.scss3
+          entity.name.selector.css.scss3
       pop: true

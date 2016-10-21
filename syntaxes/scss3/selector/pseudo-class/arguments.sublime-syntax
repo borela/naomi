@@ -19,23 +19,28 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\{)
+    - match: \s*(\()
       captures:
-        1: punctuation.delimiter.body.begin.css.scss3
-      set: contents
+        1: punctuation.delimiter.pseudo-class.arguments.begin.css.scss3
+      set: arguments
 
-  contents:
-    - match: \s*(\})
+  arguments:
+    - match: \s*(\))
       captures:
-        1: punctuation.delimiter.body.end.css.scss3
+        1: punctuation.delimiter.pseudo-class.arguments.end.css.scss3
       pop: true
+    - match: \s*(\,)
+      captures:
+        1: punctuation.delimiter.pseudo-class.arguments.css.scss3
     - match: ""
       push:
-        - match: (?=\s*\})
+        - match: |
+            (?x)
+            (?=\s*
+              (?> ,
+                | \)
+              )
+            )
           pop: true
-        - include: Packages/Naomi/syntaxes/scss3/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/scss3/directive.sublime-syntax
         - include: Packages/Naomi/syntaxes/scss3/property.sublime-syntax
         - include: Packages/Naomi/syntaxes/scss3/selector.sublime-syntax
-        - include: Packages/Naomi/syntaxes/scss3/body.sublime-syntax
-        - include: Packages/Naomi/syntaxes/scss3/variable-declaration.sublime-syntax

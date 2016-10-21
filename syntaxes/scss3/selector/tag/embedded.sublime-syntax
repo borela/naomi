@@ -32,6 +32,7 @@ contexts:
             | video
           )
         )\b
+        (?!\s*\()
       captures:
         0: selector.embedded.css.scss3
         1: entity.name.selector.css.scss3

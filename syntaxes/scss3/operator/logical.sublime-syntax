@@ -25,10 +25,14 @@ contexts:
   # |    !     | Not.        |
   main:
     - match: |
-        (?x)
-        (?> &&
-          | \|\|
-          | !
+        (?x)\s*
+        (
+          (?> and
+            | &&
+            | \|\|
+            | !
+          )
         )
-      scope: keyword.operator.logical.css.scss3
+      captures:
+        1: keyword.operator.logical.css.scss3
       pop: true

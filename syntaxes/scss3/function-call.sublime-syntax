@@ -19,15 +19,15 @@ scope: ...
 
 variables:
   commonIdentifier: |
-    [$_[:alpha:]]
-    [$_[:alnum:]]*
+    [$_\-[:alpha:]]
+    [$_\-[:alnum:]]*
 
 contexts:
   main:
     - match: |
         (?xi)
         (?=
-          {{commonIdentifier}}
+          \s*{{commonIdentifier}}
           \s*\(
         )
       set: [

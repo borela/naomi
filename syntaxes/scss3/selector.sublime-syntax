@@ -19,16 +19,14 @@ scope: ...
 
 contexts:
   main:
-    # Delimiter.
-    - match: \s*(\,)
-      captures:
-        1: punctuation.delimiter.selector.css.scss3
-      pop: true
-    # Operators.
     - include: Packages/Naomi/syntaxes/scss3/selector/operator.sublime-syntax
     # Selectors.
+    - include: Packages/Naomi/syntaxes/scss3/selector/keyframe.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/selector/id.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/selector/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/selector/property.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/selector/pseudo-class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/selector/pseudo-element.sublime-syntax
     # Tag selectors.
     - include: Packages/Naomi/syntaxes/scss3/selector/tag/embedded.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/selector/tag/form.sublime-syntax

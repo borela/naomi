@@ -30,21 +30,69 @@ contexts:
   common-constant:
     - match: |
         (?x)
-        \B(\$)
+        (\$)
         (
           {{constantIdentifier}}
           (?> [$\-]\B
             | [_[:upper:][:digit:]]\b
           )
         )
-      scope: entity.name.constant.css.scss3
+      captures:
+        0: constant.css.scss3
+        1: punctuation.delimiter.constant.begin.css.scss3
+        2: entity.name.constant.css.scss3
       pop: true
 
   support-constant:
     - match: |
         (?x)
         (?> absolute
+          | alternate
+          | all
+          | auto
+          | baseline
+          | block
+          | bold
+          | border-box
+          | button
+          | center
+          | checkbox
+          | content-box
+          | collapse
+          | dotted
+          | ease
+          | fixed
+          | forwards
           | hidden
+          | infinite
+          | inline-block
+          | inherit
+          | italic
+          | landscape
+          | left
+          | no-repeat
+          | none
+          | normal
+          | number
+          | pointer
+          | print
+          | projection
+          | radio
+          | relative
+          | repeat
+          | reset
+          | right
+          | screen
+          | search
+          | speech
+          | solid
+          | submit
+          | table-row(?:-group)?
+          | top
+          | transparent
+          | tv
+          | visible
+          | uppercase
         )
       scope: >-
         support.css.scss3

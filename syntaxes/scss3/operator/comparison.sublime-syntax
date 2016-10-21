@@ -28,13 +28,16 @@ contexts:
   # |    <     | Less than.                |
   main:
     - match: |
-        (?x)
-        (?> ==
-          | !=
-          | >=
-          | <=
-          | >(?!>)
-          | <(?!<)
+        (?x)\s*
+        (
+          (?> ==
+            | !=
+            | >=
+            | <=
+            | >(?!>)
+            | <(?!<)
+          )
         )
-      scope: keyword.operator.comparison.css.scss3
+      captures:
+        1: keyword.operator.comparison.css.scss3
       pop: true

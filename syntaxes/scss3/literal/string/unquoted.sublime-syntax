@@ -19,9 +19,18 @@ scope: ...
 
 contexts:
   main:
-    - match: \@import
-      scope: keyword.control.import.css.scss3
-      set: value
-
-  value:
-    - include: Packages/Naomi/syntaxes/scss3/value.sublime-syntax
+    - match: |
+        (?x)
+        \S.*?
+        (?=
+          (?> \s
+            | ,
+            | ;
+            | \)
+            | \]
+            | \}
+            | $
+          )
+        )
+      scope: string.unquoted.css.scss3
+      pop: true

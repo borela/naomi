@@ -24,27 +24,26 @@ variables:
 
 contexts:
   main:
-    - include: extension
-    - include: property
-
-  extension:
-    - match: |
-        (?xi)
-        \s*
-        (
-          -{{commonIdentifier}}
-        )
-        \s*(:)
+    - match: \s*(\[)
       captures:
-        0: extension.css.scss3
-        1: entity.name.property.css.scss3
-        2: keyword.operator.other.association.css.scss3
-      set: value
+        1: punctuation.delimiter.selector.begin.css.scss3
+      set: attributes
+
+  attributes:
+    - match: \s*(\])
+      captures:
+        1: punctuation.delimiter.selector.end.css.scss3
+      pop: true
+    - match: ""
+      push:
+        - include: property
+        - include: operator
+        - match: (?=\s*\])
+          pop: true
 
   property:
     - match: |
-        (?xi)
-        \s*
+        (?xi)\s*
         (
           (?> animation
             | background-color
@@ -107,13 +106,28 @@ contexts:
             | z-index
           )
         )
-        \s*(:)
       captures:
         0: support.css.scss3
         1: entity.name.property.css.scss3
-        2: keyword.operator.other.association.css.scss3
+      pop: true
+
+  operator:
+    - match: |
+        (?x)\s*
+        (
+          (?> =
+            | ~=
+            | \|=
+            | ^=
+            | \$=
+            | \*=
+          )
+        )
+      captures:
+        1: keyword.operator.other.css.scss3
       set: value
 
   value:
+    - match: (?=\s*\])
+      pop: true
     - include: Packages/Naomi/syntaxes/scss3/value.sublime-syntax
-

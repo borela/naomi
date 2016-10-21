@@ -19,15 +19,27 @@ scope: ...
 
 contexts:
   main:
-    - match: \*
-      scope: keyword.operator.other.selector.all.css.css3
+    - match: \s*(\,)
+      captures:
+        1: keyword.operator.other.comma.css.scss3
       pop: true
-    - match: \+
-      scope: keyword.operator.other.selector.adjacent.css.css3
+    - match: \s*(&)(?!&)
+      captures:
+        1: keyword.operator.other.all.css.css3
       pop: true
-    - match: \>
-      scope: keyword.operator.other.selector.direct.css.css3
+    - match: \s*(\*)
+      captures:
+        1: keyword.operator.other.selector.all.css.css3
       pop: true
-    - match: ~
-      scope: keyword.operator.other.selector.sibling.css.css3
+    - match: \s*(\+)
+      captures:
+        1: keyword.operator.other.selector.adjacent.css.css3
+      pop: true
+    - match: \s*(>)
+      captures:
+        1: keyword.operator.other.selector.direct.css.css3
+      pop: true
+    - match: \s*(~)
+      captures:
+        1: keyword.operator.other.selector.sibling.css.css3
       pop: true

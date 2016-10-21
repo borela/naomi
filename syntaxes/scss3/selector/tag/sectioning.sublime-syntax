@@ -28,6 +28,7 @@ contexts:
             | section
           )
         )\b
+        (?!\s*\()
       captures:
         0: selector.sectioning.root.css.scss3
         1: entity.name.selector.css.scss3

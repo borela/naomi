@@ -67,18 +67,18 @@ contexts:
         (?x)\s*
         (?> %
           | cm
-          | em
-          | ex
+          | e[mx]
           | in
           | mm
-          | pc
-          | pt
-          | px
+          | p[ctx]
           | rem
-          | vh
-          | vmax
-          | vmin
-          | vw
+          | s
+          | v
+            (?> h
+              | max
+              | min
+              | w
+            )
         )
       scope: keyword.modifier.unit.css.scss3
       pop: true

@@ -1,0 +1,104 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [_\-[:alpha:]]
+    [_\-[:alnum:]]*
+
+contexts:
+  main:
+    - include: extension
+    - include: parameterized-pseudo-class
+    - include: normal-pseudo-class
+
+  extension:
+    - match: |
+        (?xi)
+        \s*
+        (
+          :-{{commonIdentifier}}
+        )
+      captures:
+        0: extension.css.scss3
+        1: entity.name.pseudo-class.css.scss3
+      pop: true
+
+  parameterized-pseudo-class:
+    - match: |
+        (?xi)\s*
+        (:
+          (?> dir
+            | not
+          )
+        )\b
+      captures:
+        1: entity.name.pseudo-class.css.scss3
+      set: arguments
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/scss3/selector/pseudo-class/arguments.sublime-syntax
+
+  normal-pseudo-class:
+    - match: |
+        (?xi)\s*
+        (:
+          (?> active
+            | any(?:-link)?
+            | checked
+            | default
+            | disabled
+            | empty
+            | enabled
+            | first-child
+            | first-of-type
+            | first
+            | focus
+            | fullscreen
+            | hover
+            | in-range
+            | indeterminate
+            | invalid
+            | lang
+            | last-child
+            | last-of-type
+            | left
+            | link
+            | nth-child
+            | nth-last-child
+            | nth-last-of-type
+            | nth-of-type
+            | only-child
+            | only-of-type
+            | optional
+            | out-of-range
+            | read-only
+            | read-write
+            | required
+            | right
+            | root
+            | scope
+            | target
+            | valid
+            | visited
+          )
+        )\b
+      captures:
+        1: entity.name.pseudo-class.css.scss3
+      pop: true

@@ -23,7 +23,7 @@ scope: source.css.scss3
 contexts:
   main:
     - include: Packages/Naomi/syntaxes/scss3/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/import.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/variable-declaration.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/directive.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/selector.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/body.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/variable-declaration.sublime-syntax

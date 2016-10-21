@@ -42,7 +42,7 @@ contexts:
               )
             )
           pop: true
-        - include: statement-and-expression
+        - include: expression
 
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax
+  expression:
+    - include: Packages/Naomi/syntaxes/scss3/expression.sublime-syntax

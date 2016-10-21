@@ -34,12 +34,4 @@ contexts:
       set: value
 
   value:
-    - include: terminator
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax
-        - match: (?=\s*;)
-          pop: true
-
-  terminator:
-    - include: Packages/Naomi/syntaxes/scss3/greedy-terminator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/value.sublime-syntax

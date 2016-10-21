@@ -13,17 +13,28 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: SCSS 3 (Experimental)
+hidden: true
 
-file_extensions:
-  - scss
-
-scope: source.css.scss3
+scope: ...
 
 contexts:
+  # | Operator |       Description         |
+  # |:--------:|:--------------------------|
+  # |    ==    | Loose equality.           |
+  # |    !=    | Not equal.                |
+  # |    >=    | Greater than or equal to. |
+  # |    <=    | Less than or equal to.    |
+  # |    >     | Greater than.             |
+  # |    <     | Less than.                |
   main:
-    - include: Packages/Naomi/syntaxes/scss3/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/import.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/variable-declaration.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/selector.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/body.sublime-syntax
+    - match: |
+        (?x)
+        (?> ==
+          | !=
+          | >=
+          | <=
+          | >(?!>)
+          | <(?!<)
+        )
+      scope: keyword.operator.comparison.css.scss3
+      pop: true

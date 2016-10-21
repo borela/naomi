@@ -28,20 +28,14 @@ contexts:
     - include: common-constant
 
   common-constant:
-    # Single character.
     - match: |
         (?x)
-        (?> \$\B
-          | [_[:upper:]]\b
-        )
-      scope: entity.name.constant.css.scss3
-      pop: true
-    # Two or more characters.
-    - match: |
-        (?x)
-        {{constantIdentifier}}
-        (?> \$\B
-          | [_[:upper:]]\b
+        \B(\$)
+        (
+          {{constantIdentifier}}
+          (?> [$\-]\B
+            | [_[:upper:][:digit:]]\b
+          )
         )
       scope: entity.name.constant.css.scss3
       pop: true

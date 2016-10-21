@@ -26,7 +26,13 @@ contexts:
   main:
     - match: |
         (?xi)
-        \B(\$)({{commonIdentifier}})\b
+        \B(\$)
+        (
+          {{commonIdentifier}}
+          (?> [$\-]\B
+            | [_[:alnum:]]\b
+          )
+        )
       captures:
         0: variable.css.scss3
         1: punctuation.delimiter.variable.begin.css.scss3

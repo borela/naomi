@@ -22,35 +22,45 @@ contexts:
   # |:----------:|:--------------------|
   # |   typeof   |                     |
   # |    void    |                     |
+  # |     ,      | Comma.              |
+  # |     =      | Assignment.         |
   # |    ...     | Spread.             |
   # |     ::     | Bind.               |
   # |     .      | Member access.      |
   # |     ?      | Ternary.            |
   main:
     - match: |
-        (?x)\b
-        (?> typeof
-          | void
+        (?x)\s*
+        (
+          (?> typeof
+            | void
+          )
         )\b
       scope: keyword.operator.other.js.fjsx15
       pop: true
-    - match: =
-      scope: keyword.operator.other.assignment.js.fjsx15
+    - match: \s*(\,)
+      captures:
+        1: keyword.operator.other.comma.js.fjsx15
       pop: true
-    - match: \,
-      scope: keyword.operator.other.comma.js.fjsx15
+    - match: \s*(=)
+      captures:
+        1: keyword.operator.other.assignment.js.fjsx15
       pop: true
-    - match: \:{2}
-      scope: keyword.operator.other.bind.js.fjsx15
+    - match: \s*(\.{3})
+      captures:
+        1: keyword.operator.other.spread.js.fjsx15
       pop: true
-    - match: \.{3}
-      scope: keyword.operator.other.spread.js.fjsx15
+    - match: \s*(\:{2})
+      captures:
+        1: keyword.operator.other.bind.js.fjsx15
       pop: true
-    - match: \?
-      scope: keyword.operator.other.ternary.js.fjsx15
+    - match: \s*(\?)
+      captures:
+        1: keyword.operator.other.ternary.js.fjsx15
       set: ternary-condition
-    - match: \.
-      scope: keyword.operator.other.member-access.js.fjsx15
+    - match: \s*(\.)
+      captures:
+        1: keyword.operator.other.member-access.js.fjsx15
       set: member-access
 
   ternary-condition:

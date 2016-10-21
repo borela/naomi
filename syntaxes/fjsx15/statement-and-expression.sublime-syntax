@@ -36,7 +36,7 @@ contexts:
     - include: sequence
     # Open new expression group.
     - match: |
-        (?x)
+        (?x)\s*
         {{expressionGroupBegin}}
       scope: punctuation.delimiter.expression.group.a.begin.js.fjsx15
       set: open-b-close-a
@@ -44,7 +44,7 @@ contexts:
   open-a-close-b:
     # Open new expression group.
     - match: |
-        (?x)
+        (?x)\s*
         {{expressionGroupBegin}}
       scope: punctuation.delimiter.expression.group.a.begin.js.fjsx15
       push: open-b-close-a
@@ -64,7 +64,7 @@ contexts:
   open-b-close-a:
     # Open new expression group.
     - match: |
-        (?x)
+        (?x)\s*
         {{expressionGroupBegin}}
       scope: punctuation.delimiter.expression.group.b.begin.js.fjsx15
       push: open-a-close-b

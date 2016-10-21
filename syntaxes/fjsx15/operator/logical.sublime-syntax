@@ -25,10 +25,13 @@ contexts:
   # |    !     | Not.        |
   main:
     - match: |
-        (?x)
-        (?> &&
-          | \|\|
-          | !
+        (?x)\s*
+        (
+          (?> &&
+            | \|\|
+            | !
+          )
         )
-      scope: keyword.operator.logical.js.fjsx15
+      captures:
+        1: keyword.operator.logical.js.fjsx15
       pop: true

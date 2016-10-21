@@ -30,13 +30,16 @@ contexts:
   # |    <     | Less than.                |
   main:
     - match: |
-        (?x)
-        (?> ===?
-          | !==?
-          | >=
-          | <=
-          | >(?!>)
-          | <(?!<)
+        (?x)\s*
+        (
+          (?> ===?
+            | !==?
+            | >=
+            | <=
+            | >(?!>)
+            | <(?!<)
+          )
         )
-      scope: keyword.operator.comparison.js.fjsx15
+      captures:
+        1: keyword.operator.comparison.js.fjsx15
       pop: true

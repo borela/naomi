@@ -58,8 +58,10 @@ contexts:
             | bottom
             | box-shadow
             | box-sizing
+            | checked
             | color
             | cursor
+            | disabled
             | display
             | fill
             | float

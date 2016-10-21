@@ -60,6 +60,7 @@ contexts:
             | box-sizing
             | checked
             | color
+            | controls
             | cursor
             | disabled
             | display
@@ -71,6 +72,7 @@ contexts:
             | font-weight
             | font
             | height
+            | hidden
             | left
             | letter-spacing
             | line-height
@@ -98,6 +100,7 @@ contexts:
             | text-align
             | text-decoration
             | text-transform
+            | title
             | top
             | transform-origin
             | transform

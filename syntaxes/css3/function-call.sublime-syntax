@@ -17,29 +17,45 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_\-[:alpha:]]
+    [$_\-[:alnum:]]*
+
 contexts:
   main:
-    - match: \s*(\,)
+    - match: |
+        (?xi)
+        (?=
+          \s*{{commonIdentifier}}
+          \s*\(
+        )
+      set: [
+        arguments,
+        name
+      ]
+
+  name:
+    # Support identifier.
+    - match: |
+        (?x)
+        \s*(
+          (?> constructor
+            | super
+          )
+        )\b
       captures:
-        1: keyword.operator.other.comma.css.css3
+        1: >-
+          support.css.css3
+          entity.name.function.css.css3
       pop: true
-    - match: \s*(&)(?!&)
+    # Identifier.
+    - match: |
+        (?xi)
+        \s*({{commonIdentifier}})
       captures:
-        1: keyword.operator.other.all.css.css3
+        1: entity.name.function.css.css3
       pop: true
-    - match: \s*(\*)
-      captures:
-        1: keyword.operator.other.selector.all.css.css3
-      pop: true
-    - match: \s*(\+)
-      captures:
-        1: keyword.operator.other.selector.adjacent.css.css3
-      pop: true
-    - match: \s*(>)
-      captures:
-        1: keyword.operator.other.selector.direct.css.css3
-      pop: true
-    - match: \s*(~)
-      captures:
-        1: keyword.operator.other.selector.sibling.css.css3
-      pop: true
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/css3/function-call/arguments.sublime-syntax

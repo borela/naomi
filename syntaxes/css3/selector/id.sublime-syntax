@@ -17,24 +17,21 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [_\-[:alpha:]]
+    [_\-[:alnum:]]*
+
 contexts:
   main:
-    - match: \s*(\{)
+    - match: |
+        (?xi)\s*
+        (
+          (\#)
+          ({{commonIdentifier}})
+        )\b
       captures:
-        1: punctuation.delimiter.body.begin.css.css3
-      set: contents
-
-  contents:
-    - match: \s*(\})
-      captures:
-        1: punctuation.delimiter.body.end.css.css3
+        1: selector.id.css.css3
+        2: punctuation.delimiter.selector.begin.css.css3
+        3: entity.name.selector.css.css3
       pop: true
-    - match: ""
-      push:
-        - match: (?=\s*\})
-          pop: true
-        - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/directive.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/selector.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/body.sublime-syntax

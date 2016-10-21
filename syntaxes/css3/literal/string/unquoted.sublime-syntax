@@ -13,17 +13,24 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: CSS 3 (Experimental)
+hidden: true
 
-file_extensions:
-  - css
-  - css3
-
-scope: source.css.css3
+scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/directive.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/selector.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/body.sublime-syntax
+    - match: |
+        (?x)
+        \S.*?
+        (?=
+          (?> \s
+            | ,
+            | ;
+            | \)
+            | \]
+            | \}
+            | $
+          )
+        )
+      scope: string.unquoted.css.css3
+      pop: true

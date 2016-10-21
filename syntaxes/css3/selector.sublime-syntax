@@ -17,114 +17,19 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [_\-[:alpha:]]
-    [_\-[:alnum:]]*
-
 contexts:
   main:
-    - include: operator
-    - include: delimiter
-    - include: id
-    - include: class
-    - include: tag
-
-  operator:
     - include: Packages/Naomi/syntaxes/css3/selector/operator.sublime-syntax
-
-  delimiter:
-    - match: \s*(\,)
-      captures:
-        1: punctuation.delimiter.selector.css.css3
-      pop: true
-
-  id:
-    - match: |
-        (?xi)\s*
-        (\#{{commonIdentifier}})
-      captures:
-        1: >-
-          selector.id.css.css3
-          entity.name.selector.css.css3
-      pop: true
-
-  class:
-    - match: |
-        (?xi)\s*
-        (\.{{commonIdentifier}})
-      captures:
-        1: >-
-          selector.class.css.css3
-          entity.name.selector.css.css3
-      pop: true
-
-  tag:
-    # Form elements.
-    - match: |
-        (?x)\b
-        (?> button
-          | form
-          | input
-          | l
-            (?> abel
-              | egend
-            )
-          | option
-          | select
-          | textarea
-        )\b
-      scope: >-
-        selector.tag.form.css.css3
-        entity.name.selector.css.css3
-      pop: true
-    # Embedded elements.
-    - match: |
-        (?x)\b
-        (?> audio
-          | canvas
-          | embed
-          | i
-            (?>frame|mg)
-          | math
-          | object
-          | svg
-          | video
-        )\b
-      scope: >-
-        selector.tag.embedded.css.css3
-        entity.name.selector.css.css3
-      pop: true
-    # Section tags.
-    - match: |
-        (?x)\b
-        (?> a
-            (?>rticle|side)
-          | nav
-          | section
-        )\b
-      scope: >-
-        selector.tag.sectioning.css.css3
-        entity.name.selector.css.css3
-      pop: true
-    # Section root tags.
-    - match: |
-        (?x)\b
-        (?> b
-            (?>lockquote|ody)
-          | fi
-            (?>eldset|gure)
-          | td
-        )\b
-      scope: >-
-        selector.tag.sectioning.root.css.css3
-        entity.name.selector.css.css3
-      pop: true
-    # Other tags.
-    - match: |
-        (?xi)
-        {{commonIdentifier}}
-      scope: >-
-        selector.tag.css.css3
-        entity.name.selector.css.css3
-      pop: true
+    # Selectors.
+    - include: Packages/Naomi/syntaxes/css3/selector/keyframe.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/id.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/property.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/pseudo-class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/pseudo-element.sublime-syntax
+    # Tag selectors.
+    - include: Packages/Naomi/syntaxes/css3/selector/tag/embedded.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/tag/form.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/tag/sectioning-root.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/tag/sectioning.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/tag/other.sublime-syntax

@@ -25,7 +25,8 @@ variables:
 contexts:
   main:
     - include: extension
-    - include: property
+    - include: attribute
+    - include: unreconized-attribute
 
   extension:
     - match: |
@@ -37,11 +38,11 @@ contexts:
         \s*(:)
       captures:
         0: extension.css.scss3
-        1: entity.name.property.css.scss3
+        1: entity.name.attribute.css.scss3
         2: keyword.operator.other.association.css.scss3
       set: value
 
-  property:
+  attribute:
     - match: |
         (?xi)
         \s*
@@ -110,10 +111,22 @@ contexts:
         \s*(:)
       captures:
         0: support.css.scss3
-        1: entity.name.property.css.scss3
+        1: entity.name.attribute.css.scss3
+        2: keyword.operator.other.association.css.scss3
+      set: value
+
+  unreconized-attribute:
+    - match: |
+        (?xi)
+        \s*
+        (
+          {{commonIdentifier}}
+        )
+        \s*(:)
+      captures:
+        1: entity.name.attribute.css.scss3
         2: keyword.operator.other.association.css.scss3
       set: value
 
   value:
     - include: Packages/Naomi/syntaxes/scss3/value.sublime-syntax
-

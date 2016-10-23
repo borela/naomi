@@ -36,12 +36,12 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: property
+        - include: attribute
         - include: operator
         - match: (?=\s*\])
           pop: true
 
-  property:
+  attribute:
     - match: |
         (?xi)\s*
         (
@@ -113,7 +113,7 @@ contexts:
         )
       captures:
         0: support.css.scss3
-        1: entity.name.property.css.scss3
+        1: entity.name.attribute.css.scss3
       pop: true
 
   operator:

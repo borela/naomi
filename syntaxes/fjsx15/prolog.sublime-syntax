@@ -19,9 +19,9 @@ scope: ...
 
 contexts:
   main:
-    - match: \'use strict';$
+    - match: \'use strict';?$
       scope: keyword.other.prolog.strict.js.fjsx15
       pop: true
-    - match: \"use strict";$
+    - match: \"use strict";?$
       scope: keyword.other.prolog.strict.js.fjsx15
       pop: true

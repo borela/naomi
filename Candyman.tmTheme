@@ -457,6 +457,51 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.markup.deleted.git_gutter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f36c60</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.markup.inserted.git_gutter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.markup.changed.git_gutter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.markup.ignored.git_gutter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4dd0e1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.markup.untracked.git_gutter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.entity.name.import.ambiguous</string>
 			<key>settings</key>
 			<dict>

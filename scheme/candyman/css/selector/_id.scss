@@ -11,11 +11,13 @@
 // the License.
 
 .selector.id {
+   fontStyle: italic;
+
   .entity.name.selector {
     foreground: $pink-400;
-    fontStyle: italic;
   }
+
   .punctuation.delimiter.selector.begin {
-    foreground: rgba($pink-400,.4);
+    foreground: rgba($pink-400,.7);
   }
 }

@@ -10,7 +10,7 @@
 			<key>settings</key>
 			<dict>
 				<key>activeGuide</key>
-				<string>#cfd8dc</string>
+				<string>#546e7a</string>
 				<key>background</key>
 				<string>#263238</string>
 				<key>bracketsForeground</key>
@@ -126,7 +126,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#81D4FAB2</string>
+				<string>#4DD0E1B2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -221,6 +221,24 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.support .entity.name.attribute.css</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.extension .entity.name.attribute.css</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#e0e0e0</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.punctuation.delimiter.selector, .punctuation.delimiter.body.begin.css, .punctuation.delimiter.body.end.css</string>
 			<key>settings</key>
 			<dict>
@@ -234,25 +252,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.support .entity.name.property.css</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#aed581</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.extension .entity.name.property.css</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
+				<string>#e0e0e0</string>
 			</dict>
 		</dict>
 		<dict>
@@ -270,7 +270,16 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff9e80</string>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.selector.class</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 			</dict>
 		</dict>
 		<dict>
@@ -278,8 +287,6 @@
 			<string>.selector.class .entity.name.selector</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#4dd0e1</string>
 			</dict>
@@ -290,7 +297,16 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#4DD0E166</string>
+				<string>#4DD0E1B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.selector.id</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 			</dict>
 		</dict>
 		<dict>
@@ -298,8 +314,6 @@
 			<string>.selector.id .entity.name.selector</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#ec407a</string>
 			</dict>
@@ -310,7 +324,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#EC407A66</string>
+				<string>#EC407AB2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -328,7 +342,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ffffff</string>
+				<string>#e0e0e0</string>
 			</dict>
 		</dict>
 		<dict>
@@ -346,7 +360,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ffffff</string>
+				<string>#e0e0e0</string>
 			</dict>
 		</dict>
 		<dict>
@@ -420,7 +434,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#81d4fa</string>
+				<string>#4dd0e1</string>
 			</dict>
 		</dict>
 		<dict>
@@ -438,7 +452,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#81d4fa</string>
+				<string>#4dd0e1</string>
 			</dict>
 		</dict>
 		<dict>
@@ -494,7 +508,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#f06292</string>
+				<string>#ff80ab</string>
 			</dict>
 		</dict>
 		<dict>
@@ -503,7 +517,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#f36c60</string>
+				<string>#f06292</string>
 			</dict>
 		</dict>
 		<dict>
@@ -521,7 +535,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#4fc3f7</string>
+				<string>#4dd0e1</string>
 			</dict>
 		</dict>
 		<dict>
@@ -764,7 +778,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#81d4fa</string>
+				<string>#4dd0e1</string>
 			</dict>
 		</dict>
 		<dict>
@@ -773,7 +787,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#81D4FAB2</string>
+				<string>#4DD0E1B2</string>
 			</dict>
 		</dict>
 		<dict>

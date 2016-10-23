@@ -24,7 +24,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/css3/selector/keyframe.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/selector/id.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/selector/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/selector/property.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/attribute.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/selector/pseudo-class.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/selector/pseudo-element.sublime-syntax
     # Tag selectors.

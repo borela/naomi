@@ -77,7 +77,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/css3/body.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/operator.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/function-call.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/attribute.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/variable.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/literal.sublime-syntax

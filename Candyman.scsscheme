@@ -10,26 +10,26 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@name "Candyman";
+@name 'Candyman';
 
-@import "scheme/candyman/colors";
-@import "scheme/candyman/basic";
+@import 'scheme/candyman/colors';
+@import 'scheme/candyman/basic';
 
-@import "scheme/candyman/class";
-@import "scheme/candyman/comment";
-@import "scheme/candyman/constant";
-@import "scheme/candyman/css";
-@import "scheme/candyman/decorator";
-@import "scheme/candyman/destructuring";
-@import "scheme/candyman/expression";
-@import "scheme/candyman/flowtype";
-@import "scheme/candyman/function";
-@import "scheme/candyman/gitgutter";
-@import "scheme/candyman/import";
-@import "scheme/candyman/interface";
-@import "scheme/candyman/label";
-@import "scheme/candyman/literal";
-@import "scheme/candyman/markup";
-@import "scheme/candyman/namespace";
-@import "scheme/candyman/type";
-@import "scheme/candyman/variable";
+@import 'scheme/candyman/class';
+@import 'scheme/candyman/comment';
+@import 'scheme/candyman/constant';
+@import 'scheme/candyman/css';
+@import 'scheme/candyman/decorator';
+@import 'scheme/candyman/destructuring';
+@import 'scheme/candyman/expression';
+@import 'scheme/candyman/flowtype';
+@import 'scheme/candyman/function';
+@import 'scheme/candyman/gitgutter';
+@import 'scheme/candyman/import';
+@import 'scheme/candyman/interface';
+@import 'scheme/candyman/label';
+@import 'scheme/candyman/literal';
+@import 'scheme/candyman/markup';
+@import 'scheme/candyman/namespace';
+@import 'scheme/candyman/type';
+@import 'scheme/candyman/variable';

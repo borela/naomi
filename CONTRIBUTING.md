@@ -6,10 +6,8 @@ to this document in a pull request.
 
 ## Table of contents
 
-1. [Template for submitting bug reports](#template-for-submitting-bug-reports)
-2. [Template for submitting enhancement suggestions](#template-for-submitting-enhancement-suggestions)
-3. [Pull requests](#pull-requests)
-4. [Style guides](#style-guides)
+1. [Pull requests](#pull-requests)
+2. [Style guides](#style-guides)
   1. [Commit messages](#commit-messages)
     1. [Example of a commit message](#example-of-a-commit-message)
   2. [Color schemes](#color-schemes-style-guide)
@@ -17,65 +15,6 @@ to this document in a pull request.
   4. [Tests](#tests-style-guide)
 3. [License headers](#license-headers)
 4. [Useful links](#useful-links)
-
-## Template for submitting bug reports
-
-    [Short description of problem...]
-
-    **Reproduction steps:**
-
-    1. [...]
-    2. [...]
-    3. [...]
-
-    **Expected behavior:**
-
-    [Describe the expected behavior...]
-
-    **Observed behavior:**
-
-    [Describe the observed behavior...]
-
-    **Screenshots and GIFs**
-
-    ![Screenshots and GIFs which shows the steps and the issue...](URL)
-
-    **Version:** [Version...]
-    **OS and version:** [OS name and version...]
-
-    **Additional information:**
-
-    * It started happening recently: [Yes/No]
-    * It can be reliably reproduced: [Yes/No]
-
-## Template for submitting enhancement suggestions
-
-    [Short description of suggestion...]
-
-    **Steps which explain the enhancement**
-
-    1. [...]
-    2. [...]
-    3. [...]
-
-    **Suggested behavior**
-
-    [Describe the suggested behavior...]
-
-    **Current behavior**
-
-    [Describe the current behavior...]
-
-    **Why would the enhancement be useful to most users**
-
-    [Explain why the enhancement would be useful to most users...]
-
-    **Screenshots and GIFs**
-
-    ![Screenshots and GIFs which shows the steps and the suggestion...](URL)
-
-    **Version:** [Version...]
-    **OS and version:** [OS name and version...]
 
 ## Pull requests
 

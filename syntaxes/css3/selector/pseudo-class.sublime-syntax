@@ -25,8 +25,21 @@ variables:
 contexts:
   main:
     - include: extension
-    - include: parameterized-pseudo-class
-    - include: normal-pseudo-class
+    - include: parameterized
+    - include: normal
+    - include: css-modules
+
+  css-modules:
+    - match: |
+        (?xi)\s*
+        (:
+          (?> global
+            | local
+          )
+        )\b
+      captures:
+        1: entity.name.pseudo-class.css.css3
+      pop: true
 
   extension:
     - match: |
@@ -40,7 +53,7 @@ contexts:
         1: entity.name.pseudo-class.css.css3
       pop: true
 
-  parameterized-pseudo-class:
+  parameterized:
     - match: |
         (?xi)\s*
         (:
@@ -55,7 +68,7 @@ contexts:
   arguments:
     - include: Packages/Naomi/syntaxes/css3/selector/pseudo-class/arguments.sublime-syntax
 
-  normal-pseudo-class:
+  normal:
     - match: |
         (?xi)\s*
         (:

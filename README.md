@@ -10,13 +10,13 @@ that makes writting more fun.
 
 Sublime highlighting system is amazing, it uses only regular expressions and do
 a ton of optimizations on them which makes it very fast. That alone made me stop
-using IDEs that scans the project to perform the highlighting as I value responsiveness
-a lot in a editor.
+using IDEs that scans the project to perform the highlighting as I value
+responsiveness in a editor.
 
-That problem is that it’s not without trade offs, in some languages is not possible
-to differentiate constants from variables just using regular expressions, the
-solution then is that you must have a coding style where all your constants are
-uppercase and you’ll be fine.
+But, it’s not without trade offs, in some languages is not possible to differentiate
+constants from variables just using regular expressions. The solution then is that
+you must have a coding style where all your constants are uppercase and it’ll
+highlight them fine.
 
 ## Features
 

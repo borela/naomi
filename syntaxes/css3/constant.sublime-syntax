@@ -34,15 +34,20 @@ contexts:
           | checkbox
           | content-box
           | collapse
+          | column(?:-reverse)?
+          | contain
+          | cover
           | disabled
           | dotted
           | ease
           | fixed
+          | flex
           | forwards
           | hidden
           | infinite
           | inline-block
           | inherit
+          | initial
           | italic
           | landscape
           | left
@@ -58,6 +63,7 @@ contexts:
           | repeat
           | reset
           | right
+          | row(?:-reverse)?
           | screen
           | search
           | speech

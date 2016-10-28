@@ -31,7 +31,7 @@ highlight them fine.
 
 #### FJSX15 (Experimental)
 
-Combines ES2015+, Flow, React’s JSX and contains scopes for:
+Combines ES2015+, Flow, React’s JSX.
 
 * Templates.
 * Interfaces.
@@ -47,23 +47,48 @@ Combines ES2015+, Flow, React’s JSX and contains scopes for:
 * Alternating escaped characters.
 * Decimal, floating point and hexadecimal literals.
 
+#### JSON (Experimental)
+
+* Keys up to 7 levels.
+* Constants.
+* Decimal, floating point and hexadecimal literals.
+
 #### HTML 5 (Experimental)
 
-Scopes for:
-
-* Highlight FJSX15 inside `<script type="text/babel">` tags.
 * Balanced tags.
+* FJSX15 inside `<script type="text/babel">` tags.
+* CSS3 inside style tags.
 * Section root elements.
 * Section elements.
 * Embedded elements.
 * Form elements.
 
-#### MQL4
+#### CSS3 (Experimental)
 
-Scopes for:
+* Ids.
+* Classes.
+* Tags.
+* Pseudo classes.
+* Pseudo elements.
+* Keyframes.
+* Function calls.
+
+#### SCSS3 (Experimental)
+
+* Ids.
+* Classes.
+* Tags.
+* Pseudo classes.
+* Pseudo elements.
+* Keyframes.
+* Function calls.
+
+#### MQL4
 
 * Templates.
 * Classes.
+* Functions.
+* Function calls.
 * Datetime literals.
 * RGB literals.
 * Alternating parenthesis in expressions.
@@ -72,20 +97,22 @@ Scopes for:
 
 #### PHP 7
 
-Scopes for:
-
 * phpDoc instructions.
 * Alternating namespace names.
 * Alternating escaped characters.
 * Alternating embedded variables.
 * Alternating parenthesis in expressions.
-* Extended class and implemented interfaces.
+* Classes.
+* Interfaces.
+* Functions.
+* Function calls.
 * Private and protected modifiers.
 * Decimal, floating point, binary, octal and hexadecimal literals.
 
 #### XML 1.0 (Experimental)
 
 * Balanced tags.
+* Attributes.
 
 ## Installation
 

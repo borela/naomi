@@ -529,6 +529,141 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.keyword.operator.other.association.json, .punctuation.delimiter.object.json, .punctuation.delimiter.object.begin.json, .punctuation.delimiter.object.end.json</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-1 .string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4dd0e1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-1 .punctuation.delimiter.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4DD0E1B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-2 .string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#9ccc65</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-2 .punctuation.delimiter.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#AED581B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-3 .string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f36c60</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-3 .punctuation.delimiter.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#F36C60B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-4 .string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffab91</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-4 .punctuation.delimiter.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFAB91B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-5 .string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffe082</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-5 .punctuation.delimiter.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFE082B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-6 .string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f48fb1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-6 .punctuation.delimiter.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#F48FB1B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-7 .string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ce93d8</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-7 .punctuation.delimiter.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#CE93D8B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.entity.name.label, .punctuation.delimiter.label</string>
 			<key>settings</key>
 			<dict>

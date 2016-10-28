@@ -27,6 +27,7 @@
 @import 'scheme/candyman/gitgutter';
 @import 'scheme/candyman/import';
 @import 'scheme/candyman/interface';
+@import 'scheme/candyman/json';
 @import 'scheme/candyman/label';
 @import 'scheme/candyman/literal';
 @import 'scheme/candyman/markup';

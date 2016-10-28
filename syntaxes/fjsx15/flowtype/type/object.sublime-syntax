@@ -24,26 +24,40 @@ variables:
 
 contexts:
   main:
-    - match: \{
-      scope: punctuation.delimiter.object.begin.flowtype
+    - match: \s*(\{)
+      captures:
+        1: punctuation.delimiter.object.begin.flowtype
       set: items
 
   items:
-    - match: \,
-      scope: punctuation.delimiter.object.flowtype
-    - match: \}
-      scope: punctuation.delimiter.object.end.flowtype
+    - match: \s*(,|;)
+      captures:
+        1: >-
+          punctuation.delimiter.object.flowtype
+    - match: \s*(\})
+      captures:
+        1: punctuation.delimiter.object.end.flowtype
       pop: true
     - match: ""
       push:
-        - match: (?=\,|\])
+        - match: |
+            (?x)
+            (?=
+              (?> ,
+                | ;
+                | \]
+                | \}
+              )
+            )
           pop: true
+        - include: comment
         - include: lookup-table
         - include: property
 
   lookup-table:
-    - match: \[
-      scope: punctuation.delimiter.object.flowtype
+    - match: \s*(\[)
+      captures:
+        1: punctuation.delimiter.object.flowtype
       set: [
         type,
         lookup-table-end,
@@ -51,8 +65,9 @@ contexts:
       ]
 
   lookup-table-end:
-    - match: \]
-      scope: punctuation.delimiter.object.flowtype
+    - match: \s*(\])
+      captures:
+        1: punctuation.delimiter.object.flowtype
       pop: true
 
   property:
@@ -66,3 +81,6 @@ contexts:
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax

@@ -32,6 +32,4 @@ scope: text.xml.xml1
 
 contexts:
   main:
-    - match: lol
-      scope: lol
     - include: Packages/Naomi/syntaxes/xml1/element.sublime-syntax

@@ -24,6 +24,18 @@ variables:
 
 contexts:
   main:
+    # Type.
+    - match: |
+        (?x)\b
+        \s*(import)
+        \s*(type)\b
+      captures:
+        1: keyword.control.import.js.fjsx15
+        2: keyword.other.type-aliasing.flowtype
+      set: [
+        punctuation,
+        target
+      ]
     # Import the entire module.
     - match: |
         (?x)\b

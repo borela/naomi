@@ -551,7 +551,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#4DD0E1B2</string>
+				<string>#4DD0E180</string>
 			</dict>
 		</dict>
 		<dict>
@@ -569,7 +569,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#AED581B2</string>
+				<string>#AED58180</string>
 			</dict>
 		</dict>
 		<dict>
@@ -605,7 +605,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#FFAB91B2</string>
+				<string>#FFAB9180</string>
 			</dict>
 		</dict>
 		<dict>
@@ -623,7 +623,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#FFE082B2</string>
+				<string>#FFE08280</string>
 			</dict>
 		</dict>
 		<dict>
@@ -641,7 +641,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#F48FB1B2</string>
+				<string>#F48FB180</string>
 			</dict>
 		</dict>
 		<dict>
@@ -659,7 +659,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#CE93D8B2</string>
+				<string>#CE93D880</string>
 			</dict>
 		</dict>
 		<dict>
@@ -810,11 +810,20 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.string, .string punctuation.delimiter</string>
+			<string>.string</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#f36c60</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.string .punctuation.delimiter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#F36C6080</string>
 			</dict>
 		</dict>
 		<dict>

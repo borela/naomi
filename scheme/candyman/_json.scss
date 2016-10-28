@@ -23,7 +23,7 @@
   }
 
   .punctuation.delimiter.string {
-    foreground: rgba($cyan-300, 0.7);
+    foreground: rgba($cyan-300, .5);
   }
 }
 
@@ -33,7 +33,7 @@
   }
 
   .punctuation.delimiter.string {
-    foreground: rgba($light-green-300, 0.7);
+    foreground: rgba($light-green-300, .5);
   }
 }
 
@@ -43,7 +43,7 @@
   }
 
   .punctuation.delimiter.string {
-    foreground: rgba($red-300, 0.7);
+    foreground: rgba($red-300, .7);
   }
 }
 
@@ -53,7 +53,7 @@
   }
 
   .punctuation.delimiter.string {
-    foreground: rgba($deep-orange-200, 0.7);
+    foreground: rgba($deep-orange-200, .5);
   }
 }
 
@@ -63,7 +63,7 @@
   }
 
   .punctuation.delimiter.string {
-    foreground: rgba($amber-200, 0.7);
+    foreground: rgba($amber-200, .5);
   }
 }
 
@@ -73,7 +73,7 @@
   }
 
   .punctuation.delimiter.string {
-    foreground: rgba($pink-200, 0.7);
+    foreground: rgba($pink-200, .5);
   }
 }
 
@@ -83,6 +83,6 @@
   }
 
   .punctuation.delimiter.string {
-    foreground: rgba($purple-200, 0.7);
+    foreground: rgba($purple-200, .5);
   }
 }

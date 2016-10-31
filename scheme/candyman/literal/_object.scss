@@ -21,7 +21,7 @@
 
   &.property {
     .entity.name.variable {
-      fontStyle: bold italic;
+      foreground: $grey-400;
     }
   }
 }

@@ -239,7 +239,16 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.delimiter.selector, .punctuation.delimiter.body.begin.css, .punctuation.delimiter.body.end.css</string>
+			<string>.keyword.operator.other.comma.css, .keyword.operator.other.association.css, .keyword.operator.other.terminator.css, .punctuation.delimiter.body.begin.css, .punctuation.delimiter.body.end.css</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.delimiter.selector</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -786,8 +795,8 @@
 			<string>.object.property .entity.name.variable</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>bold italic</string>
+				<key>foreground</key>
+				<string>#bdbdbd</string>
 			</dict>
 		</dict>
 		<dict>

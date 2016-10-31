@@ -35,7 +35,7 @@ contexts:
           | [_[:upper:]]\b
         )
       scope: entity.name.constant.js.fjsx15
-      set: array-item-access
+      pop: true
     # Two or more characters.
     - match: |
         (?x)
@@ -44,7 +44,7 @@ contexts:
           | [_[:upper:]]\b
         )
       scope: entity.name.constant.js.fjsx15
-      set: array-item-access
+      pop: true
 
   support-constant:
     - match: |
@@ -59,9 +59,4 @@ contexts:
       scope: >-
         support.js.fjsx15
         entity.name.constant.js.fjsx15
-      pop: true
-
-  array-item-access:
-    - include: Packages/Naomi/syntaxes/fjsx15/array-access.sublime-syntax
-    - match: ""
       pop: true

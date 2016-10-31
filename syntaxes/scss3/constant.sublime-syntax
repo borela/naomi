@@ -49,11 +49,13 @@ contexts:
         (?> absolute
           | alternate
           | all
+          | at
           | auto
           | baseline
           | block
           | bold
           | border-box
+          | bottom
           | button
           | center
           | checkbox
@@ -65,6 +67,7 @@ contexts:
           | disabled
           | dotted
           | ease
+          | ellipse
           | fixed
           | flex
           | forwards
@@ -76,6 +79,7 @@ contexts:
           | italic
           | landscape
           | left
+          | middle
           | no-repeat
           | none
           | normal
@@ -94,7 +98,11 @@ contexts:
           | speech
           | solid
           | submit
+          | sub
+          | super
           | table-row(?:-group)?
+          | text-bottom
+          | text-top
           | top
           | transparent
           | tv

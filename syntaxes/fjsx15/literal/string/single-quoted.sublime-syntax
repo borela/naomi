@@ -35,17 +35,19 @@ variables:
 
 contexts:
   main:
-    - match: \'
-      scope: >-
-        string.quoted.single.js.fjsx15
-        punctuation.delimiter.string.begin.js.fjsx15
+    - match: \s*(')
+      captures:
+        1: >-
+          string.quoted.single.js.fjsx15
+          punctuation.delimiter.string.begin.js.fjsx15
       with_prototype:
         - match: (?<!\\)\n
           set: trap
-        - match: \'
-          scope: >-
-            string.quoted.single.js.fjsx15
-            punctuation.delimiter.string.end.js.fjsx15
+        - match: \s*(')
+          captures:
+            1: >-
+              string.quoted.single.js.fjsx15
+              punctuation.delimiter.string.end.js.fjsx15
           pop: true
       set: escape-a
 

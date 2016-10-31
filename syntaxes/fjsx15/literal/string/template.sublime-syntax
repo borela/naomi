@@ -41,8 +41,8 @@ contexts:
   main:
     - match: |
         (?xi)
-        ({{commonIdentifier}})?
-        (\`)
+        \s*({{commonIdentifier}})?
+        \s*(\`)
       captures:
         0: string.template.js.fjsx15
         1: entity.name.function.tag.js.fjsx15

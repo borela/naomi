@@ -22,6 +22,14 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  methodIdentifier: |
+    (?> {{commonIdentifier}}
+      | '.*?(?<!\\)'
+      | ".*?(?<!\\)"
+      | `.*?(?<!\\)`
+      | \[.*?\]
+    )
+
 contexts:
   main:
     # No modifiers.
@@ -29,7 +37,7 @@ contexts:
         (?xi)
         (?=
           \s*\*?
-          \s*{{commonIdentifier}}
+          \s*{{methodIdentifier}}
           \s*\(
         )
       set: declaration
@@ -51,7 +59,7 @@ contexts:
         )
         (?=
           \s*\*?
-          \s*{{commonIdentifier}}
+          \s*{{methodIdentifier}}
           \s*\(
         )
       captures:
@@ -86,6 +94,17 @@ contexts:
       captures:
         1: keyword.modifier.generator.js.fjsx15
         2: entity.name.function.js.fjsx15
+    # Computed identifier.
+    - match: \s*(\[)
+      captures:
+        1: keyword.operator.other.computed-function.begin.js.fjsx15
+      push: computed-function
+    # Other identifier types.
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
   template-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/template/parameters.sublime-syntax
@@ -95,3 +114,17 @@ contexts:
 
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
+
+  computed-function:
+    - match: \s*(\])
+      captures:
+        1: keyword.operator.other.computed-function.end.js.fjsx15
+      pop: true
+    - match: ""
+      push:
+        - match: (?=\s*\])
+          pop: true
+        - include: statement-and-expression
+
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

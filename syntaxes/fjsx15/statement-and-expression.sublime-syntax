@@ -18,35 +18,42 @@ hidden: true
 scope: ...
 
 variables:
-  arrowFunctionContinuation: |
-    .*?\)
-    .*?=>
-
   expressionGroupBegin: |
     (?<!
       \]|\)|\}
     )
-    \(
-    (?!
-      {{arrowFunctionContinuation}}
+    (\()
+    (?>
+      (?=
+        \s*(?:async)?
+        \s*\(
+      )
+      |
+      (?!
+        .*?\)
+        .*?=>
+      )
     )
 
 contexts:
   main:
-    - include: sequence
     # Open new expression group.
     - match: |
-        (?x)\s*
+        (?xi)\s*
         {{expressionGroupBegin}}
-      scope: punctuation.delimiter.expression.group.a.begin.js.fjsx15
+      captures:
+        1: punctuation.delimiter.expression.group.a.begin.js.fjsx15
       set: open-b-close-a
+    # Expression contents.
+    - include: sequence
 
   open-a-close-b:
     # Open new expression group.
     - match: |
-        (?x)\s*
+        (?xi)\s*
         {{expressionGroupBegin}}
-      scope: punctuation.delimiter.expression.group.a.begin.js.fjsx15
+      captures:
+        1: punctuation.delimiter.expression.group.a.begin.js.fjsx15
       push: open-b-close-a
     # Close current expression group.
     - match: \s*(\))
@@ -64,9 +71,10 @@ contexts:
   open-b-close-a:
     # Open new expression group.
     - match: |
-        (?x)\s*
+        (?xi)\s*
         {{expressionGroupBegin}}
-      scope: punctuation.delimiter.expression.group.b.begin.js.fjsx15
+      captures:
+        1: punctuation.delimiter.expression.group.b.begin.js.fjsx15
       push: open-a-close-b
     # Close current expression group.
     - match: \s*(\))

@@ -65,7 +65,7 @@ contexts:
         (?x)
         \s*(async)?
         (?=
-          {{commonIdentifier}}
+          \s*{{commonIdentifier}}
           (?:
             \s*:.*?
           )?

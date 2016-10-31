@@ -1,0 +1,138 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
+contexts:
+  main:
+    - include: simple-function
+    - include: complex-function
+    - include: simple-variable
+    - include: complex-variable
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+
+  member-access-operator:
+    - match: \.
+      scope: keyword.operator.other.member-access.js.fjsx15
+
+  simple-variable:
+    - match: |
+        (?x)\s*
+        (?> __dirname
+          | __filename
+        )\b
+      scope: >-
+        support.js.fjsx15
+        entity.name.variable.js.fjsx15
+      pop: true
+
+  complex-variable:
+    - match: |
+        (?x)\s*
+        (?=
+          (?> module\.exports
+            | process\.arch
+            | process\.argv
+            | process\.config
+            | process\.connected
+            | process\.env
+          )
+        )
+      set: complex-variable-components
+
+  complex-variable-components:
+    - include: member-access-operator
+    - include: global-variable
+    - match: ""
+      pop: true
+
+  simple-function:
+    - match: |
+        (?x)\b
+        (?> require
+          | setImmediate
+          | setInterval
+          | setTimeout
+        )
+        (?=\s*\()
+      scope: >-
+        support.js.fjsx15
+        entity.name.function.js.fjsx15
+      set: arguments
+
+  complex-function:
+    - match: |
+        (?x)\b
+        (?=
+          (?> console\.assert
+            | console\.dir
+            | console\.error
+            | console\.info
+            | console\.log
+            | console\.timeEnd
+            | console\.time
+            | console\.trace
+            | console\.warn
+          )
+          \s*\(
+        )
+      set: complex-function-components
+
+  complex-function-components:
+    - include: arguments
+    - include: member-access-operator
+    - include: global-variable
+    # Function.
+    - match: |
+        (?x)\b
+        (?> assert
+          | dir
+          | error
+          | info
+          | log
+          | timeEnd
+          | time
+          | trace
+          | warn
+        )\b
+      scope: >-
+        support.js.fjsx15
+        entity.name.function.js.fjsx15
+
+  global-variable:
+    - match: |
+        (?x)\s*
+        (?> arch
+          | argv
+          | config
+          | connected
+          | console
+          | env
+          | exports
+          | module
+          | process
+        )\b
+      scope: >-
+        support.js.fjsx15
+        entity.name.variable.js.fjsx15

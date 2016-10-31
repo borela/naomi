@@ -49,12 +49,13 @@ contexts:
       set: label
 
   label:
-    - match: (?=\s*;)
-      pop: true
     - match: |
-        (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.label.js.fjsx15
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.label.js.fjsx15
+      pop: true
+    - match: ""
       pop: true
 
   yield:

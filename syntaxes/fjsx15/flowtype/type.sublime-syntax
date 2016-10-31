@@ -28,6 +28,7 @@ contexts:
         1: keyword.operator.other.nullable.flowtype
         2: punctuation.delimiter.nullable.begin.flowtype
       set: [
+        optional-operator,
         enveloped-nullable-end,
         optional-operator,
         type
@@ -47,6 +48,7 @@ contexts:
       ]
 
   optional-operator:
+    - include: comment
     - match: |
         (?x)
         \s*(&)
@@ -69,7 +71,7 @@ contexts:
       captures:
         1: keyword.operator.other.union.flowtype
       set: main
-    - match: ""
+    - match: (?=\S)
       pop: true
 
   enveloped-nullable-end:
@@ -78,7 +80,19 @@ contexts:
       pop: true
 
   type:
+    - include: comment
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/tuple.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/simple.sublime-syntax
+
+  comment:
+    - match: |
+        (?x)
+        (?=\s*
+          (?> //
+            | /\*
+          )
+        )
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax

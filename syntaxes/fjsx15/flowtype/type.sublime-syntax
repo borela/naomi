@@ -17,8 +17,79 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
+  expressionGroupBegin: |
+    (\()
+    (?!\s*
+      (?> {{commonIdentifier}}:
+        | \)\s*=>
+      )
+    )
+
 contexts:
   main:
+    - match: ""
+      set: [
+        optional-operator,
+        loop-begin
+      ]
+
+  loop-begin:
+    # Open new expression group.
+    - match: |
+        (?xi)\s*
+        {{expressionGroupBegin}}
+      captures:
+        1: punctuation.delimiter.expression.group.a.begin.js.fjsx15
+      set: open-b-close-a
+    # Expression contents.
+    - include: type-definitions
+
+  open-a-close-b:
+    # Open new expression group.
+    - match: |
+        (?xi)\s*
+        {{expressionGroupBegin}}
+      captures:
+        1: punctuation.delimiter.expression.group.a.begin.js.fjsx15
+      push: open-b-close-a
+    # Close current expression group.
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.expression.group.b.end.js.fjsx15
+      pop: true
+    # Expression contents.
+    - match: ""
+      push:
+        - include: type-definitions
+        - match: ""
+          pop: true
+
+  open-b-close-a:
+    # Open new expression group.
+    - match: |
+        (?xi)\s*
+        {{expressionGroupBegin}}
+      captures:
+        1: punctuation.delimiter.expression.group.b.begin.js.fjsx15
+      push: open-a-close-b
+    # Close current expression group.
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.expression.group.a.end.js.fjsx15
+      pop: true
+    # Expression contents.
+    - match: ""
+      push:
+        - include: type-definitions
+        - match: ""
+          pop: true
+
+  type-definitions:
     # Enveloped nullable.
     - match: |
         (?x)
@@ -28,24 +99,22 @@ contexts:
         1: keyword.operator.other.nullable.flowtype
         2: punctuation.delimiter.nullable.begin.flowtype
       set: [
-        optional-operator,
         enveloped-nullable-end,
         optional-operator,
-        type
+        type-definitions
       ]
     # Nullable.
     - match: \s*\?
       scope: keyword.operator.other.nullable.flowtype
-      set: [
-        optional-operator,
-        type
-      ]
+      # set: type
     # Normal type.
-    - match: ""
-      set: [
-        optional-operator,
-        type
-      ]
+    - include: comment
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/tuple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/simple.sublime-syntax
 
   optional-operator:
     - include: comment
@@ -78,15 +147,6 @@ contexts:
     - match: \)
       scope: punctuation.delimiter.nullable.end.flowtype
       pop: true
-
-  type:
-    - include: comment
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/function.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/tuple.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/simple.sublime-syntax
 
   comment:
     - match: |

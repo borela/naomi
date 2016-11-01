@@ -213,7 +213,7 @@
 			<key>name</key>
 			<string>Tag attribute</string>
 			<key>scope</key>
-			<string>.entity.other.attribute-name, .entity.name.attribute</string>
+			<string>.entity.other.attribute-name, .entity.name.attribute, .selector</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>

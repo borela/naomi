@@ -115,7 +115,8 @@
 }
 
 .entity.other.attribute-name,
-.entity.name.attribute {
+.entity.name.attribute,
+.selector {
   @name "Tag attribute";
   fontStyle: none;
   foreground: #A6E22E;

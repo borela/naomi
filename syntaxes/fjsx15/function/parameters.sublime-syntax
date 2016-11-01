@@ -17,6 +17,11 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
     - match: \s*(\()
@@ -57,7 +62,13 @@ contexts:
         - match: (?=\s*\[)
           set: destructuring-array
         # Parameter.
-        - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+        - match: |
+            (?xi)
+            ({{commonIdentifier}})(\?)?
+          captures:
+            1: entity.name.variable.js.fjsx15
+            2: keyword.operator.other.optional.flowtype
+          pop: true
 
   associated-type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax

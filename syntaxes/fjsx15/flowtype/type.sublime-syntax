@@ -81,6 +81,8 @@ contexts:
 
   type:
     - include: comment
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/tuple.sublime-syntax

@@ -66,6 +66,7 @@ contexts:
             (?xi)
             ({{commonIdentifier}})(\?)?
           captures:
+            0: parameter.js.fjsx15
             1: entity.name.variable.js.fjsx15
             2: keyword.operator.other.optional.flowtype
           pop: true

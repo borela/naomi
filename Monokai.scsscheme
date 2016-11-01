@@ -1,0 +1,200 @@
+// Licensed under the Apache License, Version 2.0 (the “License”); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+@name "Monokai";
+@uuid D8D5E82E-3D5B-46B5-B38E-8C841C21347D;
+
+* {
+  activeGuide: #9D550FB0;
+  background: #272822;
+  bracketContentsForeground: #F8F8F2A5;
+  bracketContentsOptions: underline;
+  bracketsForeground: #F8F8F2A5;
+  bracketsOptions: underline;
+  caret: #F8F8F0;
+  findHighlight: #FFE792;
+  findHighlightForeground: #000000;
+  foreground: #F8F8F2;
+  invisibles: #3B3A32;
+  lineHighlight: #3E3D32;
+  selection: #49483E;
+  selectionBorder: #222218;
+  tagsOptions: stippled_underline;
+}
+
+.comment {
+  @name "Comment";
+  foreground: #75715E;
+}
+
+.string {
+  @name "String";
+  foreground: #E6DB74;
+}
+
+.constant.numeric {
+  @name "Number";
+  foreground: #AE81FF;
+}
+
+.constant.language,
+.support .entity.name.constant {
+  @name "Built-in constant";
+  foreground: #AE81FF;
+}
+
+.constant.character,
+.constant.other {
+  @name "User-defined constant";
+  foreground: #AE81FF;
+}
+
+.variable {
+  @name "Variable";
+  fontStyle: none;
+}
+
+.keyword {
+  @name "Keyword";
+  foreground: #F92672;
+}
+
+.storage {
+  @name "Storage";
+  fontStyle: none;
+  foreground: #F92672;
+}
+
+.storage.type,
+.keyword.declaration,
+.keyword.modifier {
+  @name "Storage type";
+  fontStyle: italic;
+  foreground: #66D9EF;
+}
+
+.entity.name.class {
+  @name "Class name";
+  fontStyle: underline;
+  foreground: #A6E22E;
+}
+
+.entity.other.inherited-class,
+.entity.name.type {
+  @name "Inherited class";
+  fontStyle: italic underline;
+  foreground: #A6E22E;
+}
+
+.entity.name.function {
+  @name "Function name";
+  fontStyle: none;
+  foreground: #A6E22E;
+}
+
+.variable.parameter,
+.parameter .entity.name.variable {
+  @name "Function argument";
+  fontStyle: italic;
+  foreground: #FD971F;
+}
+
+.entity.name.tag {
+  @name "Tag name";
+  fontStyle: none;
+  foreground: #F92672;
+}
+
+.entity.other.attribute-name,
+.entity.name.attribute {
+  @name "Tag attribute";
+  fontStyle: none;
+  foreground: #A6E22E;
+}
+
+.support {
+  &.function,
+  .entity.name.function {
+    @name "Library function";
+    fontStyle: none;
+    foreground: #66D9EF;
+  }
+
+  &.constant,
+  .entity.name.constant {
+    @name "Library constant";
+    fontStyle: none;
+    foreground: #66D9EF;
+  }
+
+  &.type,
+  &.class,
+  .entity.name.class,
+  .entity.name.attribute,
+  .entity.name.type {
+    @name "Library class/type";
+    fontStyle: italic;
+    foreground: #66D9EF;
+  }
+
+  &.other.variable,
+  .entity.name.variable {
+    @name "Library variable";
+    fontStyle: none;
+  }
+}
+
+.invalid {
+  @name "Invalid";
+  fontStyle: none;
+  foreground: #F8F8F0;
+  background: #F92672;
+}
+
+.invalid.deprecated {
+  @name "Invalid deprecated";
+  foreground: #F8F8F0;
+  background: #AE81FF;
+}
+
+.meta.structure.dictionary.json .string.quoted.double.json {
+  @name "JSON String";
+  foreground: #CFCFC2;
+}
+
+.meta.diff, .meta.diff.header {
+  @name "diff.header";
+  foreground: #75715E;
+}
+
+.markup.deleted {
+  @name "diff.deleted";
+  foreground: #F92672;
+}
+
+.markup.inserted {
+  @name "diff.inserted";
+  foreground: #A6E22E;
+}
+
+.markup.changed {
+  @name "diff.changed";
+  foreground: #E6DB74;
+}
+
+.constant.numeric.line-number.find-in-files {
+  foreground: #AE81FFA0;
+}
+
+.entity.name.filename.find-in-files {
+  foreground: #E6DB74;
+}

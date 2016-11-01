@@ -48,6 +48,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.keyword.operator</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.punctuation.delimiter</string>
 			<key>settings</key>
 			<dict>
@@ -783,7 +792,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.object .keyword</string>
+			<string>.object .keyword.operator</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

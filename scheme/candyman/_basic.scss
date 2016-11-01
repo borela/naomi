@@ -36,6 +36,10 @@
 
 .keyword {
   foreground: $pink-A100;
+
+  &.operator {
+    fontStyle: bold;
+  }
 }
 
 /**

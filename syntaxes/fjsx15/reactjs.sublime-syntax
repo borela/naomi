@@ -1,0 +1,85 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+contexts:
+  main:
+    - include: complex-variable
+
+  member-access-operator:
+    - match: \.
+      scope: keyword.operator.other.member-access.js.fjsx15
+
+  complex-variable:
+    # PropTypes.
+    - match: |
+        (?x)\s*
+        (?=
+          (?> React\.PropTypes
+            | PropTypes
+          )
+          (?:\.
+            (?> bool
+              | func
+              | number
+              | object
+              | string
+            )
+            (?:\.isRequired)?
+          )?
+        )
+      set: complex-variable-components
+    # PropType after function call.
+    - match: |
+        (?x)\s*
+        (?<=
+          \)
+        )
+        (?=
+          \.isRequired
+          (?> \s
+            | ,
+            | ;
+            | $
+          )
+        )
+      set: complex-variable-components
+
+  complex-variable-components:
+    - include: member-access-operator
+    - include: support-variable
+    - match: ""
+      pop: true
+
+  support-variable:
+    - match: |
+        (?x)\s*
+        (
+          (?> func
+            | isRequired
+            | string
+            | number
+            | object
+            | PropTypes
+            | React
+          )
+        )\b
+      captures:
+        1: >-
+          support.js.fjsx15
+          entity.name.variable.js.fjsx15

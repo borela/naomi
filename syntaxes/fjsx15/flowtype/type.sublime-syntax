@@ -47,7 +47,11 @@ contexts:
         1: punctuation.delimiter.expression.group.a.begin.js.fjsx15
       set: open-b-close-a
     # Expression contents.
-    - include: type-definitions
+    - match: ""
+      set: [
+        optional-operator,
+        type-definitions
+      ]
 
   open-a-close-b:
     # Open new expression group.
@@ -64,10 +68,10 @@ contexts:
       pop: true
     # Expression contents.
     - match: ""
-      push:
-        - include: type-definitions
-        - match: ""
-          pop: true
+      push: [
+        optional-operator,
+        type-definitions
+      ]
 
   open-b-close-a:
     # Open new expression group.
@@ -84,10 +88,10 @@ contexts:
       pop: true
     # Expression contents.
     - match: ""
-      push:
-        - include: type-definitions
-        - match: ""
-          pop: true
+      push: [
+        optional-operator,
+        type-definitions
+      ]
 
   type-definitions:
     # Enveloped nullable.
@@ -106,7 +110,6 @@ contexts:
     # Nullable.
     - match: \s*\?
       scope: keyword.operator.other.nullable.flowtype
-      # set: type
     # Normal type.
     - include: comment
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax

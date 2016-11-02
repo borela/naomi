@@ -547,11 +547,20 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.operator.other.association.json, .punctuation.delimiter.object.json, .punctuation.delimiter.object.begin.json, .punctuation.delimiter.object.end.json</string>
+			<string>.keyword.operator.other.association.json</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-1 .punctuation.delimiter.object.json, .level-1 .punctuation.delimiter.object.begin.json, .level-1 .punctuation.delimiter.object.end.json</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ce93d8</string>
 			</dict>
 		</dict>
 		<dict>
@@ -574,6 +583,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.level-2 .punctuation.delimiter.object.json, .level-2 .punctuation.delimiter.object.begin.json, .level-2 .punctuation.delimiter.object.end.json</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4dd0e1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.level-2 .string</string>
 			<key>settings</key>
 			<dict>
@@ -588,6 +606,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#AED58180</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-3 .punctuation.delimiter.object.json, .level-3 .punctuation.delimiter.object.begin.json, .level-3 .punctuation.delimiter.object.end.json</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#9ccc65</string>
 			</dict>
 		</dict>
 		<dict>
@@ -610,6 +637,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.level-4 .punctuation.delimiter.object.json, .level-4 .punctuation.delimiter.object.begin.json, .level-4 .punctuation.delimiter.object.end.json</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f36c60</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.level-4 .string</string>
 			<key>settings</key>
 			<dict>
@@ -624,6 +660,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#FFAB9180</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-5 .punctuation.delimiter.object.json, .level-5 .punctuation.delimiter.object.begin.json, .level-5 .punctuation.delimiter.object.end.json</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffab91</string>
 			</dict>
 		</dict>
 		<dict>
@@ -646,6 +691,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.level-6 .punctuation.delimiter.object.json, .level-6 .punctuation.delimiter.object.begin.json, .level-6 .punctuation.delimiter.object.end.json</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffe082</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.level-6 .string</string>
 			<key>settings</key>
 			<dict>
@@ -660,6 +714,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#F48FB180</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.level-7 .punctuation.delimiter.object.json, .level-7 .punctuation.delimiter.object.begin.json, .level-7 .punctuation.delimiter.object.end.json</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f48fb1</string>
 			</dict>
 		</dict>
 		<dict>

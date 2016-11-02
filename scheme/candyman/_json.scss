@@ -10,14 +10,17 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.keyword.operator.other.association.json,
-.punctuation.delimiter.object.json,
-.punctuation.delimiter.object.begin.json,
-.punctuation.delimiter.object.end.json {
+.keyword.operator.other.association.json {
   foreground: $grey-0;
 }
 
 .level-1 {
+  .punctuation.delimiter.object.json,
+  .punctuation.delimiter.object.begin.json,
+  .punctuation.delimiter.object.end.json {
+    foreground: $purple-200;
+  }
+
   .string {
     foreground: $cyan-300;
   }
@@ -28,6 +31,12 @@
 }
 
 .level-2 {
+  .punctuation.delimiter.object.json,
+  .punctuation.delimiter.object.begin.json,
+  .punctuation.delimiter.object.end.json {
+    foreground: $cyan-300;
+  }
+
   .string {
     foreground: $light-green-400;
   }
@@ -38,6 +47,12 @@
 }
 
 .level-3 {
+  .punctuation.delimiter.object.json,
+  .punctuation.delimiter.object.begin.json,
+  .punctuation.delimiter.object.end.json {
+    foreground: $light-green-400;
+  }
+
   .string {
     foreground: $red-300;
   }
@@ -48,6 +63,12 @@
 }
 
 .level-4 {
+  .punctuation.delimiter.object.json,
+  .punctuation.delimiter.object.begin.json,
+  .punctuation.delimiter.object.end.json {
+    foreground: $red-300;
+  }
+
   .string {
     foreground: $deep-orange-200;
   }
@@ -58,6 +79,12 @@
 }
 
 .level-5 {
+  .punctuation.delimiter.object.json,
+  .punctuation.delimiter.object.begin.json,
+  .punctuation.delimiter.object.end.json {
+    foreground: $deep-orange-200;
+  }
+
   .string {
     foreground: $amber-200;
   }
@@ -68,6 +95,12 @@
 }
 
 .level-6 {
+  .punctuation.delimiter.object.json,
+  .punctuation.delimiter.object.begin.json,
+  .punctuation.delimiter.object.end.json {
+    foreground: $amber-200;
+  }
+
   .string {
     foreground: $pink-200;
   }
@@ -78,6 +111,12 @@
 }
 
 .level-7 {
+  .punctuation.delimiter.object.json,
+  .punctuation.delimiter.object.begin.json,
+  .punctuation.delimiter.object.end.json {
+    foreground: $pink-200;
+  }
+
   .string {
     foreground: $purple-200;
   }

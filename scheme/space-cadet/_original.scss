@@ -1,0 +1,60 @@
+@uuid 2C24E84F-F9FE-4C2E-92D2-F52198BA7E41;
+
+* {
+  background: #0D0D0D;
+  caret: #7F005D;
+  foreground: #DDE6CF;
+  invisibles: #BFBFBF;
+  lineHighlight: #00000012;
+  selection: #40002F;
+}
+
+comment {
+  foreground: #473C45;
+}
+
+string {
+  foreground: #805978;
+}
+
+constant {
+  foreground: #A8885A;
+}
+
+variable.parameter,
+variable.other {
+  foreground: #596380;
+}
+
+keyword \- keyword.operator,
+keyword.operator.logical {
+  foreground: #728059;
+}
+
+storage {
+  foreground: #9EBF60;
+}
+
+entity {
+  foreground: #6078BF;
+}
+
+entity.other.inherited-class {
+  fontStyle: italic;
+}
+
+support {
+  foreground: #8A4B66;
+}
+
+support.type.exception {
+  foreground: #893062;
+}
+
+invalid {
+  background: #5F0047;
+}
+
+meta.function.section {
+  background: #371D28;
+}

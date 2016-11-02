@@ -1,0 +1,133 @@
+@uuid A2C6BAA7-90D0-4147-BBF5-96B0CD92D109;
+
+* {
+  background: #0C1021;
+  caret: #FFFFFFA6;
+  foreground: #F8F8F8;
+  invisibles: #FFFFFF40;
+  lineHighlight: #FFFFFF0F;
+  selection: #253B76;
+}
+
+comment {
+  fontStyle: none;
+  foreground: #AEAEAE;
+}
+
+constant {
+  fontStyle: none;
+  foreground: #D8FA3C;
+}
+
+entity {
+  fontStyle: none;
+  foreground: #FF6400;
+}
+
+keyword {
+  fontStyle: none;
+  foreground: #FBDE2D;
+}
+
+storage {
+  fontStyle: none;
+  foreground: #FBDE2D;
+}
+
+string,
+meta.verbatim {
+  fontStyle: none;
+  foreground: #61CE3C;
+}
+
+support {
+  fontStyle: none;
+  foreground: #8DA6CE;
+}
+
+variable {
+  fontStyle: none;
+}
+
+invalid.deprecated {
+  fontStyle: italic;
+  foreground: #AB2A1D;
+}
+
+invalid.illegal {
+  foreground: #F8F8F8;
+  background: #9D1E15;
+}
+
+entity.other.inherited-class {
+  fontStyle: italic;
+  foreground: #FF6400;
+}
+
+string constant.other.placeholder {
+  fontStyle: none;
+  foreground: #FF6400;
+}
+
+meta.function-call.py {
+  fontStyle: none;
+  foreground: #BECDE6;
+}
+
+meta.tag,
+meta.tag entity {
+  foreground: #7F90AA;
+}
+
+entity.name.section {
+  fontStyle: none;
+  foreground: #FFFFFF;
+}
+
+keyword.type.variant {
+  foreground: #D5E0F3;
+}
+
+source.ocaml keyword.operator.symbol {
+  foreground: #F8F8F8;
+}
+
+source.ocaml keyword.operator.symbol.infix {
+  fontStyle: none;
+  foreground: #8DA6CE;
+}
+
+source.ocaml keyword.operator.symbol.prefix {
+  fontStyle: none;
+  foreground: #8DA6CE;
+}
+
+source.ocaml keyword.operator.symbol.infix.floating-point {
+  fontStyle: underline;
+}
+
+source.ocaml keyword.operator.symbol.prefix.floating-point {
+  fontStyle: underline;
+}
+
+source.ocaml constant.numeric.floating-point {
+  fontStyle: underline;
+}
+
+text.tex.latex meta.function.environment {
+  background: #FFFFFF08;
+}
+
+text.tex.latex meta.function.environment meta.function.environment {
+  background: #7A96FA08;
+}
+
+text.tex.latex support.function {
+  fontStyle: none;
+  foreground: #FBDE2D;
+}
+
+source.plist string.unquoted,
+source.plist keyword.operator {
+  foreground: #FFFFFF;
+}

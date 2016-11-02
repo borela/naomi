@@ -1,0 +1,169 @@
+// Licensed under the Apache License, Version 2.0 (the Ôö£├ÂÔö£├ºÔö¼├║LicenseÔö£├ÂÔö£├ºÔö£├┐); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an Ôö£├ÂÔö£├ºÔö¼├║AS ISÔö£├ÂÔö£├ºÔö£├┐ BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+* {
+  activeGuide: #9D550FB0;
+  background: #222b30;
+  bracketContentsForeground: #866a5aA5;
+  bracketContentsOptions: underline;
+  bracketsForeground: #866a5aA5;
+  bracketsOptions: underline;
+  caret: #F8F8F0;
+  findHighlight: #ea8b2a;
+  findHighlightForeground: #000000;
+  foreground: #cbd1d2;
+  invisibles: #3B3A32;
+  lineHighlight: #3E3D32;
+  selection: #4b7b91;
+  selectionBorder: #222218;
+  tagsOptions: stippled_underline;
+}
+
+comment {
+  fontStyle: none;
+  foreground: #4b92a7;
+}
+
+string {
+  foreground: #9ed670;
+}
+
+constant.numeric {
+  foreground: #a475bd;
+}
+
+constant.language {
+  foreground: #a475bd;
+}
+
+constant.character,
+constant.other {
+  foreground: #a475bd;
+}
+
+variable {
+  fontStyle: none;
+}
+
+keyword {
+  foreground: #ee88cc;
+}
+
+meta.tag,
+declaration.tag {
+  fontStyle: none;
+  foreground: #ee88cc;
+}
+
+storage {
+  fontStyle: none;
+  foreground: #ee88cc;
+}
+
+storage.type {
+  fontStyle: italic;
+  foreground: #07cc95;
+}
+
+entity.name.class {
+  fontStyle: underline;
+  foreground: #50fa7b;
+}
+
+entity.other.inherited-class {
+  fontStyle: italic underline;
+  foreground: #50fa7b;
+}
+
+entity.name.function {
+  fontStyle: bold;
+  foreground: #63c9ec;
+}
+
+variable.parameter {
+  fontStyle: italic;
+  foreground: #f48d8d;
+}
+
+entity.name.tag {
+  fontStyle: none;
+  foreground: #ee88cc;
+}
+
+entity.other.attribute-name {
+  fontStyle: none;
+  foreground: #50fa7b;
+}
+
+support.function {
+  fontStyle: none;
+  foreground: #07cc95;
+}
+
+support.constant {
+  fontStyle: none;
+  foreground: #6bc3d4;
+}
+
+support.type,
+support.class {
+  fontStyle: italic bold;
+  foreground: #8abbe7;
+}
+
+support.other.variable {
+  fontStyle: none;
+}
+
+invalid {
+  fontStyle: none;
+  foreground: #F8F8F0;
+  background: #ee88cc;
+}
+
+invalid.deprecated {
+  foreground: #F8F8F0;
+  background: #a475bd;
+}
+
+meta.structure.dictionary.json string.quoted.double.json {
+  foreground: #CFCFC2;
+}
+
+meta.diff,
+meta.diff.header {
+  foreground: #6272a4;
+}
+
+markup.deleted {
+  foreground: #ee88cc;
+}
+
+markup.inserted {
+  foreground: #50fa7b;
+}
+
+markup.changed {
+  foreground: #E6DB74;
+}
+
+constant.numeric.line-number.find-in-files \- match {
+  foreground: #a475bd;
+}
+
+entity.name.filename {
+  foreground: #E6DB74;
+}
+
+message.error {
+  foreground: #F83333;
+}

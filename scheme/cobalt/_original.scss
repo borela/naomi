@@ -1,0 +1,220 @@
+@uuid 06CD1FB2-A00A-4F8C-97B2-60E131980454;
+
+* {
+  background: #002240;
+  caret: #FFFFFF;
+  foreground: #FFFFFF;
+  invisibles: #FFFFFF26;
+  lineHighlight: #00000059;
+  selection: #B36539BF;
+}
+
+punctuation \- \(punctuation.definition.string \|\| punctuation.definition.comment\) {
+  fontStyle: none;
+  foreground: #E1EFFF;
+}
+
+constant {
+  fontStyle: none;
+  foreground: #FF628C;
+}
+
+entity {
+  fontStyle: none;
+  foreground: #FFDD00;
+}
+
+keyword {
+  fontStyle: none;
+  foreground: #FF9D00;
+}
+
+storage {
+  fontStyle: none;
+  foreground: #FFEE80;
+}
+
+string -string.unquoted.old-plist -string.unquoted.heredoc,
+string.unquoted.heredoc string {
+  fontStyle: none;
+  foreground: #3AD900;
+}
+
+comment {
+  fontStyle: italic;
+  foreground: #0088FF;
+}
+
+support {
+  fontStyle: none;
+  foreground: #80FFBB;
+}
+
+variable {
+  fontStyle: none;
+  foreground: #CCCCCC;
+}
+
+variable.language {
+  fontStyle: none;
+  foreground: #FF80E1;
+}
+
+meta.function-call {
+  foreground: #FFEE80;
+}
+
+invalid {
+  foreground: #F8F8F8;
+  background: #800F00;
+}
+
+text source,
+string.unquoted.heredoc,
+source source {
+  fontStyle: none;
+  foreground: #FFFFFF;
+  background: #223545;
+}
+
+entity.other.inherited-class {
+  fontStyle: italic;
+  foreground: #80FCFF;
+}
+
+string.quoted source {
+  fontStyle: none;
+  foreground: #9EFF80;
+}
+
+string constant {
+  foreground: #80FF82;
+}
+
+string.regexp {
+  foreground: #80FFC2;
+}
+
+string variable {
+  foreground: #EDEF7D;
+}
+
+support.function {
+  fontStyle: none;
+  foreground: #FFB054;
+}
+
+support.constant {
+  fontStyle: none;
+  foreground: #EB939A;
+}
+
+support.type.exception {
+  foreground: #FF1E00;
+}
+
+meta.preprocessor.c {
+  foreground: #8996A8;
+}
+
+meta.preprocessor.c keyword {
+  foreground: #AFC4DB;
+}
+
+meta.sgml.html meta.doctype,
+meta.sgml.html meta.doctype entity,
+meta.sgml.html meta.doctype string,
+meta.xml-processing,
+meta.xml-processing entity,
+meta.xml-processing string {
+  foreground: #73817D;
+}
+
+meta.tag,
+meta.tag entity {
+  foreground: #9EFFFF;
+}
+
+meta.selector.css entity.name.tag {
+  foreground: #9EFFFF;
+}
+
+meta.selector.css entity.other.attribute-name.id {
+  foreground: #FFB454;
+}
+
+meta.selector.css entity.other.attribute-name.class {
+  foreground: #5FE461;
+}
+
+support.type.property-name.css {
+  foreground: #9DF39F;
+}
+
+meta.property-group support.constant.property-value.css,
+meta.property-value support.constant.property-value.css {
+  foreground: #F6F080;
+}
+
+meta.preprocessor.at-rule keyword.control.at-rule {
+  foreground: #F6AA11;
+}
+
+meta.property-value support.constant.named-color.css,
+meta.property-value constant {
+  foreground: #EDF080;
+}
+
+meta.constructor.argument.css {
+  foreground: #EB939A;
+}
+
+meta.diff,
+meta.diff.header {
+  fontStyle: none;
+  foreground: #F8F8F8;
+  background: #000E1A;
+}
+
+markup.deleted {
+  foreground: #F8F8F8;
+  background: #4C0900;
+}
+
+markup.changed {
+  foreground: #F8F8F8;
+  background: #806F00;
+}
+
+markup.inserted {
+  foreground: #F8F8F8;
+  background: #154F00;
+}
+
+markup.raw {
+  background: #8FDDF630;
+}
+
+markup.quote {
+  background: #004480;
+}
+
+markup.list {
+  background: #130D26;
+}
+
+markup.bold {
+  fontStyle: bold;
+  foreground: #C1AFFF;
+}
+
+markup.italic {
+  fontStyle: italic;
+  foreground: #B8FFD9;
+}
+
+markup.heading {
+  fontStyle: bold;
+  foreground: #C8E4FD;
+  background: #001221;
+}

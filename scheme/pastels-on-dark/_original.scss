@@ -1,0 +1,263 @@
+@uuid 343011CC-B7DF-11D9-B5C6-000D93C8BE28;
+
+* {
+  background: #211E1E;
+  caret: #FFFFFF;
+  foreground: #DADADA;
+  invisibles: #4F4D4D;
+  lineHighlight: #353030;
+  selection: #73597E80;
+}
+
+comment {
+  fontStyle: none;
+  foreground: #555555;
+}
+
+comment.block {
+  fontStyle: none;
+  foreground: #555555;
+}
+
+string {
+  foreground: #AD9361;
+}
+
+constant.numeric {
+  fontStyle: none;
+  foreground: #CCCCCC;
+}
+
+keyword {
+  fontStyle: none;
+  foreground: #A1A1FF;
+}
+
+meta.preprocessor {
+  fontStyle: none;
+  foreground: #2F006E;
+}
+
+keyword.control.import {
+  fontStyle: bold;
+}
+
+support.function {
+  fontStyle: none;
+  foreground: #A1A1FF;
+}
+
+declaration.function function-result {
+  foreground: #0000FF;
+}
+
+declaration.function function-name {
+  fontStyle: bold;
+}
+
+declaration.function argument-name {
+  fontStyle: bold;
+}
+
+declaration.function function-arg-type {
+  foreground: #0000FF;
+}
+
+declaration.function function-argument {
+  fontStyle: italic;
+}
+
+declaration.class class-name {
+  fontStyle: underline;
+}
+
+declaration.class class-inheritance {
+  fontStyle: italic underline;
+}
+
+invalid {
+  fontStyle: bold;
+  foreground: #FFF9F9;
+  background: #FF0000;
+}
+
+invalid.deprecated.trailing-whitespace {
+  background: #FFD0D0;
+}
+
+declaration.section section-name {
+  fontStyle: italic;
+}
+
+string.interpolation {
+  foreground: #C10006;
+}
+
+string.regexp {
+  fontStyle: none;
+  foreground: #666666;
+}
+
+variable {
+  foreground: #C1C144;
+}
+
+constant {
+  foreground: #6782D3;
+}
+
+constant.character {
+  fontStyle: none;
+  foreground: #AFA472;
+}
+
+constant.language {
+  fontStyle: bold;
+  foreground: #DE8E30;
+}
+
+embedded {
+  fontStyle: underline;
+}
+
+keyword.markup.element-name {
+  fontStyle: none;
+  foreground: #858EF4;
+}
+
+keyword.markup.attribute-name {
+  fontStyle: none;
+  foreground: #9B456F;
+}
+
+meta.attribute-with-value {
+  fontStyle: none;
+  foreground: #9B456F;
+}
+
+keyword.exception {
+  fontStyle: bold;
+  foreground: #C82255;
+}
+
+keyword.operator {
+  fontStyle: none;
+  foreground: #47B8D6;
+}
+
+keyword.control {
+  fontStyle: bold;
+  foreground: #6969FA;
+}
+
+meta.tag.preprocessor.xml {
+  foreground: #68685B;
+}
+
+meta.tag.sgml.doctype {
+  foreground: #888888;
+}
+
+string.quoted.docinfo.doctype.DTD {
+  fontStyle: italic;
+}
+
+comment.other.server-side-include.xhtml,
+comment.other.server-side-include.html {
+  foreground: #909090;
+}
+
+text.html declaration.tag,
+text.html meta.tag,
+text.html entity.name.tag.xhtml {
+  foreground: #858EF4;
+}
+
+keyword.markup.attribute-name {
+  foreground: #9B456F;
+}
+
+keyword.other.phpdoc.php {
+  foreground: #777777;
+}
+
+keyword.other.include.php {
+  foreground: #C82255;
+}
+
+support.constant.core.php {
+  fontStyle: bold;
+  foreground: #DE8E20;
+}
+
+support.constant.std.php {
+  fontStyle: bold;
+  foreground: #DE8E10;
+}
+
+variable.other.global.php {
+  foreground: #B72E1D;
+}
+
+variable.other.global.safer.php {
+  foreground: #00FF00;
+}
+
+string.quoted.single.php {
+  foreground: #BFA36D;
+}
+
+keyword.storage.php {
+  foreground: #6969FA;
+}
+
+string.quoted.double.php {
+  foreground: #AD9361;
+}
+
+entity.other.attribute-name.id.css {
+  foreground: #EC9E00;
+}
+
+entity.name.tag.css {
+  fontStyle: bold;
+  foreground: #B8CD06;
+}
+
+entity.other.attribute-name.class.css {
+  foreground: #EDCA06;
+}
+
+entity.other.attribute-name.pseudo-class.css {
+  foreground: #2E759C;
+}
+
+invalid.bad-comma.css {
+  foreground: #FFFFFF;
+  background: #FF0000;
+}
+
+support.constant.property-value.css {
+  foreground: #9B2E4D;
+}
+
+support.type.property-name.css {
+  foreground: #E1C96B;
+}
+
+constant.other.rgb-value.css {
+  foreground: #666633;
+}
+
+support.constant.font-name.css {
+  foreground: #666633;
+}
+
+support.constant.tm-language-def,
+support.constant.name.tm-language-def {
+  foreground: #7171F3;
+}
+
+keyword.other.unit.css {
+  foreground: #6969FA;
+}

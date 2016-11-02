@@ -1,0 +1,111 @@
+@uuid A1E55FCB-3CD2-4811-9E73-D9B87419443A;
+
+* {
+  background: #FFFFFF;
+  caret: #7C7C7C;
+  foreground: #000000;
+  invisibles: #B6B6B6;
+  lineHighlight: #EFFCA68F;
+  selection: #E3FC8D;
+}
+
+comment {
+  fontStyle: none;
+  foreground: #8C868F;
+}
+
+constant {
+  fontStyle: none;
+  foreground: #3B5BB5;
+}
+
+entity {
+  fontStyle: none;
+  foreground: #3B5BB5;
+}
+
+text.tex.latex entity {
+  fontStyle: none;
+  foreground: #D62A28;
+}
+
+keyword,
+storage {
+  fontStyle: none;
+  foreground: #FF7800;
+}
+
+string,
+meta.verbatim {
+  fontStyle: none;
+  foreground: #409B1C;
+}
+
+support {
+  fontStyle: none;
+  foreground: #3B5BB5;
+}
+
+variable {
+  fontStyle: none;
+}
+
+invalid.deprecated {
+  fontStyle: italic;
+  foreground: #990000;
+}
+
+invalid.illegal {
+  foreground: #F8F8F8;
+  background: #9D1E15;
+}
+
+entity.other.inherited-class {
+  fontStyle: italic;
+  foreground: #3B5BB5;
+}
+
+string constant.other.placeholder {
+  fontStyle: none;
+  foreground: #671EBB;
+}
+
+meta.function-call.py {
+  fontStyle: none;
+  foreground: #3E4558;
+}
+
+meta.tag,
+meta.tag entity {
+  foreground: #3A4A64;
+}
+
+keyword.type.variant {
+  fontStyle: none;
+  foreground: #7F90AA;
+}
+
+source.ocaml keyword.operator {
+  foreground: #000000;
+}
+
+source.ocaml keyword.operator.symbol.infix {
+  fontStyle: none;
+  foreground: #3B5BB5;
+}
+
+source.ocaml keyword.operator.symbol.prefix {
+  foreground: #3B5BB5;
+}
+
+source.ocaml keyword.operator.symbol.infix.floating-point {
+  fontStyle: underline;
+}
+
+source.ocaml keyword.operator.symbol.prefix.floating-point {
+  fontStyle: underline;
+}
+
+source.ocaml constant.numeric.floating-point {
+  fontStyle: underline;
+}

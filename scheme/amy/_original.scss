@@ -1,0 +1,186 @@
+@uuid 3C01FADD-7592-49DD-B7A5-1B82CA4E57B5;
+
+* {
+  background: #200020;
+  caret: #7070FF;
+  foreground: #D0D0FF;
+  invisibles: #BFBFBF;
+  lineHighlight: #80000040;
+  selection: #80000080;
+}
+
+comment.block {
+  fontStyle: italic;
+  foreground: #404080;
+  background: #200020;
+}
+
+string {
+  foreground: #999999;
+}
+
+constant.language {
+  foreground: #707090;
+}
+
+constant.numeric {
+  foreground: #7090B0;
+}
+
+constant.numeric.integer.int32 {
+  fontStyle: bold;
+}
+
+constant.numeric.integer.int64 {
+  fontStyle: italic;
+}
+
+constant.numeric.integer.nativeint {
+  fontStyle: bold italic;
+}
+
+constant.numeric.floating-point.ocaml {
+  fontStyle: underline;
+}
+
+constant.character {
+  fontStyle: none;
+  foreground: #666666;
+}
+
+constant.language.boolean {
+  foreground: #8080A0;
+}
+
+variable.language,
+variable.other {
+  fontStyle: none;
+  foreground: #008080;
+}
+
+keyword {
+  foreground: #A080FF;
+}
+
+keyword.operator {
+  foreground: #A0A0FF;
+}
+
+keyword.other.decorator {
+  foreground: #D0D0FF;
+}
+
+keyword.operator.infix.floating-point.ocaml {
+  fontStyle: underline;
+}
+
+keyword.operator.prefix.floating-point.ocaml {
+  fontStyle: underline;
+}
+
+keyword.other.directive {
+  fontStyle: none;
+  foreground: #C080C0;
+}
+
+keyword.other.directive.line-number {
+  fontStyle: underline;
+  foreground: #C080C0;
+}
+
+keyword.control {
+  foreground: #80A0FF;
+}
+
+storage {
+  foreground: #B0FFF0;
+}
+
+entity.name.type.variant {
+  foreground: #60B0FF;
+}
+
+storage.type.variant.polymorphic,
+entity.name.type.variant.polymorphic {
+  fontStyle: italic;
+  foreground: #60B0FF;
+}
+
+entity.name.type.module {
+  foreground: #B000B0;
+}
+
+entity.name.type.module-type.ocaml {
+  fontStyle: underline;
+  foreground: #B000B0;
+}
+
+support.other {
+  foreground: #A00050;
+}
+
+entity.name.type.class {
+  foreground: #70E080;
+}
+
+entity.name.type.class-type {
+  fontStyle: none;
+  foreground: #70E0A0;
+}
+
+entity.name.function {
+  foreground: #50A0A0;
+}
+
+variable.parameter {
+  foreground: #80B0B0;
+}
+
+entity.name.type.token {
+  fontStyle: none;
+  foreground: #3080A0;
+}
+
+entity.name.type.token.reference {
+  fontStyle: none;
+  foreground: #3CB0D0;
+}
+
+entity.name.function.non-terminal {
+  foreground: #90E0E0;
+}
+
+entity.name.function.non-terminal.reference {
+  foreground: #C0F0F0;
+}
+
+entity.name.tag {
+  foreground: #009090;
+}
+
+support.constant {
+  background: #200020;
+}
+
+invalid.illegal {
+  fontStyle: bold;
+  foreground: #400080;
+  background: #FFFF00;
+}
+
+invalid.deprecated {
+  foreground: #200020;
+  background: #CC66FF;
+}
+
+source.camlp4.embedded {
+  background: #40008054;
+}
+
+source.camlp4.embedded.parser.ocaml {
+  fontStyle: none;
+}
+
+punctuation {
+  foreground: #805080;
+}

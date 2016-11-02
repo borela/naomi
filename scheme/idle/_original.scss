@@ -1,0 +1,79 @@
+@uuid DDC0CBE1-442B-4CB5-80E4-26E4CFB3A277;
+
+* {
+  background: #FFFFFF;
+  caret: #000000;
+  foreground: #000000;
+  invisibles: #BFBFBF;
+  lineHighlight: #00000012;
+  selection: #BAD6FD;
+}
+
+comment {
+  foreground: #919191;
+}
+
+string {
+  foreground: #00A33F;
+}
+
+constant.numeric {}
+
+constant.language {
+  foreground: #A535AE;
+}
+
+constant.character, constant.other {}
+
+variable.language, variable.other {}
+
+keyword {
+  foreground: #FF5600;
+}
+
+storage {
+  foreground: #FF5600;
+}
+
+entity.name.type {
+  foreground: #21439C;
+}
+
+entity.other.inherited-class {}
+
+entity.name.function {
+  foreground: #21439C;
+}
+
+variable.parameter {}
+
+entity.name.tag {}
+
+entity.other.attribute-name {}
+
+support.function {
+  foreground: #A535AE;
+}
+
+support.constant {
+  foreground: #A535AE;
+}
+
+support.type,
+support.class {
+  foreground: #A535AE;
+}
+
+support.variable {
+  foreground: #A535AE;
+}
+
+invalid {
+  foreground: #FFFFFF;
+  background: #990000;
+}
+
+constant.other.placeholder.py {
+  fontStyle: none;
+  foreground: #990000;
+}

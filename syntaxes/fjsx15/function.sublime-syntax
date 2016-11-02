@@ -36,8 +36,12 @@ contexts:
           \s*\(
         )
       captures:
-        1: keyword.modifier.async.js.fjsx15
-        2: keyword.declaration.function.js.fjsx15
+        1: >-
+          keyword.modifier.async.js.fjsx15
+          storage.modifier.js.fjsx15
+        2: >-
+          keyword.declaration.function.js.fjsx15
+          storage.type.js.fjsx15
       set: declaration
     # Simple function with identifier.
     - match: |
@@ -52,8 +56,12 @@ contexts:
           \s*\(
         )
       captures:
-        1: keyword.modifier.async.js.fjsx15
-        2: keyword.declaration.function.js.fjsx15
+        1: >-
+          keyword.modifier.async.js.fjsx15
+          storage.modifier.js.fjsx15
+        2: >-
+          keyword.declaration.function.js.fjsx15
+          storage.type.js.fjsx15
       set: declaration
     # Templated function without identifier.
     - match: |
@@ -67,8 +75,12 @@ contexts:
           \s*<.*>\s*\(
         )
       captures:
-        1: keyword.modifier.async.js.fjsx15
-        2: keyword.declaration.function.js.fjsx15
+        1: >-
+          keyword.modifier.async.js.fjsx15
+          storage.modifier.js.fjsx15
+        2: >-
+          keyword.declaration.function.js.fjsx15
+          storage.type.js.fjsx15
       set: declaration
     # Templated function with identifier.
     - match: |
@@ -83,8 +95,12 @@ contexts:
           \s*<.*>\s*\(
         )
       captures:
-        1: keyword.modifier.async.js.fjsx15
-        2: keyword.declaration.function.js.fjsx15
+        1: >-
+          keyword.modifier.async.js.fjsx15
+          storage.modifier.js.fjsx15
+        2: >-
+          keyword.declaration.function.js.fjsx15
+          storage.type.js.fjsx15
       set: declaration
 
   declaration:
@@ -108,7 +124,9 @@ contexts:
           ({{commonIdentifier}})
         )?
       captures:
-        1: keyword.modifier.generator.js.fjsx15
+        1: >-
+          keyword.modifier.generator.js.fjsx15
+          storage.modifier.js.fjsx15
         2: entity.name.function.js.fjsx15
 
   template-parameters:

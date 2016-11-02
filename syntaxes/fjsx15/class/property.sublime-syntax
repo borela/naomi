@@ -31,7 +31,9 @@ contexts:
         (?=
           \s+{{commonIdentifier}}
         )
-      scope: keyword.modifier.js.fjsx15
+      scope: >-
+        keyword.modifier.js.fjsx15
+        storage.modifier.js.fjsx15
       set: declaration
     # Normal variable.
     - match: |
@@ -39,7 +41,9 @@ contexts:
         (?=
           {{commonIdentifier}}
         )
-      scope: keyword.modifier.js.fjsx15
+      scope: >-
+        keyword.modifier.js.fjsx15
+        storage.modifier.js.fjsx15
       set: declaration
 
   declaration:

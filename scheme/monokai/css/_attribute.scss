@@ -10,12 +10,15 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@name 'Monokai';
+.support {
+    .entity.name.attribute.css {
+      foreground: #66d9ef;
+      fontStyle: italic;
+    }
+}
 
-@import 'scheme/monokai/original';
-
-@import 'scheme/monokai/css/attribute';
-@import 'scheme/monokai/class';
-@import 'scheme/monokai/function';
-@import 'scheme/monokai/import';
-@import 'scheme/monokai/variable';
+.extension {
+    .entity.name.attribute.css {
+      foreground: #66d9ef;
+    }
+}

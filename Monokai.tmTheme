@@ -361,6 +361,26 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.support .entity.name.attribute.css</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#66d9ef</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.extension .entity.name.attribute.css</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#66d9ef</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.keyword.declaration.class, .keyword.modifier</string>
 			<key>settings</key>
 			<dict>

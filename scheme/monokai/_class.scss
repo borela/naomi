@@ -10,11 +10,7 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@name 'Monokai';
-
-@import 'scheme/monokai/original';
-
-@import 'scheme/monokai/class';
-@import 'scheme/monokai/function';
-@import 'scheme/monokai/import';
-@import 'scheme/monokai/variable';
+.keyword.declaration.class,
+.keyword.modifier {
+  foreground: #66d9ef;
+}

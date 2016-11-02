@@ -1,0 +1,164 @@
+* {
+  activeGuide: #9D550FB0;
+  background: #272822;
+  bracketContentsForeground: #F8F8F2A5;
+  bracketContentsOptions: underline;
+  bracketsForeground: #F8F8F2A5;
+  bracketsOptions: underline;
+  caret: #F8F8F0;
+  findHighlight: #FFE792;
+  findHighlightForeground: #000000;
+  foreground: #F8F8F2;
+  invisibles: #3B3A32;
+  lineHighlight: #3E3D32;
+  selection: #49483E;
+  selectionBorder: #222218;
+  tagsOptions: stippled_underline;
+}
+
+comment {
+  foreground: #75715E;
+}
+
+string {
+  foreground: #E6DB74;
+}
+
+constant.numeric {
+  foreground: #AE81FF;
+}
+
+constant.language {
+  foreground: #AE81FF;
+}
+
+constant.character,
+constant.other {
+  foreground: #AE81FF;
+}
+
+variable {
+  fontStyle: none;
+}
+
+keyword \- \(source.c keyword.operator \| source.cpp keyword.operator \| source.objc keyword.operator \| source.objcpp keyword.operator\),
+keyword.operator.word {
+  foreground: #F92672;
+}
+
+variable.other.dollar.only.js {
+  foreground: #F92672;
+}
+
+storage {
+  fontStyle: none;
+  foreground: #F92672;
+}
+
+storage.type {
+  fontStyle: italic;
+  foreground: #66D9EF;
+}
+
+entity.name \- \(entity.name.filename \| entity.name.section \| entity.name.tag \| entity.name.label\) {
+  fontStyle: none;
+  foreground: #A6E22E;
+}
+
+entity.other.inherited-class {
+  fontStyle: italic underline;
+  foreground: #A6E22E;
+}
+
+variable.parameter \- \(source.c \| source.cpp \| source.objc \| source.objcpp\) {
+  fontStyle: italic;
+  foreground: #FD971F;
+}
+
+variable.language {
+  fontStyle: italic;
+  foreground: #FD971F;
+}
+
+entity.name.tag {
+  fontStyle: none;
+  foreground: #F92672;
+}
+
+entity.other.attribute-name {
+  fontStyle: none;
+  foreground: #A6E22E;
+}
+
+variable.function {
+  fontStyle: none;
+  foreground: #66D9EF;
+}
+
+support.function {
+  fontStyle: none;
+  foreground: #66D9EF;
+}
+
+support.constant {
+  fontStyle: none;
+  foreground: #66D9EF;
+}
+
+support.type,
+support.class {
+  fontStyle: italic;
+  foreground: #66D9EF;
+}
+
+support.other.variable {
+  fontStyle: none;
+}
+
+invalid {
+  fontStyle: none;
+  foreground: #F8F8F0;
+  background: #F92672;
+}
+
+invalid.deprecated {
+  foreground: #F8F8F0;
+  background: #AE81FF;
+}
+
+meta.structure.dictionary.json string.quoted.double.json {
+  foreground: #CFCFC2;
+}
+
+string.unquoted.yaml {
+  foreground: #F8F8F2;
+}
+
+meta.diff,
+meta.diff.header {
+  foreground: #75715E;
+}
+
+markup.deleted {
+  foreground: #F92672;
+}
+
+markup.inserted {
+  foreground: #A6E22E;
+}
+
+markup.changed {
+  foreground: #E6DB74;
+}
+
+constant.numeric.line-number.find-in-files \- match {
+  foreground: #AE81FFA0;
+}
+
+entity.name.filename {
+  foreground: #E6DB74;
+}
+
+message.error {
+  foreground: #F83333;
+}

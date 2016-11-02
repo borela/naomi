@@ -10,11 +10,21 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@name 'Monokai';
+.entity.name.function,
+.keyword.operator.other.computed-function,
+.punctuation.delimiter.function {
+  foreground: #66d9ef;
+}
 
-@import 'scheme/monokai/original';
+.support {
+  .entity.name.function {
+    foreground: #66d9ef;
+  }
+}
 
-@import 'scheme/monokai/class';
-@import 'scheme/monokai/function';
-@import 'scheme/monokai/import';
-@import 'scheme/monokai/variable';
+.parameter {
+  .entity.name.variable,
+  .punctuation.delimiter.variable {
+    foreground: #fd971f;
+  }
+}

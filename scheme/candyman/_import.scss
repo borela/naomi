@@ -10,8 +10,10 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.entity.name.import.ambiguous {
-  foreground: $brown-200;
+.import {
+  .entity.name.ambiguous {
+    foreground: $brown-200;
+  }
 }
 
 .punctuation.delimiter.import {

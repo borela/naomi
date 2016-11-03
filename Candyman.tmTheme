@@ -520,7 +520,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.name.import.ambiguous</string>
+			<string>.import .entity.name.ambiguous</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

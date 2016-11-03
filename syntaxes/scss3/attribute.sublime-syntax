@@ -64,6 +64,13 @@ contexts:
             | cursor
             | display
             | fill
+            | flex-basis
+            | flex-direction
+            | flex-flow
+            | flex-grow
+            | flex-shrink
+            | flex-wrap
+            | flex
             | float
             | font-family
             | font-size

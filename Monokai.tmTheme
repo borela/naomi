@@ -390,7 +390,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.name.function, .keyword.operator.other.computed-function, .punctuation.delimiter.function</string>
+			<string>.entity.name.function</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -417,7 +417,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.name.import.ambiguous</string>
+			<string>.import .entity.name.ambiguous</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

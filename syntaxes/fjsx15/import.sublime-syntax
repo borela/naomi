@@ -76,7 +76,9 @@ contexts:
     - match: |
         (?xi)
         {{commonIdentifier}}
-      scope: entity.name.import.ambiguous.js.fjsx15
+      scope: >-
+        import.js.fjsx15
+        entity.name.ambiguous.js.fjsx15
       set: optional-alias
 
   list:

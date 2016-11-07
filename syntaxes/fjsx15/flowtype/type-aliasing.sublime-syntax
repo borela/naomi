@@ -32,7 +32,9 @@ contexts:
           (?:\s*<.*>)?
           \s*=
         )
-      scope: keyword.other.type-aliasing.flowtype
+      scope: >-
+        storage.type.flowtype
+        keyword.declaration.type-aliasing.flowtype
       set: [
         type,
         punctuation,

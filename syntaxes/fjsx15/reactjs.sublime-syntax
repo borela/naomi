@@ -70,7 +70,8 @@ contexts:
     - match: |
         (?x)\s*
         (
-          (?> func
+          (?> bool
+            | func
             | isRequired
             | string
             | number

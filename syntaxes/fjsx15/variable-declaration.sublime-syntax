@@ -76,8 +76,8 @@ contexts:
           | var
         )
       scope: >-
-        keyword.declaration.variable.js.fjsx15
         storage.type.js.fjsx15
+        keyword.declaration.variable.js.fjsx15
       pop: true
 
   variable-or-constant:

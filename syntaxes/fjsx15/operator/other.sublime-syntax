@@ -75,6 +75,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   member-access:
+    - meta_scope: member.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

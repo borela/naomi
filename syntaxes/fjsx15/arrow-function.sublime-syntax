@@ -84,7 +84,15 @@ contexts:
     - match: ""
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+        # Parameter.
+        - match: |
+            (?xi)
+            ({{commonIdentifier}})(\?)?
+          captures:
+            0: parameter.js.fjsx15
+            1: entity.name.variable.js.fjsx15
+            2: keyword.operator.other.optional.flowtype
+          pop: true
 
   template-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax

@@ -26,8 +26,8 @@ contexts:
   main:
     - match: \bclass\b
       scope: >-
-        keyword.declaration.class.js.fjsx15
         storage.type.js.fjsx15
+        keyword.declaration.class.js.fjsx15
       set: declaration
 
   declaration:
@@ -40,8 +40,8 @@ contexts:
     # Extensions.
     - match: \s*extends\b
       scope: >-
-        keyword.modifier.js.fjsx15
         storage.modifier.js.fjsx15
+        keyword.modifier.js.fjsx15
       push: type
     # Identifier.
     - match: |

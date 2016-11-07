@@ -25,7 +25,9 @@ contexts:
 
   optional-default:
     - match: \bdefault\b
-      scope: keyword.control.export.default.js.fjsx15
+      scope: >-
+        storage.modifier.js.fjsx15
+        keyword.control.export.default.js.fjsx15
       pop: true
     - match: (?=\S)
       pop: true

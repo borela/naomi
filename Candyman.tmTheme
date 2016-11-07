@@ -57,6 +57,26 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.storage.modifier .keyword, .storage.type .keyword</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic bold</string>
+				<key>foreground</key>
+				<string>#b39ddb</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.operator.other.embedded-expression</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#EC407AB2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.punctuation.delimiter</string>
 			<key>settings</key>
 			<dict>
@@ -64,6 +84,15 @@
 				<string>bold</string>
 				<key>foreground</key>
 				<string>#ffecb3</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.delimiter.expression.group.b</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>
@@ -392,7 +421,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.delimiter.decorator, .entity.name.decorator</string>
+			<string>.entity.name.decorator, .punctuation.delimiter.decorator</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -417,15 +446,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.delimiter.expression.group.b</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>
@@ -471,6 +491,17 @@
 			<dict>
 				<key>foreground</key>
 				<string>#4dd0e1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.parameter .entity.name.variable</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#ffcc80</string>
 			</dict>
 		</dict>
 		<dict>
@@ -801,38 +832,13 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.constant.numeric.binary</string>
+			<string>.constant.numeric</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 				<key>foreground</key>
-				<string>#80deea</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.constant.numeric.octal</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#aed581</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.constant.numeric.hex</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff9e80</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.constant.numeric.decimal</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#f06292</string>
+				<string>#ffcc80</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1044,7 +1050,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>tag.embedded entity.name.tag</string>
+			<string>.tag.embedded .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1053,7 +1059,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>tag.embedded punctuation.delimiter.tag</string>
+			<string>.tag.embedded .punctuation.delimiter.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1062,7 +1068,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>tag.form entity.name.tag</string>
+			<string>.tag.form .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1071,7 +1077,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>tag.form punctuation.delimiter.tag</string>
+			<string>.tag.form .punctuation.delimiter.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1080,7 +1086,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.tag</string>
+			<string>.entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1089,7 +1095,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>punctuation.delimiter.tag</string>
+			<string>.punctuation.delimiter.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1098,7 +1104,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>tag.sectioning.root entity.name.tag</string>
+			<string>.tag.sectioning.root .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1107,7 +1113,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>tag.sectioning.root punctuation.delimiter.tag</string>
+			<string>.tag.sectioning.root .punctuation.delimiter.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1116,7 +1122,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>tag.sectioning entity.name.tag</string>
+			<string>.tag.sectioning .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1125,7 +1131,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>tag.sectioning punctuation.delimiter.tag</string>
+			<string>.tag.sectioning .punctuation.delimiter.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

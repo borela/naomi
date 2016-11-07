@@ -11,21 +11,8 @@
 // the License.
 
 .constant.numeric {
-  &.binary {
-    foreground: $cyan-200;
-  }
-
-  &.octal {
-    foreground: $light-green-300;
-  }
-
-  &.hex {
-    foreground: $deep-orange-A100;
-  }
-
-  &.decimal {
-    foreground: $pink-300;
-  }
+  foreground: $orange-200;
+  fontStyle: italic;
 
   &.float {
     foreground: $purple-200;

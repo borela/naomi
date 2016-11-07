@@ -25,3 +25,10 @@
 .keyword.modifier.generator {
   foreground: $cyan-300;
 }
+
+.parameter {
+  .entity.name.variable {
+    foreground: $orange-200;
+    fontStyle: italic;
+  }
+}

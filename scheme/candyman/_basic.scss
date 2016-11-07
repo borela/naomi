@@ -42,6 +42,18 @@
   }
 }
 
+.storage.modifier,
+.storage.type {
+  .keyword {
+    foreground: $deep-purple-200;
+    fontStyle: italic bold;
+  }
+}
+
+.keyword.operator.other.embedded-expression {
+  foreground: rgba($pink-400, .7);
+}
+
 /**
  * Generic delimiters.
  */
@@ -49,6 +61,10 @@
 .punctuation.delimiter {
   foreground: $amber-100;
   fontStyle: bold;
+}
+
+.punctuation.delimiter.expression.group.b {
+  foreground: $brown-200;
 }
 
 /**

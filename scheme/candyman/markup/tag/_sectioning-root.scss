@@ -10,12 +10,12 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-tag.sectioning.root {
-  entity.name.tag {
+.tag.sectioning.root {
+  .entity.name.tag {
     foreground: $purple-200;
   }
 
-  punctuation.delimiter.tag {
-    foreground: rgba($purple-200,.7);
+  .punctuation.delimiter.tag {
+    foreground: rgba($purple-200, .7);
   }
 }

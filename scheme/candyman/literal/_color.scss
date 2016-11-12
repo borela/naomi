@@ -11,17 +11,12 @@
 // the License.
 
 .punctuation.delimiter.color {
-  foreground: $pink-A100;
+  foreground: rgba($orange-200, .5);
+  fontStyle: italic;
 }
 
-.constant.color.red {
-  foreground: $pink-300;
+.constant.color {
+  foreground: $orange-200;
+  fontStyle: italic;
 }
 
-.constant.color.green {
-  foreground: $light-green-300;
-}
-
-.constant.color.blue {
-  foreground: $cyan-300;
-}

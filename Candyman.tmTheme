@@ -450,6 +450,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.keyword.operator.other.spread</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.punctuation.delimiter.array.flowtype, .punctuation.delimiter.array.begin.flowtype, .punctuation.delimiter.array.end.flowtype, .punctuation.delimiter.function.parameters.flowtype, .punctuation.delimiter.function.parameters.begin.flowtype, .punctuation.delimiter.function.parameters.end.flowtype, .punctuation.delimiter.function.result.flowtype, .punctuation.delimiter.nullable.begin.flowtype, .punctuation.delimiter.nullable.end.flowtype, .punctuation.delimiter.object.flowtype, .punctuation.delimiter.object.begin.flowtype, .punctuation.delimiter.object.end.flowtype, .punctuation.delimiter.template.parameters.flowtype, .punctuation.delimiter.template.parameters.begin.flowtype, .punctuation.delimiter.template.parameters.end.flowtype, .punctuation.delimiter.template.arguments.flowtype, .punctuation.delimiter.template.arguments.begin.flowtype, .punctuation.delimiter.template.arguments.end.flowtype</string>
 			<key>settings</key>
 			<dict>
@@ -799,35 +808,21 @@
 			<string>.punctuation.delimiter.color</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 				<key>foreground</key>
-				<string>#ff80ab</string>
+				<string>#FFCC8080</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.constant.color.red</string>
+			<string>.constant.color</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 				<key>foreground</key>
-				<string>#f06292</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.constant.color.green</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#aed581</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.constant.color.blue</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4dd0e1</string>
+				<string>#ffcc80</string>
 			</dict>
 		</dict>
 		<dict>
@@ -963,6 +958,8 @@
 			<string>.entity.name.attribute</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 				<key>foreground</key>
 				<string>#aed581</string>
 			</dict>

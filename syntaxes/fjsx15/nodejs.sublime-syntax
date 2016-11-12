@@ -94,6 +94,7 @@ contexts:
             | console\.time
             | console\.trace
             | console\.warn
+            | process\.on
           )
           \s*\(
         )
@@ -111,6 +112,7 @@ contexts:
           | error
           | info
           | log
+          | on
           | timeEnd
           | time
           | trace

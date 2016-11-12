@@ -36,6 +36,7 @@ contexts:
           (?:\.
             (?> bool
               | func
+              | node
               | number
               | object
               | string
@@ -59,6 +60,13 @@ contexts:
           )
         )
       set: complex-variable-components
+    # Other.
+    - match: |
+        (?x)\s*
+        (?=
+          this\.props\b
+        )
+      set: complex-variable-components
 
   complex-variable-components:
     - include: member-access-operator
@@ -74,10 +82,13 @@ contexts:
             | func
             | isRequired
             | string
+            | node
             | number
             | object
+            | props
             | PropTypes
             | React
+            | this
           )
         )\b
       captures:

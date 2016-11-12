@@ -49,6 +49,7 @@ contexts:
             )
           pop: true
         - include: rest-operator
+        - include: comment
         # Nested destructuring.
         - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
@@ -75,6 +76,9 @@ contexts:
         - include: statement-and-expression
         - match: ""
           pop: true
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
 
   statement-and-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

@@ -69,6 +69,8 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
         # Property.
         - include: Packages/Naomi/syntaxes/fjsx15/literal/object/property.sublime-syntax
+        # Other expressions.
+        - include: statement-and-expression
 
   associated-value:
     - match: |

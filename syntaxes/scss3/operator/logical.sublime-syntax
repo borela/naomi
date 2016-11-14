@@ -40,7 +40,7 @@ contexts:
         (
           (?> &&
             | \|\|
-            | !
+            | !(?!important)
           )
         )
       captures:

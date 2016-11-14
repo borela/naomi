@@ -23,12 +23,13 @@ contexts:
     - match: |
         (?x)
         (
-          (?> from
+          (?> !important
+            | from
             | if
             | in
             | through
           )
-        )
+        )\b
       captures:
         1: keyword.other.scss.scss3
       pop: true

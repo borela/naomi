@@ -23,9 +23,7 @@ contexts:
         (?x)
         \s*(data-[_:[:alnum:]\-.]*)
       captures:
-        1: >-
-          data.html.html5
-          entity.name.attribute.html.html5
+        1: entity.name.data-attribute.html.html5
       set: value
 
   value:

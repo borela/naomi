@@ -31,7 +31,7 @@ contexts:
             | or
             | not
           )
-        )
+        )\b
       captures:
         1: keyword.operator.logical.word.scss.scss3
       pop: true

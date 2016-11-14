@@ -25,6 +25,7 @@ contexts:
         (
           (?> !default
             | !important
+            | !optional
             | from
             | if
             | in

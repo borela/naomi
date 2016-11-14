@@ -19,9 +19,11 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/greedy-spread.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/other.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/comparison.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/logical.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/bitwise.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/arithmetic.sublime-syntax
+    - match: \s*(\.{3})
+      captures:
+        1: keyword.operator.other.spread.js.fjsx15
+      set: expression
+
+  expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+

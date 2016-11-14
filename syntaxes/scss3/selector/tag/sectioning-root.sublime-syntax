@@ -31,6 +31,8 @@ contexts:
         )\b
         (?!\s*\()
       captures:
-        0: selector.sectioning.root.css.scss3
-        1: entity.name.selector.css.scss3
-      pop: true
+        1: entity.name.selector.tag.sectioning.root.scss.scss3
+      set: trap
+
+  trap:
+    - include: Packages/Naomi/syntaxes/scss3/selector/trap.sublime-syntax

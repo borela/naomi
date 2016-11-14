@@ -17,27 +17,22 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_\-[:alpha:]]
+    [$_\-[:alnum:]]*
+
 contexts:
   main:
     - match: |
-        (?x)\s*
+        (?xi)
         (
-          (?> button
-            | form
-            | input
-            | l
-              (?> abel
-                | egend
-              )
-            | option
-            | select
-            | textarea
+          \${{commonIdentifier}}
+          (?> [$\-]\B
+            | [_[:alnum:]]\b
           )
-        )\b
-        (?!\s*\()
+        )
       captures:
-        1: entity.name.selector.tag.form.scss.scss3
-      set: trap
-
-  trap:
-    - include: Packages/Naomi/syntaxes/scss3/selector/trap.sublime-syntax
+        0: parameter.scss.scss3
+        1: entity.name.variable.scss.scss3
+      pop: true

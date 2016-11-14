@@ -31,18 +31,32 @@ contexts:
     - match: |
         (?xi)
         \s*
-        (
-          ::-{{commonIdentifier}}
-        )
+        (::-)({{commonIdentifier}})
       captures:
-        0: extension.css.scss3
-        1: entity.name.pseudo-element.css.scss3
-      pop: true
+        0: extension.scss.scss3
+        1: punctuation.delimiter.selector.pseudo-element.scss.scss3
+        2: entity.name.selector.pseudo-element.scss.scss3
+      set: trap
 
   pseudo-element:
+    # Old.
     - match: |
         (?xi)\s*
-        (::
+        (:)
+        (
+          (?> after
+            | before
+          )
+        )\b
+      captures:
+        1: punctuation.delimiter.selector.pseudo-element.scss.scss3
+        2: entity.name.selector.pseudo-element.scss.scss3
+      set: trap
+    # New.
+    - match: |
+        (?xi)\s*
+        (::)
+        (
           (?> after
             | backdrop
             | before
@@ -52,5 +66,9 @@ contexts:
           )
         )\b
       captures:
-        1: entity.name.pseudo-element.css.scss3
-      pop: true
+        1: punctuation.delimiter.selector.pseudo-element.scss.scss3
+        2: entity.name.selector.pseudo-element.scss.scss3
+      set: trap
+
+  trap:
+    - include: Packages/Naomi/syntaxes/scss3/selector/trap.sublime-syntax

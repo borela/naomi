@@ -21,25 +21,28 @@ contexts:
   main:
     - match: \s*(\,)
       captures:
-        1: keyword.operator.other.comma.css.scss3
-      pop: true
+        1: keyword.operator.other.comma.scss.scss3
+      set: trap
     - match: \s*(&)(?!&)
       captures:
-        1: keyword.operator.other.all.css.css3
-      pop: true
+        1: keyword.operator.other.selector.inherit.css.css3
+      set: trap
     - match: \s*(\*)
       captures:
         1: keyword.operator.other.selector.all.css.css3
-      pop: true
+      set: trap
     - match: \s*(\+)
       captures:
         1: keyword.operator.other.selector.adjacent.css.css3
-      pop: true
+      set: trap
     - match: \s*(>)
       captures:
         1: keyword.operator.other.selector.direct.css.css3
-      pop: true
+      set: trap
     - match: \s*(~)
       captures:
         1: keyword.operator.other.selector.sibling.css.css3
-      pop: true
+      set: trap
+
+  trap:
+    - include: Packages/Naomi/syntaxes/scss3/selector/trap.sublime-syntax

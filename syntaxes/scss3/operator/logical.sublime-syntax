@@ -28,11 +28,21 @@ contexts:
         (?x)\s*
         (
           (?> and
-            | &&
+            | or
+            | not
+          )
+        )
+      captures:
+        1: keyword.operator.logical.word.scss.scss3
+      pop: true
+    - match: |
+        (?x)\s*
+        (
+          (?> &&
             | \|\|
             | !
           )
         )
       captures:
-        1: keyword.operator.logical.css.scss3
+        1: keyword.operator.logical.scss.scss3
       pop: true

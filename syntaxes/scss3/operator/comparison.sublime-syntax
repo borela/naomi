@@ -39,5 +39,5 @@ contexts:
           )
         )
       captures:
-        1: keyword.operator.comparison.css.scss3
+        1: keyword.operator.comparison.scss.scss3
       pop: true

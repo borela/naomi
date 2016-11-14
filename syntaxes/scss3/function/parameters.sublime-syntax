@@ -17,21 +17,26 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_\-[:alpha:]]
+    [$_\-[:alnum:]]*
+
 contexts:
   main:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.function.arguments.begin.scss.scss3
-      set: arguments
+        1: punctuation.delimiter.function.parameters.begin.scss.scss3
+      set: parameters
 
-  arguments:
+  parameters:
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.function.arguments.end.scss.scss3
+        1: punctuation.delimiter.function.parameters.end.scss.scss3
       pop: true
     - match: \s*(\,)
       captures:
-        1: punctuation.delimiter.function.arguments.scss.scss3
+        1: punctuation.delimiter.function.parameters.scss.scss3
     - match: ""
       push:
         - match: |
@@ -42,7 +47,13 @@ contexts:
               )
             )
           pop: true
-        - include: value
+        # Default value.
+        - match: \s*(:)
+          scope: keyword.other.association.scss.scss3
+          set: value
+        # Parameter.
+        - include: Packages/Naomi/syntaxes/scss3/function/parameter.sublime-syntax
+
 
   value:
     - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax

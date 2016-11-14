@@ -17,7 +17,20 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [_\-[:alpha:]]
+    [_\-[:alnum:]]*
+
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/scss3/directive/simple.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/directive/bodied.sublime-syntax
+    - match: |
+        (?xi)\s*
+        (%)({{commonIdentifier}})\b
+      captures:
+        1: punctuation.delimiter.selector.placeholder.scss.scss3
+        2: entity.name.selector.placeholder.scss.scss3
+      set: trap
+
+  trap:
+    - include: Packages/Naomi/syntaxes/scss3/selector/trap.sublime-syntax

@@ -26,12 +26,11 @@ contexts:
   main:
     - match: |
         (?xi)\s*
-        (
-          (\#)
-          ({{commonIdentifier}})
-        )\b
+        (\#)({{commonIdentifier}})\b
       captures:
-        1: selector.id.css.scss3
-        2: punctuation.delimiter.selector.begin.css.scss3
-        3: entity.name.selector.css.scss3
-      pop: true
+        1: punctuation.delimiter.selector.id.scss.scss3
+        2: entity.name.selector.id.scss.scss3
+      set: trap
+
+  trap:
+    - include: Packages/Naomi/syntaxes/scss3/selector/trap.sublime-syntax

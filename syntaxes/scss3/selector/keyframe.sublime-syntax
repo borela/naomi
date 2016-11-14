@@ -20,10 +20,11 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?xi)\s*
-        ([0-9]+%)
+        (?x)\s*
+        ([0-9]{1,3}%)
       captures:
-        1: >-
-          selector.keyframe.css.scss3
-          entity.name.selector.css.scss3
-      pop: true
+        1: entity.name.selector.keyframe.scss.scss3
+      set: trap
+
+  trap:
+    - include: Packages/Naomi/syntaxes/scss3/selector/trap.sublime-syntax

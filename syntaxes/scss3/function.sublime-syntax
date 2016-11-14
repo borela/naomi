@@ -26,30 +26,17 @@ contexts:
   main:
     - match: |
         (?xi)
-        (?=
-          \s*{{commonIdentifier}}
-          \s*\(
-        )
+        \s*(@function)\b
+      captures:
+        0: storage.type.scss.scss3
+        1: keyword.declaration.function.scss.scss3
       set: [
-        arguments,
+        body,
+        optional-parameters,
         name
       ]
 
   name:
-    # Support identifier.
-    - match: |
-        (?x)
-        \s*(
-          (?> constructor
-            | super
-          )
-        )\b
-      captures:
-        1: >-
-          support.scss.scss3
-          entity.name.function.scss.scss3
-      pop: true
-    # Identifier.
     - match: |
         (?xi)
         \s*({{commonIdentifier}})
@@ -57,5 +44,25 @@ contexts:
         1: entity.name.function.scss.scss3
       pop: true
 
-  arguments:
-    - include: Packages/Naomi/syntaxes/scss3/function-call/arguments.sublime-syntax
+  optional-parameters:
+    - match: (?=\s*{)
+      pop: true
+    - include: Packages/Naomi/syntaxes/scss3/function/parameters.sublime-syntax
+
+  body:
+    - match: \s*({)
+      scope: punctuation.delimiter.function.body.begin.scss.scss3
+      set: body-content
+
+  body-content:
+    - match: \s*(})
+      captures:
+        1: punctuation.delimiter.function.body.end.scss.scss3
+      pop: true
+    - match: ""
+      push:
+        - match: (?=\s*})
+          pop: true
+        - include: Packages/Naomi/syntaxes/scss3/attribute.sublime-syntax
+        - include: Packages/Naomi/syntaxes/scss3/selector.sublime-syntax
+        - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax

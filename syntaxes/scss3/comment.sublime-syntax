@@ -21,23 +21,23 @@ contexts:
   main:
     - match: \s*(\/\/)
       captures:
-        1: punctuation.comment.begin.css.scss3
+        1: punctuation.comment.begin.scss.scss3
       set: line
     - match: \s*(\/\*)
       captures:
-        1: punctuation.comment.begin.css.scss3
+        1: punctuation.comment.begin.scss.scss3
       set: block
 
   line:
-    - meta_scope: comment.line.css.scss3
-    - meta_content_scope: comment.content.css.scss3
+    - meta_scope: comment.line.scss.scss3
+    - meta_content_scope: comment.content.scss.scss3
     - match: $
       pop: true
 
   block:
-    - meta_scope: comment.block.css.scss3
+    - meta_scope: comment.block.scss.scss3
     - match: \s*(\*\/)
       captures:
-        1: punctuation.comment.end.css.scss3
+        1: punctuation.comment.end.scss.scss3
       pop: true
 

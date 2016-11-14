@@ -24,17 +24,27 @@ variables:
 
 contexts:
   main:
+    # Single character.
     - match: |
-        (?xi)
-        (\$)
+        (?xi)\s*
         (
-          {{commonIdentifier}}
+          \$
           (?> [$\-]\B
             | [_[:alnum:]]\b
           )
         )
       captures:
-        0: variable.css.scss3
-        1: punctuation.delimiter.variable.begin.css.scss3
-        2: entity.name.variable.css.scss3
+        1: entity.name.variable.scss.scss3
+      pop: true
+    # Two or more characters
+    - match: |
+        (?xi)\s*
+        (
+          \${{commonIdentifier}}
+          (?> [$\-]\B
+            | [_[:alnum:]]\b
+          )
+        )
+      captures:
+        1: entity.name.variable.scss.scss3
       pop: true

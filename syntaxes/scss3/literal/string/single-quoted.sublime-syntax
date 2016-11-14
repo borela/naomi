@@ -31,15 +31,15 @@ contexts:
   main:
     - match: \'
       scope: >-
-        string.quoted.single.css.scss3
-        punctuation.delimiter.string.begin.css.scss3
+        string.quoted.single.scss.scss3
+        punctuation.delimiter.string.begin.scss.scss3
       with_prototype:
         - match: (?<!\\)\n
           set: trap
         - match: \'
           scope: >-
-            string.quoted.single.css.scss3
-            punctuation.delimiter.string.end.css.scss3
+            string.quoted.single.scss.scss3
+            punctuation.delimiter.string.end.scss.scss3
           pop: true
       set: escape-a
 
@@ -47,13 +47,13 @@ contexts:
     - meta_content_scope: context.trap
 
   escape-a:
-    - meta_content_scope: string.quoted.single.css.scss3
+    - meta_content_scope: string.quoted.single.scss.scss3
     - match: (?xi){{singleQuotedEscapeSequences}}
-      scope: constant.character.escape.a.css.scss3
+      scope: constant.character.escape.a.scss.scss3
       set: escape-b
 
   escape-b:
-    - meta_content_scope: string.quoted.single.css.scss3
+    - meta_content_scope: string.quoted.single.scss.scss3
     - match: (?xi){{singleQuotedEscapeSequences}}
-      scope: constant.character.escape.b.css.scss3
+      scope: constant.character.escape.b.scss.scss3
       set: escape-a

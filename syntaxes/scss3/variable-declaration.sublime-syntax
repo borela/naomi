@@ -26,14 +26,12 @@ contexts:
   main:
     - match: |
         (?xi)
-        \s*(\$)({{commonIdentifier}})
+        \s*(\${{commonIdentifier}})
         \s*(:)
       captures:
-        0: variable.css.scss3
-        1: punctuation.delimiter.variable.begin.css.scss3
-        2: entity.name.variable.css.scss3
-        3: keyword.operator.other.association.css.scss3
+        1: entity.name.variable.scss.scss3
+        2: keyword.operator.other.association.scss.scss3
       set: value
 
   value:
-    - include: Packages/Naomi/syntaxes/scss3/value.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax

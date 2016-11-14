@@ -21,17 +21,17 @@ contexts:
   main:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.pseudo-class.arguments.begin.css.scss3
+        1: punctuation.delimiter.selector.pseudo-class.arguments.begin.scss.scss3
       set: arguments
 
   arguments:
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.pseudo-class.arguments.end.css.scss3
+        1: punctuation.delimiter.selector.pseudo-class.arguments.end.scss.scss3
       pop: true
     - match: \s*(\,)
       captures:
-        1: punctuation.delimiter.pseudo-class.arguments.css.scss3
+        1: punctuation.delimiter.selector.pseudo-class.arguments.scss.scss3
     - match: ""
       push:
         - match: |

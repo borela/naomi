@@ -19,30 +19,35 @@ scope: ...
 
 contexts:
   main:
-    # Expression terminator.
-    - include: terminator
-    # End of a body.
-    - match: |
-        (?x)
-        (?=\s*
-          (?> \)
-            | \}
-          )
-        )
+    - match: \s*(\()
+      captures:
+        1: punctuation.delimiter.mixin.parameters.begin.scss.scss3
+      set: parameters
+
+  parameters:
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.mixin.parameters.end.scss.scss3
       pop: true
-    # Expression.
+    - match: \s*(\,)
+      captures:
+        1: punctuation.delimiter.mixin.parameters.scss.scss3
     - match: ""
       push:
         - match: |
             (?x)
             (?=\s*
-              (?> ;
+              (?> ,
                 | \)
-                | \}
               )
             )
           pop: true
-        - include: Packages/Naomi/syntaxes/scss3/expression.sublime-syntax
+        # Default value.
+        - match: \s*(:)
+          scope: keyword.other.association.scss.scss3
+          set: value
+        # Parameter.
+        - include: Packages/Naomi/syntaxes/scss3/function/parameter.sublime-syntax
 
-  terminator:
-    - include: Packages/Naomi/syntaxes/scss3/greedy-terminator.sublime-syntax
+  value:
+    - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax

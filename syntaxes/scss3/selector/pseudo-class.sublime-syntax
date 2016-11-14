@@ -25,57 +25,29 @@ variables:
 contexts:
   main:
     - include: extension
-    - include: parameterized
     - include: normal
-    - include: css-modules
-
-  css-modules:
-    - match: |
-        (?xi)\s*
-        (:
-          (?> global
-            | local
-          )
-        )\b
-      captures:
-        1: entity.name.pseudo-class.css.css3
-      pop: true
 
   extension:
     - match: |
         (?xi)
         \s*
-        (
-          :-{{commonIdentifier}}
-        )
+        (:-)({{commonIdentifier}})
       captures:
-        0: extension.css.scss3
-        1: entity.name.pseudo-class.css.scss3
-      pop: true
-
-  parameterized:
-    - match: |
-        (?xi)\s*
-        (:
-          (?> dir
-            | not
-          )
-        )\b
-      captures:
-        1: entity.name.pseudo-class.css.scss3
-      set: arguments
-
-  arguments:
-    - include: Packages/Naomi/syntaxes/scss3/selector/pseudo-class/arguments.sublime-syntax
+        0: extension.scss.scss3
+        1: punctuation.delimiter.selector.pseudo-class.scss.scss3
+        2: entity.name.selector.pseudo-class.scss.scss3
+      set: trap
 
   normal:
     - match: |
         (?xi)\s*
-        (:
+        (:)
+        (
           (?> active
             | any(?:-link)?
             | checked
             | default
+            | dir
             | disabled
             | empty
             | enabled
@@ -84,6 +56,7 @@ contexts:
             | first
             | focus
             | fullscreen
+            | global
             | hover
             | in-range
             | indeterminate
@@ -93,6 +66,8 @@ contexts:
             | last-of-type
             | left
             | link
+            | local
+            | not
             | nth-child
             | nth-last-child
             | nth-last-of-type
@@ -113,5 +88,20 @@ contexts:
           )
         )\b
       captures:
-        1: entity.name.pseudo-class.css.scss3
-      pop: true
+        1: punctuation.delimiter.selector.pseudo-class.scss.scss3
+        2: entity.name.selector.pseudo-class.scss.scss3
+      set: optional-arguments
+
+  optional-arguments:
+    - match: (?=\s*\()
+      set: [
+        trap,
+        arguments
+      ]
+    - include: trap
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/scss3/selector/pseudo-class/arguments.sublime-syntax
+
+  trap:
+    - include: Packages/Naomi/syntaxes/scss3/selector/trap.sublime-syntax

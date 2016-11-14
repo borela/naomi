@@ -29,5 +29,8 @@ contexts:
         \s*({{commonIdentifier}})\b
         (?!\s*\()
       captures:
-        1: entity.name.selector.css.scss3
-      pop: true
+        1: entity.name.selector.tag.scss.scss3
+      set: trap
+
+  trap:
+    - include: Packages/Naomi/syntaxes/scss3/selector/trap.sublime-syntax

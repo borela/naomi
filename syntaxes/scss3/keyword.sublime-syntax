@@ -19,15 +19,14 @@ scope: ...
 
 contexts:
   main:
-    - include: directive
-
-  directive:
+    # Other keywords.
     - match: |
         (?x)
-        \s*(@import)\b
+        (
+          (?> from
+            | through
+          )
+        )
       captures:
-        1: keyword.control.directive.css.scss3
-      set: value
-
-  value:
-    - include: Packages/Naomi/syntaxes/scss3/value.sublime-syntax
+        1: keyword.other.scss.scss3
+      pop: true

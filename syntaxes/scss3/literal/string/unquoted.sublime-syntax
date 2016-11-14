@@ -32,5 +32,5 @@ contexts:
             | $
           )
         )
-      scope: string.unquoted.css.scss3
+      scope: string.unquoted.scss.scss3
       pop: true

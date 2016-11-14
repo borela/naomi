@@ -37,5 +37,5 @@ contexts:
           )
         )
       captures:
-        1: keyword.operator.arithmetic.css.scss3
+        1: keyword.operator.arithmetic.scss.scss3
       pop: true

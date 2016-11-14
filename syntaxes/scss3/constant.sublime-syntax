@@ -38,9 +38,9 @@ contexts:
           )
         )
       captures:
-        0: constant.css.scss3
-        1: punctuation.delimiter.constant.begin.css.scss3
-        2: entity.name.constant.css.scss3
+        0: constant.scss.scss3
+        1: punctuation.delimiter.constant.begin.scss.scss3
+        2: entity.name.constant.scss.scss3
       pop: true
 
   support-constant:
@@ -68,6 +68,7 @@ contexts:
           | dotted
           | ease
           | ellipse
+          | false
           | fixed
           | flex
           | forwards
@@ -83,7 +84,9 @@ contexts:
           | no-repeat
           | none
           | normal
+          | nowrap
           | number
+          | only
           | pointer
           | print
           | projection
@@ -105,11 +108,12 @@ contexts:
           | text-top
           | top
           | transparent
+          | true
           | tv
           | visible
           | uppercase
         )
       scope: >-
-        support.css.scss3
-        entity.name.constant.css.scss3
+        support.scss.scss3
+        entity.name.constant.scss.scss3
       pop: true

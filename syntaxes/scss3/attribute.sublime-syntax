@@ -25,7 +25,7 @@ variables:
 contexts:
   main:
     - include: extension
-    - include: attribute
+    - include: normal-attribute
     - include: unreconized-attribute
 
   extension:
@@ -37,17 +37,19 @@ contexts:
         )
         \s*(:)
       captures:
-        0: extension.css.scss3
-        1: entity.name.attribute.css.scss3
-        2: keyword.operator.other.association.css.scss3
+        0: extension.scss.scss3
+        1: entity.name.attribute.scss.scss3
+        2: keyword.operator.other.association.scss.scss3
       set: value
 
-  attribute:
+  normal-attribute:
     - match: |
         (?xi)
         \s*
         (
-          (?> animation
+          (?> align-content
+            | align-items
+            | animation
             | background-color
             | background-image
             | background-size
@@ -60,6 +62,7 @@ contexts:
             | bottom
             | box-shadow
             | box-sizing
+            | content
             | color
             | cursor
             | display
@@ -78,6 +81,7 @@ contexts:
             | font-weight
             | font
             | height
+            | justify-content
             | left
             | letter-spacing
             | line-height
@@ -91,12 +95,15 @@ contexts:
             | min-height
             | min-width
             | opacity
+            | orientation
             | overflow
+            | outline
             | padding-bottom
             | padding-left
             | padding-right
             | padding-top
             | padding
+            | pointer-events
             | position
             | right
             | src
@@ -108,18 +115,22 @@ contexts:
             | top
             | transform-origin
             | transform
+            | transition-timing-function
+            | transition-duration
             | transition
             | type
             | vertical-align
+            | unicode-range
+            | white-space
             | width
             | z-index
           )
         )
         \s*(:)
       captures:
-        0: support.css.scss3
-        1: entity.name.attribute.css.scss3
-        2: keyword.operator.other.association.css.scss3
+        0: support.scss.scss3
+        1: entity.name.attribute.scss.scss3
+        2: keyword.operator.other.association.scss.scss3
       set: value
 
   unreconized-attribute:
@@ -130,10 +141,29 @@ contexts:
           {{commonIdentifier}}
         )
         \s*(:)
+        (?!
+          (?> :
+            | //
+          )
+        )
       captures:
-        1: entity.name.attribute.css.scss3
-        2: keyword.operator.other.association.css.scss3
+        1: entity.name.attribute.scss.scss3
+        2: keyword.operator.other.association.scss.scss3
       set: value
 
   value:
-    - include: Packages/Naomi/syntaxes/scss3/value.sublime-syntax
+    - match: |
+        (?x)
+        (?=\s*
+          (?> ;
+            | \)
+            | }
+          )
+        )
+      pop: true
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax
+        - match: ""
+          pop: true
+

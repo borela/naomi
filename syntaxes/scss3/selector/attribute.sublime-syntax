@@ -26,20 +26,23 @@ contexts:
   main:
     - match: \s*(\[)
       captures:
-        1: punctuation.delimiter.selector.begin.css.scss3
+        1: punctuation.delimiter.selector.begin.scss.scss3
       set: attributes
 
   attributes:
     - match: \s*(\])
       captures:
-        1: punctuation.delimiter.selector.end.css.scss3
-      pop: true
+        1: punctuation.delimiter.selector.end.scss.scss3
+      set: trap
     - match: ""
       push:
-        - include: attribute
-        - include: operator
         - match: (?=\s*\])
           pop: true
+        - include: attribute
+        - include: operator
+
+  trap:
+    - include: Packages/Naomi/syntaxes/scss3/selector/trap.sublime-syntax
 
   attribute:
     - match: |
@@ -112,8 +115,8 @@ contexts:
           )
         )
       captures:
-        0: support.css.scss3
-        1: entity.name.attribute.css.scss3
+        0: support.scss.scss3
+        1: entity.name.attribute.scss.scss3
       pop: true
 
   operator:
@@ -129,10 +132,15 @@ contexts:
           )
         )
       captures:
-        1: keyword.operator.other.css.scss3
+        1: keyword.operator.other.scss.scss3
       set: value
 
   value:
     - match: (?=\s*\])
       pop: true
-    - include: Packages/Naomi/syntaxes/scss3/value.sublime-syntax
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax
+        - match: ""
+          pop: true
+

@@ -31,7 +31,7 @@ contexts:
     - match: |
         (?x)\s*
         {{expressionGroupBegin}}
-      scope: punctuation.delimiter.expression.group.a.begin.css.scss3
+      scope: punctuation.delimiter.expression.group.a.begin.scss.scss3
       set: open-b-close-a
 
   open-a-close-b:
@@ -39,12 +39,12 @@ contexts:
     - match: |
         (?x)\s*
         {{expressionGroupBegin}}
-      scope: punctuation.delimiter.expression.group.a.begin.css.scss3
+      scope: punctuation.delimiter.expression.group.a.begin.scss.scss3
       push: open-b-close-a
     # Close current expression group.
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.expression.group.b.end.css.scss3
+        1: punctuation.delimiter.expression.group.b.end.scss.scss3
       pop: true
     # Expression contents.
     - match: ""
@@ -58,12 +58,12 @@ contexts:
     - match: |
         (?x)\s*
         {{expressionGroupBegin}}
-      scope: punctuation.delimiter.expression.group.b.begin.css.scss3
+      scope: punctuation.delimiter.expression.group.b.begin.scss.scss3
       push: open-a-close-b
     # Close current expression group.
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.expression.group.a.end.css.scss3
+        1: punctuation.delimiter.expression.group.a.end.scss.scss3
       pop: true
     # Expression contents.
     - match: ""
@@ -74,10 +74,16 @@ contexts:
 
   sequence:
     - include: Packages/Naomi/syntaxes/scss3/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/body.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/greedy-terminator.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/operator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/keyword.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/statement/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/statement/bodied.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/mixin.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/attribute.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/variable-declaration.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/scss3/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/literal.sublime-syntax

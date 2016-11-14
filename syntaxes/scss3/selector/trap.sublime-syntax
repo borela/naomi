@@ -38,6 +38,7 @@ contexts:
     - match: \s*(,)
       captures:
         1: keyword.operator.other.comma.scss.scss3
+    - include: Packages/Naomi/syntaxes/scss3/keyword.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/selector.sublime-syntax
 
   body:

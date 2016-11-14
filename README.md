@@ -63,16 +63,6 @@ Combines ES2015+, Flow, React’s JSX.
 * Embedded elements.
 * Form elements.
 
-#### CSS3 (Experimental)
-
-* Ids.
-* Classes.
-* Tags.
-* Pseudo classes.
-* Pseudo elements.
-* Keyframes.
-* Function calls.
-
 #### SCSS3 (Experimental)
 
 * Ids.

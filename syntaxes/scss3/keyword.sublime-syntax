@@ -21,9 +21,10 @@ contexts:
   main:
     # Other keywords.
     - match: |
-        (?x)
+        (?x)\s*
         (
-          (?> !important
+          (?> !default
+            | !important
             | from
             | if
             | in

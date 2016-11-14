@@ -57,6 +57,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.keyword.operator.logical.word</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string></string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.storage.modifier .keyword, .storage.type .keyword</string>
 			<key>settings</key>
 			<dict>
@@ -129,6 +138,342 @@
 			<dict>
 				<key>foreground</key>
 				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.constant, .punctuation.delimiter.constant</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ce93d8</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.support .entity.name.constant</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.function, .keyword.operator.other.computed-function, .punctuation.delimiter.function</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4fc3f7</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.support .entity.name.function</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.modifier.generator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4dd0e1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.parameter .entity.name.variable</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#ffcc80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.markup.deleted.git_gutter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f36c60</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.markup.inserted.git_gutter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.markup.changed.git_gutter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.markup.ignored.git_gutter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4dd0e1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.markup.untracked.git_gutter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.interface, .punctuation.delimiter.interface</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.label, .punctuation.delimiter.label</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.namespace</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.delimiter.namespace</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#BCAAA480</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.type, .punctuation.delimiter.type</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.support .entity.name.type, .support .punctuation.delimiter.type</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.variable, .punctuation.delimiter.variable</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string></string>
+				<key>foreground</key>
+				<string>#bdbdbd</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.support .entity.name.variable, .support .punctuation.delimiter.variable</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.type.array, .punctuation.delimiter.array</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.delimiter.color</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#FFCC8080</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.color</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#ffcc80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.numeric</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#ffcc80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.numeric.float</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ce93d8</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.delimiter.object</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.object .keyword.operator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.object.property .entity.name.variable</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bdbdbd</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.operator.other.computed-property</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.string.unquoted.regex, .string.unquoted.regex .punctuation.delimiter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#26a69a</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f36c60</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.string .punctuation.delimiter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#F36C6080</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.character.escape.a</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#80deea</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.character.escape.b</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.string .variable.a .entity.name.variable, .string .variable.a .punctuation.delimiter.variable, .string .variable.a .keyword.operator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ce93d8</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.string .variable.b .entity.name.variable, .string .variable.b .punctuation.delimiter.variable, .string .variable.b .keyword.operator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f06292</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.string .variable .array.key</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#a1887f</string>
 			</dict>
 		</dict>
 		<dict>
@@ -241,178 +586,16 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.name.constant, .punctuation.delimiter.constant</string>
+			<string>.punctuation.delimiter.array.flowtype, .punctuation.delimiter.array.begin.flowtype, .punctuation.delimiter.array.end.flowtype, .punctuation.delimiter.function.parameters.flowtype, .punctuation.delimiter.function.parameters.begin.flowtype, .punctuation.delimiter.function.parameters.end.flowtype, .punctuation.delimiter.function.result.flowtype, .punctuation.delimiter.nullable.begin.flowtype, .punctuation.delimiter.nullable.end.flowtype, .punctuation.delimiter.object.flowtype, .punctuation.delimiter.object.begin.flowtype, .punctuation.delimiter.object.end.flowtype, .punctuation.delimiter.template.parameters.flowtype, .punctuation.delimiter.template.parameters.begin.flowtype, .punctuation.delimiter.template.parameters.end.flowtype, .punctuation.delimiter.template.arguments.flowtype, .punctuation.delimiter.template.arguments.begin.flowtype, .punctuation.delimiter.template.arguments.end.flowtype</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ce93d8</string>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.support .entity.name.constant</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff9e80</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.support .entity.name.attribute.css</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#aed581</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.extension .entity.name.attribute.css</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#e0e0e0</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.operator.other.comma.css, .keyword.operator.other.association.css, .keyword.operator.other.terminator.css, .punctuation.delimiter.body.begin.css, .punctuation.delimiter.body.end.css</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.delimiter.selector</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.extension .keyword.control.directive.css</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#e0e0e0</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.modifier.unit.css</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff9e80</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.selector.keyframe .entity.name.selector</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.selector.class</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.selector.class .entity.name.selector</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4dd0e1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.selector.class .punctuation.delimiter.selector.begin</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4DD0E1B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.selector.id</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.selector.id .entity.name.selector</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ec407a</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.selector.id .punctuation.delimiter.selector.begin</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#EC407AB2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.delimiter.pseudo-class, .entity.name.pseudo-class</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.extension .entity.name.pseudo-class</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#e0e0e0</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.pseudo-element</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.extension .entity.name.pseudo-element</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#e0e0e0</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.selector</string>
+			<string>.keyword.operator.other.flowtype, .keyword.operator.other.association.flowtype, .keyword.operator.other.cast.flowtype, .keyword.operator.other.intersection.flowtype, .keyword.operator.other.nullable.flowtype, .keyword.operator.other.optional.flowtype, .keyword.operator.other.union.flowtype</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -459,107 +642,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.delimiter.array.flowtype, .punctuation.delimiter.array.begin.flowtype, .punctuation.delimiter.array.end.flowtype, .punctuation.delimiter.function.parameters.flowtype, .punctuation.delimiter.function.parameters.begin.flowtype, .punctuation.delimiter.function.parameters.end.flowtype, .punctuation.delimiter.function.result.flowtype, .punctuation.delimiter.nullable.begin.flowtype, .punctuation.delimiter.nullable.end.flowtype, .punctuation.delimiter.object.flowtype, .punctuation.delimiter.object.begin.flowtype, .punctuation.delimiter.object.end.flowtype, .punctuation.delimiter.template.parameters.flowtype, .punctuation.delimiter.template.parameters.begin.flowtype, .punctuation.delimiter.template.parameters.end.flowtype, .punctuation.delimiter.template.arguments.flowtype, .punctuation.delimiter.template.arguments.begin.flowtype, .punctuation.delimiter.template.arguments.end.flowtype</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.operator.other.flowtype, .keyword.operator.other.association.flowtype, .keyword.operator.other.cast.flowtype, .keyword.operator.other.intersection.flowtype, .keyword.operator.other.nullable.flowtype, .keyword.operator.other.optional.flowtype, .keyword.operator.other.union.flowtype</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.function, .keyword.operator.other.computed-function, .punctuation.delimiter.function</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4fc3f7</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.support .entity.name.function</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff9e80</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.modifier.generator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4dd0e1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.parameter .entity.name.variable</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
-				<key>foreground</key>
-				<string>#ffcc80</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.markup.deleted.git_gutter</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#f36c60</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.markup.inserted.git_gutter</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#aed581</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.markup.changed.git_gutter</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff9e80</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.markup.ignored.git_gutter</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4dd0e1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.markup.untracked.git_gutter</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.import .entity.name.ambiguous</string>
 			<key>settings</key>
 			<dict>
@@ -574,15 +656,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.interface, .punctuation.delimiter.interface</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#aed581</string>
 			</dict>
 		</dict>
 		<dict>
@@ -785,60 +858,61 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.name.label, .punctuation.delimiter.label</string>
+			<string>.tag.embedded .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
 				<key>foreground</key>
-				<string>#ffffff</string>
+				<string>#4dd0e1</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.name.type.array, .punctuation.delimiter.array</string>
+			<string>.tag.embedded .punctuation.delimiter.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff9e80</string>
+				<string>#4DD0E1B2</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.delimiter.color</string>
+			<string>.tag.form .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
-				<string>#FFCC8080</string>
+				<string>#ffecb3</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.constant.color</string>
+			<string>.tag.form .punctuation.delimiter.tag</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
-				<string>#ffcc80</string>
+				<string>#FFECB3B2</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.constant.numeric</string>
+			<string>.entity.name.tag</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
-				<string>#ffcc80</string>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.constant.numeric.float</string>
+			<string>.punctuation.delimiter.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#BCAAA4B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.tag.sectioning.root .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -847,110 +921,29 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.delimiter.object</string>
+			<string>.tag.sectioning.root .punctuation.delimiter.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#aed581</string>
+				<string>#CE93D8B2</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.object .keyword.operator</string>
+			<string>.tag.sectioning .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#aed581</string>
+				<string>#f48fb1</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.object.property .entity.name.variable</string>
+			<string>.tag.sectioning .punctuation.delimiter.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#bdbdbd</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.operator.other.computed-property</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#aed581</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.string.unquoted.regex, .string.unquoted.regex .punctuation.delimiter</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#26a69a</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#f36c60</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.string .punctuation.delimiter</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#F36C6080</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.constant.character.escape.a</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#80deea</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.constant.character.escape.b</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#aed581</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.string .variable.a .entity.name.variable, .string .variable.a .punctuation.delimiter.variable, .string .variable.a .keyword.operator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ce93d8</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.string .variable.b .entity.name.variable, .string .variable.b .punctuation.delimiter.variable, .string .variable.b .keyword.operator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#f06292</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.string .variable .array.key</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#a1887f</string>
+				<string>#F48FB1B2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1047,97 +1040,109 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.tag.embedded .entity.name.tag</string>
+			<string>.entity.name.selector</string>
 			<key>settings</key>
 			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.delimiter.selector</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF80AB80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.extension .entity.name.selector</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#e0e0e0</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.extension .punctuation.delimiter.selector</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#E0E0E0B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.selector.class</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 				<key>foreground</key>
 				<string>#4dd0e1</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.tag.embedded .punctuation.delimiter.tag</string>
+			<string>.punctuation.delimiter.selector.class</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 				<key>foreground</key>
 				<string>#4DD0E1B2</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.tag.form .entity.name.tag</string>
+			<string>.entity.name.selector.id</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 				<key>foreground</key>
-				<string>#ffecb3</string>
+				<string>#ec407a</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.tag.form .punctuation.delimiter.tag</string>
+			<string>.punctuation.delimiter.selector.id</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 				<key>foreground</key>
-				<string>#FFECB3B2</string>
+				<string>#EC407AB2</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.name.tag</string>
+			<string>.entity.name.selector.placeholder</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>bold italic</string>
 				<key>foreground</key>
-				<string>#bcaaa4</string>
+				<string>#ffcc80</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.delimiter.tag</string>
+			<string>.punctuation.delimiter.selector.placeholder</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>bold italic</string>
 				<key>foreground</key>
-				<string>#BCAAA4B2</string>
+				<string>#FFCC8080</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.tag.sectioning.root .entity.name.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ce93d8</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.tag.sectioning.root .punctuation.delimiter.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#CE93D8B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.tag.sectioning .entity.name.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#f48fb1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.tag.sectioning .punctuation.delimiter.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#F48FB1B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.namespace</string>
+			<string>.entity.name.selector.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1146,16 +1151,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.delimiter.namespace</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#BCAAA480</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.type, .punctuation.delimiter.type</string>
+			<string>.source.css .support .entity.name.attribute, .source.scss .support .entity.name.attribute</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1164,27 +1160,43 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.support .entity.name.type, .support .punctuation.delimiter.type</string>
+			<string>.source.css .extension .entity.name.attribute, .source.scss .extension .entity.name.attribute</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff9e80</string>
+				<string>#e0e0e0</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.name.variable, .punctuation.delimiter.variable</string>
+			<string>.source.scss .punctuation.delimiter.body</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string></string>
 				<key>foreground</key>
-				<string>#bdbdbd</string>
+				<string>#ffffff</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.support .entity.name.variable, .support .punctuation.delimiter.variable</string>
+			<string>.entity.name.mixin, .punctuation.delimiter.mixin</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4fc3f7</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.scss .keyword.operator.other.comma, .source.scss .keyword.operator.other.association, .source.scss .keyword.operator.other.terminator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>source.scss .keyword.modifier.unit</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

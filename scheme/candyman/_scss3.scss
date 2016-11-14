@@ -10,14 +10,14 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.selector.class {
-   fontStyle: italic;
+@import 'scss3/selector/base';
+@import 'scss3/selector/class';
+@import 'scss3/selector/id';
+@import 'scss3/selector/placeholder';
+@import 'scss3/selector/tag';
 
-  .entity.name.selector {
-    foreground: $cyan-300;
-  }
-
-  .punctuation.delimiter.selector.begin {
-    foreground: rgba($cyan-300, .7);
-  }
-}
+@import 'scss3/attribute';
+@import 'scss3/delimiter';
+@import 'scss3/mixin';
+@import 'scss3/operator';
+@import 'scss3/unit';

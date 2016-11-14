@@ -10,10 +10,7 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@name 'Candyman';
-
-@import 'scheme/candyman/core';
-@import 'scheme/candyman/fjsx15';
-@import 'scheme/candyman/json1';
-@import 'scheme/candyman/markup';
-@import 'scheme/candyman/scss3';
+.entity.name.mixin,
+.punctuation.delimiter.mixin {
+  foreground: $light-blue-300;
+}

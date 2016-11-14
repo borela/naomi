@@ -10,14 +10,18 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.support {
-    .entity.name.attribute.css {
-      foreground: $light-green-300;
-    }
-}
+.level-6 {
+  .punctuation.delimiter.object.json,
+  .punctuation.delimiter.object.begin.json,
+  .punctuation.delimiter.object.end.json {
+    foreground: $amber-200;
+  }
 
-.extension {
-    .entity.name.attribute.css {
-      foreground: $grey-300;
-    }
+  .string {
+    foreground: $pink-200;
+  }
+
+  .punctuation.delimiter.string {
+    foreground: rgba($pink-200, .5);
+  }
 }

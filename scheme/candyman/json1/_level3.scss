@@ -10,10 +10,18 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@name 'Candyman';
+.level-3 {
+  .punctuation.delimiter.object.json,
+  .punctuation.delimiter.object.begin.json,
+  .punctuation.delimiter.object.end.json {
+    foreground: $light-green-400;
+  }
 
-@import 'scheme/candyman/core';
-@import 'scheme/candyman/fjsx15';
-@import 'scheme/candyman/json1';
-@import 'scheme/candyman/markup';
-@import 'scheme/candyman/scss3';
+  .string {
+    foreground: $red-300;
+  }
+
+  .punctuation.delimiter.string {
+    foreground: rgba($red-300, .7);
+  }
+}

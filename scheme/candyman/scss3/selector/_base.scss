@@ -10,10 +10,20 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@name 'Candyman';
+.entity.name.selector {
+  foreground: $pink-A100;
+}
 
-@import 'scheme/candyman/core';
-@import 'scheme/candyman/fjsx15';
-@import 'scheme/candyman/json1';
-@import 'scheme/candyman/markup';
-@import 'scheme/candyman/scss3';
+.punctuation.delimiter.selector {
+  foreground: rgba($pink-A100, .5);
+}
+
+.extension {
+  .entity.name.selector {
+    foreground: $grey-300;
+  }
+
+  .punctuation.delimiter.selector {
+    foreground: rgba($grey-300, .7);
+  }
+}

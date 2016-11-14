@@ -10,8 +10,18 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.extension {
-    .keyword.control.directive.css {
-      foreground: $grey-300;
-    }
+.level-4 {
+  .punctuation.delimiter.object.json,
+  .punctuation.delimiter.object.begin.json,
+  .punctuation.delimiter.object.end.json {
+    foreground: $red-300;
+  }
+
+  .string {
+    foreground: $deep-orange-200;
+  }
+
+  .punctuation.delimiter.string {
+    foreground: rgba($deep-orange-200, .5);
+  }
 }

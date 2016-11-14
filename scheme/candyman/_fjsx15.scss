@@ -10,8 +10,9 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.selector.keyframe {
-  .entity.name.selector {
-    foreground: $pink-A100;
-  }
-}
+@import 'fjsx15/flowtype/delimiter';
+@import 'fjsx15/flowtype/operator';
+
+@import 'fjsx15/decorator';
+@import 'fjsx15/destructuring';
+@import 'fjsx15/import';

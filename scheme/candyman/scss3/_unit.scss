@@ -10,13 +10,8 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.punctuation.delimiter.pseudo-class,
-.entity.name.pseudo-class {
-  foreground: $pink-A100;
-}
-
-.extension {
-    .entity.name.pseudo-class {
-      foreground: $grey-300;
-    }
+source.scss {
+  .keyword.modifier.unit {
+    foreground: $deep-orange-A100;
+  }
 }

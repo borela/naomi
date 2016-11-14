@@ -10,14 +10,18 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.selector.id {
-   fontStyle: italic;
-
-  .entity.name.selector {
-    foreground: $pink-400;
+.level-2 {
+  .punctuation.delimiter.object.json,
+  .punctuation.delimiter.object.begin.json,
+  .punctuation.delimiter.object.end.json {
+    foreground: $cyan-300;
   }
 
-  .punctuation.delimiter.selector.begin {
-    foreground: rgba($pink-400, .7);
+  .string {
+    foreground: $light-green-400;
+  }
+
+  .punctuation.delimiter.string {
+    foreground: rgba($light-green-300, .5);
   }
 }

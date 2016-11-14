@@ -10,14 +10,17 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.keyword.operator.other.comma.css,
-.keyword.operator.other.association.css,
-.keyword.operator.other.terminator.css,
-.punctuation.delimiter.body.begin.css,
-.punctuation.delimiter.body.end.css {
-  foreground: $grey-0;
-}
+.source.css,
+.source.scss {
+  .support {
+    .entity.name.attribute {
+      foreground: $light-green-300;
+    }
+  }
 
-.punctuation.delimiter.selector {
-  foreground: $pink-A100;
+  .extension {
+    .entity.name.attribute {
+      foreground: $grey-300;
+    }
+  }
 }

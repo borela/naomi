@@ -31,7 +31,7 @@
 }
 
 /**
- * Generic keywords.
+ * Generic keywords and operators.
  */
 
 .keyword {
@@ -40,7 +40,15 @@
   &.operator {
     fontStyle: bold;
   }
+
+  &.operator.logical.word {
+    fontStyle: none;
+  }
 }
+
+/**
+ * Storage type and modifiers.
+ */
 
 .storage.modifier,
 .storage.type {
@@ -49,6 +57,10 @@
     fontStyle: italic bold;
   }
 }
+
+/**
+ * Keywords that starts/ends embeded expressions.
+ */
 
 .keyword.operator.other.embedded-expression {
   foreground: rgba($pink-400, .7);

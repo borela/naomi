@@ -10,10 +10,14 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@name 'Candyman';
+@import 'markup/tag/embedded';
+@import 'markup/tag/form';
+@import 'markup/tag/other';
+@import 'markup/tag/sectioning-root';
+@import 'markup/tag/sectioning';
 
-@import 'scheme/candyman/core';
-@import 'scheme/candyman/fjsx15';
-@import 'scheme/candyman/json1';
-@import 'scheme/candyman/markup';
-@import 'scheme/candyman/scss3';
+@import 'markup/attribute';
+@import 'markup/data-attribute';
+@import 'markup/doctype';
+@import 'markup/prolog';
+@import 'markup/text';

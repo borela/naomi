@@ -24,6 +24,8 @@ contexts:
         (?x)
         (
           (?> from
+            | if
+            | in
             | through
           )
         )

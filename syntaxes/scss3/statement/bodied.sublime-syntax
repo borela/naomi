@@ -28,7 +28,8 @@ contexts:
         (?x)
         \s*
         (@
-          (?> for
+          (?> each
+            | for
             | media
           )
         )\b

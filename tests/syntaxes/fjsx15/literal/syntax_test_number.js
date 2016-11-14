@@ -13,22 +13,22 @@
 // the License.
 
    0
-// ^ constant.numeric.decimal.js.fjsx15
+// ^ .constant.numeric.decimal.js.fjsx15
    123
-// ^^^ constant.numeric.decimal.js.fjsx15
+// ^^^ .constant.numeric.decimal.js.fjsx15
    123.
-// ^^^^ constant.numeric.float.js.fjsx15
+// ^^^^ .constant.numeric.float.js.fjsx15
    123.0
-// ^^^^^ constant.numeric.float.js.fjsx15
+// ^^^^^ .constant.numeric.float.js.fjsx15
    .123
-// ^^^^ constant.numeric.float.js.fjsx15
+// ^^^^ .constant.numeric.float.js.fjsx15
    0.123
-// ^^^^^ constant.numeric.float.js.fjsx15
+// ^^^^^ .constant.numeric.float.js.fjsx15
    123e10
-// ^^^^^^ constant.numeric.float.scientific.js.fjsx15
+// ^^^^^^ .constant.numeric.float.scientific.js.fjsx15
    123e+10
-// ^^^^^^^ constant.numeric.float.scientific.js.fjsx15
+// ^^^^^^^ .constant.numeric.float.scientific.js.fjsx15
    123e-10
-// ^^^^^^^ constant.numeric.float.scientific.js.fjsx15
+// ^^^^^^^ .constant.numeric.float.scientific.js.fjsx15
    0x123
-// ^^^^^ constant.numeric.hex.js.fjsx15
+// ^^^^^ .constant.numeric.hex.js.fjsx15

@@ -50,7 +50,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          {{commonIdentifier}}
+          \s*{{commonIdentifier}}
           \s*\(
         )
       set: [

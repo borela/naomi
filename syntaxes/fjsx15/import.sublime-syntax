@@ -26,37 +26,34 @@ contexts:
   main:
     # Type.
     - match: |
-        (?x)\b
+        (?x)
         \s*(import)
         \s*(type)\b
       captures:
         1: keyword.control.import.js.fjsx15
         2: keyword.other.type-aliasing.flowtype
-      set: [
-        punctuation,
-        target
-      ]
+      set: target
     # Import the entire module.
     - match: |
-        (?x)\b
-        import
+        (?x)\s*
+        (import)
         (?=
           \s*
           (?>"|')
         )\b
-      scope: keyword.control.import.js.fjsx15
+      captures:
+        1: keyword.control.import.js.fjsx15
       set: origin-path
     # Selective.
-    - match: \bimport\b
-      scope: keyword.control.import.js.fjsx15
-      set: [
-        punctuation,
-        target
-      ]
+    - match: \s*(import)\b
+      captures:
+        1: keyword.control.import.js.fjsx15
+      set: target
 
   origin:
-    - match: \bfrom\b
-      scope: keyword.control.import.origin.js.fjsx15
+    - match: \s*(from)\b
+      captures:
+        1: keyword.control.import.origin.js.fjsx15
       set: origin-path
 
   origin-path:
@@ -65,63 +62,82 @@ contexts:
 
   target:
     # Multiple.
-    - match: \{
-      scope: punctuation.delimiter.import.list.begin.js.fjsx15
-      set: list
+    - match: \s*({)
+      captures:
+        1: punctuation.delimiter.import.list.begin.js.fjsx15
+      set: [
+        punctuation,
+        list
+      ]
     # All.
-    - match: \*
-      scope: keyword.operator.other.import.all.js.fjsx15
-      set: optional-alias
+    - match: \s*(\*)
+      captures:
+        1: keyword.operator.other.import.all.js.fjsx15
+      set: [
+        punctuation,
+        optional-alias
+      ]
     # Simple.
     - match: |
-        (?xi)
-        {{commonIdentifier}}
-      scope: >-
-        import.js.fjsx15
-        entity.name.ambiguous.js.fjsx15
-      set: optional-alias
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: >-
+          import.js.fjsx15
+          entity.name.ambiguous.js.fjsx15
+      set: [
+        punctuation,
+        optional-alias
+      ]
 
   list:
-    - match: \}
-      scope: punctuation.delimiter.import.list.end.js.fjsx15
+    - match: \s*(})
+      captures:
+        1: punctuation.delimiter.import.list.end.js.fjsx15
       pop: true
     - match: ""
       push:
-        - match: \,
-          scope: punctuation.delimiter.import.item.js.fjsx15
-        - include: target
-        - match: (?=\})
+        - match: \s*(,)
+          captures:
+            1: punctuation.delimiter.import.item.js.fjsx15
+        - match: (?=\s*})
           pop: true
+        - include: target
 
   optional-alias:
-    - include: alias
     - match: |
         (?x)
-        (?=
+        (?=\s*
           (?> ,
             | \}
             | from
           )
         )
       pop: true
+    - include: alias
 
   alias:
-    - match: \bas\b
-      scope: keyword.other.alias.js.fjsx15
+    - match: \s*(as)\b
+      captures:
+        1: keyword.other.alias.js.fjsx15
       set: alias-name
 
   alias-name:
     - match: |
-        (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.alias.js.fjsx15
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.alias.js.fjsx15
       pop: true
 
   punctuation:
     - include: origin
-    - match: \,
-      scope: punctuation.delimiter.import.item.js.fjsx15
+    - match: \s*(,)
+      captures:
+        1: punctuation.delimiter.import.item.js.fjsx15
       set: [
         punctuation,
         target
       ]
+    - match: ""
+      pop: true

@@ -10,10 +10,12 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import 'fjsx15/flowtype/delimiter';
-@import 'fjsx15/flowtype/operator';
+.export {
+  .entity.name.ambiguous {
+    foreground: $brown-200;
+  }
+}
 
-@import 'fjsx15/decorator';
-@import 'fjsx15/destructuring';
-@import 'fjsx15/export';
-@import 'fjsx15/import';
+.punctuation.delimiter.export {
+  foreground: $grey-0;
+}

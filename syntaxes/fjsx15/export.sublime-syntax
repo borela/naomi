@@ -17,17 +17,123 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
     - match: \bexport\b
       scope: keyword.control.export.js.fjsx15
-      set: optional-default
+      set: [
+        target,
+        optional-default
+      ]
 
   optional-default:
-    - match: \bdefault\b
-      scope: >-
-        storage.modifier.js.fjsx15
-        keyword.control.export.default.js.fjsx15
+    - match: \s*(default)\b
+      captures:
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.control.export.default.js.fjsx15
       pop: true
-    - match: (?=\S)
+    - match: ""
+      pop: true
+
+  origin:
+    - match: \s*(from)\b
+      captures:
+        1: keyword.control.export.origin.js.fjsx15
+      set: origin-path
+
+  origin-path:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
+
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+
+  target:
+    # Multiple.
+    - match: \s*({)
+      captures:
+        1: punctuation.delimiter.export.list.begin.js.fjsx15
+      set: [
+        punctuation,
+        list
+      ]
+    # All.
+    - match: \s*(\*)
+      captures:
+        1: keyword.operator.other.export.all.js.fjsx15
+      set: [
+        punctuation,
+        optional-alias
+      ]
+    # Simple.
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: >-
+          export.js.fjsx15
+          entity.name.ambiguous.js.fjsx15
+      set: [
+        punctuation,
+        optional-alias
+      ]
+    # Any other statement or expression.
+    - include: statement-and-expression
+
+  list:
+    - match: \s*(})
+      captures:
+        1: punctuation.delimiter.export.list.end.js.fjsx15
+      pop: true
+    - match: ""
+      push:
+        - match: \s*(,)
+          captures:
+            1: punctuation.delimiter.export.item.js.fjsx15
+        - match: (?=\s*})
+          pop: true
+        - include: target
+
+  optional-alias:
+    - match: |
+        (?x)
+        (?=\s*
+          (?> ,
+            | \}
+            | from
+          )
+        )
+      pop: true
+    - include: alias
+
+  alias:
+    - match: \s*(as)\b
+      captures:
+        1: keyword.other.alias.js.fjsx15
+      set: alias-name
+
+  alias-name:
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.alias.js.fjsx15
+      pop: true
+
+  punctuation:
+    - include: origin
+    - match: \s*(,)
+      captures:
+        1: punctuation.delimiter.export.item.js.fjsx15
+      set: [
+        punctuation,
+        target
+      ]
+    - match: ""
       pop: true

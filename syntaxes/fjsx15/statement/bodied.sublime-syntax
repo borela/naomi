@@ -21,7 +21,7 @@ contexts:
   main:
     # Body only.
     - match: |
-        (?xi)\b
+        (?xi)\s*\b
         (?> do
           | else
           | finally
@@ -31,7 +31,7 @@ contexts:
       set: body
     # Header and body.
     - match: |
-        (?xi)\b
+        (?xi)\s*\b
         (?> catch
           | if
           | elseif

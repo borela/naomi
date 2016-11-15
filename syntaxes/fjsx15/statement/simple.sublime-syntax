@@ -27,7 +27,7 @@ contexts:
     - include: break-continue
     - include: yield
     - match: |
-        (?x)\b
+        (?x)\s*\b
         (?> await
           | de
             (?> fault
@@ -41,7 +41,7 @@ contexts:
 
   break-continue:
     - match: |
-        (?x)\b
+        (?x)\s*\b
         (?> break
           | continue
         )\b
@@ -60,7 +60,7 @@ contexts:
 
   yield:
     - match: |
-        (?x)\b
+        (?x)\s*\b
         (yield)
         (?> \s*(\*)?
           | \b

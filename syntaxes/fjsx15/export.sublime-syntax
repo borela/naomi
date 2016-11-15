@@ -85,6 +85,13 @@ contexts:
           )
         )
         ({{commonIdentifier}})
+        (?=
+          \s*
+          (?> as\b
+            | from\b
+            | ,
+          )
+        )
       captures:
         1: >-
           export.js.fjsx15

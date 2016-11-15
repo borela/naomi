@@ -74,6 +74,16 @@ contexts:
     # Simple.
     - match: |
         (?xi)\s*
+        (?!
+          (?> class
+            | const
+            | function
+            | interface
+            | let
+            | type
+            | var
+          )
+        )
         ({{commonIdentifier}})
       captures:
         1: >-

@@ -36,6 +36,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/json1/constant.sublime-syntax
         - include: Packages/Naomi/syntaxes/json1/literal/number.sublime-syntax
         - include: Packages/Naomi/syntaxes/json1/literal/array.sublime-syntax
+        - include: Packages/Naomi/syntaxes/json1/literal/object/level-1.sublime-syntax
         - include: Packages/Naomi/syntaxes/json1/literal/string.sublime-syntax
         - match: ""
           pop: true

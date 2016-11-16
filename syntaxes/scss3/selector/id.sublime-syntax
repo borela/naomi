@@ -26,7 +26,8 @@ contexts:
   main:
     - match: |
         (?xi)\s*
-        (\#)({{commonIdentifier}})\b
+        (\#)(?!{)
+        ({{commonIdentifier}})?
       captures:
         1: punctuation.delimiter.selector.id.scss.scss3
         2: entity.name.selector.id.scss.scss3

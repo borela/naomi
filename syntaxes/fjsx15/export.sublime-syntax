@@ -24,12 +24,24 @@ variables:
 
 contexts:
   main:
-    - match: \bexport\b
-      scope: keyword.control.export.js.fjsx15
+    - match: \s*(export)\b
+      captures:
+        1: keyword.control.export.js.fjsx15
       set: [
         target,
         optional-default
       ]
+
+  comment-no-pop:
+    - match: |
+        (?x)
+        (?=\s*/
+          (?> \*
+            | /
+          )
+        )
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
 
   optional-default:
     - match: \s*(default)\b
@@ -55,6 +67,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   target:
+    - include: comment-no-pop
     # Multiple.
     - match: \s*({)
       captures:

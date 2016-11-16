@@ -642,6 +642,24 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.export .entity.name.ambiguous</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.delimiter.export</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.import .entity.name.ambiguous</string>
 			<key>settings</key>
 			<dict>

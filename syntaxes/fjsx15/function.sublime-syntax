@@ -26,7 +26,7 @@ contexts:
   main:
     # Simple function without identifier.
     - match: |
-        (?x)
+        (?x)\s*
         (?:
           (async)\s+
         )?
@@ -45,7 +45,7 @@ contexts:
       set: declaration
     # Simple function with identifier.
     - match: |
-        (?x)
+        (?x)\s*
         (?:
           (async)\s+
         )?
@@ -65,7 +65,7 @@ contexts:
       set: declaration
     # Templated function without identifier.
     - match: |
-        (?x)
+        (?x)\s*
         (?:
           (async)\s+
         )?
@@ -84,7 +84,7 @@ contexts:
       set: declaration
     # Templated function with identifier.
     - match: |
-        (?x)
+        (?x)\s*
         (?:
           (async)\s+
         )?

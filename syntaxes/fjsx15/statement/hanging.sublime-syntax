@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\s*\b
+        (?x)\s*
         (?> case
           | default
         )\b

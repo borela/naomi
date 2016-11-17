@@ -24,10 +24,11 @@ variables:
 
 contexts:
   main:
-    - match: \bclass\b
-      scope: >-
-        storage.type.js.fjsx15
-        keyword.declaration.class.js.fjsx15
+    - match: \s*(class)\b
+      captures:
+        1: >-
+          storage.type.js.fjsx15
+          keyword.declaration.class.js.fjsx15
       set: declaration
 
   declaration:

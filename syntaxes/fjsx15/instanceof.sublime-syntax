@@ -19,8 +19,9 @@ scope: ...
 
 contexts:
   main:
-    - match: \binstanceof\b
-      scope: keyword.other.js.fjsx15
+    - match: \s*(instanceof)\b
+      captures:
+        1: keyword.other.js.fjsx15
       set: type
 
   type:

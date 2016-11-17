@@ -37,8 +37,9 @@ contexts:
         type
       ]
     # Accept any expression after the keyword.
-    - match: (?i)\bnew\b
-      scope: keyword.other.js.fjsx15
+    - match: (?i)\s*(new)\b
+      captures:
+        1: keyword.other.js.fjsx15
       pop: true
 
   arguments:

@@ -24,12 +24,13 @@ variables:
 
 contexts:
   main:
-    - match: \binterface\b
-      scope: keyword.interface.flowtype
+    - match: \s*(interface)\b
+      captures:
+        1: keyword.interface.flowtype
       set: identifier
 
   identifier:
-    - match: (?=\bextends\b)
+    - match: (?=\s*extends\b)
       set: [
         body,
         extension
@@ -42,8 +43,9 @@ contexts:
       set: optional-template-parameters
 
   extension:
-    - match: \bextends\b
-      scope: keyword.extension.js.fjsx15
+    - match: \s*(extends)\b
+      captures:
+        1: keyword.extension.js.fjsx15
       set: type
 
   type:
@@ -58,7 +60,7 @@ contexts:
         optional-extension,
         template-parameters
       ]
-    - match: (?=\bextends\b)
+    - match: (?=\s*extends\b)
       set: [
         body,
         extension
@@ -67,7 +69,7 @@ contexts:
       set: body
 
   optional-extension:
-    - match: (?=\bextends\b)
+    - match: (?=\s*extends\b)
       set: [
         body,
         extension

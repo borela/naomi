@@ -19,8 +19,9 @@ scope: ...
 
 contexts:
   main:
-    - match: \bdeclare\b
-      scope: keyword.declaration.js.fjsx15
+    - match: \s*(declare)\b
+      captures:
+        1: keyword.declaration.js.fjsx15
       set: declarations
 
   declarations:

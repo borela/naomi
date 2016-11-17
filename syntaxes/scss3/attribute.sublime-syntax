@@ -163,7 +163,9 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax
+        - include: expression
         - match: ""
           pop: true
 
+  expression:
+    - include: Packages/Naomi/syntaxes/scss3/expression.sublime-syntax

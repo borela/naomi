@@ -26,9 +26,8 @@ contexts:
   main:
     # Decorator with arguments.
     - match: |
-        (?xi)
-        (@)
-        ({{decoratorIdentifier}})
+        (?xi)\s*
+        (@)({{decoratorIdentifier}})
         (?=\s*\()
       captures:
         1: punctuation.delimiter.decorator.js.fjsx15
@@ -36,9 +35,8 @@ contexts:
       set: arguments
     # Decorator without arguments.
     - match: |
-        (?xi)
-        (@)
-        ({{decoratorIdentifier}})
+        (?xi)\s*
+        (@)({{decoratorIdentifier}})
       captures:
         1: punctuation.delimiter.decorator.js.fjsx15
         2: entity.name.decorator.js.fjsx15

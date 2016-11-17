@@ -22,7 +22,7 @@ contexts:
     # Destructuring object.
     - match: |
         (?x)
-        (?=
+        (?=\s*
           (?> const
             | let
             | var
@@ -36,7 +36,7 @@ contexts:
     # Destructuring array.
     - match: |
         (?x)
-        (?=
+        (?=\s*
           (?> const
             | let
             | var
@@ -50,7 +50,7 @@ contexts:
     # Simple variable.
     - match: |
         (?x)
-        (?=
+        (?=\s*
           (?> const
             | let
             | var
@@ -70,14 +70,17 @@ contexts:
 
   keyword:
     - match: |
-        (?x)
-        (?> const
-          | let
-          | var
+        (?x)\s*
+        (
+          (?> const
+            | let
+            | var
+          )
         )
-      scope: >-
-        storage.type.js.fjsx15
-        keyword.declaration.variable.js.fjsx15
+      captures:
+        1: >-
+          storage.type.js.fjsx15
+          keyword.declaration.variable.js.fjsx15
       pop: true
 
   variable-or-constant:

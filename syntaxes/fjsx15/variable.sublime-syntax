@@ -30,7 +30,7 @@ contexts:
   common-variable:
     # Single character.
     - match: |
-        (?xi)
+        (?xi)\s*
         (?> \$\B
           | [_[:alpha:]]\b
         )
@@ -38,7 +38,7 @@ contexts:
       pop: true
     # Two or more characters.
     - match: |
-        (?xi)
+        (?xi)\s*
         {{commonIdentifier}}
         (?> \$\B
           | [_[:alnum:]]\b
@@ -48,7 +48,7 @@ contexts:
 
   support-variable:
     - match: |
-        (?xi)\b
+        (?xi)\s*
         (?> super
           | this
         )\b

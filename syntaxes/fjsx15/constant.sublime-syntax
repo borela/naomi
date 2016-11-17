@@ -30,7 +30,7 @@ contexts:
   common-constant:
     # Single character.
     - match: |
-        (?x)
+        (?x)\s*
         (?> \$\B
           | [_[:upper:]]\b
         )
@@ -38,7 +38,7 @@ contexts:
       pop: true
     # Two or more characters.
     - match: |
-        (?x)
+        (?x)\s*
         {{constantIdentifier}}
         (?> \$\B
           | [_[:upper:]]\b
@@ -48,7 +48,7 @@ contexts:
 
   support-constant:
     - match: |
-        (?x)
+        (?x)\s*
         (?> false
           | Infinity
           | NaN

@@ -25,7 +25,7 @@ variables:
 contexts:
   main:
     # String property name.
-    - match: (?=(?>'|"|`))
+    - match: (?=\s*(?>'|"|`))
       set: string
     # Computed property name.
     - match: \s*(\[)
@@ -34,11 +34,12 @@ contexts:
       set: computed-property
     # Normal property.
     - match: |
-        (?xi)
-        {{commonIdentifier}}
-      scope: >-
-        object.property.js.fjsx15
-        entity.name.variable.js.fjsx15
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: >-
+          object.property.js.fjsx15
+          entity.name.variable.js.fjsx15
       pop: true
 
   string:

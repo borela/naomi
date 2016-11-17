@@ -26,14 +26,14 @@ contexts:
   main:
     # Empty object literal.
     - match: |
-        (?x)
-        (\{)\s*(\})
+        (?x)\s*
+        ({)\s*(})
       captures:
         1: punctuation.delimiter.object.begin.js.fjsx15
         2: punctuation.delimiter.object.end.js.fjsx15
       pop: true
     # Normal object literal.
-    - match: \{
+    - match: \s*({)
       scope: punctuation.delimiter.object.begin.js.fjsx15
       set: items
 
@@ -41,7 +41,7 @@ contexts:
     - match: \s*(,)
       captures:
         1: punctuation.delimiter.object.js.fjsx15
-    - match: \s*(\})
+    - match: \s*(})
       captures:
         1: punctuation.delimiter.object.end.js.fjsx15
       pop: true
@@ -77,7 +77,7 @@ contexts:
         (?x)
         (?=\s*
           (?> ,
-            | \}
+            | }
           )
         )
       pop: true

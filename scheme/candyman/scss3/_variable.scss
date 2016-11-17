@@ -10,7 +10,9 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.entity.name.type.array,
-.punctuation.delimiter.array {
-  foreground: $deep-orange-A100;
+.source.scss {
+  .declaration .entity.name.variable {
+    foreground: $brown-300;
+    fontStyle: italic;
+  }
 }

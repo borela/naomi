@@ -10,30 +10,29 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import 'core/colors';
+@import 'core/palette';
 @import 'core/basic';
 
+@import 'core/array';
 @import 'core/class';
+@import 'core/color';
+@import 'core/comment';
 @import 'core/constant';
 @import 'core/function';
 @import 'core/gitgutter';
 @import 'core/interface';
 @import 'core/label';
 @import 'core/namespace';
+@import 'core/number';
+@import 'core/object';
+@import 'core/regex';
+@import 'core/string';
 @import 'core/type';
 @import 'core/variable';
 
-@import 'core/literal/array';
-@import 'core/literal/color';
-@import 'core/literal/number';
-@import 'core/literal/object';
-@import 'core/literal/regex';
-@import 'core/literal/string';
-
-@import 'core/comment/normal';
-@import 'core/comment/documentation/constant';
-@import 'core/comment/documentation/function';
-@import 'core/comment/documentation/keyword';
-@import 'core/comment/documentation/namespace';
-@import 'core/comment/documentation/type';
-@import 'core/comment/documentation/variable';
+@import 'core/docblock/constant';
+@import 'core/docblock/function';
+@import 'core/docblock/keyword';
+@import 'core/docblock/namespace';
+@import 'core/docblock/type';
+@import 'core/docblock/variable';

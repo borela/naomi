@@ -103,6 +103,7 @@ contexts:
           (?> as\b
             | from\b
             | ,
+            | }
             | $
           )
         )

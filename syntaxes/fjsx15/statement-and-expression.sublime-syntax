@@ -22,7 +22,7 @@ variables:
     (?<!
       \]|\)|\}
     )
-    (\()
+    \s*(\()
     (?>
       (?=
         \s*(?:async)?
@@ -39,7 +39,7 @@ contexts:
   main:
     # Open new expression group.
     - match: |
-        (?xi)\s*
+        (?xi)
         {{expressionGroupBegin}}
       captures:
         1: punctuation.delimiter.expression.group.a.begin.js.fjsx15
@@ -50,7 +50,7 @@ contexts:
   open-a-close-b:
     # Open new expression group.
     - match: |
-        (?xi)\s*
+        (?xi)
         {{expressionGroupBegin}}
       captures:
         1: punctuation.delimiter.expression.group.a.begin.js.fjsx15
@@ -71,7 +71,7 @@ contexts:
   open-b-close-a:
     # Open new expression group.
     - match: |
-        (?xi)\s*
+        (?xi)
         {{expressionGroupBegin}}
       captures:
         1: punctuation.delimiter.expression.group.b.begin.js.fjsx15

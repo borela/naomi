@@ -21,11 +21,10 @@ contexts:
   main:
     - match: |
         (?x)
-        (?<=
-          [$_[:alnum:]]
-          |
-          \)
+        (?<= [$_[:alnum:]]
+          | \)
         )
+        (?<!\sof)
         \s*(\[)
       captures:
         1: punctuation.delimiter.array.access.begin.js.fjsx15

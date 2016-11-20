@@ -21,25 +21,28 @@ contexts:
   main:
     - match: |
         (?x)
-        \[
+        \s*(\[)
         (?!
-          [^;]*?\]
+          [^;]*?]
           \s*=[^=]
         )
-      scope: punctuation.delimiter.array.begin.js.fjsx15
+      captures:
+        1: punctuation.delimiter.array.begin.js.fjsx15
       set: items
 
   items:
-    - match: \,
-      scope: punctuation.delimiter.array.js.fjsx15
+    - match: \s*(,)
+      captures:
+        1: punctuation.delimiter.array.js.fjsx15
     - include: end
     - match: ""
       push:
-        - match: (?=,|\])
+        - match: (?=,|])
           pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   end:
-    - match: \]
-      scope: punctuation.delimiter.array.end.js.fjsx15
+    - match: \s*(])
+      captures:
+        1: punctuation.delimiter.array.end.js.fjsx15
       pop: true

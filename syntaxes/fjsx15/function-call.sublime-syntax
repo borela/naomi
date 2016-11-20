@@ -38,7 +38,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          {{commonIdentifier}}
+          \s*{{commonIdentifier}}
           \s*<.*>\s*\(
         )
       set: [

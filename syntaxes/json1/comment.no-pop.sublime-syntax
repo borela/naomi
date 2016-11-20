@@ -13,14 +13,18 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: JSON (Experimental)
+hidden: true
 
-file_extensions:
-  - json
-
-scope: source.json.json1
+scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/json1/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/json1/literal/object/level-1.sublime-syntax
+    - match: |
+        (?x)
+        (?=
+          (?> \/\/
+            | \/\*
+          )
+        )
+      push:
+        - include: Packages/Naomi/syntaxes/json1/comment.sublime-syntax

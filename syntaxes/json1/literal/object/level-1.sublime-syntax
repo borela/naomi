@@ -28,6 +28,7 @@ contexts:
     - meta_scope: >-
         level-1.json.json1
         level-a.json.json1
+    - include: comment
     - match: \s*(,)
       captures:
         1: punctuation.delimiter.object.json.json1
@@ -47,11 +48,13 @@ contexts:
       push: key
 
   key:
+    - include: comment
     - include: Packages/Naomi/syntaxes/json1/literal/string.sublime-syntax
 
   value:
     - clear_scopes: true
     - meta_scope: source.json.json1
+    - include: comment
     - match: |
         (?x)
         (?=\s*
@@ -70,3 +73,6 @@ contexts:
         - include: Packages/Naomi/syntaxes/json1/literal/object/level-2.sublime-syntax
         - match: ""
           pop: true
+
+  comment:
+    - include: Packages/Naomi/syntaxes/json1/comment.no-pop.sublime-syntax

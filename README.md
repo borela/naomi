@@ -89,7 +89,7 @@ Combines ES2015+, Flow, React’s JSX.
 #### HTML 5 (Experimental)
 
 * Balanced tags.
-* FJSX15 inside `<script type="text/babel">` tags.
+* FJSX15 inside script tags.
 * CSS3 inside style tags.
 * Section root elements.
 * Section elements.

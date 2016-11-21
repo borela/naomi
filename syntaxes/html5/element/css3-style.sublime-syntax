@@ -33,9 +33,13 @@ contexts:
       ]
 
   embedded-css3:
+    - clear_scopes: true
+    - meta_content_scope: >-
+        source.css.css3
+        source.scss.scss3
     - match: |
         (?x)\s*
-        (</)(\2)(>)
+        (</)(style)(>)
       captures:
         0: tag.style.html.html5
         1: punctuation.delimiter.tag.begin.html.html5
@@ -44,9 +48,11 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/naomi.css3.sublime-syntax
-        - match: \s*
+        - match: |
+            (?x)
+            (?=\s*</style>)
           pop: true
+        - include: Packages/Naomi/syntaxes/naomi.scss3.sublime-syntax
 
   attributes:
     - match: \s*(\>)

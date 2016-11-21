@@ -23,11 +23,6 @@ contexts:
         (?x)
         (<)
         (script)
-        (?=
-          \s*type
-          \s*=
-          \s*"text/babel"
-        )
       captures:
         0: tag.script.html.html5
         1: punctuation.delimiter.tag.begin.html.html5

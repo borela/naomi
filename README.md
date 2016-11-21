@@ -47,9 +47,9 @@ The “Packages” directory is located at:
 #### Notes
 
 You aren’t required to use the color schemes provided but keep in mind
-that not all features listed before are going to work with other color schemes.
-Also, be aware of auto completion conflicts provided by other packages, you may
-need to disable them.
+that not all features listed are going to work with other ones. Also, be aware
+of auto completion conflicts provided by other packages, you may need to disable
+them.
 
 ## Features
 
@@ -104,6 +104,10 @@ Combines ES2015+, Flow, React’s JSX.
 * Pseudo classes.
 * Pseudo elements.
 * Keyframes.
+* Conditionals.
+* Loops.
+* Mixins.
+* Functions.
 * Function calls.
 
 #### MQL4

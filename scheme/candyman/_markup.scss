@@ -10,14 +10,15 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import 'markup/tag/embedded';
-@import 'markup/tag/form';
-@import 'markup/tag/other';
-@import 'markup/tag/sectioning-root';
-@import 'markup/tag/sectioning';
+@import "markup/tag/embedded";
+@import "markup/tag/form";
+@import "markup/tag/other";
+@import "markup/tag/sectioning-root";
+@import "markup/tag/sectioning";
 
-@import 'markup/attribute';
-@import 'markup/data-attribute';
-@import 'markup/doctype';
-@import 'markup/prolog';
-@import 'markup/text';
+@import "markup/attribute";
+@import "markup/data-attribute";
+@import "markup/doctype";
+@import "markup/operator";
+@import "markup/prolog";
+@import "markup/text";

@@ -19,7 +19,7 @@
   lineHighlight: $blue-grey-800;
   selection: $blue-grey-800;
 
-  bracketsForeground: $pink-A100;
+  bracketsForeground: $pink-a100;
   bracketsOptions: foreground;
 
   findHighlight: $teal-300;
@@ -35,7 +35,7 @@
  */
 
 .keyword {
-  foreground: $pink-A100;
+  foreground: $pink-a100;
 
   &.operator {
     fontStyle: bold;
@@ -84,7 +84,7 @@
  */
 
 .punctuation.delimiter.control {
-  foreground: $pink-A100;
+  foreground: $pink-a100;
 }
 
 /**

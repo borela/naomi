@@ -10,23 +10,8 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.punctuation.delimiter.object {
-  foreground: $light-green-300;
-}
-
-.object {
+.text.html {
   .keyword.operator {
-    foreground: $light-green-300;
+    foreground: rgba($purple-200, .7);
   }
-
-  &.property {
-    .entity.name.variable {
-      foreground: $brown-200;
-      fontStyle: italic;
-    }
-  }
-}
-
-.keyword.operator.other.computed-property {
-  foreground: $light-green-300;
 }

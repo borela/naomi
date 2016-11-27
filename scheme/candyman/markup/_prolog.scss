@@ -11,13 +11,13 @@
 // the License.
 
 .instruction.prolog {
-  foreground: $pink-A100;
+  foreground: $pink-a100;
 
   .entity.name {
-    foreground: $pink-A100;
+    foreground: $pink-a100;
   }
 
   .punctuation.delimiter.instruction {
-    foreground: rgba($pink-A100, .7);
+    foreground: rgba($pink-a100, .7);
   }
 }

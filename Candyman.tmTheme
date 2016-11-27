@@ -146,7 +146,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#FFD180E6</string>
+				<string>#ffd180</string>
 			</dict>
 		</dict>
 		<dict>
@@ -371,8 +371,10 @@
 			<string>.object.property .entity.name.variable</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 				<key>foreground</key>
-				<string>#bdbdbd</string>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>
@@ -885,6 +887,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.source.jsx .keyword.operator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#CE93D8B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.tag.embedded .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
@@ -981,16 +992,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>#aed581</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.support .entity.name.attribute</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff9e80</string>
+				<string>#9ccc65</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1027,6 +1029,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#FF80ABB2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.text.html .keyword.operator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#CE93D8B2</string>
 			</dict>
 		</dict>
 		<dict>

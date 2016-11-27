@@ -11,12 +11,6 @@
 // the License.
 
 .entity.name.attribute {
-  foreground: $light-green-300;
+  foreground: $light-green-400;
   fontStyle: italic;
-}
-
-.support {
-  .entity.name.attribute {
-    foreground: $deep-orange-A100;
-  }
 }

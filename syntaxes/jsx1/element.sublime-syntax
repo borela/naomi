@@ -37,6 +37,8 @@ contexts:
       ]
 
   attributes:
+    - clear_scopes: true
+    - meta_scope: source.jsx.fjsx15
     # Self closing tag.
     - match: (?=\s*/>)
       pop: true
@@ -54,6 +56,8 @@ contexts:
           pop: true
 
   content:
+    - clear_scopes: true
+    - meta_scope: source.jsx.fjsx15
     # Self closing tag.
     - match: \s*(/>)
       captures:

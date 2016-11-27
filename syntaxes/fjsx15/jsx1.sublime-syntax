@@ -35,16 +35,24 @@ contexts:
         )
       with_prototype:
         - match: \{
-          scope: keyword.operator.other.embedded.js.begin.jsx.jsx1
+          scope: >-
+            source.jsx.fjsx15
+            keyword.operator.other.embedded.js.begin.jsx.jsx1
           push: embedded-js
       set: jsx
 
   jsx:
+    - clear_scopes: true
+    - meta_content_scope: source.jsx.fjsx15
     - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
 
   embedded-js:
+    - clear_scopes: true
+    - meta_content_scope: source.js.fjsx15
     - match: \}
-      scope: keyword.operator.other.embedded.js.end.jsx.jsx1
+      scope: >-
+        source.jsx.fjsx15
+        keyword.operator.other.embedded.js.end.jsx.jsx1
       pop: true
     - match: ""
       push:

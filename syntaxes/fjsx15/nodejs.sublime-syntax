@@ -57,6 +57,7 @@ contexts:
             | process\.config
             | process\.connected
             | process\.env
+            | window\.onload
           )
         )
       set: complex-variable-components
@@ -133,7 +134,9 @@ contexts:
           | env
           | exports
           | module
+          | onload
           | process
+          | window
         )\b
       scope: >-
         support.js.fjsx15

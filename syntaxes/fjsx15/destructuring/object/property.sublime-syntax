@@ -39,6 +39,7 @@ contexts:
         (?xi)
         {{commonIdentifier}}
       scope: >-
+        destructuring.object.js.fjsx15
         object.property.js.fjsx15
         entity.name.variable.js.fjsx15
       pop: true

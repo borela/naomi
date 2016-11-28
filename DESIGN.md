@@ -88,6 +88,10 @@ An identity is the most specific scope possible that decribes the token.
 
 .object
   .property
+
+.destructuring
+  .array
+  .object
 ```
 
 ### Group

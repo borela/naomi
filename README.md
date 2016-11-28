@@ -62,7 +62,7 @@ them.
   3. Alt+] produces ‘.
   4. Alt+Shift+] produces ’.
 
-#### FJSX15 (Experimental)
+#### FJSX15
 
 Combines ES2015+, Flow, React’s JSX.
 
@@ -80,13 +80,13 @@ Combines ES2015+, Flow, React’s JSX.
 * Alternating escaped characters.
 * Decimal, floating point and hexadecimal literals.
 
-#### JSON (Experimental)
+#### JSON
 
 * Keys up to 7 levels.
 * Constants.
 * Decimal, floating point and hexadecimal literals.
 
-#### HTML 5 (Experimental)
+#### HTML 5
 
 * Balanced tags.
 * FJSX15 inside script tags.
@@ -96,7 +96,7 @@ Combines ES2015+, Flow, React’s JSX.
 * Embedded elements.
 * Form elements.
 
-#### SCSS3 (Experimental)
+#### SCSS3
 
 * Ids.
 * Classes.
@@ -136,7 +136,7 @@ Combines ES2015+, Flow, React’s JSX.
 * Private and protected modifiers.
 * Decimal, floating point, binary, octal and hexadecimal literals.
 
-#### XML 1.0 (Experimental)
+#### XML 1.0
 
 * Balanced tags.
 * Attributes.

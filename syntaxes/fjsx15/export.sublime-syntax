@@ -24,6 +24,17 @@ variables:
 
 contexts:
   main:
+    - match: |
+        (?x)
+        \s*(export)
+        \s*(default)
+        (?=\s*{)
+      captures:
+        1: keyword.control.export.js.fjsx15
+        2: >-
+          storage.modifier.js.fjsx15
+          keyword.control.export.default.js.fjsx15
+      set: object-literal
     - match: \s*(export)\b
       captures:
         1: keyword.control.export.js.fjsx15
@@ -32,16 +43,11 @@ contexts:
         optional-default
       ]
 
-  comment-no-pop:
-    - match: |
-        (?x)
-        (?=\s*/
-          (?> \*
-            | /
-          )
-        )
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+  object-literal:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/object.sublime-syntax
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   optional-default:
     - match: \s*(default)\b
@@ -67,7 +73,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   target:
-    - include: comment-no-pop
+    - include: comment
     # Multiple.
     - match: \s*({)
       captures:

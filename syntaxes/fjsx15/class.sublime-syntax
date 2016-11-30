@@ -32,6 +32,7 @@ contexts:
       set: declaration
 
   declaration:
+    - include: comment
     # Body.
     - match: (?=\s*\{)
       set: body
@@ -49,6 +50,9 @@ contexts:
         (?xi)
         {{commonIdentifier}}
       scope: entity.name.class.js.fjsx15
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   template-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax

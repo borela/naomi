@@ -160,6 +160,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.support .entity.name.class</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.punctuation.delimiter.color</string>
 			<key>settings</key>
 			<dict>

@@ -24,6 +24,8 @@ variables:
 
 contexts:
   main:
+    - include: simple-class
+    - include: complex-class
     - include: simple-function
     - include: complex-function
     - include: simple-variable
@@ -35,6 +37,82 @@ contexts:
   member-access-operator:
     - match: \.
       scope: keyword.operator.other.member-access.js.fjsx15
+
+  simple-class:
+    - match: |
+        (?x)\s*
+        (?> Array(?:Buffer)?
+          | Boolean
+          | DataView
+          | Date
+          | Error
+          | EvalError
+          | Float32Array
+          | Float64Array
+          | Function
+          | Generator
+          | GeneratorFunction
+          | Infinity
+          | Int16Array
+          | Int32Array
+          | Int8Array
+          | InternalError
+          | JSON
+          | Map
+          | Math
+          | Number
+          | Object
+          | Promise
+          | Proxy
+          | RangeError
+          | ReferenceError
+          | Reflect
+          | RegExp
+          | Set
+          | String
+          | Symbol
+          | SyntaxError
+          | TypeError
+          | TypedArray
+          | URIError
+          | Uint16Array
+          | Uint32Array
+          | Uint8Array
+          | Uint8ClampedArray
+          | WeakMap
+          | WeakSet
+        )\b
+      scope: >-
+        support.js.fjsx15
+        entity.name.class.js.fjsx15
+      pop: true
+
+  complex-class:
+    - match: |
+        (?x)\s*
+        (?=
+          (?> Intl.Collator
+            | Intl.DateTimeFormat
+            | Intl.NumberFormat
+            | Intl
+          )
+        )
+      set: complex-class-components
+
+  complex-class-components:
+    - include: member-access-operator
+    - match: |
+        (?x)\s*
+        (?> Intl
+          | Collator
+          | DateTimeFormat
+          | NumberFormat
+        )\b
+      scope: >-
+        support.js.fjsx15
+        entity.name.class.js.fjsx15
+    - match: ""
+      pop: true
 
   simple-variable:
     - match: |
@@ -71,10 +149,18 @@ contexts:
   simple-function:
     - match: |
         (?x)\s*
-        (?> require
+        (?> decodeURI(?:Component)
+          | encodeURI(?:Component)
+          | eval
+          | isFinite
+          | isNaN
+          | parseFloat
+          | parseInt
+          | require
           | setImmediate
           | setInterval
           | setTimeout
+          | uneval
         )
         (?=\s*\()
       scope: >-
@@ -105,7 +191,6 @@ contexts:
     - include: arguments
     - include: member-access-operator
     - include: global-variable
-    # Function.
     - match: |
         (?x)\s*
         (?> assert

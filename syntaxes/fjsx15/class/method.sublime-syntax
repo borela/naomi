@@ -102,6 +102,8 @@ contexts:
     # Other identifier types.
     - match: ""
       push:
+        - match: (?=\s*{)
+          pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax

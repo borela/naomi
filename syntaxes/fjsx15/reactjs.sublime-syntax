@@ -34,7 +34,8 @@ contexts:
             | PropTypes
           )
           (?:\.
-            (?> bool
+            (?> array
+              | bool
               | func
               | node
               | number
@@ -78,7 +79,8 @@ contexts:
     - match: |
         (?x)\s*
         (
-          (?> bool
+          (?> array
+            | bool
             | func
             | isRequired
             | string

@@ -17,6 +17,11 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_\-[:alpha:]]
+    [$_\-[:alnum:]]*
+
 contexts:
   main:
     - match: \s*(\()
@@ -45,4 +50,13 @@ contexts:
         - include: value
 
   value:
+    - match: |
+        (?xi)
+        \s*(\${{commonIdentifier}})
+        \s*(:)
+      captures:
+        1: >-
+          parameter.scss.scss3
+          entity.name.variable.scss.scss3
+        2: keyword.operator.other.association.scss.scss3
     - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax

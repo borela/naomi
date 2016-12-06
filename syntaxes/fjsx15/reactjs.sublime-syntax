@@ -34,8 +34,10 @@ contexts:
             | PropTypes
           )
           (?:\.
-            (?> array
+            (?> any
+              | array
               | bool
+              | element
               | func
               | node
               | number
@@ -79,8 +81,10 @@ contexts:
     - match: |
         (?x)\s*
         (
-          (?> array
+          (?> any
+            | array
             | bool
+            | element
             | func
             | isRequired
             | string

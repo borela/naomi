@@ -106,6 +106,7 @@ contexts:
   declaration:
     - match: (?=\s*;)
       pop: true
+    - include: comment
     # Body.
     - match: (?=\s*\{)
       set: body
@@ -128,6 +129,9 @@ contexts:
           storage.modifier.js.fjsx15
           keyword.modifier.generator.js.fjsx15
         2: entity.name.function.js.fjsx15
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   template-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax

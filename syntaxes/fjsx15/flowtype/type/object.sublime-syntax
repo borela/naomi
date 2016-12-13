@@ -24,7 +24,14 @@ variables:
 
 contexts:
   main:
-    - match: \s*(\{)
+    # Exact.
+    - match: \s*({)\s*(\|)
+      captures:
+        1: punctuation.delimiter.object.begin.flowtype
+        2: punctuation.delimiter.object.begin.flowtype
+      set: items
+    # Normal.
+    - match: \s*({)
       captures:
         1: punctuation.delimiter.object.begin.flowtype
       set: items
@@ -34,7 +41,14 @@ contexts:
       captures:
         1: >-
           punctuation.delimiter.object.flowtype
-    - match: \s*(\})
+    # Exact,
+    - match: \s*(\|)\s*(})
+      captures:
+        1: punctuation.delimiter.object.end.flowtype
+        2: punctuation.delimiter.object.end.flowtype
+      pop: true
+    # Normal.
+    - match: \s*(})
       captures:
         1: punctuation.delimiter.object.end.flowtype
       pop: true
@@ -45,8 +59,9 @@ contexts:
             (?=
               (?> ,
                 | ;
-                | \]
-                | \}
+                | ]
+                | }
+                | \|\s*}
               )
             )
           pop: true
@@ -65,7 +80,7 @@ contexts:
       ]
 
   lookup-table-end:
-    - match: \s*(\])
+    - match: \s*(])
       captures:
         1: punctuation.delimiter.object.flowtype
       pop: true

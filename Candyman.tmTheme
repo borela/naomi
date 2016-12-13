@@ -81,7 +81,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#EC407AB2</string>
+				<string>#CE93D8B2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -628,9 +628,9 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>italic</string>
+				<string>bold italic</string>
 				<key>foreground</key>
-				<string>#ec407a</string>
+				<string>#b39ddb</string>
 			</dict>
 		</dict>
 		<dict>

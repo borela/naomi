@@ -77,11 +77,16 @@ contexts:
           | hidden
           | infinite
           | inline-block
+          | inline-flex
+          | inline-grid
+          | inline-table
+          | inline
           | inherit
           | initial
           | italic
           | landscape
           | left
+          | list-item
           | middle
           | no-repeat
           | none
@@ -98,6 +103,7 @@ contexts:
           | reset
           | right
           | row(?:-reverse)?
+          | run-in
           | screen
           | search
           | space-arround
@@ -107,7 +113,13 @@ contexts:
           | submit
           | sub
           | super
+          | table-caption
+          | table-cell
+          | table-column(?:-group)?
+          | table-footer-group
+          | table-header-group
           | table-row(?:-group)?
+          | table
           | text-bottom
           | text-top
           | top

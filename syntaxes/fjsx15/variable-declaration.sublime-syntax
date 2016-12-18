@@ -62,6 +62,9 @@ contexts:
         keyword
       ]
 
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
   destructuring-object:
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
 
@@ -69,6 +72,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
 
   keyword:
+    - include: comment
     - match: |
         (?x)\s*
         (
@@ -84,14 +88,17 @@ contexts:
       pop: true
 
   variable-or-constant:
+    - include: comment
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   punctuation:
+    - include: comment
     - match: (?=\s*:)
       set: type
     - match: ""
       pop: true
 
   type:
+    - include: comment
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax

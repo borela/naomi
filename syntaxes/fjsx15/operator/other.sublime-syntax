@@ -59,6 +59,9 @@ contexts:
         1: keyword.operator.other.member-access.js.fjsx15
       set: member-access
 
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
   ternary-condition:
     - match: \s*(:)
       captures:
@@ -72,6 +75,7 @@ contexts:
 
   member-access:
     - meta_scope: member.js.fjsx15
+    - include: comment
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

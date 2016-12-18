@@ -69,19 +69,44 @@ contexts:
 
   value:
     - include: terminator
-    - match: (?<=})
+    # - match: (?<=})
+    #   pop: true
+    # Another property.
+    - match: |
+        (?xi)
+        (?=\s*
+          (?:
+            static\s+
+          )?
+          {{commonIdentifier}}
+          \s*=
+        )
       pop: true
-    - match: (?=\s*$)
+    # Method
+    - match: |
+        (?xi)
+        (?=\s*
+          (?:
+            (?> async
+              | get
+              | s
+                (?> et
+                  | tatic
+                    (?:
+                      \s+(?>async|get|set)
+                    )?
+                )
+            )
+          )?
+          \s*\*?
+          \s*{{commonIdentifier}}
+          \s*\(
+        )
       pop: true
+    # Value.
     - match: ""
       push:
-        - match: |
-            (?x)
-            (?=\s*
-              (?> ;
-                | }
-              )
-            )
+        - match: \s*
           pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 

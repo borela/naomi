@@ -71,13 +71,15 @@ contexts:
     - include: terminator
     - match: (?<=})
       pop: true
+    - match: (?=\s*$)
+      pop: true
     - match: ""
       push:
         - match: |
             (?x)
             (?=\s*
               (?> ;
-                | \}
+                | }
               )
             )
           pop: true

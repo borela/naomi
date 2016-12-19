@@ -85,7 +85,7 @@ contexts:
       scope: >-
         support.js.fjsx15
         entity.name.class.js.fjsx15
-      pop: true
+      set: optional-constructor
 
   complex-class:
     - match: |
@@ -111,6 +111,11 @@ contexts:
       scope: >-
         support.js.fjsx15
         entity.name.class.js.fjsx15
+    - match: ""
+      set: optional-constructor
+
+  optional-constructor:
+    - include: arguments
     - match: ""
       pop: true
 

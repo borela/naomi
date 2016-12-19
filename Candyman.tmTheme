@@ -236,15 +236,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.modifier.generator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4dd0e1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.parameter .entity.name.variable</string>
 			<key>settings</key>
 			<dict>

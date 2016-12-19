@@ -149,6 +149,14 @@ contexts:
         )
       pop: true
     - include: alias
+    # Found a word but it is not an alias and it wouldn't fit in the export
+    # syntax.
+    - match: |
+        (?xi)
+        (?=\s*
+          {{commonIdentifier}}
+        )
+      pop: true
 
   alias:
     - match: \s*(as)\b

@@ -71,6 +71,8 @@ contexts:
     - include: terminator
     - match: (?<=})
       pop: true
+    - match: (?=})
+      pop: true
     # Another property.
     - match: |
         (?xi)

@@ -32,7 +32,7 @@ contexts:
         1: >-
           destructuring.array.js.fjsx15
           punctuation.delimiter.array.js.fjsx15
-    - match: \s*(\])
+    - match: \s*(])
       captures:
         1: >-
           destructuring.array.js.fjsx15
@@ -44,6 +44,7 @@ contexts:
             (?x)
             (?=\s*
               (?> ,
+                | ]
                 | \)
               )
             )
@@ -67,7 +68,7 @@ contexts:
         (?x)
         (?=\s*
           (?> ,
-            | \]
+            | ]
           )
         )
       pop: true

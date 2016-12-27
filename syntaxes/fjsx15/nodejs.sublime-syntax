@@ -135,6 +135,8 @@ contexts:
         (?x)\s*
         (?=
           (?> module\.exports
+            | module\.parent\.filename
+            | module\.parent
             | process\.arch
             | process\.argv
             | process\.config
@@ -186,6 +188,7 @@ contexts:
             | console\.time
             | console\.trace
             | console\.warn
+            | process\.exit
             | process\.on
           )
           \s*\(
@@ -201,6 +204,7 @@ contexts:
         (?> assert
           | dir
           | error
+          | exit
           | info
           | log
           | on
@@ -223,8 +227,10 @@ contexts:
           | console
           | env
           | exports
+          | filename
           | module
           | onload
+          | parent
           | process
           | window
         )\b

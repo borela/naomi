@@ -18,10 +18,10 @@
   }
 
   .string {
-    foreground: $red-300;
+    foreground: $teal-300;
   }
 
   .punctuation.delimiter.string {
-    foreground: rgba($red-300, .7);
+    foreground: rgba($teal-300, .7);
   }
 }

@@ -61,6 +61,11 @@ contexts:
         # Array destructuring.
         - match: (?=\s*\[)
           set: destructuring-array
+        # Reserved word.
+        - match: (arguments)(?=\W)
+          captures:
+            0: keyword.other.js.fjsx15
+          pop: true
         # Parameter.
         - match: |
             (?xi)

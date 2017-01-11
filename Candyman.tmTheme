@@ -14,9 +14,9 @@
 				<key>background</key>
 				<string>#263238</string>
 				<key>bracketsForeground</key>
-				<string>#ff80ab</string>
+				<string>#ffffff</string>
 				<key>bracketsOptions</key>
-				<string>foreground</string>
+				<string>underline</string>
 				<key>caret</key>
 				<string>#b0bec5</string>
 				<key>findHighlight</key>
@@ -243,6 +243,15 @@
 				<string>italic</string>
 				<key>foreground</key>
 				<string>#ffcc80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.other.generator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4fc3f7</string>
 			</dict>
 		</dict>
 		<dict>

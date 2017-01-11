@@ -189,6 +189,8 @@ contexts:
             | console\.trace
             | console\.warn
             | process\.exit
+            | process\.stderr\.write
+            | process\.stdout\.write
             | process\.on
           )
           \s*\(
@@ -212,6 +214,7 @@ contexts:
           | time
           | trace
           | warn
+          | write
         )\b
       scope: >-
         support.js.fjsx15
@@ -232,6 +235,7 @@ contexts:
           | onload
           | parent
           | process
+          | stdout
           | window
         )\b
       scope: >-

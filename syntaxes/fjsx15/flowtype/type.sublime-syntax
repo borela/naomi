@@ -153,12 +153,4 @@ contexts:
       pop: true
 
   comment:
-    - match: |
-        (?x)
-        (?=\s*
-          (?> //
-            | /\*
-          )
-        )
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

@@ -85,18 +85,17 @@ contexts:
 
   body-content:
     - include: comment
-    - match: \}
-      scope: punctuation.delimiter.interface.body.end.js.fjsx15
+    - match: \s*(})
+      captures:
+        1: punctuation.delimiter.interface.body.end.js.fjsx15
       pop: true
     - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/method.sublime-syntax
         - match: ""
           pop: true
 
   comment:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

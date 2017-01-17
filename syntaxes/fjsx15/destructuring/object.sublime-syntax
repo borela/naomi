@@ -37,7 +37,7 @@ contexts:
         1: >-
           destructuring.object.js.fjsx15
           punctuation.delimiter.object.js.fjsx15
-    - match: \s*(\})
+    - match: \s*(})
       captures:
         1: >-
           destructuring.object.js.fjsx15
@@ -49,7 +49,7 @@ contexts:
             (?x)
             (?=\s*
               (?> ,
-                | \}
+                | }
               )
             )
           pop: true
@@ -73,11 +73,11 @@ contexts:
               destructuring.object.js.fjsx15
               alias.js.fjsx15
               entity.name.alias.js.fjsx15
-        # Property.
-        - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object/property.sublime-syntax
         # Nested destructuring.
         - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
+        # Property.
+        - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object/property.sublime-syntax
 
   rest-operator:
     - include: Packages/Naomi/syntaxes/fjsx15/greedy-rest.sublime-syntax
@@ -87,7 +87,7 @@ contexts:
         (?x)
         (?=\s*
           (?> ,
-            | \}
+            | }
           )
         )
       pop: true

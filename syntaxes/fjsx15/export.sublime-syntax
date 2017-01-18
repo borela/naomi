@@ -139,6 +139,7 @@ contexts:
         - include: target
 
   optional-alias:
+    - include: comment
     - match: |
         (?x)
         (?=\s*

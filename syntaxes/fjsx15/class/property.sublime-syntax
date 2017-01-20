@@ -103,6 +103,7 @@ contexts:
           \s*\*?
           \s*{{commonIdentifier}}
           \s*\(.*\)
+          .*?
           \s*{
         )
       pop: true

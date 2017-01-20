@@ -359,6 +359,33 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.constant.numeric.binary</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4dd0e1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.numeric.octal</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#dce775</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.numeric.hex</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#e0e0e0</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.punctuation.delimiter.object</string>
 			<key>settings</key>
 			<dict>

@@ -17,4 +17,16 @@
   &.float {
     foreground: $purple-200;
   }
+
+  &.binary {
+    foreground: $cyan-300;
+  }
+
+  &.octal {
+    foreground: $lime-300;
+  }
+
+  &.hex {
+    foreground: $grey-300;
+  }
 }

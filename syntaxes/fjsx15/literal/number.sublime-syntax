@@ -51,11 +51,11 @@ contexts:
       pop: true
 
   integer:
-    - match: \s*(0b[01]+)
+    - match: \s*(0[bB][01]+)
       captures:
         1: constant.numeric.binary.js.fjsx15
       pop: true
-    - match: \s*(0o[0-7]+)
+    - match: \s*(0[oO][0-7]+)
       captures:
         1: constant.numeric.octal.js.fjsx15
       pop: true

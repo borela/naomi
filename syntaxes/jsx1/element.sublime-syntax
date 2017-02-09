@@ -75,6 +75,7 @@ contexts:
     # Sub tags.
     - match: ""
       push:
+        - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
         - include: main
         - match: |
             (?x)

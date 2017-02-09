@@ -923,6 +923,24 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.component.jsx .entity.name.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ce93d8</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.component.jsx .punctuation.delimiter.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#CE93D8B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.source.jsx .keyword.operator</string>
 			<key>settings</key>
 			<dict>
@@ -986,6 +1004,24 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.tag.sectioning .entity.name.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f48fb1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.tag.sectioning .punctuation.delimiter.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#F48FB1B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.tag.sectioning.root .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
@@ -1004,20 +1040,20 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.tag.sectioning .entity.name.tag</string>
+			<string>.tag.style .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#f48fb1</string>
+				<string>#ff8a65</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.tag.sectioning .punctuation.delimiter.tag</string>
+			<string>.tag.style .punctuation.delimiter.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#F48FB1B2</string>
+				<string>#FF8A65B2</string>
 			</dict>
 		</dict>
 		<dict>

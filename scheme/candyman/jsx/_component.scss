@@ -10,16 +10,12 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "markup/tag/embedded";
-@import "markup/tag/form";
-@import "markup/tag/other";
-@import "markup/tag/sectioning";
-@import "markup/tag/sectioning-root";
-@import "markup/tag/style";
+.component.jsx {
+  .entity.name.tag {
+    foreground: $purple-200;
+  }
 
-@import "markup/attribute";
-@import "markup/data-attribute";
-@import "markup/doctype";
-@import "markup/operator";
-@import "markup/prolog";
-@import "markup/text";
+  .punctuation.delimiter.tag {
+    foreground: rgba($purple-200, .7);
+  }
+}

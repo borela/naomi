@@ -66,6 +66,7 @@ them.
 
 Combines ES2015+, Flow, React’s JSX.
 
+* Specific scope for JSX components.
 * Templates.
 * Interfaces.
 * Classes.

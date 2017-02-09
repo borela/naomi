@@ -10,11 +10,6 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@name "Bittersweet";
-
-@import 'scheme/bittersweet/original';
-
-@import 'scheme/bittersweet/function';
-@import 'scheme/bittersweet/markup/attribute';
-@import 'scheme/bittersweet/markup/tag';
-@import 'scheme/bittersweet/support';
+.entity.name.attribute {
+  foreground: #c594c5;
+}

@@ -388,6 +388,35 @@
 				<string>#ee88cc</string>
 			</dict>
 		</dict>
+		<dict>
+			<key>scope</key>
+			<string>support entity.name.function, support entity.name.variable</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#07cc95</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>support entity.name.constant</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#6bc3d4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>support entity.name.type, support entity.name.class</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic bold</string>
+				<key>foreground</key>
+				<string>#8abbe7</string>
+			</dict>
+		</dict>
 	</array>
 </dict>
 </plist>

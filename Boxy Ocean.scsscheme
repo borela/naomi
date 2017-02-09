@@ -10,11 +10,10 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@name "Bittersweet";
+@name "Boxy Ocean";
 
-@import 'scheme/bittersweet/original';
+@import 'scheme/boxy-ocean/original';
 
-@import 'scheme/bittersweet/function';
-@import 'scheme/bittersweet/markup/attribute';
-@import 'scheme/bittersweet/markup/tag';
-@import 'scheme/bittersweet/support';
+@import 'scheme/boxy-ocean/markup/attribute';
+@import 'scheme/boxy-ocean/markup/tag';
+@import 'scheme/boxy-ocean/support';

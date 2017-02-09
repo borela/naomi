@@ -129,7 +129,7 @@ entity.other.inherited-class,
 markup.heading,
 markup.inserted.git_gutter,
 meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js {
-  fontStyle: normal;
+  fontStyle: none;
   foreground: #99c794;
 }
 
@@ -302,10 +302,12 @@ markup.underline {
   foreground: #99c794;
 }
 
+/*
 markup.strike {
   fontStyle: strike;
   foreground: #65737e;
 }
+*/
 
 markup.quote punctuation.definition.blockquote.markdown {
   fontStyle: none;

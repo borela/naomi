@@ -44,6 +44,7 @@ contexts:
   jsx:
     - clear_scopes: true
     - meta_content_scope: source.jsx.fjsx15
+    - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
 
   embedded-js:

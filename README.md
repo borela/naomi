@@ -52,11 +52,13 @@ To enable Sublime Linter with the syntaxes available, you need to:
 2. Add these entries to the `syntax_map`:
 
 ```JSON
+{
   "syntax_map": {
     "naomi.fjsx15": "javascript",
     "naomi.html5": "html",
     "naomi.scss3": "scss"
   }
+}
 ```
 
 #### Notes

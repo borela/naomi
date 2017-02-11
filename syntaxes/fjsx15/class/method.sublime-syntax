@@ -109,7 +109,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
   template-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/template/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
 
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax

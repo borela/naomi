@@ -49,7 +49,7 @@ contexts:
       set: type
 
   type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
 
   template-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax

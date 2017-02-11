@@ -69,7 +69,7 @@ contexts:
         2: entity.name.function.js.fjsx15
 
   template-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/template/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
 
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax

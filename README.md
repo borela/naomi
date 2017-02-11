@@ -44,6 +44,21 @@ The “Packages” directory is located at:
 1. Go to the menu `View / Syntax / Naomi / ...` to select the new syntax.
 2. Select a color scheme provided in `Preferences / Color Scheme / Naomi`.
 
+### Sublime Linter
+
+To enable Sublime Linter with the syntaxes available, you need to:
+
+1. Go to the menu `Preferences / Package Settings / SublimeLinter / Settings - User `.
+2. Add these entries to the `syntax_map`:
+
+```JSON
+  "syntax_map": {
+    "naomi.fjsx15": "javascript",
+    "naomi.html5": "html",
+    "naomi.scss3": "scss"
+  }
+```
+
 #### Notes
 
 You aren’t required to use the color schemes provided but keep in mind

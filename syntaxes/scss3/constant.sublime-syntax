@@ -24,6 +24,7 @@ variables:
 
 contexts:
   main:
+    - include: support-color-constant
     - include: support-constant
     - include: common-constant
 
@@ -64,6 +65,7 @@ contexts:
           | column(?:-reverse)?
           | contain
           | cover
+          | dashed
           | disabled
           | dotted
           | ease
@@ -132,4 +134,157 @@ contexts:
       scope: >-
         support.scss.scss3
         entity.name.constant.scss.scss3
+      pop: true
+
+  support-color-constant:
+    - match: |
+        (?xi)
+        (?> aliceblue
+          | antiquewhite
+          | aqua
+          | aquamarine
+          | azure
+          | beige
+          | bisque
+          | black
+          | blanchedalmond
+          | blue
+          | blueviolet
+          | brown
+          | burlywood
+          | cadetblue
+          | chartreuse
+          | chocolate
+          | coral
+          | cornflowerblue
+          | cornsilk
+          | crimson
+          | cyan
+          | dark
+            (?> blue
+              | cyan
+              | goldenrod
+              | gray
+              | grey
+              | green
+              | khaki
+              | magenta
+              | olivegreen
+              | orange
+              | orchid
+              | red
+              | salmon
+              | seagreen
+              | slateblue
+              | slategray
+              | slategrey
+              | turquoise
+              | violet
+            )
+          | deeppink
+          | deepskyblue
+          | dimgray
+          | dimgrey
+          | dodgerblue
+          | firebrick
+          | floralwhite
+          | forestgreen
+          | fuchsia
+          | gainsboro
+          | ghostwhite
+          | gold(?:enrod)?
+          | gr[ae]y
+          | green(?:yellow)?
+          | honeydew
+          | hotpink
+          | indianred
+          | indigo
+          | ivory
+          | khaki
+          | lavender(?:blush)?
+          | lawngreen
+          | lemonchiffon
+          | light
+            (?> blue
+              | coral
+              | cyan
+              | goldenrodyellow
+              | gray
+              | grey
+              | green
+              | pink
+              | salmon
+              | seagreen
+              | skyblue
+              | slategray
+              | slategrey
+              | steelblue
+              | yellow
+            )
+          | lime(?:green)?
+          | linen
+          | magenta
+          | maroon
+          | medium
+            (?> aquamarine
+              | blue
+              | orchid
+              | purple
+              | seagreen
+              | slateblue
+              | springgreen
+              | turquoise
+              | violetred
+            )
+          | midnightblue
+          | mintcream
+          | mistyrose
+          | moccasin
+          | navajowhite
+          | navy
+          | oldlace
+          | olive(?:drab)?
+          | orange(?:red)?
+          | orchid
+          | palegoldenrod
+          | palegreen
+          | paleturquoise
+          | palevioletred
+          | papayawhip
+          | peachpuff
+          | peru
+          | pink
+          | plum
+          | powderblue
+          | purple
+          | rebeccapurple
+          | red
+          | rosybrown
+          | royalblue
+          | saddlebrown
+          | salmon
+          | sandybrown
+          | seagreen
+          | seashell
+          | sienna
+          | silver
+          | skyblue
+          | slateblue
+          | slategr[ae]y
+          | snow
+          | springgreen
+          | steelblue
+          | tan
+          | teal
+          | thistle
+          | tomato
+          | turquoise
+          | violet
+          | wheat
+          | white(?:smoke)?
+          | yellow(?:green)?
+        )
+      scope: >-
+        support.scss.scss3
+        entity.name.constant.color.scss.scss3
       pop: true

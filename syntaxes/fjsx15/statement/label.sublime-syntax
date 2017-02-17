@@ -28,8 +28,68 @@ contexts:
         (?xi)
         (?> ^
           | (?<=;)
+        )\s*
+        ({{commonIdentifier}})
+        (?<! abstract
+          | boolean
+          | break
+          | byte
+          | case
+          | catch
+          | char
+          | class
+          | const
+          | continue
+          | debugger
+          | default
+          | delete
+          | double
+          | do
+          | else
+          | enum
+          | export
+          | extends
+          | false
+          | finally
+          | final
+          | float
+          | for
+          | function
+          | goto
+          | if
+          | implements
+          | import
+          | in
+          | instanceof
+          | interface
+          | int
+          | long
+          | native
+          | new
+          | null
+          | package
+          | private
+          | protected
+          | public
+          | return
+          | short
+          | static
+          | super
+          | switch
+          | synchronized
+          | this
+          | throws
+          | throw
+          | transient
+          | true
+          | try
+          | typeof
+          | var
+          | void
+          | volatile
+          | while
+          | with
         )
-        \s*({{commonIdentifier}})
         \s*(:)
       captures:
         1: entity.name.label.js.fjsx15

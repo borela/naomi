@@ -46,9 +46,9 @@ contexts:
           | continue
         )\b
       scope: keyword.control.js.fjsx15
-      set: label
+      set: optional-label
 
-  label:
+  optional-label:
     - match: |
         (?xi)\s*
         ({{commonIdentifier}})

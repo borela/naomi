@@ -69,6 +69,7 @@ contexts:
           | disabled
           | dotted
           | ease
+          | ellipsis
           | ellipse
           | false
           | fixed

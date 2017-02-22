@@ -66,7 +66,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.storage.modifier .keyword, .storage.type .keyword</string>
+			<string>.statement.modifier .keyword, .storage.modifier .keyword, .storage.type .keyword</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>

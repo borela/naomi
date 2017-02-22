@@ -33,6 +33,8 @@
 				<string>#37474f</string>
 				<key>selection</key>
 				<string>#37474f</string>
+				<key>shadowWidth</key>
+				<string>33</string>
 				<key>stackGuide</key>
 				<string>#37474f</string>
 			</dict>

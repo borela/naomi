@@ -95,9 +95,17 @@ contexts:
         1: keyword.modifier.generator.js.fjsx15
         2: entity.name.function.js.fjsx15
     # Computed identifier.
-    - match: \s*(\[)
+    - match: |
+        (?x)
+        (?:
+          \s*(\*)
+        )?
+        \s*(\[)
       captures:
-        1: keyword.operator.other.computed-function.begin.js.fjsx15
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.modifier.generator.js.fjsx15
+        2: keyword.operator.other.computed-function.begin.js.fjsx15
       push: computed-function
     # Other identifier types.
     - match: ""

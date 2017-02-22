@@ -22,6 +22,14 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  methodIdentifier: |
+    (?> {{commonIdentifier}}
+      | '.*?(?<!\\)'
+      | ".*?(?<!\\)"
+      | `.*?(?<!\\)`
+      | \[.*?\]
+    )
+
 contexts:
   main:
     # Static variables.
@@ -101,7 +109,7 @@ contexts:
             )
           )?
           \s*\*?
-          \s*{{commonIdentifier}}
+          \s*{{methodIdentifier}}
           \s*\(.*\)
           .*?
           \s*{
@@ -112,7 +120,10 @@ contexts:
       push:
         - match: \s*
           pop: true
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+        - include: statement-and-expression
 
   terminator:
     - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax
+
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

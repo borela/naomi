@@ -128,4 +128,6 @@ contexts:
         )
       captures:
         1: keyword.control.js.fjsx15
-        2: keyword.other.generator.js.fjsx15
+        2: >-
+          statement.modifier.js.fjsx15
+          keyword.generator.js.fjsx15

@@ -127,7 +127,7 @@ contexts:
       captures:
         1: >-
           storage.modifier.js.fjsx15
-          keyword.modifier.generator.js.fjsx15
+          keyword.generator.js.fjsx15
         2: entity.name.function.js.fjsx15
 
   comment:

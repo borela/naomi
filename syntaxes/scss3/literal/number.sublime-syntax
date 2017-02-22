@@ -67,6 +67,7 @@ contexts:
         (?x)\s*
         (?> %
           | cm
+          | deg
           | e[mx]
           | in
           | mm

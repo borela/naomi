@@ -28,10 +28,6 @@
   guide: $blue-grey-800;
   activeGuide: $blue-grey-600;
   stackGuide: $blue-grey-800;
-
-  // Hide that shadow near the scrollbar.
-  // http://docs.sublimetext.info/en/latest/reference/color_schemes.html#shadow
-  shadowWidth: 33;
 }
 
 /**
@@ -47,6 +43,10 @@
 
   &.operator.logical.word {
     fontStyle: none;
+  }
+
+  &.control.flow-break {
+    fontStyle: bold italic;
   }
 }
 

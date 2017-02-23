@@ -28,13 +28,18 @@ contexts:
     - include: yield
     - match: |
         (?x)\s*
+        (?> return
+          | throw
+        )\b
+      scope: keyword.control.flow-break.js.fjsx15
+      pop: true
+    - match: |
+        (?x)\s*
         (?> await
           | de
             (?> fault
               | lete
             )
-          | return
-          | throw
         )\b
       scope: keyword.control.js.fjsx15
       pop: true
@@ -45,7 +50,7 @@ contexts:
         (?> break
           | continue
         )\b
-      scope: keyword.control.js.fjsx15
+      scope: keyword.control.flow-break.js.fjsx15
       set: optional-label
 
   optional-label:

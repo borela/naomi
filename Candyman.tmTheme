@@ -33,8 +33,6 @@
 				<string>#37474f</string>
 				<key>selection</key>
 				<string>#37474f</string>
-				<key>shadowWidth</key>
-				<string>33</string>
 				<key>stackGuide</key>
 				<string>#37474f</string>
 			</dict>
@@ -64,6 +62,15 @@
 			<dict>
 				<key>fontStyle</key>
 				<string></string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.control.flow-break</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold italic</string>
 			</dict>
 		</dict>
 		<dict>

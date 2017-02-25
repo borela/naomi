@@ -11,11 +11,11 @@
 // the License.
 
 @name 'Candyman';
-@import 'scheme/candyman/palette';
+@import 'schemes/candyman/palette';
 
-@import 'scheme/candyman/core';
-@import 'scheme/candyman/fjsx15';
-@import 'scheme/candyman/json1';
-@import 'scheme/candyman/jsx';
-@import 'scheme/candyman/markup';
-@import 'scheme/candyman/scss3';
+@import 'schemes/candyman/core';
+@import 'schemes/candyman/fjsx15';
+@import 'schemes/candyman/json1';
+@import 'schemes/candyman/jsx';
+@import 'schemes/candyman/markup';
+@import 'schemes/candyman/scss3';

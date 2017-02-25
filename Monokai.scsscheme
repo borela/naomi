@@ -12,10 +12,10 @@
 
 @name 'Monokai';
 
-@import 'scheme/monokai/original';
+@import 'schemes/monokai/original';
 
-@import 'scheme/monokai/css/attribute';
-@import 'scheme/monokai/class';
-@import 'scheme/monokai/function';
-@import 'scheme/monokai/import';
-@import 'scheme/monokai/variable';
+@import 'schemes/monokai/css/attribute';
+@import 'schemes/monokai/class';
+@import 'schemes/monokai/function';
+@import 'schemes/monokai/import';
+@import 'schemes/monokai/variable';

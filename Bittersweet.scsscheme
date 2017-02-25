@@ -12,9 +12,9 @@
 
 @name "Bittersweet";
 
-@import 'scheme/bittersweet/original';
+@import 'schemes/bittersweet/original';
 
-@import 'scheme/bittersweet/function';
-@import 'scheme/bittersweet/markup/attribute';
-@import 'scheme/bittersweet/markup/tag';
-@import 'scheme/bittersweet/support';
+@import 'schemes/bittersweet/function';
+@import 'schemes/bittersweet/markup/attribute';
+@import 'schemes/bittersweet/markup/tag';
+@import 'schemes/bittersweet/support';

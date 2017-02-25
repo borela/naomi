@@ -12,8 +12,8 @@
 
 @name "Boxy Ocean";
 
-@import 'scheme/boxy-ocean/original';
+@import 'schemes/boxy-ocean/original';
 
-@import 'scheme/boxy-ocean/markup/attribute';
-@import 'scheme/boxy-ocean/markup/tag';
-@import 'scheme/boxy-ocean/support';
+@import 'schemes/boxy-ocean/markup/attribute';
+@import 'schemes/boxy-ocean/markup/tag';
+@import 'schemes/boxy-ocean/support';

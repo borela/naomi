@@ -22,8 +22,9 @@ contexts:
     - include: complex-variable
 
   member-access-operator:
-    - match: \.
-      scope: keyword.operator.other.member-access.js.fjsx15
+    - match: \s*(\.)
+      captures:
+        1: keyword.operator.other.member-access.js.fjsx15
 
   complex-variable:
     # PropTypes.
@@ -33,7 +34,7 @@ contexts:
           (?> React\.PropTypes
             | PropTypes
           )
-          (?:\.
+          (?:\s*\.\s*
             (?> any
               | array
               | bool
@@ -44,7 +45,7 @@ contexts:
               | object
               | string
             )
-            (?:\.isRequired)?
+            (?:\s*\.\s*isRequired)?
           )?
         )
       set: complex-variable-components
@@ -55,7 +56,7 @@ contexts:
           \)
         )
         (?=
-          \.isRequired
+          \s*\.\s*isRequired
           (?> \s
             | ,
             | ;
@@ -67,7 +68,10 @@ contexts:
     - match: |
         (?x)\s*
         (?=
-          this\.props\b
+          this\s*\.\s*
+          (?> props
+            | state
+          )\b
         )
       set: complex-variable-components
 
@@ -94,6 +98,7 @@ contexts:
             | props
             | PropTypes
             | React
+            | state
             | this
           )
         )\b

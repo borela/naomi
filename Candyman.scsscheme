@@ -18,4 +18,5 @@
 @import 'schemes/candyman/json1';
 @import 'schemes/candyman/jsx';
 @import 'schemes/candyman/markup';
+@import 'schemes/candyman/html5';
 @import 'schemes/candyman/scss3';

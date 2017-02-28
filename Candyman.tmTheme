@@ -959,6 +959,125 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.entity.name.attribute</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#9ccc65</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.section.cdata</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.section.cdata .entity.name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.section.cdata .punctuation.delimiter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF80ABB2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.data-attribute</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.declaration.doctype</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.declaration.doctype .entity.name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.declaration.doctype .punctuation.delimiter.declaration</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF80ABB2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.text.html .keyword.operator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#CE93D8B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.instruction.prolog</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.instruction.prolog .entity.name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.instruction.prolog .punctuation.delimiter.instruction</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF80ABB2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.jsx, .text.html, .text.xml</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#BDBDBD66</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.tag.embedded .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
@@ -1063,98 +1182,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#FF8A65B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.attribute</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
-				<key>foreground</key>
-				<string>#9ccc65</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.data-attribute</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.declaration.doctype</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.declaration.doctype .entity.name</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.declaration.doctype .punctuation.delimiter.declaration</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF80ABB2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.text.html .keyword.operator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#CE93D8B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.instruction.prolog</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.instruction.prolog .entity.name</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.instruction.prolog .punctuation.delimiter.instruction</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF80ABB2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.source.jsx, .text.html, .text.xml</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#BDBDBD66</string>
 			</dict>
 		</dict>
 		<dict>

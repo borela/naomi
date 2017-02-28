@@ -30,14 +30,18 @@ contexts:
         (?=
           {{commonIdentifier}}
         )
-      scope: punctuation.delimiter.tag.begin.xml.xml1
+      scope: >-
+        tag.xml.xml1
+        punctuation.delimiter.tag.begin.xml.xml1
       set: tag-name
 
   tag-name:
     - match: |
         (?xi)
         ({{commonIdentifier}})
-      scope: entity.name.tag.xml.xml1
+      scope: >-
+        tag.xml.xml1
+        entity.name.tag.xml.xml1
       set: [
         content,
         attributes
@@ -47,15 +51,17 @@ contexts:
     - match: (?=/>)
       pop: true
     - match: \>
-      scope: punctuation.delimiter.tag.end.xml.xml1
+      scope: >-
+        tag.xml.xml1
+        punctuation.delimiter.tag.end.xml.xml1
       pop: true
     - include: Packages/Naomi/syntaxes/xml1/element/attributes.sublime-syntax
 
   content:
-    - meta_scope: element.xml.xml1
-    - meta_content_scope: element.content.xml.xml1
     - match: />
-      scope: punctuation.delimiter.tag.end.xml.xml1
+      scope: >-
+        tag.xml.xml1
+        punctuation.delimiter.tag.end.xml.xml1
       pop: true
     - match: |
         (?x)

@@ -21,7 +21,9 @@ file_extensions:
   - rss
   - svg
   - tld
+  - tmPreferences
   - tmTheme
+  - sublime-snippet
   - xml
   - xsd
   - xslt

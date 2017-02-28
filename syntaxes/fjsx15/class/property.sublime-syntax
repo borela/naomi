@@ -89,7 +89,7 @@ contexts:
             static\s+
           )?
           {{commonIdentifier}}
-          \s*=
+          .*=
         )
       pop: true
     # Method

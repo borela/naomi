@@ -10,10 +10,14 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "markup/attribute";
-@import "markup/cdata";
-@import "markup/data-attribute";
-@import "markup/doctype";
-@import "markup/operator";
-@import "markup/prolog";
-@import "markup/text";
+.section.cdata {
+  foreground: $pink-a100;
+
+  .entity.name {
+    foreground: $pink-a100;
+  }
+
+  .punctuation.delimiter {
+    foreground: rgba($pink-a100, .7);
+  }
+}

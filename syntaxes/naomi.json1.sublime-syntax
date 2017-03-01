@@ -23,4 +23,5 @@ scope: source.json.json1
 contexts:
   main:
     - include: Packages/Naomi/syntaxes/json1/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/json1/literal/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/json1/literal/object/level-1.sublime-syntax

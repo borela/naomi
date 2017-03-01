@@ -17,6 +17,8 @@ name: JSON
 
 file_extensions:
   - json
+  - sublime-keymap
+  - sublime-macro
 
 scope: source.json.json1
 

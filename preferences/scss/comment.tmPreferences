@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>comment</string>
 	<key>scope</key>
-	<string>source.mql</string>
+	<string>source.scss</string>
 	<key>settings</key>
 	<dict>
 		<key>shellVariables</key>

@@ -13,8 +13,7 @@
 # the License.
 
 name: comment
-scope: >-
-  source.mql
+scope: source.scss
 settings:
   shellVariables:
   - name: TM_COMMENT_START

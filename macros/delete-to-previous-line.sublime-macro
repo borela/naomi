@@ -11,23 +11,10 @@
 // the License.
 
 [{
-  // Opening single curly quote.
-  "keys": [ "alt+]" ],
-  "command": "insert_snippet",
-  "args": { "contents": "‘" }
+  "command": "run_macro_file",
+  "args": {
+    "file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"
+  }
 },{
-  // Closing single curly quote.
-  "keys": [ "alt+shift+]" ],
-  "command": "insert_snippet",
-  "args": { "contents": "’" }
-},{
-  // Opening double curly quote.
-  "keys": [ "alt+[" ],
-  "command": "insert_snippet",
-  "args": { "contents": "“" }
-},{
-  // Closing double curly quote.
-  "keys": [ "alt+shift+[" ],
-  "command": "insert_snippet",
-  "args": { "contents": "”" }
+  "command": "left_delete"
 }]

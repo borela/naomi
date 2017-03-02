@@ -69,7 +69,8 @@ contexts:
         (?x)\s*
         (?=
           this\s*\.\s*
-          (?> props
+          (?> context
+            | props
             | state
           )\b
         )
@@ -88,6 +89,7 @@ contexts:
           (?> any
             | array
             | bool
+            | context
             | element
             | func
             | isRequired

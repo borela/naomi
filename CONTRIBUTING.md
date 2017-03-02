@@ -42,7 +42,7 @@ following style:
 
 #### Example of a commit message:
 
-    Summary (72 chars or less).
+    Summary (72 chars or less)
 
     More detailed explanatory text, if necessary.  Wrap it to about 72
     characters. In some contexts, the first line is treated as the

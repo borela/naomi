@@ -12,7 +12,7 @@
 
 [{
   // Close the doc block.
-  "keys": [ "enter" ],
+  "keys": [ "shift+enter" ],
   "command": "insert_snippet",
   "context": [{
     "key": "selection_empty",
@@ -32,7 +32,28 @@
   }],
   "args": { "contents": "\n * ${0}\n */" }
 },{
-  // Insert line to the doc block.
+  // Add line to the beginning of the doc block.
+  "keys": [ "enter" ],
+  "command": "insert_snippet",
+  "context": [{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "comment",
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_contains",
+    "operand": "^\\s*/\\*\\*\\s*",
+    "match_all": true
+  }],
+  "args": { "contents": "\n * " }
+},{
+  // Add line to the doc block.
   "keys": [ "enter" ],
   "command": "insert_snippet",
   "context": [{
@@ -69,7 +90,7 @@
   },{
     "key": "preceding_text",
     "operator": "regex_match",
-    "operand": "^\\s+\\*\\s*",
+    "operand": "^\\s+\\*\\s",
     "match_all": true
   }],
   "args": {

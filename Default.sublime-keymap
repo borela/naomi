@@ -11,6 +11,27 @@
 // the License.
 
 [{
+  // Close doc block from the beginning.
+  "keys": [ "shift+enter" ],
+  "command": "insert_snippet",
+  "context": [{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "comment.block",
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_contains",
+    "operand": "^\\s*/\\*\\*",
+    "match_all": true
+  }],
+  "args": { "contents": "\n * ${0}\n */" }
+},{
   // Close the doc block.
   "keys": [ "shift+enter" ],
   "command": "insert_snippet",
@@ -22,15 +43,15 @@
   },{
     "key": "selector",
     "operator": "equal",
-    "operand": "comment",
+    "operand": "comment.block",
     "match_all": true
   },{
     "key": "preceding_text",
     "operator": "regex_contains",
-    "operand": "^\\s*/\\*\\*",
+    "operand": "^\\s*\\*",
     "match_all": true
   }],
-  "args": { "contents": "\n * ${0}\n */" }
+  "args": { "contents": "\n*/" }
 },{
   // Add line to the beginning of the doc block.
   "keys": [ "enter" ],
@@ -74,29 +95,6 @@
   }],
   "args": { "contents": "\n* " }
 },{
-  // Remove line from the doc block.
-  "keys": [ "backspace" ],
-  "command": "run_macro_file",
-  "context": [{
-    "key": "selection_empty",
-    "operator": "equal",
-    "operand": true,
-    "match_all": true
-  },{
-    "key": "selector",
-    "operator": "equal",
-    "operand": "comment",
-    "match_all": true
-  },{
-    "key": "preceding_text",
-    "operator": "regex_match",
-    "operand": "^\\s+\\*\\s",
-    "match_all": true
-  }],
-  "args": {
-    "file": "res://Packages/Naomi/macros/delete-to-previous-line.sublime-macro"
-  }
-},{
   // Add line to a single line comment.
   "keys": [ "shift+enter" ],
   "command": "insert_snippet",
@@ -113,7 +111,7 @@
   }],
   "args": { "contents": "\n// " }
 },{
-  // Remove line from single line comment.
+  // Remove line from comment.
   "keys": [ "backspace" ],
   "command": "run_macro_file",
   "context": [{
@@ -124,7 +122,7 @@
   },{
     "key": "preceding_text",
     "operator": "regex_match",
-    "operand": "^\\s*//\\s",
+    "operand": "^\\s*(?>\\*/?|//)\\s?",
     "match_all": true
   }],
   "args": {

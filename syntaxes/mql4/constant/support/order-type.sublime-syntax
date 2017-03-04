@@ -20,11 +20,15 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bOP_
-        (?> BUY(?>LIMIT|STOP)?
-          | SELL(?>LIMIT|STOP)?
+        (?x)\s*
+        \b(
+          OP_
+          (?> BUY(?>LIMIT|STOP)?
+            | SELL(?>LIMIT|STOP)?
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

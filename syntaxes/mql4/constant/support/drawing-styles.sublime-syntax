@@ -20,23 +20,26 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\b
-        (?> DRAW_
-            (?> ARROW
-              | HISTOGRAM
-              | LINE
-              | NONE
-              | SECTION
-              | ZIGZAG
-            )
-            |
-            STYLE_
-            (?> DASH(?:DOT){0,2}
-              | DOT
-              | SOLID
-            )
+        (?x)\s*
+        \b(
+          (?> DRAW_
+              (?> ARROW
+                | HISTOGRAM
+                | LINE
+                | NONE
+                | SECTION
+                | ZIGZAG
+              )
+              |
+              STYLE_
+              (?> DASH(?:DOT){0,2}
+                | DOT
+                | SOLID
+              )
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

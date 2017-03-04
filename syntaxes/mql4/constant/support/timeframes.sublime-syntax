@@ -20,23 +20,27 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bPERIOD_
-        (?> CURRENT
-          | D1
-          | H
-            (?> 12?
-              | [23468]
-            )
-          | M
-            (?> 1[025]?
-              | 20?
-              | 30?
-              | [456]
-              | N1
-            )
-          | W1
+        (?x)\s*
+        \b(
+          PERIOD_
+          (?> CURRENT
+            | D1
+            | H
+              (?> 12?
+                | [23468]
+              )
+            | M
+              (?> 1[025]?
+                | 20?
+                | 30?
+                | [456]
+                | N1
+              )
+            | W1
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

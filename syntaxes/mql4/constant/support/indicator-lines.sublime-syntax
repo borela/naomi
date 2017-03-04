@@ -20,20 +20,24 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bMODE_
-        (?> MAIN
-          | CHIKOUSPAN
-          | GATOR(?>JAW|LIPS|TEETH)
-          | KIJUNSEN
-          | LOWER
-          | MINUSDI
-          | PLUSDI
-          | SENKOUSPAN[AB]
-          | SIGNAL
-          | TENKANSEN
-          | UPPER
+        (?x)\s*
+        \b(
+          MODE_
+          (?> MAIN
+            | CHIKOUSPAN
+            | GATOR(?>JAW|LIPS|TEETH)
+            | KIJUNSEN
+            | LOWER
+            | MINUSDI
+            | PLUSDI
+            | SENKOUSPAN[AB]
+            | SIGNAL
+            | TENKANSEN
+            | UPPER
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

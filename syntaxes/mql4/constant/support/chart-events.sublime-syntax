@@ -20,20 +20,22 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\b
-        (?> CHARTEVENT_
-            (?> KEYDOWN
-              | MOUSE_MOVE
-              | OBJECT_
-                (?:CREATE|CHANGE|DELETE)
-              | CLICK
-              | OBJECT_
-                (?>CLICK|DRAG|ENDEDIT)
-              | CHART_CHANGE
-              | CUSTOM(?:_LAST)?
-            )
+        (?x)\s*
+        \b(
+          CHARTEVENT_
+          (?> KEYDOWN
+            | MOUSE_MOVE
+            | OBJECT_
+              (?:CREATE|CHANGE|DELETE)
+            | CLICK
+            | OBJECT_
+              (?>CLICK|DRAG|ENDEDIT)
+            | CHART_CHANGE
+            | CUSTOM(?:_LAST)?
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

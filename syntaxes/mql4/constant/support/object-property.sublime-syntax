@@ -20,59 +20,63 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bOBJPROP_
-        (?> ALIGN
-          | ANCHOR
-          | ANGLE
-          | ARROWCODE
-          | BACK
-          | BGCOLOR
-          | BMPFILE
-          | BORDER_
-            (?>COLOR|TYPE)
-          | COLOR
-          | CORNER
-          | CREATETIME
-          | DEVIATION
-          | DRAWLINES
-          | ELLIPSE
-          | FIBOLEVELS
-          | FIRSTLEVEL
-          | FONT(?:SIZE)?
-          | HIDDEN
-          | LEVEL
-            (?> COLOR
-              | S(TYLE)?
-              | TEXT
-              | VALUE
-              | WIDTH
-            )
-          | NAME
-          | PRICE
-            (?>1|2|3)?
-          | RAY(?:_RIGHT)?
-          | READONLY
-          | SCALE
-          | SELECT
-            (?>ABLE|ED)
-          | STATE
-          | STYLE
-          | SYMBOL
-          | TEXT
-          | TIME
-            (?>1|2|3|FRAMES)?
-          | TOOLTIP
-          | TYPE
-          | WIDTH
-          | XDISTANCE
-          | XOFFSET
-          | XSIZE
-          | YDISTANCE
-          | YOFFSET
-          | YSIZE
-          | ZORDER
+        (?x)\s*
+        \b(
+          OBJPROP_
+          (?> ALIGN
+            | ANCHOR
+            | ANGLE
+            | ARROWCODE
+            | BACK
+            | BGCOLOR
+            | BMPFILE
+            | BORDER_
+              (?>COLOR|TYPE)
+            | COLOR
+            | CORNER
+            | CREATETIME
+            | DEVIATION
+            | DRAWLINES
+            | ELLIPSE
+            | FIBOLEVELS
+            | FIRSTLEVEL
+            | FONT(?:SIZE)?
+            | HIDDEN
+            | LEVEL
+              (?> COLOR
+                | S(TYLE)?
+                | TEXT
+                | VALUE
+                | WIDTH
+              )
+            | NAME
+            | PRICE
+              (?>1|2|3)?
+            | RAY(?:_RIGHT)?
+            | READONLY
+            | SCALE
+            | SELECT
+              (?>ABLE|ED)
+            | STATE
+            | STYLE
+            | SYMBOL
+            | TEXT
+            | TIME
+              (?>1|2|3|FRAMES)?
+            | TOOLTIP
+            | TYPE
+            | WIDTH
+            | XDISTANCE
+            | XOFFSET
+            | XSIZE
+            | YDISTANCE
+            | YOFFSET
+            | YSIZE
+            | ZORDER
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

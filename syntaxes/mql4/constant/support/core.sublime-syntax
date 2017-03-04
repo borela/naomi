@@ -19,19 +19,23 @@ scope: ...
 
 contexts:
   main:
-    - match: \bNULL\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+    - match: \s*\b(NULL)\b
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
     - include: case-insentive
 
   case-insentive:
     - match: |
-        (?xi)\b
-        (?> true
-          | false
+        (?xi)\s*
+        \b(
+          (?> true
+            | false
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

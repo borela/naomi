@@ -20,11 +20,14 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\b
-        (?> MODE_(?>HISTORY|TRADES)
-          | SELECT_BY_(?>POS|TICKET)
+        (?x)\s*
+        \b(
+          (?> MODE_(?>HISTORY|TRADES)
+            | SELECT_BY_(?>POS|TICKET)
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

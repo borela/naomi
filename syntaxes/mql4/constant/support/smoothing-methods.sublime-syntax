@@ -20,12 +20,16 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bMODE_
-        (?> EMA
-          | LWMA
-          | SM(?>A|MA)
+        (?x)\s*
+        \b(
+          MODE_
+          (?> EMA
+            | LWMA
+            | SM(?>A|MA)
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

@@ -20,21 +20,25 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bOBJ_
-        (?> NO_PERIODS
-          | PERIOD_
-            (?> M15?
-              | M5
-              | M30
-              | H1
-              | H4
-              | D1
-              | W1
-              | MN1
-            )
-          | ALL_PERIODS
+        (?x)\s*
+        \b(
+          OBJ_
+          (?> NO_PERIODS
+            | PERIOD_
+              (?> M15?
+                | M5
+                | M30
+                | H1
+                | H4
+                | D1
+                | W1
+                | MN1
+              )
+            | ALL_PERIODS
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

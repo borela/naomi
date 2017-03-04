@@ -20,11 +20,15 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bCORNER_
-        (?> LEFT_(?>UPPER|LOWER)
-          | RIGHT_(?>UPPER|LOWER)
+        (?x)\s*
+        \b(
+          CORNER_
+          (?> LEFT_(?>UPPER|LOWER)
+            | RIGHT_(?>UPPER|LOWER)
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

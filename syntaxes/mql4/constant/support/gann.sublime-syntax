@@ -20,11 +20,15 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bGANN_
-        (?> UP_TREND
-          | DOWN_TREND
+        (?x)\s*
+        \b(
+          GANN_
+          (?> UP_TREND
+            | DOWN_TREND
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

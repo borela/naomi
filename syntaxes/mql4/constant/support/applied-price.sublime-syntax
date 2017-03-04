@@ -20,16 +20,20 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bPRICE_
-        (?> CLOSE
-          | HIGH
-          | LOW
-          | MEDIAN
-          | OPEN
-          | TYPICAL
-          | WEIGHTED
+        (?x)\s*
+        \b(
+          PRICE_
+          (?> CLOSE
+            | HIGH
+            | LOW
+            | MEDIAN
+            | OPEN
+            | TYPICAL
+            | WEIGHTED
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

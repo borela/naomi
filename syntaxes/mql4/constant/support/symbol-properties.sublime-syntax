@@ -20,36 +20,40 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bMODE_
-        (?> ASK
-          | BID
-          | CLOSEBY_ALLOWED
-          | DIGITS
-          | EXPIRATION
-          | FREEZELEVEL
-          | HIGH
-          | LOT(?>SIZE|STEP)
-          | LOW
-          | MARGIN
-            (?> CALCMODE
-              | HEDGED
-              | INIT
-              | MAINTENANCE
-              | REQUIRED
-            )
-          | MAXLOT
-          | MINLOT
-          | POINT
-          | PROFITCALCMODE
-          | SPREAD
-          | STARTING
-          | STOPLEVEL
-          | SWAP(?>LONG|SHORT|TYPE)
-          | TICK(?>SIZE|VALUE)
-          | TIME
-          | TRADEALLOWED
+        (?x)\s*
+        \b(
+          MODE_
+          (?> ASK
+            | BID
+            | CLOSEBY_ALLOWED
+            | DIGITS
+            | EXPIRATION
+            | FREEZELEVEL
+            | HIGH
+            | LOT(?>SIZE|STEP)
+            | LOW
+            | MARGIN
+              (?> CALCMODE
+                | HEDGED
+                | INIT
+                | MAINTENANCE
+                | REQUIRED
+              )
+            | MAXLOT
+            | MINLOT
+            | POINT
+            | PROFITCALCMODE
+            | SPREAD
+            | STARTING
+            | STOPLEVEL
+            | SWAP(?>LONG|SHORT|TYPE)
+            | TICK(?>SIZE|VALUE)
+            | TIME
+            | TRADEALLOWED
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

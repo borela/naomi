@@ -20,47 +20,51 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bOBJ_
-        (?> ARROW
-            (?:_
-              (?> BUY
-                | CHECK
-                | DOWN
-                | LEFT_PRICE
-                | RIGHT_PRICE
-                | SELL
-                | STOP
-                | THUMB_(?>DOWN|UP)
-                | UP
-              )
-            )?
-          | BITMAP(?:_LABEL)?
-          | BUTTON
-          | CHANNEL
-          | CYCLES
-          | EDIT
-          | ELLIPSE
-          | EVENT
-          | EXPANSION
-          | FIBO
-            (?> ARC
-              | CHANNEL
-              | FAN
-              | TIMES
-            )?
-          | GANN(?>FAN|GRID|LINE)?
-          | HLINE
-          | LABEL
-          | PITCHFORK
-          | RECTANGLE(?:_LABEL)?
-          | REGRESSION
-          | STDDEVCHANNEL
-          | TEXT
-          | TREND(?:BYANGLE)?
-          | TRIANGLE
-          | VLINE
+        (?x)\s*
+        \b(
+          OBJ_
+          (?> ARROW
+              (?:_
+                (?> BUY
+                  | CHECK
+                  | DOWN
+                  | LEFT_PRICE
+                  | RIGHT_PRICE
+                  | SELL
+                  | STOP
+                  | THUMB_(?>DOWN|UP)
+                  | UP
+                )
+              )?
+            | BITMAP(?:_LABEL)?
+            | BUTTON
+            | CHANNEL
+            | CYCLES
+            | EDIT
+            | ELLIPSE
+            | EVENT
+            | EXPANSION
+            | FIBO
+              (?> ARC
+                | CHANNEL
+                | FAN
+                | TIMES
+              )?
+            | GANN(?>FAN|GRID|LINE)?
+            | HLINE
+            | LABEL
+            | PITCHFORK
+            | RECTANGLE(?:_LABEL)?
+            | REGRESSION
+            | STDDEVCHANNEL
+            | TEXT
+            | TREND(?:BYANGLE)?
+            | TRIANGLE
+            | VLINE
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

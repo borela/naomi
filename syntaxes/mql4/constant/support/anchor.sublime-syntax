@@ -20,16 +20,20 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bANCHOR_
-        (?> BOTTOM
-          | CENTER
-          | LEFT(?:_(?>LOWER|UPPER))?
-          | LOWER
-          | RIGHT(?:_(?>LOWER|UPPER))?
-          | TOP
-          | UPPER
+        (?x)\s*
+        \b(
+          ANCHOR_
+          (?> BOTTOM
+            | CENTER
+            | LEFT(?:_(?>LOWER|UPPER))?
+            | LOWER
+            | RIGHT(?:_(?>LOWER|UPPER))?
+            | TOP
+            | UPPER
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

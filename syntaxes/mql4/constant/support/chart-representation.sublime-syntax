@@ -20,14 +20,18 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bCHART_
-        (?> BARS
-          | CANDLES
-          | LINE
-          | VOLUME_
-            (?>HIDE|TICK)
+        (?x)\s*
+        \b(
+          CHART_
+          (?> BARS
+            | CANDLES
+            | LINE
+            | VOLUME_
+              (?>HIDE|TICK)
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

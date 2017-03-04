@@ -20,12 +20,16 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bBORDER_
-        (?> FLAT
-          | RAISED
-          | SUNKEN
+        (?x)\s*
+        \b(
+          BORDER_
+          (?> FLAT
+            | RAISED
+            | SUNKEN
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

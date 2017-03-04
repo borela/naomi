@@ -20,12 +20,16 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bALIGN_
-        (?> LEFT
-          | CENTER
-          | RIGHT
+        (?x)\s*
+        \b(
+          ALIGN_
+          (?> LEFT
+            | CENTER
+            | RIGHT
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

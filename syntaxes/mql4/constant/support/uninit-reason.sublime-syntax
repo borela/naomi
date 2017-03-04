@@ -20,17 +20,21 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bREASON_
-        (?> ACCOUNT
-          | CHART(?>CHANGE|CLOSE)
-          | CLOSE
-          | INITFAILED
-          | PARAMETERS
-          | PROGRAM
-          | RE(?>COMPILE|MOVE)
-          | TEMPLATE
+        (?x)\s*
+        \b(
+          REASON_
+          (?> ACCOUNT
+            | CHART(?>CHANGE|CLOSE)
+            | CLOSE
+            | INITFAILED
+            | PARAMETERS
+            | PROGRAM
+            | RE(?>COMPILE|MOVE)
+            | TEMPLATE
+          )
         )\b
-      scope: >-
-        support.constant.mql.mql4
-        entity.name.constant.mql.mql4
+      captures:
+        1: >-
+          support.constant.mql.mql4
+          entity.name.constant.mql.mql4
       pop: true

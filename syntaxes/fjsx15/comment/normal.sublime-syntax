@@ -37,5 +37,5 @@ contexts:
     - meta_scope: comment.block.js.fjsx15
     - match: \s*(\*\/)
       captures:
-        1: punctuation.comment.end.js.fjsx15
+        1: punctuation.delimiter.comment.end.js.fjsx15
       pop: true

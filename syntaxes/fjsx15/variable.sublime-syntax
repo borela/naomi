@@ -31,28 +31,33 @@ contexts:
     # Single character.
     - match: |
         (?xi)\s*
-        (?> \$\B
+        ((?> \$\B
           | [_[:alpha:]]\b
-        )
-      scope: entity.name.variable.js.fjsx15
+        ))
+      captures:
+        1: entity.name.variable.js.fjsx15
       pop: true
     # Two or more characters.
     - match: |
         (?xi)\s*
-        {{commonIdentifier}}
-        (?> \$\B
-          | [_[:alnum:]]\b
+        (
+          {{commonIdentifier}}
+          (?> \$\B
+            | [_[:alnum:]]\b
+          )
         )
-      scope: entity.name.variable.js.fjsx15
+      captures:
+        1: entity.name.variable.js.fjsx15
       pop: true
 
   support-variable:
     - match: |
         (?xi)\s*
-        (?> super
+        ((?> super
           | this
-        )\b
-      scope: >-
-        support.js.fjsx15
-        entity.name.variable.js.fjsx15
+        ))\b
+      captures:
+        1: >-
+          support.js.fjsx15
+          entity.name.variable.js.fjsx15
       pop: true

@@ -31,32 +31,35 @@ contexts:
     # Single character.
     - match: |
         (?x)\s*
-        (?> \$\B
-          | [_[:upper:]]\b
-        )
-      scope: entity.name.constant.js.fjsx15
+        ([_[:upper:]])\b
+      captures:
+        1: entity.name.constant.js.fjsx15
       pop: true
     # Two or more characters.
     - match: |
         (?x)\s*
-        {{constantIdentifier}}
-        (?> \$\B
-          | [_[:upper:]]\b
+        (
+          {{constantIdentifier}}
+          (?> \$\B
+            | [_[:upper:]]\b
+          )
         )
-      scope: entity.name.constant.js.fjsx15
+      captures:
+        1: entity.name.constant.js.fjsx15
       pop: true
 
   support-constant:
     - match: |
         (?x)\s*
-        (?> false
+        ((?> false
           | Infinity
           | NaN
           | null
           | true
           | undefined
-        )
-      scope: >-
-        support.js.fjsx15
-        entity.name.constant.js.fjsx15
+        ))
+      captures:
+        1: >-
+          support.js.fjsx15
+          entity.name.constant.js.fjsx15
       pop: true

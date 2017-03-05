@@ -25,13 +25,13 @@ contexts:
       set: body-content
 
   body-content:
-    - match: \s*(\})
+    - match: \s*(})
       captures:
         1: punctuation.delimiter.function.body.end.js.fjsx15
       pop: true
     - match: ""
       push:
-        - match: (?=\s*\})
+        - match: (?=\s*})
           pop: true
         - include: statement-and-expression
 

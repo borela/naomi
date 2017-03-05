@@ -51,7 +51,7 @@ contexts:
             (?x)
             (?=\s*
               (?> ,
-                | \}
+                | }
               )
             )
           pop: true

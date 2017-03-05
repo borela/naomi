@@ -31,12 +31,12 @@ contexts:
       set: index
 
   index:
-    - match: \s*(\])
+    - match: \s*(])
       captures:
         1: punctuation.delimiter.array.access.end.js.fjsx15
       pop: true
     - match: ""
       push:
-        - match: (?=\s*\])
+        - match: (?=\s*])
           pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

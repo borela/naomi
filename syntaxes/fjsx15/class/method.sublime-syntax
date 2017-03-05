@@ -27,7 +27,7 @@ variables:
       | '.*?(?<!\\)'
       | ".*?(?<!\\)"
       | `.*?(?<!\\)`
-      | \[.*?\]
+      | \[.*?]
     )
 
 contexts:
@@ -43,8 +43,7 @@ contexts:
       set: declaration
     # With modifiers.
     - match: |
-        (?xi)
-        \s*
+        (?xi)\s*
         (
           (?> async
             | get
@@ -128,13 +127,13 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
 
   computed-function:
-    - match: \s*(\])
+    - match: \s*(])
       captures:
         1: keyword.operator.other.computed-function.end.js.fjsx15
       pop: true
     - match: ""
       push:
-        - match: (?=\s*\])
+        - match: (?=\s*])
           pop: true
         - include: statement-and-expression
 

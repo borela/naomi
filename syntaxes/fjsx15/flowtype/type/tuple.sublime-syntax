@@ -31,6 +31,6 @@ contexts:
       pop: true
     - match: ""
       push:
-        - match: (?=\,|\])
+        - match: (?=\,|])
           pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax

@@ -23,7 +23,7 @@ variables:
 
   unicodeEscapedChar: |
     (?> u[a-f0-9]{4}
-      | u\{[a-f0-9]+\}
+      | u\{[a-f0-9]+}
     )
 
   singleQuotedEscapeSequences: |

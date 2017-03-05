@@ -25,13 +25,13 @@ contexts:
       set: body
 
   body:
-    - match: \s*(\})
+    - match: \s*(})
       captures:
         1: punctuation.delimiter.class.body.end.js.fjsx15
       pop: true
     - match: ""
       push:
-        - match: (?=\s*\})
+        - match: (?=\s*})
           pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax

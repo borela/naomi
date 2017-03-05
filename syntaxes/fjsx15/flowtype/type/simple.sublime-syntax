@@ -59,7 +59,7 @@ contexts:
   array-shorthand:
     - match: |
         (?x)
-        (\[)\s*(\])
+        (\[)\s*(])
       captures:
         1: punctuation.delimiter.array.begin.flowtype
         2: punctuation.delimiter.array.end.flowtype

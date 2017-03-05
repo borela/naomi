@@ -20,7 +20,7 @@ scope: ...
 variables:
   expressionGroupBegin: |
     (?<!
-      \]|\)|\}
+      \)|]|}
     )
     \s*(\()
     (?>

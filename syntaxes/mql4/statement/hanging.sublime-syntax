@@ -21,13 +21,20 @@ contexts:
   main:
     - match: |
         (?xi)\b
-        (?> case
-          | default
-          | private
+        (?> private
           | protected
           | public
         )\b
-      scope: keyword.control.hanging.mql.mql4
+      scope: >-
+        storage.modifier.mql.mql4
+        keyword.modifier.mql.mql4
+      set: operator
+    - match: |
+        (?xi)\b
+        (?> case
+          | default
+        )\b
+      scope: keyword.control.mql.mql4
       set: operator
 
   operator:

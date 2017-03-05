@@ -101,7 +101,13 @@ contexts:
         - include: statement-and-expression
 
   value:
-    - match: (?=\s*;)
+    - match: |
+        (?x)
+        (?=\s*
+          (?> ,
+            | ;
+          )
+        )
       pop: true
     - match: ""
       push:

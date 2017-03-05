@@ -65,7 +65,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
 
   punctuation:
-    - include: terminator
     - match: |
         (?x)
         (?=\s*
@@ -101,6 +100,3 @@ contexts:
 
   statement-and-expression:
     - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax
-
-  terminator:
-    - include: Packages/Naomi/syntaxes/mql4/terminator.sublime-syntax

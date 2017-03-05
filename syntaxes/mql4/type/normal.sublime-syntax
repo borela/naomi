@@ -25,13 +25,12 @@ variables:
 contexts:
   main:
     - match: |
-        (?xi)
+        (?xi)\s*
         \b({{commonIdentifier}})
         (?> \s*(\**)
           | \b
         )
       captures:
-        0: type.mql.mql4
         1: entity.name.type.mql.mql4
         2: keyword.operator.other.pointer.mql.mql4
       set: template-arguments

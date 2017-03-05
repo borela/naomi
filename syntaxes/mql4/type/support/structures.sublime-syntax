@@ -21,12 +21,16 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bMql
-        (?> DateTime
-          | Rates
-          | Tick
+        (?x)\s*\b
+        (
+          Mql
+          (?> DateTime
+            | Rates
+            | Tick
+          )
         )\b
-      scope: >-
-        support.type.mql.mql4
-        entity.name.type.mql.mql4
+      captures:
+        1: >-
+          support.mql.mql4
+          entity.name.type.mql.mql4
       pop: true

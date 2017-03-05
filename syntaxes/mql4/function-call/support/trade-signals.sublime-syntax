@@ -20,24 +20,27 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bSignal
-        (?> Base
-            (?> Get(?>Double|Integer|String)
-              | Select
-              | Total
-            )
-          | Info
-            (?> Get(?>Double|Integer|String)
-              | Set(?>Double|Integer)
-              | Total
-            )
-          | Subscribe
-          | Unsubscribe
+        (?x)\s*\b
+        (
+          Signal
+          (?> Base
+              (?> Get(?>Double|Integer|String)
+                | Select
+                | Total
+              )
+            | Info
+              (?> Get(?>Double|Integer|String)
+                | Set(?>Double|Integer)
+                | Total
+              )
+            | Subscribe
+            | Unsubscribe
+          )
         )(?=\s*\()
-      scope: >-
-        function.call.mql.mql4
-        support.function.mql.mql4
-        entity.name.function.mql.mql4
+      captures:
+        1: >-
+          support.function.mql.mql4
+          entity.name.function.mql.mql4
       set: arguments
 
   arguments:

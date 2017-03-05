@@ -20,8 +20,8 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\b
-        (?> HideTestIndicators
+        (?x)\s*\b
+        ((?> HideTestIndicators
           | Indicator
             (?> Buffers
               | Counted
@@ -41,11 +41,11 @@ contexts:
               )
               | Level(?>Style|Value)
             )
-        )(?=\s*\()
-      scope: >-
-        function.call.mql.mql4
-        support.function.mql.mql4
-        entity.name.function.mql.mql4
+        ))(?=\s*\()
+      captures:
+        1: >-
+          support.function.mql.mql4
+          entity.name.function.mql.mql4
       set: arguments
 
   arguments:

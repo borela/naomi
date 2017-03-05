@@ -77,8 +77,8 @@ contexts:
     # Scoped function call.
     - match: |
         (?xi)
-        (?=\b
-          {{typeIdentifier}}::{{functionIdentifier}}
+        (?=\s*
+          \b{{typeIdentifier}}::{{functionIdentifier}}
           \s*\(
         )
       set: [
@@ -89,41 +89,48 @@ contexts:
     # Normal function call.
     - match: |
         (?xi)
-        (?=\b
-          {{functionIdentifier}}
+        (?=\s*
+          \b{{functionIdentifier}}
           \s*\(
         )
       set: name
 
   class:
-    - match: (?xi)\b{{typeIdentifier}}\b
-      scope: entity.name.class.mql.mql4
+    - match: |
+        (?xi)\s*
+        \b({{typeIdentifier}})\b
+      captures:
+        1: entity.name.class.mql.mql4
       pop: true
 
   scope-operator:
-    - match: "::"
-      scope: keyword.operator.other.scope.mql.mql4
+    - match: \s*(::)
+      captures:
+        1: keyword.operator.other.scope.mql.mql4
       pop: true
 
   name:
-    - meta_scope: function.call.mql.mql4
     # Special function name.
     - match: |
-        (?x)
-        (?> On
+        (?x)\s*
+        ((?> On
             (?> Calculate
               | Deinit
               | Init
               | Start
             )
-        )(?=\s*\()
-      scope: >-
-        support.function.mql.mql4
-        entity.name.function.mql.mql4
+        ))(?=\s*\()
+      captures:
+        1: >-
+          support.function.mql.mql4
+          entity.name.function.mql.mql4
       set: arguments
     # Common function name.
-    - match: (?xi){{functionIdentifier}}
-      scope: entity.name.function.mql.mql4
+    - match: |
+        (?xi)\s*
+        ({{functionIdentifier}})
+      captures:
+        1: entity.name.function.mql.mql4
       set: arguments
 
   arguments:

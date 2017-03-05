@@ -20,35 +20,38 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bi
-        (?> A(?>C|DX?|lligator|O|TR)
-          | Bands(?:OnArray)?
-          | (?>Bears|Bulls)Power
-          | BWMFI
-          | CCI(?:OnArray)?
-          | Custom
-          | DeMarker
-          | Envelopes(?:OnArray)?
-          | Force
-          | Fractals
-          | Gator
-          | Ichimoku
-          | MA(?>CD|OnArray)?
-          | MFI
-          | Momentum(?:OnArray)?
-          | OBV
-          | OsMA
-          | RSI(?:OnArray)?
-          | RVI
-          | SAR
-          | StdDev(?:OnArray)?
-          | Stochastic
-          | WPR
+        (?x)\s*\b
+        (
+          i
+          (?> A(?>C|DX?|lligator|O|TR)
+            | Bands(?:OnArray)?
+            | (?>Bears|Bulls)Power
+            | BWMFI
+            | CCI(?:OnArray)?
+            | Custom
+            | DeMarker
+            | Envelopes(?:OnArray)?
+            | Force
+            | Fractals
+            | Gator
+            | Ichimoku
+            | MA(?>CD|OnArray)?
+            | MFI
+            | Momentum(?:OnArray)?
+            | OBV
+            | OsMA
+            | RSI(?:OnArray)?
+            | RVI
+            | SAR
+            | StdDev(?:OnArray)?
+            | Stochastic
+            | WPR
+          )
         )(?=\s*\()
-      scope: >-
-        function.call.mql.mql4
-        support.function.mql.mql4
-        entity.name.function.mql.mql4
+      captures:
+        1: >-
+          support.function.mql.mql4
+          entity.name.function.mql.mql4
       set: arguments
 
   arguments:

@@ -91,6 +91,8 @@ contexts:
     # - include: Packages/Naomi/syntaxes/mql4/flowtype/declare.sublime-syntax
     # - include: Packages/Naomi/syntaxes/mql4/export.sublime-syntax
     # - include: Packages/Naomi/syntaxes/mql4/import.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/cd-tor.inside.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/cd-tor.outside.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/function.sublime-syntax
     # Simple statements.

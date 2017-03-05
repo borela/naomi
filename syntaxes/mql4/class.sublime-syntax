@@ -74,7 +74,6 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/mql4/cd-tor.inside.sublime-syntax
         - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax
 
   comment:

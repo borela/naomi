@@ -20,17 +20,22 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?xi)\b
-        (?> break
-          | const
+        (?x)\s*\b
+        ((?> break
           | continue
-          | default
+        ))\b
+      captures:
+        1: keyword.control.flow-break.mql.mql4
+      pop: true
+    - match: |
+        (?xi)\s*\b
+        ((?> default
           | delete
           | goto
-          | throw
-        )\b
-      scope: keyword.control.simple.mql.mql4
-      set: expression
+        ))\b
+      captures:
+        1: keyword.control.mql.mql4
+      pop: true
 
   expression:
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

@@ -20,9 +20,11 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?xi)\b
-        sizeof\s*\(
-      scope: keyword.other.mql.mql4
+        (?xi)\s*\b
+        (sizeof)\s*(\()
+      captures:
+        1: keyword.other.mql.mql4
+        2: punctuation.delimiter.function.parameters.begin.mql.mql4
       set: [
         delimiter,
         type
@@ -32,6 +34,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   delimiter:
-    - match: \)
-      scope: keyword.other.mql.mql4
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.function.parameters.end.mql.mql4
       pop: true

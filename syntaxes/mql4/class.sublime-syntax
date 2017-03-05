@@ -24,29 +24,30 @@ variables:
 
 contexts:
   main:
-    - match: \bclass\b
-      scope: >-
-        storage.type.mql.mql4
-        keyword.declaration.class.mql.mql4
+    - match: \s*\b(class)\b
+      captures:
+        1: >-
+          storage.type.mql.mql4
+          keyword.declaration.class.mql.mql4
       set: identifier
 
   identifier:
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: |
-        (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.class.mql.mql4
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.class.mql.mql4
       set: [
         body,
         inheritance
       ]
 
   inheritance:
-    - match: (?=\{)
+    - match: (?=\s*\{)
       pop: true
     - match: |
         (?xi)
-        (:)
+        \s*(:)
         \s*(
           (?> public
             | protected
@@ -61,17 +62,20 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   body:
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: \{
-      scope: punctuation.delimiter.class.body.begin.mql.mql4
+    - include: comment
+    - match: \s*(\{)
+      captures: punctuation.delimiter.class.body.begin.mql.mql4
       set: body-content
 
   body-content:
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: \};
+    - match: \s*(\};?)
       scope: punctuation.delimiter.class.body.end.mql.mql4
       pop: true
     - match: ""
       push:
         - include: Packages/Naomi/syntaxes/mql4/cd-tor.inside.sublime-syntax
-        - include: Packages/Naomi/syntaxes/mql4/statement.sublime-syntax
+        - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax
+
+  comment:
+    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax

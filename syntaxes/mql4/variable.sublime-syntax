@@ -35,7 +35,6 @@ contexts:
         )
         ({{commonIdentifier}})\b
       captures:
-        0: variable.mql.mql4
         1: keyword.operator.other.pointer.mql.mql4
         2: entity.name.variable.mql.mql4
       set: array-item-access-begin
@@ -43,7 +42,7 @@ contexts:
   support-variable:
     - match: (?i)\bthis\b
       scope: >-
-        support.variable.mql.mql4
+        support.mql.mql4
         entity.name.variable.mql.mql4
       set: array-item-access-begin
 
@@ -52,18 +51,19 @@ contexts:
     - match: (?!\s*\[)
       pop: true
     # Array item access.
-    - match: \[
-      scope: punctuation.delimiter.array.item.access.begin.mql.mql4
-      push: [
-        array-item-access-end,
-        array-index
-      ]
+    - match: \s*(\[)
+      captures:
+        1: punctuation.delimiter.array.begin.mql.mql4
+      push: array
 
-  array-index:
-    - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
-
-  array-item-access-end:
-    - meta_scope: array.item.access.mql.mql4
-    - match: \]
-      scope: punctuation.delimiter.array.item.access.end.mql.mql4
+  array:
+    - match: \s*(])
+      captures:
+        1: punctuation.delimiter.array.end.mql.mql4
       pop: true
+    - match: ""
+      push:
+        - include: statement-and-expression
+
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax

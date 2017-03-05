@@ -26,12 +26,11 @@ contexts:
   main:
     - match: \bclass\b
       scope: >-
-        class.mql.mql4
-        keyword.class.mql.mql4
+        storage.type.mql.mql4
+        keyword.declaration.class.mql.mql4
       set: identifier
 
   identifier:
-    - meta_content_scope: class.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: |
         (?xi)
@@ -56,28 +55,21 @@ contexts:
         )\s*
       captures:
         1: keyword.operator.other.inherit.mql.mql4
-        2: keyword.modifier.mql.mql4
+        2: >-
+          storage.modifier.mql.mql4
+          keyword.modifier.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   body:
-    - meta_content_scope: >-
-        class.mql.mql4
-        class.body.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: \{
       scope: punctuation.delimiter.class.body.begin.mql.mql4
       set: body-content
 
   body-content:
-    - meta_content_scope: >-
-        class.mql.mql4
-        class.body.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: \};
-      scope: >-
-        class.mql.mql4
-        class.body.mql.mql4
-        punctuation.delimiter.class.body.end.mql.mql4
+      scope: punctuation.delimiter.class.body.end.mql.mql4
       pop: true
     - match: ""
       push:

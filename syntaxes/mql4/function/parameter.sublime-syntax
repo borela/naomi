@@ -50,6 +50,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   variable:
+    - meta_content_scope: parameter.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
 

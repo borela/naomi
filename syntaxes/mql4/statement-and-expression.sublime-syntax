@@ -81,36 +81,26 @@ contexts:
   sequence:
     - include: Packages/Naomi/syntaxes/mql4/terminator.sublime-syntax
     # Comments.
-    # - include: Packages/Naomi/syntaxes/mql4/flowtype/prolog.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/comment.sublime-syntax
+    # Expression keywords.
+    - include: Packages/Naomi/syntaxes/mql4/sizeof.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/new.sublime-syntax
     # Complex statements.
     # - include: Packages/Naomi/syntaxes/mql4/flowtype/interface.sublime-syntax
     # - include: Packages/Naomi/syntaxes/mql4/flowtype/type-aliasing.sublime-syntax
     # - include: Packages/Naomi/syntaxes/mql4/flowtype/declare.sublime-syntax
     # - include: Packages/Naomi/syntaxes/mql4/export.sublime-syntax
     # - include: Packages/Naomi/syntaxes/mql4/import.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/class.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/decorator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/function.sublime-syntax
     # Simple statements.
-    # - include: Packages/Naomi/syntaxes/mql4/statement/label.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/statement/hanging.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/statement/bodied.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/statement/simple.sublime-syntax
-    # Expression keywords.
-    # - include: Packages/Naomi/syntaxes/mql4/instanceof.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/new.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/other-keywords.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/statement/hanging.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/statement/bodied.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/statement/simple.sublime-syntax
     # Expression.
-    # - include: Packages/Naomi/syntaxes/mql4/array-access.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/array-access.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/arrow-function.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/function.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/nodejs.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/reactjs.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/function-call.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/destructuring.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/mql4/jsx1.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/operator.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/variable-declaration.sublime-syntax
     # When it comes to constants and variables, there's no way to tell apart

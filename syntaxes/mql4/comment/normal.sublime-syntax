@@ -38,4 +38,9 @@ contexts:
     - match: \s*(\*/)
       captures:
         1: punctuation.delimiter.comment.end.mql.mql4
-      pop: true
+      set:
+        - match: \s*$\n
+          scope: meta.block-end.mql.mql4
+          pop: true
+        - match: ''
+          pop: true

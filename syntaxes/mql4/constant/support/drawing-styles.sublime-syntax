@@ -20,8 +20,8 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\s*
-        \b(
+        (?x)\s*\b
+        (
           (?> DRAW_
               (?> ARROW
                 | HISTOGRAM

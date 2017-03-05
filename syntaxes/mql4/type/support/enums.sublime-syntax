@@ -44,6 +44,6 @@ contexts:
         )\b
       captures:
         1: >-
-        support.mql.mql4
-        entity.name.type.mql.mql4
+          support.mql.mql4
+          entity.name.type.mql.mql4
       pop: true

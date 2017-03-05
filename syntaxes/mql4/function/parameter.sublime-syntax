@@ -38,6 +38,7 @@ contexts:
       set: [
         punctuation,
         variable,
+        optional-reference,
         type
       ]
 
@@ -49,13 +50,22 @@ contexts:
           keyword.declaration.const.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
+  optional-reference:
+    - match: \s*(&)
+      captures:
+        1: >-
+          storage.modifier.mql.mql4
+          keyword.other.reference.mql.mql4
+    - match: ""
+      pop: true
+
   variable:
     - meta_content_scope: parameter.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
 
   punctuation:
-    - include: Packages/Naomi/syntaxes/mql4/terminator.sublime-syntax
+    - include: terminator
     - match: |
         (?x)
         (?=\s*
@@ -66,22 +76,21 @@ contexts:
       pop: true
     - match: \s*(\[)
       captures:
-        1: punctuation.delimiter.array.index.begin.mql.mql4
-      push: array-index
+        1: punctuation.delimiter.array.begin.mql.mql4
+      push: array
     - match: \s*(=)
       captures:
         1: keyword.operator.other.assignment.mql.mql4
       push: value
 
-  array-index:
-    - match: \s*(,)
-      captures:
-        1: punctuation.delimiter.array.index.mql.mql4
+  array:
     - match: \s*(])
       captures:
-        1: punctuation.delimiter.array.index.end.mql.mql4
+        1: punctuation.delimiter.array.end.mql.mql4
       pop: true
-    - include: statement-and-expression
+    - match: ""
+      push:
+        - include: statement-and-expression
 
   value:
     - match: (?=\s*,)
@@ -92,3 +101,6 @@ contexts:
 
   statement-and-expression:
     - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax
+
+  terminator:
+    - include: Packages/Naomi/syntaxes/mql4/terminator.sublime-syntax

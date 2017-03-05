@@ -28,13 +28,14 @@ contexts:
   # |    <     | Less than.                |
   main:
     - match: |
-        (?x)
-        (?> ==
+        (?x)\s*
+        ((?> ==
           | !=
           | >=
           | <=
           | >(?!>)
           | <(?!<)
-        )
-      scope: keyword.operator.comparison.mql.mql4
+        ))
+      captures:
+        1: keyword.operator.comparison.mql.mql4
       pop: true

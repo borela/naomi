@@ -64,17 +64,24 @@ contexts:
   body:
     - include: comment
     - match: \s*(\{)
-      captures: punctuation.delimiter.class.body.begin.mql.mql4
+      captures:
+        1: punctuation.delimiter.class.body.begin.mql.mql4
       set: body-content
 
   body-content:
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: \s*(\};?)
-      scope: punctuation.delimiter.class.body.end.mql.mql4
+    - include: comment
+    - match: \s*(};?)
+      captures:
+        1: punctuation.delimiter.class.body.end.mql.mql4
       pop: true
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax
+        - match: (?=\s*})
+          pop: true
+        - include: statement-and-expression
+
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax
 
   comment:
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax

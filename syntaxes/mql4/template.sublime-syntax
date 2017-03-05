@@ -24,23 +24,26 @@ variables:
 
 contexts:
   main:
-    - match: \btemplate\b
-      scope: >-
-        template.mql.mql4
-        keyword.template.mql.mql4
+    - match: \s*\b(template)\b
+      captures:
+        1: >-
+          storage.type.mql.mql4
+          keyword.template.mql.mql4
       set: parameters
 
   parameters:
-    - match: \<
-      scope: punctuation.delimiter.template.parameters.begin.mql.mql4
+    - match: \s*(<)
+      captures:
+        1: punctuation.delimiter.template.parameters.begin.mql.mql4
       set: parameters-content
 
   parameters-content:
-    - match: \>
-      scope: punctuation.delimiter.template.parameters.end.mql.mql4
+    - match: \s*(>)
+      captures:
+        1: punctuation.delimiter.template.parameters.end.mql.mql4
       set: target
     - match: |
-        (?xi)
+        (?xi)\s*
         (typename)
         \s*({{commonIdentifier}})
         \s*(,)?

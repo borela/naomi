@@ -88,6 +88,7 @@ contexts:
     # Complex statements.
     - include: Packages/Naomi/syntaxes/mql4/input.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/cd-tor.outside.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/template.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/struct.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/enum.sublime-syntax

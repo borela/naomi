@@ -37,15 +37,20 @@ variables:
 contexts:
   main:
     - match: |
-        (?xi)
+        (?xi)\s*
         (')
         (?> ({{escapeSequences}})
           | .
         )
         (')
       captures:
-        0: constant.character.mql.mql4
-        1: punctuation.delimiter.constant.character.begin.mql.mql4
-        2: constant.character.escape.mql.mql4
-        3: punctuation.delimiter.constant.character.end.mql.mql4
+        1: >-
+          constant.character.mql.mql4
+          punctuation.delimiter.constant.character.begin.mql.mql4
+        2: >-
+          constant.character.mql.mql4
+          constant.character.escape.mql.mql4
+        3: >-
+          constant.character.mql.mql4
+          punctuation.delimiter.constant.character.end.mql.mql4
       pop: true

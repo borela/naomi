@@ -23,10 +23,11 @@ variables:
 
 contexts:
   main:
-    - match: C'
-      scope: >-
-        constant.color.mql.mql4
-        punctuation.delimiter.color.begin.mql.mql4
+    - match: \s*(C')
+      captures:
+        1: >-
+          constant.color.mql.mql4
+          punctuation.delimiter.color.begin.mql.mql4
       set: [
         end,
         blue-value,

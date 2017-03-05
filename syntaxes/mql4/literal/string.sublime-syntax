@@ -33,7 +33,7 @@ variables:
 
 contexts:
   main:
-    - match: \"
+    - match: \s*\"
       scope: >-
         string.quoted.double.mql.mql4
         punctuation.delimiter.string.begin.mql.mql4

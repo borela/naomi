@@ -17,104 +17,52 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]]*
-
-  typeIdentifier: |
-    {{commonIdentifier}}
-
 contexts:
   main:
     # Function without parameters.
     - match: |
-        (?x)
+        (?x)\s*
         (\()
-        (
-          (?:
-            \s*(void)\s*
-          )?
-        )
+        (?:
+          \s*(void)\s*
+        )?
         (\))
       captures:
-        0: function.parameters.mql.mql4
         1: punctuation.delimiter.function.parameters.begin.mql.mql4
-        2: function.parameters.content.mql.mql4
-        3: >-
+        2: >-
           support.type.mql.mql4
           entity.name.type.mql.mql4
-        4: punctuation.delimiter.function.parameters.end.mql.mql4
+        3: punctuation.delimiter.function.parameters.end.mql.mql4
       pop: true
     # Parameters.
-    - match: \(
-      scope: punctuation.delimiter.function.parameters.begin.mql.mql4
+    - match: \s*(\()
+      captures:
+        1: punctuation.delimiter.function.parameters.begin.mql.mql4
       set: parameters
 
   parameters:
-    - meta_scope: function.parameters.mql.mql4
-    - meta_content_scope: function.parameters.content.mql.mql4
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: \)
-      scope: punctuation.delimiter.function.parameters.end.mql.mql4
-      pop: true
-    # Constant parameters.
-    - match: |
-        (?xi)
-        (?=\s*const\s+)
-      push: [
-        param-delimiter,
-        param-operators,
-        param-variable,
-        type,
-        const-keyword
-      ]
-    # Normal parameters.
-    - match: (?=\S)
-      push: [
-        param-delimiter,
-        param-operators,
-        param-variable,
-        type
-      ]
-
-  const-keyword:
-    - match: const
-      scope: keyword.constant.mql.mql4
-      pop: true
-
-  type:
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
-
-  param-variable:
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: \s*(&)
+    - match: \s*(\,)
       captures:
-        1: keyword.operator.other.reference.mql.mql4
-    - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
+        1: punctuation.delimiter.function.parameters.mql.mql4
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.function.parameters.end.mql.mql4
+      pop: true
+    - match: ""
+      push:
+        - match: |
+            (?x)
+            (?=\s*
+              (?> ,
+                | \)
+              )
+            )
+          pop: true
+        - include: comment-no-pop
+        - include: parameter
 
-  param-operators:
+  comment-no-pop:
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: (?=,|\))
-      pop: true
-    - match: \[\]
-      scope: punctuation.delimiter.array.mql.mql4
-    - match: \=
-      scope: keyword.operator.other.mql.mql4
-      set: param-default-value
 
-  param-default-value:
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: (?=,|\))
-      pop: true
-    - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
-
-  param-delimiter:
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: (?=\))
-      pop: true
-    - match: ","
-      scope: punctuation.delimiter.function.parameters.mql.mql4
-      pop: true
+  parameter:
+    - include: Packages/Naomi/syntaxes/mql4/function/parameter.sublime-syntax

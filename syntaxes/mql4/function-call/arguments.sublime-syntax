@@ -19,17 +19,30 @@ scope: ...
 
 contexts:
   main:
-    - match: \(
-      scope: punctuation.delimiter.function.arguments.begin.mql.mql4
+    - match: \s*(\()
+      captures:
+        1: punctuation.delimiter.function.arguments.begin.mql.mql4
       set: arguments
 
   arguments:
-    - meta_scope: function.call.mql.mql4
-    - match: \)
-      scope: punctuation.delimiter.function.arguments.end.mql.mql4
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.function.arguments.end.mql.mql4
       pop: true
-    - match: \,
-      scope: >-
-        function.call.mql.mql4
-        punctuation.delimiter.function.arguments.mql.mql4
-    - include: Packages/Naomi/syntaxes/mql4/expression.no-pop.sublime-syntax
+    - match: \s*(,)
+      captures:
+        1: punctuation.delimiter.function.arguments.mql.mql4
+    - match: ""
+      push:
+      - match: |
+          (?x)
+          (?=\s*
+            (?> ,
+              | \)
+            )
+          )
+        pop: true
+      - include: statement-and-expression
+
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax

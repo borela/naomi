@@ -33,7 +33,8 @@ contexts:
         (?xi)
         (?=
           (?:
-            (?> extern
+            (?> const
+              | extern
               | static
             )\s+
           )?
@@ -47,41 +48,57 @@ contexts:
       ]
 
   type:
-    - match: extern
-      scope: keyword.modifier.extern.mql.mql4
-    - match: static
-      scope: keyword.modifier.static.mql.mql4
+    - match: \s*(const)
+      captures:
+        1: >-
+          storage.type.mql.mql4
+          keyword.declaration.const.mql.mql4
+    - match: |
+        (?x)\s*
+        ((?> extern
+          | static
+        ))
+      captures:
+        1: >-
+          storage.modifier.mql.mql4
+          keyword.modifier.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   variable:
+    - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
 
   punctuation:
     - include: Packages/Naomi/syntaxes/mql4/terminator.sublime-syntax
-    - match: (?=\))
+    - match: (?=\s*\))
       pop: true
-    - match: \,
-      scope: punctuation.delimiter.mql.mql4
+    - match: \s*(,)
+      captures:
+        1: keyword.operator.other.comma.mql.mql4
       set: [
         punctuation,
         variable
       ]
-    - match: \[
-      scope: punctuation.delimiter.array.index.begin.mql.mql4
+    - match: \s*(\[)
+      captures:
+        1: punctuation.delimiter.array.index.begin.mql.mql4
       push: array-index
-    - match: =
-      scope: keyword.operator.other.assignment.mql.mql4
+    - match: \s*(=)
+      captures:
+        1: keyword.operator.other.assignment.mql.mql4
       push: value
 
   array-index:
-    - match: \,
-      scope: punctuation.delimiter.array.index.mql.mql4
-    - match: \]
-      scope: punctuation.delimiter.array.index.end.mql.mql4
+    - match: \s*(,)
+      captures:
+        1: punctuation.delimiter.array.index.mql.mql4
+    - match: \s*(])
+      captures:
+        1: punctuation.delimiter.array.index.end.mql.mql4
       pop: true
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
 
   value:
-    - match: (?=;)
+    - match: (?=\s*;)
       pop: true
     - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

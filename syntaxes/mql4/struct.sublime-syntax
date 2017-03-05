@@ -24,29 +24,29 @@ variables:
 
 contexts:
   main:
-    - match: \bstruct\b
-      scope: >-
-        struct.mql.mql4
-        keyword.struct.mql.mql4
+    - match: \s*\b(struct)\b
+      captures:
+        1: >-
+          storage.type.mql.mql4
+          keyword.struct.mql.mql4
       set: identifier
 
   identifier:
-    - meta_content_scope: struct.mql.mql4
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: |
-        (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.struct.mql.mql4
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.struct.mql.mql4
       set: [
         body,
         inheritance
       ]
 
   inheritance:
-    - match: (?=\{)
+    - match: (?=\s*\{)
       pop: true
     - match: |
-        (?xi)
+        (?xi)\s*
         (:)
         \s*(
           (?> public
@@ -55,31 +55,30 @@ contexts:
           )
         )\s*
       captures:
-        1: keyword.operator.other.inherit.mql.mql4
-        2: keyword.modifier.mql.mql4
+        1: keyword.other.mql.mql4
+        2: >-
+          storage.modifier.mql.mql4
+          keyword.modifier.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   body:
-    - meta_content_scope: >-
-        struct.mql.mql4
-        struct.body.mql.mql4
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: \{
-      scope: punctuation.delimiter.struct.body.begin.mql.mql4
+    - include: comment
+    - match: \s*(\{)
+      captures:
+        1: punctuation.delimiter.struct.body.begin.mql.mql4
       set: body-content
 
   body-content:
-    - meta_content_scope: >-
-        struct.mql.mql4
-        struct.body.mql.mql4
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: \};
-      scope: >-
-        struct.mql.mql4
-        struct.body.mql.mql4
-        punctuation.delimiter.struct.body.end.mql.mql4
+    - include: comment
+    - match: \s*(\};?)
+      captures:
+        1: punctuation.delimiter.struct.body.end.mql.mql4
       pop: true
     - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/mql4/cd-tor.inside.sublime-syntax
-        - include: Packages/Naomi/syntaxes/mql4/statement.sublime-syntax
+      push: statement-and-expression
+
+  comment:
+    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
+
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax

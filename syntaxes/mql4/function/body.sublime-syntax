@@ -25,8 +25,9 @@ variables:
 contexts:
   main:
     # End.
-    - match: ;
-      scope: punctuation.delimiter.function.declaration.end.mql.mql4
+    - match: \s*(;)
+      captures:
+        1: punctuation.delimiter.function.declaration.end.mql.mql4
       pop: true
     # Pure virtual or const.
     - match: |
@@ -41,11 +42,16 @@ contexts:
           )?
         )
       captures:
-        1: keyword.function.const.mql.mql4
-        2: keyword.function.virtual.mql.mql4
+        1: >-
+          storage.modifier.const.mql.mql4
+          keyword.modifier.const.mql.mql4
+        2: >-
+          storage.modifier.pure-virtual.mql.mql4
+          keyword.modifier.pure-virtual.mql.mql4
     # Initialization.
-    - match: ":"
-      scope: punctuation.initialization.list.begin.mql.mql4
+    - match: \s*(:)
+      captures:
+        1: punctuation.initialization.list.begin.mql.mql4
       set: initializations
     # Normal body.
     - include: body-start
@@ -61,51 +67,50 @@ contexts:
       ]
 
   initialized-identifier:
-    - match: (?xi){{commonIdentifier}}
-      scope: entity.name.ambiguous.mql.mql4
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.ambiguous.mql.mql4
       pop: true
 
   begin-initialization:
-    - match: \(
-      scope: punctuation.delimiter.initialization.begin.mql.mql4
+    - match: \s*(\()
+      captures:
+        1: punctuation.delimiter.initialization.begin.mql.mql4
       pop: true
 
   initialization-expression:
-    - match: (?=\))
+    - match: (?=\s*\))
       pop: true
-    - match: \,
-      scope: punctuation.delimiter.initialization.mql.mql4
+    - match: \s*(,)
+      captures:
+        1: punctuation.delimiter.initialization.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/expression.no-pop.sublime-syntax
 
   end-initialization:
-    - match: \)
-      scope: punctuation.delimiter.initialization.end.mql.mql4
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.initialization.end.mql.mql4
       pop: true
 
   delimiter:
-    - meta_content_scope: function.mql.mql4
     - include: body-start
-    - match: \,
-      scope: punctuation.delimiter.initialization.mql.mql4
+    - match: \s*(,)
+      captures:
+        1: punctuation.delimiter.initialization.mql.mql4
       set: initializations
 
   body-start:
-    - match: \{
-      scope: >-
-        function.body.mql.mql4
-        punctuation.delimiter.function.body.begin.mql.mql4
+    - match: \s*(\{)
+      captures:
+        1: punctuation.delimiter.function.body.begin.mql.mql4
       set: body-content
 
   body-content:
-    - meta_content_scope: >-
-        function.mql.mql4
-        function.body.mql.mql4
-        function.body.content.mql.mql4
-    - match: \}
-      scope: >-
-        function.mql.mql4
-        function.body.mql.mql4
-        punctuation.delimiter.function.body.end.mql.mql4
+    - match: \s*(})
+      captures:
+        1: punctuation.delimiter.function.body.end.mql.mql4
       pop: true
     - match: ""
       push:

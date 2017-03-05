@@ -76,7 +76,7 @@ contexts:
   main:
     # Member function.
     - match: |
-        (?xi)
+        (?xi)\s*
         (?=\b
           (?:
             (?> virtual
@@ -98,7 +98,7 @@ contexts:
       ]
     # Free function.
     - match: |
-        (?xi)
+        (?xi)\s*
         (?=\b
           (?:
             (?> virtual
@@ -120,10 +120,13 @@ contexts:
   modifier:
     - match: |
         (?xi)\s*
-        (?> virtual
+        ((?> virtual
           | static
-        )
-      scope: keyword.modifier.mql.mql4
+        ))
+      captures:
+        1: >-
+          storage.modifier.mql.mql4
+          keyword.modifier.mql.mql4
       pop: true
     - match: ""
       pop: true
@@ -135,39 +138,45 @@ contexts:
     - match: \s*(\*+)
       captures:
         1: keyword.operator.other.pointer.mql.mql4
-    - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.class.mql.mql4
+    - match: |
+        (?xi)\s*
+        \b({{commonIdentifier}})\b
+      captures:
+        1: entity.name.class.mql.mql4
       pop: true
 
   scope-operator:
-    - match: |
-        (?x)::
-      scope: keyword.operator.other.scope.mql.mql4
+    - match: \s*(::)
+      captures:
+        1: keyword.operator.other.scope.mql.mql4
       pop: true
 
   name:
     # Special function name.
     - match: |
-        (?x)
-        (?> On
+        (?x)\s*
+        ((?> On
             (?> Calculate
               | Deinit
               | Init
               | Start
             )
-        )(?=\s*\()
-      scope: >-
-        support.function.mql.mql4
-        entity.name.function.mql.mql4
+        ))(?=\s*\()
+      captures:
+        1: >-
+          support.function.mql.mql4
+          entity.name.function.mql.mql4
       pop: true
     # Common function name.
-    - match: (?xi){{functionIdentifier}}
-      scope: entity.name.function.mql.mql4
+    - match: |
+        (?xi)\s*
+        ({{functionIdentifier}})
+      captures:
+        1: entity.name.function.mql.mql4
       pop: true
 
   parameters:
     - include: Packages/Naomi/syntaxes/mql4/function/parameters.sublime-syntax
 
   body:
-    - meta_scope: function.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/function/body.sublime-syntax

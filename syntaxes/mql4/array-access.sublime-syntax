@@ -17,31 +17,22 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]]*
-
 contexts:
   main:
-    - include: support-variable
-    - include: common-variable
-
-  common-variable:
     - match: |
-        (?xi)
-        (?> \s*(\**)\b
-          | \b
-        )
-        ({{commonIdentifier}})\b
+        (?x)
+        \s*(\[)
       captures:
-        1: keyword.operator.other.pointer.mql.mql4
-        2: entity.name.variable.mql.mql4
-      pop: true
+        1: punctuation.delimiter.array.access.begin.mql.mql4
+      set: index
 
-  support-variable:
-    - match: (?i)\bthis\b
-      scope: >-
-        support.mql.mql4
-        entity.name.variable.mql.mql4
+  index:
+    - match: \s*(])
+      captures:
+        1: punctuation.delimiter.array.access.end.mql.mql4
       pop: true
+    - match: ""
+      push:
+        - match: (?=\s*])
+          pop: true
+        - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax

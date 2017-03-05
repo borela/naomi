@@ -13,42 +13,32 @@
 // the License.
 
    MarketInfo();
-// ^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^ entity.name.function.mql.mql4
    SymbolInfoDouble();
-// ^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SymbolInfoInteger();
-// ^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SymbolInfoSessionQuote();
-// ^^^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SymbolInfoSessionTrade();
-// ^^^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SymbolInfoString();
-// ^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SymbolInfoTick();
-// ^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    SymbolName();
-// ^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^ entity.name.function.mql.mql4
    SymbolSelect();
-// ^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^ entity.name.function.mql.mql4
    SymbolsTotal();
-// ^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^ entity.name.function.mql.mql4

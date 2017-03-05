@@ -36,6 +36,3 @@ contexts:
       captures:
         1: keyword.control.mql.mql4
       pop: true
-
-  expression:
-    - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax

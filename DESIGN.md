@@ -99,6 +99,7 @@ An identity is the most specific scope possible that decribes the token.
 ```css
 .storage
   .modifier
+    .visibility
   .type
 ```
 
@@ -118,12 +119,20 @@ An identity is the most specific scope possible that decribes the token.
 
 .punctuation
   .delimiter
+    .array
+      .begin
+      .end
+      .index
+        .begin
+        .end
     .class
       .body
         .begin
         .end
     .function
       .arguments
+        .begin
+        .end
       .body
         .begin
         .end
@@ -133,11 +142,21 @@ An identity is the most specific scope possible that decribes the token.
         .end
 
 .keyword
+  .declaration
+    .class
+    .const
+    .function
+    .variable
   .modifier
+    .const
+    .pure-virtual
+    .visibility
   .operator
     .assignment
     .logical
     .other
+      .comma
+      .terminator
   .other
     .unit
 ```

@@ -19,5 +19,72 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/mql4/preprocessor/include.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/preprocessor/property.sublime-syntax
+    - match: \s*(\#include)
+      scope: keyword.preprocessor.mql.mql4
+      set: include-value
+    - match: |
+        (?x)\s*
+        (\#
+          (?> define
+            | else
+            | endif
+            | ifdef
+            | import
+            | property
+          )
+        )
+      captures:
+        1: keyword.preprocessor.mql.mql4
+      set: value
+
+  include-value:
+    - match: \s*(\<.+?\>)
+      scope: string.unquoted.mql.mql4
+      pop: true
+    - include: Packages/Naomi/syntaxes/mql4/literal/string.sublime-syntax
+
+  value:
+    - match: \s*$
+      pop: true
+    - match: ""
+      push:
+        - include: other-keywords
+        - include: statement-and-expression
+
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax
+
+  other-keywords:
+    - match: |
+        (?x)\s*\b
+        ((?> copyright
+          | description
+          | icon
+          | indicator_
+            (?> chart_window
+              | buffers
+              | color[1-8]
+              | height
+              | label[1-8]
+              | level
+                (?> color
+                  | style
+                  | width
+                )
+              | maximum
+              | minimum
+              | separate_window
+            )
+          | library
+          | link
+          | script_show_
+            (?>confirm|inputs)
+          | stacksize
+          | strict
+          | tester_
+            (?>file|indicator|library)
+          | version
+        ))
+      captures:
+        1: keyword.preprocessor.mql.mql4
+      pop: true

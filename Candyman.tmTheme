@@ -227,6 +227,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.entity.name.enum, .punctuation.delimiter.enum</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.entity.name.function, .keyword.operator.other.computed-function, .punctuation.delimiter.function</string>
 			<key>settings</key>
 			<dict>
@@ -501,6 +510,24 @@
 			<dict>
 				<key>foreground</key>
 				<string>#a1887f</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.struct, .punctuation.delimiter.struct</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.delimiter.template</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>

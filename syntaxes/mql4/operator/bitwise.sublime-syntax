@@ -36,14 +36,15 @@ contexts:
   # |  >>>=    | Unsigned right shift assignment. |
   main:
     - match: |
-        (?x)
-        (?> ~=?
+        (?x)\s*
+        ((?> ~=?
           | &=?
           | \|=?
           | \^=?
           | <<=?
           | >>>=?
           | >>=?
-        )
-      scope: keyword.operator.bitwise.mql.mql4
+        ))
+      captures:
+        1: keyword.operator.bitwise.mql.mql4
       pop: true

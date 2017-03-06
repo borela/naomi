@@ -24,68 +24,56 @@ variables:
 
 contexts:
   main:
-    - match: \benum\b
-      scope: >-
-        enum.mql.mql4
-        keyword.enum.mql.mql4
+    - match: \s*\b(enum)\b
+      captures:
+        1: >-
+          storage.type.mql.mql4
+          keyword.enum.mql.mql4
       set: identifier
 
   identifier:
-    - meta_content_scope: enum.mql.mql4
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
     - match: |
-        (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.enum.mql.mql4
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.enum.mql.mql4
       set: body
 
   body:
-    - meta_content_scope: >-
-        enum.mql.mql4
-        enum.body.mql.mql4
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: \{
-      scope: punctuation.delimiter.enum.body.begin.mql.mql4
+    - include: comment
+    - match: \s*(\{)
+      captures:
+        1: punctuation.delimiter.enum.body.begin.mql.mql4
       set: body-content
 
   body-content:
-    - meta_content_scope: >-
-        enum.mql.mql4
-        enum.body.mql.mql4
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: \};
-      scope: >-
-        enum.mql.mql4
-        enum.body.mql.mql4
-        punctuation.delimiter.enum.body.end.mql.mql4
+    - include: comment
+    # End of enum.
+    - match: \s*(};?)
+      captures:
+        1: punctuation.delimiter.enum.body.end.mql.mql4
       pop: true
-    - match: \,
-      scope: punctuation.delimiter.enum.items.mql.mql4
-    - match: (?=\S)
-      push: [
-        optional-value,
-        item
-      ]
-
-  item:
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
+    # Delimiter.
+    - match: \s*(,)
+      captures:
+        1: punctuation.delimiter.enum.items.mql.mql4
+    # Item.
     - match: |
-        (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.enum.item.mql.mql4
-      pop: true
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: >-
+          enum.item.mql.mql4
+          entity.name.variable.mql.mql4
+    # Optional value.
+    - match: ""
+      push:
+        - match: (?=\s*[,}])
+          pop: true
+        - include: statement-and-expression
 
-  optional-value:
+  comment:
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - match: (?=[,}])
-      pop: true
-    - match: =
-      scope: keyword.operator.other.assignment.mql.mql4
-      set: value
 
-  value:
-    - match: (?=[,}])
-      pop: true
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax

@@ -1,5 +1,4 @@
-%YAML1.2
----
+# [PackageDev] target_format: plist, ext: tmPreferences
 
 # Licensed under the Apache License, Version 2.0 (the “License”); you may not
 # use this file except in compliance with the License. You may obtain a copy of
@@ -13,12 +12,33 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-hidden: true
-
-scope: ...
-
-contexts:
-  main:
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
+name: indentation block
+scope: source.mql
+settings:
+  preserveIndent: false
+  increaseIndentPattern: |
+    (?x)
+    (?> ^\s*(?>private|protected|public)
+      | (?> \{
+          | \[
+          | \(
+        )\s*$
+    )
+  decreaseIndentPattern: |
+    (?x)
+    ^\s*
+    (?> private
+      | protected
+      | public
+      | }
+      | ]
+      | \)
+    )
+  bracketIndentNextLinePattern: |
+    (?x)
+    ^\s*
+    (?> else
+      | for
+      | if
+      | while
+    )\b

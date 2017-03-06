@@ -28,23 +28,25 @@ contexts:
   # |     ?      |                     |
   # |     :      |                     |
   main:
-    - match: "&(?![&=])"
-      scope: keyword.operator.other.reference.mql.mql4
+    - match: \s*(&)(?![&=])
+      captures:
+        1: keyword.operator.other.reference.mql.mql4
       pop: true
     - match: |
-        (?x)
-        (?> ->
+        (?x)\s*
+        ((?> ->
           | \.
-        )
-      scope: keyword.operator.other.member.access.mql.mql4
+        ))
+      captures:
+        1: keyword.operator.other.member.access.mql.mql4
       set: member-access
     # Other.
-    - match: "\\?|:"
-      scope: keyword.operator.other.mql.mql4
+    - match: \s*(\\?|:)
+      captures:
+        1: keyword.operator.other.mql.mql4
       pop: true
 
   member-access:
-    - meta_content_scope: member.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/function-call/normal.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/constant/normal.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax

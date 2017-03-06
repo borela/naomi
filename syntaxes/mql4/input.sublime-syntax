@@ -19,30 +19,10 @@ scope: ...
 
 contexts:
   main:
-    - match: \b(input)\s
-      scope: keyword.input.mql.mql4
+    - match: \s*\b(input)\s
+      captures:
+        1: keyword.input.mql.mql4
       set: input
 
   input:
-    - meta_scope: input.mql.mql4
-    - include: assignment-operator
-    - match: (?=\S)
-      push: [
-        identifier,
-        type
-      ]
-
-  type:
-    - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
-
-  identifier:
-    - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
-
-  assignment-operator:
-    - match: =
-      scope: keyword.operator.other.assignment.mql.mql4
-      set: value
-
-  value:
-    - meta_scope: input.mql.mql4
-    - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/variable-declaration.sublime-syntax

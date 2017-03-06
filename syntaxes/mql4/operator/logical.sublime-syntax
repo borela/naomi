@@ -25,10 +25,11 @@ contexts:
   # |    !     | Not.        |
   main:
     - match: |
-        (?x)
-        (?> &&
+        (?x)\s*
+        ((?> &&
           | \|\|
           | !
-        )
-      scope: keyword.operator.logical.mql.mql4
+        ))
+      captures:
+        1: keyword.operator.logical.mql.mql4
       pop: true

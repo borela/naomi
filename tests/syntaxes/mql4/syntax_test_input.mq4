@@ -15,7 +15,7 @@
     input string identifier = "...";
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ input.mql.mql4
 //  ^^^^^ keyword.input.mql.mql4
-//        ^^^^^^ support.type.mql.mql4
+//        ^^^^^^ support.mql.mql4
 //        ^^^^^^ entity.name.type.mql.mql4
 //               ^^^^^^^^^^ entity.name.variable.mql.mql4
 //                          ^ keyword.operator.other.assignment.mql.mql4

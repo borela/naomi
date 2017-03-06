@@ -29,7 +29,7 @@ contexts:
   main:
     - match: |
         (?xi)
-        (?=
+        (?=\s*
           (?> \b
             | \B(?:~)?
           )
@@ -44,11 +44,13 @@ contexts:
 
   name:
     - match: |
-        (?xi)
-        (?> \b
-          | \B(?:~)?
-        )
-        {{commonIdentifier}}\b
+        (?xi)\s*
+        (
+          (?> \b
+            | \B(?:~)?
+          )
+          {{commonIdentifier}}
+        )\b
       scope: entity.name.function.mql.mql4
       pop: true
 
@@ -56,5 +58,4 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/function/parameters.sublime-syntax
 
   body:
-    - meta_scope: function.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/function/body.sublime-syntax

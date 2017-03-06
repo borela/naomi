@@ -19,11 +19,11 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\/\/)
+    - match: \s*(//)
       captures:
         1: punctuation.delimiter.comment.begin.mql.mql4
       set: line
-    - match: \s*(\/\*)
+    - match: \s*(/\*)
       captures:
         1: punctuation.delimiter.comment.begin.mql.mql4
       set: block
@@ -35,7 +35,12 @@ contexts:
 
   block:
     - meta_scope: comment.block.mql.mql4
-    - match: \s*(\*\/)
+    - match: \s*(\*/)
       captures:
         1: punctuation.delimiter.comment.end.mql.mql4
-      pop: true
+      set:
+        - match: \s*$\n
+          scope: meta.block-end.mql.mql4
+          pop: true
+        - match: ''
+          pop: true

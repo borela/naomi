@@ -19,6 +19,20 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\S)
+    - match: |
+        (?x)
+        \s*(\[)
+      captures:
+        1: punctuation.delimiter.array.access.begin.mql.mql4
+      set: index
+
+  index:
+    - match: \s*(])
+      captures:
+        1: punctuation.delimiter.array.access.end.mql.mql4
+      pop: true
+    - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/mql4/statement.sublime-syntax
+        - match: (?=\s*])
+          pop: true
+        - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax

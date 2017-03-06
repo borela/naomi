@@ -20,48 +20,48 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\b
-        (?> File
-          (?> Close
-            | Copy
-            | Delete
-            | Find(?>Close|First|Next)
-            | Flush
-            | GetInteger
-            | Is(?>Ending|Exist|LineEnding)
-            | Move
-            | Open(?:History)?
-            | Read
-              (?> Array
-                | Bool
-                | Datetime
-                | Double
-                | Float
-                | Integer
-                | Long
-                | Number
-                | String
-                | Struct
-              )
-            | Seek
-            | Size
-            | Tell
-            | Write
-              (?> Array
-                | Double
-                | Float
-                | Integer
-                | Long
-                | String
-                | Struct
-              )?
-          )
-        | Folder(?>Clean|Create|Delete)
-        )(?=\s*\()
-      scope: >-
-        function.call.mql.mql4
-        support.function.mql.mql4
-        entity.name.function.mql.mql4
+        (?x)\s*\b
+        ((?> File
+            (?> Close
+              | Copy
+              | Delete
+              | Find(?>Close|First|Next)
+              | Flush
+              | GetInteger
+              | Is(?>Ending|Exist|LineEnding)
+              | Move
+              | Open(?:History)?
+              | Read
+                (?> Array
+                  | Bool
+                  | Datetime
+                  | Double
+                  | Float
+                  | Integer
+                  | Long
+                  | Number
+                  | String
+                  | Struct
+                )
+              | Seek
+              | Size
+              | Tell
+              | Write
+                (?> Array
+                  | Double
+                  | Float
+                  | Integer
+                  | Long
+                  | String
+                  | Struct
+                )?
+            )
+          | Folder(?>Clean|Create|Delete)
+        ))(?=\s*\()
+      captures:
+        1: >-
+          support.function.mql.mql4
+          entity.name.function.mql.mql4
       set: arguments
 
   arguments:

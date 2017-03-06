@@ -20,31 +20,34 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bMath
-        (?> Abs
-          | Arc
-            (?:cos|sin|tan)
-          | Ceil
-          | Cos
-          | Exp
-          | Floor
-          | IsValidNumber
-          | Log(?:10)?
-          | Max
-          | Min
-          | Mod
-          | Pow
-          | Rand
-          | Round
-          | Sin
-          | Sqrt
-          | Srand
-          | Tan
+        (?x)\s*\b
+        (
+          Math
+          (?> Abs
+            | Arc
+              (?:cos|sin|tan)
+            | Ceil
+            | Cos
+            | Exp
+            | Floor
+            | IsValidNumber
+            | Log(?:10)?
+            | Max
+            | Min
+            | Mod
+            | Pow
+            | Rand
+            | Round
+            | Sin
+            | Sqrt
+            | Srand
+            | Tan
+          )
         )(?=\s*\()
-      scope: >-
-        function.call.mql.mql4
-        support.function.mql.mql4
-        entity.name.function.mql.mql4
+      captures:
+        1: >-
+          support.function.mql.mql4
+          entity.name.function.mql.mql4
       set: arguments
 
   arguments:

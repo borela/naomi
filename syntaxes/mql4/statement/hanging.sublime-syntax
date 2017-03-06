@@ -20,18 +20,32 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?xi)\b
-        (?> case
-          | default
-          | private
+        (?xi)\s*\b
+        ((?> private
           | protected
           | public
-        )\b
-      scope: keyword.control.hanging.mql.mql4
+        ))\b
+      captures:
+        1: >-
+          storage.modifier.mql.mql4
+          keyword.modifier.mql.mql4
+      set: operator
+    - match: |
+        (?xi)\s*\b
+        ((?> case
+          | default
+        ))\b
+      captures:
+        1: keyword.control.mql.mql4
       set: operator
 
   operator:
-    - match: ":"
-      scope: keyword.operator.other.mql.mql4
+    - match: \s*(:)
+      captures:
+        1: keyword.operator.other.mql.mql4
       pop: true
-    - include: Packages/Naomi/syntaxes/mql4/expression.sublime-syntax
+    - match: ""
+      push: statement-and-expression
+
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

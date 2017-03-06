@@ -19,6 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: ;
-      scope: keyword.operator.other.terminator.mql.mql4
+    - match: \s*(;)
+      captures:
+        1: keyword.operator.other.terminator.mql.mql4
       pop: true

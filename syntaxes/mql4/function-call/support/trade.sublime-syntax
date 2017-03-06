@@ -20,38 +20,41 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bOrder
-        (?> Close
-              (?> By
-                | Price
-                | Time
-              )?
-          | Comment
-          | Commission
-          | Delete
-          | Expiration
-          | Lots
-          | MagicNumber
-          | Modify
-          | OpenPrice
-          | OpenTime
-          | Print
-          | Profit
-          | Select
-          | Send
-          | sHistoryTotal
-          | StopLoss
-          | sTotal
-          | Swap
-          | Symbol
-          | TakeProfit
-          | Ticket
-          | Type
+        (?x)\s*\b
+        (
+          Order
+          (?> Close
+                (?> By
+                  | Price
+                  | Time
+                )?
+            | Comment
+            | Commission
+            | Delete
+            | Expiration
+            | Lots
+            | MagicNumber
+            | Modify
+            | OpenPrice
+            | OpenTime
+            | Print
+            | Profit
+            | Select
+            | Send
+            | sHistoryTotal
+            | StopLoss
+            | sTotal
+            | Swap
+            | Symbol
+            | TakeProfit
+            | Ticket
+            | Type
+          )
         )(?=\s*\()
-      scope: >-
-        function.call.mql.mql4
-        support.function.mql.mql4
-        entity.name.function.mql.mql4
+      captures:
+        1: >-
+          support.function.mql.mql4
+          entity.name.function.mql.mql4
       set: arguments
 
   arguments:

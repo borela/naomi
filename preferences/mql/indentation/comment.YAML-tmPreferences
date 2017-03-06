@@ -1,5 +1,4 @@
-%YAML1.2
----
+# [PackageDev] target_format: plist, ext: tmPreferences
 
 # Licensed under the Apache License, Version 2.0 (the “License”); you may not
 # use this file except in compliance with the License. You may obtain a copy of
@@ -13,27 +12,16 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-hidden: true
-
-scope: ...
-
-variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]]*
-
-contexts:
-  main:
-    - match: |
-        (?xi)\s*
-        \b({{commonIdentifier}})
-        (?> \s*(\**)
-          | \b
-        )
-      captures:
-        1: entity.name.type.mql.mql4
-        2: keyword.operator.other.pointer.mql.mql4
-      set: template-arguments
-
-  template-arguments:
-    - include: Packages/Naomi/syntaxes/mql4/type/template-arguments.sublime-syntax
+name: indentation comment
+scope: >-
+  source.mql
+  comment,
+  source.mql
+  meta.block-end
+settings:
+  preserveIndent: false
+  increaseIndentPattern: ""
+  decreaseIndentPattern: ""
+  bracketIndentNextLinePattern: ""
+  disableIndentNextLinePattern: ""
+  unIndentedLinePattern: .

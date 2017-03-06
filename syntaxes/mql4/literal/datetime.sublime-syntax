@@ -19,14 +19,15 @@ scope: ...
 
 contexts:
   main:
-    - match: "D'"
-      scope: >-
-        constant.datetime.mql.mql4
-        punctuation.delimiter.datetime.begin.mql.mql4
+    - match: \s*(D')
+      captures:
+        1: >-
+          constant.datetime.mql.mql4
+          punctuation.delimiter.datetime.begin.mql.mql4
       set: year-value
 
   end:
-    - match: "'"
+    - match: \'
       scope: >-
         constant.datetime.mql.mql4
         punctuation.delimiter.datetime.end.mql.mql4
@@ -35,7 +36,7 @@ contexts:
   date-delimiter:
     - match: (?=\')
       pop: true
-    - match: "\\."
+    - match: \.
       scope: >-
         constant.datetime.mql.mql4
         punctuation.delimiter.date.mql.mql4

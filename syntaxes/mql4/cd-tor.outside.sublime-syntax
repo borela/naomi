@@ -30,7 +30,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          \b
+          \s*\b
           {{commonIdentifier}}::(?:~)?{{commonIdentifier}}
           \s*\(
         )
@@ -43,14 +43,15 @@ contexts:
       ]
 
   class:
-    - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.class.mql.mql4
+    - match: (?xi)\s*\b({{commonIdentifier}})\b
+      captures:
+        1: entity.name.class.mql.mql4
       pop: true
 
   scope-operator:
-    - match: |
-        (?x)::
-      scope: keyword.operator.other.scope.mql.mql4
+    - match: \s*(::)
+      captures:
+        1: keyword.operator.other.scope.mql.mql4
       pop: true
 
   name:
@@ -67,5 +68,4 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/function/parameters.sublime-syntax
 
   body:
-    - meta_scope: function.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/function/body.sublime-syntax

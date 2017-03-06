@@ -19,8 +19,9 @@ scope: ...
 
 contexts:
   main:
-    - match: (?i)\b(new)\b
-      scope: keyword.other.mql.mql4
+    - match: (?i)\s*\b(new)\b
+      captures:
+        1: keyword.other.mql.mql4
       set: [
         arguments,
         type

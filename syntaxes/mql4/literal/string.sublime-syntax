@@ -33,15 +33,17 @@ variables:
 
 contexts:
   main:
-    - match: \"
-      scope: >-
-        string.quoted.double.mql.mql4
-        punctuation.delimiter.string.begin.mql.mql4
+    - match: \s*(")
+      captures:
+        1: >-
+          string.quoted.double.mql.mql4
+          punctuation.delimiter.string.begin.mql.mql4
       with_prototype:
-        - match: \"
-          scope: >-
-            string.quoted.double.mql.mql4
-            punctuation.delimiter.string.end.mql.mql4
+        - match: \s*(")
+          captures:
+            1: >-
+              string.quoted.double.mql.mql4
+              punctuation.delimiter.string.end.mql.mql4
           pop: true
       set: escape-a
 

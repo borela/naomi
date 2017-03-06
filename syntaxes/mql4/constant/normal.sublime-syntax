@@ -28,7 +28,5 @@ contexts:
         (?x)\s*
         ({{constantIdentifier}})
       captures:
-        1: >-
-          constant.mql.mql4
-          entity.name.constant.mql.mql4
+        1: entity.name.constant.mql.mql4
       pop: true

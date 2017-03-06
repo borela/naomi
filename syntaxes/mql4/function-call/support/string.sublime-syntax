@@ -20,29 +20,32 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bString
-        (?> Add
-          | BufferLen
-          | Compare
-          | Concatenate
-          | Fill
-          | Find
-          | GetChar(?:acter)?
-          | Init
-          | Len
-          | Replace
-          | SetChar(?:acter)?
-          | Split
-          | Substr
-          | To
-            (?:Lower|Upper)
-          | Trim
-            (?:Left|Right)
+        (?x)\s*\b
+        (
+          String
+          (?> Add
+            | BufferLen
+            | Compare
+            | Concatenate
+            | Fill
+            | Find
+            | GetChar(?:acter)?
+            | Init
+            | Len
+            | Replace
+            | SetChar(?:acter)?
+            | Split
+            | Substr
+            | To
+              (?:Lower|Upper)
+            | Trim
+              (?:Left|Right)
+          )
         )(?=\s*\()
-      scope: >-
-        function.call.mql.mql4
-        support.function.mql.mql4
-        entity.name.function.mql.mql4
+      captures:
+        1: >-
+          support.function.mql.mql4
+          entity.name.function.mql.mql4
       set: arguments
 
   arguments:

@@ -20,30 +20,33 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bArray
-        (?> Bsearch
-          | Compare
-          | Copy
-            (?>Rates|Series)?
-          | Dimension
-          | Fill
-          | Free
-          | GetAsSeries
-          | Initialize
-          | Is
-            (?>Dynamic|Series)
-          | Maximum
-          | Minimum
-          | Range
-          | Resize
-          | SetAsSeries
-          | Size
-          | Sort
+        (?x)\s*\b
+        (
+          Array
+          (?> Bsearch
+            | Compare
+            | Copy
+              (?>Rates|Series)?
+            | Dimension
+            | Fill
+            | Free
+            | GetAsSeries
+            | Initialize
+            | Is
+              (?>Dynamic|Series)
+            | Maximum
+            | Minimum
+            | Range
+            | Resize
+            | SetAsSeries
+            | Size
+            | Sort
+          )
         )(?=\s*\()
-      scope: >-
-        function.call.mql.mql4
-        support.function.mql.mql4
-        entity.name.function.mql.mql4
+      captures:
+        1: >-
+          support.function.mql.mql4
+          entity.name.function.mql.mql4
       set: arguments
 
   arguments:

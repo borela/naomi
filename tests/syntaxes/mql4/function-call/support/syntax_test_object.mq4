@@ -13,110 +13,83 @@
 // the License.
 
    ObjectCreate();
-// ^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectDelete();
-// ^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectDescription();
-// ^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectFind();
-// ^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectGet();
-// ^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^ entity.name.function.mql.mql4
    ObjectGetDouble();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectGetFiboDescription();
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectGetInteger();
-// ^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectGetShiftByValue();
-// ^^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectGetString();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectGetTimeByValue();
-// ^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectGetValueByShift();
-// ^^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectGetValueByTime();
-// ^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectMove();
-// ^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectName();
-// ^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectsDeleteAll();
-// ^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectSet();
-// ^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^ entity.name.function.mql.mql4
    ObjectSetDouble();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectSetFiboDescription();
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectSetInteger();
-// ^^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectSetString();
-// ^^^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectSetText();
-// ^^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectsTotal();
-// ^^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^ entity.name.function.mql.mql4
    ObjectType();
-// ^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^ entity.name.function.mql.mql4
    TextGetSize();
-// ^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^ entity.name.function.mql.mql4
    TextOut();
-// ^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^ support.function.mql.mql4
+// ^^^^^^^ support.mql.mql4
 // ^^^^^^^ entity.name.function.mql.mql4
    TextSetFont();
-// ^^^^^^^^^^^^^ function.call.mql.mql4
-// ^^^^^^^^^^^ support.function.mql.mql4
+// ^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^ entity.name.function.mql.mql4

@@ -40,11 +40,21 @@ contexts:
       captures:
         1: keyword.operator.other.member.access.mql.mql4
       set: member-access
-    # Other.
-    - match: \s*(\\?|:)
+    - match: \s*(\?)
       captures:
-        1: keyword.operator.other.mql.mql4
+        1: keyword.operator.other.ternary.mql.mql4
+      set: ternary-condition
+
+  ternary-condition:
+    - match: \s*(:)
+      captures:
+        1: keyword.operator.other.ternary.mql.mql4
       pop: true
+    - match: ""
+      push:
+        - match: (?=\s*:)
+          pop: true
+        - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax
 
   member-access:
     - include: Packages/Naomi/syntaxes/mql4/function-call/normal.sublime-syntax

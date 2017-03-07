@@ -18,6 +18,10 @@ hidden: true
 scope: ...
 
 variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
   expressionGroupBegin: |
     (?<!
       \)|]|}
@@ -37,6 +41,7 @@ variables:
 
 contexts:
   main:
+    - include: cast-operator
     # Open new expression group.
     - match: |
         (?xi)
@@ -48,6 +53,7 @@ contexts:
     - include: sequence
 
   open-a-close-b:
+    - include: cast-operator
     # Open new expression group.
     - match: |
         (?xi)
@@ -63,12 +69,12 @@ contexts:
     # Expression contents.
     - match: ""
       push:
-        - include: cast-operator
         - include: sequence
         - match: ""
           pop: true
 
   open-b-close-a:
+    - include: cast-operator
     # Open new expression group.
     - match: |
         (?xi)
@@ -84,13 +90,20 @@ contexts:
     # Expression contents.
     - match: ""
       push:
-        - include: cast-operator
         - include: sequence
         - match: ""
           pop: true
 
   cast-operator:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax
+    - match: |
+        (?xi)
+        (?=
+          \s*\(
+          {{commonIdentifier}}
+          \s*:
+        )
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax
 
   sequence:
     - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax
@@ -98,6 +111,11 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+    # Simple statements.
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/label.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/hanging.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/bodied.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/simple.sublime-syntax
     # Complex statements.
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/interface.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
@@ -106,11 +124,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
-    # Simple statements.
-    - include: Packages/Naomi/syntaxes/fjsx15/statement/label.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/statement/hanging.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/statement/bodied.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/statement/simple.sublime-syntax
     # Expression keywords.
     - include: Packages/Naomi/syntaxes/fjsx15/instanceof.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/new.sublime-syntax

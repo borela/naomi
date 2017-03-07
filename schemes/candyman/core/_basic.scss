@@ -51,6 +51,16 @@
 }
 
 /**
+ * Operator used to cast one type to another.
+ */
+
+.keyword.operator.cast,
+.punctuation.delimiter.cast {
+  foreground: $brown-200;
+}
+
+
+/**
  * Storage type and modifiers.
  */
 

@@ -87,5 +87,5 @@ contexts:
           | version
         ))
       captures:
-        1: keyword.preprocessor.mql.mql4
+        1: keyword.other.mql.mql4
       pop: true

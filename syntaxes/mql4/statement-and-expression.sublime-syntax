@@ -18,11 +18,16 @@ hidden: true
 scope: ...
 
 variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [_[:alnum:]]*
+
   expressionGroupBegin: |
     \s*(\()
 
 contexts:
   main:
+    - include: cast-operator
     # Open new expression group.
     - match: |
         (?xi)
@@ -34,6 +39,7 @@ contexts:
     - include: sequence
 
   open-a-close-b:
+    - include: cast-operator
     # Open new expression group.
     - match: |
         (?xi)
@@ -49,12 +55,12 @@ contexts:
     # Expression contents.
     - match: ""
       push:
-        # - include: cast-operator
         - include: sequence
         - match: ""
           pop: true
 
   open-b-close-a:
+    - include: cast-operator
     # Open new expression group.
     - match: |
         (?xi)
@@ -70,13 +76,20 @@ contexts:
     # Expression contents.
     - match: ""
       push:
-        # - include: cast-operator
         - include: sequence
         - match: ""
           pop: true
 
-  # cast-operator:
-  #   - include: Packages/Naomi/syntaxes/mql4/flowtype/cast.sublime-syntax
+  cast-operator:
+    - match: |
+        (?xi)
+        (?=
+          \s*\(
+          {{commonIdentifier}}
+          \s*\)
+        )
+      push:
+        - include: Packages/Naomi/syntaxes/mql4/cast.sublime-syntax
 
   sequence:
     - include: Packages/Naomi/syntaxes/mql4/terminator.sublime-syntax
@@ -85,6 +98,10 @@ contexts:
     # Expression keywords.
     - include: Packages/Naomi/syntaxes/mql4/sizeof.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/new.sublime-syntax
+    # Simple statements.
+    - include: Packages/Naomi/syntaxes/mql4/statement/hanging.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/statement/bodied.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/statement/simple.sublime-syntax
     # Complex statements.
     - include: Packages/Naomi/syntaxes/mql4/preprocessor.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/input.sublime-syntax
@@ -94,10 +111,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/struct.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/enum.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/function.sublime-syntax
-    # Simple statements.
-    - include: Packages/Naomi/syntaxes/mql4/statement/hanging.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/statement/bodied.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/statement/simple.sublime-syntax
     # Expression.
     - include: Packages/Naomi/syntaxes/mql4/array-access.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/literal.sublime-syntax

@@ -74,6 +74,7 @@ contexts:
               | maximum
               | minimum
               | separate_window
+              | style[1-8]
             )
           | library
           | link

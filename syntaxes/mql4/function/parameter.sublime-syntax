@@ -106,6 +106,8 @@ contexts:
     - match: ""
       push:
         - include: statement-and-expression
+        - match: ""
+          pop: true
 
   statement-and-expression:
     - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax

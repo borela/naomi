@@ -114,7 +114,10 @@ contexts:
         1: punctuation.delimiter.function.body.end.mql.mql4
       pop: true
     - match: ""
-      push: statement-and-expression
+      push:
+        - match: (?=\s*})
+          pop: true
+        - include: statement-and-expression
 
   statement-and-expression:
     - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax

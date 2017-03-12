@@ -27,14 +27,14 @@ contexts:
     # Multiple characters.
     - match: |
         (?x)\s*
-        ({{constantIdentifier}})
+        ({{constantIdentifier}})\b
       captures:
         1: entity.name.constant.mql.mql4
       pop: true
     # Single character.
     - match: |
         (?x)\s*
-        ([[:upper:]])
+        ([[:upper:]])\b
       captures:
         1: entity.name.constant.mql.mql4
       pop: true

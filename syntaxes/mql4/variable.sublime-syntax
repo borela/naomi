@@ -40,8 +40,9 @@ contexts:
       pop: true
 
   support-variable:
-    - match: (?i)\bthis\b
-      scope: >-
-        support.mql.mql4
-        entity.name.variable.mql.mql4
+    - match: (?i)\s*\b(this)\b
+      captures:
+        1: >-
+          support.mql.mql4
+          entity.name.variable.mql.mql4
       pop: true

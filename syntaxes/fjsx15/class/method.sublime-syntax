@@ -32,6 +32,22 @@ variables:
 
 contexts:
   main:
+    # Class instance property.
+    - match: |
+        (?xi)
+        (?=
+          \s*{{commonIdentifier}}
+          \s*=
+          \s*
+            (?> \(.*\)
+              | {{commonIdentifier}}
+            )
+          \s*=>
+        )
+      set: [
+        arrow-function,
+        class-instance-identifier
+      ]
     # No modifiers.
     - match: |
         (?xi)
@@ -64,6 +80,19 @@ contexts:
       captures:
         1: keyword.modifier.js.fjsx15
       set: declaration
+
+  class-instance-identifier:
+    - match: |
+        (?xi)
+        \s*({{commonIdentifier}})
+        \s*(=)
+      captures:
+        1: entity.name.function.js.fjsx15
+        2: punctuation.delimiter.function.js.fjsx15
+      pop: true
+
+  arrow-function:
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
 
   declaration:
     - match: (?=\s*;)

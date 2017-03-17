@@ -24,6 +24,20 @@ variables:
 
 contexts:
   main:
+    # Export default from.
+    - match: |
+        (?x)
+        \s*(export)
+        \s*(default)
+        \s*(from)
+      captures:
+        1: keyword.control.export.js.fjsx15
+        2: >-
+          storage.modifier.js.fjsx15
+          keyword.control.export.default.js.fjsx15
+        3: keyword.control.export.origin.js.fjsx15
+      set: origin-path
+    # Export specific elements.
     - match: |
         (?x)
         \s*(export)
@@ -35,6 +49,7 @@ contexts:
           storage.modifier.js.fjsx15
           keyword.control.export.default.js.fjsx15
       set: object-literal
+    # Generic export.
     - match: \s*(export)\b
       captures:
         1: keyword.control.export.js.fjsx15

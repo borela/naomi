@@ -48,6 +48,7 @@ contexts:
                 | 201[5678]
               )
             | JavaScript
+            | JS
           )
         )
       captures:

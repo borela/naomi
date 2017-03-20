@@ -1,5 +1,7 @@
 # Apache License
 
+Copyright © 2017 Alexandre Borela <alexandre@borela.tech>
+
 Version 2.0, January 2004
 http://www.apache.org/licenses/
 

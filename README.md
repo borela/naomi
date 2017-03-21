@@ -18,7 +18,7 @@ constants from variables just using regular expressions. The solution then is th
 you must have a coding style where all your constants are uppercase and it’ll
 highlight them fine.
 
-## Installation
+## Installation (You only need to choose 1 method)
 
 #### Package Control
 
@@ -78,86 +78,14 @@ them.
   2. Alt+Shift+[ produces ”.
   3. Alt+] produces ‘.
   4. Alt+Shift+] produces ’.
-
-#### FJSX15
-
-Combines ES2015+, Flow, React’s JSX.
-
-* Specific scope for JSX components.
-* Templates.
-* Interfaces.
-* Classes.
-* Get and set class methods.
-* Static variables and functions.
-* Simple functions.
-* Generator functions.
-* Arrow functions.
-* Decorators.
-* Destructuring operators.
-* Alternating parenthesis in expressions.
-* Alternating escaped characters.
-* Decimal, floating point and hexadecimal literals.
-
-#### JSON
-
-* Keys up to 7 levels.
-* Constants.
-* Decimal, floating point and hexadecimal literals.
-
-#### HTML 5
-
-* Balanced tags.
-* FJSX15 inside script tags.
-* CSS3 inside style tags.
-* Section root elements.
-* Section elements.
-* Embedded elements.
-* Form elements.
-
-#### SCSS3
-
-* Ids.
-* Classes.
-* Tags.
-* Pseudo classes.
-* Pseudo elements.
-* Keyframes.
-* Conditionals.
-* Loops.
-* Mixins.
-* Functions.
-* Function calls.
-
-#### MQL4
-
-* Templates.
-* Classes.
-* Functions.
-* Function calls.
-* Datetime literals.
-* RGB literals.
-* Alternating parenthesis in expressions.
-* Alternating escaped characters.
-* Decimal, floating point and hexadecimal literals.
-
-#### PHP 7
-
-* phpDoc instructions.
-* Alternating namespace names.
-* Alternating escaped characters.
-* Alternating embedded variables.
-* Alternating parenthesis in expressions.
-* Classes.
-* Interfaces.
-* Functions.
-* Function calls.
-* Private and protected modifiers.
-* Decimal, floating point, binary, octal and hexadecimal literals.
-
-#### XML 1.0
-
-* Balanced tags.
-* Attributes.
+* Stable syntaxes:
+  * FJSX15 (Combines ES2015+, Flow, React’s JSX).
+  * JSON.
+  * HTML 5.
+  * SCSS3.
+  * MQL4.
+  * PHP 7.
+  * XML 1.0.
 
 ## Preview
 

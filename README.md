@@ -18,16 +18,9 @@ constants from variables just using regular expressions. The solution then is th
 you must have a coding style where all your constants are uppercase and it’ll
 highlight them fine.
 
-## Installation (You only need to choose 1 method)
+## Installation
 
-#### Package Control
-
-1. Install [Package Control](https://packagecontrol.io/installation).
-2. Run **Package Control: Install Package** command.
-3. Find and install the **Naomi** plugin.
-4. Restart Sublime Text if there are issues.
-
-#### Manual
+#### Manual installation
 
 Clone the repository in your Sublime Text “Packages” directory:
 
@@ -38,6 +31,13 @@ The “Packages” directory is located at:
 * **OS X**: `~/Library/Application Support/Sublime Text 3/Packages`
 * **Linux**: `~/.config/sublime-text-3/Packages`
 * **Windows**: `%APPDATA%\Sublime Text 3\Packages`
+
+#### Installing using package Control
+
+1. Install [Package Control](https://packagecontrol.io/installation).
+2. Run **Package Control: Install Package** command.
+3. Find and install the **Naomi** plugin.
+4. Restart Sublime Text if there are issues.
 
 ## Usage
 

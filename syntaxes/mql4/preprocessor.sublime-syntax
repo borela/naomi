@@ -17,16 +17,32 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [_[:alnum:]]*
+
 contexts:
   main:
+    # Include.
     - match: \s*(\#include)
-      scope: keyword.preprocessor.mql.mql4
+      captures:
+        1: keyword.preprocessor.mql.mql4
       set: include-value
+    # Define.
+    - match: |
+        (?xi)
+        \s*(\#define)
+        \s*({{commonIdentifier}})
+      captures:
+        1: keyword.preprocessor.mql.mql4
+        2: entity.name.variable.mql.mql4
+      set: value
+    # Conditionals.
     - match: |
         (?x)\s*
         (\#
-          (?> define
-            | else
+          (?> else
             | endif
             | ifdef
             | import

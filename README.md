@@ -46,7 +46,7 @@ The “Packages” directory is located at:
 
 ### Sublime Linter
 
-To enable Sublime Linter with the syntaxes available, you need to:
+To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need to:
 
 1. Go to the menu `Preferences / Package Settings / SublimeLinter / Settings - User `.
 2. Add these entries to the `syntax_map`:
@@ -102,3 +102,4 @@ them.
 ![Candyman PHP 7 preview 1](./preview/php7/candyman-1.png)
 
 [sublime]: http://www.sublimetext.com/
+[sublimeLinter]: https://github.com/SublimeLinter/SublimeLinter3

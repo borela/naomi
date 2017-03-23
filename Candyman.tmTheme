@@ -30,7 +30,7 @@
 				<key>gutterForeground</key>
 				<string>#78909c</string>
 				<key>lineHighlight</key>
-				<string>#37474f</string>
+				<string>#0000001A</string>
 				<key>selection</key>
 				<string>#37474f</string>
 				<key>stackGuide</key>
@@ -39,110 +39,16 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword</string>
+			<string>.entity.name.alias</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.operator</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.operator.logical.word</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.control.flow-break</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>bold italic</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.operator.cast, .punctuation.delimiter.cast</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.statement.modifier .keyword, .storage.modifier .keyword, .storage.type .keyword</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>italic bold</string>
-				<key>foreground</key>
-				<string>#b39ddb</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.operator.other.embedded-expression</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#CE93D8B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.delimiter</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
 				<key>foreground</key>
 				<string>#ffecb3</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.delimiter.expression.group.b</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.delimiter.control</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
 			<string>.entity.name.ambiguous</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffecb3</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.alias</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -165,6 +71,26 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ffd180</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.block-cursor</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#b2ff59</string>
+				<key>foreground</key>
+				<string>#263238</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.operator.cast, .punctuation.delimiter.cast</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>
@@ -232,6 +158,44 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.delimiter</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#ffecb3</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.delimiter.expression.group.b</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.delimiter.control</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.operator.other.embedded-expression</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#CE93D8B2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -337,6 +301,42 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.keyword</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.operator</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.operator.logical.word</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string></string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.control.flow-break</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold italic</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.entity.name.label, .punctuation.delimiter.label</string>
 			<key>settings</key>
 			<dict>
@@ -344,6 +344,17 @@
 				<string>bold</string>
 				<key>foreground</key>
 				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.statement.modifier .keyword, .storage.modifier .keyword, .storage.type .keyword</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic bold</string>
+				<key>foreground</key>
+				<string>#b39ddb</string>
 			</dict>
 		</dict>
 		<dict>
@@ -584,6 +595,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.unknown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffecb3</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1119,6 +1139,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#BDBDBD66</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.support .entity.name.property.mql</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
 			</dict>
 		</dict>
 		<dict>

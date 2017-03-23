@@ -24,8 +24,11 @@ variables:
 
   typeIdentifier: |
     {{commonIdentifier}}
-    (?:\s*<.*?>\s+)?
-    (?:\s*\**)?
+    (?> \s*\*+
+      | \s*<.*?>
+        (?:\s*\**)
+      | \b
+    )
 
 contexts:
   main:
@@ -38,8 +41,8 @@ contexts:
               | static
             )\s+
           )?
-          {{typeIdentifier}}\b
-          {{commonIdentifier}}\b
+          {{typeIdentifier}}
+          \s*{{commonIdentifier}}\b
         )
       set: [
         punctuation,

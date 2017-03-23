@@ -75,7 +75,10 @@ contexts:
         1: punctuation.delimiter.struct.body.end.mql.mql4
       pop: true
     - match: ""
-      push: statement-and-expression
+      push:
+        - match: (?=\s*})
+          pop: true
+        - include: statement-and-expression
 
   comment:
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax

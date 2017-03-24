@@ -42,7 +42,11 @@ contexts:
             )\s+
           )?
           {{typeIdentifier}}
-          \s*{{commonIdentifier}}\b
+          \s*{{commonIdentifier}}\s*
+          (?> =
+            | \[
+            | ;
+          )
         )
       set: [
         punctuation,

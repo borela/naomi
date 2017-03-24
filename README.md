@@ -1,7 +1,7 @@
 # Naomi
 
 [![Sublime version](https://img.shields.io/badge/sublime%203->%3D3084-orange.svg?style=flat-square)][sublime]
-[![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](LICENSE.md)
+[![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)][license]
 
 Package designed to provide easy to extend syntax highlighting and other stuff
 that makes writting more fun.
@@ -64,9 +64,18 @@ To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need 
 #### Notes
 
 You aren’t required to use the color schemes provided but keep in mind
-that not all features listed are going to work with other ones. Also, be aware
-of auto completion conflicts provided by other packages, you may need to disable
-them.
+that not all features are going to work with other ones, this is because Naomi
+use more specific scopes to allow better control when designing color schemes for
+each programming language.
+
+Most color schemes found online use very generic scopes and that’s why in most
+cases a color scheme will look great in one language but horrible in another. You
+can find the logic behind Naomi’s scopes in the [DESIGN][design] document or look
+into the color scheme [Candyman][candyman], it is the one used in the previews
+and it contain very specific rules for each language.
+
+Also, be aware of auto completion conflicts provided by other packages, you may
+need to disable them.
 
 ## Features
 
@@ -101,5 +110,8 @@ them.
 
 ![Candyman PHP 7 preview 1](./preview/php7/candyman-1.png)
 
+[candyman]: ./schemes/candyman
+[design]: ./DESIGN.md
+[license]: ./LICENSE.md
 [sublime]: http://www.sublimetext.com/
 [sublimeLinter]: https://github.com/SublimeLinter/SublimeLinter3

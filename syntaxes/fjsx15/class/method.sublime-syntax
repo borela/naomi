@@ -114,6 +114,8 @@ contexts:
         1: >-
           support.js.fjsx15
           entity.name.function.js.fjsx15
+    # React JS’s support methods.
+    - include: Packages/Naomi/syntaxes/fjsx15/class/reactjs.sublime-syntax
     # Identifier.
     - match: |
         (?xi)

@@ -75,6 +75,8 @@ An identity is the most specific scope possible that decribes the token.
 .support
   .core
   .lib
+    .node-js
+    .react-js
 ```
 
 ### Context
@@ -145,13 +147,16 @@ An identity is the most specific scope possible that decribes the token.
   .declaration
     .class
     .const
+    .interface
     .function
+    .struct
     .variable
   .modifier
     .const
     .pure-virtual
     .visibility
   .operator
+    .arithmetic
     .assignment
     .logical
     .other

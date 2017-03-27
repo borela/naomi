@@ -24,12 +24,13 @@ variables:
 
 contexts:
   main:
+    - include: comment-no-pop
     # End.
     - match: \s*(;)
       captures:
         1: punctuation.delimiter.function.declaration.end.mql.mql4
       pop: true
-    # Pure virtual or const.
+    # Pure virtual or constant.
     - match: |
         (?x)\s*
         (?> (const)\s*
@@ -118,6 +119,9 @@ contexts:
         - match: (?=\s*})
           pop: true
         - include: statement-and-expression
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
 
   statement-and-expression:
     - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax

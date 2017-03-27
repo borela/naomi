@@ -30,12 +30,33 @@ contexts:
 
   line:
     - meta_scope: comment.line.js.fjsx15
+    - include: email
+    - include: link
     - match: \s*$
       pop: true
 
   block:
     - meta_scope: comment.block.js.fjsx15
+    - include: email
+    - include: link
     - match: \s*(\*/)
       captures:
         1: punctuation.delimiter.comment.end.js.fjsx15
       pop: true
+
+  link:
+    - match: |
+        (?xi)\s*
+        ([[:alnum:]]+:\S+)\s
+      captures:
+        1: entity.link.js.fjsx15
+
+  email:
+    - match: |
+        (?xi)\s*
+        (?> ([.[:alnum:]]+@[.[:alnum:]]+)\s
+          | (<[.[:alnum:]]+@[.[:alnum:]]+>)
+        )
+      captures:
+        1: entity.email.js.fjsx15
+        2: entity.email.js.fjsx15

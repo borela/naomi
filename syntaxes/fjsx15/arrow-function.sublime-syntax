@@ -24,7 +24,7 @@ variables:
 
 contexts:
   main:
-    # Templated arrow function.
+    # Template arrow function.
     - match: |
         (?x)
         \s*(async)?
@@ -89,7 +89,7 @@ contexts:
             (?xi)
             ({{commonIdentifier}})(\?)?
           captures:
-            0: parameter.js.fjsx15
+            0: function.parameter.js.fjsx15
             1: entity.name.variable.js.fjsx15
             2: keyword.operator.other.optional.flowtype
           pop: true

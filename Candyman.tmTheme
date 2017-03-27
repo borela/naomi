@@ -144,6 +144,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.comment .entity.email, .comment .entity.link</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#90a4ae</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.entity.name.constant, .punctuation.delimiter.constant</string>
 			<key>settings</key>
 			<dict>

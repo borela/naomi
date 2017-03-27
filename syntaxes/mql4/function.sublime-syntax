@@ -85,7 +85,6 @@ contexts:
           )?
           {{typeIdentifier}}\b
           {{commonIdentifier}}::{{functionIdentifier}}
-          \s*\(
         )
       set: [
         body,
@@ -160,6 +159,7 @@ contexts:
               | Deinit
               | Init
               | Start
+              | Timer
             )
         ))(?=\s*\()
       captures:

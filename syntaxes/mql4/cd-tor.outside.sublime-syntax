@@ -61,7 +61,9 @@ contexts:
           | \B(?:~)?
         )
         {{commonIdentifier}}\b
-      scope: entity.name.function.mql.mql4
+      scope: >-
+        support.core.mql.mql4
+        entity.name.function.mql.mql4
       pop: true
 
   parameters:

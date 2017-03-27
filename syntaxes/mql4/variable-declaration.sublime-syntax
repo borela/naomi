@@ -45,6 +45,7 @@ contexts:
           \s*{{commonIdentifier}}\s*
           (?> =
             | \[
+            | ,
             | ;
           )
         )

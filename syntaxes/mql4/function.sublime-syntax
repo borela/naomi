@@ -59,12 +59,13 @@ variables:
     )
 
   functionIdentifier: |
-    {{commonIdentifier}}
+    {{commonIdentifier}}\s*
     (?> {{comparisonOperators}}
       | {{logicalOperators}}
       | {{bitwiseOperators}}
       | {{arithmeticOperators}}
       | =
+      | \[\s*]
     )?
 
   typeIdentifier: |
@@ -164,7 +165,24 @@ contexts:
         ))(?=\s*\()
       captures:
         1: >-
-          support.function.mql.mql4
+          support.core.mql.mql4
+          entity.name.function.mql.mql4
+      pop: true
+    # Operator functions.
+    - match: |
+        (?x)\s*
+        ((?> operator\s*
+          (?> {{comparisonOperators}}
+            | {{logicalOperators}}
+            | {{bitwiseOperators}}
+            | {{arithmeticOperators}}
+            | =
+            | \[\s*]
+          )?
+        ))(?=\s*\()
+      captures:
+        1: >-
+          support.core.mql.mql4
           entity.name.function.mql.mql4
       pop: true
     # Common function name.

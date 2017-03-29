@@ -12,13 +12,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: PHP’s comment
-scope: source.php
+name: PHP’s comment indentation settings
+scope: >-
+  source.php comment,
+  source.php meta.block-end
 settings:
-  shellVariables:
-  - name: TM_COMMENT_START
-    value: "// "
-  - name: TM_COMMENT_START_2
-    value: "/*"
-  - name: TM_COMMENT_END_2
-    value: "*/"
+  preserveIndent: true
+  increaseIndentPattern: ""
+  decreaseIndentPattern: ""
+  bracketIndentNextLinePattern: ""
+  disableIndentNextLinePattern: ""
+  unIndentedLinePattern: .

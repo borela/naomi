@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>comment</string>
+	<string>PHP’s comment</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>settings</key>

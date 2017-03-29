@@ -133,7 +133,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/nodejs.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/global.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/reactjs.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring.sublime-syntax

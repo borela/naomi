@@ -22,6 +22,8 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+# This file will include global variables/classes that are available in NodeJS
+# and browsers.
 contexts:
   main:
     - include: simple-class
@@ -134,14 +136,17 @@ contexts:
     - match: |
         (?x)\s*
         (?=
-          (?> module\.exports
-            | module\.parent\.filename
-            | module\.parent
-            | process\.arch
-            | process\.argv
-            | process\.config
-            | process\.connected
-            | process\.env
+          (?> env
+            | module\.
+              (?> exports
+                | parent
+              )
+            | process\.
+              (?> arch
+                | argv
+                | config
+                | connected
+              )
             | window\.onload
           )
         )
@@ -179,19 +184,49 @@ contexts:
     - match: |
         (?x)\s*
         (?=
-          (?> console\.assert
-            | console\.dir
-            | console\.error
-            | console\.info
-            | console\.log
-            | console\.timeEnd
-            | console\.time
-            | console\.trace
-            | console\.warn
-            | process\.exit
-            | process\.stderr\.write
-            | process\.stdout\.write
-            | process\.on
+          (?> console\.
+              (?> assert
+                | dir
+                | error
+                | info
+                | log
+                | timeEnd
+                | time
+                | trace
+                | warn
+              )
+            | document\.
+              (?> addEventListener
+                | adoptNode
+                | close
+                | createAttribute
+                | createComment
+                | createDocumentFragment
+                | createElement
+                | createTextNode
+                | getElementById
+                | getElementByClassName
+                | getElementsByName
+                | getElementsByTagName
+                | hasFocus
+                | importNode
+                | normalize(?:Document)?
+                | open
+                | querySelector(?:all)?
+                | removeEventListener
+                | renameNode
+                | write(?:ln)?
+              )
+            | process\.
+              (?> exit
+                | stderr\.write
+                | stdout\.write
+                | on
+              )
+            | window\.
+              (?> addEventListener
+                |
+              )
           )
           \s*\(
         )
@@ -203,18 +238,37 @@ contexts:
     - include: global-variable
     - match: |
         (?x)\s*
-        (?> assert
+        (?> addEventListener
+          | adoptNode
+          | assert
+          | close
+          | createAttribute
+          | createComment
+          | createDocumentFragment
+          | createElement
+          | createTextNode
           | dir
           | error
           | exit
+          | getElementByClassName
+          | getElementById
+          | getElementsByName
+          | getElementsByTagName
+          | hasFocus
+          | importNode
           | info
           | log
+          | normalize(?:Document)?
           | on
-          | timeEnd
+          | open
+          | querySelector(?:all)?
+          | removeEventListener
+          | renameNode
           | time
+          | timeEnd
           | trace
           | warn
-          | write
+          | write(?:ln)?
         )\b
       scope: >-
         support.js.fjsx15
@@ -228,6 +282,7 @@ contexts:
           | config
           | connected
           | console
+          | document
           | env
           | exports
           | filename

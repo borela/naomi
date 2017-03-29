@@ -25,4 +25,4 @@ contexts:
       set: input
 
   input:
-    - include: Packages/Naomi/syntaxes/mql4/variable-declaration.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/unguarded-variable-declaration.sublime-syntax

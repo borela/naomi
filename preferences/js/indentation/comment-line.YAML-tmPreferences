@@ -12,13 +12,13 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: JavaScript’s comment
-scope: source.js
+name: JavaScript’s comment line indentation settings
+scope: >-
+  source.js comment.line
 settings:
-  shellVariables:
-  - name: TM_COMMENT_START
-    value: "// "
-  - name: TM_COMMENT_START_2
-    value: "/*"
-  - name: TM_COMMENT_END_2
-    value: "*/"
+  preserveIndent: false
+  increaseIndentPattern: ""
+  decreaseIndentPattern: ""
+  bracketIndentNextLinePattern: ""
+  disableIndentNextLinePattern: ""
+  unIndentedLinePattern: ""

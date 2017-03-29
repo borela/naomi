@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>comment</string>
+	<string>JavaScript’s comment</string>
 	<key>scope</key>
 	<string>source.js</string>
 	<key>settings</key>

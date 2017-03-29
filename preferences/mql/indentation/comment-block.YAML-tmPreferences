@@ -12,14 +12,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: indentation comment
+name: MQL’s comment indentation settings
 scope: >-
-  source.mql
-  comment,
-  source.mql
-  meta.block-end
+  source.mql comment.block,
+  source.mql meta.block-end
 settings:
-  preserveIndent: false
+  preserveIndent: true
   increaseIndentPattern: ""
   decreaseIndentPattern: ""
   bracketIndentNextLinePattern: ""

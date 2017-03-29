@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>indentation comment</string>
+	<string>MQL’s comment indentation settings</string>
 	<key>scope</key>
-	<string>source.mql comment, source.mql meta.block-end</string>
+	<string>source.mql comment.block, source.mql meta.block-end</string>
 	<key>settings</key>
 	<dict>
 		<key>bracketIndentNextLinePattern</key>
@@ -17,7 +17,7 @@
 		<key>increaseIndentPattern</key>
 		<string></string>
 		<key>preserveIndent</key>
-		<false/>
+		<true/>
 		<key>unIndentedLinePattern</key>
 		<string>.</string>
 	</dict>

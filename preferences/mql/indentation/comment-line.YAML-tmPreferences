@@ -12,42 +12,13 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: MQL’s block indentation settings
-scope: source.mql
+name: MQL’s comment line indentation settings
+scope: >-
+  source.mql comment.line
 settings:
   preserveIndent: false
-  increaseIndentPattern: |
-    (?x)
-    (?> ^\s*
-        (?> case
-          | private
-          | protected
-          | public
-        )
-      | ^.*
-        (?> \{
-          | \[
-          | \(
-        )\s*$
-    )
-  decreaseIndentPattern: |
-    (?x)
-    ^\s*
-    (?> case
-      | private
-      | protected
-      | public
-      | }
-      | ]
-      | \)
-    )
-  bracketIndentNextLinePattern: |
-    (?x)
-    ^\s*
-    (?> case
-      | else
-      | for
-      | if
-      | switch
-      | while
-    )\b
+  increaseIndentPattern: ""
+  decreaseIndentPattern: ""
+  bracketIndentNextLinePattern: ""
+  disableIndentNextLinePattern: ""
+  unIndentedLinePattern: ""

@@ -12,13 +12,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: SCSS’s comment
-scope: source.scss
+name: SCSS’s comment indentation settings
+scope: >-
+  source.scss comment,
+  source.scss meta.block-end
 settings:
-  shellVariables:
-  - name: TM_COMMENT_START
-    value: "// "
-  - name: TM_COMMENT_START_2
-    value: "/*"
-  - name: TM_COMMENT_END_2
-    value: "*/"
+  preserveIndent: true
+  increaseIndentPattern: ""
+  decreaseIndentPattern: ""
+  bracketIndentNextLinePattern: ""
+  disableIndentNextLinePattern: ""
+  unIndentedLinePattern: .

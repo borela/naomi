@@ -12,13 +12,29 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: SCSS’s comment
+name: SCSS’s block indentation settings
 scope: source.scss
 settings:
-  shellVariables:
-  - name: TM_COMMENT_START
-    value: "// "
-  - name: TM_COMMENT_START_2
-    value: "/*"
-  - name: TM_COMMENT_END_2
-    value: "*/"
+  preserveIndent: false
+  increaseIndentPattern: |
+    (?x)
+    ^.*
+    (?> \{
+      | \[
+      | \(
+    )\s*$
+  decreaseIndentPattern: |
+    (?x)
+    ^\s*
+    (?> }
+      | ]
+      | \)
+    )
+  bracketIndentNextLinePattern: |
+    (?x)
+    ^\s*@
+    (?> else
+      | for
+      | if
+      | while
+    )\b

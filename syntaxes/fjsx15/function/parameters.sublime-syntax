@@ -72,7 +72,7 @@ contexts:
             ({{commonIdentifier}})(\?)?
           captures:
             1: >-
-              parameter.js.fjsx15
+              function.parameter.js.fjsx15
               entity.name.variable.js.fjsx15
             2: keyword.operator.other.optional.flowtype
           pop: true

@@ -157,6 +157,7 @@ contexts:
         (?x)\s*
         ((?> On
             (?> Calculate
+              | ChartEvent
               | Deinit
               | Init
               | Start

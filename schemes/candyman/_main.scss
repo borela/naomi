@@ -22,7 +22,8 @@
   selection: $blue-grey-800;
 
   bracketsForeground: $grey-0;
-  bracketsOptions: underline;
+  bracketsOptions: stippled_underline;
+  tagsOptions: stippled_underline;
 
   findHighlight: $teal-300;
   findHighlightForeground: $teal-800;

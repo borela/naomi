@@ -24,6 +24,64 @@ variables:
 
 contexts:
   main:
+    # Template arrow function assigned to declared variable/constant.
+    - match: |
+        (?xi)\s*
+        ((?> const
+          | let
+          | var
+        ))
+        \s*({{commonIdentifier}})
+        \s*(=)
+        \s*(async)?
+        (?=
+          \s*<.*>
+          \s*\(.*\)
+          (?:
+            \s*:.*?
+          )?
+          \s*=>
+        )
+      captures:
+        1: >-
+          storage.type.js.fjsx15
+          keyword.declaration.variable.js.fjsx15
+        2: entity.name.function.js.fjsx15
+        3: keyword.operator.other.assignment.js.fjsx15
+        4: keyword.modifier.js.fjsx15
+      set: [
+        body,
+        parameters,
+        template-parameters
+      ]
+    # Arrow function assigned to declared variable/constant.
+    - match: |
+        (?xi)\s*
+        ((?> const
+          | let
+          | var
+        ))
+        \s*({{commonIdentifier}})
+        \s*(=)
+        \s*(async)?
+        (?=
+          \s*\(.*\)
+          (?:
+            \s*:.*?
+          )?
+          \s*=>
+        )
+      captures:
+        1: >-
+          storage.type.js.fjsx15
+          keyword.declaration.variable.js.fjsx15
+        2: entity.name.function.js.fjsx15
+        3: keyword.operator.other.assignment.js.fjsx15
+        4: keyword.modifier.js.fjsx15
+      set: [
+        body,
+        parameters
+      ]
     # Template arrow function.
     - match: |
         (?x)
@@ -59,6 +117,35 @@ contexts:
       set: [
         body,
         parameters
+      ]
+    # Single parameter assigned to variable.
+    - match: |
+        (?x)
+        (?xi)\s*
+        ((?> const
+          | let
+          | var
+        ))
+        \s*({{commonIdentifier}})
+        \s*(=)
+        \s*(async)?
+        (?=
+          \s*{{commonIdentifier}}
+          (?:
+            \s*:.*?
+          )?
+          \s*=>
+        )
+      captures:
+        1: >-
+          storage.type.js.fjsx15
+          keyword.declaration.variable.js.fjsx15
+        2: entity.name.function.js.fjsx15
+        3: keyword.operator.other.assignment.js.fjsx15
+        4: keyword.modifier.js.fjsx15
+      set: [
+        body,
+        single-parameter
       ]
     # Single parameter.
     - match: |

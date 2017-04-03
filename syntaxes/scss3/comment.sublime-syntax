@@ -30,14 +30,40 @@ contexts:
 
   line:
     - meta_scope: comment.line.scss.scss3
-    - meta_content_scope: comment.content.scss.scss3
+    - include: email
+    - include: link
     - match: $
       pop: true
 
   block:
     - meta_scope: comment.block.scss.scss3
+    - include: email
+    - include: link
     - match: \s*(\*\/)
       captures:
         1: punctuation.comment.end.scss.scss3
-      pop: true
+      set:
+        # Used to fix the block comment indentation settings.
+        # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
+        - match: \s*$\n?
+          scope: meta.block-end.scss.scss3
+          pop: true
+        - match: ''
+          pop: true
 
+  link:
+    - match: |
+        (?xi)\s*
+        ([[:alnum:]]+:\S+)\s
+      captures:
+        1: entity.link.js.fjsx15
+
+  email:
+    - match: |
+        (?xi)\s*
+        (?> ([.[:alnum:]]+@[.[:alnum:]]+)\s
+          | (<[.[:alnum:]]+@[.[:alnum:]]+>)
+        )
+      captures:
+        1: entity.email.js.fjsx15
+        2: entity.email.js.fjsx15

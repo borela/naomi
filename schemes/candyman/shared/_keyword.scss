@@ -12,16 +12,4 @@
 
 .keyword {
   foreground: $pink-a100;
-
-  &.operator {
-    fontStyle: bold;
-  }
-
-  &.operator.logical.word {
-    fontStyle: none;
-  }
-
-  &.control.flow-break {
-    fontStyle: bold italic;
-  }
 }

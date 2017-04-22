@@ -321,33 +321,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.operator</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.operator.logical.word</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.control.flow-break</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>bold italic</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.entity.name.label, .punctuation.delimiter.label</string>
 			<key>settings</key>
 			<dict>
@@ -359,7 +332,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.statement.modifier .keyword, .storage.modifier .keyword, .storage.type .keyword</string>
+			<string>.statement.modifier .keyword, .statement.modifier .keyword.operator, .statement.modifier .keyword.operator.other, .storage.modifier .keyword, .storage.modifier .keyword.operator, .storage.modifier .keyword.operator.other, .storage.type .keyword, .storage.type .keyword.operator, .storage.type .keyword.operator.other</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -473,6 +446,26 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.keyword.operator</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#5af158</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.operator.logical.word</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string></string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.keyword.preprocessor</string>
 			<key>settings</key>
 			<dict>
@@ -505,6 +498,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#F36C6080</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.character</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f36c60</string>
 			</dict>
 		</dict>
 		<dict>

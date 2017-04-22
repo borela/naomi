@@ -38,11 +38,18 @@ contexts:
           | -=?
           | \+\+
           | \+=?
-          | \*\*
-          | \*=?
           | /=?
           | %=?
         ))
       captures:
         1: keyword.operator.arithmetic.mql.mql4
+      pop: true
+    # Multiplication operator needs an extra check to prevent it being confused
+    # with the pointer operator.
+    - match: |
+        (?x)
+        (?<=^|\w)
+        \s*(\*)
+      captures:
+        1: keyword.operator.arithmetic.multiplication.mql.mql4
       pop: true

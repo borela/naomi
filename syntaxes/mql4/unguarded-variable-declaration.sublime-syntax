@@ -22,14 +22,6 @@ variables:
     [_[:alpha:]]
     [_[:alnum:]]*
 
-  typeIdentifier: |
-    {{commonIdentifier}}
-    (?> \s*\*+
-      | \s*<.*?>
-        (?:\s*\**)
-      | \b
-    )
-
 contexts:
   main:
     - match: ""

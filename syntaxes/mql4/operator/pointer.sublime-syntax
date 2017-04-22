@@ -17,19 +17,13 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]]*
-
 contexts:
   main:
     - match: |
-        (?xi)\s*
-        \b({{commonIdentifier}})\b
+        (?x)
+        \s*(\**)
       captures:
-        1: entity.name.type.mql.mql4
-      set: modifiers
-
-  modifiers:
-    - include: Packages/Naomi/syntaxes/mql4/type/modifiers.sublime-syntax
+        1: >-
+          storage.modifier.mql.mql4
+          keyword.operator.other.pointer.mql.mql4
+      pop: true

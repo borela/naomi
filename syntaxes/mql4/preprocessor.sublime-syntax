@@ -55,6 +55,7 @@ contexts:
           (?> else
             | endif
             | ifdef
+            | ifndef
             | import
           )
         )

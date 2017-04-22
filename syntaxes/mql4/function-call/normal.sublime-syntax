@@ -57,13 +57,15 @@ variables:
     )
 
   functionIdentifier: |
-    {{commonIdentifier}}
-    (?> {{comparisonOperators}}
-      | {{logicalOperators}}
-      | {{bitwiseOperators}}
-      | {{arithmeticOperators}}
-      | =
-    )?
+    (?> operator
+        (?> {{comparisonOperators}}
+          | {{logicalOperators}}
+          | {{bitwiseOperators}}
+          | {{arithmeticOperators}}
+          | =
+        )
+      | {{commonIdentifier}}
+    )
 
   typeIdentifier: |
     {{commonIdentifier}}

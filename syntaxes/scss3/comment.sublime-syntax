@@ -54,7 +54,7 @@ contexts:
   link:
     - match: |
         (?xi)\s*
-        ([[:alnum:]]+:\S+)\s
+        ([[:alnum:]]+://\S+)\s
       captures:
         1: entity.link.js.fjsx15
 

@@ -64,7 +64,7 @@ contexts:
       captures:
         1: >-
           storage.modifier.mql.mql4
-          keyword.other.reference.mql.mql4
+          keyword.operator.other.reference.mql.mql4
     # Array indicator.
     - match: \s*(\[)
       captures:

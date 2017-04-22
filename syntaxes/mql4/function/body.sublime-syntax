@@ -52,7 +52,7 @@ contexts:
     # Initialization.
     - match: \s*(:)
       captures:
-        1: keyword.other.mql.mql4
+        1: punctuation.delimiter.function.initializations.mql.mql4
       set: initializations
     # Normal body.
     - include: body-start
@@ -87,7 +87,7 @@ contexts:
     - match: \s*(,)
       captures:
         1: punctuation.delimiter.initialization.mql.mql4
-    - match: ""
+    - match: (?=\S)
       push: statement-and-expression
 
   end-initialization:

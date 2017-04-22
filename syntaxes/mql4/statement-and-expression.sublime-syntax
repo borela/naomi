@@ -81,15 +81,7 @@ contexts:
           pop: true
 
   cast-operator:
-    - match: |
-        (?xi)
-        (?=
-          \s*\(
-          {{commonIdentifier}}
-          \s*\)
-        )
-      push:
-        - include: Packages/Naomi/syntaxes/mql4/cast.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/cast.sublime-syntax
 
   sequence:
     - include: Packages/Naomi/syntaxes/mql4/terminator.sublime-syntax

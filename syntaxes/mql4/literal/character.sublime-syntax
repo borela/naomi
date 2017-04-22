@@ -39,8 +39,10 @@ contexts:
     - match: |
         (?xi)\s*
         (')
-        (?> ({{escapeSequences}})
-          | .
+        (
+          (?> ({{escapeSequences}})
+            | .
+          )
         )
         (')
       captures:

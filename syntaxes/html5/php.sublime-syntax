@@ -19,9 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: ""
+    - match: (?=\s*<\?php)
       push:
-        - include: Packages/Naomi/syntaxes/html5/php.sublime-syntax
-        - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
-        - match: \s*
-          pop: true
+        - include: Packages/Naomi/syntaxes/naomi.php7.sublime-syntax

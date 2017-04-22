@@ -47,7 +47,7 @@ contexts:
           storage.type.js.fjsx15
           keyword.declaration.variable.js.fjsx15
         2: entity.name.function.js.fjsx15
-        3: keyword.operator.other.assignment.js.fjsx15
+        3: punctuation.delimiter.function.assignment.js.fjsx1
         4: keyword.modifier.js.fjsx15
       set: [
         body,
@@ -76,7 +76,7 @@ contexts:
           storage.type.js.fjsx15
           keyword.declaration.variable.js.fjsx15
         2: entity.name.function.js.fjsx15
-        3: keyword.operator.other.assignment.js.fjsx15
+        3: punctuation.delimiter.function.assignment.js.fjsx1
         4: keyword.modifier.js.fjsx15
       set: [
         body,
@@ -141,7 +141,7 @@ contexts:
           storage.type.js.fjsx15
           keyword.declaration.variable.js.fjsx15
         2: entity.name.function.js.fjsx15
-        3: keyword.operator.other.assignment.js.fjsx15
+        3: punctuation.delimiter.function.assignment.js.fjsx1
         4: keyword.modifier.js.fjsx15
       set: [
         body,

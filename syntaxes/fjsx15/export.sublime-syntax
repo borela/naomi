@@ -136,6 +136,8 @@ contexts:
         punctuation,
         optional-alias
       ]
+    # An arrow function.
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
     # Any other statement or expression.
     - include: statement-and-expression
 

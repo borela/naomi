@@ -21,7 +21,7 @@ contexts:
   main:
     - match: |
         (?x)
-        \s*(\**)
+        \s*(\*+)
       captures:
         1: >-
           storage.modifier.mql.mql4

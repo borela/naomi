@@ -116,9 +116,9 @@ contexts:
       pop: true
     - match: ""
       push:
-        - match: (?=\s*})
-          pop: true
         - include: statement-and-expression
+        - match: ""
+          pop: true
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax

@@ -34,7 +34,6 @@ contexts:
   main:
     - match: |
         (?xi)
-        (?<=^|;|\()
         (?=\s*
           (?:
             (?> const

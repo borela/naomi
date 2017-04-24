@@ -71,7 +71,6 @@ contexts:
               keyword.operator.other.association.js.fjsx15
             2: >-
               destructuring.object.js.fjsx15
-              alias.js.fjsx15
               entity.name.alias.js.fjsx15
         # Nested destructuring.
         - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax

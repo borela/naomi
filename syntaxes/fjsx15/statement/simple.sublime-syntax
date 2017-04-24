@@ -28,29 +28,32 @@ contexts:
     - include: yield
     - match: |
         (?x)\s*
-        (?> return
+        ((?> return
           | throw
-        )\b
-      scope: keyword.control.flow-break.js.fjsx15
+        ))\b
+      captures:
+        1: keyword.control.flow-break.js.fjsx15
       pop: true
     - match: |
         (?x)\s*
-        (?> await
+        ((?> await
           | de
             (?> fault
               | lete
             )
-        )\b
-      scope: keyword.control.js.fjsx15
+        ))\b
+      captures:
+        1: keyword.control.js.fjsx15
       pop: true
 
   break-continue:
     - match: |
         (?x)\s*
-        (?> break
+        ((?> break
           | continue
-        )\b
-      scope: keyword.control.flow-break.js.fjsx15
+        ))\b
+      captures:
+        1: keyword.control.flow-break.js.fjsx15
       set: optional-label
 
   optional-label:
@@ -128,7 +131,7 @@ contexts:
     - match: |
         (?x)\s*
         (yield)
-        (?> \s*(\*)?
+        (?> \s*(\*)
           | \b
         )
       captures:
@@ -136,3 +139,4 @@ contexts:
         2: >-
           statement.modifier.js.fjsx15
           keyword.generator.js.fjsx15
+      pop: true

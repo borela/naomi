@@ -749,7 +749,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.destructuring .keyword, .destructuring .keyword.operator.other.computed-property</string>
+			<string>.destructuring .keyword, .destructuring .keyword.operator.other.association, .destructuring .keyword.operator.other.computed-property</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

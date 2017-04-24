@@ -12,6 +12,7 @@
 
 .destructuring {
   .keyword,
+  .keyword.operator.other.association,
   .keyword.operator.other.computed-property {
     foreground: $grey-0;
   }

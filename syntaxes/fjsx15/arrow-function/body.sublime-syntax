@@ -19,21 +19,22 @@ scope: ...
 
 contexts:
   main:
-    # Multi statement body.
     - match: |
         (?x)
         \s*(=>)
+      captures:
+        1: punctuation.delimiter.function.body.arrow.js.fjsx15
+      set: possible-multi-statement-body
+
+  possible-multi-statement-body:
+    - include: comment
+    - match: |
+        (?x)
         \s*(\{)
       captures:
-        1: punctuation.delimiter.function.body.arrow.js.fjsx15
-        2: punctuation.delimiter.function.body.begin.js.fjsx15
+        1: punctuation.delimiter.function.body.begin.js.fjsx15
       set: multi-statement-body
-    # Simple body.
-    - match: |
-        (?x)
-        \s*(=>)
-      captures:
-        1: punctuation.delimiter.function.body.arrow.js.fjsx15
+    - match: (?=\S)
       pop: true
 
   multi-statement-body:
@@ -46,6 +47,9 @@ contexts:
         - match: (?=\s*})
           pop: true
         - include: statement-and-expression
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   statement-and-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

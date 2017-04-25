@@ -27,20 +27,10 @@ variables:
       \)|]|}
     )
     \s*(\()
-    (?>
-      (?=
-        \s*(?:async)?
-        \s*\(
-      )
-      |
-      (?!
-        .*?\)
-        .*?=>
-      )
-    )
 
 contexts:
   main:
+    - include: arrow-function
     - include: cast-operator
     # Open new expression group.
     - match: |
@@ -53,6 +43,7 @@ contexts:
     - include: sequence
 
   open-a-close-b:
+    - include: arrow-function
     - include: cast-operator
     # Open new expression group.
     - match: |
@@ -74,6 +65,7 @@ contexts:
           pop: true
 
   open-b-close-a:
+    - include: arrow-function
     - include: cast-operator
     # Open new expression group.
     - match: |
@@ -105,6 +97,9 @@ contexts:
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax
 
+  arrow-function:
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+
   sequence:
     - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax
     # Comments.
@@ -131,7 +126,6 @@ contexts:
     # Expression.
     - include: Packages/Naomi/syntaxes/fjsx15/array-access.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/global.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/reactjs.sublime-syntax

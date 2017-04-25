@@ -118,8 +118,6 @@
 			<string>.punctuation.delimiter.color</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#FFCC8080</string>
 			</dict>
@@ -129,8 +127,6 @@
 			<string>.constant.color</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#ffcc80</string>
 			</dict>
@@ -176,8 +172,6 @@
 			<string>.punctuation.delimiter</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
 				<key>foreground</key>
 				<string>#ffecb3</string>
 			</dict>
@@ -241,8 +235,6 @@
 			<string>.function.parameter .entity.name.variable</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#ffcc80</string>
 			</dict>
@@ -324,8 +316,6 @@
 			<string>.entity.name.label, .punctuation.delimiter.label</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
 				<key>foreground</key>
 				<string>#ffffff</string>
 			</dict>
@@ -335,8 +325,6 @@
 			<string>.statement.modifier .keyword, .statement.modifier .keyword.operator, .statement.modifier .keyword.operator.other, .storage.modifier .keyword, .storage.modifier .keyword.operator, .storage.modifier .keyword.operator.other, .storage.type .keyword, .storage.type .keyword.operator, .storage.type .keyword.operator.other</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic bold</string>
 				<key>foreground</key>
 				<string>#b39ddb</string>
 			</dict>
@@ -364,8 +352,6 @@
 			<string>.constant.numeric</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#ffcc80</string>
 			</dict>
@@ -429,8 +415,6 @@
 			<string>.object.property .entity.name.variable</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#bcaaa4</string>
 			</dict>
@@ -449,19 +433,8 @@
 			<string>.keyword.operator</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
 				<key>foreground</key>
 				<string>#5af158</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.operator.logical.word</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
 			</dict>
 		</dict>
 		<dict>
@@ -741,8 +714,6 @@
 			<string>.entity.name.decorator, .punctuation.delimiter.decorator</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>bold italic</string>
 				<key>foreground</key>
 				<string>#b39ddb</string>
 			</dict>
@@ -1040,8 +1011,6 @@
 			<string>.entity.name.attribute</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#9ccc65</string>
 			</dict>
@@ -1312,8 +1281,6 @@
 			<string>.entity.name.selector.class</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#4dd0e1</string>
 			</dict>
@@ -1323,8 +1290,6 @@
 			<string>.punctuation.delimiter.selector.class</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#4DD0E1B2</string>
 			</dict>
@@ -1334,8 +1299,6 @@
 			<string>.entity.name.selector.id</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#ec407a</string>
 			</dict>
@@ -1345,8 +1308,6 @@
 			<string>.punctuation.delimiter.selector.id</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#EC407AB2</string>
 			</dict>
@@ -1356,8 +1317,6 @@
 			<string>.entity.name.selector.placeholder</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>bold italic</string>
 				<key>foreground</key>
 				<string>#ffcc80</string>
 			</dict>
@@ -1367,8 +1326,6 @@
 			<string>.punctuation.delimiter.selector.placeholder</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>bold italic</string>
 				<key>foreground</key>
 				<string>#FFCC8080</string>
 			</dict>
@@ -1432,8 +1389,6 @@
 			<string>.source.scss .declaration .entity.name.variable</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#a1887f</string>
 			</dict>

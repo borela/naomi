@@ -13,10 +13,5 @@
 .keyword {
   &.operator {
     foreground: $green-a200;
-    fontStyle: bold;
-  }
-
-  &.operator.logical.word {
-    fontStyle: none;
   }
 }

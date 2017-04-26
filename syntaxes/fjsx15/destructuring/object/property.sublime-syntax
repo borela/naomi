@@ -75,9 +75,7 @@ contexts:
         1: >-
           destructuring.object.js.fjsx15
           keyword.operator.other.association.js.fjsx15
-        2: >-
-          function.parameter.js.fjsx15
-          entity.name.variable.js.fjsx15
+        2: entity.name.variable.js.fjsx15
       pop: true
     - match: (?=\s*\W)
       pop: true

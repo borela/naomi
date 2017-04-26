@@ -58,25 +58,11 @@ contexts:
         # Default value.
         - match: (?=\s*=)
           set: default-value
-        # Alias.
-        - match: |
-            (?x)
-            \s*(:)
-            (?:
-              \s*({{commonIdentifier}})
-            )?
-          captures:
-            1: >-
-              destructuring.object.js.fjsx15
-              keyword.operator.other.association.js.fjsx15
-            2: >-
-              destructuring.object.js.fjsx15
-              entity.name.alias.js.fjsx15
+        # Property.
+        - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object/property.sublime-syntax
         # Nested destructuring.
         - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
-        # Property.
-        - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object/property.sublime-syntax
 
   rest-operator:
     - include: Packages/Naomi/syntaxes/fjsx15/greedy-rest.sublime-syntax

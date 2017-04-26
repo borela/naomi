@@ -102,10 +102,10 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
 
   destructuring-object:
-    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/destructuring/object.sublime-syntax
 
   destructuring-array:
-    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/destructuring/array.sublime-syntax
 
   return-type:
     - match: (?=\s*:)

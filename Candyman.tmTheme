@@ -720,7 +720,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.destructuring .keyword, .destructuring .keyword.operator.other.association, .destructuring .keyword.operator.other.computed-property</string>
+			<string>.destructuring .keyword, .destructuring .keyword.operator.other.association, .destructuring .keyword.operator.other.computed-property, .destructuring .punctuation.delimiter, .destructuring .punctuation.delimiter.array, .destructuring .punctuation.delimiter.object, .destructuring .punctuation.delimiter.property</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -729,7 +729,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.destructuring .punctuation.delimiter, .destructuring .punctuation.delimiter.array, .destructuring .punctuation.delimiter.object, .destructuring .punctuation.delimiter.property</string>
+			<string>.destructuring .object.property .entity.name.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

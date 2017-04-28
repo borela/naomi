@@ -34,7 +34,7 @@ contexts:
       captures:
         1: punctuation.delimiter.function.body.begin.js.fjsx15
       set: multi-statement-body
-    - match: (?=\S)
+    - match: (?=\s*\S)
       pop: true
 
   multi-statement-body:

@@ -101,14 +101,7 @@ need to disable them.
 #### FJSX15 (ES2015 + FlowType + React’s JSX)
 
 ![Candyman FJSX15 preview 1](./preview/fjsx15/candyman-1.png)
-
-#### HTML 5
-
-![Candyman HTML5 preview 1](./preview/html5/candyman-1.png)
-
-#### PHP 7
-
-![Candyman PHP 7 preview 1](./preview/php7/candyman-1.png)
+![Candyman FJSX15 preview 2](./preview/fjsx15/candyman-2.png)
 
 [candyman]: ./schemes/candyman
 [design]: ./DESIGN.md

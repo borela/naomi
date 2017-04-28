@@ -48,7 +48,7 @@ contexts:
     # with the pointer operator.
     - match: |
         (?x)
-        (?<=^|\w)
+        (?<=^|\w|\)|]|})
         \s*(\*)
       captures:
         1: keyword.operator.arithmetic.multiplication.mql.mql4

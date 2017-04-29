@@ -34,14 +34,15 @@ contexts:
   main:
     # Static variables.
     - match: |
-        (?xi)
-        static
+        (?xi)\s*
+        (static)
         (?=
           \s+{{commonIdentifier}}
         )
-      scope: >-
-        storage.modifier.js.fjsx15
-        keyword.modifier.js.fjsx15
+      captures:
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.modifier.js.fjsx15
       set: declaration
     # Normal variable.
     - match: |
@@ -49,9 +50,6 @@ contexts:
         (?=
           {{commonIdentifier}}
         )
-      scope: >-
-        storage.modifier.js.fjsx15
-        keyword.modifier.js.fjsx15
       set: declaration
 
   declaration:

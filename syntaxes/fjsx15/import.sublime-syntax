@@ -42,7 +42,9 @@ contexts:
         \s*(type)\b
       captures:
         1: keyword.control.import.js.fjsx15
-        2: keyword.other.type-aliasing.flowtype
+        2: >-
+          storage.type.flowtype
+          keyword.other.type-aliasing.flowtype
       set: target-types
     # Other.
     - match: \s*(import)\b

@@ -747,7 +747,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.export .entity.name.ambiguous</string>
+			<string>.export .entity.name.aliased, .export .entity.name.ambiguous</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -765,7 +765,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.import .entity.name.ambiguous</string>
+			<string>.import .entity.name.aliased, .import .entity.name.ambiguous</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

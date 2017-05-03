@@ -135,7 +135,7 @@ contexts:
     - match: |
         (?xi)\s*
         ({{commonIdentifier}})
-        (?=\s*as)
+        (?=\s+as)
       captures:
         1: >-
           import.js.fjsx15

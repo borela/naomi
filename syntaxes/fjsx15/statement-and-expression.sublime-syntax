@@ -94,8 +94,8 @@ contexts:
         (?xi)
         (?=
           \s*\(
-          {{commonIdentifier}}
-          \s*:
+          [^?]*:
+          .*\)
         )
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax

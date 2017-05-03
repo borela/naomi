@@ -702,7 +702,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.operator.other.flowtype, .keyword.operator.other.association.flowtype, .keyword.operator.other.cast.flowtype, .keyword.operator.other.intersection.flowtype, .keyword.operator.other.nullable.flowtype, .keyword.operator.other.optional.flowtype, .keyword.operator.other.union.flowtype</string>
+			<string>.keyword.operator.other.flowtype, .keyword.operator.other.association.flowtype, .keyword.operator.other.cast.flowtype, .keyword.operator.other.existential.flowtype, .keyword.operator.other.intersection.flowtype, .keyword.operator.other.nullable.flowtype, .keyword.operator.other.optional.flowtype, .keyword.operator.other.union.flowtype</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

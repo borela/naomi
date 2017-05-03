@@ -94,6 +94,10 @@ contexts:
       ]
 
   type-definitions:
+    - match: \s*(\*)
+      captures:
+        1: keyword.operator.other.existential.flowtype
+      pop: true
     # Enveloped nullable.
     - match: |
         (?x)

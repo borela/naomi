@@ -18,7 +18,8 @@
   &.intersection.flowtype,
   &.nullable.flowtype,
   &.optional.flowtype,
-  &.union.flowtype {
+  &.union.flowtype,
+  &.utility.flowtype {
     foreground: $brown-200;
   }
 }

@@ -439,6 +439,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.keyword.operator.other.instanceof, .keyword.operator.other.typeof</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.keyword.preprocessor</string>
 			<key>settings</key>
 			<dict>
@@ -702,7 +711,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.operator.other.flowtype, .keyword.operator.other.association.flowtype, .keyword.operator.other.cast.flowtype, .keyword.operator.other.existential.flowtype, .keyword.operator.other.intersection.flowtype, .keyword.operator.other.nullable.flowtype, .keyword.operator.other.optional.flowtype, .keyword.operator.other.union.flowtype</string>
+			<string>.keyword.operator.other.flowtype, .keyword.operator.other.association.flowtype, .keyword.operator.other.cast.flowtype, .keyword.operator.other.existential.flowtype, .keyword.operator.other.intersection.flowtype, .keyword.operator.other.nullable.flowtype, .keyword.operator.other.optional.flowtype, .keyword.operator.other.union.flowtype, .keyword.operator.other.utility.flowtype</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

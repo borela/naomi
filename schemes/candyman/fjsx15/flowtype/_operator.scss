@@ -18,8 +18,11 @@
   &.intersection.flowtype,
   &.nullable.flowtype,
   &.optional.flowtype,
-  &.union.flowtype,
-  &.utility.flowtype {
+  &.union.flowtype {
     foreground: $brown-200;
   }
+}
+
+.keyword.operator.other.utility.flowtype {
+  foreground: $pink-a100;
 }

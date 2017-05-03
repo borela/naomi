@@ -24,31 +24,32 @@ scope: text.html5
 contexts:
   main:
     # Normal open tag.
-    - match: <\?php
-      scope: keyword.embedded.begin.php.php7
+    - match: \s*(<\?php)
+      captures:
+        1: keyword.embedded.begin.php.php7
       set: embedded
     # Short open tag.
-    - match: <\?=
-      scope: keyword.embedded.begin.php.php7
+    - match: \s*(<\?=)
+      captures:
+        1: keyword.embedded.begin.php.php7
       set: embedded-short
 
   embedded:
-    - meta_scope: embedded.php.php7
-    - meta_content_scope: >-
-        embedded.content.php.php7
+    - meta_scope: >-
+        embedded.php.php7
         source.php.php7
     - include: content
 
   embedded-short:
-    - meta_scope: embedded.short.php.php7
-    - meta_content_scope: >-
-        embedded.content.php.php7
+    - meta_scope: >-
+        embedded.short.php.php7
         source.php.php7
     - include: content
 
   content:
-    - match: \?>
-      scope: keyword.embedded.end.php.php7
+    - match: \s*(\?>)
+      captures:
+        1: keyword.embedded.end.php.php7
       pop: true
     - match: ""
       with_prototype:

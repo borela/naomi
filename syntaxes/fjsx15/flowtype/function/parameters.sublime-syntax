@@ -39,5 +39,7 @@ contexts:
               )
             )
           pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/object.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/tuple.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

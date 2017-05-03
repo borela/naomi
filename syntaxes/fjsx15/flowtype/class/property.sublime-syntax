@@ -17,23 +17,20 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
-    - match: \s*(\{)
+    - match: |
+        (?xi)
+        \s*({{commonIdentifier}})
+        (?=\s*:)
       captures:
-        1: punctuation.delimiter.class.body.begin.js.fjsx15
-      set: body
+        1: entity.name.variable.js.fjsx15
+      set: type
 
-  body:
-    - match: \s*(})
-      captures:
-        1: punctuation.delimiter.class.body.end.js.fjsx15
-      pop: true
-    - match: ""
-      push:
-        - match: (?=\s*})
-          pop: true
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/class/property.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax

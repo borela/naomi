@@ -29,14 +29,13 @@ contexts:
   # |     .      | Member access.      |
   # |     ?      | Ternary.            |
   main:
-    - match: |
-        (?x)\s*
-        (
-          (?> typeof
-            | void
-          )
-        )\b
-      scope: keyword.operator.other.js.fjsx15
+    - match: \s*(typeof)\b
+      captures:
+        1: keyword.operator.other.typeof.js.fjsx15
+      pop: true
+    - match: \s*(void)\b
+      captures:
+        1: keyword.operator.other.comma.js.fjsx15
       pop: true
     - match: \s*(\,)
       captures:

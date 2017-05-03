@@ -59,6 +59,26 @@ contexts:
           storage.modifier.js.fjsx15
           keyword.control.export.default.js.fjsx15
       set: statement-and-expression
+    # Export statements.
+    - match: |
+        (?x)
+        \s*(export)
+        \s*
+        (?=
+          (?> class
+            | const
+            | function
+            | interface
+            | let
+            | var
+          )
+        )
+      captures:
+        1: keyword.control.export.js.fjsx15
+        2: >-
+          storage.modifier.js.fjsx15
+          keyword.control.export.default.js.fjsx15
+      set: statement-and-expression
     # Other.
     - match: |
         (?x)

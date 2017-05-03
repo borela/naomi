@@ -52,17 +52,7 @@ contexts:
     - match: |
         (?x)
         \s*(export)
-        \s*(default)?
-        (?=
-          (?> class
-            | const
-            | function
-            | interface
-            | let
-            | type
-            | var
-          )
-        )
+        \s*(default)
       captures:
         1: keyword.control.export.js.fjsx15
         2: >-
@@ -75,10 +65,7 @@ contexts:
         \s*(export)
       captures:
         1: keyword.control.export.js.fjsx15
-      set: [
-        targets,
-        optional-default
-      ]
+      set: targets
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

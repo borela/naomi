@@ -132,6 +132,7 @@ contexts:
             | Keys
             | ObjMap
             | PropertyType
+            | Shape
             | Supertype
             | Subtype
           )

@@ -26,30 +26,39 @@ contexts:
   main:
     - match: |
         (?xi)\s*
-        (type)
-        (?=
-          \s+{{commonIdentifier}}
-          (?:\s*<.*>)?
-          \s*=
-        )
+        (module)
       captures:
         1: >-
           storage.type.flowtype
           keyword.declaration.type-aliasing.flowtype
       set: [
-        type,
-        punctuation,
+        body,
         identifier
       ]
 
   identifier:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
-  punctuation:
-    - match: \s*(=)
+  body:
+    - include: comment
+    - match: \s*(\{)
       captures:
-        1: keyword.operator.other.assignment.flowtype
-      pop: true
+        1: punctuation.delimiter.module.body.begin.flowtype
+      set: body-content
 
-  type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
+  body-content:
+    - include: comment
+    - match: \s*(})
+      captures:
+        1: punctuation.delimiter.module.body.end.flowtype
+      pop: true
+    - match: ""
+      push:
+        - match: (?=\s*})
+          pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

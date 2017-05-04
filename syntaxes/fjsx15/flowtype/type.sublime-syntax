@@ -155,6 +155,8 @@ contexts:
 
   optional-operator:
     - include: comment
+    - match: (?=\s*})
+      pop: true
     - match: |
         (?x)
         \s*(&)
@@ -172,13 +174,12 @@ contexts:
         (?!
           (?> \|
             | =
-            | \s*}
           )
         )
       captures:
         1: keyword.operator.other.union.flowtype
       set: main
-    - match: (?=\S)
+    - match: (?=\s*\S)
       pop: true
 
   enveloped-nullable-end:

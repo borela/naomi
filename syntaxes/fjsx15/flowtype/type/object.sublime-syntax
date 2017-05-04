@@ -41,7 +41,7 @@ contexts:
       captures:
         1: >-
           punctuation.delimiter.object.flowtype
-    # Exact,
+    # Exact.
     - match: \s*(\|)\s*(})
       captures:
         1: punctuation.delimiter.object.end.flowtype

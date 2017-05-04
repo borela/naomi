@@ -30,6 +30,7 @@ contexts:
       set: identifier
 
   identifier:
+    - include: comment
     - match: (?=\s*extends\b)
       set: [
         body,
@@ -43,6 +44,7 @@ contexts:
       set: optional-template-parameters
 
   extension:
+    - include: comment
     - match: \s*(extends)\b
       captures:
         1: keyword.extension.js.fjsx15
@@ -55,6 +57,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
 
   optional-template-parameters:
+    - include: comment
     - match: (?=<)
       set: [
         optional-extension,
@@ -69,6 +72,7 @@ contexts:
       set: body
 
   optional-extension:
+    - include: comment
     - match: (?=\s*extends\b)
       set: [
         body,
@@ -89,9 +93,10 @@ contexts:
       captures:
         1: punctuation.delimiter.interface.body.end.js.fjsx15
       pop: true
-    - match: (?=\S)
+    - match: ""
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/method.sublime-syntax
         - match: ""

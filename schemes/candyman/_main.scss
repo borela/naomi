@@ -65,8 +65,10 @@
 @import "shared/unknown";
 
 @import "shared/docblock/constant";
+@import "shared/docblock/delimiter";
 @import "shared/docblock/function";
 @import "shared/docblock/keyword";
 @import "shared/docblock/namespace";
+@import "shared/docblock/operator";
 @import "shared/docblock/type";
 @import "shared/docblock/variable";

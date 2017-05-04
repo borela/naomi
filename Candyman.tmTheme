@@ -621,6 +621,33 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.comment .punctuation.delimiter.expression.group.a</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFECB380</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .punctuation.delimiter.expression.group.b</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#BCAAA480</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .punctuation.delimiter.control</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF80AB80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.comment .entity.name.function, .comment .punctuation.delimiter.function</string>
 			<key>settings</key>
 			<dict>
@@ -639,7 +666,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.comment .keyword</string>
+			<string>.comment .keyword, .comment .punctuation.delimiter.keyword</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -662,6 +689,24 @@
 			<dict>
 				<key>foreground</key>
 				<string>#BCAAA466</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .keyword.operator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#5AF15880</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .keyword.operator.other.instanceof, .comment .keyword.operator.other.typeof</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF80AB80</string>
 			</dict>
 		</dict>
 		<dict>
@@ -702,7 +747,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.delimiter.array.flowtype, .punctuation.delimiter.array.begin.flowtype, .punctuation.delimiter.array.end.flowtype, .punctuation.delimiter.cast.begin.flowtype, .punctuation.delimiter.cast.end.flowtype, .punctuation.delimiter.function.parameters.flowtype, .punctuation.delimiter.function.parameters.begin.flowtype, .punctuation.delimiter.function.parameters.end.flowtype, .punctuation.delimiter.function.result.flowtype, .punctuation.delimiter.nullable.begin.flowtype, .punctuation.delimiter.nullable.end.flowtype, .punctuation.delimiter.object.flowtype, .punctuation.delimiter.object.begin.flowtype, .punctuation.delimiter.object.end.flowtype, .punctuation.delimiter.template.parameters.flowtype, .punctuation.delimiter.template.parameters.begin.flowtype, .punctuation.delimiter.template.parameters.end.flowtype, .punctuation.delimiter.template.arguments.flowtype, .punctuation.delimiter.template.arguments.begin.flowtype, .punctuation.delimiter.template.arguments.end.flowtype</string>
+			<string>.punctuation.delimiter.array.flowtype, .punctuation.delimiter.array.begin.flowtype, .punctuation.delimiter.array.end.flowtype, .punctuation.delimiter.cast.begin.flowtype, .punctuation.delimiter.cast.end.flowtype, .punctuation.delimiter.function.parameters.begin.flowtype, .punctuation.delimiter.function.parameters.end.flowtype, .punctuation.delimiter.function.parameters.flowtype, .punctuation.delimiter.function.result.flowtype, .punctuation.delimiter.module.body.begin.flowtype, .punctuation.delimiter.module.body.end.flowtype, .punctuation.delimiter.nullable.begin.flowtype, .punctuation.delimiter.nullable.end.flowtype, .punctuation.delimiter.object.begin.flowtype, .punctuation.delimiter.object.end.flowtype, .punctuation.delimiter.object.flowtype, .punctuation.delimiter.template.arguments.begin.flowtype, .punctuation.delimiter.template.arguments.flowtype, .punctuation.delimiter.template.parameters.begin.flowtype, .punctuation.delimiter.template.parameters.end.flowtype, .punctuation.delimiter.template.parameters.flowtype, .punctuation.delimiter.template.arguments.end.flowtype</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

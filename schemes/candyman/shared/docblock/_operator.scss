@@ -10,9 +10,13 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.comment {
-  .keyword,
-  .punctuation.delimiter.keyword {
+.comment .keyword {
+  &.operator {
+    foreground: rgba($green-a200, .5);
+  }
+
+  &.operator.other.instanceof,
+  &.operator.other.typeof {
     foreground: rgba($pink-a100, .5);
   }
 }

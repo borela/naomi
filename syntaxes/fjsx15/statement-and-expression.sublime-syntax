@@ -90,13 +90,7 @@ contexts:
           pop: true
 
   cast-operator:
-    - match: |
-        (?xi)
-        (?=
-          \s*\(
-          [^?]*:
-          .*\)
-        )
+    - match: (?=\s*:)
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax
 

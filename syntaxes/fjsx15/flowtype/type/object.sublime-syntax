@@ -93,6 +93,16 @@ contexts:
         1: entity.name.variable.js.fjsx15
         2: keyword.operator.other.optional.flowtype
       set: type
+    - match: (?=\S)
+      set: [
+        type,
+        literal-string
+      ]
+
+  literal-string:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax

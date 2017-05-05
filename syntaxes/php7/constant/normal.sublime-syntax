@@ -27,14 +27,18 @@ contexts:
     # Multiple characters.
     - match: |
         (?x)\s*
+        ((?>\\|\b))
         ({{constantIdentifier}})\b
       captures:
-        1: entity.name.constant.php.php7
+        1: punctuation.delimiter.constant.php.php7
+        2: entity.name.constant.php.php7
       pop: true
     # Single character.
     - match: |
         (?x)\s*
+        ((?>\\|\b))
         ([[:upper:]])\b
       captures:
-        1: entity.name.constant.php.php7
+        1: punctuation.delimiter.constant.php.php7
+        2: entity.name.constant.php.php7
       pop: true

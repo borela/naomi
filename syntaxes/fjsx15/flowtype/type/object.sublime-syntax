@@ -67,6 +67,10 @@ contexts:
         - include: comment
         - include: lookup-table
         - include: property
+        - include: method
+
+  method:
+    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
 
   lookup-table:
     - match: \s*(\[)

@@ -19,24 +19,20 @@ scope: ...
 
 contexts:
   main:
-    # Templated function.
     - match: |
         (?x)
         (?=
-          <.*>
+          (?:\s*<.*>)?
           \s*\(
         )
-      set: [
-        return,
-        parameters,
-        template-arguments
-      ]
-    # Normal function.
-    - match: |
-        (?x)
-        (?=
-          \s*\(
-        )
+      set: declaration
+
+  declaration:
+    # Template parameters.
+    - match: (?=\s*<)
+      push: template-arguments
+    # Parameters.
+    - match: (?=\s*\()
       set: [
         return,
         parameters

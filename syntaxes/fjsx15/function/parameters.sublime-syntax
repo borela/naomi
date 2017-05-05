@@ -41,11 +41,7 @@ contexts:
       push:
         - match: |
             (?x)
-            (?=\s*
-              (?> ,
-                | \)
-              )
-            )
+            (?=\s*(?>,|\)))
           pop: true
         - include: comment
         - include: rest-operator
@@ -83,11 +79,7 @@ contexts:
   default-value:
     - match: |
         (?x)
-        (?=\s*
-          (?> ,
-            | \)
-          )
-        )
+        (?=\s*(?>,|\)))
       pop: true
     - match: ""
       push:

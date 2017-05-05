@@ -101,7 +101,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
 
   sequence:
-    - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
     # Comments.
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/prolog.sublime-syntax

@@ -61,7 +61,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array/variable.sublime-syntax
 
   rest-operator:
-    - include: Packages/Naomi/syntaxes/fjsx15/greedy-rest.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/rest.sublime-syntax
 
   default-value:
     - match: |

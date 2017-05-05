@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/greedy-spread.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/spread.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/shebang.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/other.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/comparison.sublime-syntax

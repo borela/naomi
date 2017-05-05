@@ -121,7 +121,7 @@ contexts:
         - include: statement-and-expression
 
   terminator:
-    - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
 
   statement-and-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

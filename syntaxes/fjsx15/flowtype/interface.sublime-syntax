@@ -97,7 +97,7 @@ contexts:
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/method.sublime-syntax
         - match: ""
           pop: true

@@ -56,7 +56,7 @@ contexts:
         (?xi)\s*
         ([[:alnum:]]+://\S+)\s
       captures:
-        1: entity.link.js.fjsx15
+        1: entity.link.php.php7
 
   email:
     - match: |
@@ -65,5 +65,5 @@ contexts:
           | (<[.[:alnum:]]+@[.[:alnum:]]+>)
         )
       captures:
-        1: entity.email.js.fjsx15
-        2: entity.email.js.fjsx15
+        1: entity.email.php.php7
+        2: entity.email.php.php7

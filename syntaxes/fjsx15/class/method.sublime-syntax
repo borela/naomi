@@ -44,7 +44,7 @@ contexts:
         )
         (?=
           (?:\s*\*)?
-          (?:\s+{{methodIdentifier}})?
+          (?:\s*{{methodIdentifier}})?
           (?:\s*<.*>)?
           \s*\(
         )
@@ -58,7 +58,7 @@ contexts:
         (?xi)
         (?=
           (?:\s*\*)?
-          \s*{{methodIdentifier}}
+          (?:\s*{{methodIdentifier}})?
           (?:\s*<.*>)?
           \s*\(
         )

@@ -43,7 +43,7 @@ contexts:
       ]
 
   identifier:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax
 
   punctuation:
     - match: \s*(=)

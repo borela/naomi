@@ -145,10 +145,10 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/function.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/tuple.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/tuple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax
 
   optional-operator:
     - include: operators

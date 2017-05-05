@@ -38,7 +38,7 @@ contexts:
       set: computed-property
     # Constant.
     - match: |
-        (?xi)\s*
+        (?x)\s*
         ({{constantIdentifier}})
       captures:
         1: >-

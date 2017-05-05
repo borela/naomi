@@ -59,19 +59,12 @@ contexts:
       push:
         - match: |
             (?x)
-            (?=
-              (?> ,
-                | ;
-                | ]
-                | }
-                | \|\s*}
-              )
-            )
+            (?=(?>,|;|]|}|\|\s*}))
           pop: true
         - include: comment
         - include: lookup-table
-        - include: property
         - include: method
+        - include: property
 
   method:
     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
@@ -95,7 +88,7 @@ contexts:
   property:
     # Constant.
     - match: |
-        (?xi)
+        (?x)\s*
         ({{constantIdentifier}})(\?)?
       captures:
         1: entity.name.constant.js.fjsx15
@@ -103,14 +96,14 @@ contexts:
       set: type
     # Normal property.
     - match: |
-        (?xi)
+        (?xi)\s*
         ({{commonIdentifier}})(\?)?
       captures:
         1: entity.name.variable.js.fjsx15
         2: keyword.operator.other.optional.flowtype
       set: type
     # Anything else.
-    - match: (?=\S)
+    - match: (?=\s*\S)
       set: [
         type,
         literal-string

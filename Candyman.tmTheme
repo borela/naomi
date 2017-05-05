@@ -607,7 +607,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#BDBDBDB2</string>
+				<string>#CE93D8B2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -693,6 +693,51 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.comment .constant.numeric</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFCC8080</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .constant.numeric.float</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#CE93D880</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .constant.numeric.binary</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4DD0E180</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .constant.numeric.octal</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#DCE77580</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .constant.numeric.hex</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#E0E0E080</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.comment .keyword.operator</string>
 			<key>settings</key>
 			<dict>
@@ -707,6 +752,51 @@
 			<dict>
 				<key>foreground</key>
 				<string>#FF80AB80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#F36C6080</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .string .punctuation.delimiter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#F36C6080</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .constant.character</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#F36C6080</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .constant.character.escape.a</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#80DEEA80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .constant.character.escape.b</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#AED58180</string>
 			</dict>
 		</dict>
 		<dict>

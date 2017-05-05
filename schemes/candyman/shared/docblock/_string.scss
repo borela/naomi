@@ -11,15 +11,23 @@
 // the License.
 
 .comment {
-  .entity.name.constant,
-  .punctuation.delimiter.constant {
-    foreground: rgba($purple-200, .7);
-  }
-}
+  .string {
+    foreground: rgba($red-300, .5);
 
-.comment .support {
-  .entity.name.constant,
-  .punctuation.delimiter.constant {
-    foreground: rgba($deep-orange-a100, .7);
+    .punctuation.delimiter {
+      foreground: rgba($red-300, .5);
+    }
+  }
+
+  .constant.character {
+    foreground: rgba($red-300, .5);
+  }
+
+  .constant.character.escape.a {
+    foreground: rgba($cyan-200, .5);
+  }
+
+  .constant.character.escape.b {
+    foreground: rgba($light-green-300, .5);
   }
 }

@@ -95,12 +95,14 @@ contexts:
       pop: true
     - match: ""
       push:
+        - match: (?=\s*})
+          pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/method.sublime-syntax
-        - match: ""
-          pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/lookup-table.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

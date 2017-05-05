@@ -31,6 +31,7 @@ variables:
 
 contexts:
   main:
+    - include: operators
     # Open new expression group.
     - match: |
         (?xi)\s*
@@ -39,7 +40,7 @@ contexts:
         1: punctuation.delimiter.expression.group.a.begin.js.fjsx15
       set: open-b-close-a
     # Expression contents.
-    - match: ""
+    - match: (?=\s*\S)
       set: [
         optional-operator,
         type-definitions
@@ -59,7 +60,7 @@ contexts:
         1: punctuation.delimiter.expression.group.b.end.js.fjsx15
       pop: true
     # Expression contents.
-    - match: ""
+    - match: (?=\s*\S)
       push: [
         optional-operator,
         type-definitions
@@ -79,7 +80,7 @@ contexts:
         1: punctuation.delimiter.expression.group.a.end.js.fjsx15
       pop: true
     # Expression contents.
-    - match: ""
+    - match: (?=\s*\S)
       push: [
         optional-operator,
         type-definitions
@@ -150,32 +151,26 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/simple.sublime-syntax
 
   optional-operator:
+    - include: operators
+    - match: (?=\s*\S)
+      pop: true
+
+  operators:
     - include: comment
     - match: |
         (?x)
         \s*(&)
-        (?!
-          (?> &
-            | =
-          )
-        )
+        (?!(?>&|=))
       captures:
         1: keyword.operator.other.intersection.flowtype
       set: main
     - match: |
         (?x)
         \s*(\|)
-        (?!
-          (?> \|
-            | =
-            | \s*}
-          )
-        )
+        (?!(?>\||=|\s*}))
       captures:
         1: keyword.operator.other.union.flowtype
       set: main
-    - match: (?=\s*\S)
-      pop: true
 
   enveloped-nullable-end:
     - match: \s*(\))

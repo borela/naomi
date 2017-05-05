@@ -27,9 +27,11 @@ contexts:
     - match: |
         (?xi)
         \s*({{commonIdentifier}})
+        \s*(\?)?
         (?=\s*:)
       captures:
         1: entity.name.variable.js.fjsx15
+        2: keyword.operator.other.optional.flowtype
       set: type
 
   type:

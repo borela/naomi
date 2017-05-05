@@ -28,51 +28,23 @@ variables:
 
 contexts:
   main:
-    # Exact.
-    - match: \s*({)\s*(\|)
-      captures:
-        1: punctuation.delimiter.object.begin.flowtype
-        2: punctuation.delimiter.object.begin.flowtype
-      set: items
-    # Normal.
-    - match: \s*({)
-      captures:
-        1: punctuation.delimiter.object.begin.flowtype
-      set: items
-
-  items:
-    - match: \s*(,|;)
+    - match: \s*(\[)
       captures:
         1: punctuation.delimiter.object.flowtype
-    # Exact.
-    - match: \s*(\|)\s*(})
-      captures:
-        1: punctuation.delimiter.object.end.flowtype
-        2: punctuation.delimiter.object.end.flowtype
-      pop: true
-    # Normal.
-    - match: \s*(})
-      captures:
-        1: punctuation.delimiter.object.end.flowtype
-      pop: true
-    - match: ""
-      push:
-        - match: |
-            (?x)
-            (?=(?>,|;|]|}|\|\s*}))
-          pop: true
-        - include: comment
-        - include: lookup-table
-        - include: method
-        - include: property
+      set: [
+        type,
+        lookup-table-end,
+        property
+      ]
 
-  method:
-    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
-
-  lookup-table:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/lookup-table.sublime-syntax
+  lookup-table-end:
+    - match: \s*(])
+      captures:
+        1: punctuation.delimiter.object.flowtype
+      pop: true
 
   property:
+    - include: comment
     # Constant.
     - match: |
         (?x)\s*

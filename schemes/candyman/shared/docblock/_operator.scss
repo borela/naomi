@@ -15,8 +15,7 @@
     foreground: rgba($green-a200, .7);
   }
 
-  &.operator.other.instanceof,
-  &.operator.other.typeof {
+  &.operator.other.word {
     foreground: rgba($pink-a100, .7);
   }
 }

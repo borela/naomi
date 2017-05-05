@@ -108,7 +108,7 @@ contexts:
         (?x)\s*
         (typeof)
       captures:
-        1: keyword.operator.other.typeof.js.fjsx15
+        1: keyword.operator.other.word.js.fjsx15
     # Utility operators.
     - match: |
         (?x)\s*

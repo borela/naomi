@@ -162,6 +162,7 @@ An identity is the most specific scope possible that decribes the token.
     .other
       .comma
       .terminator
+      .word
   .other
     .unit
 ```

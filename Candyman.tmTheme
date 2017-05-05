@@ -457,7 +457,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.operator.other.instanceof, .keyword.operator.other.typeof</string>
+			<string>.keyword.operator.other.word</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -765,7 +765,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.comment .keyword.operator.other.instanceof, .comment .keyword.operator.other.typeof</string>
+			<string>.comment .keyword.operator.other.word</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

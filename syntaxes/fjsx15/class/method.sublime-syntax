@@ -93,7 +93,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
 
   declaration:
-    - match: (?=\s*;)
       pop: true
     # Body.
     - match: (?=\s*\{)

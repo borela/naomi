@@ -39,8 +39,7 @@ contexts:
   items:
     - match: \s*(,|;)
       captures:
-        1: >-
-          punctuation.delimiter.object.flowtype
+        1: punctuation.delimiter.object.flowtype
     # Exact.
     - match: \s*(\|)\s*(})
       captures:

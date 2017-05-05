@@ -24,26 +24,31 @@ variables:
 
 contexts:
   main:
-    - match: \(
-      scope: punctuation.delimiter.function.parameters.begin.php.php7
+    - match: \s*(\()
+      captures:
+        1: punctuation.delimiter.function.parameters.begin.php.php7
       set: parameters
 
-  parameters:
-    - meta_scope: function.parameters.php.php7
-    - meta_content_scope: function.parameters.content.php.php7
+
+
+  comment:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: \)
-      scope: punctuation.delimiter.function.parameters.end.php.php7
+
+  parameters:
+    - include: comment
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.function.parameters.end.php.php7
       pop: true
     # Starts with a variable.
-    - match: (?=\$)
+    - match: (?=\s*\$)
       push: [
         param-delimiter,
         param-optional-default-value,
         param-variable
       ]
     # Starts with a variadic or reference operator.
-    - match: (?=\.\.\.|&)
+    - match: (?=\s*(?>\.\.\.|&))
       push: [
         param-delimiter,
         param-optional-default-value,
@@ -51,7 +56,7 @@ contexts:
         variadic-or-reference-operator
       ]
     # Starts with a type hint.
-    - match: (?=\S)
+    - match: (?=\s*\S)
       push: [
         param-delimiter,
         param-optional-default-value,
@@ -66,21 +71,24 @@ contexts:
 
   variadic-or-reference-operator:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?=\$)
+    - match: (?=\s*\$)
       pop: true
-    - match: \&
-      scope: keyword.operator.other.reference.php.php7
+    - match: \s*(\&)
+      captures:
+        1: keyword.operator.other.reference.php.php7
       pop: true
-    - match: \.\.\.
-      scope: keyword.operator.other.variadic.php.php7
+    - match: \s*(\.\.\.)
+      captures:
+        1: keyword.operator.other.variadic.php.php7
       pop: true
 
   reference-operator:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?=\$)
+    - match: (?=\s*\$)
       pop: true
-    - match: \&
-      scope: keyword.operator.other.reference.php.php7
+    - match: \s*(\&)
+      captures:
+        1: keyword.operator.other.reference.php.php7
       pop: true
 
   param-variable:
@@ -89,22 +97,23 @@ contexts:
 
   param-optional-default-value:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?=,|\))
+    - match: (?=\s*(?>,|\)))
       pop: true
-    - match: \=
-      scope: keyword.operator.other.assignment.php.php7
+    - match: \s*(=)
+      captures:
+        1: keyword.operator.other.assignment.php.php7
       set: param-default-value
 
   param-default-value:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?=,|\))
+    - match: (?=\s*(?>,|\)))
       pop: true
     - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
     # Constant inside class.
     - match: |
         (?xi)
-        (?={{commonIdentifier}})
+        (?=\s*{{commonIdentifier}})
       push: [
         default-value-constant,
         default-value-scope-operator,
@@ -113,10 +122,11 @@ contexts:
 
   param-delimiter:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?=\))
+    - match: (?=\s*\))
       pop: true
-    - match: ","
-      scope: punctuation.delimiter.function.parameters.php.php7
+    - match: \s*(,)
+      captures:
+        1: punctuation.delimiter.function.parameters.php.php7
       pop: true
 
   default-value-type:
@@ -124,7 +134,8 @@ contexts:
 
   default-value-scope-operator:
     - match: "::"
-      scope: keyword.operator.other.scope.resolution.php.php7
+      captures:
+        1: keyword.operator.other.scope.resolution.php.php7
       pop: true
 
   default-value-constant:

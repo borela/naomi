@@ -17,7 +17,6 @@
 //  ^^^^^ keyword.embedded.begin.php.php7
         $var = 123;
 //      ^^^^^^^^^^^ embedded.php.php7
-//      ^^^^^^^^^^^ embedded.content.php.php7
     ?>
 //  ^^ embedded.php.php7
 //  ^^ keyword.embedded.end.php.php7
@@ -27,7 +26,6 @@
 //  ^^^ keyword.embedded.begin.php.php7
         $var = 123;
 //      ^^^^^^^^^^^ embedded.short.php.php7
-//      ^^^^^^^^^^^ embedded.content.php.php7
     ?>
 //  ^^ embedded.short.php.php7
 //  ^^ keyword.embedded.end.php.php7

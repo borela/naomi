@@ -169,6 +169,24 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.punctuation.delimiter.datetime</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFCC8080</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.datetime</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffcc80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.punctuation.delimiter</string>
 			<key>settings</key>
 			<dict>

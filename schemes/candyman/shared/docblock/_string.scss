@@ -12,22 +12,22 @@
 
 .comment {
   .string {
-    foreground: rgba($red-300, .5);
+    foreground: rgba($red-300, .7);
 
     .punctuation.delimiter {
-      foreground: rgba($red-300, .5);
+      foreground: rgba($red-300, .7);
     }
   }
 
   .constant.character {
-    foreground: rgba($red-300, .5);
+    foreground: rgba($red-300, .7);
   }
 
   .constant.character.escape.a {
-    foreground: rgba($cyan-200, .5);
+    foreground: rgba($cyan-200, .7);
   }
 
   .constant.character.escape.b {
-    foreground: rgba($light-green-300, .5);
+    foreground: rgba($light-green-300, .7);
   }
 }

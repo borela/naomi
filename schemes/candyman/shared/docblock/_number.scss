@@ -1,4 +1,4 @@
-// Licensed under the Apache License, Version 2.0 (the “License”), .5) you may not
+// Licensed under the Apache License, Version 2.0 (the “License”), .7) you may not
 // use this file except in compliance with the License. You may obtain a copy of
 // the License at
 //
@@ -12,22 +12,22 @@
 
 .comment {
   .constant.numeric {
-    foreground: rgba($orange-200, .5);
+    foreground: rgba($orange-200, .7);
 
     &.float {
-      foreground: rgba($purple-200, .5);
+      foreground: rgba($purple-200, .7);
     }
 
     &.binary {
-      foreground: rgba($cyan-300, .5);
+      foreground: rgba($cyan-300, .7);
     }
 
     &.octal {
-      foreground: rgba($lime-300, .5);
+      foreground: rgba($lime-300, .7);
     }
 
     &.hex {
-      foreground: rgba($grey-300, .5);
+      foreground: rgba($grey-300, .7);
     }
   }
 }

@@ -20,19 +20,21 @@ scope: ...
 variables:
   constantIdentifier: |
     [_[:upper:]]
-    [_[:upper:][:digit:]]*
+    [_[:upper:][:digit:]]+
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/php7/namespace-path.no-pop.sublime-syntax
+    # Multiple characters.
     - match: |
-        (?x)
-        ((?>\\|\b))
-        (
-          {{constantIdentifier}}
-        )\b
+        (?x)\s*
+        ({{constantIdentifier}})\b
       captures:
-        0: constant.php.php7
-        1: punctuation.delimiter.constant.php.php7
-        2: entity.name.constant.php.php7
+        1: entity.name.constant.php.php7
+      pop: true
+    # Single character.
+    - match: |
+        (?x)\s*
+        ([[:upper:]])\b
+      captures:
+        1: entity.name.constant.php.php7
       pop: true

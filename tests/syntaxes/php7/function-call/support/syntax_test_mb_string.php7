@@ -15,221 +15,221 @@
 <?php
    mb_check_encoding();
 // ^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_convert_case();
 // ^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_convert_encoding();
 // ^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_convert_kana();
 // ^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_convert_variables();
 // ^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_decode_mimeheader();
 // ^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_decode_numericentity();
 // ^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_detect_encoding();
 // ^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_detect_order();
 // ^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_encode_mimeheader();
 // ^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_encode_numericentity();
 // ^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_encoding_aliases();
 // ^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_ereg();
 // ^^^^^^^ function.call.php.php7
-// ^^^^^^^ support.function.php.php7
+// ^^^^^^^ support.php.php7
 // ^^^^^^^ entity.name.function.php.php7
    mb_ereg_match();
 // ^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_ereg_replace();
 // ^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_ereg_replace_callback();
 // ^^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_ereg_search();
 // ^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_ereg_search_getpos();
 // ^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_ereg_search_getregs();
 // ^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_ereg_search_init();
 // ^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_ereg_search_pos();
 // ^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_ereg_search_regs();
 // ^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_ereg_search_setpos();
 // ^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_eregi();
 // ^^^^^^^^ function.call.php.php7
-// ^^^^^^^^ support.function.php.php7
+// ^^^^^^^^ support.php.php7
 // ^^^^^^^^ entity.name.function.php.php7
    mb_eregi_replace();
 // ^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_get_info();
 // ^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^ entity.name.function.php.php7
    mb_http_input();
 // ^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_http_output();
 // ^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_internal_encoding();
 // ^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_language();
 // ^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^ entity.name.function.php.php7
    mb_list_encodings();
 // ^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_output_handler();
 // ^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_parse_str();
 // ^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^ entity.name.function.php.php7
    mb_preferred_mime_name();
 // ^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_regex_encoding();
 // ^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_regex_set_options();
 // ^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_send_mail();
 // ^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^ entity.name.function.php.php7
    mb_split();
 // ^^^^^^^^ function.call.php.php7
-// ^^^^^^^^ support.function.php.php7
+// ^^^^^^^^ support.php.php7
 // ^^^^^^^^ entity.name.function.php.php7
    mb_strcut();
 // ^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^ support.php.php7
 // ^^^^^^^^^ entity.name.function.php.php7
    mb_strimwidth();
 // ^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_stripos();
 // ^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^ entity.name.function.php.php7
    mb_stristr();
 // ^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^ entity.name.function.php.php7
    mb_strlen();
 // ^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^ support.php.php7
 // ^^^^^^^^^ entity.name.function.php.php7
    mb_strpos();
 // ^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^ support.php.php7
 // ^^^^^^^^^ entity.name.function.php.php7
    mb_strrchr();
 // ^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^ entity.name.function.php.php7
    mb_strrichr();
 // ^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^ entity.name.function.php.php7
    mb_strripos();
 // ^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^ entity.name.function.php.php7
    mb_strrpos();
 // ^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^ entity.name.function.php.php7
    mb_strstr();
 // ^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^ support.php.php7
 // ^^^^^^^^^ entity.name.function.php.php7
    mb_strtolower();
 // ^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_strtoupper();
 // ^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_strwidth();
 // ^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^ entity.name.function.php.php7
    mb_substitute_character();
 // ^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    mb_substr();
 // ^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^ support.php.php7
 // ^^^^^^^^^ entity.name.function.php.php7
    mb_substr_count();
 // ^^^^^^^^^^^^^^^ function.call.php.php7
-// ^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^ entity.name.function.php.php7

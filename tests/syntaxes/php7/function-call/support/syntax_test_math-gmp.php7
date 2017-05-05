@@ -15,194 +15,194 @@
 <?php
     gmp_abs();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     gmp_add();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     gmp_and();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     gmp_clrbit();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     gmp_cmp();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     gmp_com();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     gmp_div_q();
 //  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     gmp_div_qr();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     gmp_div_r();
 //  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     gmp_div();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     gmp_divexact();
 //  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     gmp_export();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     gmp_fact();
 //  ^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     gmp_gcd();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     gmp_gcdext();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     gmp_hamdist();
 //  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     gmp_import();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     gmp_init();
 //  ^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     gmp_intval();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     gmp_invert();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     gmp_jacobi();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     gmp_legendre();
 //  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     gmp_mod();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     gmp_mul();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     gmp_neg();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     gmp_nextprime();
 //  ^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.function.php.php7
     gmp_or();
 //  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     gmp_perfect_square();
 //  ^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     gmp_popcount();
 //  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     gmp_pow();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     gmp_powm();
 //  ^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     gmp_prob_prime();
 //  ^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.function.php.php7
     gmp_random_bits();
 //  ^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^ entity.name.function.php.php7
     gmp_random_range();
 //  ^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     gmp_random_seed();
 //  ^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^ entity.name.function.php.php7
     gmp_random();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     gmp_root();
 //  ^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     gmp_rootrem();
 //  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     gmp_scan0();
 //  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     gmp_scan1();
 //  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     gmp_setbit();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     gmp_sign();
 //  ^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     gmp_sqrt();
 //  ^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     gmp_sqrtrem();
 //  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     gmp_strval();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     gmp_sub();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     gmp_testbit();
 //  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     gmp_xor();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
 ?>

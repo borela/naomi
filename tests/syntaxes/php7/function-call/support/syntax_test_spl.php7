@@ -14,45 +14,45 @@
 
 <?php
    class_implements();
-// ^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    class_parents();
-// ^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^ entity.name.function.php.php7
    class_uses();
-// ^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^ entity.name.function.php.php7
    iterator_apply();
-// ^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^ entity.name.function.php.php7
    iterator_count();
-// ^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^ entity.name.function.php.php7
    iterator_to_array();
-// ^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    spl_autoload_call();
-// ^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    spl_autoload_extensions();
-// ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    spl_autoload_functions();
-// ^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    spl_autoload_register();
-// ^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    spl_autoload_unregister();
-// ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
    spl_autoload();
-// ^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^ entity.name.function.php.php7
    spl_classes();
-// ^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^ entity.name.function.php.php7
    spl_object_hash();
-// ^^^^^^^^^^^^^^^ support.function.php.php7
+// ^^^^^^^^^^^^^^^ support.php.php7
 // ^^^^^^^^^^^^^^^ entity.name.function.php.php7
 ?>

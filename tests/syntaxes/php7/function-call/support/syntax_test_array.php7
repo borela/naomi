@@ -15,314 +15,314 @@
 <?php
     array_change_key_case ();
 //  ^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_chunk ();
 //  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     array_column ();
 //  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     array_combine ();
 //  ^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.function.php.php7
     array_count_values ();
 //  ^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_diff_assoc ();
 //  ^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_diff_key ();
 //  ^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_diff_uassoc ();
 //  ^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_diff_ukey ();
 //  ^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_diff ();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     array_fill_keys ();
 //  ^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_fill ();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     array_filter ();
 //  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     array_flip ();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     array_intersect_assoc ();
 //  ^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_intersect_key ();
 //  ^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_intersect_uassoc ();
 //  ^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_intersect_ukey ();
 //  ^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_intersect ();
 //  ^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_key_exists ();
 //  ^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_keys ();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     array_map ();
 //  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     array_merge_recursive ();
 //  ^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_merge ();
 //  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     array_multisort ();
 //  ^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_pad ();
 //  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     array_pop ();
 //  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     array_product ();
 //  ^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.function.php.php7
     array_push ();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     array_rand ();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     array_reduce ();
 //  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     array_replace_recursive ();
 //  ^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_replace ();
 //  ^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.function.php.php7
     array_reverse ();
 //  ^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.function.php.php7
     array_search ();
 //  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     array_shift ();
 //  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     array_slice ();
 //  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     array_splice ();
 //  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     array_sum ();
 //  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     array_udiff_assoc ();
 //  ^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_udiff_uassoc ();
 //  ^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_udiff ();
 //  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     array_uintersect_assoc ();
 //  ^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_uintersect_uassoc ();
 //  ^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_uintersect ();
 //  ^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_unique ();
 //  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     array_unshift ();
 //  ^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.function.php.php7
     array_values ();
 //  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     array_walk_recursive ();
 //  ^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     array_walk ();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     arsort ();
 //  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     asort ();
 //  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     compact ();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     count ();
 //  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     current ();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     each ();
 //  ^^^^ function.call.php.php7
-//  ^^^^ support.function.php.php7
+//  ^^^^ support.php.php7
 //  ^^^^ entity.name.function.php.php7
     end ();
 //  ^^^ function.call.php.php7
-//  ^^^ support.function.php.php7
+//  ^^^ support.php.php7
 //  ^^^ entity.name.function.php.php7
     extract ();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     in_array ();
 //  ^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     key_exists ();
 //  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     key ();
 //  ^^^ function.call.php.php7
-//  ^^^ support.function.php.php7
+//  ^^^ support.php.php7
 //  ^^^ entity.name.function.php.php7
     krsort ();
 //  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     ksort ();
 //  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     list ();
 //  ^^^^ function.call.php.php7
-//  ^^^^ support.function.php.php7
+//  ^^^^ support.php.php7
 //  ^^^^ entity.name.function.php.php7
     natcasesort ();
 //  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     natsort ();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     next ();
 //  ^^^^ function.call.php.php7
-//  ^^^^ support.function.php.php7
+//  ^^^^ support.php.php7
 //  ^^^^ entity.name.function.php.php7
     pos ();
 //  ^^^ function.call.php.php7
-//  ^^^ support.function.php.php7
+//  ^^^ support.php.php7
 //  ^^^ entity.name.function.php.php7
     prev ();
 //  ^^^^ function.call.php.php7
-//  ^^^^ support.function.php.php7
+//  ^^^^ support.php.php7
 //  ^^^^ entity.name.function.php.php7
     range ();
 //  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     reset ();
 //  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     rsort ();
 //  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     shuffle ();
 //  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     sizeof ();
 //  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     sort ();
 //  ^^^^ function.call.php.php7
-//  ^^^^ support.function.php.php7
+//  ^^^^ support.php.php7
 //  ^^^^ entity.name.function.php.php7
     uasort ();
 //  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     uksort ();
 //  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     usort ();
 //  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
 ?>

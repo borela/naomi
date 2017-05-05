@@ -14,87 +14,87 @@
 
 <?php
     CRYPT_SALT_LENGTH
-//  ^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     CRYPT_STD_DES
-//  ^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.constant.php.php7
     CRYPT_EXT_DES
-//  ^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.constant.php.php7
     CRYPT_MD5
-//  ^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.constant.php.php7
     CRYPT_BLOWFISH
-//  ^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.constant.php.php7
     HTML_SPECIALCHARS
-//  ^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     HTML_ENTITIES
-//  ^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.constant.php.php7
     ENT_COMPAT
-//  ^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.constant.php.php7
     ENT_QUOTES
-//  ^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.constant.php.php7
     ENT_NOQUOTES
-//  ^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.constant.php.php7
     ENT_IGNORE
-//  ^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.constant.php.php7
     ENT_SUBSTITUTE
-//  ^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.constant.php.php7
     ENT_DISALLOWED
-//  ^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.constant.php.php7
     ENT_HTML401
-//  ^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.constant.php.php7
     ENT_XML1
-//  ^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.constant.php.php7
     ENT_XHTML
-//  ^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.constant.php.php7
     ENT_HTML5
-//  ^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.constant.php.php7
     CHAR_MAX
-//  ^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.constant.php.php7
     LC_CTYPE
-//  ^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.constant.php.php7
     LC_NUMERIC
-//  ^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.constant.php.php7
     LC_TIME
-//  ^^^^^^^ support.constant.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.constant.php.php7
     LC_COLLATE
-//  ^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.constant.php.php7
     LC_MONETARY
-//  ^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.constant.php.php7
     LC_ALL
-//  ^^^^^^ support.constant.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.constant.php.php7
     LC_MESSAGES
-//  ^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.constant.php.php7
     STR_PAD_LEFT
-//  ^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.constant.php.php7
     STR_PAD_RIGHT
-//  ^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.constant.php.php7
     STR_PAD_BOTH
-//  ^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.constant.php.php7
 ?>

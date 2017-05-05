@@ -36,9 +36,9 @@ contexts:
     - match: |
         (?xi)\s*
         (
-          (?> async
-            | get
-            | set
+          (?> async\b
+            | get\b
+            | set\b
             | static (?:\s*(?>async|get|set)\b)?
           )
         )

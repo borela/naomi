@@ -32,6 +32,36 @@ variables:
 
 contexts:
   main:
+    # With modifiers.
+    - match: |
+        (?xi)\s*
+        (
+          (?> async
+            | get
+            | set
+            | static (?:\s*(?>async|get|set)\b)?
+          )
+        )
+        (?=
+          (?:\s*\*)?
+          (?:\s+{{methodIdentifier}})?
+          (?:\s*<.*>)?
+          \s*\(
+        )
+      captures:
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.modifier.js.fjsx15
+      set: declaration
+    # No modifiers.
+    - match: |
+        (?xi)
+        (?=
+          (?:\s*\*)?
+          \s*{{methodIdentifier}}
+          \s*\(
+        )
+      set: declaration
     # Class instance property.
     - match: |
         (?xi)
@@ -48,38 +78,6 @@ contexts:
         arrow-function,
         class-instance-identifier
       ]
-    # No modifiers.
-    - match: |
-        (?xi)
-        (?=
-          \s*\*?
-          \s*{{methodIdentifier}}
-          \s*\(
-        )
-      set: declaration
-    # With modifiers.
-    - match: |
-        (?xi)\s*
-        (
-          (?> async
-            | get
-            | s
-              (?> et
-                | tatic
-                  (?:
-                    \s+(?>async|get|set)
-                  )?
-              )
-          )
-        )
-        (?=
-          \s*\*?
-          \s*{{methodIdentifier}}
-          \s*\(
-        )
-      captures:
-        1: keyword.modifier.js.fjsx15
-      set: declaration
 
   class-instance-identifier:
     - match: |
@@ -142,11 +140,11 @@ contexts:
     # Other identifier types.
     - match: ""
       push:
-        - match: (?=\s*{)
-          pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
+        - match: ""
+          pop: true
 
   template-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax

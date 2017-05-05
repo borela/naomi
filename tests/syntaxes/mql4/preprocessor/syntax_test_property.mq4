@@ -153,7 +153,7 @@
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ preprocessor.mql.mql4
 //  ^^^^^^^^^ keyword.preprocessor.mql.mql4
 //            ^^^^^^^^^^^^^^^^ keyword.preprocessor.mql.mql4
-//                             ^^^^^^ support.constant.mql.mql4
+//                             ^^^^^^ support.mql.mql4
     #property indicator_width1 1
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ preprocessor.mql.mql4
 //  ^^^^^^^^^ keyword.preprocessor.mql.mql4
@@ -168,12 +168,12 @@
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ preprocessor.mql.mql4
 //  ^^^^^^^^^ keyword.preprocessor.mql.mql4
 //            ^^^^^^^^^^^^^^^^ keyword.preprocessor.mql.mql4
-//                             ^^^^^^^^^^^ support.constant.mql.mql4
+//                             ^^^^^^^^^^^ support.mql.mql4
     #property indicator_type1 DRAW_LINE
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ preprocessor.mql.mql4
 //  ^^^^^^^^^ keyword.preprocessor.mql.mql4
 //            ^^^^^^^^^^^^^^^ keyword.preprocessor.mql.mql4
-//                            ^^^^^^^^^ support.constant.mql.mql4
+//                            ^^^^^^^^^ support.mql.mql4
     #property indicator_level1 1.0
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ preprocessor.mql.mql4
 //  ^^^^^^^^^ keyword.preprocessor.mql.mql4
@@ -207,7 +207,7 @@
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ preprocessor.mql.mql4
 //  ^^^^^^^^^ keyword.preprocessor.mql.mql4
 //            ^^^^^^^^^^^^^^^^^^^^^ keyword.preprocessor.mql.mql4
-//                                  ^^^^^^ support.constant.mql.mql4
+//                                  ^^^^^^ support.mql.mql4
     #property indicator_levelwidth1 1
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ preprocessor.mql.mql4
 //  ^^^^^^^^^ keyword.preprocessor.mql.mql4
@@ -222,7 +222,7 @@
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ preprocessor.mql.mql4
 //  ^^^^^^^^^ keyword.preprocessor.mql.mql4
 //            ^^^^^^^^^^^^^^^^^^^^^ keyword.preprocessor.mql.mql4
-//                                  ^^^^^^^^^^^ support.constant.mql.mql4
+//                                  ^^^^^^^^^^^ support.mql.mql4
     #property script_show_confirm
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ preprocessor.mql.mql4
 //  ^^^^^^^^^ keyword.preprocessor.mql.mql4

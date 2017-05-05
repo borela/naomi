@@ -13,35 +13,35 @@
 // the License.
 
    OBJ_ALL_PERIODS
-// ^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_NO_PERIODS
-// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_PERIOD_D1
-// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_PERIOD_H1
-// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_PERIOD_H4
-// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_PERIOD_M1
-// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_PERIOD_M15
-// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_PERIOD_M30
-// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_PERIOD_M5
-// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_PERIOD_MN1
-// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OBJ_PERIOD_W1
-// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^ entity.name.constant.mql.mql4

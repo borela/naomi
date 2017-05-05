@@ -13,14 +13,14 @@
 // the License.
 
    MODE_EMA
-// ^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^ support.mql.mql4
 // ^^^^^^^^ entity.name.constant.mql.mql4
    MODE_LWMA
-// ^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^ entity.name.constant.mql.mql4
    MODE_SMA
-// ^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^ support.mql.mql4
 // ^^^^^^^^ entity.name.constant.mql.mql4
    MODE_SMMA
-// ^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^ entity.name.constant.mql.mql4

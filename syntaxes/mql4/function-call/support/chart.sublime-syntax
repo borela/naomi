@@ -64,7 +64,7 @@ contexts:
         ))(?=\s*\()
       captures:
         1: >-
-          support.function.mql.mql4
+          support.mql.mql4
           entity.name.function.mql.mql4
       set: arguments
 

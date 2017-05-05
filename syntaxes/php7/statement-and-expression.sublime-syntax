@@ -114,7 +114,7 @@ contexts:
     # - include: Packages/Naomi/syntaxes/php7/flowtype/declare.sublime-syntax
     # - include: Packages/Naomi/syntaxes/php7/export.sublime-syntax
     # - include: Packages/Naomi/syntaxes/php7/import.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/interface.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/trait.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/namespace.sublime-syntax

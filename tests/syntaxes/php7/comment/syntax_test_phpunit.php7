@@ -46,7 +46,6 @@
      * @covers \Namespace\Namespace\TargetClass::TargetMethod
 //     ^^^^^^^ keyword.documentation.php.php7
 //             ^^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                 ^^^^^^^^^^^^ type.php.php7
 //     ^ punctuation.keyword.begin.php.php7
 //             ^ punctuation.delimiter.namespace.a.php.php7
 //                       ^ punctuation.delimiter.namespace.b.php.php7
@@ -57,7 +56,6 @@
      * @covers Namespace\Namespace\TargetClass::TargetMethod
 //     ^^^^^^^ keyword.documentation.php.php7
 //             ^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                ^^^^^^^^^^^^ type.php.php7
 //     ^ punctuation.keyword.begin.php.php7
 //                      ^ punctuation.delimiter.namespace.b.php.php7
 //                                ^ punctuation.delimiter.type.php.php7
@@ -67,7 +65,6 @@
      * @coversDefaultClass \Namespace\Namespace\TargetClass
 //     ^^^^^^^^^^^^^^^^^^^ keyword.documentation.php.php7
 //                         ^^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                             ^^^^^^^^^^^^ type.php.php7
 //     ^ punctuation.keyword.begin.php.php7
 //                         ^ punctuation.delimiter.namespace.a.php.php7
 //                                   ^ punctuation.delimiter.namespace.b.php.php7
@@ -76,7 +73,6 @@
      * @coversDefaultClass Namespace\Namespace\TargetClass
 //     ^^^^^^^^^^^^^^^^^^^ keyword.documentation.php.php7
 //                         ^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                            ^^^^^^^^^^^^ type.php.php7
 //     ^ punctuation.keyword.begin.php.php7
 //                                  ^ punctuation.delimiter.namespace.b.php.php7
 //                                            ^ punctuation.delimiter.type.php.php7
@@ -95,7 +91,6 @@
      * @expectedException \Namespace\Namespace\TargetClass
 //     ^^^^^^^^^^^^^^^^^^ keyword.documentation.php.php7
 //                        ^^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                            ^^^^^^^^^^^^ type.php.php7
 //     ^ punctuation.keyword.begin.php.php7
 //                        ^ punctuation.delimiter.namespace.a.php.php7
 //                                  ^ punctuation.delimiter.namespace.b.php.php7
@@ -104,7 +99,6 @@
      * @expectedException Namespace\Namespace\TargetClass
 //     ^^^^^^^^^^^^^^^^^^ keyword.documentation.php.php7
 //                        ^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                           ^^^^^^^^^^^^ type.php.php7
 //     ^ punctuation.keyword.begin.php.php7
 //                                 ^ punctuation.delimiter.namespace.b.php.php7
 //                                           ^ punctuation.delimiter.type.php.php7
@@ -120,24 +114,22 @@
      * @expectedExceptionMessage \Namespace\Namespace\TargetClass::TARGET_CONST
 //     ^^^^^^^^^^^^^^^^^^^^^^^^^ keyword.documentation.php.php7
 //                               ^^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                                   ^^^^^^^^^^^^ type.php.php7
 //     ^ punctuation.keyword.begin.php.php7
 //                               ^ punctuation.delimiter.namespace.a.php.php7
 //                                         ^ punctuation.delimiter.namespace.b.php.php7
 //                                                   ^ punctuation.delimiter.type.php.php7
 //                                                    ^^^^^^^^^^^ entity.name.type.php.php7
 //                                                               ^^ keyword.operator.other.scope.resolution.php.php7
-//                                                                 ^^^^^^^^^^^^ constant.php.php7
+//                                                                 ^^^^^^^^^^^^ entity.name.constant.php.php7
      * @expectedExceptionMessage Namespace\Namespace\TargetClass::TARGET_CONST
 //     ^^^^^^^^^^^^^^^^^^^^^^^^^ keyword.documentation.php.php7
 //                               ^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                                  ^^^^^^^^^^^^ type.php.php7
 //     ^ punctuation.keyword.begin.php.php7
 //                                        ^ punctuation.delimiter.namespace.b.php.php7
 //                                                  ^ punctuation.delimiter.type.php.php7
 //                                                   ^^^^^^^^^^^ entity.name.type.php.php7
 //                                                              ^^ keyword.operator.other.scope.resolution.php.php7
-//                                                                ^^^^^^^^^^^^ constant.php.php7
+//                                                                ^^^^^^^^^^^^ entity.name.constant.php.php7
      * @expectedExceptionMessageRegExp /Some pattern/
 //     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ keyword.documentation.php.php7
 //     ^ punctuation.keyword.begin.php.php7
@@ -180,7 +172,6 @@
      * @uses \Namespace\Namespace\TargetClass
 //     ^^^^^ keyword.documentation.php.php7
 //           ^^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                               ^^^^^^^^^^^^ type.php.php7
 //     ^ punctuation.keyword.begin.php.php7
 //           ^ punctuation.delimiter.namespace.a.php.php7
 //                     ^ punctuation.delimiter.namespace.b.php.php7
@@ -189,7 +180,6 @@
      * @uses Namespace\Namespace\TargetClass
 //     ^^^^^ keyword.documentation.php.php7
 //           ^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                              ^^^^^^^^^^^^ type.php.php7
 //     ^ punctuation.keyword.begin.php.php7
 //                    ^ punctuation.delimiter.namespace.b.php.php7
 //                              ^ punctuation.delimiter.type.php.php7

@@ -58,10 +58,22 @@ contexts:
           function.parameter.js.fjsx15
           entity.name.variable.js.fjsx15
       pop: true
+    # Nested destructuring.
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+        (?=\s*:)
+      captures:
+        1: >-
+          destructuring.object.js.fjsx15
+          object.property.js.fjsx15
+          entity.name.variable.js.fjsx15
+      pop: true
     # Normal property.
     - match: |
         (?xi)\s*
         ({{commonIdentifier}})
+        (?!\s*:)
       captures:
         1: >-
           function.parameter.js.fjsx15

@@ -95,16 +95,16 @@
 //                                     ^ .constant.numeric.decimal.js.fjsx15
 //                                      ^ .punctuation.delimiter.object.end.js.fjsx15
 //                                       ^ .keyword.operator.other.terminator.js.fjsx15
-
    state = {count:this.props.initialCount};
 // ^^^^^ .entity.name.variable.js.fjsx15
 //       ^ .keyword.operator.other.assignment.js.fjsx15
 //         ^ .punctuation.delimiter.object.begin.js.fjsx15
 //          ^^^^^ .entity.name.variable.js.fjsx15
 //               ^ .keyword.operator.other.association.js.fjsx15
-//                ^^^^ .support.js.fjsx15
+//                ^^^^ .support.react-js.fjsx15
 //                ^^^^ .entity.name.variable.js.fjsx15
 //                    ^ .keyword.operator.other.member-access.js.fjsx15
+//                     ^^^^^ .support.react-js.fjsx15
 //                     ^^^^^ .entity.name.variable.js.fjsx15
 //                          ^ .keyword.operator.other.member-access.js.fjsx15
 //                           ^^^^^^^^^^^^ .entity.name.variable.js.fjsx15
@@ -124,7 +124,8 @@
 //          ^ .punctuation.delimiter.function.body.begin.js.fjsx15
 //           ^ .punctuation.delimiter.function.body.end.js.fjsx15
     *method(){}
-//  ^ .keyword.modifier.generator.js.fjsx15
+//  ^ .storage.modifier.js.fjsx15
+//  ^ .keyword.generator.js.fjsx15
 //   ^^^^^^ .entity.name.function.js.fjsx15
 //         ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //          ^ .punctuation.delimiter.function.parameters.end.js.fjsx15

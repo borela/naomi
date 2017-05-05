@@ -60,6 +60,13 @@ contexts:
           set: default-value
         # Property.
         - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object/property.sublime-syntax
+        # We can assume that the “:” is for a nested destructuring because otherwise
+        # the previous rule for properties would have consumed it.
+        - match: \s*(:)
+          captures:
+            1: >-
+              destructuring.object.js.fjsx15
+              keyword.operator.other.association.js.fjsx15
         # Nested destructuring.
         - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax

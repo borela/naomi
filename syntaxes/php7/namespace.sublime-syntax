@@ -46,7 +46,7 @@ contexts:
           pop: true
 
   implicit-body:
-    - match: (?=\bnamespace\b)
+    - match: (?=\s*\bnamespace\b)
       pop: true
     - include: body-content
 

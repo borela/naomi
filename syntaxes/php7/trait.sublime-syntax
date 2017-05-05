@@ -24,35 +24,38 @@ scope: ...
 
 contexts:
   main:
-    - match: (?xi)\btrait(?!\\)\b
-      scope: keyword.trait.php.php7
+    - match: (?xi)\s*\b(trait)(?!\\)\b
+      captures:
+        1: keyword.trait.php.php7
       set: declaration
 
-  declaration:
-    - meta_scope: trait.php.php7
+  comment:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+
+  declaration:
+    - include: comment
     # Body.
-    - match: "{"
-      scope: >-
-        trait.body.php.php7
-        punctuation.delimiter.trait.body.begin.php.php7
+    - match: \s*(\{)
+      captures:
+        1: >-
+          punctuation.delimiter.trait.body.begin.php.php7
       set: body
     # Trait’s name.
-    - match: "(?xi){{commonIdentifier}}"
-      scope: entity.name.trait.php.php7
+    - match: (?xi)\s*({{commonIdentifier}})
+      captures:
+        1: entity.name.trait.php.php7
 
   body:
-    - meta_content_scope: >-
-        trait.php.php7
-        trait.body.php.php7
-        trait.body.content.php.php7
-    - match: "}"
-      scope: >-
-        trait.php.php7
-        trait.body.php.php7
-        punctuation.delimiter.trait.body.end.php.php7
+    - match: \s*(})
+      captures:
+        1: punctuation.delimiter.trait.body.end.php.php7
       pop: true
     - include: body-content
 
   body-content:
-    - include: Packages/Naomi/syntaxes/php7/no-pop.sublime-syntax
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax
+        - match: ""
+          pop: true
+

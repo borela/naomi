@@ -115,7 +115,9 @@ contexts:
     # - include: Packages/Naomi/syntaxes/php7/export.sublime-syntax
     # - include: Packages/Naomi/syntaxes/php7/import.sublime-syntax
     # - include: Packages/Naomi/syntaxes/php7/class.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/decorator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/trait.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/namespace.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
     # Expression keywords.
     # - include: Packages/Naomi/syntaxes/php7/instanceof.sublime-syntax
     # - include: Packages/Naomi/syntaxes/php7/new.sublime-syntax
@@ -123,8 +125,6 @@ contexts:
     # Expression.
     # - include: Packages/Naomi/syntaxes/php7/array-access.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/namespace.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
     # - include: Packages/Naomi/syntaxes/php7/global.sublime-syntax
     # - include: Packages/Naomi/syntaxes/php7/reactjs.sublime-syntax
     # - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax

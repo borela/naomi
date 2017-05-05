@@ -574,6 +574,24 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.entity.name.trait, .punctuation.delimiter.trait</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.support .entity.name.trait</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.entity.name.type, .punctuation.delimiter.type</string>
 			<key>settings</key>
 			<dict>

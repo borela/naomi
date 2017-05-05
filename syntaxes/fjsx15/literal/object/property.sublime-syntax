@@ -22,6 +22,10 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  constantIdentifier: |
+    [$_[:upper:]]
+    [$_[:upper:][:digit:]]*
+
 contexts:
   main:
     # String property name.
@@ -32,6 +36,15 @@ contexts:
       captures:
         1: keyword.operator.other.computed-property.begin.js.fjsx15
       set: computed-property
+    # Constant.
+    - match: |
+        (?xi)\s*
+        ({{constantIdentifier}})
+      captures:
+        1: >-
+          object.property.js.fjsx15
+          entity.name.constant.js.fjsx15
+      pop: true
     # Normal property.
     - match: |
         (?xi)\s*

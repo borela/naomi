@@ -22,6 +22,10 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  constantIdentifier: |
+    [$_[:upper:]]
+    [$_[:upper:][:digit:]]*
+
 contexts:
   main:
     # Exact.
@@ -89,6 +93,15 @@ contexts:
       pop: true
 
   property:
+    # Constant.
+    - match: |
+        (?xi)
+        ({{constantIdentifier}})(\?)?
+      captures:
+        1: entity.name.constant.js.fjsx15
+        2: keyword.operator.other.optional.flowtype
+      set: type
+    # Normal property.
     - match: |
         (?xi)
         ({{commonIdentifier}})(\?)?
@@ -96,6 +109,7 @@ contexts:
         1: entity.name.variable.js.fjsx15
         2: keyword.operator.other.optional.flowtype
       set: type
+    # Anything else.
     - match: (?=\S)
       set: [
         type,

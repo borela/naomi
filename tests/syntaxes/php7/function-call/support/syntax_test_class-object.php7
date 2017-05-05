@@ -14,71 +14,54 @@
 
 <?php
     class_alias ();
-//  ^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     class_exists ();
-//  ^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     get_called_class ();
-//  ^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     get_class_methods ();
-//  ^^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     get_class_vars ();
-//  ^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.function.php.php7
     get_class ();
-//  ^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     get_declared_classes ();
-//  ^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     get_declared_interfaces ();
-//  ^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     get_declared_traits ();
-//  ^^^^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     get_object_vars ();
-//  ^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^ entity.name.function.php.php7
     get_parent_class ();
-//  ^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     interface_exists ();
-//  ^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     is_a ();
-//  ^^^^ function.call.php.php7
 //  ^^^^ support.php.php7
 //  ^^^^ entity.name.function.php.php7
     is_subclass_of ();
-//  ^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.function.php.php7
     method_exists ();
-//  ^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.function.php.php7
     property_exists ();
-//  ^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^ entity.name.function.php.php7
     trait_exists ();
-//  ^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
 ?>

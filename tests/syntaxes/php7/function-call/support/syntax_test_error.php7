@@ -14,51 +14,39 @@
 
 <?php
     debug_backtrace();
-//  ^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^ entity.name.function.php.php7
     debug_print_backtrace();
-//  ^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     error_clear_last();
-//  ^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     error_get_last();
-//  ^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.function.php.php7
     error_log();
-//  ^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     error_reporting();
-//  ^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^ entity.name.function.php.php7
     restore_error_handler();
-//  ^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     restore_exception_handler();
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     set_error_handler();
-//  ^^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     set_exception_handler();
-//  ^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     trigger_error();
-//  ^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.function.php.php7
     user_error();
-//  ^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
 ?>

@@ -14,71 +14,54 @@
 
 <?php
     flush();
-//  ^^^^^ function.call.php.php7
 //  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     ob_clean();
-//  ^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     ob_end_clean();
-//  ^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     ob_end_flush();
-//  ^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     ob_flush();
-//  ^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     ob_get_clean();
-//  ^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     ob_get_contents();
-//  ^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^ entity.name.function.php.php7
     ob_get_flush();
-//  ^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     ob_get_length();
-//  ^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.function.php.php7
     ob_get_level();
-//  ^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     ob_get_status();
-//  ^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.function.php.php7
     ob_gzhandler();
-//  ^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     ob_implicit_flush();
-//  ^^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     ob_list_handlers();
-//  ^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     ob_start();
-//  ^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     output_add_rewrite_var();
-//  ^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     output_reset_rewrite_vars();
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
 ?>

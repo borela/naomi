@@ -67,5 +67,4 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/function/return-type-hint.sublime-syntax
 
   body:
-    - meta_scope: function.php.php7
     - include: Packages/Naomi/syntaxes/php7/function/body.sublime-syntax

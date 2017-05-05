@@ -29,8 +29,6 @@ contexts:
         1: punctuation.delimiter.function.parameters.begin.php.php7
       set: parameters
 
-
-
   comment:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
 
@@ -66,11 +64,11 @@ contexts:
       ]
 
   variable-type:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: comment
     - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
 
   variadic-or-reference-operator:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: comment
     - match: (?=\s*\$)
       pop: true
     - match: \s*(\&)
@@ -83,7 +81,7 @@ contexts:
       pop: true
 
   reference-operator:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: comment
     - match: (?=\s*\$)
       pop: true
     - match: \s*(\&)
@@ -92,11 +90,11 @@ contexts:
       pop: true
 
   param-variable:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
+    - include: comment
+    - include: Packages/Naomi/syntaxes/php7/function/parameter.sublime-syntax
 
   param-optional-default-value:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: comment
     - match: (?=\s*(?>,|\)))
       pop: true
     - match: \s*(=)
@@ -105,7 +103,7 @@ contexts:
       set: param-default-value
 
   param-default-value:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: comment
     - match: (?=\s*(?>,|\)))
       pop: true
     - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
@@ -121,7 +119,7 @@ contexts:
       ]
 
   param-delimiter:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: comment
     - match: (?=\s*\))
       pop: true
     - match: \s*(,)

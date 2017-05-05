@@ -24,44 +24,14 @@ variables:
 
 contexts:
   main:
-    - include: support-variable
-    - include: common-variable
-
-  support-variable:
-    - match: |
-        (?x)\s*
-        \B(\$)(
-          (?> argc
-            | argv
-            | php_errormsg
-            | http_response_header
-            | this
-            | GLOBALS
-            | _
-              (?> SERVER
-                | GET
-                | POST
-                | FILES
-                | REQUEST
-                | SESSION
-                | COOKIE
-              )
-          )
-        )\b
-      captures:
-        1: >-
-          support.php.php7
-          punctuation.delimiter.variable.begin.php.php7
-        2: >-
-          support.php.php7
-          entity.name.variable.php.php7
-      pop: true
-
-  common-variable:
     - match: |
         (?xi)\s*
         \B(\$)({{commonIdentifier}})\b
       captures:
-        1: punctuation.delimiter.variable.begin.php.php7
-        2: entity.name.variable.php.php7
+        1: >-
+          function.parameter.php.php7
+          punctuation.delimiter.variable.begin.php.php7
+        2: >-
+          function.parameter.php.php7
+          entity.name.variable.php.php7
       pop: true

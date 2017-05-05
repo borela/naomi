@@ -23,7 +23,8 @@
 }
 
 .function.parameter {
-  .entity.name.variable {
+  .entity.name.variable,
+  .punctuation.delimiter.variable {
     foreground: $orange-200;
   }
 }

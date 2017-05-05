@@ -250,7 +250,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.function.parameter .entity.name.variable</string>
+			<string>.function.parameter .entity.name.variable, .function.parameter .punctuation.delimiter.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

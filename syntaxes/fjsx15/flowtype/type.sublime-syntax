@@ -157,12 +157,7 @@ contexts:
 
   operators:
     - include: comment
-    - match: \s*(\+)(?!(?>\+|=))
-      captures:
-        1: keyword.operator.other.covariant.flowtype
-    - match: \s*(-)(?!(?>-|=))
-      captures:
-        1: keyword.operator.other.contravariant.flowtype
+    - include: co-contravariant
     - match: |
         (?x)
         \s*(&)
@@ -186,6 +181,9 @@ contexts:
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  co-contravariant:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/co-contravariant.no-pop.sublime-syntax
 
   template:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax

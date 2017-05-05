@@ -17,29 +17,11 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [$_[:alpha:]]
-    [$_[:alnum:]]*
-
 contexts:
   main:
-    - match: |
-        (?xi)
-        (?:\s*
-          (?> (\+)
-            | (-)
-          )
-        )?
-        \s*({{commonIdentifier}})
-        \s*(\?)?
-        (?=\s*:)
+    - match: \s*(\+)(?!(?>\+|=))
       captures:
         1: keyword.operator.other.covariant.flowtype
-        2: keyword.operator.other.contravariant.flowtype
-        3: entity.name.variable.js.fjsx15
-        4: keyword.operator.other.optional.flowtype
-      set: type
-
-  type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+    - match: \s*(-)(?!(?>-|=))
+      captures:
+        1: keyword.operator.other.contravariant.flowtype

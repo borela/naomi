@@ -28,9 +28,18 @@ variables:
 
 contexts:
   main:
-    - match: \s*(\[)
+    - match: |
+        (?x)
+        (?:\s*
+          (?> (\+)
+            | (-)
+          )
+        )?
+        \s*(\[)
       captures:
-        1: punctuation.delimiter.object.flowtype
+        1: keyword.operator.other.covariant.flowtype
+        2: keyword.operator.other.contravariant.flowtype
+        3: punctuation.delimiter.object.flowtype
       set: [
         type,
         lookup-table-end,

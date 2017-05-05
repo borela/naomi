@@ -37,7 +37,7 @@ contexts:
     - include: end
     - match: ""
       push:
-        - match: (?=,|])
+        - match: (?=\s*(?>,|]))
           pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 

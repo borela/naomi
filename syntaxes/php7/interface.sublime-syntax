@@ -24,60 +24,64 @@ scope: ...
 
 contexts:
   main:
-    - match: (?i)\binterface(?!\\)\b
-      scope: keyword.interface.php.php7
+    - match: (?i)\s*\b(interface)(?!\\)\b
+      captures:
+        1: keyword.interface.php.php7
       set: declaration
 
-  declaration:
-    - meta_scope: interface.php.php7
+  comment:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+
+  declaration:
+    - include: comment
     # Extends.
-    - match: (?i)\bextends\b
-      scope: keyword.inherit.php.php7
+    - match: (?i)\s*\b(extends)\b
+      captures:
+        1: keyword.inherit.php.php7
       push: extend-targets
     # interface’s name.
-    - match: (?xi)\b{{commonIdentifier}}\b
-      scope: entity.name.interface.php.php7
+    - match: (?xi)\s*\b({{commonIdentifier}})\b
+      captures:
+        1: entity.name.interface.php.php7
     # Body.
-    - match: \{
-      scope: >-
-        interface.body.php.php7
-        punctuation.delimiter.interface.body.begin.php.php7
+    - match: \s*(\{)
+      captures:
+        1: punctuation.delimiter.interface.body.begin.php.php7
       set: body
 
   body:
-    - meta_content_scope: >-
-        interface.php.php7
-        interface.body.php.php7
-        interface.body.content.php.php7
-    - match: \}
-      scope: >-
-        interface.php.php7
-        interface.body.php.php7
-        punctuation.delimiter.interface.body.end.php.php7
+    - match: \s*(})
+      captures:
+        1: punctuation.delimiter.interface.body.end.php.php7
       pop: true
-    # Body’s content.
-    - include: Packages/Naomi/syntaxes/php7/statement.no-pop.sublime-syntax
+    - include: body-content
+
+  body-content:
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax
+        - match: ""
+          pop: true
 
   extend-targets:
-    - meta_scope: extend.php.php7
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?=\{)
+    - include: comment
+    - match: (?=\s*\{)
       pop: true
-    - match: (?=\S)
+    - match: (?=\s*\S)
       push: [
         extend-target-delimiter,
         extend-target
       ]
 
   extend-target:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: comment
     - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
 
   extend-target-delimiter:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: ","
-      scope: punctuation.delimiter.extend.php.php7
+    - include: comment
+    - match: \s*(,)
+      captures:
+        1: punctuation.delimiter.extend.php.php7
       pop: true
-    - match: (?=\S)
+    - match: (?=\s*\S)
       pop: true

@@ -31,13 +31,6 @@ variables:
 
 contexts:
   main:
-    - match: ""
-      set: [
-        optional-operator,
-        loop-begin
-      ]
-
-  loop-begin:
     # Open new expression group.
     - match: |
         (?xi)\s*
@@ -158,8 +151,6 @@ contexts:
 
   optional-operator:
     - include: comment
-    - match: (?=\s*})
-      pop: true
     - match: |
         (?x)
         \s*(&)
@@ -187,8 +178,9 @@ contexts:
       pop: true
 
   enveloped-nullable-end:
-    - match: \)
-      scope: punctuation.delimiter.nullable.end.flowtype
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.nullable.end.flowtype
       pop: true
 
   comment:

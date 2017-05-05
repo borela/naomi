@@ -59,6 +59,7 @@ contexts:
         (?=
           (?:\s*\*)?
           \s*{{methodIdentifier}}
+          (?:\s*<.*>)?
           \s*\(
         )
       set: declaration
@@ -93,7 +94,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
 
   declaration:
-      pop: true
     # Body.
     - match: (?=\s*\{)
       set: body
@@ -136,14 +136,15 @@ contexts:
           keyword.generator.js.fjsx15
         2: keyword.operator.other.computed-function.begin.js.fjsx15
       push: computed-function
-    # Other identifier types.
-    - match: ""
+    # String identifiers
+    - match: (?=(?>'|"|`))
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
-        - match: ""
-          pop: true
+    # None of the expected items matched, it probably ended.
+    - match: (?=\s*\S)
+      pop: true
 
   template-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax

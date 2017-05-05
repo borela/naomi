@@ -43,16 +43,6 @@ contexts:
       set: declaration
 
   declaration:
-    - match: |
-        (?x)
-        (?=\s*
-          (?> ;
-            | \)
-            | ]
-            | }
-          )
-        )
-      pop: true
     # Template parameters.
     - match: (?=\s*<)
       push: template-parameters
@@ -69,6 +59,9 @@ contexts:
           storage.modifier.js.fjsx15
           keyword.generator.js.fjsx15
         2: entity.name.function.js.fjsx15
+    # None of the expected items matched, it probably ended.
+    - match: (?=\s*\S)
+      pop: true
 
   template-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax

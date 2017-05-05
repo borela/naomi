@@ -123,6 +123,7 @@ contexts:
     # Expression.
     # - include: Packages/Naomi/syntaxes/php7/array-access.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/namespace.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
     # - include: Packages/Naomi/syntaxes/php7/global.sublime-syntax
     # - include: Packages/Naomi/syntaxes/php7/reactjs.sublime-syntax

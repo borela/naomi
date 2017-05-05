@@ -52,18 +52,7 @@ contexts:
           pop: true
 
   link:
-    - match: |
-        (?xi)\s*
-        ([[:alnum:]]+://\S+)\s
-      captures:
-        1: entity.link.js.fjsx15
+    - include: Packages/Naomi/syntaxes/shared/link.sublime-syntax
 
   email:
-    - match: |
-        (?xi)\s*
-        (?> ([.[:alnum:]]+@[.[:alnum:]]+)\s
-          | (<[.[:alnum:]]+@[.[:alnum:]]+>)
-        )
-      captures:
-        1: entity.email.js.fjsx15
-        2: entity.email.js.fjsx15
+    - include: Packages/Naomi/syntaxes/shared/email.sublime-syntax

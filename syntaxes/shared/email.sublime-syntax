@@ -20,21 +20,10 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?xi)
-        <!--
-      scope: punctuation.comment.block.begin.html.html5
-      set: comment
-
-  comment:
-    - meta_scope: comment.block.html.html5
-    - include: email
-    - include: link
-    - match: -->
-      scope: punctuation.comment.block.end.html.html5
-      pop: true
-
-  link:
-    - include: Packages/Naomi/syntaxes/shared/link.sublime-syntax
-
-  email:
-    - include: Packages/Naomi/syntaxes/shared/email.sublime-syntax
+        (?xi)\s*
+        (?> ([.[:alnum:]]+@[.[:alnum:]]+)\s
+          | (<[.[:alnum:]]+@[.[:alnum:]]+>)
+        )
+      captures:
+        1: entity.email
+        2: entity.email

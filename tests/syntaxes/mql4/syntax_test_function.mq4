@@ -13,47 +13,25 @@
 // the License.
 
     virtual void Myfunction(   ) = 0;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ function.mql.mql4
 //  ^^^^^^^ keyword.modifier.mql.mql4
 //          ^^^^ support.mql.mql4
 //          ^^^^ entity.name.type.mql.mql4
 //               ^^^^^^^^^^ entity.name.function.mql.mql4
-//                         ^^^^^ function.parameters.mql.mql4
-//                          ^^^ function.parameters.content.mql.mql4
-
     virtual void Myfunction(   ) = NULL;
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ function.mql.mql4
 //  ^^^^^^^ keyword.modifier.mql.mql4
 //          ^^^^ support.mql.mql4
 //          ^^^^ entity.name.type.mql.mql4
 //               ^^^^^^^^^^ entity.name.function.mql.mql4
-//                         ^^^^^ function.parameters.mql.mql4
-//                          ^^^ function.parameters.content.mql.mql4
-
-
     static void Myfunction(   ){   }
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ function.mql.mql4
 //  ^^^^^^ keyword.modifier.mql.mql4
 //         ^^^^ support.mql.mql4
 //         ^^^^ entity.name.type.mql.mql4
 //              ^^^^^^^^^^ entity.name.function.mql.mql4
-//                        ^^^^^ function.parameters.mql.mql4
-//                         ^^^ function.parameters.content.mql.mql4
-
-
     void Myfunction(   ){   }
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^ function.mql.mql4
 //  ^^^^ support.mql.mql4
 //  ^^^^ entity.name.type.mql.mql4
 //       ^^^^^^^^^^ entity.name.function.mql.mql4
-//                 ^^^^^ function.parameters.mql.mql4
-//                  ^^^ function.parameters.content.mql.mql4
-
-
     void Myfunction(void){   }
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ function.mql.mql4
 //  ^^^^ support.mql.mql4
 //  ^^^^ entity.name.type.mql.mql4
 //       ^^^^^^^^^^ entity.name.function.mql.mql4
-//                 ^^^^^ function.parameters.mql.mql4
-//                  ^^^ function.parameters.content.mql.mql4

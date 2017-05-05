@@ -157,6 +157,12 @@ contexts:
 
   operators:
     - include: comment
+    - match: \s*(\+)(?!(?>\+|=))
+      captures:
+        1: keyword.operator.other.covariant.flowtype
+    - match: \s*(-)(?!(?>-|=))
+      captures:
+        1: keyword.operator.other.contravariant.flowtype
     - match: |
         (?x)
         \s*(&)

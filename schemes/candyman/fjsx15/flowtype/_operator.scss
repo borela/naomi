@@ -11,10 +11,12 @@
 // the License.
 
 .keyword.operator.other {
-  &.flowtype,
   &.association.flowtype,
   &.cast.flowtype,
+  &.contravariant.flowtype,
+  &.covariant.flowtype,
   &.existential.flowtype,
+  &.flowtype,
   &.intersection.flowtype,
   &.nullable.flowtype,
   &.optional.flowtype,

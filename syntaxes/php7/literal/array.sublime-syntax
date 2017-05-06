@@ -33,7 +33,6 @@ contexts:
       set: items
 
   short-array-items:
-    - meta_scope: type.array.php.php7
     - match: \s*(])
       captures:
         1: punctuation.delimiter.array.end.php.php7
@@ -42,7 +41,6 @@ contexts:
       push: key-or-value
 
   items:
-    - meta_scope: type.array.php.php7
     - match: \s*(\))
       captures:
         1: punctuation.delimiter.array.end.php.php7
@@ -55,7 +53,7 @@ contexts:
     - include: item-delimiter
     - match: \s*(=>)
       captures:
-        1: keyword.operator.other.key.association.php.php7
+        1: punctuation.delimiter.array.association.php.php7
       set: value
     - match: ""
       push:

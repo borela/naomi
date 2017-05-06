@@ -27,12 +27,14 @@ contexts:
     - match: (?i)\s*\b(new)\b
       scope: keyword.other.php.php7
       set: [
-        arguments,
+        optional-arguments,
         type
       ]
 
-  arguments:
+  optional-arguments:
     - include: Packages/Naomi/syntaxes/php7/function-call/arguments.sublime-syntax
+    - match: (?=\s*\S)
+      pop: true
 
   type:
     - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax

@@ -22,9 +22,9 @@ contexts:
     - match: |
         (?x)\s*
         (?<= [$_[:alnum:]]
+          | ]
           | \)
         )
-        (?<!\sof)
         \s*(\[)
       captures:
         1: punctuation.delimiter.array.access.begin.php.php7

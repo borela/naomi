@@ -106,6 +106,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/trait.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/namespace.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/closure.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/use.sublime-syntax
     # Simple statements.
     - include: Packages/Naomi/syntaxes/php7/goto.sublime-syntax
@@ -122,10 +123,13 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
     # When it comes to constants and variables, there's no way to tell apart
     # without an intellisense, so it’ll treat that anything that looks a
     # uppercase variable as if it was a constant.
     - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
+    # Some types can look like constants but we will give the power to the user
+    # to override types and in turn we get some predefined constants highlighted
+    # correctly..
+    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
     # Constant matching failed, so it could be a variable.
     - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax

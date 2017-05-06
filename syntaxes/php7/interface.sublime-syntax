@@ -26,7 +26,9 @@ contexts:
   main:
     - match: (?i)\s*\b(interface)(?!\\)\b
       captures:
-        1: keyword.interface.php.php7
+        1: >-
+          storage.type.php.php7
+          keyword.interface.php.php7
       set: declaration
 
   comment:
@@ -37,7 +39,9 @@ contexts:
     # Extends.
     - match: (?i)\s*\b(extends)\b
       captures:
-        1: keyword.inherit.php.php7
+        1: >-
+          storage.modifier.php.php7
+          keyword.inherit.php.php7
       push: extend-targets
     # interface’s name.
     - match: (?xi)\s*\b({{commonIdentifier}})\b

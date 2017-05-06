@@ -26,7 +26,9 @@ contexts:
   main:
     - match: (?xi)\s*\b(trait)(?!\\)\b
       captures:
-        1: keyword.trait.php.php7
+        1: >-
+          storage.type.php.php7
+          keyword.trait.php.php7
       set: declaration
 
   comment:

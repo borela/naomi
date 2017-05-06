@@ -48,7 +48,9 @@ contexts:
   keyword:
     - match: (?i)\s*\b(class)(?!\\)\b
       captures:
-        1: keyword.class.php.php7
+        1: >-
+          storage.type.php.php7
+          keyword.class.php.php7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/modifier.no-pop.sublime-syntax
 
@@ -60,12 +62,16 @@ contexts:
     # Extends.
     - match: (?i)\s*\b(extends)\b
       captures:
-        1: keyword.inherit.php.php7
+        1: >-
+          storage.modifier.php.php7
+          keyword.inherit.php.php7
       push: extend-target
     # Implements.
     - match: (?i)\s*\b(implements)\b
       captures:
-        1: keyword.implement.php.php7
+        1: >-
+          storage.modifier.php.php7
+          keyword.implement.php.php7
       push: implement-targets
     # Class’s name.
     - match: (?xi)\s*\b({{commonIdentifier}})\b

@@ -21,7 +21,9 @@ contexts:
   main:
     - match: (?xi)\s*\b(namespace)(?!\\)\b
       captures:
-        1: keyword.namespace.php.php7
+        1: >-
+          storage.type.php.php7
+          keyword.namespace.php.php7
       set: declaration
 
   declaration:

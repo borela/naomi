@@ -19,21 +19,17 @@ scope: ...
 
 contexts:
   main:
-    - match: (?i)\babstract\b
-      scope: keyword.modifier.abstract.php.php7
-      pop: true
-    - match: (?i)\bstatic\b
-      scope: keyword.modifier.static.php.php7
-      pop: true
-    - match: (?i)\bfinal\b
-      scope: keyword.modifier.final.php.php7
-      pop: true
-    - match: (?i)\bpublic\b
-      scope: keyword.modifier.public.php.php7
-      pop: true
-    - match: (?i)\bprotected\b
-      scope: keyword.modifier.protected.php.php7
-      pop: true
-    - match: (?i)\bprivate\b
-      scope: keyword.modifier.private.php.php7
+    - match: |
+        (?xi)\s*\b
+        ((?> abstract
+          | static
+          | final
+          | public
+          | protected
+          | private
+        ))\b
+      captures:
+        1: >-
+          storage.modifier.php.php7
+          keyword.modifier.php.php7
       pop: true

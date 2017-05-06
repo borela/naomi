@@ -17,21 +17,22 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
-    - match: |
-        (?x)\s*\b
-        ((?> break
-          | continue
-        ))\b
-      captures:
-        1: keyword.control.flow-break.mql.mql4
-      pop: true
-    - match: |
-        (?xi)\s*\b
-        ((?> default
-          | delete
-        ))\b
+    - match: \s*(goto)
       captures:
         1: keyword.control.mql.mql4
+      set: label
+
+  label:
+    - match: |
+        (?xi)
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.label.mql.mql4
       pop: true

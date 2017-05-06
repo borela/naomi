@@ -37,10 +37,8 @@ contexts:
     - match: |
         (?x)\s*
         ((?> await
-          | de
-            (?> fault
-              | lete
-            )
+          | default
+          | delete
         ))\b
       captures:
         1: keyword.control.js.fjsx15

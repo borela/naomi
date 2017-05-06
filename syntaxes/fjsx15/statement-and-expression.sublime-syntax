@@ -107,6 +107,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
     # Simple statements.
+    - include: Packages/Naomi/syntaxes/fjsx15/goto.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/statement/label.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/statement/hanging.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/statement/bodied.sublime-syntax

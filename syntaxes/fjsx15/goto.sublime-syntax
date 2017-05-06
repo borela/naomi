@@ -24,29 +24,15 @@ variables:
 
 contexts:
   main:
-    # Type after new.
+    - match: \s*(goto)
+      captures:
+        1: keyword.control.js.fjsx15
+      set: label
+
+  label:
     - match: |
-        (?xi)\s*
-        (new)
-        (?=
-          \s+{{commonIdentifier}}
-        )
+        (?xi)
+        ({{commonIdentifier}})
       captures:
-        1: keyword.other.js.fjsx15
-      set: [
-        arguments,
-        type
-      ]
-    # Accept any expression after the keyword.
-    - match: (?i)\s*(new)\b
-      captures:
-        1: keyword.other.js.fjsx15
+        1: entity.name.label.js.fjsx15
       pop: true
-
-  arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
-    - match: ""
-      pop: true
-
-  type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax

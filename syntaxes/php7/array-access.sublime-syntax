@@ -37,6 +37,6 @@ contexts:
       pop: true
     - match: ""
       push:
-        - match: (?=\s*])
-          pop: true
         - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax
+        - match: ""
+          pop: true

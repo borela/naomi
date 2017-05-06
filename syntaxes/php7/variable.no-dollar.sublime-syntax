@@ -29,7 +29,4 @@ contexts:
         \b({{commonIdentifier}})\b
       captures:
         1: entity.name.variable.php.php7
-      set: array-item-access
-
-  array-item-access:
-    - include: Packages/Naomi/syntaxes/php7/variable/array-item-access.sublime-syntax
+      pop: true

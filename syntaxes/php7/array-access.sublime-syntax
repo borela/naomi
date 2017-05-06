@@ -20,13 +20,23 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?xi)\s*\b
-        ((?> clone
-          | die
-          | e(?>cho|val|xit)
-          | include(?:_once)?
-          | require(?:_once)?
-        ))\b
+        (?x)\s*
+        (?<= [$_[:alnum:]]
+          | \)
+        )
+        (?<!\sof)
+        \s*(\[)
       captures:
-        1: keyword.other.php.php7
+        1: punctuation.delimiter.array.access.begin.php.php7
+      set: index
+
+  index:
+    - match: \s*(])
+      captures:
+        1: punctuation.delimiter.array.access.end.php.php7
       pop: true
+    - match: ""
+      push:
+        - match: (?=\s*])
+          pop: true
+        - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax

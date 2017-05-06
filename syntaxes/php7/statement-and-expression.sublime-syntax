@@ -114,13 +114,13 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/statement/hanging.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/statement/bodied.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/statement/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/statement/other.sublime-syntax
+    # Other keywords.
     - include: Packages/Naomi/syntaxes/php7/modifier.sublime-syntax
-    # Expression keywords.
     # - include: Packages/Naomi/syntaxes/php7/instanceof.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/new.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/other-keywords.sublime-syntax
     # Expression.
-    # - include: Packages/Naomi/syntaxes/php7/array-access.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/array-access.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax

@@ -18,17 +18,11 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [$_[:alpha:]]
-    [$_[:alnum:]]*
-
   expressionGroupBegin: |
     \s*(\()
 
 contexts:
   main:
-    # - include: arrow-function
-    # - include: cast-operator
     # Open new expression group.
     - match: |
         (?xi)
@@ -40,8 +34,6 @@ contexts:
     - include: sequence
 
   open-a-close-b:
-    # - include: arrow-function
-    # - include: cast-operator
     # Open new expression group.
     - match: |
         (?xi)
@@ -62,8 +54,6 @@ contexts:
           pop: true
 
   open-b-close-a:
-    # - include: arrow-function
-    # - include: cast-operator
     # Open new expression group.
     - match: |
         (?xi)
@@ -83,20 +73,6 @@ contexts:
         - match: ""
           pop: true
 
-  # cast-operator:
-  #   - match: |
-  #       (?xi)
-  #       (?=
-  #         \s*\(
-  #         {{commonIdentifier}}
-  #         \s*:
-  #       )
-  #     push:
-  #       - include: Packages/Naomi/syntaxes/php7/flowtype/cast.sublime-syntax
-
-  # arrow-function:
-  #   - include: Packages/Naomi/syntaxes/php7/arrow-function.sublime-syntax
-
   sequence:
     - include: Packages/Naomi/syntaxes/php7/terminator.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
@@ -104,6 +80,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/interface.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/trait.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/declare.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/namespace.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/closure.sublime-syntax
@@ -117,7 +94,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/statement/other.sublime-syntax
     # Other keywords.
     - include: Packages/Naomi/syntaxes/php7/modifier.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/instanceof.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/new.sublime-syntax
     # Expression.
     - include: Packages/Naomi/syntaxes/php7/array-access.sublime-syntax

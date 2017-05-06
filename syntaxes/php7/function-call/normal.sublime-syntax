@@ -24,6 +24,18 @@ scope: ...
 
 contexts:
   main:
+    # Closure.
+    - match: |
+        (?xi)
+        (?=
+          \s*\B(\$)({{commonIdentifier}})\b
+          \s*\(
+        )
+      set: [
+        arguments,
+        variable
+      ]
+    # Actual function.
     - match: |
         (?xi)\s*
         ((?>\\|\b))
@@ -34,6 +46,9 @@ contexts:
         1: punctuation.delimiter.function.php.php7
         2: entity.name.function.php.php7
       set: arguments
+
+  variable:
+    - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
 
   arguments:
     - include: Packages/Naomi/syntaxes/php7/function-call/arguments.sublime-syntax

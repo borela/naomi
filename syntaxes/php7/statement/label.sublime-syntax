@@ -24,41 +24,11 @@ variables:
 
 contexts:
   main:
-    - include: break-continue
-    - include: yield
     - match: |
-        (?x)\s*
-        ((?> return
-          | throw
-        ))\b
-      captures:
-        1: keyword.control.flow-break.php.php7
-      pop: true
-    - match: |
-        (?x)\s*
-        ((?> await
-          | de
-            (?> fault
-              | lete
-            )
-        ))\b
-      captures:
-        1: keyword.control.php.php7
-      pop: true
-
-  break-continue:
-    - match: |
-        (?x)\s*
-        ((?> break
-          | continue
-        ))\b
-      captures:
-        1: keyword.control.flow-break.php.php7
-      set: optional-label
-
-  optional-label:
-    - match: |
-        (?xi)\s*
+        (?xi)
+        (?> ^
+          | (?<=;)
+        )\s*
         ({{commonIdentifier}})
         (?<! abstract
           | boolean
@@ -120,23 +90,7 @@ contexts:
           | while
           | with
         )
-        (?=\W)
+        \s*(:)
       captures:
         1: entity.name.label.php.php7
-      pop: true
-    - match: ""
-      pop: true
-
-  yield:
-    - match: |
-        (?x)\s*
-        (yield)
-        (?> \s*(\*)
-          | \b
-        )
-      captures:
-        1: keyword.control.php.php7
-        2: >-
-          statement.modifier.php.php7
-          keyword.generator.php.php7
-      pop: true
+        2: keyword.operator.other.php.php7

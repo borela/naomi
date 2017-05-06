@@ -99,40 +99,30 @@ contexts:
 
   sequence:
     - include: Packages/Naomi/syntaxes/php7/terminator.sublime-syntax
-    # Comments.
-    # - include: Packages/Naomi/syntaxes/php7/flowtype/prolog.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/comment.sublime-syntax
-    # Simple statements.
-    # - include: Packages/Naomi/syntaxes/php7/statement/label.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/statement/hanging.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/statement/bodied.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/statement/simple.sublime-syntax
     # Complex statements.
-    # - include: Packages/Naomi/syntaxes/php7/flowtype/interface.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/flowtype/type-aliasing.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/flowtype/declare.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/export.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/import.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/interface.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/trait.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/namespace.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/use.sublime-syntax
+    # Simple statements.
+    - include: Packages/Naomi/syntaxes/php7/goto.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/statement/label.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/statement/hanging.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/statement/bodied.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/statement/simple.sublime-syntax
     # Expression keywords.
     # - include: Packages/Naomi/syntaxes/php7/instanceof.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/new.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/new.sublime-syntax
     # - include: Packages/Naomi/syntaxes/php7/other-keywords.sublime-syntax
     # Expression.
     # - include: Packages/Naomi/syntaxes/php7/array-access.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/global.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/reactjs.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/destructuring.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/jsx1.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/operator.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
     # When it comes to constants and variables, there's no way to tell apart
     # without an intellisense, so it’ll treat that anything that looks a
     # uppercase variable as if it was a constant.

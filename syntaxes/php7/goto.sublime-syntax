@@ -17,22 +17,22 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
-    - match: |
-        (?x)\s*
-        ((?> case
-          | default
-        ))\b
+    - match: \s*(goto)
       captures:
         1: keyword.control.php.php7
-      set: operator
+      set: label
 
-  operator:
-    - match: \s*(:)
+  label:
+    - match: |
+        (?xi)
+        ({{commonIdentifier}})
       captures:
-        1: keyword.operator.other.php.php7
+        1: entity.name.label.php.php7
       pop: true
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax

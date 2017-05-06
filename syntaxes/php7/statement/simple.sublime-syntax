@@ -37,10 +37,7 @@ contexts:
     - match: |
         (?x)\s*
         ((?> await
-          | de
-            (?> fault
-              | lete
-            )
+          | default
         ))\b
       captures:
         1: keyword.control.php.php7

@@ -14,14 +14,14 @@
 
 <?php
     abstract class MyClass {   }
-//  ^^^^^^^^ keyword.modifier.abstract.php.php7
+//  ^^^^^^^^ keyword.modifier.php.php7
 //           ^^^^^ keyword.class.php.php7
 //                 ^^^^^^^ entity.name.class.php.php7
 //                         ^ punctuation.delimiter.class.body.begin.php.php7
 //                             ^ punctuation.delimiter.class.body.end.php.php7
 
     final class MyClass {   }
-//  ^^^^^ keyword.modifier.final.php.php7
+//  ^^^^^ keyword.modifier.php.php7
 //        ^^^^^ keyword.class.php.php7
 //              ^^^^^^^ entity.name.class.php.php7
 //                      ^ punctuation.delimiter.class.body.begin.php.php7

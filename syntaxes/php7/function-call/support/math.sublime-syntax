@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)
+        (?x)\s*
         ((?>\\|\b))
         (
           (?> abs
@@ -63,7 +63,6 @@ contexts:
           )
         )\b
       captures:
-        0: function.call.php.php7
         1: punctuation.delimiter.support.php.php7
         2: >-
           support.php.php7

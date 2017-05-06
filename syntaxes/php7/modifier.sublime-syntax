@@ -22,11 +22,12 @@ contexts:
     - match: |
         (?xi)\s*\b
         ((?> abstract
-          | static
           | final
-          | public
-          | protected
+          | global
           | private
+          | protected
+          | public
+          | static
         ))\b
       captures:
         1: >-

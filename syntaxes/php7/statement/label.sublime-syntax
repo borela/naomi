@@ -91,6 +91,7 @@ contexts:
           | with
         )
         \s*(:)
+        (?!:)
       captures:
         1: entity.name.label.php.php7
         2: keyword.operator.other.php.php7

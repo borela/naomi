@@ -38,7 +38,7 @@ contexts:
           | \.
         ))
       captures:
-        1: keyword.operator.other.member.access.mql.mql4
+        1: keyword.operator.other.member-access.mql.mql4
       set: member-access
     - match: \s*(\?)
       captures:

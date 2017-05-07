@@ -28,7 +28,7 @@ contexts:
       captures:
         1: >-
           storage.type.mql.mql4
-          keyword.struct.mql.mql4
+          keyword.declaration.struct.mql.mql4
       set: identifier
 
   identifier:

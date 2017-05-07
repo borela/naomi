@@ -71,8 +71,11 @@ contexts:
           \s*=
           \s*
             (?> \(.*\)
-              | {{commonIdentifier}}
+                (?:\s*<.*>)?
+              | {{commonIdentifier}
+                (?:\s*<.*>)?
             )
+          (?:\s*:.*?)?
           \s*=>
         )
       set: [

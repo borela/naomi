@@ -37,8 +37,8 @@ contexts:
         (?xi)\s*
         (
           (?> async\b
-            | get\b
-            | set\b
+            | get(?=\s*(?>\[|\w))
+            | set(?=\s*(?>\[|\w))
             | static (?:\s*(?>async|get|set)\b)?
           )
         )

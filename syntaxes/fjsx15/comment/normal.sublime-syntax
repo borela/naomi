@@ -19,10 +19,22 @@ scope: ...
 
 contexts:
   main:
+    # Flow block declaration.
+    - match: \s*(\/\*::)
+      captures:
+        1: punctuation.delimiter.comment.begin.flowtype
+      set: flow-block
+    # Flow associated type.
+    - match: \s*(\/\*(?=:))
+      captures:
+        1: punctuation.delimiter.comment.begin.flowtype
+      set: flow-associated-type
+    # Normal single line comment.
     - match: \s*(//)
       captures:
         1: punctuation.delimiter.comment.begin.js.fjsx15
       set: line
+    # Normal block comment.
     - match: \s*(/\*)
       captures:
         1: punctuation.delimiter.comment.begin.js.fjsx15
@@ -35,6 +47,54 @@ contexts:
     - include: link
     - match: \s*$
       pop: true
+
+  flow-associated-type:
+    - meta_scope: comment.block.flowtype
+    - match: \s*(\*/)
+      captures:
+        1: punctuation.delimiter.comment.end.js.fjsx15
+      set:
+        # Used to fix the block comment indentation settings.
+        # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
+        - match: \s*$\n?
+          scope: meta.block-end.js.fjsx15
+          pop: true
+        - match: ''
+          pop: true
+    - match: ""
+      push:
+        - match: (?=\s*\*\/)
+          pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+
+  flow-block:
+    - meta_scope: comment.block.flowtype
+    - match: \s*(\*/)
+      captures:
+        1: punctuation.delimiter.comment.end.js.fjsx15
+      set:
+        # Used to fix the block comment indentation settings.
+        # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
+        - match: \s*$\n?
+          scope: meta.block-end.js.fjsx15
+          pop: true
+        - match: ''
+          pop: true
+    - match: ""
+      push:
+        - match: (?=\s*\*\/)
+          pop: true
+        - match: \s*(\?)(?=\s*:)
+          captures:
+            1: keyword.operator.other.optional.flowtype
+          set:
+            - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/declare.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/interface.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/lookup-table.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/module.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
 
   block:
     - meta_scope: comment.block.js.fjsx15

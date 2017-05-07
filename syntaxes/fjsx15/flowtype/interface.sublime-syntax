@@ -26,7 +26,9 @@ contexts:
   main:
     - match: \s*(interface)\b
       captures:
-        1: keyword.interface.flowtype
+        1: >-
+          storage.type.flowtype
+          keyword.declaration.interface.flowtype
       set: identifier
 
   identifier:
@@ -36,18 +38,21 @@ contexts:
         body,
         extension
       ]
-    - match: (?=\{)
+    - match: (?=\s*\{)
       set: body
     # Actual identifier.
-    - match: (?xi){{commonIdentifier}}
-      scope: entity.name.interface.flowtype
+    - match: (?xi)\s*({{commonIdentifier}})
+      captures:
+        1: entity.name.interface.flowtype
       set: optional-template-parameters
 
   extension:
     - include: comment
     - match: \s*(extends)\b
       captures:
-        1: keyword.extension.js.fjsx15
+        1: >-
+          storage.modifier.flowtype
+          keyword.extension.flowtype
       set: type
 
   type:
@@ -58,7 +63,7 @@ contexts:
 
   optional-template-parameters:
     - include: comment
-    - match: (?=<)
+    - match: (?=\s*<)
       set: [
         optional-extension,
         template-parameters
@@ -68,7 +73,7 @@ contexts:
         body,
         extension
       ]
-    - match: (?=\{)
+    - match: (?=\s*\{)
       set: body
 
   optional-extension:
@@ -78,20 +83,21 @@ contexts:
         body,
         extension
       ]
-    - match: (?=\{)
+    - match: (?=\s*\{)
       set: body
 
   body:
     - include: comment
-    - match: \{
-      scope: punctuation.delimiter.interface.body.begin.js.fjsx15
+    - match: \s*(\{)
+      captures:
+        1: punctuation.delimiter.interface.body.begin.flowtype
       set: body-content
 
   body-content:
     - include: comment
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.interface.body.end.js.fjsx15
+        1: punctuation.delimiter.interface.body.end.flowtype
       pop: true
     - match: ""
       push:

@@ -3,21 +3,6 @@
 [![Sublime version](https://img.shields.io/badge/sublime%203->%3D3084-orange.svg?style=flat-square)][sublime]
 [![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)][license]
 
-Package designed to provide easy to extend syntax highlighting and other stuff
-that makes writting more fun.
-
-#### Constants vs Variables
-
-Sublime highlighting system is amazing, it uses only regular expressions and do
-a ton of optimizations on them which makes it very fast. That alone made me stop
-using IDEs that scans the project to perform the highlighting as I value
-responsiveness in a editor.
-
-But, it’s not without trade offs, in some languages is not possible to differentiate
-constants from variables just using regular expressions. The solution then is that
-you must have a coding style where all your constants are uppercase and it’ll
-highlight them fine.
-
 ## Installation
 
 #### Manual installation
@@ -32,7 +17,7 @@ The “Packages” directory is located at:
 * **Linux**: `~/.config/sublime-text-3/Packages`
 * **Windows**: `%APPDATA%\Sublime Text 3\Packages`
 
-#### Installing using package Control
+#### Installing using Package Control
 
 1. Install [Package Control](https://packagecontrol.io/installation).
 2. Run **Package Control: Install Package** command.
@@ -43,6 +28,11 @@ The “Packages” directory is located at:
 
 1. Go to the menu `View / Syntax / Naomi / ...` to select the new syntax.
 2. Select a color scheme provided in `Preferences / Color Scheme / Naomi`.
+
+**Notes:** The recommended color scheme is [Candyman][candyman] which covers many
+of the scopes and can serve as a starting point if you want to create your own using
+[CSScheme][csscheme]. Please look into the [DESIGN][design] document for a list
+of the available scopes and their structure.
 
 ### Sublime Linter
 
@@ -56,26 +46,13 @@ To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need 
   "syntax_map": {
     "naomi.fjsx15": "javascript",
     "naomi.html5": "html",
-    "naomi.scss3": "scss"
+    "naomi.mql4": "mql",
+    "naomi.php7": "php",
+    "naomi.scss3": "scss",
+    "naomi.xml1": "xml"
   }
 }
 ```
-
-#### Notes
-
-You aren’t required to use the color schemes provided but keep in mind
-that not all features are going to work with other ones, this is because Naomi
-use more specific scopes to allow better control when designing color schemes for
-each programming language.
-
-Most color schemes found online use very generic scopes and that’s why in most
-cases a color scheme will look great in one language but horrible in another. You
-can find the logic behind Naomi’s scopes in the [DESIGN][design] document or look
-into the color scheme [Candyman][candyman], it is the one used in the previews
-and it contain very specific rules for each language.
-
-Also, be aware of auto completion conflicts provided by other packages, you may
-need to disable them.
 
 ## Features
 
@@ -104,6 +81,7 @@ need to disable them.
 ![Candyman FJSX15 preview 2](./preview/fjsx15/candyman-2.png)
 
 [candyman]: ./schemes/candyman
+[csscheme]: https://github.com/FichteFoll/CSScheme
 [design]: ./DESIGN.md
 [license]: ./LICENSE.md
 [sublime]: http://www.sublimetext.com/

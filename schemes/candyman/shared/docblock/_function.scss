@@ -23,3 +23,12 @@
     foreground: rgba($deep-orange-a100, .7);
   }
 }
+
+.comment {
+  .function.parameter {
+    .entity.name.variable,
+    .punctuation.delimiter.variable {
+      foreground: rgba($orange-200, .7);
+    }
+  }
+}

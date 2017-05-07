@@ -36,3 +36,32 @@
     foreground: $brown-200;
   }
 }
+
+.comment {
+  .punctuation.delimiter {
+    &.array.flowtype,
+    &.array.begin.flowtype,
+    &.array.end.flowtype,
+    &.cast.begin.flowtype,
+    &.cast.end.flowtype,
+    &.function.parameters.begin.flowtype,
+    &.function.parameters.end.flowtype,
+    &.function.parameters.flowtype,
+    &.function.result.flowtype,
+    &.module.body.begin.flowtype,
+    &.module.body.end.flowtype,
+    &.nullable.begin.flowtype,
+    &.nullable.end.flowtype,
+    &.object.begin.flowtype,
+    &.object.end.flowtype,
+    &.object.flowtype,
+    &.template.arguments.begin.flowtype,
+    &.template.arguments.flowtype,
+    &.template.parameters.begin.flowtype,
+    &.template.parameters.end.flowtype,
+    &.template.parameters.flowtype,
+    &.template.arguments.end.flowtype {
+      foreground: rgba($brown-200, .7);
+    }
+  }
+}

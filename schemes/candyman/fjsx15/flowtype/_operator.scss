@@ -28,3 +28,24 @@
 .keyword.operator.other.utility.flowtype {
   foreground: $pink-a100;
 }
+
+.comment {
+  .keyword.operator.other {
+    &.association.flowtype,
+    &.cast.flowtype,
+    &.contravariant.flowtype,
+    &.covariant.flowtype,
+    &.existential.flowtype,
+    &.flowtype,
+    &.intersection.flowtype,
+    &.nullable.flowtype,
+    &.optional.flowtype,
+    &.union.flowtype {
+      foreground: rgba($brown-200, .7);
+    }
+  }
+
+  .keyword.operator.other.utility.flowtype {
+    foreground: rgba($pink-a100, .7);
+  }
+}

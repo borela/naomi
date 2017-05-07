@@ -18,12 +18,12 @@
 
     Type::myFunction()
 //  ^^^^ entity.name.type.php.php7
-//      ^^ keyword.operator.other.scope.resolution.php.php7
+//      ^^ keyword.operator.other.scope-resolution.php.php7
 //        ^^^^^^^^^^ entity.name.function.php.php7
 
     $object->myFunction();
 //  ^ punctuation.delimiter.variable.begin.php.php7
 //   ^^^^^^ entity.name.variable.php.php7
-//         ^^ keyword.operator.other.member.access.php.php7
+//         ^^ keyword.operator.other.member-access.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 ?>

@@ -28,7 +28,7 @@ contexts:
       captures:
         1: >-
           storage.type.php.php7
-          keyword.interface.php.php7
+          keyword.declaration.interface.php.php7
       set: declaration
 
   comment:

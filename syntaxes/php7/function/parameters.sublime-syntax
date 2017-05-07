@@ -133,7 +133,7 @@ contexts:
   default-value-scope-operator:
     - match: "::"
       captures:
-        1: keyword.operator.other.scope.resolution.php.php7
+        1: keyword.operator.other.scope-resolution.php.php7
       pop: true
 
   default-value-constant:

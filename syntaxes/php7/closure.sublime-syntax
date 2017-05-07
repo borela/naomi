@@ -48,7 +48,7 @@ contexts:
       captures:
         1: >-
           storage.type.php.php7
-          keyword.function.php.php7
+          keyword.declaration.function.php.php7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/modifier.no-pop.sublime-syntax
 

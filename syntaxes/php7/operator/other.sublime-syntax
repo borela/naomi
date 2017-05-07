@@ -59,11 +59,11 @@ contexts:
       pop: true
     - match: \s*(->)
       captures:
-        1: keyword.operator.other.member.access.php.php7
+        1: keyword.operator.other.member-access.php.php7
       set: member-access
     - match: \s*(::)
       captures:
-        1: keyword.operator.other.scope.resolution.php.php7
+        1: keyword.operator.other.scope-resolution.php.php7
       set: scope-resolution
     - match: \s*(\?\?)
       captures:

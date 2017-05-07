@@ -18,6 +18,6 @@
 
     Type::CONSTANT
 //  ^^^^ entity.name.type.php.php7
-//      ^^ keyword.operator.other.scope.resolution.php.php7
+//      ^^ keyword.operator.other.scope-resolution.php.php7
 //        ^^^^^^^^ entity.name.constant.php.php7
 ?>

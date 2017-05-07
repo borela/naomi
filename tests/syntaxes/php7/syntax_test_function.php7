@@ -14,7 +14,8 @@
 
 <?php
     function Myfunction($param){   }
-//  ^^^^^^^^ keyword.function.php.php7
+//  ^^^^^^^^ storage.type.php.php7
+//  ^^^^^^^^ keyword.declaration.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 //                     ^ punctuation.delimiter.function.parameters.begin.php.php7
 //                      ^ punctuation.delimiter.variable.begin.php.php7
@@ -24,7 +25,8 @@
 //                                 ^ punctuation.delimiter.function.body.end.php.php7
 
     function Myfunction(...$param){   }
-//  ^^^^^^^^ keyword.function.php.php7
+//  ^^^^^^^^ storage.type.php.php7
+//  ^^^^^^^^ keyword.declaration.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 //                     ^ punctuation.delimiter.function.parameters.begin.php.php7
 //                      ^^^ keyword.operator.other.variadic.php.php7
@@ -35,7 +37,7 @@
 //                                    ^ punctuation.delimiter.function.body.end.php.php7
 
     function Myfunction($param1, int ...$param2){   }
-//  ^^^^^^^^ keyword.function.php.php7
+//  ^^^^^^^^ keyword.declaration.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 //                     ^ punctuation.delimiter.function.parameters.begin.php.php7
 //                      ^ punctuation.delimiter.variable.begin.php.php7
@@ -50,7 +52,8 @@
 //                                                  ^ punctuation.delimiter.function.body.end.php.php7
 
     function Myfunction(int $param1, string $param2){   }
-//  ^^^^^^^^ keyword.function.php.php7
+//  ^^^^^^^^ storage.type.php.php7
+//  ^^^^^^^^ keyword.declaration.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 //                     ^ punctuation.delimiter.function.parameters.begin.php.php7
 //                      ^^^ support.php.php7
@@ -65,7 +68,8 @@
 //                                                      ^ punctuation.delimiter.function.body.end.php.php7
 
     function Myfunction(
-//  ^^^^^^^^ keyword.function.php.php7
+//  ^^^^^^^^ storage.type.php.php7
+//  ^^^^^^^^ keyword.declaration.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 //                     ^ punctuation.delimiter.function.parameters.begin.php.php7
         int $param1,
@@ -84,7 +88,8 @@
 
 
     function Myfunction(
-//  ^^^^^^^^ keyword.function.php.php7
+//  ^^^^^^^^ storage.type.php.php7
+//  ^^^^^^^^ keyword.declaration.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 //                     ^ punctuation.delimiter.function.parameters.begin.php.php7
         int $param1,

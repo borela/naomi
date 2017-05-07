@@ -14,13 +14,13 @@
 
 <?php
     interface MyInterface {   }
-//  ^^^^^^^^^ keyword.interface.php.php7
+//  ^^^^^^^^^ keyword.declaration.interface.php.php7
 //            ^^^^^^^^^^^ entity.name.interface.php.php7
 //                        ^ punctuation.delimiter.interface.body.begin.php.php7
 //                            ^ punctuation.delimiter.interface.body.end.php.php7
 
     interface MyInterface {
-//  ^^^^^^^^^ keyword.interface.php.php7
+//  ^^^^^^^^^ keyword.declaration.interface.php.php7
 //            ^^^^^^^^^^^ entity.name.interface.php.php7
 //                        ^ punctuation.delimiter.interface.body.begin.php.php7
         Something...
@@ -28,7 +28,7 @@
 //  ^ punctuation.delimiter.interface.body.end.php.php7
 
     interface MyInterface extends
-//  ^^^^^^^^^ keyword.interface.php.php7
+//  ^^^^^^^^^ keyword.declaration.interface.php.php7
 //            ^^^^^^^^^^^ entity.name.interface.php.php7
 //                        ^^^^^^^ keyword.inherit.php.php7
         \Namespace\Namespace\ParentInterface2 {
@@ -44,7 +44,7 @@
 //  ^ punctuation.delimiter.interface.body.end.php.php7
 
     interface MyInterface extends
-//  ^^^^^^^^^ keyword.interface.php.php7
+//  ^^^^^^^^^ keyword.declaration.interface.php.php7
 //            ^^^^^^^^^^^ entity.name.interface.php.php7
 //                        ^^^^^^^ keyword.inherit.php.php7
         Namespace\Namespace\ParentInterface2 {
@@ -59,7 +59,7 @@
 //  ^ punctuation.delimiter.interface.body.end.php.php7
 
     interface MyInterface extends
-//  ^^^^^^^^^ keyword.interface.php.php7
+//  ^^^^^^^^^ keyword.declaration.interface.php.php7
 //            ^^^^^^^^^^^ entity.name.interface.php.php7
 //                        ^^^^^^^ keyword.inherit.php.php7
         \Namespace\Namespace\Interface1,
@@ -83,7 +83,7 @@
 //  ^ punctuation.delimiter.interface.body.end.php.php7
 
     interface MyInterface extends
-//  ^^^^^^^^^ keyword.interface.php.php7
+//  ^^^^^^^^^ keyword.declaration.interface.php.php7
 //            ^^^^^^^^^^^ entity.name.interface.php.php7
 //                        ^^^^^^^ keyword.inherit.php.php7
         Namespace\Namespace\Interface1,

@@ -83,7 +83,8 @@ contexts:
     # Other.
     - match: |
         (?x)
-        \s*(export)
+        \s*(export)\b
+        (?!\.)
       captures:
         1: keyword.control.export.js.fjsx15
       set: targets

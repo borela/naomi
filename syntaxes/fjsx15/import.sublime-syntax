@@ -47,7 +47,10 @@ contexts:
           keyword.other.type-aliasing.flowtype
       set: target-types
     # Other.
-    - match: \s*(import)\b
+    - match: |
+        (?x)
+        \s*(import)\b
+        (?!\.)
       captures:
         1: keyword.control.import.js.fjsx15
       set: targets

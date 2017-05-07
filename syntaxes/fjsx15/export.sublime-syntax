@@ -134,6 +134,13 @@ contexts:
     - include: comment
     - include: origin
     - include: punctuation
+    # Default.
+    - match: \s*(default)\b
+      captures:
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.control.export.default.js.fjsx15
+      push: optional-alias
     # All.
     - match: \s*(\*)
       captures:

@@ -22,6 +22,50 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  keywords: |
+    (?> await
+      | break
+      | case
+      | catch
+      | class
+      | const
+      | continue
+      | debugger
+      | default
+      | delete
+      | do
+      | else
+      | enum
+      | export
+      | extends
+      | finally
+      | for
+      | function
+      | if
+      | imp(?>lements|ort)
+      | in(?:stanceof)?
+      | interface
+      | let
+      | new
+      | package
+      | private
+      | protected
+      | public
+      | return
+      | static
+      | super
+      | switch
+      | this
+      | throw
+      | try
+      | typeof
+      | var
+      | void
+      | while
+      | with
+      | yield
+    )
+
 contexts:
   main:
     # Export object literal.
@@ -63,8 +107,7 @@ contexts:
     - match: |
         (?x)
         \s*(export)
-        \s*
-        (?=
+        (?=\s*
           (?> class
             | const
             | function
@@ -134,6 +177,11 @@ contexts:
     - include: comment
     - include: origin
     - include: punctuation
+    # New statement.
+    - match: |
+        (?x)
+        (?=\s*{{keywords}})
+      pop: true
     # Default.
     - match: \s*(default)\b
       captures:

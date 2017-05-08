@@ -17,6 +17,7 @@ name: JSON
 
 file_extensions:
   - json
+  - package.json
   - sublime-keymap
   - sublime-macro
 

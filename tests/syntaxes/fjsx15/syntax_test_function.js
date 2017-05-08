@@ -21,7 +21,8 @@
 //                 ^ .punctuation.delimiter.function.body.end.js.fjsx15
    function *foo() {}
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
-//          ^ .keyword.modifier.generator.js.fjsx15
+//          ^ .storage.modifier.js.fjsx15
+//          ^ .keyword.generator.js.fjsx15
 //           ^^^ .entity.name.function.js.fjsx15
 //              ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //               ^ .punctuation.delimiter.function.parameters.end.js.fjsx15
@@ -40,7 +41,8 @@
 //                                ^ .punctuation.delimiter.function.body.end.js.fjsx15
    function *foo(param, ...param) {}
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
-//          ^ .keyword.modifier.generator.js.fjsx15
+//          ^ .storage.modifier.js.fjsx15
+//          ^ .keyword.generator.js.fjsx15
 //           ^^^ .entity.name.function.js.fjsx15
 //              ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //               ^^^^^ .entity.name.variable.js.fjsx15
@@ -122,7 +124,8 @@
 //                                           ^ .punctuation.delimiter.function.body.end.js.fjsx15
    function *foo<A,B>(param:A, ...param:B):B {}
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
-//          ^ .keyword.modifier.generator.js.fjsx15
+//          ^ .storage.modifier.js.fjsx15
+//          ^ .keyword.generator.js.fjsx15
 //           ^^^ .entity.name.function.js.fjsx15
 //              ^ .punctuation.delimiter.template.parameters.begin.flowtype
 //               ^ .entity.name.type.flowtype
@@ -151,14 +154,16 @@
 //              ^ .punctuation.delimiter.function.body.end.js.fjsx15
    function *() {}
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
-//          ^ .keyword.modifier.generator.js.fjsx15
+//          ^ .storage.modifier.js.fjsx15
+//          ^ .keyword.generator.js.fjsx15
 //           ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //            ^ .punctuation.delimiter.function.parameters.end.js.fjsx15
 //              ^ .punctuation.delimiter.function.body.begin.js.fjsx15
 //               ^ .punctuation.delimiter.function.body.end.js.fjsx15
    function *<A,B>(param:A, ...param:B):B {}
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
-//          ^ .keyword.modifier.generator.js.fjsx15
+//          ^ .storage.modifier.js.fjsx15
+//          ^ .keyword.generator.js.fjsx15
 //           ^ .punctuation.delimiter.template.parameters.begin.flowtype
 //            ^ .entity.name.type.flowtype
 //             ^ .punctuation.delimiter.template.parameters.flowtype

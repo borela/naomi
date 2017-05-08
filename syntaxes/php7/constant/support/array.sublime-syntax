@@ -20,9 +20,8 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\b
-        (?> CASE_
-            (?>UPPER|LOWER)
+        (?x)\s*\b
+        ((?> CASE_(?>UPPER|LOWER)
           | SORT_
             (?> ASC
               | DESC
@@ -33,10 +32,8 @@ contexts:
               | NATURAL
               | FLAG_CASE
             )
-          | ARRAY_FILTER_USE_
-            (?>KEY|BOTH)
-          | COUNT_
-            (?>NORMAL|RECURSIVE)
+          | ARRAY_FILTER_USE_(?>KEY|BOTH)
+          | COUNT_(?>NORMAL|RECURSIVE)
           | EXTR_
             (?> OVERWRITE
               | SKIP
@@ -45,8 +42,9 @@ contexts:
               | IF_EXISTS
               | REFS
             )
-        )\b
-      scope: >-
-        support.constant.php.php7
-        entity.name.constant.php.php7
+        ))\b
+      captures:
+        1: >-
+          support.php.php7
+          entity.name.constant.php.php7
       pop: true

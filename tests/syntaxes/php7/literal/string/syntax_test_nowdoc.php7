@@ -18,7 +18,6 @@
 //  ^^^^^^^^^^ punctuation.delimiter.string.begin.php.php7
     Something is here....
 //  ^^^^^^^^^^^^^^^^^^^^^ string.unquoted.nowdoc.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^^ string.content.php.php7
 Nowdoc;
 // <- string.unquoted.nowdoc.php.php7
 //^^^^^ string.unquoted.nowdoc.php.php7

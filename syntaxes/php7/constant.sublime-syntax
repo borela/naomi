@@ -19,6 +19,7 @@ scope: ...
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/php7/namespace-path.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/constant/support/core.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/constant/support/error.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/constant/support/array.sublime-syntax

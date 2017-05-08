@@ -22,8 +22,14 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  constantIdentifier: |
+    [$_[:upper:]]
+    [$_[:upper:][:digit:]]*
+
 contexts:
   main:
+    - include: constant
+    - include: variable
     # String property name.
     - match: (?=\s*(?>'|"|`))
       set: string
@@ -32,10 +38,53 @@ contexts:
       captures:
         1: keyword.operator.other.computed-property.begin.js.fjsx15
       set: computed-property
-    # Normal property.
+
+  constant:
+    # Single character.
+    - match: |
+        (?x)\s*
+        ([_[:upper:]])\b
+      captures:
+        1: >-
+          object.property.js.fjsx15
+          entity.name.constant.js.fjsx15
+      pop: true
+    # Two or more characters.
+    - match: |
+        (?x)\s*
+        (
+          {{constantIdentifier}}
+          (?> \$\B
+            | [_[:upper:]]\b
+          )
+        )
+      captures:
+        1: >-
+          object.property.js.fjsx15
+          entity.name.constant.js.fjsx15
+      pop: true
+
+  variable:
+    # Single character.
     - match: |
         (?xi)\s*
-        ({{commonIdentifier}})
+        ((?> \$\B
+          | [_[:alpha:]]\b
+        ))
+      captures:
+        1: >-
+          object.property.js.fjsx15
+          entity.name.variable.js.fjsx15
+      pop: true
+    # Two or more characters.
+    - match: |
+        (?xi)\s*
+        (
+          {{commonIdentifier}}
+          (?> \$\B
+            | [_[:alnum:]]\b
+          )
+        )
       captures:
         1: >-
           object.property.js.fjsx15

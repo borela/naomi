@@ -24,8 +24,8 @@ contexts:
 
   normal:
     - match: |
-        (?x)\b
-        (?>
+        (?x)\s*\b
+        ((?>
           PHP_
             (?> VERSION(?:_ID)?
               | MAJOR_VERSION
@@ -38,8 +38,7 @@ contexts:
               | OS
               | SAPI
               | EOL
-              | INT_
-                (?>MAX|MIN|SIZE)
+              | INT_(?>MAX|MIN|SIZE)
               | EXTENSION_DIR
               | PREFIX
               | BINDIR
@@ -49,27 +48,27 @@ contexts:
               | DATADIR
               | SYSCONFDIR
               | LOCALSTATEDIR
-              | CONFIG_FILE_
-                (?>PATH|SCAN_DIR)
+              | CONFIG_FILE_(?>PATH|SCAN_DIR)
               | SHLIB_SUFFIX
             )
-          | PEAR_
-            (?>INSTALL_DIR|EXTENSION_DIR)
+          | PEAR_(?>INSTALL_DIR|EXTENSION_DIR)
           | DEFAULT_INCLUDE_PATH
-        )\b
-      scope: >-
-        support.constant.php.php7
-        entity.name.constant.php.php7
+        ))\b
+      captures:
+        1: >-
+          support.php.php7
+          entity.name.constant.php.php7
       pop: true
 
   case-insenstive:
     - match: |
-        (?xi)\b
-        (?> TRUE
+        (?xi)\s*\b
+        ((?> TRUE
           | FALSE
           | NULL
-        )\b
-      scope: >-
-        support.constant.php.php7
-        entity.name.constant.php.php7
+        ))\b
+      captures:
+        1: >-
+          support.php.php7
+          entity.name.constant.php.php7
       pop: true

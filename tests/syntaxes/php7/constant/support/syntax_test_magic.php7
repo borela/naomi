@@ -14,27 +14,35 @@
 
 <?php
     __LINE__
-//  ^^^^^^^^ support.constant.preprocessor.php.php7
+//  ^^^^^^^^ support.php.php7
+//  ^^^^^^^^ preprocessor.php.php7
 //  ^^^^^^^^ entity.name.constant.php.php7
     __FILE__
-//  ^^^^^^^^ support.constant.preprocessor.php.php7
+//  ^^^^^^^^ support.php.php7
+//  ^^^^^^^^ preprocessor.php.php7
 //  ^^^^^^^^ entity.name.constant.php.php7
     __DIR__
-//  ^^^^^^^ support.constant.preprocessor.php.php7
+//  ^^^^^^^ support.php.php7
+//  ^^^^^^^ preprocessor.php.php7
 //  ^^^^^^^ entity.name.constant.php.php7
     __FUNCTION__
-//  ^^^^^^^^^^^^ support.constant.preprocessor.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
+//  ^^^^^^^^^^^^ preprocessor.php.php7
 //  ^^^^^^^^^^^^ entity.name.constant.php.php7
     __CLASS__
-//  ^^^^^^^^^ support.constant.preprocessor.php.php7
+//  ^^^^^^^^^ support.php.php7
+//  ^^^^^^^^^ preprocessor.php.php7
 //  ^^^^^^^^^ entity.name.constant.php.php7
     __TRAIT__
-//  ^^^^^^^^^ support.constant.preprocessor.php.php7
+//  ^^^^^^^^^ support.php.php7
+//  ^^^^^^^^^ preprocessor.php.php7
 //  ^^^^^^^^^ entity.name.constant.php.php7
     __METHOD__
-//  ^^^^^^^^^^ support.constant.preprocessor.php.php7
+//  ^^^^^^^^^^ support.php.php7
+//  ^^^^^^^^^^ preprocessor.php.php7
 //  ^^^^^^^^^^ entity.name.constant.php.php7
     __NAMESPACE__
-//  ^^^^^^^^^^^^^ support.constant.preprocessor.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
+//  ^^^^^^^^^^^^^ preprocessor.php.php7
 //  ^^^^^^^^^^^^^ entity.name.constant.php.php7
 ?>

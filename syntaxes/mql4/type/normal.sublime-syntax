@@ -26,14 +26,10 @@ contexts:
   main:
     - match: |
         (?xi)\s*
-        \b({{commonIdentifier}})
-        (?> \s*(\**)
-          | \b
-        )
+        \b({{commonIdentifier}})\b
       captures:
         1: entity.name.type.mql.mql4
-        2: keyword.operator.other.pointer.mql.mql4
-      set: template-arguments
+      set: modifiers
 
-  template-arguments:
-    - include: Packages/Naomi/syntaxes/mql4/type/template-arguments.sublime-syntax
+  modifiers:
+    - include: Packages/Naomi/syntaxes/mql4/type/modifiers.sublime-syntax

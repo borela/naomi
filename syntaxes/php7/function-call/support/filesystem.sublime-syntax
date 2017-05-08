@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)
+        (?x)\s*
         ((?>\\|\b))
         (
           (?> basename
@@ -110,10 +110,9 @@ contexts:
         )
         (?=\s*\()
       captures:
-        0: function.call.php.php7
-        1: punctuation.delimiter.support.function.php.php7
+        1: punctuation.delimiter.support.php.php7
         2: >-
-          support.function.php.php7
+          support.php.php7
           entity.name.function.php.php7
       set: arguments
 

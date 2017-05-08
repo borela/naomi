@@ -28,9 +28,7 @@ contexts:
       captures:
         1: punctuation.delimiter.template.arguments.begin.mql.mql4
       set: [
-        final-pointer-operator,
         delimiter,
-        argument-pointer-operator,
         argument
       ]
     - match: (?=\S)
@@ -38,13 +36,6 @@ contexts:
 
   argument:
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
-
-  argument-pointer-operator:
-    - match: (?=[,>])
-      pop: true
-    - match: \s*(\*+)
-      captures:
-        1: keyword.operator.other.pointer.mql.mql4
 
   delimiter:
     - match: \>
@@ -54,21 +45,11 @@ contexts:
       scope: punctuation.delimiter.template.arguments.mql.mql4
       set: [
         delimiter,
-        argument-pointer-operator,
         argument
       ]
     - match: \<
       scope: punctuation.delimiter.template.arguments.begin.mql.mql4
       push: [
         delimiter,
-        argument-pointer-operator,
         argument
       ]
-
-  final-pointer-operator:
-    - match: \s*(\*+)
-      captures:
-        1: keyword.operator.other.pointer.mql.mql4
-      pop: true
-    - match: ""
-      pop: true

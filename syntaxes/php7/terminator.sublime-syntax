@@ -19,6 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: ;
-      scope: keyword.operator.other.terminator.php.php7
+    - match: \s*(;)
+      captures:
+        1: keyword.operator.other.terminator.php.php7
       pop: true

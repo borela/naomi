@@ -20,23 +20,24 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bE_
-        (?> ERROR
-          | WARNING
-          | PARSE
-          | NOTICE
-          | CORE_
-            (?>ERROR|WARNING)
-          | COMPILE_
-            (?>ERROR|WARNING)
-          | USER_
-            (?>ERROR|WARNING|NOTICE)
-          | DEPRECATED
-          | USER_DEPRECATED
-          | ALL
-          | STRICT
+        (?x)\s*\b
+        (
+          E_
+          (?> ERROR
+            | WARNING
+            | PARSE
+            | NOTICE
+            | CORE_(?>ERROR|WARNING)
+            | COMPILE_(?>ERROR|WARNING)
+            | USER_(?>ERROR|WARNING|NOTICE)
+            | DEPRECATED
+            | USER_DEPRECATED
+            | ALL
+            | STRICT
+          )
         )\b
-      scope: >-
-        support.constant.php.php7
-        entity.name.constant.php.php7
+      captures:
+        1: >-
+          support.php.php7
+          entity.name.constant.php.php7
       pop: true

@@ -32,8 +32,8 @@ contexts:
   # |    <     | Less than.                |
   main:
     - match: |
-        (?x)
-        (?> ===?
+        (?x)\s*
+        ((?> ===?
           | !==?
           | <>
           | >=
@@ -41,6 +41,7 @@ contexts:
           | <=
           | >(?!>)
           | <(?!<)
-        )
-      scope: keyword.operator.comparison.php.php7
+        ))
+      captures:
+        1: keyword.operator.comparison.php.php7
       pop: true

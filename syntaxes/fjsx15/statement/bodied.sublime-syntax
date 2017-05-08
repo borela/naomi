@@ -61,11 +61,12 @@ contexts:
 
   header-content:
     - match: \s*(\))
-      captures: punctuation.delimiter.control.header.end.js.fjsx15
+      captures:
+        1: punctuation.delimiter.control.header.end.js.fjsx15
       pop: true
     - match: ""
       push:
-        - match: (?=\))
+        - match: (?=\s*\))
           pop: true
         - include: statement-and-expression
 

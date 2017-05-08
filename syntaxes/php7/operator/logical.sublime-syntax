@@ -27,17 +27,19 @@ contexts:
   # |    !     | Not.        |
   main:
     - match: |
-        (?x)
-        (?>
-          (?:
-            \s+
-            (?> and
-              | or
-            )\s+
-          )
-          | &&
+        (?x)\s*\b
+        ((?> and
+          | or
+        ))\b
+      captures:
+        1: keyword.operator.other.word.php.php7
+      pop: true
+    - match: |
+        (?x)\s*
+        ((?> &&
           | \|\|
           | !
-        )
-      scope: keyword.operator.logical.php.php7
+        ))
+      captures:
+        1: keyword.operator.logical.php.php7
       pop: true

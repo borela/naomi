@@ -44,17 +44,18 @@ variables:
 
 contexts:
   main:
-    - match: (?xi)<<<({{commonIdentifier}})
-      scope: >-
-        string.unquoted.heredoc.php.php7
-        punctuation.delimiter.string.begin.php.php7
+    - match: (?xi)\s*(<<<{{commonIdentifier}})
+      captures:
+        1: >-
+          string.unquoted.heredoc.php.php7
+          punctuation.delimiter.string.begin.php.php7
       with_prototype:
           # HACK: This pattern is not matching the one captured when the heredoc
           # was opened, it’ll work in most cases but another solution must be
           # used.
         - match: |
             (?xi)
-            ^[_[:alpha:]][_[:alnum:]]*(?=;$)
+            ^[_[:alpha:]][_[:alnum:]]*;$
           scope: >-
             string.unquoted.heredoc.php.php7
             punctuation.delimiter.string.end.php.php7
@@ -62,73 +63,67 @@ contexts:
       set: escape-a-variable-a
 
   escape-a-variable-a:
-    - meta_content_scope: >-
-        string.unquoted.heredoc.php.php7
-        string.content.php.php7
-    - match: (?x)(?={{heredocEscapeSequences}})
+    - meta_content_scope: string.unquoted.heredoc.php.php7
+    - match: (?x)(?=\s*{{heredocEscapeSequences}})
       set: [
         escape-b-variable-a,
         escape-a
       ]
-    - match: (?x)(?={{embeddedVariableStart}})
+    - match: (?x)(?=\s*{{embeddedVariableStart}})
       set: [
         escape-a-variable-b,
         variable-a
       ]
 
   escape-b-variable-a:
-    - meta_content_scope: >-
-        string.unquoted.heredoc.php.php7
-        string.content.php.php7
-    - match: (?x)(?={{heredocEscapeSequences}})
+    - meta_content_scope: string.unquoted.heredoc.php.php7
+    - match: (?x)(?=\s*{{heredocEscapeSequences}})
       set: [
         escape-a-variable-a,
         escape-b
       ]
-    - match: (?x)(?={{embeddedVariableStart}})
+    - match: (?x)(?=\s*{{embeddedVariableStart}})
       set: [
         escape-b-variable-b,
         variable-a
       ]
 
   escape-a-variable-b:
-    - meta_content_scope: >-
-        string.unquoted.heredoc.php.php7
-        string.content.php.php7
-    - match: (?x)(?={{heredocEscapeSequences}})
+    - meta_content_scope: string.unquoted.heredoc.php.php7
+    - match: (?x)(?=\s*{{heredocEscapeSequences}})
       set: [
         escape-b-variable-b,
         escape-a
       ]
-    - match: (?x)(?={{embeddedVariableStart}})
+    - match: (?x)(?=\s*{{embeddedVariableStart}})
       set: [
         escape-a-variable-a,
         variable-b
       ]
 
   escape-b-variable-b:
-    - meta_content_scope: >-
-        string.unquoted.heredoc.php.php7
-        string.content.php.php7
-    - match: (?x)(?={{heredocEscapeSequences}})
+    - meta_content_scope: string.unquoted.heredoc.php.php7
+    - match: (?x)(?=\s*{{heredocEscapeSequences}})
       set: [
         escape-a-variable-b,
         escape-b
       ]
-    - match: (?x)(?={{embeddedVariableStart}})
+    - match: (?x)(?=\s*{{embeddedVariableStart}})
       set: [
         escape-b-variable-a,
         variable-b
       ]
 
   escape-a:
-    - match: (?x){{heredocEscapeSequences}}
-      scope: constant.character.escape.a.php.php7
+    - match: (?x)\s*({{heredocEscapeSequences}})
+      captures:
+        1: constant.character.escape.a.php.php7
       pop: true
 
   escape-b:
-    - match: (?x){{heredocEscapeSequences}}
-      scope: constant.character.escape.b.php.php7
+    - match: (?x)\s*({{heredocEscapeSequences}})
+      captures:
+        1: constant.character.escape.b.php.php7
       pop: true
 
   variable-a:

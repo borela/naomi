@@ -19,12 +19,14 @@ scope: ...
 
 contexts:
   main:
+    - include: comment
     - match: \s*(\{)
       captures:
         1: punctuation.delimiter.class.body.begin.js.fjsx15
       set: body
 
   body:
+    - include: comment
     - match: \s*(})
       captures:
         1: punctuation.delimiter.class.body.end.js.fjsx15
@@ -34,10 +36,11 @@ contexts:
         - match: (?=\s*})
           pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/lookup-table.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

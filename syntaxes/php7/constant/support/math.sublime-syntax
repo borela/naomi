@@ -20,28 +20,23 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\b
-        (?> INF
+        (?x)\s*\b
+        ((?> INF
           | M_
             (?> 1_PI
-              | 2_
-                (?>PI|SQRTPI)
-              | EULER
-                (?>2|10|PI)?
+              | 2_(?>PI|SQRTPI)
+              | EULER(?>2|10|PI)?
               | E
-              | LN
-                (?>2|10|PI)
-              | LOG
-                (?>2E|10E)
+              | LN(?>2|10|PI)
+              | LOG(?>2E|10E)
               | PI(?>_2|_4)?
-              | SQRT
-                (?>1_2|2|3|PI)
+              | SQRT(?>1_2|2|3|PI)
             )
           | NAN
-          | PHP_ROUND_HALF_
-            (?>DOWN|EVEN|ODD|UP)
-        )\b
-      scope: >-
-        support.constant.php.php7
-        entity.name.constant.php.php7
+          | PHP_ROUND_HALF_(?>DOWN|EVEN|ODD|UP)
+        ))\b
+      captures:
+        1: >-
+          support.php.php7
+          entity.name.constant.php.php7
       pop: true

@@ -19,51 +19,43 @@ scope: ...
 
 contexts:
   main:
-    - match: (?xi)\bnamespace(?!\\)\b
-      scope: keyword.namespace.php.php7
+    - match: (?xi)\s*\b(namespace)(?!\\)\b
+      captures:
+        1: >-
+          storage.type.php.php7
+          keyword.namespace.php.php7
       set: declaration
 
   declaration:
-    - meta_scope: namespace.php.php7
     # Implicit body.
-    - match: ;
-      scope: >-
-        namespace.body.php.php7
-        punctuation.delimiter.namespace.body.begin.php.php7
+    - match: \s*(;)
+      captures:
+        1: punctuation.delimiter.namespace.body.begin.php.php7
       set: implicit-body
     # Bracketed body.
-    - match: "{"
-      scope: >-
-        namespace.body.php.php7
-        punctuation.delimiter.namespace.body.begin.php.php7
+    - match: \s*(\{)
+      captures:
+        1: punctuation.delimiter.namespace.body.begin.php.php7
       set: bracketed-body
-    # namespace’s path.
+    # Namespace’s path.
     - include: Packages/Naomi/syntaxes/php7/namespace/path.sublime-syntax
 
   body-content:
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax
+        - match: ""
+          pop: true
 
   implicit-body:
-    - meta_content_scope: >-
-        namespace.php.php7
-        namespace.body.php.php7
-        namespace.body.content.php.php7
-    - match: (?=\bnamespace\b)
+    - match: (?=\s*\bnamespace\b)
       pop: true
     - include: body-content
 
   bracketed-body:
-    - meta_content_scope: >-
-        namespace.php.php7
-        namespace.body.php.php7
-        namespace.body.content.php.php7
-    - match: "}"
-      scope: >-
-        namespace.php.php7
-        namespace.body.php.php7
-        punctuation.delimiter.namespace.body.end.php.php7
+    - match: \s*(})
+      captures:
+        1: >-
+          punctuation.delimiter.namespace.body.end.php.php7
       pop: true
     - include: body-content

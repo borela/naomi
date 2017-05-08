@@ -12,7 +12,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: comment
+name: PHP’s comment
 scope: source.php
 settings:
   shellVariables:

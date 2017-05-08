@@ -37,14 +37,21 @@ contexts:
         ({{commonIdentifier}})
       captures:
         1: entity.name.class.mql.mql4
-      set: [
-        body,
-        inheritance
-      ]
+      set: inheritance
 
   inheritance:
-    - match: (?=\s*\{)
+    - include: comment
+    # End of declaration.
+    - match: \s*(;)
+      captures:
+        1: punctuation.delimiter.class.body.end.mql.mql4
       pop: true
+    # Body beginning.
+    - match: \s*(\{)
+      captures:
+        1: punctuation.delimiter.class.body.begin.mql.mql4
+      set: body-content
+    # Inherited class access.
     - match: |
         (?xi)
         \s*(:)
@@ -59,14 +66,10 @@ contexts:
         2: >-
           storage.modifier.mql.mql4
           keyword.modifier.mql.mql4
-    - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
-
-  body:
-    - include: comment
-    - match: \s*(\{)
-      captures:
-        1: punctuation.delimiter.class.body.begin.mql.mql4
-      set: body-content
+    # Inherited class.
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   body-content:
     - include: comment

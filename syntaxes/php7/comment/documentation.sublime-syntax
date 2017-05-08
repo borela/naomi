@@ -19,15 +19,27 @@ scope: ...
 
 contexts:
   main:
-    - match: \/\*\*(?!\/)
-      scope: punctuation.comment.documentation.begin.php.php7
+    - match: \s*(/\*\*)
+      captures:
+        1: punctuation.delimiter.comment.documentation.begin.php.php7
       set: content
 
   content:
-    - meta_scope: comment.documentation.php.php7
-    - meta_content_scope: comment.documentation.content.php.php7
-    - match: \*\/
-      scope: punctuation.comment.documentation.end.php.php7
-      pop: true
-    - include: Packages/Naomi/syntaxes/php7/phpdoc/tags.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/phpunit/tags.no-pop.sublime-syntax
+    - meta_scope: comment.block.documentation.php.php7
+    - match: \s*(\*/)
+      captures:
+        1: punctuation.delimiter.comment.documentation.end.php.php7
+      set:
+        # Used to fix the block comment indentation settings.
+        # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
+        - match: \s*$\n?
+          scope: meta.block-end.php.php7
+          pop: true
+        - match: ''
+          pop: true
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/php7/comment/phpdoc.sublime-syntax
+        - include: Packages/Naomi/syntaxes/php7/comment/phpunit.sublime-syntax
+        - match: (?=\s*\*/)
+          pop: true

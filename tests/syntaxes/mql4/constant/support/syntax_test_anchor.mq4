@@ -13,35 +13,35 @@
 // the License.
 
    ANCHOR_BOTTOM
-// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    ANCHOR_CENTER
-// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    ANCHOR_LEFT
-// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^ entity.name.constant.mql.mql4
    ANCHOR_LEFT_LOWER
-// ^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    ANCHOR_LEFT_UPPER
-// ^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    ANCHOR_LOWER
-// ^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^ entity.name.constant.mql.mql4
    ANCHOR_RIGHT
-// ^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^ entity.name.constant.mql.mql4
    ANCHOR_RIGHT_LOWER
-// ^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    ANCHOR_RIGHT_UPPER
-// ^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    ANCHOR_TOP
-// ^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^ entity.name.constant.mql.mql4
    ANCHOR_UPPER
-// ^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^ entity.name.constant.mql.mql4

@@ -13,26 +13,26 @@
 // the License.
 
     CHARTEVENT_KEYDOWN
-//  ^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^^^ support.mql.mql4
     CHARTEVENT_MOUSE_MOVE
-//  ^^^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
     CHARTEVENT_OBJECT_CREATE
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
     CHARTEVENT_OBJECT_CHANGE
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
     CHARTEVENT_OBJECT_DELETE
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
     CHARTEVENT_CLICK
-//  ^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^ support.mql.mql4
     CHARTEVENT_OBJECT_CLICK
-//  ^^^^^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
     CHARTEVENT_OBJECT_DRAG
-//  ^^^^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
     CHARTEVENT_OBJECT_ENDEDIT
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
     CHARTEVENT_CHART_CHANGE
-//  ^^^^^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
     CHARTEVENT_CUSTOM
-//  ^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^^ support.mql.mql4
     CHARTEVENT_CUSTOM_LAST
-//  ^^^^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4

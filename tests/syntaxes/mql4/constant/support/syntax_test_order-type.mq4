@@ -13,20 +13,20 @@
 // the License.
 
    OP_BUY
-// ^^^^^^ support.constant.mql.mql4
+// ^^^^^^ support.mql.mql4
 // ^^^^^^ entity.name.constant.mql.mql4
    OP_SELL
-// ^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^ support.mql.mql4
 // ^^^^^^^ entity.name.constant.mql.mql4
    OP_BUYLIMIT
-// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^ entity.name.constant.mql.mql4
    OP_SELLLIMIT
-// ^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^ entity.name.constant.mql.mql4
    OP_BUYSTOP
-// ^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^ entity.name.constant.mql.mql4
    OP_SELLSTOP
-// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^ entity.name.constant.mql.mql4

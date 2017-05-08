@@ -24,21 +24,14 @@ variables:
 
   expressionGroupBegin: |
     (\()
-    (?!\s*
-      (?> {{commonIdentifier}}:
-        | \)\s*=>
-      )
+    (?!
+      .*\)
+      \s*=>
     )
 
 contexts:
   main:
-    - match: ""
-      set: [
-        optional-operator,
-        loop-begin
-      ]
-
-  loop-begin:
+    - include: operators
     # Open new expression group.
     - match: |
         (?xi)\s*
@@ -47,7 +40,7 @@ contexts:
         1: punctuation.delimiter.expression.group.a.begin.js.fjsx15
       set: open-b-close-a
     # Expression contents.
-    - match: ""
+    - match: (?=\s*\S)
       set: [
         optional-operator,
         type-definitions
@@ -67,7 +60,7 @@ contexts:
         1: punctuation.delimiter.expression.group.b.end.js.fjsx15
       pop: true
     # Expression contents.
-    - match: ""
+    - match: (?=\s*\S)
       push: [
         optional-operator,
         type-definitions
@@ -87,7 +80,7 @@ contexts:
         1: punctuation.delimiter.expression.group.a.end.js.fjsx15
       pop: true
     # Expression contents.
-    - match: ""
+    - match: (?=\s*\S)
       push: [
         optional-operator,
         type-definitions
@@ -110,47 +103,87 @@ contexts:
     # Nullable.
     - match: \s*\?
       scope: keyword.operator.other.nullable.flowtype
+    # “Type of” operator.
+    - match: |
+        (?x)\s*
+        (typeof)
+      captures:
+        1: keyword.operator.other.word.js.fjsx15
+    # Utility operators.
+    - match: |
+        (?x)\s*
+        (Class)
+      captures:
+        1: keyword.operator.other.utility.flowtype
+      set: template
+    # Utility operators preceded by $.
+    - match: |
+        (?x)\s*
+        (\$
+          (?> Abstract
+            | Diff
+            | Exact
+            | Keys
+            | ObjMap
+            | PropertyType
+            | Shape
+            | Supertype
+            | Subtype
+          )
+        )
+      captures:
+        1: keyword.operator.other.utility.flowtype
+      set: template
+    # Existential.
+    - match: \s*(\*)
+      captures:
+        1: keyword.operator.other.existential.flowtype
+      pop: true
     # Normal type.
     - include: comment
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/number.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/function.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/tuple.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/tuple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax
 
   optional-operator:
+    - include: operators
+    - match: (?=\s*\S)
+      pop: true
+
+  operators:
     - include: comment
+    - include: co-contravariant
     - match: |
         (?x)
         \s*(&)
-        (?!
-          (?> &
-            | =
-          )
-        )
+        (?!(?>&|=))
       captures:
         1: keyword.operator.other.intersection.flowtype
       set: main
     - match: |
         (?x)
         \s*(\|)
-        (?!
-          (?> \|
-            | =
-            | \s*}
-          )
-        )
+        (?!(?>\||=|\s*}))
       captures:
         1: keyword.operator.other.union.flowtype
       set: main
-    - match: (?=\S)
-      pop: true
 
   enveloped-nullable-end:
-    - match: \)
-      scope: punctuation.delimiter.nullable.end.flowtype
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.nullable.end.flowtype
       pop: true
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  co-contravariant:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/co-contravariant.no-pop.sublime-syntax
+
+  template:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax

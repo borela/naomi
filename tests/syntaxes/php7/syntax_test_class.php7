@@ -14,49 +14,34 @@
 
 <?php
     abstract class MyClass {   }
-//           ^^^^^^^^^^^^^^^^^^^ class.php.php7
-//  ^^^^^^^^ keyword.modifier.abstract.php.php7
-//           ^^^^^ keyword.class.php.php7
+//  ^^^^^^^^ keyword.modifier.php.php7
+//           ^^^^^ storage.type.php.php7
+//           ^^^^^ keyword.declaration.class.php.php7
 //                 ^^^^^^^ entity.name.class.php.php7
 //                         ^ punctuation.delimiter.class.body.begin.php.php7
-//                         ^^^^^ class.body.php.php7
-//                          ^^^ class.body.content.php.php7
 //                             ^ punctuation.delimiter.class.body.end.php.php7
 
     final class MyClass {   }
-//        ^^^^^^^^^^^^^ class.php.php7
-//  ^^^^^ keyword.modifier.final.php.php7
-//        ^^^^^ keyword.class.php.php7
+//  ^^^^^ keyword.modifier.php.php7
+//        ^^^^^ keyword.declaration.class.php.php7
 //              ^^^^^^^ entity.name.class.php.php7
 //                      ^ punctuation.delimiter.class.body.begin.php.php7
-//                      ^^^^^ class.body.php.php7
-//                       ^^^ class.body.content.php.php7
 //                          ^ punctuation.delimiter.class.body.end.php.php7
 
     class MyClass {
-//  ^^^^^^^^^^^^^^^ class.php.php7
-//  ^^^^^ keyword.class.php.php7
+//  ^^^^^ keyword.declaration.class.php.php7
 //        ^^^^^^^ entity.name.class.php.php7
-//                ^ class.body.php.php7
 //                ^ punctuation.delimiter.class.body.begin.php.php7
         Something...
-//      ^^^^^^^^^^^^ class.php.php7
-//      ^^^^^^^^^^^^ class.body.php.php7
-//      ^^^^^^^^^^^^ class.body.content.php.php7
     }
-//  ^ class.php.php7
-//  ^ class.body.php.php7
 //  ^ punctuation.delimiter.class.body.end.php.php7
 
     class MyClass extends
-//  ^^^^^^^^^^^^^^^^^^^^^ class.php.php7
-//  ^^^^^ keyword.class.php.php7
+//  ^^^^^ keyword.declaration.class.php.php7
 //        ^^^^^^^ entity.name.class.php.php7
 //                ^^^^^^^ keyword.inherit.php.php7
         \Namespace\Namespace\ParentClass {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
 //      ^^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                       ^ class.body.php.php7
 //                                       ^ punctuation.delimiter.class.body.begin.php.php7
 //      ^ punctuation.delimiter.namespace.a.php.php7
 //                ^ punctuation.delimiter.namespace.b.php.php7
@@ -65,23 +50,15 @@
 //                 ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                           ^^^^^^^^^^^ entity.name.type.php.php7
         Something...
-//      ^^^^^^^^^^^^ class.php.php7
-//      ^^^^^^^^^^^^ class.body.php.php7
-//      ^^^^^^^^^^^^ class.body.content.php.php7
     }
-//  ^ class.php.php7
-//  ^ class.body.php.php7
 //  ^ punctuation.delimiter.class.body.end.php.php7
 
     class MyClass extends
-//  ^^^^^^^^^^^^^^^^^^^^^ class.php.php7
-//  ^^^^^ keyword.class.php.php7
+//  ^^^^^ keyword.declaration.class.php.php7
 //        ^^^^^^^ entity.name.class.php.php7
 //                ^^^^^^^ keyword.inherit.php.php7
         Namespace\Namespace\ParentClass {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
 //      ^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                      ^ class.body.php.php7
 //                                      ^ punctuation.delimiter.class.body.begin.php.php7
 //               ^ punctuation.delimiter.namespace.b.php.php7
 //                         ^ punctuation.delimiter.type.php.php7
@@ -89,21 +66,14 @@
 //                ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                          ^^^^^^^^^^^ entity.name.type.php.php7
         Something...
-//      ^^^^^^^^^^^^ class.php.php7
-//      ^^^^^^^^^^^^ class.body.php.php7
-//      ^^^^^^^^^^^^ class.body.content.php.php7
     }
-//  ^ class.php.php7
-//  ^ class.body.php.php7
 //  ^ punctuation.delimiter.class.body.end.php.php7
 
     class MyClass implements
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
-//  ^^^^^ keyword.class.php.php7
+//  ^^^^^ keyword.declaration.class.php.php7
 //        ^^^^^^^ entity.name.class.php.php7
 //                ^^^^^^^^^^ keyword.implement.php.php7
         \Namespace\Namespace\Interface1,
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
 //      ^^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
 //                                     ^ punctuation.delimiter.implement.php.php7
 //      ^ punctuation.delimiter.namespace.a.php.php7
@@ -113,9 +83,7 @@
 //                 ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                           ^^^^^^^^^^ entity.name.type.php.php7
         \Namespace\Namespace\Interface2 {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
 //      ^^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                      ^ class.body.php.php7
 //                                      ^ punctuation.delimiter.class.body.begin.php.php7
 //      ^ punctuation.delimiter.namespace.a.php.php7
 //                ^ punctuation.delimiter.namespace.b.php.php7
@@ -124,21 +92,14 @@
 //                 ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                           ^^^^^^^^^^ entity.name.type.php.php7
         Something...
-//      ^^^^^^^^^^^^ class.php.php7
-//      ^^^^^^^^^^^^ class.body.php.php7
-//      ^^^^^^^^^^^^ class.body.content.php.php7
     }
-//  ^ class.php.php7
-//  ^ class.body.php.php7
 //  ^ punctuation.delimiter.class.body.end.php.php7
 
     class MyClass implements
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
-//  ^^^^^ keyword.class.php.php7
+//  ^^^^^ keyword.declaration.class.php.php7
 //        ^^^^^^^ entity.name.class.php.php7
 //                ^^^^^^^^^^ keyword.implement.php.php7
         Namespace\Namespace\Interface1,
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
 //      ^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
 //                                    ^ punctuation.delimiter.implement.php.php7
 //               ^ punctuation.delimiter.namespace.b.php.php7
@@ -147,9 +108,7 @@
 //                ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                          ^^^^^^^^^^ entity.name.type.php.php7
         Namespace\Namespace\Interface2 {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
 //      ^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                     ^ class.body.php.php7
 //                                     ^ punctuation.delimiter.class.body.begin.php.php7
 //               ^ punctuation.delimiter.namespace.b.php.php7
 //                         ^ punctuation.delimiter.type.php.php7
@@ -157,21 +116,14 @@
 //                ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                          ^^^^^^^^^^ entity.name.type.php.php7
         Something...
-//      ^^^^^^^^^^^^ class.php.php7
-//      ^^^^^^^^^^^^ class.body.php.php7
-//      ^^^^^^^^^^^^ class.body.content.php.php7
     }
-//  ^ class.php.php7
-//  ^ class.body.php.php7
 //  ^ punctuation.delimiter.class.body.end.php.php7
 
     class MyClass extends
-//  ^^^^^^^^^^^^^^^^^^^^^ class.php.php7
-//  ^^^^^ keyword.class.php.php7
+//  ^^^^^ keyword.declaration.class.php.php7
 //        ^^^^^^^ entity.name.class.php.php7
 //                ^^^^^^^ keyword.inherit.php.php7
         \Namespace\Namespace\ParentClass
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
 //      ^^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
 //      ^ punctuation.delimiter.namespace.a.php.php7
 //                ^ punctuation.delimiter.namespace.b.php.php7
@@ -182,7 +134,6 @@
     implements
 //  ^^^^^^^^^^ keyword.implement.php.php7
         \Namespace\Namespace\Interface1,
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
 //      ^^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
 //                                     ^ punctuation.delimiter.implement.php.php7
 //      ^ punctuation.delimiter.namespace.a.php.php7
@@ -192,9 +143,7 @@
 //                 ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                           ^^^^^^^^^^ entity.name.type.php.php7
         \Namespace\Namespace\Interface2 {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
 //      ^^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                      ^ class.body.php.php7
 //                                      ^ punctuation.delimiter.class.body.begin.php.php7
 //      ^ punctuation.delimiter.namespace.a.php.php7
 //                ^ punctuation.delimiter.namespace.b.php.php7
@@ -203,21 +152,14 @@
 //                 ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                           ^^^^^^^^^^ entity.name.type.php.php7
         Something...
-//      ^^^^^^^^^^^^ class.php.php7
-//      ^^^^^^^^^^^^ class.body.php.php7
-//      ^^^^^^^^^^^^ class.body.content.php.php7
     }
-//  ^ class.php.php7
-//  ^ class.body.php.php7
 //  ^ punctuation.delimiter.class.body.end.php.php7
 
     class MyClass extends
-//  ^^^^^^^^^^^^^^^^^^^^^ class.php.php7
-//  ^^^^^ keyword.class.php.php7
+//  ^^^^^ keyword.declaration.class.php.php7
 //        ^^^^^^^ entity.name.class.php.php7
 //                ^^^^^^^ keyword.inherit.php.php7
         Namespace\Namespace\ParentClass
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
 //      ^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
 //               ^ punctuation.delimiter.namespace.b.php.php7
 //                         ^ punctuation.delimiter.type.php.php7
@@ -227,7 +169,6 @@
     implements
 //  ^^^^^^^^^^ keyword.implement.php.php7
         Namespace\Namespace\Interface1,
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
 //      ^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
 //                                    ^ punctuation.delimiter.implement.php.php7
 //               ^ punctuation.delimiter.namespace.b.php.php7
@@ -236,9 +177,7 @@
 //                ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                          ^^^^^^^^^^ entity.name.type.php.php7
         Namespace\Namespace\Interface2 {
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class.php.php7
 //      ^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                                     ^ class.body.php.php7
 //                                     ^ punctuation.delimiter.class.body.begin.php.php7
 //               ^ punctuation.delimiter.namespace.b.php.php7
 //                         ^ punctuation.delimiter.type.php.php7
@@ -246,11 +185,6 @@
 //                ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                          ^^^^^^^^^^ entity.name.type.php.php7
         Something...
-//      ^^^^^^^^^^^^ class.php.php7
-//      ^^^^^^^^^^^^ class.body.php.php7
-//      ^^^^^^^^^^^^ class.body.content.php.php7
     }
-//  ^ class.php.php7
-//  ^ class.body.php.php7
 //  ^ punctuation.delimiter.class.body.end.php.php7
 ?>

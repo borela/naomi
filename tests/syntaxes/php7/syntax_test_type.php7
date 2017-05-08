@@ -14,16 +14,12 @@
 
 <?php
     \Random
-//  ^^^^^^^ type.php.php7
 //  ^ punctuation.delimiter.type.php.php7
 //   ^^^^^^ entity.name.type.php.php7
     Random
-//  ^^^^^^ type.php.php7
 //  ^^^^^^ entity.name.type.php.php7
 
     \Namespace\Namespace\Random
-//  ^^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                      ^^^^^^^ type.php.php7
 //  ^ punctuation.delimiter.namespace.a.php.php7
 //            ^ punctuation.delimiter.namespace.b.php.php7
 //                      ^ punctuation.delimiter.type.php.php7
@@ -31,94 +27,89 @@
 //             ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                       ^^^^^^ entity.name.type.php.php7
     Namespace\Namespace\Random
-//  ^^^^^^^^^^^^^^^^^^^ namespace.path.php.php7
-//                     ^^^^^^^ type.php.php7
 //           ^ punctuation.delimiter.namespace.b.php.php7
 //                     ^ punctuation.delimiter.type.php.php7
 //  ^^^^^^^^^ entity.name.namespace.a.php.php7
 //            ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                      ^^^^^^ entity.name.type.php.php7
-
     array
-//  ^^^^^ support.type.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.type.php.php7
     callable
-//  ^^^^^^^^ support.type.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.type.php.php7
     bool
-//  ^^^^ support.type.php.php7
+//  ^^^^ support.php.php7
 //  ^^^^ entity.name.type.php.php7
     float
-//  ^^^^^ support.type.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.type.php.php7
     int
-//  ^^^ support.type.php.php7
+//  ^^^ support.php.php7
 //  ^^^ entity.name.type.php.php7
     parent
-//  ^^^^^^ support.type.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.type.php.php7
     string
-//  ^^^^^^ support.type.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.type.php.php7
     self
-//  ^^^^ support.type.php.php7
+//  ^^^^ support.php.php7
 //  ^^^^ entity.name.type.php.php7
-
     Traversable
-//  ^^^^^^^^^^^ support.type.interface.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.type.php.php7
     \Traversable
-//  ^^^^^^^^^^^^ support.type.interface.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^ punctuation.delimiter.type.php.php7
 //   ^^^^^^^^^^^ entity.name.type.php.php7
     Iterator
-//  ^^^^^^^^ support.type.interface.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.type.php.php7
     \Iterator
-//  ^^^^^^^^^ support.type.interface.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^ punctuation.delimiter.type.php.php7
 //   ^^^^^^^^ entity.name.type.php.php7
     IteratorAggregate
-//  ^^^^^^^^^^^^^^^^^ support.type.interface.php.php7
+//  ^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^ entity.name.type.php.php7
     \IteratorAggregate
-//  ^^^^^^^^^^^^^^^^^^ support.type.interface.php.php7
+//  ^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^ punctuation.delimiter.type.php.php7
 //   ^^^^^^^^^^^^^^^^^ entity.name.type.php.php7
     Throwable
-//  ^^^^^^^^^ support.type.interface.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.type.php.php7
     \Throwable
-//  ^^^^^^^^^^ support.type.interface.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^ punctuation.delimiter.type.php.php7
 //   ^^^^^^^^^ entity.name.type.php.php7
     ArrayAccess
-//  ^^^^^^^^^^^ support.type.interface.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.type.php.php7
     \ArrayAccess
-//  ^^^^^^^^^^^^ support.type.interface.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^ punctuation.delimiter.type.php.php7
 //   ^^^^^^^^^^^ entity.name.type.php.php7
     Serializable
-//  ^^^^^^^^^^^^ support.type.interface.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.type.php.php7
     \Serializable
-//  ^^^^^^^^^^^^^ support.type.interface.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^ punctuation.delimiter.type.php.php7
 //   ^^^^^^^^^^^^ entity.name.type.php.php7
-
     Closure
-//  ^^^^^^^ support.type.class.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.type.php.php7
     \Closure
-//  ^^^^^^^^ support.type.class.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^ punctuation.delimiter.type.php.php7
 //   ^^^^^^^ entity.name.type.php.php7
     Generator
-//  ^^^^^^^^^ support.type.class.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.type.php.php7
     \Generator
-//  ^^^^^^^^^^ support.type.class.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^ punctuation.delimiter.type.php.php7
 //   ^^^^^^^^^ entity.name.type.php.php7
 ?>

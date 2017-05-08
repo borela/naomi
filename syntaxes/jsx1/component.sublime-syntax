@@ -30,9 +30,12 @@ contexts:
         ({{componentIdentifier}})
       captures:
         1: >-
+          meta.tag.jsx.jsx1
           component.jsx.jsx1
           punctuation.delimiter.tag.begin.jsx.jsx1
+          punctuation.definition.tag.begin.jsx.jsx1
         2: >-
+          meta.tag.jsx.jsx1
           component.jsx.jsx1
           entity.name.tag.jsx.jsx1
       set: [
@@ -50,8 +53,11 @@ contexts:
     - match: \s*(>)
       captures:
         1: >-
+          source.jsx.fjsx15
+          meta.tag.jsx.jsx1
           component.jsx.jsx1
           punctuation.delimiter.tag.end.jsx.jsx1
+          punctuation.definition.tag.end.jsx.jsx1
       pop: true
     # Attributes.
     - match: ""
@@ -68,23 +74,32 @@ contexts:
     - match: \s*(/>)
       captures:
         1: >-
+          source.jsx.fjsx15
+          meta.tag.jsx.jsx1
           component.jsx.jsx1
           punctuation.delimiter.tag.end.jsx.jsx1
+          punctuation.definition.tag.end.jsx.jsx1
       pop: true
     # Closing tag.
     - match: |
         (?x)\s*
         (</)(\2)(>)
       captures:
+        0: source.jsx.fjsx15
         1: >-
+          meta.tag.jsx.jsx1
           component.jsx.jsx1
           punctuation.delimiter.tag.begin.jsx.jsx1
+          punctuation.definition.tag.begin.jsx.jsx1
         2: >-
+          meta.tag.jsx.jsx1
           component.jsx.jsx1
           entity.name.tag.jsx.jsx1
         3: >-
+          meta.tag.jsx.jsx1
           component.jsx.jsx1
           punctuation.delimiter.tag.end.jsx.jsx1
+          punctuation.definition.tag.end.jsx.jsx1
       pop: true
     # Sub tags.
     - match: ""
@@ -99,5 +114,3 @@ contexts:
               )
             )
           pop: true
-        - match: .
-          scope: source.jsx.jsx1

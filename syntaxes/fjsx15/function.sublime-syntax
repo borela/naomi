@@ -104,8 +104,6 @@ contexts:
       set: declaration
 
   declaration:
-    - match: (?=\s*;)
-      pop: true
     - include: comment
     # Body.
     - match: (?=\s*\{)
@@ -129,6 +127,9 @@ contexts:
           storage.modifier.js.fjsx15
           keyword.generator.js.fjsx15
         2: entity.name.function.js.fjsx15
+    # None of the expected items matched, it probably ended.
+    - match: (?=\s*\S)
+      pop: true
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

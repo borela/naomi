@@ -17,20 +17,46 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [_[:alnum:]]*
+
 contexts:
   main:
+    # Include.
     - match: \s*(\#include)
-      scope: keyword.preprocessor.mql.mql4
+      captures:
+        1: keyword.preprocessor.mql.mql4
       set: include-value
+    # Define.
+    - match: |
+        (?xi)
+        \s*(\#define)
+        \s*({{commonIdentifier}})
+      captures:
+        1: keyword.preprocessor.mql.mql4
+        2: entity.name.variable.mql.mql4
+      set: value
+    # Property.
+    - match: |
+        (?x)\s*
+        (\#property)
+      captures:
+        1: keyword.preprocessor.mql.mql4
+      set: [
+        value,
+        property-identifier
+      ]
+    # Other keyword value pairs.
     - match: |
         (?x)\s*
         (\#
-          (?> define
-            | else
+          (?> else
             | endif
             | ifdef
+            | ifndef
             | import
-            | property
           )
         )
       captures:
@@ -48,13 +74,13 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: other-keywords
         - include: statement-and-expression
 
   statement-and-expression:
     - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax
 
-  other-keywords:
+  property-identifier:
+    # Expected properties.
     - match: |
         (?x)\s*\b
         ((?> copyright
@@ -74,6 +100,8 @@ contexts:
               | maximum
               | minimum
               | separate_window
+              | style[1-8]
+              | width[1-8]
             )
           | library
           | link
@@ -86,5 +114,14 @@ contexts:
           | version
         ))
       captures:
-        1: keyword.preprocessor.mql.mql4
+        1: >-
+          support.mql.mql4
+          entity.name.property.mql.mql4
+      pop: true
+    # Not expected property.
+    - match: |
+        (?x)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.unknown.mql.mql4
       pop: true

@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)
+        (?x)\s*
         ((?>\\|\b))
         (
           (?> Bad
@@ -43,7 +43,10 @@ contexts:
           )
         )\b
       captures:
-        0: support.type.class.php.php7
-        1: punctuation.delimiter.type.php.php7
-        2: entity.name.type.php.php7
+        1: >-
+          support.php.php7
+          punctuation.delimiter.type.php.php7
+        2: >-
+          support.php.php7
+          entity.name.type.php.php7
       pop: true

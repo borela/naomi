@@ -14,69 +14,69 @@
 
 <?php
     CASE_LOWER
-//  ^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.constant.php.php7
     CASE_UPPER
-//  ^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.constant.php.php7
     SORT_ASC
-//  ^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.constant.php.php7
     SORT_DESC
-//  ^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.constant.php.php7
     SORT_REGULAR
-//  ^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.constant.php.php7
     SORT_NUMERIC
-//  ^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.constant.php.php7
     SORT_STRING
-//  ^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.constant.php.php7
     SORT_LOCALE_STRING
-//  ^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     SORT_NATURAL
-//  ^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.constant.php.php7
     SORT_FLAG_CASE
-//  ^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.constant.php.php7
     ARRAY_FILTER_USE_KEY
-//  ^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     ARRAY_FILTER_USE_BOTH
-//  ^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     COUNT_NORMAL
-//  ^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.constant.php.php7
     COUNT_RECURSIVE
-//  ^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     EXTR_OVERWRITE
-//  ^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.constant.php.php7
     EXTR_SKIP
-//  ^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.constant.php.php7
     EXTR_PREFIX_SAME
-//  ^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     EXTR_PREFIX_ALL
-//  ^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     EXTR_PREFIX_INVALID
-//  ^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     EXTR_PREFIX_IF_EXISTS
-//  ^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     EXTR_IF_EXISTS
-//  ^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.constant.php.php7
     EXTR_REFS
-//  ^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.constant.php.php7
 ?>

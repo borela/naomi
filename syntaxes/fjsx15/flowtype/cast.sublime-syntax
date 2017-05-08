@@ -24,24 +24,11 @@ variables:
 
 contexts:
   main:
-    # Variable/constant cast. This is necessary to prevent labels to overpower
-    # cast operations.
-    - match: |
-        (?xi)
-        (?=
-          {{commonIdentifier}}
-          \s*:
-        )
+    - match: ""
       set: [
-        operator,
-        variable-or-constant
+        type,
+        operator
       ]
-    # Complex cast.
-    - include: operator
-
-  variable-or-constant:
-    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   operator:
     - match: |
@@ -49,7 +36,7 @@ contexts:
         \s*(:)
       captures:
         1: keyword.operator.other.cast.flowtype
-      set: type
+      pop: true
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax

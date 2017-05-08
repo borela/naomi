@@ -17,21 +17,123 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
+    - include: break-continue
+    - include: yield
     - match: |
-        (?xi)\b
-        (?> break
+        (?x)\s*
+        ((?> return
+          | throw
+        ))\b
+      captures:
+        1: keyword.control.flow-break.php.php7
+      pop: true
+    - match: |
+        (?x)\s*
+        ((?> await
+          | default
+        ))\b
+      captures:
+        1: keyword.control.php.php7
+      pop: true
+
+  break-continue:
+    - match: |
+        (?x)\s*
+        ((?> break
+          | continue
+        ))\b
+      captures:
+        1: keyword.control.flow-break.php.php7
+      set: optional-label
+
+  optional-label:
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+        (?<! abstract
+          | boolean
+          | break
+          | byte
+          | case
+          | catch
+          | char
+          | class
           | const
           | continue
+          | debugger
           | default
+          | delete
+          | double
+          | do
+          | else
+          | enum
+          | export
+          | extends
+          | false
+          | finally
+          | final
+          | float
+          | for
+          | function
           | goto
+          | if
+          | implements
+          | import
+          | in
+          | instanceof
+          | interface
+          | int
+          | long
+          | native
+          | new
+          | null
+          | package
+          | private
+          | protected
+          | public
           | return
+          | short
+          | static
+          | super
+          | switch
+          | synchronized
+          | this
+          | throws
           | throw
-          | yield(\s+from)?
-        )\b
-      scope: keyword.control.simple.php.php7
-      set: expression
+          | transient
+          | true
+          | try
+          | typeof
+          | var
+          | void
+          | volatile
+          | while
+          | with
+        )
+        (?=\W)
+      captures:
+        1: entity.name.label.php.php7
+      pop: true
+    - match: ""
+      pop: true
 
-  expression:
-    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+  yield:
+    - match: |
+        (?x)\s*
+        (yield)
+        (?> \s*(\*)
+          | \b
+        )
+      captures:
+        1: keyword.control.php.php7
+        2: >-
+          statement.modifier.php.php7
+          keyword.generator.php.php7
+      pop: true

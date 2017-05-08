@@ -25,6 +25,8 @@ contexts:
       set: declarations
 
   declarations:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/module.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax

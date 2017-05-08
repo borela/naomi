@@ -12,14 +12,20 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: indentation block
+name: MQL’s block indentation settings
 scope: source.mql
 settings:
   preserveIndent: false
   increaseIndentPattern: |
     (?x)
-    (?> ^\s*(?>private|protected|public)
-      | (?> \{
+    (?> ^\s*
+        (?> case
+          | private
+          | protected
+          | public
+        )
+      | ^.*
+        (?> \{
           | \[
           | \(
         )\s*$
@@ -27,7 +33,8 @@ settings:
   decreaseIndentPattern: |
     (?x)
     ^\s*
-    (?> private
+    (?> case
+      | private
       | protected
       | public
       | }
@@ -37,8 +44,10 @@ settings:
   bracketIndentNextLinePattern: |
     (?x)
     ^\s*
-    (?> else
+    (?> case
+      | else
       | for
       | if
+      | switch
       | while
     )\b

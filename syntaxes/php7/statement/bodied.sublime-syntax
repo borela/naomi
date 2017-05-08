@@ -19,61 +19,80 @@ scope: ...
 
 contexts:
   main:
-    # Without header.
+    # Body only.
     - match: |
-        (?xi)\b
-        (?> do
+        (?x)\s*
+        ((?> do
           | else
-          | try
           | finally
-        )\b
-      scope: keyword.control.php.php7
+          | try
+        ))\b
+      captures:
+        1: keyword.control.php.php7
       set: body
-    # With header.
+    # Header and body.
     - match: |
-        (?xi)\b
-        (?> if
+        (?x)\s*\b
+        ((?> catch
+          | if
           | elseif
           | for(?:each)?
           | while
-          | catch
           | switch
-        )\b
-      scope: keyword.control.php.php7
+        ))\b
+      captures:
+        1: keyword.control.php.php7
       set: [
         body,
         header
       ]
 
+  optional-header:
+    - match: (?=\s*;)
+      pop: true
+    - match: (?=\s*\()
+      set: header
+
   header:
-    - match: \(
-      scope: punctuation.delimiter.control.header.begin.php.php7
+    - match: \s*(\()
+      captures:
+        1: punctuation.delimiter.control.header.begin.php.php7
       set: header-content
 
   header-content:
-    - match: \)
-      scope: punctuation.delimiter.control.header.end.php.php7
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.control.header.end.php.php7
       pop: true
-    - match: (?=\S)
+    - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
-        - match: (?=\))
+        - match: (?=\s*\))
           pop: true
+        - include: statement-and-expression
+
+  terminator:
+    - match: \s*(;)
+      captures:
+        1: keyword.operator.other.terminator.php.php7
+      pop: true
 
   body:
-    - match: \{
-      scope: punctuation.delimiter.control.body.begin.php.php7
+    - match: \s*(\{)
+      captures:
+        1: punctuation.delimiter.control.body.begin.php.php7
       set: body-content
-    - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+    - include: statement-and-expression
 
   body-content:
-    - match: \}
-      scope: punctuation.delimiter.control.body.end.php.php7
+    - match: \s*(})
+      captures:
+        1: punctuation.delimiter.control.body.end.php.php7
       pop: true
-    - match: (?=\S)
+    - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/php7/statement.sublime-syntax
-        - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+        - match: (?=\s*})
+          pop: true
+        - include: statement-and-expression
 
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax

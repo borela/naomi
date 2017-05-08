@@ -31,8 +31,10 @@ contexts:
           {{commonIdentifier}}
         )
       scope: >-
+        meta.tag.xml.xml1
         tag.xml.xml1
         punctuation.delimiter.tag.begin.xml.xml1
+        punctuation.definition.tag.begin.xml.xml1
       set: tag-name
 
   tag-name:
@@ -40,6 +42,7 @@ contexts:
         (?xi)
         ({{commonIdentifier}})
       scope: >-
+        meta.tag.xml.xml1
         tag.xml.xml1
         entity.name.tag.xml.xml1
       set: [
@@ -52,24 +55,34 @@ contexts:
       pop: true
     - match: \>
       scope: >-
+        meta.tag.xml.xml1
         tag.xml.xml1
         punctuation.delimiter.tag.end.xml.xml1
+        punctuation.definition.tag.end.xml.xml1
       pop: true
     - include: Packages/Naomi/syntaxes/xml1/element/attributes.sublime-syntax
 
   content:
     - match: />
       scope: >-
+        meta.tag.xml.xml1
         tag.xml.xml1
         punctuation.delimiter.tag.end.xml.xml1
+        punctuation.definition.tag.end.xml.xml1
       pop: true
     - match: |
         (?x)
         (</)(\1)(>)
       captures:
-        0: tag.close.xml.xml1
-        1: punctuation.delimiter.tag.begin.xml.xml1
+        0: >-
+          meta.tag.xml.xml1
+          tag.close.xml.xml1
+        1: >-
+          punctuation.delimiter.tag.begin.xml.xml1
+          punctuation.definition.tag.begin.xml.xml1
         2: entity.name.tag.xml.xml1
-        3: punctuation.delimiter.tag.end.xml.xml1
+        3: >-
+          punctuation.delimiter.tag.end.xml.xml1
+          punctuation.definition.tag.end.xml.xml1
       pop: true
     - include: Packages/Naomi/syntaxes/xml1/element/content.sublime-syntax

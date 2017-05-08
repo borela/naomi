@@ -19,12 +19,11 @@ scope: ...
 
 contexts:
   main:
-    - match: ":"
-      scope: punctuation.delimiter.function.php.php7
+    - match: \s*(:)
+      captures:
+        1: punctuation.delimiter.function.php.php7
       set: return-type
 
   return-type:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?={|;)
-      pop: true
     - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax

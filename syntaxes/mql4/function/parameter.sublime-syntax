@@ -49,6 +49,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   parameter:
+    - include: comment-no-pop
     # End of parameter.
     - match: |
         (?x)
@@ -63,7 +64,7 @@ contexts:
       captures:
         1: >-
           storage.modifier.mql.mql4
-          keyword.other.reference.mql.mql4
+          keyword.operator.other.reference.mql.mql4
     # Array indicator.
     - match: \s*(\[)
       captures:
@@ -81,7 +82,7 @@ contexts:
       push: identifier
 
   identifier:
-    - meta_content_scope: parameter.mql.mql4
+    - meta_scope: function.parameter.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
 
@@ -106,6 +107,11 @@ contexts:
     - match: ""
       push:
         - include: statement-and-expression
+        - match: ""
+          pop: true
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
 
   statement-and-expression:
     - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax

@@ -78,7 +78,8 @@
 //           ^ .punctuation.delimiter.function.body.end.js.fjsx15
 //            ^ .punctuation.delimiter.object.js.fjsx15
     *method(){},
-//  ^ .keyword.modifier.generator.js.fjsx15
+//  ^ .storage.modifier.js.fjsx15
+//  ^ .keyword.generator.js.fjsx15
 //   ^^^^^^ .entity.name.function.js.fjsx15
 //         ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //          ^ .punctuation.delimiter.function.parameters.end.js.fjsx15

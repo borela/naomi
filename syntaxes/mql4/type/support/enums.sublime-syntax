@@ -46,4 +46,8 @@ contexts:
         1: >-
           support.mql.mql4
           entity.name.type.mql.mql4
-      pop: true
+      set: modifiers
+
+  modifiers:
+    - include: Packages/Naomi/syntaxes/mql4/type/modifiers.sublime-syntax
+

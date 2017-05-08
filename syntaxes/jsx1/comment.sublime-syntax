@@ -31,14 +31,23 @@ contexts:
   line:
     - meta_scope: comment.line.jsx.jsx1
     - meta_content_scope: comment.content.jsx.jsx1
+    - include: email
+    - include: link
     - match: \s*$
       pop: true
 
   block:
     - meta_scope: comment.block.jsx.jsx1
     - meta_content_scope: comment.content.jsx.jsx1
+    - include: email
+    - include: link
     - match: \s*(\*\/)
       captures:
         1: punctuation.comment.end.jsx.jsx1
       pop: true
 
+  link:
+    - include: Packages/Naomi/syntaxes/shared/link.sublime-syntax
+
+  email:
+    - include: Packages/Naomi/syntaxes/shared/email.sublime-syntax

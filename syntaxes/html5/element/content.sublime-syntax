@@ -21,6 +21,7 @@ contexts:
   main:
     - match: ""
       push:
+        - include: Packages/Naomi/syntaxes/html5/php.sublime-syntax
         - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
         - match: \s*
           pop: true

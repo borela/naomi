@@ -1,0 +1,89 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
+  constantIdentifier: |
+    [$_[:upper:]]
+    [$_[:upper:][:digit:]]*
+
+contexts:
+  main:
+    - match: |
+        (?x)
+        (?:\s*
+          (?> (\+)
+            | (-)
+          )
+        )?
+        \s*(\[)
+      captures:
+        1: keyword.operator.other.covariant.flowtype
+        2: keyword.operator.other.contravariant.flowtype
+        3: punctuation.delimiter.object.flowtype
+      set: [
+        type,
+        lookup-table-end,
+        property
+      ]
+
+  lookup-table-end:
+    - match: \s*(])
+      captures:
+        1: punctuation.delimiter.object.flowtype
+      pop: true
+
+  property:
+    - include: comment
+    # Constant.
+    - match: |
+        (?x)\s*
+        ({{constantIdentifier}})(\?)?
+      captures:
+        1: entity.name.constant.js.fjsx15
+        2: keyword.operator.other.optional.flowtype
+      set: type
+    # Normal property.
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})(\?)?
+      captures:
+        1: entity.name.variable.js.fjsx15
+        2: keyword.operator.other.optional.flowtype
+      set: type
+    # Anything else.
+    - match: (?=\s*\S)
+      set: [
+        type,
+        literal-string
+      ]
+
+  literal-string:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
+
+  type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax

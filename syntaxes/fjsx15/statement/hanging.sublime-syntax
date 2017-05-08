@@ -21,10 +21,11 @@ contexts:
   main:
     - match: |
         (?x)\s*
-        (?> case
+        ((?> case
           | default
-        )\b
-      scope: keyword.control.js.fjsx15
+        ))\b
+      captures:
+        1: keyword.control.js.fjsx15
       set: operator
 
   operator:

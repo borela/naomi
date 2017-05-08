@@ -27,13 +27,10 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/namespace-path.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/function/support/magic.sublime-syntax
     - match: |
-        (?xi)
+        (?xi)\s*
         ((?>\\|\b))
-        (
-          {{commonIdentifier}}
-        )\b
+        ({{commonIdentifier}})\b
       captures:
-        0: function.call.php.php7
         1: punctuation.delimiter.function.php.php7
         2: entity.name.function.php.php7
       pop: true

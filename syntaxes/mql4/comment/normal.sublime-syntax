@@ -30,17 +30,29 @@ contexts:
 
   line:
     - meta_scope: comment.line.mql.mql4
+    - include: email
+    - include: link
     - match: \s*$
       pop: true
 
   block:
     - meta_scope: comment.block.mql.mql4
+    - include: email
+    - include: link
     - match: \s*(\*/)
       captures:
         1: punctuation.delimiter.comment.end.mql.mql4
       set:
-        - match: \s*$\n
+        # Used to fix the block comment indentation settings.
+        # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
+        - match: \s*$\n?
           scope: meta.block-end.mql.mql4
           pop: true
         - match: ''
           pop: true
+
+  link:
+    - include: Packages/Naomi/syntaxes/shared/link.sublime-syntax
+
+  email:
+    - include: Packages/Naomi/syntaxes/shared/email.sublime-syntax

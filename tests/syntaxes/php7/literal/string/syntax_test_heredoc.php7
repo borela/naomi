@@ -18,7 +18,6 @@
 #  ^^^^^^^^^^ punctuation.delimiter.string.begin.php.php7
    Something is here....
 #  ^^^^^^^^^^^^^^^^^^^^^ string.unquoted.heredoc.php.php7
-#  ^^^^^^^^^^^^^^^^^^^^^ string.content.php.php7
    Escaped: \\\n\r\t\v\e\f\$\101\x41\u{0065}
 #           ^^ constant.character.escape.a.php.php7
 #             ^^ constant.character.escape.b.php.php7
@@ -79,6 +78,5 @@ Heredoc;
 # <- string.unquoted.heredoc.php.php7
 #^^^^^^ string.unquoted.heredoc.php.php7
 # <- punctuation.delimiter.string.end.php.php7
-#^^^^^^ punctuation.delimiter.string.end.php.php7
-#      ^ keyword.operator.other.terminator.php.php7
+#^^^^^^^ punctuation.delimiter.string.end.php.php7
 ?>

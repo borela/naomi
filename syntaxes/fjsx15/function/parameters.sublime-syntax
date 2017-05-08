@@ -41,11 +41,7 @@ contexts:
       push:
         - match: |
             (?x)
-            (?=\s*
-              (?> ,
-                | \)
-              )
-            )
+            (?=\s*(?>,|\)))
           pop: true
         - include: comment
         - include: rest-operator
@@ -72,7 +68,7 @@ contexts:
             ({{commonIdentifier}})(\?)?
           captures:
             1: >-
-              parameter.js.fjsx15
+              function.parameter.js.fjsx15
               entity.name.variable.js.fjsx15
             2: keyword.operator.other.optional.flowtype
           pop: true
@@ -83,11 +79,7 @@ contexts:
   default-value:
     - match: |
         (?x)
-        (?=\s*
-          (?> ,
-            | \)
-          )
-        )
+        (?=\s*(?>,|\)))
       pop: true
     - match: ""
       push:
@@ -96,16 +88,16 @@ contexts:
           pop: true
 
   rest-operator:
-    - include: Packages/Naomi/syntaxes/fjsx15/greedy-rest.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/rest.sublime-syntax
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
 
   destructuring-object:
-    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/destructuring/object.sublime-syntax
 
   destructuring-array:
-    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/destructuring/array.sublime-syntax
 
   return-type:
     - match: (?=\s*:)

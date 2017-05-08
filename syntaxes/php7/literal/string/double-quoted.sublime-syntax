@@ -40,12 +40,12 @@ variables:
 
 contexts:
   main:
-    - match: \"
+    - match: \s*(")
       scope: >-
         string.quoted.double.php.php7
         punctuation.delimiter.string.begin.php.php7
       with_prototype:
-        - match: \"
+        - match: \s*(")
           scope: >-
             string.quoted.double.php.php7
             punctuation.delimiter.string.end.php.php7
@@ -53,73 +53,67 @@ contexts:
       set: escape-a-variable-a
 
   escape-a-variable-a:
-    - meta_content_scope: >-
-        string.quoted.double.php.php7
-        string.content.php.php7
-    - match: (?x)(?={{doubleQuotedEscapeSequences}})
+    - meta_content_scope:  string.quoted.double.php.php7
+    - match: (?x)(?=\s*{{doubleQuotedEscapeSequences}})
       set: [
         escape-b-variable-a,
         escape-a
       ]
-    - match: (?x)(?={{embeddedVariableStart}})
+    - match: (?x)(?=\s*{{embeddedVariableStart}})
       set: [
         escape-a-variable-b,
         variable-a
       ]
 
   escape-b-variable-a:
-    - meta_content_scope: >-
-        string.quoted.double.php.php7
-        string.content.php.php7
-    - match: (?x)(?={{doubleQuotedEscapeSequences}})
+    - meta_content_scope: string.quoted.double.php.php7
+    - match: (?x)(?=\s*{{doubleQuotedEscapeSequences}})
       set: [
         escape-a-variable-a,
         escape-b
       ]
-    - match: (?x)(?={{embeddedVariableStart}})
+    - match: (?x)(?=\s*{{embeddedVariableStart}})
       set: [
         escape-b-variable-b,
         variable-a
       ]
 
   escape-a-variable-b:
-    - meta_content_scope: >-
-        string.quoted.double.php.php7
-        string.content.php.php7
-    - match: (?x)(?={{doubleQuotedEscapeSequences}})
+    - meta_content_scope: string.quoted.double.php.php7
+    - match: (?x)(?=\s*{{doubleQuotedEscapeSequences}})
       set: [
         escape-b-variable-b,
         escape-a
       ]
-    - match: (?x)(?={{embeddedVariableStart}})
+    - match: (?x)(?=\s*{{embeddedVariableStart}})
       set: [
         escape-a-variable-a,
         variable-b
       ]
 
   escape-b-variable-b:
-    - meta_content_scope: >-
-        string.quoted.double.php.php7
-        string.content.php.php7
-    - match: (?x)(?={{doubleQuotedEscapeSequences}})
+    - meta_content_scope: string.quoted.double.php.php7
+    - match: (?x)(?=\s*{{doubleQuotedEscapeSequences}})
       set: [
         escape-a-variable-b,
         escape-b
       ]
-    - match: (?x)(?={{embeddedVariableStart}})
+    - match: (?x)(?=\s*{{embeddedVariableStart}})
       set: [
         escape-b-variable-a,
         variable-b
       ]
 
   escape-a:
-    - match: (?x){{doubleQuotedEscapeSequences}}
-      scope: constant.character.escape.a.php.php7
+    - match: (?x)\s*({{doubleQuotedEscapeSequences}})
+      captures:
+        1: constant.character.escape.a.php.php7
       pop: true
 
   escape-b:
-    - match: (?x){{doubleQuotedEscapeSequences}}
-      scope: constant.character.escape.b.php.php7
+    - match: (?x)\s*({{doubleQuotedEscapeSequences}})
+      captures:
+        1: constant.character.escape.b.php.php7
       pop: true
 
   variable-a:

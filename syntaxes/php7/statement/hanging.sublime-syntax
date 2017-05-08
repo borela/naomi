@@ -20,15 +20,19 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?xi)\b
-        (?> case
+        (?x)\s*
+        ((?> case
           | default
-        )\b
-      scope: keyword.control.hanging.php.php7
+        ))\b
+      captures:
+        1: keyword.control.php.php7
       set: operator
 
   operator:
-    - match: ":"
-      scope: keyword.operator.other.php.php7
+    - match: \s*(:)
+      captures:
+        1: keyword.operator.other.php.php7
       pop: true
-    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax

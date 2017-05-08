@@ -33,6 +33,6 @@ contexts:
           )
         )
       captures:
-        0: parameter.scss.scss3
+        0: function.parameter.scss.scss3
         1: entity.name.variable.scss.scss3
       pop: true

@@ -35,7 +35,7 @@ variables:
 
 contexts:
   main:
-    - match: (?xi){{simpleVariable}}
+    - match: (?xi)\s*{{simpleVariable}}
       captures:
         1: punctuation.delimiter.variable.begin.php.php7
         2: entity.name.variable.php.php7

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>indentation block</string>
+	<string>MQL’s block indentation settings</string>
 	<key>scope</key>
 	<string>source.mql</string>
 	<key>settings</key>
@@ -11,16 +11,19 @@
 		<key>bracketIndentNextLinePattern</key>
 		<string>(?x)
 ^\s*
-(?&gt; else
+(?&gt; case
+  | else
   | for
   | if
+  | switch
   | while
 )\b
 </string>
 		<key>decreaseIndentPattern</key>
 		<string>(?x)
 ^\s*
-(?&gt; private
+(?&gt; case
+  | private
   | protected
   | public
   | }
@@ -30,8 +33,14 @@
 </string>
 		<key>increaseIndentPattern</key>
 		<string>(?x)
-(?&gt; ^\s*(?&gt;private|protected|public)
-  | (?&gt; \{
+(?&gt; ^\s*
+    (?&gt; case
+      | private
+      | protected
+      | public
+    )
+  | ^.*
+    (?&gt; \{
       | \[
       | \(
     )\s*$

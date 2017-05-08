@@ -14,391 +14,294 @@
 
 <?php
     addcslashes();
-//  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     addslashes();
-//  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     bin2hex();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     chop();
-//  ^^^^ function.call.php.php7
-//  ^^^^ support.function.php.php7
+//  ^^^^ support.php.php7
 //  ^^^^ entity.name.function.php.php7
     chr();
-//  ^^^ function.call.php.php7
-//  ^^^ support.function.php.php7
+//  ^^^ support.php.php7
 //  ^^^ entity.name.function.php.php7
     chunk_split();
-//  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     convert_cyr_string();
-//  ^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     convert_uudecode();
-//  ^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     convert_uuencode();
-//  ^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     count_chars();
-//  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     crc32();
-//  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     crypt();
-//  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     explode();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     fprintf();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     get_html_translation_table();
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     hebrev();
-//  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     hebrevc();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     hex2bin();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     html_entity_decode();
-//  ^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     htmlentities();
-//  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     htmlspecialchars_decode();
-//  ^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     htmlspecialchars();
-//  ^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     implode();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     join();
-//  ^^^^ function.call.php.php7
-//  ^^^^ support.function.php.php7
+//  ^^^^ support.php.php7
 //  ^^^^ entity.name.function.php.php7
     lcfirst();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     levenshtein();
-//  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     localeconv();
-//  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     ltrim();
-//  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     md5_file();
-//  ^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     md5();
-//  ^^^ function.call.php.php7
-//  ^^^ support.function.php.php7
+//  ^^^ support.php.php7
 //  ^^^ entity.name.function.php.php7
     metaphone();
-//  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     money_format();
-//  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     nl_langinfo();
-//  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     nl2br();
-//  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     number_format();
-//  ^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.function.php.php7
     ord();
-//  ^^^ function.call.php.php7
-//  ^^^ support.function.php.php7
+//  ^^^ support.php.php7
 //  ^^^ entity.name.function.php.php7
     parse_str();
-//  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     print();
-//  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     printf();
-//  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     quoted_printable_decode();
-//  ^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     quoted_printable_encode();
-//  ^^^^^^^^^^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.function.php.php7
     quotemeta();
-//  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     rtrim();
-//  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     setlocale();
-//  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     sha1_file();
-//  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     sha1();
-//  ^^^^ function.call.php.php7
-//  ^^^^ support.function.php.php7
+//  ^^^^ support.php.php7
 //  ^^^^ entity.name.function.php.php7
     similar_text();
-//  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     soundex();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     sprintf();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     sscanf();
-//  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     str_getcsv();
-//  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     str_ireplace();
-//  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     str_pad();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     str_repeat();
-//  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     str_replace();
-//  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     str_rot13();
-//  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     str_shuffle();
-//  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     str_split();
-//  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     str_word_count();
-//  ^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.function.php.php7
     strcasecmp();
-//  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     strchr();
-//  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     strcmp();
-//  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     strcoll();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     strcspn();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     strip_tags();
-//  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     stripcslashes();
-//  ^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.function.php.php7
     stripos();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     stripslashes();
-//  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     stristr();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     strlen();
-//  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     strnatcasecmp();
-//  ^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^ entity.name.function.php.php7
     strnatcmp();
-//  ^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.function.php.php7
     strncasecmp();
-//  ^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.function.php.php7
     strncmp();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     strpbrk();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     strpos();
-//  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     strrchr();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     strrev();
-//  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     strripos();
-//  ^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     strrpos();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     strspn();
-//  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     strstr();
-//  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     strtok();
-//  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     strtolower();
-//  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     strtoupper();
-//  ^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^ entity.name.function.php.php7
     strtr();
-//  ^^^^^ function.call.php.php7
-//  ^^^^^ support.function.php.php7
+//  ^^^^^ support.php.php7
 //  ^^^^^ entity.name.function.php.php7
     substr_compare();
-//  ^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.function.php.php7
     substr_count();
-//  ^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.function.php.php7
     substr_replace();
-//  ^^^^^^^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^ entity.name.function.php.php7
     substr();
-//  ^^^^^^ function.call.php.php7
-//  ^^^^^^ support.function.php.php7
+//  ^^^^^^ support.php.php7
 //  ^^^^^^ entity.name.function.php.php7
     trim();
-//  ^^^^ function.call.php.php7
-//  ^^^^ support.function.php.php7
+//  ^^^^ support.php.php7
 //  ^^^^ entity.name.function.php.php7
     ucfirst();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     ucwords();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     vfprintf();
-//  ^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     vprintf();
-//  ^^^^^^^ function.call.php.php7
-//  ^^^^^^^ support.function.php.php7
+//  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.function.php.php7
     vsprintf();
-//  ^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
     wordwrap();
-//  ^^^^^^^^ function.call.php.php7
-//  ^^^^^^^^ support.function.php.php7
+//  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.function.php.php7
 ?>

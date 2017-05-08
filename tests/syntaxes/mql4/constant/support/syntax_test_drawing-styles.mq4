@@ -13,24 +13,24 @@
 // the License.
 
     DRAW_LINE
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     DRAW_SECTION
-//  ^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^ support.mql.mql4
     DRAW_HISTOGRAM
-//  ^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^ support.mql.mql4
     DRAW_ARROW
-//  ^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^ support.mql.mql4
     DRAW_ZIGZAG
-//  ^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^ support.mql.mql4
     DRAW_NONE
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     STYLE_SOLID
-//  ^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^ support.mql.mql4
     STYLE_DASH
-//  ^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^ support.mql.mql4
     STYLE_DOT
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     STYLE_DASHDOT
-//  ^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^ support.mql.mql4
     STYLE_DASHDOTDOT
-//  ^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^ support.mql.mql4

@@ -13,11 +13,11 @@
 // the License.
 
    INIT_SUCCEEDED
-// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    INIT_FAILED
-// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^ entity.name.constant.mql.mql4
    INIT_PARAMETERS_INCORRECT
-// ^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.mql.mql4

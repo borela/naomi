@@ -31,7 +31,6 @@ contexts:
         (?xi)\s*\b
         ((?> default
           | delete
-          | goto
         ))\b
       captures:
         1: keyword.control.mql.mql4

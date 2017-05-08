@@ -27,6 +27,14 @@ contexts:
 
   comment:
     - meta_scope: comment.block.html.html5
+    - include: email
+    - include: link
     - match: -->
       scope: punctuation.comment.block.end.html.html5
       pop: true
+
+  link:
+    - include: Packages/Naomi/syntaxes/shared/link.sublime-syntax
+
+  email:
+    - include: Packages/Naomi/syntaxes/shared/email.sublime-syntax

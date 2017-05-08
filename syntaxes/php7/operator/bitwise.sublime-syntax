@@ -37,8 +37,8 @@ contexts:
   # |  >>>=    | Unsigned right shift assignment. |
   main:
     - match: |
-        (?x)
-        (?> xor
+        (?x)\s*
+        ((?> xor
           | ~=?
           | &=?
           | \|=?
@@ -46,6 +46,7 @@ contexts:
           | <<=?
           | >>>=?
           | >>=?
-        )
-      scope: keyword.operator.bitwise.php.php7
+        ))
+      captures:
+        1: keyword.operator.bitwise.php.php7
       pop: true

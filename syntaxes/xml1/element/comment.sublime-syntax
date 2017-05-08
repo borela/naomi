@@ -20,11 +20,25 @@ scope: ...
 contexts:
   main:
     - match: <!--
-      scope: punctuation.comment.begin.xml.xml1
+      scope: >-
+        meta.tag.xml.xml1
+        punctuation.comment.begin.xml.xml1
+        punctuation.definition.tag.begin.xml.xml1
       set: comment
 
   comment:
     - meta_scope: comment.block.xml.xml1
+    - include: email
+    - include: link
     - match: -->
-      scope: punctuation.comment.end.xml.xml1
+      scope: >-
+        meta.tag.xml.xml1
+        punctuation.comment.end.xml.xml1
+        punctuation.definition.tag.end.xml.xml1
       pop: true
+
+  link:
+    - include: Packages/Naomi/syntaxes/shared/link.sublime-syntax
+
+  email:
+    - include: Packages/Naomi/syntaxes/shared/email.sublime-syntax

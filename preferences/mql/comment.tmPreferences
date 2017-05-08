@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>comment</string>
+	<string>MQL’s comments</string>
 	<key>scope</key>
 	<string>source.mql</string>
 	<key>settings</key>

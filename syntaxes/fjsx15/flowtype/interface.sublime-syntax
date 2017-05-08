@@ -26,26 +26,33 @@ contexts:
   main:
     - match: \s*(interface)\b
       captures:
-        1: keyword.interface.flowtype
+        1: >-
+          storage.type.flowtype
+          keyword.declaration.interface.flowtype
       set: identifier
 
   identifier:
+    - include: comment
     - match: (?=\s*extends\b)
       set: [
         body,
         extension
       ]
-    - match: (?=\{)
+    - match: (?=\s*\{)
       set: body
     # Actual identifier.
-    - match: (?xi){{commonIdentifier}}
-      scope: entity.name.interface.flowtype
+    - match: (?xi)\s*({{commonIdentifier}})
+      captures:
+        1: entity.name.interface.flowtype
       set: optional-template-parameters
 
   extension:
+    - include: comment
     - match: \s*(extends)\b
       captures:
-        1: keyword.extension.js.fjsx15
+        1: >-
+          storage.modifier.flowtype
+          keyword.extension.flowtype
       set: type
 
   type:
@@ -55,7 +62,8 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
 
   optional-template-parameters:
-    - match: (?=<)
+    - include: comment
+    - match: (?=\s*<)
       set: [
         optional-extension,
         template-parameters
@@ -65,37 +73,42 @@ contexts:
         body,
         extension
       ]
-    - match: (?=\{)
+    - match: (?=\s*\{)
       set: body
 
   optional-extension:
+    - include: comment
     - match: (?=\s*extends\b)
       set: [
         body,
         extension
       ]
-    - match: (?=\{)
+    - match: (?=\s*\{)
       set: body
 
   body:
     - include: comment
-    - match: \{
-      scope: punctuation.delimiter.interface.body.begin.js.fjsx15
+    - match: \s*(\{)
+      captures:
+        1: punctuation.delimiter.interface.body.begin.flowtype
       set: body-content
 
   body-content:
     - include: comment
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.interface.body.end.js.fjsx15
+        1: punctuation.delimiter.interface.body.end.flowtype
       pop: true
-    - match: (?=\S)
+    - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/method.sublime-syntax
-        - match: ""
+        - match: (?=\s*})
           pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/lookup-table.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

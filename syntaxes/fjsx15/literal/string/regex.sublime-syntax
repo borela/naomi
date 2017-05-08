@@ -51,6 +51,16 @@ contexts:
           | \?
           | :
           | /
+          | case
+          | export
+          | import
+          | in
+          | instanceof
+          | new
+          | return
+          | throw
+          | typeof
+          | yield
         )
         \s*/
         (?=

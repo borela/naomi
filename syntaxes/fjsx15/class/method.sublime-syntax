@@ -32,42 +32,71 @@ variables:
 
 contexts:
   main:
-    # No modifiers.
-    - match: |
-        (?xi)
-        (?=
-          \s*\*?
-          \s*{{methodIdentifier}}
-          \s*\(
-        )
-      set: declaration
     # With modifiers.
     - match: |
         (?xi)\s*
         (
-          (?> async
-            | get
-            | s
-              (?> et
-                | tatic
-                  (?:
-                    \s+(?>async|get|set)
-                  )?
-              )
+          (?> async\b
+            | get(?=(?>\s*\[|\s+\w))
+            | set(?=(?>\s*\[|\s+\w))
+            | static (?:\s*(?>async|get|set)\b)?
           )
         )
         (?=
-          \s*\*?
-          \s*{{methodIdentifier}}
+          (?:\s*\*)?
+          (?:\s*{{methodIdentifier}})?
+          (?:\s*<.*>)?
           \s*\(
         )
       captures:
-        1: keyword.modifier.js.fjsx15
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.modifier.js.fjsx15
       set: declaration
+    # No modifiers.
+    - match: |
+        (?xi)
+        (?=
+          (?:\s*\*)?
+          (?:\s*{{methodIdentifier}})?
+          (?:\s*<.*>)?
+          \s*\(
+        )
+      set: declaration
+    # Class instance property.
+    - match: |
+        (?xi)
+        (?=
+          \s*{{commonIdentifier}}
+          \s*=
+          \s*
+            (?> \(.*\)
+                (?:\s*<.*>)?
+              | {{commonIdentifier}
+                (?:\s*<.*>)?
+            )
+          (?:\s*:.*?)?
+          \s*=>
+        )
+      set: [
+        arrow-function,
+        class-instance-identifier
+      ]
+
+  class-instance-identifier:
+    - match: |
+        (?xi)
+        \s*({{commonIdentifier}})
+        \s*(=)
+      captures:
+        1: entity.name.function.js.fjsx15
+        2: punctuation.delimiter.function.js.fjsx15
+      pop: true
+
+  arrow-function:
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
 
   declaration:
-    - match: (?=\s*;)
-      pop: true
     # Body.
     - match: (?=\s*\{)
       set: body
@@ -85,6 +114,8 @@ contexts:
         1: >-
           support.js.fjsx15
           entity.name.function.js.fjsx15
+    # React JS’s support methods.
+    - include: Packages/Naomi/syntaxes/fjsx15/class/reactjs.sublime-syntax
     # Identifier.
     - match: |
         (?xi)
@@ -108,14 +139,15 @@ contexts:
           keyword.generator.js.fjsx15
         2: keyword.operator.other.computed-function.begin.js.fjsx15
       push: computed-function
-    # Other identifier types.
-    - match: ""
+    # String identifiers
+    - match: (?=(?>'|"|`))
       push:
-        - match: (?=\s*{)
-          pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
+    # None of the expected items matched, it probably ended.
+    - match: (?=\s*\S)
+      pop: true
 
   template-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax

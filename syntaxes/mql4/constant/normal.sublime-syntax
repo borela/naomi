@@ -20,13 +20,21 @@ scope: ...
 variables:
   constantIdentifier: |
     [_[:upper:]]
-    [_[:upper:][:digit:]]*
+    [_[:upper:][:digit:]]+
 
 contexts:
   main:
+    # Multiple characters.
     - match: |
         (?x)\s*
-        ({{constantIdentifier}})
+        ({{constantIdentifier}})\b
+      captures:
+        1: entity.name.constant.mql.mql4
+      pop: true
+    # Single character.
+    - match: |
+        (?x)\s*
+        ([[:upper:]])\b
       captures:
         1: entity.name.constant.mql.mql4
       pop: true

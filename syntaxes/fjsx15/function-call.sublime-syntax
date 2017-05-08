@@ -34,7 +34,7 @@ contexts:
           \s*\(
         )
       set: arguments
-    # Templated function.
+    # Template function.
     - match: |
         (?xi)
         (?=
@@ -72,6 +72,8 @@ contexts:
           support.js.fjsx15
           entity.name.function.js.fjsx15
       pop: true
+    # React JS’s support functions.
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/reactjs.sublime-syntax
     # Identifier.
     - match: |
         (?xi)

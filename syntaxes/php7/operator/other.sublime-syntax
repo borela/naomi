@@ -37,40 +37,62 @@ contexts:
   # |     ::     | Scope resolution.   |
   # |    ...     | Argument unpacking. |
   # |     ??     | Null coalescing.    |
-  # |     ?      |                     |
-  # |     :      |                     |
+  # |     ?      | Ternary.            |
   main:
-    - match: (?xi)\bas\b
-      scope: keyword.operator.other.alias.php.php7
+    - match: (?xi)\s*\b(as)\b
+      captures:
+        1: keyword.operator.other.word.alias.php.php7
       pop: true
-    - match: (?xi)\binstanceof\b
-      scope: keyword.operator.other.php.php7
+    - match: (?xi)\s*\b(instanceof)\b
+      scope: keyword.operator.other.word.php.php7
       pop: true
-    - match: "=>"
-      scope: keyword.operator.other.key.association.php.php7
-    - match: "@"
-      scope: keyword.operator.other.error.suppression.php.php7
+    - match: \s*(=>)
+      captures:
+        1: keyword.operator.other.key.association.php.php7
+    - match: \s*(@)
+      captures:
+        1: keyword.operator.other.error.suppression.php.php7
       pop: true
-    - match: "\\.\\.\\."
-      scope: keyword.operator.other.argument.unpack.php.php7
+    - match: \s*(\.\.\.)
+      captures:
+        1: keyword.operator.other.argument.unpack.php.php7
       pop: true
-    - match: "->"
-      scope: keyword.operator.other.member.access.php.php7
+    - match: \s*(->)
+      captures:
+        1: keyword.operator.other.member-access.php.php7
       set: member-access
-    - match: "::"
-      scope: keyword.operator.other.scope.resolution.php.php7
+    - match: \s*(::)
+      captures:
+        1: keyword.operator.other.scope-resolution.php.php7
       set: scope-resolution
-    - match: "\\?\\??|:"
-      scope: keyword.operator.other.php.php7
+    - match: \s*(\?\?)
+      captures:
+        1: keyword.operator.other.php.php7
+      pop: true
+    - match: \s*(\?)
+      captures:
+        1: keyword.operator.other.ternary.js.fjsx15
+      set: ternary-condition
+
+  ternary-condition:
+    - match: \s*(:)
+      captures:
+        1: keyword.operator.other.ternary.php.php7
+      pop: true
+    - match: ""
+      push:
+        - match: (?=\s*:)
+          pop: true
+        - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax
 
   member-access:
     - meta_content_scope: member.php.php7
     - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
     - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/variable.no-dollar-sign.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/variable.no-dollar.sublime-syntax
 
   scope-resolution:
-    - match: \bclass\b
+    - match: \s*\b(class)\b
       scope: keyword.other.php.php7
       pop: true
     - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax

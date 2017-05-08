@@ -20,11 +20,9 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\b
-        (?> CRYPT_
-            (?>SALT_LENGTH|STD_DES|EXT_DES|MD5|BLOWFISH)
-          | HTML_
-            (?>SPECIALCHARS|ENTITIES)
+        (?x)\s*\b
+        ((?> CRYPT_(?>SALT_LENGTH|STD_DES|EXT_DES|MD5|BLOWFISH)
+          | HTML_(?>SPECIALCHARS|ENTITIES)
           | ENT_
             (?> COMPAT
               | QUOTES
@@ -47,10 +45,10 @@ contexts:
               | ALL
               | MESSAGES
             )
-          | STR_PAD_
-            (?>LEFT|RIGHT|BOTH)
-        )\b
-      scope: >-
-        support.constant.php.php7
-        entity.name.constant.php.php7
+          | STR_PAD_(?>LEFT|RIGHT|BOTH)
+        ))\b
+      captures:
+        1: >-
+          support.php.php7
+          entity.name.constant.php.php7
       pop: true

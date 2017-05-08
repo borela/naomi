@@ -23,6 +23,7 @@ contexts:
   # |    .     | Concatenation. |
   # |    .=    | Append.        |
   main:
-    - match: \.=?
-      scope: keyword.operator.other.string.php.php7
+    - match: \s*(\.=?)
+      captures:
+        1: keyword.operator.other.string.php.php7
       pop: true

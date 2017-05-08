@@ -152,6 +152,6 @@ contexts:
         )\b
       captures:
         1: >-
-          support.constant.mql.mql4
+          support.mql.mql4
           entity.name.constant.mql.mql4
       pop: true

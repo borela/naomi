@@ -20,17 +20,20 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\bGMP_
-        (?> ROUND_
-              (?>ZERO|PLUSINF|MINUSINF)
-          | MSW_FIRST
-          | LSW_FIRST
-          | LITTLE_ENDIAN
-          | BIG_ENDIAN
-          | NATIVE_ENDIAN
-          | VERSION
+        (?x)\s*\b
+        (
+          GMP_
+          (?> ROUND_(?>ZERO|PLUSINF|MINUSINF)
+            | MSW_FIRST
+            | LSW_FIRST
+            | LITTLE_ENDIAN
+            | BIG_ENDIAN
+            | NATIVE_ENDIAN
+            | VERSION
+          )
         )\b
-      scope: >-
-        support.constant.php.php7
-        entity.name.constant.php.php7
+      captures:
+        1: >-
+          support.php.php7
+          entity.name.constant.php.php7
       pop: true

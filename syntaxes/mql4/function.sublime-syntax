@@ -59,18 +59,24 @@ variables:
     )
 
   functionIdentifier: |
-    {{commonIdentifier}}
-    (?> {{comparisonOperators}}
-      | {{logicalOperators}}
-      | {{bitwiseOperators}}
-      | {{arithmeticOperators}}
-      | =
-    )?
+    (?> operator
+        (?> {{comparisonOperators}}
+          | {{logicalOperators}}
+          | {{bitwiseOperators}}
+          | {{arithmeticOperators}}
+          | =
+          | \[\s*]
+        )
+      | {{commonIdentifier}}
+    )
 
   typeIdentifier: |
     {{commonIdentifier}}
-    (?:\s*<.*?>)?
-    (?:\s*\**)?
+    (?> \s*\*+
+      | \s*<.*?>
+        (?:\s*\**)
+      | \b
+    )
 
 contexts:
   main:
@@ -83,9 +89,9 @@ contexts:
               | static
             )\s+
           )?
-          {{typeIdentifier}}\b
-          {{commonIdentifier}}::{{functionIdentifier}}
-          \s*\(
+          {{typeIdentifier}}
+          \s*{{commonIdentifier}}
+          ::{{functionIdentifier}}
         )
       set: [
         body,
@@ -105,8 +111,8 @@ contexts:
               | static
             )\s+
           )?
-          {{typeIdentifier}}\b
-          {{functionIdentifier}}
+          {{typeIdentifier}}
+          \s*{{functionIdentifier}}
           \s*\(
         )
       set: [
@@ -135,9 +141,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   class:
-    - match: \s*(\*+)
-      captures:
-        1: keyword.operator.other.pointer.mql.mql4
     - match: |
         (?xi)\s*
         \b({{commonIdentifier}})\b
@@ -157,14 +160,33 @@ contexts:
         (?x)\s*
         ((?> On
             (?> Calculate
+              | ChartEvent
               | Deinit
               | Init
               | Start
+              | Timer
             )
         ))(?=\s*\()
       captures:
         1: >-
-          support.function.mql.mql4
+          support.core.mql.mql4
+          entity.name.function.mql.mql4
+      pop: true
+    # Operator functions.
+    - match: |
+        (?x)\s*
+        ((?> operator\s*
+          (?> {{comparisonOperators}}
+            | {{logicalOperators}}
+            | {{bitwiseOperators}}
+            | {{arithmeticOperators}}
+            | =
+            | \[\s*]
+          )?
+        ))(?=\s*\()
+      captures:
+        1: >-
+          support.core.mql.mql4
           entity.name.function.mql.mql4
       pop: true
     # Common function name.

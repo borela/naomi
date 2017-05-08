@@ -26,15 +26,16 @@ contexts:
   main:
     - match: |
         (?xi)\s*
-        type
+        (type)
         (?=
           \s+{{commonIdentifier}}
           (?:\s*<.*>)?
           \s*=
         )
-      scope: >-
-        storage.type.flowtype
-        keyword.declaration.type-aliasing.flowtype
+      captures:
+        1: >-
+          storage.type.flowtype
+          keyword.declaration.type-aliasing.flowtype
       set: [
         type,
         punctuation,
@@ -42,11 +43,12 @@ contexts:
       ]
 
   identifier:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax
 
   punctuation:
-    - match: "="
-      scope: keyword.operator.other.assignment.flowtype
+    - match: \s*(=)
+      captures:
+        1: keyword.operator.other.assignment.flowtype
       pop: true
 
   type:

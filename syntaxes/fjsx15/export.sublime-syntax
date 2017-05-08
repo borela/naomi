@@ -24,6 +24,7 @@ variables:
 
 contexts:
   main:
+    # Export object literal.
     - match: |
         (?x)
         \s*(export)
@@ -35,19 +36,78 @@ contexts:
           storage.modifier.js.fjsx15
           keyword.control.export.default.js.fjsx15
       set: object-literal
-    - match: \s*(export)\b
+    # Type from...
+    - match: |
+        (?x)
+        \s*(export)
+        \s*(type)
+        (?=\s*{)
       captures:
         1: keyword.control.export.js.fjsx15
-      set: [
-        target,
-        optional-default
-      ]
+        2: >-
+          storage.type.flowtype
+          keyword.other.type-aliasing.flowtype
+      set: target-types
+    # Export statements.
+    - match: |
+        (?x)
+        \s*(export)
+        \s*(default)
+      captures:
+        1: keyword.control.export.js.fjsx15
+        2: >-
+          storage.modifier.js.fjsx15
+          keyword.control.export.default.js.fjsx15
+      set: statement-and-expression
+    # Export statements.
+    - match: |
+        (?x)
+        \s*(export)
+        \s*
+        (?=
+          (?> class
+            | const
+            | function
+            | interface
+            | let
+            | type
+            | var
+          )
+        )
+      captures:
+        1: keyword.control.export.js.fjsx15
+        2: >-
+          storage.modifier.js.fjsx15
+          keyword.control.export.default.js.fjsx15
+      set: statement-and-expression
+    # Other.
+    - match: |
+        (?x)
+        \s*(export)\b
+        (?!\.)
+      captures:
+        1: keyword.control.export.js.fjsx15
+      set: targets
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  statement-and-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   object-literal:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/object.sublime-syntax
 
-  comment:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+  origin:
+    - match: \s*(from)\b
+      captures:
+        1: keyword.control.export.origin.js.fjsx15
+      set: origin-path
+
+  origin-path:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
   optional-default:
     - match: \s*(default)\b
@@ -59,87 +119,44 @@ contexts:
     - match: ""
       pop: true
 
-  origin:
-    - match: \s*(from)\b
-      captures:
-        1: keyword.control.export.origin.js.fjsx15
-      set: origin-path
-
-  origin-path:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
-
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
-
-  target:
-    - include: comment
-    # Multiple.
-    - match: \s*({)
+  punctuation:
+    - match: \s*(\{)
       captures:
         1: punctuation.delimiter.export.list.begin.js.fjsx15
-      set: [
-        punctuation,
-        list
-      ]
+    - match: \s*(})
+      captures:
+        1: punctuation.delimiter.export.list.end.js.fjsx15
+    - match: \s*(,)
+      captures:
+        1: punctuation.delimiter.export.item.js.fjsx15
+
+  targets:
+    - include: comment
+    - include: origin
+    - include: punctuation
+    # Default.
+    - match: \s*(default)\b
+      captures:
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.control.export.default.js.fjsx15
+      push: optional-alias
     # All.
     - match: \s*(\*)
       captures:
         1: keyword.operator.other.export.all.js.fjsx15
-      set: [
-        punctuation,
-        optional-alias
-      ]
+      push: optional-alias
     # Simple.
     - match: |
         (?xi)\s*
-        (?!
-          (?> class
-            | const
-            | function
-            | interface
-            | let
-            | type
-            | var
-          )
-        )
         ({{commonIdentifier}})
-        (?=
-          \s*
-          (?> as\b
-            | from\b
-            | ,
-            | }
-            | $
-          )
-        )
       captures:
         1: >-
           export.js.fjsx15
           entity.name.ambiguous.js.fjsx15
-      set: [
-        punctuation,
-        optional-alias
-      ]
-    # Any other statement or expression.
-    - include: statement-and-expression
-
-  list:
-    - match: \s*(})
-      captures:
-        1: punctuation.delimiter.export.list.end.js.fjsx15
-      pop: true
-    - match: ""
-      push:
-        - match: \s*(,)
-          captures:
-            1: punctuation.delimiter.export.item.js.fjsx15
-        - match: (?=\s*})
-          pop: true
-        - include: target
+      push: optional-alias
 
   optional-alias:
-    - include: comment
     - match: |
         (?x)
         (?=\s*
@@ -150,14 +167,6 @@ contexts:
         )
       pop: true
     - include: alias
-    # Found a word but it is not an alias and it wouldn't fit in the export
-    # syntax.
-    - match: |
-        (?xi)
-        (?=\s*
-          {{commonIdentifier}}
-        )
-      pop: true
 
   alias:
     - match: \s*(as)\b
@@ -173,14 +182,56 @@ contexts:
         1: entity.name.alias.js.fjsx15
       pop: true
 
-  punctuation:
+  target-types:
+    - include: comment
     - include: origin
-    - match: \s*(,)
+    - include: punctuation
+    # All.
+    - match: \s*(\*)
       captures:
-        1: punctuation.delimiter.export.item.js.fjsx15
-      set: [
-        punctuation,
-        target
-      ]
-    - match: ""
+        1: keyword.operator.other.export.all.js.fjsx15
+      push: optional-type-alias
+    # Aliased.
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+        (?=\s*as)
+      captures:
+        1: >-
+          export.js.fjsx15
+          entity.name.aliased.flowtype
+      push: type-alias
+    # Other.
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: >-
+          export.js.fjsx15
+          entity.name.type.flowtype
+
+  optional-type-alias:
+    - match: |
+        (?x)
+        (?=\s*
+          (?> ,
+            | }
+            | from
+          )
+        )
+      pop: true
+    - include: type-alias
+
+  type-alias:
+    - match: \s*(as)\b
+      captures:
+        1: keyword.other.alias.js.fjsx15
+      set: type-alias-name
+
+  type-alias-name:
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.type.flowtype
       pop: true

@@ -13,46 +13,46 @@
 // the License.
 
     PERIOD_CURRENT
-//  ^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^ support.mql.mql4
     PERIOD_D1
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     PERIOD_H1
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     PERIOD_H12
-//  ^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^ support.mql.mql4
     PERIOD_H2
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     PERIOD_H3
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     PERIOD_H4
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     PERIOD_H6
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     PERIOD_H8
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     PERIOD_M1
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     PERIOD_M10
-//  ^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^ support.mql.mql4
     PERIOD_M12
-//  ^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^ support.mql.mql4
     PERIOD_M15
-//  ^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^ support.mql.mql4
     PERIOD_M2
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     PERIOD_M20
-//  ^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^ support.mql.mql4
     PERIOD_M3
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     PERIOD_M30
-//  ^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^ support.mql.mql4
     PERIOD_M4
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     PERIOD_M5
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     PERIOD_M6
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4
     PERIOD_MN1
-//  ^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^ support.mql.mql4
     PERIOD_W1
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4

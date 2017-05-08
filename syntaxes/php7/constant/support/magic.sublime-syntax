@@ -20,17 +20,22 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\b__
-        (?> LINE
-          | FILE
-          | DIR
-          | FUNCTION
-          | CLASS
-          | TRAIT
-          | METHOD
-          | NAMESPACE
-        )__\b
-      scope: >-
-        support.constant.preprocessor.php.php7
-        entity.name.constant.php.php7
+        (?x)\s*\b
+        (
+          __
+          (?> LINE
+            | FILE
+            | DIR
+            | FUNCTION
+            | CLASS
+            | TRAIT
+            | METHOD
+            | NAMESPACE
+          )__
+        )\b
+      captures:
+        1: >-
+          support.php.php7
+          preprocessor.php.php7
+          entity.name.constant.php.php7
       pop: true

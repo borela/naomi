@@ -13,23 +13,23 @@
 // the License.
 
    PRICE_CLOSE
-// ^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^ entity.name.constant.mql.mql4
    PRICE_HIGH
-// ^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^ entity.name.constant.mql.mql4
    PRICE_LOW
-// ^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^ entity.name.constant.mql.mql4
    PRICE_MEDIAN
-// ^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^ entity.name.constant.mql.mql4
    PRICE_OPEN
-// ^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^ entity.name.constant.mql.mql4
    PRICE_TYPICAL
-// ^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^ entity.name.constant.mql.mql4
    PRICE_WEIGHTED
-// ^^^^^^^^^^^^^^ support.constant.mql.mql4
+// ^^^^^^^^^^^^^^ support.mql.mql4
 // ^^^^^^^^^^^^^^ entity.name.constant.mql.mql4

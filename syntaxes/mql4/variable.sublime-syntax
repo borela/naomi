@@ -29,19 +29,16 @@ contexts:
 
   common-variable:
     - match: |
-        (?xi)
-        (?> \s*(\**)\b
-          | \b
-        )
-        ({{commonIdentifier}})\b
+        (?xi)\s*
+        \b({{commonIdentifier}})\b
       captures:
-        1: keyword.operator.other.pointer.mql.mql4
-        2: entity.name.variable.mql.mql4
+        1: entity.name.variable.mql.mql4
       pop: true
 
   support-variable:
-    - match: (?i)\bthis\b
-      scope: >-
-        support.mql.mql4
-        entity.name.variable.mql.mql4
+    - match: (?i)\s*\b(this)\b
+      captures:
+        1: >-
+          support.mql.mql4
+          entity.name.variable.mql.mql4
       pop: true

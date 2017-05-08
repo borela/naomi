@@ -19,12 +19,13 @@ scope: ...
 
 contexts:
   main:
-    - match: \[
-      scope: punctuation.delimiter.array.begin.php.php7
+    - match: \s*(\[)
+      captures:
+        1: punctuation.delimiter.array.begin.php.php7
       set: short-array-items
     - match: |
         (?x)
-        (array)
+        \s*(array)
         \s*(\()
       captures:
         1: entity.name.type.array.php.php7
@@ -32,39 +33,49 @@ contexts:
       set: items
 
   short-array-items:
-    - meta_scope: type.array.php.php7
-    - match: \]
-      scope: punctuation.delimiter.array.end.php.php7
+    - match: \s*(])
+      captures:
+        1: punctuation.delimiter.array.end.php.php7
       pop: true
-    - match: (?=\S)
+    - match: (?=\s*\S)
       push: key-or-value
 
   items:
-    - meta_scope: type.array.php.php7
-    - match: \)
-      scope: punctuation.delimiter.array.end.php.php7
+    - match: \s*(\))
+      captures:
+        1: punctuation.delimiter.array.end.php.php7
       pop: true
-    - match: (?=\S)
+    - match: (?=\s*\S)
       push: key-or-value
 
   key-or-value:
     - include: end
     - include: item-delimiter
-    - match: "=>"
-      scope: keyword.operator.other.key.association.php.php7
+    - match: \s*(=>)
+      captures:
+        1: punctuation.delimiter.array.association.php.php7
       set: value
-    - include: Packages/Naomi/syntaxes/php7/expression.no-pop.sublime-syntax
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax
+        - match: ""
+          pop: true
 
   value:
     - include: end
     - include: item-delimiter
-    - include: Packages/Naomi/syntaxes/php7/expression.no-pop.sublime-syntax
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax
+        - match: ""
+          pop: true
 
   item-delimiter:
-    - match: \,
-      scope: punctuation.delimiter.array.php.php7
+    - match: \s*(,)
+      captures:
+        1: punctuation.delimiter.array.php.php7
       pop: true
 
   end:
-    - match: (?=\)|\])
+    - match: (?=\s*(?>\)|]))
       pop: true

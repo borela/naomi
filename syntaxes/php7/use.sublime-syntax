@@ -24,80 +24,80 @@ variables:
 
 contexts:
   main:
-    - match: (?i)\buse(?!\\)\b
-      scope: keyword.import.php.php7
+    - match: (?i)\s*\b(use)(?!\\)\b
+      captures:
+        1: keyword.import.php.php7
       set: declaration
 
-  declaration:
-    - meta_scope: import.php.php7
+  comment:
     - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+
+  terminator:
     - include: Packages/Naomi/syntaxes/php7/terminator.sublime-syntax
-    - match: \,
-      scope: punctuation.delimiter.import.php.php7
-    - match: (?=\S)
+
+  declaration:
+    - include: comment
+    - include: terminator
+    - match: \s*(,)
+      captures:
+        1: punctuation.delimiter.import.php.php7
+    - match: (?=\s*\S)
       push: [
         alias,
         const-or-function
       ]
 
   const-or-function:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?i)\bconst\b
-      scope: keyword.import.constant.php.php7
+    - include: comment
+    - match: (?i)\s*\b(const)\b
+      captures:
+        1: keyword.import.constant.php.php7
       set: namespaced-const
-    - match: (?i)\bfunction\b
-      scope: keyword.import.function.php.php7
+    - match: (?i)\s*\b(function)\b
+      captures:
+        1: keyword.import.function.php.php7
       set: namespaced-function
-    - match: (?=\S)
+    - match: (?=\s*\S)
       set: namespace-or-type
 
   namespaced-const:
-    - meta_scope: import.constant.php.php7
-    - include: target-const
+    - include: comment
+    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
 
   namespaced-function:
-    - meta_scope: import.function.php.php7
-    - include: target-function
+    - include: comment
+    - include: Packages/Naomi/syntaxes/php7/function/name.sublime-syntax
 
   namespace-or-type:
     - include: Packages/Naomi/syntaxes/php7/namespace-path.no-pop.sublime-syntax
     # Target namespace or type.
     - match: |
-        (?xi)
+        (?xi)\s*
         ((?>\\|\b))
-        (
-          {{commonIdentifier}}
-        )\b
+        ({{commonIdentifier}})\b
       captures:
-        0: ambiguous.php.php7
         1: punctuation.delimiter.ambiguous.php.php7
         2: entity.name.ambiguous.php.php7
       pop: true
 
   target-type:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: comment
     - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
 
-  target-const:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-
-  target-function:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/function/name.sublime-syntax
-
   alias:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?=,|;)
+    - include: comment
+    - match: (?=\s*(?>,|;))
       pop: true
-    - match: (?i)\bas\b
-      scope: keyword.import.alias.php.php7
+    - match: (?i)\s*\b(as)\b
+      captures:
+        1: keyword.import.alias.php.php7
       set: alias-name
 
   alias-name:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
-    - match: (?=;)
+    - include: comment
+    - match: (?=\s*;)
       pop: true
-    - match: "(?xi){{commonIdentifier}}"
-      scope: entity.name.alias.php.php7
+    - match: (?xi)\s*({{commonIdentifier}})
+      captures:
+        1: entity.name.alias.php.php7
       pop: true

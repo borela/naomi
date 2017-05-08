@@ -14,36 +14,36 @@
 
 <?php
     PHP_OUTPUT_HANDLER_START
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_OUTPUT_HANDLER_WRITE
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_OUTPUT_HANDLER_FLUSH
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_OUTPUT_HANDLER_CLEAN
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_OUTPUT_HANDLER_FINAL
-//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_OUTPUT_HANDLER_CONT
-//  ^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_OUTPUT_HANDLER_END
-//  ^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_OUTPUT_HANDLER_CLEANABLE
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_OUTPUT_HANDLER_FLUSHABLE
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_OUTPUT_HANDLER_REMOVABLE
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
     PHP_OUTPUT_HANDLER_STDFLAGS
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.constant.php.php7
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.constant.php.php7
 ?>

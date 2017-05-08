@@ -13,8 +13,8 @@
 // the License.
 
     CHART_BEGIN
-//  ^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^ support.mql.mql4
     CHART_CURRENT_POS
-//  ^^^^^^^^^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^^^^^^^^^ support.mql.mql4
     CHART_END
-//  ^^^^^^^^^ support.constant.mql.mql4
+//  ^^^^^^^^^ support.mql.mql4

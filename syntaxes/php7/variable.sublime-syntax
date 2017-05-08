@@ -24,12 +24,13 @@ variables:
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/php7/namespace-path.no-pop.sublime-syntax
     - include: support-variable
     - include: common-variable
 
   support-variable:
     - match: |
-        (?x)
+        (?x)\s*
         \B(\$)(
           (?> argc
             | argv
@@ -49,20 +50,19 @@ contexts:
           )
         )\b
       captures:
-        0: support.variable.php.php7
-        1: punctuation.delimiter.variable.begin.php.php7
-        2: entity.name.variable.php.php7
-      set: array-item-access
+        1: >-
+          support.php.php7
+          punctuation.delimiter.variable.begin.php.php7
+        2: >-
+          support.php.php7
+          entity.name.variable.php.php7
+      pop: true
 
   common-variable:
     - match: |
-        (?xi)
+        (?xi)\s*
         \B(\$)({{commonIdentifier}})\b
       captures:
-        0: variable.php.php7
         1: punctuation.delimiter.variable.begin.php.php7
         2: entity.name.variable.php.php7
-      set: array-item-access
-
-  array-item-access:
-    - include: Packages/Naomi/syntaxes/php7/variable/array-item-access.sublime-syntax
+      pop: true

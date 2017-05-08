@@ -14,32 +14,18 @@
 
 <?php
     trait MyTrait {
-//  ^^^^^^^^^^^^^^^ trait.php.php7
-//  ^^^^^ keyword.trait.php.php7
+//  ^^^^^ keyword.declaration.trait.php.php7
 //        ^^^^^^^ entity.name.trait.php.php7
-//                ^ trait.body.php.php7
 //                ^ punctuation.delimiter.trait.body.begin.php.php7
-    Something...
-//  ^^^^^^^^^^^^ trait.php.php7
-//  ^^^^^^^^^^^^ trait.body.php.php7
-//  ^^^^^^^^^^^^ trait.body.content.php.php7
+      Something...
     }
-//  ^ trait.php.php7
-//  ^ trait.body.php.php7
 //  ^ punctuation.delimiter.trait.body.end.php.php7
 
     trait MyTrait {
-//  ^^^^^^^^^^^^^^^ trait.php.php7
-//  ^^^^^ keyword.trait.php.php7
+//  ^^^^^ keyword.declaration.trait.php.php7
 //        ^^^^^^^ entity.name.trait.php.php7
-//                ^ trait.body.php.php7
 //                ^ punctuation.delimiter.trait.body.begin.php.php7
-    Something...
-//  ^^^^^^^^^^^^ trait.php.php7
-//  ^^^^^^^^^^^^ trait.body.php.php7
-//  ^^^^^^^^^^^^ trait.body.content.php.php7
+      Something...
     }
-//  ^ trait.php.php7
-//  ^ trait.body.php.php7
 //  ^ punctuation.delimiter.trait.body.end.php.php7
 ?>

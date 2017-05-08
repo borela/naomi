@@ -41,12 +41,12 @@ variables:
 
 contexts:
   main:
-    - match: (?xi){{namespacePath}}
+    - match: (?xi)\s*({{namespacePath}})
       captures:
-        0: namespace.path.php.php7
-        1: punctuation.delimiter.namespace.a.php.php7
-        2: entity.name.namespace.a.php.php7
-        3: punctuation.delimiter.namespace.b.php.php7
-        4: entity.name.namespace.b.php.php7
-        5: punctuation.delimiter.namespace.a.php.php7
-        6: entity.name.namespace.a.php.php7
+        1: namespace.path.php.php7
+        2: punctuation.delimiter.namespace.a.php.php7
+        3: entity.name.namespace.a.php.php7
+        4: punctuation.delimiter.namespace.b.php.php7
+        5: entity.name.namespace.b.php.php7
+        6: punctuation.delimiter.namespace.a.php.php7
+        7: entity.name.namespace.a.php.php7

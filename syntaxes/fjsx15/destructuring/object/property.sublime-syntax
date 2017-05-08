@@ -26,23 +26,58 @@ contexts:
   main:
     # String property name.
     - match: (?=\s*(?>'|"|`))
-      set: string
+      set: [
+        optional-alias,
+        string
+      ]
     # Computed property name.
     - match: \s*(\[)
       captures:
         1: >-
           destructuring.object.js.fjsx15
           keyword.operator.other.computed-property.begin.js.fjsx15
-      set: computed-property
-    # Normal property.
+      set: [
+        optional-alias,
+        computed-property
+      ]
+    # Normal property with an alias.
     - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
+        (?xi)
+        \s*({{commonIdentifier}})
+        \s*(:)
+        \s*({{commonIdentifier}})
       captures:
         1: >-
           destructuring.object.js.fjsx15
           object.property.js.fjsx15
           entity.name.variable.js.fjsx15
+        2: >-
+          destructuring.object.js.fjsx15
+          keyword.operator.other.association.js.fjsx15
+        3: entity.name.variable.js.fjsx15
+      pop: true
+    # Normal property.
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.variable.js.fjsx15
+      pop: true
+
+  optional-alias:
+    - match: |
+        (?x)
+        \s*(:)
+        (?:
+          \s*({{commonIdentifier}})
+        )?
+      captures:
+        1: >-
+          destructuring.object.js.fjsx15
+          keyword.operator.other.association.js.fjsx15
+        2: entity.name.variable.js.fjsx15
+      pop: true
+    - match: (?=\s*\W)
       pop: true
 
   string:

@@ -57,6 +57,18 @@ contexts:
     - match: \s*(,)
       captures:
         1: punctuation.delimiter.enum.items.mql.mql4
+    # Optional value.
+    - match: \s*(=)
+      captures:
+        1: keyword.operator.other.assignment.mql.mql4
+      push:
+        - match: (?=\s*[,}])
+          pop: true
+        - match: ""
+          push:
+            - include: statement-and-expression
+            - match: ""
+              pop: true
     # Item.
     - match: |
         (?xi)\s*
@@ -65,12 +77,6 @@ contexts:
         1: >-
           enum.item.mql.mql4
           entity.name.variable.mql.mql4
-    # Optional value.
-    - match: ""
-      push:
-        - match: (?=\s*[,}])
-          pop: true
-        - include: statement-and-expression
 
   comment:
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax

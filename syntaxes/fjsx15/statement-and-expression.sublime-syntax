@@ -18,25 +18,21 @@ hidden: true
 scope: ...
 
 variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
   expressionGroupBegin: |
     (?<!
       \)|]|}
     )
     \s*(\()
-    (?>
-      (?=
-        \s*(?:async)?
-        \s*\(
-      )
-      |
-      (?!
-        .*?\)
-        .*?=>
-      )
-    )
 
 contexts:
   main:
+    - include: comment
+    - include: arrow-function
+    - include: cast-operator
     # Open new expression group.
     - match: |
         (?xi)
@@ -48,6 +44,9 @@ contexts:
     - include: sequence
 
   open-a-close-b:
+    - include: comment
+    - include: arrow-function
+    - include: cast-operator
     # Open new expression group.
     - match: |
         (?xi)
@@ -63,12 +62,14 @@ contexts:
     # Expression contents.
     - match: ""
       push:
-        - include: cast-operator
         - include: sequence
         - match: ""
           pop: true
 
   open-b-close-a:
+    - include: comment
+    - include: arrow-function
+    - include: cast-operator
     # Open new expression group.
     - match: |
         (?xi)
@@ -84,20 +85,33 @@ contexts:
     # Expression contents.
     - match: ""
       push:
-        - include: cast-operator
         - include: sequence
         - match: ""
           pop: true
 
   cast-operator:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax
+    - match: (?=\s*:)
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  arrow-function:
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
 
   sequence:
-    - include: Packages/Naomi/syntaxes/fjsx15/greedy-terminator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
     # Comments.
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+    # Simple statements.
+    - include: Packages/Naomi/syntaxes/fjsx15/goto.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/label.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/hanging.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/bodied.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/simple.sublime-syntax
     # Complex statements.
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/interface.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
@@ -106,11 +120,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
-    # Simple statements.
-    - include: Packages/Naomi/syntaxes/fjsx15/statement/label.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/statement/hanging.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/statement/bodied.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/statement/simple.sublime-syntax
     # Expression keywords.
     - include: Packages/Naomi/syntaxes/fjsx15/instanceof.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/new.sublime-syntax
@@ -118,9 +127,8 @@ contexts:
     # Expression.
     - include: Packages/Naomi/syntaxes/fjsx15/array-access.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/nodejs.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/global.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/reactjs.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring.sublime-syntax

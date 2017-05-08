@@ -31,7 +31,8 @@ contexts:
         (?=
           \s+{{commonIdentifier}}
         )
-      scope: keyword.other.js.fjsx15
+      captures:
+        1: keyword.other.js.fjsx15
       set: [
         arguments,
         type

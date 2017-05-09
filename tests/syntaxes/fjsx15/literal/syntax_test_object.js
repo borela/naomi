@@ -24,20 +24,20 @@
 //           ^^^ .constant.numeric.decimal.js.fjsx15
 //              ^ .punctuation.delimiter.object.js.fjsx15
     [property]:123,
-//  ^ .keyword.operator.other.computed-property.begin.js.fjsx15
+//  ^ .punctuation.delimiter.object.computed-property.begin.js.fjsx15
 //   ^^^^^^^^ .entity.name.variable.js.fjsx15
-//           ^ .keyword.operator.other.computed-property.end.js.fjsx15
+//           ^ .punctuation.delimiter.object.computed-property.end.js.fjsx15
 //            ^ .keyword.operator.other.association.js.fjsx15
 //             ^^^ .constant.numeric.decimal.js.fjsx15
 //                ^ .punctuation.delimiter.object.js.fjsx15
     [1 + 1 + 1]:123,
-//  ^ .keyword.operator.other.computed-property.begin.js.fjsx15
+//  ^ .punctuation.delimiter.object.computed-property.begin.js.fjsx15
 //   ^ .constant.numeric.decimal.js.fjsx15
 //     ^ .keyword.operator.arithmetic.js.fjsx15
 //       ^ .constant.numeric.decimal.js.fjsx15
 //         ^ .keyword.operator.arithmetic.js.fjsx15
 //           ^ .constant.numeric.decimal.js.fjsx15
-//            ^ .keyword.operator.other.computed-property.end.js.fjsx15
+//            ^ .punctuation.delimiter.object.computed-property.end.js.fjsx15
 //             ^ .keyword.operator.other.association.js.fjsx15
 //              ^^^ .constant.numeric.decimal.js.fjsx15
 //                 ^ .punctuation.delimiter.object.js.fjsx15

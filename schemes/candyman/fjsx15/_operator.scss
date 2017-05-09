@@ -10,11 +10,9 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "fjsx15/flowtype/delimiter";
-@import "fjsx15/flowtype/operator";
-
-@import "fjsx15/decorator";
-@import "fjsx15/destructuring";
-@import "fjsx15/export";
-@import "fjsx15/import";
-@import "fjsx15/operator";
+.keyword.operator.other {
+  &.rest,
+  &.spread {
+    foreground: $grey-0;
+  }
+}

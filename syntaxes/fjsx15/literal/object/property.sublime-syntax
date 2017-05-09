@@ -36,7 +36,7 @@ contexts:
     # Computed property name.
     - match: \s*(\[)
       captures:
-        1: keyword.operator.other.computed-property.begin.js.fjsx15
+        1: punctuation.delimiter.object.computed-property.begin.js.fjsx15
       set: computed-property
 
   constant:
@@ -99,7 +99,7 @@ contexts:
   computed-property:
     - match: \s*(\])
       captures:
-        1: keyword.operator.other.computed-property.end.js.fjsx15
+        1: punctuation.delimiter.object.computed-property.end.js.fjsx15
       pop: true
     - match: ""
       push:

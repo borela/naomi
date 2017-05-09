@@ -13,7 +13,6 @@
 .destructuring {
   .keyword,
   .keyword.operator.other.association,
-  .keyword.operator.other.computed-property,
   .punctuation.delimiter,
   .punctuation.delimiter.array,
   .punctuation.delimiter.object,
@@ -26,8 +25,4 @@
       foreground: $grey-0;
     }
   }
-}
-
-.keyword.operator.other.spread {
-  foreground: $grey-0;
 }

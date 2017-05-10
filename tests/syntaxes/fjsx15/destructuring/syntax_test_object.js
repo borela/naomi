@@ -17,10 +17,10 @@
 //     ^ .destructuring.object.js.fjsx15
 //     ^ .punctuation.delimiter.object.begin.js.fjsx15
 //      ^ .destructuring.object.js.fjsx15
-//      ^ .keyword.operator.other.computed-property.begin.js.fjsx15
+//      ^ .punctuation.delimiter.object.computed-property.begin.js.fjsx15
 //       ^^^ .entity.name.variable.js.fjsx15
 //          ^ .destructuring.object.js.fjsx15
-//          ^ .keyword.operator.other.computed-property.end.js.fjsx15
+//          ^ .punctuation.delimiter.object.computed-property.end.js.fjsx15
 //           ^ .destructuring.object.js.fjsx15
 //           ^ .keyword.operator.other.association.js.fjsx15
 //            ^ .entity.name.variable.js.fjsx15

@@ -102,10 +102,7 @@ contexts:
 
   sequence:
     - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
-    # Comments.
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/prolog.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
     # Simple statements.
     - include: Packages/Naomi/syntaxes/fjsx15/goto.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/statement/label.sublime-syntax

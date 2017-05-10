@@ -30,6 +30,7 @@ contexts:
         (?x)\b
         (?> any
           | boolean
+          | false
           | Function
           | Generator
           | mixed
@@ -37,6 +38,7 @@ contexts:
           | null
           | Object
           | string
+          | true
           | void
         )\b
       scope: >-

@@ -439,15 +439,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.operator.other.computed-property</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#aed581</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.keyword.operator</string>
 			<key>settings</key>
 			<dict>
@@ -1017,7 +1008,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.destructuring .keyword, .destructuring .keyword.operator.other.association, .destructuring .keyword.operator.other.computed-property, .destructuring .punctuation.delimiter, .destructuring .punctuation.delimiter.array, .destructuring .punctuation.delimiter.object, .destructuring .punctuation.delimiter.property</string>
+			<string>.destructuring .keyword, .destructuring .keyword.operator.other.association, .destructuring .punctuation.delimiter, .destructuring .punctuation.delimiter.array, .destructuring .punctuation.delimiter.object, .destructuring .punctuation.delimiter.property</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1035,11 +1026,20 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.operator.other.spread</string>
+			<string>.punctuation.delimiter.eslint</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ffffff</string>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.eslint-rule</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b39ddb</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1072,6 +1072,15 @@
 		<dict>
 			<key>scope</key>
 			<string>.punctuation.delimiter.import</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.operator.other.rest, .keyword.operator.other.spread</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

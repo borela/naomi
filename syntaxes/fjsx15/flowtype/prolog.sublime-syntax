@@ -20,9 +20,10 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)
-        (?> \/\/\s@flow
-          | \/\*\s@flow\s\*\/
-        )
-      scope: keyword.other.prolog.flowtype
+        (?x)\s*
+        ((?> \/\/\s*@flow
+          | \/\*\s*@flow\s\*\/
+        ))
+      captures:
+        1: keyword.other.prolog.flowtype
       pop: true

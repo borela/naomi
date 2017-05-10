@@ -35,7 +35,7 @@ contexts:
       captures:
         1: >-
           destructuring.object.js.fjsx15
-          keyword.operator.other.computed-property.begin.js.fjsx15
+          punctuation.delimiter.object.computed-property.begin.js.fjsx15
       set: [
         optional-alias,
         computed-property
@@ -90,7 +90,7 @@ contexts:
       captures:
         1:  >-
           destructuring.object.js.fjsx15
-          keyword.operator.other.computed-property.end.js.fjsx15
+          punctuation.delimiter.object.computed-property.end.js.fjsx15
       pop: true
     - match: ""
       push:

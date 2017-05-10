@@ -20,39 +20,48 @@ scope: ...
 contexts:
   main:
     # Flow block declaration.
-    - match: \s*(\/\*::)
+    - match: \s*(/\*::)
       captures:
-        1: punctuation.delimiter.comment.begin.flowtype
+        1: >-
+          comment.block.flowtype
+          punctuation.delimiter.comment.begin.flowtype
       set: flow-block
     # Flow associated type.
-    - match: \s*(\/\*(?=:))
+    - match: \s*(/\*(?=:))
       captures:
-        1: punctuation.delimiter.comment.begin.flowtype
+        1: >-
+          comment.block.flowtype
+          punctuation.delimiter.comment.begin.flowtype
       set: flow-associated-type
     # Normal single line comment.
     - match: \s*(//)
       captures:
-        1: punctuation.delimiter.comment.begin.js.fjsx15
+        1: >-
+          comment.line.js.fjsx15
+          punctuation.delimiter.comment.begin.js.fjsx15
       set: line
     # Normal block comment.
     - match: \s*(/\*)
       captures:
-        1: punctuation.delimiter.comment.begin.js.fjsx15
+        1: >-
+          comment.line.js.fjsx15
+          punctuation.delimiter.comment.begin.js.fjsx15
       set: block
 
   line:
-    - meta_scope: comment.line.js.fjsx15
-    - include: eslint
+    - meta_content_scope: comment.line.js.fjsx15
     - include: email
     - include: link
     - match: \s*$
       pop: true
 
   flow-associated-type:
-    - meta_scope: comment.block.flowtype
+    - meta_content_scope: comment.block.flowtype
     - match: \s*(\*/)
       captures:
-        1: punctuation.delimiter.comment.end.js.fjsx15
+        1: >-
+          comment.block.flowtype
+          punctuation.delimiter.comment.end.js.fjsx15
       set:
         # Used to fix the block comment indentation settings.
         # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
@@ -68,10 +77,12 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
 
   flow-block:
-    - meta_scope: comment.block.flowtype
+    - meta_content_scope: comment.block.flowtype
     - match: \s*(\*/)
       captures:
-        1: punctuation.delimiter.comment.end.js.fjsx15
+        1: >-
+          comment.block.flowtype
+          punctuation.delimiter.comment.end.js.fjsx15
       set:
         # Used to fix the block comment indentation settings.
         # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
@@ -97,13 +108,14 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
 
   block:
-    - meta_scope: comment.block.js.fjsx15
-    - include: eslint
+    - meta_content_scope: comment.block.js.fjsx15
     - include: email
     - include: link
     - match: \s*(\*/)
       captures:
-        1: punctuation.delimiter.comment.end.js.fjsx15
+        1: >-
+          comment.block.js.fjsx15
+          punctuation.delimiter.comment.end.js.fjsx15
       set:
         # Used to fix the block comment indentation settings.
         # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
@@ -118,25 +130,3 @@ contexts:
 
   email:
     - include: Packages/Naomi/syntaxes/shared/email.sublime-syntax
-
-  eslint:
-    - match: |
-        (?xi)\s*
-        (
-          eslint-
-          (?> enable
-            | disable
-          )
-        )
-      captures:
-        1: keyword.other.js.fjsx15
-      push:
-        - match: |
-            (?xi)\s*
-            (
-              [$_[:alpha:]]
-              [$_\-[:alnum:]]*
-            )
-          captures:
-            1: string.unquoted.js.fjsx15
-          pop: true

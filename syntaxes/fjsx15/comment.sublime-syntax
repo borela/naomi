@@ -19,4 +19,6 @@ scope: ...
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/fjsx15/eslint.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment/normal.sublime-syntax

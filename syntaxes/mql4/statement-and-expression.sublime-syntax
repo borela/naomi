@@ -102,6 +102,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/mql4/template.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/struct.sublime-syntax
+    - include: Packages/Naomi/syntaxes/mql4/typedef.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/enum.sublime-syntax
     - include: Packages/Naomi/syntaxes/mql4/function.sublime-syntax
     # Expression.

@@ -102,6 +102,7 @@ An identity is the most specific scope possible that decribes the token.
 .storage
   .modifier
   .type
+.word
 ```
 
 ### Identity
@@ -143,9 +144,10 @@ An identity is the most specific scope possible that decribes the token.
         .end
 
 .keyword
+  .control
   .declaration
     .class
-    .const
+    .constant
     .interface
     .function
     .struct
@@ -153,7 +155,6 @@ An identity is the most specific scope possible that decribes the token.
     .variable
   .modifier
     .constant
-    .extension
     .inheritance
     .pure-virtual
     .visibility
@@ -166,7 +167,6 @@ An identity is the most specific scope possible that decribes the token.
       .member-access
       .scope-resolution
       .terminator
-      .word
   .other
     .unit
 ```

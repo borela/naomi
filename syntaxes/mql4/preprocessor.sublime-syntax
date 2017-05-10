@@ -52,11 +52,12 @@ contexts:
     - match: |
         (?x)\s*
         (\#
-          (?> else
+          (?> elif
+            | else
             | endif
-            | ifdef
-            | ifndef
+            | if(?:n?def)?
             | import
+            | pragma
           )
         )
       captures:

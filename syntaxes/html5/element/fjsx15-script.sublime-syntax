@@ -43,6 +43,8 @@ contexts:
         3: punctuation.delimiter.tag.end.html.html5
       pop: true
     - match: (?=\S)
+      with_prototype:
+        - include: Packages/Naomi/syntaxes/naomi.php7.sublime-syntax
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
         - match: ""

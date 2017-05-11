@@ -24,6 +24,18 @@ variables:
 
 contexts:
   main:
+    - match: |
+        (?xi)\s*
+        (\{@)(inheritDoc)(})
+      captures:
+        1: >-
+          keyword.documentation.php.php7
+          punctuation.delimiter.keyword.begin.php.php7
+        2: keyword.documentation.php.php7
+        3: >-
+          keyword.documentation.php.php7
+          punctuation.delimiter.keyword.end.php.php7
+      pop: true
     - include: param
     - include: return
     - include: throws
@@ -34,9 +46,18 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
 
   types:
-    - match: (?=\$|$)
+    # $this.
+    - match: \s*(\$this)\b
+      captures:
+        1: >-
+          support.php.php7
+          entity.name.variable.php.php7
       pop: true
-    - match: (?=\S)
+    # Variables.
+    - match: (?=\s*(?>\$|$))
+      pop: true
+    # Actual type.
+    - match: (?=\s*\S)
       set: [
         type-delimiter,
         type

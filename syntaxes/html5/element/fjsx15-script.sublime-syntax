@@ -20,27 +20,36 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)
-        (<)
-        (script)
+        (?x)\s*
+        (<)(script)
       captures:
-        0: tag.script.html.html5
-        1: punctuation.delimiter.tag.begin.html.html5
-        2: entity.name.tag.html.html5
+        1: >-
+          tag.script.html.html5
+          punctuation.delimiter.tag.begin.html.html5
+        2: >-
+          tag.script.html.html5
+          entity.name.tag.html.html5
       set: [
         embedded-fjsx15,
         attributes
       ]
 
   embedded-fjsx15:
+    - clear_scopes: true
+    - meta_content_scope: source.js.fjsx15
     - match: |
         (?x)\s*
         (</)(\2)(>)
       captures:
-        0: tag.script.html.html5
-        1: punctuation.delimiter.tag.begin.html.html5
-        2: entity.name.tag.html.html5
-        3: punctuation.delimiter.tag.end.html.html5
+        1: >-
+          tag.script.html.html5
+          punctuation.delimiter.tag.begin.html.html5
+        2: >-
+          tag.script.html.html5
+          entity.name.tag.html.html5
+        3: >-
+          tag.script.html.html5
+          punctuation.delimiter.tag.end.html.html5
       pop: true
     - match: (?=\S)
       with_prototype:

@@ -132,7 +132,7 @@ contexts:
       captures:
         1: >-
           storage.modifier.mql.mql4
-          keyword.modifier.mql.mql4
+          keyword.other.access.mql.mql4
       pop: true
     - match: ""
       pop: true

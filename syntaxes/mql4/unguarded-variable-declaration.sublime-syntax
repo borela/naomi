@@ -45,7 +45,7 @@ contexts:
       captures:
         1: >-
           storage.modifier.mql.mql4
-          keyword.modifier.mql.mql4
+          keyword.other.access.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   variable:

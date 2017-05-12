@@ -45,10 +45,10 @@ contexts:
       captures:
         1: >-
           storage.modifier.mql.mql4
-          keyword.modifier.constant.mql.mql4
+          keyword.other.constant-function.mql.mql4
         2: >-
           storage.modifier.mql.mql4
-          keyword.modifier.pure-virtual.mql.mql4
+          keyword.other.pure-virtual.mql.mql4
     # Initialization.
     - match: \s*(:)
       captures:

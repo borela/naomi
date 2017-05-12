@@ -29,20 +29,11 @@ contexts:
       captures:
         1: punctuation.delimiter.function.arguments.end.js.fjsx15
       pop: true
-    - match: \s*(\,)
+    - match: \s*(,)
       captures:
         1: punctuation.delimiter.function.arguments.js.fjsx15
     - match: ""
       push:
-        - match: |
-            (?x)
-            (?=\s*
-              (?> ,
-                | \)
-              )
-            )
+        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+        - match: ""
           pop: true
-        - include: statement-and-expression
-
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

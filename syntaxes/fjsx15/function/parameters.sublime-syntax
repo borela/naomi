@@ -100,6 +100,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/destructuring/array.sublime-syntax
 
   return-type:
+    - include: comment
     - match: (?=\s*:)
       set: associated-type
     - match: ""

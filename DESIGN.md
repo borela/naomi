@@ -124,7 +124,7 @@ An identity is the most specific scope possible that decribes the token.
     .array
       .begin
       .end
-      .index
+      .access
         .begin
         .end
     .class
@@ -135,10 +135,16 @@ An identity is the most specific scope possible that decribes the token.
       .arguments
         .begin
         .end
+      .parameters
+        .begin
+        .end
       .body
         .begin
         .end
     .object
+      .computed-property
+        .begin
+        .end
       .body
         .begin
         .end
@@ -153,21 +159,22 @@ An identity is the most specific scope possible that decribes the token.
     .struct
     .trait
     .variable
-  .modifier
-    .constant
-    .inheritance
-    .pure-virtual
-    .visibility
   .operator
     .arithmetic
     .assignment
     .logical
     .other
+      .association
       .comma
+      .key-value
       .member-access
       .scope-resolution
       .terminator
   .other
+    .access
+    .constant-function
+    .inheritance
+    .pure-virtual
     .unit
 ```
 

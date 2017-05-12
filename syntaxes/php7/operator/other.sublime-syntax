@@ -33,7 +33,7 @@ contexts:
   # | instanceof |                     |
   # |     @      | Error suppression.  |
   # |     ->     | Member access.      |
-  # |     =>     | Array association.  |
+  # |     =>     | Key/value.          |
   # |     ::     | Scope resolution.   |
   # |    ...     | Argument unpacking. |
   # |     ??     | Null coalescing.    |
@@ -48,7 +48,7 @@ contexts:
       pop: true
     - match: \s*(=>)
       captures:
-        1: keyword.operator.other.key.association.php.php7
+        1: keyword.operator.other.key-value.php.php7
     - match: \s*(@)
       captures:
         1: keyword.operator.other.error.suppression.php.php7

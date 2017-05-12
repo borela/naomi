@@ -22,6 +22,23 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  templateArguments: |
+    (?<tArgs><
+      [^<>]*
+      \g<tArgs>?
+      [^<>]*
+    >)
+
+  parameters: |
+    (?<params>\(
+      [^()]*
+      \g<params>?
+      [^()]*
+    \))
+
+  returnType: |
+    (?::[^)]*?)?
+
 contexts:
   main:
     # Template arrow function assigned to declared variable/constant.
@@ -35,9 +52,9 @@ contexts:
         \s*(=)
         \s*(async)?
         (?=
-          \s*<.*>
-          \s*\(.*\)
-          (?:\s*:.*?)?
+          \s*{{templateArguments}}
+          \s*{{parameters}}
+          \s*{{returnType}}
           \s*=>
         )
       captures:
@@ -63,10 +80,8 @@ contexts:
         \s*(=)
         \s*(async)?
         (?=
-          \s*\(.*\)
-          (?:
-            \s*:.*?
-          )?
+          \s*{{parameters}}
+          \s*{{returnType}}
           \s*=>
         )
       captures:
@@ -85,11 +100,9 @@ contexts:
         (?x)
         \s*(async)?
         (?=
-          \s*<.*>
-          \s*\(.*\)
-          (?:
-            \s*:.*?
-          )?
+          \s*{{templateArguments}}
+          \s*{{parameters}}
+          \s*{{returnType}}
           \s*=>
         )
       captures:
@@ -104,10 +117,8 @@ contexts:
         (?x)
         \s*(async)?
         (?=
-          \s*\(.*\)
-          (?:
-            \s*:.*?
-          )?
+          \s*{{parameters}}
+          \s*{{returnType}}
           \s*=>
         )
       captures:
@@ -129,9 +140,7 @@ contexts:
         \s*(async)?
         (?=
           \s*{{commonIdentifier}}
-          (?:
-            \s*:.*?
-          )?
+          \s*{{returnType}}
           \s*=>
         )
       captures:
@@ -151,9 +160,7 @@ contexts:
         \s*(async)?
         (?=
           \s*{{commonIdentifier}}
-          (?:
-            \s*:.*?
-          )?
+          \s*{{returnType}}
           \s*=>
         )
       captures:

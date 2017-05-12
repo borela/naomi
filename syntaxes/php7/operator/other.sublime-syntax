@@ -55,7 +55,7 @@ contexts:
       pop: true
     - match: \s*(\.\.\.)
       captures:
-        1: keyword.operator.other.argument.unpack.php.php7
+        1: keyword.operator.other.spread.php.php7
       pop: true
     - match: \s*(->)
       captures:

@@ -77,7 +77,7 @@ contexts:
       pop: true
     - match: \s*(\.\.\.)
       captures:
-        1: keyword.operator.other.variadic.php.php7
+        1: keyword.operator.other.rest.php.php7
       pop: true
 
   reference-operator:

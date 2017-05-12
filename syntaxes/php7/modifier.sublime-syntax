@@ -33,5 +33,5 @@ contexts:
       captures:
         1: >-
           storage.modifier.php.php7
-          keyword.modifier.php.php7
+          keyword.other.access.php.php7
       pop: true

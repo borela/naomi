@@ -128,12 +128,10 @@ contexts:
     - match: |
         (?x)\s*
         (yield)
-        (?> \s*(\*)
+        (?> \s*(from)
           | \b
         )
       captures:
         1: keyword.control.php.php7
-        2: >-
-          statement.modifier.php.php7
-          keyword.generator.php.php7
+        2: keyword.control.php.php7
       pop: true

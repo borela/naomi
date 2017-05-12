@@ -40,9 +40,7 @@ contexts:
           \s+{{commonIdentifier}}
         )
       captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.modifier.js.fjsx15
+        1: keyword.other.access.js.fjsx15
       set: declaration
     # Normal variable.
     - match: |

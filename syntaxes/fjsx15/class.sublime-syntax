@@ -41,9 +41,7 @@ contexts:
       push: template-parameters
     # Extensions.
     - match: \s*extends\b
-      scope: >-
-        storage.modifier.js.fjsx15
-        keyword.modifier.js.fjsx15
+      scope: keyword.other.inherit.js.fjsx15
       push: type
     # Identifier.
     - match: |

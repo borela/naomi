@@ -63,7 +63,7 @@ contexts:
           keyword.declaration.variable.js.fjsx15
         2: entity.name.function.js.fjsx15
         3: punctuation.delimiter.function.assignment.js.fjsx1
-        4: keyword.modifier.js.fjsx15
+        4: keyword.other.async.js.fjsx15
       set: [
         body,
         parameters,
@@ -90,7 +90,7 @@ contexts:
           keyword.declaration.variable.js.fjsx15
         2: entity.name.function.js.fjsx15
         3: punctuation.delimiter.function.assignment.js.fjsx1
-        4: keyword.modifier.js.fjsx15
+        4: keyword.other.async.js.fjsx15
       set: [
         body,
         parameters
@@ -106,7 +106,7 @@ contexts:
           \s*=>
         )
       captures:
-        1: keyword.modifier.js.fjsx15
+        1: keyword.other.async.js.fjsx15
       set: [
         body,
         parameters,
@@ -122,7 +122,7 @@ contexts:
           \s*=>
         )
       captures:
-        1: keyword.modifier.js.fjsx15
+        1: keyword.other.async.js.fjsx15
       set: [
         body,
         parameters
@@ -149,7 +149,7 @@ contexts:
           keyword.declaration.variable.js.fjsx15
         2: entity.name.function.js.fjsx15
         3: punctuation.delimiter.function.assignment.js.fjsx1
-        4: keyword.modifier.js.fjsx15
+        4: keyword.other.async.js.fjsx15
       set: [
         body,
         single-parameter
@@ -164,7 +164,7 @@ contexts:
           \s*=>
         )
       captures:
-        1: keyword.modifier.js.fjsx15
+        1: keyword.other.async.js.fjsx15
       set: [
         body,
         single-parameter

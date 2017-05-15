@@ -40,7 +40,22 @@ contexts:
         optional-alias,
         computed-property
       ]
-    # Normal property with an alias.
+    # Accessing sub-property.
+    - match: |
+        (?xi)
+        \s*({{commonIdentifier}})
+        \s*(:)
+        (?=\s*\{)
+      captures:
+        1: >-
+          destructuring.object.js.fjsx15
+          object.property.js.fjsx15
+          entity.name.variable.js.fjsx15
+        2: >-
+          destructuring.object.js.fjsx15
+          keyword.operator.other.association.js.fjsx15
+      pop: true
+    # Aliasing.
     - match: |
         (?xi)
         \s*({{commonIdentifier}})

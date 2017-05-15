@@ -10,9 +10,15 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "html5/embedded";
-@import "html5/form";
-@import "html5/other";
-@import "html5/sectioning";
-@import "html5/sectioning-root";
-@import "html5/style";
+@import "scss/selector/base";
+@import "scss/selector/class";
+@import "scss/selector/id";
+@import "scss/selector/placeholder";
+@import "scss/selector/tag";
+
+@import "scss/attribute";
+@import "scss/delimiter";
+@import "scss/mixin";
+@import "scss/operator";
+@import "scss/variable";
+@import "scss/unit";

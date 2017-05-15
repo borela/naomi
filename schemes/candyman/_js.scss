@@ -10,9 +10,12 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.source.jsx,
-.text.html,
-.text.md,
-.text.xml {
-  foreground: rgba($grey-400, .4);
-}
+@import "js/flowtype/delimiter";
+@import "js/flowtype/operator";
+
+@import "js/decorator";
+@import "js/destructuring";
+@import "js/eslint";
+@import "js/export";
+@import "js/import";
+@import "js/operator";

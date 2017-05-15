@@ -10,12 +10,8 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.statement.modifier,
-.storage.modifier,
-.storage.type {
-  .keyword,
-  .keyword.operator,
-  .keyword.operator.other {
+.storage.modifier {
+  .keyword {
     foreground: $deep-purple-200;
   }
 }

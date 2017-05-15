@@ -10,9 +10,9 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.source.jsx,
-.text.html,
-.text.md,
-.text.xml {
-  foreground: rgba($grey-400, .4);
-}
+@import "html/embedded";
+@import "html/form";
+@import "html/other";
+@import "html/sectioning";
+@import "html/sectioning-root";
+@import "html/style";

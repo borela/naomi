@@ -13,3 +13,9 @@
 .keyword {
   foreground: $pink-a100;
 }
+
+.storage.type {
+  .keyword {
+    foreground: $deep-purple-200;
+  }
+}

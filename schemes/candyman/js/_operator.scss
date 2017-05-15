@@ -11,6 +11,10 @@
 // the License.
 
 .keyword.operator.other {
+  &.generator {
+    foreground: $deep-purple-200;
+  }
+
   &.rest,
   &.spread {
     foreground: $grey-0;

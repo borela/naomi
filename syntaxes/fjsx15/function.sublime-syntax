@@ -36,7 +36,9 @@ contexts:
           \s*\(
         )
       captures:
-        1: keyword.other.async.js.fjsx15
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.other.async.js.fjsx15
         2: >-
           storage.type.js.fjsx15
           keyword.declaration.function.js.fjsx15
@@ -54,7 +56,9 @@ contexts:
           \s*\(
         )
       captures:
-        1: keyword.other.async.js.fjsx15
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.other.async.js.fjsx15
         2: >-
           storage.type.js.fjsx15
           keyword.declaration.function.js.fjsx15
@@ -71,7 +75,9 @@ contexts:
           \s*<.*>\s*\(
         )
       captures:
-        1: keyword.other.async.js.fjsx15
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.other.async.js.fjsx15
         2: >-
           storage.type.js.fjsx15
           keyword.declaration.function.js.fjsx15
@@ -89,7 +95,9 @@ contexts:
           \s*<.*>\s*\(
         )
       captures:
-        1: keyword.other.async.js.fjsx15
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.other.async.js.fjsx15
         2: >-
           storage.type.js.fjsx15
           keyword.declaration.function.js.fjsx15

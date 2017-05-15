@@ -60,6 +60,6 @@ contexts:
         ))
       captures:
         1: >-
-          support.js.fjsx15
+          support.core.js.fjsx15
           entity.name.constant.js.fjsx15
       pop: true

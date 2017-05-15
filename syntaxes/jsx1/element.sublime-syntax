@@ -98,11 +98,7 @@ contexts:
         - include: main
         - match: |
             (?x)
-            (?=\s*
-              (?> />
-                | <
-              )
-            )
+            (?=\s*(?>/>|<))
           pop: true
         - match: .
           scope: source.jsx.jsx1

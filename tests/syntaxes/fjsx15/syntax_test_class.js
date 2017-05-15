@@ -30,7 +30,7 @@
    class Foo extends A.B.C {}
 // ^^^^^ .keyword.declaration.class.js.fjsx15
 //       ^^^ .entity.name.class.js.fjsx15
-//           ^^^^^^^ .keyword.modifier.js.fjsx15
+//           ^^^^^^^ .keyword.other.inherit.js.fjsx15
 //                   ^ .entity.name.namespace.a.flowtype
 //                    ^ .punctuation.delimiter.namespace.a.flowtype
 //                     ^ .entity.name.namespace.b.flowtype
@@ -46,7 +46,7 @@
 //            ^ .punctuation.delimiter.template.parameters.flowtype
 //             ^ .entity.name.type.flowtype
 //              ^ .punctuation.delimiter.template.parameters.end.flowtype
-//                ^^^^^^^ .keyword.modifier.js.fjsx15
+//                ^^^^^^^ .keyword.other.inherit.js.fjsx15
 //                        ^ .entity.name.namespace.a.flowtype
 //                         ^ .punctuation.delimiter.namespace.a.flowtype
 //                          ^ .entity.name.namespace.b.flowtype
@@ -125,7 +125,7 @@
 //           ^ .punctuation.delimiter.function.body.end.js.fjsx15
     *method(){}
 //  ^ .storage.modifier.js.fjsx15
-//  ^ .keyword.generator.js.fjsx15
+//  ^ .keyword.operator.other.generator.js.fjsx15
 //   ^^^^^^ .entity.name.function.js.fjsx15
 //         ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //          ^ .punctuation.delimiter.function.parameters.end.js.fjsx15

@@ -13,6 +13,7 @@
 // the License.
 
    var object = {
+// ^^^ .storage.type.js.fjsx15
 // ^^^ .keyword.declaration.variable.js.fjsx15
 //     ^^^^^^ .entity.name.variable.js.fjsx15
 //            ^ .keyword.operator.other.assignment.js.fjsx15
@@ -45,6 +46,7 @@
 // ^ .punctuation.delimiter.object.end.js.fjsx15
 //  ^ .keyword.operator.other.terminator.js.fjsx15
    var object = {
+// ^^^ .storage.type.js.fjsx15
 // ^^^ .keyword.declaration.variable.js.fjsx15
 //     ^^^^^^ .entity.name.variable.js.fjsx15
 //            ^ .keyword.operator.other.assignment.js.fjsx15
@@ -79,7 +81,7 @@
 //            ^ .punctuation.delimiter.object.js.fjsx15
     *method(){},
 //  ^ .storage.modifier.js.fjsx15
-//  ^ .keyword.generator.js.fjsx15
+//  ^ .keyword.operator.other.generator.js.fjsx15
 //   ^^^^^^ .entity.name.function.js.fjsx15
 //         ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //          ^ .punctuation.delimiter.function.parameters.end.js.fjsx15
@@ -87,7 +89,8 @@
 //            ^ .punctuation.delimiter.function.body.end.js.fjsx15
 //             ^ .punctuation.delimiter.object.js.fjsx15
     get property(){},
-//  ^^^ .keyword.modifier.js.fjsx15
+//  ^^^ .storage.modifier.js.fjsx15
+//  ^^^ .keyword.other.proxy.js.fjsx15
 //      ^^^^^^^^ .entity.name.function.js.fjsx15
 //              ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //               ^ .punctuation.delimiter.function.parameters.end.js.fjsx15
@@ -95,7 +98,8 @@
 //                 ^ .punctuation.delimiter.function.body.end.js.fjsx15
 //                  ^ .punctuation.delimiter.object.js.fjsx15
     set property(){},
-//  ^^^ .keyword.modifier.js.fjsx15
+//  ^^^ .storage.modifier.js.fjsx15
+//  ^^^ .keyword.other.proxy.js.fjsx15
 //      ^^^^^^^^ .entity.name.function.js.fjsx15
 //              ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //               ^ .punctuation.delimiter.function.parameters.end.js.fjsx15
@@ -103,7 +107,8 @@
 //                 ^ .punctuation.delimiter.function.body.end.js.fjsx15
 //                  ^ .punctuation.delimiter.object.js.fjsx15
     async method(){},
-//  ^^^^^ .keyword.modifier.js.fjsx15
+//  ^^^^^ .storage.modifier.js.fjsx15
+//  ^^^^^ .keyword.other.async.js.fjsx15
 //        ^^^^^^ .entity.name.function.js.fjsx15
 //              ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //               ^ .punctuation.delimiter.function.parameters.end.js.fjsx15
@@ -111,7 +116,8 @@
 //                 ^ .punctuation.delimiter.function.body.end.js.fjsx15
 //                  ^ .punctuation.delimiter.object.js.fjsx15
     static method(){},
-//  ^^^^^^ .keyword.modifier.js.fjsx15
+//  ^^^^^^ .storage.modifier.js.fjsx15
+//  ^^^^^^ .keyword.other.access.js.fjsx15
 //         ^^^^^^ .entity.name.function.js.fjsx15
 //               ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //                ^ .punctuation.delimiter.function.parameters.end.js.fjsx15
@@ -119,8 +125,10 @@
 //                  ^ .punctuation.delimiter.function.body.end.js.fjsx15
 //                   ^ .punctuation.delimiter.object.js.fjsx15
     static get property(){},
-//  ^^^^^^ .keyword.modifier.js.fjsx15
-//         ^^^ .keyword.modifier.js.fjsx15
+//  ^^^^^^ .storage.modifier.js.fjsx15
+//  ^^^^^^ .keyword.other.access.js.fjsx15
+//         ^^^ .storage.modifier.js.fjsx15
+//         ^^^ .keyword.other.proxy.js.fjsx15
 //             ^^^^^^^^ .entity.name.function.js.fjsx15
 //                     ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //                      ^ .punctuation.delimiter.function.parameters.end.js.fjsx15
@@ -128,8 +136,10 @@
 //                        ^ .punctuation.delimiter.function.body.end.js.fjsx15
 //                         ^ .punctuation.delimiter.object.js.fjsx15
     static set property(){},
-//  ^^^^^^ .keyword.modifier.js.fjsx15
-//         ^^^ .keyword.modifier.js.fjsx15
+//  ^^^^^^ .storage.modifier.js.fjsx15
+//  ^^^^^^ .keyword.other.access.js.fjsx15
+//         ^^^ .storage.modifier.js.fjsx15
+//         ^^^ .keyword.other.proxy.js.fjsx15
 //             ^^^^^^^^ .entity.name.function.js.fjsx15
 //                     ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //                      ^ .punctuation.delimiter.function.parameters.end.js.fjsx15
@@ -137,8 +147,10 @@
 //                        ^ .punctuation.delimiter.function.body.end.js.fjsx15
 //                         ^ .punctuation.delimiter.object.js.fjsx15
     static async method(){},
-//  ^^^^^^ .keyword.modifier.js.fjsx15
-//         ^^^^^ .keyword.modifier.js.fjsx15
+//  ^^^^^^ .storage.modifier.js.fjsx15
+//  ^^^^^^ .keyword.other.access.js.fjsx15
+//         ^^^^^ .storage.modifier.js.fjsx15
+//         ^^^^^ .keyword.other.async.js.fjsx15
 //               ^^^^^^ .entity.name.function.js.fjsx15
 //                     ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //                      ^ .punctuation.delimiter.function.parameters.end.js.fjsx15

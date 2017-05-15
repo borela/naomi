@@ -34,10 +34,22 @@ contexts:
           )
         )
       with_prototype:
-        - match: \{
-          scope: >-
-            source.jsx.fjsx15
-            keyword.operator.other.embedded.js.begin.jsx.jsx1
+        # Single line comment.
+        - match: (\{\s*/\*)(.*)(\*/\s*})
+          captures:
+            1: >-
+              comment.block.js.fjsx15
+              punctuation.delimiter.comment.begin.js.fjsx15
+            2: comment.block.js.fjsx15
+            3: >-
+              comment.block.js.fjsx15
+              punctuation.delimiter.comment.end.js.fjsx15
+        # Embedded javascript.
+        - match: (\{)
+          captures:
+            1: >-
+              source.jsx.jsx1
+              keyword.operator.other.embedded.js.begin.jsx.jsx1
           push: embedded-js
       set: jsx
 

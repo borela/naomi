@@ -81,31 +81,6 @@ variables:
 
 contexts:
   main:
-    # Template arrow function assigned to variable/constant.
-    - match: |
-        (?xi)
-        \s*((?>const|let|var)\b)?
-        \s*({{commonIdentifier}})
-        \s*(=)
-        \s*(async)?
-        (?=
-          \s*{{templateArguments}}
-          \s*{{parameters}}
-          \s*{{returnType}}
-          \s*=>
-        )
-      captures:
-        1: >-
-          storage.type.js.fjsx15
-          keyword.declaration.variable.js.fjsx15
-        2: entity.name.function.js.fjsx15
-        3: punctuation.delimiter.function.assignment.js.fjsx1
-        4: keyword.other.async.js.fjsx15
-      push: [
-        body,
-        parameters,
-        template-parameters
-      ]
     # Normal arrow function assigned to variable/constant.
     - match: |
         (?xi)
@@ -114,6 +89,7 @@ contexts:
         \s*(=)
         \s*(async)?
         (?=
+          \s*{{templateArguments}}?
           \s*{{parameters}}
           \s*{{returnType}}
           \s*=>
@@ -124,10 +100,12 @@ contexts:
           keyword.declaration.variable.js.fjsx15
         2: entity.name.function.js.fjsx15
         3: punctuation.delimiter.function.assignment.js.fjsx1
-        4: keyword.other.async.js.fjsx15
+        4: >-
+          storage.modifier.js.fjsx15
+          keyword.other.async.js.fjsx15
       push: [
         body,
-        parameters
+        template-and-parameters
       ]
     # Single parameter arrow function assigned to variable.
     - match: |
@@ -147,27 +125,12 @@ contexts:
           keyword.declaration.variable.js.fjsx15
         2: entity.name.function.js.fjsx15
         3: punctuation.delimiter.function.assignment.js.fjsx1
-        4: keyword.other.async.js.fjsx15
+        4: >-
+          storage.modifier.js.fjsx15
+          keyword.other.async.js.fjsx15
       push: [
         body,
         single-parameter
-      ]
-    # Template arrow function.
-    - match: |
-        (?xi)
-        \s*(async)?
-        (?=
-          \s*{{templateArguments}}
-          \s*{{parameters}}
-          \s*{{returnType}}
-          \s*=>
-        )
-      captures:
-        1: keyword.other.async.js.fjsx15
-      push: [
-        body,
-        parameters,
-        template-parameters
       ]
     # Normal arrow function.
     - match: |
@@ -180,10 +143,12 @@ contexts:
           \s*=>
         )
       captures:
-        1: keyword.other.async.js.fjsx15
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.other.async.js.fjsx15
       push: [
         body,
-        parameters
+        template-and-parameters
       ]
     # Single parameter.
     - match: |
@@ -217,11 +182,13 @@ contexts:
             2: keyword.operator.other.optional.flowtype
           pop: true
 
-  template-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
-
-  parameters:
+  template-and-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
+        - match: ""
+          pop: true
 
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/body.sublime-syntax

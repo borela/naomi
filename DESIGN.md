@@ -110,14 +110,17 @@ An identity is the most specific scope possible that decribes the token.
 ```css
 .entity
   .name
-    .class
-    .interface
-    .function
-    .variable
-    .constant
-    .parameter
-    .tag
     .attribute
+    .class
+    .constant
+    .enum
+    .function
+    .interface
+    .structure
+    .tag
+    .trait
+    .typedef
+    .variable
 
 .punctuation
   .delimiter
@@ -126,13 +129,13 @@ An identity is the most specific scope possible that decribes the token.
       .end
       .access
         .begin
-        .end
+        .enda
     .class
       .body
         .begin
         .end
     .function
-      .arguments
+      .parameters
         .begin
         .end
       .parameters
@@ -167,13 +170,19 @@ An identity is the most specific scope possible that decribes the token.
       .association
       .comma
       .key-value
+      .inherit
       .member-access
+      .rest
       .scope-resolution
+      .spread
       .terminator
+      .void
   .other
     .access
+    .async
     .constant-function
-    .inheritance
+    .inherit
+    .proxy
     .pure-virtual
     .unit
 ```

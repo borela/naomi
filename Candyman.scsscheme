@@ -13,11 +13,12 @@
 @name 'Candyman';
 @import 'schemes/candyman/palette';
 
-@import 'schemes/candyman/main';
-@import 'schemes/candyman/fjsx15';
-@import 'schemes/candyman/json1';
+@import 'schemes/candyman/html';
+@import 'schemes/candyman/js';
+@import 'schemes/candyman/json';
 @import 'schemes/candyman/jsx';
+@import 'schemes/candyman/main';
 @import 'schemes/candyman/markup';
+@import 'schemes/candyman/md';
 @import 'schemes/candyman/mql';
-@import 'schemes/candyman/html5';
-@import 'schemes/candyman/scss3';
+@import 'schemes/candyman/scss';

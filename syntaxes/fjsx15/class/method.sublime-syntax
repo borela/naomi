@@ -126,22 +126,22 @@ contexts:
       ]
 
   modifiers:
-    - match: \s*(async)
+    - match: \s*(async)\b
       captures:
         1: >-
           storage.modifier.js.fjsx15
           keyword.other.async.js.fjsx15
-    - match: \s*(get|set)
+    - match: \s*(get|set)\b
       captures:
         1: >-
           storage.modifier.js.fjsx15
           keyword.other.proxy.js.fjsx15
-    - match: \s*(static)
+    - match: \s*(static)\b
       captures:
         1: >-
           storage.modifier.js.fjsx15
           keyword.other.access.js.fjsx15
-    - match: \s*(\*)
+    - match: \s*(\*)\b
       captures:
         1: >-
           storage.modifier.js.fjsx15

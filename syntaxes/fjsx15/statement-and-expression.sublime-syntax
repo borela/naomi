@@ -109,7 +109,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
     # Expression keywords.
-    - include: Packages/Naomi/syntaxes/fjsx15/instanceof.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/new.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/other-keywords.sublime-syntax
     # Expression.

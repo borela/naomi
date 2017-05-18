@@ -21,8 +21,16 @@ contexts:
   main:
     - match: \s*(instanceof)\b
       captures:
-        1: keyword.operator.other.word.js.fjsx15
+        1: >-
+          word.js.fjsx15
+          keyword.operator.relational.js.fjsx15
       set: type
+    - match: \s*(in)\b
+      captures:
+        1: >-
+          word.js.fjsx15
+          keyword.operator.relational.js.fjsx15
+      pop: true
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax

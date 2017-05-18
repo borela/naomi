@@ -22,7 +22,6 @@ contexts:
     - match: |
         (?x)\s*
         (?> delete
-          | in
           | of
         )\b
       scope: keyword.other.js.fjsx15

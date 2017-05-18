@@ -22,6 +22,13 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  templateArguments: |
+    (<
+      [^<>]*
+      \g<-1>?
+      [^<>]*
+    >)
+
 contexts:
   main:
     # Import the entire module.
@@ -71,8 +78,29 @@ contexts:
     - include: punctuation
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/typeof.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
+        # Typeof.
+        - match: (?=\s*typeof)
+          set: [
+            optional-alias,
+            typeof
+          ]
+        # Type.
+        - match: |
+            (?xi)
+            (?=\s*type\s+
+              (?> \{
+                | {{commonIdentifier}}
+                  {{templateArguments}}?
+              )
+            )
+          captures:
+            1: >-
+              storage.type.flowtype
+              keyword.declaration.type-aliasing.flowtype
+          set: [
+            optional-alias,
+            type-aliasing
+          ]
         # Default.
         - match: \s*(default)\b
           captures:
@@ -96,6 +124,12 @@ contexts:
           set: optional-alias
         - match: ""
           pop: true
+
+  type-aliasing:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
+
+  typeof:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/typeof.sublime-syntax
 
   optional-alias:
     - match: |

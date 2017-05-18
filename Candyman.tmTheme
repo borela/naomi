@@ -158,7 +158,16 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.comment .punctuation.delimiter.array.flowtype, .comment .punctuation.delimiter.array.begin.flowtype, .comment .punctuation.delimiter.array.end.flowtype, .comment .punctuation.delimiter.cast.begin.flowtype, .comment .punctuation.delimiter.cast.end.flowtype, .comment .punctuation.delimiter.function.parameters.begin.flowtype, .comment .punctuation.delimiter.function.parameters.end.flowtype, .comment .punctuation.delimiter.function.parameters.flowtype, .comment .punctuation.delimiter.function.result.flowtype, .comment .punctuation.delimiter.module.body.begin.flowtype, .comment .punctuation.delimiter.module.body.end.flowtype, .comment .punctuation.delimiter.nullable.begin.flowtype, .comment .punctuation.delimiter.nullable.end.flowtype, .comment .punctuation.delimiter.object.begin.flowtype, .comment .punctuation.delimiter.object.end.flowtype, .comment .punctuation.delimiter.object.flowtype, .comment .punctuation.delimiter.template.arguments.begin.flowtype, .comment .punctuation.delimiter.template.arguments.flowtype, .comment .punctuation.delimiter.template.parameters.begin.flowtype, .comment .punctuation.delimiter.template.parameters.end.flowtype, .comment .punctuation.delimiter.template.parameters.flowtype, .comment .punctuation.delimiter.template.arguments.end.flowtype</string>
+			<string>.comment.block.flowtype .punctuation.delimiter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#BCAAA4B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment.block.flowtype .punctuation.delimiter.array.flowtype, .comment.block.flowtype .punctuation.delimiter.array.begin.flowtype, .comment.block.flowtype .punctuation.delimiter.array.end.flowtype, .comment.block.flowtype .punctuation.delimiter.cast.begin.flowtype, .comment.block.flowtype .punctuation.delimiter.cast.end.flowtype, .comment.block.flowtype .punctuation.delimiter.function.parameters.begin.flowtype, .comment.block.flowtype .punctuation.delimiter.function.parameters.end.flowtype, .comment.block.flowtype .punctuation.delimiter.function.parameters.flowtype, .comment.block.flowtype .punctuation.delimiter.function.result.flowtype, .comment.block.flowtype .punctuation.delimiter.module.body.begin.flowtype, .comment.block.flowtype .punctuation.delimiter.module.body.end.flowtype, .comment.block.flowtype .punctuation.delimiter.nullable.begin.flowtype, .comment.block.flowtype .punctuation.delimiter.nullable.end.flowtype, .comment.block.flowtype .punctuation.delimiter.object.begin.flowtype, .comment.block.flowtype .punctuation.delimiter.object.end.flowtype, .comment.block.flowtype .punctuation.delimiter.object.flowtype, .comment.block.flowtype .punctuation.delimiter.template.arguments.begin.flowtype, .comment.block.flowtype .punctuation.delimiter.template.arguments.flowtype, .comment.block.flowtype .punctuation.delimiter.template.parameters.begin.flowtype, .comment.block.flowtype .punctuation.delimiter.template.parameters.end.flowtype, .comment.block.flowtype .punctuation.delimiter.template.parameters.flowtype, .comment.block.flowtype .punctuation.delimiter.template.arguments.end.flowtype</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1152,6 +1161,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.comment .entity.name.alias</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFECB3B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.comment .entity.name.class, .comment .punctuation.delimiter.class</string>
 			<key>settings</key>
 			<dict>
@@ -1265,6 +1283,42 @@
 			<dict>
 				<key>foreground</key>
 				<string>#FF80ABB2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .entity.name.namespace</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#BCAAA4B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .punctuation.delimiter.namespace</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#BCAAA466</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .import .entity.name.aliased, .comment .import .entity.name.ambiguous</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#BCAAA4B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .punctuation.delimiter.import</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFFFFFB2</string>
 			</dict>
 		</dict>
 		<dict>

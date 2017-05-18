@@ -37,8 +37,10 @@
   }
 }
 
-.comment {
+.comment.block.flowtype {
   .punctuation.delimiter {
+    foreground: rgba($brown-200, .7);
+
     &.array.flowtype,
     &.array.begin.flowtype,
     &.array.end.flowtype,

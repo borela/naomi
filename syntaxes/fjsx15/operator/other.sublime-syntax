@@ -31,11 +31,15 @@ contexts:
   main:
     - match: \s*(typeof)\b
       captures:
-        1: keyword.operator.other.word.js.fjsx15
+        1: >-
+          word.js.fjsx15
+          keyword.operator.other.js.fjsx15
       pop: true
     - match: \s*(void)\b
       captures:
-        1: keyword.operator.other.void.js.fjsx15
+        1: >-
+          word.js.fjsx15
+          keyword.operator.other.void.js.fjsx15
       pop: true
     - match: \s*(\,)
       captures:

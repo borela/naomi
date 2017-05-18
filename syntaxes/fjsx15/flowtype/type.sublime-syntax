@@ -24,14 +24,11 @@ variables:
 
   expressionGroupBegin: |
     (\()
-    (?!
-      .*\)
-      \s*=>
-    )
 
 contexts:
   main:
     - include: operators
+    - include: function
     # Open new expression group.
     - match: |
         (?xi)\s*
@@ -47,6 +44,7 @@ contexts:
       ]
 
   open-a-close-b:
+    - include: function
     # Open new expression group.
     - match: |
         (?xi)\s*
@@ -67,6 +65,7 @@ contexts:
       ]
 
   open-b-close-a:
+    - include: function
     # Open new expression group.
     - match: |
         (?xi)\s*
@@ -86,7 +85,11 @@ contexts:
         type-definitions
       ]
 
+  function:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.no-pop.sublime-syntax
+
   type-definitions:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/typeof.sublime-syntax
     # Enveloped nullable.
     - match: |
         (?x)
@@ -103,12 +106,6 @@ contexts:
     # Nullable.
     - match: \s*\?
       scope: keyword.operator.other.nullable.flowtype
-    # “Type of” operator.
-    - match: |
-        (?x)\s*
-        (typeof)
-      captures:
-        1: keyword.operator.other.word.js.fjsx15
     # Utility operators.
     - match: |
         (?x)\s*
@@ -145,7 +142,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/tuple.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax

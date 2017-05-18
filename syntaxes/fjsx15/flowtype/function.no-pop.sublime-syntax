@@ -17,15 +17,50 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
+  templateArguments: |
+    (<
+      [^<>]*
+      \g<-1>?
+      [^<>]*
+    >)
+
+  parameters: |
+    (\(
+      [^()]*
+      \g<-1>?
+      [^()]*
+    \))
+
+  string: |
+    (?> '.*?'
+      | ".*?"
+      | `.*`
+    )
+
+  simpleFlowType: |
+    (?> {{string}}
+      | {{commonIdentifier}}
+        {{templateArguments}}?
+    )
+
+  flowFunction: |
+    {{parameters}}
+    \s*=>\s*
+    (?> {{simpleFlowType}}
+      | \g<-2>
+    )
+
 contexts:
   main:
     - match: |
-        (?x)
-        (?=
-          (?:\s*<.*>)?
-          \s*\(
-        )
-      set: declaration
+        (?xi)
+        (?={{flowFunction}})
+      push: declaration
 
   declaration:
     # Template parameters.

@@ -22,22 +22,27 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  templateArguments: |
+    (<
+      [^<>]*
+      \g<-1>?
+      [^<>]*
+    >)
+
 contexts:
   main:
     - match: |
         (?xi)\s*
         (type)
-        (?=
-          \s+{{commonIdentifier}}
-          (?:\s*<.*>)?
-          \s*=
+        (?=\s+
+          {{commonIdentifier}}
+          {{templateArguments}}?
         )
       captures:
         1: >-
           storage.type.flowtype
           keyword.declaration.type-aliasing.flowtype
       set: [
-        type,
         punctuation,
         identifier
       ]
@@ -49,6 +54,8 @@ contexts:
     - match: \s*(=)
       captures:
         1: keyword.operator.other.assignment.flowtype
+      set: type
+    - match: (?=\s*\S)
       pop: true
 
   type:

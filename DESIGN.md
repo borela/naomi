@@ -154,6 +154,8 @@ An identity is the most specific scope possible that decribes the token.
 
 .keyword
   .control
+    .conditional
+    .loop
   .declaration
     .class
     .constant

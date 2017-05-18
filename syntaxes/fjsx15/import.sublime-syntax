@@ -28,29 +28,14 @@ contexts:
     - match: |
         (?x)\s*
         (import)
-        (?=
-          \s*
-          (?>"|')
-        )\b
+        (?=\s*(?>"|'|`))\b
       captures:
         1: keyword.control.import.js.fjsx15
       set: origin-path
-    # Type.
-    - match: |
-        (?x)
-        \s*(import)
-        \s*(type)\b
-      captures:
-        1: keyword.control.import.js.fjsx15
-        2: >-
-          storage.type.flowtype
-          keyword.other.type-aliasing.flowtype
-      set: target-types
     # Other.
     - match: |
         (?x)
         \s*(import)\b
-        (?!\.)
       captures:
         1: keyword.control.import.js.fjsx15
       set: targets
@@ -84,37 +69,38 @@ contexts:
     - include: comment
     - include: origin
     - include: punctuation
-    # Default.
-    - match: \s*(default)\b
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.control.export.default.js.fjsx15
-      push: optional-alias
-    # All.
-    - match: \s*(\*)
-      captures:
-        1: keyword.operator.other.import.all.js.fjsx15
-      push: optional-alias
-    # Simple.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: >-
-          import.js.fjsx15
-          entity.name.ambiguous.js.fjsx15
-      push: optional-alias
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/typeof.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
+        # Default.
+        - match: \s*(default)\b
+          captures:
+            1: >-
+              storage.modifier.js.fjsx15
+              keyword.control.export.default.js.fjsx15
+          set: optional-alias
+        # All.
+        - match: \s*(\*)
+          captures:
+            1: keyword.operator.other.import.all.js.fjsx15
+          set: optional-alias
+        # Simple.
+        - match: |
+            (?xi)\s*
+            ({{commonIdentifier}})
+          captures:
+            1: >-
+              import.js.fjsx15
+              entity.name.ambiguous.js.fjsx15
+          set: optional-alias
+        - match: ""
+          pop: true
 
   optional-alias:
     - match: |
         (?x)
-        (?=\s*
-          (?> ,
-            | }
-            | from
-          )
-        )
+        (?=\s*(?>,|}|from))
       pop: true
     - include: alias
 
@@ -130,58 +116,4 @@ contexts:
         ({{commonIdentifier}})
       captures:
         1: entity.name.alias.js.fjsx15
-      pop: true
-
-  target-types:
-    - include: comment
-    - include: origin
-    - include: punctuation
-    # All.
-    - match: \s*(\*)
-      captures:
-        1: keyword.operator.other.import.all.js.fjsx15
-      push: optional-type-alias
-    # Aliased.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-        (?=\s+as)
-      captures:
-        1: >-
-          import.js.fjsx15
-          entity.name.aliased.flowtype
-      push: type-alias
-    # Other.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: >-
-          import.js.fjsx15
-          entity.name.type.flowtype
-
-  optional-type-alias:
-    - match: |
-        (?x)
-        (?=\s*
-          (?> ,
-            | }
-            | from
-          )
-        )
-      pop: true
-    - include: type-alias
-
-  type-alias:
-    - match: \s*(as)\b
-      captures:
-        1: keyword.other.alias.js.fjsx15
-      set: type-alias-name
-
-  type-alias-name:
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: entity.name.type.flowtype
       pop: true

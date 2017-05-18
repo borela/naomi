@@ -176,6 +176,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.word .keyword.operator.other.flowtype</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.keyword.operator.other.utility.flowtype</string>
 			<key>settings</key>
 			<dict>
@@ -195,6 +204,15 @@
 		<dict>
 			<key>scope</key>
 			<string>.comment .keyword.operator.other.utility.flowtype</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF80ABB2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .word .keyword.operator.other.flowtype</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -943,7 +961,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.operator.other.word</string>
+			<string>.word .keyword.operator</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

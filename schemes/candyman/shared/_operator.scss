@@ -14,8 +14,10 @@
   &.operator {
     foreground: $green-a200;
   }
+}
 
-  &.operator.other.word {
+.word {
+  .keyword.operator {
     foreground: $pink-a100;
   }
 }

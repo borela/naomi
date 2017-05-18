@@ -25,6 +25,12 @@
   }
 }
 
+.word {
+  .keyword.operator.other.flowtype {
+    foreground: $pink-a100;
+  }
+}
+
 .keyword.operator.other.utility.flowtype {
   foreground: $pink-a100;
 }
@@ -47,5 +53,11 @@
 
   .keyword.operator.other.utility.flowtype {
     foreground: rgba($pink-a100, .7);
+  }
+
+  .word {
+    .keyword.operator.other.flowtype {
+      foreground: rgba($pink-a100, .7);
+    }
   }
 }

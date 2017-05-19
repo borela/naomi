@@ -44,7 +44,7 @@ contexts:
       ]
 
   open-a-close-b:
-    - include: function
+    - include: function-no-pop
     # Open new expression group.
     - match: |
         (?xi)\s*
@@ -65,7 +65,7 @@ contexts:
       ]
 
   open-b-close-a:
-    - include: function
+    - include: function-no-pop
     # Open new expression group.
     - match: |
         (?xi)\s*
@@ -86,10 +86,13 @@ contexts:
       ]
 
   function:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.sublime-syntax
+
+  function-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.no-pop.sublime-syntax
 
   type-definitions:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/typeof.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/typeof.no-pop.sublime-syntax
     # Enveloped nullable.
     - match: |
         (?x)
@@ -123,6 +126,7 @@ contexts:
             | Keys
             | ObjMap
             | PropertyType
+            | ReadOnly(?:Array)?
             | Shape
             | Supertype
             | Subtype

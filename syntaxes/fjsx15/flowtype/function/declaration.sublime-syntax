@@ -17,48 +17,29 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [$_[:alpha:]]
-    [$_[:alnum:]]*
-
-  templateArguments: |
-    (<
-      [^<>]*
-      \g<-1>?
-      [^<>]*
-    >)
-
 contexts:
   main:
-    - match: |
-        (?xi)\s*
-        (type)\b
-        (?=\s+
-          {{commonIdentifier}}
-          {{templateArguments}}?
-        )
-      captures:
-        1: >-
-          storage.type.flowtype
-          keyword.declaration.type-aliasing.flowtype
+    # Template parameters.
+    - match: (?=\s*<)
+      push: template-arguments
+    # Parameters.
+    - match: (?=\s*\()
       set: [
-        punctuation,
-        identifier
+        return,
+        parameters
       ]
 
-  identifier:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax
+  template-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax
 
-  punctuation:
-    - match: \s*(=)
+  parameters:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function/parameters.sublime-syntax
+
+  return:
+    - match: \s*(=>)
       captures:
-        1: keyword.operator.other.assignment.flowtype
-      set: type
-    - match: ""
-      pop: true
+        1: punctuation.delimiter.function.result.flowtype
+      set: return-type
 
-  type:
+  return-type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
-    - match: ""
-      pop: true

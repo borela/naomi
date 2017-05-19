@@ -26,8 +26,3 @@ contexts:
         1: >-
           word.flowtype
           keyword.operator.other.flowtype
-      set: typeof-target
-
-  typeof-target:
-    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

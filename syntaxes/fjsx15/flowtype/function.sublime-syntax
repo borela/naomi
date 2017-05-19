@@ -44,7 +44,7 @@ contexts:
           {{templateArguments}}?
           {{flowFunction}}
         )
-      push: declaration
+      set: declaration
 
   declaration:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function/declaration.sublime-syntax

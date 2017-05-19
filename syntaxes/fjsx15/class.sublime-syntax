@@ -40,14 +40,18 @@ contexts:
     - match: (?=\s*<)
       push: template-parameters
     # Extensions.
-    - match: \s*extends\b
-      scope: keyword.other.inherit.js.fjsx15
+    - match: \s*(extends)\b
+      captures:
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.other.inherit.js.fjsx15
       push: type
     # Identifier.
     - match: |
         (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.class.js.fjsx15
+        \s*({{commonIdentifier}})
+      captures:
+        1: entity.name.class.js.fjsx15
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

@@ -43,6 +43,7 @@ contexts:
     - match: |
         (?x)
         \s*(import)\b
+        (?!\s*\.)
       captures:
         1: keyword.control.import.js.fjsx15
       set: targets
@@ -84,16 +85,13 @@ contexts:
 
   sequence:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/typeof.no-pop.sublime-syntax
-    # # Type.
+    # Type.
     - match: \s*(type)\b
       captures:
         1: >-
           storage.type.flowtype
           keyword.declaration.type-aliasing.flowtype
-      set: [
-        optional-alias,
-        simple-type
-      ]
+      set: types
     # Default.
     - match: \s*(default)\b
       captures:
@@ -115,6 +113,32 @@ contexts:
           import.js.fjsx15
           entity.name.ambiguous.js.fjsx15
       set: optional-alias
+
+  types:
+    - include: aliased-type
+    - match: \s*(})
+      captures:
+        1: punctuation.delimiter.import.list.end.js.fjsx15
+      pop: true
+    - match: \s*(\{)
+      captures:
+        1: punctuation.delimiter.import.list.begin.js.fjsx15
+      push:
+        - include: aliased-type
+        - match: \s*(,)
+          captures:
+            1: punctuation.delimiter.import.item.js.fjsx15
+        - match: (?=\s*})
+          pop: true
+
+  aliased-type:
+    - match: |
+        (?xi)
+        (?={{commonIdentifier}})
+      set: [
+        optional-alias,
+        simple-type
+      ]
 
   simple-type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax

@@ -34,8 +34,8 @@ contexts:
     # Import the entire module.
     - match: |
         (?x)\s*
-        (import)
-        (?=\s*(?>"|'|`))\b
+        (import)\b
+        (?=\s*(?>"|'|`))
       captures:
         1: keyword.control.import.js.fjsx15
       set: origin-path
@@ -78,58 +78,46 @@ contexts:
     - include: punctuation
     - match: ""
       push:
-        # Typeof.
-        - match: (?=\s*typeof)
-          set: [
-            optional-alias,
-            typeof
-          ]
-        # Type.
-        - match: |
-            (?xi)
-            (?=\s*type\s+
-              (?> \{
-                | {{commonIdentifier}}
-                  {{templateArguments}}?
-              )
-            )
-          captures:
-            1: >-
-              storage.type.flowtype
-              keyword.declaration.type-aliasing.flowtype
-          set: [
-            optional-alias,
-            type-aliasing
-          ]
-        # Default.
-        - match: \s*(default)\b
-          captures:
-            1: >-
-              storage.modifier.js.fjsx15
-              keyword.control.export.default.js.fjsx15
-          set: optional-alias
-        # All.
-        - match: \s*(\*)
-          captures:
-            1: keyword.operator.other.import.all.js.fjsx15
-          set: optional-alias
-        # Simple.
-        - match: |
-            (?xi)\s*
-            ({{commonIdentifier}})
-          captures:
-            1: >-
-              import.js.fjsx15
-              entity.name.ambiguous.js.fjsx15
-          set: optional-alias
+        - include: sequence
         - match: ""
           pop: true
 
-  type-aliasing:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
+  sequence:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/typeof.no-pop.sublime-syntax
+    # # Type.
+    - match: \s*(type)\b
+      captures:
+        1: >-
+          storage.type.flowtype
+          keyword.declaration.type-aliasing.flowtype
+      set: [
+        optional-alias,
+        simple-type
+      ]
+    # Default.
+    - match: \s*(default)\b
+      captures:
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.control.export.default.js.fjsx15
+      set: optional-alias
+    # All.
+    - match: \s*(\*)
+      captures:
+        1: keyword.operator.other.import.all.js.fjsx15
+      set: optional-alias
+    # Simple.
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: >-
+          import.js.fjsx15
+          entity.name.ambiguous.js.fjsx15
+      set: optional-alias
 
-  typeof:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/typeof.sublime-syntax
+  simple-type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax
 
   optional-alias:
     - match: |

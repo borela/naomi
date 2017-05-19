@@ -95,12 +95,7 @@ contexts:
     # Two or more characters.
     - match: |
         (?x)\s*
-        (
-          {{constantIdentifier}}
-          (?> \$\B
-            | [_[:upper:]]\b
-          )
-        )
+        ({{constantIdentifier}})
         (?:\s*(\?\B))?
       captures:
         1: >-

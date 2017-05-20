@@ -55,10 +55,6 @@ contexts:
       captures:
         1: keyword.operator.other.assignment.flowtype
       set: type
-    - match: ""
-      pop: true
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
-    - match: ""
-      pop: true

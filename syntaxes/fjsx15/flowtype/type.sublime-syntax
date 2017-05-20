@@ -22,13 +22,41 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  templateArguments: |
+    (<
+      [^<>]*
+      \g<-1>?
+      [^<>]*
+    >)
+
+  parameters: |
+    (\(
+      [^()]*
+      \g<-1>?
+      [^()]*
+    \))
+
+  flowFunction: |
+    {{parameters}}
+    \s*=>\s*
+
   expressionGroupBegin: |
     (\()
 
 contexts:
   main:
     - include: operators
-    - include: function
+    # Function.
+    - match: |
+        (?xi)
+        (?=\s*
+          {{templateArguments}}?
+          {{flowFunction}}
+        )
+      set: [
+        optional-operator,
+        function-declaration
+      ]
     # Open new expression group.
     - match: |
         (?xi)\s*
@@ -85,11 +113,11 @@ contexts:
         type-definitions
       ]
 
-  function:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.sublime-syntax
-
   function-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.no-pop.sublime-syntax
+
+  function-declaration:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function/declaration.sublime-syntax
 
   type-definitions:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/typeof.no-pop.sublime-syntax
@@ -103,8 +131,7 @@ contexts:
         2: punctuation.delimiter.nullable.begin.flowtype
       set: [
         enveloped-nullable-end,
-        optional-operator,
-        type-definitions
+        main
       ]
     # Nullable.
     - match: \s*\?
@@ -142,7 +169,7 @@ contexts:
       pop: true
     # Normal type.
     - include: comment
-    - include: function
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/number.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
@@ -159,6 +186,7 @@ contexts:
   operators:
     - include: comment
     - include: co-contravariant
+    # Intersection.
     - match: |
         (?x)
         \s*(&)
@@ -166,6 +194,7 @@ contexts:
       captures:
         1: keyword.operator.other.intersection.flowtype
       set: main
+    # Union.
     - match: |
         (?x)
         \s*(\|)

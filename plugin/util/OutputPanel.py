@@ -10,4 +10,21 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .plugin import *
+import os
+import sublime
+import sublime_api
+import sublime_plugin
+
+class OutputPanel(object):
+  def __init__(self, window, name):
+    self.window = window
+    self.panelName = name
+    self.panel = window.create_output_panel(name)
+    self.panel.settings().set('word_wrap', False)
+    self.panel.settings().set('line_numbers', True)
+
+  def append(self, text):
+    self.panel.run_command('append', { 'characters': text + '\n' })
+
+  def show(self):
+      self.window.run_command('show_panel', { 'panel': 'output.' + self.panelName })

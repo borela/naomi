@@ -42,3 +42,6 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
         - match: ""
           pop: true
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

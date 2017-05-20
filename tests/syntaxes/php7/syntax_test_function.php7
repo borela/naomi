@@ -23,19 +23,17 @@
 //                            ^ punctuation.delimiter.function.parameters.end.php.php7
 //                             ^ punctuation.delimiter.function.body.begin.php.php7
 //                                 ^ punctuation.delimiter.function.body.end.php.php7
-
     function Myfunction(...$param){   }
 //  ^^^^^^^^ storage.type.php.php7
 //  ^^^^^^^^ keyword.declaration.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 //                     ^ punctuation.delimiter.function.parameters.begin.php.php7
-//                      ^^^ keyword.operator.other.variadic.php.php7
+//                      ^^^ keyword.operator.other.rest.php.php7
 //                         ^ punctuation.delimiter.variable.begin.php.php7
 //                          ^^^^^ entity.name.variable.php.php7
 //                               ^ punctuation.delimiter.function.parameters.end.php.php7
 //                                ^ punctuation.delimiter.function.body.begin.php.php7
 //                                    ^ punctuation.delimiter.function.body.end.php.php7
-
     function Myfunction($param1, int ...$param2){   }
 //  ^^^^^^^^ keyword.declaration.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
@@ -44,13 +42,12 @@
 //                       ^^^^^^ entity.name.variable.php.php7
 //                             ^ punctuation.delimiter.function.parameters.php.php7
 //                               ^^^ support.php.php7
-//                                   ^^^ keyword.operator.other.variadic.php.php7
+//                                   ^^^ keyword.operator.other.rest.php.php7
 //                                      ^ punctuation.delimiter.variable.begin.php.php7
 //                                       ^^^^^^ entity.name.variable.php.php7
 //                                             ^ punctuation.delimiter.function.parameters.end.php.php7
 //                                              ^ punctuation.delimiter.function.body.begin.php.php7
 //                                                  ^ punctuation.delimiter.function.body.end.php.php7
-
     function Myfunction(int $param1, string $param2){   }
 //  ^^^^^^^^ storage.type.php.php7
 //  ^^^^^^^^ keyword.declaration.function.php.php7
@@ -66,7 +63,6 @@
 //                                                 ^ punctuation.delimiter.function.parameters.end.php.php7
 //                                                  ^ punctuation.delimiter.function.body.begin.php.php7
 //                                                      ^ punctuation.delimiter.function.body.end.php.php7
-
     function Myfunction(
 //  ^^^^^^^^ storage.type.php.php7
 //  ^^^^^^^^ keyword.declaration.function.php.php7
@@ -78,15 +74,13 @@
 //           ^^^^^ entity.name.variable.php.php7
 //                 ^ punctuation.delimiter.function.parameters.php.php7
         ...$param2
-//      ^^^ keyword.operator.other.variadic.php.php7
+//      ^^^ keyword.operator.other.rest.php.php7
 //         ^ punctuation.delimiter.variable.begin.php.php7
 //          ^^^^^ entity.name.variable.php.php7
     ){   }
 //  ^ punctuation.delimiter.function.parameters.end.php.php7
 //   ^ punctuation.delimiter.function.body.begin.php.php7
 //       ^ punctuation.delimiter.function.body.end.php.php7
-
-
     function Myfunction(
 //  ^^^^^^^^ storage.type.php.php7
 //  ^^^^^^^^ keyword.declaration.function.php.php7
@@ -98,7 +92,7 @@
 //           ^^^^^ entity.name.variable.php.php7
 //                 ^ punctuation.delimiter.function.parameters.php.php7
         string ...$param2
-//             ^^^ keyword.operator.other.variadic.php.php7
+//             ^^^ keyword.operator.other.rest.php.php7
 //                ^ punctuation.delimiter.variable.begin.php.php7
 //                 ^^^^^ entity.name.variable.php.php7
     ){   }

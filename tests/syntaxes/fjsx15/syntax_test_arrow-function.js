@@ -19,7 +19,8 @@
 //       ^ .punctuation.delimiter.function.body.begin.js.fjsx15
 //        ^ .punctuation.delimiter.function.body.end.js.fjsx15
    async () => {}
-// ^^^^^ .keyword.modifier.js.fjsx15
+// ^^^^^ .storage.modifier.js.fjsx15
+// ^^^^^ .keyword.other.async.js.fjsx15
 //       ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //        ^ .punctuation.delimiter.function.parameters.end.js.fjsx15
 //          ^^ .punctuation.delimiter.function.body.arrow.js.fjsx15
@@ -36,7 +37,8 @@
 //                      ^ .punctuation.delimiter.function.body.begin.js.fjsx15
 //                       ^ .punctuation.delimiter.function.body.end.js.fjsx15
    async (param, ...param) => {}
-// ^^^^^ .keyword.modifier.js.fjsx15
+// ^^^^^ .storage.modifier.js.fjsx15
+// ^^^^^ .keyword.other.async.js.fjsx15
 //       ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //        ^^^^^ .entity.name.variable.js.fjsx15
 //             ^ .punctuation.delimiter.function.parameters.js.fjsx15
@@ -66,7 +68,8 @@
 //                                           ^ .punctuation.delimiter.function.body.begin.js.fjsx15
 //                                            ^ .punctuation.delimiter.function.body.end.js.fjsx15
    async (param:number, ...param:string):number => {}
-// ^^^^^ .keyword.modifier.js.fjsx15
+// ^^^^^ .storage.modifier.js.fjsx15
+// ^^^^^ .keyword.other.async.js.fjsx15
 //       ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
 //        ^^^^^ .entity.name.variable.js.fjsx15
 //             ^ .keyword.operator.other.association.flowtype

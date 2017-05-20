@@ -42,7 +42,7 @@ contexts:
 
   open-a-close-b:
     - include: comment
-    - include: arrow-function
+    - include: arrow-function-no-pop
     # Open new expression group.
     - match: |
         (?xi)
@@ -64,7 +64,7 @@ contexts:
 
   open-b-close-a:
     - include: comment
-    - include: arrow-function
+    - include: arrow-function-no-pop
     # Open new expression group.
     - match: |
         (?xi)
@@ -88,6 +88,9 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   arrow-function:
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+
+  arrow-function-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.no-pop.sublime-syntax
 
   sequence:

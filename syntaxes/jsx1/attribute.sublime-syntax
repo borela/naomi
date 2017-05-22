@@ -25,17 +25,13 @@ variables:
 contexts:
   main:
     - match: |
-        (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.attribute.jsx.jsx1
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.attribute.jsx.jsx1
       set: optional-value
 
   optional-value:
-    # Embedded javascript.
-    - match: \s*(=)(?=\s*\{)
-      captures:
-        1: keyword.operator.other.assignment.jsx.jsx1
-      pop: true
     # Normal value.
     - match: \s*(=)
       captures:
@@ -48,3 +44,5 @@ contexts:
   value:
     - include: Packages/Naomi/syntaxes/jsx1/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/literal/string/single-quoted.sublime-syntax
+    - match: ""
+      pop: true

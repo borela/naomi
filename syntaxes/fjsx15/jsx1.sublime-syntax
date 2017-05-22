@@ -28,10 +28,7 @@ contexts:
         (?xi)
         (?=\s*
           <{{commonIdentifier}}
-          (?> \s
-            | >
-            | />
-          )
+          (?>\s|>|/>)
         )
       with_prototype:
         # Single line comment.
@@ -55,20 +52,20 @@ contexts:
 
   jsx:
     - clear_scopes: true
-    - meta_content_scope: source.jsx.fjsx15
     - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
 
   embedded-js:
     - clear_scopes: true
     - meta_content_scope: source.js.fjsx15
-    - match: \}
-      scope: >-
-        source.jsx.fjsx15
-        keyword.operator.other.embedded.js.end.jsx.jsx1
+    - match: \s*(})
+      captures:
+        1: >-
+          source.jsx.jsx1
+          keyword.operator.other.embedded.js.end.jsx.jsx1
       pop: true
     - match: ""
       push:
-        - match: (?=})
-          pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+        - match: ""
+          pop: true

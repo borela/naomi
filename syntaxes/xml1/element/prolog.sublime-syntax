@@ -19,113 +19,25 @@ scope: ...
 
 contexts:
   main:
-    - match: (<\?)(xml)
+    - match: \s*(<\?)(xml)
       captures:
-        0: instruction.prolog.xml.xml1
-        1: punctuation.delimiter.instruction.begin.xml.xml1
-        2: entity.name.instruction.xml.xml1
-      set: version
+        1: >-
+          instruction.prolog.xml.xml1
+          punctuation.delimiter.instruction.begin.xml.xml1
+        2: >-
+          instruction.prolog.xml.xml1
+          entity.name.instruction.xml.xml1
+      set: prolog
 
-  terminator:
-    - match: \s*\?>
-      scope: >-
-        instruction.prolog.xml.xml1
-        punctuation.delimiter.instruction.end.xml.xml1
-      pop: true
-
-  assignment-operator:
-    - match: \s*(=)
+  prolog:
+    - match: \s*(\?>)
       captures:
-        1: keyword.operator.other.assignment.xml.xml1
+        1: >-
+          instruction.prolog.xml.xml1
+          punctuation.delimiter.instruction.end.xml.xml1
       pop: true
-
-  version:
-    - include: terminator
-    - match: version
-      scope: >-
-        support.attribute.xml.xml1
-        entity.name.attribute.xml.xml1
-      set: [
-        optional-attributes,
-        version-value,
-        assignment-operator
-      ]
-
-  version-value:
-    - match: (\")1.[0-9]+(\")
-      captures:
-        0: string.quoted.double.xml.xml1
-        1: punctuation.delimiter.string.begin.xml.xml1
-        2: punctuation.delimiter.string.end.xml.xml1
-      pop: true
-    - match: (\')1.[0-9]+(\')
-      captures:
-        0: string.quoted.single.xml.xml1
-        1: punctuation.delimiter.string.begin.xml.xml1
-        2: punctuation.delimiter.string.end.xml.xml1
-      pop: true
-
-  optional-attributes:
-    - include: encoding
-    - include: standalone
-
-  encoding:
-    - include: terminator
-    - match: encoding
-      scope: >-
-        support.attribute.xml.xml1
-        entity.name.attribute.xml.xml1
-      set: [
-        standalone,
-        encoding-value,
-        assignment-operator
-      ]
-
-  encoding-value:
-    - match: |
-        (?xi)
-        (\")[a-z][a-z0-9-._]+(\")
-      captures:
-        0: string.quoted.double.xml.xml1
-        1: punctuation.delimiter.string.begin.xml.xml1
-        2: punctuation.delimiter.string.end.xml.xml1
-      pop: true
-    - match: |
-        (?xi)
-        (\')[a-z][a-z0-9-._]+(\')
-      captures:
-        0: string.quoted.single.xml.xml1
-        1: punctuation.delimiter.string.begin.xml.xml1
-        2: punctuation.delimiter.string.end.xml.xml1
-      pop: true
-
-  standalone:
-    - include: terminator
-    - match: standalone
-      scope: >-
-        support.attribute.xml.xml1
-        entity.name.attribute.xml.xml1
-      set: [
-        terminator,
-        standalone-value,
-        assignment-operator
-      ]
-
-  standalone-value:
-    - include: terminator
-    - match: |
-        (?xi)
-        (\")(?>yes|no)(\")
-      captures:
-        0: string.quoted.double.xml.xml1
-        1: punctuation.delimiter.string.begin.xml.xml1
-        2: punctuation.delimiter.string.end.xml.xml1
-      pop: true
-    - match: |
-        (?xi)
-        (\')(?>yes|no)(\')
-      captures:
-        0: string.quoted.single.xml.xml1
-        1: punctuation.delimiter.string.begin.xml.xml1
-        2: punctuation.delimiter.string.end.xml.xml1
-      pop: true
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/xml1/attribute.sublime-syntax
+        - match: ""
+          pop: true

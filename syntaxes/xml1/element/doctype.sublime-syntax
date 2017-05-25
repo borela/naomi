@@ -19,10 +19,15 @@ scope: ...
 
 contexts:
   main:
-    - match: (<!)(DOCTYPE).*?(>)
+    - match: \s*(<!)(DOCTYPE)(.*?)(>)
       captures:
-        0: declaration.doctype.xml.xml1
-        1: punctuation.delimiter.declaration.begin.xml.xml1
-        2: entity.name.other.xml.xml1
-        3: punctuation.delimiter.declaration.end.xml.xml1
+        1: >-
+          declaration.doctype.xml.xml1
+          punctuation.delimiter.declaration.begin.xml.xml1
+        2: >-
+          declaration.doctype.xml.xml1
+          entity.name.other.xml.xml1
+        3: >-
+          declaration.doctype.xml.xml1
+          punctuation.delimiter.declaration.end.xml.xml1
       pop: true

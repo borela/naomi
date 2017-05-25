@@ -23,7 +23,10 @@ variables:
     [$_[:alnum:]]*
 
 contexts:
+  # Javascript/flow don’t have namespaces, this is just a visual cue to highlight
+  # only the last element when a type is expected.
   main:
+    # Namespace delimited by dots.
     - match: |
         (?xi)
         (?>
@@ -37,6 +40,29 @@ contexts:
           (?:\b
             ({{commonIdentifier}})
             (\.)
+          )
+        )
+      captures:
+        1: entity.name.namespace.a.flowtype
+        2: punctuation.delimiter.namespace.a.flowtype
+        3: entity.name.namespace.b.flowtype
+        4: punctuation.delimiter.namespace.b.flowtype
+        5: entity.name.namespace.a.flowtype
+        6: punctuation.delimiter.namespace.a.flowtype
+    # Namespace delimited by dollar signs..
+    - match: |
+        (?xi)
+        (?>
+          (?:\b
+            ({{commonIdentifier}})
+            (\$)
+            ({{commonIdentifier}})
+            (\$)
+          )
+          |
+          (?:\b
+            ({{commonIdentifier}})
+            (\$)
           )
         )
       captures:

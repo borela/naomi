@@ -24,20 +24,21 @@ variables:
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/namespace/path.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/namespace-path.no-pop.sublime-syntax
     # Predefined types.
     - match: |
         (?x)\b
         (?> any
-          | boolean
+          | Array
+          | [Bb]oolean
           | false
           | Function
           | Generator
           | mixed
-          | number
+          | [Nn]umber
           | null
           | Object
-          | string
+          | [Ss]tring
           | true
           | void
         )\b

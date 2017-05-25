@@ -22,5 +22,5 @@ contexts:
     - match: ""
       push:
         - include: Packages/Naomi/syntaxes/html5/attribute.sublime-syntax
-        - match: \s*
+        - match: ""
           pop: true

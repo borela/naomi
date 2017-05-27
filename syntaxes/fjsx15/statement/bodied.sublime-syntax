@@ -40,8 +40,12 @@ contexts:
           | while
           | switch
         ))\b
+        (?:\s+
+          (await)
+        )?
       captures:
         1: keyword.control.js.fjsx15
+        2: keyword.control.js.fjsx15
       set: [
         body,
         header

@@ -862,7 +862,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.storage.modifier .keyword</string>
+			<string>.storage.modifier .keyword, .storage.modifier .keyword.operator</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

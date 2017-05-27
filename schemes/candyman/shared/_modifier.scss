@@ -11,7 +11,8 @@
 // the License.
 
 .storage.modifier {
-  .keyword {
+  .keyword,
+  .keyword.operator {
     foreground: $deep-purple-200;
   }
 }

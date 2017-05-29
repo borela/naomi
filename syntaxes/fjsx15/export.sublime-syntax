@@ -99,6 +99,18 @@ contexts:
           storage.modifier.js.fjsx15
           keyword.control.export.default.js.fjsx15
       set: statement-and-expression
+    # Export default from.
+    - match: |
+        (?x)
+        \s*(export)
+        \s*(default)
+        (?=\s*from)
+      captures:
+        1: keyword.control.export.js.fjsx15
+        2: >-
+          storage.modifier.js.fjsx15
+          keyword.control.export.default.js.fjsx15
+      set: origin
     # Export default.
     - match: |
         (?x)

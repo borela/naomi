@@ -23,7 +23,8 @@ contexts:
         (?x)
         \s*(
           (?> component
-              (?> DidUpdate
+              (?> DidMount
+                | DidUpdate
                 | Will
                   (?> Mount
                     | ReceiveProps

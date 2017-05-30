@@ -100,7 +100,7 @@ contexts:
         (?=
           \s*{{modifiers}}?
           \s*\*?
-          \s*{{methodIdentifier}}?
+          \s*{{methodIdentifier}}
           \s*{{templateArguments}}?
           \s*\(
         )
@@ -108,7 +108,7 @@ contexts:
         declaration,
         modifiers
       ]
-    # Class instance property.
+    # Method assigned to a class property.
     - match: |
         (?xi)
         (?=
@@ -122,7 +122,7 @@ contexts:
         )
       set: [
         arrow-function,
-        class-instance-identifier
+        declaration
       ]
 
   modifiers:
@@ -149,20 +149,15 @@ contexts:
     - match: ""
       pop: true
 
-  class-instance-identifier:
-    - match: |
-        (?xi)
-        \s*({{commonIdentifier}})
-        \s*(=)
-      captures:
-        1: entity.name.function.js.fjsx15
-        2: punctuation.delimiter.function.js.fjsx15
-      pop: true
-
   arrow-function:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
 
   declaration:
+    # Class properties will have an arrow function assigned to them.
+    - match: \s*(=)
+      captures:
+        1: keyword.operator.other.assignment.js.fjsx15
+      pop: true
     # Body.
     - match: (?=\s*\{)
       set: body
@@ -181,7 +176,7 @@ contexts:
           support.js.fjsx15
           entity.name.function.js.fjsx15
     # React JS’s support methods.
-    - include: Packages/Naomi/syntaxes/fjsx15/class/reactjs.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/reactjs.no-pop.sublime-syntax
     # Identifier.
     - match: |
         (?xi)

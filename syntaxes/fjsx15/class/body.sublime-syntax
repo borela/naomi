@@ -33,14 +33,14 @@ contexts:
       pop: true
     - match: ""
       push:
-        - match: (?=\s*})
-          pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/lookup-table.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+        - match: ""
+          pop: true
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

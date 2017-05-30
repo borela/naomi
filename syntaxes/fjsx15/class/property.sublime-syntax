@@ -30,15 +30,14 @@ variables:
       | \[.*?]
     )
 
+
 contexts:
   main:
     # Static variables.
     - match: |
         (?xi)\s*
         (static)
-        (?=
-          \s+{{commonIdentifier}}
-        )
+        (?=\s+{{commonIdentifier}})
       captures:
         1: >-
           storage.modifier.js.fjsx15
@@ -47,9 +46,7 @@ contexts:
     # Normal variable.
     - match: |
         (?xi)
-        (?=
-          {{commonIdentifier}}
-        )
+        (?=\s*{{commonIdentifier}})
       set: declaration
 
   declaration:
@@ -59,7 +56,7 @@ contexts:
       push: type
     # Value.
     - match: (?=\s*=)
-      set: value
+      pop: true
     # Identifier.
     - match: |
         (?xi)
@@ -72,53 +69,6 @@ contexts:
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
-
-  value:
-    - include: terminator
-    - match: (?<=})
-      pop: true
-    - match: (?=})
-      pop: true
-    # Another property.
-    - match: |
-        (?xi)
-        (?=\s*
-          (?:
-            static\s+
-          )?
-          {{commonIdentifier}}
-          .*=
-        )
-      pop: true
-    # Method
-    - match: |
-        (?xi)
-        (?=\s*
-          (?:
-            (?> async
-              | get
-              | s
-                (?> et
-                  | tatic
-                    (?:
-                      \s+(?>async|get|set)
-                    )?
-                )
-            )
-          )?
-          \s*\*?
-          \s*{{methodIdentifier}}
-          \s*\(.*\)
-          .*?
-          \s*{
-        )
-      pop: true
-    # Value.
-    - match: ""
-      push:
-        - match: \s*
-          pop: true
-        - include: statement-and-expression
 
   terminator:
     - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax

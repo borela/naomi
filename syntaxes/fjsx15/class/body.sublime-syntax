@@ -35,7 +35,7 @@ contexts:
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/lookup-table.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

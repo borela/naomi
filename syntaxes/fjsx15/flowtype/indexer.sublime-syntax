@@ -29,61 +29,78 @@ variables:
 contexts:
   main:
     - match: |
-        (?x)^
+        (?x)
         (?:\s*
-          (?> (\+)
-            | (-)
-          )
+          (?>(\+)|(-))
         )?
         \s*(\[)
       captures:
-        1: keyword.operator.other.covariant.flowtype
-        2: keyword.operator.other.contravariant.flowtype
-        3: punctuation.delimiter.object.flowtype
+        1: >-
+          flowtype
+          keyword.operator.other.covariant.flowtype
+        2: >-
+          flowtype
+          keyword.operator.other.contravariant.flowtype
+        3: >-
+          flowtype
+          punctuation.delimiter.object.indexer.flowtype
       set: [
-        type,
-        lookup-table-end,
-        property
+        associated-type,
+        indexer-end,
+        property-or-type
       ]
 
-  lookup-table-end:
+  indexer-end:
     - match: \s*(])
       captures:
-        1: punctuation.delimiter.object.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.object.indexer.flowtype
       pop: true
 
-  property:
+  property-or-type:
     - include: comment
     # Constant.
     - match: |
         (?x)\s*
         ({{constantIdentifier}})(\?)?
+        (?=\s*:)
       captures:
         1: entity.name.constant.js.fjsx15
-        2: keyword.operator.other.optional.flowtype
-      set: type
+        2: >-
+          flowtype
+          keyword.operator.other.optional.flowtype
+      set: associated-type
     # Normal property.
     - match: |
         (?xi)\s*
         ({{commonIdentifier}})(\?)?
+        (?=\s*:)
       captures:
         1: entity.name.variable.js.fjsx15
-        2: keyword.operator.other.optional.flowtype
-      set: type
-    # Anything else.
-    - match: (?=\s*\S)
+        2: >-
+          flowtype
+          keyword.operator.other.optional.flowtype
+      set: associated-type
+    # Strings.
+    - match: (?=\s*(?>'|"|`))
       set: [
-        type,
-        literal-string
+        associated-type,
+        string
       ]
+    # Simple type.
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
 
-  literal-string:
+  string:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
-  type:
+  associated-type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+
+  type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax

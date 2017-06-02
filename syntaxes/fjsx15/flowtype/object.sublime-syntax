@@ -72,17 +72,11 @@ contexts:
     - match: ""
       push:
         - include: comment
-        - include: method
-        - include: lookup-table
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
         - include: property
         - match: ""
           pop: true
-
-  method:
-    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
-
-  lookup-table:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/lookup-table.sublime-syntax
 
   property:
     - include: constant

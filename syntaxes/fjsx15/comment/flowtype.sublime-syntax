@@ -80,7 +80,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/declare.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/interface.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/lookup-table.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/module.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax

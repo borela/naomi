@@ -28,19 +28,14 @@ contexts:
   main:
     # Namespace delimited by dots.
     - match: |
-        (?xi)
+        (?xi)\s*
         (?>
           (?:\b
-            ({{commonIdentifier}})
-            (\.)
-            ({{commonIdentifier}})
-            (\.)
+            ({{commonIdentifier}})(\.)
+            ({{commonIdentifier}})(\.)
           )
           |
-          (?:\b
-            ({{commonIdentifier}})
-            (\.)
-          )
+          (?:\b({{commonIdentifier}})(\.))
         )
       captures:
         1: >-
@@ -61,20 +56,16 @@ contexts:
         6: >-
           flowtype
           punctuation.delimiter.namespace.a.flowtype
+    # Namespace delimited by dollar signs.
     - match: |
-        (?xi)
+        (?xi)\s*
         (?>
           (?:\b
-            ({{commonIdentifier}})
-            (\$)
-            ({{commonIdentifier}})
-            (\$)
+            ({{commonIdentifier}})(\$)
+            ({{commonIdentifier}})(\$)
           )
           |
-          (?:\b
-            ({{commonIdentifier}})
-            (\$)
-          )
+          (?:\b({{commonIdentifier}})(\$))
         )
       captures:
         1: >-

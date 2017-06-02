@@ -27,8 +27,8 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/namespace-path.no-pop.sublime-syntax
     # Predefined types.
     - match: |
-        (?x)\b
-        (?> any
+        (?x)\s*\b
+        ((?> any
           | Array
           | [Bb]oolean
           | false
@@ -66,7 +66,7 @@ contexts:
 
   array-shorthand:
     - match: |
-        (?x)
+        (?x)\s*
         (\[)\s*(])
       captures:
         1: >-

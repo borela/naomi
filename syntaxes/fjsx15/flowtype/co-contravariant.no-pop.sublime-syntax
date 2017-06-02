@@ -21,7 +21,11 @@ contexts:
   main:
     - match: \s*(\+)(?!(?>\+|=))
       captures:
-        1: keyword.operator.other.covariant.flowtype
+        1: >-
+          flowtype
+          keyword.operator.other.covariant.flowtype
     - match: \s*(-)(?!(?>-|=))
       captures:
-        1: keyword.operator.other.contravariant.flowtype
+        1: >-
+          flowtype
+          keyword.operator.other.contravariant.flowtype

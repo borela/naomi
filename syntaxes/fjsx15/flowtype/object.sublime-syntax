@@ -31,29 +31,43 @@ contexts:
     # Exact.
     - match: \s*({)\s*(\|)
       captures:
-        1: punctuation.delimiter.object.begin.flowtype
-        2: punctuation.delimiter.object.begin.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.object.begin.flowtype
+        2: >-
+          flowtype
+          punctuation.delimiter.object.begin.flowtype
       set: items
     # Normal.
     - match: \s*({)
       captures:
-        1: punctuation.delimiter.object.begin.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.object.begin.flowtype
       set: items
 
   items:
     - match: \s*(,|;)
       captures:
-        1: punctuation.delimiter.object.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.object.flowtype
     # Exact.
     - match: \s*(\|)\s*(})
       captures:
-        1: punctuation.delimiter.object.end.flowtype
-        2: punctuation.delimiter.object.end.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.object.end.flowtype
+        2: >-
+          flowtype
+          punctuation.delimiter.object.end.flowtype
       pop: true
     # Normal.
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.object.end.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.object.end.flowtype
       pop: true
     - match: ""
       push:
@@ -90,7 +104,9 @@ contexts:
         1: >-
           object.property.js.fjsx15
           entity.name.constant.js.fjsx15
-        2: keyword.operator.other.optional.flowtype
+        2: >-
+          flowtype
+          keyword.operator.other.optional.flowtype
       set: type
     # Two or more characters.
     - match: |
@@ -101,7 +117,9 @@ contexts:
         1: >-
           object.property.js.fjsx15
           entity.name.constant.js.fjsx15
-        2: keyword.operator.other.optional.flowtype
+        2: >-
+          flowtype
+          keyword.operator.other.optional.flowtype
       set: type
 
   variable:
@@ -116,7 +134,9 @@ contexts:
         1: >-
           object.property.js.fjsx15
           entity.name.variable.js.fjsx15
-        2: keyword.operator.other.optional.flowtype
+        2: >-
+          flowtype
+          keyword.operator.other.optional.flowtype
       set: type
     # Two or more characters.
     - match: |
@@ -132,7 +152,9 @@ contexts:
         1: >-
           object.property.js.fjsx15
           entity.name.variable.js.fjsx15
-        2: keyword.operator.other.optional.flowtype
+        2: >-
+          flowtype
+          keyword.operator.other.optional.flowtype
       set: type
 
   string:

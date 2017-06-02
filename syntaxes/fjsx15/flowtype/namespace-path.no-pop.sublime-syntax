@@ -43,13 +43,24 @@ contexts:
           )
         )
       captures:
-        1: entity.name.namespace.a.flowtype
-        2: punctuation.delimiter.namespace.a.flowtype
-        3: entity.name.namespace.b.flowtype
-        4: punctuation.delimiter.namespace.b.flowtype
-        5: entity.name.namespace.a.flowtype
-        6: punctuation.delimiter.namespace.a.flowtype
-    # Namespace delimited by dollar signs..
+        1: >-
+          flowtype
+          entity.name.namespace.a.flowtype
+        2: >-
+          flowtype
+          punctuation.delimiter.namespace.a.flowtype
+        3: >-
+          flowtype
+          entity.name.namespace.b.flowtype
+        4: >-
+          flowtype
+          punctuation.delimiter.namespace.b.flowtype
+        5: >-
+          flowtype
+          entity.name.namespace.a.flowtype
+        6: >-
+          flowtype
+          punctuation.delimiter.namespace.a.flowtype
     - match: |
         (?xi)
         (?>
@@ -66,9 +77,21 @@ contexts:
           )
         )
       captures:
-        1: entity.name.namespace.a.flowtype
-        2: punctuation.delimiter.namespace.a.flowtype
-        3: entity.name.namespace.b.flowtype
-        4: punctuation.delimiter.namespace.b.flowtype
-        5: entity.name.namespace.a.flowtype
-        6: punctuation.delimiter.namespace.a.flowtype
+        1: >-
+          flowtype
+          entity.name.namespace.a.flowtype
+        2: >-
+          flowtype
+          punctuation.delimiter.namespace.a.flowtype
+        3: >-
+          flowtype
+          entity.name.namespace.b.flowtype
+        4: >-
+          flowtype
+          punctuation.delimiter.namespace.b.flowtype
+        5: >-
+          flowtype
+          entity.name.namespace.a.flowtype
+        6: >-
+          flowtype
+          punctuation.delimiter.namespace.a.flowtype

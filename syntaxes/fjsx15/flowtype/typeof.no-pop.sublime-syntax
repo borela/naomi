@@ -24,5 +24,6 @@ contexts:
         (typeof)
       captures:
         1: >-
+          flowtype
           word.flowtype
           keyword.operator.other.flowtype

@@ -23,7 +23,9 @@ contexts:
         (?x)
         \s*(:)
       captures:
-        1: keyword.operator.other.cast.flowtype
+        1: >-
+          flowtype
+          keyword.operator.other.cast.flowtype
       set: type
 
   type:

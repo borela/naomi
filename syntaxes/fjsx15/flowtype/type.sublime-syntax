@@ -127,21 +127,30 @@ contexts:
         \s*(\?)
         \s*(\()
       captures:
-        1: keyword.operator.other.nullable.flowtype
-        2: punctuation.delimiter.nullable.begin.flowtype
+        1: >-
+          flowtype
+          keyword.operator.other.nullable.flowtype
+        2: >-
+          flowtype
+          punctuation.delimiter.nullable.begin.flowtype
       set: [
         enveloped-nullable-end,
         main
       ]
     # Nullable.
-    - match: \s*\?
-      scope: keyword.operator.other.nullable.flowtype
+    - match: \s*(\?)
+      captures:
+        1: >-
+          flowtype
+          keyword.operator.other.nullable.flowtype
     # Utility operators.
     - match: |
         (?x)\s*
         (Class)
       captures:
-        1: keyword.operator.other.utility.flowtype
+        1: >-
+          flowtype
+          keyword.operator.other.utility.flowtype
       set: template
     # Utility operators preceded by $.
     - match: |
@@ -160,12 +169,16 @@ contexts:
           )
         )
       captures:
-        1: keyword.operator.other.utility.flowtype
+        1: >-
+          flowtype
+          keyword.operator.other.utility.flowtype
       set: template
     # Existential.
     - match: \s*(\*)
       captures:
-        1: keyword.operator.other.existential.flowtype
+        1: >-
+          flowtype
+          keyword.operator.other.existential.flowtype
       pop: true
     # Normal type.
     - include: comment
@@ -192,7 +205,9 @@ contexts:
         \s*(&)
         (?!(?>&|=))
       captures:
-        1: keyword.operator.other.intersection.flowtype
+        1: >-
+          flowtype
+          keyword.operator.other.intersection.flowtype
       set: main
     # Union.
     - match: |
@@ -200,13 +215,17 @@ contexts:
         \s*(\|)
         (?!(?>\||=|\s*}))
       captures:
-        1: keyword.operator.other.union.flowtype
+        1: >-
+          flowtype
+          keyword.operator.other.union.flowtype
       set: main
 
   enveloped-nullable-end:
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.nullable.end.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.nullable.end.flowtype
       pop: true
 
   comment:

@@ -38,7 +38,9 @@ contexts:
   return:
     - match: \s*(=>)
       captures:
-        1: punctuation.delimiter.function.result.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.function.result.flowtype
       set: return-type
 
   return-type:

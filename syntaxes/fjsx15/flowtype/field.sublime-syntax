@@ -35,10 +35,16 @@ contexts:
         \s*(\?)?
         (?=\s*:)
       captures:
-        1: keyword.operator.other.covariant.flowtype
-        2: keyword.operator.other.contravariant.flowtype
+        1: >-
+          flowtype
+          keyword.operator.other.covariant.flowtype
+        2: >-
+          flowtype
+          keyword.operator.other.contravariant.flowtype
         3: entity.name.variable.js.fjsx15
-        4: keyword.operator.other.optional.flowtype
+        4: >-
+          flowtype
+          keyword.operator.other.optional.flowtype
       set: type
 
   type:

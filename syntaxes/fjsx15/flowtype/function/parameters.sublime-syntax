@@ -21,16 +21,22 @@ contexts:
   main:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.function.parameters.begin.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.function.parameters.begin.flowtype
       set: parameters
 
   parameters:
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.function.parameters.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.function.parameters.flowtype
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.function.parameters.end.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.function.parameters.end.flowtype
       pop: true
     - match: ""
       push:

@@ -21,7 +21,9 @@ contexts:
   main:
     - match: \s*(:)
       captures:
-        1: keyword.operator.other.association.flowtype
+        1: >-
+          flowtype
+          keyword.operator.other.association.flowtype
       set: type
 
   type:

@@ -19,15 +19,24 @@ scope: ...
 
 contexts:
   main:
-    - match: \[
-      scope: punctuation.delimiter.array.begin.flowtype
+    - match: \s*(\[)
+      captures:
+        1: >-
+          flowtype
+          punctuation.delimiter.array.begin.flowtype
       set: items
 
   items:
-    - match: \,
-      scope: punctuation.delimiter.array.flowtype
-    - match: \]
-      scope: punctuation.delimiter.array.end.flowtype
+    - match: \s*(,)
+      captures:
+        1: >-
+          flowtype
+          punctuation.delimiter.array.flowtype
+    - match: \s*(])
+      captures:
+        1: >-
+          flowtype
+          punctuation.delimiter.array.end.flowtype
       pop: true
     - match: ""
       push:

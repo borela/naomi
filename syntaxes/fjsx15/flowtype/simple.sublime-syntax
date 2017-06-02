@@ -41,16 +41,21 @@ contexts:
           | [Ss]tring
           | true
           | void
-        )\b
-      scope: >-
-        support.flowtype
-        entity.name.type.flowtype
+        ))\b
+      captures:
+        1: >-
+          flowtype
+          support.flowtype
+          entity.name.type.flowtype
       set: optional-template-or-array-shorthand
     # Other types.
     - match: |
-        (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.type.flowtype
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: >-
+          flowtype
+          entity.name.type.flowtype
       set: optional-template-or-array-shorthand
 
   optional-template-or-array-shorthand:
@@ -64,8 +69,12 @@ contexts:
         (?x)
         (\[)\s*(])
       captures:
-        1: punctuation.delimiter.array.begin.flowtype
-        2: punctuation.delimiter.array.end.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.array.begin.flowtype
+        2: >-
+          flowtype
+          punctuation.delimiter.array.end.flowtype
       pop: true
 
   template:

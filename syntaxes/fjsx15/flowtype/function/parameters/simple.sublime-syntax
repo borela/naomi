@@ -32,5 +32,7 @@ contexts:
           flowtype
           function.parameter.js.fjsx15
           entity.name.variable.js.fjsx15
-        2: keyword.operator.other.optional.flowtype
+        2: >-
+          flowtype
+          keyword.operator.other.optional.flowtype
       pop: true

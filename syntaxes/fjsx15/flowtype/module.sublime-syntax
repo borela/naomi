@@ -29,6 +29,7 @@ contexts:
         (module)
       captures:
         1: >-
+          flowtype
           storage.type.flowtype
           keyword.declaration.type-aliasing.flowtype
       set: [
@@ -45,14 +46,18 @@ contexts:
     - include: comment
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.module.body.begin.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.module.body.begin.flowtype
       set: body-content
 
   body-content:
     - include: comment
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.module.body.end.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.module.body.end.flowtype
       pop: true
     - match: ""
       push:

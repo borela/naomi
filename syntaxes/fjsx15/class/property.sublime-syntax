@@ -22,14 +22,62 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  methodIdentifier: |
-    (?> {{commonIdentifier}}
-      | '.*?(?<!\\)'
-      | ".*?(?<!\\)"
-      | `.*?(?<!\\)`
-      | \[.*?]
+  templateArguments: |
+    (<
+      [^<>]*
+      \g<-1>?
+      [^<>]*
+    >)
+
+  parameters: |
+    (\(
+      [^()]*
+      \g<-1>?
+      [^()]*
+    \))
+
+  flowOperators: |
+    (?> &(?!&)
+      | \|(?!\|)
     )
 
+  string: |
+    (?> '.*?'
+      | ".*?"
+      | `.*`
+    )
+
+  simpleFlowType: |
+    (?> {{string}}
+      | {{commonIdentifier}}
+        {{templateArguments}}?
+    )
+
+  flowFunction: |
+    (
+      {{parameters}}
+      \s*=>\s*
+      (?> {{simpleFlowType}}
+        | \g<-2>
+      )
+    )
+
+  complexType: |
+    (
+      \??\s*
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
+      )
+      \s*{{flowOperators}}?
+      \s*\g<-5>?
+    )
+
+  flowComment: /\*\s*:.*?\*/
+
+  flowType: |
+    (?> {{flowComment}}
+      | (?::{{complexType}})
+    )
 
 contexts:
   main:
@@ -37,7 +85,11 @@ contexts:
     - match: |
         (?xi)\s*
         (static)
-        (?=\s+{{commonIdentifier}}\s*=)
+        (?=
+          \s+{{commonIdentifier}}
+          (\s*{{flowType}})?
+          \s*=
+        )
       captures:
         1: >-
           storage.modifier.js.fjsx15
@@ -46,7 +98,11 @@ contexts:
     # Normal variable.
     - match: |
         (?xi)
-        (?=\s*{{commonIdentifier}}\s*=)
+        (?=
+          \s+{{commonIdentifier}}
+          (\s*{{flowType}})?
+          \s*=
+        )
       set: declaration
 
   declaration:

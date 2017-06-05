@@ -183,7 +183,7 @@ contexts:
           pop: true
 
   template-and-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/parameters.sublime-syntax
     - match: ""
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax

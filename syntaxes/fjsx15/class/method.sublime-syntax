@@ -153,10 +153,9 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
 
   declaration:
-    # Class properties will have an arrow function assigned to them.
     - match: \s*(=)
       captures:
-        1: keyword.operator.other.assignment.js.fjsx15
+        1: punctuation.delimiter.function.assignment.js.fjsx15
       pop: true
     # Body.
     - match: (?=\s*\{)

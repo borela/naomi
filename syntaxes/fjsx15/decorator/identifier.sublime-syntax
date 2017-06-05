@@ -24,13 +24,21 @@ variables:
 
 contexts:
   main:
+    # With arguments.
     - match: |
-        (?xi)
-        \s*(@)
-        (?={{decoratorIdentifier}})
+        (?xi)\s*
+        ({{decoratorIdentifier}})
+        (?=\s*\()
       captures:
-        1: punctuation.delimiter.decorator.js.fjsx15
-      set: identifier
+        1: entity.name.decorator.js.fjsx15
+      set: arguments
+    # Without arguments.
+    - match: |
+        (?xi)\s*
+        ({{decoratorIdentifier}})
+      captures:
+        1: entity.name.decorator.js.fjsx15
+      pop: true
 
-  identifier:
-    - include: Packages/Naomi/syntaxes/fjsx15/decorator/identifier.sublime-syntax
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/decorator/arguments.sublime-syntax

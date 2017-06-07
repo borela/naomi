@@ -31,14 +31,27 @@ contexts:
         (?=\s*\()
       captures:
         1: entity.name.decorator.js.fjsx15
-      set: arguments
+      set: [
+        possible-chain,
+        arguments
+      ]
     # Without arguments.
     - match: |
         (?xi)\s*
         ({{decoratorIdentifier}})
       captures:
         1: entity.name.decorator.js.fjsx15
-      pop: true
+      set: possible-chain
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/decorator/arguments.sublime-syntax
+
+  # The decorator might be followed by a chain of function calls and we want to
+  # to highlight them as decorators too.
+  possible-chain:
+    - match: \s*(\.)
+      captures:
+        1: punctuation.delimiter.decorator.chain.js.fjsx15
+      set: main
+    - match: (?=\s*\S)
+      pop: true

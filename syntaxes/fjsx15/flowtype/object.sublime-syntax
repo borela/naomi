@@ -31,44 +31,52 @@ contexts:
     # Exact.
     - match: \s*({)\s*(\|)
       captures:
-        1: punctuation.delimiter.object.begin.flowtype
-        2: punctuation.delimiter.object.begin.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.object.begin.flowtype
+        2: >-
+          flowtype
+          punctuation.delimiter.object.begin.flowtype
       set: items
     # Normal.
     - match: \s*({)
       captures:
-        1: punctuation.delimiter.object.begin.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.object.begin.flowtype
       set: items
 
   items:
     - match: \s*(,|;)
       captures:
-        1: punctuation.delimiter.object.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.object.flowtype
     # Exact.
     - match: \s*(\|)\s*(})
       captures:
-        1: punctuation.delimiter.object.end.flowtype
-        2: punctuation.delimiter.object.end.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.object.end.flowtype
+        2: >-
+          flowtype
+          punctuation.delimiter.object.end.flowtype
       pop: true
     # Normal.
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.object.end.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.object.end.flowtype
       pop: true
     - match: ""
       push:
         - include: comment
-        - include: method
-        - include: lookup-table
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
         - include: property
         - match: ""
           pop: true
-
-  method:
-    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
-
-  lookup-table:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/lookup-table.sublime-syntax
 
   property:
     - include: constant
@@ -90,23 +98,22 @@ contexts:
         1: >-
           object.property.js.fjsx15
           entity.name.constant.js.fjsx15
-        2: keyword.operator.other.optional.flowtype
+        2: >-
+          flowtype
+          keyword.operator.other.optional.flowtype
       set: type
     # Two or more characters.
     - match: |
         (?x)\s*
-        (
-          {{constantIdentifier}}
-          (?> \$\B
-            | [_[:upper:]]\b
-          )
-        )
+        ({{constantIdentifier}})
         (?:\s*(\?\B))?
       captures:
         1: >-
           object.property.js.fjsx15
           entity.name.constant.js.fjsx15
-        2: keyword.operator.other.optional.flowtype
+        2: >-
+          flowtype
+          keyword.operator.other.optional.flowtype
       set: type
 
   variable:
@@ -121,7 +128,9 @@ contexts:
         1: >-
           object.property.js.fjsx15
           entity.name.variable.js.fjsx15
-        2: keyword.operator.other.optional.flowtype
+        2: >-
+          flowtype
+          keyword.operator.other.optional.flowtype
       set: type
     # Two or more characters.
     - match: |
@@ -137,7 +146,9 @@ contexts:
         1: >-
           object.property.js.fjsx15
           entity.name.variable.js.fjsx15
-        2: keyword.operator.other.optional.flowtype
+        2: >-
+          flowtype
+          keyword.operator.other.optional.flowtype
       set: type
 
   string:

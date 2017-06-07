@@ -28,7 +28,7 @@ contexts:
       captures:
         1: >-
           storage.modifier.mql.mql4
-          keyword.modifier.mql.mql4
+          keyword.other.access.mql.mql4
       set: operator
     - match: |
         (?xi)\s*\b
@@ -42,7 +42,7 @@ contexts:
   operator:
     - match: \s*(:)
       captures:
-        1: keyword.operator.other.mql.mql4
+        1: keyword.operator.other.scope.mql.mql4
       pop: true
     - match: ""
       push: statement-and-expression

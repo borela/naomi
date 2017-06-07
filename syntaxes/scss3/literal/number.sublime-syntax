@@ -81,7 +81,7 @@ contexts:
               | w
             )
         )
-      scope: keyword.modifier.unit.scss.scss3
+      scope: keyword.other.unit.scss.scss3
       pop: true
     - match: ""
       pop: true

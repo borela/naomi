@@ -28,35 +28,44 @@ contexts:
         (?xi)
         (?=\s*
           <{{commonIdentifier}}
-          (?> \s
-            | >
-            | />
-          )
+          (?>\s|>|/>)
         )
       with_prototype:
-        - match: \{
-          scope: >-
-            source.jsx.fjsx15
-            keyword.operator.other.embedded.js.begin.jsx.jsx1
+        # Single line comment.
+        - match: (\{\s*/\*)(.*)(\*/\s*})
+          captures:
+            1: >-
+              comment.block.js.fjsx15
+              punctuation.delimiter.comment.begin.js.fjsx15
+            2: comment.block.js.fjsx15
+            3: >-
+              comment.block.js.fjsx15
+              punctuation.delimiter.comment.end.js.fjsx15
+        # Embedded javascript.
+        - match: (\{)
+          captures:
+            1: >-
+              source.jsx.jsx1
+              keyword.operator.other.embedded.js.begin.jsx.jsx1
           push: embedded-js
       set: jsx
 
   jsx:
     - clear_scopes: true
-    - meta_content_scope: source.jsx.fjsx15
     - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
 
   embedded-js:
     - clear_scopes: true
     - meta_content_scope: source.js.fjsx15
-    - match: \}
-      scope: >-
-        source.jsx.fjsx15
-        keyword.operator.other.embedded.js.end.jsx.jsx1
+    - match: \s*(})
+      captures:
+        1: >-
+          source.jsx.jsx1
+          keyword.operator.other.embedded.js.end.jsx.jsx1
       pop: true
     - match: ""
       push:
-        - match: (?=})
-          pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+        - match: ""
+          pop: true

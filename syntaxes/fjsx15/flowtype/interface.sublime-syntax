@@ -27,6 +27,7 @@ contexts:
     - match: \s*(interface)\b
       captures:
         1: >-
+          flowtype
           storage.type.flowtype
           keyword.declaration.interface.flowtype
       set: identifier
@@ -43,7 +44,9 @@ contexts:
     # Actual identifier.
     - match: (?xi)\s*({{commonIdentifier}})
       captures:
-        1: entity.name.interface.flowtype
+        1: >-
+          flowtype
+          entity.name.interface.flowtype
       set: optional-template-parameters
 
   extension:
@@ -51,6 +54,7 @@ contexts:
     - match: \s*(extends)\b
       captures:
         1: >-
+          flowtype
           storage.modifier.flowtype
           keyword.extension.flowtype
       set: type
@@ -90,14 +94,18 @@ contexts:
     - include: comment
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.interface.body.begin.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.interface.body.begin.flowtype
       set: body-content
 
   body-content:
     - include: comment
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.interface.body.end.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.interface.body.end.flowtype
       pop: true
     - match: ""
       push:
@@ -105,7 +113,7 @@ contexts:
           pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/lookup-table.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

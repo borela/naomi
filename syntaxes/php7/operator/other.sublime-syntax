@@ -33,7 +33,7 @@ contexts:
   # | instanceof |                     |
   # |     @      | Error suppression.  |
   # |     ->     | Member access.      |
-  # |     =>     | Array association.  |
+  # |     =>     | Key/value.          |
   # |     ::     | Scope resolution.   |
   # |    ...     | Argument unpacking. |
   # |     ??     | Null coalescing.    |
@@ -41,21 +41,26 @@ contexts:
   main:
     - match: (?xi)\s*\b(as)\b
       captures:
-        1: keyword.operator.other.word.alias.php.php7
+        1: >-
+          word.php.php7
+          keyword.operator.other.alias.php.php7
       pop: true
     - match: (?xi)\s*\b(instanceof)\b
-      scope: keyword.operator.other.word.php.php7
+      captures:
+        1: >-
+          word.php.php7
+          keyword.operator.relational.php.php7
       pop: true
     - match: \s*(=>)
       captures:
-        1: keyword.operator.other.key.association.php.php7
+        1: keyword.operator.other.key-value.php.php7
     - match: \s*(@)
       captures:
         1: keyword.operator.other.error.suppression.php.php7
       pop: true
     - match: \s*(\.\.\.)
       captures:
-        1: keyword.operator.other.argument.unpack.php.php7
+        1: keyword.operator.other.spread.php.php7
       pop: true
     - match: \s*(->)
       captures:

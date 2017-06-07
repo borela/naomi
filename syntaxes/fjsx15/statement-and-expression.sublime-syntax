@@ -23,16 +23,13 @@ variables:
     [$_[:alnum:]]*
 
   expressionGroupBegin: |
-    (?<!
-      \)|]|}
-    )
+    (?<!\)|]|})
     \s*(\()
 
 contexts:
   main:
     - include: comment
     - include: arrow-function
-    - include: cast-operator
     # Open new expression group.
     - match: |
         (?xi)
@@ -45,8 +42,7 @@ contexts:
 
   open-a-close-b:
     - include: comment
-    - include: arrow-function
-    - include: cast-operator
+    - include: arrow-function-no-pop
     # Open new expression group.
     - match: |
         (?xi)
@@ -68,8 +64,7 @@ contexts:
 
   open-b-close-a:
     - include: comment
-    - include: arrow-function
-    - include: cast-operator
+    - include: arrow-function-no-pop
     # Open new expression group.
     - match: |
         (?xi)
@@ -89,20 +84,19 @@ contexts:
         - match: ""
           pop: true
 
-  cast-operator:
-    - match: (?=\s*:)
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax
-
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   arrow-function:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
 
+  arrow-function-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.no-pop.sublime-syntax
+
   sequence:
     - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/prolog.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax
     # Simple statements.
     - include: Packages/Naomi/syntaxes/fjsx15/goto.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/statement/label.sublime-syntax
@@ -118,7 +112,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
     # Expression keywords.
-    - include: Packages/Naomi/syntaxes/fjsx15/instanceof.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/new.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/other-keywords.sublime-syntax
     # Expression.

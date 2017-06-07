@@ -32,7 +32,9 @@ contexts:
           | or
         ))\b
       captures:
-        1: keyword.operator.other.word.php.php7
+        1: >-
+          word.php.php7
+          keyword.operator.logical.php.php7
       pop: true
     - match: |
         (?x)\s*

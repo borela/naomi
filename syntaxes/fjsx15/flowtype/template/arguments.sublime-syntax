@@ -19,24 +19,27 @@ scope: ...
 
 contexts:
   main:
-    - match: <
-      scope: punctuation.delimiter.template.arguments.begin.flowtype
+    - match: \s*(<)
+      captures:
+        1: >-
+          flowtype
+          punctuation.delimiter.template.arguments.begin.flowtype
       set: arguments
 
   arguments:
-    - match: \,
-      scope: punctuation.delimiter.template.arguments.flowtype
-    - match: \>
-      scope: punctuation.delimiter.template.arguments.end.flowtype
+    - match: \s*(,)
+      captures:
+        1: >-
+          flowtype
+          punctuation.delimiter.template.arguments.flowtype
+    - match: \s*(>)
+      captures:
+        1: >-
+          flowtype
+          punctuation.delimiter.template.arguments.end.flowtype
       pop: true
     - match: ""
       push:
-        - match: |
-            (?x)
-            (?=\s*
-              (?> ,
-                | >
-              )
-            )
-          pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
+        - match: ""
+          pop: true

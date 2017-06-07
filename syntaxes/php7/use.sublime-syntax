@@ -69,7 +69,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/php7/function/name.sublime-syntax
 
   namespace-or-type:
-    - include: Packages/Naomi/syntaxes/php7/namespace-path.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/php7/namespace/path.no-pop.sublime-syntax
     # Target namespace or type.
     - match: |
         (?xi)\s*

@@ -20,7 +20,6 @@ scope: ...
 contexts:
   # |  Operator  |  Description        |
   # |:----------:|:--------------------|
-  # | instanceof |                     |
   # |     &      | Reference.          |
   # |     .      | Member access.      |
   # |     ->     | Member access.      |

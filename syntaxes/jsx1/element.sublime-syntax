@@ -42,8 +42,6 @@ contexts:
       ]
 
   attributes:
-    - clear_scopes: true
-    - meta_content_scope: source.jsx.fjsx15
     # Self closing tag.
     - match: (?=\s*/>)
       pop: true
@@ -58,14 +56,13 @@ contexts:
     # Attributes.
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/jsx1/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/jsx1/attribute.sublime-syntax
         - match: ""
           pop: true
 
   content:
     - clear_scopes: true
-    - meta_content_scope: source.jsx.fjsx15
+    - meta_scope: source.jsx.jsx1
     # Self closing tag.
     - match: \s*(/>)
       captures:
@@ -94,15 +91,12 @@ contexts:
     # Sub tags.
     - match: ""
       push:
+        - clear_scopes: true
         - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
         - include: main
         - match: |
             (?x)
-            (?=\s*
-              (?> />
-                | <
-              )
-            )
+            (?=\s*(?>/>|<))
           pop: true
         - match: .
-          scope: source.jsx.jsx1
+          scope: source.jsx

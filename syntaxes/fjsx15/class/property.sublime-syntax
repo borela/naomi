@@ -22,12 +22,61 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  methodIdentifier: |
-    (?> {{commonIdentifier}}
-      | '.*?(?<!\\)'
-      | ".*?(?<!\\)"
-      | `.*?(?<!\\)`
-      | \[.*?]
+  templateArguments: |
+    (<
+      [^<>]*
+      \g<-1>?
+      [^<>]*
+    >)
+
+  parameters: |
+    (\(
+      [^()]*
+      \g<-1>?
+      [^()]*
+    \))
+
+  flowOperators: |
+    (?> &(?!&)
+      | \|(?!\|)
+    )
+
+  string: |
+    (?> '.*?'
+      | ".*?"
+      | `.*`
+    )
+
+  simpleFlowType: |
+    (?> {{string}}
+      | {{commonIdentifier}}
+        {{templateArguments}}?
+    )
+
+  flowFunction: |
+    (
+      {{parameters}}
+      \s*=>\s*
+      (?> {{simpleFlowType}}
+        | \g<-2>
+      )
+    )
+
+  complexType: |
+    (
+      \??\s*
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
+      )
+      \s*{{flowOperators}}?
+      \s*\g<-5>?
+    )
+
+  flowComment: /\*\s*:.*?\*/
+
+  flowType: |
+    (?> {{flowComment}}
+      | (?::{{complexType}})
     )
 
 contexts:
@@ -38,17 +87,21 @@ contexts:
         (static)
         (?=
           \s+{{commonIdentifier}}
+          (\s*{{flowType}})?
+          \s*=
         )
       captures:
         1: >-
           storage.modifier.js.fjsx15
-          keyword.modifier.js.fjsx15
+          keyword.other.access.js.fjsx15
       set: declaration
     # Normal variable.
     - match: |
         (?xi)
         (?=
-          {{commonIdentifier}}
+          \s+{{commonIdentifier}}
+          (\s*{{flowType}})?
+          \s*=
         )
       set: declaration
 
@@ -59,7 +112,7 @@ contexts:
       push: type
     # Value.
     - match: (?=\s*=)
-      set: value
+      pop: true
     # Identifier.
     - match: |
         (?xi)
@@ -72,53 +125,6 @@ contexts:
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
-
-  value:
-    - include: terminator
-    - match: (?<=})
-      pop: true
-    - match: (?=})
-      pop: true
-    # Another property.
-    - match: |
-        (?xi)
-        (?=\s*
-          (?:
-            static\s+
-          )?
-          {{commonIdentifier}}
-          .*=
-        )
-      pop: true
-    # Method
-    - match: |
-        (?xi)
-        (?=\s*
-          (?:
-            (?> async
-              | get
-              | s
-                (?> et
-                  | tatic
-                    (?:
-                      \s+(?>async|get|set)
-                    )?
-                )
-            )
-          )?
-          \s*\*?
-          \s*{{methodIdentifier}}
-          \s*\(.*\)
-          .*?
-          \s*{
-        )
-      pop: true
-    # Value.
-    - match: ""
-      push:
-        - match: \s*
-          pop: true
-        - include: statement-and-expression
 
   terminator:
     - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax

@@ -29,7 +29,4 @@ contexts:
         \s*({{commonIdentifier}})
       captures:
         1: entity.name.attribute.xml.xml1
-      set: value
-
-  value:
-    - include: Packages/Naomi/syntaxes/xml1/attribute/value.sublime-syntax
+      pop: true

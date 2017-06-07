@@ -31,7 +31,6 @@ variables:
       | const
       | continue
       | debugger
-      | default
       | delete
       | do
       | else
@@ -80,29 +79,6 @@ contexts:
           storage.modifier.js.fjsx15
           keyword.control.export.default.js.fjsx15
       set: object-literal
-    # Type from...
-    - match: |
-        (?x)
-        \s*(export)
-        \s*(type)
-        (?=\s*{)
-      captures:
-        1: keyword.control.export.js.fjsx15
-        2: >-
-          storage.type.flowtype
-          keyword.other.type-aliasing.flowtype
-      set: target-types
-    # Export statements.
-    - match: |
-        (?x)
-        \s*(export)
-        \s*(default)
-      captures:
-        1: keyword.control.export.js.fjsx15
-        2: >-
-          storage.modifier.js.fjsx15
-          keyword.control.export.default.js.fjsx15
-      set: statement-and-expression
     # Export statements.
     - match: |
         (?x)
@@ -123,11 +99,34 @@ contexts:
           storage.modifier.js.fjsx15
           keyword.control.export.default.js.fjsx15
       set: statement-and-expression
+    # Export default from.
+    - match: |
+        (?x)
+        \s*(export)
+        \s*(default)
+        (?=\s*from)
+      captures:
+        1: keyword.control.export.js.fjsx15
+        2: >-
+          storage.modifier.js.fjsx15
+          keyword.control.export.default.js.fjsx15
+      set: origin
+    # Export default.
+    - match: |
+        (?x)
+        \s*(export)
+        \s*(default)
+      captures:
+        1: keyword.control.export.js.fjsx15
+        2: >-
+          storage.modifier.js.fjsx15
+          keyword.control.export.default.js.fjsx15
+      set: statement-and-expression
     # Other.
     - match: |
         (?x)
         \s*(export)\b
-        (?!\.)
+        (?!\s*\.)
       captures:
         1: keyword.control.export.js.fjsx15
       set: targets
@@ -152,16 +151,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
-  optional-default:
-    - match: \s*(default)\b
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.control.export.default.js.fjsx15
-      pop: true
-    - match: ""
-      pop: true
-
   punctuation:
     - match: \s*(\{)
       captures:
@@ -177,18 +166,20 @@ contexts:
     - include: comment
     - include: origin
     - include: punctuation
-    # New statement.
     - match: |
         (?x)
-        (?=\s*{{keywords}})
+        (?=\s*export)
       pop: true
+    - include: sequence
+
+  sequence:
     # Default.
     - match: \s*(default)\b
       captures:
         1: >-
           storage.modifier.js.fjsx15
           keyword.control.export.default.js.fjsx15
-      push: optional-alias
+      push: alias
     # All.
     - match: \s*(\*)
       captures:
@@ -207,12 +198,7 @@ contexts:
   optional-alias:
     - match: |
         (?x)
-        (?=\s*
-          (?> ,
-            | }
-            | from
-          )
-        )
+        (?=\s*(?>,|}|from))
       pop: true
     - include: alias
 
@@ -228,58 +214,4 @@ contexts:
         ({{commonIdentifier}})
       captures:
         1: entity.name.alias.js.fjsx15
-      pop: true
-
-  target-types:
-    - include: comment
-    - include: origin
-    - include: punctuation
-    # All.
-    - match: \s*(\*)
-      captures:
-        1: keyword.operator.other.export.all.js.fjsx15
-      push: optional-type-alias
-    # Aliased.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-        (?=\s*as)
-      captures:
-        1: >-
-          export.js.fjsx15
-          entity.name.aliased.flowtype
-      push: type-alias
-    # Other.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: >-
-          export.js.fjsx15
-          entity.name.type.flowtype
-
-  optional-type-alias:
-    - match: |
-        (?x)
-        (?=\s*
-          (?> ,
-            | }
-            | from
-          )
-        )
-      pop: true
-    - include: type-alias
-
-  type-alias:
-    - match: \s*(as)\b
-      captures:
-        1: keyword.other.alias.js.fjsx15
-      set: type-alias-name
-
-  type-alias-name:
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: entity.name.type.flowtype
       pop: true

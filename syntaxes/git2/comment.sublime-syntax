@@ -19,12 +19,12 @@ scope: ...
 
 contexts:
   main:
-    - match: \#
-      scope: punctuation.comment.begin.git
+    - match: \s*(#)
+      captures:
+        1: punctuation.comment.begin.git
       set: line
 
   line:
     - meta_scope: comment.line.git.attributes
-    - meta_content_scope: comment.content.git
-    - match: $
+    - match: \s*$
       pop: true

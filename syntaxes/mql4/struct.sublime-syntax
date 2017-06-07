@@ -55,10 +55,12 @@ contexts:
           )
         )\s*
       captures:
-        1: keyword.other.mql.mql4
+        1: >-
+          storage.modifier.mql.mql4
+          keyword.operator.other.inherit.mql.mql4
         2: >-
           storage.modifier.mql.mql4
-          keyword.modifier.mql.mql4
+          keyword.other.access.mql.mql4
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
   body:

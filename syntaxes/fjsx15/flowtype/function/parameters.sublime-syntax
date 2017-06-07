@@ -21,16 +21,22 @@ contexts:
   main:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.function.parameters.begin.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.function.parameters.begin.flowtype
       set: parameters
 
   parameters:
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.function.parameters.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.function.parameters.flowtype
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.function.parameters.end.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.function.parameters.end.flowtype
       pop: true
     - match: ""
       push:
@@ -39,6 +45,9 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/object.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/tuple.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function/parameters/simple.sublime-syntax
         - match: ""
           pop: true
+
+  comment:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

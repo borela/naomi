@@ -22,24 +22,28 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  templateArguments: |
+    (<
+      [^<>]*
+      \g<-1>?
+      [^<>]*
+    >)
+
 contexts:
   main:
     # Function call at the result of an expression.
     - match: |
         (?x)
-        (?<=
-          \)|]|}|"|'|`
-        )
-        (?=
-          \s*\(
-        )
+        (?<=\)|]|}|"|'|`)
+        (?=\s*\()
       set: arguments
     # Template function.
     - match: |
         (?xi)
         (?=
           \s*{{commonIdentifier}}
-          \s*<.*>\s*\(
+          \s*{{templateArguments}}
+          \s*\(
         )
       set: [
         arguments,

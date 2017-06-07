@@ -51,10 +51,6 @@ contexts:
   key-or-value:
     - include: end
     - include: item-delimiter
-    - match: \s*(=>)
-      captures:
-        1: punctuation.delimiter.array.association.php.php7
-      set: value
     - match: ""
       push:
         - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax

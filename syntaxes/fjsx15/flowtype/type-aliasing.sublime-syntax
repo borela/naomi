@@ -22,22 +22,28 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  templateArguments: |
+    (<
+      [^<>]*
+      \g<-1>?
+      [^<>]*
+    >)
+
 contexts:
   main:
     - match: |
         (?xi)\s*
-        (type)
-        (?=
-          \s+{{commonIdentifier}}
-          (?:\s*<.*>)?
-          \s*=
+        (type)\b
+        (?=\s+
+          {{commonIdentifier}}
+          {{templateArguments}}?
         )
       captures:
         1: >-
+          flowtype
           storage.type.flowtype
           keyword.declaration.type-aliasing.flowtype
       set: [
-        type,
         punctuation,
         identifier
       ]
@@ -48,8 +54,10 @@ contexts:
   punctuation:
     - match: \s*(=)
       captures:
-        1: keyword.operator.other.assignment.flowtype
-      pop: true
+        1: >-
+          flowtype
+          keyword.operator.other.assignment.flowtype
+      set: type
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax

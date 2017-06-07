@@ -137,17 +137,14 @@ contexts:
         (?x)\s*
         (?=
           (?> env
-            | module\.
-              (?> exports
-                | parent
-              )
+            | module(?:\.(?>exports|parent))?
             | process\.
               (?> arch
                 | argv
                 | config
                 | connected
               )
-            | window\.onload
+            | window(?:\.onload)?
           )
         )
       set: complex-variable-components
@@ -161,8 +158,8 @@ contexts:
   simple-function:
     - match: |
         (?x)\s*
-        (?> decodeURI(?:Component)
-          | encodeURI(?:Component)
+        (?> decodeURI(?:Component)?
+          | encodeURI(?:Component)?
           | eval
           | isFinite
           | isNaN

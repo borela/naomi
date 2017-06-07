@@ -24,32 +24,38 @@ variables:
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/namespace/path.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/namespace-path.no-pop.sublime-syntax
     # Predefined types.
     - match: |
-        (?x)\b
-        (?> any
-          | boolean
+        (?x)\s*\b
+        ((?> any
+          | Array
+          | [Bb]oolean
           | false
           | Function
           | Generator
           | mixed
-          | number
+          | [Nn]umber
           | null
           | Object
-          | string
+          | [Ss]tring
           | true
           | void
-        )\b
-      scope: >-
-        support.flowtype
-        entity.name.type.flowtype
+        ))\b
+      captures:
+        1: >-
+          flowtype
+          support.flowtype
+          entity.name.type.flowtype
       set: optional-template-or-array-shorthand
     # Other types.
     - match: |
-        (?xi)
-        {{commonIdentifier}}
-      scope: entity.name.type.flowtype
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: >-
+          flowtype
+          entity.name.type.flowtype
       set: optional-template-or-array-shorthand
 
   optional-template-or-array-shorthand:
@@ -60,11 +66,15 @@ contexts:
 
   array-shorthand:
     - match: |
-        (?x)
+        (?x)\s*
         (\[)\s*(])
       captures:
-        1: punctuation.delimiter.array.begin.flowtype
-        2: punctuation.delimiter.array.end.flowtype
+        1: >-
+          flowtype
+          punctuation.delimiter.array.begin.flowtype
+        2: >-
+          flowtype
+          punctuation.delimiter.array.end.flowtype
       pop: true
 
   template:

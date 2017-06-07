@@ -21,7 +21,9 @@ contexts:
   main:
     - match: \s*(declare)\b
       captures:
-        1: keyword.declaration.js.fjsx15
+        1: >-
+          flowtype
+          keyword.declaration.js.fjsx15
       set: declarations
 
   declarations:

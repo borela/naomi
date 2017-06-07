@@ -63,15 +63,7 @@ contexts:
             1: keyword.other.js.fjsx15
           pop: true
         # Parameter.
-        - match: |
-            (?xi)\s*
-            ({{commonIdentifier}})(\?)?
-          captures:
-            1: >-
-              function.parameter.js.fjsx15
-              entity.name.variable.js.fjsx15
-            2: keyword.operator.other.optional.flowtype
-          pop: true
+        - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/simple.sublime-syntax
 
   associated-type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
@@ -100,6 +92,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/destructuring/array.sublime-syntax
 
   return-type:
+    - include: comment
     - match: (?=\s*:)
       set: associated-type
     - match: ""

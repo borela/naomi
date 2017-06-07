@@ -22,35 +22,28 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  templateArguments: |
+    (<
+      [^<>]*
+      \g<-1>?
+      [^<>]*
+    >)
+
 contexts:
   main:
     # Import the entire module.
     - match: |
         (?x)\s*
-        (import)
-        (?=
-          \s*
-          (?>"|')
-        )\b
+        (import)\b
+        (?=\s*(?>"|'|`))
       captures:
         1: keyword.control.import.js.fjsx15
       set: origin-path
-    # Type.
-    - match: |
-        (?x)
-        \s*(import)
-        \s*(type)\b
-      captures:
-        1: keyword.control.import.js.fjsx15
-        2: >-
-          storage.type.flowtype
-          keyword.other.type-aliasing.flowtype
-      set: target-types
     # Other.
     - match: |
         (?x)
         \s*(import)\b
-        (?!\.)
+        (?!\s*\.)
       captures:
         1: keyword.control.import.js.fjsx15
       set: targets
@@ -84,18 +77,33 @@ contexts:
     - include: comment
     - include: origin
     - include: punctuation
+    - match: ""
+      push:
+        - include: sequence
+        - match: ""
+          pop: true
+
+  sequence:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/typeof.no-pop.sublime-syntax
+    # Type.
+    - match: \s*(type)\b
+      captures:
+        1: >-
+          storage.type.flowtype
+          keyword.declaration.type-aliasing.flowtype
+      set: types
     # Default.
     - match: \s*(default)\b
       captures:
         1: >-
           storage.modifier.js.fjsx15
           keyword.control.export.default.js.fjsx15
-      push: optional-alias
+      set: optional-alias
     # All.
     - match: \s*(\*)
       captures:
         1: keyword.operator.other.import.all.js.fjsx15
-      push: optional-alias
+      set: optional-alias
     # Simple.
     - match: |
         (?xi)\s*
@@ -104,17 +112,41 @@ contexts:
         1: >-
           import.js.fjsx15
           entity.name.ambiguous.js.fjsx15
-      push: optional-alias
+      set: optional-alias
+
+  types:
+    - include: aliased-type
+    - match: \s*(})
+      captures:
+        1: punctuation.delimiter.import.list.end.js.fjsx15
+      pop: true
+    - match: \s*(\{)
+      captures:
+        1: punctuation.delimiter.import.list.begin.js.fjsx15
+      push:
+        - include: aliased-type
+        - match: \s*(,)
+          captures:
+            1: punctuation.delimiter.import.item.js.fjsx15
+        - match: (?=\s*})
+          pop: true
+
+  aliased-type:
+    - match: |
+        (?xi)
+        (?={{commonIdentifier}})
+      set: [
+        optional-alias,
+        simple-type
+      ]
+
+  simple-type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax
 
   optional-alias:
     - match: |
         (?x)
-        (?=\s*
-          (?> ,
-            | }
-            | from
-          )
-        )
+        (?=\s*(?>,|}|from))
       pop: true
     - include: alias
 
@@ -130,58 +162,4 @@ contexts:
         ({{commonIdentifier}})
       captures:
         1: entity.name.alias.js.fjsx15
-      pop: true
-
-  target-types:
-    - include: comment
-    - include: origin
-    - include: punctuation
-    # All.
-    - match: \s*(\*)
-      captures:
-        1: keyword.operator.other.import.all.js.fjsx15
-      push: optional-type-alias
-    # Aliased.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-        (?=\s+as)
-      captures:
-        1: >-
-          import.js.fjsx15
-          entity.name.aliased.flowtype
-      push: type-alias
-    # Other.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: >-
-          import.js.fjsx15
-          entity.name.type.flowtype
-
-  optional-type-alias:
-    - match: |
-        (?x)
-        (?=\s*
-          (?> ,
-            | }
-            | from
-          )
-        )
-      pop: true
-    - include: type-alias
-
-  type-alias:
-    - match: \s*(as)\b
-      captures:
-        1: keyword.other.alias.js.fjsx15
-      set: type-alias-name
-
-  type-alias-name:
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: entity.name.type.flowtype
       pop: true

@@ -20,3 +20,4 @@ scope: ...
 contexts:
   main:
     - include: Packages/Naomi/syntaxes/xml1/attribute/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/xml1/attribute/value.sublime-syntax

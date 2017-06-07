@@ -50,16 +50,14 @@ contexts:
       pop: true
     - match: ""
       push:
-        - match: |
-            (?x)
-            (?=\s*
-              (?> ,
-                | \)
-              )
-            )
-          pop: true
         - include: comment-no-pop
+        - include: preprocessor
         - include: parameter
+        - match: ""
+          pop: true
+
+  preprocessor:
+    - include: Packages/Naomi/syntaxes/mql4/preprocessor.sublime-syntax
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax

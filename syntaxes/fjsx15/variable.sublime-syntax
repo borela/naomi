@@ -31,15 +31,20 @@ contexts:
     # Single character.
     - match: |
         (?xi)\s*
+        (\#)?
         ((?> \$\B
           | [_[:alpha:]]\b
         ))
       captures:
-        1: entity.name.variable.js.fjsx15
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.operator.other.access.js.fjsx15
+        2: entity.name.variable.js.fjsx15
       pop: true
     # Two or more characters.
     - match: |
         (?xi)\s*
+        (\#)?
         (
           {{commonIdentifier}}
           (?> \$\B
@@ -47,7 +52,10 @@ contexts:
           )
         )
       captures:
-        1: entity.name.variable.js.fjsx15
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.operator.other.access.js.fjsx15
+        2: entity.name.variable.js.fjsx15
       pop: true
 
   support-variable:

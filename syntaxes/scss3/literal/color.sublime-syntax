@@ -24,7 +24,7 @@ variables:
 contexts:
   main:
     - match: |
-        (?x)
+        (?xi)
         (\#)
         (?> ({{hex}}{{hex}}) ({{hex}}{{hex}}) ({{hex}}{{hex}})
           | ({{hex}}) ({{hex}}) ({{hex}})

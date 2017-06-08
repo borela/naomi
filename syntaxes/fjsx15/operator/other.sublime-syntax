@@ -23,7 +23,6 @@ contexts:
   # |   typeof   |                     |
   # |    void    |                     |
   # |     ,      | Comma.              |
-  # |     =      | Assignment.         |
   # |    ...     | Spread.             |
   # |     ::     | Bind.               |
   # |     .      | Member access.      |
@@ -44,10 +43,6 @@ contexts:
     - match: \s*(\,)
       captures:
         1: keyword.operator.other.comma.js.fjsx15
-      pop: true
-    - match: \s*(=)
-      captures:
-        1: keyword.operator.other.assignment.js.fjsx15
       pop: true
     - match: \s*(\:{2})
       captures:

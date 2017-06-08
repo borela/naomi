@@ -40,6 +40,7 @@ contexts:
           | Object
           | [Ss]tring
           | true
+          | undefined
           | void
         ))\b
       captures:

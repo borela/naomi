@@ -27,6 +27,7 @@ contexts:
     - match: |
         (?xi)\s*
         ({{commonIdentifier}})(\?)?
+        (?=\s*:)
       captures:
         1: >-
           flowtype

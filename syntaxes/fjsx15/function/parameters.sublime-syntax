@@ -80,7 +80,7 @@ contexts:
           pop: true
 
   rest-operator:
-    - include: Packages/Naomi/syntaxes/fjsx15/rest.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/rest.sublime-syntax
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax

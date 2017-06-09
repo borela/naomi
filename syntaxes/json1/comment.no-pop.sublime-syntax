@@ -21,10 +21,6 @@ contexts:
   main:
     - match: |
         (?x)
-        (?=
-          (?> \/\/
-            | \/\*
-          )
-        )
+        (?=(?>\/\/|\/\*|\#))
       push:
         - include: Packages/Naomi/syntaxes/json1/comment.sublime-syntax

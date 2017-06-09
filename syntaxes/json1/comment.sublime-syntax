@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\/\/)
+    - match: \s*(\/\/|\#)
       captures:
         1: punctuation.delimiter.comment.begin.json.json1
       set: line

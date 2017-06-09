@@ -22,11 +22,19 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  indexer: |
+    (\[
+      [^\[\]]*
+      \g<-1>?
+      [^\[\]]*
+    \])
+
   methodIdentifier: |
     (?> {{commonIdentifier}}
       | '.*?(?<!\\)'
       | ".*?(?<!\\)"
       | `.*?(?<!\\)`
+      | {{indexer}}
     )
 
   modifiers: |
@@ -189,16 +197,14 @@ contexts:
     # Computed identifier.
     - match: |
         (?x)
-        (?:
-          \s*(\*)
-        )?
+        (?:\s*(\*))?
         \s*(\[)
       captures:
         1: >-
           storage.modifier.js.fjsx15
           keyword.operator.other.generator.js.fjsx15
-        2: keyword.operator.other.computed-function.begin.js.fjsx15
-      push: computed-function
+        2: punctuation.delimiter.function.identifier.begin.js.fjsx15
+      push: computed-identifier
     # String identifiers
     - match: (?=(?>'|"|`))
       push:
@@ -218,10 +224,10 @@ contexts:
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
 
-  computed-function:
+  computed-identifier:
     - match: \s*(])
       captures:
-        1: keyword.operator.other.computed-function.end.js.fjsx15
+        1: punctuation.delimiter.function.identifier.end.js.fjsx15
       pop: true
     - match: ""
       push:

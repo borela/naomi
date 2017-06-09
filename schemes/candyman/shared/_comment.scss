@@ -12,13 +12,13 @@
 
 .comment,
 .comment .punctuation.delimiter {
-  foreground: $blue-grey-500;
+  foreground: $blue-gray-500;
 }
 
 .comment .entity {
   &.email,
   &.link {
-    foreground: $blue-grey-300;
+    foreground: $blue-gray-300;
   }
 }
 

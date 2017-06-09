@@ -17,12 +17,12 @@
   .punctuation.delimiter.array,
   .punctuation.delimiter.object,
   .punctuation.delimiter.property {
-    foreground: $grey-0;
+    foreground: $gray-0;
   }
 
   .object.property {
     .entity.name.variable {
-      foreground: $grey-0;
+      foreground: $gray-0;
     }
   }
 }

@@ -17,7 +17,7 @@
   foreground: $blue-gray-200;
   gutterForeground: $blue-gray-400;
 
-  caret: $blue-grey-200;
+  caret: $light-green-a200;
   lineHighlight: rgba(0,0,0,.1);
   selection: $blue-gray-700;
 
@@ -36,7 +36,6 @@
 @import "shared/alias";
 @import "shared/ambiguous";
 @import "shared/array";
-@import "shared/block-cursor";
 @import "shared/cast";
 @import "shared/class";
 @import "shared/color";

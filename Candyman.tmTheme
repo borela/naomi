@@ -18,7 +18,7 @@
 				<key>bracketsOptions</key>
 				<string>stippled_underline</string>
 				<key>caret</key>
-				<string>#b0bec5</string>
+				<string>#b2ff59</string>
 				<key>findHighlight</key>
 				<string>#4db6ac</string>
 				<key>findHighlightForeground</key>
@@ -32,7 +32,7 @@
 				<key>lineHighlight</key>
 				<string>#0000001A</string>
 				<key>selection</key>
-				<string>#37474f</string>
+				<string>#455a64</string>
 				<key>stackGuide</key>
 				<string>#37474f</string>
 				<key>tagsOptions</key>
@@ -586,17 +586,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ffd180</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.block-cursor</string>
-			<key>settings</key>
-			<dict>
-				<key>background</key>
-				<string>#b2ff59</string>
-				<key>foreground</key>
-				<string>#263238</string>
 			</dict>
 		</dict>
 		<dict>

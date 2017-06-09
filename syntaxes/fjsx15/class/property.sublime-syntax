@@ -88,7 +88,6 @@ contexts:
         (?=
           \s+{{commonIdentifier}}
           (\s*{{flowType}})?
-          \s*=
         )
       captures:
         1: >-
@@ -101,12 +100,13 @@ contexts:
         (?=
           \s+{{commonIdentifier}}
           (\s*{{flowType}})?
-          \s*=
         )
       set: declaration
 
   declaration:
     - include: terminator
+    - match: (?=\s*$)
+      pop: true
     # Type.
     - match: (?=\s*:)
       push: type

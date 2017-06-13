@@ -139,7 +139,10 @@ contexts:
         1: >-
           storage.modifier.js.fjsx15
           keyword.other.async.js.fjsx15
-    - match: \s*(get|set)(?=\s+{{commonIdentifier}})
+    - match: |
+        (?xi)\s*
+        (get|set)
+        (?=\s+{{commonIdentifier}})
       captures:
         1: >-
           storage.modifier.js.fjsx15

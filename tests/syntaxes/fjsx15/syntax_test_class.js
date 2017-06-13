@@ -61,6 +61,11 @@
    @decorator
 // ^ .punctuation.delimiter.decorator.js.fjsx15
 //  ^^^^^^^^^ .entity.name.decorator.js.fjsx15
+   @decorator.decorator
+// ^ .punctuation.delimiter.decorator.js.fjsx15
+//  ^^^^^^^^^ .entity.name.decorator.js.fjsx15
+//           ^ .punctuation.delimiter.decorator.chain.js.fjsx15
+//            ^^^^^^^^ .entity.name.decorator.js.fjsx15
    @decorator(1,'2')
 // ^ .punctuation.delimiter.decorator.js.fjsx15
 //  ^^^^^^^^^ .entity.name.decorator.js.fjsx15
@@ -71,6 +76,25 @@
 //              ^ .punctuation.delimiter.string.begin.js.fjsx15
 //                ^ .punctuation.delimiter.string.end.js.fjsx15
 //                 ^ .punctuation.delimiter.decorator.arguments.end.js.fjsx15
+   @decorator(1,'2').decorator(1,'2')
+// ^ .punctuation.delimiter.decorator.js.fjsx15
+//  ^^^^^^^^^ .entity.name.decorator.js.fjsx15
+//           ^ .punctuation.delimiter.decorator.arguments.begin.js.fjsx15
+//            ^ .constant.numeric.decimal.js.fjsx15
+//             ^ .punctuation.delimiter.decorator.arguments.js.fjsx15
+//              ^^^ .string.quoted.single.js.fjsx15
+//              ^ .punctuation.delimiter.string.begin.js.fjsx15
+//                ^ .punctuation.delimiter.string.end.js.fjsx15
+//                 ^ .punctuation.delimiter.decorator.arguments.end.js.fjsx15
+//                  ^ .punctuation.delimiter.decorator.chain.js.fjsx15
+//                   ^^^^^^^^^ .entity.name.decorator.js.fjsx15
+//                            ^ .punctuation.delimiter.decorator.arguments.begin.js.fjsx15
+//                             ^ .constant.numeric.decimal.js.fjsx15
+//                              ^ .punctuation.delimiter.decorator.arguments.js.fjsx15
+//                               ^^^ .string.quoted.single.js.fjsx15
+//                               ^ .punctuation.delimiter.string.begin.js.fjsx15
+//                                 ^ .punctuation.delimiter.string.end.js.fjsx15
+//                                  ^ .punctuation.delimiter.decorator.arguments.end.js.fjsx15
    static propTypes:number = {initialCount:React.PropTypes.number};
 // ^^^^^^ .storage.modifier.js.fjsx15
 // ^^^^^^ .keyword.other.access.js.fjsx15

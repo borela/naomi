@@ -19,8 +19,8 @@ scope: ...
 
 variables:
   decoratorIdentifier: |
-    [$._[:alpha:]]
-    [$._[:alnum:]]*
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
 
 contexts:
   main:

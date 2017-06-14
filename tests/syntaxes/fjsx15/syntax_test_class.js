@@ -221,3 +221,21 @@
 //                        ^ .punctuation.delimiter.function.body.end.js.fjsx15
    }
 // ^ .punctuation.delimiter.class.body.end.js.fjsx15
+   class Foo {
+// ^^^^^ .keyword.declaration.class.js.fjsx15
+//       ^^^ .entity.name.class.js.fjsx15
+//           ^ .punctuation.delimiter.class.body.begin.js.fjsx15
+   property:type
+// ^^^^^^^^ .entity.name.variable.js.fjsx15
+//         ^ .keyword.operator.other.association.flowtype
+//          ^^^^ .flowtype
+//          ^^^^ .entity.name.type.flowtype
+    constructor(){}
+//  ^^^^^^^^^^^ .support.js.fjsx15
+//  ^^^^^^^^^^^ .entity.name.function.js.fjsx15
+//             ^ .punctuation.delimiter.function.parameters.begin.js.fjsx15
+//              ^ .punctuation.delimiter.function.parameters.end.js.fjsx15
+//               ^ .punctuation.delimiter.function.body.begin.js.fjsx15
+//                ^ .punctuation.delimiter.function.body.end.js.fjsx15
+   }
+// ^ .punctuation.delimiter.class.body.end.js.fjsx15

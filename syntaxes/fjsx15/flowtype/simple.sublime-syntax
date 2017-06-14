@@ -62,7 +62,7 @@ contexts:
   optional-template-or-array-shorthand:
     - include: array-shorthand
     - include: template
-    - match: (?=\S)
+    - match: ""
       pop: true
 
   array-shorthand:

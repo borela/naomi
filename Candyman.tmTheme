@@ -257,11 +257,11 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.delimiter.eslint</string>
+			<string>.eslint .keyword.other, .eslint .punctuation.delimiter</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff80ab</string>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>

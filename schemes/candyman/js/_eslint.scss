@@ -10,8 +10,11 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.punctuation.delimiter.eslint {
-  foreground: $pink-a100;
+.eslint {
+  .keyword.other,
+  .punctuation.delimiter {
+    foreground: $brown-200;
+  }
 }
 
 .entity.name.eslint-rule {

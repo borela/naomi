@@ -69,7 +69,7 @@ contexts:
         (?xi)\s*
         (
           [$_[:alpha:]]
-          [$_\-[:alnum:]]*
+          [$_\-/[:alnum:]]*
         )
       captures:
         1: >-

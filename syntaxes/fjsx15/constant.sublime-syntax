@@ -46,7 +46,7 @@ contexts:
         (
           {{constantIdentifier}}
           (?> \$\B
-            | [_[:upper:]]\b
+            | [_[:upper:][:digit:]]\b
           )
         )
       captures:

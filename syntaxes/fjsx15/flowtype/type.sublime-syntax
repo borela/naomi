@@ -147,7 +147,7 @@ contexts:
     # Utility operators.
     - match: |
         (?x)\s*
-        (Class)
+        (Class)\b
       captures:
         1: >-
           flowtype
@@ -167,7 +167,7 @@ contexts:
             | Shape
             | Supertype
             | Subtype
-          )
+          )\b
         )
       captures:
         1: >-

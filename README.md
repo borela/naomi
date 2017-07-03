@@ -1,6 +1,6 @@
 # Naomi
 
-[![Sublime version](https://img.shields.io/badge/sublime%203->%3D3084-orange.svg?style=flat-square)][sublime]
+[![Sublime version](https://img.shields.io/badge/sublime%203->%3D3126-orange.svg?style=flat-square)][sublime]
 [![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)][license]
 
 ## Installation

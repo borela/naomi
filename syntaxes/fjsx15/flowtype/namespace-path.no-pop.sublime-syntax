@@ -31,11 +31,11 @@ contexts:
         (?xi)\s*
         (?>
           (?:\b
-            ({{commonIdentifier}})(\.)
-            ({{commonIdentifier}})(\.)
+            ({{commonIdentifier}})(\??\.)
+            ({{commonIdentifier}})(\??\.)
           )
           |
-          (?:\b({{commonIdentifier}})(\.))
+          (?:\b({{commonIdentifier}})(\??\.))
         )
       captures:
         1: >-

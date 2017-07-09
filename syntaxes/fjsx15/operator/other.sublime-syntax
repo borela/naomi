@@ -26,6 +26,7 @@ contexts:
   # |    ...     | Spread.             |
   # |     ::     | Bind.               |
   # |     .      | Member access.      |
+  # |    ?.      | Optional chain.     |
   # |     ?      | Ternary.            |
   main:
     - match: \s*(typeof)\b
@@ -47,6 +48,10 @@ contexts:
     - match: \s*(\:{2})
       captures:
         1: keyword.operator.other.bind.js.fjsx15
+      pop: true
+    - match: \s*(\?\.)
+      captures:
+        1: keyword.operator.other.optional-chain.js.fjsx15
       pop: true
     - match: \s*(\?)
       captures:

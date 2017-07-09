@@ -22,4 +22,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/eslint.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment/flowtype.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/documentation.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment/normal.sublime-syntax

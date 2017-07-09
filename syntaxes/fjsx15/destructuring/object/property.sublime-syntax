@@ -60,7 +60,7 @@ contexts:
         (?xi)
         \s*({{commonIdentifier}})
         \s*(:)
-        \s*({{commonIdentifier}})
+        (?=\s*({{commonIdentifier}}))
       captures:
         1: >-
           destructuring.object.js.fjsx15
@@ -69,15 +69,13 @@ contexts:
         2: >-
           destructuring.object.js.fjsx15
           keyword.operator.other.association.js.fjsx15
-        3: entity.name.variable.js.fjsx15
-      pop: true
+      push: constant-or-variable
     # Normal property.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: entity.name.variable.js.fjsx15
-      pop: true
+    - include: constant-or-variable
+
+  constant-or-variable:
+    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   optional-alias:
     - match: |

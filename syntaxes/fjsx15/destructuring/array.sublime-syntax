@@ -57,8 +57,9 @@ contexts:
         # Default value.
         - match: (?=\s*=)
           set: default-value
-        # Normal variables.
-        - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array/variable.sublime-syntax
+        # Normal variables and constants.
+        - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   rest-operator:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/rest.sublime-syntax

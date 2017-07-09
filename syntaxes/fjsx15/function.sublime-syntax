@@ -24,76 +24,12 @@ variables:
 
 contexts:
   main:
-    # Simple function without identifier.
     - match: |
         (?x)\s*
         (?:
           (async)\s+
         )?
-        (function)
-        (?=
-          \s*\*?
-          \s*\(
-        )
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.async.js.fjsx15
-        2: >-
-          storage.type.js.fjsx15
-          keyword.declaration.function.js.fjsx15
-      set: declaration
-    # Simple function with identifier.
-    - match: |
-        (?x)\s*
-        (?:
-          (async)\s+
-        )?
-        (function)
-        (?=
-          \s*\*?
-          \s*{{commonIdentifier}}
-          \s*\(
-        )
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.async.js.fjsx15
-        2: >-
-          storage.type.js.fjsx15
-          keyword.declaration.function.js.fjsx15
-      set: declaration
-    # Templated function without identifier.
-    - match: |
-        (?x)\s*
-        (?:
-          (async)\s+
-        )?
-        (function)
-        (?=
-          \s*\*?
-          \s*<.*>\s*\(
-        )
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.async.js.fjsx15
-        2: >-
-          storage.type.js.fjsx15
-          keyword.declaration.function.js.fjsx15
-      set: declaration
-    # Templated function with identifier.
-    - match: |
-        (?x)\s*
-        (?:
-          (async)\s+
-        )?
-        (function)
-        (?=
-          \s*\*?
-          \s*{{commonIdentifier}}
-          \s*<.*>\s*\(
-        )
+        \b(function)\b
       captures:
         1: >-
           storage.modifier.js.fjsx15

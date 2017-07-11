@@ -37,13 +37,14 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
   member-access-operator:
-    - match: \.
-      scope: keyword.operator.other.member-access.js.fjsx15
+    - match: \s*(\.)
+      captures:
+        1: keyword.operator.other.member-access.js.fjsx15
 
   simple-class:
     - match: |
         (?x)\s*
-        (?> Array(?:Buffer)?
+        ((?> Array(?:Buffer)?
           | Boolean
           | DataView
           | Date
@@ -83,10 +84,11 @@ contexts:
           | Uint8ClampedArray
           | WeakMap
           | WeakSet
-        )\b
-      scope: >-
-        support.js.fjsx15
-        entity.name.class.js.fjsx15
+        ))\b
+      captures:
+        1: >-
+          support.js.fjsx15
+          entity.name.class.js.fjsx15
       set: optional-constructor
 
   complex-class:
@@ -97,7 +99,7 @@ contexts:
             | Intl.DateTimeFormat
             | Intl.NumberFormat
             | Intl
-          )
+          )\b
         )
       set: complex-class-components
 
@@ -105,14 +107,15 @@ contexts:
     - include: member-access-operator
     - match: |
         (?x)\s*
-        (?> Intl
+        ((?> Intl
           | Collator
           | DateTimeFormat
           | NumberFormat
-        )\b
-      scope: >-
-        support.js.fjsx15
-        entity.name.class.js.fjsx15
+        ))\b
+      captures:
+        1: >-
+          support.js.fjsx15
+          entity.name.class.js.fjsx15
     - match: ""
       set: optional-constructor
 
@@ -124,12 +127,13 @@ contexts:
   simple-variable:
     - match: |
         (?x)\s*
-        (?> __dirname
+        ((?> __dirname
           | __filename
-        )\b
-      scope: >-
-        support.js.fjsx15
-        entity.name.variable.js.fjsx15
+        ))\b
+      captures:
+        1: >-
+          support.js.fjsx15
+          entity.name.variable.js.fjsx15
       pop: true
 
   complex-variable:
@@ -145,7 +149,7 @@ contexts:
                 | connected
               )
             | window(?:\.onload)?
-          )
+          )\b
         )
       set: complex-variable-components
 
@@ -158,7 +162,7 @@ contexts:
   simple-function:
     - match: |
         (?x)\s*
-        (?> decodeURI(?:Component)?
+        ((?> decodeURI(?:Component)?
           | encodeURI(?:Component)?
           | eval
           | isFinite
@@ -170,11 +174,12 @@ contexts:
           | setInterval
           | setTimeout
           | uneval
-        )
+        ))
         (?=\s*\()
-      scope: >-
-        support.js.fjsx15
-        entity.name.function.js.fjsx15
+      captures:
+        1: >-
+          support.js.fjsx15
+          entity.name.function.js.fjsx15
       set: arguments
 
   complex-function:
@@ -235,7 +240,7 @@ contexts:
     - include: global-variable
     - match: |
         (?x)\s*
-        (?> addEventListener
+        ((?> addEventListener
           | adoptNode
           | assert
           | close
@@ -266,15 +271,16 @@ contexts:
           | trace
           | warn
           | write(?:ln)?
-        )\b
-      scope: >-
-        support.js.fjsx15
-        entity.name.function.js.fjsx15
+        ))\b
+      captures:
+        1: >-
+          support.js.fjsx15
+          entity.name.function.js.fjsx15
 
   global-variable:
     - match: |
         (?x)\s*
-        (?> arch
+        ((?> arch
           | argv
           | config
           | connected
@@ -289,7 +295,8 @@ contexts:
           | process
           | stdout
           | window
-        )\b
-      scope: >-
-        support.js.fjsx15
-        entity.name.variable.js.fjsx15
+        ))\b
+      captures:
+        1: >-
+          support.js.fjsx15
+          entity.name.variable.js.fjsx15

@@ -31,6 +31,14 @@ variables:
 
 contexts:
   main:
+    # Dynamic import.
+    - match: |
+        (?x)\s*
+        (import)\b
+        (?=\s*\()
+      captures:
+        1: keyword.control.import.js.fjsx15
+      set: function-arguments
     # Import the entire module.
     - match: |
         (?x)\s*
@@ -50,6 +58,9 @@ contexts:
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  function-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
   origin:
     - match: \s*(from)\b

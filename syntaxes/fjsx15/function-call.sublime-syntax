@@ -57,10 +57,7 @@ contexts:
           \s*{{commonIdentifier}}
           \s*\(
         )
-      set: [
-        arguments,
-        name
-      ]
+      set: name
 
   name:
     # Support identifier.
@@ -75,19 +72,22 @@ contexts:
         1: >-
           support.js.fjsx15
           entity.name.function.js.fjsx15
-      pop: true
+      set: support-arguments
     # React JS’s support functions.
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/reactjs.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/reactjs-function.sublime-syntax
     # Identifier.
     - match: |
         (?xi)
         \s*({{commonIdentifier}})
       captures:
         1: entity.name.function.js.fjsx15
-      pop: true
+      set: arguments
 
   template-arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+
+  support-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support-arguments.sublime-syntax

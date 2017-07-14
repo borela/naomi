@@ -30,4 +30,8 @@ contexts:
         1: >-
           support.react-js.fjsx15
           entity.name.function.js.fjsx15
-      pop: true
+      set: support-arguments
+
+  support-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support-arguments.sublime-syntax
+

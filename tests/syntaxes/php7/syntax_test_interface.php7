@@ -16,91 +16,91 @@
     interface MyInterface {   }
 //  ^^^^^^^^^ keyword.declaration.interface.php.php7
 //            ^^^^^^^^^^^ entity.name.interface.php.php7
-//                        ^ punctuation.delimiter.interface.body.begin.php.php7
-//                            ^ punctuation.delimiter.interface.body.end.php.php7
+//                        ^ punctuation.definition.interface.body.begin.php.php7
+//                            ^ punctuation.definition.interface.body.end.php.php7
 
     interface MyInterface {
 //  ^^^^^^^^^ keyword.declaration.interface.php.php7
 //            ^^^^^^^^^^^ entity.name.interface.php.php7
-//                        ^ punctuation.delimiter.interface.body.begin.php.php7
+//                        ^ punctuation.definition.interface.body.begin.php.php7
         Something...
     }
-//  ^ punctuation.delimiter.interface.body.end.php.php7
+//  ^ punctuation.definition.interface.body.end.php.php7
 
     interface MyInterface extends
 //  ^^^^^^^^^ keyword.declaration.interface.php.php7
 //            ^^^^^^^^^^^ entity.name.interface.php.php7
 //                        ^^^^^^^ keyword.inherit.php.php7
         \Namespace\Namespace\ParentInterface2 {
-//                                            ^ punctuation.delimiter.interface.body.begin.php.php7
-//      ^ punctuation.delimiter.namespace.a.php.php7
-//                ^ punctuation.delimiter.namespace.b.php.php7
-//                          ^ punctuation.delimiter.type.php.php7
+//                                            ^ punctuation.definition.interface.body.begin.php.php7
+//      ^ punctuation.definition.namespace.a.php.php7
+//                ^ punctuation.definition.namespace.b.php.php7
+//                          ^ punctuation.definition.type.php.php7
 //       ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                 ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                           ^^^^^^^^^^^^^^^^ entity.name.type.php.php7
         Something...
     }
-//  ^ punctuation.delimiter.interface.body.end.php.php7
+//  ^ punctuation.definition.interface.body.end.php.php7
 
     interface MyInterface extends
 //  ^^^^^^^^^ keyword.declaration.interface.php.php7
 //            ^^^^^^^^^^^ entity.name.interface.php.php7
 //                        ^^^^^^^ keyword.inherit.php.php7
         Namespace\Namespace\ParentInterface2 {
-//                                           ^ punctuation.delimiter.interface.body.begin.php.php7
-//               ^ punctuation.delimiter.namespace.b.php.php7
-//                         ^ punctuation.delimiter.type.php.php7
+//                                           ^ punctuation.definition.interface.body.begin.php.php7
+//               ^ punctuation.definition.namespace.b.php.php7
+//                         ^ punctuation.definition.type.php.php7
 //      ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                          ^^^^^^^^^^^^^^^^ entity.name.type.php.php7
         Something...
     }
-//  ^ punctuation.delimiter.interface.body.end.php.php7
+//  ^ punctuation.definition.interface.body.end.php.php7
 
     interface MyInterface extends
 //  ^^^^^^^^^ keyword.declaration.interface.php.php7
 //            ^^^^^^^^^^^ entity.name.interface.php.php7
 //                        ^^^^^^^ keyword.inherit.php.php7
         \Namespace\Namespace\Interface1,
-//                                     ^ punctuation.delimiter.extend.php.php7
-//      ^ punctuation.delimiter.namespace.a.php.php7
-//                ^ punctuation.delimiter.namespace.b.php.php7
-//                          ^ punctuation.delimiter.type.php.php7
+//                                     ^ punctuation.definition.extend.php.php7
+//      ^ punctuation.definition.namespace.a.php.php7
+//                ^ punctuation.definition.namespace.b.php.php7
+//                          ^ punctuation.definition.type.php.php7
 //       ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                 ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                           ^^^^^^^^^^ entity.name.type.php.php7
         \Namespace\Namespace\Interface2 {
-//                                      ^ punctuation.delimiter.interface.body.begin.php.php7
-//      ^ punctuation.delimiter.namespace.a.php.php7
-//                ^ punctuation.delimiter.namespace.b.php.php7
-//                          ^ punctuation.delimiter.type.php.php7
+//                                      ^ punctuation.definition.interface.body.begin.php.php7
+//      ^ punctuation.definition.namespace.a.php.php7
+//                ^ punctuation.definition.namespace.b.php.php7
+//                          ^ punctuation.definition.type.php.php7
 //       ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                 ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                           ^^^^^^^^^^ entity.name.type.php.php7
         Something...
     }
-//  ^ punctuation.delimiter.interface.body.end.php.php7
+//  ^ punctuation.definition.interface.body.end.php.php7
 
     interface MyInterface extends
 //  ^^^^^^^^^ keyword.declaration.interface.php.php7
 //            ^^^^^^^^^^^ entity.name.interface.php.php7
 //                        ^^^^^^^ keyword.inherit.php.php7
         Namespace\Namespace\Interface1,
-//                                    ^ punctuation.delimiter.extend.php.php7
-//               ^ punctuation.delimiter.namespace.b.php.php7
-//                         ^ punctuation.delimiter.type.php.php7
+//                                    ^ punctuation.definition.extend.php.php7
+//               ^ punctuation.definition.namespace.b.php.php7
+//                         ^ punctuation.definition.type.php.php7
 //      ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                          ^^^^^^^^^^ entity.name.type.php.php7
         Namespace\Namespace\Interface2 {
-//                                     ^ punctuation.delimiter.interface.body.begin.php.php7
-//               ^ punctuation.delimiter.namespace.b.php.php7
-//                         ^ punctuation.delimiter.type.php.php7
+//                                     ^ punctuation.definition.interface.body.begin.php.php7
+//               ^ punctuation.definition.namespace.b.php.php7
+//                         ^ punctuation.definition.type.php.php7
 //      ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                          ^^^^^^^^^^ entity.name.type.php.php7
         Something...
     }
-//  ^ punctuation.delimiter.interface.body.end.php.php7
+//  ^ punctuation.definition.interface.body.end.php.php7
 ?>

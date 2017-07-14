@@ -20,9 +20,9 @@
 //               ^^ datetime.hour.mql.mql4
 //                  ^^ datetime.minute.mql.mql4
 //                     ^^ datetime.second.mql.mql4
-//  ^^ punctuation.delimiter.datetime.begin.mql.mql4
-//        ^ punctuation.delimiter.date.mql.mql4
-//           ^ punctuation.delimiter.date.mql.mql4
-//                 ^ punctuation.delimiter.time.mql.mql4
-//                    ^ punctuation.delimiter.time.mql.mql4
-//                       ^ punctuation.delimiter.datetime.end.mql.mql4
+//  ^^ punctuation.definition.datetime.begin.mql.mql4
+//        ^ punctuation.definition.date.mql.mql4
+//           ^ punctuation.definition.date.mql.mql4
+//                 ^ punctuation.definition.time.mql.mql4
+//                    ^ punctuation.definition.time.mql.mql4
+//                       ^ punctuation.definition.datetime.end.mql.mql4

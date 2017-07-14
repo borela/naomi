@@ -14,21 +14,21 @@
 
    `Something is 'here'...`
 // ^^^^^^^^^^^^^^^^^^^^^^^^ .string.template.js.fjsx15
-// ^ .punctuation.delimiter.string.begin.js.fjsx15
-//                        ^ .punctuation.delimiter.string.end.js.fjsx15
+// ^ .punctuation.definition.string.begin.js.fjsx15
+//                        ^ .punctuation.definition.string.end.js.fjsx15
    `Something is "here"...`
 // ^^^^^^^^^^^^^^^^^^^^^^^^ .string.template.js.fjsx15
-// ^ .punctuation.delimiter.string.begin.js.fjsx15
-//                        ^ .punctuation.delimiter.string.end.js.fjsx15
+// ^ .punctuation.definition.string.begin.js.fjsx15
+//                        ^ .punctuation.definition.string.end.js.fjsx15
    `Something is \`here\`...`
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^ .string.template.js.fjsx15
-// ^ .punctuation.delimiter.string.begin.js.fjsx15
+// ^ .punctuation.definition.string.begin.js.fjsx15
 //               ^^ .constant.character.escape.a.js.fjsx15
 //                     ^^ .constant.character.escape.b.js.fjsx15
-//                          ^ .punctuation.delimiter.string.end.js.fjsx15
+//                          ^ .punctuation.definition.string.end.js.fjsx15
    `Escaped: \\\b\f\n\r\t\v\x12\u1234\u{1234}`
 // ^^^^^^^^^^^^^^^^^^^^^^^^^ .string.template.js.fjsx15
-// ^ .punctuation.delimiter.string.begin.js.fjsx15
+// ^ .punctuation.definition.string.begin.js.fjsx15
 //           ^^ .constant.character.escape.a.js.fjsx15
 //             ^^ .constant.character.escape.b.js.fjsx15
 //               ^^ .constant.character.escape.a.js.fjsx15
@@ -39,34 +39,34 @@
 //                         ^^^^ .constant.character.escape.b.js.fjsx15
 //                             ^^^^^^ .constant.character.escape.a.js.fjsx15
 //                                   ^^^^^^^^ .constant.character.escape.b.js.fjsx15
-//                                           ^ .punctuation.delimiter.string.end.js.fjsx15
+//                                           ^ .punctuation.definition.string.end.js.fjsx15
    `Embedded variable ${variable}`
 // ^^^^^^^^^^^^^^^^^^^ .string.template.js.fjsx15
-// ^ .punctuation.delimiter.string.begin.js.fjsx15
+// ^ .punctuation.definition.string.begin.js.fjsx15
 //                    ^^ - string.template.js.fjsx15
 //                    ^^ .keyword.operator.other.embedded-expression.begin.js.fjsx15
 //                      ^^^^^^^^ .entity.name.variable.js.fjsx15
 //                              ^ - string.template.js.fjsx15
 //                              ^ .keyword.operator.other.embedded-expression.end.js.fjsx15
 //                               ^ .string.template.js.fjsx15
-//                               ^ .punctuation.delimiter.string.end.js.fjsx15
+//                               ^ .punctuation.definition.string.end.js.fjsx15
    `A${`B${`C`}`}`
 // ^^ .string.template.js.fjsx15
-// ^ .punctuation.delimiter.string.begin.js.fjsx15
+// ^ .punctuation.definition.string.begin.js.fjsx15
 //   ^^ - string.template.js.fjsx15
 //   ^^ .keyword.operator.other.embedded-expression.begin.js.fjsx15
 //     ^^ .string.template.js.fjsx15
-//     ^ .punctuation.delimiter.string.begin.js.fjsx15
+//     ^ .punctuation.definition.string.begin.js.fjsx15
 //       ^^ - string.template.js.fjsx15
 //       ^^ .keyword.operator.other.embedded-expression.begin.js.fjsx15
 //         ^^^ .string.template.js.fjsx15
-//         ^ .punctuation.delimiter.string.begin.js.fjsx15
-//           ^ .punctuation.delimiter.string.end.js.fjsx15
+//         ^ .punctuation.definition.string.begin.js.fjsx15
+//           ^ .punctuation.definition.string.end.js.fjsx15
 //            ^ - string.template.js.fjsx15
 //            ^ .keyword.operator.other.embedded-expression.end.js.fjsx15
 //             ^ .string.template.js.fjsx15
-//             ^ .punctuation.delimiter.string.end.js.fjsx15
+//             ^ .punctuation.definition.string.end.js.fjsx15
 //              ^ - string.template.js.fjsx15
 //              ^ .keyword.operator.other.embedded-expression.end.js.fjsx15
 //               ^ .string.template.js.fjsx15
-//               ^ .punctuation.delimiter.string.end.js.fjsx15
+//               ^ .punctuation.definition.string.end.js.fjsx15

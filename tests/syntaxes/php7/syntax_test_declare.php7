@@ -15,18 +15,18 @@
 <?php
     declare(ticks=1);
 //  ^^^^^^^ keyword.declare.php.php7
-//         ^ punctuation.delimiter.declare.parameters.begin.php.php7
-//                 ^ punctuation.delimiter.declare.parameters.end.php.php7
-//                  ^ punctuation.delimiter.declare.body.begin.php.php7
+//         ^ punctuation.definition.declare.parameters.begin.php.php7
+//                 ^ punctuation.definition.declare.parameters.end.php.php7
+//                  ^ punctuation.definition.declare.body.begin.php.php7
 
     Something...
 
     declare(ticks=1) {
 //  ^^^^^^^ keyword.declare.php.php7
-//         ^ punctuation.delimiter.declare.parameters.begin.php.php7
-//                 ^ punctuation.delimiter.declare.parameters.end.php.php7
-//                   ^ punctuation.delimiter.declare.body.begin.php.php7
+//         ^ punctuation.definition.declare.parameters.begin.php.php7
+//                 ^ punctuation.definition.declare.parameters.end.php.php7
+//                   ^ punctuation.definition.declare.body.begin.php.php7
     Something...
     }
-//  ^ punctuation.delimiter.declare.body.end.php.php7
+//  ^ punctuation.definition.declare.body.end.php.php7
 ?>

@@ -17,16 +17,16 @@
 //    ^^ color.value.r.mql.mql4
 //       ^^ color.value.g.mql.mql4
 //          ^^ color.value.b.mql.mql4
-//  ^^ punctuation.delimiter.color.begin.mql.mql4
-//      ^ punctuation.delimiter.color.mql.mql4
-//         ^ punctuation.delimiter.color.mql.mql4
-//            ^ punctuation.delimiter.color.end.mql.mql4
+//  ^^ punctuation.definition.color.begin.mql.mql4
+//      ^ punctuation.definition.color.mql.mql4
+//         ^ punctuation.definition.color.mql.mql4
+//            ^ punctuation.definition.color.end.mql.mql4
     C'0x42,0x42,0x42'
 //  ^^^^^^^^^^^^^^^^^ constant.color.mql.mql4
 //    ^^^^ color.value.r.mql.mql4
 //         ^^^^ color.value.g.mql.mql4
 //              ^^^^ color.value.b.mql.mql4
-//  ^^ punctuation.delimiter.color.begin.mql.mql4
-//        ^ punctuation.delimiter.color.mql.mql4
-//             ^ punctuation.delimiter.color.mql.mql4
-//                  ^ punctuation.delimiter.color.end.mql.mql4
+//  ^^ punctuation.definition.color.begin.mql.mql4
+//        ^ punctuation.definition.color.mql.mql4
+//             ^ punctuation.definition.color.mql.mql4
+//                  ^ punctuation.definition.color.end.mql.mql4

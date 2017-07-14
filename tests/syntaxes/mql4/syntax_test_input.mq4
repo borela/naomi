@@ -20,8 +20,8 @@
 //                          ^ keyword.operator.other.assignment.mql.mql4
 //                            ^^^^^ string.quoted.double.mql.mql4
 //                             ^^^ string.content.mql.mql4
-//                            ^ punctuation.delimiter.string.begin.mql.mql4
-//                                ^ punctuation.delimiter.string.end.mql.mql4
+//                            ^ punctuation.definition.string.begin.mql.mql4
+//                                ^ punctuation.definition.string.end.mql.mql4
 //                                 ^ keyword.operator.other.terminator.mql.mql4
     input Custom identifier = "...";
 //  ^^^^^ keyword.input.mql.mql4
@@ -30,6 +30,6 @@
 //                          ^ keyword.operator.other.assignment.mql.mql4
 //                            ^^^^^ string.quoted.double.mql.mql4
 //                             ^^^ string.content.mql.mql4
-//                            ^ punctuation.delimiter.string.begin.mql.mql4
-//                                ^ punctuation.delimiter.string.end.mql.mql4
+//                            ^ punctuation.definition.string.begin.mql.mql4
+//                                ^ punctuation.definition.string.end.mql.mql4
 //                                 ^ keyword.operator.other.terminator.mql.mql4

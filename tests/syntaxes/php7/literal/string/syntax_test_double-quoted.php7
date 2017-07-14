@@ -15,14 +15,14 @@
 <?php
     "Something is 'here'..."
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.php.php7
-//  ^ punctuation.delimiter.string.begin.php.php7
-//                         ^ punctuation.delimiter.string.end.php.php7
+//  ^ punctuation.definition.string.begin.php.php7
+//                         ^ punctuation.definition.string.end.php.php7
     "Something is \"here\"..."
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.php.php7
-//  ^ punctuation.delimiter.string.begin.php.php7
+//  ^ punctuation.definition.string.begin.php.php7
 //                ^^ constant.character.escape.a.php.php7
 //                      ^^ constant.character.escape.b.php.php7
-//                           ^ punctuation.delimiter.string.end.php.php7
+//                           ^ punctuation.definition.string.end.php.php7
     "Escaped: \\\"\n\r\t\v\e\f\$\101\x41\u{0065}"
 //            ^^ constant.character.escape.a.php.php7
 //              ^^ constant.character.escape.b.php.php7
@@ -38,43 +38,43 @@
 //                                      ^^^^^^^^ constant.character.escape.b.php.php7
     "Variables: $var1$var2"
 //              ^^^^^ variable.a.php.php7
-//              ^ punctuation.delimiter.variable.begin.php.php7
+//              ^ punctuation.definition.variable.begin.php.php7
 //               ^^^^ entity.name.variable.php.php7
 //                   ^^^^^ variable.b.php.php7
-//                   ^ punctuation.delimiter.variable.begin.php.php7
+//                   ^ punctuation.definition.variable.begin.php.php7
 //                    ^^^^ entity.name.variable.php.php7
     "Variables: $var1[123]$var2[abc]"
 //              ^^^^^^^^^^ variable.a.php.php7
-//              ^ punctuation.delimiter.variable.begin.php.php7
+//              ^ punctuation.definition.variable.begin.php.php7
 //               ^^^^ entity.name.variable.php.php7
 //                   ^ keyword.operator.other.subscript.begin.php.php7
 //                    ^^^ array.key.php.php7
 //                       ^ keyword.operator.other.subscript.end.php.php7
 //                        ^^^^^^^^^^ variable.b.php.php7
-//                        ^ punctuation.delimiter.variable.begin.php.php7
+//                        ^ punctuation.definition.variable.begin.php.php7
 //                         ^^^^ entity.name.variable.php.php7
 //                             ^ keyword.operator.other.subscript.begin.php.php7
 //                              ^^^ array.key.php.php7
 //                                 ^ keyword.operator.other.subscript.end.php.php7
     "Variables: $var1\n$var2\n"
 //              ^^^^^ variable.a.php.php7
-//              ^ punctuation.delimiter.variable.begin.php.php7
+//              ^ punctuation.definition.variable.begin.php.php7
 //               ^^^^ entity.name.variable.php.php7
 //                   ^^ constant.character.escape.a.php.php7
 //                     ^^^^^ variable.b.php.php7
-//                     ^ punctuation.delimiter.variable.begin.php.php7
+//                     ^ punctuation.definition.variable.begin.php.php7
 //                      ^^^^ entity.name.variable.php.php7
 //                          ^^ constant.character.escape.b.php.php7
     "Variables: $var1[123]\n$var2[abc]\n"
 //              ^^^^^^^^^^ variable.a.php.php7
-//              ^ punctuation.delimiter.variable.begin.php.php7
+//              ^ punctuation.definition.variable.begin.php.php7
 //               ^^^^ entity.name.variable.php.php7
 //                   ^ keyword.operator.other.subscript.begin.php.php7
 //                    ^^^ array.key.php.php7
 //                       ^ keyword.operator.other.subscript.end.php.php7
 //                        ^^ constant.character.escape.a.php.php7
 //                          ^^^^^^^^^^ variable.b.php.php7
-//                          ^ punctuation.delimiter.variable.begin.php.php7
+//                          ^ punctuation.definition.variable.begin.php.php7
 //                           ^^^^ entity.name.variable.php.php7
 //                               ^ keyword.operator.other.subscript.begin.php.php7
 //                                ^^^ array.key.php.php7

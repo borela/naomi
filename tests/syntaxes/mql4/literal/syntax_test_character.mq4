@@ -17,30 +17,30 @@
     '\\'
 //  ^^^^ string.quoted.single.mql.mql4
 //   ^^ constant.character.escape.a.mql.mql4
-//  ^ punctuation.delimiter.string.begin.mql.mql4
-//     ^ punctuation.delimiter.string.end.mql.mql4
+//  ^ punctuation.definition.string.begin.mql.mql4
+//     ^ punctuation.definition.string.end.mql.mql4
     '\n'
 //  ^^^^ string.quoted.single.mql.mql4
 //   ^^ constant.character.escape.a.mql.mql4
-//  ^ punctuation.delimiter.string.begin.mql.mql4
-//     ^ punctuation.delimiter.string.end.mql.mql4
+//  ^ punctuation.definition.string.begin.mql.mql4
+//     ^ punctuation.definition.string.end.mql.mql4
     '\t'
 //  ^^^^ string.quoted.single.mql.mql4
 //   ^^ constant.character.escape.a.mql.mql4
-//  ^ punctuation.delimiter.string.begin.mql.mql4
-//     ^ punctuation.delimiter.string.end.mql.mql4
+//  ^ punctuation.definition.string.begin.mql.mql4
+//     ^ punctuation.definition.string.end.mql.mql4
     '\r'
 //  ^^^^ string.quoted.single.mql.mql4
 //   ^^ constant.character.escape.a.mql.mql4
-//  ^ punctuation.delimiter.string.begin.mql.mql4
-//     ^ punctuation.delimiter.string.end.mql.mql4
+//  ^ punctuation.definition.string.begin.mql.mql4
+//     ^ punctuation.definition.string.end.mql.mql4
     '\x0065'
 //  ^^^^^^^^ string.quoted.single.mql.mql4
 //   ^^^^^^ constant.character.escape.a.mql.mql4
-//  ^ punctuation.delimiter.string.begin.mql.mql4
-//         ^ punctuation.delimiter.string.end.mql.mql4
+//  ^ punctuation.definition.string.begin.mql.mql4
+//         ^ punctuation.definition.string.end.mql.mql4
     '\d65535'
 //  ^^^^^^^^^ string.quoted.single.mql.mql4
 //   ^^^^^^^ constant.character.escape.a.mql.mql4
-//  ^ punctuation.delimiter.string.begin.mql.mql4
-//          ^ punctuation.delimiter.string.end.mql.mql4
+//  ^ punctuation.definition.string.begin.mql.mql4
+//          ^ punctuation.definition.string.end.mql.mql4

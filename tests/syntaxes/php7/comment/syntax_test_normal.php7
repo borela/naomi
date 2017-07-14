@@ -15,14 +15,14 @@
 <?php
     // Test...
 //  ^^^^^^^^^^ comment.line.php.php7
-//  ^^ punctuation.delimiter.comment.begin.php.php7
+//  ^^ punctuation.definition.comment.begin.php.php7
 
     # Test...
 //  ^^^^^^^^^ comment.line.php.php7
-//  ^ punctuation.delimiter.comment.begin.php.php7
+//  ^ punctuation.definition.comment.begin.php.php7
 
     /* Test... */
 //  ^^^^^^^^^^^^^ comment.block.php.php7
-//  ^^ punctuation.delimiter.comment.begin.php.php7
-//             ^^ punctuation.delimiter.comment.end.php.php7
+//  ^^ punctuation.definition.comment.begin.php.php7
+//             ^^ punctuation.definition.comment.end.php.php7
 ?>

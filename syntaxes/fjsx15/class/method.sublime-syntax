@@ -185,8 +185,12 @@ contexts:
         1: >-
           support.js.fjsx15
           entity.name.function.js.fjsx15
+      set: [
+        support-body,
+        support-parameters
+      ]
     # React JS’s support methods.
-    - include: Packages/Naomi/syntaxes/fjsx15/class/reactjs.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/method/reactjs.sublime-syntax
     # Identifier.
     - match: |
         (?xi)
@@ -224,8 +228,14 @@ contexts:
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
 
+  support-parameters:
+    - include: Packages/Naomi/syntaxes/fjsx15/function/support-parameters.sublime-syntax
+
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
+
+  support-body:
+    - include: Packages/Naomi/syntaxes/fjsx15/function/support-body.sublime-syntax
 
   computed-identifier:
     - match: \s*(])

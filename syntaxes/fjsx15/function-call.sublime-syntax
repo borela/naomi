@@ -73,6 +73,8 @@ contexts:
           support.js.fjsx15
           entity.name.function.js.fjsx15
       set: support-arguments
+    # Jest.
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/jest-function.sublime-syntax
     # React JS’s support functions.
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/reactjs-function.sublime-syntax
     # Identifier.

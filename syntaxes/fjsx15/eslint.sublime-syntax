@@ -26,7 +26,7 @@ contexts:
       captures:
         1: >-
           eslint.js.fjsx15
-          punctuation.delimiter.eslint.begin.js.fjsx15
+          punctuation.definition.eslint.begin.js.fjsx15
       set: block
 
   block:
@@ -35,7 +35,7 @@ contexts:
       captures:
         1: >-
           eslint.js.fjsx15
-          punctuation.delimiter.eslint.end.js.fjsx15
+          punctuation.definition.eslint.end.js.fjsx15
       set:
         # Used to fix the block comment indentation settings.
         # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
@@ -63,7 +63,7 @@ contexts:
       captures:
         1: >-
           eslint.js.fjsx15
-          punctuation.delimiter.eslint.js.fjsx15
+          punctuation.definition.eslint.js.fjsx15
     # Rule.
     - match: |
         (?xi)\s*

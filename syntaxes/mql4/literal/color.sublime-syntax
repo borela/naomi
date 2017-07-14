@@ -27,13 +27,13 @@ contexts:
       captures:
         1: >-
           constant.color.mql.mql4
-          punctuation.delimiter.color.begin.mql.mql4
+          punctuation.definition.color.begin.mql.mql4
       set: [
         end,
         blue-value,
-        delimiter,
+        definition,
         green-value,
-        delimiter,
+        definition,
         red-value
       ]
 
@@ -41,14 +41,14 @@ contexts:
     - match: \'
       scope: >-
         constant.color.mql.mql4
-        punctuation.delimiter.color.end.mql.mql4
+        punctuation.definition.color.end.mql.mql4
       pop: true
 
-  delimiter:
+  definition:
     - match: \,
       scope: >-
         constant.color.mql.mql4
-        punctuation.delimiter.color.mql.mql4
+        punctuation.definition.color.mql.mql4
       pop: true
 
   red-value:

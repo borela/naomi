@@ -99,7 +99,7 @@ contexts:
           storage.type.js.fjsx15
           keyword.declaration.variable.js.fjsx15
         2: entity.name.function.js.fjsx15
-        3: punctuation.delimiter.function.assignment.js.fjsx1
+        3: punctuation.definition.function.assignment.js.fjsx1
         4: >-
           storage.modifier.js.fjsx15
           keyword.other.async.js.fjsx15
@@ -124,7 +124,7 @@ contexts:
           storage.type.js.fjsx15
           keyword.declaration.variable.js.fjsx15
         2: entity.name.function.js.fjsx15
-        3: punctuation.delimiter.function.assignment.js.fjsx1
+        3: punctuation.definition.function.assignment.js.fjsx1
         4: >-
           storage.modifier.js.fjsx15
           keyword.other.async.js.fjsx15

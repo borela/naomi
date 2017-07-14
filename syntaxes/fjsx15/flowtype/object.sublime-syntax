@@ -33,17 +33,17 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.object.begin.flowtype
+          punctuation.definition.object.begin.flowtype
         2: >-
           flowtype
-          punctuation.delimiter.object.begin.flowtype
+          punctuation.definition.object.begin.flowtype
       set: items
     # Normal.
     - match: \s*({)
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.object.begin.flowtype
+          punctuation.definition.object.begin.flowtype
       set: items
 
   items:
@@ -51,23 +51,23 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.object.flowtype
+          punctuation.definition.object.flowtype
     # Exact.
     - match: \s*(\|)\s*(})
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.object.end.flowtype
+          punctuation.definition.object.end.flowtype
         2: >-
           flowtype
-          punctuation.delimiter.object.end.flowtype
+          punctuation.definition.object.end.flowtype
       pop: true
     # Normal.
     - match: \s*(})
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.object.end.flowtype
+          punctuation.definition.object.end.flowtype
       pop: true
     - match: ""
       push:

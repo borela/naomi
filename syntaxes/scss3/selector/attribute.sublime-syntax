@@ -26,13 +26,13 @@ contexts:
   main:
     - match: \s*(\[)
       captures:
-        1: punctuation.delimiter.selector.begin.scss.scss3
+        1: punctuation.definition.selector.begin.scss.scss3
       set: attributes
 
   attributes:
     - match: \s*(\])
       captures:
-        1: punctuation.delimiter.selector.end.scss.scss3
+        1: punctuation.definition.selector.end.scss.scss3
       set: trap
     - match: ""
       push:

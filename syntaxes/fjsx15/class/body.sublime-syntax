@@ -22,14 +22,14 @@ contexts:
     - include: comment
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.class.body.begin.js.fjsx15
+        1: punctuation.definition.class.body.begin.js.fjsx15
       set: body
 
   body:
     - include: comment
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.class.body.end.js.fjsx15
+        1: punctuation.definition.class.body.end.js.fjsx15
       pop: true
     - match: ""
       push:

@@ -15,7 +15,7 @@
     foreground: rgba($brown-200, .7);
   }
 
-  .punctuation.delimiter.namespace {
+  .punctuation.definition.namespace {
     foreground: rgba($brown-200, .4);
   }
 
@@ -26,7 +26,7 @@
     }
   }
 
-  .punctuation.delimiter.import {
+  .punctuation.definition.import {
     foreground: rgba($gray-0, .7);
   }
 }

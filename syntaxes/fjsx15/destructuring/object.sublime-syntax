@@ -28,7 +28,7 @@ contexts:
       captures:
         1: >-
           destructuring.object.js.fjsx15
-          punctuation.delimiter.object.begin.js.fjsx15
+          punctuation.definition.object.begin.js.fjsx15
       set: items
 
   items:
@@ -36,12 +36,12 @@ contexts:
       captures:
         1: >-
           destructuring.object.js.fjsx15
-          punctuation.delimiter.object.js.fjsx15
+          punctuation.definition.object.js.fjsx15
     - match: \s*(})
       captures:
         1: >-
           destructuring.object.js.fjsx15
-          punctuation.delimiter.object.end.js.fjsx15
+          punctuation.definition.object.end.js.fjsx15
       pop: true
     - match: ""
       push:

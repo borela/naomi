@@ -21,17 +21,17 @@ contexts:
   main:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.function.arguments.begin.js.fjsx15
+        1: punctuation.definition.function.arguments.begin.js.fjsx15
       set: arguments
 
   arguments:
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.function.arguments.end.js.fjsx15
+        1: punctuation.definition.function.arguments.end.js.fjsx15
       pop: true
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.function.arguments.js.fjsx15
+        1: punctuation.definition.function.arguments.js.fjsx15
     - match: ""
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

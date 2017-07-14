@@ -13,10 +13,10 @@
 .destructuring {
   .keyword,
   .keyword.operator.other.association,
-  .punctuation.delimiter,
-  .punctuation.delimiter.array,
-  .punctuation.delimiter.object,
-  .punctuation.delimiter.property {
+  .punctuation.definition,
+  .punctuation.definition.array,
+  .punctuation.definition.object,
+  .punctuation.definition.property {
     foreground: $gray-0;
   }
 

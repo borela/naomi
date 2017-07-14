@@ -12,7 +12,7 @@
 
 .comment {
   .keyword,
-  .punctuation.delimiter.keyword {
+  .punctuation.definition.keyword {
     foreground: rgba($pink-a100, .7);
   }
 }

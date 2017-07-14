@@ -21,13 +21,13 @@ contexts:
   main:
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.function.body.begin.js.fjsx15
+        1: punctuation.definition.function.body.begin.js.fjsx15
       set: body-content
 
   body-content:
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.function.body.end.js.fjsx15
+        1: punctuation.definition.function.body.end.js.fjsx15
       pop: true
     - match: ""
       push:

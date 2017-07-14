@@ -10,60 +10,62 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.punctuation.delimiter {
-  &.array.flowtype,
-  &.array.begin.flowtype,
-  &.array.end.flowtype,
-  &.cast.begin.flowtype,
-  &.cast.end.flowtype,
-  &.function.parameters.begin.flowtype,
-  &.function.parameters.end.flowtype,
-  &.function.parameters.flowtype,
-  &.function.result.flowtype,
-  &.module.body.begin.flowtype,
-  &.module.body.end.flowtype,
-  &.nullable.begin.flowtype,
-  &.nullable.end.flowtype,
-  &.object.begin.flowtype,
-  &.object.end.flowtype,
-  &.object.flowtype,
-  &.template.arguments.begin.flowtype,
-  &.template.arguments.flowtype,
-  &.template.parameters.begin.flowtype,
-  &.template.parameters.end.flowtype,
-  &.template.parameters.flowtype,
-  &.template.arguments.end.flowtype {
-    foreground: $brown-200;
+.flowtype {
+  .punctuation.definition {
+    &.array,
+    &.array.begin,
+    &.array.end,
+    &.cast.begin,
+    &.cast.end,
+    &.function.parameters.begin,
+    &.function.parameters.end,
+    &.function.parameters,
+    &.function.result,
+    &.module.body.begin,
+    &.module.body.end,
+    &.nullable.begin,
+    &.nullable.end,
+    &.object.begin,
+    &.object.end,
+    &.object,
+    &.template.arguments.begin,
+    &.template.arguments,
+    &.template.parameters.begin,
+    &.template.parameters.end,
+    &.template.parameters,
+    &.template.arguments.end {
+      foreground: $brown-200;
+    }
   }
-}
 
-.comment.block.flowtype {
-  .punctuation.delimiter {
-    foreground: rgba($brown-200, .7);
-
-    &.array.flowtype,
-    &.array.begin.flowtype,
-    &.array.end.flowtype,
-    &.cast.begin.flowtype,
-    &.cast.end.flowtype,
-    &.function.parameters.begin.flowtype,
-    &.function.parameters.end.flowtype,
-    &.function.parameters.flowtype,
-    &.function.result.flowtype,
-    &.module.body.begin.flowtype,
-    &.module.body.end.flowtype,
-    &.nullable.begin.flowtype,
-    &.nullable.end.flowtype,
-    &.object.begin.flowtype,
-    &.object.end.flowtype,
-    &.object.flowtype,
-    &.template.arguments.begin.flowtype,
-    &.template.arguments.flowtype,
-    &.template.parameters.begin.flowtype,
-    &.template.parameters.end.flowtype,
-    &.template.parameters.flowtype,
-    &.template.arguments.end.flowtype {
+  .comment.block {
+    .punctuation.definition {
       foreground: rgba($brown-200, .7);
+
+      &.array,
+      &.array.begin,
+      &.array.end,
+      &.cast.begin,
+      &.cast.end,
+      &.function.parameters.begin,
+      &.function.parameters.end,
+      &.function.parameters,
+      &.function.result,
+      &.module.body.begin,
+      &.module.body.end,
+      &.nullable.begin,
+      &.nullable.end,
+      &.object.begin,
+      &.object.end,
+      &.object,
+      &.template.arguments.begin,
+      &.template.arguments,
+      &.template.parameters.begin,
+      &.template.parameters.end,
+      &.template.parameters,
+      &.template.arguments.end {
+        foreground: rgba($brown-200, .7);
+      }
     }
   }
 }

@@ -33,7 +33,7 @@ contexts:
         )\b
       captures:
         0: tag.embedded.html.html5
-        1: punctuation.delimiter.tag.begin.html.html5
+        1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
       set: attributes
 
@@ -53,7 +53,7 @@ contexts:
         )\b
       captures:
         0: tag.embedded.html.html5
-        1: punctuation.delimiter.tag.begin.html.html5
+        1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
       set: [
         content,
@@ -65,7 +65,7 @@ contexts:
       captures:
         1: >-
           tag.embedded.html.html5
-          punctuation.delimiter.tag.end.html.html5
+          punctuation.definition.tag.end.html.html5
       pop: true
     - include: Packages/Naomi/syntaxes/html5/element/attributes.sublime-syntax
 
@@ -75,8 +75,8 @@ contexts:
         (</)(\2)(>)
       captures:
         0: tag.embedded.html.html5
-        1: punctuation.delimiter.tag.begin.html.html5
+        1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
-        3: punctuation.delimiter.tag.end.html.html5
+        3: punctuation.definition.tag.end.html.html5
       pop: true
     - include: Packages/Naomi/syntaxes/html5/element/content.sublime-syntax

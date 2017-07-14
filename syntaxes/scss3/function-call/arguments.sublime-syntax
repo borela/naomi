@@ -26,17 +26,17 @@ contexts:
   main:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.function.arguments.begin.scss.scss3
+        1: punctuation.definition.function.arguments.begin.scss.scss3
       set: arguments
 
   arguments:
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.function.arguments.end.scss.scss3
+        1: punctuation.definition.function.arguments.end.scss.scss3
       pop: true
     - match: \s*(\,)
       captures:
-        1: punctuation.delimiter.function.arguments.scss.scss3
+        1: punctuation.definition.function.arguments.scss.scss3
     - match: ""
       push:
         - match: |

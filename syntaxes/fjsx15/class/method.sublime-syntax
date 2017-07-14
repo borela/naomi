@@ -166,7 +166,7 @@ contexts:
   declaration:
     - match: \s*(=)
       captures:
-        1: punctuation.delimiter.function.assignment.js.fjsx15
+        1: punctuation.definition.function.assignment.js.fjsx15
       pop: true
     # Body.
     - match: (?=\s*\{)
@@ -206,7 +206,7 @@ contexts:
         1: >-
           storage.modifier.js.fjsx15
           keyword.operator.other.generator.js.fjsx15
-        2: punctuation.delimiter.function.identifier.begin.js.fjsx15
+        2: punctuation.definition.function.identifier.begin.js.fjsx15
       push: computed-identifier
     # String identifiers
     - match: (?=(?>'|"|`))
@@ -230,7 +230,7 @@ contexts:
   computed-identifier:
     - match: \s*(])
       captures:
-        1: punctuation.delimiter.function.identifier.end.js.fjsx15
+        1: punctuation.definition.function.identifier.end.js.fjsx15
       pop: true
     - match: ""
       push:

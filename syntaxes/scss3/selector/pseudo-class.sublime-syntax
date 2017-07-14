@@ -34,7 +34,7 @@ contexts:
         (:-)({{commonIdentifier}})
       captures:
         0: extension.scss.scss3
-        1: punctuation.delimiter.selector.pseudo-class.scss.scss3
+        1: punctuation.definition.selector.pseudo-class.scss.scss3
         2: entity.name.selector.pseudo-class.scss.scss3
       set: trap
 
@@ -88,7 +88,7 @@ contexts:
           )
         )\b
       captures:
-        1: punctuation.delimiter.selector.pseudo-class.scss.scss3
+        1: punctuation.definition.selector.pseudo-class.scss.scss3
         2: entity.name.selector.pseudo-class.scss.scss3
       set: optional-arguments
 

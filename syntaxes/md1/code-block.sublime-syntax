@@ -24,11 +24,11 @@ contexts:
         (?xi)^\s*
         (```JSON)
       captures:
-        1: punctuation.delimiter.code-block.begin.md.md1
+        1: punctuation.definition.code-block.begin.md.md1
       push:
         - match: ^\s*(```)
           captures:
-            1: punctuation.delimiter.code-block.end.md.md1
+            1: punctuation.definition.code-block.end.md.md1
           pop: true
         - match: ""
           push:
@@ -52,11 +52,11 @@ contexts:
           )
         )
       captures:
-        1: punctuation.delimiter.code-block.begin.md.md1
+        1: punctuation.definition.code-block.begin.md.md1
       push:
         - match: ^\s*(```)
           captures:
-            1: punctuation.delimiter.code-block.end.md.md1
+            1: punctuation.definition.code-block.end.md.md1
           pop: true
         - match: ""
           push:

@@ -12,14 +12,14 @@
 
 .comment {
   .entity.name.type,
-  .punctuation.delimiter.type {
+  .punctuation.definition.type {
     foreground: rgba($light-green-300, .7);
   }
 }
 
 .comment .support {
   .entity.name.type,
-  .punctuation.delimiter.type {
+  .punctuation.definition.type {
     foreground: rgba($deep-orange-a100, .7);
   }
 }

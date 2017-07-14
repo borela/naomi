@@ -1176,7 +1176,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.delimiter.tag</string>
+			<string>.punctuation.definition.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1185,7 +1185,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.support .entity.name.class, .support .entity.name.interface, .support .entity.name.function, .support .entity.name.variable, .support .entity.name.constant, .support .entity.name.type, .support .punctuation.delimiter.class, .support .punctuation.delimiter.interface, .support .punctuation.delimiter.function, .support .punctuation.delimiter.variable, .support .punctuation.delimiter.constant, .support .punctuation.delimiter.type</string>
+			<string>.support .entity.name.class, .support .entity.name.interface, .support .entity.name.function, .support .entity.name.variable, .support .entity.name.constant, .support .entity.name.type, .support .punctuation.definition.class, .support .punctuation.definition.interface, .support .punctuation.definition.function, .support .punctuation.definition.variable, .support .punctuation.definition.constant, .support .punctuation.definition.type</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

@@ -26,12 +26,12 @@ contexts:
   main:
     - match: (?xi)\s*(<<<'({{commonIdentifier}})')
       captures:
-        1: punctuation.delimiter.string.begin.php.php7
+        1: punctuation.definition.string.begin.php.php7
       set: nowdoc-string
 
   nowdoc-string:
     - meta_scope: string.unquoted.nowdoc.php.php7
     - match: ^(\2;)
       captures:
-        1: punctuation.delimiter.string.end.php.php7
+        1: punctuation.definition.string.end.php.php7
       pop: true

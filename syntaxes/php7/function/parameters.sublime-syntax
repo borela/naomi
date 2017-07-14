@@ -26,7 +26,7 @@ contexts:
   main:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.function.parameters.begin.php.php7
+        1: punctuation.definition.function.parameters.begin.php.php7
       set: parameters
 
   comment:
@@ -36,19 +36,19 @@ contexts:
     - include: comment
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.function.parameters.end.php.php7
+        1: punctuation.definition.function.parameters.end.php.php7
       pop: true
     # Starts with a variable.
     - match: (?=\s*\$)
       push: [
-        param-delimiter,
+        param-definition,
         param-optional-default-value,
         param-variable
       ]
     # Starts with a variadic or reference operator.
     - match: (?=\s*(?>\.\.\.|&))
       push: [
-        param-delimiter,
+        param-definition,
         param-optional-default-value,
         param-variable,
         variadic-or-reference-operator
@@ -56,7 +56,7 @@ contexts:
     # Starts with a type hint.
     - match: (?=\s*\S)
       push: [
-        param-delimiter,
+        param-definition,
         param-optional-default-value,
         param-variable,
         variadic-or-reference-operator,
@@ -118,13 +118,13 @@ contexts:
         default-value-type
       ]
 
-  param-delimiter:
+  param-definition:
     - include: comment
     - match: (?=\s*\))
       pop: true
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.function.parameters.php.php7
+        1: punctuation.definition.function.parameters.php.php7
       pop: true
 
   default-value-type:

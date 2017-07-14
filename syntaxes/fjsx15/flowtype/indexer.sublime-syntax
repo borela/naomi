@@ -43,7 +43,7 @@ contexts:
           keyword.operator.other.contravariant.flowtype
         3: >-
           flowtype
-          punctuation.delimiter.object.indexer.flowtype
+          punctuation.definition.object.indexer.flowtype
       set: [
         associated-type,
         indexer-end,
@@ -55,7 +55,7 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.object.indexer.flowtype
+          punctuation.definition.object.indexer.flowtype
       pop: true
 
   property-or-type:

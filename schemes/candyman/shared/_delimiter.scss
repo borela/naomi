@@ -10,14 +10,14 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.punctuation.delimiter {
+.punctuation.definition {
   foreground: $amber-100;
 }
 
-.punctuation.delimiter.expression.group.b {
+.punctuation.definition.expression.group.b {
   foreground: $brown-200;
 }
 
-.punctuation.delimiter.control {
+.punctuation.definition.control {
   foreground: $pink-a100;
 }

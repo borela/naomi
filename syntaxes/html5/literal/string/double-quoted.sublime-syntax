@@ -21,12 +21,12 @@ contexts:
   main:
     - match: \s*(\")
       captures:
-        1: punctuation.delimiter.string.begin.html.html5
+        1: punctuation.definition.string.begin.html.html5
       set: string
 
   string:
     - meta_scope: string.quoted.double.html.html5
     - match: \s*(\")
       captures:
-        1: punctuation.delimiter.string.end.html.html5
+        1: punctuation.definition.string.end.html.html5
       pop: true

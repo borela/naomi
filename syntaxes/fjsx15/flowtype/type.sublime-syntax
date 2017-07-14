@@ -62,7 +62,7 @@ contexts:
         (?xi)\s*
         {{expressionGroupBegin}}
       captures:
-        1: punctuation.delimiter.expression.group.a.begin.js.fjsx15
+        1: punctuation.definition.expression.group.a.begin.js.fjsx15
       set: open-b-close-a
     # Expression contents.
     - match: (?=\s*\S)
@@ -78,12 +78,12 @@ contexts:
         (?xi)\s*
         {{expressionGroupBegin}}
       captures:
-        1: punctuation.delimiter.expression.group.a.begin.js.fjsx15
+        1: punctuation.definition.expression.group.a.begin.js.fjsx15
       push: open-b-close-a
     # Close current expression group.
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.expression.group.b.end.js.fjsx15
+        1: punctuation.definition.expression.group.b.end.js.fjsx15
       pop: true
     # Expression contents.
     - match: (?=\s*\S)
@@ -99,12 +99,12 @@ contexts:
         (?xi)\s*
         {{expressionGroupBegin}}
       captures:
-        1: punctuation.delimiter.expression.group.b.begin.js.fjsx15
+        1: punctuation.definition.expression.group.b.begin.js.fjsx15
       push: open-a-close-b
     # Close current expression group.
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.expression.group.a.end.js.fjsx15
+        1: punctuation.definition.expression.group.a.end.js.fjsx15
       pop: true
     # Expression contents.
     - match: (?=\s*\S)
@@ -133,7 +133,7 @@ contexts:
           keyword.operator.other.nullable.flowtype
         2: >-
           flowtype
-          punctuation.delimiter.nullable.begin.flowtype
+          punctuation.definition.nullable.begin.flowtype
       set: [
         enveloped-nullable-end,
         main
@@ -225,7 +225,7 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.nullable.end.flowtype
+          punctuation.definition.nullable.end.flowtype
       pop: true
 
   comment:

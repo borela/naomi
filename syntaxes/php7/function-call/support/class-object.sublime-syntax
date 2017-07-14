@@ -45,7 +45,7 @@ contexts:
         )
         (?=\s*\()
       captures:
-        1: punctuation.delimiter.support.php.php7
+        1: punctuation.definition.support.php.php7
         2: >-
           support.php.php7
           entity.name.function.php.php7

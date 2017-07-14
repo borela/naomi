@@ -23,13 +23,13 @@ contexts:
       captures:
         1: >-
           comment.line.js.fjsx15
-          punctuation.delimiter.comment.begin.js.fjsx15
+          punctuation.definition.comment.begin.js.fjsx15
       set: line
     - match: \s*(/\*)
       captures:
         1: >-
           comment.line.js.fjsx15
-          punctuation.delimiter.comment.begin.js.fjsx15
+          punctuation.definition.comment.begin.js.fjsx15
       set: block
 
   line:
@@ -47,7 +47,7 @@ contexts:
       captures:
         1: >-
           comment.block.js.fjsx15
-          punctuation.delimiter.comment.end.js.fjsx15
+          punctuation.definition.comment.end.js.fjsx15
       set:
         # Used to fix the block comment indentation settings.
         # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6

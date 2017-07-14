@@ -24,7 +24,6 @@ contexts:
         1: >-
           meta.tag.xml.xml1
           section.cdata.xml.xml1
-          punctuation.delimiter.section.begin.xml.xml1
           punctuation.definition.section.begin.xml.xml1
         2: >-
           meta.tag.xml.xml1
@@ -33,7 +32,6 @@ contexts:
         3: >-
           meta.tag.xml.xml1
           section.cdata.xml.xml1
-          punctuation.delimiter.section.begin.xml.xml1
           punctuation.definition.section.begin.xml.xml1
       set: content
 
@@ -43,6 +41,5 @@ contexts:
         1: >-
           meta.tag.xml.xml1
           section.cdata.xml.xml1
-          punctuation.delimiter.section.end.xml.xml1
           punctuation.definition.section.end.xml.xml1
       pop: true

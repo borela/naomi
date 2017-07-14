@@ -40,7 +40,7 @@ contexts:
     - include: terminator
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.import.php.php7
+        1: punctuation.definition.import.php.php7
     - match: (?=\s*\S)
       push: [
         alias,
@@ -76,7 +76,7 @@ contexts:
         ((?>\\|\b))
         ({{commonIdentifier}})\b
       captures:
-        1: punctuation.delimiter.ambiguous.php.php7
+        1: punctuation.definition.ambiguous.php.php7
         2: entity.name.ambiguous.php.php7
       pop: true
 

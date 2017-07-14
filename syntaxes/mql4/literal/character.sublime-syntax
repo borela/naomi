@@ -46,12 +46,12 @@ contexts:
       captures:
         1: >-
           string.quoted.single.mql.mql4
-          punctuation.delimiter.string.begin.mql.mql4
+          punctuation.definition.string.begin.mql.mql4
         2: >-
           string.quoted.single.mql.mql4
           constant.character.escape.a.mql.mql4
         3: string.quoted.single.mql.mql4
         4: >-
           string.quoted.single.mql.mql4
-          punctuation.delimiter.string.end.mql.mql4
+          punctuation.definition.string.end.mql.mql4
       pop: true

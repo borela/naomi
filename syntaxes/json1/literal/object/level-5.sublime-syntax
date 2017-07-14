@@ -21,7 +21,7 @@ contexts:
   main:
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.object.begin.json.json1
+        1: punctuation.definition.object.begin.json.json1
       set: items
 
   items:
@@ -31,10 +31,10 @@ contexts:
     - include: comment
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.object.json.json1
+        1: punctuation.definition.object.json.json1
     - match: \s*(\})
       captures:
-        1: punctuation.delimiter.object.end.json.json1
+        1: punctuation.definition.object.end.json.json1
       pop: true
     # Value.
     - match: \s*(:)

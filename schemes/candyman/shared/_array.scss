@@ -11,10 +11,10 @@
 // the License.
 
 .entity.name.type.array,
-.punctuation.delimiter.array {
+.punctuation.definition.array {
   foreground: $deep-orange-a100;
 }
 
-.punctuation.delimiter.array.access {
+.punctuation.definition.array.access {
   foreground: $orange-a100;
 }

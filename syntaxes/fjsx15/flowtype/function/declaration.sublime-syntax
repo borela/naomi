@@ -40,7 +40,7 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.function.result.flowtype
+          punctuation.definition.function.result.flowtype
       set: return-type
 
   return-type:

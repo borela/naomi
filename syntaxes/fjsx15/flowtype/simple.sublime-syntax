@@ -72,10 +72,10 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.array.begin.flowtype
+          punctuation.definition.array.begin.flowtype
         2: >-
           flowtype
-          punctuation.delimiter.array.end.flowtype
+          punctuation.definition.array.end.flowtype
       pop: true
 
   template:

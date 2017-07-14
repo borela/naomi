@@ -68,7 +68,7 @@ contexts:
     # Array indicator.
     - match: \s*(\[)
       captures:
-        1: punctuation.delimiter.array.begin.mql.mql4
+        1: punctuation.definition.array.begin.mql.mql4
       push: array
     # Default value.
     - match: \s*(=)
@@ -89,7 +89,7 @@ contexts:
   array:
     - match: \s*(])
       captures:
-        1: punctuation.delimiter.array.end.mql.mql4
+        1: punctuation.definition.array.end.mql.mql4
       pop: true
     - match: ""
       push:

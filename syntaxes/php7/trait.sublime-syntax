@@ -40,7 +40,7 @@ contexts:
     - match: \s*(\{)
       captures:
         1: >-
-          punctuation.delimiter.trait.body.begin.php.php7
+          punctuation.definition.trait.body.begin.php.php7
       set: body
     # Trait’s name.
     - match: (?xi)\s*({{commonIdentifier}})
@@ -50,7 +50,7 @@ contexts:
   body:
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.trait.body.end.php.php7
+        1: punctuation.definition.trait.body.end.php.php7
       pop: true
     - include: body-content
 

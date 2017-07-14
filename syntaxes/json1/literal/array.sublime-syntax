@@ -20,16 +20,16 @@ scope: ...
 contexts:
   main:
     - match: \s*(\[)
-      scope: punctuation.delimiter.array.begin.json.json1
+      scope: punctuation.definition.array.begin.json.json1
       set: items
 
   items:
     - match: \s*(\,)
       captures:
-        1: punctuation.delimiter.array.json.json1
+        1: punctuation.definition.array.json.json1
     - match: \s*(\])
       captures:
-        1: punctuation.delimiter.array.end.json.json1
+        1: punctuation.definition.array.end.json.json1
       pop: true
     - match: ""
       push:

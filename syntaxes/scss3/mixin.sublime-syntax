@@ -51,12 +51,12 @@ contexts:
 
   body:
     - match: \s*({)
-      scope: punctuation.delimiter.mixin.body.begin.scss.scss3
+      scope: punctuation.definition.mixin.body.begin.scss.scss3
       set: body-content
 
   body-content:
     - match: \s*(})
-      scope: punctuation.delimiter.mixin.body.end.scss.scss3
+      scope: punctuation.definition.mixin.body.end.scss.scss3
     - match: ""
       push:
         - match: (?=\s*})

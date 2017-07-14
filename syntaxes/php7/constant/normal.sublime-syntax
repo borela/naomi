@@ -30,7 +30,7 @@ contexts:
         ((?>\\|\b))
         ({{constantIdentifier}})\b
       captures:
-        1: punctuation.delimiter.constant.php.php7
+        1: punctuation.definition.constant.php.php7
         2: entity.name.constant.php.php7
       pop: true
     # Single character.
@@ -39,6 +39,6 @@ contexts:
         ((?>\\|\b))
         ([[:upper:]])\b
       captures:
-        1: punctuation.delimiter.constant.php.php7
+        1: punctuation.definition.constant.php.php7
         2: entity.name.constant.php.php7
       pop: true

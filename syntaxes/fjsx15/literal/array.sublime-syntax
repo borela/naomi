@@ -27,13 +27,13 @@ contexts:
           \s*=[^=]
         )
       captures:
-        1: punctuation.delimiter.array.begin.js.fjsx15
+        1: punctuation.definition.array.begin.js.fjsx15
       set: items
 
   items:
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.array.js.fjsx15
+        1: punctuation.definition.array.js.fjsx15
     - include: end
     - match: ""
       push:
@@ -44,5 +44,5 @@ contexts:
   end:
     - match: \s*(])
       captures:
-        1: punctuation.delimiter.array.end.js.fjsx15
+        1: punctuation.definition.array.end.js.fjsx15
       pop: true

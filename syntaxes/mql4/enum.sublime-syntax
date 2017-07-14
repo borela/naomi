@@ -43,7 +43,7 @@ contexts:
     - include: comment
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.enum.body.begin.mql.mql4
+        1: punctuation.definition.enum.body.begin.mql.mql4
       set: body-content
 
   body-content:
@@ -51,12 +51,12 @@ contexts:
     # End of enum.
     - match: \s*(};?)
       captures:
-        1: punctuation.delimiter.enum.body.end.mql.mql4
+        1: punctuation.definition.enum.body.end.mql.mql4
       pop: true
-    # Delimiter.
+    # definition.
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.enum.items.mql.mql4
+        1: punctuation.definition.enum.items.mql.mql4
     # Optional value.
     - match: \s*(=)
       captures:

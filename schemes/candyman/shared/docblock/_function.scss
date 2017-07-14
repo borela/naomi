@@ -12,14 +12,14 @@
 
 .comment {
   .entity.name.function,
-  .punctuation.delimiter.function {
+  .punctuation.definition.function {
     foreground: rgba($light-blue-300, .7);
   }
 }
 
 .comment .support {
   .entity.name.function,
-  .punctuation.delimiter.function {
+  .punctuation.definition.function {
     foreground: rgba($deep-orange-a100, .7);
   }
 }
@@ -27,7 +27,7 @@
 .comment {
   .function.parameter {
     .entity.name.variable,
-    .punctuation.delimiter.variable {
+    .punctuation.definition.variable {
       foreground: rgba($orange-200, .7);
     }
   }

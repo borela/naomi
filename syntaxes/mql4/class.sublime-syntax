@@ -44,12 +44,12 @@ contexts:
     # End of declaration.
     - match: \s*(;)
       captures:
-        1: punctuation.delimiter.class.body.end.mql.mql4
+        1: punctuation.definition.class.body.end.mql.mql4
       pop: true
     # Body beginning.
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.class.body.begin.mql.mql4
+        1: punctuation.definition.class.body.begin.mql.mql4
       set: body-content
     # Inherited class access.
     - match: |
@@ -77,7 +77,7 @@ contexts:
     - include: comment
     - match: \s*(};?)
       captures:
-        1: punctuation.delimiter.class.body.end.mql.mql4
+        1: punctuation.definition.class.body.end.mql.mql4
       pop: true
     - match: ""
       push:

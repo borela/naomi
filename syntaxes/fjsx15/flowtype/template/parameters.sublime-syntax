@@ -23,7 +23,7 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.template.parameters.begin.flowtype
+          punctuation.definition.template.parameters.begin.flowtype
       set: parameters
 
   parameters:
@@ -31,12 +31,12 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.template.parameters.flowtype
+          punctuation.definition.template.parameters.flowtype
     - match: \s*(>)
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.template.parameters.end.flowtype
+          punctuation.definition.template.parameters.end.flowtype
       pop: true
     - match: ""
       push:

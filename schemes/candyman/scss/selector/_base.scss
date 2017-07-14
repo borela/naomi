@@ -14,7 +14,7 @@
   foreground: $pink-a100;
 }
 
-.punctuation.delimiter.selector {
+.punctuation.definition.selector {
   foreground: rgba($pink-a100, .5);
 }
 
@@ -23,7 +23,7 @@
     foreground: $gray-300;
   }
 
-  .punctuation.delimiter.selector {
+  .punctuation.definition.selector {
     foreground: rgba($gray-300, .7);
   }
 }

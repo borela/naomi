@@ -29,7 +29,7 @@ contexts:
         (\#)(?!{)
         ({{commonIdentifier}})?
       captures:
-        1: punctuation.delimiter.selector.id.scss.scss3
+        1: punctuation.definition.selector.id.scss.scss3
         2: entity.name.selector.id.scss.scss3
       set: trap
 

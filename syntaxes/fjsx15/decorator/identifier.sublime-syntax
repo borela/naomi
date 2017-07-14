@@ -51,7 +51,7 @@ contexts:
   possible-chain:
     - match: \s*(\.)
       captures:
-        1: punctuation.delimiter.decorator.chain.js.fjsx15
+        1: punctuation.definition.decorator.chain.js.fjsx15
       set: main
     - match: (?=\s*\S)
       pop: true

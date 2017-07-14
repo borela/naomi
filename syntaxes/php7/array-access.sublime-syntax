@@ -27,13 +27,13 @@ contexts:
         )
         \s*(\[)
       captures:
-        1: punctuation.delimiter.array.access.begin.php.php7
+        1: punctuation.definition.array.access.begin.php.php7
       set: index
 
   index:
     - match: \s*(])
       captures:
-        1: punctuation.delimiter.array.access.end.php.php7
+        1: punctuation.definition.array.access.end.php.php7
       pop: true
     - match: ""
       push:

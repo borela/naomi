@@ -11,9 +11,9 @@
 // the License.
 
 .level-5 {
-  .punctuation.delimiter.object.json,
-  .punctuation.delimiter.object.begin.json,
-  .punctuation.delimiter.object.end.json {
+  .punctuation.definition.object.json,
+  .punctuation.definition.object.begin.json,
+  .punctuation.definition.object.end.json {
     foreground: $deep-orange-200;
   }
 
@@ -21,7 +21,7 @@
     foreground: $amber-200;
   }
 
-  .punctuation.delimiter.string {
+  .punctuation.definition.string {
     foreground: rgba($amber-200, .5);
   }
 }

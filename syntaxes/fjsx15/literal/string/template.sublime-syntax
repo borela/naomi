@@ -46,7 +46,7 @@ contexts:
       captures:
         0: string.template.js.fjsx15
         1: entity.name.function.tag.js.fjsx15
-        2: punctuation.delimiter.string.begin.js.fjsx15
+        2: punctuation.definition.string.begin.js.fjsx15
       set: escape-a
 
   escape-a:
@@ -86,5 +86,5 @@ contexts:
     - match: \`
       scope: >-
         string.template.js.fjsx15
-        punctuation.delimiter.string.end.js.fjsx15
+        punctuation.definition.string.end.js.fjsx15
       pop: true

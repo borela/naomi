@@ -32,11 +32,11 @@ contexts:
   declaration:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.declare.parameters.begin.php.php7
+        1: punctuation.definition.declare.parameters.begin.php.php7
       push: parameters
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.declare.parameters.end.php.php7
+        1: punctuation.definition.declare.parameters.end.php.php7
       set: body
 
   parameters:
@@ -75,17 +75,17 @@ contexts:
   body:
     - match: \s*(;)
       captures:
-        1: punctuation.delimiter.declare.body.begin.php.php7
+        1: punctuation.definition.declare.body.begin.php.php7
       pop: true
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.declare.body.begin.php.php7
+        1: punctuation.definition.declare.body.begin.php.php7
       set: bracketed-body
 
   bracketed-body:
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.declare.body.end.php.php7
+        1: punctuation.definition.declare.body.end.php.php7
       pop: true
     - match: ""
       push:

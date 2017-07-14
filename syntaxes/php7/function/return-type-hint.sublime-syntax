@@ -21,7 +21,7 @@ contexts:
   main:
     - match: \s*(:)
       captures:
-        1: punctuation.delimiter.function.php.php7
+        1: punctuation.definition.function.php.php7
       set: return-type
 
   return-type:

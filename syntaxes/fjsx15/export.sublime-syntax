@@ -154,13 +154,13 @@ contexts:
   punctuation:
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.export.list.begin.js.fjsx15
+        1: punctuation.definition.export.list.begin.js.fjsx15
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.export.list.end.js.fjsx15
+        1: punctuation.definition.export.list.end.js.fjsx15
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.export.item.js.fjsx15
+        1: punctuation.definition.export.item.js.fjsx15
 
   targets:
     - include: comment

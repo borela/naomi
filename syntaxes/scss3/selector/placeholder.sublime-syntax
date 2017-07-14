@@ -28,7 +28,7 @@ contexts:
         (?xi)\s*
         (%)({{commonIdentifier}})\b
       captures:
-        1: punctuation.delimiter.selector.placeholder.scss.scss3
+        1: punctuation.definition.selector.placeholder.scss.scss3
         2: entity.name.selector.placeholder.scss.scss3
       set: trap
 

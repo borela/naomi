@@ -11,15 +11,15 @@
 // the License.
 
 .comment {
-  .punctuation.delimiter.expression.group.a {
+  .punctuation.definition.expression.group.a {
     foreground: rgba($amber-100, .7);
   }
 
-  .punctuation.delimiter.expression.group.b {
+  .punctuation.definition.expression.group.b {
     foreground: rgba($brown-200, .7);
   }
 
-  .punctuation.delimiter.control {
+  .punctuation.definition.control {
     foreground: rgba($pink-a100, .7);
   }
 }

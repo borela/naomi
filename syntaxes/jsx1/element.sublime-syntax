@@ -31,7 +31,6 @@ contexts:
       captures:
         1: >-
           meta.tag.jsx.jsx1
-          punctuation.delimiter.tag.begin.jsx.jsx1
           punctuation.definition.tag.begin.jsx.jsx1
         2: >-
           meta.tag.jsx.jsx1
@@ -50,7 +49,6 @@ contexts:
       captures:
         1: >-
           meta.tag.jsx.jsx1
-          punctuation.delimiter.tag.end.jsx.jsx1
           punctuation.definition.tag.end.jsx.jsx1
       pop: true
     # Attributes.
@@ -68,7 +66,6 @@ contexts:
       captures:
         1: >-
           meta.tag.jsx.jsx1
-          punctuation.delimiter.tag.end.jsx.jsx1
           punctuation.definition.tag.end.jsx.jsx1
       pop: true
     # Closing tag.
@@ -78,14 +75,12 @@ contexts:
       captures:
         1: >-
           meta.tag.jsx.jsx1
-          punctuation.delimiter.tag.begin.jsx.jsx1
           punctuation.definition.tag.begin.jsx.jsx1
         2: >-
           meta.tag.jsx.jsx1
           entity.name.tag.jsx.jsx1
         3: >-
           meta.tag.jsx.jsx1
-          punctuation.delimiter.tag.end.jsx.jsx1
           punctuation.definition.tag.end.jsx.jsx1
       pop: true
     # Sub tags.

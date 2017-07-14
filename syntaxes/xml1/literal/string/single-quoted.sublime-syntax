@@ -21,12 +21,12 @@ contexts:
   main:
     - match: \s*(\')
       captures:
-        1: punctuation.delimiter.string.begin.xml.xml1
+        1: punctuation.definition.string.begin.xml.xml1
       set: string
 
   string:
     - meta_scope: string.quoted.single.xml.xml1
     - match: \s*(\')
       captures:
-        1: punctuation.delimiter.string.end.xml.xml1
+        1: punctuation.definition.string.end.xml.xml1
       pop: true

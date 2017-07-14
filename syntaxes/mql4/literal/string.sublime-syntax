@@ -37,13 +37,13 @@ contexts:
       captures:
         1: >-
           string.quoted.double.mql.mql4
-          punctuation.delimiter.string.begin.mql.mql4
+          punctuation.definition.string.begin.mql.mql4
       with_prototype:
         - match: \s*(")
           captures:
             1: >-
               string.quoted.double.mql.mql4
-              punctuation.delimiter.string.end.mql.mql4
+              punctuation.definition.string.end.mql.mql4
           pop: true
       set: escape-a
 

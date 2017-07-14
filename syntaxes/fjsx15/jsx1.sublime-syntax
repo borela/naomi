@@ -36,11 +36,11 @@ contexts:
           captures:
             1: >-
               comment.block.js.fjsx15
-              punctuation.delimiter.comment.begin.js.fjsx15
+              punctuation.definition.comment.begin.js.fjsx15
             2: comment.block.js.fjsx15
             3: >-
               comment.block.js.fjsx15
-              punctuation.delimiter.comment.end.js.fjsx15
+              punctuation.definition.comment.end.js.fjsx15
         # Embedded javascript.
         - match: (\{)
           captures:

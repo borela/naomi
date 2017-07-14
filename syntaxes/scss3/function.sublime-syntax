@@ -51,13 +51,13 @@ contexts:
 
   body:
     - match: \s*({)
-      scope: punctuation.delimiter.function.body.begin.scss.scss3
+      scope: punctuation.definition.function.body.begin.scss.scss3
       set: body-content
 
   body-content:
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.function.body.end.scss.scss3
+        1: punctuation.definition.function.body.end.scss.scss3
       pop: true
     - match: ""
       push:

@@ -10,54 +10,54 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.keyword.operator.other {
-  &.association.flowtype,
-  &.cast.flowtype,
-  &.contravariant.flowtype,
-  &.covariant.flowtype,
-  &.existential.flowtype,
-  &.flowtype,
-  &.intersection.flowtype,
-  &.nullable.flowtype,
-  &.optional.flowtype,
-  &.union.flowtype {
-    foreground: $brown-200;
-  }
-}
-
-.word {
-  .keyword.operator.other.flowtype {
-    foreground: $pink-a100;
-  }
-}
-
-.keyword.operator.other.utility.flowtype {
-  foreground: $pink-a100;
-}
-
-.comment {
+.flowtype {
   .keyword.operator.other {
-    &.association.flowtype,
-    &.cast.flowtype,
-    &.contravariant.flowtype,
-    &.covariant.flowtype,
-    &.existential.flowtype,
-    &.flowtype,
-    &.intersection.flowtype,
-    &.nullable.flowtype,
-    &.optional.flowtype,
-    &.union.flowtype {
-      foreground: rgba($brown-200, .7);
+    &.association,
+    &.cast,
+    &.contravariant,
+    &.covariant,
+    &.existential,
+    &.intersection,
+    &.nullable,
+    &.optional,
+    &.union {
+      foreground: $brown-200;
     }
   }
 
-  .keyword.operator.other.utility.flowtype {
-    foreground: rgba($pink-a100, .7);
+  .word {
+    .keyword.operator.other {
+      foreground: $pink-a100;
+    }
   }
 
-  .word {
-    .keyword.operator.other.flowtype {
+  .keyword.operator.other.utility {
+    foreground: $pink-a100;
+  }
+
+  .comment {
+    .keyword.operator.other {
+      &.association,
+      &.cast,
+      &.contravariant,
+      &.covariant,
+      &.existential,
+      &.intersection,
+      &.nullable,
+      &.optional,
+      &.union {
+        foreground: rgba($brown-200, .7);
+      }
+    }
+
+    .keyword.operator.other.utility {
       foreground: rgba($pink-a100, .7);
+    }
+
+    .word {
+      .keyword.operator.other {
+        foreground: rgba($pink-a100, .7);
+      }
     }
   }
 }

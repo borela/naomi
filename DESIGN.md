@@ -123,7 +123,7 @@ An identity is the most specific scope possible that decribes the token.
     .variable
 
 .punctuation
-  .delimiter
+  .definition
     .array
       .begin
       .end

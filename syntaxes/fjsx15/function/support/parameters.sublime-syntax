@@ -22,7 +22,7 @@ contexts:
     - match: \s*(\()
       captures:
         1: >-
-          support.js.fjsx15
+          support.core.js.fjsx15
           punctuation.definition.function.parameters.begin.js.fjsx15
       set: parameters
 
@@ -30,12 +30,12 @@ contexts:
     - match: \s*(\,)
       captures:
         1: >-
-          support.js.fjsx15
+          support.core.js.fjsx15
           punctuation.definition.function.parameters.js.fjsx15
     - match: \s*(\))
       captures:
         1: >-
-          support.js.fjsx15
+          support.core.js.fjsx15
           punctuation.definition.function.parameters.end.js.fjsx15
       set: return-type
     - match: ""

@@ -46,7 +46,7 @@ contexts:
       ]
 
   support-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/support-parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/support/react-js-parameters.sublime-syntax
 
   support-body:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/support-body.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/support/react-js-body.sublime-syntax

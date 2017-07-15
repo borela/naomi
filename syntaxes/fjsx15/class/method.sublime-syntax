@@ -190,7 +190,7 @@ contexts:
         support-parameters
       ]
     # React JS’s support methods.
-    - include: Packages/Naomi/syntaxes/fjsx15/class/support/reactjs-method.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/support/react-js-method.sublime-syntax
     # Identifier.
     - match: |
         (?xi)
@@ -229,13 +229,13 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
 
   support-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/support-parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/support/parameters.sublime-syntax
 
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
 
   support-body:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/support-body.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/support/body.sublime-syntax
 
   computed-identifier:
     - match: \s*(])

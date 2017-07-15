@@ -22,7 +22,7 @@ contexts:
     - match: \s*(\{)
       captures:
         1: >-
-          support.js.fjsx15
+          support.lib.react-js.js.fjsx15
           punctuation.definition.function.body.begin.js.fjsx15
       set: body-content
 
@@ -30,7 +30,7 @@ contexts:
     - match: \s*(})
       captures:
         1: >-
-          support.js.fjsx15
+          support.lib.react-js.js.fjsx15
           punctuation.definition.function.body.end.js.fjsx15
       pop: true
     - match: ""

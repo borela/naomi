@@ -119,7 +119,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/global.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/reactjs.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax

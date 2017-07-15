@@ -106,5 +106,5 @@ contexts:
         )\b
       captures:
         1: >-
-          support.react-js.fjsx15
+          support.lib.react-js.fjsx15
           entity.name.variable.js.fjsx15

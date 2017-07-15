@@ -54,10 +54,10 @@ contexts:
         )\b
       captures:
         1: >-
-          support.jest.fjsx15
+          support.lib.jest.fjsx15
           entity.name.function.js.fjsx15
-      set: support-arguments
+      set: arguments
 
-  support-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support-arguments.sublime-syntax
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/jest-arguments.sublime-syntax
 

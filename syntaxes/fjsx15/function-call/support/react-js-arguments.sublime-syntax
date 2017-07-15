@@ -19,19 +19,27 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        \s*(
-          (?> forceUpdate
-            | setState
-          )
-        )\b
+    - match: \s*(\()
       captures:
         1: >-
-          support.react-js.fjsx15
-          entity.name.function.js.fjsx15
-      set: support-arguments
+          support.lib.jest.fjsx15
+          punctuation.definition.function.arguments.begin.js.fjsx15
+      set: arguments
 
-  support-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support-arguments.sublime-syntax
-
+  arguments:
+    - match: \s*(\))
+      captures:
+        1: >-
+          support.lib.jest.fjsx15
+          punctuation.definition.function.arguments.end.js.fjsx15
+      pop: true
+    - match: \s*(,)
+      captures:
+        1: >-
+          support.lib.jest.fjsx15
+          punctuation.definition.function.arguments.js.fjsx15
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+        - match: ""
+          pop: true

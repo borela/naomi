@@ -92,4 +92,4 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
   support-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support-arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax

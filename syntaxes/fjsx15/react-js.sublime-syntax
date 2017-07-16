@@ -52,16 +52,10 @@ contexts:
     # PropType after function call.
     - match: |
         (?x)\s*
-        (?<=
-          \)
-        )
+        (?<=\))
         (?=
           \s*\.\s*isRequired
-          (?> \s
-            | ,
-            | ;
-            | $
-          )
+          (?>\s|,|;|$)
         )
       set: complex-variable-components
     # Other.
@@ -85,25 +79,23 @@ contexts:
   support-variable:
     - match: |
         (?x)\s*
-        (
-          (?> any
-            | array
-            | bool
-            | context
-            | element
-            | func
-            | isRequired
-            | string
-            | node
-            | number
-            | object
-            | props
-            | PropTypes
-            | React
-            | state
-            | this
-          )
-        )\b
+        ((?> any
+          | array
+          | bool
+          | context
+          | element
+          | func
+          | isRequired
+          | string
+          | node
+          | number
+          | object
+          | props
+          | PropTypes
+          | React
+          | state
+          | this
+        ))\b
       captures:
         1: >-
           support.lib.react-js.fjsx15

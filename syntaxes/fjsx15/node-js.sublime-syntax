@@ -17,37 +17,18 @@ hidden: true
 
 scope: ...
 
-variables:
-  constantIdentifier: |
-    [$_[:upper:]]
-    [$_[:upper:][:digit:]]*
-
 contexts:
   main:
-    # Single character.
+    - include: constants
+
+  constants:
     - match: |
         (?x)\s*
-        (\#)?
-        ([_[:upper:]])\b
+        ((?> __dirname
+          | __filename
+        ))\b
       captures:
         1: >-
-          storage.modifier.js.fjsx15
-          keyword.operator.other.access.js.fjsx15
-        2: entity.name.constant.js.fjsx15
-      pop: true
-    # Two or more characters.
-    - match: |
-        (?x)\s*
-        (\#)?
-        (
-          {{constantIdentifier}}
-          (?> \$\B
-            | [_[:upper:][:digit:]]\b
-          )
-        )
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.operator.other.access.js.fjsx15
-        2: entity.name.constant.js.fjsx15
+          support.env.node-js.js.fjsx15
+          entity.name.variable.js.fjsx15
       pop: true

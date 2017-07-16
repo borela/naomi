@@ -74,9 +74,13 @@ An identity is the most specific scope possible that decribes the token.
 ```css
 .support
   .core
-  .lib
+  .env
+    .dom
     .node-js
+  .lib
+    .jest
     .react-js
+    .phpunit
 ```
 
 ### Context
@@ -94,6 +98,8 @@ An identity is the most specific scope possible that decribes the token.
 .destructuring
   .array
   .object
+
+.parent
 ```
 
 ### Group
@@ -125,25 +131,37 @@ An identity is the most specific scope possible that decribes the token.
 .punctuation
   .definition
     .array
-      .begin
-      .end
       .access
         .begin
         .enda
+      .begin
+      .end
+      .separator
     .class
       .body
         .begin
         .end
+    .export
+    .export-list
+      .begin
+      .end
+      .separator
     .function
-      .parameters
-        .begin
-        .end
-      .parameters
+      .arguments
         .begin
         .end
       .body
         .begin
         .end
+      .parameters
+        .begin
+        .end
+        .separator
+    .import
+    .import-list
+      .begin
+      .end
+      .separator
     .object
       .computed-property
         .begin
@@ -151,6 +169,12 @@ An identity is the most specific scope possible that decribes the token.
       .body
         .begin
         .end
+        .separator
+    .type
+      .arguments
+        .begin
+        .end
+        .separator
 
 .keyword
   .control

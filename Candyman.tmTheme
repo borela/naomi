@@ -689,33 +689,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.definition</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffecb3</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.definition.expression.group.b</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.definition.control</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.keyword.operator.other.embedded-expression</string>
 			<key>settings</key>
 			<dict>
@@ -747,7 +720,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff9e80</string>
+				<string>#FF9E80B2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -977,6 +950,33 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.punctuation.definition</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffecb3</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.definition.expression.group.b</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.definition.control</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.string.unquoted.regex, .string.unquoted.regex .punctuation.definition</string>
 			<key>settings</key>
 			<dict>
@@ -1121,6 +1121,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.entity.name.unknown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffecb3</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.entity.name.variable, .punctuation.definition.variable</string>
 			<key>settings</key>
 			<dict>
@@ -1137,15 +1146,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ff9e80</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.unknown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffecb3</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1195,33 +1195,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.comment .punctuation.definition.expression.group.a</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FFECB3B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.comment .punctuation.definition.expression.group.b</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#BCAAA4B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.comment .punctuation.definition.control</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF80ABB2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.comment .entity.name.function, .comment .punctuation.definition.function</string>
 			<key>settings</key>
 			<dict>
@@ -1245,33 +1218,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#FFCC80B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.comment .entity.name.interface, .comment .punctuation.definition.interface</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#AED581B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.comment .support .entity.name.interface</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF9E80B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.comment .keyword, .comment .punctuation.definition.keyword</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF80ABB2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1308,6 +1254,33 @@
 			<dict>
 				<key>foreground</key>
 				<string>#FFFFFFB2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .entity.name.interface, .comment .punctuation.definition.interface</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#AED581B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .support .entity.name.interface</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF9E80B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .keyword, .comment .punctuation.definition.keyword</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF80ABB2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1394,6 +1367,33 @@
 		<dict>
 			<key>scope</key>
 			<string>.comment .keyword.operator.other.word</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF80ABB2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .punctuation.definition.expression.group.a</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFECB3B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .punctuation.definition.expression.group.b</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#BCAAA4B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .punctuation.definition.control</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1807,15 +1807,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.source.scss .punctuation.definition.body</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.entity.name.mixin, .punctuation.definition.mixin</string>
 			<key>settings</key>
 			<dict>
@@ -1834,11 +1825,11 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.source.scss .declaration .entity.name.variable</string>
+			<string>.source.scss .punctuation.definition.body</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#bcaaa4</string>
+				<string>#ffffff</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1848,6 +1839,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.scss .declaration .entity.name.variable</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 	</array>

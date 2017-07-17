@@ -22,6 +22,7 @@ contexts:
     - include: instance-variables
     - include: static-variables
     - include: proptypes
+    - include: functions
 
   instance-variables:
     - match: |
@@ -115,93 +116,43 @@ contexts:
           entity.name.variable.js.fjsx15
       pop: true
 
-
-
-
-
-
-
-
-  member-access-operator:
-    - match: \s*(\.)
-      captures:
-        1: keyword.operator.other.member-access.js.fjsx15
-
-  complex-variable:
-    # PropTypes.
+  functions:
+    # React functions.
     - match: |
-        (?x)\s*
-        (?> React\.PropTypes
-          | PropTypes
-        )
-        (?:\s*\.\s*
-          (?> any
-            | array
-            | bool
-            | element
-            | func
-            | node
-            | number
-            | object
-            | string
-          )
-          (?:\s*\.\s*isRequired)?
-        )?
-      set: complex-variable-components
-    # PropType after function call.
-    - match: |
-        (?x)\s*
-        (?<=\))
-        (?=
-          \s*\.\s*isRequired
-          (?>\s|,|;|$)
-        )
-      set: complex-variable-components
-    # Other.
-    - match: |
-        (?x)\s*
-        (?=
-          this\s*\.\s*
-          (?> context
-            | props
-            | state
-          )\b
-        )
-      set: complex-variable-components
-
-
-
-
-
-
-
-  complex-variable-components:
-    - include: member-access-operator
-    - include: support-variable
-    - match: ""
-      pop: true
-
-  support-variable:
-    - match: |
-        (?x)\s*
-        ((?> any
-          | array
-          | bool
-          | context
-          | element
-          | func
-          | isRequired
-          | string
-          | node
-          | number
-          | object
-          | props
-          | PropTypes
-          | React
-          | state
-          | this
+        (?x)
+        \s*(React)
+        \s*(\.)\s*
+        ((?> createElement
+          | createFactory
+          | cloneElement
+          | isValidElement
         ))\b
       captures:
         1: >-
           support.lib.react-js.fjsx15
+          entity.name.function.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.lib.react-js.fjsx15
+          entity.name.function.js.fjsx15
+      set: arguments
+    # Component functions.
+    - match: |
+        (?x)
+        \s*(this)
+        \s*(\.)\s*
+        ((?> forceUpdate
+          | setState
+        ))\b
+      captures:
+        1: >-
+          support.core.fjsx15
           entity.name.variable.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.lib.react-js.fjsx15
+          entity.name.function.js.fjsx15
+      set: arguments
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/react-js-arguments.sublime-syntax

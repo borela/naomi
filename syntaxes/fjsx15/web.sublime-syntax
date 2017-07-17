@@ -21,6 +21,7 @@ contexts:
   main:
     - include: console-functions
     - include: document-functions
+    - include: window-functions
 
   function-arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax
@@ -111,3 +112,62 @@ contexts:
           entity.name.class.js.fjsx15
       set: function-arguments
 
+  window-functions:
+    - match: |
+        (?x)
+        \s*(window)\b
+        (?:
+          \s*(\.)\s*
+          ((?> addEventListener
+            | alert
+            | atob
+            | blur
+            | btoa
+            | cancel(?>AnimationFrame|IdleCallback)
+            | clear(?>Interval|Timeout)
+            | close
+            | confirm
+            | convertPointFromNodeToPage
+            | createImageBitmap
+            | event
+            | fetch
+            | focus
+            | forward
+            | get
+              (?> Attention
+                | ComputedStyle
+                | DefaultComputedStyle
+                | Selection
+              )
+            | home
+            | matchMedia
+            | minimize
+            | move(?>By|To)
+            | open
+            | postMessage
+            | print
+            | prompt
+            | request(?>AnimationFrame|IdleCallback)
+            | removeEventListener
+            | resize(?>By|To)
+            | restore
+            | routeEvent
+            | scroll
+              (?> By(?:Pages)?
+                | To
+              )?
+            | set(?>Interval|Timeout)
+            | sizeToContent
+            | stop
+            | updateCommands
+          ))\b
+        )
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+      set: function-arguments

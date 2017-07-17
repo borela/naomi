@@ -24,8 +24,6 @@ contexts:
     - include: math-constants
     - include: math-functions
     - include: symbol-functions
-    # https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope
-    - include: window-or-worker-global-functions
     # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
     - include: constants
     - include: functions
@@ -178,46 +176,6 @@ contexts:
           entity.name.class.js.fjsx15
         2: keyword.operator.other.member-access.js.fjsx15
         3: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-      set: function-arguments
-
-  window-or-worker-global-functions:
-    # Requires the window global.
-    - match: |
-        (?x)
-        \s*(window)\b
-        (?:
-          \s*(\.)\s*
-          ((?> atob
-            | btoa
-            | clear(?>Interval|Timeout)
-            | createImageBitmap
-            | fetch
-            | set(?>Interval|Timeout)
-          ))\b
-        )?
-      captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-      set: function-arguments
-    # Just the functions.
-    - match: |
-        (?x)\s*
-        ((?> atob
-          | btoa
-          | clear(?>Interval|Timeout)
-          | createImageBitmap
-          | fetch
-          | set(?>Interval|Timeout)
-        ))\b
-      captures:
-        1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
       set: function-arguments

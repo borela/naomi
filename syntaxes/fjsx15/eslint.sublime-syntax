@@ -19,6 +19,17 @@ scope: ...
 
 contexts:
   main:
+    # Line.
+    - match: |
+        (?x)\s*
+        (\/\/)
+        (?=\s*eslint)
+      captures:
+        1: >-
+          eslint.js.fjsx15
+          punctuation.definition.eslint.begin.js.fjsx15
+      set: line
+    # Block.
     - match: |
         (?x)\s*
         (\/\*)
@@ -28,6 +39,11 @@ contexts:
           eslint.js.fjsx15
           punctuation.definition.eslint.begin.js.fjsx15
       set: block
+
+  line:
+    - include: enable-disable
+    - match: \s*$
+      pop: true
 
   block:
     - include: enable-disable
@@ -48,7 +64,7 @@ contexts:
   enable-disable:
     - match: |
         (?xi)\s*
-        (eslint-(?>enable|disable))
+        (eslint-(?>enable|disable)(?:-line))
       captures:
         1: >-
           eslint.js.fjsx15

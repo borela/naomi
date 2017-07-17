@@ -27,10 +27,10 @@ contexts:
 
   console-functions:
     - match: |
-        (?x)\s*
-        (console)\b
+        (?x)
+        \s*(console)\b
         (?:
-          (\.)
+          \s*(\.)\s*
           ((?> assert
             | clear
             | count
@@ -56,10 +56,10 @@ contexts:
 
   document-functions:
     - match: |
-        (?x)\s*
-        (document)\b
+        (?x)
+        \s*(document)\b
         (?:
-          (\.)
+          \s*(\.)\s*
           ((?> adoptNode
             | close
             | create

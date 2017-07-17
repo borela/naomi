@@ -19,45 +19,61 @@ scope: ...
 
 contexts:
   main:
+    - include: core
+    - include: matchers
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/jest-arguments.sublime-syntax
+
+  core:
     - match: |
         (?x)
-        \s*(
-          (?> describe
-            | expect
-            | it
-            | to
-              (?> Be
-                  (?> Called
-                    | CloseTo
-                    | Defined
-                    | Falsy
-                    | GreaterThan
-                    | GreaterThanOrEqual
-                    | InstanceOf
-                    | LessThan
-                    | LessThanOrEqual
-                    | Null
-                    | Truthy
-                    | Undefined
-                  )?
-                | Contain(?:Equal)?
-                | Equal
-                | HaveBeen
-                  (?> Called(?>Times|With)?
-                    | LastCalledWith
-                  )
-                | Have(?>Length|Property)
-                | Match(?:Object|Snapshot)?
-                | Throw(?:ErrorMatchingSnapshot)?
-              )
-          )
-        )\b
+        (?<!\.)\s*
+        ((?> describe
+          | expect
+          | it
+        ))\b
       captures:
         1: >-
           support.lib.jest.fjsx15
           entity.name.function.js.fjsx15
       set: arguments
 
-  arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/jest-arguments.sublime-syntax
-
+  matchers:
+    - match: |
+        (?x)\s*
+        (to
+          (?> Be
+              (?> Called
+                | CloseTo
+                | Defined
+                | Falsy
+                | GreaterThan
+                | GreaterThanOrEqual
+                | InstanceOf
+                | LessThan
+                | LessThanOrEqual
+                | Null
+                | Truthy
+                | Undefined
+              )?
+            | Contain(?:Equal)?
+            | Equal
+            | HaveBeen
+              (?> Called(?>Times|With)?
+                | LastCalledWith
+              )
+            | Have(?>Length|Property)
+            | Match(?:Object|Snapshot)?
+            | Throw(?:ErrorMatchingSnapshot)?
+          )
+        )\b
+      captures:
+        1: >-
+          support.lib.jest.fjsx15
+          entity.name.function.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.lib.jest.fjsx15
+          entity.name.function.js.fjsx15
+      set: arguments

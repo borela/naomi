@@ -19,7 +19,108 @@ scope: ...
 
 contexts:
   main:
-    - include: complex-variable
+    - include: instance-variables
+    - include: static-variables
+    - include: proptypes
+
+  instance-variables:
+    - match: |
+        (?x)\s*
+        (?:
+          (this)
+          \s*(\.)\s*
+        )?
+        ((?> props
+          | state
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.variable.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+      pop: true
+
+  static-variables:
+    - match: |
+        (?x)
+        \s*(static)\s+
+        ((?> contextTypes
+          | defaultProps
+          | propTypes
+        ))\b
+      captures:
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.other.access.js.fjsx15
+        2: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+      pop: true
+
+  proptypes:
+    - match: |
+        (?x)
+        (?:
+          \s*(React\b)
+          \s*(\.)
+        )?
+        \s*(PropTypes\b)
+        (?:
+          \s*(\.)\s*
+          ((?> any
+            | array
+            | bool
+            | element
+            | func
+            | node
+            | number
+            | object
+            | string
+          ))
+        )?
+        (?:
+          \s*(\.)\s*
+          (isRequired\b)
+        )?
+      captures:
+        1: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+        4: keyword.operator.other.member-access.js.fjsx15
+        5: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+        6: keyword.operator.other.member-access.js.fjsx15
+        7: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+      pop: true
+    # “isRequired” after function call.
+    - match: |
+        (?x)\s*
+        (?<=\))
+        \s*(\.)\s*
+        (isRequired\b)
+      captures:
+        1: keyword.operator.other.member-access.js.fjsx15
+        2: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+      pop: true
+
+
+
+
+
+
+
 
   member-access-operator:
     - match: \s*(\.)
@@ -30,24 +131,22 @@ contexts:
     # PropTypes.
     - match: |
         (?x)\s*
-        (?=
-          (?> React\.PropTypes
-            | PropTypes
-          )
-          (?:\s*\.\s*
-            (?> any
-              | array
-              | bool
-              | element
-              | func
-              | node
-              | number
-              | object
-              | string
-            )
-            (?:\s*\.\s*isRequired)?
-          )?
+        (?> React\.PropTypes
+          | PropTypes
         )
+        (?:\s*\.\s*
+          (?> any
+            | array
+            | bool
+            | element
+            | func
+            | node
+            | number
+            | object
+            | string
+          )
+          (?:\s*\.\s*isRequired)?
+        )?
       set: complex-variable-components
     # PropType after function call.
     - match: |
@@ -69,6 +168,12 @@ contexts:
           )\b
         )
       set: complex-variable-components
+
+
+
+
+
+
 
   complex-variable-components:
     - include: member-access-operator

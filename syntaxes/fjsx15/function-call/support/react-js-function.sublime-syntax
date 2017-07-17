@@ -20,12 +20,10 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)
-        \s*(
-          (?> forceUpdate
-            | setState
-          )
-        )\b
+        (?x)\s*
+        ((?> forceUpdate
+          | setState
+        ))\b
       captures:
         1: >-
           support.lib.react-js.fjsx15

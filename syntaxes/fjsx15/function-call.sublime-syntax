@@ -62,12 +62,10 @@ contexts:
   name:
     # Support identifier.
     - match: |
-        (?x)
-        \s*(
-          (?> constructor
-            | super
-          )
-        )\b
+        (?x)\s*
+        ((?> constructor
+          | super
+        ))\b
       captures:
         1: >-
           support.js.fjsx15
@@ -76,7 +74,7 @@ contexts:
     # Jest.
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/jest-function.sublime-syntax
     # React JS’s support functions.
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/reactjs-function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/react-js-function.sublime-syntax
     # Identifier.
     - match: |
         (?xi)

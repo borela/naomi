@@ -19,7 +19,116 @@ scope: ...
 
 contexts:
   main:
+    - include: module
+    - include: process
+    # https://nodejs.org/api/globals.html
+    - include: functions
     - include: constants
+
+  function-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax
+
+  module:
+    - match: |
+        (?x)
+        \s*(module)\b
+        (?:
+          \s*(\.)\s*
+          ((?> exports
+            | parent
+          ))\b
+        )?
+      captures:
+        1: >-
+          support.env.node-js.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.env.node-js.js.fjsx15
+          entity.name.variable.js.fjsx15
+      pop: true
+
+  process:
+    # Functions.
+    - match: |
+        (?x)
+        \s*(process)\b
+        (?:
+          \s*(\.)\s*
+          ((?> abort
+            | chdir
+            | cpuUsage
+            | cwd
+            | disconnect
+            | emitWarning
+            | exit
+            | get(?>e[gu]id|[gu]id|groups)
+            | hrtime
+            | initgroups
+            | kill
+            | memoryUsage
+            | nextTick
+            | send
+            | set(?>e[gu]id|[gu]id|groups)
+            | u(?>mask|ptime)
+          ))\b
+        )
+      captures:
+        1: >-
+          support.env.node-js.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.env.node-js.js.fjsx15
+          entity.name.class.js.fjsx15
+      set: function-arguments
+    # Variables.
+    - match: |
+        (?x)
+        \s*(process)\b
+        (?:
+          \s*(\.)\s*
+          ((?> ar(?>ch|gv0?)
+            | channel
+            | config
+            | connected
+            | env
+            | exec(?>Argv|Path)
+            | exitCode
+            | mainModule
+            | pid
+            | platform
+            | release
+            | std(?>err|in|out)
+            | title
+            | versions?
+          ))\b
+        )?
+      captures:
+        1: >-
+          support.env.node-js.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.env.node-js.js.fjsx15
+          entity.name.class.js.fjsx15
+      pop: true
+
+  functions:
+    - match: |
+        (?x)\s*
+        ((?> (?>clear|set)Immediate
+          | require
+        ))\b
+      captures:
+        1: >-
+          support.env.node-js.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.env.node-js.js.fjsx15
+          entity.name.class.js.fjsx15
+      set: function-arguments
 
   constants:
     - match: |
@@ -30,5 +139,5 @@ contexts:
       captures:
         1: >-
           support.env.node-js.js.fjsx15
-          entity.name.variable.js.fjsx15
+          entity.name.constant.js.fjsx15
       pop: true

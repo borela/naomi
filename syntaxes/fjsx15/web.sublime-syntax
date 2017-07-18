@@ -52,7 +52,7 @@ contexts:
         2: keyword.operator.other.member-access.js.fjsx15
         3: >-
           support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+          entity.name.function.js.fjsx15
       set: function-arguments
 
   document-functions:
@@ -109,7 +109,7 @@ contexts:
         2: keyword.operator.other.member-access.js.fjsx15
         3: >-
           support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+          entity.name.function.js.fjsx15
       set: function-arguments
 
   window-functions:
@@ -169,5 +169,5 @@ contexts:
         2: keyword.operator.other.member-access.js.fjsx15
         3: >-
           support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+          entity.name.function.js.fjsx15
       set: function-arguments

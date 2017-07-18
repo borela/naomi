@@ -141,7 +141,7 @@ contexts:
             | create
             | definePropert(?>ies|y)
             | freeze
-            | getOwnProperty(?>Descriptor|Names|Symbols)
+            | getOwnProperty(?>Descriptors?|Names|Symbols)
             | getPrototypeOf
             | is(?>Extensible|Frozen|Sealed)?
             | keys

@@ -23,6 +23,10 @@ contexts:
     - include: static-variables
     - include: proptypes
     - include: functions
+    - include: react-dom-functions
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/react-js-arguments.sublime-syntax
 
   instance-variables:
     - match: |
@@ -154,5 +158,21 @@ contexts:
           entity.name.function.js.fjsx15
       set: arguments
 
-  arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/react-js-arguments.sublime-syntax
+  react-dom-functions:
+    - match: |
+        (?x)
+        \s*(ReactDom)
+        \s*(\.)\s*
+        ((?> findDOMNode
+          | render(?:ToS(?>taticMarkup|tring))?
+          | unmountComponentAtNode
+        ))\b
+      captures:
+        1: >-
+          support.lib.react-js.fjsx15
+          entity.name.function.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.lib.react-js.fjsx15
+          entity.name.function.js.fjsx15
+      set: arguments

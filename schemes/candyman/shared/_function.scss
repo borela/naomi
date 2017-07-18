@@ -20,7 +20,7 @@
   .entity.name.function,
   .keyword.operator.other.computed-function,
   .punctuation.definition.function {
-    foreground: rgba($deep-orange-a100, .7);
+    foreground: $deep-orange-a100;
   }
 }
 

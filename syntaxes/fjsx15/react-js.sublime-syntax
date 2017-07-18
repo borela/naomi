@@ -34,7 +34,7 @@ contexts:
         (?:
           (this)
           \s*(\.)\s*
-        )?
+        )
         ((?> props
           | state
         ))\b

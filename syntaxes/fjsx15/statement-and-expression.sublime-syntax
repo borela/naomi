@@ -121,6 +121,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/web.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/node-js.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/jest.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring.sublime-syntax

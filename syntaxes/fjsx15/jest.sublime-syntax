@@ -33,6 +33,7 @@ contexts:
           | expect
           | it
         ))\b
+        (?=\s*\()
       captures:
         1: >-
           support.lib.jest.fjsx15
@@ -68,6 +69,7 @@ contexts:
             | Throw(?:ErrorMatchingSnapshot)?
           )
         )\b
+        (?=\s*\()
       captures:
         1: >-
           support.lib.jest.fjsx15

@@ -64,7 +64,7 @@ contexts:
   enable-disable:
     - match: |
         (?xi)\s*
-        (eslint-(?>enable|disable)(?:-line))
+        (eslint-(?>enable|disable)(?:-line)?)
       captures:
         1: >-
           eslint.js.fjsx15

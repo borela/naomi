@@ -95,6 +95,7 @@ contexts:
             | hasFocus
             | importNode
             | open
+            | query
               (?> Command(?>Enabled|Supported)
                 | Selector(?:All)?
               )

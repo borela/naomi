@@ -45,15 +45,6 @@ contexts:
       pop: true
     # Parameter.
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/simple.sublime-syntax
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})(\?)?
-      captures:
-        1: >-
-          function.parameter.js.fjsx15
-          entity.name.variable.js.fjsx15
-        2: keyword.operator.other.optional.flowtype
-      pop: true
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax

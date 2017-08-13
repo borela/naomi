@@ -233,9 +233,13 @@ contexts:
 
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
+    - match: (?=\s*\S)
+      pop: true
 
   support-body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/support/body.sublime-syntax
+    - match: (?=\s*\S)
+      pop: true
 
   computed-identifier:
     - match: \s*(])

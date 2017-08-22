@@ -91,12 +91,6 @@ contexts:
       set: escape-b
     # If the slash was not consumed before, it probably is the end of the regex.
     - include: regex-end
-    # Character set begin.
-    - match: \[
-      set: character-set-a
-    # Character set end.
-    - match: (?=])
-      pop: true
 
   escape-b:
     - meta_content_scope: string.unquoted.regex.js.fjsx15
@@ -105,23 +99,3 @@ contexts:
       set: escape-a
     # If the slash was not consumed before, it probably is the end of the regex.
     - include: regex-end
-    # Character set begin.
-    - match: \[
-      set: character-set-b
-    # Character set end.
-    - match: (?=])
-      pop: true
-
-  character-set-a:
-    - meta_content_scope: string.unquoted.regex.js.fjsx15
-    - match: \]
-      set: escape-a
-    - match: ""
-      push: escape-a
-
-  character-set-b:
-    - meta_content_scope: string.unquoted.regex.js.fjsx15
-    - match: \]
-      set: escape-b
-    - match: ""
-      push: escape-b

@@ -39,9 +39,9 @@ contexts:
     - include: web-assembly
 
   function-arguments:
-    - match: (?=\))
-      pop: true
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax
+    - match: (?=\S)
+      pop: true
 
   optional-template-and-type-arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.no-pop.sublime-syntax

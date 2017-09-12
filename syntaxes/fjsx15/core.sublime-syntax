@@ -19,6 +19,8 @@ scope: ...
 
 contexts:
   main:
+    - include: symbol-properties
+    # Functions.
     - include: array-functions
     - include: object-functions
     - include: math-constants
@@ -165,13 +167,11 @@ contexts:
   symbol-functions:
     - match: |
         (?x)
-        \s*(Symbol)\b
-        (?:
-          \s*(\.)\s*
-          ((?> for
-            | KeyFor
-          ))\b
-        )?
+        \s*(Symbol)
+        \s*(\.)\s*
+        ((?> for
+          | KeyFor
+        ))\b
       captures:
         1: >-
           support.core.js.fjsx15
@@ -181,6 +181,34 @@ contexts:
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
       set: function-arguments
+
+  symbol-properties:
+    - match: |
+        (?x)
+        \s*(Symbol)
+        \s*(\.)\s*
+        ((?> asyncIterator
+          | hasInstance
+          | isConcatSpreadable
+          | iterator
+          | match
+          | replace
+          | search
+          | species
+          | split
+          | toPrimitive
+          | toStringTag
+          | unscopables
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.constant.js.fjsx15
+      pop: true
 
   constants:
     - match: |
@@ -225,7 +253,6 @@ contexts:
           | Object
           | RangeError
           | ReferenceError
-          | Symbol
           | SyntaxError
           | TypeError
           | URIError

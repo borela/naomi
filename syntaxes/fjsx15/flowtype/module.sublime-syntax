@@ -48,7 +48,7 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.module.body.begin.flowtype
+          punctuation.definition.module.body.begin.flowtype
       set: body-content
 
   body-content:
@@ -57,7 +57,7 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.module.body.end.flowtype
+          punctuation.definition.module.body.end.flowtype
       pop: true
     - match: ""
       push:

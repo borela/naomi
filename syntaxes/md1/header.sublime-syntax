@@ -24,7 +24,7 @@ contexts:
       captures:
         1: >-
           level-6.md.md1
-          punctuation.delimiter.header.md.md1
+          punctuation.definition.header.md.md1
         2: >-
           level-6.md.md1
           entity.name.header.md.md1
@@ -34,7 +34,7 @@ contexts:
       captures:
         1: >-
           level-5.md.md1
-          punctuation.delimiter.header.md.md1
+          punctuation.definition.header.md.md1
         2: >-
           level-5.md.md1
           entity.name.header.md.md1
@@ -44,7 +44,7 @@ contexts:
       captures:
         1: >-
           level-4.md.md1
-          punctuation.delimiter.header.md.md1
+          punctuation.definition.header.md.md1
         2: >-
           level-4.md.md1
           entity.name.header.md.md1
@@ -54,7 +54,7 @@ contexts:
       captures:
         1: >-
           level-3.md.md1
-          punctuation.delimiter.header.md.md1
+          punctuation.definition.header.md.md1
         2: >-
           level-3.md.md1
           entity.name.header.md.md1
@@ -64,7 +64,7 @@ contexts:
       captures:
         1: >-
           level-2.md.md1
-          punctuation.delimiter.header.md.md1
+          punctuation.definition.header.md.md1
         2: >-
           level-2.md.md1
           entity.name.header.md.md1
@@ -74,7 +74,7 @@ contexts:
       captures:
         1: >-
           level-1.md.md1
-          punctuation.delimiter.header.md.md1
+          punctuation.definition.header.md.md1
         2: >-
           level-1.md.md1
           entity.name.header.md.md1

@@ -30,11 +30,11 @@ contexts:
       captures:
         1: >-
           keyword.documentation.php.php7
-          punctuation.delimiter.keyword.begin.php.php7
+          punctuation.definition.keyword.begin.php.php7
         2: keyword.documentation.php.php7
         3: >-
           keyword.documentation.php.php7
-          punctuation.delimiter.keyword.end.php.php7
+          punctuation.definition.keyword.end.php.php7
       pop: true
     - include: param
     - include: return
@@ -59,14 +59,14 @@ contexts:
     # Actual type.
     - match: (?=\s*\S)
       set: [
-        type-delimiter,
+        type-definition,
         type
       ]
 
   type:
     - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
 
-  type-delimiter:
+  type-definition:
     - match: |
         (?x)
         (?=\s*
@@ -77,7 +77,7 @@ contexts:
       captures:
         1: keyword.operator.other.php.php7
       set: [
-        type-delimiter,
+        type-definition,
         type
       ]
 
@@ -86,7 +86,7 @@ contexts:
       captures:
         1: >-
           keyword.documentation.php.php7
-          punctuation.delimiter.keyword.begin.php.php7
+          punctuation.definition.keyword.begin.php.php7
         2: keyword.documentation.php.php7
       set: [
         variable,
@@ -98,7 +98,7 @@ contexts:
       captures:
         1: >-
           keyword.documentation.php.php7
-          punctuation.delimiter.keyword.begin.php.php7
+          punctuation.definition.keyword.begin.php.php7
         2: keyword.documentation.php.php7
       set: types
 
@@ -107,7 +107,7 @@ contexts:
       captures:
         1: >-
           keyword.documentation.php.php7
-          punctuation.delimiter.keyword.begin.php.php7
+          punctuation.definition.keyword.begin.php.php7
         2: keyword.documentation.php.php7
       set: type
 
@@ -116,7 +116,7 @@ contexts:
       captures:
         1: >-
           keyword.documentation.php.php7
-          punctuation.delimiter.keyword.begin.php.php7
+          punctuation.definition.keyword.begin.php.php7
         2: keyword.documentation.php.php7
       set: types
 
@@ -150,6 +150,6 @@ contexts:
       captures:
         1: >-
           keyword.documentation.php.php7
-          punctuation.delimiter.keyword.begin.php.php7
+          punctuation.definition.keyword.begin.php.php7
         2: keyword.documentation.php.php7
       pop: true

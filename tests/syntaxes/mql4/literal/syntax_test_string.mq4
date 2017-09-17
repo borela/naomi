@@ -15,15 +15,15 @@
     "Something is 'here'..."
 //  ^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.mql.mql4
 //   ^^^^^^^^^^^^^^^^^^^^^^ string.content.mql.mql4
-//  ^ punctuation.delimiter.string.begin.mql.mql4
-//                         ^ punctuation.delimiter.string.end.mql.mql4
+//  ^ punctuation.definition.string.begin.mql.mql4
+//                         ^ punctuation.definition.string.end.mql.mql4
     "Something is \"here\"..."
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.mql.mql4
 //   ^^^^^^^^^^^^^^^^^^^^^^^^ string.content.mql.mql4
-//  ^ punctuation.delimiter.string.begin.mql.mql4
+//  ^ punctuation.definition.string.begin.mql.mql4
 //                ^^ constant.character.escape.a.mql.mql4
 //                      ^^ constant.character.escape.b.mql.mql4
-//                           ^ punctuation.delimiter.string.end.mql.mql4
+//                           ^ punctuation.definition.string.end.mql.mql4
     "Escaped: \\\"\n\r\t\x0065\d65535"
 //            ^^ constant.character.escape.a.mql.mql4
 //              ^^ constant.character.escape.b.mql.mql4

@@ -11,13 +11,13 @@
 // the License.
 
 .entity.name.type,
-.punctuation.delimiter.type {
+.punctuation.definition.type {
   foreground: $light-green-300;
 }
 
 .support {
   .entity.name.type,
-  .punctuation.delimiter.type {
+  .punctuation.definition.type {
     foreground: $deep-orange-a100;
   }
 }

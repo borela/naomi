@@ -28,7 +28,7 @@ contexts:
         (?xi)\s*
         (\.)({{commonIdentifier}})?
       captures:
-        1: punctuation.delimiter.selector.class.scss.scss3
+        1: punctuation.definition.selector.class.scss.scss3
         2: entity.name.selector.class.scss.scss3
       set: trap
 

@@ -408,7 +408,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.function.parameter .entity.name.variable, .function.parameter .punctuation.delimiter.variable</string>
+			<string>.function.parameter .entity.name.variable, .function.parameter .punctuation.definition.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -426,7 +426,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.name.variable, .punctuation.delimiter.variable</string>
+			<string>.entity.name.variable, .punctuation.definition.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -437,7 +437,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.support .entity.name.variable, .support .punctuation.delimiter.variable</string>
+			<string>.support .entity.name.variable, .support .punctuation.definition.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

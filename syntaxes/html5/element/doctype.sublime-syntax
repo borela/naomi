@@ -22,7 +22,7 @@ contexts:
     - match: (?i)(<!)(DOCTYPE) html(>)
       captures:
         0: declaration.doctype.html.html5
-        1: punctuation.delimiter.declaration.begin.html.html5
+        1: punctuation.definition.declaration.begin.html.html5
         2: entity.name.other.html.html5
-        3: punctuation.delimiter.declaration.end.html.html5
+        3: punctuation.definition.declaration.end.html.html5
       pop: true

@@ -57,37 +57,33 @@ contexts:
           \s*{{commonIdentifier}}
           \s*\(
         )
-      set: [
-        arguments,
-        name
-      ]
+      set: name
 
   name:
     # Support identifier.
     - match: |
-        (?x)
-        \s*(
-          (?> constructor
-            | super
-          )
-        )\b
+        (?x)\s*
+        ((?> constructor
+          | super
+        ))\b
       captures:
         1: >-
           support.js.fjsx15
           entity.name.function.js.fjsx15
-      pop: true
-    # React JS’s support functions.
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/reactjs.sublime-syntax
+      set: support-arguments
     # Identifier.
     - match: |
         (?xi)
         \s*({{commonIdentifier}})
       captures:
         1: entity.name.function.js.fjsx15
-      pop: true
+      set: arguments
 
   template-arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+
+  support-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax

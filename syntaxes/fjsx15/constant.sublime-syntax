@@ -24,10 +24,6 @@ variables:
 
 contexts:
   main:
-    - include: support-constant
-    - include: common-constant
-
-  common-constant:
     # Single character.
     - match: |
         (?x)\s*
@@ -54,20 +50,4 @@ contexts:
           storage.modifier.js.fjsx15
           keyword.operator.other.access.js.fjsx15
         2: entity.name.constant.js.fjsx15
-      pop: true
-
-  support-constant:
-    - match: |
-        (?x)\s*
-        ((?> false
-          | Infinity
-          | NaN
-          | null
-          | true
-          | undefined
-        ))
-      captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.constant.js.fjsx15
       pop: true

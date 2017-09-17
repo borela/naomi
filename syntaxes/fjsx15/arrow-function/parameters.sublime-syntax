@@ -28,7 +28,7 @@ contexts:
       captures:
         1: >-
           arrow.js.fjsx15
-          punctuation.delimiter.function.parameters.begin.js.fjsx15
+          punctuation.definition.function.parameters.begin.js.fjsx15
       set: parameters
 
   parameters:
@@ -36,12 +36,12 @@ contexts:
       captures:
         1: >-
           arrow.js.fjsx15
-          punctuation.delimiter.function.parameters.js.fjsx15
+          punctuation.definition.function.parameters.js.fjsx15
     - match: \s*(\))
       captures:
         1: >-
           arrow.js.fjsx15
-          punctuation.delimiter.function.parameters.end.js.fjsx15
+          punctuation.definition.function.parameters.end.js.fjsx15
       set: return-type
     - match: ""
       push:

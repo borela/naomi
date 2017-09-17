@@ -14,17 +14,17 @@
 
    "Something is 'here'..."
 // ^^^^^^^^^^^^^^^^^^^^^^^^ .string.quoted.double.js.fjsx15
-// ^ .punctuation.delimiter.string.begin.js.fjsx15
-//                        ^ .punctuation.delimiter.string.end.js.fjsx15
+// ^ .punctuation.definition.string.begin.js.fjsx15
+//                        ^ .punctuation.definition.string.end.js.fjsx15
    "Something is \"here\"..."
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^ .string.quoted.double.js.fjsx15
-// ^ .punctuation.delimiter.string.begin.js.fjsx15
+// ^ .punctuation.definition.string.begin.js.fjsx15
 //               ^^ .constant.character.escape.a.js.fjsx15
 //                     ^^ .constant.character.escape.b.js.fjsx15
-//                          ^ .punctuation.delimiter.string.end.js.fjsx15
+//                          ^ .punctuation.definition.string.end.js.fjsx15
    "Escaped: \\\b\f\n\r\t\v\x12\u1234\u{1234}"
 // ^^^^^^^^^^^^^^^^^^^^^^^^^ .string.quoted.double.js.fjsx15
-// ^ .punctuation.delimiter.string.begin.js.fjsx15
+// ^ .punctuation.definition.string.begin.js.fjsx15
 //           ^^ .constant.character.escape.a.js.fjsx15
 //             ^^ .constant.character.escape.b.js.fjsx15
 //               ^^ .constant.character.escape.a.js.fjsx15
@@ -35,4 +35,4 @@
 //                         ^^^^ .constant.character.escape.b.js.fjsx15
 //                             ^^^^^^ .constant.character.escape.a.js.fjsx15
 //                                   ^^^^^^^^ .constant.character.escape.b.js.fjsx15
-//                                           ^ .punctuation.delimiter.string.end.js.fjsx15
+//                                           ^ .punctuation.definition.string.end.js.fjsx15

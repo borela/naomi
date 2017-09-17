@@ -28,7 +28,7 @@ contexts:
         (?xi)
         {{expressionGroupBegin}}
       captures:
-        1: punctuation.delimiter.expression.group.a.begin.php.php7
+        1: punctuation.definition.expression.group.a.begin.php.php7
       set: open-b-close-a
     # Expression contents.
     - include: sequence
@@ -39,12 +39,12 @@ contexts:
         (?xi)
         {{expressionGroupBegin}}
       captures:
-        1: punctuation.delimiter.expression.group.a.begin.php.php7
+        1: punctuation.definition.expression.group.a.begin.php.php7
       push: open-b-close-a
     # Close current expression group.
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.expression.group.b.end.php.php7
+        1: punctuation.definition.expression.group.b.end.php.php7
       pop: true
     # Expression contents.
     - match: ""
@@ -59,12 +59,12 @@ contexts:
         (?xi)
         {{expressionGroupBegin}}
       captures:
-        1: punctuation.delimiter.expression.group.b.begin.php.php7
+        1: punctuation.definition.expression.group.b.begin.php.php7
       push: open-a-close-b
     # Close current expression group.
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.expression.group.a.end.php.php7
+        1: punctuation.definition.expression.group.a.end.php.php7
       pop: true
     # Expression contents.
     - match: ""

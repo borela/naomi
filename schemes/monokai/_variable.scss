@@ -11,14 +11,14 @@
 // the License.
 
 .entity.name.variable,
-.punctuation.delimiter.variable {
+.punctuation.definition.variable {
   foreground: #f8f8f2;
   fontStyle: none;
 }
 
 .support {
   .entity.name.variable,
-  .punctuation.delimiter.variable {
+  .punctuation.definition.variable {
     foreground: #66d9ef;
   }
 }

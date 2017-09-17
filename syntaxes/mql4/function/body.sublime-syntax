@@ -28,7 +28,7 @@ contexts:
     # End.
     - match: \s*(;)
       captures:
-        1: punctuation.delimiter.function.declaration.end.mql.mql4
+        1: punctuation.definition.function.declaration.end.mql.mql4
       pop: true
     # Pure virtual or constant.
     - match: |
@@ -52,7 +52,7 @@ contexts:
     # Initialization.
     - match: \s*(:)
       captures:
-        1: punctuation.delimiter.function.initializations.mql.mql4
+        1: punctuation.definition.function.initializations.mql.mql4
       set: initializations
     # Normal body.
     - include: body-start
@@ -60,7 +60,7 @@ contexts:
   initializations:
     - match: ""
       set: [
-        delimiter,
+        definition,
         end-initialization,
         initialization-expression,
         begin-initialization,
@@ -78,7 +78,7 @@ contexts:
   begin-initialization:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.initialization.begin.mql.mql4
+        1: punctuation.definition.initialization.begin.mql.mql4
       pop: true
 
   initialization-expression:
@@ -86,33 +86,33 @@ contexts:
       pop: true
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.initialization.mql.mql4
+        1: punctuation.definition.initialization.mql.mql4
     - match: (?=\S)
       push: statement-and-expression
 
   end-initialization:
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.initialization.end.mql.mql4
+        1: punctuation.definition.initialization.end.mql.mql4
       pop: true
 
-  delimiter:
+  definition:
     - include: body-start
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.initialization.mql.mql4
+        1: punctuation.definition.initialization.mql.mql4
       set: initializations
 
   body-start:
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.function.body.begin.mql.mql4
+        1: punctuation.definition.function.body.begin.mql.mql4
       set: body-content
 
   body-content:
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.function.body.end.mql.mql4
+        1: punctuation.definition.function.body.end.mql.mql4
       pop: true
     - match: ""
       push:

@@ -44,9 +44,9 @@ contexts:
     - match: (?xi)\s*({{namespacePath}})
       captures:
         1: namespace.path.php.php7
-        2: punctuation.delimiter.namespace.a.php.php7
+        2: punctuation.definition.namespace.a.php.php7
         3: entity.name.namespace.a.php.php7
-        4: punctuation.delimiter.namespace.b.php.php7
+        4: punctuation.definition.namespace.b.php.php7
         5: entity.name.namespace.b.php.php7
-        6: punctuation.delimiter.namespace.a.php.php7
+        6: punctuation.definition.namespace.a.php.php7
         7: entity.name.namespace.a.php.php7

@@ -69,24 +69,24 @@ contexts:
   imported-variables-begin:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.function.parameters.begin.php.php7
+        1: punctuation.definition.function.parameters.begin.php.php7
       set: imported-variables
 
   imported-variables:
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.function.parameters.end.php.php7
+        1: punctuation.definition.function.parameters.end.php.php7
       pop: true
     # Starts with a variable.
     - match: (?=\s*\$)
       push: [
-        target-delimiter,
+        target-definition,
         target-variable,
       ]
     # Starts with a reference operator.
     - match: (?=\s*&)
       push: [
-        target-delimiter,
+        target-definition,
         target-variable,
         reference-operator
       ]
@@ -103,13 +103,13 @@ contexts:
         1: keyword.operator.other.reference.php.php7
       pop: true
 
-  target-delimiter:
+  target-definition:
     - include: comment
     - match: (?=\s*\))
       pop: true
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.function.parameters.php.php7
+        1: punctuation.definition.function.parameters.php.php7
       pop: true
 
   target-variable:

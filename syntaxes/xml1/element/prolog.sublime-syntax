@@ -23,7 +23,7 @@ contexts:
       captures:
         1: >-
           instruction.prolog.xml.xml1
-          punctuation.delimiter.instruction.begin.xml.xml1
+          punctuation.definition.instruction.begin.xml.xml1
         2: >-
           instruction.prolog.xml.xml1
           entity.name.instruction.xml.xml1
@@ -34,7 +34,7 @@ contexts:
       captures:
         1: >-
           instruction.prolog.xml.xml1
-          punctuation.delimiter.instruction.end.xml.xml1
+          punctuation.definition.instruction.end.xml.xml1
       pop: true
     - match: ""
       push:

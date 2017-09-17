@@ -22,18 +22,18 @@ contexts:
     # Function without body.
     - match: \s*(;)
       captures:
-        1: punctuation.delimiter.function.declaration.end.php.php7
+        1: punctuation.definition.function.declaration.end.php.php7
       pop: true
     # Normal body.
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.function.body.begin.php.php7
+        1: punctuation.definition.function.body.begin.php.php7
       set: body-content
 
   body-content:
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.function.body.end.php.php7
+        1: punctuation.definition.function.body.end.php.php7
       pop: true
     - match: ""
       push:

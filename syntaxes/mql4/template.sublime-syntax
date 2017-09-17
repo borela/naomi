@@ -34,13 +34,13 @@ contexts:
   parameters:
     - match: \s*(<)
       captures:
-        1: punctuation.delimiter.template.parameters.begin.mql.mql4
+        1: punctuation.definition.template.parameters.begin.mql.mql4
       set: parameters-content
 
   parameters-content:
     - match: \s*(>)
       captures:
-        1: punctuation.delimiter.template.parameters.end.mql.mql4
+        1: punctuation.definition.template.parameters.end.mql.mql4
       set: target
     - match: |
         (?xi)\s*
@@ -50,7 +50,7 @@ contexts:
       captures:
         1: keyword.other.mql.mql4
         2: entity.name.type.mql.mql4
-        3: punctuation.delimiter.template.parameter.mql.mql4
+        3: punctuation.definition.template.parameter.mql.mql4
 
   target:
     - include: Packages/Naomi/syntaxes/mql4/function.sublime-syntax

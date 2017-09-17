@@ -11,6 +11,6 @@
 // the License.
 
 .string.unquoted.regex,
-.string.unquoted.regex .punctuation.delimiter {
+.string.unquoted.regex .punctuation.definition {
   foreground: $teal-400;
 }

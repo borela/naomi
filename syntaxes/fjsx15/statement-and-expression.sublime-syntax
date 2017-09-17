@@ -35,7 +35,7 @@ contexts:
         (?xi)
         {{expressionGroupBegin}}
       captures:
-        1: punctuation.delimiter.expression.group.a.begin.js.fjsx15
+        1: punctuation.definition.expression.group.a.begin.js.fjsx15
       set: open-b-close-a
     # Expression contents.
     - include: sequence
@@ -48,12 +48,12 @@ contexts:
         (?xi)
         {{expressionGroupBegin}}
       captures:
-        1: punctuation.delimiter.expression.group.a.begin.js.fjsx15
+        1: punctuation.definition.expression.group.a.begin.js.fjsx15
       push: open-b-close-a
     # Close current expression group.
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.expression.group.b.end.js.fjsx15
+        1: punctuation.definition.expression.group.b.end.js.fjsx15
       pop: true
     # Expression contents.
     - match: ""
@@ -70,18 +70,18 @@ contexts:
         (?xi)
         {{expressionGroupBegin}}
       captures:
-        1: punctuation.delimiter.expression.group.b.begin.js.fjsx15
+        1: punctuation.definition.expression.group.b.begin.js.fjsx15
       push: open-a-close-b
     # Close current expression group.
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.expression.group.a.end.js.fjsx15
+        1: punctuation.definition.expression.group.a.end.js.fjsx15
       pop: true
     # Expression contents.
     - match: ""
       push:
         - include: sequence
-        - match: ""
+        - match: \s*
           pop: true
 
   comment:
@@ -118,8 +118,11 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/array-access.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/global.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/reactjs.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/web.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/node-js.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/jest.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax

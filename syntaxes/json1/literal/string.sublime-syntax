@@ -39,7 +39,7 @@ contexts:
       captures:
         1: >-
           string.quoted.double.json.json1
-          punctuation.delimiter.string.begin.json.json1
+          punctuation.definition.string.begin.json.json1
       with_prototype:
         - match: (?<!\\)\n
           set: trap
@@ -47,7 +47,7 @@ contexts:
           captures:
             1: >-
               string.quoted.double.json.json1
-              punctuation.delimiter.string.end.json.json1
+              punctuation.definition.string.end.json.json1
           pop: true
       set: escape-a
 

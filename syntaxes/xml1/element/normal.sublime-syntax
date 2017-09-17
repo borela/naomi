@@ -32,7 +32,6 @@ contexts:
         1: >-
           meta.tag.xml.xml1
           tag.xml.xml1
-          punctuation.delimiter.tag.begin.xml.xml1
           punctuation.definition.tag.begin.xml.xml1
       set: tag-name
 
@@ -58,7 +57,6 @@ contexts:
         1: >-
           meta.tag.xml.xml1
           tag.xml.xml1
-          punctuation.delimiter.tag.end.xml.xml1
           punctuation.definition.tag.end.xml.xml1
       pop: true
     - include: Packages/Naomi/syntaxes/xml1/element/attributes.sublime-syntax
@@ -69,7 +67,6 @@ contexts:
         1: >-
           meta.tag.xml.xml1
           tag.xml.xml1
-          punctuation.delimiter.tag.end.xml.xml1
           punctuation.definition.tag.end.xml.xml1
       pop: true
     - match: |
@@ -79,7 +76,6 @@ contexts:
         1: >-
           meta.tag.xml.xml1
           tag.close.xml.xml1
-          punctuation.delimiter.tag.begin.xml.xml1
           punctuation.definition.tag.begin.xml.xml1
         2: >-
           meta.tag.xml.xml1
@@ -88,7 +84,6 @@ contexts:
         3: >-
           meta.tag.xml.xml1
           tag.close.xml.xml1
-          punctuation.delimiter.tag.end.xml.xml1
           punctuation.definition.tag.end.xml.xml1
       pop: true
     - match: ""

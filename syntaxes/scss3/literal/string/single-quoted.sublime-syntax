@@ -32,14 +32,14 @@ contexts:
     - match: \'
       scope: >-
         string.quoted.single.scss.scss3
-        punctuation.delimiter.string.begin.scss.scss3
+        punctuation.definition.string.begin.scss.scss3
       with_prototype:
         - match: (?<!\\)\n
           set: trap
         - match: \'
           scope: >-
             string.quoted.single.scss.scss3
-            punctuation.delimiter.string.end.scss.scss3
+            punctuation.definition.string.end.scss.scss3
           pop: true
       set: escape-a
 

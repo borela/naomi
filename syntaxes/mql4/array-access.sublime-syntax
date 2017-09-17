@@ -23,13 +23,13 @@ contexts:
         (?x)
         \s*(\[)
       captures:
-        1: punctuation.delimiter.array.access.begin.mql.mql4
+        1: punctuation.definition.array.access.begin.mql.mql4
       set: index
 
   index:
     - match: \s*(])
       captures:
-        1: punctuation.delimiter.array.access.end.mql.mql4
+        1: punctuation.definition.array.access.end.mql.mql4
       pop: true
     - match: ""
       push:

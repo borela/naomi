@@ -21,17 +21,17 @@ contexts:
   main:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.function.arguments.begin.mql.mql4
+        1: punctuation.definition.function.arguments.begin.mql.mql4
       set: arguments
 
   arguments:
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.function.arguments.end.mql.mql4
+        1: punctuation.definition.function.arguments.end.mql.mql4
       pop: true
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.function.arguments.mql.mql4
+        1: punctuation.definition.function.arguments.mql.mql4
     - match: ""
       push:
       - match: |

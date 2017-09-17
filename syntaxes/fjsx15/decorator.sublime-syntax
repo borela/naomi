@@ -29,7 +29,7 @@ contexts:
         \s*(@)
         (?={{decoratorIdentifier}})
       captures:
-        1: punctuation.delimiter.decorator.js.fjsx15
+        1: punctuation.definition.decorator.js.fjsx15
       set: identifier
 
   identifier:

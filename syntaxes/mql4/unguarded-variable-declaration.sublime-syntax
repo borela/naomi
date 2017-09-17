@@ -65,7 +65,7 @@ contexts:
       ]
     - match: \s*(\[)
       captures:
-        1: punctuation.delimiter.array.index.begin.mql.mql4
+        1: punctuation.definition.array.index.begin.mql.mql4
       push: array-index
     - match: \s*(=)
       captures:
@@ -75,10 +75,10 @@ contexts:
   array-index:
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.array.index.mql.mql4
+        1: punctuation.definition.array.index.mql.mql4
     - match: \s*(])
       captures:
-        1: punctuation.delimiter.array.index.end.mql.mql4
+        1: punctuation.definition.array.index.end.mql.mql4
       pop: true
     - match: ""
       push:

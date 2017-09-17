@@ -21,11 +21,11 @@ contexts:
   main:
     - match: \s*(//|#)
       captures:
-        1: punctuation.delimiter.comment.begin.php.php7
+        1: punctuation.definition.comment.begin.php.php7
       set: line
     - match: \s*(/\*)
       captures:
-        1: punctuation.delimiter.comment.begin.php.php7
+        1: punctuation.definition.comment.begin.php.php7
       set: block
 
   line:
@@ -41,7 +41,7 @@ contexts:
     - include: link
     - match: \s*(\*/)
       captures:
-        1: punctuation.delimiter.comment.end.php.php7
+        1: punctuation.definition.comment.end.php.php7
       set:
         # Used to fix the block comment indentation settings.
         # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6

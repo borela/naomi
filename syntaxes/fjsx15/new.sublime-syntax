@@ -28,25 +28,31 @@ contexts:
     - match: |
         (?xi)\s*
         (new)
-        (?=
-          \s+{{commonIdentifier}}
-        )
+        (?=\s+{{commonIdentifier}})
       captures:
         1: keyword.other.js.fjsx15
       set: [
-        arguments,
+        optional-template-and-args,
         type
       ]
-    # Accept any expression after the keyword.
+    # Any other expression after the keyword.
     - match: (?i)\s*(new)\b
       captures:
         1: keyword.other.js.fjsx15
       pop: true
 
-  arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
-    - match: ""
+  type:
+    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
+    # Other constructors.
+    - match: |
+        (?xi)
+        \s*({{commonIdentifier}})
+      captures:
+        1: entity.name.class.js.fjsx15
       pop: true
 
-  type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
+  optional-template-and-args:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/type/arguments.sublime-syntax
+    - match: ""
+      pop: true

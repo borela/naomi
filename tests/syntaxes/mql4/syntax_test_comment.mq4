@@ -14,9 +14,9 @@
 
     // Test...
 //  ^^^^^^^^^^ comment.line.mql.mql4
-//  ^^ punctuation.delimiter.comment.begin.mql.mql4
+//  ^^ punctuation.definition.comment.begin.mql.mql4
 
     /* Test... */
 //  ^^^^^^^^^^^^^ comment.block.mql.mql4
-//  ^^ punctuation.delimiter.comment.begin.mql.mql4
-//             ^^ punctuation.delimiter.comment.end.mql.mql4
+//  ^^ punctuation.definition.comment.begin.mql.mql4
+//             ^^ punctuation.definition.comment.end.mql.mql4

@@ -24,17 +24,17 @@ contexts:
         (sizeof)\s*(\()
       captures:
         1: keyword.other.mql.mql4
-        2: punctuation.delimiter.function.parameters.begin.mql.mql4
+        2: punctuation.definition.function.parameters.begin.mql.mql4
       set: [
-        delimiter,
+        definition,
         type
       ]
 
   type:
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
-  delimiter:
+  definition:
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.function.parameters.end.mql.mql4
+        1: punctuation.definition.function.parameters.end.mql.mql4
       pop: true

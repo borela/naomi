@@ -34,7 +34,7 @@ contexts:
     - include: complex-variable
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax
 
   member-access-operator:
     - match: \s*(\.)
@@ -116,7 +116,6 @@ contexts:
         1: >-
           support.js.fjsx15
           entity.name.class.js.fjsx15
-    - match: ""
       set: optional-constructor
 
   optional-constructor:

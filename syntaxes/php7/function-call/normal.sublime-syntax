@@ -43,7 +43,7 @@ contexts:
           {{commonIdentifier}}
         )(?=\s*\()
       captures:
-        1: punctuation.delimiter.function.php.php7
+        1: punctuation.definition.function.php.php7
         2: entity.name.function.php.php7
       set: arguments
 

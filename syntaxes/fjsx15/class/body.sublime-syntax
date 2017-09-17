@@ -22,18 +22,36 @@ contexts:
     - include: comment
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.class.body.begin.js.fjsx15
+        1: punctuation.definition.class.body.begin.js.fjsx15
       set: body
 
   body:
     - include: comment
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.class.body.end.js.fjsx15
+        1: punctuation.definition.class.body.end.js.fjsx15
       pop: true
     - match: ""
       push:
+        # This is necessary because normally these instance variables would be
+        # accessed using “this” but in the class body we can use the short version.
+        - match: |
+            (?x)\s*
+            ((?> props
+              | state
+            ))\b
+          captures:
+            1: >-
+              support.core.js.fjsx15
+              entity.name.variable.js.fjsx15
+            2: keyword.operator.other.member-access.js.fjsx15
+            3: >-
+              support.lib.react-js.fjsx15
+              entity.name.variable.js.fjsx15
+          pop: true
+        # Other contents.
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax

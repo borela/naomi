@@ -26,9 +26,9 @@ contexts:
   main:
     - match: \s*(<)
       captures:
-        1: punctuation.delimiter.template.arguments.begin.mql.mql4
+        1: punctuation.definition.template.arguments.begin.mql.mql4
       set: [
-        delimiter,
+        definition,
         argument
       ]
     - match: (?=\S)
@@ -37,19 +37,19 @@ contexts:
   argument:
     - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
 
-  delimiter:
+  definition:
     - match: \>
-      scope: punctuation.delimiter.template.arguments.end.mql.mql4
+      scope: punctuation.definition.template.arguments.end.mql.mql4
       pop: true
     - match: \,
-      scope: punctuation.delimiter.template.arguments.mql.mql4
+      scope: punctuation.definition.template.arguments.mql.mql4
       set: [
-        delimiter,
+        definition,
         argument
       ]
     - match: \<
-      scope: punctuation.delimiter.template.arguments.begin.mql.mql4
+      scope: punctuation.definition.template.arguments.begin.mql.mql4
       push: [
-        delimiter,
+        definition,
         argument
       ]

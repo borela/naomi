@@ -30,7 +30,7 @@ contexts:
       captures:
         1: >-
           function.parameter.php.php7
-          punctuation.delimiter.variable.begin.php.php7
+          punctuation.definition.variable.begin.php.php7
         2: >-
           function.parameter.php.php7
           entity.name.variable.php.php7

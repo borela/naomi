@@ -21,16 +21,16 @@ contexts:
   main:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.function.arguments.begin.php.php7
+        1: punctuation.definition.function.arguments.begin.php.php7
       set: arguments
 
   arguments:
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.function.arguments.end.php.php7
+        1: punctuation.definition.function.arguments.end.php.php7
       pop: true
     - match: \s*(,)
-      scope: punctuation.delimiter.function.arguments.php.php7
+      scope: punctuation.definition.function.arguments.php.php7
     - match: ""
       push:
         - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax

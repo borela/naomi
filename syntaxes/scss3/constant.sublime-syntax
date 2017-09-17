@@ -40,7 +40,7 @@ contexts:
         )
       captures:
         0: constant.scss.scss3
-        1: punctuation.delimiter.constant.begin.scss.scss3
+        1: punctuation.definition.constant.begin.scss.scss3
         2: entity.name.constant.scss.scss3
       pop: true
 

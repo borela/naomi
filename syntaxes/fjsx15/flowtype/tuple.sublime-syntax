@@ -23,7 +23,7 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.array.begin.flowtype
+          punctuation.definition.array.begin.flowtype
       set: items
 
   items:
@@ -31,12 +31,12 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.array.flowtype
+          punctuation.definition.array.flowtype
     - match: \s*(])
       captures:
         1: >-
           flowtype
-          punctuation.delimiter.array.end.flowtype
+          punctuation.definition.array.end.flowtype
       pop: true
     - match: ""
       push:

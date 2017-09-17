@@ -14,21 +14,21 @@
 
 <?php
     \Random
-//  ^ punctuation.delimiter.type.php.php7
+//  ^ punctuation.definition.type.php.php7
 //   ^^^^^^ entity.name.type.php.php7
     Random
 //  ^^^^^^ entity.name.type.php.php7
 
     \Namespace\Namespace\Random
-//  ^ punctuation.delimiter.namespace.a.php.php7
-//            ^ punctuation.delimiter.namespace.b.php.php7
-//                      ^ punctuation.delimiter.type.php.php7
+//  ^ punctuation.definition.namespace.a.php.php7
+//            ^ punctuation.definition.namespace.b.php.php7
+//                      ^ punctuation.definition.type.php.php7
 //   ^^^^^^^^^ entity.name.namespace.a.php.php7
 //             ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                       ^^^^^^ entity.name.type.php.php7
     Namespace\Namespace\Random
-//           ^ punctuation.delimiter.namespace.b.php.php7
-//                     ^ punctuation.delimiter.type.php.php7
+//           ^ punctuation.definition.namespace.b.php.php7
+//                     ^ punctuation.definition.type.php.php7
 //  ^^^^^^^^^ entity.name.namespace.a.php.php7
 //            ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                      ^^^^^^ entity.name.type.php.php7
@@ -61,55 +61,55 @@
 //  ^^^^^^^^^^^ entity.name.type.php.php7
     \Traversable
 //  ^^^^^^^^^^^^ support.php.php7
-//  ^ punctuation.delimiter.type.php.php7
+//  ^ punctuation.definition.type.php.php7
 //   ^^^^^^^^^^^ entity.name.type.php.php7
     Iterator
 //  ^^^^^^^^ support.php.php7
 //  ^^^^^^^^ entity.name.type.php.php7
     \Iterator
 //  ^^^^^^^^^ support.php.php7
-//  ^ punctuation.delimiter.type.php.php7
+//  ^ punctuation.definition.type.php.php7
 //   ^^^^^^^^ entity.name.type.php.php7
     IteratorAggregate
 //  ^^^^^^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^^^^^^ entity.name.type.php.php7
     \IteratorAggregate
 //  ^^^^^^^^^^^^^^^^^^ support.php.php7
-//  ^ punctuation.delimiter.type.php.php7
+//  ^ punctuation.definition.type.php.php7
 //   ^^^^^^^^^^^^^^^^^ entity.name.type.php.php7
     Throwable
 //  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.type.php.php7
     \Throwable
 //  ^^^^^^^^^^ support.php.php7
-//  ^ punctuation.delimiter.type.php.php7
+//  ^ punctuation.definition.type.php.php7
 //   ^^^^^^^^^ entity.name.type.php.php7
     ArrayAccess
 //  ^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^ entity.name.type.php.php7
     \ArrayAccess
 //  ^^^^^^^^^^^^ support.php.php7
-//  ^ punctuation.delimiter.type.php.php7
+//  ^ punctuation.definition.type.php.php7
 //   ^^^^^^^^^^^ entity.name.type.php.php7
     Serializable
 //  ^^^^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^^^^ entity.name.type.php.php7
     \Serializable
 //  ^^^^^^^^^^^^^ support.php.php7
-//  ^ punctuation.delimiter.type.php.php7
+//  ^ punctuation.definition.type.php.php7
 //   ^^^^^^^^^^^^ entity.name.type.php.php7
     Closure
 //  ^^^^^^^ support.php.php7
 //  ^^^^^^^ entity.name.type.php.php7
     \Closure
 //  ^^^^^^^^ support.php.php7
-//  ^ punctuation.delimiter.type.php.php7
+//  ^ punctuation.definition.type.php.php7
 //   ^^^^^^^ entity.name.type.php.php7
     Generator
 //  ^^^^^^^^^ support.php.php7
 //  ^^^^^^^^^ entity.name.type.php.php7
     \Generator
 //  ^^^^^^^^^^ support.php.php7
-//  ^ punctuation.delimiter.type.php.php7
+//  ^ punctuation.definition.type.php.php7
 //   ^^^^^^^^^ entity.name.type.php.php7
 ?>

@@ -28,25 +28,25 @@ contexts:
         )?
         (\))
       captures:
-        1: punctuation.delimiter.function.parameters.begin.mql.mql4
+        1: punctuation.definition.function.parameters.begin.mql.mql4
         2: >-
           support.type.mql.mql4
           entity.name.type.mql.mql4
-        3: punctuation.delimiter.function.parameters.end.mql.mql4
+        3: punctuation.definition.function.parameters.end.mql.mql4
       pop: true
     # Parameters.
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.function.parameters.begin.mql.mql4
+        1: punctuation.definition.function.parameters.begin.mql.mql4
       set: parameters
 
   parameters:
     - match: \s*(\,)
       captures:
-        1: punctuation.delimiter.function.parameters.mql.mql4
+        1: punctuation.definition.function.parameters.mql.mql4
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.function.parameters.end.mql.mql4
+        1: punctuation.definition.function.parameters.end.mql.mql4
       pop: true
     - match: ""
       push:

@@ -12,10 +12,10 @@
 
 .component.jsx {
   .entity.name.tag {
-    foreground: $purple-200;
+    foreground: $amber-200;
   }
 
-  .punctuation.delimiter.tag {
-    foreground: rgba($purple-200, .7);
+  .punctuation.definition.tag {
+    foreground: rgba($amber-200, .7);
   }
 }

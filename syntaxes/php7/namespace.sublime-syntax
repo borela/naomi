@@ -31,12 +31,12 @@ contexts:
     # Implicit body.
     - match: \s*(;)
       captures:
-        1: punctuation.delimiter.namespace.body.begin.php.php7
+        1: punctuation.definition.namespace.body.begin.php.php7
       set: implicit-body
     # Bracketed body.
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.namespace.body.begin.php.php7
+        1: punctuation.definition.namespace.body.begin.php.php7
       set: bracketed-body
 
   body-content:
@@ -55,6 +55,6 @@ contexts:
     - match: \s*(})
       captures:
         1: >-
-          punctuation.delimiter.namespace.body.end.php.php7
+          punctuation.definition.namespace.body.end.php.php7
       pop: true
     - include: body-content

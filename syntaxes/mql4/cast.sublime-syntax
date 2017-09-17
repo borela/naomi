@@ -40,19 +40,19 @@ contexts:
           \s*\)
         )
       set: [
-        delimiter,
+        definition,
         type,
-        delimiter
+        definition
       ]
 
-  delimiter:
+  definition:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.cast.begin.mql.mql4
+        1: punctuation.definition.cast.begin.mql.mql4
       pop: true
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.cast.end.mql.mql4
+        1: punctuation.definition.cast.end.mql.mql4
       pop: true
 
   type:

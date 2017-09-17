@@ -60,13 +60,13 @@ contexts:
   header:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.control.header.begin.js.fjsx15
+        1: punctuation.definition.control.header.begin.js.fjsx15
       set: header-content
 
   header-content:
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.control.header.end.js.fjsx15
+        1: punctuation.definition.control.header.end.js.fjsx15
       pop: true
     - match: ""
       push:
@@ -83,14 +83,14 @@ contexts:
   body:
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.control.body.begin.js.fjsx15
+        1: punctuation.definition.control.body.begin.js.fjsx15
       set: body-content
     - include: statement-and-expression
 
   body-content:
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.control.body.end.js.fjsx15
+        1: punctuation.definition.control.body.end.js.fjsx15
       pop: true
     - match: ""
       push:

@@ -12,19 +12,21 @@
 
 .entity.name.function,
 .keyword.operator.other.computed-function,
-.punctuation.delimiter.function {
+.punctuation.definition.function {
   foreground: $light-blue-300;
 }
 
 .support {
-  .entity.name.function {
+  .entity.name.function,
+  .keyword.operator.other.computed-function,
+  .punctuation.definition.function {
     foreground: $deep-orange-a100;
   }
 }
 
 .function.parameter {
   .entity.name.variable,
-  .punctuation.delimiter.variable {
+  .punctuation.definition.variable {
     foreground: $orange-200;
   }
 }

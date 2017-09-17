@@ -17,12 +17,12 @@
   .entity.name.variable,
   .entity.name.constant,
   .entity.name.type,
-  .punctuation.delimiter.class,
-  .punctuation.delimiter.interface,
-  .punctuation.delimiter.function,
-  .punctuation.delimiter.variable,
-  .punctuation.delimiter.constant,
-  .punctuation.delimiter.type {
+  .punctuation.definition.class,
+  .punctuation.definition.interface,
+  .punctuation.definition.function,
+  .punctuation.definition.variable,
+  .punctuation.definition.constant,
+  .punctuation.definition.type {
     foreground: #6699cc;
   }
 }

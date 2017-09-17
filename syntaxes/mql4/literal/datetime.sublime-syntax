@@ -23,33 +23,33 @@ contexts:
       captures:
         1: >-
           constant.datetime.mql.mql4
-          punctuation.delimiter.datetime.begin.mql.mql4
+          punctuation.definition.datetime.begin.mql.mql4
       set: year-value
 
   end:
     - match: \'
       scope: >-
         constant.datetime.mql.mql4
-        punctuation.delimiter.datetime.end.mql.mql4
+        punctuation.definition.datetime.end.mql.mql4
       pop: true
 
-  date-delimiter:
+  date-definition:
     - match: (?=\')
       pop: true
     - match: \.
       scope: >-
         constant.datetime.mql.mql4
-        punctuation.delimiter.date.mql.mql4
+        punctuation.definition.date.mql.mql4
       pop: true
 
-  time-delimiter:
+  time-definition:
     - meta_content_scope: constant.datetime.mql.mql4
     - match: (?=')
       pop: true
     - match: ":"
       scope: >-
         constant.datetime.mql.mql4
-        punctuation.delimiter.time.mql.mql4
+        punctuation.definition.time.mql.mql4
       pop: true
 
   year-value:
@@ -59,7 +59,7 @@ contexts:
       scope: datetime.year.mql.mql4
       set: [
         month-value,
-        date-delimiter
+        date-definition
       ]
 
   month-value:
@@ -69,7 +69,7 @@ contexts:
       scope: datetime.month.mql.mql4
       set: [
         day-value,
-        date-delimiter
+        date-definition
       ]
 
   day-value:
@@ -86,7 +86,7 @@ contexts:
       scope: datetime.hour.mql.mql4
       set: [
         minute-value,
-        time-delimiter
+        time-definition
       ]
 
   minute-value:
@@ -96,7 +96,7 @@ contexts:
       scope: datetime.minute.mql.mql4
       set: [
         second-value,
-        time-delimiter
+        time-definition
       ]
 
   second-value:

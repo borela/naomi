@@ -16,16 +16,16 @@
     trait MyTrait {
 //  ^^^^^ keyword.declaration.trait.php.php7
 //        ^^^^^^^ entity.name.trait.php.php7
-//                ^ punctuation.delimiter.trait.body.begin.php.php7
+//                ^ punctuation.definition.trait.body.begin.php.php7
       Something...
     }
-//  ^ punctuation.delimiter.trait.body.end.php.php7
+//  ^ punctuation.definition.trait.body.end.php.php7
 
     trait MyTrait {
 //  ^^^^^ keyword.declaration.trait.php.php7
 //        ^^^^^^^ entity.name.trait.php.php7
-//                ^ punctuation.delimiter.trait.body.begin.php.php7
+//                ^ punctuation.definition.trait.body.begin.php.php7
       Something...
     }
-//  ^ punctuation.delimiter.trait.body.end.php.php7
+//  ^ punctuation.definition.trait.body.end.php.php7
 ?>

@@ -23,13 +23,13 @@ contexts:
       captures:
         1: >-
           comment.block.flowtype
-          punctuation.delimiter.comment.begin.flowtype
+          punctuation.definition.comment.begin.flowtype
       set: block
     - match: \s*(/\*(?=\s*:))
       captures:
         1: >-
           comment.block.flowtype
-          punctuation.delimiter.comment.begin.flowtype
+          punctuation.definition.comment.begin.flowtype
       set: associated-type
 
   associated-type:
@@ -38,7 +38,7 @@ contexts:
       captures:
         1: >-
           comment.block.flowtype
-          punctuation.delimiter.comment.end.js.fjsx15
+          punctuation.definition.comment.end.js.fjsx15
       set:
         # Used to fix the block comment indentation settings.
         # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
@@ -59,7 +59,7 @@ contexts:
       captures:
         1: >-
           comment.block.flowtype
-          punctuation.delimiter.comment.end.js.fjsx15
+          punctuation.definition.comment.end.js.fjsx15
       set:
         # Used to fix the block comment indentation settings.
         # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6

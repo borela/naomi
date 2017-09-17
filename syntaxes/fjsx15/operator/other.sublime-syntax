@@ -77,8 +77,20 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   member-access:
-    - meta_scope: member.js.fjsx15
     - include: comment
+    # Jest “not”.
+    - match: |
+        (?x)
+        \s*(not\b)
+        (?=\s*\.)
+      captures:
+        1: >-
+          support.lib.jest.fjsx15
+          entity.name.function.js.fjsx15
+      pop: true
+    # Other members.
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/jest.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

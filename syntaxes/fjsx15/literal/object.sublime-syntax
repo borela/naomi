@@ -29,21 +29,21 @@ contexts:
         (?x)\s*
         ({)\s*(})
       captures:
-        1: punctuation.delimiter.object.begin.js.fjsx15
-        2: punctuation.delimiter.object.end.js.fjsx15
+        1: punctuation.definition.object.begin.js.fjsx15
+        2: punctuation.definition.object.end.js.fjsx15
       pop: true
     # Normal object literal.
     - match: \s*({)
-      scope: punctuation.delimiter.object.begin.js.fjsx15
+      scope: punctuation.definition.object.begin.js.fjsx15
       set: items
 
   items:
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.object.js.fjsx15
+        1: punctuation.definition.object.js.fjsx15
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.object.end.js.fjsx15
+        1: punctuation.definition.object.end.js.fjsx15
       pop: true
     - match: ""
       push:

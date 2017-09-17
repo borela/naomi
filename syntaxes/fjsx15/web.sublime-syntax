@@ -1,0 +1,174 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+contexts:
+  main:
+    - include: console-functions
+    - include: document-functions
+    - include: window-functions
+
+  function-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax
+
+  console-functions:
+    - match: |
+        (?x)
+        \s*(console)\b
+        (?:
+          \s*(\.)\s*
+          ((?> assert
+            | clear
+            | count
+            | error
+            | group(?>Collapsed|End)?
+            | info
+            | log
+            | table
+            | time(?>End|Stamp)?
+            | trace
+            | warn
+          ))\b
+        )
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.function.js.fjsx15
+      set: function-arguments
+
+  document-functions:
+    - match: |
+        (?x)
+        \s*(document)\b
+        (?:
+          \s*(\.)\s*
+          ((?> adoptNode
+            | close
+            | create
+              (?> Attribute
+                | CDATASection
+                | Comment
+                | DocumentFragment
+                | Element(?:NS)?
+                | Event
+                | Expression
+                | NodeIterator
+                | NSResolver
+                | ProcessingInstruction
+                | Range
+                | TextNode
+                | TreeWalker
+              )
+            | elementFromPoint
+            | enableStyleSheetsForSet
+            | evaluate
+            | execCommand
+            | exitFullscreen
+            | getElement
+              (?> ById
+                | sBy
+                  (?> ClassName
+                    | Name
+                    | TagName(?:NS)?
+                  )
+              )
+            | getSelection
+            | hasFocus
+            | importNode
+            | open
+            | query
+              (?> Command(?>Enabled|Supported)
+                | Selector(?:All)?
+              )
+            | releaseCapture
+            | write(?:ln)?
+          ))\b
+        )
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.function.js.fjsx15
+      set: function-arguments
+
+  window-functions:
+    - match: |
+        (?x)
+        \s*(window)\b
+        (?:
+          \s*(\.)\s*
+          ((?> addEventListener
+            | alert
+            | atob
+            | blur
+            | btoa
+            | cancel(?>AnimationFrame|IdleCallback)
+            | clear(?>Interval|Timeout)
+            | close
+            | confirm
+            | convertPointFromNodeToPage
+            | createImageBitmap
+            | event
+            | fetch
+            | focus
+            | forward
+            | get
+              (?> Attention
+                | ComputedStyle
+                | DefaultComputedStyle
+                | Selection
+              )
+            | home
+            | matchMedia
+            | minimize
+            | move(?>By|To)
+            | open
+            | postMessage
+            | print
+            | prompt
+            | request(?>AnimationFrame|IdleCallback)
+            | removeEventListener
+            | resize(?>By|To)
+            | restore
+            | routeEvent
+            | scroll
+              (?> By(?:Pages)?
+                | To
+              )?
+            | set(?>Interval|Timeout)
+            | sizeToContent
+            | stop
+            | updateCommands
+          ))\b
+        )
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.function.js.fjsx15
+      set: function-arguments

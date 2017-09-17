@@ -28,13 +28,13 @@ contexts:
         (?<!\sof)
         \s*(\[)
       captures:
-        1: punctuation.delimiter.array.access.begin.js.fjsx15
+        1: punctuation.definition.array.access.begin.js.fjsx15
       set: index
 
   index:
     - match: \s*(])
       captures:
-        1: punctuation.delimiter.array.access.end.js.fjsx15
+        1: punctuation.definition.array.access.end.js.fjsx15
       pop: true
     - match: ""
       push:

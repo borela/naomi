@@ -166,7 +166,7 @@ contexts:
   declaration:
     - match: \s*(=)
       captures:
-        1: punctuation.delimiter.function.assignment.js.fjsx15
+        1: punctuation.definition.function.assignment.js.fjsx15
       pop: true
     # Body.
     - match: (?=\s*\{)
@@ -185,8 +185,12 @@ contexts:
         1: >-
           support.js.fjsx15
           entity.name.function.js.fjsx15
+      set: [
+        support-body,
+        support-parameters
+      ]
     # React JS’s support methods.
-    - include: Packages/Naomi/syntaxes/fjsx15/class/reactjs.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/support/react-js-method.sublime-syntax
     # Identifier.
     - match: |
         (?xi)
@@ -206,7 +210,7 @@ contexts:
         1: >-
           storage.modifier.js.fjsx15
           keyword.operator.other.generator.js.fjsx15
-        2: punctuation.delimiter.function.identifier.begin.js.fjsx15
+        2: punctuation.definition.function.identifier.begin.js.fjsx15
       push: computed-identifier
     # String identifiers
     - match: (?=(?>'|"|`))
@@ -224,13 +228,23 @@ contexts:
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
 
+  support-parameters:
+    - include: Packages/Naomi/syntaxes/fjsx15/function/support/parameters.sublime-syntax
+
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
+    - match: (?=\s*\S)
+      pop: true
+
+  support-body:
+    - include: Packages/Naomi/syntaxes/fjsx15/function/support/body.sublime-syntax
+    - match: (?=\s*\S)
+      pop: true
 
   computed-identifier:
     - match: \s*(])
       captures:
-        1: punctuation.delimiter.function.identifier.end.js.fjsx15
+        1: punctuation.definition.function.identifier.end.js.fjsx15
       pop: true
     - match: ""
       push:

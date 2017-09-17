@@ -31,7 +31,7 @@ contexts:
       captures:
         1: >-
           keyword.documentation.js.fjsx15
-          punctuation.delimiter.keyword.begin.js.fjsx15
+          punctuation.definition.keyword.begin.js.fjsx15
         2: keyword.documentation.js.fjsx15
       set: param-args
 
@@ -48,7 +48,7 @@ contexts:
       captures:
         1: >-
           jsdoc.js.fjsx15
-          punctuation.delimiter.types.begin.js.fjsx15
+          punctuation.definition.types.begin.js.fjsx15
       set: types
 
   types:
@@ -56,7 +56,7 @@ contexts:
       captures:
         1: >-
           jsdoc.js.fjsx15
-          punctuation.delimiter.types.end.js.fjsx15
+          punctuation.definition.types.end.js.fjsx15
       pop: true
     - match: ""
       push:

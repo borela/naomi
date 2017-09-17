@@ -31,6 +31,14 @@ variables:
 
 contexts:
   main:
+    # Dynamic import.
+    - match: |
+        (?x)\s*
+        (import)\b
+        (?=\s*\()
+      captures:
+        1: keyword.control.import.js.fjsx15
+      set: function-arguments
     # Import the entire module.
     - match: |
         (?x)\s*
@@ -51,6 +59,9 @@ contexts:
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
+  function-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+
   origin:
     - match: \s*(from)\b
       captures:
@@ -65,13 +76,13 @@ contexts:
   punctuation:
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.import.list.begin.js.fjsx15
+        1: punctuation.definition.import.list.begin.js.fjsx15
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.import.list.end.js.fjsx15
+        1: punctuation.definition.import.list.end.js.fjsx15
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.import.item.js.fjsx15
+        1: punctuation.definition.import.item.js.fjsx15
 
   targets:
     - include: comment
@@ -118,16 +129,16 @@ contexts:
     - include: aliased-type
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.import.list.end.js.fjsx15
+        1: punctuation.definition.import.list.end.js.fjsx15
       pop: true
     - match: \s*(\{)
       captures:
-        1: punctuation.delimiter.import.list.begin.js.fjsx15
+        1: punctuation.definition.import.list.begin.js.fjsx15
       push:
         - include: aliased-type
         - match: \s*(,)
           captures:
-            1: punctuation.delimiter.import.item.js.fjsx15
+            1: punctuation.definition.import.item.js.fjsx15
         - match: (?=\s*})
           pop: true
 

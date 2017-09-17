@@ -31,7 +31,7 @@ contexts:
     - match: |
         (?x)\s*
         {{expressionGroupBegin}}
-      scope: punctuation.delimiter.expression.group.a.begin.scss.scss3
+      scope: punctuation.definition.expression.group.a.begin.scss.scss3
       set: open-b-close-a
 
   open-a-close-b:
@@ -39,12 +39,12 @@ contexts:
     - match: |
         (?x)\s*
         {{expressionGroupBegin}}
-      scope: punctuation.delimiter.expression.group.a.begin.scss.scss3
+      scope: punctuation.definition.expression.group.a.begin.scss.scss3
       push: open-b-close-a
     # Close current expression group.
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.expression.group.b.end.scss.scss3
+        1: punctuation.definition.expression.group.b.end.scss.scss3
       pop: true
     # Expression contents.
     - match: ""
@@ -58,12 +58,12 @@ contexts:
     - match: |
         (?x)\s*
         {{expressionGroupBegin}}
-      scope: punctuation.delimiter.expression.group.b.begin.scss.scss3
+      scope: punctuation.definition.expression.group.b.begin.scss.scss3
       push: open-a-close-b
     # Close current expression group.
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.expression.group.a.end.scss.scss3
+        1: punctuation.definition.expression.group.a.end.scss.scss3
       pop: true
     # Expression contents.
     - match: ""

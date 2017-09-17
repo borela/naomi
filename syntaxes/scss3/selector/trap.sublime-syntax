@@ -33,7 +33,7 @@ contexts:
       pop: true
     - match: \s*({)
       captures:
-        1: punctuation.delimiter.body.begin.scss.scss3
+        1: punctuation.definition.body.begin.scss.scss3
       set: body
     - match: \s*(,)
       captures:
@@ -44,7 +44,7 @@ contexts:
   body:
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.body.end.scss.scss3
+        1: punctuation.definition.body.end.scss.scss3
       pop: true
     - match: ""
       push:

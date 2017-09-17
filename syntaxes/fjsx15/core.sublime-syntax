@@ -1,0 +1,400 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+contexts:
+  main:
+    - include: symbol-properties
+    # Functions.
+    - include: array-functions
+    - include: object-functions
+    - include: math-constants
+    - include: math-functions
+    - include: symbol-functions
+    # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+    - include: constants
+    - include: functions
+    - include: fundamental-objects
+    - include: numbers-and-dates
+    - include: text-processing
+    - include: indexed-collections
+    - include: keyed-collections
+    - include: structured-data
+    - include: control-abstraction-objects
+    - include: reflection
+    - include: internationalization
+    - include: web-assembly
+
+  function-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax
+    - match: (?=\S)
+      pop: true
+
+  optional-template-and-type-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/type/support/arguments.sublime-syntax
+    - match: ""
+      pop: true
+
+  array-functions:
+    - match: |
+        (?x)
+        \s*(Array)\b
+        (?:
+          \s*(\.)\s*
+          ((?> from
+            | isArray
+          ))\b
+        )?
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.function.js.fjsx15
+      set: function-arguments
+
+  math-constants:
+    - match: |
+        (?x)
+        \s*(Math)
+        \s*(\.)\s*
+        ((?> E
+          | LN(?>10|2)
+          | LOG(?>10E|2E)
+          | PI
+          | SQRT(?>1_2|2)
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.constant.js.fjsx15
+      pop: true
+
+  math-functions:
+    - match: |
+        (?x)
+        \s*(Math)\b
+        (?:
+          \s*(\.)\s*
+          ((?> abs
+            | acosh?
+            | asinh?
+            | atan(?>2|h)?
+            | cbrt
+            | ceil
+            | clz32
+            | cosh?
+            | exp
+            | exp(?:m1)?
+            | floor
+            | fround
+            | hypot
+            | imul
+            | log(?>10|1p|2)?
+            | max
+            | min
+            | pow
+            | random
+            | round
+            | sign
+            | sinh?
+            | sqrt
+            | tanh?
+            | trunc
+          ))\b
+        )?
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.function.js.fjsx15
+      set: function-arguments
+
+  object-functions:
+    - match: |
+        (?x)
+        \s*(Object)\b
+        (?:
+          \s*(\.)\s*
+          ((?> assign
+            | create
+            | definePropert(?>ies|y)
+            | freeze
+            | getOwnProperty(?>Descriptors?|Names|Symbols)
+            | getPrototypeOf
+            | is(?>Extensible|Frozen|Sealed)?
+            | keys
+            | preventExtensions
+            | seal
+            | setPrototypeOf
+          ))\b
+        )?
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.function.js.fjsx15
+      set: function-arguments
+
+  symbol-functions:
+    - match: |
+        (?x)
+        \s*(Symbol)
+        \s*(\.)\s*
+        ((?> for
+          | KeyFor
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.function.js.fjsx15
+      set: function-arguments
+
+  symbol-properties:
+    - match: |
+        (?x)
+        \s*(Symbol)
+        \s*(\.)\s*
+        ((?> asyncIterator
+          | hasInstance
+          | isConcatSpreadable
+          | iterator
+          | match
+          | replace
+          | search
+          | species
+          | split
+          | toPrimitive
+          | toStringTag
+          | unscopables
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.constant.js.fjsx15
+      pop: true
+
+  constants:
+    - match: |
+        (?x)\s*
+        ((?> false
+          | Infinity
+          | NaN
+          | null
+          | true
+          | undefined
+        ))
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.constant.js.fjsx15
+      pop: true
+
+  functions:
+    - match: |
+        (?x)\s*
+        ((?> decodeURI(?:Component)?
+          | encodeURI(?:Component)?
+          | eval
+          | is(?>Finite|NaN)
+          | parse(?>Float|Int)
+        ))
+        (?=\s*\()
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.function.js.fjsx15
+      set: function-arguments
+
+  fundamental-objects:
+    - match: |
+        (?x)\s*
+        ((?> Boolean
+          | Error
+          | EvalError
+          | Function
+          | InternalError
+          | Object
+          | RangeError
+          | ReferenceError
+          | SyntaxError
+          | TypeError
+          | URIError
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+      set: optional-template-and-type-arguments
+
+  numbers-and-dates:
+    - match: |
+        (?x)\s*
+        ((?> Date
+          | Math
+          | Number
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+      set: optional-template-and-type-arguments
+
+  text-processing:
+    - match: |
+        (?x)\s*
+        ((?> RegExp
+          | String
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+      set: optional-template-and-type-arguments
+
+  indexed-collections:
+    - match: |
+        (?x)\s*
+        ((?> Array
+          | Float(?>32|64)Array
+          | Int(?>8|16|32)Array
+          | Uint(?>8|16|32)Array
+          | Uint8ClampedArray
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+      set: optional-template-and-type-arguments
+
+  keyed-collections:
+    - match: |
+        (?x)\s*
+        ((?> Map
+          | Set
+          | Weak(?>Map|Set)
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+      set: optional-template-and-type-arguments
+
+  structured-data:
+    - match: |
+        (?x)\s*
+        ((?> ArrayBuffer
+          | DataView
+          | JSON
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+      set: optional-template-and-type-arguments
+
+  control-abstraction-objects:
+    - match: |
+        (?x)\s*
+        ((?> Generator(?:Function)?
+          | Promise
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+      set: optional-template-and-type-arguments
+
+  reflection:
+    - match: |
+        (?x)\s*
+        ((?> Proxy
+          | Reflect
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+      set: optional-template-and-type-arguments
+
+  internationalization:
+    - match: |
+        (?x)
+        \s*(Intl)\b
+        (?:
+          \s*(\.)\s*
+          ((?> Collator
+            | DateTimeFormat
+            | NumberFormat
+          ))\b
+        )?
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+      set: optional-template-and-type-arguments
+
+  web-assembly:
+    - match: |
+        (?x)
+        \s*(WebAssembly)\b
+        (?:
+          \s*(\.)\s*
+          ((?> CompileError
+            | Instance
+            | LinkError
+            | Memory
+            | Module
+            | RuntimeError
+            | Table
+          ))\b
+        )?
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+      set: optional-template-and-type-arguments

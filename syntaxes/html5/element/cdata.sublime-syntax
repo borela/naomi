@@ -21,13 +21,13 @@ contexts:
   main:
     - match: (<!\[)(CDATA)(\[)
       captures:
-        1: punctuation.delimiter.section.begin.html.html5
+        1: punctuation.definition.section.begin.html.html5
         2: entity.name.other.html.html5
-        3: punctuation.delimiter.section.begin.html.html5
+        3: punctuation.definition.section.begin.html.html5
       set: content
 
   content:
     - meta_scope: section.cdata.html.html5
     - match: \]\]\>
-      scope: punctuation.delimiter.section.end.html.html5
+      scope: punctuation.definition.section.end.html.html5
       pop: true

@@ -48,7 +48,7 @@ contexts:
       captures:
         1: >-
           string.unquoted.heredoc.php.php7
-          punctuation.delimiter.string.begin.php.php7
+          punctuation.definition.string.begin.php.php7
       with_prototype:
           # HACK: This pattern is not matching the one captured when the heredoc
           # was opened, it’ll work in most cases but another solution must be
@@ -58,7 +58,7 @@ contexts:
             ^[_[:alpha:]][_[:alnum:]]*;$
           scope: >-
             string.unquoted.heredoc.php.php7
-            punctuation.delimiter.string.end.php.php7
+            punctuation.definition.string.end.php.php7
           pop: true
       set: escape-a-variable-a
 

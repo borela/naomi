@@ -21,17 +21,17 @@ contexts:
   main:
     - match: \s*(\()
       captures:
-        1: punctuation.delimiter.mixin.parameters.begin.scss.scss3
+        1: punctuation.definition.mixin.parameters.begin.scss.scss3
       set: parameters
 
   parameters:
     - match: \s*(\))
       captures:
-        1: punctuation.delimiter.mixin.parameters.end.scss.scss3
+        1: punctuation.definition.mixin.parameters.end.scss.scss3
       pop: true
     - match: \s*(\,)
       captures:
-        1: punctuation.delimiter.mixin.parameters.scss.scss3
+        1: punctuation.definition.mixin.parameters.scss.scss3
     - match: ""
       push:
         - match: |

@@ -45,7 +45,10 @@ contexts:
         1: >-
           storage.modifier.js.fjsx15
           keyword.other.inherit.js.fjsx15
-      push: type
+      push: [
+        optional-template-arguments,
+        extended-class
+      ]
     # Identifier.
     - match: |
         (?xi)
@@ -64,3 +67,19 @@ contexts:
 
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/class/body.sublime-syntax
+
+  optional-template-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax
+    - match: ""
+      pop: true
+
+  extended-class:
+    - match: |
+        (?xi)
+        \s*({{commonIdentifier}})
+      captures:
+        1: >-
+          parent.js.fjsx15
+          entity.name.class.js.fjsx15
+      pop: true
+

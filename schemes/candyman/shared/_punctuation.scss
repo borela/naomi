@@ -10,8 +10,14 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.source.scss {
-  .punctuation.delimiter.body {
-    foreground: $gray-0;
-  }
+.punctuation.definition {
+  foreground: $amber-100;
+}
+
+.punctuation.definition.expression.group.b {
+  foreground: $brown-200;
+}
+
+.punctuation.definition.control {
+  foreground: $pink-a100;
 }

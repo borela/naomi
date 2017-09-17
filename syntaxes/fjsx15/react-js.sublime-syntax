@@ -1,0 +1,203 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+contexts:
+  main:
+    - include: instance-variables
+    - include: static-variables
+    - include: proptypes
+    - include: functions
+    - include: react-dom-functions
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/react-js-arguments.sublime-syntax
+
+  instance-variables:
+    - match: |
+        (?x)\s*
+        (?:
+          (this)
+          \s*(\.)\s*
+        )
+        ((?> props
+          | state
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.variable.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+      pop: true
+
+  static-variables:
+    - match: |
+        (?x)
+        \s*(static)\s+
+        ((?> contextTypes
+          | defaultProps
+          | propTypes
+        ))\b
+      captures:
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.other.access.js.fjsx15
+        2: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+      pop: true
+
+  proptypes:
+    # Normal.
+    - match: |
+        (?x)
+        (?:
+          \s*(React\b)
+          \s*(\.)
+        )?
+        \s*(PropTypes\b)
+        \s*(\.)\s*
+        ((?> any
+          | array
+          | bool
+          | element
+          | func
+          | node
+          | number
+          | object
+          | string
+        ))
+        (?:
+          \s*(\.)\s*
+          (isRequired\b)
+        )?
+      captures:
+        1: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+        4: keyword.operator.other.member-access.js.fjsx15
+        5: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+        6: keyword.operator.other.member-access.js.fjsx15
+        7: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+      pop: true
+    # Function call.
+    - match: |
+        (?x)
+        (?:
+          \s*(React\b)
+          \s*(\.)
+        )?
+        \s*(PropTypes\b)
+        \s*(\.)\s*
+        ((?> oneOfType
+          | shape
+        ))
+        (?=\s*\()
+      captures:
+        1: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+        4: keyword.operator.other.member-access.js.fjsx15
+        5: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+      set: arguments
+    # “isRequired” after function call.
+    - match: |
+        (?x)\s*
+        (?<=\))
+        \s*(\.)\s*
+        (isRequired\b)
+      captures:
+        1: keyword.operator.other.member-access.js.fjsx15
+        2: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+      pop: true
+
+  functions:
+    # React functions.
+    - match: |
+        (?x)
+        \s*(React)
+        \s*(\.)\s*
+        ((?> createElement
+          | createFactory
+          | cloneElement
+          | isValidElement
+        ))\b
+      captures:
+        1: >-
+          support.lib.react-js.fjsx15
+          entity.name.function.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.lib.react-js.fjsx15
+          entity.name.function.js.fjsx15
+      set: arguments
+    # Component functions.
+    - match: |
+        (?x)
+        \s*(this)
+        \s*(\.)\s*
+        ((?> forceUpdate
+          | setState
+        ))\b
+      captures:
+        1: >-
+          support.core.fjsx15
+          entity.name.variable.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.lib.react-js.fjsx15
+          entity.name.function.js.fjsx15
+      set: arguments
+
+  react-dom-functions:
+    - match: |
+        (?x)
+        \s*(ReactDom)
+        \s*(\.)\s*
+        ((?> findDOMNode
+          | render(?:ToS(?>taticMarkup|tring))?
+          | unmountComponentAtNode
+        ))\b
+      captures:
+        1: >-
+          support.lib.react-js.fjsx15
+          entity.name.function.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.lib.react-js.fjsx15
+          entity.name.function.js.fjsx15
+      set: arguments

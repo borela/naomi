@@ -43,19 +43,19 @@ contexts:
           entity.name.namespace.a.flowtype
         2: >-
           flowtype
-          punctuation.delimiter.namespace.a.flowtype
+          punctuation.definition.namespace.a.flowtype
         3: >-
           flowtype
           entity.name.namespace.b.flowtype
         4: >-
           flowtype
-          punctuation.delimiter.namespace.b.flowtype
+          punctuation.definition.namespace.b.flowtype
         5: >-
           flowtype
           entity.name.namespace.a.flowtype
         6: >-
           flowtype
-          punctuation.delimiter.namespace.a.flowtype
+          punctuation.definition.namespace.a.flowtype
     # Namespace delimited by dollar signs.
     - match: |
         (?xi)\s*
@@ -73,16 +73,16 @@ contexts:
           entity.name.namespace.a.flowtype
         2: >-
           flowtype
-          punctuation.delimiter.namespace.a.flowtype
+          punctuation.definition.namespace.a.flowtype
         3: >-
           flowtype
           entity.name.namespace.b.flowtype
         4: >-
           flowtype
-          punctuation.delimiter.namespace.b.flowtype
+          punctuation.definition.namespace.b.flowtype
         5: >-
           flowtype
           entity.name.namespace.a.flowtype
         6: >-
           flowtype
-          punctuation.delimiter.namespace.a.flowtype
+          punctuation.definition.namespace.a.flowtype

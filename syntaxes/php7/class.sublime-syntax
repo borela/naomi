@@ -79,13 +79,13 @@ contexts:
         1: entity.name.class.php.php7
     # Body.
     - match: \s*(\{)
-      scope: punctuation.delimiter.class.body.begin.php.php7
+      scope: punctuation.definition.class.body.begin.php.php7
       set: body
 
   body:
     - match: \s*(})
       captures:
-        1: punctuation.delimiter.class.body.end.php.php7
+        1: punctuation.definition.class.body.end.php.php7
       pop: true
     - include: body-content
 
@@ -110,7 +110,7 @@ contexts:
       pop: true
     - match: (?=\s*\S)
       push: [
-        implement-target-delimiter,
+        implement-target-definition,
         implement-target
       ]
 
@@ -118,11 +118,11 @@ contexts:
     - include: comment
     - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
 
-  implement-target-delimiter:
+  implement-target-definition:
     - include: comment
     - match: \s*(,)
       captures:
-        1: punctuation.delimiter.implement.php.php7
+        1: punctuation.definition.implement.php.php7
       pop: true
     - match: (?=\s*\S)
       pop: true

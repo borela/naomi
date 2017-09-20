@@ -84,7 +84,8 @@ contexts:
         (?x)
         \s*(export)
         (?=\s*
-          (?> class
+          (?> async
+            | class
             | const
             | function
             | interface

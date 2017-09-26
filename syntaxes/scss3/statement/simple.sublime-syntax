@@ -19,10 +19,13 @@ scope: ...
 
 contexts:
   main:
-    # Other.
     - match: |
         (?x)
-        \s*(@return)\b
+        \s*(@
+          (?> content
+            | return
+          )
+        )\b
       captures:
         1: keyword.control.other.scss.scss3
       set: value

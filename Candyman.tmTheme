@@ -29,6 +29,8 @@
 				<string>#37474f</string>
 				<key>gutterForeground</key>
 				<string>#78909c</string>
+				<key>invisibles</key>
+				<string>#37474f</string>
 				<key>lineHighlight</key>
 				<string>#0000001A</string>
 				<key>selection</key>

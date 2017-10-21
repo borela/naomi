@@ -19,6 +19,7 @@ scope: ...
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/pipe.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/spread.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/comparison.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/assignment.sublime-syntax

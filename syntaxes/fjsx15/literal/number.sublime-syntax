@@ -19,7 +19,7 @@ scope: ...
 
 variables:
   literalDecimal: |
-    [0-9]+
+    [0-9_]+
 
   literalFloat: |
     (?> [0-9]*[.]{{literalDecimal}}
@@ -51,7 +51,7 @@ contexts:
       pop: true
 
   integer:
-    - match: \s*(0[bB][01]+)
+    - match: \s*(0[bB][01_]+)
       captures:
         1: constant.numeric.binary.js.fjsx15
       pop: true
@@ -59,11 +59,11 @@ contexts:
       captures:
         1: constant.numeric.octal.js.fjsx15
       pop: true
-    - match: (?i)\s*(0[x][0-9a-f]+)
+    - match: (?i)\s*(0[xX][0-9a-f_]+)
       captures:
         1: constant.numeric.hex.js.fjsx15
       pop: true
-    - match: \s*([1-9][0-9]*|0)
+    - match: \s*([1-9][0-9_]*|0)
       captures:
         1: constant.numeric.decimal.js.fjsx15
       pop: true

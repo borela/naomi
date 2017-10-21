@@ -30,11 +30,20 @@ contexts:
       captures:
         1: keyword.control.js.fjsx15
       set: body
+    # Optional header.
+    - match: |
+        (?x)\s*\b
+        (catch)\b
+      captures:
+        1: keyword.control.js.fjsx15
+      set: [
+        body,
+        optional-header
+      ]
     # Header and body.
     - match: |
         (?x)\s*\b
-        ((?> catch
-          | if
+        ((?> if
           | elseif
           | for
           | while
@@ -52,7 +61,7 @@ contexts:
       ]
 
   optional-header:
-    - match: (?=\s*;)
+    - match: (?=\s*\{)
       pop: true
     - match: (?=\s*\()
       set: header

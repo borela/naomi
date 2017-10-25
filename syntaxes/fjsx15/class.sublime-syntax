@@ -47,7 +47,7 @@ contexts:
           keyword.other.inherit.js.fjsx15
       push: [
         optional-template-arguments,
-        extended-class
+        extended-class-or-namespace
       ]
     # Identifier.
     - match: |
@@ -73,7 +73,8 @@ contexts:
     - match: ""
       pop: true
 
-  extended-class:
+  extended-class-or-namespace:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/namespace-path.no-pop.sublime-syntax
     - match: |
         (?xi)
         \s*({{commonIdentifier}})

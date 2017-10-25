@@ -19,7 +19,7 @@ scope: ...
 
 variables:
   literalDecimal: |
-    [0-9_]+
+    [0-9][0-9_]*
 
   literalFloat: |
     (?> [0-9]*[.]{{literalDecimal}}

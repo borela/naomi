@@ -45,11 +45,7 @@ contexts:
           \s*{{templateArguments}}
           \s*\(
         )
-      set: [
-        arguments,
-        template-arguments,
-        name
-      ]
+      set: name
     # Simple function call.
     - match: |
         (?xi)
@@ -70,17 +66,25 @@ contexts:
         1: >-
           support.js.fjsx15
           entity.name.function.js.fjsx15
-      set: support-arguments
+      set: [
+        support-arguments,
+        possible-template-arguments
+      ]
     # Identifier.
     - match: |
         (?xi)
         \s*({{commonIdentifier}})
       captures:
         1: entity.name.function.js.fjsx15
-      set: arguments
+      set: [
+        arguments,
+        possible-template-arguments
+      ]
 
-  template-arguments:
+  possible-template-arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax
+    - match: ""
+      pop: true
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax

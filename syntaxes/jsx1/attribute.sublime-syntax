@@ -42,6 +42,8 @@ contexts:
       pop: true
 
   value:
+    - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
+    - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/literal/string/single-quoted.sublime-syntax
     - match: ""

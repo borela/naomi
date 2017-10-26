@@ -41,21 +41,29 @@ contexts:
     - match: |
         (?xi)
         (?=
+          \s*\#?
           \s*{{commonIdentifier}}
           \s*{{templateArguments}}
           \s*\(
         )
-      set: name
+      set: modifier-and-name
     # Simple function call.
     - match: |
         (?xi)
         (?=
+          \s*\#?
           \s*{{commonIdentifier}}
           \s*\(
         )
-      set: name
+      set: modifier-and-name
 
-  name:
+  modifier-and-name:
+    # Private modifier.
+    - match: \s*(\#)
+      captures:
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.other.access.js.fjsx15
     # Support identifier.
     - match: |
         (?x)\s*

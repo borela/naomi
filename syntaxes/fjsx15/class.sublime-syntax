@@ -39,6 +39,17 @@ contexts:
     # Template parameters.
     - match: (?=\s*<)
       push: template-parameters
+    # Interfaces.
+    - match: \s*(implements)\b
+      captures:
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.other.implement.js.fjsx15
+      push: [
+        optional-target-class-or-namespace,
+        optional-template-arguments,
+        target-class-or-namespace
+      ]
     # Extensions.
     - match: \s*(extends)\b
       captures:
@@ -47,7 +58,7 @@ contexts:
           keyword.other.inherit.js.fjsx15
       push: [
         optional-template-arguments,
-        extended-class-or-namespace
+        target-class-or-namespace
       ]
     # Identifier.
     - match: |
@@ -73,7 +84,18 @@ contexts:
     - match: ""
       pop: true
 
-  extended-class-or-namespace:
+  optional-target-class-or-namespace:
+    - match: \s*(\,)
+      scope: punctuation.definition.implement-list.separator.js.fjsx15
+      set: [
+        optional-target-class-or-namespace,
+        optional-template-arguments,
+        target-class-or-namespace
+      ]
+    - match: (?=\s*\{)
+      pop: true
+
+  target-class-or-namespace:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/namespace-path.no-pop.sublime-syntax
     - match: |
         (?xi)

@@ -53,6 +53,7 @@ contexts:
         (?x)
         \s*(static)\s+
         ((?> contextTypes
+          | childContextTypes
           | defaultProps
           | propTypes
         ))\b
@@ -66,6 +67,33 @@ contexts:
       pop: true
 
   proptypes:
+    # Function call.
+    - match: |
+        (?x)
+        (?:
+          \s*(React\b)
+          \s*(\.)
+        )?
+        \s*(PropTypes\b)
+        \s*(\.)\s*
+        ((?> arrayOf
+          | oneOf(?:Type)?
+          | shape
+        ))
+        (?=\s*\()
+      captures:
+        1: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.lib.react-js.fjsx15
+          entity.name.variable.js.fjsx15
+        4: keyword.operator.other.member-access.js.fjsx15
+        5: >-
+          support.lib.react-js.fjsx15
+          entity.name.function.js.fjsx15
+      set: arguments
     # Normal.
     - match: |
         (?x)
@@ -106,32 +134,6 @@ contexts:
           support.lib.react-js.fjsx15
           entity.name.variable.js.fjsx15
       pop: true
-    # Function call.
-    - match: |
-        (?x)
-        (?:
-          \s*(React\b)
-          \s*(\.)
-        )?
-        \s*(PropTypes\b)
-        \s*(\.)\s*
-        ((?> oneOfType
-          | shape
-        ))
-        (?=\s*\()
-      captures:
-        1: >-
-          support.lib.react-js.fjsx15
-          entity.name.variable.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.lib.react-js.fjsx15
-          entity.name.variable.js.fjsx15
-        4: keyword.operator.other.member-access.js.fjsx15
-        5: >-
-          support.lib.react-js.fjsx15
-          entity.name.variable.js.fjsx15
-      set: arguments
     # “isRequired” after function call.
     - match: |
         (?x)\s*

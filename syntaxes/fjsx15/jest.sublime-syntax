@@ -29,13 +29,21 @@ contexts:
     - match: |
         (?x)
         (?<!\.)\s*
-        ((?> describe
+        ((?> after(?>All|Each)
+          | before(?>All|Each)
+          | describe
           | expect
           | it
-        ))\b
+          | test
+        ))
+        (?:(.)((?>only|skip)))?
         (?=\s*\()
       captures:
         1: >-
+          support.lib.jest.fjsx15
+          entity.name.function.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
           support.lib.jest.fjsx15
           entity.name.function.js.fjsx15
       set: arguments

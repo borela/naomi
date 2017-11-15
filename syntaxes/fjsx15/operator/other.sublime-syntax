@@ -27,6 +27,7 @@ contexts:
   # |     ::     | Bind.               |
   # |     .      | Member access.      |
   # |    ?.      | Optional chain.     |
+  # |    ??      | Nullish coalescing. |
   # |     ?      | Ternary.            |
   main:
     - match: \s*(typeof)\b
@@ -48,6 +49,10 @@ contexts:
     - match: \s*(\:{2})
       captures:
         1: keyword.operator.other.bind.js.fjsx15
+      pop: true
+    - match: \s*(\?\?)
+      captures:
+        1: keyword.operator.other.nullish-coalescing.js.fjsx15
       pop: true
     - match: \s*(\?\.)
       captures:

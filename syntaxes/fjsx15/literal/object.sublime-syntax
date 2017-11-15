@@ -74,12 +74,12 @@ contexts:
         # Simple variable.
         - match: |
             (?xi)\s*
-            (?={{commonIdentifier}}\s*,)
+            (?={{commonIdentifier}}\s*(?>,|}|$))
           set: variable
         # Simple constant.
         - match: |
             (?x)\s*
-            (?={{constantIdentifier}}\s*,)
+            (?={{constantIdentifier}}\s*(?>,|$))
           set: constant
         # Property.
         - include: Packages/Naomi/syntaxes/fjsx15/literal/object/property.sublime-syntax

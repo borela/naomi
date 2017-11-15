@@ -52,7 +52,7 @@ contexts:
     - match: \s*(\?\.)
       captures:
         1: keyword.operator.other.optional-chain.js.fjsx15
-      pop: true
+      set: member-access
     - match: \s*(\?)
       captures:
         1: keyword.operator.other.ternary.js.fjsx15

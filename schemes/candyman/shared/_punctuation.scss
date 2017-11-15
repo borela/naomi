@@ -21,3 +21,8 @@
 .punctuation.definition.control {
   foreground: $pink-a100;
 }
+
+.punctuation.definition.extend-list.separator,
+.punctuation.definition.implement-list.separator {
+  foreground: $purple-200;
+}

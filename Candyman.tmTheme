@@ -979,6 +979,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.punctuation.definition.extend-list.separator, .punctuation.definition.implement-list.separator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ce93d8</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.string.unquoted.regex, .string.unquoted.regex .punctuation.definition</string>
 			<key>settings</key>
 			<dict>

@@ -31,6 +31,13 @@ contexts:
 
   function-or-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+    # Await keyword.
+    - match: |
+        (?x)\s*
+        (await)\b
+      captures:
+        1: keyword.control.js.fjsx15
+      pop: true
     # Simple function.
     - match: |
         (?xi)\s*

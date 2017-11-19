@@ -20,8 +20,8 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)
-        \s*(
+        (?x)\s*
+        (
           (?> component
               (?> DidMount
                 | DidUpdate
@@ -40,13 +40,21 @@ contexts:
         1: >-
           support.lib.react-js.fjsx15
           entity.name.function.js.fjsx15
-      set: [
-        support-body,
-        support-parameters
-      ]
+      set: declaration
 
-  support-parameters:
+  declaration:
+    # Body.
+    - match: (?=\s*\{)
+      set: body
+    # Parameters.
+    - match: (?=\s*\()
+      push: parameters
+    # None of the expected items matched, it probably ended.
+    - match: (?=\s*\S)
+      pop: true
+
+  parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/support/react-js-parameters.sublime-syntax
 
-  support-body:
+  body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/support/react-js-body.sublime-syntax

@@ -41,11 +41,17 @@ contexts:
     - match: ""
       push:
         - include: comment
+        # Rest.
         - match: \s*(\.{3})
           captures:
             1: >-
               flowtype
               keyword.operator.other.rest.flowtype
+        # Parameter.
+        - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/simple.sublime-syntax
+        # Type after parameter.
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+        # Type highlighted without the parameter.
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
         - match: ""
           pop: true

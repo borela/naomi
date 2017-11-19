@@ -39,9 +39,9 @@ contexts:
     # Normal object literal.
     - match: \s*({)
       scope: punctuation.definition.object.begin.js.fjsx15
-      set: items
+      set: declaration
 
-  items:
+  declaration:
     - match: \s*(,)
       captures:
         1: punctuation.definition.object.js.fjsx15

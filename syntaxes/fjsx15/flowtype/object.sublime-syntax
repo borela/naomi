@@ -37,16 +37,16 @@ contexts:
         2: >-
           flowtype
           punctuation.definition.object.begin.flowtype
-      set: items
+      set: declaration
     # Normal.
     - match: \s*({)
       captures:
         1: >-
           flowtype
           punctuation.definition.object.begin.flowtype
-      set: items
+      set: declaration
 
-  items:
+  declaration:
     - match: \s*(,|;)
       captures:
         1: >-

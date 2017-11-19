@@ -46,12 +46,7 @@ contexts:
             1: >-
               flowtype
               keyword.operator.other.rest.flowtype
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/object.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/tuple.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function/parameters/simple.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
         - match: ""
           pop: true
 

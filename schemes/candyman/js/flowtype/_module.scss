@@ -10,13 +10,8 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "js/flowtype/module";
-@import "js/flowtype/operator";
-@import "js/flowtype/punctuation";
-
-@import "js/decorator";
-@import "js/destructuring";
-@import "js/eslint";
-@import "js/export";
-@import "js/import";
-@import "js/operator";
+.flowtype {
+  .entity.name.module {
+    foreground: $light-green-300;
+  }
+}

@@ -50,11 +50,17 @@ contexts:
           keyword.declaration.type-aliasing.flowtype
       set: [
         punctuation,
+        optional-constraint,
         identifier
       ]
 
   identifier:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax
+
+  optional-constraint:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+    - match: (?=\s*\S)
+      pop: true
 
   punctuation:
     - match: \s*(=)

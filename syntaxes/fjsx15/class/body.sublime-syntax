@@ -31,6 +31,7 @@ contexts:
       captures:
         1: punctuation.definition.class.body.end.js.fjsx15
       pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.sublime-syntax
     - match: ""
       push:
         # This is necessary because normally these instance variables would be
@@ -49,7 +50,6 @@ contexts:
               support.lib.react-js.fjsx15
               entity.name.variable.js.fjsx15
           pop: true
-        # Other contents.
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
         # React’s variables (state, contextTypes, etc...).
         - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax

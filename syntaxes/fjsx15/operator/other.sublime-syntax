@@ -22,7 +22,6 @@ contexts:
   # |:----------:|:--------------------|
   # |   typeof   |                     |
   # |    void    |                     |
-  # |     ,      | Comma.              |
   # |    ...     | Spread.             |
   # |     ::     | Bind.               |
   # |     .      | Member access.      |
@@ -42,9 +41,6 @@ contexts:
           word.js.fjsx15
           keyword.operator.other.void.js.fjsx15
       pop: true
-    - match: \s*(\,)
-      captures:
-        1: keyword.operator.other.comma.js.fjsx15
       pop: true
     - match: \s*(\:{2})
       captures:

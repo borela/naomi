@@ -83,9 +83,9 @@ contexts:
     - match: |
         (?x)
         \s*(export)
-        (?:\s*(opaque))?
-        (?=\s*
-          (?> async
+        (?=
+          (?:\s*opaque)?
+          \s*(?> async
             | class
             | const
             | function
@@ -97,13 +97,6 @@ contexts:
         )
       captures:
         1: keyword.control.export.js.fjsx15
-        2: >-
-          flowtype
-          storage.type.flowtype
-          keyword.other.access.flowtype
-        3: >-
-          storage.modifier.js.fjsx15
-          keyword.control.export.default.js.fjsx15
       set: statement-and-expression
     # Export default from.
     - match: |

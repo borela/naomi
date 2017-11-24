@@ -35,10 +35,14 @@ contexts:
         - match: (\{\s*/\*)(.*)(\*/\s*})
           captures:
             1: >-
+              source.jsx
               comment.block.js.fjsx15
               punctuation.definition.comment.begin.js.fjsx15
-            2: comment.block.js.fjsx15
+            2: >-
+              source.jsx
+              comment.block.js.fjsx15
             3: >-
+              source.jsx
               comment.block.js.fjsx15
               punctuation.definition.comment.end.js.fjsx15
         # Embedded javascript.

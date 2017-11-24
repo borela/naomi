@@ -29,7 +29,7 @@ variables:
 contexts:
   main:
     - match: |
-        (?x)
+        (?x)^
         (?:\s*
           (?>(\+)|(-))
         )?

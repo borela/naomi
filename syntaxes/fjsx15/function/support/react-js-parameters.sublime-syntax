@@ -50,7 +50,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
 
   return-type:
-    - include: comment
     - match: (?=\s*:)
       set: associated-type
     - match: ""

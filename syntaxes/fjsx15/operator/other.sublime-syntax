@@ -41,7 +41,6 @@ contexts:
           word.js.fjsx15
           keyword.operator.other.void.js.fjsx15
       pop: true
-      pop: true
     - match: \s*(\:{2})
       captures:
         1: keyword.operator.other.bind.js.fjsx15

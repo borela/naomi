@@ -29,12 +29,8 @@ contexts:
         (<)
         ({{commonIdentifier}})
       captures:
-        1: >-
-          meta.tag.jsx.jsx1
-          punctuation.definition.tag.begin.jsx.jsx1
-        2: >-
-          meta.tag.jsx.jsx1
-          entity.name.tag.jsx.jsx1
+        1: punctuation.definition.tag.begin.jsx.jsx1
+        2: entity.name.tag.jsx.jsx1
       set: [
         content,
         attributes
@@ -47,9 +43,7 @@ contexts:
     # Normal tag.
     - match: \s*(>)
       captures:
-        1: >-
-          meta.tag.jsx.jsx1
-          punctuation.definition.tag.end.jsx.jsx1
+        1: punctuation.definition.tag.end.jsx.jsx1
       pop: true
     # Attributes.
     - match: ""
@@ -64,24 +58,16 @@ contexts:
     # Self closing tag.
     - match: \s*(/>)
       captures:
-        1: >-
-          meta.tag.jsx.jsx1
-          punctuation.definition.tag.end.jsx.jsx1
+        1: punctuation.definition.tag.end.jsx.jsx1
       pop: true
     # Closing tag.
     - match: |
         (?x)\s*
         (</)(\2)(>)
       captures:
-        1: >-
-          meta.tag.jsx.jsx1
-          punctuation.definition.tag.begin.jsx.jsx1
-        2: >-
-          meta.tag.jsx.jsx1
-          entity.name.tag.jsx.jsx1
-        3: >-
-          meta.tag.jsx.jsx1
-          punctuation.definition.tag.end.jsx.jsx1
+        1: punctuation.definition.tag.begin.jsx.jsx1
+        2: entity.name.tag.jsx.jsx1
+        3: punctuation.definition.tag.end.jsx.jsx1
       pop: true
     # Sub tags.
     - match: ""

@@ -133,18 +133,21 @@
   "keys": [ "/" ],
   "command": "close_tag",
   "context": [{
+    "key": "setting.auto_close_tags",
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_match",
+    "operand": ".*<$"
+  },{
     "key": "selector",
     "operator": "equal",
-    "operand": "(source.jsx) - string - comment",
+    "operand": "source.jsx - string - comment",
     "match_all": true
   },{
-    "key":
-    "preceding_text",
-    "operator": "regex_match",
-    "operand": ".*<$",
+    "key": "selector",
+    "operator": "not_equal",
+    "operand": "keyword.operator.other.embedded.js.end",
     "match_all": true
-  },{
-    "key": "setting.auto_close_tags"
-  }],
-  "args": { "insert_slash": true }
+  }]
 }]

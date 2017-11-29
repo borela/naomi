@@ -128,4 +128,23 @@
   "args": {
     "file": "res://Packages/Naomi/macros/delete-to-previous-line.sublime-macro"
   }
+},{
+  // Close JSX tag.
+  "keys": [ "/" ],
+  "command": "close_tag",
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "(source.jsx) - string - comment",
+    "match_all": true
+  },{
+    "key":
+    "preceding_text",
+    "operator": "regex_match",
+    "operand": ".*<$",
+    "match_all": true
+  },{
+    "key": "setting.auto_close_tags"
+  }],
+  "args": { "insert_slash": true }
 }]

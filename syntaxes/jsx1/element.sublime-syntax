@@ -79,5 +79,5 @@ contexts:
             (?x)
             (?=\s*(?>/>|<))
           pop: true
-        - match: .
+        - match: .|\n
           scope: source.jsx

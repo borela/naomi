@@ -94,3 +94,5 @@ contexts:
             (?x)
             (?=\s*(?>/>|<))
           pop: true
+        - match: .|\n
+          scope: source.jsx

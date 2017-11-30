@@ -7,9 +7,7 @@
     <img src="https://img.shields.io/badge/sublime%203->%3D3126-orange.svg?style=flat-square">
   </a>
 
-  <a href="LICENSE.md">
-    <img src="http://img.shields.io/:license-apache-blue.svg?style=flat-square">
-  </a>
+  <img src="http://img.shields.io/:license-mixed-blue.svg?style=flat-square">
 
   <a href="stargazers">
     <img src="https://img.shields.io/github/stars/borela/naomi.svg?style=social&label=Star">

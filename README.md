@@ -1,11 +1,18 @@
-<h1 align="center">
-  <img src="./art/logo.png"/>
-</h1>
+<p align="center">
+  <img src="./art/logo.png">
+</p>
 
-[![Sublime version](https://img.shields.io/badge/sublime%203->%3D3126-orange.svg?style=flat-square)][sublime]
-[![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)][license]
-![GitHub stars](https://img.shields.io/github/stars/borela/naomi.svg?style=social&label=Star)
-![GitHub forks](https://img.shields.io/github/forks/borela/naomi.svg?style=social&label=Fork)
+<p>
+  <a href="www.sublimetext.com">
+    <img src="https://img.shields.io/badge/sublime%203->%3D3126-orange.svg?style=flat-square">
+  </a>
+  <a href="./LICENSE.md">
+    <img src="http://img.shields.io/:license-apache-blue.svg?style=flat-square">
+  </a>
+
+  <img src="https://img.shields.io/github/stars/borela/naomi.svg?style=social&label=Star">
+  <img src="https://img.shields.io/github/forks/borela/naomi.svg?style=social&label=Fork">
+<p>
 
 ## Installation
 
@@ -87,6 +94,4 @@ To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need 
 [candyman]: ./schemes/candyman
 [csscheme]: https://github.com/FichteFoll/CSScheme
 [design]: ./DESIGN.md
-[license]: ./LICENSE.md
-[sublime]: http://www.sublimetext.com/
 [sublimeLinter]: https://github.com/SublimeLinter/SublimeLinter3

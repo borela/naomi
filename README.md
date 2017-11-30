@@ -1,4 +1,4 @@
-![Naomi](art/logo.png)
+[![Naomi](art/logo.png)][naomi]
 
 [![Sublime version](https://img.shields.io/badge/sublime%203->%3D3126-orange.svg?style=flat-square)][sublime]
 ![License](http://img.shields.io/:license-mixed-blue.svg?style=flat-square)
@@ -86,6 +86,7 @@ To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need 
 [csscheme]: //github.com/FichteFoll/CSScheme
 [design]: DESIGN.md
 [sublime]: //www.sublimetext.com
+[naomi]: //github.com/borela/naomi
 [stars]: //github.com/borela/naomi/stargazers
 [forks]: //github.com/borela/naomi/network/members
 [sublimeLinter]: //github.com/SublimeLinter/SublimeLinter3

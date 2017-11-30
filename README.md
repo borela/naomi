@@ -1,22 +1,9 @@
-<p align="center">
-  <img src="art/logo.png" height="100px" width="323px">
-</p>
+![Naomi](art/logo.png)
 
-<p align="center">
-  <a href="//www.sublimetext.com">
-    <img src="https://img.shields.io/badge/sublime%203->%3D3126-orange.svg?style=flat-square">
-  </a>
-
-  <img src="http://img.shields.io/:license-mixed-blue.svg?style=flat-square">
-
-  <a href="//github.com/borela/naomi/stargazers">
-    <img src="https://img.shields.io/github/stars/borela/naomi.svg?style=social&label=Star">
-  </a>
-
-  <a href="//github.com/borela/naomi/network/members">
-    <img src="https://img.shields.io/github/forks/borela/naomi.svg?style=social&label=Fork">
-  </a>
-<p>
+[![Sublime version](https://img.shields.io/badge/sublime%203->%3D3126-orange.svg?style=flat-square)][sublime]
+![License](http://img.shields.io/:license-mixed-blue.svg?style=flat-square)
+[![GitHub stars](https://img.shields.io/github/stars/borela/naomi.svg?style=social&label=Star)][stars]
+[![GitHub forks](https://img.shields.io/github/forks/borela/naomi.svg?style=social&label=Fork)][forks]
 
 ## Installation
 
@@ -92,10 +79,12 @@ To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need 
 
 #### FJSX15 (ES2015 + FlowType + React’s JSX)
 
-![Candyman FJSX15 preview 1](./preview/fjsx15/candyman-1.png)
-![Candyman FJSX15 preview 2](./preview/fjsx15/candyman-2.png)
+![Candyman FJSX15 preview 1](preview/fjsx15/candyman-1.png)
+![Candyman FJSX15 preview 2](preview/fjsx15/candyman-2.png)
 
-[candyman]: ./schemes/candyman
-[csscheme]: https://github.com/FichteFoll/CSScheme
-[design]: ./DESIGN.md
-[sublimeLinter]: https://github.com/SublimeLinter/SublimeLinter3
+[candyman]: schemes/candyman
+[csscheme]: //github.com/FichteFoll/CSScheme
+[design]: DESIGN.md
+[stars]: //github.com/borela/naomi/stargazers
+[fork]: //github.com/borela/naomi/network/members
+[sublimeLinter]: //github.com/SublimeLinter/SublimeLinter3

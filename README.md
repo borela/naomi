@@ -1,7 +1,11 @@
-# Naomi
+<h1 align="center">
+  <img src="./art/logo.png"/>
+</h1>
 
 [![Sublime version](https://img.shields.io/badge/sublime%203->%3D3126-orange.svg?style=flat-square)][sublime]
 [![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)][license]
+![GitHub stars](https://img.shields.io/github/stars/borela/naomi.svg?style=social&label=Star)
+![GitHub forks](https://img.shields.io/github/forks/borela/naomi.svg?style=social&label=Fork)
 
 ## Installation
 

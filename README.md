@@ -5,7 +5,7 @@
 
 ## Installation
 
-#### Manual installation (Recommended if you want faster updates)
+#### Manual installation
 
 Clone the repository in your Sublime Text “Packages” directory:
 

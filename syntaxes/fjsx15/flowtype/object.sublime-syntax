@@ -37,16 +37,16 @@ contexts:
         2: >-
           flowtype
           punctuation.definition.object.begin.flowtype
-      set: items
+      set: declaration
     # Normal.
     - match: \s*({)
       captures:
         1: >-
           flowtype
           punctuation.definition.object.begin.flowtype
-      set: items
+      set: declaration
 
-  items:
+  declaration:
     - match: \s*(,|;)
       captures:
         1: >-
@@ -72,7 +72,9 @@ contexts:
     - match: ""
       push:
         - include: comment
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/co-contravariant.no-pop.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/callable.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
         - include: property
         - match: ""
@@ -105,7 +107,12 @@ contexts:
     # Two or more characters.
     - match: |
         (?x)\s*
-        ({{constantIdentifier}})
+        (
+          {{constantIdentifier}}
+          (?> \$\B
+            | [_[:upper:]]\b
+          )
+        )
         (?:\s*(\?\B))?
       captures:
         1: >-
@@ -161,3 +168,4 @@ contexts:
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+

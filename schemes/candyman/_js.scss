@@ -10,8 +10,9 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "js/flowtype/punctuation";
+@import "js/flowtype/module";
 @import "js/flowtype/operator";
+@import "js/flowtype/punctuation";
 
 @import "js/decorator";
 @import "js/destructuring";

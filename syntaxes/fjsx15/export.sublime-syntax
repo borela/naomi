@@ -67,6 +67,25 @@ variables:
 
 contexts:
   main:
+    # Export multiple types.
+    - match: |
+        (?x)
+        \s*(export)
+        (?:\s*(opaque))?
+        \s*(type)
+        \s*({)
+      captures:
+        1: keyword.control.export.js.fjsx15
+        2: >-
+          flowtype
+          storage.type.flowtype
+          keyword.other.access.flowtype
+        3: >-
+          flowtype
+          storage.type.flowtype
+          keyword.declaration.type-aliasing.flowtype
+        4: punctuation.definition.export.list.begin.js.fjsx15
+      set: types
     # Export object literal.
     - match: |
         (?x)
@@ -83,8 +102,9 @@ contexts:
     - match: |
         (?x)
         \s*(export)
-        (?=\s*
-          (?> async
+        (?=
+          (?:\s*opaque)?
+          \s*(?> async
             | class
             | const
             | function
@@ -96,9 +116,6 @@ contexts:
         )
       captures:
         1: keyword.control.export.js.fjsx15
-        2: >-
-          storage.modifier.js.fjsx15
-          keyword.control.export.default.js.fjsx15
       set: statement-and-expression
     # Export default from.
     - match: |
@@ -216,3 +233,26 @@ contexts:
       captures:
         1: entity.name.alias.js.fjsx15
       pop: true
+
+  types:
+    - match: \s*(,)
+      captures:
+        1: punctuation.definition.export.item.js.fjsx15
+    - match: \s*(})
+      captures:
+        1: punctuation.definition.export.list.end.js.fjsx15
+      pop: true
+    - match: ""
+      push: aliased-type
+
+  aliased-type:
+    - match: |
+        (?xi)
+        (?={{commonIdentifier}})
+      set: [
+        optional-alias,
+        simple-type
+      ]
+
+  simple-type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax

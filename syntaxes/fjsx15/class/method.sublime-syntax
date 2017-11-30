@@ -39,8 +39,8 @@ variables:
 
   modifiers: |
     (?:
-      ((?>async|get|set|static))\b
-      \s*\g<-1>?
+      ((?>\#|async|get|set|static))
+      (\s+\g<-2>)*
     )
 
   templateArguments: |
@@ -134,6 +134,11 @@ contexts:
       ]
 
   modifiers:
+    - match: \s*(\#|static)
+      captures:
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.other.access.js.fjsx15
     - match: \s*(async)\b
       captures:
         1: >-
@@ -141,17 +146,11 @@ contexts:
           keyword.other.async.js.fjsx15
     - match: |
         (?xi)\s*
-        (get|set)
-        (?=\s+{{commonIdentifier}})
+        (get|set)\b
       captures:
         1: >-
           storage.modifier.js.fjsx15
           keyword.other.proxy.js.fjsx15
-    - match: \s*(static)\b
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.access.js.fjsx15
     - match: \s*(\*)\b
       captures:
         1: >-

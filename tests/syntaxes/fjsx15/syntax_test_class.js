@@ -35,7 +35,8 @@
 //                    ^ .punctuation.definition.namespace.a.flowtype
 //                     ^ .entity.name.namespace.b.flowtype
 //                      ^ .punctuation.definition.namespace.b.flowtype
-//                       ^ .entity.name.type.flowtype
+//                       ^ .parent.js.fjsx15
+//                       ^ .entity.name.class.js.fjsx15
 //                         ^ .punctuation.definition.class.body.begin.js.fjsx15
 //                          ^ .punctuation.definition.class.body.end.js.fjsx15
    class Foo<A,B> extends A.B.C {}
@@ -51,7 +52,8 @@
 //                         ^ .punctuation.definition.namespace.a.flowtype
 //                          ^ .entity.name.namespace.b.flowtype
 //                           ^ .punctuation.definition.namespace.b.flowtype
-//                            ^ .entity.name.type.flowtype
+//                            ^ .parent.js.fjsx15
+//                            ^ .entity.name.class.js.fjsx15
 //                              ^ .punctuation.definition.class.body.begin.js.fjsx15
 //                               ^ .punctuation.definition.class.body.end.js.fjsx15
    class Foo {
@@ -127,10 +129,10 @@
 //         ^ .punctuation.definition.object.begin.js.fjsx15
 //          ^^^^^ .entity.name.variable.js.fjsx15
 //               ^ .keyword.operator.other.association.js.fjsx15
-//                ^^^^ .support.react-js.fjsx15
+//                ^^^^ .support.core.js.fjsx15
 //                ^^^^ .entity.name.variable.js.fjsx15
 //                    ^ .keyword.operator.other.member-access.js.fjsx15
-//                     ^^^^^ .support.react-js.fjsx15
+//                     ^^^^^ .support.lib.react-js.fjsx15
 //                     ^^^^^ .entity.name.variable.js.fjsx15
 //                          ^ .keyword.operator.other.member-access.js.fjsx15
 //                           ^^^^^^^^^^^^ .entity.name.variable.js.fjsx15

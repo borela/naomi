@@ -29,6 +29,8 @@
 				<string>#37474f</string>
 				<key>gutterForeground</key>
 				<string>#78909c</string>
+				<key>invisibles</key>
+				<string>#37474f</string>
 				<key>lineHighlight</key>
 				<string>#0000001A</string>
 				<key>selection</key>
@@ -149,34 +151,16 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.flowtype .punctuation.definition.array, .flowtype .punctuation.definition.array.begin, .flowtype .punctuation.definition.array.end, .flowtype .punctuation.definition.cast.begin, .flowtype .punctuation.definition.cast.end, .flowtype .punctuation.definition.function.parameters.begin, .flowtype .punctuation.definition.function.parameters.end, .flowtype .punctuation.definition.function.parameters, .flowtype .punctuation.definition.function.result, .flowtype .punctuation.definition.module.body.begin, .flowtype .punctuation.definition.module.body.end, .flowtype .punctuation.definition.nullable.begin, .flowtype .punctuation.definition.nullable.end, .flowtype .punctuation.definition.object.begin, .flowtype .punctuation.definition.object.end, .flowtype .punctuation.definition.object, .flowtype .punctuation.definition.template.arguments.begin, .flowtype .punctuation.definition.template.arguments, .flowtype .punctuation.definition.template.parameters.begin, .flowtype .punctuation.definition.template.parameters.end, .flowtype .punctuation.definition.template.parameters, .flowtype .punctuation.definition.template.arguments.end</string>
+			<string>.flowtype .entity.name.module</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#bcaaa4</string>
+				<string>#aed581</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.flowtype .comment.block .punctuation.definition</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#BCAAA4B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.flowtype .comment.block .punctuation.definition.array, .flowtype .comment.block .punctuation.definition.array.begin, .flowtype .comment.block .punctuation.definition.array.end, .flowtype .comment.block .punctuation.definition.cast.begin, .flowtype .comment.block .punctuation.definition.cast.end, .flowtype .comment.block .punctuation.definition.function.parameters.begin, .flowtype .comment.block .punctuation.definition.function.parameters.end, .flowtype .comment.block .punctuation.definition.function.parameters, .flowtype .comment.block .punctuation.definition.function.result, .flowtype .comment.block .punctuation.definition.module.body.begin, .flowtype .comment.block .punctuation.definition.module.body.end, .flowtype .comment.block .punctuation.definition.nullable.begin, .flowtype .comment.block .punctuation.definition.nullable.end, .flowtype .comment.block .punctuation.definition.object.begin, .flowtype .comment.block .punctuation.definition.object.end, .flowtype .comment.block .punctuation.definition.object, .flowtype .comment.block .punctuation.definition.template.arguments.begin, .flowtype .comment.block .punctuation.definition.template.arguments, .flowtype .comment.block .punctuation.definition.template.parameters.begin, .flowtype .comment.block .punctuation.definition.template.parameters.end, .flowtype .comment.block .punctuation.definition.template.parameters, .flowtype .comment.block .punctuation.definition.template.arguments.end</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#BCAAA4B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.flowtype .keyword.operator.other.association, .flowtype .keyword.operator.other.cast, .flowtype .keyword.operator.other.contravariant, .flowtype .keyword.operator.other.covariant, .flowtype .keyword.operator.other.existential, .flowtype .keyword.operator.other.intersection, .flowtype .keyword.operator.other.nullable, .flowtype .keyword.operator.other.optional, .flowtype .keyword.operator.other.union</string>
+			<string>.flowtype .keyword.operator.other.association, .flowtype .keyword.operator.other.cast, .flowtype .keyword.operator.other.contravariant, .flowtype .keyword.operator.other.covariant, .flowtype .keyword.operator.other.existential, .flowtype .keyword.operator.other.intersection, .flowtype .keyword.operator.other.nullable, .flowtype .keyword.operator.other.optional, .flowtype .keyword.operator.other.rest, .flowtype .keyword.operator.other.union</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -226,6 +210,33 @@
 			<dict>
 				<key>foreground</key>
 				<string>#FF80ABB2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.flowtype .punctuation.definition.array, .flowtype .punctuation.definition.array.begin, .flowtype .punctuation.definition.array.end, .flowtype .punctuation.definition.cast.begin, .flowtype .punctuation.definition.cast.end, .flowtype .punctuation.definition.function.parameters.begin, .flowtype .punctuation.definition.function.parameters.end, .flowtype .punctuation.definition.function.parameters, .flowtype .punctuation.definition.function.result, .flowtype .punctuation.definition.module.body.begin, .flowtype .punctuation.definition.module.body.end, .flowtype .punctuation.definition.nullable.begin, .flowtype .punctuation.definition.nullable.end, .flowtype .punctuation.definition.object.begin, .flowtype .punctuation.definition.object.end, .flowtype .punctuation.definition.object, .flowtype .punctuation.definition.template.arguments.begin, .flowtype .punctuation.definition.template.arguments, .flowtype .punctuation.definition.template.parameters.begin, .flowtype .punctuation.definition.template.parameters.end, .flowtype .punctuation.definition.template.parameters, .flowtype .punctuation.definition.template.arguments.end</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.flowtype .comment.block .punctuation.definition</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#BCAAA4B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.flowtype .comment.block .punctuation.definition.array, .flowtype .comment.block .punctuation.definition.array.begin, .flowtype .comment.block .punctuation.definition.array.end, .flowtype .comment.block .punctuation.definition.cast.begin, .flowtype .comment.block .punctuation.definition.cast.end, .flowtype .comment.block .punctuation.definition.function.parameters.begin, .flowtype .comment.block .punctuation.definition.function.parameters.end, .flowtype .comment.block .punctuation.definition.function.parameters, .flowtype .comment.block .punctuation.definition.function.result, .flowtype .comment.block .punctuation.definition.module.body.begin, .flowtype .comment.block .punctuation.definition.module.body.end, .flowtype .comment.block .punctuation.definition.nullable.begin, .flowtype .comment.block .punctuation.definition.nullable.end, .flowtype .comment.block .punctuation.definition.object.begin, .flowtype .comment.block .punctuation.definition.object.end, .flowtype .comment.block .punctuation.definition.object, .flowtype .comment.block .punctuation.definition.template.arguments.begin, .flowtype .comment.block .punctuation.definition.template.arguments, .flowtype .comment.block .punctuation.definition.template.parameters.begin, .flowtype .comment.block .punctuation.definition.template.parameters.end, .flowtype .comment.block .punctuation.definition.template.parameters, .flowtype .comment.block .punctuation.definition.template.arguments.end</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#BCAAA4B2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -973,6 +984,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.definition.extend-list.separator, .punctuation.definition.implement-list.separator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ce93d8</string>
 			</dict>
 		</dict>
 		<dict>

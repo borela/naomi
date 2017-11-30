@@ -157,8 +157,18 @@ An identity is the most specific scope possible that decribes the token.
         .begin
         .end
         .separator
+    .implement
+    .implement-list
+      .begin
+      .end
+      .separator
     .import
     .import-list
+      .begin
+      .end
+      .separator
+    .inherit
+    .inherit-list
       .begin
       .end
       .separator

@@ -22,11 +22,11 @@ contexts:
   # |:----------:|:--------------------|
   # |   typeof   |                     |
   # |    void    |                     |
-  # |     ,      | Comma.              |
   # |    ...     | Spread.             |
   # |     ::     | Bind.               |
   # |     .      | Member access.      |
   # |    ?.      | Optional chain.     |
+  # |    ??      | Nullish coalescing. |
   # |     ?      | Ternary.            |
   main:
     - match: \s*(typeof)\b
@@ -41,18 +41,18 @@ contexts:
           word.js.fjsx15
           keyword.operator.other.void.js.fjsx15
       pop: true
-    - match: \s*(\,)
-      captures:
-        1: keyword.operator.other.comma.js.fjsx15
-      pop: true
     - match: \s*(\:{2})
       captures:
         1: keyword.operator.other.bind.js.fjsx15
       pop: true
+    - match: \s*(\?\?)
+      captures:
+        1: keyword.operator.other.nullish-coalescing.js.fjsx15
+      pop: true
     - match: \s*(\?\.)
       captures:
         1: keyword.operator.other.optional-chain.js.fjsx15
-      pop: true
+      set: member-access
     - match: \s*(\?)
       captures:
         1: keyword.operator.other.ternary.js.fjsx15

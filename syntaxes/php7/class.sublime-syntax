@@ -122,7 +122,7 @@ contexts:
     - include: comment
     - match: \s*(,)
       captures:
-        1: punctuation.definition.implement.php.php7
+        1: punctuation.definition.implement-list.separator.php.php7
       pop: true
     - match: (?=\s*\S)
       pop: true

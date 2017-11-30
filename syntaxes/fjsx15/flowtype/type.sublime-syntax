@@ -84,7 +84,7 @@ contexts:
     - match: \s*(\))
       captures:
         1: punctuation.definition.expression.group.b.end.js.fjsx15
-      pop: true
+      set: optional-operator
     # Expression contents.
     - match: (?=\s*\S)
       push: [
@@ -105,7 +105,7 @@ contexts:
     - match: \s*(\))
       captures:
         1: punctuation.definition.expression.group.a.end.js.fjsx15
-      pop: true
+      set: optional-operator
     # Expression contents.
     - match: (?=\s*\S)
       push: [

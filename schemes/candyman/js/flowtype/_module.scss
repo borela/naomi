@@ -10,19 +10,8 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.punctuation.definition {
-  foreground: $amber-100;
-}
-
-.punctuation.definition.expression.group.b {
-  foreground: $brown-200;
-}
-
-.punctuation.definition.control {
-  foreground: $pink-a100;
-}
-
-.punctuation.definition.extend-list.separator,
-.punctuation.definition.implement-list.separator {
-  foreground: $purple-200;
+.flowtype {
+  .entity.name.module {
+    foreground: $light-green-300;
+  }
 }

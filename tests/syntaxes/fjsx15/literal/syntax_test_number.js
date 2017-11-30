@@ -16,8 +16,16 @@
 // ^ .constant.numeric.decimal.js.fjsx15
    123
 // ^^^ .constant.numeric.decimal.js.fjsx15
+   1_2_3
+// ^^^^^ .constant.numeric.decimal.js.fjsx15
+   123_456_789
+// ^^^^^^^^^^^ .constant.numeric.decimal.js.fjsx15
    123.
 // ^^^^ .constant.numeric.float.js.fjsx15
+   1_2_3.
+// ^^^^^^ .constant.numeric.float.js.fjsx15
+   123_456_789.
+// ^^^^^^^^^^^^ .constant.numeric.float.js.fjsx15
    123.0
 // ^^^^^ .constant.numeric.float.js.fjsx15
    .123
@@ -32,3 +40,7 @@
 // ^^^^^^^ .constant.numeric.float.scientific.js.fjsx15
    0x123
 // ^^^^^ .constant.numeric.hex.js.fjsx15
+   0x1_2_3
+// ^^^^^^^ .constant.numeric.hex.js.fjsx15
+   0x123_456_789
+// ^^^^^^^^^^^^^ .constant.numeric.hex.js.fjsx15

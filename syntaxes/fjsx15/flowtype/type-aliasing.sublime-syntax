@@ -33,6 +33,7 @@ contexts:
   main:
     - match: |
         (?xi)\s*
+        (?:(opaque)\s+)?
         (type)\b
         (?=\s+
           {{commonIdentifier}}
@@ -42,14 +43,24 @@ contexts:
         1: >-
           flowtype
           storage.type.flowtype
+          keyword.other.access.flowtype
+        2: >-
+          flowtype
+          storage.type.flowtype
           keyword.declaration.type-aliasing.flowtype
       set: [
         punctuation,
+        optional-constraint,
         identifier
       ]
 
   identifier:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax
+
+  optional-constraint:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+    - match: (?=\s*\S)
+      pop: true
 
   punctuation:
     - match: \s*(=)
@@ -58,6 +69,10 @@ contexts:
           flowtype
           keyword.operator.other.assignment.flowtype
       set: type
+    # Anything other than the assignment symbol here will terminate the type
+    # declaration.
+    - match: (?=\s*\S)
+      pop: true
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax

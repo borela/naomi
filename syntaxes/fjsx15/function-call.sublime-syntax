@@ -36,30 +36,36 @@ contexts:
         (?x)
         (?<=\)|]|}|"|'|`)
         (?=\s*\()
-      set: arguments
+      set: optional-chain-and-arguments
     # Template function.
     - match: |
         (?xi)
         (?=
+          \s*\#?
           \s*{{commonIdentifier}}
           \s*{{templateArguments}}
+          \s*(\?\.)?
           \s*\(
         )
-      set: [
-        arguments,
-        template-arguments,
-        name
-      ]
+      set: modifier-and-name
     # Simple function call.
     - match: |
         (?xi)
         (?=
+          \s*\#?
           \s*{{commonIdentifier}}
+          \s*(\?\.)?
           \s*\(
         )
-      set: name
+      set: modifier-and-name
 
-  name:
+  modifier-and-name:
+    # Private modifier.
+    - match: \s*(\#)
+      captures:
+        1: >-
+          storage.modifier.js.fjsx15
+          keyword.other.access.js.fjsx15
     # Support identifier.
     - match: |
         (?x)\s*
@@ -70,20 +76,38 @@ contexts:
         1: >-
           support.js.fjsx15
           entity.name.function.js.fjsx15
-      set: support-arguments
+      set: [
+        optional-chain-and-support-arguments,
+        possible-template-arguments
+      ]
     # Identifier.
     - match: |
         (?xi)
         \s*({{commonIdentifier}})
       captures:
         1: entity.name.function.js.fjsx15
-      set: arguments
+      set: [
+        optional-chain-and-arguments,
+        possible-template-arguments
+      ]
 
-  template-arguments:
+  possible-template-arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax
+    - match: ""
+      pop: true
 
-  arguments:
+  optional-chain-and-arguments:
+    # Optional chain operator.
+    - match: \s*(\?\.)
+      captures:
+        1: keyword.operator.other.optional-chain.js.fjsx15
+    # Actual arguments.
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
-  support-arguments:
+  optional-chain-and-support-arguments:
+    # Optional chain operator.
+    - match: \s*(\?\.)
+      captures:
+        1: keyword.operator.other.optional-chain.js.fjsx15
+    # Actual arguments.
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax

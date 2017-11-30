@@ -94,6 +94,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.no-pop.sublime-syntax
 
   sequence:
+    - include: comment
     - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax

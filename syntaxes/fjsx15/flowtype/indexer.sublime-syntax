@@ -29,7 +29,7 @@ variables:
 contexts:
   main:
     - match: |
-        (?x)
+        (?x)^
         (?:\s*
           (?>(\+)|(-))
         )?
@@ -47,7 +47,7 @@ contexts:
       set: [
         associated-type,
         indexer-end,
-        property-or-type
+        named-or-anonymous
       ]
 
   indexer-end:
@@ -58,26 +58,17 @@ contexts:
           punctuation.definition.object.indexer.flowtype
       pop: true
 
-  property-or-type:
+  named-or-anonymous:
     - include: comment
-    # Constant.
-    - match: |
-        (?x)\s*
-        ({{constantIdentifier}})(\?)?
-        (?=\s*:)
-      captures:
-        1: entity.name.constant.js.fjsx15
-        2: >-
-          flowtype
-          keyword.operator.other.optional.flowtype
-      set: associated-type
-    # Normal property.
+    # Named indexers are similar to function’s parameters.
     - match: |
         (?xi)\s*
         ({{commonIdentifier}})(\?)?
         (?=\s*:)
       captures:
-        1: entity.name.variable.js.fjsx15
+        1: >-
+          function.parameter.js.fjsx15
+          entity.name.variable.js.fjsx15
         2: >-
           flowtype
           keyword.operator.other.optional.flowtype

@@ -22,6 +22,10 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  constantIdentifier: |
+    [$_[:upper:]]
+    [$_[:upper:][:digit:]]*
+
 contexts:
   main:
     # Empty object literal.
@@ -35,9 +39,9 @@ contexts:
     # Normal object literal.
     - match: \s*({)
       scope: punctuation.definition.object.begin.js.fjsx15
-      set: items
+      set: declaration
 
-  items:
+  declaration:
     - match: \s*(,)
       captures:
         1: punctuation.definition.object.js.fjsx15
@@ -67,6 +71,16 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
         # Methods.
         - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
+        # Simple constant.
+        - match: |
+            (?x)\s*
+            (?={{constantIdentifier}}\s*(?>,|}|$))
+          set: constant
+        # Simple variable.
+        - match: |
+            (?xi)\s*
+            (?={{commonIdentifier}}\s*(?>,|}|$))
+          set: variable
         # Property.
         - include: Packages/Naomi/syntaxes/fjsx15/literal/object/property.sublime-syntax
         # Other expressions.
@@ -75,11 +89,7 @@ contexts:
   associated-value:
     - match: |
         (?x)
-        (?=\s*
-          (?> ,
-            | }
-          )
-        )
+        (?=\s*(?>,|}))
       pop: true
     - match: ""
       push:
@@ -95,3 +105,9 @@ contexts:
 
   statement-and-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+
+  constant:
+    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
+
+  variable:
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

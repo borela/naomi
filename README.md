@@ -2,7 +2,7 @@
   <img src="./art/logo.png">
 </p>
 
-<p>
+<p align="center">
   <a href="www.sublimetext.com">
     <img src="https://img.shields.io/badge/sublime%203->%3D3126-orange.svg?style=flat-square">
   </a>

@@ -2,6 +2,7 @@
 
 [![Sublime version](https://img.shields.io/badge/sublime%203->%3D3126-orange.svg?style=flat-square)][sublime]
 ![License](http://img.shields.io/:license-mixed-blue.svg?style=flat-square)
+[![Downloads](https://img.shields.io/packagecontrol/dt/Naomi.svg)][package-control]
 [![GitHub stars](https://img.shields.io/github/stars/borela/naomi.svg?style=social&label=Star)][stars]
 [![GitHub forks](https://img.shields.io/github/forks/borela/naomi.svg?style=social&label=Fork)][forks]
 
@@ -83,6 +84,7 @@ To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need 
 ![Candyman FJSX15 preview 2](preview/fjsx15/candyman-2.png)
 
 [candyman]: schemes/candyman
+[package-control]: //packagecontrol.io/packages/Naomi
 [csscheme]: //github.com/FichteFoll/CSScheme
 [design]: DESIGN.md
 [sublime]: //www.sublimetext.com

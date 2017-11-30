@@ -7,8 +7,6 @@
 ![GitHub stars](https://img.shields.io/github/stars/borela/naomi.svg?style=social&label=Star)
 ![GitHub forks](https://img.shields.io/github/forks/borela/naomi.svg?style=social&label=Fork)
 
-
-
 ## Installation
 
 #### Manual installation

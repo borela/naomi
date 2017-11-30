@@ -9,11 +9,11 @@
 
   <img src="http://img.shields.io/:license-mixed-blue.svg?style=flat-square">
 
-  <a href="stargazers">
+  <a href="//github.com/borela/naomi/stargazers">
     <img src="https://img.shields.io/github/stars/borela/naomi.svg?style=social&label=Star">
   </a>
 
-  <a href="network/members">
+  <a href="//github.com/borela/naomi/network/members">
     <img src="https://img.shields.io/github/forks/borela/naomi.svg?style=social&label=Fork">
   </a>
 <p>

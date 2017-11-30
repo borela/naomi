@@ -16,7 +16,7 @@
    version="1.1"
    id="svg8"
    sodipodi:docname="logo.svg"
-   inkscape:version="0.92.1 r15371"
+   inkscape:version="0.92.0 r15299"
    inkscape:export-filename="C:\Users\Alexandre\AppData\Roaming\Sublime Text 3\Packages\Naomi\art\logo.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
@@ -84,7 +84,9 @@
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:41.36497498px;line-height:1.25;font-family:Constantia;-inkscape-font-specification:'Constantia Italic';letter-spacing:0px;word-spacing:0px;fill:#ff58b8;fill-opacity:1;stroke:none;stroke-width:1.03412426;"
        x="77.555054"
        y="102.1529"
-       id="text3684"><tspan
+       id="text3684"
+       inkscape:export-xdpi="61.020317"
+       inkscape:export-ydpi="61.020317"><tspan
          sodipodi:role="line"
          id="tspan3682"
          x="77.555054"
@@ -95,15 +97,21 @@
        d="M 31.136899,103.49686 43.564933,64.809596 57.529764,64.675963 62.808339,81.781212 67.986686,64.742778 82.18538,64.709371 69.89098,103.56368 55.525243,103.54816 50.580758,86.992967 45.239421,103.57989 Z"
        id="path3722"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccc" />
+       sodipodi:nodetypes="ccccccccccc"
+       inkscape:export-xdpi="61.020317"
+       inkscape:export-ydpi="61.020317" />
     <path
        style="fill:url(#linearGradient3732);stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
        d="M 62.808339,81.78121 69.89098,103.56368 82.185379,64.70937 67.986684,64.74278 Z"
        id="path3724"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="61.020317"
+       inkscape:export-ydpi="61.020317" />
     <g
        id="g4702"
-       transform="matrix(1.0746513,0,0,1.0746513,10.587367,-37.244037)">
+       transform="matrix(1.0746513,0,0,1.0746513,10.587367,-37.244037)"
+       inkscape:export-xdpi="61.020317"
+       inkscape:export-ydpi="61.020317">
       <g
          transform="matrix(0.72222221,0,0,0.66666666,29.260914,62.129001)"
          id="g4585">

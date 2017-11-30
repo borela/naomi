@@ -62,11 +62,13 @@ contexts:
   embedded-js:
     - clear_scopes: true
     - meta_content_scope: source.js.fjsx15
-    - match: \s*(})
+    - match: (\s*)(})(\n*)
       captures:
-        1: >-
+        1: source.js.fjsx15
+        2: >-
           source.jsx.jsx1
           keyword.operator.other.embedded.js.end.jsx.jsx1
+        3: source.jsx.jsx1
       pop: true
     - match: ""
       push:

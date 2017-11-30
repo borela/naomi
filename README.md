@@ -1,5 +1,5 @@
 <h1 align="center">
-  ![Naomi](./art/logo.png)
+  <img src="./art/logo.png"/>
 </h1>
 
 [![Sublime version](https://img.shields.io/badge/sublime%203->%3D3126-orange.svg?style=flat-square)][sublime]

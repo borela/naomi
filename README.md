@@ -85,6 +85,7 @@ To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need 
 [candyman]: schemes/candyman
 [csscheme]: //github.com/FichteFoll/CSScheme
 [design]: DESIGN.md
+[sublime]: //www.sublimetext.com
 [stars]: //github.com/borela/naomi/stargazers
-[fork]: //github.com/borela/naomi/network/members
+[forks]: //github.com/borela/naomi/network/members
 [sublimeLinter]: //github.com/SublimeLinter/SublimeLinter3

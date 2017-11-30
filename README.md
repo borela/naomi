@@ -3,15 +3,21 @@
 </p>
 
 <p align="center">
-  <a href="www.sublimetext.com">
+  <a href="//www.sublimetext.com">
     <img src="https://img.shields.io/badge/sublime%203->%3D3126-orange.svg?style=flat-square">
   </a>
-  <a href="./LICENSE.md">
+
+  <a href="LICENSE.md">
     <img src="http://img.shields.io/:license-apache-blue.svg?style=flat-square">
   </a>
 
-  <img src="https://img.shields.io/github/stars/borela/naomi.svg?style=social&label=Star">
-  <img src="https://img.shields.io/github/forks/borela/naomi.svg?style=social&label=Fork">
+  <a href="stargazers">
+    <img src="https://img.shields.io/github/stars/borela/naomi.svg?style=social&label=Star">
+  </a>
+
+  <a href="network/members">
+    <img src="https://img.shields.io/github/forks/borela/naomi.svg?style=social&label=Fork">
+  </a>
 <p>
 
 ## Installation

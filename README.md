@@ -1,6 +1,6 @@
 [![Naomi](art/logo.png)][naomi]
 
-[![Sublime version](https://img.shields.io/badge/sublime%203->%3D3126-orange.svg?style=flat-square)][sublime]
+[![Sublime version](https://img.shields.io/badge/sublime-%E2%89%A53126-orange.svg)][sublime]
 [![License](http://img.shields.io/:license-mixed-blue.svg?style=flat-square)][naomi]
 [![Downloads](https://img.shields.io/packagecontrol/dt/Naomi.svg?style=flat-square)][package-control]
 [![GitHub stars](https://img.shields.io/github/stars/borela/naomi.svg?style=social&label=Star)][stars]

@@ -35,11 +35,16 @@ contexts:
       captures:
         1: punctuation.definition.object.begin.js.fjsx15
         2: punctuation.definition.object.end.js.fjsx15
-      pop: true
+      set: optional-property-access
     # Normal object literal.
     - match: \s*({)
       scope: punctuation.definition.object.begin.js.fjsx15
       set: declaration
+
+  optional-property-access:
+    - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
+    - match: (?=\S)
+      pop: true
 
   declaration:
     - match: \s*(,)

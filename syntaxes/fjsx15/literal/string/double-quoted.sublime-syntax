@@ -48,8 +48,13 @@ contexts:
             1: >-
               string.quoted.double.js.fjsx15
               punctuation.definition.string.end.js.fjsx15
-          pop: true
+          set: optional-property-access
       set: escape-a
+
+  optional-property-access:
+    - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
+    - match: (?=\S)
+      pop: true
 
   trap:
     - meta_content_scope: context.trap

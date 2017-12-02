@@ -87,4 +87,9 @@ contexts:
       scope: >-
         string.template.js.fjsx15
         punctuation.definition.string.end.js.fjsx15
+      set: optional-property-access
+
+  optional-property-access:
+    - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
+    - match: (?=\S)
       pop: true

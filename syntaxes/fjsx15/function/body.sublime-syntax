@@ -28,9 +28,14 @@ contexts:
     - match: \s*(})
       captures:
         1: punctuation.definition.function.body.end.js.fjsx15
-      pop: true
+      set: optional-property-access
     - match: ""
       push:
         - match: (?=\s*})
           pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+
+  optional-property-access:
+    - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
+    - match: (?=\S)
+      pop: true

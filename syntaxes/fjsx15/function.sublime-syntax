@@ -27,9 +27,13 @@ contexts:
     # Function property.
     - match: |
         (?x)\s*
-        (function.sent)
+        (function)(.)(sent)
       captures:
         1: >-
+          support.core.js.fjsx15
+          entity.name.variable.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
           support.core.js.fjsx15
           entity.name.variable.js.fjsx15
       pop: true

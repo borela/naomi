@@ -170,7 +170,7 @@ contexts:
         \s*(Symbol)
         \s*(\.)\s*
         ((?> for
-          | KeyFor
+          | keyFor
         ))\b
       captures:
         1: >-

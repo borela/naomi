@@ -116,7 +116,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/new.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/other-keywords.sublime-syntax
     # Expression.
-    - include: Packages/Naomi/syntaxes/fjsx15/array-access.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax

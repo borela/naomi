@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(/\*\*)
+    - match: \s*(/\*\*)(?!/)
       captures:
         1: punctuation.definition.comment.documentation.begin.js.fjsx15
       set: content

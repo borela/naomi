@@ -38,7 +38,7 @@ contexts:
         (?=\s*\()
       captures:
         1: keyword.control.import.js.fjsx15
-      set: function-arguments
+      set: header
     # Import the entire module.
     - match: |
         (?x)\s*
@@ -55,6 +55,9 @@ contexts:
       captures:
         1: keyword.control.import.js.fjsx15
       set: targets
+
+  header:
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/header.sublime-syntax
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

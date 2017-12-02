@@ -172,6 +172,7 @@ contexts:
           | setImmediate
           | setInterval
           | setTimeout
+          | toString
           | uneval
         ))
         (?=\s*\()

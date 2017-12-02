@@ -67,27 +67,7 @@ contexts:
       set: header
 
   header:
-    - match: \s*(\()
-      captures:
-        1: punctuation.definition.control.header.begin.js.fjsx15
-      set: header-content
-
-  header-content:
-    - match: \s*(\))
-      captures:
-        1: punctuation.definition.control.header.end.js.fjsx15
-      pop: true
-    - match: ""
-      push:
-        - match: (?=\s*\))
-          pop: true
-        - include: statement-and-expression
-
-  terminator:
-    - match: \s*(;)
-      captures:
-        1: keyword.operator.other.terminator.js.fjsx15
-      pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/statement/header.sublime-syntax
 
   optional-body:
     - match: (?=\s*(?>}|]|\)))

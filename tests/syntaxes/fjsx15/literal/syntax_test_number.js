@@ -12,35 +12,35 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-   0
+   0;
 // ^ .constant.numeric.decimal.js.fjsx15
-   123
+   123;
 // ^^^ .constant.numeric.decimal.js.fjsx15
-   1_2_3
+   1_2_3;
 // ^^^^^ .constant.numeric.decimal.js.fjsx15
-   123_456_789
+   123_456_789;
 // ^^^^^^^^^^^ .constant.numeric.decimal.js.fjsx15
-   123.
+   123.;
 // ^^^^ .constant.numeric.float.js.fjsx15
-   1_2_3.
+   1_2_3.;
 // ^^^^^^ .constant.numeric.float.js.fjsx15
-   123_456_789.
+   123_456_789.;
 // ^^^^^^^^^^^^ .constant.numeric.float.js.fjsx15
-   123.0
+   123.0;
 // ^^^^^ .constant.numeric.float.js.fjsx15
-   .123
+   .123;
 // ^^^^ .constant.numeric.float.js.fjsx15
-   0.123
+   0.123;
 // ^^^^^ .constant.numeric.float.js.fjsx15
-   123e10
+   123e10;
 // ^^^^^^ .constant.numeric.float.scientific.js.fjsx15
-   123e+10
+   123e+10;
 // ^^^^^^^ .constant.numeric.float.scientific.js.fjsx15
-   123e-10
+   123e-10;
 // ^^^^^^^ .constant.numeric.float.scientific.js.fjsx15
-   0x123
+   0x123;
 // ^^^^^ .constant.numeric.hex.js.fjsx15
-   0x1_2_3
+   0x1_2_3;
 // ^^^^^^^ .constant.numeric.hex.js.fjsx15
-   0x123_456_789
+   0x123_456_789;
 // ^^^^^^^^^^^^^ .constant.numeric.hex.js.fjsx15

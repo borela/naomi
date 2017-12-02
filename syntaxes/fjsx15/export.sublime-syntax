@@ -98,6 +98,18 @@ contexts:
           storage.modifier.js.fjsx15
           keyword.control.export.default.js.fjsx15
       set: object-literal
+    # Export default from.
+    - match: |
+        (?x)
+        \s*(export)
+        \s*(default)
+        (?=\s*from)
+      captures:
+        1: keyword.control.export.js.fjsx15
+        2: >-
+          storage.modifier.js.fjsx15
+          keyword.control.export.default.js.fjsx15
+      set: origin
     # Export statements.
     - match: |
         (?x)
@@ -117,18 +129,6 @@ contexts:
       captures:
         1: keyword.control.export.js.fjsx15
       set: statement-and-expression
-    # Export default from.
-    - match: |
-        (?x)
-        \s*(export)
-        \s*(default)
-        (?=\s*from)
-      captures:
-        1: keyword.control.export.js.fjsx15
-        2: >-
-          storage.modifier.js.fjsx15
-          keyword.control.export.default.js.fjsx15
-      set: origin
     # Export default.
     - match: |
         (?x)
@@ -169,13 +169,24 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
-  punctuation:
+  export-list-begin:
     - match: \s*(\{)
       captures:
         1: punctuation.definition.export.list.begin.js.fjsx15
+      set: export-list
+
+  export-list:
     - match: \s*(})
       captures:
         1: punctuation.definition.export.list.end.js.fjsx15
+      set: comma-origin-escape
+    - match: ""
+      push:
+        - include: targets
+        - match: ""
+          pop: true
+
+  comma:
     - match: \s*(,)
       captures:
         1: punctuation.definition.export.item.js.fjsx15
@@ -183,42 +194,43 @@ contexts:
   targets:
     - include: comment
     - include: origin
-    - include: punctuation
-    - match: |
-        (?x)
-        (?=\s*export)
-      pop: true
-    - include: sequence
-
-  sequence:
+    - include: export-list-begin
+    - include: comma
+    - include: alias
     # Default.
     - match: \s*(default)\b
       captures:
         1: >-
           storage.modifier.js.fjsx15
           keyword.control.export.default.js.fjsx15
-      push: alias
     # All.
     - match: \s*(\*)
       captures:
         1: keyword.operator.other.export.all.js.fjsx15
-      push: optional-alias
     # Simple.
     - match: |
         (?xi)\s*
+        (?!{{keywords}})
         ({{commonIdentifier}})
       captures:
         1: >-
           export.js.fjsx15
           entity.name.ambiguous.js.fjsx15
-      push: optional-alias
-
-  optional-alias:
-    - match: |
-        (?x)
-        (?=\s*(?>,|}|from))
+      set: alias-comma-origin-escape
+    - match: (?=\s*\S)
       pop: true
-    - include: alias
+
+  comma-origin-escape:
+    - match: (?=\s*(?>,|from))
+      set: targets
+    - match: (?=\s*\S)
+      pop: true
+
+  alias-comma-origin-escape:
+    - match: (?=\s*(?>,|as|from))
+      set: targets
+    - match: (?=\s*\S)
+      pop: true
 
   alias:
     - match: \s*(as)\b
@@ -242,17 +254,14 @@ contexts:
       captures:
         1: punctuation.definition.export.list.end.js.fjsx15
       pop: true
-    - match: ""
-      push: aliased-type
+    - include: alias
+    - include: type
 
-  aliased-type:
+  type:
     - match: |
         (?xi)
         (?={{commonIdentifier}})
-      set: [
-        optional-alias,
-        simple-type
-      ]
+      push: simple-type
 
   simple-type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax

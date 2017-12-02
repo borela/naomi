@@ -24,6 +24,16 @@ variables:
 
 contexts:
   main:
+    # Function property.
+    - match: |
+        (?x)\s*
+        (function.sent)
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.variable.js.fjsx15
+      pop: true
+    # Function declaration.
     - match: |
         (?x)\s*
         (?:

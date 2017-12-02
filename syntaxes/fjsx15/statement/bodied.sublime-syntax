@@ -29,7 +29,7 @@ contexts:
         ))\b
       captures:
         1: keyword.control.js.fjsx15
-      set: body
+      set: optional-body
     # Optional header.
     - match: |
         (?x)\s*\b
@@ -37,7 +37,7 @@ contexts:
       captures:
         1: keyword.control.js.fjsx15
       set: [
-        body,
+        optional-body,
         optional-header
       ]
     # Header and body.
@@ -56,7 +56,7 @@ contexts:
         1: keyword.control.js.fjsx15
         2: keyword.control.js.fjsx15
       set: [
-        body,
+        optional-body,
         header
       ]
 
@@ -89,7 +89,9 @@ contexts:
         1: keyword.operator.other.terminator.js.fjsx15
       pop: true
 
-  body:
+  optional-body:
+    - match: (?=\s*(?>}|]|))
+      pop: true
     - match: \s*(\{)
       captures:
         1: punctuation.definition.control.body.begin.js.fjsx15

@@ -14,7 +14,16 @@
   foreground: $pink-a100;
 }
 
+.storage.modifier {
+  foreground: $deep-purple-200;
+  .keyword,
+  .keyword.operator {
+    foreground: $deep-purple-200;
+  }
+}
+
 .storage.type {
+  foreground: $deep-purple-200;
   .keyword {
     foreground: $deep-purple-200;
   }

@@ -817,6 +817,33 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.storage.modifier</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b39ddb</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.storage.modifier .keyword, .storage.modifier .keyword.operator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b39ddb</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.storage.type</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b39ddb</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.storage.type .keyword</string>
 			<key>settings</key>
 			<dict>
@@ -831,15 +858,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.storage.modifier .keyword, .storage.modifier .keyword.operator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#b39ddb</string>
 			</dict>
 		</dict>
 		<dict>

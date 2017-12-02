@@ -90,7 +90,7 @@ contexts:
       pop: true
 
   optional-body:
-    - match: (?=\s*(?>}|]|))
+    - match: (?=\s*(?>}|]|\)))
       pop: true
     - match: \s*(\{)
       captures:

@@ -57,7 +57,7 @@ contexts:
     - match: \\.
       scope: constant.character.escape.a.js.fjsx15
       set: escape-b
-    # If the slash was not consumed before, it probably is the end of the regex.
+    # If the slash was not consumed before, it is probably the end of the regex.
     - include: regex-end
 
   escape-b:
@@ -65,5 +65,5 @@ contexts:
     - match: \\.
       scope: constant.character.escape.b.js.fjsx15
       set: escape-a
-    # If the slash was not consumed before, it probably is the end of the regex.
+    # If the slash was not consumed before, it is probably the end of the regex.
     - include: regex-end

@@ -34,7 +34,7 @@ contexts:
           storage.modifier.js.fjsx15
           keyword.operator.other.access.js.fjsx15
         2: entity.name.constant.js.fjsx15
-      set: optional-property-access
+      pop: true
     # Two or more characters.
     - match: |
         (?x)\s*
@@ -50,9 +50,4 @@ contexts:
           storage.modifier.js.fjsx15
           keyword.operator.other.access.js.fjsx15
         2: entity.name.constant.js.fjsx15
-      set: optional-property-access
-
-  optional-property-access:
-    - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
-    - match: (?=\S)
       pop: true

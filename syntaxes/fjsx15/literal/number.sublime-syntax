@@ -44,38 +44,26 @@ contexts:
     - match: (?xi)\s*({{scientificNotation}})
       captures:
         1: constant.numeric.float.scientific.js.fjsx15
-      set: optional-property-access-or-operator
+      pop: true
     - match: (?x)\s*({{literalFloat}})
       captures:
         1: constant.numeric.float.js.fjsx15
-      set: optional-property-access-or-operator
+      pop: true
 
   integer:
     - match: \s*(0[bB][01_]+)
       captures:
         1: constant.numeric.binary.js.fjsx15
-      set: optional-property-access-or-operator
+      pop: true
     - match: \s*(0[oO][0-7]+)
       captures:
         1: constant.numeric.octal.js.fjsx15
-      set: optional-property-access-or-operator
+      pop: true
     - match: (?i)\s*(0[xX][0-9a-f_]+)
       captures:
         1: constant.numeric.hex.js.fjsx15
-      set: optional-property-access-or-operator
+      pop: true
     - match: \s*([1-9][0-9_]*|0)
       captures:
         1: constant.numeric.decimal.js.fjsx15
-      set: optional-property-access-or-operator
-
-  optional-property-access-or-operator:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
-    # Comma operators are usually used to delimit arguments.
-    - match: (?=\s*\,)
-      pop: true
-    # Other operators.
-    - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
-    # Anything else.
-    - match: (?=\S)
       pop: true

@@ -27,6 +27,7 @@ variables:
 contexts:
   main:
     - include: comment-no-pop
+    - include: comma-no-pop
     - include: Packages/Naomi/syntaxes/fjsx15/operator/assignment.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
     - match: "{{expressionGroupBegin}}"
@@ -35,21 +36,16 @@ contexts:
       push: open-b-close-a
     # Start of the expression.
     - match: "{{expressionBegin}}"
-      embed: head-tail
-      escape: (?=\s*;)
+      push: [
+        expression-tail,
+        expression-head
+      ]
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   comma-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.no-pop.sublime-syntax
-
-  head-tail:
-    - match: ""
-      push: [
-        expression-tail,
-        expression-head
-      ]
 
   open-a-close-b:
     - include: comment-no-pop
@@ -66,8 +62,10 @@ contexts:
       pop: true
     # Start of the expression.
     - match: "{{expressionBegin}}"
-      embed: head-tail
-      escape: (?=\s*;)
+      push: [
+        expression-tail,
+        expression-head
+      ]
 
   open-b-close-a:
     - include: comment-no-pop
@@ -84,8 +82,10 @@ contexts:
       pop: true
     # Start of the expression.
     - match: "{{expressionBegin}}"
-      embed: head-tail
-      escape: (?=\s*;)
+      push: [
+        expression-tail,
+        expression-head
+      ]
 
   expression-head:
     - include: comment-no-pop

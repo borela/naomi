@@ -19,15 +19,6 @@ scope: ...
 
 contexts:
   main:
-    # Regex literals are a bit hard to predict and there are some cases where
-    # this pattern will fail, for example:
-    #
-    #     if (something) /regex/.exec(x);
-    #
-    # It’s impossible to know that the closing parenthesis is closing the
-    # statement’s header, that would only be possible with a parser.
-    #
-    # http://stackoverflow.com/questions/5519596/when-parsing-javascript-what-determines-the-meaning-of-a-slash
     - match: |
         (?x)
         \s*/
@@ -42,10 +33,7 @@ contexts:
       set: escape-a
 
   regex-end:
-    - match: |
-        (?x)
-        (/)
-        ([a-z]{0,5})
+    - match: (/)([a-z]{0,5})
       captures:
         0: string.unquoted.regex.js.fjsx15
         1: punctuation.definition.string.end.js.fjsx15

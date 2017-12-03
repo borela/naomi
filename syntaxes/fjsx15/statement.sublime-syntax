@@ -13,19 +13,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: FJSX15
+hidden: true
 
-file_extensions:
-  - fjsx
-  - fjsx15
-  - js
-  - jsx
-  - jsx15
-
-scope: source.js.fjsx15
+scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax

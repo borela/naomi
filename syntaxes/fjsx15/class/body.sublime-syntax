@@ -68,7 +68,7 @@ contexts:
         # Class variables.
         - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
         # Any other statement or expression.
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
         - match: ""
           pop: true
 

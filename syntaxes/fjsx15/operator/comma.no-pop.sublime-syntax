@@ -22,7 +22,3 @@ contexts:
     - match: \s*(,)
       captures:
         1: keyword.operator.other.comma.js.fjsx15
-      set: statement-and-expression
-
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

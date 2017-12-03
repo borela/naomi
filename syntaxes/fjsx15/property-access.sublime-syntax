@@ -28,9 +28,11 @@ contexts:
     - match: \s*(])
       captures:
         1: punctuation.definition.property.access.end.js.fjsx15a
-      pop: true
-    - match: ""
-      push:
-        - match: (?=\s*])
-          pop: true
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+      set: expression-tail
+    - include: expression
+
+  expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
+  expression-tail:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax#expression-tail

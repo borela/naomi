@@ -38,8 +38,5 @@ contexts:
         1: >-
           support.core.js.fjsx15
           punctuation.definition.function.arguments.js.fjsx15
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
-        - match: ""
-          pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+

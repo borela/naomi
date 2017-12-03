@@ -19,10 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        (?<!\sof)
-        \s*(\[)
+    - match: \s*(\[)
       captures:
         1: punctuation.definition.property.access.begin.js.fjsx15
       set: index

@@ -31,12 +31,6 @@ variables:
 
 contexts:
   main:
-    # Function call at the result of an expression.
-    - match: |
-        (?x)
-        (?<=\)|]|}|"|'|`)
-        (?=\s*\()
-      set: optional-chain-and-arguments
     # Template function.
     - match: |
         (?xi)
@@ -58,6 +52,8 @@ contexts:
           \s*\(
         )
       set: modifier-and-name
+    # Function call near expression.
+    - include: function-arguments
 
   modifier-and-name:
     # Private modifier.
@@ -74,6 +70,7 @@ contexts:
         ))\b
       captures:
         1: >-
+          call.js.fjsx15
           support.js.fjsx15
           entity.name.function.js.fjsx15
       set: [
@@ -85,7 +82,9 @@ contexts:
         (?xi)
         \s*({{commonIdentifier}})
       captures:
-        1: entity.name.function.js.fjsx15
+        1: >-
+          call.js.fjsx
+          entity.name.function.js.fjsx15
       set: [
         optional-chain-and-arguments,
         possible-template-arguments
@@ -97,17 +96,20 @@ contexts:
       pop: true
 
   optional-chain-and-arguments:
-    # Optional chain operator.
-    - match: \s*(\?\.)
-      captures:
-        1: keyword.operator.other.optional-chain.js.fjsx15
-    # Actual arguments.
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+    - include: optional-chain-operator
+    - include: function-arguments
 
   optional-chain-and-support-arguments:
-    # Optional chain operator.
+    - include: optional-chain-operator
+    - include: support-function-arguments
+
+  optional-chain-operator:
     - match: \s*(\?\.)
       captures:
         1: keyword.operator.other.optional-chain.js.fjsx15
-    # Actual arguments.
+
+  function-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+
+  support-function-arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax

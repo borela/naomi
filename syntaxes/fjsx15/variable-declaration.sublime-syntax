@@ -22,48 +22,28 @@ contexts:
     # Destructuring object.
     - match: |
         (?x)
-        (?=\s*
-          (?> const
-            | let
-            | var
-          )\s+\{
-        )
+        (?=\s*(?>const|let|var)\s+\{)
       set: [
-        punctuation,
         destructuring-object,
         keyword
       ]
     # Destructuring array.
     - match: |
         (?x)
-        (?=\s*
-          (?> const
-            | let
-            | var
-          )\s+\[
-        )
+        (?=\s*(?>const|let|var)\s+\[)
       set: [
-        punctuation,
         destructuring-array,
         keyword
       ]
     # Simple variable.
     - match: |
         (?x)
-        (?=\s*
-          (?> const
-            | let
-            | var
-          )\s+
-        )
+        (?=\s*(?>const|let|var)\s+)
       set: [
-        punctuation,
+        optional-type,
         variable-or-constant,
         keyword
       ]
-
-  comment:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   destructuring-object:
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
@@ -72,15 +52,10 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
 
   keyword:
-    - include: comment
+    - include: comment-no-pop
     - match: |
         (?x)\s*
-        (
-          (?> const
-            | let
-            | var
-          )
-        )
+        ((?>const|let|var))
       captures:
         1: >-
           storage.type.js.fjsx15
@@ -92,13 +67,8 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
-  punctuation:
-    - include: comment
-    - match: (?=\s*:)
-      set: type
-    - match: ""
-      pop: true
-
-  type:
-    - include: comment
+  optional-type:
+    - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+    - match: (?=\s*\S)
+      pop: true

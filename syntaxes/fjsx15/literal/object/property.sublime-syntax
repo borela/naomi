@@ -28,16 +28,30 @@ variables:
 
 contexts:
   main:
-    - include: constant
+    # # Computed property name.
+    # - match: \s*(\[)
+    #   captures:
+    #     1: punctuation.definition.object.computed-property.begin.js.fjsx15
+    #   push: [
+    #     associated-value,
+    #     computed-property
+    #   ]
+    # # Other property formats.
+    # - include: string
+    # - include: constant
     - include: variable
-    # String property name.
-    - match: (?=\s*(?>'|"|`))
-      set: string
-    # Computed property name.
-    - match: \s*(\[)
+
+  computed-property:
+    - match: \s*(\])
       captures:
-        1: punctuation.definition.object.computed-property.begin.js.fjsx15
-      set: computed-property
+        1: punctuation.definition.object.computed-property.end.js.fjsx15
+      pop: true
+    - include: expression
+
+  string:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
   constant:
     # Single character.
@@ -48,7 +62,7 @@ contexts:
         1: >-
           object.property.js.fjsx15
           entity.name.constant.js.fjsx15
-      pop: true
+      push: associated-value
     # Two or more characters.
     - match: |
         (?x)\s*
@@ -62,20 +76,20 @@ contexts:
         1: >-
           object.property.js.fjsx15
           entity.name.constant.js.fjsx15
-      pop: true
+      push: associated-value
 
   variable:
     # Single character.
-    - match: |
-        (?xi)\s*
-        ((?> \$\B
-          | [_[:alpha:]]\b
-        ))
-      captures:
-        1: >-
-          object.property.js.fjsx15
-          entity.name.variable.js.fjsx15
-      pop: true
+    # - match: |
+    #     (?xi)\s*
+    #     ((?> \$\B
+    #       | [_[:alpha:]]\b
+    #     ))
+    #   captures:
+    #     1: >-
+    #       object.property.js.fjsx15
+    #       entity.name.variable.js.fjsx15
+    #   push: associated-value
     # Two or more characters.
     - match: |
         (?xi)\s*
@@ -89,23 +103,14 @@ contexts:
         1: >-
           object.property.js.fjsx15
           entity.name.variable.js.fjsx15
-      pop: true
+      push: associated-value
 
-  string:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
+  expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
-  computed-property:
-    - match: \s*(\])
-      captures:
-        1: punctuation.definition.object.computed-property.end.js.fjsx15
-      pop: true
-    - match: ""
-      push:
-        - match: (?=\s*])
-          pop: true
-        - include: statement-and-expression
-
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  associated-value:
+    - match: \s*(:)
+      scope: >-
+        object.js.fjsx15
+        keyword.operator.other.association.js.fjsx15
+      set: expression

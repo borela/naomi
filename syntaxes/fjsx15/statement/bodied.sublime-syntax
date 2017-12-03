@@ -72,10 +72,14 @@ contexts:
   optional-body:
     - match: (?=\s*(?>}|]|\)))
       pop: true
+    # Regex right after header.
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
+    # Body beginning.
     - match: \s*(\{)
       captures:
         1: punctuation.definition.control.body.begin.js.fjsx15
       set: body-content
+    # Other statements and expressions.
     - include: statement-and-expression
 
   body-content:

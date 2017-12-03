@@ -30,6 +30,38 @@ contexts:
     # http://stackoverflow.com/questions/5519596/when-parsing-javascript-what-determines-the-meaning-of-a-slash
     - match: |
         (?x)
+        (?<= ^
+          | \.
+          | ,
+          | ;
+          | \(
+          | \{
+          | }
+          | \[
+          | <
+          | >
+          | =
+          | \+
+          | -
+          | \&
+          | \|
+          | \^
+          | !
+          | ~
+          | \?
+          | :
+          | /
+          | case
+          | export
+          | import
+          | in
+          | instanceof
+          | new
+          | return
+          | throw
+          | typeof
+          | yield
+        )
         \s*/
         (?=
           .*?

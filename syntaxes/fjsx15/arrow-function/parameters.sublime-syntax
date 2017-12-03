@@ -81,7 +81,7 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: statement-and-expression
+        # - include: statement-and-expression
         - match: ""
           pop: true
 
@@ -107,5 +107,5 @@ contexts:
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
 
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  # statement-and-expression:
+  #   - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

@@ -80,7 +80,7 @@ contexts:
         1: punctuation.definition.control.body.begin.js.fjsx15
       set: body-content
     # Other statements and expressions.
-    - include: statement-and-expression
+    # - include: statement-and-expression
 
   body-content:
     - match: \s*(})
@@ -91,7 +91,7 @@ contexts:
       push:
         - match: (?=\s*})
           pop: true
-        - include: statement-and-expression
+        # - include: statement-and-expression
 
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  # statement-and-expression:
+  #   - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

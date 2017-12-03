@@ -249,7 +249,7 @@ contexts:
       push:
         - match: (?=\s*])
           pop: true
-        - include: statement-and-expression
+        # - include: statement-and-expression
 
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  # statement-and-expression:
+  #   - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

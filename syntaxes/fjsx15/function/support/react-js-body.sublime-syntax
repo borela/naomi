@@ -37,5 +37,5 @@ contexts:
       push:
         - match: (?=\s*})
           pop: true
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 

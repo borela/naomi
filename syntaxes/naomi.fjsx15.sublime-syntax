@@ -26,4 +26,3 @@ scope: source.js.fjsx15
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

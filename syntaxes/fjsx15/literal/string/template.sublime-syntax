@@ -80,7 +80,7 @@ contexts:
       push:
         - match: (?=})
           pop: true
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 
   template-end:
     - match: \`

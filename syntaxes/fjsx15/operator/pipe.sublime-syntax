@@ -46,5 +46,5 @@ contexts:
         1: entity.name.function.js.fjsx15
       pop: true
     # Other expressions.
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+    # - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
 

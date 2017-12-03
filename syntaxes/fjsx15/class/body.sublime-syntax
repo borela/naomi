@@ -25,12 +25,19 @@ contexts:
         1: punctuation.definition.class.body.begin.js.fjsx15
       set: body
 
+  optional-property-access-or-regex:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
+    - match: (?=\S)
+      pop: true
+
   body:
     - include: comment
     - match: \s*(})
       captures:
         1: punctuation.definition.class.body.end.js.fjsx15
-      pop: true
+      set: optional-property-access-or-regex
     - match: ""
       push:
         # This is necessary because normally these instance variables would be

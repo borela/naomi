@@ -54,7 +54,7 @@ contexts:
     - match: \s*(\))
       captures:
         1: punctuation.definition.expression.group.b.end.js.fjsx15
-      pop: true
+      set: optional-property-access
     # Expression contents.
     - match: ""
       push:
@@ -76,13 +76,18 @@ contexts:
     - match: \s*(\))
       captures:
         1: punctuation.definition.expression.group.a.end.js.fjsx15
-      pop: true
+      set: optional-property-access
     # Expression contents.
     - match: ""
       push:
         - include: sequence
         - match: \s*
           pop: true
+
+  optional-property-access:
+    - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
+    - match: (?=\S)
+      pop: true
 
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

@@ -28,7 +28,7 @@ contexts:
   main:
     - include: comment-no-pop
     - include: comma-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
+    # - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
     - match: "{{expressionGroupBegin}}"
       captures:
@@ -96,22 +96,40 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
-    # Prefix operators.
-    - match: (?=\s*\S)
+    # Terminator and expression delimiters.
+    - match: (?=\s*[;)\]}])
+      pop: true
+    # Binary operators.
+    - match: (?=\S)
       push:
-        - include: comment-no-pop
         - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
 
   expression-tail:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
     # Suffix operator.
     - match: (?=\s*[\[(])
       push:
-        - include: comment-no-pop
         - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
-    # Expression ended.
+    # Binary operators.
+    - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
+    # Statements that end the expression.
+    - match: |
+        (?x)
+        (?=
+          (?> class
+            | const
+            | function
+            | let
+            | var
+            | ;
+          )
+        )
+      set: entry-point
+    # Anything else that is not expected.
     - match: (?=\s*\S)
       pop: true
+
+  entry-point:
+    - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax

@@ -29,7 +29,4 @@ contexts:
       captures:
         1: punctuation.definition.property.access.end.js.fjsx15a
       pop: true
-    - include: expression
-
-  expression:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

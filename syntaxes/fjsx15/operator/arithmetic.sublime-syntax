@@ -47,4 +47,7 @@ contexts:
         )
       captures:
         1: keyword.operator.arithmetic.js.fjsx15
-      pop: true
+      set: expression
+
+  expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

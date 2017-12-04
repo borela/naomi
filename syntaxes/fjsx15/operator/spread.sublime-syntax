@@ -22,7 +22,7 @@ contexts:
     - match: \s*(\.{3})
       captures:
         1: keyword.operator.other.spread.js.fjsx15
-  #     set: statement-and-expression
+      set: expression
 
-  # statement-and-expression:
-  #   - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

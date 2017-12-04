@@ -28,7 +28,7 @@ contexts:
   main:
     - include: comment-no-pop
     - include: comma-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/assignment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
     - match: "{{expressionGroupBegin}}"
       captures:

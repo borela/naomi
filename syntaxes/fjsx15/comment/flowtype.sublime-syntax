@@ -85,7 +85,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/operator/terminator.sublime-syntax
 
   link:
     - include: Packages/Naomi/syntaxes/shared/link.sublime-syntax

@@ -24,13 +24,13 @@ contexts:
         1: >-
           word.js.fjsx15
           keyword.operator.other.js.fjsx15
-      set: expression
+      set: optional-expression
     - match: \s*(void)\b
       captures:
         1: >-
           word.js.fjsx15
           keyword.operator.other.void.js.fjsx15
-      set: expression
+      set: optional-expression
 
-  expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

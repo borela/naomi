@@ -29,3 +29,4 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/relational.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/shebang.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/spread.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/word.sublime-syntax

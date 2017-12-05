@@ -19,14 +19,9 @@ scope: ...
 
 contexts:
   main:
-    # - match: (?=\s*[;\)\]}])
-    #   set: entry-point
     - match: (?=\s*[;\)\]}])
       pop: true
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-
-  entry-point:
-    - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax

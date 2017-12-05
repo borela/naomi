@@ -30,46 +30,31 @@ contexts:
     # Open new expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
-        1: punctuation.definition.expression.group.a.begin.js.fjsx15
-      push: open-b-close-a
+        1: punctuation.definition.expression.group.begin.js.fjsx15
+      push: open-group
     # Start of the expression.
     - match: "{{expressionBegin}}"
-      set: [ optional-tail, head ]
+      push: [ optional-tail, head ]
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
-  open-a-close-b:
+  open-group:
     - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.sublime-syntax
     # Open new expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
-        1: punctuation.definition.expression.group.a.begin.js.fjsx15
-      push: open-b-close-a
+        1: punctuation.definition.expression.group.begin.js.fjsx15
+      push: open-group
     # Close the previous expression group.
     - match: \s*(\))
       captures:
-        1: punctuation.definition.expression.group.b.end.js.fjsx15
+        1: punctuation.definition.expression.group.end.js.fjsx15
       set: optional-tail
     # Start of the expression.
     - match: "{{expressionBegin}}"
-      set: [ optional-tail, head ]
-
-  open-b-close-a:
-    - include: comment-no-pop
-    # Open new expression group.
-    - match: "{{expressionGroupBegin}}"
-      captures:
-        1: punctuation.definition.expression.group.b.begin.js.fjsx15
-      push: open-a-close-b
-    # Close the previous expression group.
-    - match: \s*(\))
-      captures:
-        1: punctuation.definition.expression.group.a.end.js.fjsx15
-      set: optional-tail
-    # Start of the expression.
-    - match: "{{expressionBegin}}"
-      set: [ optional-tail, head ]
+      push: [ optional-tail, head ]
 
   head:
     - include: comment-no-pop

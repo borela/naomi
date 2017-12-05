@@ -27,7 +27,7 @@ scope: source.js.fjsx15
 contexts:
   main:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/terminator.sublime-syntax
     # We need to detect operators as soon as possible but it can’t have a higher
     # priority than regex literals at this stage.
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax

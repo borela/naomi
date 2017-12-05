@@ -42,7 +42,7 @@ contexts:
         )
       captures:
         1: keyword.operator.comparison.js.fjsx15
-      set: expression
+      set: optional-expression
 
-  expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

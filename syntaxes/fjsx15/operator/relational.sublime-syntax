@@ -30,10 +30,10 @@ contexts:
         1: >-
           word.js.fjsx15
           keyword.operator.relational.js.fjsx15
-      set: expression
+      set: optional-expression
 
-  expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax

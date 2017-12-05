@@ -27,29 +27,20 @@ variables:
 contexts:
   main:
     - include: comment-no-pop
-    - include: comma-no-pop
-    # - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
+    # Open new expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
         1: punctuation.definition.expression.group.a.begin.js.fjsx15
       push: open-b-close-a
     # Start of the expression.
     - match: "{{expressionBegin}}"
-      push: [
-        expression-tail,
-        expression-head
-      ]
+      set: [ optional-tail, head ]
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
-  comma-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.no-pop.sublime-syntax
-
   open-a-close-b:
     - include: comment-no-pop
-    - include: comma-no-pop
     # Open new expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
@@ -59,17 +50,13 @@ contexts:
     - match: \s*(\))
       captures:
         1: punctuation.definition.expression.group.b.end.js.fjsx15
-      pop: true
+      set: optional-tail
     # Start of the expression.
     - match: "{{expressionBegin}}"
-      push: [
-        expression-tail,
-        expression-head
-      ]
+      set: [ optional-tail, head ]
 
   open-b-close-a:
     - include: comment-no-pop
-    - include: comma-no-pop
     # Open new expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
@@ -79,57 +66,40 @@ contexts:
     - match: \s*(\))
       captures:
         1: punctuation.definition.expression.group.a.end.js.fjsx15
-      pop: true
+      set: optional-tail
     # Start of the expression.
     - match: "{{expressionBegin}}"
-      push: [
-        expression-tail,
-        expression-head
-      ]
+      set: [ optional-tail, head ]
 
-  expression-head:
+  head:
     - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/word.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
-    # Terminator and expression delimiters.
-    - match: (?=\s*[;)\]}])
-      pop: true
-    # Binary operators.
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
 
-  expression-tail:
+  optional-tail:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
-    # Suffix operator.
-    - match: (?=\s*[\[(])
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
-    # Binary operators.
+    # Property access, function call and type conversion.
+    - match: (?=\s*[\[(:])
+      set: [ optional-tail, tail ]
+    # Other operators. At this point, operators will have a higher priority than
+    # regex literals.
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
-    # Statements that end the expression.
-    - match: |
-        (?x)
-        (?=
-          (?> class
-            | const
-            | function
-            | let
-            | var
-            | ;
-          )
-        )
-      set: entry-point
-    # Anything else that is not expected.
+    # Anything else not expected.
     - match: (?=\s*\S)
       pop: true
+      # set: entry-point
 
   entry-point:
+    - match: \s*lol
+      scope: keyword
     - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax
+
+  tail:
+    - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax

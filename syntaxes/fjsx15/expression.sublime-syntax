@@ -91,12 +91,6 @@ contexts:
     # Anything else not expected.
     - match: (?=\s*\S)
       pop: true
-      # set: entry-point
-
-  entry-point:
-    - match: \s*lol
-      scope: keyword
-    - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax
 
   tail:
     - include: comment-no-pop

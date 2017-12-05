@@ -34,7 +34,7 @@ contexts:
       push: open-group
     # Start of the expression.
     - match: "{{expressionBegin}}"
-      push: [ optional-tail, head ]
+      set: [ optional-tail, head ]
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

@@ -50,7 +50,7 @@ contexts:
               entity.name.variable.js.fjsx15
           pop: true
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.sublime-syntax
         # React’s variables (state, contextTypes, etc...).
         - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
         # Any methods (including supporting libraries’ methods).

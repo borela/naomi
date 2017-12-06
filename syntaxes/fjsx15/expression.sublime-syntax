@@ -41,7 +41,6 @@ contexts:
 
   open-group:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.no-pop.sublime-syntax
     # Open new expression group.
     - match: "{{expressionGroupBegin}}"
       captures:

@@ -40,6 +40,9 @@ contexts:
     - match: "{{expressionBegin}}"
       set: [ optional-tail, head ]
 
+  comma:
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.sublime-syntax
+
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
@@ -51,6 +54,9 @@ contexts:
 
   open-group:
     - include: comment-no-pop
+    # Comma operator.
+    - match: (?=\s*,)
+      push: comma
     # Type cast.
     - match: (?=\s*:)
       set: [ close-group, type-cast ]

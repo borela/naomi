@@ -27,11 +27,15 @@ variables:
 contexts:
   main:
     - include: comment-no-pop
+    # We need to detect operators as soon as possible but it can’t have a higher
+    # priority than regex literals at this stage.
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     # Open new expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
         1: punctuation.definition.expression.group.begin.js.fjsx15
-      push: open-group
+      set: open-group
     # Start of the expression.
     - match: "{{expressionBegin}}"
       set: [ optional-tail, head ]
@@ -39,21 +43,33 @@ contexts:
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  type-cast:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax
+
   open-group:
     - include: comment-no-pop
+    # Type cast.
+    - match: (?=\s*:)
+      set: [ close-group, type-cast ]
     # Open new expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
         1: punctuation.definition.expression.group.begin.js.fjsx15
       push: open-group
-    # Close the previous expression group.
+    # Close the current expression group.
+    - include: close-group
+    # Start of the expression.
+    - match: "{{expressionBegin}}"
+      push: optional-expression
+
+  close-group:
     - match: \s*(\))
       captures:
         1: punctuation.definition.expression.group.end.js.fjsx15
       set: optional-tail
-    # Start of the expression.
-    - match: "{{expressionBegin}}"
-      push: [ optional-tail, head ]
 
   head:
     - include: comment-no-pop
@@ -66,8 +82,8 @@ contexts:
 
   optional-tail:
     - include: comment-no-pop
-    # Property access, function call and type conversion.
-    - match: (?=\s*[\[(:])
+    # Property access and function call.
+    - match: (?=\s*[\[(])
       set: [ optional-tail, tail ]
     # Other operators. At this point, operators will have a higher priority than
     # regex literals.
@@ -78,6 +94,5 @@ contexts:
 
   tail:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax

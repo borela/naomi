@@ -27,6 +27,7 @@ variables:
 contexts:
   main:
     - include: comment-no-pop
+    - include: comma
     # We need to detect operators as soon as possible but it can’t have a higher
     # priority than regex literals at this stage.
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax

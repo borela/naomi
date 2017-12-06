@@ -24,9 +24,9 @@ contexts:
         1: >-
           support.core.js.fjsx15
           punctuation.definition.function.arguments.begin.js.fjsx15
-      set: arguments
+      set: [ delimiter, optional-expression ]
 
-  arguments:
+  delimiter:
     - match: \s*(\))
       captures:
         1: >-
@@ -38,5 +38,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           punctuation.definition.function.arguments.js.fjsx15
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+      set: [ delimiter, optional-expression ]
 
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

@@ -32,13 +32,13 @@ contexts:
       captures:
         1: punctuation.definition.function.parameters.end.js.fjsx15
       set: return-type
-    - match: ""
-      push:
-        - match: |
-            (?x)
-            (?=\s*(?>,|\)))
-          pop: true
-        - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/content.sublime-syntax
+    # - match: ""
+    #   push:
+    #     - match: |
+    #         (?x)
+    #         (?=\s*(?>,|\)))
+    #       pop: true
+    #     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/content.sublime-syntax
 
   associated-type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax

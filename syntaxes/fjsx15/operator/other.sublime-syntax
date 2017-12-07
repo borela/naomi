@@ -30,15 +30,15 @@ contexts:
     - match: \s*(\:{2})
       captures:
         1: keyword.operator.other.bind.js.fjsx15
-      pop: true
+      set: optional-expression
     - match: \s*(\?\?)
       captures:
         1: keyword.operator.other.nullish-coalescing.js.fjsx15
-      pop: true
+      set: optional-expression
     - match: \s*(\?\.)
       captures:
         1: keyword.operator.other.optional-chain.js.fjsx15
-      pop: true
+      set: optional-expression
     - match: \s*(\.)
       captures:
         1: keyword.operator.other.member-access.js.fjsx15
@@ -47,6 +47,10 @@ contexts:
     #   captures:
     #     1: keyword.operator.other.ternary.js.fjsx15
     #   set: ternary-condition
+  optional-expression:
+    # - match: \s*123
+    #   scope: keyword
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
   # comment:
   #   - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

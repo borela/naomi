@@ -32,7 +32,7 @@ contexts:
     - match: \s*(,)
       captures:
         1: punctuation.definition.function.arguments.js.fjsx15
-      set: [ delimiter, optional-expression ]
+      push: optional-expression
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

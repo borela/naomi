@@ -38,8 +38,7 @@ contexts:
         1: >-
           support.lib.jest.fjsx15
           punctuation.definition.function.arguments.js.fjsx15
-
-      set: [ delimiter, optional-expression ]
+      push: optional-expression
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

@@ -22,4 +22,10 @@ contexts:
     - match: \s*(;)
       captures:
         1: keyword.operator.other.terminator.js.fjsx15
+      set: entry-point
+
+  entry-point:
+    - include: main
+    - match: (?=\s*[,:)\]}])
       pop: true
+    - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax

@@ -28,9 +28,10 @@ contexts:
   main:
     - include: comment-no-pop
     - include: comma
-    # We need to detect operators as soon as possible but it can’t have a higher
-    # priority than regex literals at this stage.
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
+    # At this stage, regex literals will have a higher priority than operators.
+    - match: (?=\s*/.*?(?<!\\)/[a-z]{0,5})
+      set: [ optional-tail, regex-literal ]
+    # Detect operators as soon as possible.
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     # Open new expression group.
     - match: "{{expressionGroupBegin}}"
@@ -49,6 +50,9 @@ contexts:
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  regex-literal:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
 
   type-cast:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax

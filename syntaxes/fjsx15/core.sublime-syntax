@@ -20,7 +20,6 @@ scope: ...
 contexts:
   main:
     - include: symbol-properties
-    # Functions.
     - include: array-functions
     - include: object-functions
     - include: math-constants

@@ -21,7 +21,7 @@ contexts:
   main:
     - match: |
         (?x)
-        (?=\s*(?>const|let|var)\s+)
+        (?=\s*(?>const|let|var)\b)
       set: [
         optional-type,
         optional-variables,

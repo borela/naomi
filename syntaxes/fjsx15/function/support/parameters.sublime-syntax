@@ -24,33 +24,28 @@ contexts:
         1: >-
           support.core.js.fjsx15
           punctuation.definition.function.parameters.begin.js.fjsx15
-      set: parameters
+      set: [ delimiters, optional-parameter ]
 
-  parameters:
+  delimiters:
+    - include: comment-no-pop
     - match: \s*(\,)
       captures:
         1: >-
           support.core.js.fjsx15
           punctuation.definition.function.parameters.js.fjsx15
+      push: optional-parameter
     - match: \s*(\))
       captures:
         1: >-
           support.core.js.fjsx15
           punctuation.definition.function.parameters.end.js.fjsx15
-      set: return-type
-    - match: ""
-      push:
-        - match: |
-            (?x)
-            (?=\s*(?>,|\)))
-          pop: true
-        - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/content.sublime-syntax
+      set: optional-return-type
 
-  associated-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+  optional-parameter:
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax#optional-parameter
 
-  return-type:
-    - match: (?=\s*:)
-      set: associated-type
-    - match: ""
-      pop: true
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  optional-return-type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-associated-type.sublime-syntax

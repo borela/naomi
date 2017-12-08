@@ -84,16 +84,26 @@ contexts:
 
   head:
     - include: comment-no-pop
+    # Library constants and function calls.
+    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/node-js.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/jest.sublime-syntax
+    # Normal expressions.
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax#constants
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   optional-tail:
     - include: comment-no-pop
+    # Library constants and function calls.
+    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/node-js.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/jest.sublime-syntax
     # Property access and function call.
     - match: (?=\s*[\[(])
       set: [ optional-tail, tail ]

@@ -82,14 +82,15 @@ contexts:
         1: punctuation.definition.expression.group.end.js.fjsx15
       set: optional-tail
 
-  head:
-    - include: comment-no-pop
-    # Library constants and function calls.
+  globals:
     - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/node-js.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/jest.sublime-syntax
-    # Normal expressions.
+
+  head:
+    - include: comment-no-pop
+    - include: globals
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
@@ -99,11 +100,7 @@ contexts:
 
   optional-tail:
     - include: comment-no-pop
-    # Library constants and function calls.
-    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/node-js.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/jest.sublime-syntax
+    - include: globals
     # Property access and function call.
     - match: (?=\s*[\[(])
       set: [ optional-tail, tail ]

@@ -42,7 +42,7 @@ contexts:
 
   optional-parameter:
     - include: comment-no-pop
-    - match: (?=\s*[)\]}])
+    - match: (?=\s*[,)\]}])
       pop: true
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/destructuring/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/destructuring/object.sublime-syntax

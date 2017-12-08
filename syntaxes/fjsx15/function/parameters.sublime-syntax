@@ -48,4 +48,3 @@ contexts:
 
   optional-return-type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-associated-type.sublime-syntax
-

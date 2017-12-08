@@ -19,33 +19,39 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\()
+    - match: \s*(\[)
       captures:
-        1: punctuation.definition.function.parameters.begin.js.fjsx15
+        1: >-
+          destructuring.array.js.fjsx15
+          punctuation.definition.array.begin.js.fjsx15
       set: [ delimiters, optional-parameter ]
 
   delimiters:
-    - include: comment-no-pop
-    - match: \s*(\,)
+    - match: \s*(,)
       captures:
-        1: punctuation.definition.function.parameters.js.fjsx15
+        1: >-
+          destructuring.array.js.fjsx15
+          punctuation.definition.array.js.fjsx15
       push: optional-parameter
-    - match: \s*(\))
+    - match: \s*(])
       captures:
-        1: punctuation.definition.function.parameters.end.js.fjsx15
-      set: optional-return-type
+        1: >-
+          destructuring.array.js.fjsx15
+          punctuation.definition.array.end.js.fjsx15
+      set: optional-default-value
 
   optional-parameter:
     - include: comment-no-pop
-    - match: (?=\s*[,)])
+    - match: (?=\s*[)\]}])
       pop: true
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/destructuring/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/destructuring/object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/simple.sublime-syntax
 
+  optional-default-value:
+    - match: (?=\s*,)
+      pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-
-  optional-return-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-associated-type.sublime-syntax
-

@@ -19,40 +19,20 @@ scope: ...
 
 contexts:
   main:
-    # Destructuring object.
-    - match: |
-        (?x)
-        (?=\s*(?>const|let|var)\s+\{)
-      set: [
-        destructuring-object,
-        keyword
-      ]
-    # Destructuring array.
-    - match: |
-        (?x)
-        (?=\s*(?>const|let|var)\s+\[)
-      set: [
-        destructuring-array,
-        keyword
-      ]
-    # Simple variable.
     - match: |
         (?x)
         (?=\s*(?>const|let|var)\s+)
       set: [
         optional-type,
-        variable-or-constant,
+        optional-variables,
         keyword
       ]
 
-  destructuring-object:
-    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
-
-  destructuring-array:
-    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   keyword:
-    # - include: comment-no-pop
+    - include: comment-no-pop
     - match: |
         (?x)\s*
         ((?>const|let|var))
@@ -62,13 +42,13 @@ contexts:
           keyword.declaration.variable.js.fjsx15
       pop: true
 
-  variable-or-constant:
-    # - include: comment
+  optional-variables:
+    - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   optional-type:
-    # - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
-    - match: (?=\s*\S)
-      pop: true
+    - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-associated-type.sublime-syntax

@@ -28,6 +28,7 @@ contexts:
     # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
     - include: constants
     - include: functions
+    - include: function-properties
     - include: fundamental-objects
     - include: numbers-and-dates
     - include: text-processing
@@ -240,6 +241,20 @@ contexts:
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
       set: function-arguments
+
+  function-properties:
+    - match: |
+        (?x)\s*
+        (function)(.)(sent)
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.variable.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.variable.js.fjsx15
+      pop: true
 
   fundamental-objects:
     - match: |

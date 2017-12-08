@@ -29,68 +29,36 @@ contexts:
         1: >-
           destructuring.object.js.fjsx15
           punctuation.definition.object.begin.js.fjsx15
-      set: items
+      set: [ delimiters, optional-variable ]
 
-  items:
+  delimiters:
     - match: \s*(,)
       captures:
         1: >-
           destructuring.object.js.fjsx15
           punctuation.definition.object.js.fjsx15
+      push: optional-variable
     - match: \s*(})
       captures:
         1: >-
           destructuring.object.js.fjsx15
           punctuation.definition.object.end.js.fjsx15
       pop: true
-    - match: ""
-      push:
-        - match: |
-            (?x)
-            (?=\s*
-              (?> ,
-                | }
-              )
-            )
-          pop: true
-        - include: rest-operator
-        - include: comment
-        # Default value.
-        - match: (?=\s*=)
-          set: default-value
-        # Property.
-        - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object/property.sublime-syntax
-        # We can assume that the “:” is for a nested destructuring because otherwise
-        # the previous rule for properties would have consumed it.
-        - match: \s*(:)
-          captures:
-            1: >-
-              destructuring.object.js.fjsx15
-              keyword.operator.other.association.js.fjsx15
-        # Nested destructuring.
-        - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
 
-  rest-operator:
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/rest.sublime-syntax
-
-  default-value:
-    - match: |
-        (?x)
-        (?=\s*
-          (?> ,
-            | }
-          )
-        )
+  optional-variable:
+    - include: comment-no-pop
+    - match: (?=\s*[,)\]}])
       pop: true
-    - match: ""
-      push:
-        # - include: statement-and-expression
-        - match: ""
-          pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object/property.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
-  comment:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+  optional-default-value:
+    - match: (?=\s*,)
+      pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
-  # statement-and-expression:
-    # - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

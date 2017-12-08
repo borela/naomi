@@ -58,5 +58,7 @@ contexts:
   optional-variable:
     - match: (?=\s*[,)\]}])
       pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

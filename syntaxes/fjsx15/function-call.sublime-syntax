@@ -30,8 +30,9 @@ variables:
     >)
 
 contexts:
+  # There’s no need to highlight the arguments, the expression loop will do it.
   main:
-    # Template function.
+    # Template function call.
     - match: |
         (?xi)
         (?=
@@ -41,7 +42,11 @@ contexts:
           \s*(\?\.)?
           \s*\(
         )
-      set: modifier-and-name
+      set: [
+        template-arguments,
+        identifier,
+        optional-modifier
+      ]
     # Simple function call.
     - match: |
         (?xi)
@@ -51,33 +56,21 @@ contexts:
           \s*(\?\.)?
           \s*\(
         )
-      set: modifier-and-name
-    # Function call near expression.
-    - include: function-arguments
+      set: [
+        identifier,
+        optional-modifier
+      ]
 
-  modifier-and-name:
-    # Private modifier.
+  optional-modifier:
     - match: \s*(\#)
       captures:
         1: >-
           storage.modifier.js.fjsx15
           keyword.other.access.js.fjsx15
-    # Support identifier.
-    - match: |
-        (?x)\s*
-        ((?> constructor
-          | super
-        ))\b
-      captures:
-        1: >-
-          call.js.fjsx15
-          support.js.fjsx15
-          entity.name.function.js.fjsx15
-      set: [
-        optional-chain-and-support-arguments,
-        possible-template-arguments
-      ]
-    # Identifier.
+    - match: (?=\s*\S)
+      pop: true
+
+  identifier:
     - match: |
         (?xi)
         \s*({{commonIdentifier}})
@@ -85,31 +78,7 @@ contexts:
         1: >-
           call.js.fjsx
           entity.name.function.js.fjsx15
-      set: [
-        optional-chain-and-arguments,
-        possible-template-arguments
-      ]
-
-  possible-template-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax
-    - match: ""
       pop: true
 
-  optional-chain-and-arguments:
-    - include: optional-chain-operator
-    - include: function-arguments
-
-  optional-chain-and-support-arguments:
-    - include: optional-chain-operator
-    - include: support-function-arguments
-
-  optional-chain-operator:
-    - match: \s*(\?\.)
-      captures:
-        1: keyword.operator.other.optional-chain.js.fjsx15
-
-  function-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
-
-  support-function-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax
+  template-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax

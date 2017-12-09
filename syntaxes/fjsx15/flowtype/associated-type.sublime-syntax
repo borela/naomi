@@ -24,7 +24,7 @@ contexts:
         1: >-
           flowtype
           keyword.operator.other.association.flowtype
-      set: type
+      set: optional-type-expression
 
-  type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
+  optional-type-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-type-expression.sublime-syntax

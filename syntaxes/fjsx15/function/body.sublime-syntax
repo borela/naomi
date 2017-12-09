@@ -22,15 +22,16 @@ contexts:
     - match: \s*(\{)
       captures:
         1: punctuation.definition.function.body.begin.js.fjsx15
-      set: body-content
+      set: [
+        close-body,
+        optional-statements-and-expressions
+      ]
 
-  body-content:
+  close-body:
     - match: \s*(})
       captures:
         1: punctuation.definition.function.body.end.js.fjsx15
       pop: true
-    - match: ""
-      push:
-        - match: (?=\s*})
-          pop: true
-        # - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+
+  optional-statements-and-expressions:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax

@@ -25,4 +25,4 @@ contexts:
       pop: true
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-type-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax

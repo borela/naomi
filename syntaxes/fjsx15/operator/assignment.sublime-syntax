@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(=)
+    - match: \s*(=)(?!\s*>)
       captures:
         1: keyword.operator.other.assignment.js.fjsx15
       set: optional-expression

@@ -40,10 +40,9 @@ contexts:
     - include: internationalization
     - include: web-assembly
 
-  # function-arguments:
-  #   - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/core-arguments.sublime-syntax
-
   optional-template-arguments:
+    - match: lol
+      scope: keyword
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/optional-arguments.sublime-syntax
 
   optional-core-arguments:
@@ -65,7 +64,10 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: optional-core-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   math-constants:
     - match: |
@@ -127,7 +129,10 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: optional-core-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   object-functions:
     - match: |
@@ -154,7 +159,10 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: optional-core-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   symbol-functions:
     - match: |
@@ -172,7 +180,10 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: optional-core-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   symbol-properties:
     - match: |
@@ -232,7 +243,10 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: optional-core-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   function-properties:
     - match: |

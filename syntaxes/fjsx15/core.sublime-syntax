@@ -40,27 +40,23 @@ contexts:
     - include: internationalization
     - include: web-assembly
 
-  function-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax
-    - match: (?=\S)
-      pop: true
+  # function-arguments:
+  #   - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/core-arguments.sublime-syntax
 
-  optional-template-and-type-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/type/support/arguments.sublime-syntax
-    - match: ""
-      pop: true
+  optional-template-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/optional-arguments.sublime-syntax
+
+  optional-core-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/optional-core-arguments.sublime-syntax
 
   array-functions:
     - match: |
         (?x)
-        \s*(Array)\b
-        (?:
-          \s*(\.)\s*
-          ((?> from
-            | isArray
-          ))\b
-        )?
+        \s*(Array)
+        \s*(\.)\s*
+        ((?> from
+          | isArray
+        ))\b
       captures:
         1: >-
           support.core.js.fjsx15
@@ -69,7 +65,7 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: function-arguments
+      set: optional-core-arguments
 
   math-constants:
     - match: |
@@ -96,35 +92,33 @@ contexts:
     - match: |
         (?x)
         \s*(Math)\b
-        (?:
-          \s*(\.)\s*
-          ((?> abs
-            | acosh?
-            | asinh?
-            | atan(?>2|h)?
-            | cbrt
-            | ceil
-            | clz32
-            | cosh?
-            | exp
-            | exp(?:m1)?
-            | floor
-            | fround
-            | hypot
-            | imul
-            | log(?>10|1p|2)?
-            | max
-            | min
-            | pow
-            | random
-            | round
-            | sign
-            | sinh?
-            | sqrt
-            | tanh?
-            | trunc
-          ))\b
-        )?
+        \s*(\.)\s*
+        ((?> abs
+          | acosh?
+          | asinh?
+          | atan(?>2|h)?
+          | cbrt
+          | ceil
+          | clz32
+          | cosh?
+          | exp
+          | exp(?:m1)?
+          | floor
+          | fround
+          | hypot
+          | imul
+          | log(?>10|1p|2)?
+          | max
+          | min
+          | pow
+          | random
+          | round
+          | sign
+          | sinh?
+          | sqrt
+          | tanh?
+          | trunc
+        ))\b
       captures:
         1: >-
           support.core.js.fjsx15
@@ -133,27 +127,25 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: function-arguments
+      set: optional-core-arguments
 
   object-functions:
     - match: |
         (?x)
         \s*(Object)\b
-        (?:
-          \s*(\.)\s*
-          ((?> assign
-            | create
-            | definePropert(?>ies|y)
-            | freeze
-            | getOwnProperty(?>Descriptors?|Names|Symbols)
-            | getPrototypeOf
-            | is(?>Extensible|Frozen|Sealed)?
-            | keys
-            | preventExtensions
-            | seal
-            | setPrototypeOf
-          ))\b
-        )?
+        \s*(\.)\s*
+        ((?> assign
+          | create
+          | definePropert(?>ies|y)
+          | freeze
+          | getOwnProperty(?>Descriptors?|Names|Symbols)
+          | getPrototypeOf
+          | is(?>Extensible|Frozen|Sealed)?
+          | keys
+          | preventExtensions
+          | seal
+          | setPrototypeOf
+        ))\b
       captures:
         1: >-
           support.core.js.fjsx15
@@ -162,7 +154,7 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: function-arguments
+      set: optional-core-arguments
 
   symbol-functions:
     - match: |
@@ -180,7 +172,7 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: function-arguments
+      set: optional-core-arguments
 
   symbol-properties:
     - match: |
@@ -240,7 +232,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: function-arguments
+      set: optional-core-arguments
 
   function-properties:
     - match: |
@@ -275,7 +267,10 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   numbers-and-dates:
     - match: |
@@ -288,7 +283,10 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   text-processing:
     - match: |
@@ -300,7 +298,10 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   indexed-collections:
     - match: |
@@ -315,7 +316,10 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   keyed-collections:
     - match: |
@@ -328,7 +332,10 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   structured-data:
     - match: |
@@ -341,7 +348,10 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   control-abstraction-objects:
     - match: |
@@ -353,7 +363,10 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   reflection:
     - match: |
@@ -365,7 +378,10 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   internationalization:
     - match: |
@@ -386,7 +402,10 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]
 
   web-assembly:
     - match: |
@@ -411,4 +430,7 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+      set: [
+        optional-core-arguments,
+        optional-template-arguments
+      ]

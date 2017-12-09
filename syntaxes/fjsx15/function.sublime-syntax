@@ -24,7 +24,6 @@ variables:
 
 contexts:
   main:
-    # Function declaration.
     - match: |
         (?x)\s*
         (?:
@@ -41,7 +40,7 @@ contexts:
       set: declaration
 
   declaration:
-    - include: comment
+    - include: comment-no-pop
     # Body.
     - match: (?=\s*\{)
       set: body
@@ -68,7 +67,7 @@ contexts:
     - match: (?=\s*\S)
       pop: true
 
-  comment:
+  comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   template-parameters:

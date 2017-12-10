@@ -19,7 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax
+    - match: (?=\s*:)
+      push: associated-type
+
+  associated-type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax

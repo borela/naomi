@@ -87,6 +87,8 @@ contexts:
 
   head:
     - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/tuple.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/number.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax

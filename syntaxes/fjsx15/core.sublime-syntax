@@ -42,7 +42,7 @@ contexts:
 
   optional-template-and-arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/core-arguments.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/core-arguments.sublime-syntax
     - match: (?=\s*\S)
       pop: true
 

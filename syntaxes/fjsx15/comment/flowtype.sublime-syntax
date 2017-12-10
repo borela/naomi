@@ -72,20 +72,20 @@ contexts:
       push:
         - match: (?=\s*\*\/)
           pop: true
-        - match: \s*(\?)(?=\s*:)
-          captures:
-            1: keyword.operator.other.optional.flowtype
-          set:
-            - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+    #     - match: \s*(\?)(?=\s*:)
+    #       captures:
+    #         1: keyword.operator.other.optional.flowtype
+    #       set:
+    #         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/declare.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/interface.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/module.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/operator/terminator.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/interface.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/module.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/operator/terminator.sublime-syntax
 
   link:
     - include: Packages/Naomi/syntaxes/shared/link.sublime-syntax

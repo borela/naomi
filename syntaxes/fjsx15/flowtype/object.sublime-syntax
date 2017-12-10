@@ -70,16 +70,6 @@ contexts:
           flowtype
           punctuation.definition.object.end.flowtype
       pop: true
-    # - match: ""
-    #   push:
-    #     - include: comment
-    #     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/co-contravariant.no-pop.sublime-syntax
-    #     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
-    #     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/callable.sublime-syntax
-    #     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
-    #     - include: property
-    #     - match: ""
-    #       pop: true
 
   optional-property:
     - include: comment-no-pop

@@ -24,7 +24,7 @@ contexts:
     - include: window-functions
 
   function-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/core-arguments.sublime-syntax
 
   console-functions:
     - match: |

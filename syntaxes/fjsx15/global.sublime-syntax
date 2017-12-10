@@ -34,7 +34,7 @@ contexts:
     - include: complex-variable
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/core-arguments.sublime-syntax
 
   member-access-operator:
     - match: \s*(\.)

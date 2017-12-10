@@ -26,9 +26,7 @@ contexts:
   main:
     - match: |
         (?x)\s*
-        (?:
-          (async)\s+
-        )?
+        (?:(async)\s+)?
         \b(function)\b
       captures:
         1: >-

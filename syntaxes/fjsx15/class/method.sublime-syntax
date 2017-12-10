@@ -95,9 +95,9 @@ variables:
 
   flowComment: /\*\s*:.*?\*/
 
-  returnType: |
+  type: |
     (?> {{flowComment}}
-      | (?::{{complexType}})
+      | :{{complexType}}
     )?
 
 contexts:
@@ -117,21 +117,21 @@ contexts:
         modifiers
       ]
     # Method assigned to a class property.
-    - match: |
-        (?xi)
-        (?=
-          \s*{{commonIdentifier}}
-          \s*=
-          \s*{{modifiers}}?
-          \s*{{templateArguments}}?
-          \s*{{parameters}}?
-          \s*{{returnType}}?
-          \s*=>
-        )
-      set: [
-        arrow-function,
-        declaration
-      ]
+    # - match: |
+    #     (?xi)
+    #     (?=
+    #       \s*{{commonIdentifier}}
+    #       \s*=
+    #       \s*{{modifiers}}?
+    #       \s*{{templateArguments}}?
+    #       \s*{{parameters}}?
+    #       \s*{{type}}?
+    #       \s*=>
+    #     )
+    #   set: [
+    #     arrow-function,
+    #     declaration
+    #   ]
 
   modifiers:
     - match: \s*(\#|static)
@@ -228,7 +228,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
 
   support-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/support/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/support/core-parameters.sublime-syntax
 
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax

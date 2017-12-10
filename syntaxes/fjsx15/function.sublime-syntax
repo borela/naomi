@@ -25,17 +25,24 @@ variables:
 contexts:
   main:
     - match: |
-        (?x)\s*
-        (?:(async)\s+)?
-        \b(function)\b
+        (?x)
+        (?=\s*
+          (?:async\s+)?
+          function\b
+        )
+      set: [
+        declaration,
+        keyword
+      ]
+
+  keyword:
+    - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
+    - match: \s*(function)
       captures:
         1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.async.js.fjsx15
-        2: >-
           storage.type.js.fjsx15
           keyword.declaration.function.js.fjsx15
-      set: declaration
+      pop: true
 
   declaration:
     - include: comment-no-pop

@@ -19,10 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\s*\()
-      set: arguments
-    - match: (?=\s*\S)
-      pop: true
+    - match: (?=\s*<)
+      push: arguments
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/core-arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax

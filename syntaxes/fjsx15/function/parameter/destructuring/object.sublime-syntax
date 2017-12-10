@@ -43,7 +43,7 @@ contexts:
         1: >-
           destructuring.object.js.fjsx15
           punctuation.definition.object.end.js.fjsx15
-      pop: true
+      set: optional-default-value
 
   optional-parameter:
     - include: comment-no-pop

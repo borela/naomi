@@ -33,8 +33,8 @@ contexts:
       captures:
         1: keyword.operator.other.js.fjsx15
       set: optional-body
-    - match: ""
-      push:
+    # - match: ""
+    #   push:
         # - include: statement-and-expression
 
   optional-body:

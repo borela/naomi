@@ -40,13 +40,11 @@ contexts:
     - include: internationalization
     - include: web-assembly
 
-  optional-template-arguments:
-    - match: lol
-      scope: keyword
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/optional-arguments.sublime-syntax
-
-  optional-core-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/optional-core-arguments.sublime-syntax
+  optional-template-and-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/core-arguments.no-pop.sublime-syntax
+    - match: (?=\s*\S)
+      pop: true
 
   array-functions:
     - match: |
@@ -64,10 +62,7 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   math-constants:
     - match: |
@@ -129,10 +124,7 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   object-functions:
     - match: |
@@ -159,10 +151,7 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   symbol-functions:
     - match: |
@@ -180,10 +169,7 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   symbol-properties:
     - match: |
@@ -243,10 +229,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   function-properties:
     - match: |
@@ -281,10 +264,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   numbers-and-dates:
     - match: |
@@ -297,10 +277,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   text-processing:
     - match: |
@@ -312,10 +289,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   indexed-collections:
     - match: |
@@ -330,10 +304,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   keyed-collections:
     - match: |
@@ -346,10 +317,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   structured-data:
     - match: |
@@ -362,10 +330,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   control-abstraction-objects:
     - match: |
@@ -377,10 +342,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   reflection:
     - match: |
@@ -392,10 +354,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   internationalization:
     - match: |
@@ -416,10 +375,7 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments
 
   web-assembly:
     - match: |
@@ -444,7 +400,4 @@ contexts:
         3: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-      set: [
-        optional-core-arguments,
-        optional-template-arguments
-      ]
+      set: optional-template-and-arguments

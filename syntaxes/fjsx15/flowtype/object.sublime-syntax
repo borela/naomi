@@ -82,6 +82,7 @@ contexts:
     #       pop: true
 
   optional-property:
+    - include: comment-no-pop
     - match: (?=\s*[|}])
       pop: true
     - include: constant
@@ -169,6 +170,6 @@ contexts:
   associated-type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
 
-  comment:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 

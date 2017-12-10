@@ -29,83 +29,32 @@ contexts:
         1: >-
           arrow.js.fjsx15
           punctuation.definition.function.parameters.begin.js.fjsx15
-      set: parameters
+      set: [ delimiters, optional-parameter ]
 
-  parameters:
+  delimiters:
     - match: \s*(\,)
       captures:
         1: >-
           arrow.js.fjsx15
           punctuation.definition.function.parameters.js.fjsx15
+      push: optional-parameter
     - match: \s*(\))
       captures:
         1: >-
           arrow.js.fjsx15
           punctuation.definition.function.parameters.end.js.fjsx15
-      set: return-type
-    - match: ""
-      push:
-        - match: |
-            (?x)
-            (?=\s*(?>,|\)))
-          pop: true
-        - include: comment
-        - include: rest-operator
-        # Parameter type.
-        - match: (?=\s*:)
-          set: associated-type
-        # Default value.
-        - match: (?=\s*=)
-          set: default-value
-        # Object destructuring.
-        - match: (?=\s*\{)
-          set: destructuring-object
-        # Array destructuring.
-        - match: (?=\s*\[)
-          set: destructuring-array
-        # Reserved word.
-        - match: \s*(arguments)(?=\W)
-          captures:
-            1: keyword.other.js.fjsx15
-          pop: true
-        # Parameter.
-        - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/simple.sublime-syntax
+      set: optional-return-type
 
-  associated-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
-
-  default-value:
-    - match: |
-        (?x)
-        (?=\s*(?>,|\)))
+  optional-parameter:
+    - include: comment-no-pop
+    - match: (?=\s*[,)])
       pop: true
-    - match: ""
-      push:
-        # - include: statement-and-expression
-        - match: ""
-          pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/destructuring/array.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/destructuring/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/simple.sublime-syntax
 
-  rest-operator:
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/rest.sublime-syntax
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
-  comment:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
-
-  destructuring-object:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/destructuring/object.sublime-syntax
-
-  destructuring-array:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters/destructuring/array.sublime-syntax
-
-  return-type:
-    - include: comment
-    - match: (?=\s*:)
-      set: associated-type
-    - match: ""
-      pop: true
-
-  type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
-
-  # statement-and-expression:
-  #   - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  optional-return-type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-associated-type.sublime-syntax

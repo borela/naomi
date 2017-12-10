@@ -29,31 +29,32 @@ contexts:
       set: possible-multi-statement-body
 
   possible-multi-statement-body:
-    - include: comment
+    - include: comment-no-pop
     - match: \s*(\{)
       captures:
         1: >-
           arrow.js.fjsx15
           punctuation.definition.function.body.begin.js.fjsx15
-      set: multi-statement-body
+      set: [
+        close-body,
+        optional-statements-and-expressions
+      ]
     - match: (?=\s*\S)
       pop: true
 
-  multi-statement-body:
+  close-body:
     - match: \s*(})
       captures:
         1: >-
           arrow.js.fjsx15
           punctuation.definition.function.body.end.js.fjsx15
-      pop: true
-    - match: ""
-      push:
-        # - include: statement-and-expression
-        - match: ""
-          pop: true
+      set: optional-expression-tail
 
-  comment:
+  optional-statements-and-expressions:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
+
+  comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
-  # statement-and-expression:
-  #   - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  optional-expression-tail:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax#optional-tail

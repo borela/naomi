@@ -32,6 +32,8 @@ contexts:
       captures:
         1: punctuation.definition.function.body.end.js.fjsx15
       pop: true
+    - match: ""
+      push: optional-statements-and-expressions
 
   optional-statements-and-expressions:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax

@@ -19,12 +19,13 @@ scope: ...
 
 contexts:
   main:
-    - include: symbol-properties
     - include: array-functions
-    - include: object-functions
+    - include: console-functions
     - include: math-constants
     - include: math-functions
+    - include: object-functions
     - include: symbol-functions
+    - include: symbol-properties
     # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
     - include: constants
     - include: functions
@@ -54,6 +55,35 @@ contexts:
         ((?> from
           | isArray
         ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.class.js.fjsx15
+        2: keyword.operator.other.member-access.js.fjsx15
+        3: >-
+          support.core.js.fjsx15
+          entity.name.function.js.fjsx15
+      set: optional-template-and-arguments
+
+  console-functions:
+    - match: |
+        (?x)
+        \s*(console)\b
+        (?:
+          \s*(\.)\s*
+          ((?> assert
+            | clear
+            | count
+            | error
+            | group(?>Collapsed|End)?
+            | info
+            | log
+            | table
+            | time(?>End|Stamp)?
+            | trace
+            | warn
+          ))\b
+        )
       captures:
         1: >-
           support.core.js.fjsx15

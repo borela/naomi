@@ -1006,7 +1006,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.definition.control</string>
+			<string>.punctuation.definition.block, .punctuation.definition.control</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

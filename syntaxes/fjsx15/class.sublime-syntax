@@ -73,8 +73,8 @@ contexts:
   template-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
 
-  type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type.sublime-syntax
+  type-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-expression.sublime-syntax
 
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/class/body.sublime-syntax

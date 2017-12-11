@@ -104,7 +104,7 @@ contexts:
       set: declaration
 
   declaration:
-    - include: terminator
+    # - include: terminator
     - match: (?=\s*$)
       pop: true
     # Type.
@@ -126,8 +126,8 @@ contexts:
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
 
-  terminator:
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/terminator.sublime-syntax
+  # terminator:
+  #   - include: Packages/Naomi/syntaxes/fjsx15/operator/terminator.sublime-syntax
 
   # statement-and-expression:
   #   - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax

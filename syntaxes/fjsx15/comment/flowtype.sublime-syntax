@@ -68,16 +68,16 @@ contexts:
           pop: true
         - match: ''
           pop: true
-    - match: ""
-      push:
-        - match: (?=\s*\*\/)
-          pop: true
+    # - match: ""
+    #   push:
+    #     - match: (?=\s*\*\/)
+    #       pop: true
     #     - match: \s*(\?)(?=\s*:)
     #       captures:
     #         1: keyword.operator.other.optional.flowtype
     #       set:
     #         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/declare.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/declare.sublime-syntax
         # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
         # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/interface.sublime-syntax
         # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax

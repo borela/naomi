@@ -30,7 +30,7 @@ contexts:
       set: function-or-expression
 
   function-or-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+    # - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
     # Await keyword.
     - match: |
         (?x)\s*
@@ -47,4 +47,3 @@ contexts:
       pop: true
     # Other expressions.
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-

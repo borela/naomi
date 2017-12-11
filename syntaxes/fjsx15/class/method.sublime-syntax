@@ -159,8 +159,8 @@ contexts:
     - match: ""
       pop: true
 
-  arrow-function:
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+  # arrow-function:
+  #   - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
 
   declaration:
     - match: \s*(=)

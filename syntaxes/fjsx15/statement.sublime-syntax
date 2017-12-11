@@ -23,3 +23,13 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax
+    - include: return
+
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  return:
+    - match: \s*(return)
+      captures:
+        1: keyword.other.js.fjsx15
+      set: optional-expression

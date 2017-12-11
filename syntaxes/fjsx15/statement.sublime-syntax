@@ -28,7 +28,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax
-    - include: break
+    - include: break-continue
     - include: empty
     - include: label
     - include: block
@@ -54,10 +54,10 @@ contexts:
     - match: ""
       push: optional-statements-and-expressions
 
-  break:
+  break-continue:
     - match: |
         (?xi)
-        \s*(break)
+        \s*(break|continue)
         (?:\s+({{commonIdentifier}}))?
       captures:
         1: keyword.other.js.fjsx15

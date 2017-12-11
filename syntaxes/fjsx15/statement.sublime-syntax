@@ -28,17 +28,36 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax
-    - include: break-continue
-    - include: empty
-    - include: label
     - include: block
+    - include: break-continue
+    - include: debugger
+    - include: do-while
+    - include: empty
+    - include: for
+    - include: if-else
+    - include: label
     - include: return
+    - include: throw
+    - include: try-catch-finally
+    - include: yield
 
   optional-statements-and-expressions:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  statement-condition:
+    - match: \s*(\()
+      captures:
+        1: punctuation.definition.control.header.begin.js.fjsx15
+      set: [ statement-condition-end, optional-expression ]
+
+  statement-condition-end:
+    - match: \s*(\))
+      captures:
+        1: punctuation.definition.control.header.end.js.fjsx15
+      pop: true
 
   block:
     - match: \s*({)
@@ -57,17 +76,49 @@ contexts:
   break-continue:
     - match: |
         (?xi)
-        \s*(break|continue)
+        \s*(break|continue)\b
         (?:\s+({{commonIdentifier}}))?
       captures:
         1: keyword.other.js.fjsx15
         2: entity.name.label.js.fjsx15
       pop: true
 
+  debugger:
+    - match: \s*(debugger)\b
+      captures:
+        1: keyword.other.js.fjsx15
+      pop: true
+
+  do-while:
+    - match: \s*(do)\b
+      captures:
+        1: keyword.other.js.fjsx15
+      pop: true
+    - match: \s*(while)\b
+      captures:
+        1: keyword.other.js.fjsx15
+      set: statement-condition
+
   empty:
     - match: \s*(;)
       captures:
         1: keyword.operator.other.terminator.js.fjsx15
+      pop: true
+
+  for:
+    - match: \s*(for)
+      captures:
+        1: keyword.other.js.fjsx15
+      set: statement-condition
+
+  if-else:
+    - match: \s*(if)\b
+      captures:
+        1: keyword.other.js.fjsx15
+      set: statement-condition
+    - match: \s*(else)\b
+      captures:
+        1: keyword.other.js.fjsx15
       pop: true
 
   label:
@@ -81,7 +132,33 @@ contexts:
       set: optional-statements-and-expressions
 
   return:
-    - match: \s*(return)
+    - match: \s*(return)\b
+      captures:
+        1: keyword.other.js.fjsx15
+      set: optional-expression
+
+  throw:
+    - match: \s*(throw)\b
+      captures:
+        1: keyword.other.js.fjsx15
+      set: optional-expression
+
+  try-catch-finally:
+    - match: \s*(try)\b
+      captures:
+        1: keyword.other.js.fjsx15
+      pop: true
+    - match: \s*(catch)\b
+      captures:
+        1: keyword.other.js.fjsx15
+      set: statement-condition
+    - match: \s*(finally)\b
+      captures:
+        1: keyword.other.js.fjsx15
+      pop: true
+
+  yield:
+    - match: \s*(yield)\b
       captures:
         1: keyword.other.js.fjsx15
       set: optional-expression

@@ -102,7 +102,7 @@ contexts:
   empty:
     - match: \s*(;)
       captures:
-        1: keyword.operator.other.terminator.js.fjsx15
+        1: keyword.other.terminator.js.fjsx15
       pop: true
 
   for:

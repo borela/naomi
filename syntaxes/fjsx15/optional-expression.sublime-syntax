@@ -19,7 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/terminator.sublime-syntax
-    - match: (?=\s*[,:)\]}])
+    - match: (?=\s*[,;:)\]}])
       pop: true
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

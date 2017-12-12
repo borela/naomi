@@ -29,7 +29,7 @@ contexts:
     - match: (?=\s*/.*?(?<!\\)/[a-z]{0,5})
       set: [ optional-tail, regex-literal ]
     # Arrow functions need to be detect before expression groups.
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
     # Detect operators as soon as possible.
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     # Open new expression group.

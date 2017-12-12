@@ -120,7 +120,7 @@ contexts:
     - match: \s*(for)
       captures:
         1: keyword.other.js.fjsx15
-      set: statements-and-expressions-header
+      set: for-header
 
   if-else:
     - match: \s*(if)\b

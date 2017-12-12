@@ -41,23 +41,34 @@ contexts:
     - include: try-catch-finally
     - include: yield
 
-  optional-statements-and-expressions:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
-
-  optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
-
-  statement-condition:
-    - match: \s*(\()
-      captures:
-        1: punctuation.definition.control.header.begin.js.fjsx15
-      set: [ statement-condition-end, optional-expression ]
-
-  statement-condition-end:
+  condition-end:
     - match: \s*(\))
       captures:
         1: punctuation.definition.control.header.end.js.fjsx15
       pop: true
+
+  optional-statements-and-expressions:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
+
+  for-header:
+    - match: \s*(\()
+      captures:
+        1: punctuation.definition.control.header.begin.js.fjsx15
+      set: for-header-end
+
+  for-header-end:
+    - include: condition-end
+    - match: ""
+      push: optional-statements-and-expressions
+
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  expression-only-header:
+    - match: \s*(\()
+      captures:
+        1: punctuation.definition.control.header.begin.js.fjsx15
+      set: [ condition-end, optional-expression ]
 
   block:
     - match: \s*({)
@@ -97,7 +108,7 @@ contexts:
     - match: \s*(while)\b
       captures:
         1: keyword.other.js.fjsx15
-      set: statement-condition
+      set: expression-only-header
 
   empty:
     - match: \s*(;)
@@ -109,13 +120,13 @@ contexts:
     - match: \s*(for)
       captures:
         1: keyword.other.js.fjsx15
-      set: statement-condition
+      set: statements-and-expressions-header
 
   if-else:
     - match: \s*(if)\b
       captures:
         1: keyword.other.js.fjsx15
-      set: statement-condition
+      set: expression-only-header
     - match: \s*(else)\b
       captures:
         1: keyword.other.js.fjsx15
@@ -151,7 +162,7 @@ contexts:
     - match: \s*(catch)\b
       captures:
         1: keyword.other.js.fjsx15
-      set: statement-condition
+      set: expression-only-header
     - match: \s*(finally)\b
       captures:
         1: keyword.other.js.fjsx15

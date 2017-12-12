@@ -26,7 +26,7 @@ contexts:
   main:
     - match: |
         (?xi)
-        (?=\s*<{{commonIdentifier}})
+        (?=\s*<(?>>|{{commonIdentifier}}))
       with_prototype:
         # Single line comment.
         - match: \s*(\{\s*/\*)(.*)(\*/\s*})
@@ -53,6 +53,7 @@ contexts:
 
   jsx:
     - clear_scopes: true
+    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
 

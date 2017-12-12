@@ -30,6 +30,8 @@ contexts:
       set: [ optional-tail, regex-literal ]
     # Arrow functions need to be detect before expression groups.
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+    # JSX tags.
+    - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax
     # Detect operators as soon as possible.
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     # Open new expression group.
@@ -93,6 +95,7 @@ contexts:
   head:
     - include: comment-no-pop
     - include: globals
+    - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax

@@ -26,13 +26,10 @@ contexts:
   main:
     - match: |
         (?xi)
-        (?=\s*
-          <{{commonIdentifier}}
-          (?>\s|>|/>)
-        )
+        (?=\s*<{{commonIdentifier}})
       with_prototype:
         # Single line comment.
-        - match: (\{\s*/\*)(.*)(\*/\s*})
+        - match: \s*(\{\s*/\*)(.*)(\*/\s*})
           captures:
             1: >-
               source.jsx
@@ -46,7 +43,7 @@ contexts:
               comment.block.js.fjsx15
               punctuation.definition.comment.end.js.fjsx15
         # Embedded javascript.
-        - match: (\{)
+        - match: \s*(\{)
           captures:
             1: >-
               source.jsx.jsx1
@@ -71,7 +68,7 @@ contexts:
         3: source.jsx.jsx1
       pop: true
     - match: ""
-      push:
-        # - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
-        - match: ""
-          pop: true
+      push: optional-statements-and-expressions
+
+  optional-statements-and-expressions:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax

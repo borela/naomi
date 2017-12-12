@@ -19,6 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\s*})
+    - match: (?=\s*[)\]}])
       pop: true
     - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax

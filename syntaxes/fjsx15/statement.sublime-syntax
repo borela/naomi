@@ -47,6 +47,11 @@ contexts:
         1: punctuation.definition.control.header.end.js.fjsx15
       pop: true
 
+  optional-await:
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/await.sublime-syntax#just-pop
+    - match: (?=\s*\S)
+      pop: true
+
   optional-statements-and-expressions:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
 
@@ -120,7 +125,10 @@ contexts:
     - match: \s*(for)
       captures:
         1: keyword.other.js.fjsx15
-      set: for-header
+      set: [
+        for-header,
+        optional-await
+      ]
 
   if-else:
     - match: \s*(if)\b

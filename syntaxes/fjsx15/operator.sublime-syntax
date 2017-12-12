@@ -25,6 +25,7 @@ contexts:
     # Actual operators.
     - include: Packages/Naomi/syntaxes/fjsx15/operator/arithmetic.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/assignment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/await.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/bitwise.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/comparison.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/delete.sublime-syntax

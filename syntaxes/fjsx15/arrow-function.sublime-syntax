@@ -85,7 +85,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          \s*(async)?
+          (?:\s*async)?
           \s*{{templateArguments}}?
           \s*{{parameters}}
           \s*{{type}}?
@@ -96,7 +96,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          \s*(async)?
+          (?:\s*async)?
           \s*{{commonIdentifier}}
           \s*{{type}}?
           \s*=>

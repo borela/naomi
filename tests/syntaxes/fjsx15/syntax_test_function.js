@@ -86,13 +86,13 @@
 //                                ^^^^^ .entity.name.variable.js.fjsx15
 //                                     ^ .keyword.operator.other.association.flowtype
 //                                      ^ .keyword.operator.other.nullable.flowtype
-//                                       ^ .punctuation.definition.nullable.begin.flowtype
+//                                       ^ .punctuation.definition.expression.group.begin.flowtype
 //                                        ^^^^^^ .support.flowtype
 //                                        ^^^^^^ .entity.name.type.flowtype
 //                                              ^ .keyword.operator.other.union.flowtype
 //                                               ^^^^^^ .support.flowtype
 //                                               ^^^^^^ .entity.name.type.flowtype
-//                                                     ^ .punctuation.definition.nullable.end.flowtype
+//                                                     ^ .punctuation.definition.expression.group.end.flowtype
 //                                                      ^ .punctuation.definition.function.parameters.end.js.fjsx15
 //                                                       ^ .keyword.operator.other.association.flowtype
 //                                                        ^ .keyword.operator.other.nullable.flowtype

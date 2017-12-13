@@ -52,7 +52,7 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.definition.expression.group.begin.js.fjsx15
+          punctuation.definition.expression.group.begin.flowtype
       set: open-group
     # Start of the type expression.
     - match: "{{expressionBegin}}"
@@ -69,7 +69,7 @@ contexts:
     # Open new type expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
-        1: punctuation.definition.expression.group.begin.js.fjsx15
+        1: punctuation.definition.expression.group.begin.flowtype
       push: open-group
     # Close the current type expression group.
     - include: close-group
@@ -82,7 +82,7 @@ contexts:
       captures:
         1: >-
           flowtype
-          punctuation.definition.expression.group.end.js.fjsx15
+          punctuation.definition.expression.group.end.flowtype
       set: optional-tail
 
   head:

@@ -26,19 +26,18 @@ contexts:
   main:
     - match: |
         (?xi)\s*
-        ({{commonIdentifier}})(\?)?
+        ({{commonIdentifier}})
       captures:
+        1: >-
           function.parameter.js.fjsx15
           entity.name.variable.js.fjsx15
-        3: >-
-          flowtype
-          keyword.operator.other.optional.flowtype
       set: [
         optional-default-value,
-        optional-type
+        optional-modifier-and-type
       ]
 
-  optional-type:
+  optional-modifier-and-type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-modifier.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-associated-type.sublime-syntax
 
   optional-default-value:

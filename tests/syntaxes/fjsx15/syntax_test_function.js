@@ -13,6 +13,7 @@
 // the License.
 
    function foo() {}
+// ^^^^^^^^^^^^^^ .meta.function.declaration.js.fjsx15
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
 //          ^^^ .entity.name.function.js.fjsx15
 //             ^ .punctuation.definition.function.parameters.begin.js.fjsx15
@@ -20,6 +21,7 @@
 //                ^ .punctuation.definition.function.body.begin.js.fjsx15
 //                 ^ .punctuation.definition.function.body.end.js.fjsx15
    function *foo() {}
+// ^^^^^^^^^^^^^^^ .meta.function.declaration.js.fjsx15
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
 //          ^ .storage.modifier.js.fjsx15
 //          ^ .keyword.operator.other.generator.js.fjsx15
@@ -29,6 +31,7 @@
 //                 ^ .punctuation.definition.function.body.begin.js.fjsx15
 //                  ^ .punctuation.definition.function.body.end.js.fjsx15
    function foo(param, ...param) {}
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.function.declaration.js.fjsx15
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
 //          ^^^ .entity.name.function.js.fjsx15
 //             ^ .punctuation.definition.function.parameters.begin.js.fjsx15
@@ -40,6 +43,7 @@
 //                               ^ .punctuation.definition.function.body.begin.js.fjsx15
 //                                ^ .punctuation.definition.function.body.end.js.fjsx15
    function *foo(param, ...param) {}
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.function.declaration.js.fjsx15
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
 //          ^ .storage.modifier.js.fjsx15
 //          ^ .keyword.operator.other.generator.js.fjsx15
@@ -53,6 +57,7 @@
 //                                ^ .punctuation.definition.function.body.begin.js.fjsx15
 //                                 ^ .punctuation.definition.function.body.end.js.fjsx15
    function foo(param:number, ...param:string):boolean {}
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.function.declaration.js.fjsx15
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
 //          ^^^ .entity.name.function.js.fjsx15
 //             ^ .punctuation.definition.function.parameters.begin.js.fjsx15
@@ -73,6 +78,7 @@
 //                                                     ^ .punctuation.definition.function.body.begin.js.fjsx15
 //                                                      ^ .punctuation.definition.function.body.end.js.fjsx15
    function foo(param:?number, ...param:?(string|number)):?boolean {}
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.function.declaration.js.fjsx15
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
 //          ^^^ .entity.name.function.js.fjsx15
 //             ^ .punctuation.definition.function.parameters.begin.js.fjsx15
@@ -101,6 +107,7 @@
 //                                                                 ^ .punctuation.definition.function.body.begin.js.fjsx15
 //                                                                  ^ .punctuation.definition.function.body.end.js.fjsx15
    function foo<A,B>(param:A, ...param:B):B {}
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.function.declaration.js.fjsx15
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
 //          ^^^ .entity.name.function.js.fjsx15
 //             ^ .punctuation.definition.template.parameters.begin.flowtype
@@ -123,6 +130,7 @@
 //                                          ^ .punctuation.definition.function.body.begin.js.fjsx15
 //                                           ^ .punctuation.definition.function.body.end.js.fjsx15
    function *foo<A,B>(param:A, ...param:B):B {}
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.function.declaration.js.fjsx15
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
 //          ^ .storage.modifier.js.fjsx15
 //          ^ .keyword.operator.other.generator.js.fjsx15
@@ -147,12 +155,14 @@
 //                                           ^ .punctuation.definition.function.body.begin.js.fjsx15
 //                                            ^ .punctuation.definition.function.body.end.js.fjsx15
    function () {}
+// ^^^^^^^^^^^ .meta.function.declaration.js.fjsx15
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
 //          ^ .punctuation.definition.function.parameters.begin.js.fjsx15
 //           ^ .punctuation.definition.function.parameters.end.js.fjsx15
 //             ^ .punctuation.definition.function.body.begin.js.fjsx15
 //              ^ .punctuation.definition.function.body.end.js.fjsx15
    function *() {}
+// ^^^^^^^^^^^^ .meta.function.declaration.js.fjsx15
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
 //          ^ .storage.modifier.js.fjsx15
 //          ^ .keyword.operator.other.generator.js.fjsx15
@@ -161,6 +171,7 @@
 //              ^ .punctuation.definition.function.body.begin.js.fjsx15
 //               ^ .punctuation.definition.function.body.end.js.fjsx15
    function *<A,B>(param:A, ...param:B):B {}
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.function.declaration.js.fjsx15
 // ^^^^^^^^ .keyword.declaration.function.js.fjsx15
 //          ^ .storage.modifier.js.fjsx15
 //          ^ .keyword.operator.other.generator.js.fjsx15

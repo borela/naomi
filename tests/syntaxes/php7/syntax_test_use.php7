@@ -18,7 +18,7 @@
 //      ^ punctuation.definition.namespace.a.php.php7
 //                ^ punctuation.definition.namespace.b.php.php7
 //                          ^ punctuation.definition.ambiguous.php.php7
-//                                 ^ keyword.operator.other.terminator.php.php7
+//                                 ^ keyword.other.terminator.php.php7
 //       ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                 ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                           ^^^^^ entity.name.ambiguous.php.php7
@@ -29,7 +29,7 @@
 //      ^ punctuation.definition.namespace.a.php.php7
 //                ^ punctuation.definition.namespace.b.php.php7
 //                          ^ punctuation.definition.ambiguous.php.php7
-//                                          ^ keyword.operator.other.terminator.php.php7
+//                                          ^ keyword.other.terminator.php.php7
 //       ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                 ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                           ^^^^^ entity.name.ambiguous.php.php7
@@ -39,7 +39,7 @@
 //  ^^^ keyword.import.php.php7
 //               ^ punctuation.definition.namespace.b.php.php7
 //                         ^ punctuation.definition.ambiguous.php.php7
-//                                ^ keyword.operator.other.terminator.php.php7
+//                                ^ keyword.other.terminator.php.php7
 //      ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                          ^^^^^ entity.name.ambiguous.php.php7
@@ -49,7 +49,7 @@
 //                                 ^^ keyword.import.alias.php.php7
 //               ^ punctuation.definition.namespace.b.php.php7
 //                         ^ punctuation.definition.ambiguous.php.php7
-//                                         ^ keyword.operator.other.terminator.php.php7
+//                                         ^ keyword.other.terminator.php.php7
 //      ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                          ^^^^^ entity.name.ambiguous.php.php7
@@ -61,7 +61,7 @@
 //               ^ punctuation.definition.namespace.a.php.php7
 //                         ^ punctuation.definition.namespace.b.php.php7
 //                                   ^ punctuation.definition.function.php.php7
-//                                              ^ keyword.operator.other.terminator.php.php7
+//                                              ^ keyword.other.terminator.php.php7
 //                ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                          ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                                    ^^^^^^^^^^ entity.name.function.php.php7
@@ -73,7 +73,7 @@
 //               ^ punctuation.definition.namespace.a.php.php7
 //                         ^ punctuation.definition.namespace.b.php.php7
 //                                   ^ punctuation.definition.function.php.php7
-//                                                       ^ keyword.operator.other.terminator.php.php7
+//                                                       ^ keyword.other.terminator.php.php7
 //                ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                          ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                                    ^^^^^^^^^ entity.name.function.php.php7
@@ -84,7 +84,7 @@
 //      ^^^^^^^^ keyword.import.function.php.php7
 //                        ^ punctuation.definition.namespace.b.php.php7
 //                                  ^ punctuation.definition.function.php.php7
-//                                             ^ keyword.operator.other.terminator.php.php7
+//                                             ^ keyword.other.terminator.php.php7
 //               ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                         ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                                   ^^^^^^^^^^ entity.name.function.php.php7
@@ -95,7 +95,7 @@
 //                                              ^^ keyword.import.alias.php.php7
 //                        ^ punctuation.definition.namespace.b.php.php7
 //                                  ^ punctuation.definition.function.php.php7
-//                                                      ^ keyword.operator.other.terminator.php.php7
+//                                                      ^ keyword.other.terminator.php.php7
 //               ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                         ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                                   ^^^^^^^^^^ entity.name.function.php.php7
@@ -107,7 +107,7 @@
 //            ^ punctuation.definition.namespace.a.php.php7
 //                      ^ punctuation.definition.namespace.b.php.php7
 //                                ^ punctuation.definition.constant.php.php7
-//                                           ^ keyword.operator.other.terminator.php.php7
+//                                           ^ keyword.other.terminator.php.php7
 //             ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                       ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                                 ^^^^^^^^^^ entity.name.constant.php.php7
@@ -119,7 +119,7 @@
 //            ^ punctuation.definition.namespace.a.php.php7
 //                      ^ punctuation.definition.namespace.b.php.php7
 //                                ^ punctuation.definition.constant.php.php7
-//                                                    ^ keyword.operator.other.terminator.php.php7
+//                                                    ^ keyword.other.terminator.php.php7
 //             ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                       ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                                 ^^^^^^^^^^ entity.name.constant.php.php7
@@ -130,7 +130,7 @@
 //      ^^^^^ keyword.import.constant.php.php7
 //                     ^ punctuation.definition.namespace.b.php.php7
 //                               ^ punctuation.definition.constant.php.php7
-//                                          ^ keyword.operator.other.terminator.php.php7
+//                                          ^ keyword.other.terminator.php.php7
 //            ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                      ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                                ^^^^^^^^^^ entity.name.constant.php.php7
@@ -141,7 +141,7 @@
 //                                           ^^ keyword.import.alias.php.php7
 //                     ^ punctuation.definition.namespace.b.php.php7
 //                               ^ punctuation.definition.constant.php.php7
-//                                                   ^ keyword.operator.other.terminator.php.php7
+//                                                   ^ keyword.other.terminator.php.php7
 //            ^^^^^^^^^ entity.name.namespace.a.php.php7
 //                      ^^^^^^^^^ entity.name.namespace.b.php.php7
 //                                ^^^^^^^^^^ entity.name.constant.php.php7

@@ -21,7 +21,7 @@ contexts:
   main:
     - match: \s*(;)
       captures:
-        1: keyword.operator.other.terminator.js.fjsx15
+        1: keyword.other.terminator.js.fjsx15
       set: entry-point
 
   entry-point:

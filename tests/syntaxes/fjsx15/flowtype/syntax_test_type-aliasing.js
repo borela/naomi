@@ -17,7 +17,7 @@
 //      ^^^^^ .entity.name.type.flowtype
 //            ^ .keyword.operator.other.assignment.flowtype
 //              ^^^^^^^^ .entity.name.type.flowtype
-//                      ^ .keyword.operator.other.terminator.js.fjsx15
+//                      ^ .keyword.other.terminator.js.fjsx15
    type Alias = SomeType[];
 // ^^^^ .keyword.declaration.type-aliasing.flowtype
 //      ^^^^^ .entity.name.type.flowtype
@@ -25,7 +25,7 @@
 //              ^^^^^^^^ .entity.name.type.flowtype
 //                      ^ .punctuation.definition.array.begin.flowtype
 //                       ^ .punctuation.definition.array.end.flowtype
-//                        ^ .keyword.operator.other.terminator.js.fjsx15
+//                        ^ .keyword.other.terminator.js.fjsx15
    type Alias = SomeType<number>;
 // ^^^^ .keyword.declaration.type-aliasing.flowtype
 //      ^^^^^ .entity.name.type.flowtype
@@ -35,7 +35,7 @@
 //                       ^^^^^^ .support.flowtype
 //                       ^^^^^^ .entity.name.type.flowtype
 //                             ^ .punctuation.definition.template.arguments.end.flowtype
-//                              ^ .keyword.operator.other.terminator.js.fjsx15
+//                              ^ .keyword.other.terminator.js.fjsx15
    type Alias = SomeType<number[]>;
 // ^^^^ .keyword.declaration.type-aliasing.flowtype
 //      ^^^^^ .entity.name.type.flowtype
@@ -47,7 +47,7 @@
 //                             ^ .punctuation.definition.array.begin.flowtype
 //                              ^ .punctuation.definition.array.end.flowtype
 //                               ^ .punctuation.definition.template.arguments.end.flowtype
-//                                ^ .keyword.operator.other.terminator.js.fjsx15
+//                                ^ .keyword.other.terminator.js.fjsx15
    type Alias = (param:number) => number;
 // ^^^^ .keyword.declaration.type-aliasing.flowtype
 //      ^^^^^ .entity.name.type.flowtype
@@ -61,7 +61,7 @@
 //                             ^^ .punctuation.definition.function.result.flowtype
 //                                ^^^^^^ .support.flowtype
 //                                ^^^^^^ .entity.name.type.flowtype
-//                                      ^ .keyword.operator.other.terminator.js.fjsx15
+//                                      ^ .keyword.other.terminator.js.fjsx15
    type Alias = (param:number, param:string) => number;
 // ^^^^ .keyword.declaration.type-aliasing.flowtype
 //      ^^^^^ .entity.name.type.flowtype
@@ -80,7 +80,7 @@
 //                                           ^^ .punctuation.definition.function.result.flowtype
 //                                              ^^^^^^ .support.flowtype
 //                                              ^^^^^^ .entity.name.type.flowtype
-//                                                    ^ .keyword.operator.other.terminator.js.fjsx15
+//                                                    ^ .keyword.other.terminator.js.fjsx15
    type Alias<A,B,C> = (param:A, param:B) => C;
 // ^^^^ .keyword.declaration.type-aliasing.flowtype
 //      ^^^^^ .entity.name.type.flowtype
@@ -103,7 +103,7 @@
 //                                      ^ .punctuation.definition.function.parameters.end.flowtype
 //                                        ^^ .punctuation.definition.function.result.flowtype
 //                                           ^ .entity.name.type.flowtype
-//                                            ^ .keyword.operator.other.terminator.js.fjsx15
+//                                            ^ .keyword.other.terminator.js.fjsx15
    type Alias<A,B,C> = (param:A|B, param:B) => C|B;
 // ^^^^ .keyword.declaration.type-aliasing.flowtype
 //      ^^^^^ .entity.name.type.flowtype
@@ -130,7 +130,7 @@
 //                                             ^ .entity.name.type.flowtype
 //                                              ^ .keyword.operator.other.union.flowtype
 //                                               ^ .entity.name.type.flowtype
-//                                                ^ .keyword.operator.other.terminator.js.fjsx15
+//                                                ^ .keyword.other.terminator.js.fjsx15
    type Alias<A,B,C> = (param:?(A|B), param:?B) => ?C;
 // ^^^^ .keyword.declaration.type-aliasing.flowtype
 //      ^^^^^ .entity.name.type.flowtype
@@ -160,7 +160,7 @@
 //                                              ^^ .punctuation.definition.function.result.flowtype
 //                                                 ^ .keyword.operator.other.nullable.flowtype
 //                                                  ^ .entity.name.type.flowtype
-//                                                   ^ .keyword.operator.other.terminator.js.fjsx15
+//                                                   ^ .keyword.other.terminator.js.fjsx15
    type Alias<A,B> = {a:?A, b:?B};
 // ^^^^ .keyword.declaration.type-aliasing.flowtype
 //      ^^^^^ .entity.name.type.flowtype
@@ -181,7 +181,7 @@
 //                            ^ .keyword.operator.other.nullable.flowtype
 //                             ^ .entity.name.type.flowtype
 //                              ^ .punctuation.definition.object.end.flowtype
-//                               ^ .keyword.operator.other.terminator.js.fjsx15
+//                               ^ .keyword.other.terminator.js.fjsx15
    type Alias<A,B,C> = {a:?(A|C), b:?B};
 // ^^^^ .keyword.declaration.type-aliasing.flowtype
 //      ^^^^^ .entity.name.type.flowtype
@@ -208,7 +208,7 @@
 //                                  ^ .keyword.operator.other.nullable.flowtype
 //                                   ^ .entity.name.type.flowtype
 //                                    ^ .punctuation.definition.object.end.flowtype
-//                                     ^ .keyword.operator.other.terminator.js.fjsx15
+//                                     ^ .keyword.other.terminator.js.fjsx15
    type Alias<A,B> = {a:A} & {b:B};
 // ^^^^ .keyword.declaration.type-aliasing.flowtype
 //      ^^^^^ .entity.name.type.flowtype
@@ -229,4 +229,4 @@
 //                             ^ .keyword.operator.other.association.flowtype
 //                              ^ .entity.name.type.flowtype
 //                               ^ .punctuation.definition.object.end.flowtype
-//                                ^ .keyword.operator.other.terminator.js.fjsx15
+//                                ^ .keyword.other.terminator.js.fjsx15

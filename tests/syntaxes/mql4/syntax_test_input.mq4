@@ -22,7 +22,7 @@
 //                             ^^^ string.content.mql.mql4
 //                            ^ punctuation.definition.string.begin.mql.mql4
 //                                ^ punctuation.definition.string.end.mql.mql4
-//                                 ^ keyword.operator.other.terminator.mql.mql4
+//                                 ^ keyword.other.terminator.mql.mql4
     input Custom identifier = "...";
 //  ^^^^^ keyword.input.mql.mql4
 //        ^^^^^^ entity.name.type.mql.mql4
@@ -32,4 +32,4 @@
 //                             ^^^ string.content.mql.mql4
 //                            ^ punctuation.definition.string.begin.mql.mql4
 //                                ^ punctuation.definition.string.end.mql.mql4
-//                                 ^ keyword.operator.other.terminator.mql.mql4
+//                                 ^ keyword.other.terminator.mql.mql4

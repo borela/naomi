@@ -44,7 +44,7 @@
 //                 ^ .punctuation.definition.object.js.fjsx15
    };
 // ^ .punctuation.definition.object.end.js.fjsx15
-//  ^ .keyword.operator.other.terminator.js.fjsx15
+//  ^ .keyword.other.terminator.js.fjsx15
    var object = {
 // ^^^ .storage.type.js.fjsx15
 // ^^^ .keyword.declaration.variable.js.fjsx15
@@ -159,4 +159,4 @@
 //                         ^ .punctuation.definition.object.js.fjsx15
    };
 // ^ .punctuation.definition.object.end.js.fjsx15
-//  ^ .keyword.operator.other.terminator.js.fjsx15
+//  ^ .keyword.other.terminator.js.fjsx15

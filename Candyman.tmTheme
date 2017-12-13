@@ -1863,7 +1863,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.source.scss .keyword.operator.other.comma, .source.scss .keyword.operator.other.association, .source.scss .keyword.operator.other.terminator</string>
+			<string>.source.scss .keyword.operator.other.comma, .source.scss .keyword.operator.other.association, .source.scss .keyword.other.terminator</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

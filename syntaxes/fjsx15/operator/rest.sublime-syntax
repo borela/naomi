@@ -17,31 +17,9 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [$_[:alpha:]]
-    [$_[:alnum:]]*
-
 contexts:
   main:
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})(\?)?
+    - match: \s*(\.{3})
       captures:
-          function.parameter.js.fjsx15
-          entity.name.variable.js.fjsx15
-        3: >-
-          flowtype
-          keyword.operator.other.optional.flowtype
-      set: [
-        optional-default-value,
-        optional-type
-      ]
-
-  optional-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-associated-type.sublime-syntax
-
-  optional-default-value:
-    - match: (?=\s*(?>,|=>))
+        1: keyword.operator.other.rest.js.fjsx15
       pop: true
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

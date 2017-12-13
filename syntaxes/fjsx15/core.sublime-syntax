@@ -253,6 +253,7 @@ contexts:
           | eval
           | is(?>Finite|NaN)
           | parse(?>Float|Int)
+          | super
         ))
         (?=\s*\()
       captures:

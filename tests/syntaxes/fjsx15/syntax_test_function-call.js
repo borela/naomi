@@ -13,7 +13,7 @@
 // the License.
 
    super(1,2);
-// ^^^^^ .support.js.fjsx15
+// ^^^^^ .support.core.js.fjsx15
 // ^^^^^ .entity.name.function.js.fjsx15
 //      ^ .punctuation.definition.function.arguments.begin.js.fjsx15
 //       ^ .constant.numeric.decimal.js.fjsx15

@@ -44,6 +44,9 @@ contexts:
           destructuring.object.js.fjsx15
           punctuation.definition.object.end.js.fjsx15
       pop: true
+    # Default value.
+    - match: (?=\s*=)
+      push: default-value
 
   optional-variable:
     - include: comment-no-pop
@@ -56,9 +59,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
-  optional-default-value:
-    - match: (?=\s*,)
-      pop: true
+  default-value:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
   comment-no-pop:

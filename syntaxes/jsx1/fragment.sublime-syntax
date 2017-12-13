@@ -44,7 +44,7 @@ contexts:
     - match: ""
       push:
         - clear_scopes: true
-        - include: Packages/Naomi/syntaxes/jsx1/main.sublime-syntax
+        - include: main
         - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
         - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
         - match: |

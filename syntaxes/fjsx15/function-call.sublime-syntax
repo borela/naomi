@@ -76,8 +76,8 @@ contexts:
         \s*({{commonIdentifier}})
       captures:
         1: >-
-          call.js.fjsx
-          entity.name.function.js.fjsx15
+          function.call.js.fjsx
+          entity.name.variable.js.fjsx15
       pop: true
 
   template-arguments:

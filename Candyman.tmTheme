@@ -943,15 +943,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.definition.property.access</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#aed581</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.object .keyword.operator</string>
 			<key>settings</key>
 			<dict>
@@ -1006,11 +997,11 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.definition.expression.group.b</string>
+			<string>.punctuation.other.property.access</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#bcaaa4</string>
+				<string>#aed581</string>
 			</dict>
 		</dict>
 		<dict>

@@ -39,7 +39,7 @@ contexts:
       captures:
         1: keyword.operator.other.optional-chain.js.fjsx15
       set: optional-expression
-    - match: \s*(\.)
+    - match: \s*(\.)(?!\.)
       captures:
         1: keyword.operator.other.member-access.js.fjsx15
       set: optional-expression

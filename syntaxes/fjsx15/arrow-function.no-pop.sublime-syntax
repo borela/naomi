@@ -29,7 +29,7 @@ variables:
       [^<>]*
     >)
 
-  templateParameters: {{templateArguments}}
+  templateParameters: "{{templateArguments}}"
 
   parameters: |
     (\(

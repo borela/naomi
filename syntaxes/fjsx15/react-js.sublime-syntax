@@ -28,6 +28,21 @@ contexts:
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/react-js-arguments.sublime-syntax
 
+  optional-property-type-and-value:
+    - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax#optional-type-and-value
+
+  class-properties:
+    - match: |
+        (?x)\s*
+        ((?> props
+          | state
+        ))\b
+      captures:
+        1: >-
+          support.core.js.fjsx15
+          entity.name.variable.js.fjsx15
+      set: optional-property-type-and-value
+
   instance-variables:
     - match: |
         (?x)\s*
@@ -64,7 +79,7 @@ contexts:
         2: >-
           support.lib.react-js.fjsx15
           entity.name.variable.js.fjsx15
-      pop: true
+      set: optional-property-type-and-value
 
   proptypes:
     # Function call.

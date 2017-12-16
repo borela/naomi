@@ -26,27 +26,166 @@ variables:
     [$_[:upper:]]
     [$_[:upper:][:digit:]]*
 
+  indexer: |
+    (\[
+      [^\[\]]*
+      \g<-1>?
+      [^\[\]]*
+    \])
+
+  methodIdentifier: |
+    (?> '.*?(?<!\\)'
+      | ".*?(?<!\\)"
+      | `.*?(?<!\\)`
+      | {{indexer}}
+      | {{commonIdentifier}}
+    )
+
+  templateArguments: |
+    (<
+      [^<>]*
+      \g<-1>?
+      [^<>]*
+    >)
+
+  templateParameters: "{{templateArguments}}"
+
+  parameters: |
+    (\(
+      [^()]*
+      \g<-1>?
+      [^()]*
+    \))
+
+  flowOperators: |
+    (?> &(?!&)
+      | \|(?!\|)
+    )
+
+  string: |
+    (?> '.*?'
+      | ".*?"
+      | `.*`
+    )
+
+  simpleFlowType: |
+    (?> {{string}}
+      | {{commonIdentifier}}
+        {{templateArguments}}?
+    )
+
+  flowFunction: |
+    (
+      {{parameters}}
+      \s*=>\s*
+      (?> {{simpleFlowType}}
+        | \g<-2>
+      )
+    )
+
+  complexType: |
+    (
+      \??\s*
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
+      )
+      \s*{{flowOperators}}?
+      \s*\g<-5>?
+    )
+
+  flowComment: /\*\s*:.*?\*/
+
+  type: |
+    (?> {{flowComment}}
+      | :{{complexType}}
+    )
+
 contexts:
   main:
-    # # Computed property name.
-    # - match: \s*(\[)
-    #   captures:
-    #     1: punctuation.definition.object.computed-property.begin.js.fjsx15
-    #   push: [
-    #     associated-value,
-    #     computed-property
-    #   ]
-    # # Other property formats.
-    # - include: string
-    # - include: constant
+    # Function assigned to property.
+    - match: |
+        (?xi)
+        (?=
+          \s*{{commonIdentifier}}
+          \s*:
+          (?:\s*async\b)?
+          \s*function
+        )
+      set: [
+        function-declaration,
+        function-keyword,
+        method-identifier
+      ]
+    # Single parameter arrow function assigned to property.
+    - match: |
+        (?xi)
+        (?=
+          \s*{{commonIdentifier}}
+          \s*:
+          (?:\s*async\b)?
+          \s*{{commonIdentifier}}
+          \s*{{type}}?
+          \s*=>
+        )
+      set: [
+        arrow-function,
+        method-identifier
+      ]
+    # Arrow function assigned to property.
+    - match: |
+        (?xi)
+        (?=
+          \s*{{commonIdentifier}}
+          \s*:
+          (?:\s*async\b)?
+          \s*{{templateParameters}}?
+          \s*{{parameters}}
+          \s*=>
+        )
+      set: [
+        arrow-function,
+        method-identifier
+      ]
+    # Computed property name.
+    - match: \s*(\[)
+      captures:
+        1: punctuation.definition.object.computed-property.begin.js.fjsx15
+      set: [
+        associated-value,
+        computed-property-end,
+        optional-expression
+      ]
+    # String.
+    - match: (?=\s*['"`])
+      set: [ associated-value, string ]
+    # Simple property.
+    - include: constant
     - include: variable
 
-  computed-property:
+  method-identifier:
+    - match: |
+        (?xi)
+        \s*({{commonIdentifier}})
+        \s*(:)
+      captures:
+        1: entity.name.function.js.fjsx15
+        2: punctuation.definition.function.js.fjsx15
+      pop: true
+
+  arrow-function:
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+
+  function-keyword:
+    - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax#keyword
+
+  function-declaration:
+    - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax#declaration
+
+  computed-property-end:
     - match: \s*(\])
       captures:
         1: punctuation.definition.object.computed-property.end.js.fjsx15
       pop: true
-    - include: expression
 
   string:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
@@ -62,7 +201,7 @@ contexts:
         1: >-
           object.property.js.fjsx15
           entity.name.constant.js.fjsx15
-      push: associated-value
+      set: associated-value
     # Two or more characters.
     - match: |
         (?x)\s*
@@ -76,20 +215,20 @@ contexts:
         1: >-
           object.property.js.fjsx15
           entity.name.constant.js.fjsx15
-      push: associated-value
+      set: associated-value
 
   variable:
     # Single character.
-    # - match: |
-    #     (?xi)\s*
-    #     ((?> \$\B
-    #       | [_[:alpha:]]\b
-    #     ))
-    #   captures:
-    #     1: >-
-    #       object.property.js.fjsx15
-    #       entity.name.variable.js.fjsx15
-    #   push: associated-value
+    - match: |
+        (?xi)\s*
+        ((?> \$\B
+          | [_[:alpha:]]\b
+        ))
+      captures:
+        1: >-
+          object.property.js.fjsx15
+          entity.name.variable.js.fjsx15
+      set: associated-value
     # Two or more characters.
     - match: |
         (?xi)\s*
@@ -103,14 +242,15 @@ contexts:
         1: >-
           object.property.js.fjsx15
           entity.name.variable.js.fjsx15
-      push: associated-value
+      set: associated-value
 
-  expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
   associated-value:
     - match: \s*(:)
-      scope: >-
-        object.js.fjsx15
-        keyword.operator.other.association.js.fjsx15
-      set: expression
+      captures:
+        1: >-
+          object.js.fjsx15
+          keyword.operator.other.association.js.fjsx15
+      set: optional-expression

@@ -55,7 +55,7 @@ contexts:
       push: template-parameters
     # Parameters.
     - match: (?=\s*\()
-      push: parameters
+      set: [ optional-body, parameters ]
     # Identifier.
     - match: |
         (?xi)\s*
@@ -78,6 +78,11 @@ contexts:
 
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
+
+  optional-body:
+    - include: body
+    - match: (?=\s*\S)
+      pop: true
 
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax

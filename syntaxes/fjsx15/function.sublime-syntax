@@ -60,10 +60,7 @@ contexts:
     - match: |
         (?xi)\s*
         (\*)?
-        (?:
-          \s*
-          ({{commonIdentifier}})
-        )?
+        (?:\s*({{commonIdentifier}}))?
       captures:
         1: >-
           storage.modifier.js.fjsx15

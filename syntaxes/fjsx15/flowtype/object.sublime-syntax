@@ -37,14 +37,14 @@ contexts:
         2: >-
           flowtype
           punctuation.definition.object.begin.flowtype
-      set: [ delimiters, optional-property ]
+      set: [ delimiters, optional-property-or-method ]
     # Normal.
     - match: \s*({)
       captures:
         1: >-
           flowtype
           punctuation.definition.object.begin.flowtype
-      set: [ delimiters, optional-property ]
+      set: [ delimiters, optional-property-or-method ]
 
   delimiters:
     - match: \s*(,|;)
@@ -52,7 +52,7 @@ contexts:
         1: >-
           flowtype
           punctuation.definition.object.flowtype
-      push: optional-property
+      push: optional-property-or-method
     # Exact.
     - match: \s*(\|)\s*(})
       captures:
@@ -71,10 +71,12 @@ contexts:
           punctuation.definition.object.end.flowtype
       pop: true
 
-  optional-property:
+  optional-property-or-method:
     - include: comment-no-pop
     - match: (?=\s*[|}])
       pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
     - include: constant
     - include: variable
     # String property name.

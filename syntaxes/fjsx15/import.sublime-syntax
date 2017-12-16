@@ -59,7 +59,7 @@ contexts:
   header:
     - include: Packages/Naomi/syntaxes/fjsx15/statement/header.sublime-syntax
 
-  comment:
+  comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   function-arguments:
@@ -88,7 +88,7 @@ contexts:
         1: punctuation.definition.import.item.js.fjsx15
 
   targets:
-    - include: comment
+    - include: comment-no-pop
     - include: origin
     - include: punctuation
     - match: ""

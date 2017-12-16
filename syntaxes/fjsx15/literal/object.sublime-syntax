@@ -50,6 +50,7 @@ contexts:
     # Spread.
     - include: Packages/Naomi/syntaxes/fjsx15/operator/spread.sublime-syntax
     # Method.
+    - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
     # Simple constant.
     - match: |

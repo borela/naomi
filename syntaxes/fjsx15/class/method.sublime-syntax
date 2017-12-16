@@ -48,11 +48,6 @@ contexts:
   main:
     - match: |
         (?xi)
-        (?=\s*(?>\#|\*|async|get|set|static))
-      set: declaration
-    # Normal method.
-    - match: |
-        (?xi)
         (?=
           \s*{{methodIdentifier}}
           \s*{{templateParameters}}?
@@ -60,33 +55,8 @@ contexts:
         )
       set: declaration
 
-  modifiers:
-    - match: \s*(\#|static)
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.access.js.fjsx15
-    - match: \s*(async)\b
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.async.js.fjsx15
-    - match: |
-        (?xi)\s*
-        (get|set)\b
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.proxy.js.fjsx15
-    - match: \s*(\*)\b
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.operator.other.generator.js.fjsx15
-
   declaration:
     - include: comment-no-pop
-    - include: modifiers
     # Body.
     - match: (?=\s*\{)
       set: body

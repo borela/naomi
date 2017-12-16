@@ -23,14 +23,28 @@ contexts:
     - match: \s*(\{)
       captures:
         1: punctuation.definition.class.body.begin.js.fjsx15
-      set: body
+      set: [ body-end, statements-and-expressions ]
 
-  body:
+  body-end:
     - include: comment-no-pop
+    - match: \s*(?>(,)|(;))
+      captures:
+        1: punctuation.definition.object.js.fjsx15
+        2: keyword.other.terminator.js.fjsx15
+      push: statements-and-expressions
     - match: \s*(})
       captures:
         1: punctuation.definition.class.body.end.js.fjsx15
       pop: true
+    - match: (?=\s*\S)
+      push: statements-and-expressions
+
+  statements-and-expressions:
+    - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
     # - match: ""
     #   push:
     #     # This is necessary because normally these instance variables would be

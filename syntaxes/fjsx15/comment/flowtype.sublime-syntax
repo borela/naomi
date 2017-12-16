@@ -24,71 +24,50 @@ contexts:
         1: >-
           comment.block.flowtype
           punctuation.definition.comment.begin.flowtype
-      set: block
+      set: [ block-end, statements-and-expressions ]
     - match: \s*(/\*(?=\s*:))
       captures:
         1: >-
           comment.block.flowtype
           punctuation.definition.comment.begin.flowtype
-      set: associated-type
+      set: [ block-end, associated-type ]
+
+  block-end:
+    - meta_scope: comment.block.flowtype
+    - match: \s*(\*/)
+      captures:
+        1: >-
+          comment.block.flowtype
+          punctuation.definition.comment.end.js.fjsx15
+      set:
+        # Used to fix the block comment indentation settings.
+        # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
+        - match: \s*$\n?
+          scope: meta.block-end.js.fjsx15
+          pop: true
+        - match: ''
+          pop: true
 
   associated-type:
-    - meta_content_scope: comment.block.flowtype
-    - match: \s*(\*/)
-      captures:
-        1: >-
-          comment.block.flowtype
-          punctuation.definition.comment.end.js.fjsx15
-      set:
-        # Used to fix the block comment indentation settings.
-        # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
-        - match: \s*$\n?
-          scope: meta.block-end.js.fjsx15
-          pop: true
-        - match: ''
-          pop: true
+    - match: (?=\s*\*\/)
+      pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+
+  statements-and-expressions:
+    - match: (?=\s*\*\/)
+      pop: true
     - match: ""
       push:
-        - match: (?=\s*\*\/)
-          pop: true
+        - match: \s*(;)
+          captures:
+            1: keyword.other.terminator.js.fjsx15
         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
-
-  block:
-    - meta_content_scope: comment.block.flowtype
-    - match: \s*(\*/)
-      captures:
-        1: >-
-          comment.block.flowtype
-          punctuation.definition.comment.end.js.fjsx15
-      set:
-        # Used to fix the block comment indentation settings.
-        # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
-        - match: \s*$\n?
-          scope: meta.block-end.js.fjsx15
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/declare.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/interface.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax
+        - match: ""
           pop: true
-        - match: ''
-          pop: true
-    # - match: ""
-    #   push:
-    #     - match: (?=\s*\*\/)
-    #       pop: true
-    #     - match: \s*(\?)(?=\s*:)
-    #       captures:
-    #         1: keyword.operator.other.optional.flowtype
-    #       set:
-    #         - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
-        # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/declare.sublime-syntax
-        # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/field.sublime-syntax
-        # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/interface.sublime-syntax
-        # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
-        # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/module.sublime-syntax
-        # - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
-        # - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
-        # - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax
-        # - include: Packages/Naomi/syntaxes/fjsx15/operator/terminator.sublime-syntax
-
-  link:
-    - include: Packages/Naomi/syntaxes/shared/link.sublime-syntax
-
-  email:
-    - include: Packages/Naomi/syntaxes/shared/email.sublime-syntax

@@ -42,6 +42,7 @@ contexts:
   statements-and-expressions:
     - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax

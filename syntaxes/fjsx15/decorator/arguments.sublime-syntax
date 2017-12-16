@@ -22,18 +22,17 @@ contexts:
     - match: \s*(\()
       captures:
         1: punctuation.definition.decorator.arguments.begin.js.fjsx15
-      set: arguments
+      set: [ delimiters, optional-expression ]
 
-  arguments:
+  delimiters:
+    - match: \s*(\,)
+      captures:
+        1: punctuation.definition.decorator.arguments.js.fjsx15
+      push: optional-expression
     - match: \s*(\))
       captures:
         1: punctuation.definition.decorator.arguments.end.js.fjsx15
       pop: true
-    - match: \s*(\,)
-      captures:
-        1: punctuation.definition.decorator.arguments.js.fjsx15
-    - match: ""
-      push:
-        # - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
-        - match: ""
-          pop: true
+
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

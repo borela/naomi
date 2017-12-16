@@ -41,13 +41,15 @@ contexts:
 
   statements-and-expressions:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax#class-properties
-    - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax#class-properties
+    - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
+    - match: (?=\s*\S)
+      pop: true
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

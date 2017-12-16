@@ -22,7 +22,7 @@ contexts:
     - include: modifiers
 
   modifiers:
-    - match: \s*(static)
+    - match: \s*(static)\b
       captures:
         1: >-
           storage.modifier.js.fjsx15

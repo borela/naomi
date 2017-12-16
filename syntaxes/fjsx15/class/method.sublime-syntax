@@ -65,7 +65,10 @@ contexts:
       push: template-parameters
     # Parameters.
     - match: (?=\s*\()
-      push: parameters
+      set: [
+        optional-body,
+        parameters
+      ]
     # Support identifier.
     - match: |
         (?x)
@@ -75,7 +78,7 @@ contexts:
           support.js.fjsx15
           entity.name.function.js.fjsx15
       set: [
-        support-body,
+        optional-support-body,
         support-parameters
       ]
     # React JS’s support methods.
@@ -115,7 +118,12 @@ contexts:
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
 
-  support-body:
+  optional-body:
+    - include: body
+    - match: (?=\s*\S)
+      pop: true
+
+  optional-support-body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/support/body.sublime-syntax
     - match: (?=\s*\S)
       pop: true

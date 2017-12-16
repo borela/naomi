@@ -37,6 +37,11 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   optional-type-and-value:
+    - match: \s*(\?)
+      captures:
+        1: >-
+          flowtype
+          keyword.operator.other.optional.flowtype
     # Type.
     - match: (?=\s*:)
       push: associated-type

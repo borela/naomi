@@ -52,7 +52,9 @@ contexts:
     # Open new type expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
-        1: punctuation.definition.expression.group.begin.flowtype
+        1: >-
+          flowtype
+          punctuation.definition.expression.group.begin.flowtype
       push: open-group
     # Close the current type expression group.
     - include: close-group

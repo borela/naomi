@@ -25,6 +25,7 @@ variables:
 contexts:
   main:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/declare.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/interface.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax

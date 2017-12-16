@@ -1,0 +1,100 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
+contexts:
+  main:
+    - match: \s*(interface)\b
+      captures:
+        1: >-
+          flowtype
+          storage.type.flowtype
+          keyword.declaration.interface.flowtype
+      set: declaration
+
+  declaration:
+    - include: comment-no-pop
+    # Extension.
+    - match: \s*(extends)\b
+      captures:
+        1: >-
+          flowtype
+          storage.modifier.flowtype
+          keyword.extension.flowtype
+      push: optional-type-expression
+    # Template parameters.
+    - match: (?=\s*<)
+      push: template-parameters
+    # Body.
+    - match: (?=\s*\{)
+      set: body
+    # Identifier.
+    - match: (?xi)\s*({{commonIdentifier}})
+      captures:
+        1: >-
+          flowtype
+          entity.name.interface.flowtype
+
+  optional-type-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-type-expression.sublime-syntax
+
+  template-parameters:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
+
+  body:
+    - include: comment
+    - match: \s*(\{)
+      captures:
+        1: >-
+          flowtype
+          punctuation.definition.interface.body.begin.flowtype
+      set: [ body-end, statements-and-expressions ]
+
+  body-end:
+    - include: comment-no-pop
+    - match: \s*(?>(,)|(;))
+      captures:
+        1: punctuation.definition.object.js.fjsx15
+        2: keyword.other.terminator.js.fjsx15
+      push: statements-and-expressions
+    - match: \s*(})
+      captures:
+        1: >-
+          flowtype
+          punctuation.definition.interface.body.end.flowtype
+      pop: true
+    - match: (?=\s*\S)
+      push: statements-and-expressions
+
+  statements-and-expressions:
+    - match: (?=\s*})
+      pop: true
+    - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/operator/covariant.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/operator/contravariant.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

@@ -24,6 +24,8 @@ variables:
 contexts:
   main:
     - include: comment-no-pop
+    # Functions need to be detected before expression groups.
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.sublime-syntax
     # Detect operators as soon as possible.
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/operator.sublime-syntax
     # Open new type expression group.
@@ -45,6 +47,8 @@ contexts:
 
   open-group:
     - include: comment-no-pop
+    # Functions need to be detected before expression groups.
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.no-pop.sublime-syntax
     # Open new type expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
@@ -66,6 +70,7 @@ contexts:
 
   head:
     - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/tuple.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/number.sublime-syntax

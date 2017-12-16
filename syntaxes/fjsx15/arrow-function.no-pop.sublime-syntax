@@ -29,6 +29,8 @@ variables:
       [^<>]*
     >)
 
+  templateParameters: {{templateArguments}}
+
   parameters: |
     (\(
       [^()]*
@@ -86,7 +88,7 @@ contexts:
         (?xi)
         (?=
           (?:\s*async)?
-          \s*{{templateArguments}}?
+          \s*{{templateParameters}}?
           \s*{{parameters}}
           \s*{{type}}?
           \s*=>

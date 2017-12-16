@@ -18,27 +18,6 @@ hidden: true
 scope: ...
 
 variables:
-  # commonIdentifier: |
-  #   [$_[:alpha:]]
-  #   [$_[:alnum:]]*
-
-  # templateArguments: |
-  #   (<
-  #     [^<>]*
-  #     \g<-1>?
-  #     [^<>]*
-  #   >)
-
-  # parameters: |
-  #   (\(
-  #     [^()]*
-  #     \g<-1>?
-  #     [^()]*
-  #   \))
-
-  # flowFunction: |
-  #   {{parameters}}
-  #   \s*=>\s*
   expressionGroupBegin: \s*(\()
   expressionBegin: (?=\s*\S)
 

@@ -27,7 +27,7 @@ contexts:
     # Common JS module.
     - match: (?=\s*module\s*.\s*exports)
       set: [
-        block,
+        object-literal,
         association,
         common-js-module
       ]
@@ -51,8 +51,8 @@ contexts:
           keyword.operator.other.association.flowtype
       pop: true
 
-  block:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#block
+  object-literal:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/object.sublime-syntax
 
   identifier:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax

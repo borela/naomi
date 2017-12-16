@@ -19,9 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        \s*(=>)
+    - match: \s*(=>)
       captures:
         1: >-
           arrow.js.fjsx15

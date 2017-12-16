@@ -23,6 +23,7 @@ contexts:
     # detect its body as if it were an operator.
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/body.sublime-syntax
     # Actual operators.
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/pipe.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/arithmetic.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/assignment.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/await.sublime-syntax
@@ -34,7 +35,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/new.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/of.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/other.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/pipe.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/relational.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/shebang.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/spread.sublime-syntax

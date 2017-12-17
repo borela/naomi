@@ -33,12 +33,8 @@ contexts:
         1: >-
           arrow.js.fjsx15
           punctuation.definition.function.body.begin.js.fjsx15
-      set: [
-        close-body,
-        optional-statements-and-expressions
-      ]
+      set: optional-statements-and-expressions
     - include: optional-expression
-
 
   close-body:
     - match: \s*(})
@@ -47,6 +43,8 @@ contexts:
           arrow.js.fjsx15
           punctuation.definition.function.body.end.js.fjsx15
       set: optional-expression-tail
+    - match: ""
+      push: optional-statements-and-expressions
 
   optional-statements-and-expressions:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax

@@ -42,6 +42,7 @@ contexts:
     - include: if-else
     - include: label
     - include: return
+    - include: switch-case
     - include: throw
     - include: try-catch-finally
     - include: yield
@@ -157,7 +158,7 @@ contexts:
         \s*(:)
       captures:
         1: entity.name.label.js.fjsx15
-        2: keyword.operator.other.js.fjsx15
+        2: punctuation.separator.js.fjsx15
       set: optional-statements-and-expressions
 
   return:
@@ -165,6 +166,25 @@ contexts:
       captures:
         1: keyword.control.flow.js.fjsx15
       set: optional-expression
+
+  switch-case:
+    - match: \s*(switch)\b
+      captures:
+        1: keyword.control.switch.js.fjsx15
+      set: expression-only-header
+    - match: \s*(case)\b
+      captures:
+        1: keyword.control.switch.js.fjsx15
+      set: [
+        colon,
+        optional-expression
+      ]
+
+  colon:
+    - match: \s*(:)
+      captures:
+        1: punctuation.separator.js.fjsx15
+      pop: true
 
   throw:
     - match: \s*(throw)\b

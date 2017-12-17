@@ -25,7 +25,7 @@ contexts:
       set: string
 
   string:
-    - meta_scope: string.quoted.single.jsx.jsx1
+    - meta_scope: string.quoted.double.jsx.jsx1
     - match: \s*(\")
       captures:
         1: punctuation.definition.string.end.jsx.jsx1

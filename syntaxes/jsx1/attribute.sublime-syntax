@@ -28,7 +28,7 @@ contexts:
         (?xi)\s*
         ({{commonIdentifier}})
       captures:
-        1: entity.name.attribute.jsx.jsx1
+        1: entity.other.attribute-name.jsx.jsx1
       set: optional-value
 
   optional-value:

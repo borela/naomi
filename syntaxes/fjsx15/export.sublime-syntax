@@ -75,15 +75,13 @@ contexts:
         \s*(type)
         \s*({)
       captures:
-        1: keyword.control.export.js.fjsx15
+        1: keyword.control.import-export.js.fjsx15
         2: >-
           flowtype
-          storage.type.flowtype
-          keyword.other.access.flowtype
+          storage.modifier.flowtype
         3: >-
           flowtype
           storage.type.flowtype
-          keyword.declaration.type-aliasing.flowtype
         4: punctuation.definition.export.list.begin.js.fjsx15
       set: types
     # Export object literal.
@@ -93,7 +91,7 @@ contexts:
         \s*(default)
         (?=\s*{)
       captures:
-        1: keyword.control.export.js.fjsx15
+        1: keyword.control.import-export.js.fjsx15
         2: >-
           storage.modifier.js.fjsx15
           keyword.control.export.default.js.fjsx15
@@ -105,7 +103,7 @@ contexts:
         \s*(default)
         (?=\s*from)
       captures:
-        1: keyword.control.export.js.fjsx15
+        1: keyword.control.import-export.js.fjsx15
         2: >-
           storage.modifier.js.fjsx15
           keyword.control.export.default.js.fjsx15
@@ -127,7 +125,7 @@ contexts:
           )
         )
       captures:
-        1: keyword.control.export.js.fjsx15
+        1: keyword.control.import-export.js.fjsx15
       # set: statement-and-expression
     # Export default.
     - match: |
@@ -135,7 +133,7 @@ contexts:
         \s*(export)
         \s*(default)
       captures:
-        1: keyword.control.export.js.fjsx15
+        1: keyword.control.import-export.js.fjsx15
         2: >-
           storage.modifier.js.fjsx15
           keyword.control.export.default.js.fjsx15
@@ -146,7 +144,7 @@ contexts:
         \s*(export)\b
         (?!\s*\.)
       captures:
-        1: keyword.control.export.js.fjsx15
+        1: keyword.control.import-export.js.fjsx15
       set: targets
 
   comment:

@@ -53,8 +53,7 @@ contexts:
       captures:
         1: >-
           flowtype
-          support.flowtype
-          entity.name.type.flowtype
+          support.type.flowtype
       pop: true
     # Other types.
     - match: |
@@ -63,5 +62,5 @@ contexts:
       captures:
         1: >-
           flowtype
-          entity.name.type.flowtype
+          variable.other.type.flowtype
       pop: true

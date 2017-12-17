@@ -64,20 +64,17 @@ contexts:
   optional-modifier:
     - match: \s*(\#)
       captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.access.js.fjsx15
+        1: storage.modifier.js.fjsx15
     - match: (?=\s*\S)
       pop: true
 
   identifier:
+    - meta_scope: meta.function-call.js.fjsx15
     - match: |
         (?xi)
         \s*({{commonIdentifier}})
       captures:
-        1: >-
-          function.call.js.fjsx
-          entity.name.variable.js.fjsx15
+        1: variable.function.js.fjsx15
       pop: true
 
   template-arguments:

@@ -26,9 +26,7 @@ contexts:
   main:
     - match: \s*(class)\b
       captures:
-        1: >-
-          storage.type.js.fjsx15
-          keyword.declaration.class.js.fjsx15
+        1: storage.type.class.js.fjsx15
       set: declaration
 
   declaration:
@@ -42,9 +40,7 @@ contexts:
     # Interfaces.
     - match: \s*(implements)\b
       captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.implement.js.fjsx15
+        1: storage.modifier.js.fjsx15
       push: [
         optional-target-class-or-namespace,
         optional-template-arguments,
@@ -53,9 +49,7 @@ contexts:
     # Extensions.
     - match: \s*(extends)\b
       captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.inherit.js.fjsx15
+        1: storage.modifier.js.fjsx15
       push: [
         optional-template-arguments,
         target-class-or-namespace
@@ -101,7 +95,5 @@ contexts:
         (?xi)
         \s*({{commonIdentifier}})
       captures:
-        1: >-
-          parent.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: entity.other.inherited-class.js.fjsx15
       pop: true

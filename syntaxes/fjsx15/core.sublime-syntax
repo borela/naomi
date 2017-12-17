@@ -28,8 +28,8 @@ contexts:
     - include: symbol-properties
     # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
     - include: constants
+    - include: variables
     - include: functions
-    - include: function-properties
     - include: fundamental-objects
     - include: numbers-and-dates
     - include: text-processing
@@ -56,13 +56,9 @@ contexts:
           | isArray
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
+        1: support.class.builtin.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.js.fjsx15
       set: optional-template-and-arguments
 
   console-functions:
@@ -85,13 +81,9 @@ contexts:
           ))\b
         )
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.variable.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
+        1: support.type.object.console.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.console.js.fjsx15
       set: optional-template-and-arguments
 
   math-constants:
@@ -109,7 +101,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
         3: >-
           support.core.js.fjsx15
           entity.name.constant.js.fjsx15
@@ -147,13 +139,9 @@ contexts:
           | trunc
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
+        1: support.class.builtin.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.js.fjsx15
       set: optional-template-and-arguments
 
   object-functions:
@@ -174,13 +162,9 @@ contexts:
           | setPrototypeOf
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
+        1: support.class.builtin.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.js.fjsx15
       set: optional-template-and-arguments
 
   symbol-functions:
@@ -192,13 +176,9 @@ contexts:
           | keyFor
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
+        1: support.class.builtin.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.js.fjsx15
       set: optional-template-and-arguments
 
   symbol-properties:
@@ -223,7 +203,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
         3: >-
           support.core.js.fjsx15
           entity.name.constant.js.fjsx15
@@ -233,16 +213,30 @@ contexts:
     - match: |
         (?x)\s*
         ((?> false
-          | Infinity
+          | true
+        ))
+      captures:
+        1: constant.language.boolean.js.fjsx15
+      pop: true
+    - match: |
+        (?x)\s*
+        ((?> Infinity
           | NaN
           | null
-          | true
           | undefined
         ))
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.constant.js.fjsx15
+        1: constant.language.js.fjsx15
+      pop: true
+
+  variables:
+    - match: \s*(super)\b
+      captures:
+        1: variable.language.super.js.fjsx15
+      pop: true
+    - match: \s*(this)\b
+      captures:
+        1: variable.language.this.js.fjsx15
       pop: true
 
   functions:
@@ -257,9 +251,7 @@ contexts:
         ))
         (?=\s*\()
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
+        1: support.function.js.fjsx15
       set: optional-template-and-arguments
 
   function-properties:
@@ -267,13 +259,9 @@ contexts:
         (?x)\s*
         (function)(.)(sent)
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.variable.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.variable.js.fjsx15
+        1: support.class.builtin.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.variable.js.fjsx15
       pop: true
 
   fundamental-objects:
@@ -292,9 +280,7 @@ contexts:
           | URIError
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.class.builtin.js.fjsx15
       set: optional-template-and-arguments
 
   numbers-and-dates:
@@ -305,9 +291,7 @@ contexts:
           | Number
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.class.builtin.js.fjsx15
       set: optional-template-and-arguments
 
   text-processing:
@@ -317,9 +301,7 @@ contexts:
           | String
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.class.builtin.js.fjsx15
       set: optional-template-and-arguments
 
   indexed-collections:
@@ -332,9 +314,7 @@ contexts:
           | Uint8ClampedArray
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.class.builtin.js.fjsx15
       set: optional-template-and-arguments
 
   keyed-collections:
@@ -345,9 +325,9 @@ contexts:
           | Weak(?>Map|Set)
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.class.builtin.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.js.fjsx15
       set: optional-template-and-arguments
 
   structured-data:
@@ -358,9 +338,9 @@ contexts:
           | JSON
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.class.builtin.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.js.fjsx15
       set: optional-template-and-arguments
 
   control-abstraction-objects:
@@ -370,9 +350,9 @@ contexts:
           | Promise
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.class.builtin.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.js.fjsx15
       set: optional-template-and-arguments
 
   reflection:
@@ -382,9 +362,9 @@ contexts:
           | Reflect
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.class.builtin.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.js.fjsx15
       set: optional-template-and-arguments
 
   internationalization:
@@ -399,13 +379,9 @@ contexts:
           ))\b
         )?
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.class.builtin.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.js.fjsx15
       set: optional-template-and-arguments
 
   web-assembly:
@@ -424,11 +400,7 @@ contexts:
           ))\b
         )?
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.class.builtin.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.js.fjsx15
       set: optional-template-and-arguments

@@ -81,7 +81,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.variable.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
@@ -193,7 +193,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15
@@ -253,7 +253,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
         3: >-
           support.core.js.fjsx15
           entity.name.function.js.fjsx15

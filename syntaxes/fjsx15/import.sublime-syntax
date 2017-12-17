@@ -37,7 +37,7 @@ contexts:
         (import)\b
         (?=\s*\()
       captures:
-        1: keyword.control.import.js.fjsx15
+        1: keyword.control.import-export.js.fjsx15
       set: header
     # Import the entire module.
     - match: |
@@ -45,7 +45,7 @@ contexts:
         (import)\b
         (?=\s*(?>"|'|`))
       captures:
-        1: keyword.control.import.js.fjsx15
+        1: keyword.control.import-export.js.fjsx15
       set: origin-path
     # Other.
     - match: |
@@ -53,11 +53,11 @@ contexts:
         \s*(import)\b
         (?!\s*\.)
       captures:
-        1: keyword.control.import.js.fjsx15
+        1: keyword.control.import-export.js.fjsx15
       set: targets
 
   header:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement/header.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#expression-only-header
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
@@ -98,7 +98,7 @@ contexts:
           pop: true
 
   sequence:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/typeof.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/typeof.sublime-syntax
     # Type.
     - match: \s*(type)\b
       captures:
@@ -125,7 +125,7 @@ contexts:
       captures:
         1: >-
           import.js.fjsx15
-          entity.name.ambiguous.js.fjsx15
+          variable.other.readwrite.js.fjsx15
       set: optional-alias
 
   types:

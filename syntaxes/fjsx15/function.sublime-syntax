@@ -24,6 +24,7 @@ variables:
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax#function-properties
     - match: |
         (?x)
         (?=\s*
@@ -39,9 +40,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
     - match: \s*(function)
       captures:
-        1: >-
-          storage.type.js.fjsx15
-          keyword.declaration.function.js.fjsx15
+        1: storage.type.function.js.fjsx15
       pop: true
 
   declaration:

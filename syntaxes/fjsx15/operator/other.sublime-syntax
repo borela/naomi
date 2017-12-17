@@ -41,7 +41,7 @@ contexts:
       set: optional-expression
     - match: \s*(\.)(?!\.)
       captures:
-        1: keyword.operator.other.member-access.js.fjsx15
+        1: punctuation.accessor.js.fjsx15
       set: optional-expression
     - match: \s*(\?)
       captures:

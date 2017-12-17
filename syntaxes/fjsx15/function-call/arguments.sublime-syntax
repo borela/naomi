@@ -22,7 +22,7 @@ contexts:
     - match: \s*(\()
       captures:
         1: >-
-          function.call.js.fjsx15
+          meta.function-call.js.fjsx15
           punctuation.definition.function.arguments.begin.js.fjsx15
       set: [ delimiter, optional-expression ]
 
@@ -30,13 +30,13 @@ contexts:
     - match: \s*(\))
       captures:
         1: >-
-          function.call.js.fjsx15
+          meta.function-call.js.fjsx15
           punctuation.definition.function.arguments.end.js.fjsx15
       pop: true
     - match: \s*(,)
       captures:
         1: >-
-          function.call.js.fjsx15
+          meta.function-call.js.fjsx15
           punctuation.definition.function.arguments.js.fjsx15
       push: optional-expression
 

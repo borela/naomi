@@ -29,7 +29,6 @@ contexts:
         1: >-
           flowtype
           storage.type.flowtype
-          keyword.declaration.interface.flowtype
       set: declaration
 
   declaration:
@@ -40,7 +39,6 @@ contexts:
         1: >-
           flowtype
           storage.modifier.flowtype
-          keyword.extension.flowtype
       push: optional-type-expression
     # Template parameters.
     - match: (?=\s*<)

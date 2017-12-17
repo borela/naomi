@@ -80,6 +80,11 @@ contexts:
         1: punctuation.definition.control.header.begin.js.fjsx15
       set: [ condition-end, optional-expression ]
 
+  optional-expression-only-header:
+    - include: expression-only-header
+    - match: (?=\s*\S)
+      pop: true
+
   block:
     - match: \s*({)
       captures:
@@ -100,7 +105,7 @@ contexts:
         \s*(break|continue)\b
         (?:\s+({{commonIdentifier}}))?
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.control.loop.js.fjsx15
         2: entity.name.label.js.fjsx15
       pop: true
 
@@ -113,23 +118,23 @@ contexts:
   do-while:
     - match: \s*(do)\b
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.control.loop.js.fjsx15
       pop: true
     - match: \s*(while)\b
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.control.loop.js.fjsx15
       set: expression-only-header
 
   empty:
     - match: \s*(;)
       captures:
-        1: keyword.other.terminator.js.fjsx15
+        1: punctuation.terminator.js.fjsx15
       pop: true
 
   for:
     - match: \s*(for)
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.control.loop.js.fjsx15
       set: [
         for-header,
         optional-await
@@ -138,11 +143,11 @@ contexts:
   if-else:
     - match: \s*(if)\b
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.control.conditional.js.fjsx15
       set: expression-only-header
     - match: \s*(else)\b
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.control.conditional.js.fjsx15
       pop: true
 
   label:
@@ -158,31 +163,31 @@ contexts:
   return:
     - match: \s*(return)\b
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.control.flow.js.fjsx15
       set: optional-expression
 
   throw:
     - match: \s*(throw)\b
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.control.trycatch.js.fjsx15
       set: optional-expression
 
   try-catch-finally:
     - match: \s*(try)\b
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.control.trycatch.js.fjsx15
       pop: true
     - match: \s*(catch)\b
       captures:
-        1: keyword.other.js.fjsx15
-      set: expression-only-header
+        1: keyword.control.trycatch.js.fjsx15
+      set: optional-expression-only-header
     - match: \s*(finally)\b
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.control.trycatch.js.fjsx15
       pop: true
 
   yield:
     - match: \s*(yield)\b
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.control.flow.js.fjsx15
       set: optional-expression

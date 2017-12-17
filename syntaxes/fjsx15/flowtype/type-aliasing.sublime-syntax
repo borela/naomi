@@ -42,12 +42,10 @@ contexts:
       captures:
         1: >-
           flowtype
-          storage.type.flowtype
-          keyword.other.access.flowtype
+          storage.modifier.flowtype
         2: >-
           flowtype
           storage.type.flowtype
-          keyword.declaration.type-aliasing.flowtype
       set: [
         punctuation,
         identifier

@@ -60,6 +60,7 @@ contexts:
       set: declaration
 
   declaration:
+    - meta_scope: meta.function.declaration.js.fjsx15
     - include: comment-no-pop
     # Body.
     - match: (?=\s*\{)

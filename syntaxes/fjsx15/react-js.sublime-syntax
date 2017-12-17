@@ -57,7 +57,7 @@ contexts:
         1: >-
           support.core.js.fjsx15
           entity.name.variable.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
         3: >-
           support.lib.react-js.fjsx15
           entity.name.variable.js.fjsx15
@@ -100,11 +100,11 @@ contexts:
         1: >-
           support.lib.react-js.fjsx15
           entity.name.variable.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
         3: >-
           support.lib.react-js.fjsx15
           entity.name.variable.js.fjsx15
-        4: keyword.operator.other.member-access.js.fjsx15
+        4: punctuation.accessor.js.fjsx15
         5: >-
           support.lib.react-js.fjsx15
           entity.name.function.js.fjsx15
@@ -136,15 +136,15 @@ contexts:
         1: >-
           support.lib.react-js.fjsx15
           entity.name.variable.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
         3: >-
           support.lib.react-js.fjsx15
           entity.name.variable.js.fjsx15
-        4: keyword.operator.other.member-access.js.fjsx15
+        4: punctuation.accessor.js.fjsx15
         5: >-
           support.lib.react-js.fjsx15
           entity.name.variable.js.fjsx15
-        6: keyword.operator.other.member-access.js.fjsx15
+        6: punctuation.accessor.js.fjsx15
         7: >-
           support.lib.react-js.fjsx15
           entity.name.variable.js.fjsx15
@@ -156,7 +156,7 @@ contexts:
         \s*(\.)\s*
         (isRequired\b)
       captures:
-        1: keyword.operator.other.member-access.js.fjsx15
+        1: punctuation.accessor.js.fjsx15
         2: >-
           support.lib.react-js.fjsx15
           entity.name.variable.js.fjsx15
@@ -177,7 +177,7 @@ contexts:
         1: >-
           support.lib.react-js.fjsx15
           entity.name.function.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
         3: >-
           support.lib.react-js.fjsx15
           entity.name.function.js.fjsx15
@@ -194,7 +194,7 @@ contexts:
         1: >-
           support.core.fjsx15
           entity.name.variable.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
         3: >-
           support.lib.react-js.fjsx15
           entity.name.function.js.fjsx15
@@ -213,7 +213,7 @@ contexts:
         1: >-
           support.lib.react-js.fjsx15
           entity.name.function.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
         3: >-
           support.lib.react-js.fjsx15
           entity.name.function.js.fjsx15

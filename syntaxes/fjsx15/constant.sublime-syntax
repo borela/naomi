@@ -30,10 +30,8 @@ contexts:
         (\#)?
         ([_[:upper:]])\b
       captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.operator.other.access.js.fjsx15
-        2: entity.name.constant.js.fjsx15
+        1: storage.modifier.js.fjsx15
+        2: variable.other.constant.js.fjsx15
       pop: true
     # Two or more characters.
     - match: |
@@ -46,8 +44,6 @@ contexts:
           )
         )
       captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.operator.other.access.js.fjsx15
-        2: entity.name.constant.js.fjsx15
+        1: storage.modifier.js.fjsx15
+        2: variable.other.constant.js.fjsx15
       pop: true

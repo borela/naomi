@@ -42,7 +42,7 @@ contexts:
         1: >-
           support.lib.jest.fjsx15
           entity.name.function.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
         3: >-
           support.lib.jest.fjsx15
           entity.name.function.js.fjsx15
@@ -82,7 +82,7 @@ contexts:
         1: >-
           support.lib.jest.fjsx15
           entity.name.function.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
         3: >-
           support.lib.jest.fjsx15
           entity.name.function.js.fjsx15

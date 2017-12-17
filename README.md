@@ -38,8 +38,7 @@ the ones in Sublime’s core, if you want to try the modified syntaxes check the
 
 **Notes:** The recommended color scheme is [Candyman][candyman] which covers many
 of the scopes and can serve as a starting point if you want to create your own using
-[CSScheme][csscheme]. Please look into the [DESIGN][design] document for a list
-of the available scopes and their structure.
+[CSScheme][csscheme].
 
 ### Sublime Linter
 

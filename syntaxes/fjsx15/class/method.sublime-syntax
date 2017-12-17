@@ -46,6 +46,10 @@ variables:
 
 contexts:
   main:
+    # Method without identifier.
+    - match:  (?=\s*\()
+      set: declaration
+    # Normal method.
     - match: |
         (?xi)
         (?=

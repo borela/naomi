@@ -29,15 +29,15 @@ contexts:
   main:
     - match: \s*(\:{2})
       captures:
-        1: keyword.operator.other.bind.js.fjsx15
+        1: keyword.operator.bind.js.fjsx15
       set: optional-expression
     - match: \s*(\?\?)
       captures:
-        1: keyword.operator.other.nullish-coalescing.js.fjsx15
+        1: keyword.operator.nullish-coalescing.js.fjsx15
       set: optional-expression
     - match: \s*(\?\.)
       captures:
-        1: keyword.operator.other.optional-chain.js.fjsx15
+        1: keyword.operator.optional-chain.js.fjsx15
       set: optional-expression
     - match: \s*(\.)(?!\.)
       captures:
@@ -45,41 +45,17 @@ contexts:
       set: optional-expression
     - match: \s*(\?)
       captures:
-        1: keyword.operator.other.ternary.js.fjsx15
+        1: keyword.operator.ternary.js.fjsx15
       set: [
         ternary-else,
         optional-expression
       ]
 
   optional-expression:
-    # - match: \s*123
-    #   scope: keyword
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
-
-  # comment:
-  #   - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   ternary-else:
     - match: \s*(:)
       captures:
-        1: keyword.operator.other.ternary.js.fjsx15
+        1: keyword.operator.ternary.js.fjsx15
       set: optional-expression
-
-  # member-access:
-  #   - include: comment
-  #   # Jest “not”.
-  #   - match: |
-  #       (?x)
-  #       \s*(not\b)
-  #       (?=\s*\.)
-  #     captures:
-  #       1: >-
-  #         support.lib.jest.fjsx15
-  #         entity.name.function.js.fjsx15
-  #     pop: true
-  #   # Other members.
-  #   - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
-  #   - include: Packages/Naomi/syntaxes/fjsx15/jest.sublime-syntax
-  #   - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
-  #   - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
-  #   - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

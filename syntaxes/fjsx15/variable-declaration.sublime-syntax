@@ -104,6 +104,7 @@ contexts:
     - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 

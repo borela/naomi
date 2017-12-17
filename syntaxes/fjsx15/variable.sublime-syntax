@@ -80,7 +80,6 @@ variables:
 
 contexts:
   main:
-    - include: function-assigned-to-variable
     - include: object
     - include: simple
 
@@ -171,7 +170,7 @@ contexts:
         (?xi)\s*
         (\#)?
         ({{commonIdentifier}})
-        (?=\s*\.)
+        (?=\s*\??\.)
       captures:
         1: storage.modifier.js.fjsx15
         2: variable.other.object.js.fjsx15

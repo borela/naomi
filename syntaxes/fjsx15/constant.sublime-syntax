@@ -24,6 +24,21 @@ variables:
 
 contexts:
   main:
+    - include: object
+    - include: normal
+
+  object:
+    - match: |
+        (?xi)\s*
+        (\#)?
+        ({{constantIdentifier}})
+        (?=\s*\??\.)
+      captures:
+        1: storage.modifier.js.fjsx15
+        2: variable.other.object.constant.js.fjsx15
+      pop: true
+
+  normal:
     # Single character.
     - match: |
         (?x)\s*

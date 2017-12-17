@@ -27,21 +27,25 @@ contexts:
     - match: \s*(\|>)
       captures:
         1: keyword.operator.other.pipe.js.fjsx15
-      set: function-or-expression
+      set: target
 
-  function-or-expression:
+  target:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
     # Await keyword.
     - match: \s*(await)\b
       captures:
         1: keyword.control.js.fjsx15
-      pop: true
+      set: function-identifier
+    # Simple identifier.
+    - include: function-identifier
+
+  function-identifier:
     # Simple function.
     - match: |
         (?xi)\s*
         ({{commonIdentifier}})
       captures:
-        1: entity.name.function.js.fjsx15
+        1: variable.function.js.fjsx15
       pop: true
     # Other expressions.
     - match: (?=\s*\S)

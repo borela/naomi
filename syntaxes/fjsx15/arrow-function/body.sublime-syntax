@@ -33,7 +33,7 @@ contexts:
         1: >-
           arrow.js.fjsx15
           punctuation.definition.function.body.begin.js.fjsx15
-      set: optional-statements-and-expressions
+      set: close-body
     - include: optional-expression
 
   close-body:

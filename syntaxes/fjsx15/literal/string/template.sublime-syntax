@@ -44,50 +44,34 @@ contexts:
         \s*({{commonIdentifier}})?
         \s*(\`)
       captures:
-        0: string.template.js.fjsx15
         1: entity.name.function.tag.js.fjsx15
         2: punctuation.definition.string.begin.js.fjsx15
-      set: escape-a
+      set: string
 
-  escape-a:
-    - meta_content_scope: string.template.js.fjsx15
+  string:
+    - meta_scope: string.template.js.fjsx15
+    # Close.
+    - match: \`
+      scope: punctuation.definition.string.end.js.fjsx15
+      pop: true
+    # Escape.
     - match: (?xi){{escapeSequences}}
-      scope: constant.character.escape.a.js.fjsx15
-      set: escape-b
-    - include: embedded-expression
-    - include: template-end
-
-  escape-b:
-    - meta_content_scope: string.template.js.fjsx15
-    - match: (?xi){{escapeSequences}}
-      scope: constant.character.escape.b.js.fjsx15
-      set: escape-a
-    - include: embedded-expression
-    - include: template-end
-
-  embedded-expression:
-    - match: \$\{
-      scope: keyword.operator.other.embedded-expression.begin.js.fjsx15
+      scope: constant.character.escape.js.fjsx15
+    # # Embedded expression.
+    - match: \s*(\$\{)
+      captures:
+        1: punctuation.definition.template-expression.begin.js.fjsx15
       push: [ close-embedded-expression, embedded-content ]
 
   close-embedded-expression:
-    - match: \}
-      scope: keyword.operator.other.embedded-expression.end.js.fjsx15
+    - clear_scopes: true
+    - meta_scope: >-
+        source.js.fjsx15
+        meta.template-expression.js.fjsx15
+    - match: \s*(})
+      captures:
+        1: punctuation.definition.template-expression.end.js.fjsx15
       pop: true
 
   embedded-content:
-    - clear_scopes: true
-    - meta_scope: source.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
-
-  template-end:
-    - match: \`
-      scope: >-
-        string.template.js.fjsx15
-        punctuation.definition.string.end.js.fjsx15
-      set: optional-property-access
-
-  optional-property-access:
-    - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
-    - match: (?=\S)
-      pop: true

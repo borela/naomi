@@ -251,7 +251,7 @@ contexts:
         (?x)\s*
         (function)(.)(sent)
       captures:
-        1: support.class.builtin.js.fjsx15
+        1: support.type.object.js.fjsx15
         2: punctuation.accessor.js.fjsx15
         3: support.variable.js.fjsx15
       pop: true

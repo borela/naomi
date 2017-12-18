@@ -29,7 +29,7 @@ contexts:
 
   object:
     - match: |
-        (?xi)\s*
+        (?x)\s*
         (\#)?
         ({{constantIdentifier}})
         (?=\s*\??\.)

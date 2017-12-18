@@ -22,7 +22,7 @@ contexts:
     # Technically there’s no “of” operator, but this will simplify for loops.
     - match: \s*(of)\b
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.operator.js.fjsx15
       set: optional-expression
 
   optional-expression:

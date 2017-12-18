@@ -26,7 +26,7 @@ contexts:
   main:
     - match: \s*(\|>)
       captures:
-        1: keyword.operator.other.pipe.js.fjsx15
+        1: keyword.operator.pipe.js.fjsx15
       set: target
 
   target:

@@ -21,7 +21,7 @@ contexts:
   main:
     - match: \s*(\.{3})
       captures:
-        1: keyword.operator.other.spread.js.fjsx15
+        1: keyword.operator.spread.js.fjsx15
       set: optional-expression
 
   optional-expression:

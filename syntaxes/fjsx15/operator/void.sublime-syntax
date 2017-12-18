@@ -23,7 +23,7 @@ contexts:
       captures:
         1: >-
           word.js.fjsx15
-          keyword.operator.other.js.fjsx15
+          keyword.operator.js.fjsx15
       set: optional-expression
 
   optional-expression:

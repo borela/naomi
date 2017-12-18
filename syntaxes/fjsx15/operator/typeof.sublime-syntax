@@ -21,10 +21,9 @@ contexts:
   main:
     - match: \s*(typeof)\b
       captures:
-        1: >-
-          word.js.fjsx15
-          keyword.operator.other.void.js.fjsx15
-      set: optional-expression
+        1: keyword.operator.typeof.js.fjsx15
+      set: type-or-optional-expression
 
-  optional-expression:
+  type-or-optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/new.sublime-syntax#type
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

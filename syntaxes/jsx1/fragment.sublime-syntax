@@ -37,8 +37,7 @@ contexts:
     - match: \s*(</)(>)
       captures:
         1: punctuation.definition.tag.begin.jsx.jsx1
-        2: entity.name.tag.jsx.jsx1
-        3: punctuation.definition.tag.end.jsx.jsx1
+        2: punctuation.definition.tag.end.jsx.jsx1
       pop: true
     # Sub tags.
     - match: ""

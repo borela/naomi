@@ -30,7 +30,7 @@ contexts:
         ({{decoratorIdentifier}})
         (?=\s*\()
       captures:
-        1: entity.name.decorator.js.fjsx15
+        1: variable.annotation.js.fjsx15
       set: [
         possible-chain,
         arguments
@@ -40,7 +40,7 @@ contexts:
         (?xi)\s*
         ({{decoratorIdentifier}})
       captures:
-        1: entity.name.decorator.js.fjsx15
+        1: variable.annotation.js.fjsx15
       set: possible-chain
 
   arguments:

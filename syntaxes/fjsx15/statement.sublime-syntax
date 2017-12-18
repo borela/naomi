@@ -75,7 +75,7 @@ contexts:
   asi-checked-optional-expression:
     - match: (?=\s*\n)
       pop: true
-    - include: optiona-expression
+    - include: optional-expression
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

@@ -99,6 +99,7 @@ contexts:
         )
       set: [
         normal-arrow-function,
+        assignment,
         optional-type,
         function-identifier
       ]
@@ -116,6 +117,7 @@ contexts:
         )
       set: [
         single-parameter-arrow-function,
+        assignment,
         optional-type,
         function-identifier
       ]
@@ -131,6 +133,7 @@ contexts:
         )
       set: [
         function,
+        assignment,
         optional-type,
         function-identifier
       ]
@@ -139,27 +142,40 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   function:
+    - meta_scope: meta.function.declaration.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
+
+  assignment:
+    - match: \s*(=)
+      captures:
+         1: keyword.operator.assignment.js.fjsx15
+      pop: true
 
   function-identifier:
     - match: |
         (?xi)
         \s*({{commonIdentifier}})
       captures:
-        0: meta.function.declaration.js.fjsx15
         1: entity.name.function.js.fjsx15
       pop: true
 
+  arrow-body:
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/body.sublime-syntax
+
   normal-arrow-function:
+    - meta_scope: meta.function.declaration.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/parameters.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/body.sublime-syntax
+    - match: (?=\s*=>)
+      set: arrow-body
 
   single-parameter-arrow-function:
+    - meta_scope: meta.function.declaration.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/simple.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/body.sublime-syntax
+    - match: (?=\s*=>)
+      set: arrow-body
 
   optional-type:
     - include: comment-no-pop

@@ -24,6 +24,9 @@ variables:
 
 contexts:
   main:
+    - include: decorator-identifier
+
+  decorator-identifier:
     # With arguments.
     - match: |
         (?xi)\s*
@@ -52,6 +55,6 @@ contexts:
     - match: \s*(\.)
       captures:
         1: punctuation.definition.decorator.chain.js.fjsx15
-      set: main
+      set: decorator-identifier
     - match: (?=\s*\S)
       pop: true

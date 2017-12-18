@@ -39,13 +39,9 @@ contexts:
           ))\b
         )?
       captures:
-        1: >-
-          support.env.node-js.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.type.object.module.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.env.node-js.js.fjsx15
-          entity.name.variable.js.fjsx15
+        3: support.type.object.module.js.fjsx15
       pop: true
 
   process:
@@ -74,13 +70,9 @@ contexts:
           ))\b
         )
       captures:
-        1: >-
-          support.env.node-js.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.type.object.module.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.env.node-js.js.fjsx15
-          entity.name.class.js.fjsx15
+        3: support.function.js.fjsx15
       set: function-arguments
     # Variables.
     - match: |
@@ -105,13 +97,9 @@ contexts:
           ))\b
         )?
       captures:
-        1: >-
-          support.env.node-js.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.type.object.module.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.env.node-js.js.fjsx15
-          entity.name.class.js.fjsx15
+        3: support.variable.js.fjsx15
       pop: true
 
   functions:

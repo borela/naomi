@@ -78,13 +78,9 @@ contexts:
           ))\b
         )
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.variable.js.fjsx15
+        1: support.type.object.dom.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
+        3: support.function.js.fjsx15
       set: optional-template-and-arguments
 
   document-properties:
@@ -190,13 +186,9 @@ contexts:
           ))\b
         )
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.type.object.dom.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
+        3: support.variable.js.fjsx15
       pop: true
 
   window-functions:
@@ -250,11 +242,7 @@ contexts:
           ))\b
         )
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.type.object.dom.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
+        3: support.function.js.fjsx15
       set: optional-template-and-arguments

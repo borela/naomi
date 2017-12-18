@@ -22,6 +22,10 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  constantIdentifier: |
+    [$_[:upper:]]
+    [$_[:upper:][:digit:]]*
+
   templateArguments: |
     (<
       [^<>]*
@@ -85,12 +89,32 @@ contexts:
         (?x)
         (?=\s*(?>const|let|var)\b)
       set: [
-        variables,
+        optional-type-and-initial-value,
+        variable-or-constant,
         keyword
       ]
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  associated-type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+
+  optional-type-and-initial-value:
+    - meta_scope: meta.declaration.variable.js.fjsx15
+    - match: (?=\s*:)
+      push: associated-type
+    - match: \s*(,)
+      captures:
+        1: punctuation.separator.js.fjsx15
+      push: variable-or-constant
+    - match: (?=\s*=)
+      push: optional-expression
+    - match: (?=\s*\S)
+      pop: true
 
   keyword:
     - match: |
@@ -100,14 +124,66 @@ contexts:
         1: storage.type.js.fjsx15
       pop: true
 
-  variables:
+  variable-or-constant:
     - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
-    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+    - include: constant
+    - include: variable
 
   optional-type:
     - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-associated-type.sublime-syntax
+
+  constant:
+    # Single character.
+    - match: |
+        (?x)\s*
+        (\#)?
+        ([_[:upper:]])\b
+      captures:
+        1: storage.modifier.js.fjsx15
+        2: entity.name.constant.js.fjsx15
+      pop: true
+    # Two or more characters.
+    - match: |
+        (?x)\s*
+        (\#)?
+        (
+          {{constantIdentifier}}
+          (?> \$\B
+            | [_[:upper:][:digit:]]\b
+          )
+        )
+      captures:
+        1: storage.modifier.js.fjsx15
+        2: entity.name.constant.js.fjsx15
+      pop: true
+
+  variable:
+    # Single character.
+    - match: |
+        (?xi)\s*
+        (\#)?
+        ((?> \$\B
+          | [_[:alpha:]]\b
+        ))
+      captures:
+        1: storage.modifier.js.fjsx15
+        2: entity.name.variable.js.fjsx15
+      pop: true
+    # Two or more characters.
+    - match: |
+        (?xi)\s*
+        (\#)?
+        (
+          {{commonIdentifier}}
+          (?> \$\B
+            | [_[:alnum:]]\b
+          )
+        )
+      captures:
+        1: storage.modifier.js.fjsx15
+        2: entity.name.variable.js.fjsx15
+      pop: true

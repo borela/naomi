@@ -72,6 +72,11 @@ contexts:
     - match: ""
       push: optional-statements-and-expressions
 
+  asi-checked-optional-expression:
+    - match: (?=\s*\n)
+      pop: true
+    - include: optiona-expression
+
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
@@ -165,7 +170,7 @@ contexts:
     - match: \s*(return)\b
       captures:
         1: keyword.control.flow.js.fjsx15
-      set: optional-expression
+      set: asi-checked-optional-expression
 
   switch-case:
     - match: \s*(switch)\b
@@ -190,7 +195,7 @@ contexts:
     - match: \s*(throw)\b
       captures:
         1: keyword.control.trycatch.js.fjsx15
-      set: optional-expression
+      set: asi-checked-optional-expression
 
   try-catch-finally:
     - match: \s*(try)\b

@@ -86,11 +86,11 @@ contexts:
       set: optional-tail
 
   globals:
-    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/node-js.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/jest.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/web.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
 
   head:
     - include: comment-no-pop

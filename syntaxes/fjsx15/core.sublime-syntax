@@ -98,13 +98,9 @@ contexts:
           | SQRT(?>1_2|2)
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.class.builtin.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.constant.js.fjsx15
+        3: support.constant.js.fjsx15
       pop: true
 
   math-functions:
@@ -200,13 +196,9 @@ contexts:
           | unscopables
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.class.builtin.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.constant.js.fjsx15
+        3: support.variable.js.fjsx15
       pop: true
 
   constants:

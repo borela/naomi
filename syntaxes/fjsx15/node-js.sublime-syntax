@@ -109,13 +109,7 @@ contexts:
           | require
         ))\b
       captures:
-        1: >-
-          support.env.node-js.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.env.node-js.js.fjsx15
-          entity.name.class.js.fjsx15
+        1: support.function.js.fjsx15
       set: function-arguments
 
   constants:
@@ -125,7 +119,5 @@ contexts:
           | __filename
         ))\b
       captures:
-        1: >-
-          support.env.node-js.js.fjsx15
-          entity.name.constant.js.fjsx15
+        1: support.variable.js.fjsx15
       pop: true

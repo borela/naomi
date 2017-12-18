@@ -38,29 +38,21 @@ contexts:
           | state
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.variable.js.fjsx15
+        1: support.type.object.js.fjsx15
       set: optional-property-type-and-value
 
   instance-variables:
     - match: |
-        (?x)\s*
-        (?:
-          (this)
-          \s*(\.)\s*
-        )
+        (?x)
+        \s*(this)
+        \s*(\.)\s*
         ((?> props
           | state
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.variable.js.fjsx15
+        1: variable.language.this.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.lib.react-js.fjsx15
-          entity.name.variable.js.fjsx15
+        3: support.type.object.js.fjsx15
       pop: true
 
   static-variables:
@@ -73,12 +65,8 @@ contexts:
           | propTypes
         ))\b
       captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.access.js.fjsx15
-        2: >-
-          support.lib.react-js.fjsx15
-          entity.name.variable.js.fjsx15
+        1: storage.modifier.js.fjsx15
+        2: support.type.object.fjsx15
       set: optional-property-type-and-value
 
   proptypes:
@@ -97,17 +85,11 @@ contexts:
         ))
         (?=\s*\()
       captures:
-        1: >-
-          support.lib.react-js.fjsx15
-          entity.name.variable.js.fjsx15
+        1: support.type.object.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.lib.react-js.fjsx15
-          entity.name.variable.js.fjsx15
+        3: support.type.object.fjsx15
         4: punctuation.accessor.js.fjsx15
-        5: >-
-          support.lib.react-js.fjsx15
-          entity.name.function.js.fjsx15
+        5: support.function.fjsx15
       set: arguments
     # Normal.
     - match: |
@@ -133,21 +115,13 @@ contexts:
           (isRequired\b)
         )?
       captures:
-        1: >-
-          support.lib.react-js.fjsx15
-          entity.name.variable.js.fjsx15
+        1: support.type.object.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.lib.react-js.fjsx15
-          entity.name.variable.js.fjsx15
+        3: support.type.object.fjsx15
         4: punctuation.accessor.js.fjsx15
-        5: >-
-          support.lib.react-js.fjsx15
-          entity.name.variable.js.fjsx15
+        5: support.type.object.fjsx15
         6: punctuation.accessor.js.fjsx15
-        7: >-
-          support.lib.react-js.fjsx15
-          entity.name.variable.js.fjsx15
+        7: support.variable.fjsx15
       pop: true
     # “isRequired” after function call.
     - match: |
@@ -157,9 +131,7 @@ contexts:
         (isRequired\b)
       captures:
         1: punctuation.accessor.js.fjsx15
-        2: >-
-          support.lib.react-js.fjsx15
-          entity.name.variable.js.fjsx15
+        2: support.variable.fjsx15
       pop: true
 
   functions:
@@ -174,13 +146,9 @@ contexts:
           | isValidElement
         ))\b
       captures:
-        1: >-
-          support.lib.react-js.fjsx15
-          entity.name.function.js.fjsx15
+        1: support.type.object.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.lib.react-js.fjsx15
-          entity.name.function.js.fjsx15
+        3: support.function.fjsx15
       set: arguments
     # Component functions.
     - match: |
@@ -191,13 +159,9 @@ contexts:
           | setState
         ))\b
       captures:
-        1: >-
-          support.core.fjsx15
-          entity.name.variable.js.fjsx15
+        1: variable.language.this.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.lib.react-js.fjsx15
-          entity.name.function.js.fjsx15
+        3: support.function.fjsx15
       set: arguments
 
   react-dom-functions:
@@ -210,11 +174,7 @@ contexts:
           | unmountComponentAtNode
         ))\b
       captures:
-        1: >-
-          support.lib.react-js.fjsx15
-          entity.name.function.js.fjsx15
+        1: support.type.object.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.lib.react-js.fjsx15
-          entity.name.function.js.fjsx15
+        3: support.function.fjsx15
       set: arguments

@@ -23,7 +23,7 @@ contexts:
     - include: matchers
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/jest-arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
   core:
     - match: |

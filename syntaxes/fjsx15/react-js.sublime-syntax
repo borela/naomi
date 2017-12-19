@@ -26,7 +26,7 @@ contexts:
     - include: react-dom-functions
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/react-js-arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
   optional-property-type-and-value:
     - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax#optional-type-and-value

@@ -54,7 +54,7 @@ contexts:
       pop: true
 
   parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/support/react-js-parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
 
   body:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/support/react-js-body.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax

@@ -121,7 +121,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/class/method/parameters.sublime-syntax
 
   body:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/method/body.sublime-syntax
 
   optional-body:
     - include: body

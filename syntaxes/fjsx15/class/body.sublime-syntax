@@ -22,19 +22,20 @@ contexts:
     - include: comment-no-pop
     - match: \s*(\{)
       captures:
-        1: punctuation.definition.class.body.begin.js.fjsx15
+        1: punctuation.section.block.begin.js.fjsx15
       set: [ body-end, statements-and-expressions ]
 
   body-end:
+    - meta_scope: meta.class.js.fjsx15
     - include: comment-no-pop
     - match: \s*(?>(,)|(;))
       captures:
-        1: punctuation.definition.object.js.fjsx15
-        2: keyword.other.terminator.js.fjsx15
+        1: punctuation.separator.comma.js.fjsx15
+        2: punctuation.terminator.js.fjsx15
       push: statements-and-expressions
     - match: \s*(})
       captures:
-        1: punctuation.definition.class.body.end.js.fjsx15
+        1: punctuation.section.block.end.js.fjsx15
       pop: true
     - match: (?=\s*\S)
       push: statements-and-expressions

@@ -21,13 +21,14 @@ contexts:
   main:
     - match: \s*(\[)
       captures:
-        1: punctuation.other.property.access.begin.js.fjsx15
+        1: punctuation.section.brackets.begin.js.fjsx15
       set: index
 
   index:
+    - meta_scope: meta.item-access.js.fjsx15
     - match: \s*(])
       captures:
-        1: punctuation.other.property.access.end.js.fjsx15a
+        1: punctuation.section.brackets.end.js.fjsx15a
       pop: true
     - match: ""
       push: optional-expression

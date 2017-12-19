@@ -59,6 +59,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax
 
   open-group:
+    - meta_scope: meta.group.js.fjsx15
     - include: comment-no-pop
     # Comma operator.
     - match: (?=\s*,)

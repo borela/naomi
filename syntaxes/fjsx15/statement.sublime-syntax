@@ -94,13 +94,14 @@ contexts:
   block:
     - match: \s*({)
       captures:
-        1: punctuation.definition.block.begin.js.fjsx15
+        1: punctuation.section.block.begin.js.fjsx15
       set: [ block-end, optional-statements-and-expressions ]
 
   block-end:
+    - meta_scope: meta.block.js.fjsx15
     - match: \s*(})
       captures:
-        1: punctuation.definition.block.end.js.fjsx15
+        1: punctuation.section.block.end.js.fjsx15
       pop: true
     - match: ""
       push: optional-statements-and-expressions

@@ -169,7 +169,7 @@ contexts:
         \s*(:)
       captures:
         1: entity.name.function.js.fjsx15
-        2: punctuation.definition.function.js.fjsx15
+        2: punctuation.separator.key-value.js.fjsx15
       pop: true
 
   arrow-function:
@@ -250,7 +250,5 @@ contexts:
   associated-value:
     - match: \s*(:)
       captures:
-        1: >-
-          object.js.fjsx15
-          keyword.operator.other.association.js.fjsx15
+        1: punctuation.separator.key-value.js.fjsx15
       set: optional-expression

@@ -29,18 +29,19 @@ variables:
 contexts:
   main:
     - match: \s*({)
-      scope: punctuation.definition.object.begin.js.fjsx15
+      scope: punctuation.section.block.begin.js.fjsx15
       set: [ delimiters, statements-and-expressions ]
 
   delimiters:
+    - meta_scope: meta.object-literal.js.fjsx15
     - include: comment-no-pop
     - match: \s*(,)
       captures:
-        1: punctuation.definition.object.js.fjsx15
+        1: punctuation.separator.comma.js.fjsx15
       push: statements-and-expressions
     - match: \s*(})
       captures:
-        1: punctuation.definition.object.end.js.fjsx15
+        1: punctuation.section.block.end.js.fjsx15
       pop: true
 
   statements-and-expressions:

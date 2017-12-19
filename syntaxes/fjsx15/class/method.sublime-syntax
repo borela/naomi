@@ -60,7 +60,9 @@ contexts:
       set: declaration
 
   declaration:
-    - meta_scope: meta.function.declaration.js.fjsx15
+    - meta_scope: >-
+        meta.function.declaration.js.fjsx15
+        meta.method.js.fjsx15
     - include: comment-no-pop
     # Body.
     - match: (?=\s*\{)
@@ -115,7 +117,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
 
   parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/method/parameters.sublime-syntax
 
   support-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/support/core-parameters.sublime-syntax

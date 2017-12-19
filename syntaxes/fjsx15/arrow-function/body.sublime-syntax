@@ -21,27 +21,23 @@ contexts:
   main:
     - match: \s*(=>)
       captures:
-        1: >-
-          arrow.js.fjsx15
-          punctuation.definition.function.body.arrow.js.fjsx15
+        0: meta.function.js.fjsx15
+        1: storage.type.function.arrow.js.fjsx15
       set: possible-multi-statement-body
 
   possible-multi-statement-body:
     - include: comment-no-pop
     - match: \s*(\{)
       captures:
-        1: >-
-          arrow.js.fjsx15
-          punctuation.definition.function.body.begin.js.fjsx15
+        1: punctuation.section.block.begin.js.fjsx15
       set: close-body
     - include: optional-expression
 
   close-body:
+    - meta_scope: meta.function.js.fjsx15
     - match: \s*(})
       captures:
-        1: >-
-          arrow.js.fjsx15
-          punctuation.definition.function.body.end.js.fjsx15
+        1: punctuation.section.block.end.js.fjsx15
       set: optional-expression-tail
     - match: ""
       push: optional-statements-and-expressions

@@ -60,7 +60,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
 
   body:
-    - include: comment
+    - include: comment-no-pop
     - match: \s*(\{)
       captures:
         1: >-

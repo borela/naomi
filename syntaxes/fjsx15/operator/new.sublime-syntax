@@ -24,13 +24,24 @@ variables:
 
 contexts:
   main:
+    # new.target
+    - match: |
+        (?xi)
+        \s*(new)
+        \s*(\.)
+        \s*(target)
+      captures:
+        1: keyword.operator.word.new.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.constant.js.fjsx15
+      pop: true
     # Type after new.
     - match: |
         (?xi)\s*
         (new)
         (?=\s+{{commonIdentifier}})
       captures:
-        1: keyword.operator.js.fjsx15
+        1: keyword.operator.word.new.js.fjsx15
       set: [
         optional-template-and-arguments,
         type
@@ -38,7 +49,7 @@ contexts:
     # Any other expression after the keyword.
     - match: (?i)\s*(new)\b
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.operator.word.new.js.fjsx15
       pop: true
 
   type:

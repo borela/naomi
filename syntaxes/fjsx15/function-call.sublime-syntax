@@ -30,7 +30,6 @@ variables:
     >)
 
 contexts:
-  # There’s no need to highlight the arguments, the expression loop will do it.
   main:
     # Template function call.
     - match: |
@@ -43,6 +42,8 @@ contexts:
           \s*\(
         )
       set: [
+        meta-scope,
+        arguments,
         template-arguments,
         identifier,
         optional-modifier
@@ -57,6 +58,8 @@ contexts:
           \s*\(
         )
       set: [
+        meta-scope,
+        arguments,
         identifier,
         optional-modifier
       ]
@@ -79,3 +82,11 @@ contexts:
 
   template-arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+
+  meta-scope:
+    - meta_scope: meta.function-call.js.fjsx15
+    - match: ""
+      pop: true

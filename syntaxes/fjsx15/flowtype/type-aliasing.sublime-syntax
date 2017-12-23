@@ -52,17 +52,29 @@ contexts:
       ]
 
   identifier:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.type.flowtype
+      pop: true
 
   punctuation:
+    - meta_scope: meta.declaration.type.flowtype
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.no-pop.sublime-syntax
     - match: \s*(=)
       captures:
-        1: >-
-          flowtype
-          keyword.operator.other.assignment.flowtype
-      set: optional-type-expression
+        1: keyword.operator.other.assignment.flowtype
+      set: [
+        meta-scope,
+        optional-type-expression
+      ]
 
   optional-type-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-type-expression.sublime-syntax
+
+  meta-scope:
+    - meta_scope: meta.declaration.type.flowtype
+    - match: ""
+      pop: true

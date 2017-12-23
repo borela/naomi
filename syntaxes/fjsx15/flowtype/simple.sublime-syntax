@@ -28,9 +28,7 @@ contexts:
     # Existential.
     - match: \s*(\*)
       captures:
-        1: >-
-          flowtype
-          entity.name.type.existential.flowtype
+        1: entity.name.type.existential.flowtype
       pop: true
     # Predefined types.
     - match: |
@@ -51,16 +49,12 @@ contexts:
           | void
         ))\b
       captures:
-        1: >-
-          flowtype
-          support.type.flowtype
+        1: support.type.flowtype
       pop: true
     # Other types.
     - match: |
         (?xi)\s*
         ({{commonIdentifier}})
       captures:
-        1: >-
-          flowtype
-          variable.other.type.flowtype
+        1: variable.other.type.flowtype
       pop: true

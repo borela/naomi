@@ -19,6 +19,9 @@ scope: ...
 
 contexts:
   main:
+    - include: expression-escape
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
+  expression-escape:
     - match: (?=\s*[,;:)\]}])
       pop: true
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

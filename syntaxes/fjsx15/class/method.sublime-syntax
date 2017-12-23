@@ -115,7 +115,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
 
   support-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/class/method/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
 
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax

@@ -44,9 +44,7 @@ contexts:
       pop: true
 
   declaration:
-    - meta_scope: >-
-        meta.declaration.function.js.fjsx15
-        meta.function.js.fjsx15
+    - meta_scope: meta.function.js.fjsx15
     - include: comment-no-pop
     # Body.
     - match: (?=\s*\{)

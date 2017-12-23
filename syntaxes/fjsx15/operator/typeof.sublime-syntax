@@ -17,13 +17,26 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
-    - match: \s*(typeof)\b
+    # Type after typeof.
+    - match: |
+        (?xi)\s*
+        (typeof)
+        (?=\s+{{commonIdentifier}})
       captures:
-        1: keyword.operator.typeof.js.fjsx15
-      set: type-or-optional-expression
+        1: keyword.operator.word.typeof.js.fjsx15
+      set: type
+    # Any other expression after the keyword.
+    - match: (?i)\s*(typeof)\b
+      captures:
+        1: keyword.operator.word.typeof.js.fjsx15
+      pop: true
 
-  type-or-optional-expression:
+  type:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/new.sublime-syntax#type
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

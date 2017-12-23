@@ -22,13 +22,14 @@ contexts:
     # It is impossible to detect multiline arrow functions, but we can still
     # detect its body as if it were an operator.
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/body.sublime-syntax
-    # Actual operators.
+    # Position dependent operators.
     - include: Packages/Naomi/syntaxes/fjsx15/operator/pipe.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/arithmetic.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/comparison.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/assignment.sublime-syntax
+    # Position independent operators.
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/arithmetic.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/await.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/bitwise.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/comparison.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/delete.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/in.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/operator/logical.sublime-syntax

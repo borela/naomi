@@ -23,4 +23,4 @@ contexts:
       push: parameters
 
   parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax

@@ -72,7 +72,6 @@ contexts:
       pop: true
 
   identifier:
-    - meta_scope: meta.function-call.js.fjsx15
     - match: |
         (?xi)
         \s*({{commonIdentifier}})

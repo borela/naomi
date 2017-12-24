@@ -111,7 +111,10 @@ contexts:
     - meta_scope: >-
         meta.function.parameter.js.fjsx15
         meta.function.parameter.optional.js.fjsx15
-    - match: (?=\s*(?>,|=>))
+    - match: (?=\s*(?>[,;:)\]}]|=>))
       pop: true
-
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+        - match: ""
+          pop: true

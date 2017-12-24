@@ -152,15 +152,25 @@ contexts:
         1: punctuation.definition.object.computed-property.begin.js.fjsx15
       set: [
         associated-value,
+        key-meta-scope,
         computed-property-end,
         optional-expression
       ]
     # String.
     - match: (?=\s*['"`])
-      set: [ associated-value, string ]
+      set: [
+        associated-value,
+        key-meta-scope,
+        string
+      ]
     # Simple property.
     - include: constant
     - include: variable
+
+  key-meta-scope:
+    - meta_scope: meta.object-literal.key.js.fjsx15
+    - match: ""
+      pop: true
 
   method-identifier:
     - match: |
@@ -199,7 +209,7 @@ contexts:
         ([_[:upper:]])\b
       captures:
         1: >-
-          object.property.js.fjsx15
+          meta.object-literal.key.js.fjsx15
           entity.name.constant.js.fjsx15
       set: associated-value
     # Two or more characters.
@@ -213,7 +223,7 @@ contexts:
         )
       captures:
         1: >-
-          object.property.js.fjsx15
+          meta.object-literal.key.js.fjsx15
           entity.name.constant.js.fjsx15
       set: associated-value
 
@@ -226,7 +236,7 @@ contexts:
         ))
       captures:
         1: >-
-          object.property.js.fjsx15
+          meta.object-literal.key.js.fjsx15
           entity.name.variable.js.fjsx15
       set: associated-value
     # Two or more characters.
@@ -240,7 +250,7 @@ contexts:
         )
       captures:
         1: >-
-          object.property.js.fjsx15
+          meta.object-literal.key.js.fjsx15
           entity.name.variable.js.fjsx15
       set: associated-value
 

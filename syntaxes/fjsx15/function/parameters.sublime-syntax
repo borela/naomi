@@ -29,7 +29,7 @@ contexts:
     - include: comment-no-pop
     - match: \s*(\,)
       captures:
-        1: punctuation.separator.js.fjsx15
+        1: punctuation.separator.comma.js.fjsx15
       push: optional-parameter
     - match: \s*(\))
       captures:

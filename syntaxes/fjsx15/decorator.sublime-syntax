@@ -29,11 +29,12 @@ contexts:
         \s*(@)
         (?={{decoratorIdentifier}})
       captures:
-        1: punctuation.definition.annotation.js.fjsx15
+        1: >-
+          meta.annotation.js.fjsx15
+          punctuation.definition.annotation.js.fjsx15
       set: decorator-identifier
 
   decorator-identifier:
-    - meta_scope: meta.annotation.js.fjsx15
     # With arguments.
     - match: |
         (?xi)\s*

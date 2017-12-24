@@ -25,6 +25,7 @@ contexts:
       set: [ delimiters, optional-parameter ]
 
   delimiters:
+    - meta_scope: meta.function.parameters.js.fjsx15
     - include: comment-no-pop
     - match: \s*(\,)
       captures:

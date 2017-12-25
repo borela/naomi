@@ -39,13 +39,9 @@ contexts:
         (?:(.)((?>only|skip)))?
         (?=\s*\()
       captures:
-        1: >-
-          support.lib.jest.fjsx15
-          entity.name.function.js.fjsx15
+        1: support.function.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.lib.jest.fjsx15
-          entity.name.function.js.fjsx15
+        3: support.function.fjsx15
       set: arguments
 
   matchers:
@@ -79,11 +75,7 @@ contexts:
         )\b
         (?=\s*\()
       captures:
-        1: >-
-          support.lib.jest.fjsx15
-          entity.name.function.js.fjsx15
+        1: support.function.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: >-
-          support.lib.jest.fjsx15
-          entity.name.function.js.fjsx15
+        3: support.function.fjsx15
       set: arguments

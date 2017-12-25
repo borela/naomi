@@ -142,7 +142,7 @@
   },{
     "key": "selector",
     "operator": "equal",
-    "operand": "source.jsx - string - comment",
+    "operand": "source.js meta.tag - string - comment",
     "match_all": true
   },{
     "key": "selector",

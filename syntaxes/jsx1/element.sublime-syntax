@@ -28,27 +28,68 @@ variables:
 
 contexts:
   main:
+    # html, head, body.
     - match: |
-        (?x)\s*
-        (<)
-        ({{elementIdentifier}})
+        (?x)
+        \s*(<)
+        \s*(body|head|html)\b
+      captures:
+        1: punctuation.definition.tag.begin.jsx.jsx1
+        2: entity.name.tag.structure.jsx.jsx1
+      set: [
+        meta-scope-structure,
+        closing-tag,
+        open-tag,
+        optional-attribute
+      ]
+    # a.
+    - match: |
+        (?x)
+        \s*(<)
+        \s*(a)\b
+      captures:
+        1: punctuation.definition.tag.begin.jsx.jsx1
+        2: entity.name.tag.a.jsx.jsx1
+      set: [
+        meta-scope-a,
+        closing-tag,
+        open-tag,
+        optional-attribute
+      ]
+    # Other tags.
+    - match: |
+        (?x)
+        \s*(<)
+        \s*({{elementIdentifier}})
       captures:
         1: punctuation.definition.tag.begin.jsx.jsx1
         2: entity.name.tag.jsx.jsx1
       set: [
-        meta-scope,
+        meta-scope-other,
         closing-tag,
         open-tag,
         optional-attribute
       ]
 
-  meta-scope:
-    - meta_scope: meta.tag.other.jsx.jsx1
+  meta-scope-structure:
+    - meta_scope: >-
+        text.html.basic.jsx.jsx1
+        meta.tag.structure.jsx.jsx1
     - match: ""
       pop: true
 
-  escape:
-    - match: (?=\s*\S)
+  meta-scope-a:
+    - meta_scope: >-
+        text.html.basic.jsx.jsx1
+        meta.tag.inline.a.jsx.jsx1
+    - match: ""
+      pop: true
+
+  meta-scope-other:
+    - meta_scope: >-
+        text.html.basic.jsx.jsx1
+        meta.tag.other.jsx.jsx1
+    - match: ""
       pop: true
 
   attribute:
@@ -56,7 +97,8 @@ contexts:
 
   optional-attribute:
     - include: attribute
-    - include: escape
+    - match: (?=\s*\S)
+      pop: true
 
   open-tag:
     # Normal or self closing tag.
@@ -72,7 +114,7 @@ contexts:
 
   closing-tag:
     # It was a self closing tag.
-    - match: (?<=/>)
+    - match: (?<=[^<]/>)
       pop: true
     # Closing tag.
     - match: |
@@ -92,5 +134,4 @@ contexts:
         - include: main
         # Simple text.
         - match: .
-          scope: text.jsx
           pop: true

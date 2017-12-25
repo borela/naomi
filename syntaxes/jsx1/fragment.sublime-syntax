@@ -28,9 +28,22 @@ contexts:
       captures:
         1: punctuation.definition.tag.begin.jsx.jsx1
         2: punctuation.definition.tag.end.jsx.jsx1
-      set: content
+      set: [
+        meta-scope,
+        closing-tag
+      ]
 
-  content:
+  meta-scope:
+    - meta_scope: >-
+        text.html.basic.jsx.jsx1
+        meta.tag.other.fragment.jsx.jsx1
+    - match: ""
+      pop: true
+
+  closing-tag:
+    # It was a self closing tag.
+    - match: (?<=[^<]/>)
+      pop: true
     # Closing tag.
     - match: \s*((</)(>))
       captures:
@@ -38,13 +51,13 @@ contexts:
         2: punctuation.definition.tag.begin.jsx.jsx1
         3: punctuation.definition.tag.end.jsx.jsx1
       pop: true
-    # Sub tags.
-    - match: ""
+    # Other content.
+    - match: (?=\s*\S)
       push:
         - include: main
         - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
         - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
-        - match: |
-            (?x)
-            (?=\s*<)
+        # Simple text.
+        - match: .
           pop: true
+

@@ -29,9 +29,9 @@ variables:
 contexts:
   main:
     - match: |
-        (?x)\s*
-        (<)
-        ({{componentIdentifier}})
+        (?x)
+        \s*(<)
+        \s*({{componentIdentifier}})
       captures:
         1: punctuation.definition.tag.begin.jsx.jsx1
         2: entity.name.tag.component.jsx.jsx1
@@ -43,12 +43,10 @@ contexts:
       ]
 
   meta-scope:
-    - meta_scope: meta.tag.component.jsx.jsx1
+    - meta_scope: >-
+        text.html.basic.jsx.jsx1
+        meta.tag.other.component.jsx.jsx1
     - match: ""
-      pop: true
-
-  escape:
-    - match: (?=\s*\S)
       pop: true
 
   attribute:
@@ -56,7 +54,8 @@ contexts:
 
   optional-attribute:
     - include: attribute
-    - include: escape
+    - match: (?=\s*\S)
+      pop: true
 
   open-tag:
     # Normal or self closing tag.
@@ -72,7 +71,7 @@ contexts:
 
   closing-tag:
     # It was a self closing tag.
-    - match: (?<=/>)
+    - match: (?<=[^<]/>)
       pop: true
     # Closing tag.
     - match: |
@@ -91,5 +90,4 @@ contexts:
         - include: main
         - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
         - match: .
-          scope: text.jsx
           pop: true

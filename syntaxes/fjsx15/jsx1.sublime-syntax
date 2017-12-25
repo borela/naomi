@@ -32,44 +32,32 @@ contexts:
         - match: \s*(\{\s*/\*)(.*)(\*/\s*})
           captures:
             1: >-
-              source.jsx
-              comment.block.js.fjsx15
-              punctuation.definition.comment.begin.js.fjsx15
-            2: >-
-              source.jsx
-              comment.block.js.fjsx15
+              comment.block.jsx.jsx1
+              punctuation.definition.comment.begin.jsx.jsx1
+            2: comment.block.jsx.jsx1
             3: >-
-              source.jsx
-              comment.block.js.fjsx15
-              punctuation.definition.comment.end.js.fjsx15
+              comment.block.jsx.jsx1
+              punctuation.definition.comment.end.jsx.jsx1
         # Embedded javascript.
         - match: \s*(\{)
           captures:
-            1: >-
-              source.jsx.jsx1
-              keyword.operator.other.embedded.js.begin.jsx.jsx1
-          push: embedded-js
+            1: keyword.operator.other.embedded.js.begin.jsx.jsx1
+          push: [
+            embedded-js-close,
+            optional-expression
+          ]
       set: jsx
 
   jsx:
-    - clear_scopes: true
     - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
 
-  embedded-js:
-    - clear_scopes: true
-    - meta_content_scope: source.js.fjsx15
-    - match: (\s*)(})(\n*)
+  embedded-js-close:
+    - match: \s*(})
       captures:
-        1: source.js.fjsx15
-        2: >-
-          source.jsx.jsx1
-          keyword.operator.other.embedded.js.end.jsx.jsx1
-        3: source.jsx.jsx1
+        1: keyword.operator.other.embedded.js.end.jsx.jsx1
       pop: true
-    - match: ""
-      push: optional-statements-and-expressions
 
-  optional-statements-and-expressions:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

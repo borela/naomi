@@ -24,18 +24,28 @@ variables:
 
 contexts:
   main:
+    # Attribute with value.
+    - match: |
+        (?xi)\s*
+        ({{attributeIdentifier}})
+        (?=\s*=)
+      captures:
+        1: entity.other.attribute-name.jsx.jsx1
+      set: optional-value
+    # Simple attribute.
     - match: |
         (?xi)\s*
         ({{attributeIdentifier}})
       captures:
         1: entity.other.attribute-name.jsx.jsx1
-      set: optional-value
+      pop: true
 
   escape:
     - match: (?=\s*\S)
       pop: true
 
   optional-value:
+    - meta_scope: meta.attribute-with-value.jsx.jsx1
     # Normal value.
     - match: \s*(=)
       captures:

@@ -19,8 +19,12 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\s*<)
-      push: parameters
+    - match: \s*(&)
+      captures:
+        1: >-
+          flow
+          keyword.operator.other.intersection.flow
+      set: optional-type-expression
 
-  parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow/template/parameters.sublime-syntax
+  optional-type-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/flow1/optional-type-expression.sublime-syntax

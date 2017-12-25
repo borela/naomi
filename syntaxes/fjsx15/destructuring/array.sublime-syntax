@@ -53,7 +53,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
   optional-type:
-    - include: Packages/Naomi/syntaxes/flow/optional-associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/optional-associated-type.sublime-syntax
 
   optional-variable:
     - match: (?=\s*[,)\]}])

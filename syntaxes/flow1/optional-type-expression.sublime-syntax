@@ -19,12 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(&)
-      captures:
-        1: >-
-          flow
-          keyword.operator.other.intersection.flow
-      set: optional-type-expression
-
-  optional-type-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow/optional-type-expression.sublime-syntax
+    - match: (?=\s*[>,;:)\]}])
+      pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/flow1/type-expression.sublime-syntax

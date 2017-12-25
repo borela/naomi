@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/flow/prolog.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment/eslint.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment/flow.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment/normal.sublime-syntax

@@ -19,6 +19,10 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow/operator/intersection.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flow/operator/nullable.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flow/operator/union.sublime-syntax
+    - match: (?=\s*:)
+      set: associated-type
+    - match: (?=\s*\S)
+      pop: true
+
+  associated-type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flow1/associated-type.sublime-syntax

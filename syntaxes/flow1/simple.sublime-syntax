@@ -24,19 +24,37 @@ variables:
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/fjsx15/flow1/namespace-path.no-pop.sublime-syntax
+    # Existential.
+    - match: \s*(\*)
+      captures:
+        1: entity.name.type.existential.flow
+      pop: true
+    # Predefined types.
+    - match: |
+        (?x)\s*\b
+        ((?> any
+          | Array
+          | [Bb]oolean
+          | false
+          | Function
+          | Generator
+          | mixed
+          | [Nn]umber
+          | null
+          | Object
+          | [Ss]tring
+          | true
+          | undefined
+          | void
+        ))\b
+      captures:
+        1: support.type.flow
+      pop: true
+    # Other types.
     - match: |
         (?xi)\s*
-        ({{commonIdentifier}})(\?)?
-        (?=\s*:)
+        ({{commonIdentifier}})
       captures:
-        1: >-
-          flow
-          function.parameter.js.fjsx15
-          entity.name.variable.js.fjsx15
-        2: >-
-          flow
-          keyword.operator.other.optional.flow
-      set: optional-associated-type
-
-  optional-associated-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow/optional-associated-type.sublime-syntax
+        1: variable.other.type.flow
+      pop: true

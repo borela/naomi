@@ -49,4 +49,4 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   optional-return-type:
-    - include: Packages/Naomi/syntaxes/flow/optional-associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/optional-associated-type.sublime-syntax

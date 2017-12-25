@@ -17,34 +17,8 @@ hidden: true
 
 scope: ...
 
-variables:
-  templateArguments: |
-    (<
-      [^<>]*
-      \g<-1>?
-      [^<>]*
-    >)
-
-  parameters: |
-    (\(
-      [^()]*
-      \g<-1>?
-      [^()]*
-    \))
-
-  flowFunction: |
-    {{parameters}}
-    \s*=>\s*
-
 contexts:
   main:
-    - match: |
-        (?xi)
-        (?=\s*
-          {{templateArguments}}?
-          {{flowFunction}}
-        )
-      push: declaration
-
-  declaration:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow/function.sublime-syntax#declaration
+    - include: Packages/Naomi/syntaxes/fjsx15/flow1/operator/intersection.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flow1/operator/nullable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flow1/operator/union.sublime-syntax

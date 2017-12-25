@@ -65,16 +65,16 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   template-parameters:
-    - include: Packages/Naomi/syntaxes/flow/template/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/template/parameters.sublime-syntax
 
   type-expression:
-    - include: Packages/Naomi/syntaxes/flow/type-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax
 
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/class/body.sublime-syntax
 
   optional-template-arguments:
-    - include: Packages/Naomi/syntaxes/flow/template/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/template/arguments.sublime-syntax
     - match: ""
       pop: true
 
@@ -90,7 +90,7 @@ contexts:
       pop: true
 
   target-class-or-namespace:
-    - include: Packages/Naomi/syntaxes/flow/namespace-path.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/namespace-path.no-pop.sublime-syntax
     - match: |
         (?xi)
         \s*({{commonIdentifier}})

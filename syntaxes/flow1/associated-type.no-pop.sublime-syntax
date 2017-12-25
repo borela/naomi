@@ -19,12 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\|)
-      captures:
-        1: >-
-          flow
-          keyword.operator.other.union.flow
-      set: optional-type-expression
+    - match: (?=\s*:)
+      push: associated-type
 
-  optional-type-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow/optional-type-expression.sublime-syntax
+  associated-type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flow1/associated-type.sublime-syntax

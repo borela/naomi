@@ -19,11 +19,11 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\[)
+    - match: \s*(<)
       captures:
         1: >-
           flow
-          punctuation.definition.array.begin.flow
+          punctuation.definition.template.arguments.begin.flow
       set: [ delimiters, optional-type-expression ]
 
   delimiters:
@@ -31,14 +31,14 @@ contexts:
       captures:
         1: >-
           flow
-          punctuation.definition.array.flow
+          punctuation.definition.template.arguments.flow
       push: optional-type-expression
-    - match: \s*(])
+    - match: \s*(>)
       captures:
         1: >-
           flow
-          punctuation.definition.array.end.flow
+          punctuation.definition.template.arguments.end.flow
       pop: true
 
   optional-type-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow/optional-type-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flow1/optional-type-expression.sublime-syntax

@@ -17,23 +17,26 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
-    - match: \s*(<)
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})(\?)?
+        (?=\s*:)
       captures:
-        1: punctuation.definition.generic.begin.flow
-      set: [ delimiters, optional-type-expression ]
+        1: >-
+          flow
+          function.parameter.js.fjsx15
+          entity.name.variable.js.fjsx15
+        2: >-
+          flow
+          keyword.operator.other.optional.flow
+      set: optional-associated-type
 
-  delimiters:
-    - meta_scope: meta.generic.flow
-    - match: \s*(,)
-      captures:
-        1: punctuation.separator.comma.flow
-      push: optional-type-expression
-    - match: \s*(>)
-      captures:
-        1: punctuation.definition.generic.end.flow
-      pop: true
-
-  optional-type-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow/optional-type-expression.sublime-syntax
+  optional-associated-type:
+    - include: Packages/Naomi/syntaxes/fjsx15/flow1/optional-associated-type.sublime-syntax

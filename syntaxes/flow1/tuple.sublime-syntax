@@ -19,8 +19,26 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\s*:)
-      push: associated-type
+    - match: \s*(\[)
+      captures:
+        1: >-
+          flow
+          punctuation.definition.array.begin.flow
+      set: [ delimiters, optional-type-expression ]
 
-  associated-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow/associated-type.sublime-syntax
+  delimiters:
+    - match: \s*(,)
+      captures:
+        1: >-
+          flow
+          punctuation.definition.array.flow
+      push: optional-type-expression
+    - match: \s*(])
+      captures:
+        1: >-
+          flow
+          punctuation.definition.array.end.flow
+      pop: true
+
+  optional-type-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/flow1/optional-type-expression.sublime-syntax

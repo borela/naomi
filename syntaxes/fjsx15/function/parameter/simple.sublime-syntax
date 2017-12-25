@@ -104,8 +104,8 @@ contexts:
       set: optional-modifier-and-type
 
   optional-modifier-and-type:
-    - include: Packages/Naomi/syntaxes/flow/optional-modifier.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow/optional-associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/optional-modifier.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/optional-associated-type.sublime-syntax
 
   optional-default-value:
     - meta_scope: >-

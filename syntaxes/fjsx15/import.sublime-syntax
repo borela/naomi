@@ -155,7 +155,7 @@ contexts:
       ]
 
   simple-type:
-    - include: Packages/Naomi/syntaxes/flow/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/simple.sublime-syntax
 
   optional-alias:
     - match: |

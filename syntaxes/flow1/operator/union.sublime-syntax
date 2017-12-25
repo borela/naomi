@@ -19,8 +19,12 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\s*\?)
-      push: optional-modifier
+    - match: \s*(\|)
+      captures:
+        1: >-
+          flow
+          keyword.operator.other.union.flow
+      set: optional-type-expression
 
-  optional-modifier:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow/optional-modifier.sublime-syntax
+  optional-type-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/flow1/optional-type-expression.sublime-syntax

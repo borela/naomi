@@ -73,7 +73,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   template-parameters:
-    - include: Packages/Naomi/syntaxes/flow/template/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/template/parameters.sublime-syntax
 
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax

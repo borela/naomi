@@ -51,7 +51,7 @@ contexts:
   associated-type:
     - match: (?=\s*\*\/)
       pop: true
-    - include: Packages/Naomi/syntaxes/flow/associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
 
   statements-and-expressions:
     - match: (?=\s*\*\/)
@@ -61,12 +61,12 @@ contexts:
         - match: \s*(;)
           captures:
             1: keyword.other.terminator.js.fjsx15
-        - include: Packages/Naomi/syntaxes/flow/associated-type.sublime-syntax
-        - include: Packages/Naomi/syntaxes/flow/declare.sublime-syntax
-        - include: Packages/Naomi/syntaxes/flow/interface.sublime-syntax
-        - include: Packages/Naomi/syntaxes/flow/type-aliasing.sublime-syntax
+        - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
+        - include: Packages/Naomi/syntaxes/flow1/declare.sublime-syntax
+        - include: Packages/Naomi/syntaxes/flow1/interface.sublime-syntax
+        - include: Packages/Naomi/syntaxes/flow1/type-aliasing.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
-        - include: Packages/Naomi/syntaxes/flow/indexer.sublime-syntax
+        - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax
         - match: ""

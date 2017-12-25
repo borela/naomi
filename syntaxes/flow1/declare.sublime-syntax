@@ -19,8 +19,14 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\s*<)
-      push: arguments
+    - match: \s*(declare)\b
+      captures:
+        1: >-
+          flow
+          keyword.declaration.js.fjsx15
+      set: possible-module
 
-  arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow/template/arguments.sublime-syntax
+  possible-module:
+    - include: Packages/Naomi/syntaxes/fjsx15/flow1/module.sublime-syntax
+    - match: (?=\s*\S)
+      pop: true

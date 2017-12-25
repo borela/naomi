@@ -19,21 +19,26 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(instanceof)\b
+    - match: \s*(<)
       captures:
         1: >-
-          word.js.fjsx15
-          keyword.operator.relational.js.fjsx15
-      set: optional-type-expression
-    - match: \s*(in)\b
-      captures:
-        1: >-
-          word.js.fjsx15
-          keyword.operator.relational.js.fjsx15
-      set: optional-expression
+          flow
+          punctuation.definition.template.arguments.begin.flow
+      set: [ delimiters, optional-type-expression ]
 
-  optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+  delimiters:
+    - match: \s*(,)
+      captures:
+        1: >-
+          flow
+          punctuation.definition.template.arguments.flow
+      push: optional-type-expression
+    - match: \s*(>)
+      captures:
+        1: >-
+          flow
+          punctuation.definition.template.arguments.end.flow
+      pop: true
 
   optional-type-expression:
-    - include: Packages/Naomi/syntaxes/flow/optional-type-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/flow/optional-type-expression.sublime-syntax

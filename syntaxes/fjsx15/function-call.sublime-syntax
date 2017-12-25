@@ -80,7 +80,7 @@ contexts:
       pop: true
 
   template-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow/template/arguments.sublime-syntax
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax

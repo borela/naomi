@@ -42,9 +42,9 @@ contexts:
 
   statements-and-expressions:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/operator/covariant.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/operator/contravariant.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow/operator/covariant.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow/operator/contravariant.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow/indexer.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax#class-properties
     - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax

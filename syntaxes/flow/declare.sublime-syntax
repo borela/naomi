@@ -19,7 +19,14 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/flow/prolog.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/eslint.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/flow.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/normal.sublime-syntax
+    - match: \s*(declare)\b
+      captures:
+        1: >-
+          flow
+          keyword.declaration.js.fjsx15
+      set: possible-module
+
+  possible-module:
+    - include: Packages/Naomi/syntaxes/fjsx15/flow/module.sublime-syntax
+    - match: (?=\s*\S)
+      pop: true

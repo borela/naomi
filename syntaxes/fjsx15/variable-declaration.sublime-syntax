@@ -101,7 +101,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
   associated-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow/associated-type.sublime-syntax
 
   optional-type-and-initial-value:
     - meta_scope: meta.declaration.variable.js.fjsx15
@@ -134,7 +134,7 @@ contexts:
 
   optional-type:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/optional-associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow/optional-associated-type.sublime-syntax
 
   constant:
     # Single character.

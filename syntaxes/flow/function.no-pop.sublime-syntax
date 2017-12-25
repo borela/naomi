@@ -17,9 +17,34 @@ hidden: true
 
 scope: ...
 
+variables:
+  templateArguments: |
+    (<
+      [^<>]*
+      \g<-1>?
+      [^<>]*
+    >)
+
+  parameters: |
+    (\(
+      [^()]*
+      \g<-1>?
+      [^()]*
+    \))
+
+  flowFunction: |
+    {{parameters}}
+    \s*=>\s*
+
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/flow/prolog.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/eslint.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/flow.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/normal.sublime-syntax
+    - match: |
+        (?xi)
+        (?=\s*
+          {{templateArguments}}?
+          {{flowFunction}}
+        )
+      push: declaration
+
+  declaration:
+    - include: Packages/Naomi/syntaxes/fjsx15/flow/function.sublime-syntax#declaration

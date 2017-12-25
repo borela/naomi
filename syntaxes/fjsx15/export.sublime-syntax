@@ -77,11 +77,11 @@ contexts:
       captures:
         1: keyword.control.import-export.js.fjsx15
         2: >-
-          flowtype
-          storage.modifier.flowtype
+          flow
+          storage.modifier.flow
         3: >-
-          flowtype
-          storage.type.flowtype
+          flow
+          storage.type.flow
         4: punctuation.definition.export.list.begin.js.fjsx15
       set: types
     # Export object literal.
@@ -262,4 +262,4 @@ contexts:
       push: simple-type
 
   simple-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow/simple.sublime-syntax

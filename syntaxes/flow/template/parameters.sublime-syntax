@@ -19,7 +19,21 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/flow/prolog.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/eslint.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/flow.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/normal.sublime-syntax
+    - match: \s*(<)
+      captures:
+        1: punctuation.definition.generic.begin.flow
+      set: [ delimiters, optional-type-expression ]
+
+  delimiters:
+    - meta_scope: meta.generic.flow
+    - match: \s*(,)
+      captures:
+        1: punctuation.separator.comma.flow
+      push: optional-type-expression
+    - match: \s*(>)
+      captures:
+        1: punctuation.definition.generic.end.flow
+      pop: true
+
+  optional-type-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/flow/optional-type-expression.sublime-syntax

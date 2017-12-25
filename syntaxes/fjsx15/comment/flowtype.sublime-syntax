@@ -22,22 +22,22 @@ contexts:
     - match: \s*(/\*\s*::)
       captures:
         1: >-
-          comment.block.flowtype
-          punctuation.definition.comment.begin.flowtype
+          comment.block.flow
+          punctuation.definition.comment.begin.flow
       set: [ block-end, statements-and-expressions ]
     - match: \s*(/\*(?=\s*:))
       captures:
         1: >-
-          comment.block.flowtype
-          punctuation.definition.comment.begin.flowtype
+          comment.block.flow
+          punctuation.definition.comment.begin.flow
       set: [ block-end, associated-type ]
 
   block-end:
-    - meta_scope: comment.block.flowtype
+    - meta_scope: comment.block.flow
     - match: \s*(\*/)
       captures:
         1: >-
-          comment.block.flowtype
+          comment.block.flow
           punctuation.definition.comment.end.js.fjsx15
       set:
         # Used to fix the block comment indentation settings.
@@ -51,7 +51,7 @@ contexts:
   associated-type:
     - match: (?=\s*\*\/)
       pop: true
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow/associated-type.sublime-syntax
 
   statements-and-expressions:
     - match: (?=\s*\*\/)
@@ -61,12 +61,12 @@ contexts:
         - match: \s*(;)
           captures:
             1: keyword.other.terminator.js.fjsx15
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/declare.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/interface.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/type-aliasing.sublime-syntax
+        - include: Packages/Naomi/syntaxes/flow/associated-type.sublime-syntax
+        - include: Packages/Naomi/syntaxes/flow/declare.sublime-syntax
+        - include: Packages/Naomi/syntaxes/flow/interface.sublime-syntax
+        - include: Packages/Naomi/syntaxes/flow/type-aliasing.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/indexer.sublime-syntax
+        - include: Packages/Naomi/syntaxes/flow/indexer.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax
         - match: ""

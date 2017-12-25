@@ -56,7 +56,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
 
   type-cast:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/cast.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow/cast.sublime-syntax
 
   open-group:
     - meta_scope: meta.group.js.fjsx15

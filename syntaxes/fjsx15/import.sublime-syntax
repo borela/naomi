@@ -103,8 +103,8 @@ contexts:
     - match: \s*(type)\b
       captures:
         1: >-
-          storage.type.flowtype
-          keyword.declaration.type-aliasing.flowtype
+          storage.type.flow
+          keyword.declaration.type-aliasing.flow
       set: types
     # Default.
     - match: \s*(default)\b
@@ -155,7 +155,7 @@ contexts:
       ]
 
   simple-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow/simple.sublime-syntax
 
   optional-alias:
     - match: |

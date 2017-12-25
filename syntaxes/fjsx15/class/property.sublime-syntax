@@ -40,8 +40,8 @@ contexts:
     - match: \s*(\?)
       captures:
         1: >-
-          flowtype
-          keyword.operator.other.optional.flowtype
+          flow
+          keyword.operator.other.optional.flow
     # Type.
     - match: (?=\s*:)
       push: associated-type
@@ -53,7 +53,7 @@ contexts:
       pop: true
 
   associated-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow/associated-type.sublime-syntax
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

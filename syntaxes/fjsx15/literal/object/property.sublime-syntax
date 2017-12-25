@@ -152,7 +152,7 @@ contexts:
         1: punctuation.definition.object.computed-property.begin.js.fjsx15
       set: [
         associated-value,
-        key-meta-scope,
+        computed-key-meta-scope,
         computed-property-end,
         optional-expression
       ]
@@ -167,10 +167,19 @@ contexts:
     - include: constant
     - include: variable
 
-  key-meta-scope:
-    - meta_scope: meta.object-literal.key.js.fjsx15
+  escape:
     - match: ""
       pop: true
+
+  key-meta-scope:
+    - meta_scope: meta.object-literal.key.js.fjsx15
+    - include: escape
+
+  computed-key-meta-scope:
+    - meta_scope: >-
+        meta.object-literal.key.js.fjsx15
+        meta.object-literal.key.computed.js.fjsx15
+    - include: escape
 
   method-identifier:
     - match: |
@@ -210,7 +219,7 @@ contexts:
       captures:
         1: >-
           meta.object-literal.key.js.fjsx15
-          entity.name.constant.js.fjsx15
+          variable.other.constant.js.fjsx15
       set: associated-value
     # Two or more characters.
     - match: |
@@ -224,7 +233,7 @@ contexts:
       captures:
         1: >-
           meta.object-literal.key.js.fjsx15
-          entity.name.constant.js.fjsx15
+          variable.other.constant.js.fjsx15
       set: associated-value
 
   variable:
@@ -237,7 +246,7 @@ contexts:
       captures:
         1: >-
           meta.object-literal.key.js.fjsx15
-          entity.name.variable.js.fjsx15
+          variable.other.readwrite.js.fjsx15
       set: associated-value
     # Two or more characters.
     - match: |
@@ -251,7 +260,7 @@ contexts:
       captures:
         1: >-
           meta.object-literal.key.js.fjsx15
-          entity.name.variable.js.fjsx15
+          variable.other.readwrite.js.fjsx15
       set: associated-value
 
   optional-expression:

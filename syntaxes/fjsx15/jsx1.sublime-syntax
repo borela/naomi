@@ -49,6 +49,8 @@ contexts:
       set: [ Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax ]
 
   embedded-js-close:
+    - clear_scopes: true
+    - meta_scope: source.js.fjsx15
     - match: \s*(})
       captures:
         1: keyword.operator.other.embedded.js.end.jsx.jsx1

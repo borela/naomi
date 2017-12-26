@@ -35,7 +35,7 @@ contexts:
       captures:
         1: punctuation.definition.tag.begin.html.jsx.jsx1
         2: entity.name.tag.component.html.jsx.jsx1
-      set: [
+      push: [
         meta-scope,
         closing-tag,
         open-tag,
@@ -47,45 +47,11 @@ contexts:
     - match: ""
       pop: true
 
-  attribute:
-    - include: Packages/Naomi/syntaxes/jsx1/attribute.sublime-syntax
-
-  optional-attribute:
-    - include: attribute
-    - match: (?=\s*\S)
-      pop: true
+  closing-tag:
+    - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax#closing-tag
 
   open-tag:
-    # Normal or self closing tag.
-    - match: \s*(/?>)
-      captures:
-        1: punctuation.definition.tag.end.html.jsx.jsx1
-      pop: true
-    # Attribute.
-    - match: |
-        (?xi)
-        (?=\s*{{attributeIdentifier}})
-      push: attribute
+    - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax#open-tag
 
-  closing-tag:
-    # It was a self closing tag.
-    - match: (?<=[^<]/>)
-      pop: true
-    # Closing tag.
-    - match: |
-        (?x)\s*
-        ((</)(\2)(>))
-      captures:
-        1: meta.tag.close.html.jsx.jsx1
-        2: punctuation.definition.tag.begin.html.jsx.jsx1
-        3: entity.name.tag.component.html.jsx.jsx1
-        4: punctuation.definition.tag.end.html.jsx.jsx1
-      pop: true
-    # Other content.
-    - match: (?=\s*\S)
-      push:
-        - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
-        - include: main
-        - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
-        - match: .
-          pop: true
+  optional-attribute:
+    - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax#optional-attribute

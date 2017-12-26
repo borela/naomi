@@ -46,12 +46,7 @@ contexts:
             embedded-js-close,
             optional-expression
           ]
-      set: jsx
-
-  jsx:
-    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
-    - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
+      set: [ Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax ]
 
   embedded-js-close:
     - match: \s*(})

@@ -50,7 +50,7 @@ contexts:
     - match: \s*(=)
       captures:
         1: punctuation.separator.key-value.html.jsx.jsx1
-      set: value
+      push: value
     # Anything else.
     - include: escape
 

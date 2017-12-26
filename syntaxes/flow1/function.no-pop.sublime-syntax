@@ -47,4 +47,4 @@ contexts:
       push: declaration
 
   declaration:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/function.sublime-syntax#declaration
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#declaration

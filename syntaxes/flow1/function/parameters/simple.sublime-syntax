@@ -39,4 +39,4 @@ contexts:
       set: optional-associated-type
 
   optional-associated-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/optional-associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/optional-associated-type.sublime-syntax

@@ -54,10 +54,10 @@ contexts:
           entity.name.interface.flow
 
   optional-type-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/optional-type-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax
 
   template-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/template/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/template/parameters.sublime-syntax
 
   body:
     - include: comment-no-pop
@@ -88,9 +88,9 @@ contexts:
     - match: (?=\s*})
       pop: true
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/operator/covariant.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/operator/contravariant.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/indexer.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/operator/covariant.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/operator/contravariant.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
 

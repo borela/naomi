@@ -23,4 +23,4 @@ contexts:
       push: optional-modifier
 
   optional-modifier:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/optional-modifier.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/optional-modifier.sublime-syntax

@@ -58,10 +58,10 @@ contexts:
       ]
 
   template-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/template/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/template/arguments.sublime-syntax
 
   parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/function/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/function/parameters.sublime-syntax
 
   return:
     - match: \s*(=>)
@@ -72,5 +72,5 @@ contexts:
       set: optional-type-expression
 
   optional-type-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/optional-type-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax
 

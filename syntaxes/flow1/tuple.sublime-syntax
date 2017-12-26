@@ -41,4 +41,4 @@ contexts:
       pop: true
 
   optional-type-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/optional-type-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax

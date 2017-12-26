@@ -23,4 +23,4 @@ contexts:
       push: parameters
 
   parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/template/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/template/parameters.sublime-syntax

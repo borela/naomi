@@ -160,7 +160,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
   associated-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flow1/associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

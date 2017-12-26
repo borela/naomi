@@ -30,6 +30,7 @@ contexts:
     - include: constants
     - include: variables
     - include: functions
+    - include: import-properties
     - include: fundamental-objects
     - include: numbers-and-dates
     - include: text-processing
@@ -254,6 +255,16 @@ contexts:
         1: support.type.object.js.fjsx15
         2: punctuation.accessor.js.fjsx15
         3: support.variable.js.fjsx15
+      pop: true
+
+  import-properties:
+    - match: |
+        (?x)\s*
+        (import)(.)(meta)\b
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.type.object.js.fjsx15
       pop: true
 
   fundamental-objects:

@@ -31,6 +31,7 @@ variables:
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax#import-properties
     # Dynamic import.
     - match: |
         (?x)\s*

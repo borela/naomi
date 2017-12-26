@@ -30,14 +30,14 @@ contexts:
         ({{attributeIdentifier}})
         (?=\s*=)
       captures:
-        1: entity.other.attribute-name.jsx.jsx1
+        1: entity.other.attribute-name.html.jsx.jsx1
       set: optional-value
     # Simple attribute.
     - match: |
         (?xi)\s*
         ({{attributeIdentifier}})
       captures:
-        1: entity.other.attribute-name.jsx.jsx1
+        1: entity.other.attribute-name.html.jsx.jsx1
       pop: true
 
   escape:
@@ -45,11 +45,11 @@ contexts:
       pop: true
 
   optional-value:
-    - meta_scope: meta.attribute-with-value.jsx.jsx1
+    - meta_scope: meta.attribute-with-value.html.jsx.jsx1
     # Normal value.
     - match: \s*(=)
       captures:
-        1: punctuation.separator.key-value.jsx.jsx1
+        1: punctuation.separator.key-value.html.jsx.jsx1
       set: value
     # Anything else.
     - include: escape

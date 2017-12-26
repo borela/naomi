@@ -34,8 +34,8 @@ contexts:
         \s*(<)
         \s*(body|head|html)\b
       captures:
-        1: punctuation.definition.tag.begin.jsx.jsx1
-        2: entity.name.tag.structure.jsx.jsx1
+        1: punctuation.definition.tag.begin.html.jsx.jsx1
+        2: entity.name.tag.structure.html.jsx.jsx1
       set: [
         meta-scope-structure,
         closing-tag,
@@ -48,8 +48,8 @@ contexts:
         \s*(<)
         \s*(a)\b
       captures:
-        1: punctuation.definition.tag.begin.jsx.jsx1
-        2: entity.name.tag.a.jsx.jsx1
+        1: punctuation.definition.tag.begin.html.jsx.jsx1
+        2: entity.name.tag.a.html.jsx.jsx1
       set: [
         meta-scope-a,
         closing-tag,
@@ -62,8 +62,8 @@ contexts:
         \s*(<)
         \s*({{elementIdentifier}})
       captures:
-        1: punctuation.definition.tag.begin.jsx.jsx1
-        2: entity.name.tag.jsx.jsx1
+        1: punctuation.definition.tag.begin.html.jsx.jsx1
+        2: entity.name.tag.html.jsx.jsx1
       set: [
         meta-scope-other,
         closing-tag,
@@ -74,21 +74,21 @@ contexts:
   meta-scope-structure:
     - meta_scope: >-
         text.html.basic.jsx.jsx1
-        meta.tag.structure.jsx.jsx1
+        meta.tag.structure.html.jsx.jsx1
     - match: ""
       pop: true
 
   meta-scope-a:
     - meta_scope: >-
         text.html.basic.jsx.jsx1
-        meta.tag.inline.a.jsx.jsx1
+        meta.tag.inline.a.html.jsx.jsx1
     - match: ""
       pop: true
 
   meta-scope-other:
     - meta_scope: >-
         text.html.basic.jsx.jsx1
-        meta.tag.other.jsx.jsx1
+        meta.tag.other.html.jsx.jsx1
     - match: ""
       pop: true
 
@@ -104,7 +104,7 @@ contexts:
     # Normal or self closing tag.
     - match: \s*(/?>)
       captures:
-        1: punctuation.definition.tag.end.jsx.jsx1
+        1: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
     # Attribute.
     - match: |
@@ -121,10 +121,10 @@ contexts:
         (?x)\s*
         ((</)(\2)(>))
       captures:
-        1: meta.tag.close.jsx.jsx1
-        2: punctuation.definition.tag.begin.jsx.jsx1
-        3: entity.name.tag.jsx.jsx1
-        4: punctuation.definition.tag.end.jsx.jsx1
+        1: meta.tag.close.html.jsx.jsx1
+        2: punctuation.definition.tag.begin.html.jsx.jsx1
+        3: entity.name.tag.html.jsx.jsx1
+        4: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
     # Other content.
     - match: (?=\s*\S)

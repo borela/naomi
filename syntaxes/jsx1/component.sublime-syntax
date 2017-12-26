@@ -33,8 +33,8 @@ contexts:
         \s*(<)
         \s*({{componentIdentifier}})
       captures:
-        1: punctuation.definition.tag.begin.jsx.jsx1
-        2: entity.name.tag.component.jsx.jsx1
+        1: punctuation.definition.tag.begin.html.jsx.jsx1
+        2: entity.name.tag.component.html.jsx.jsx1
       set: [
         meta-scope,
         closing-tag,
@@ -45,7 +45,7 @@ contexts:
   meta-scope:
     - meta_scope: >-
         text.html.basic.jsx.jsx1
-        meta.tag.other.component.jsx.jsx1
+        meta.tag.other.component.html.jsx.jsx1
     - match: ""
       pop: true
 
@@ -61,7 +61,7 @@ contexts:
     # Normal or self closing tag.
     - match: \s*(/?>)
       captures:
-        1: punctuation.definition.tag.end.jsx.jsx1
+        1: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
     # Attribute.
     - match: |
@@ -78,10 +78,10 @@ contexts:
         (?x)\s*
         ((</)(\2)(>))
       captures:
-        1: meta.tag.close.jsx.jsx1
-        2: punctuation.definition.tag.begin.jsx.jsx1
-        3: entity.name.tag.component.jsx.jsx1
-        4: punctuation.definition.tag.end.jsx.jsx1
+        1: meta.tag.close.html.jsx.jsx1
+        2: punctuation.definition.tag.begin.html.jsx.jsx1
+        3: entity.name.tag.component.html.jsx.jsx1
+        4: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
     # Other content.
     - match: (?=\s*\S)

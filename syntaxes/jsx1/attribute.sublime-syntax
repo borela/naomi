@@ -24,6 +24,20 @@ variables:
 
 contexts:
   main:
+    # className.
+    - match: |
+        (?xi)\s*
+        (className)
+      captures:
+        1: entity.other.attribute-name.class.html.jsx.jsx1
+      set: optional-value
+    # style.
+    - match: |
+        (?xi)\s*
+        (style)
+      captures:
+        1: entity.other.attribute-name.style.html.jsx.jsx1
+      set: optional-value
     # Attribute with value.
     - match: |
         (?xi)\s*

@@ -56,6 +56,34 @@ contexts:
         open-tag,
         optional-attribute
       ]
+    # div.
+    - match: |
+        (?x)
+        \s*(<)
+        \s*(div)\b
+      captures:
+        1: punctuation.definition.tag.begin.html.jsx.jsx1
+        2: entity.name.tag.block.any.html.jsx.jsx1
+      set: [
+        meta-scope-block-any,
+        closing-tag,
+        open-tag,
+        optional-attribute
+      ]
+    # span.
+    - match: |
+        (?x)
+        \s*(<)
+        \s*(span)\b
+      captures:
+        1: punctuation.definition.tag.begin.html.jsx.jsx1
+        2: entity.name.tag.inline.any.html.jsx.jsx1
+      set: [
+        meta-scope-inline-any,
+        closing-tag,
+        open-tag,
+        optional-attribute
+      ]
     # Other tags.
     - match: |
         (?x)
@@ -78,6 +106,16 @@ contexts:
 
   meta-scope-a:
     - meta_scope: meta.tag.inline.a.html.jsx.jsx1
+    - match: ""
+      pop: true
+
+  meta-scope-block-any:
+    - meta_scope: meta.tag.block.any.html.jsx.jsx1
+    - match: ""
+      pop: true
+
+  meta-scope-inline-any:
+    - meta_scope: meta.tag.inline.any.html.jsx.jsx1
     - match: ""
       pop: true
 
@@ -104,6 +142,8 @@ contexts:
     # Content.
     - match: (?=\s*\S)
       push:
+        - clear_scopes: true
+        - meta_scope: text.html.basic.jsx.jsx1
         - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
         - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
         - include: main

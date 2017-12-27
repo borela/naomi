@@ -30,7 +30,8 @@ contexts:
         2: punctuation.definition.tag.end.jsx.jsx1
       set: [
         meta-scope,
-        closing-tag
+        closing-tag,
+        optional-content
       ]
 
   meta-scope:
@@ -38,18 +39,11 @@ contexts:
     - match: ""
       pop: true
 
-  closing-tag:
-    # It was a self closing tag.
-    - match: (?<=[^<]/>)
-      pop: true
+  optional-content:
     # Closing tag.
-    - match: \s*((</)(>))
-      captures:
-        1: meta.tag.close.jsx.jsx1
-        2: punctuation.definition.tag.begin.jsx.jsx1
-        3: punctuation.definition.tag.end.jsx.jsx1
+    - match: (?=\s*</)
       pop: true
-    # Other content.
+    # Content.
     - match: (?=\s*\S)
       push:
         - include: main
@@ -59,3 +53,11 @@ contexts:
         - match: .
           pop: true
 
+  closing-tag:
+    # Closing tag.
+    - match: \s*((</)(>))
+      captures:
+        1: meta.tag.close.jsx.jsx1
+        2: punctuation.definition.tag.begin.jsx.jsx1
+        3: punctuation.definition.tag.end.jsx.jsx1
+      pop: true

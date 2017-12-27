@@ -95,32 +95,13 @@ contexts:
       pop: true
 
   open-tag:
-    # Normal or self closing tag.
-    - match: \s*(/?>)
-      captures:
-        1: punctuation.definition.tag.end.html.jsx.jsx1
-      pop: true
-    # Attribute.
-    - match: |
-        (?xi)
-        (?=\s*{{attributeIdentifier}})
-      push: attribute
+    - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax#open-tag
 
-  closing-tag:
-    # It was a self closing tag.
-    - match: (?<=[^<]/>)
-      pop: true
+  optional-content:
     # Closing tag.
-    - match: |
-        (?x)\s*
-        ((</)(\2)(>))
-      captures:
-        1: meta.tag.close.html.jsx.jsx1
-        2: punctuation.definition.tag.begin.html.jsx.jsx1
-        3: entity.name.tag.html.jsx.jsx1
-        4: punctuation.definition.tag.end.html.jsx.jsx1
+    - match: (?=\s*</)
       pop: true
-    # Other content.
+    # Content.
     - match: (?=\s*\S)
       push:
         - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
@@ -129,3 +110,6 @@ contexts:
         # Simple text.
         - match: .
           pop: true
+
+  closing-tag:
+    - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax#closing-tag

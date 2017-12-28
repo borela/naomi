@@ -29,13 +29,16 @@ The “Packages” directory is located at:
 
 ## Usage
 
+**Support for external color schemes is being added as I am syncing the scopes with
+the ones in Sublime’s core, if you want to try the modified syntaxes check the
+[pull requests section](https://github.com/borela/naomi/pulls).**
+
 1. Go to the menu `View / Syntax / Naomi / ...` to select the new syntax.
 2. Select a color scheme provided in `Preferences / Color Scheme / Naomi`.
 
 **Notes:** The recommended color scheme is [Candyman][candyman] which covers many
 of the scopes and can serve as a starting point if you want to create your own using
-[CSScheme][csscheme]. Please look into the [DESIGN][design] document for a list
-of the available scopes and their structure.
+[CSScheme][csscheme].
 
 ### Sublime Linter
 

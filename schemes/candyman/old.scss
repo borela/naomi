@@ -10,18 +10,12 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@name 'Candyman';
-@import 'schemes/candyman/palette';
-
-// Old scopes.
-@import 'schemes/candyman/old';
-
-// New scopes.
-@import 'schemes/candyman/annotation';
-@import 'schemes/candyman/class';
-@import 'schemes/candyman/constant';
-@import 'schemes/candyman/function';
-@import 'schemes/candyman/number';
-@import 'schemes/candyman/punctuation';
-@import 'schemes/candyman/type';
-@import 'schemes/candyman/variable';
+@import 'old/html';
+@import 'old/js';
+@import 'old/json';
+@import 'old/jsx';
+@import 'old/main';
+@import 'old/markup';
+@import 'old/md';
+@import 'old/mql';
+@import 'old/scss';

@@ -37,7 +37,7 @@ contexts:
     # Open new expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
-        1: punctuation.definition.expression.group.begin.js.fjsx15
+        1: punctuation.section.group.begin.js.fjsx15
       set: open-group
     # Start of the expression.
     - match: "{{expressionBegin}}"
@@ -72,7 +72,7 @@ contexts:
     # Open new expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
-        1: punctuation.definition.expression.group.begin.js.fjsx15
+        1: punctuation.section.group.begin.js.fjsx15
       push: open-group
     # Close the current expression group.
     - include: close-group
@@ -83,7 +83,7 @@ contexts:
   close-group:
     - match: \s*(\))
       captures:
-        1: punctuation.definition.expression.group.end.js.fjsx15
+        1: punctuation.section.group.end.js.fjsx15
       set: optional-tail
 
   globals:

@@ -13,12 +13,15 @@
 @name 'Candyman';
 @import 'schemes/candyman/palette';
 
-@import 'schemes/candyman/html';
-@import 'schemes/candyman/js';
-@import 'schemes/candyman/json';
-@import 'schemes/candyman/jsx';
-@import 'schemes/candyman/main';
-@import 'schemes/candyman/markup';
-@import 'schemes/candyman/md';
-@import 'schemes/candyman/mql';
-@import 'schemes/candyman/scss';
+// Old scopes.
+@import 'schemes/candyman/old';
+
+// New scopes.
+@import 'schemes/candyman/annotation';
+@import 'schemes/candyman/class';
+@import 'schemes/candyman/constant';
+@import 'schemes/candyman/function';
+@import 'schemes/candyman/number';
+@import 'schemes/candyman/punctuation';
+@import 'schemes/candyman/type';
+@import 'schemes/candyman/variable';

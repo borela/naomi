@@ -31,7 +31,7 @@ contexts:
         \s*(\.)
         \s*(target)
       captures:
-        1: keyword.operator.word.new.js.fjsx15
+        1: support.type.object.js.fjsx15
         2: punctuation.accessor.js.fjsx15
         3: support.constant.js.fjsx15
       pop: true

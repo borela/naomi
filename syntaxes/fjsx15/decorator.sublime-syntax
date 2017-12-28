@@ -53,7 +53,10 @@ contexts:
         ({{decoratorIdentifier}})
       captures:
         1: variable.annotation.js.fjsx15
-      set: possible-chain
+      set: [
+        possible-chain,
+        meta-scope
+      ]
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax

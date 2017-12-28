@@ -44,12 +44,12 @@ contexts:
     - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/flow1/operator/covariant.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/flow1/operator/contravariant.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax#class-properties
     - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
     - match: (?=\s*\S)
       pop: true

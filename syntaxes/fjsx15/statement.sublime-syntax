@@ -50,7 +50,7 @@ contexts:
   condition-end:
     - match: \s*(\))
       captures:
-        1: punctuation.definition.control.header.end.js.fjsx15
+        1: punctuation.section.group.end.js.fjsx15
       pop: true
 
   optional-await:
@@ -58,13 +58,17 @@ contexts:
     - match: (?=\s*\S)
       pop: true
 
+  optional-block-statement-or-expression:
+    - include: block
+    - include: optional-statements-and-expressions
+
   optional-statements-and-expressions:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
 
   for-header:
     - match: \s*(\()
       captures:
-        1: punctuation.definition.control.header.begin.js.fjsx15
+        1: punctuation.section.group.begin.js.fjsx15
       set: for-header-end
 
   for-header-end:
@@ -83,7 +87,7 @@ contexts:
   expression-only-header:
     - match: \s*(\()
       captures:
-        1: punctuation.definition.control.header.begin.js.fjsx15
+        1: punctuation.section.group.begin.js.fjsx15
       set: [ condition-end, optional-expression ]
 
   optional-expression-only-header:
@@ -94,14 +98,18 @@ contexts:
   block:
     - match: \s*({)
       captures:
-        1: punctuation.section.block.begin.js.fjsx15
+        1: >-
+          meta.block.js.fjsx15
+          punctuation.section.block.begin.js.fjsx15
       set: [ block-end, optional-statements-and-expressions ]
 
   block-end:
-    - meta_scope: meta.block.js.fjsx15
+    - meta_content_scope: meta.block.js.fjsx15
     - match: \s*(})
       captures:
-        1: punctuation.section.block.end.js.fjsx15
+        1: >-
+          meta.block.js.fjsx15
+          punctuation.section.block.end.js.fjsx15
       pop: true
     - match: ""
       push: optional-statements-and-expressions
@@ -151,10 +159,21 @@ contexts:
     - match: \s*(if)\b
       captures:
         1: keyword.control.conditional.js.fjsx15
-      set: expression-only-header
+      set: [
+        meta-conditional,
+        optional-block-statement-or-expression,
+        expression-only-header
+      ]
     - match: \s*(else)\b
       captures:
         1: keyword.control.conditional.js.fjsx15
+      set: [
+        optional-block-statement-or-expression
+      ]
+
+  meta-conditional:
+    - meta_scope: meta.conditional.js.fjsx15
+    - match: ""
       pop: true
 
   label:

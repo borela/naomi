@@ -49,8 +49,8 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
     - match: (?=\s*\S)
       pop: true
 

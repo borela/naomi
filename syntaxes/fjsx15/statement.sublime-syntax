@@ -47,48 +47,68 @@ contexts:
     - include: try-catch-finally
     - include: yield
 
-  condition-end:
-    - match: \s*(\))
-      captures:
-        1: punctuation.section.group.end.js.fjsx15
-      pop: true
+  optional-statements-and-expressions:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
+
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
   optional-await:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/await.sublime-syntax#just-pop
     - match: (?=\s*\S)
       pop: true
 
-  optional-block-statement-or-expression:
+  optional-block-or-statement-or-expression:
     - include: block
     - include: optional-statements-and-expressions
-
-  optional-statements-and-expressions:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
-
-  for-header:
-    - match: \s*(\()
-      captures:
-        1: punctuation.section.group.begin.js.fjsx15
-      set: for-header-end
-
-  for-header-end:
-    - include: condition-end
-    - match: ""
-      push: optional-statements-and-expressions
 
   asi-checked-optional-expression:
     - match: (?=\s*\n)
       pop: true
     - include: optional-expression
 
-  optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+  header-end:
+    - match: \s*(\))
+      captures:
+        1: punctuation.section.group.end.js.fjsx15
+      pop: true
 
   expression-only-header:
     - match: \s*(\()
       captures:
+        1: >-
+          meta.group.js.fjsx15
+          punctuation.section.group.begin.js.fjsx15
+      set: [
+        meta-group,
+        header-end,
+        optional-expression
+      ]
+
+  statements-and-expressions-header:
+    - match: \s*(\()
+      captures:
         1: punctuation.section.group.begin.js.fjsx15
-      set: [ condition-end, optional-expression ]
+      set: [
+        meta-group,
+        header-end,
+        optional-statements-and-expressions
+      ]
+
+  meta-group:
+    - meta_content_scope: meta.group.js.fjsx15
+    - match: ""
+      pop: true
+
+  meta-conditional:
+    - meta_content_scope: meta.conditional.js.fjsx15
+    - match: ""
+      pop: true
+
+  meta-switch:
+    - meta_content_scope: meta.switch.js.fjsx15
+    - match: ""
+      pop: true
 
   optional-expression-only-header:
     - include: expression-only-header
@@ -101,7 +121,10 @@ contexts:
         1: >-
           meta.block.js.fjsx15
           punctuation.section.block.begin.js.fjsx15
-      set: [ block-end, optional-statements-and-expressions ]
+      set: [
+        block-end,
+        optional-statements-and-expressions
+      ]
 
   block-end:
     - meta_content_scope: meta.block.js.fjsx15
@@ -151,30 +174,42 @@ contexts:
       captures:
         1: keyword.control.loop.js.fjsx15
       set: [
-        for-header,
+        statements-and-expressions-header,
         optional-await
       ]
 
   if-else:
     - match: \s*(if)\b
       captures:
-        1: keyword.control.conditional.js.fjsx15
+        1: >-
+          meta.conditional.js.fjsx15
+          keyword.control.conditional.js.fjsx15
       set: [
         meta-conditional,
-        optional-block-statement-or-expression,
+        optional-block-or-statement-or-expression,
         expression-only-header
       ]
     - match: \s*(else)\b
       captures:
+        0: meta.conditional.js.fjsx15
         1: keyword.control.conditional.js.fjsx15
       set: [
-        optional-block-statement-or-expression
+        meta-conditional,
+        else-body,
       ]
 
-  meta-conditional:
-    - meta_scope: meta.conditional.js.fjsx15
-    - match: ""
-      pop: true
+  else-body:
+    - include: no-meta-if
+    - include: optional-block-or-statement-or-expression
+
+  no-meta-if:
+    - match: \s*(if)\b
+      captures:
+        1: keyword.control.conditional.js.fjsx15
+      set: [
+        optional-block-or-statement-or-expression,
+        expression-only-header
+      ]
 
   label:
     - match: |
@@ -196,7 +231,10 @@ contexts:
     - match: \s*(switch)\b
       captures:
         1: keyword.control.switch.js.fjsx15
-      set: expression-only-header
+      set: [
+        meta-switch,
+        expression-only-header
+      ]
     - match: \s*(case)\b
       captures:
         1: keyword.control.switch.js.fjsx15

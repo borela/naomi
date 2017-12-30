@@ -17,12 +17,30 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
     - match: \s*(<)
       captures:
         1: punctuation.definition.generic.begin.flow
-      set: [ delimiters, optional-type-expression ]
+      set: [ delimiters, generic-identifier ]
+
+  generic-identifier:
+    - match: |
+        (?xi)
+        \s*({{commonIdentifier}})
+      captures:
+        1: variable.other.type.flow
+      set: optional-refinement
+
+  optional-refinement:
+    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
+    - match: (?=\s*\S)
+      pop: true
 
   delimiters:
     - meta_scope: meta.generic.flow

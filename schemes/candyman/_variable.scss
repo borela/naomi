@@ -10,18 +10,18 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@name 'Candyman';
-@import 'schemes/candyman/palette';
+.variable.other.readwrite,
+.entity.name.variable,
+.punctuation.definition.variable {
+  foreground: $gray-400;
+  fontStyle: none;
+}
 
-// Old scopes.
-@import 'schemes/candyman/old';
+.support.variable {
+  foreground: $deep-orange-a100;
+}
 
-// New scopes.
-@import 'schemes/candyman/annotation';
-@import 'schemes/candyman/class';
-@import 'schemes/candyman/constant';
-@import 'schemes/candyman/function';
-@import 'schemes/candyman/number';
-@import 'schemes/candyman/punctuation';
-@import 'schemes/candyman/type';
-@import 'schemes/candyman/variable';
+
+.variable.parameter.function {
+  foreground: $orange-200;
+}

@@ -19,7 +19,10 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/flow1/operator/typeof.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/operator/intersection.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/operator/nullable.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/operator/union.sublime-syntax
+    - match: (?i)\s*(typeof)\b
+      captures:
+        1: keyword.operator.word.typeof.flow
+      set: type
+
+  type:
+    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax

@@ -2054,11 +2054,20 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.accessor</string>
+			<string>.punctuation.accessor, .punctuation.terminator</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#5af158</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.generic .punctuation.separator.comma, .meta.generic .punctuation.definition.generic</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#a1887f</string>
 			</dict>
 		</dict>
 		<dict>

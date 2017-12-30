@@ -10,8 +10,18 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.punctuation.accessor {
-  foreground: $green-a200;
+.punctuation {
+  &.accessor,
+  &.terminator {
+    foreground: $green-a200;
+  }
+}
+
+.meta.generic {
+  .punctuation.separator.comma,
+  .punctuation.definition.generic {
+    foreground: $brown-300;
+  }
 }
 
 .meta.group {

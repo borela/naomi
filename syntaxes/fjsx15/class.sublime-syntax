@@ -49,7 +49,7 @@ contexts:
     # Extensions.
     - match: \s*(extends)\b
       captures:
-        1: storage.modifier.js.fjsx15
+        1: storage.modifier.extends.js.fjsx15
       push: [
         optional-template-arguments,
         target-class-or-namespace

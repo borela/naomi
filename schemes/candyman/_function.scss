@@ -10,36 +10,25 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.variable.function,
 .entity.name.function {
+  foreground: $light-blue-300;
+  background: rgba($light-blue-300, .025);
+}
+
+.variable.function {
   foreground: $light-blue-300;
 }
 
 .meta.function {
-  .punctuation.section.block,
-  .punctuation.section.group,
-  .punctuation.separator.comma {
-    foreground: $light-blue-300;
+  .punctuation {
+    &.section.block,
+    &.section.group,
+    &.separator.comma {
+      foreground: $light-blue-300;
+    }
   }
 }
 
 .support.function {
-  foreground: $deep-orange-a100;
+  foreground: $deep-orange-300;
 }
-
-
-
-// .support {
-//   .entity.name.function,
-//   .keyword.operator.other.computed-function,
-//   .punctuation.definition.function {
-//     foreground: $deep-orange-a100;
-//   }
-// }
-
-// .function.parameter {
-//   .entity.name.variable,
-//   .punctuation.definition.variable {
-//     foreground: $orange-200;
-//   }
-// }

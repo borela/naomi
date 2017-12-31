@@ -1919,6 +1919,28 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.entity.name.class</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#AED58106</string>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.other.inherited-class</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#EA80FC06</string>
+				<key>foreground</key>
+				<string>#ea80fc</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.variable.other.constant, .entity.name.constant, .punctuation.definition.constant</string>
 			<key>settings</key>
 			<dict>
@@ -1937,7 +1959,36 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.variable.function, .entity.name.function</string>
+			<string>.comment, .comment .punctuation.definition</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#90a4ae</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.comment .entity.email, .comment .entity.link</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#cfd8dc</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.function</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#4FC3F706</string>
+				<key>foreground</key>
+				<string>#4fc3f7</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.variable.function</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1959,7 +2010,239 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff9e80</string>
+				<string>#ff8a65</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .punctuation.section.dictionary</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ce93d8</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary.key .string</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#4DD0E10D</string>
+				<key>foreground</key>
+				<string>#4dd0e1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary.key .string .punctuation.definition.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4dd0e1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .punctuation.section.dictionary</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4dd0e1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#AED5810D</string>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string .punctuation.definition.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .punctuation.section.dictionary</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FF8A650D</string>
+				<key>foreground</key>
+				<string>#ff8a65</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string .punctuation.definition.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff8a65</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .punctuation.section.dictionary</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff8a65</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#4DB6AC1A</string>
+				<key>foreground</key>
+				<string>#4db6ac</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string .punctuation.definition.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4db6ac</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .punctuation.section.dictionary</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4db6ac</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#F062921A</string>
+				<key>foreground</key>
+				<string>#f06292</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string .punctuation.definition.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f06292</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .punctuation.section.dictionary</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f06292</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#BA68C81A</string>
+				<key>foreground</key>
+				<string>#ba68c8</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string .punctuation.definition.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ba68c8</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .punctuation.section.dictionary</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ba68c8</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FFD54F0D</string>
+				<key>foreground</key>
+				<string>#ffd54f</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string .punctuation.definition.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffd54f</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .punctuation.section.dictionary</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffd54f</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FFD54F0D</string>
+				<key>foreground</key>
+				<string>#ffd54f</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary .meta.structure.dictionary.key .string .punctuation.definition.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffd54f</string>
 			</dict>
 		</dict>
 		<dict>
@@ -2086,6 +2369,26 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ffecb3</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.string</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FFD54F09</string>
+				<key>foreground</key>
+				<string>#ffd54f</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.string .punctuation.definition.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffd54f</string>
 			</dict>
 		</dict>
 		<dict>

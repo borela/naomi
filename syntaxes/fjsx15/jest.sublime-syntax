@@ -19,51 +19,98 @@ scope: ...
 
 contexts:
   main:
-    - include: core
-    - include: matchers
-    - include: jest-fn
-
-  arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
-
-  jest-fn:
+    # jest.
     - match: |
         (?x)
         (?<!\.)
         \s*(jest)
         \s*(\.)
-        \s*(fn)
-        (?=\s*\()
       captures:
-        1: >-
-          support.lib.jest.fjsx15
-          entity.name.variable.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.lib.jest.fjsx15
-          entity.name.function.js.fjsx15
-      set: arguments
-
-  core:
+        1: support.type.object.jest.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: jest-property-or-function
+    # afterAll/Each, beforeAll/Each, describe, it, test.
     - match: |
         (?x)
         (?<!\.)\s*
         ((?> after(?>All|Each)
           | before(?>All|Each)
           | describe
-          | expect
           | it
           | test
         ))
-        (?:(.)((?>only|skip)))?
-        (?=\s*\()
       captures:
-        1: support.function.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.fjsx15
-      set: arguments
+        1: support.function.jest.fn.js.fjsx15
+      set: [
+        meta-scope,
+        arguments,
+        optional-skip-only
+      ]
+    # expect
+    - match: (?<!\.)\s*(expect)
+      captures:
+        1: support.function.jest.fn.js.fjsx15
+      set: [
+        expect-chain,
+        meta-scope,
+        arguments
+      ]
 
-  matchers:
+  escape:
+    - match: (?=\s*\S)
+      pop: true
+
+  pop-now:
+    - match: ""
+      pop: true
+
+  accessor-no-pop:
+    - match: \s*(\.)
+      captures:
+        1: punctuation.accessor.js.fjsx15
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+
+  optional-skip-only:
+    - include: accessor-no-pop
+    # only
+    - match: \s*(only)\b
+      captures:
+        1: support.function.jest.only.js.fjsx15
+      pop: true
+    # skip
+    - match: \s*(skip)\b
+      captures:
+        1: support.function.jest.skip.js.fjsx15
+      pop: true
+    # Anything else.
+    - include: escape
+
+  jest-property-or-function:
+    - match: \s*(fn)(?=\s*\()
+      captures:
+        1: support.function.jest.fn.js.fjsx15
+      set: [
+        meta-scope,
+        arguments
+      ]
+
+  meta-scope:
+    - meta_scope: meta.function-call.jest.js.fjsx15
+    - include: pop-now
+
+  matcher-meta-scope:
+    - meta_scope: meta.function-call.jest.matcher.js.fjsx15
+    - include: pop-now
+
+  expect-chain:
+    - include: accessor-no-pop
+    # Not.
+    - match: \s*(not)\b
+      captures:
+        1: support.type.object.jest.matcher.not.js.fjsx15
+    # Matchers.
     - match: |
         (?x)\s*
         (to
@@ -94,7 +141,8 @@ contexts:
         )\b
         (?=\s*\()
       captures:
-        1: support.function.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.fjsx15
-      set: arguments
+        1: support.function.jest.matcher.fjsx15
+      set: [
+        matcher-meta-scope,
+        arguments
+      ]

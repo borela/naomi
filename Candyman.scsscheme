@@ -19,6 +19,7 @@
 
 // New scopes.
 @import 'schemes/candyman/annotation';
+@import 'schemes/candyman/array';
 @import 'schemes/candyman/class';
 @import 'schemes/candyman/class/body';
 @import 'schemes/candyman/comment';

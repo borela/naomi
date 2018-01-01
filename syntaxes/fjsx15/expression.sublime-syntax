@@ -108,9 +108,16 @@ contexts:
   optional-tail:
     - include: comment-no-pop
     - include: globals
-    # Property access and function call.
-    - match: (?=\s*[\[(])
-      set: [ optional-tail, tail ]
+    # Function call.
+    - match: (?=\s*\()
+      set: [
+        optional-tail,
+        function-call-meta-scope,
+        function-call
+      ]
+    # Property access.
+    - match: (?=\s*\[)
+      set: [ optional-tail, property-access ]
     # Other operators. At this point, operators will have a higher priority than
     # regex literals.
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
@@ -118,7 +125,15 @@ contexts:
     - match: (?=\s*\S)
       pop: true
 
-  tail:
+  function-call-meta-scope:
+    - meta_scope: meta.function-call.js.fjsx15
+    - match: ""
+      pop: true
+
+  function-call:
+    - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+
+  property-access:
     - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax

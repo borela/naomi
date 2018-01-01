@@ -18,3 +18,13 @@
     foreground: $amber-300;
   }
 }
+
+
+.string.regexp {
+  foreground: $teal-300;
+  background: rgba($teal-300, .035);
+
+  .punctuation.definition.string {
+    foreground: $teal-300;
+  }
+}

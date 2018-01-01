@@ -14,11 +14,13 @@
   &.accessor,
   &.terminator {
     foreground: $green-a200;
+    fontStyle: bold;
   }
 
   &.separator.comma,
   &.section.group {
     foreground: $amber-100;
+    fontStyle: none;
   }
 }
 
@@ -30,6 +32,7 @@
       &.section.group,
       &.separator.comma {
         foreground: $amber-100;
+        fontStyle: none;
       }
     }
   }
@@ -43,6 +46,7 @@
       &.section.group,
       &.separator.comma {
         foreground: $amber-100;
+        fontStyle: none;
       }
     }
   }

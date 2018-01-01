@@ -15,6 +15,7 @@
     &.section.group,
     &.separator.comma {
       foreground: $light-blue-300;
+      fontStyle: bold;
     }
   }
 }
@@ -28,6 +29,7 @@
       &.section.group,
       &.separator.comma {
         foreground: $light-blue-300;
+        fontStyle: bold;
       }
     }
   }

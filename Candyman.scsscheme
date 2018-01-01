@@ -25,6 +25,7 @@
 @import 'schemes/candyman/comment';
 @import 'schemes/candyman/function';
 @import 'schemes/candyman/function-call';
+@import 'schemes/candyman/function/body';
 @import 'schemes/candyman/function/parameters';
 @import 'schemes/candyman/global/console';
 @import 'schemes/candyman/global/jest';

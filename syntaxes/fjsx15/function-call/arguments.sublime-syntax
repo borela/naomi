@@ -25,6 +25,7 @@ contexts:
       set: [ delimiter, optional-expression ]
 
   delimiter:
+    - meta_scope: meta.group.js.fjsx15
     - match: \s*(\))
       captures:
         1: punctuation.section.group.end.js.fjsx15

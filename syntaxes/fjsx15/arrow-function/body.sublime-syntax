@@ -33,7 +33,9 @@ contexts:
     - include: optional-expression
 
   close-body:
-    - meta_scope: meta.function.js.fjsx15
+    - meta_scope: >-
+        meta.function.js.fjsx15
+        meta.block.js.fjsx15
     - match: \s*(})
       captures:
         1: punctuation.section.block.end.js.fjsx15

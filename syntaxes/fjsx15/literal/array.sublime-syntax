@@ -21,18 +21,18 @@ contexts:
   main:
     - match: \s*(\[)
       captures:
-        1: punctionation.section.brackets.begin.js.fjsx15
+        1: punctuation.section.brackets.begin.js.fjsx15
       set: [ delimiters, optional-expression ]
 
   delimiters:
     - meta_scope: meta.sequence.js.fjsx15
     - match: \s*(])
       captures:
-        1: punctionation.section.brackets.end.js.fjsx15
+        1: punctuation.section.brackets.end.js.fjsx15
       pop: true
     - match: \s*(,)
       captures:
-        1: punctuation.separator.js.fjsx15
+        1: punctuation.separator.comma.js.fjsx15
       push: optional-expression
 
   optional-expression:

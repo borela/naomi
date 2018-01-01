@@ -140,11 +140,12 @@ contexts:
   break-continue:
     - match: |
         (?xi)
-        \s*(break|continue)\b
+        \s*(?>(break)|(continue))\b
         (?:\s+({{commonIdentifier}}))?
       captures:
-        1: keyword.control.loop.js.fjsx15
-        2: entity.name.label.js.fjsx15
+        1: keyword.control.flow.break.js.fjsx15
+        2: keyword.control.flow.break.continue.js.fjsx15
+        3: entity.name.label.js.fjsx15
       pop: true
 
   debugger:
@@ -224,7 +225,7 @@ contexts:
   return:
     - match: \s*(return)\b
       captures:
-        1: keyword.control.flow.js.fjsx15
+        1: keyword.control.flow.return.js.fjsx15
       set: asi-checked-optional-expression
 
   switch-case:
@@ -252,7 +253,7 @@ contexts:
   throw:
     - match: \s*(throw)\b
       captures:
-        1: keyword.control.trycatch.js.fjsx15
+        1: keyword.control.flow.break.throw.js.fjsx15
       set: asi-checked-optional-expression
 
   try-catch-finally:

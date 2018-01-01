@@ -28,7 +28,7 @@ contexts:
     # Existential.
     - match: \s*(\*)
       captures:
-        1: entity.name.type.existential.flow
+        1: support.type.existential.flow
       pop: true
     # Predefined types.
     - match: |

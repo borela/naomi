@@ -69,7 +69,7 @@ contexts:
   origin:
     - match: \s*(from)\b
       captures:
-        1: keyword.control.import.origin.js.fjsx15
+        1: keyword.control.import-export.origin.js.fjsx15
       set: origin-path
 
   origin-path:

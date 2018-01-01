@@ -15,6 +15,37 @@
   &.terminator {
     foreground: $green-a200;
   }
+
+  &.separator.comma,
+  &.section.group {
+    foreground: $amber-100;
+  }
+}
+
+// Group inside function parameters.
+@for $i from 1 through 7 {
+  #{repeatString('meta.function.parameters meta.group', $i)}
+  .meta.group {
+    .punctuation {
+      &.section.group,
+      &.separator.comma {
+        foreground: $amber-100;
+      }
+    }
+  }
+}
+
+// Group inside function call.
+@for $i from 1 through 7 {
+  #{repeatString('meta.function-call meta.group', $i)}
+  .meta.group {
+    .punctuation {
+      &.section.group,
+      &.separator.comma {
+        foreground: $amber-100;
+      }
+    }
+  }
 }
 
 .meta.generic {
@@ -24,14 +55,82 @@
   }
 }
 
-.meta.group {
-  .punctuation.separator.comma {
-    foreground: $green-a200;
-  }
-  .punctuation.section.group {
-    foreground: $amber-100;
-  }
-}
+// Groups inside function calls.
+// @for $i from 1 through 100 {
+//   .animation#{$i} {
+//     animation-delay: random(100) * 0.1 + s !important;
+//     animation-duration: max(random(20), 10) + s;
+//     animation-iteration-count: infinite;
+//     animation-name: pulsatingBlock;
+//   }
+// }
+
+
+// .meta.function-call
+// .meta.group
+// .meta.group,
+
+// .meta.function-call
+// .meta.group
+// .meta.function-call
+// .meta.group
+// .meta.group,
+
+// .meta.function-call
+// .meta.group
+// .meta.function-call
+// .meta.group
+// .meta.function-call
+// .meta.group
+// .meta.group,
+
+// .meta.function-call
+// .meta.group
+// .meta.function-call
+// .meta.group
+// .meta.function-call
+// .meta.group
+// .meta.function-call
+// .meta.group
+// .meta.group,
+
+// .meta.function-call
+// .meta.group
+// .meta.function-call
+// .meta.group
+// .meta.function-call
+// .meta.group
+// .meta.function-call
+// .meta.group
+// .meta.function-call
+// .meta.group
+// .meta.group {
+//   .punctuation {
+//     &.separator.comma {
+//       foreground: $green-a200;
+//     }
+//     &.section.group {
+//       foreground: $amber-100;
+//     }
+//   }
+// }
+
+
+// .meta.conditional {
+//   .meta.block
+//   .punctuation.section.block {
+//     foreground: $green-200;
+//   }
+
+//   .meta.group {
+//     .punctuation {
+//       &.separator.comma,
+//       &.section.group {
+//         foreground: $green-200;
+//       }
+//     }
+//   }
+// }
 
 // .punctuation.other.property.access {
 //   foreground: $light-green-300;

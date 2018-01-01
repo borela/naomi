@@ -10,13 +10,26 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.variable.other.readwrite,
-.entity.name.variable,
-.punctuation.definition.variable {
-  foreground: $gray-400;
-  fontStyle: none;
+.variable.parameter.function {
+  foreground: $orange-200;
 }
 
-.support.variable {
-  foreground: $deep-orange-a100;
+.meta.function.parameters {
+  .punctuation.section.group {
+    foreground: $light-blue-300;
+  }
+}
+
+// Function parameters of a function inside groups.
+@for $i from 1 through 7 {
+  #{repeatString('meta.group', $i)}
+  .meta.function.parameters
+  .meta.group {
+    .punctuation {
+      &.section.group,
+      &.separator.comma {
+        foreground: $light-blue-300;
+      }
+    }
+  }
 }

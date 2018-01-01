@@ -225,9 +225,7 @@ contexts:
         (?x)\s*
         ([_[:upper:]])\b
       captures:
-        1: >-
-          meta.object-literal.key.js.fjsx15
-          variable.other.constant.js.fjsx15
+        1: meta.object-literal.key.uppercase.js.fjsx15
       set: associated-value
     # Two or more characters.
     - match: |
@@ -239,9 +237,7 @@ contexts:
           )
         )
       captures:
-        1: >-
-          meta.object-literal.key.js.fjsx15
-          variable.other.constant.js.fjsx15
+        1: meta.object-literal.key.uppercase.js.fjsx15
       set: associated-value
 
   variable:
@@ -252,9 +248,7 @@ contexts:
           | [_[:alpha:]]\b
         ))
       captures:
-        1: >-
-          meta.object-literal.key.js.fjsx15
-          variable.other.readwrite.js.fjsx15
+        1: meta.object-literal.key.js.fjsx15
       set: associated-value
     # Two or more characters.
     - match: |
@@ -266,9 +260,7 @@ contexts:
           )
         )
       captures:
-        1: >-
-          meta.object-literal.key.js.fjsx15
-          variable.other.readwrite.js.fjsx15
+        1: meta.object-literal.key.js.fjsx15
       set: associated-value
 
   optional-expression:

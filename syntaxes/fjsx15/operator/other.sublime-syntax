@@ -22,7 +22,7 @@ contexts:
   # |:----------:|:--------------------|
   # |    ...     | Spread.             |
   # |     ::     | Bind.               |
-  # |     .      | Member access.      |
+  # |     .      | Accessor.           |
   # |    ?.      | Optional chain.     |
   # |    ??      | Nullish coalescing. |
   # |     ?      | Ternary.            |

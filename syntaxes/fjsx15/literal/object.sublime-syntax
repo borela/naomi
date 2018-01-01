@@ -33,7 +33,9 @@ contexts:
       set: [ delimiters, statements-and-expressions ]
 
   delimiters:
-    - meta_scope: meta.object-literal.js.fjsx15
+    - meta_scope: >-
+        meta.object-literal.js.fjsx15
+        meta.block.js.fjsx15
     - include: comment-no-pop
     - match: \s*(,)
       captures:

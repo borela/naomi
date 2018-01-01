@@ -19,16 +19,6 @@
   foreground: $light-blue-300;
 }
 
-.meta.function {
-  .punctuation {
-    &.section.block,
-    &.section.group,
-    &.separator.comma {
-      foreground: $light-blue-300;
-    }
-  }
-}
-
 .support.function {
   foreground: $deep-orange-300;
 }

@@ -24,40 +24,40 @@
   }
 }
 
-// Group inside function parameters.
-@for $i from 1 through 7 {
-  #{repeatString('meta.function.parameters meta.group', $i)}
-  .meta.group {
-    .punctuation {
-      &.section.group,
-      &.separator.comma {
-        foreground: $amber-100;
-        fontStyle: none;
-      }
-    }
-  }
+//   &.separator.comma,
+//   &.section.group {
+//     foreground: $amber-200;
+//     fontStyle: none;
+//   }
 }
 
-// Group inside function call.
-@for $i from 1 through 7 {
-  #{repeatString('meta.function-call meta.group', $i)}
-  .meta.group {
-    .punctuation {
-      &.section.group,
-      &.separator.comma {
-        foreground: $amber-100;
-        fontStyle: none;
-      }
-    }
-  }
-}
+// .meta.generic {
+//   .punctuation.separator.comma,
+//   .punctuation.definition.generic {
+//     foreground: $brown-300;
+//   }
+// }
 
-.meta.generic {
-  .punctuation.separator.comma,
-  .punctuation.definition.generic {
-    foreground: $brown-300;
-  }
-}
+// .meta.template.
+
+// @for $i from 1 through 7 {
+//   #{repeatString('meta.annotation .meta.group', $i)}
+//   .meta.group,
+//   #{repeatString('meta.conditional .meta.group', $i)}
+//   .meta.group,
+//   #{repeatString('meta.function.parameters meta.group', $i)}
+//   .meta.group,
+//   #{repeatString('meta.function-call meta.group', $i)}
+//   .meta.group {
+//     .punctuation {
+//       &.section.group,
+//       &.separator.comma {
+//         foreground: $amber-200;
+//         fontStyle: none;
+//       }
+//     }
+//   }
+// }
 
 // Groups inside function calls.
 // @for $i from 1 through 100 {

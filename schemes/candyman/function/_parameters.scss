@@ -14,22 +14,24 @@
   foreground: $orange-200;
 }
 
-.meta.function.parameters {
-  .punctuation.section.group {
-    foreground: $light-blue-300;
-  }
-}
+// .meta.function.parameters {
+//   .punctuation.section.group {
+//     foreground: $light-blue-300;
+//     fontStyle: none;
+//   }
+// }
 
-// Function parameters of a function inside groups.
-@for $i from 1 through 7 {
-  #{repeatString('meta.group', $i)}
-  .meta.function.parameters
-  .meta.group {
-    .punctuation {
-      &.section.group,
-      &.separator.comma {
-        foreground: $light-blue-300;
-      }
-    }
-  }
-}
+// // Function parameters of a function inside groups.
+// @for $i from 1 through 7 {
+//   #{repeatString('meta.group', $i)}
+//   .meta.function.parameters
+//   .meta.group {
+//     .punctuation {
+//       &.section.group,
+//       &.separator.comma {
+//         foreground: $light-blue-300;
+//         fontStyle: none;
+//       }
+//     }
+//   }
+// }

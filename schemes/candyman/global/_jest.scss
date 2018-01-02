@@ -35,27 +35,27 @@
   }
 }
 
-// Global function call punctuation.
-@for $i from 0 through 7 {
-  #{repeatString('.meta.function', $i)}
-  .meta.function-call.jest
-  .meta.group {
-    .punctuation {
-      &.section.group,
-      &.separator.comma {
-        foreground: $pink-300;
-      }
-    }
-  }
-}
+// // Global function call punctuation.
+// @for $i from 0 through 7 {
+//   #{repeatString('.meta.function', $i)}
+//   .meta.function-call.jest
+//   .meta.group {
+//     .punctuation {
+//       &.section.group,
+//       &.separator.comma {
+//         foreground: $pink-300;
+//       }
+//     }
+//   }
+// }
 
-// Matcher function call punctuation.
-.meta.function-call.jest.matcher
-.meta.group {
-  .punctuation {
-    &.section.group,
-    &.separator.comma {
-      foreground: $green-200;
-    }
-  }
-}
+// // Matcher function call punctuation.
+// .meta.function-call.jest.matcher
+// .meta.group {
+//   .punctuation {
+//     &.section.group,
+//     &.separator.comma {
+//       foreground: $green-200;
+//     }
+//   }
+// }

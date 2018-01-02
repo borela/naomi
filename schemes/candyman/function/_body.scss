@@ -14,29 +14,18 @@
   foreground: $light-blue-300;
 }
 
-.meta.function {
-  .punctuation.section.block {
-    foreground: $light-blue-300;
-  }
-}
+// .meta.function {
+//   .punctuation.section.block {
+//     foreground: $light-blue-300;
+//   }
+// }
 
-/**
- * Inside classes.
- */
-
-// Level 1.
-.meta.class .meta.function {
-  .punctuation.section.block {
-    foreground: $light-blue-300;
-  }
-}
-
-// Level 2 - N.
-@for $i from 1 through 7 {
-  #{repeatString('.meta.function .meta.class', $i)}
-  .meta.function {
-    .punctuation.section.block {
-      foreground: $light-blue-300;
-    }
-  }
-}
+// @for $i from 1 through 7 {
+//   #{repeatString('.meta.conditional .meta.function', $i)},
+//   #{repeatString('.meta.class .meta.function', $i)},
+//   #{repeatString('.meta.loop .meta.function', $i)} {
+//     .punctuation.section.block {
+//       foreground: $light-blue-300;
+//     }
+//   }
+// }

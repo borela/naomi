@@ -52,3 +52,36 @@
   }
 }
 
+// .meta.conditional {
+//   .meta.group {
+//     .punctuation {
+//       &.section.group,
+//       &.separator.comma {
+//         foreground: $brown-200;
+//         fontStyle: none;
+//       }
+//     }
+//   }
+
+//   .punctuation.section.block {
+//     foreground: $brown-200;
+//     fontStyle: none;
+//   }
+// }
+
+// .meta.loop {
+//   .meta.group {
+//     .punctuation {
+//       &.section.group,
+//       &.separator.comma {
+//         foreground: $orange-300;
+//         fontStyle: none;
+//       }
+//     }
+//   }
+
+//   .punctuation.section.block {
+//     foreground: $orange-300;
+//     fontStyle: none;
+//   }
+// }

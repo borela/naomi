@@ -10,28 +10,16 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.meta.class {
-  .punctuation.section.block {
-    foreground: $light-green-300;
-  }
-}
+// .meta.class {
+//   .punctuation.section.block {
+//     foreground: $light-green-300;
+//   }
+// }
 
-/**
- * Inside function.
- */
-
-// Level 1.
-.meta.function .meta.class {
-  .punctuation.section.block {
-    foreground: $light-green-300;
-  }
-}
-// Level 2 - N.
-@for $i from 1 through 7 {
-  #{repeatString('.meta.class .meta.function ', $i)}
-  .meta.class {
-    .punctuation.section.block {
-      foreground: $light-green-300;
-    }
-  }
-}
+// @for $i from 1 through 7 {
+//   #{repeatString('.meta.function .meta.class ', $i)} {
+//     .punctuation.section.block {
+//       foreground: $light-green-300;
+//     }
+//   }
+// }

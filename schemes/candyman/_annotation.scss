@@ -12,9 +12,7 @@
 
 .meta.annotation {
   .variable.annotation,
-  .punctuation.section.group,
-  .punctuation.separator.comma,
-  .punctuation.definition.annotation {
+  .punctuation.definition {
     foreground: $purple-a100;
     fontStyle: italic;
   }

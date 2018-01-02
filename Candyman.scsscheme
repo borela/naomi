@@ -13,6 +13,7 @@
 @name 'Candyman';
 @import 'schemes/candyman/palette';
 @import 'schemes/candyman/repeatString';
+@import 'schemes/candyman/main';
 
 // Old scopes.
 @import 'schemes/candyman/old';

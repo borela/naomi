@@ -1,0 +1,33 @@
+// Licensed under the Apache License, Version 2.0 (the “License”); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+* {
+  background: $blue-gray-900;
+  foreground: $blue-gray-200;
+  gutterForeground: $blue-gray-400;
+  invisibles: $blue-gray-800;
+
+  caret: $light-green-a200;
+  lineHighlight: rgba(0,0,0,.1);
+  selection: $blue-gray-700;
+
+  bracketsForeground: $gray-0;
+  bracketsOptions: stippled_underline;
+  tagsOptions: stippled_underline;
+
+  findHighlight: $teal-300;
+  findHighlightForeground: $teal-800;
+
+  guide: $blue-gray-800;
+  activeGuide: $blue-gray-600;
+  stackGuide: $blue-gray-800;
+}

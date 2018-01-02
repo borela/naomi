@@ -17,12 +17,9 @@
     fontStyle: bold;
   }
 
-  &.separator.comma,
-  &.section.group {
-    foreground: $amber-100;
-    fontStyle: none;
+  &.definition.template-expression {
+    foreground: $red-300;
   }
-}
 
 //   &.separator.comma,
 //   &.section.group {

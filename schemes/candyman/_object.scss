@@ -10,10 +10,7 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.storage {
-  &.modifier,
-  &.type {
-    foreground: $deep-purple-200;
-    fontStyle: none;
-  }
+.meta.object-literal.key {
+  foreground: $brown-200;
+  fontStyle: italic;
 }

@@ -19,3 +19,19 @@
 .support.constant {
   foreground: $deep-orange-a100;
 }
+
+.constant.language {
+  foreground: $red-300;
+  background: rgba($red-300, .05);
+}
+
+.constant.language.infinity,
+.constant.language.nan {
+  foreground: $purple-a100;
+  background: rgba($purple-a100, .05);
+}
+
+.constant.language.boolean {
+  foreground: $green-200;
+  background: rgba($green-200, .05);
+}

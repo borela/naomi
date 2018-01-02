@@ -19,391 +19,135 @@ scope: ...
 
 contexts:
   main:
-    - include: array-functions
+    # - include: array-functions
+    - include: console
     - include: console-functions
-    - include: math-constants
-    - include: math-functions
-    - include: object-functions
-    - include: symbol-functions
-    - include: symbol-properties
+    - include: console-function-calls
+    # - include: math-constants
+    # - include: math-functions
+    # - include: object-functions
+    # - include: symbol-functions
+    # - include: symbol-properties
     # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
     - include: constants
-    - include: variables
-    - include: functions
-    - include: import-properties
-    - include: fundamental-objects
-    - include: numbers-and-dates
-    - include: text-processing
-    - include: indexed-collections
-    - include: keyed-collections
-    - include: structured-data
-    - include: control-abstraction-objects
-    - include: reflection
-    - include: internationalization
-    - include: web-assembly
+    # - include: variables
+    # - include: functions
+    # - include: import-properties
+    # - include: fundamental-objects
+    # - include: numbers-and-dates
+    # - include: text-processing
+    # - include: indexed-collections
+    # - include: keyed-collections
+    # - include: structured-data
+    # - include: control-abstraction-objects
+    # - include: reflection
+    # - include: internationalization
+    # - include: web-assembly
 
-  optional-template-and-arguments:
-    - include: Packages/Naomi/syntaxes/flow1/template/arguments.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+  escape:
     - match: (?=\s*\S)
       pop: true
 
-  array-functions:
-    - match: |
-        (?x)
-        \s*(Array)
-        \s*(\.)\s*
-        ((?> from
-          | isArray
-        ))\b
-      captures:
-        1: support.class.builtin.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.js.fjsx15
-      set: optional-template-and-arguments
+  pop-now:
+    - match: ""
+      pop: true
 
-  console-functions:
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+
+  console:
     - match: |
         (?x)
-        \s*(console)\b
-        (?:
-          \s*(\.)\s*
-          ((?> assert
-            | clear
-            | count
-            | error
-            | group(?>Collapsed|End)?
-            | info
-            | log
-            | table
-            | time(?>End|Stamp)?
-            | trace
-            | warn
-          ))\b
-        )
+        \s*(console)
+        \s*(\.)
       captures:
         1: support.type.object.console.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: support.function.console.js.fjsx15
-      set: optional-template-and-arguments
+      set: console-property-or-function
 
-  math-constants:
-    - match: |
-        (?x)
-        \s*(Math)
-        \s*(\.)\s*
-        ((?> E
-          | LN(?>10|2)
-          | LOG(?>10E|2E)
-          | PI
-          | SQRT(?>1_2|2)
-        ))\b
+  console-property-or-function:
+    # error
+    - match: \s*(error)(?=\s*\()
       captures:
-        1: support.class.builtin.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.constant.js.fjsx15
+        1: support.function.console.error.js.fjsx15
+      set: [
+        console-error-meta-scope,
+        arguments
+      ]
+    - match: \s*(error)
+      captures:
+        1: support.function.console.error.js.fjsx15
       pop: true
-
-  math-functions:
-    - match: |
-        (?x)
-        \s*(Math)\b
-        \s*(\.)\s*
-        ((?> abs
-          | acosh?
-          | asinh?
-          | atan(?>2|h)?
-          | cbrt
-          | ceil
-          | clz32
-          | cosh?
-          | exp
-          | exp(?:m1)?
-          | floor
-          | fround
-          | hypot
-          | imul
-          | log(?>10|1p|2)?
-          | max
-          | min
-          | pow
-          | random
-          | round
-          | sign
-          | sinh?
-          | sqrt
-          | tanh?
-          | trunc
-        ))\b
+    # info
+    - match: \s*(info)(?=\s*\()
       captures:
-        1: support.class.builtin.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.js.fjsx15
-      set: optional-template-and-arguments
-
-  object-functions:
-    - match: |
-        (?x)
-        \s*(Object)\b
-        \s*(\.)\s*
-        ((?> assign
-          | create
-          | definePropert(?>ies|y)
-          | freeze
-          | getOwnProperty(?>Descriptors?|Names|Symbols)
-          | getPrototypeOf
-          | is(?>Extensible|Frozen|Sealed)?
-          | keys
-          | preventExtensions
-          | seal
-          | setPrototypeOf
-        ))\b
+        1: support.function.console.info.js.fjsx15
+      set: [
+        console-info-meta-scope,
+        arguments
+      ]
+    - match: \s*(info)
       captures:
-        1: support.class.builtin.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.js.fjsx15
-      set: optional-template-and-arguments
-
-  symbol-functions:
-    - match: |
-        (?x)
-        \s*(Symbol)
-        \s*(\.)\s*
-        ((?> for
-          | keyFor
-        ))\b
-      captures:
-        1: support.class.builtin.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.js.fjsx15
-      set: optional-template-and-arguments
-
-  symbol-properties:
-    - match: |
-        (?x)
-        \s*(Symbol)
-        \s*(\.)\s*
-        ((?> asyncIterator
-          | hasInstance
-          | isConcatSpreadable
-          | iterator
-          | match
-          | replace
-          | search
-          | species
-          | split
-          | toPrimitive
-          | toStringTag
-          | unscopables
-        ))\b
-      captures:
-        1: support.class.builtin.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.variable.js.fjsx15
+        1: support.function.console.info.js.fjsx15
       pop: true
+    # log
+    - match: \s*(log)(?=\s*\()
+      captures:
+        1: support.function.console.log.js.fjsx15
+      set: [
+        console-log-meta-scope,
+        arguments
+      ]
+    - match: \s*(log)
+      captures:
+        1: support.function.console.log.js.fjsx15
+      pop: true
+    # warn
+    - match: \s*(warn)(?=\s*\()
+      captures:
+        1: support.function.console.warn.js.fjsx15
+      set: [
+        console-warn-meta-scope,
+        arguments
+      ]
+    - match: \s*(warn)
+      captures:
+        1: support.function.console.warn.js.fjsx15
+      pop: true
+    # Anything else.
+    - include: escape
+
+  console-error-meta-scope:
+    - meta_scope: meta.function-call.console.error.js.fjsx15
+    - include: pop-now
+
+  console-info-meta-scope:
+    - meta_scope: meta.function-call.console.info.js.fjsx15
+    - include: pop-now
+
+  console-log-meta-scope:
+    - meta_scope: meta.function-call.console.log.js.fjsx15
+    - include: pop-now
+
+  console-warn-meta-scope:
+    - meta_scope: meta.function-call.console.warn.js.fjsx15
+    - include: pop-now
 
   constants:
-    - match: |
-        (?x)\s*
-        ((?> false
-          | true
-        ))
-      captures:
-        1: constant.language.boolean.js.fjsx15
-      pop: true
-    - match: |
-        (?x)\s*
-        ((?> Infinity
-          | NaN
-          | null
-          | undefined
-        ))
-      captures:
-        1: constant.language.js.fjsx15
-      pop: true
-
-  variables:
-    - match: \s*(super)\b
-      captures:
-        1: variable.language.super.js.fjsx15
-      pop: true
-    - match: \s*(this)\b
-      captures:
-        1: variable.language.this.js.fjsx15
-      pop: true
-
-  functions:
-    - match: |
-        (?x)\s*
-        ((?> decodeURI(?:Component)?
-          | encodeURI(?:Component)?
-          | eval
-          | is(?>Finite|NaN)
-          | parse(?>Float|Int)
-          | super
-        ))
-        (?=\s*\()
-      captures:
-        1: support.function.js.fjsx15
-      set: optional-template-and-arguments
-
-  function-properties:
-    - match: |
-        (?x)\s*
-        (function)(.)(sent)
-      captures:
-        1: support.type.object.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.variable.js.fjsx15
-      pop: true
-
-  import-properties:
-    - match: |
-        (?x)\s*
-        (import)(.)(meta)\b
-      captures:
-        1: support.type.object.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.type.object.js.fjsx15
-      pop: true
-
-  fundamental-objects:
-    - match: |
-        (?x)\s*
-        ((?> Boolean
-          | Error
-          | EvalError
-          | Function
-          | InternalError
-          | Object
-          | RangeError
-          | ReferenceError
-          | SyntaxError
-          | TypeError
-          | URIError
-        ))\b
-      captures:
-        1: support.class.builtin.js.fjsx15
-      set: optional-template-and-arguments
-
-  numbers-and-dates:
-    - match: |
-        (?x)\s*
-        ((?> Date
-          | Math
-          | Number
-        ))\b
-      captures:
-        1: support.class.builtin.js.fjsx15
-      set: optional-template-and-arguments
-
-  text-processing:
-    - match: |
-        (?x)\s*
-        ((?> RegExp
-          | String
-        ))\b
-      captures:
-        1: support.class.builtin.js.fjsx15
-      set: optional-template-and-arguments
-
-  indexed-collections:
-    - match: |
-        (?x)\s*
-        ((?> Array
-          | Float(?>32|64)Array
-          | Int(?>8|16|32)Array
-          | Uint(?>8|16|32)Array
-          | Uint8ClampedArray
-        ))\b
-      captures:
-        1: support.class.builtin.js.fjsx15
-      set: optional-template-and-arguments
-
-  keyed-collections:
-    - match: |
-        (?x)\s*
-        ((?> Map
-          | Set
-          | Weak(?>Map|Set)
-        ))\b
-      captures:
-        1: support.class.builtin.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.js.fjsx15
-      set: optional-template-and-arguments
-
-  structured-data:
-    - match: |
-        (?x)\s*
-        ((?> ArrayBuffer
-          | DataView
-          | JSON
-        ))\b
-      captures:
-        1: support.class.builtin.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.js.fjsx15
-      set: optional-template-and-arguments
-
-  control-abstraction-objects:
-    - match: |
-        (?x)\s*
-        ((?> Generator(?:Function)?
-          | Promise
-        ))\b
-      captures:
-        1: support.class.builtin.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.js.fjsx15
-      set: optional-template-and-arguments
-
-  reflection:
-    - match: |
-        (?x)\s*
-        ((?> Proxy
-          | Reflect
-        ))\b
-      captures:
-        1: support.class.builtin.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.js.fjsx15
-      set: optional-template-and-arguments
-
-  internationalization:
-    - match: |
-        (?x)
-        \s*(Intl)\b
-        (?:
-          \s*(\.)\s*
-          ((?> Collator
-            | DateTimeFormat
-            | NumberFormat
-          ))\b
-        )?
-      captures:
-        1: support.class.builtin.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.js.fjsx15
-      set: optional-template-and-arguments
-
-  web-assembly:
-    - match: |
-        (?x)
-        \s*(WebAssembly)\b
-        (?:
-          \s*(\.)\s*
-          ((?> CompileError
-            | Instance
-            | LinkError
-            | Memory
-            | Module
-            | RuntimeError
-            | Table
-          ))\b
-        )?
-      captures:
-        1: support.class.builtin.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.js.fjsx15
-      set: optional-template-and-arguments
+      - match: |
+          (?x)\s*
+          (?> (false)
+            | (Infinity)
+            | (NaN)
+            | (null)
+            | (true)
+            | (undefined)
+          )
+        captures:
+          1: constant.language.boolean.false.js.fjsx15
+          2: constant.language.infinity.js.fjsx15
+          3: constant.language.nan.js.fjsx15
+          4: constant.language.null.js.fjsx15
+          5: constant.language.boolean.true.js.fjsx15
+          6: constant.language.undefined.js.fjsx15
+        pop: true

@@ -12,7 +12,6 @@
 
 .support.type.object.jest {
   foreground: $deep-orange-300;
-  background: rgba($deep-orange-300, .1);
 
   &.matcher.not {
     foreground: $red-300;
@@ -21,10 +20,10 @@
 }
 
 .support.function.jest {
-  foreground: $pink-300;
+  foreground: $red-300;
 
   &.matcher {
-    foreground: $green-200;
+    foreground: $deep-orange-300;
   }
 
   &.skip,

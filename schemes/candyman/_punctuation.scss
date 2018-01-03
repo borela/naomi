@@ -12,21 +12,17 @@
 
 .punctuation {
   &.accessor,
-  &.comma,
+  &.separator.comma,
   &.terminator {
     foreground: $green-a200;
     fontStyle: bold;
   }
 
   &.definition.template-expression {
-    foreground: $red-300;
+    foreground: $gray-100;
+    fontStyle: none;
   }
 
-//   &.separator.comma,
-//   &.section.group {
-//     foreground: $amber-200;
-//     fontStyle: none;
-//   }
 }
 
 // .meta.generic {

@@ -11,44 +11,62 @@
 // the License.
 
 .keyword {
-  foreground: $pink-a100;
-}
+  foreground: $red-a100;
 
-.keyword.control.conditional {
-  foreground: $brown-200;
-}
+  &.control {
+    &.conditional {
+      foreground: $teal-a400;
+      fontStyle: italic;
+    }
 
-.keyword.control.flow {
-  foreground: $deep-orange-300;
-  background: rgba($deep-orange-300, .05);
-  fontStyle: italic;
-}
+    &.flow {
+      foreground: $green-200;
+      fontStyle: italic;
 
-.keyword.control.import-export {
-  foreground: $teal-200;
-  background: rgba($teal-300, .05);
-  fontStyle: italic;
-}
+      &.break.throw {
+        foreground: $purple-a100;
+      }
 
-.keyword.control.loop {
-  foreground: $orange-300;
-  background: rgba($orange-300, .05);
-  fontStyle: italic;
-}
+      &.return {
+        foreground: $purple-a100;
+      }
+    }
 
-.keyword.control.trycatch {
-  foreground: $pink-300;
-  background: rgba($pink-300, .05);
-  fontStyle: italic;
+    &.import-export {
+      foreground: $green-200;
+      fontStyle: none;
+
+      &.default {
+        foreground: $deep-purple-200;
+      }
+    }
+
+    &.loop {
+      foreground: $deep-orange-300;
+      fontStyle: italic;
+    }
+
+    &.trycatch {
+      foreground: $red-a200;
+      fontStyle: italic;
+    }
+  }
 }
 
 .keyword.operator {
   foreground: $green-a200;
-  fontStyle: bold;
+
+  &.pipe {
+    foreground: $light-blue-300;
+  }
 
   &.word {
-    foreground: $pink-a100;
+    foreground: $red-a100;
     fontStyle: italic;
+
+    &.of {
+      foreground: $green-200;
+    }
   }
 }
 

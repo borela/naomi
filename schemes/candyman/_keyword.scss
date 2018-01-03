@@ -55,6 +55,7 @@
 
 .keyword.operator {
   foreground: $green-a200;
+  fontStyle: bold;
 
   &.pipe {
     foreground: $light-blue-300;

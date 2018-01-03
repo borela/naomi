@@ -33,6 +33,7 @@
 @import 'schemes/candyman/global/jest';
 @import 'schemes/candyman/json';
 @import 'schemes/candyman/keyword';
+@import 'schemes/candyman/markup';
 @import 'schemes/candyman/modifier';
 @import 'schemes/candyman/number';
 @import 'schemes/candyman/object';

@@ -106,7 +106,7 @@ contexts:
         1: keyword.control.import-export.js.fjsx15
         2: >-
           storage.modifier.js.fjsx15
-          keyword.control.export.default.js.fjsx15
+          keyword.control.import-export.default.js.fjsx15
       set: origin
     # Export statements.
     - match: |
@@ -136,7 +136,7 @@ contexts:
         1: keyword.control.import-export.js.fjsx15
         2: >-
           storage.modifier.js.fjsx15
-          keyword.control.export.default.js.fjsx15
+          keyword.control.import-export.default.js.fjsx15
       # set: statement-and-expression
     # Other.
     - match: |

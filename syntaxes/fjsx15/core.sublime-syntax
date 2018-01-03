@@ -17,32 +17,75 @@ hidden: true
 
 scope: ...
 
+variables:
+  mathFunctions: |
+    (?> abs
+      | acosh?
+      | asinh?
+      | atan(?>2|h)?
+      | cbrt
+      | ceil
+      | clz32
+      | cosh?
+      | exp
+      | exp(?:m1)?
+      | floor
+      | fround
+      | hypot
+      | imul
+      | log(?>10|1p|2)?
+      | max
+      | min
+      | pow
+      | random
+      | round
+      | sign
+      | sinh?
+      | sqrt
+      | tanh?
+      | trunc
+    )\b
+
+  objectFunctions: |
+    (?> assign
+      | create
+      | definePropert(?>ies|y)
+      | freeze
+      | getOwnProperty(?>Descriptors?|Names|Symbols)
+      | getPrototypeOf
+      | is(?>Extensible|Frozen|Sealed)?
+      | keys
+      | preventExtensions
+      | seal
+      | setPrototypeOf
+    )\b
+
+  symbolFunctions: |
+    (?> for
+      | KeyFor
+    )\b
+
+
 contexts:
   main:
-    # - include: array-functions
     - include: console
-    - include: console-functions
-    - include: console-function-calls
-    # - include: math-constants
-    # - include: math-functions
-    # - include: object-functions
-    # - include: symbol-functions
-    # - include: symbol-properties
     # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
     - include: constants
+    - include: variables
+    - include: functions
     # - include: variables
     # - include: functions
     # - include: import-properties
-    # - include: fundamental-objects
-    # - include: numbers-and-dates
-    # - include: text-processing
-    # - include: indexed-collections
-    # - include: keyed-collections
-    # - include: structured-data
-    # - include: control-abstraction-objects
-    # - include: reflection
-    # - include: internationalization
-    # - include: web-assembly
+    - include: fundamental-objects
+    - include: numbers-and-dates
+    - include: text-processing
+    - include: indexed-collections
+    - include: keyed-collections
+    - include: structured-data
+    - include: control-abstraction-objects
+    - include: reflection
+    - include: internationalization
+    - include: web-assembly
 
   escape:
     - match: (?=\s*\S)
@@ -55,11 +98,12 @@ contexts:
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
+  function-call-meta-scope:
+    - meta_scope: meta.function-call.js.fjsx15
+    - include: pop-now
+
   console:
-    - match: |
-        (?x)
-        \s*(console)
-        \s*(\.)
+    - match: \s*(console)\s*(\.)
       captures:
         1: support.type.object.console.js.fjsx15
         2: punctuation.accessor.js.fjsx15
@@ -151,3 +195,269 @@ contexts:
           5: constant.language.boolean.true.js.fjsx15
           6: constant.language.undefined.js.fjsx15
         pop: true
+
+  variables:
+    - match: \s*(prototype)\b
+      captures:
+        1: variable.language.prototype.js.fjsx15
+      pop: true
+    - match: \s*(super)\b
+      captures:
+        1: variable.language.super.js.fjsx15
+      pop: true
+    - match: \s*(this)\b
+      captures:
+        1: variable.language.this.js.fjsx15
+      pop: true
+
+  functions:
+    - match: |
+        (?x)\s*
+        ((?> decodeURI(?:Component)?
+          | encodeURI(?:Component)?
+          | eval
+          | is(?>Finite|NaN)
+          | parse(?>Float|Int)
+        ))
+        (?=\s*\()
+      captures:
+        1: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+
+  fundamental-objects:
+    - match: \s*(Object)\s*(\.)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: object-property-or-function
+    - match: \s*(Symbol)\s*(\.)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: symbol-property-or-function
+    - match: |
+        (?x)\s*
+        ((?> Boolean
+          | Error
+          | EvalError
+          | Function
+          | InternalError
+          | Object
+          | RangeError
+          | ReferenceError
+          | Symbol
+          | SyntaxError
+          | TypeError
+          | URIError
+        ))\b
+      captures:
+        1: support.type.object.js.fjsx15
+      pop: true
+
+  object-property-or-function:
+    # Function call.
+    - match: |
+        (?x)
+        ({{objectFunctions}})
+        (?=\s*\()
+      captures:
+        1: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: |
+        (?x)
+        ({{objectFunctions}})
+      captures:
+        1: support.function.js.fjsx15
+      pop: true
+
+  symbol-property-or-function:
+    # Function call.
+    - match: |
+        (?x)
+        ({{symbolFunctions}})
+        (?=\s*\()
+      captures:
+        1: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: |
+        (?x)
+        ({{symbolFunctions}})
+      captures:
+        1: support.function.js.fjsx15
+      pop: true
+  numbers-and-dates:
+    - match: \s*(Math)\s*(\.)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: math-property-or-function
+    - match: |
+        (?x)\s*
+        ((?> Date
+          | Math
+          | Number
+        ))\b
+      captures:
+        1: support.type.object.js.fjsx15
+      pop: true
+
+  math-property-or-function:
+    # Function call.
+    - match: |
+        (?x)
+        ({{mathFunctions}})
+        (?=\s*\()
+      captures:
+        1: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: |
+        (?x)
+        ({{mathFunctions}})
+      captures:
+        1: support.function.js.fjsx15
+      pop: true
+    # Constants.
+    - match: |
+        (?x)\s*
+        ((?> E
+          | LN(?>10|2)
+          | LOG(?>10E|2E)
+          | PI
+          | SQRT(?>1_2|2)
+        ))\b
+      captures:
+        1: support.constant.js.fjsx15
+      pop: true
+
+  text-processing:
+    - match: |
+        (?x)\s*
+        ((?> RegExp
+          | String
+        ))\b
+      captures:
+        1: support.type.object.js.fjsx15
+      pop: true
+
+  indexed-collections:
+    - match: \s*(Array)\s*(\.)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: array-property-or-function
+    - match: |
+        (?x)\s*
+        ((?> Array
+          | Float(?>32|64)Array
+          | Int(?>8|16|32)Array
+          | Uint(?>8|16|32)Array
+          | Uint8ClampedArray
+        ))\b
+      captures:
+        1: support.type.object.js.fjsx15
+      pop: true
+
+  array-property-or-function:
+    # Function.
+    - match: |
+        (?x)\s*
+        ((?> from
+          | isArray
+        ))\b
+      captures:
+        1: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+
+  keyed-collections:
+    - match: |
+        (?x)\s*
+        ((?> Map
+          | Set
+          | Weak(?>Map|Set)
+        ))\b
+      captures:
+        1: support.type.object.js.fjsx15
+      pop: true
+
+  structured-data:
+    - match: |
+        (?x)\s*
+        ((?> ArrayBuffer
+          | DataView
+          | JSON
+        ))\b
+      captures:
+        1: support.type.object.js.fjsx15
+      pop: true
+
+  control-abstraction-objects:
+    - match: |
+        (?x)\s*
+        ((?> Generator(?:Function)?
+          | Promise
+        ))\b
+      captures:
+        1: support.type.object.js.fjsx15
+      pop: true
+
+  reflection:
+    - match: |
+        (?x)\s*
+        ((?> Proxy
+          | Reflect
+        ))\b
+      captures:
+        1: support.type.object.js.fjsx15
+      pop: true
+
+  internationalization:
+    - match: |
+        (?x)
+        \s*(Intl)\b
+        (?:
+          \s*(\.)\s*
+          ((?> Collator
+            | DateTimeFormat
+            | NumberFormat
+          ))\b
+        )?
+      captures:
+        1: support.type.object.js.fjsx15
+      pop: true
+
+  web-assembly:
+    - match: |
+        (?x)
+        \s*(WebAssembly)\b
+        (?:
+          \s*(\.)\s*
+          ((?> CompileError
+            | Instance
+            | LinkError
+            | Memory
+            | Module
+            | RuntimeError
+            | Table
+          ))\b
+        )?
+      captures:
+        1: support.type.object.js.fjsx15
+      pop: true

@@ -13,13 +13,32 @@
 .variable.other.readwrite,
 .entity.name.variable,
 .punctuation.definition.variable {
-  foreground: $gray-400;
+  foreground: $gray-300;
   fontStyle: none;
 }
 
-.variable.other.object {
-  foreground: $brown-200;
-  fontStyle: italic;
+.variable {
+  &.other.object {
+    foreground: $brown-200;
+    fontStyle: italic;
+  }
+
+  &.language {
+    &.prototype,
+    &.this {
+      foreground: $red-300;
+      fontStyle: italic;
+    }
+
+    &.super {
+      foreground: $deep-orange-300;
+    }
+
+    &.this {
+      foreground: $purple-a100;
+      fontStyle: italic;
+    }
+  }
 }
 
 .support.variable {

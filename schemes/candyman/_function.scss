@@ -11,13 +11,15 @@
 // the License.
 
 .entity.name.function {
-  foreground: $light-blue-300;
+  foreground: $blue-300;
+  fontStyle: italic;
 }
 
 .variable.function {
-  foreground: $light-blue-300;
+  foreground: $blue-300;
 }
 
 .support.function {
-  foreground: $deep-orange-300;
+  foreground: $purple-a100;
+  fontStyle: italic;
 }

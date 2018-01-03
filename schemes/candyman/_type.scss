@@ -16,14 +16,13 @@
 }
 
 .support.type {
-  foreground: $deep-orange-a100;
+  foreground: $deep-purple-a100;
 }
 
 .support.type.object {
   fontStyle: italic;
   &.console {
     foreground: $green-200;
-    background: rgba($green-200, .05);
   }
 }
 

@@ -56,7 +56,11 @@ contexts:
       push: template-parameters
     # Parameters.
     - match: (?=\s*\()
-      push: parameters
+      set: [
+        optional-body,
+        meta-declaration-scope,
+        parameters
+      ]
     # Identifier.
     - match: |
         (?xi)\s*
@@ -66,6 +70,18 @@ contexts:
         1: storage.modifier.js.fjsx15
         2: entity.name.function.js.fjsx15
     # None of the expected items matched, it probably ended.
+    - match: (?=\s*\S)
+      pop: true
+
+  meta-declaration-scope:
+    - meta_scope: meta.declaration.function.js.fjsx15
+    - match: ""
+      pop: true
+
+  optional-body:
+    - match: (?=\s*\{)
+      set: body
+    # Anything else.
     - match: (?=\s*\S)
       pop: true
 

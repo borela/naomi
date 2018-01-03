@@ -63,11 +63,11 @@ contexts:
       pop: true
     - include: optional-expression
 
-  # header-end:
-  #   - match: \s*(\))
-  #     captures:
-  #       1: punctuation.section.group.end.js.fjsx15
-  #     pop: true
+  header-end:
+    - match: \s*(\))
+      captures:
+        1: punctuation.section.group.end.js.fjsx15
+      pop: true
 
   # expression-only-header:
   #   - match: \s*(\()
@@ -79,15 +79,24 @@ contexts:
   #       optional-expression
   #     ]
 
-  # statements-and-expressions-header:
-  #   - match: \s*(\()
-  #     captures:
-  #       1: punctuation.section.group.begin.js.fjsx15
-  #     set: [
-  #       meta-group,
-  #       header-end,
-  #       optional-statements-and-expressions
-  #     ]
+  statements-and-expressions-header:
+    - match: \s*(\()
+      captures:
+        1: punctuation.section.group.begin.js.fjsx15
+      set: [
+        meta-group,
+        header-end,
+        statements-and-expressions-header-content
+      ]
+
+  statements-and-expressions-header-content:
+    - match: (?=\s*\))
+      pop: true
+    - match: ""
+      push:
+        - include: optional-statements-and-expressions
+        - match: ""
+          pop: true
 
   meta-group:
     - meta_scope: meta.group.js.fjsx15
@@ -183,7 +192,7 @@ contexts:
       set: [
         meta-loop-for,
         optional-statements-and-expressions,
-        optional-expression,
+        statements-and-expressions-header,
         optional-await
       ]
 
@@ -198,27 +207,28 @@ contexts:
         optional-statements-and-expressions,
         optional-expression
       ]
-    # - match: \s*(else)\b
-    #   captures:
-    #     0: meta.conditional.js.fjsx15
-    #     1: keyword.control.conditional.js.fjsx15
-    #   set: [
-    #     meta-conditional,
-    #     else-body,
-    #   ]
+    - match: \s*(else)\b
+      captures:
+        1: >-
+          meta.conditional.js.fjsx15
+          keyword.control.conditional.js.fjsx15
+      set: [
+        meta-conditional,
+        optional-else-if
+      ]
 
-  else-body:
+  optional-else-if:
     - include: no-meta-if
     - include: optional-statements-and-expressions
 
-  # no-meta-if:
-  #   - match: \s*(if)\b
-  #     captures:
-  #       1: keyword.control.conditional.js.fjsx15
-  #     set: [
-  #       optional-statements-and-expressions,
-  #       expression-only-header
-  #     ]
+  no-meta-if:
+    - match: \s*(if)\b
+      captures:
+        1: keyword.control.conditional.js.fjsx15
+      set: [
+        optional-statements-and-expressions,
+        optional-expression
+      ]
 
   label:
     - match: |

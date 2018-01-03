@@ -30,5 +30,5 @@ contexts:
   just-pop:
     - match: \s*(await)\b
       captures:
-        1: keyword.other.js.fjsx15
+        1: keyword.control.flow.await.js.fjsx15
       pop: true

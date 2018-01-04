@@ -22,13 +22,6 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  templateArguments: |
-    (<
-      [^<>]*
-      \g<-1>?
-      [^<>]*
-    >)
-
 contexts:
   main:
     - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax#import-properties
@@ -73,6 +66,12 @@ contexts:
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
+  origin:
+    - match: \s*(from)\b
+      captures:
+        1: keyword.control.import-export.origin.js.fjsx15
+      set: origin-path
+
   origin-path:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
@@ -87,6 +86,8 @@ contexts:
   optional-target:
     - match: (?=\s*(?>[,}]|from))
       pop: true
+    # Type.
+    - include: Packages/Naomi/syntaxes/flow1/type-import.sublime-syntax
     # All.
     - match: \s*(\*)
       captures:
@@ -101,100 +102,32 @@ contexts:
         delimiter,
         optional-target
       ]
+    # Aliased.
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+        (?=\s+as)
+      captures:
+        1: variable.other.readwrite.js.fjsx15
+      set: alias
     # Simple.
     - match: |
         (?xi)\s*
         ({{commonIdentifier}})
       captures:
         1: entity.name.variable.js.fjsx15
-      set: optional-alias
+      pop: true
 
   delimiter:
     - match: \s*(,)
       captures:
         1: punctuation.separator.comma.js.fjsx15
       push: optional-target
-    # Origin.
-    - match: \s*(from)\b
-      captures:
-        1: keyword.control.import-export.origin.js.fjsx15
-      set: origin-path
+    # From.
+    - include: origin
     # Anything else.
     - match: (?=\s*\S)
       pop: true
-
-  # targets:
-  #   - include: comment-no-pop
-  #   - include: origin
-  #   - include: punctuation
-  #   - match: ""
-  #     push:
-  #       - include: sequence
-  #       - match: ""
-  #         pop: true
-
-  sequence:
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/typeof.sublime-syntax
-    # Type.
-    - match: \s*(type)\b
-      captures:
-        1: storage.type.flow
-      set: types
-    # Default.
-    - match: \s*(default)\b
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.control.import-export.default.js.fjsx15
-      set: optional-alias
-    # All.
-    - match: \s*(\*)
-      captures:
-        1: keyword.control.import-export.star.js.fjsx15
-      set: optional-alias
-    # Simple.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: entity.name.readwrite.js.fjsx15
-      set: optional-alias
-
-  types:
-    - include: aliased-type
-    - match: \s*(})
-      captures:
-        1: punctuation.section.block.end.js.fjsx15
-      pop: true
-    - match: \s*(\{)
-      captures:
-        1: punctuation.section.block.begin.js.fjsx15
-      push:
-        - include: aliased-type
-        - match: \s*(,)
-          captures:
-            1: punctuation.separator.comma.js.fjsx15
-        - match: (?=\s*})
-          pop: true
-
-  aliased-type:
-    - match: |
-        (?xi)
-        (?={{commonIdentifier}})
-      set: [
-        optional-alias,
-        simple-type
-      ]
-
-  simple-type:
-    - include: Packages/Naomi/syntaxes/flow1/simple.sublime-syntax
-
-  optional-alias:
-    - match: |
-        (?x)
-        (?=\s*(?>,|}|from))
-      pop: true
-    - include: alias
 
   alias:
     - match: \s*(as)\b

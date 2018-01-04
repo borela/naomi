@@ -28,16 +28,16 @@ contexts:
     - match: (?=\s*(?>'|"|`))
       set: [
         optional-alias,
+        meta-key,
         string
       ]
     # Computed property name.
     - match: \s*(\[)
       captures:
-        1: >-
-          destructuring.object.js.fjsx15
-          punctuation.definition.object.computed-property.begin.js.fjsx15
+        1: punctuation.section.brackets.begin.js.fjsx15
       set: [
         optional-alias,
+        meta-key,
         computed-property-end,
         optional-expression
       ]
@@ -46,12 +46,15 @@ contexts:
         (?xi)
         \s*({{commonIdentifier}})
         (?=\s*:)
-      captures:
-        1: >-
-          destructuring.object.js.fjsx15
-          object.property.js.fjsx15
-          entity.name.variable.js.fjsx15
-      set: optional-alias
+      set: [
+        optional-alias,
+        meta-key
+      ]
+
+  meta-key:
+    - meta_scope: meta.object-literal.key.js.fjsx15
+    - match: ""
+      pop: true
 
   string:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
@@ -61,21 +64,18 @@ contexts:
   optional-alias:
     - match: \s*(:)
       captures:
-        1: >-
-          destructuring.object.js.fjsx15
-          keyword.operator.other.association.js.fjsx15
-      set: optional-parameter
+        1: punctuation.separator.key-value.js.fjsx15
+      set: alias
     - match: (?=\s*\S)
       pop: true
 
-  optional-parameter:
+  alias:
     - include: comment-no-pop
     - match: (?=\s*\))
       pop: true
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax#variable-or-constant
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
@@ -86,7 +86,5 @@ contexts:
   computed-property-end:
     - match: \s*(])
       captures:
-        1:  >-
-          destructuring.object.js.fjsx15
-          punctuation.definition.object.computed-property.end.js.fjsx15
+        1:  punctuation.section.brackets.end.js.fjsx15
       pop: true

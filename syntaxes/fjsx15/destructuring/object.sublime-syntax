@@ -53,8 +53,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object/property.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax#variable-or-constant
 
   default-value:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

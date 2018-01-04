@@ -37,7 +37,7 @@ contexts:
       set: optional-expression
     - match: \s*(\?\.)
       captures:
-        1: keyword.operator.optional-chain.js.fjsx15
+        1: punctuation.accessor.optional-chain.js.fjsx15
       set: optional-expression
     - match: \s*(\.)(?!\.)
       captures:

@@ -73,9 +73,8 @@ contexts:
     - include: constants
     - include: variables
     - include: functions
-    # - include: variables
-    # - include: functions
-    # - include: import-properties
+    - include: function-properties
+    - include: import-properties
     - include: fundamental-objects
     - include: numbers-and-dates
     - include: text-processing
@@ -227,6 +226,17 @@ contexts:
         arguments
       ]
 
+  function-properties:
+    - match: |
+        (?x)
+        \s*(function)
+        \s*(\.)
+        \s*(sent)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.variable.js.fsjx15
+
   fundamental-objects:
     - match: \s*(Object)\s*(\.)
       captures:
@@ -256,6 +266,17 @@ contexts:
       captures:
         1: support.type.object.js.fjsx15
       pop: true
+
+  import-properties:
+    - match: |
+        (?x)
+        \s*(import)
+        \s*(\.)
+        \s*(meta)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.variable.js.fsjx15
 
   object-property-or-function:
     # Function call.

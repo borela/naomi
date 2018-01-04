@@ -25,6 +25,7 @@
 @import 'schemes/candyman/class/body';
 @import 'schemes/candyman/comment';
 @import 'schemes/candyman/constant';
+@import 'schemes/candyman/destructuring';
 @import 'schemes/candyman/function';
 @import 'schemes/candyman/function-call';
 @import 'schemes/candyman/function/body';

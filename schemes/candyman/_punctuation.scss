@@ -12,7 +12,7 @@
 
 .punctuation {
   &.accessor,
-  &.separator.comma,
+  &.separator,
   &.terminator {
     foreground: $green-a200;
     fontStyle: bold;

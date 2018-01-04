@@ -10,8 +10,6 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.variable.other.label,
-.entity.name.label {
-  foreground: $gray-300;
-  fontStyle: bold;
+.meta.destructuring.object.key {
+  foreground: $deep-orange-a100;
 }

@@ -38,7 +38,9 @@
       foreground: $green-200;
       fontStyle: none;
 
-      &.default {
+      &.as,
+      &.default,
+      &.star {
         foreground: $deep-purple-200;
       }
     }

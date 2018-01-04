@@ -17,14 +17,20 @@
 
 .support.type {
   foreground: $deep-purple-a100;
-}
 
-.support.type.object {
-  fontStyle: italic;
-  &.console {
-    foreground: $green-200;
+  &.existential.flow,
+  &.flow {
+    foreground: $deep-orange-200;
+  }
+
+  &.object {
+    fontStyle: italic;
+    &.console {
+      foreground: $green-200;
+    }
   }
 }
+
 
 //   foreground: $light-green-300;
 

@@ -967,7 +967,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>entity.name.constant</string>
+			<string>.entity.name.constant</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -980,7 +980,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#bcaaa4</string>
+				<string>#e0e0e0</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1448,7 +1448,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.control.import-export.default</string>
+			<string>.keyword.control.import-export.as, .keyword.control.import-export.default, .keyword.control.import-export.star</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1740,6 +1740,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.support.type.existential.flow, .support.type.flow</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffab91</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.support.type.object</string>
 			<key>settings</key>
 			<dict>
@@ -1758,11 +1767,22 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.variable.other.readwrite, .entity.name.variable, .punctuation.definition.variable</string>
+			<string>.variable.other.readwrite, .punctuation.definition.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
 				<string></string>
+				<key>foreground</key>
+				<string>#e0e0e0</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.name.variable</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 				<key>foreground</key>
 				<string>#e0e0e0</string>
 			</dict>

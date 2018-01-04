@@ -11,10 +11,14 @@
 // the License.
 
 .variable.other.readwrite,
-.entity.name.variable,
 .punctuation.definition.variable {
   foreground: $gray-300;
   fontStyle: none;
+}
+
+.entity.name.variable {
+  foreground: $gray-300;
+  fontStyle: italic;
 }
 
 .variable {

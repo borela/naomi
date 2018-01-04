@@ -52,7 +52,7 @@ contexts:
         (?xi)\s*
         ({{commonIdentifier}})
       captures:
-        1: variable.type.flow
+        1: entity.name.type.flow
       pop: true
 
   punctuation:

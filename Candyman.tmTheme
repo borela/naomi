@@ -1077,6 +1077,17 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.variable.parameter.generic</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string></string>
+				<key>foreground</key>
+				<string>#ea80fc</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.support.function.console.error</string>
 			<key>settings</key>
 			<dict>
@@ -1738,7 +1749,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.variable.type, .variable.other.type</string>
+			<string>.entity.name.type, .variable.type, .variable.other.type</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

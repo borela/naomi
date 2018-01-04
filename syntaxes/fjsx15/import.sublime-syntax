@@ -55,7 +55,6 @@ contexts:
     - match: |
         (?x)
         \s*(import)\b
-        (?!\s*\.)
       captures:
         1: keyword.control.import-export.js.fjsx15
       set: targets

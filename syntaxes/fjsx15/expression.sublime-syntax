@@ -132,7 +132,7 @@ contexts:
 
   function-call:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+    - include: main
 
   property-access:
     - include: comment-no-pop

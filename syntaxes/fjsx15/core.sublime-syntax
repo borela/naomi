@@ -95,7 +95,7 @@ contexts:
       pop: true
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   function-call-meta-scope:
     - meta_scope: meta.function-call.js.fjsx15

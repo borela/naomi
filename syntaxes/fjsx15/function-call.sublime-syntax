@@ -83,7 +83,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/flow1/template/arguments.sublime-syntax
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   meta-scope:
     - meta_scope: meta.function-call.js.fjsx15

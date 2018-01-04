@@ -70,7 +70,7 @@ contexts:
         1: punctuation.accessor.js.fjsx15
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   optional-skip-only:
     - include: accessor-no-pop

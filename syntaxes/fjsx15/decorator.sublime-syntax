@@ -59,7 +59,7 @@ contexts:
       ]
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   # The decorator might be followed by a chain of function calls and we want to
   # to highlight them as decorators too.

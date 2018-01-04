@@ -52,7 +52,7 @@ contexts:
       ]
 
   meta-key:
-    - meta_scope: meta.object-literal.key.js.fjsx15
+    - meta_scope: meta.destructuring.object.key.js.fjsx15
     - match: ""
       pop: true
 

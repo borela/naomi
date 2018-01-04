@@ -930,8 +930,6 @@
 			<string>.entity.name.class</string>
 			<key>settings</key>
 			<dict>
-				<key>background</key>
-				<string>#AED58106</string>
 				<key>foreground</key>
 				<string>#aed581</string>
 			</dict>
@@ -941,8 +939,6 @@
 			<string>.entity.other.inherited-class</string>
 			<key>settings</key>
 			<dict>
-				<key>background</key>
-				<string>#EA80FC06</string>
 				<key>foreground</key>
 				<string>#ea80fc</string>
 			</dict>
@@ -1561,6 +1557,26 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.storage.modifier.extends</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#f36c60</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.variable.other.namespace</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.storage.type.numeric</string>
 			<key>settings</key>
 			<dict>
@@ -1767,7 +1783,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.variable.other.readwrite, .punctuation.definition.variable</string>
+			<string>.variable.other, .punctuation.definition.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -1785,17 +1801,6 @@
 				<string>italic</string>
 				<key>foreground</key>
 				<string>#e0e0e0</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.variable.other.object</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>

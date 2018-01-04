@@ -37,6 +37,7 @@
 @import 'schemes/candyman/label';
 @import 'schemes/candyman/markup';
 @import 'schemes/candyman/modifier';
+@import 'schemes/candyman/namespace';
 @import 'schemes/candyman/number';
 @import 'schemes/candyman/object';
 @import 'schemes/candyman/punctuation';

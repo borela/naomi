@@ -10,15 +10,6 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.storage {
-  &.modifier,
-  &.type {
-    foreground: $deep-purple-200;
-    fontStyle: none;
-  }
-
-  &.modifier.extends {
-    foreground: $red-300;
-    fontStyle: italic;
-  }
+.variable.other.namespace {
+  foreground: $brown-200;
 }

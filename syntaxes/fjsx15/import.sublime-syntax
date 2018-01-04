@@ -38,8 +38,11 @@ contexts:
         (import)\b
         (?=\s*\()
       captures:
-        1: keyword.control.import-export.js.fjsx15
-      set: header
+        1: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
     # Import the entire module.
     - match: |
         (?x)\s*
@@ -57,14 +60,16 @@ contexts:
         1: keyword.control.import-export.js.fjsx15
       set: targets
 
-  header:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#expression-only-header
+  function-call-meta-scope:
+    - meta_scope: meta.function-call.js.fjsx15
+    - match: ""
+      pop: true
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-
-  function-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
   origin:
     - match: \s*(from)\b
@@ -80,13 +85,13 @@ contexts:
   punctuation:
     - match: \s*(\{)
       captures:
-        1: punctuation.definition.import.list.begin.js.fjsx15
+        1: punctuation.section.block.begin.js.fjsx15
     - match: \s*(})
       captures:
-        1: punctuation.definition.import.list.end.js.fjsx15
+        1: punctuation.section.block.end.js.fjsx15
     - match: \s*(,)
       captures:
-        1: punctuation.definition.import.item.js.fjsx15
+        1: punctuation.separator.comma.js.fjsx15
 
   targets:
     - include: comment-no-pop
@@ -103,9 +108,7 @@ contexts:
     # Type.
     - match: \s*(type)\b
       captures:
-        1: >-
-          storage.type.flow
-          keyword.declaration.type-aliasing.flow
+        1: storage.type.flow
       set: types
     # Default.
     - match: \s*(default)\b
@@ -117,32 +120,30 @@ contexts:
     # All.
     - match: \s*(\*)
       captures:
-        1: keyword.operator.other.import.all.js.fjsx15
+        1: keyword.control.import-export.star.js.fjsx15
       set: optional-alias
     # Simple.
     - match: |
         (?xi)\s*
         ({{commonIdentifier}})
       captures:
-        1: >-
-          import.js.fjsx15
-          variable.other.readwrite.js.fjsx15
+        1: entity.name.readwrite.js.fjsx15
       set: optional-alias
 
   types:
     - include: aliased-type
     - match: \s*(})
       captures:
-        1: punctuation.definition.import.list.end.js.fjsx15
+        1: punctuation.section.block.end.js.fjsx15
       pop: true
     - match: \s*(\{)
       captures:
-        1: punctuation.definition.import.list.begin.js.fjsx15
+        1: punctuation.section.block.begin.js.fjsx15
       push:
         - include: aliased-type
         - match: \s*(,)
           captures:
-            1: punctuation.definition.import.item.js.fjsx15
+            1: punctuation.separator.comma.js.fjsx15
         - match: (?=\s*})
           pop: true
 
@@ -168,7 +169,7 @@ contexts:
   alias:
     - match: \s*(as)\b
       captures:
-        1: keyword.other.alias.js.fjsx15
+        1: keyword.control.import-export.as.js.fjsx15
       set: alias-name
 
   alias-name:
@@ -176,5 +177,5 @@ contexts:
         (?xi)\s*
         ({{commonIdentifier}})
       captures:
-        1: entity.name.alias.js.fjsx15
+        1: entity.name.variable.js.fjsx15
       pop: true

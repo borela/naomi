@@ -74,11 +74,8 @@ contexts:
   return:
     - match: \s*(=>)
       captures:
-        1: >-
-          flow
-          punctuation.definition.function.result.flow
+        1: storage.type.function.arrow.flow
       set: optional-type-expression
 
   optional-type-expression:
     - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax
-

@@ -21,7 +21,5 @@ contexts:
   main:
     - match: \s*(\?)
       captures:
-        1: >-
-          flow
-          keyword.operator.other.optional.flow
+        1: storage.modifier.optional.flow
       pop: true

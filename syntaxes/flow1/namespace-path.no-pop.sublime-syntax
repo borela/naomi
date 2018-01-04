@@ -26,63 +26,13 @@ contexts:
   # Javascript/flow don’t have namespaces, this is just a visual cue to highlight
   # only the last element when a type is expected.
   main:
-    # Namespace delimited by dots.
     - match: |
-        (?xi)\s*
-        (?>
-          (?:\b
-            ({{commonIdentifier}})(\??\.)
-            ({{commonIdentifier}})(\??\.)
-          )
-          |
-          (?:\b({{commonIdentifier}})(\??\.))
+        (?xi)
+        \s*({{commonIdentifier}})\s*
+        (?> (\?\.)
+          | (\.)
         )
       captures:
-        1: >-
-          flow
-          entity.name.namespace.a.flow
-        2: >-
-          flow
-          punctuation.definition.namespace.a.flow
-        3: >-
-          flow
-          entity.name.namespace.b.flow
-        4: >-
-          flow
-          punctuation.definition.namespace.b.flow
-        5: >-
-          flow
-          entity.name.namespace.a.flow
-        6: >-
-          flow
-          punctuation.definition.namespace.a.flow
-    # Namespace delimited by dollar signs.
-    - match: |
-        (?xi)\s*
-        (?>
-          (?:\b
-            ({{commonIdentifier}})(\$)
-            ({{commonIdentifier}})(\$)
-          )
-          |
-          (?:\b({{commonIdentifier}})(\$))
-        )
-      captures:
-        1: >-
-          flow
-          entity.name.namespace.a.flow
-        2: >-
-          flow
-          punctuation.definition.namespace.a.flow
-        3: >-
-          flow
-          entity.name.namespace.b.flow
-        4: >-
-          flow
-          punctuation.definition.namespace.b.flow
-        5: >-
-          flow
-          entity.name.namespace.a.flow
-        6: >-
-          flow
-          punctuation.definition.namespace.a.flow
+        1: variable.other.namespace.flow
+        2: punctuation.accessor.optional-chain.flow
+        3: punctuation.accessor.flow

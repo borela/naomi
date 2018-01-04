@@ -31,44 +31,31 @@ contexts:
     # Exact.
     - match: \s*({)\s*(\|)
       captures:
-        1: >-
-          flow
-          punctuation.definition.object.begin.flow
-        2: >-
-          flow
-          punctuation.definition.object.begin.flow
+        1: punctuation.section.block.begin.flow
+        2: punctuation.section.block.begin.flow
       set: [ delimiters, optional-property-or-method ]
     # Normal.
     - match: \s*({)
       captures:
-        1: >-
-          flow
-          punctuation.definition.object.begin.flow
+        1: punctuation.section.block.begin.flow
       set: [ delimiters, optional-property-or-method ]
 
   delimiters:
-    - match: \s*(,|;)
+    - match: \s*(?:(,)|(;))
       captures:
-        1: >-
-          flow
-          punctuation.definition.object.flow
+        1: punctuation.separator.comma.flow
+        2: punctuation.terminator.flow
       push: optional-property-or-method
     # Exact.
     - match: \s*(\|)\s*(})
       captures:
-        1: >-
-          flow
-          punctuation.definition.object.end.flow
-        2: >-
-          flow
-          punctuation.definition.object.end.flow
+        1: punctuation.section.block.end.flow
+        2: punctuation.section.block.end.flow
       pop: true
     # Normal.
     - match: \s*(})
       captures:
-        1: >-
-          flow
-          punctuation.definition.object.end.flow
+        1: punctuation.section.block.end.flow
       pop: true
 
   optional-property-or-method:
@@ -165,4 +152,3 @@ contexts:
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-

@@ -25,7 +25,5 @@ contexts:
           | \/\*\s*@flow\s\*\/
         ))
       captures:
-        1: >-
-          flow
-          keyword.other.prolog.flow
+        1: keyword.other.prolog.flow
       pop: true

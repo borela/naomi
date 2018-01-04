@@ -40,12 +40,8 @@ contexts:
           {{templateArguments}}?
         )
       captures:
-        1: >-
-          flow
-          storage.modifier.flow
-        2: >-
-          flow
-          storage.type.flow
+        1: storage.modifier.opaque.flow
+        2: storage.type.flow
       set: [
         punctuation,
         identifier
@@ -56,7 +52,7 @@ contexts:
         (?xi)\s*
         ({{commonIdentifier}})
       captures:
-        1: entity.name.type.flow
+        1: variable.type.flow
       pop: true
 
   punctuation:

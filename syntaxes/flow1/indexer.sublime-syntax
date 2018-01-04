@@ -26,18 +26,18 @@ contexts:
   main:
     - match: \s*(\[)
       captures:
-        1: >-
-          flow
-          punctuation.definition.object.indexer.flow
-      set: [ indexer-end, optional-name ]
+        1: punctuation.section.brackets.begin.flow
+      set: [
+        optional-associated-type,
+        indexer-end,
+        optional-name
+      ]
 
   indexer-end:
     - match: \s*(])
       captures:
-        1: >-
-          flow
-          punctuation.definition.object.indexer.flow
-      set: optional-associated-type
+        1: punctuation.section.brackets.end.flow
+      pop: true
 
   type-expression:
     - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax
@@ -53,12 +53,8 @@ contexts:
         ({{commonIdentifier}})(\?)?
         (?=\s*:)
       captures:
-        1: >-
-          function.parameter.js.fjsx15
-          entity.name.variable.js.fjsx15
-        2: >-
-          flow
-          keyword.operator.other.optional.flow
+        1: variable.parameter.function.js.fjsx15
+        2: storage.modifier.optional.flow
       set: associated-type
     # Strings.
     - match: (?=\s*(?>'|"|`))

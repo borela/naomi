@@ -31,9 +31,7 @@ contexts:
     # Open new type expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
-        1: >-
-          flow
-          punctuation.definition.expression.group.begin.flow
+        1: punctuation.section.group.begin.flow
       set: open-group
     # Start of the type expression.
     - match: "{{expressionBegin}}"
@@ -52,9 +50,7 @@ contexts:
     # Open new type expression group.
     - match: "{{expressionGroupBegin}}"
       captures:
-        1: >-
-          flow
-          punctuation.definition.expression.group.begin.flow
+        1: punctuation.section.group.begin.flow
       push: open-group
     # Close the current type expression group.
     - include: close-group
@@ -65,9 +61,7 @@ contexts:
   close-group:
     - match: \s*(\))
       captures:
-        1: >-
-          flow
-          punctuation.definition.expression.group.end.flow
+        1: punctuation.section.group.end.flow
       set: optional-tail
 
   head:

@@ -21,23 +21,17 @@ contexts:
   main:
     - match: \s*(\[)
       captures:
-        1: >-
-          flow
-          punctuation.definition.array.begin.flow
+        1: punctuation.section.brackets.flow
       set: [ delimiters, optional-type-expression ]
 
   delimiters:
     - match: \s*(,)
       captures:
-        1: >-
-          flow
-          punctuation.definition.array.flow
+        1: punctuation.separator.flow
       push: optional-type-expression
     - match: \s*(])
       captures:
-        1: >-
-          flow
-          punctuation.definition.array.end.flow
+        1: punctuation.section.brackets.end.flow
       pop: true
 
   optional-type-expression:

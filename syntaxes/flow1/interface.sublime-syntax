@@ -26,9 +26,7 @@ contexts:
   main:
     - match: \s*(interface)\b
       captures:
-        1: >-
-          flow
-          storage.type.flow
+        1: storage.type.interface.flow
       set: declaration
 
   declaration:
@@ -36,9 +34,7 @@ contexts:
     # Extension.
     - match: \s*(extends)\b
       captures:
-        1: >-
-          flow
-          storage.modifier.flow
+        1: storage.modifier.extends.flow
       push: optional-type-expression
     # Template parameters.
     - match: (?=\s*<)
@@ -49,9 +45,7 @@ contexts:
     # Identifier.
     - match: (?xi)\s*({{commonIdentifier}})
       captures:
-        1: >-
-          flow
-          entity.name.interface.flow
+        1: entity.name.interface.flow
 
   optional-type-expression:
     - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax
@@ -63,23 +57,19 @@ contexts:
     - include: comment-no-pop
     - match: \s*(\{)
       captures:
-        1: >-
-          flow
-          punctuation.definition.interface.body.begin.flow
+        1: punctuation.section.block.begin.flow
       set: [ body-end, statements-and-expressions ]
 
   body-end:
     - include: comment-no-pop
     - match: \s*(?>(,)|(;))
       captures:
-        1: punctuation.definition.object.js.fjsx15
-        2: keyword.other.terminator.js.fjsx15
+        1: punctuation.separator.comma.flow
+        2: punctuation.terminator.flow
       push: statements-and-expressions
     - match: \s*(})
       captures:
-        1: >-
-          flow
-          punctuation.definition.interface.body.end.flow
+        1: punctuation.section.brackets.end.flow
       pop: true
     - match: (?=\s*\S)
       push: statements-and-expressions

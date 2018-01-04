@@ -34,10 +34,7 @@ contexts:
     # ES module.
     - match: \s*(module)
       captures:
-        1: >-
-          flow
-          storage.type.flow
-          keyword.declaration.type-aliasing.flow
+        1: storage.type.module.flow
       set: identifier
 
   common-js-module:
@@ -46,9 +43,7 @@ contexts:
   association:
     - match: \s*(:)
       captures:
-        1: >-
-          flow
-          keyword.operator.other.association.flow
+        1: keyword.operator.other.flow
       pop: true
 
   object-literal:
@@ -62,7 +57,5 @@ contexts:
         (?xi)\a*
         ({{commonIdentifier}})
       captures:
-        1: >-
-          flow
-          entity.name.module.flow
+        1: entity.name.module.flow
       pop: true

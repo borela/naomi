@@ -57,7 +57,10 @@ contexts:
         \s*(import)\b
       captures:
         1: keyword.control.import-export.js.fjsx15
-      set: targets
+      set: [
+        delimiter,
+        optional-target
+      ]
 
   function-call-meta-scope:
     - meta_scope: meta.function-call.js.fjsx15
@@ -65,42 +68,70 @@ contexts:
       pop: true
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-
-  origin:
-    - match: \s*(from)\b
-      captures:
-        1: keyword.control.import-export.origin.js.fjsx15
-      set: origin-path
 
   origin-path:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
-  punctuation:
-    - match: \s*(\{)
-      captures:
-        1: punctuation.section.block.begin.js.fjsx15
+  close-block:
     - match: \s*(})
       captures:
         1: punctuation.section.block.end.js.fjsx15
+      pop: true
+
+  optional-target:
+    - match: (?=\s*(?>[,}]|from))
+      pop: true
+    # All.
+    - match: \s*(\*)
+      captures:
+        1: keyword.control.import-export.star.js.fjsx15
+      pop: true
+    # Multiple targets.
+    - match: \s*(\{)
+      captures:
+        1: punctuation.section.block.begin.js.fjsx15
+      set: [
+        close-block,
+        delimiter,
+        optional-target
+      ]
+    # Simple.
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: entity.name.variable.js.fjsx15
+      set: optional-alias
+
+  delimiter:
     - match: \s*(,)
       captures:
         1: punctuation.separator.comma.js.fjsx15
+      push: optional-target
+    # Origin.
+    - match: \s*(from)\b
+      captures:
+        1: keyword.control.import-export.origin.js.fjsx15
+      set: origin-path
+    # Anything else.
+    - match: (?=\s*\S)
+      pop: true
 
-  targets:
-    - include: comment-no-pop
-    - include: origin
-    - include: punctuation
-    - match: ""
-      push:
-        - include: sequence
-        - match: ""
-          pop: true
+  # targets:
+  #   - include: comment-no-pop
+  #   - include: origin
+  #   - include: punctuation
+  #   - match: ""
+  #     push:
+  #       - include: sequence
+  #       - match: ""
+  #         pop: true
 
   sequence:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/typeof.sublime-syntax

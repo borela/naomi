@@ -11,38 +11,38 @@
 // the License.
 
 .storage.type.numeric {
-  foreground: $orange-400;
+  foreground: $amber-300;
 }
 
 .constant.numeric {
-  foreground: $orange-400;
+  foreground: $amber-300;
   fontStyle: none;
 
   &.float {
-    foreground: $purple-200;
-    .punctuation.defintion {
-      foreground: $purple-300;
-    }
-  }
-
-  &.binary {
     foreground: $cyan-300;
-    .punctuation.definition {
+    .punctuation.defintion {
       foreground: $cyan-300;
     }
   }
 
-  &.octal {
-    foreground: $lime-300;
+  &.binary {
+    foreground: $deep-orange-300;
     .punctuation.definition {
-      foreground: $lime-300;
+      foreground: $deep-orange-300;
+    }
+  }
+
+  &.octal {
+    foreground: $brown-200;
+    .punctuation.definition {
+      foreground: $brown-200;
     }
   }
 
   &.hex {
-    foreground: $gray-300;
+    foreground: $green-200;
     .punctuation.definition {
-      foreground: $gray-300;
+      foreground: $green-200;
     }
   }
 }

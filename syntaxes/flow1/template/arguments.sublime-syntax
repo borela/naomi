@@ -21,23 +21,18 @@ contexts:
   main:
     - match: \s*(<)
       captures:
-        1: >-
-          flow
-          punctuation.definition.template.arguments.begin.flow
+        1: punctuation.section.generic.begin.flow
       set: [ delimiters, optional-type-expression ]
 
   delimiters:
+    - meta_scope: meta.generic.flow
     - match: \s*(,)
       captures:
-        1: >-
-          flow
-          punctuation.definition.template.arguments.flow
+        1: punctuation.separator.comma.flow
       push: optional-type-expression
     - match: \s*(>)
       captures:
-        1: >-
-          flow
-          punctuation.definition.template.arguments.end.flow
+        1: punctuation.section.generic.end.flow
       pop: true
 
   optional-type-expression:

@@ -21,9 +21,7 @@ contexts:
   main:
     - match: \s*(\?)
       captures:
-        1: >-
-          flow
-          keyword.operator.other.nullable.flow
+        1: storage.modifier.nullable.flow
       set: optional-type-expression
 
   optional-type-expression:

@@ -21,9 +21,7 @@ contexts:
   main:
     - match: \s*(\|)
       captures:
-        1: >-
-          flow
-          keyword.operator.other.union.flow
+        1: keyword.operator.other.union.flow
       set: optional-type-expression
 
   optional-type-expression:

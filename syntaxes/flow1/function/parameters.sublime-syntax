@@ -21,31 +21,26 @@ contexts:
   main:
     - match: \s*(\()
       captures:
-        1: >-
-          flow
-          punctuation.definition.function.parameters.begin.flow
+        1: punctuation.section.group.begin.flow
       set: [ delimiters, optional-parameter ]
 
   delimiters:
     - match: \s*(,)
       captures:
-        1: >-
-          flow
-          punctuation.definition.function.parameters.flow
+        1: punctuation.separator.comma.flow
       push: optional-parameter
     - match: \s*(\))
       captures:
-        1: >-
-          flow
-          punctuation.definition.function.parameters.end.flow
+        1: punctuation.section.group.end.flow
       pop: true
 
   optional-parameter:
+    - meta_scope: meta.function.parameters.js.fjsx15
     # Rest.
     - match: \s*(\.{3})
       captures:
-        1: >-
-          flow
-          keyword.operator.other.rest.flow
+        1: keyword.operator.other.rest.flow
+    # Parameter and type.
     - include: Packages/Naomi/syntaxes/flow1/function/parameters/simple.sublime-syntax
+    # Just the type.
     - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax

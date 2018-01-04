@@ -19,13 +19,9 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        \s*(:)
+    - match: \s*(:)
       captures:
-        1: >-
-          flow
-          keyword.operator.other.cast.flow
+        1: keyword.operator.other.cast.flow
       set: optional-type-expression
 
   optional-type-expression:

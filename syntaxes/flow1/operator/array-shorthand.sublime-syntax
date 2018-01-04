@@ -19,12 +19,9 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\[)\s*(])
+    - match: \s*((\[)\s*(]))
       captures:
-        1: >-
-          flow
-          punctuation.definition.array.begin.flow
-        2: >-
-          flow
-          punctuation.definition.array.end.flow
+        1: meta.sequence.flow
+        1: punctuation.section.brackets.begin.flow
+        2: punctuation.section.brackets.end.flow
       pop: true

@@ -35,7 +35,7 @@ contexts:
         meta.block.js.fjsx15
     - match: \s*(,)
       captures:
-        1: punctuation.definition.object.js.fjsx15
+        1: punctuation.separator.comma.js.fjsx15
       push: optional-variable
     - match: \s*(})
       captures:

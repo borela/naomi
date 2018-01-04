@@ -1409,6 +1409,8 @@
 			<string>.keyword.control.flow.break.throw</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>bold italic</string>
 				<key>foreground</key>
 				<string>#ea80fc</string>
 			</dict>
@@ -1418,6 +1420,8 @@
 			<string>.keyword.control.flow.return</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>bold italic</string>
 				<key>foreground</key>
 				<string>#ea80fc</string>
 			</dict>
@@ -1560,6 +1564,8 @@
 			<string>.constant.numeric</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string></string>
 				<key>foreground</key>
 				<string>#ffa726</string>
 			</dict>
@@ -1642,7 +1648,7 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>italic</string>
+				<string>bold</string>
 				<key>foreground</key>
 				<string>#bcaaa4</string>
 			</dict>

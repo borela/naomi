@@ -25,10 +25,12 @@
 
       &.break.throw {
         foreground: $purple-a100;
+        fontStyle: bold italic;
       }
 
       &.return {
         foreground: $purple-a100;
+        fontStyle: bold italic;
       }
     }
 

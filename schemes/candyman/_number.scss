@@ -16,6 +16,7 @@
 
 .constant.numeric {
   foreground: $orange-400;
+  fontStyle: none;
 
   &.float {
     foreground: $purple-200;

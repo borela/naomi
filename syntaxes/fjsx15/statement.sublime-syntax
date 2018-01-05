@@ -232,8 +232,9 @@ contexts:
 
   label:
     - match: |
-        (?xi)
-        \s*({{commonIdentifier}})
+        (?xi)\s*
+        (?!default)
+        ({{commonIdentifier}})
         \s*(:)
       captures:
         1: entity.name.label.js.fjsx15
@@ -255,6 +256,13 @@ contexts:
         optional-expression
       ]
     - match: \s*(case)\b
+      captures:
+        1: keyword.control.switch.js.fjsx15
+      set: [
+        colon,
+        optional-expression
+      ]
+    - match: \s*(default)\b
       captures:
         1: keyword.control.switch.js.fjsx15
       set: [

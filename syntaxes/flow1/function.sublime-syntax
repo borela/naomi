@@ -18,7 +18,7 @@ hidden: true
 scope: ...
 
 variables:
-  templateArguments: |
+  genericArguments: |
     (<
       [^<>]*
       \g<-1>?
@@ -49,15 +49,15 @@ contexts:
     - match: |
         (?xi)
         (?=\s*
-          {{templateArguments}}?
+          {{genericArguments}}?
           {{flowFunction}}
         )
       set: declaration
 
   declaration:
-    # Template parameters.
+    # Generic parameters.
     - match: (?=\s*<)
-      push: template-arguments
+      push: generic-arguments
     # Parameters.
     - match: (?=\s*\()
       set: [
@@ -65,8 +65,8 @@ contexts:
         parameters
       ]
 
-  template-arguments:
-    - include: Packages/Naomi/syntaxes/flow1/template/arguments.sublime-syntax
+  generic-arguments:
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
 
   parameters:
     - include: Packages/Naomi/syntaxes/flow1/function/parameters.sublime-syntax

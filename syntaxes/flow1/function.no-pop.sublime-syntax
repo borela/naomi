@@ -18,7 +18,7 @@ hidden: true
 scope: ...
 
 variables:
-  templateArguments: |
+  genericArguments: |
     (<
       [^<>]*
       \g<-1>?
@@ -49,7 +49,7 @@ contexts:
     - match: |
         (?xi)
         (?=\s*
-          {{templateArguments}}?
+          {{genericArguments}}?
           {{flowFunction}}
         )
       push: declaration

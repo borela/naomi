@@ -22,7 +22,7 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  templateArguments: |
+  genericArguments: |
     (<
       [^<>]*
       \g<-1>?
@@ -37,7 +37,7 @@ contexts:
         (type)\b
         (?=\s+
           {{commonIdentifier}}
-          {{templateArguments}}?
+          {{genericArguments}}?
         )
       captures:
         1: storage.modifier.opaque.flow
@@ -57,7 +57,7 @@ contexts:
 
   punctuation:
     - meta_scope: meta.declaration.type.flow
-    - include: Packages/Naomi/syntaxes/flow1/template/parameters.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/generic/parameters.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/flow1/associated-type.no-pop.sublime-syntax
     - match: \s*(=)
       captures:

@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: (?=\s*<)
-      push: parameters
+      push: arguments
 
-  parameters:
-    - include: Packages/Naomi/syntaxes/flow1/template/parameters.sublime-syntax
+  arguments:
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax

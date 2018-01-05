@@ -10,8 +10,6 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "palette";
-
 * {
   background: $blue-gray-900;
   foreground: $blue-gray-200;
@@ -33,52 +31,3 @@
   activeGuide: $blue-gray-600;
   stackGuide: $blue-gray-800;
 }
-
-@import "shared/alias";
-@import "shared/ambiguous";
-@import "shared/array";
-@import "shared/cast";
-@import "shared/class";
-@import "shared/color";
-@import "shared/comment";
-@import "shared/constant";
-@import "shared/datetime";
-@import "shared/embedded-expression";
-@import "shared/enumeration";
-@import "shared/function";
-@import "shared/gitgutter";
-@import "shared/interface";
-@import "shared/keyword";
-@import "shared/label";
-@import "shared/modifier";
-@import "shared/namespace";
-@import "shared/number";
-@import "shared/object";
-@import "shared/operator";
-@import "shared/preprocessor";
-@import "shared/punctuation";
-@import "shared/regex";
-@import "shared/string";
-@import "shared/structure";
-@import "shared/template";
-@import "shared/trait";
-@import "shared/type";
-@import "shared/unknown";
-@import "shared/variable";
-
-@import "shared/docblock/alias";
-@import "shared/docblock/class";
-@import "shared/docblock/constant";
-@import "shared/docblock/function";
-@import "shared/docblock/import";
-@import "shared/docblock/interface";
-@import "shared/docblock/keyword";
-@import "shared/docblock/modifier";
-@import "shared/docblock/namespace";
-@import "shared/docblock/number";
-@import "shared/docblock/operator";
-@import "shared/docblock/punctuation";
-@import "shared/docblock/string";
-@import "shared/docblock/structure";
-@import "shared/docblock/type";
-@import "shared/docblock/variable";

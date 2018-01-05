@@ -21,5 +21,5 @@ contexts:
   main:
     - match: \s*(\.{3})
       captures:
-        1: keyword.operator.other.rest.js.fjsx15
+        1: keyword.operator.rest.js.fjsx15
       pop: true

@@ -10,11 +10,141 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-@import "json/operator";
-@import "json/level1";
-@import "json/level2";
-@import "json/level3";
-@import "json/level4";
-@import "json/level5";
-@import "json/level6";
-@import "json/level7";
+.source.json {
+  // Root.
+  .punctuation.section.dictionary {
+    foreground: $purple-200;
+  }
+
+  // Level 1.
+  .meta.structure.dictionary {
+    .meta.structure.dictionary.key {
+      .string {
+        foreground: $cyan-300;
+
+        .punctuation.definition.string {
+          foreground: $cyan-300;
+        }
+      }
+    }
+  }
+
+  // Level 2.
+  #{repeatString('.meta.structure.dictionary', 3)} {
+    .punctuation.section.dictionary {
+      foreground: $cyan-300;
+    }
+
+    .meta.structure.dictionary.key {
+      .string {
+        foreground: $light-green-300;
+
+        .punctuation.definition.string {
+          foreground: $light-green-300;
+        }
+      }
+    }
+  }
+
+  // Level 3.
+  #{repeatString('.meta.structure.dictionary', 5)} {
+    .punctuation.section.dictionary {
+      foreground: $light-green-300;
+    }
+
+    .meta.structure.dictionary.key {
+      .string {
+        foreground: $deep-orange-300;
+
+        .punctuation.definition.string {
+          foreground: $deep-orange-300;
+        }
+      }
+    }
+  }
+
+  // Level 4.
+  #{repeatString('.meta.structure.dictionary', 7)} {
+    .punctuation.section.dictionary {
+      foreground: $deep-orange-300;
+    }
+
+    .meta.structure.dictionary.key {
+      .string {
+        foreground: $teal-300;
+
+        .punctuation.definition.string {
+          foreground: $teal-300;
+        }
+      }
+    }
+  }
+
+  // Level 5.
+  #{repeatString('.meta.structure.dictionary', 9)} {
+    .punctuation.section.dictionary {
+      foreground: $teal-300;
+    }
+
+    .meta.structure.dictionary.key {
+      .string {
+        foreground: $pink-300;
+
+        .punctuation.definition.string {
+          foreground: $pink-300;
+        }
+      }
+    }
+  }
+
+  // Level 6.
+  #{repeatString('.meta.structure.dictionary', 11)} {
+    .punctuation.section.dictionary {
+      foreground: $pink-300;
+    }
+
+    .meta.structure.dictionary.key {
+      .string {
+        foreground: $purple-300;
+
+        .punctuation.definition.string {
+          foreground: $purple-300;
+        }
+      }
+    }
+  }
+
+  // Level 7.
+  #{repeatString('.meta.structure.dictionary', 13)} {
+    .punctuation.section.dictionary {
+      foreground: $purple-300;
+    }
+
+    .meta.structure.dictionary.key {
+      .string {
+        foreground: $amber-300;
+
+        .punctuation.definition.string {
+          foreground: $amber-300;
+        }
+      }
+    }
+  }
+
+  // Level 8 - n.
+  #{repeatString('.meta.structure.dictionary', 15)} {
+    .punctuation.section.dictionary {
+      foreground: $amber-300;
+    }
+
+    .meta.structure.dictionary.key {
+      .string {
+        foreground: $amber-300;
+
+        .punctuation.definition.string {
+          foreground: $amber-300;
+        }
+      }
+    }
+  }
+}

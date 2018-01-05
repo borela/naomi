@@ -22,7 +22,7 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  templateArguments: |
+  genericArguments: |
     (<
       [^<>]*
       \g<-1>?
@@ -31,23 +31,23 @@ variables:
 
 contexts:
   main:
-    # Function call at the result of an expression.
-    - match: |
-        (?x)
-        (?<=\)|]|}|"|'|`)
-        (?=\s*\()
-      set: optional-chain-and-arguments
-    # Template function.
+    # Generic function call.
     - match: |
         (?xi)
         (?=
           \s*\#?
           \s*{{commonIdentifier}}
-          \s*{{templateArguments}}
+          \s*{{genericArguments}}
           \s*(\?\.)?
           \s*\(
         )
-      set: modifier-and-name
+      set: [
+        meta-scope,
+        arguments,
+        generic-arguments,
+        identifier,
+        optional-modifier
+      ]
     # Simple function call.
     - match: |
         (?xi)
@@ -57,57 +57,35 @@ contexts:
           \s*(\?\.)?
           \s*\(
         )
-      set: modifier-and-name
+      set: [
+        meta-scope,
+        arguments,
+        identifier,
+        optional-modifier
+      ]
 
-  modifier-and-name:
-    # Private modifier.
+  optional-modifier:
     - match: \s*(\#)
       captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.access.js.fjsx15
-    # Support identifier.
-    - match: |
-        (?x)\s*
-        ((?> constructor
-          | super
-        ))\b
-      captures:
-        1: >-
-          support.js.fjsx15
-          entity.name.function.js.fjsx15
-      set: [
-        optional-chain-and-support-arguments,
-        possible-template-arguments
-      ]
-    # Identifier.
+        1: storage.modifier.js.fjsx15
+    - match: (?=\s*\S)
+      pop: true
+
+  identifier:
     - match: |
         (?xi)
         \s*({{commonIdentifier}})
       captures:
-        1: entity.name.function.js.fjsx15
-      set: [
-        optional-chain-and-arguments,
-        possible-template-arguments
-      ]
-
-  possible-template-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.sublime-syntax
-    - match: ""
+        1: variable.function.js.fjsx15
       pop: true
 
-  optional-chain-and-arguments:
-    # Optional chain operator.
-    - match: \s*(\?\.)
-      captures:
-        1: keyword.operator.other.optional-chain.js.fjsx15
-    # Actual arguments.
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+  generic-arguments:
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
 
-  optional-chain-and-support-arguments:
-    # Optional chain operator.
-    - match: \s*(\?\.)
-      captures:
-        1: keyword.operator.other.optional-chain.js.fjsx15
-    # Actual arguments.
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
+  meta-scope:
+    - meta_scope: meta.function-call.js.fjsx15
+    - match: ""
+      pop: true

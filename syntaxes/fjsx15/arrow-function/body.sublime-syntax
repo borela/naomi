@@ -19,41 +19,38 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        \s*(=>)
+    - match: \s*(=>)
       captures:
-        1: >-
-          arrow.js.fjsx15
-          punctuation.definition.function.body.arrow.js.fjsx15
+        1: storage.type.function.arrow.js.fjsx15
       set: possible-multi-statement-body
 
   possible-multi-statement-body:
-    - include: comment
+    - include: comment-no-pop
     - match: \s*(\{)
       captures:
-        1: >-
-          arrow.js.fjsx15
-          punctuation.definition.function.body.begin.js.fjsx15
-      set: multi-statement-body
-    - match: (?=\s*\S)
-      pop: true
+        1: punctuation.section.block.begin.js.fjsx15
+      set: close-body
+    - include: optional-expression
 
-  multi-statement-body:
+  close-body:
+    - meta_scope: >-
+        meta.function.js.fjsx15
+        meta.block.js.fjsx15
     - match: \s*(})
       captures:
-        1: >-
-          arrow.js.fjsx15
-          punctuation.definition.function.body.end.js.fjsx15
-      pop: true
+        1: punctuation.section.block.end.js.fjsx15
+      set: optional-expression-tail
     - match: ""
-      push:
-        - include: statement-and-expression
-        - match: ""
-          pop: true
+      push: optional-statements-and-expressions
 
-  comment:
+  optional-statements-and-expressions:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
+
+  comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  optional-expression-tail:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax#optional-tail

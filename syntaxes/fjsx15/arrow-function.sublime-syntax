@@ -22,7 +22,7 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  templateArguments: |
+  genericArguments: |
     (<
       [^<>]*
       \g<-1>?
@@ -31,9 +31,17 @@ variables:
 
   parameters: |
     (\(
-      [^()]*
+      (?> '(?:\'|[^'])*'
+        | "(?:\"|[^"])*"
+        | `(?:\`|[^`])*`
+        | [^'"`()]*
+      )
       \g<-1>?
-      [^()]*
+      (?> '(?:\'|[^'])*'
+        | "(?:\"|[^"])*"
+        | `(?:\`|[^`])*`
+        | [^'"`()]*
+      )
     \))
 
   flowOperators: |
@@ -42,15 +50,15 @@ variables:
     )
 
   string: |
-    (?> '.*?'
-      | ".*?"
-      | `.*`
+    (?> '(?:\'|[^'])*'
+      | "(?:\"|[^"])*"
+      | `(?:\`|[^`])*`
     )
 
   simpleFlowType: |
     (?> {{string}}
       | {{commonIdentifier}}
-        {{templateArguments}}?
+        {{genericArguments}}?
     )
 
   flowFunction: |
@@ -74,121 +82,44 @@ variables:
 
   flowComment: /\*\s*:.*?\*/
 
-  returnType: |
+  type: |
     (?> {{flowComment}}
-      | (?::{{complexType}})
-    )?
+      | :{{complexType}}
+    )
 
 contexts:
   main:
-    # Normal arrow function assigned to variable/constant.
-    - match: |
-        (?xi)
-        \s*((?>const|let|var)\b)?
-        \s*({{commonIdentifier}})
-        \s*(=)
-        \s*(async)?
-        (?=
-          \s*{{templateArguments}}?
-          \s*{{parameters}}
-          \s*{{returnType}}
-          \s*=>
-        )
-      captures:
-        1: >-
-          storage.type.js.fjsx15
-          keyword.declaration.variable.js.fjsx15
-        2: entity.name.function.js.fjsx15
-        3: punctuation.definition.function.assignment.js.fjsx1
-        4: >-
-          storage.modifier.js.fjsx15
-          keyword.other.async.js.fjsx15
-      set: [
-        body,
-        template-and-parameters
-      ]
-    # Single parameter arrow function assigned to variable.
-    - match: |
-        (?xi)
-        \s*((?>const|let|var)\b)?
-        \s*({{commonIdentifier}})
-        \s*(=)
-        \s*(async)?
-        (?=
-          \s*{{commonIdentifier}}
-          \s*{{returnType}}
-          \s*=>
-        )
-      captures:
-        1: >-
-          storage.type.js.fjsx15
-          keyword.declaration.variable.js.fjsx15
-        2: entity.name.function.js.fjsx15
-        3: punctuation.definition.function.assignment.js.fjsx1
-        4: >-
-          storage.modifier.js.fjsx15
-          keyword.other.async.js.fjsx15
-      set: [
-        body,
-        single-parameter
-      ]
     # Normal arrow function.
     - match: |
         (?xi)
-        \s*(async)?
         (?=
-          \s*{{templateArguments}}?
+          (?:\s*async)?
+          \s*{{genericArguments}}?
           \s*{{parameters}}
-          \s*{{returnType}}
+          \s*{{type}}?
           \s*=>
         )
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.async.js.fjsx15
-      set: [
-        body,
-        template-and-parameters
-      ]
+      set: normal-arrow-function
     # Single parameter.
     - match: |
         (?xi)
-        \s*(async)?
         (?=
+          (?:\s*async)?
           \s*{{commonIdentifier}}
-          \s*{{returnType}}
+          \s*{{type}}?
           \s*=>
         )
-      captures:
-        1: keyword.other.async.js.fjsx15
-      set: [
-        body,
-        single-parameter
-      ]
+      set: single-parameter-arrow-function
 
-  single-parameter:
-    - match: (?=\s*=>)
-      pop: true
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
-        # Parameter.
-        - match: |
-            (?xi)
-            ({{commonIdentifier}})(\?)?
-          captures:
-            0: function.parameter.js.fjsx15
-            1: entity.name.variable.js.fjsx15
-            2: keyword.operator.other.optional.flowtype
-          pop: true
+  normal-arrow-function:
+    - meta_scope: meta.function.js.fjsx15
+    - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/generic/parameters.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/body.sublime-syntax
 
-  template-and-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/parameters.sublime-syntax
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
-        - match: ""
-          pop: true
-
-  body:
+  single-parameter-arrow-function:
+    - meta_scope: meta.function.js.fjsx15
+    - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/simple.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/body.sublime-syntax

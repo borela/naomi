@@ -28,7 +28,7 @@ contexts:
     - match: \s*(/\*)
       captures:
         1: >-
-          comment.line.js.fjsx15
+          comment.block.js.fjsx15
           punctuation.definition.comment.begin.js.fjsx15
       set: block
 
@@ -54,7 +54,7 @@ contexts:
         - match: \s*$\n?
           scope: meta.block-end.js.fjsx15
           pop: true
-        - match: ''
+        - match: ""
           pop: true
 
   link:

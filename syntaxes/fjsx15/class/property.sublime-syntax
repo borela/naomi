@@ -22,112 +22,38 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  templateArguments: |
-    (<
-      [^<>]*
-      \g<-1>?
-      [^<>]*
-    >)
-
-  parameters: |
-    (\(
-      [^()]*
-      \g<-1>?
-      [^()]*
-    \))
-
-  flowOperators: |
-    (?> &(?!&)
-      | \|(?!\|)
-    )
-
-  string: |
-    (?> '.*?'
-      | ".*?"
-      | `.*`
-    )
-
-  simpleFlowType: |
-    (?> {{string}}
-      | {{commonIdentifier}}
-        {{templateArguments}}?
-    )
-
-  flowFunction: |
-    (
-      {{parameters}}
-      \s*=>\s*
-      (?> {{simpleFlowType}}
-        | \g<-2>
-      )
-    )
-
-  complexType: |
-    (
-      \??\s*
-      (?> {{simpleFlowType}}
-        | {{flowFunction}}
-      )
-      \s*{{flowOperators}}?
-      \s*\g<-5>?
-    )
-
-  flowComment: /\*\s*:.*?\*/
-
-  flowType: |
-    (?> {{flowComment}}
-      | (?::{{complexType}})
-    )
-
 contexts:
   main:
-    # Static variables.
     - match: |
-        (?xi)\s*
-        (static)
-        (?=
-          \s+{{commonIdentifier}}
-          (\s*{{flowType}})?
-        )
+        (?xi)
+        (?=\s*{{commonIdentifier}})
+      set: [
+        optional-type-and-value,
+        identifier
+      ]
+
+  identifier:
+    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+
+  optional-type-and-value:
+    - match: \s*(\?)
       captures:
         1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.access.js.fjsx15
-      set: declaration
-    # Normal variable.
-    - match: |
-        (?xi)
-        (?=
-          \s+{{commonIdentifier}}
-          (\s*{{flowType}})?
-        )
-      set: declaration
-
-  declaration:
-    - include: terminator
-    - match: (?=\s*$)
-      pop: true
+          flow
+          keyword.operator.other.optional.flow
     # Type.
     - match: (?=\s*:)
-      push: type
+      push: associated-type
     # Value.
     - match: (?=\s*=)
+      set: optional-expression
+    # Anything else.
+    - match: (?=\s*\S)
       pop: true
-    # Identifier.
-    - match: |
-        (?xi)
-        (?=\s*
-          {{commonIdentifier}}
-        )
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
-  type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/associated-type.sublime-syntax
+  associated-type:
+    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
 
-  terminator:
-    - include: Packages/Naomi/syntaxes/fjsx15/terminator.sublime-syntax
-
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

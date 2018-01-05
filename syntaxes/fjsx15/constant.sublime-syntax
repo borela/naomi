@@ -24,16 +24,29 @@ variables:
 
 contexts:
   main:
+    - include: object
+    - include: normal
+
+  object:
+    - match: |
+        (?x)\s*
+        (\#)?
+        ({{constantIdentifier}})
+        (?=\s*\??\.)
+      captures:
+        1: storage.modifier.js.fjsx15
+        2: variable.other.object.constant.js.fjsx15
+      pop: true
+
+  normal:
     # Single character.
     - match: |
         (?x)\s*
         (\#)?
         ([_[:upper:]])\b
       captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.operator.other.access.js.fjsx15
-        2: entity.name.constant.js.fjsx15
+        1: storage.modifier.js.fjsx15
+        2: variable.other.constant.js.fjsx15
       pop: true
     # Two or more characters.
     - match: |
@@ -46,8 +59,6 @@ contexts:
           )
         )
       captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.operator.other.access.js.fjsx15
-        2: entity.name.constant.js.fjsx15
+        1: storage.modifier.js.fjsx15
+        2: variable.other.constant.js.fjsx15
       pop: true

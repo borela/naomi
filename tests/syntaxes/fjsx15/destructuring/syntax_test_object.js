@@ -42,7 +42,7 @@
 //                            ^ .keyword.operator.other.association.js.fjsx15
 //                             ^ .constant.numeric.decimal.js.fjsx15
 //                              ^ .punctuation.definition.object.end.js.fjsx15
-//                               ^ .keyword.operator.other.terminator.js.fjsx15
+//                               ^ .keyword.other.terminator.js.fjsx15
    let {a=0,...b=0} = {a:1,b:2};
 // ^^^ .keyword.declaration.variable.js.fjsx15
 //     ^ .destructuring.object.js.fjsx15
@@ -72,7 +72,7 @@
 //                          ^ .keyword.operator.other.association.js.fjsx15
 //                           ^ .constant.numeric.decimal.js.fjsx15
 //                            ^ .punctuation.definition.object.end.js.fjsx15
-//                             ^ .keyword.operator.other.terminator.js.fjsx15
+//                             ^ .keyword.other.terminator.js.fjsx15
    let {a=0,...b=0}:{a:number,b:number} = {a:1,b:2};
 // ^^^ .keyword.declaration.variable.js.fjsx15
 //     ^ .destructuring.object.js.fjsx15
@@ -102,7 +102,7 @@
 //                                            ^ .punctuation.definition.object.js.fjsx15
 //                                               ^ .constant.numeric.decimal.js.fjsx15
 //                                                ^ .punctuation.definition.object.end.js.fjsx15
-//                                                 ^ .keyword.operator.other.terminator.js.fjsx15
+//                                                 ^ .keyword.other.terminator.js.fjsx15
    let {a:{a=0,...b=0}} = {a:{a:1,a:2}};
 // ^^^ .keyword.declaration.variable.js.fjsx15
 //     ^ .destructuring.object.js.fjsx15
@@ -142,7 +142,7 @@
 //                                  ^ .constant.numeric.decimal.js.fjsx15
 //                                   ^ .punctuation.definition.object.end.js.fjsx15
 //                                    ^ .punctuation.definition.object.end.js.fjsx15
-//                                     ^ .keyword.operator.other.terminator.js.fjsx15
+//                                     ^ .keyword.other.terminator.js.fjsx15
    let {a:{a=0,...b=0}}:{a:{a:number,b:number}} = {a:{a:1,b:2}};
 // ^^^ .keyword.declaration.variable.js.fjsx15
 //     ^ .destructuring.object.js.fjsx15
@@ -192,7 +192,7 @@
 //                                                          ^ .constant.numeric.decimal.js.fjsx15
 //                                                           ^ .punctuation.definition.object.end.js.fjsx15
 //                                                            ^ .punctuation.definition.object.end.js.fjsx15
-//                                                             ^ .keyword.operator.other.terminator.js.fjsx15
+//                                                             ^ .keyword.other.terminator.js.fjsx15
     function foo({a=0,...b=0}){}
 //  ^^^^^^^^ .keyword.declaration.function.js.fjsx15
 //           ^^^ .entity.name.function.js.fjsx15

@@ -40,6 +40,6 @@ contexts:
           punctuation.definition.type.arguments.js.fjsx15
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+        # - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
         - match: ""
           pop: true

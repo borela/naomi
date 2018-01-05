@@ -111,7 +111,7 @@
 //                                                        ^ .keyword.operator.other.member-access.js.fjsx15
 //                                                         ^^^^^^ .entity.name.variable.js.fjsx15
 //                                                               ^ .punctuation.definition.object.end.js.fjsx15
-//                                                                ^ .keyword.operator.other.terminator.js.fjsx15
+//                                                                ^ .keyword.other.terminator.js.fjsx15
    static defaultProps = {initialCount:0};
 // ^^^^^^ .storage.modifier.js.fjsx15
 // ^^^^^^ .keyword.other.access.js.fjsx15
@@ -122,7 +122,7 @@
 //                                    ^ .keyword.operator.other.association.js.fjsx15
 //                                     ^ .constant.numeric.decimal.js.fjsx15
 //                                      ^ .punctuation.definition.object.end.js.fjsx15
-//                                       ^ .keyword.operator.other.terminator.js.fjsx15
+//                                       ^ .keyword.other.terminator.js.fjsx15
    state = {count:this.props.initialCount};
 // ^^^^^ .entity.name.variable.js.fjsx15
 //       ^ .keyword.operator.other.assignment.js.fjsx15
@@ -137,7 +137,7 @@
 //                          ^ .keyword.operator.other.member-access.js.fjsx15
 //                           ^^^^^^^^^^^^ .entity.name.variable.js.fjsx15
 //                                       ^ .punctuation.definition.object.end.js.fjsx15
-//                                        ^ .keyword.operator.other.terminator.js.fjsx15
+//                                        ^ .keyword.other.terminator.js.fjsx15
     constructor(){}
 //  ^^^^^^^^^^^ .support.js.fjsx15
 //  ^^^^^^^^^^^ .entity.name.function.js.fjsx15

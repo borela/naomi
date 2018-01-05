@@ -18,33 +18,61 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
+  attributeIdentifier: |
     [_[:alpha:]]
     [._\-[:alnum:]]*
 
 contexts:
   main:
+    # className.
     - match: |
         (?xi)\s*
-        ({{commonIdentifier}})
+        (className)
       captures:
-        1: entity.name.attribute.jsx.jsx1
+        1: entity.other.attribute-name.class.html.jsx.jsx1
       set: optional-value
+    # style.
+    - match: |
+        (?xi)\s*
+        (style)
+      captures:
+        1: entity.other.attribute-name.style.html.jsx.jsx1
+      set: optional-value
+    # Attribute with value.
+    - match: |
+        (?xi)\s*
+        ({{attributeIdentifier}})
+        (?=\s*=)
+      captures:
+        1: entity.other.attribute-name.html.jsx.jsx1
+      set: optional-value
+    # Simple attribute.
+    - match: |
+        (?xi)\s*
+        ({{attributeIdentifier}})
+      captures:
+        1: entity.other.attribute-name.html.jsx.jsx1
+      pop: true
+
+  escape:
+    - match: (?=\s*\S)
+      pop: true
 
   optional-value:
+    - meta_scope: meta.attribute-with-value.html.jsx.jsx1
     # Normal value.
     - match: \s*(=)
       captures:
-        1: keyword.operator.other.assignment.jsx.jsx1
-      set: value
+        1: punctuation.separator.key-value.html.jsx.jsx1
+      push: value
     # Anything else.
-    - match: ""
-      pop: true
+    - include: escape
 
   value:
+    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/literal/string/single-quoted.sublime-syntax
-    - match: ""
-      pop: true
+    # Anything else.
+    - include: escape

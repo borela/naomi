@@ -24,54 +24,72 @@ variables:
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax#function-properties
     - match: |
-        (?x)\s*
-        (?:
-          (async)\s+
-        )?
-        \b(function)\b
+        (?x)
+        (?=\s*
+          (?:async\s+)?
+          function\b
+        )
+      set: [
+        declaration,
+        keyword
+      ]
+
+  keyword:
+    - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
+    - match: \s*(function)
       captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.async.js.fjsx15
-        2: >-
-          storage.type.js.fjsx15
-          keyword.declaration.function.js.fjsx15
-      set: declaration
+        1: storage.type.function.js.fjsx15
+      pop: true
 
   declaration:
-    - include: comment
+    - meta_scope: >-
+        meta.declaration.function.js.fjsx15
+        meta.function.js.fjsx15
+    - include: comment-no-pop
     # Body.
     - match: (?=\s*\{)
       set: body
-    # Template parameters.
+    # Generic parameters.
     - match: (?=\s*<)
-      push: template-parameters
+      push: generic-parameters
     # Parameters.
     - match: (?=\s*\()
-      push: parameters
+      set: [
+        optional-body,
+        meta-declaration-scope,
+        parameters
+      ]
     # Identifier.
     - match: |
         (?xi)\s*
         (\*)?
-        (?:
-          \s*
-          ({{commonIdentifier}})
-        )?
+        (?:\s*({{commonIdentifier}}))?
       captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.operator.other.generator.js.fjsx15
+        1: storage.modifier.js.fjsx15
         2: entity.name.function.js.fjsx15
     # None of the expected items matched, it probably ended.
     - match: (?=\s*\S)
       pop: true
 
-  comment:
+  meta-declaration-scope:
+    - meta_scope: meta.declaration.function.js.fjsx15
+    - match: ""
+      pop: true
+
+  optional-body:
+    - match: (?=\s*\{)
+      set: body
+    # Anything else.
+    - match: (?=\s*\S)
+      pop: true
+
+  comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
-  template-parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/parameters.sublime-syntax
+  generic-parameters:
+    - include: Packages/Naomi/syntaxes/flow1/generic/parameters.sublime-syntax
 
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax

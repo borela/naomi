@@ -73,7 +73,7 @@ contexts:
   terminator:
     - match: \s*(;)
       captures:
-        1: keyword.operator.other.terminator.php.php7
+        1: keyword.other.terminator.php.php7
       pop: true
 
   body:

@@ -21,12 +21,12 @@ contexts:
   main:
     - match: \s*(\")
       captures:
-        1: punctuation.definition.string.begin.jsx.jsx1
+        1: punctuation.definition.string.begin.html.html.jsx.jsx1
       set: string
 
   string:
-    - meta_scope: string.quoted.single.jsx.jsx1
+    - meta_scope: string.quoted.double.html.html.jsx.jsx1
     - match: \s*(\")
       captures:
-        1: punctuation.definition.string.end.jsx.jsx1
+        1: punctuation.definition.string.end.html.html.jsx.jsx1
       pop: true

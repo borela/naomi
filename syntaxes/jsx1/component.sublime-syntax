@@ -22,77 +22,86 @@ variables:
     [[:upper:]]
     [$_.:[:alnum:]]*
 
+  attributeIdentifier: |
+    [_[:alpha:]]
+    [._\-[:alnum:]]*
+
 contexts:
   main:
     - match: |
-        (?x)\s*
-        (<)
-        ({{componentIdentifier}})
+        (?x)
+        \s*(<)
+        \s*({{componentIdentifier}})
       captures:
-        1: >-
-          component.jsx.jsx1
-          punctuation.definition.tag.begin.jsx.jsx1
-        2: >-
-          component.jsx.jsx1
-          entity.name.tag.jsx.jsx1
+        1: punctuation.definition.tag.begin.html.jsx.jsx1
+        2: entity.name.tag.component.html.jsx.jsx1
       set: [
-        content,
-        attributes
+        meta-scope,
+        closing-tag,
+        open-tag,
+        optional-attribute
       ]
 
-  attributes:
+  meta-scope:
+    - meta_scope: meta.tag.other.component.html.jsx.jsx1
+    - match: ""
+      pop: true
+
+  attribute:
+    - include: Packages/Naomi/syntaxes/jsx1/attribute.sublime-syntax
+
+  optional-attribute:
+    - include: attribute
+    - match: (?=\s*\S)
+      pop: true
+
+  open-tag:
     # Self closing tag.
     - match: (?=\s*/>)
+      captures:
+        1: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
-    # Normal tag.
+    # Normal closing tag.
     - match: \s*(>)
       captures:
-        1: >-
-          component.jsx.jsx1
-          punctuation.definition.tag.end.jsx.jsx1
+        1: punctuation.definition.tag.end.html.jsx.jsx1
+      # pop: true
+      set: optional-content
+    # Attribute.
+    - match: |
+        (?xi)
+        (?=\s*{{attributeIdentifier}})
+      push: attribute
+
+  optional-content:
+    # Closing tag.
+    - match: (?=\s*</)
       pop: true
-    # Attributes.
-    - match: ""
+    # Content.
+    - match: (?=\s*\S)
       push:
-        - include: Packages/Naomi/syntaxes/jsx1/attribute.sublime-syntax
-        - match: ""
+        - clear_scopes: true
+        - meta_scope: text.html.basic.jsx.jsx1
+        - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
+        - include: main
+        - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
+        # Simple text.
+        - match: .
           pop: true
 
-  content:
-    - clear_scopes: true
-    - meta_scope: source.jsx.jsx1
+  closing-tag:
     # Self closing tag.
     - match: \s*(/>)
       captures:
-        1: >-
-          source.jsx.fjsx15
-          component.jsx.jsx1
-          punctuation.definition.tag.end.jsx.jsx1
+        1: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
     # Closing tag.
     - match: |
         (?x)\s*
-        (</)(\2)(>)
+        ((</)(\2)(>))
       captures:
-        1: >-
-          component.jsx.jsx1
-          punctuation.definition.tag.begin.jsx.jsx1
-        2: >-
-          component.jsx.jsx1
-          entity.name.tag.jsx.jsx1
-        3: >-
-          component.jsx.jsx1
-          punctuation.definition.tag.end.jsx.jsx1
+        1: meta.tag.close.html.jsx.jsx1
+        2: punctuation.definition.tag.begin.html.jsx.jsx1
+        3: entity.name.tag.component.html.jsx.jsx1
+        4: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
-    # Sub tags.
-    - match: ""
-      push:
-        - clear_scopes: true
-        - include: main
-        - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
-        - match: |
-            (?x)
-            (?=\s*(?>/>|<))
-          pop: true
-        - match: .|\n
-          scope: source.jsx

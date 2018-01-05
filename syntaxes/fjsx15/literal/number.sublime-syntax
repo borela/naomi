@@ -51,19 +51,29 @@ contexts:
       pop: true
 
   integer:
-    - match: \s*(0[bB][01_]+)
+    - match: \s*(0[bB])([01_]+)
       captures:
-        1: constant.numeric.binary.js.fjsx15
+        1: >-
+          constant.numeric.binary.js.fjsx15
+          punctuation.definition.numeric.js.fjsx15
+        2: constant.numeric.binary.js.fjsx15
       pop: true
-    - match: \s*(0[oO][0-7]+)
+    - match: \s*(0[oO])([0-7]+)
       captures:
-        1: constant.numeric.octal.js.fjsx15
+        1: >-
+          constant.numeric.octal.js.fjsx15
+          punctuation.definition.numeric.js.fjsx15
+        2: constant.numeric.octal.js.fjsx15
       pop: true
-    - match: (?i)\s*(0[xX][0-9a-f_]+)
+    - match: (?i)\s*(0[xX])([0-9a-f_]+)
       captures:
-        1: constant.numeric.hex.js.fjsx15
+        1: >-
+          constant.numeric.hex.js.fjsx15
+          punctuation.definition.numeric.js.fjsx15
+        2: constant.numeric.hex.js.fjsx15
       pop: true
-    - match: \s*([1-9][0-9_]*|0)
+    - match: \s*([1-9][0-9_]*|0)(?:\s*(n))?
       captures:
         1: constant.numeric.decimal.js.fjsx15
+        2: storage.type.numeric.bigint.js.fjsx15
       pop: true

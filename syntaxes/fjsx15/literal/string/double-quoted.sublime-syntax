@@ -40,28 +40,23 @@ contexts:
         1: >-
           string.quoted.double.js.fjsx15
           punctuation.definition.string.begin.js.fjsx15
-      with_prototype:
-        - match: (?<!\\)\n
-          set: trap
-        - match: \s*(")
-          captures:
-            1: >-
-              string.quoted.double.js.fjsx15
-              punctuation.definition.string.end.js.fjsx15
-          pop: true
-      set: escape-a
+      set: string
 
   trap:
     - meta_content_scope: context.trap
 
-  escape-a:
+  string:
     - meta_content_scope: string.quoted.double.js.fjsx15
+    # New line trap.
+    - match: (?<!\\)\n
+      set: trap
+    # Close.
+    - match: \s*(")
+      captures:
+        1: >-
+          string.quoted.double.js.fjsx15
+          punctuation.definition.string.end.js.fjsx15
+      pop: true
+    # Escape.
     - match: (?xi){{doubleQuotedEscapeSequences}}
-      scope: constant.character.escape.a.js.fjsx15
-      set: escape-b
-
-  escape-b:
-    - meta_content_scope: string.quoted.double.js.fjsx15
-    - match: (?xi){{doubleQuotedEscapeSequences}}
-      scope: constant.character.escape.b.js.fjsx15
-      set: escape-a
+      scope: constant.character.escape.js.fjsx15

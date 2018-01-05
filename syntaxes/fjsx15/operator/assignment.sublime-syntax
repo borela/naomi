@@ -22,7 +22,7 @@ contexts:
     - match: \s*(=)
       captures:
         1: keyword.operator.other.assignment.js.fjsx15
-      set: statement-and-expression
+      set: optional-expression
 
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

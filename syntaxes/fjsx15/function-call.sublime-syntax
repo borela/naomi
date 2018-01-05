@@ -22,7 +22,7 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  templateArguments: |
+  genericArguments: |
     (<
       [^<>]*
       \g<-1>?
@@ -31,20 +31,20 @@ variables:
 
 contexts:
   main:
-    # Template function call.
+    # Generic function call.
     - match: |
         (?xi)
         (?=
           \s*\#?
           \s*{{commonIdentifier}}
-          \s*{{templateArguments}}
+          \s*{{genericArguments}}
           \s*(\?\.)?
           \s*\(
         )
       set: [
         meta-scope,
         arguments,
-        template-arguments,
+        generic-arguments,
         identifier,
         optional-modifier
       ]
@@ -79,8 +79,8 @@ contexts:
         1: variable.function.js.fjsx15
       pop: true
 
-  template-arguments:
-    - include: Packages/Naomi/syntaxes/flow1/template/arguments.sublime-syntax
+  generic-arguments:
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

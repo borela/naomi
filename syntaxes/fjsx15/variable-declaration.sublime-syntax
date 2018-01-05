@@ -26,7 +26,7 @@ variables:
     [$_[:upper:]]
     [$_[:upper:][:digit:]]*
 
-  templateArguments: |
+  genericArguments: |
     (<
       [^<>]*
       \g<-1>?
@@ -62,7 +62,7 @@ variables:
   simpleFlowType: |
     (?> {{string}}
       | {{commonIdentifier}}
-        {{templateArguments}}?
+        {{genericArguments}}?
     )
 
   flowFunction: |

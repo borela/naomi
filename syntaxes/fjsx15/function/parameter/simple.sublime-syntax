@@ -21,7 +21,7 @@ variables:
   commonIdentifier: |
     [$_[:alpha:]]
     [$_[:alnum:]]*
-  templateArguments: |
+  genericArguments: |
     (<
       [^<>]*
       \g<-1>?
@@ -57,7 +57,7 @@ variables:
   simpleFlowType: |
     (?> {{string}}
       | {{commonIdentifier}}
-        {{templateArguments}}?
+        {{genericArguments}}?
     )
 
   flowFunction: |

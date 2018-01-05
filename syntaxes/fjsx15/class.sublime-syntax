@@ -34,16 +34,16 @@ contexts:
     # Body.
     - match: (?=\s*\{)
       set: body
-    # Template parameters.
+    # Generic parameters.
     - match: (?=\s*<)
-      push: template-parameters
+      push: generic-parameters
     # Interfaces.
     - match: \s*(implements)\b
       captures:
         1: storage.modifier.js.fjsx15
       push: [
         optional-target-class-or-namespace,
-        optional-template-arguments,
+        optional-generic-arguments,
         target-class-or-namespace
       ]
     # Extensions.
@@ -51,7 +51,7 @@ contexts:
       captures:
         1: storage.modifier.extends.js.fjsx15
       push: [
-        optional-template-arguments,
+        optional-generic-arguments,
         target-class-or-namespace
       ]
     # Identifier.
@@ -64,8 +64,8 @@ contexts:
   comment:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
-  template-parameters:
-    - include: Packages/Naomi/syntaxes/flow1/template/parameters.sublime-syntax
+  generic-parameters:
+    - include: Packages/Naomi/syntaxes/flow1/generic/parameters.sublime-syntax
 
   type-expression:
     - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax
@@ -73,8 +73,8 @@ contexts:
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/class/body.sublime-syntax
 
-  optional-template-arguments:
-    - include: Packages/Naomi/syntaxes/flow1/template/arguments.sublime-syntax
+  optional-generic-arguments:
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
     - match: ""
       pop: true
 
@@ -83,7 +83,7 @@ contexts:
       scope: punctuation.definition.implement-list.separator.js.fjsx15
       set: [
         optional-target-class-or-namespace,
-        optional-template-arguments,
+        optional-generic-arguments,
         target-class-or-namespace
       ]
     - match: (?=\s*\{)

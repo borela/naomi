@@ -41,14 +41,14 @@ variables:
       | {{commonIdentifier}}
     )
 
-  templateArguments: |
+  genericArguments: |
     (<
       [^<>]*
       \g<-1>?
       [^<>]*
     >)
 
-  templateParameters: "{{templateArguments}}"
+  genericParameters: "{{genericArguments}}"
 
   parameters: |
     (\(
@@ -79,7 +79,7 @@ variables:
   simpleFlowType: |
     (?> {{string}}
       | {{commonIdentifier}}
-        {{templateArguments}}?
+        {{genericArguments}}?
     )
 
   flowFunction: |
@@ -146,7 +146,7 @@ contexts:
           \s*{{commonIdentifier}}
           \s*:
           (?:\s*async\b)?
-          \s*{{templateParameters}}?
+          \s*{{genericParameters}}?
           \s*{{parameters}}
           \s*=>
         )

@@ -23,8 +23,8 @@ contexts:
     - include: document-properties
     - include: window-functions
 
-  optional-template-and-arguments:
-    - include: Packages/Naomi/syntaxes/flow1/template/arguments.no-pop.sublime-syntax
+  optional-generic-and-arguments:
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
     - match: (?=\s*\S)
       pop: true
@@ -81,7 +81,7 @@ contexts:
         1: support.type.object.dom.js.fjsx15
         2: punctuation.accessor.js.fjsx15
         3: support.function.js.fjsx15
-      set: optional-template-and-arguments
+      set: optional-generic-and-arguments
 
   document-properties:
     - match: |
@@ -245,4 +245,4 @@ contexts:
         1: support.type.object.dom.js.fjsx15
         2: punctuation.accessor.js.fjsx15
         3: support.function.js.fjsx15
-      set: optional-template-and-arguments
+      set: optional-generic-and-arguments

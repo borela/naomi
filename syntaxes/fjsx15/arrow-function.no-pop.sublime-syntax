@@ -22,14 +22,14 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  templateArguments: |
+  genericArguments: |
     (<
       [^<>]*
       \g<-1>?
       [^<>]*
     >)
 
-  templateParameters: "{{templateArguments}}"
+  genericParameters: "{{genericArguments}}"
 
   parameters: |
     (\(
@@ -60,7 +60,7 @@ variables:
   simpleFlowType: |
     (?> {{string}}
       | {{commonIdentifier}}
-        {{templateArguments}}?
+        {{genericArguments}}?
     )
 
   flowFunction: |
@@ -96,7 +96,7 @@ contexts:
         (?xi)
         (?=
           (?:\s*async)?
-          \s*{{templateParameters}}?
+          \s*{{genericParameters}}?
           \s*{{parameters}}
           \s*{{type}}?
           \s*=>

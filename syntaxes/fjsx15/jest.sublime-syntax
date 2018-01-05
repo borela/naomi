@@ -146,3 +146,6 @@ contexts:
         matcher-meta-scope,
         arguments
       ]
+    # Anything else.
+    - match: (?=\s*\S)
+      pop: true

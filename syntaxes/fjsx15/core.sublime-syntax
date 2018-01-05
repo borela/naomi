@@ -236,6 +236,7 @@ contexts:
         1: support.type.object.js.fjsx15
         2: punctuation.accessor.js.fjsx15
         3: support.variable.js.fsjx15
+      pop: true
 
   fundamental-objects:
     - match: \s*(Object)\s*(\.)
@@ -277,6 +278,7 @@ contexts:
         1: support.type.object.js.fjsx15
         2: punctuation.accessor.js.fjsx15
         3: support.variable.js.fsjx15
+      pop: true
 
   object-property-or-function:
     # Function call.

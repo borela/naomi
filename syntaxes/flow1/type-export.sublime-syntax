@@ -24,41 +24,17 @@ variables:
 
 contexts:
   main:
-    - match: \s*(export)
+    - match: \s*(typeof)\b
       captures:
-        1: keyword.control.import-export.export.js.fjsx15
-      set: possible-statements-and-expressions
-
-  possible-statements-and-expressions:
-    - match: (?=\s*(?>[*{]|type(?:of)?))
-      set: [  delimiter, optional-target ]
-    # Default statements and expressions.
-    - match: \s*(default)
+        1: keyword.operator.word.typeof.flow
+      set: optional-target
+    - match: \s*(type)\b
       captures:
-        1: keyword.control.import-export.default.js.fjsx15
-      set: statements-and-expressions
-    # Other statements.
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
-
-  statements-and-expressions:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-
-  origin:
-    - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax#origin
-
-  close-block:
-    - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax#close-block
+        1: storage.type.flow
+      set: optional-target
 
   optional-target:
     - match: (?=\s*(?>[,}]|from))
-      pop: true
-    # Type.
-    - include: Packages/Naomi/syntaxes/flow1/type-export.sublime-syntax
-    # All.
-    - match: \s*(\*)
-      captures:
-        1: keyword.control.import-export.star.js.fjsx15
       pop: true
     # Multiple targets.
     - match: \s*(\{)
@@ -75,14 +51,14 @@ contexts:
         ({{commonIdentifier}})
         (?=\s+as)
       captures:
-        1: variable.other.readwrite.js.fjsx15
+        1: variable.other.type.js.fjsx15
       set: alias
     # Simple.
     - match: |
         (?xi)\s*
         ({{commonIdentifier}})
       captures:
-        1: variable.other.readwrite.js.fjsx15
+        1: variable.other.type.js.fjsx15
       pop: true
 
   delimiter:
@@ -96,6 +72,12 @@ contexts:
     - match: (?=\s*\S)
       pop: true
 
+  origin:
+    - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax#origin
+
+  close-block:
+    - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax#close-block
+
   alias:
     - match: \s*(as)\b
       captures:
@@ -107,5 +89,5 @@ contexts:
         (?xi)\s*
         ({{commonIdentifier}})
       captures:
-        1: variable.other.readwrite.js.fjsx15
+        1: variable.other.type.js.fjsx15
       pop: true

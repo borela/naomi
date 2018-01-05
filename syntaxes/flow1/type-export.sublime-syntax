@@ -28,10 +28,20 @@ contexts:
       captures:
         1: keyword.operator.word.typeof.flow
       set: optional-target
+    - match: |
+        (?xi)
+        (?=
+          \s*type
+          \s+{{commonIdentifier}}
+        )
+      set: type-aliasing
     - match: \s*(type)\b
       captures:
         1: storage.type.flow
       set: optional-target
+
+  type-aliasing:
+    - include: Packages/Naomi/syntaxes/flow1/type-aliasing.sublime-syntax
 
   optional-target:
     - match: (?=\s*(?>[,}]|from))

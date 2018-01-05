@@ -24,6 +24,10 @@ variables:
 
 contexts:
   main:
+    - match: \s*(typeof)\b
+      captures:
+        1: keyword.operator.word.typeof.flow
+      set: optional-target
     - match: \s*(type)\b
       captures:
         1: storage.type.flow

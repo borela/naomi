@@ -31,7 +31,7 @@ contexts:
         (import)\b
         (?=\s*\()
       captures:
-        1: support.function.js.fjsx15
+        1: support.function.import.js.fjsx15
       set: [
         function-call-meta-scope,
         arguments
@@ -42,14 +42,14 @@ contexts:
         (import)\b
         (?=\s*(?>"|'|`))
       captures:
-        1: keyword.control.import-export.js.fjsx15
+        1: keyword.control.import-export.import.js.fjsx15
       set: origin-path
     # Other.
     - match: |
         (?x)
         \s*(import)\b
       captures:
-        1: keyword.control.import-export.js.fjsx15
+        1: keyword.control.import-export.import.js.fjsx15
       set: [
         delimiter,
         optional-target

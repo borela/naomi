@@ -32,8 +32,13 @@ contexts:
   possible-statements-and-expressions:
     - match: (?=\s*(?>[*{]|type(?:of)?))
       set: [  delimiter, optional-target ]
+    # Default from.
+    - match: \s*(default)\b(?=\s+from\b)
+      captures:
+        1: keyword.control.import-export.default.js.fjsx15
+      set: origin
     # Default statements and expressions.
-    - match: \s*(default)
+    - match: \s*(default)\b
       captures:
         1: keyword.control.import-export.default.js.fjsx15
       set: statements-and-expressions

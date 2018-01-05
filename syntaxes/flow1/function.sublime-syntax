@@ -57,7 +57,7 @@ contexts:
   declaration:
     # Generic parameters.
     - match: (?=\s*<)
-      push: generic-arguments
+      push: generic-parameters
     # Parameters.
     - match: (?=\s*\()
       set: [
@@ -65,8 +65,8 @@ contexts:
         parameters
       ]
 
-  generic-arguments:
-    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
+  generic-parameters:
+    - include: Packages/Naomi/syntaxes/flow1/generic/parameters.sublime-syntax
 
   parameters:
     - include: Packages/Naomi/syntaxes/flow1/function/parameters.sublime-syntax

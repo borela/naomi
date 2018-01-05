@@ -22,7 +22,7 @@ contexts:
     - match: \s*(instanceof)\b
       captures:
         1: keyword.operator.word.instanceof.js.fjsx15
-      set: optional-type-expression
+      set: optional-expression
     - match: \s*(in)\b
       captures:
         1: keyword.operator.word.in.js.fjsx15
@@ -30,6 +30,3 @@ contexts:
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
-
-  optional-type-expression:
-    - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax

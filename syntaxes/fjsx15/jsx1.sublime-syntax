@@ -41,7 +41,7 @@ contexts:
         # Embedded javascript.
         - match: \s*(\{)
           captures:
-            1: punctuation.definition.generic-expression.begin.jsx.jsx1
+            1: punctuation.definition.template-expression.begin.jsx.jsx1
           push: [
             embedded-js-close,
             optional-expression
@@ -53,7 +53,7 @@ contexts:
     - meta_scope: source.js.fjsx15
     - match: \s*(})
       captures:
-        1: punctuation.definition.generic-expression.end.jsx.jsx1
+        1: punctuation.definition.template-expression.end.jsx.jsx1
       pop: true
 
   optional-expression:

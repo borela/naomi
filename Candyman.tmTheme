@@ -1395,7 +1395,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff7997</string>
+				<string>#f48fb1</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1450,7 +1450,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#72d572</string>
+				<string>#f48fb1</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1512,7 +1512,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>#ff7997</string>
+				<string>#84ffff</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1749,7 +1749,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.name.type, .variable.type, .variable.other.type</string>
+			<string>.entity.name.interface, .entity.name.type, .variable.type, .variable.other.type</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

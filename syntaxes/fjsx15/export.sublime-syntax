@@ -74,6 +74,11 @@ contexts:
         delimiter,
         optional-target
       ]
+    # default.
+    - match: \s*(default)\b
+      captures:
+        1: keyword.control.import-export.default.js.fjsx15
+      set: optional-alias
     # Aliased.
     - match: |
         (?xi)\s*
@@ -98,6 +103,12 @@ contexts:
     # From.
     - include: origin
     # Anything else.
+    - match: (?=\s*\S)
+      pop: true
+
+  optional-alias:
+    - match: (?=\s*as\b)
+      set: alias
     - match: (?=\s*\S)
       pop: true
 

@@ -22,6 +22,6 @@ contexts:
     - match: \s*((\[)\s*(]))
       captures:
         1: meta.sequence.flow
-        1: punctuation.section.brackets.begin.flow
-        2: punctuation.section.brackets.end.flow
+        2: punctuation.section.brackets.begin.flow
+        3: punctuation.section.brackets.end.flow
       pop: true

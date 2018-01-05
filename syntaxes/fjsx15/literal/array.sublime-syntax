@@ -19,30 +19,21 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        \s*(\[)
-        (?!
-          [^;]*?]
-          \s*=[^=]
-        )
+    - match: \s*(\[)
       captures:
-        1: punctuation.definition.array.begin.js.fjsx15
-      set: items
+        1: punctuation.section.brackets.begin.js.fjsx15
+      set: [ delimiters, optional-expression ]
 
-  items:
-    - match: \s*(,)
-      captures:
-        1: punctuation.definition.array.js.fjsx15
-    - include: end
-    - match: ""
-      push:
-        - match: (?=\s*(?>,|]))
-          pop: true
-        - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
-
-  end:
+  delimiters:
+    - meta_scope: meta.sequence.js.fjsx15
     - match: \s*(])
       captures:
-        1: punctuation.definition.array.end.js.fjsx15
+        1: punctuation.section.brackets.end.js.fjsx15
       pop: true
+    - match: \s*(,)
+      captures:
+        1: punctuation.separator.comma.js.fjsx15
+      push: optional-expression
+
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

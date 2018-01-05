@@ -33,7 +33,7 @@
 //                      ^ .punctuation.definition.array.js.fjsx15
 //                       ^ .constant.numeric.decimal.js.fjsx15
 //                        ^ .punctuation.definition.array.end.js.fjsx15
-//                         ^ .keyword.operator.other.terminator.js.fjsx15
+//                         ^ .keyword.other.terminator.js.fjsx15
    let [a=0,...b=0]:[number,number] = [1,2];
 // ^^^ .keyword.declaration.variable.js.fjsx15
 //     ^ .destructuring.array.js.fjsx15
@@ -63,7 +63,7 @@
 //                                      ^ .punctuation.definition.array.js.fjsx15
 //                                       ^ .constant.numeric.decimal.js.fjsx15
 //                                        ^ .punctuation.definition.array.end.js.fjsx15
-//                                         ^ .keyword.operator.other.terminator.js.fjsx15
+//                                         ^ .keyword.other.terminator.js.fjsx15
    let [[a=0,...b=0]] = [[1,2]];
 // ^^^ .keyword.declaration.variable.js.fjsx15
 //     ^ .destructuring.array.js.fjsx15
@@ -91,7 +91,7 @@
 //                          ^ .constant.numeric.decimal.js.fjsx15
 //                           ^ .punctuation.definition.array.end.js.fjsx15
 //                            ^ .punctuation.definition.array.end.js.fjsx15
-//                             ^ .keyword.operator.other.terminator.js.fjsx15
+//                             ^ .keyword.other.terminator.js.fjsx15
    let [[a=0,...b=0]]:[[number,number]] = [[1,2]];
 // ^^^ .keyword.declaration.variable.js.fjsx15
 //     ^ .destructuring.array.js.fjsx15
@@ -129,7 +129,7 @@
 //                                            ^ .constant.numeric.decimal.js.fjsx15
 //                                             ^ .punctuation.definition.array.end.js.fjsx15
 //                                              ^ .punctuation.definition.array.end.js.fjsx15
-//                                               ^ .keyword.operator.other.terminator.js.fjsx15
+//                                               ^ .keyword.other.terminator.js.fjsx15
     function foo([a=0,...b=0]){}
 //  ^^^^^^^^ .keyword.declaration.function.js.fjsx15
 //           ^^^ .entity.name.function.js.fjsx15

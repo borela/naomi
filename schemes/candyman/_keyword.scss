@@ -1,0 +1,110 @@
+// Licensed under the Apache License, Version 2.0 (the “License”); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+.keyword {
+  foreground: $pink-200;
+
+  &.control {
+    &.conditional {
+      foreground: $teal-a400;
+      fontStyle: italic;
+    }
+
+    &.flow {
+      foreground: $green-200;
+      fontStyle: italic;
+
+      &.break.throw {
+        foreground: $purple-a100;
+        fontStyle: bold italic;
+      }
+
+      &.return {
+        foreground: $purple-a100;
+        fontStyle: bold italic;
+      }
+    }
+
+    &.import-export {
+      foreground: $pink-200;
+      fontStyle: none;
+
+      &.as,
+      &.default,
+      &.star {
+        foreground: $deep-purple-200;
+      }
+    }
+
+    &.loop {
+      foreground: $deep-orange-300;
+      fontStyle: italic;
+    }
+
+    &.trycatch {
+      foreground: $red-a200;
+      fontStyle: italic;
+    }
+  }
+}
+
+.keyword.operator {
+  foreground: $green-a200;
+  fontStyle: bold;
+
+  &.pipe {
+    foreground: $light-blue-300;
+  }
+
+  &.word {
+    foreground: $cyan-a100;
+    fontStyle: italic;
+
+    &.of {
+      foreground: $green-200;
+    }
+  }
+}
+
+// .meta.conditional {
+//   .meta.group {
+//     .punctuation {
+//       &.section.group,
+//       &.separator.comma {
+//         foreground: $brown-200;
+//         fontStyle: none;
+//       }
+//     }
+//   }
+
+//   .punctuation.section.block {
+//     foreground: $brown-200;
+//     fontStyle: none;
+//   }
+// }
+
+// .meta.loop {
+//   .meta.group {
+//     .punctuation {
+//       &.section.group,
+//       &.separator.comma {
+//         foreground: $orange-300;
+//         fontStyle: none;
+//       }
+//     }
+//   }
+
+//   .punctuation.section.block {
+//     foreground: $orange-300;
+//     fontStyle: none;
+//   }
+// }

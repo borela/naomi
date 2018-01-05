@@ -12,13 +12,14 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-   () => {}
+   () => {};
 // ^ .punctuation.definition.function.parameters.begin.js.fjsx15
 //  ^ .punctuation.definition.function.parameters.end.js.fjsx15
 //    ^^ .punctuation.definition.function.body.arrow.js.fjsx15
 //       ^ .punctuation.definition.function.body.begin.js.fjsx15
 //        ^ .punctuation.definition.function.body.end.js.fjsx15
-   async () => {}
+//         ^ .keyword.other.terminator.js.fjsx15
+   async () => {};
 // ^^^^^ .storage.modifier.js.fjsx15
 // ^^^^^ .keyword.other.async.js.fjsx15
 //       ^ .punctuation.definition.function.parameters.begin.js.fjsx15
@@ -26,7 +27,7 @@
 //          ^^ .punctuation.definition.function.body.arrow.js.fjsx15
 //             ^ .punctuation.definition.function.body.begin.js.fjsx15
 //              ^ .punctuation.definition.function.body.end.js.fjsx15
-   (param, ...param) => {}
+   (param, ...param) => {};
 // ^ .punctuation.definition.function.parameters.begin.js.fjsx15
 //  ^^^^^ .entity.name.variable.js.fjsx15
 //       ^ .punctuation.definition.function.parameters.js.fjsx15
@@ -36,7 +37,7 @@
 //                   ^^ .punctuation.definition.function.body.arrow.js.fjsx15
 //                      ^ .punctuation.definition.function.body.begin.js.fjsx15
 //                       ^ .punctuation.definition.function.body.end.js.fjsx15
-   async (param, ...param) => {}
+   async (param, ...param) => {};
 // ^^^^^ .storage.modifier.js.fjsx15
 // ^^^^^ .keyword.other.async.js.fjsx15
 //       ^ .punctuation.definition.function.parameters.begin.js.fjsx15
@@ -48,7 +49,7 @@
 //                         ^^ .punctuation.definition.function.body.arrow.js.fjsx15
 //                            ^ .punctuation.definition.function.body.begin.js.fjsx15
 //                             ^ .punctuation.definition.function.body.end.js.fjsx15
-   (param:number, ...param:string):number => {}
+   (param:number, ...param:string):number => {};
 // ^ .punctuation.definition.function.parameters.begin.js.fjsx15
 //  ^^^^^ .entity.name.variable.js.fjsx15
 //       ^ .keyword.operator.other.association.flowtype
@@ -67,7 +68,7 @@
 //                                        ^^ .punctuation.definition.function.body.arrow.js.fjsx15
 //                                           ^ .punctuation.definition.function.body.begin.js.fjsx15
 //                                            ^ .punctuation.definition.function.body.end.js.fjsx15
-   async (param:number, ...param:string):number => {}
+   async (param:number, ...param:string):number => {};
 // ^^^^^ .storage.modifier.js.fjsx15
 // ^^^^^ .keyword.other.async.js.fjsx15
 //       ^ .punctuation.definition.function.parameters.begin.js.fjsx15
@@ -88,7 +89,7 @@
 //                                              ^^ .punctuation.definition.function.body.arrow.js.fjsx15
 //                                                 ^ .punctuation.definition.function.body.begin.js.fjsx15
 //                                                  ^ .punctuation.definition.function.body.end.js.fjsx15
-   <A,B,C>(param:A, ...param:B):C => {}
+   <A,B,C>(param:A, ...param:B):C => {};
 // ^ .punctuation.definition.template.parameters.begin.flowtype
 //  ^ .entity.name.type.flowtype
 //   ^ .punctuation.definition.template.parameters.flowtype

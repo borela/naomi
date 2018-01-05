@@ -10,29 +10,26 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.punctuation.accessor {
-  foreground: $green-a200;
-}
-
-.meta.group {
-  .punctuation.separator.comma {
+.punctuation {
+  &.accessor,
+  &.separator,
+  &.terminator {
     foreground: $green-a200;
+    fontStyle: bold;
   }
-  .punctuation.section.group {
-    foreground: $amber-100;
+
+  &.separator.key-value {
+    foreground: $deep-orange-300;
+  }
+
+  &.definition {
+    &.tag {
+      foreground: $brown-300;
+      fontStyle: none;
+    }
+    &.template-expression {
+      foreground: $deep-orange-300;
+      fontStyle: bold;
+    }
   }
 }
-
-// .punctuation.other.property.access {
-//   foreground: $light-green-300;
-// }
-
-// .punctuation.definition.block,
-// .punctuation.definition.control {
-//   foreground: $pink-a100;
-// }
-
-// .punctuation.definition.extend-list.separator,
-// .punctuation.definition.implement-list.separator {
-//   foreground: $purple-200;
-// }

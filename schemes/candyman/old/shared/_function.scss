@@ -10,6 +10,12 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
+.function.call {
+  .entity.name.variable {
+    foreground: $light-blue-300;
+  }
+}
+
 .entity.name.function,
 .keyword.operator.other.computed-function,
 .punctuation.definition.function {

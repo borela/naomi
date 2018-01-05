@@ -49,4 +49,7 @@ contexts:
         )
       captures:
         1: keyword.operator.bitwise.js.fjsx15
-      pop: true
+      set: optional-expression
+
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

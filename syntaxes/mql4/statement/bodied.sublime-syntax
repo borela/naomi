@@ -78,7 +78,7 @@ contexts:
   terminator:
     - match: \s*(;)
       captures:
-        1: keyword.operator.other.terminator.mql.mql4
+        1: keyword.other.terminator.mql.mql4
       pop: true
 
   body:

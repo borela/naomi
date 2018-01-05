@@ -22,208 +22,84 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  keywords: |
-    (?> await
-      | break
-      | case
-      | catch
-      | class
-      | const
-      | continue
-      | debugger
-      | delete
-      | do
-      | else
-      | enum
-      | export
-      | extends
-      | finally
-      | for
-      | function
-      | if
-      | imp(?>lements|ort)
-      | in(?:stanceof)?
-      | interface
-      | let
-      | new
-      | package
-      | private
-      | protected
-      | public
-      | return
-      | static
-      | super
-      | switch
-      | this
-      | throw
-      | try
-      | typeof
-      | var
-      | void
-      | while
-      | with
-      | yield
-    )
-
 contexts:
   main:
-    # Export multiple types.
-    - match: |
-        (?x)
-        \s*(export)
-        (?:\s*(opaque))?
-        \s*(type)
-        \s*({)
+    - match: \s*(export)
       captures:
-        1: keyword.control.export.js.fjsx15
-        2: >-
-          flowtype
-          storage.type.flowtype
-          keyword.other.access.flowtype
-        3: >-
-          flowtype
-          storage.type.flowtype
-          keyword.declaration.type-aliasing.flowtype
-        4: punctuation.definition.export.list.begin.js.fjsx15
-      set: types
-    # Export object literal.
-    - match: |
-        (?x)
-        \s*(export)
-        \s*(default)
-        (?=\s*{)
-      captures:
-        1: keyword.control.export.js.fjsx15
-        2: >-
-          storage.modifier.js.fjsx15
-          keyword.control.export.default.js.fjsx15
-      set: object-literal
-    # Export statements.
-    - match: |
-        (?x)
-        \s*(export)
-        (?=
-          (?:\s*opaque)?
-          \s*(?> async
-            | class
-            | const
-            | function
-            | interface
-            | let
-            | type
-            | var
-          )
-        )
-      captures:
-        1: keyword.control.export.js.fjsx15
-      set: statement-and-expression
-    # Export default from.
-    - match: |
-        (?x)
-        \s*(export)
-        \s*(default)
-        (?=\s*from)
-      captures:
-        1: keyword.control.export.js.fjsx15
-        2: >-
-          storage.modifier.js.fjsx15
-          keyword.control.export.default.js.fjsx15
-      set: origin
-    # Export default.
-    - match: |
-        (?x)
-        \s*(export)
-        \s*(default)
-      captures:
-        1: keyword.control.export.js.fjsx15
-        2: >-
-          storage.modifier.js.fjsx15
-          keyword.control.export.default.js.fjsx15
-      set: statement-and-expression
-    # Other.
-    - match: |
-        (?x)
-        \s*(export)\b
-        (?!\s*\.)
-      captures:
-        1: keyword.control.export.js.fjsx15
-      set: targets
+        1: keyword.control.import-export.export.js.fjsx15
+      set: possible-statements-and-expressions
 
-  comment:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+  possible-statements-and-expressions:
+    - match: (?=\s*(?>[*{]|type(?:of)?))
+      set: [  delimiter, optional-target ]
+    # Default statements and expressions.
+    - match: \s*(default)
+      captures:
+        1: keyword.control.import-export.default.js.fjsx15
+      set: statements-and-expressions
+    # Other statements.
+    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
 
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
-
-  object-literal:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/object.sublime-syntax
+  statements-and-expressions:
+    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   origin:
-    - match: \s*(from)\b
-      captures:
-        1: keyword.control.export.origin.js.fjsx15
-      set: origin-path
+    - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax#origin
 
-  origin-path:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
+  close-block:
+    - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax#close-block
 
-  punctuation:
-    - match: \s*(\{)
-      captures:
-        1: punctuation.definition.export.list.begin.js.fjsx15
-    - match: \s*(})
-      captures:
-        1: punctuation.definition.export.list.end.js.fjsx15
-    - match: \s*(,)
-      captures:
-        1: punctuation.definition.export.item.js.fjsx15
-
-  targets:
-    - include: comment
-    - include: origin
-    - include: punctuation
-    - match: |
-        (?x)
-        (?=\s*export)
+  optional-target:
+    - match: (?=\s*(?>[,}]|from))
       pop: true
-    - include: sequence
-
-  sequence:
-    # Default.
-    - match: \s*(default)\b
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.control.export.default.js.fjsx15
-      push: alias
+    # Type.
+    - include: Packages/Naomi/syntaxes/flow1/type-export.sublime-syntax
     # All.
     - match: \s*(\*)
       captures:
-        1: keyword.operator.other.export.all.js.fjsx15
-      push: optional-alias
+        1: keyword.control.import-export.star.js.fjsx15
+      pop: true
+    # Multiple targets.
+    - match: \s*(\{)
+      captures:
+        1: punctuation.section.block.begin.js.fjsx15
+      set: [
+        close-block,
+        delimiter,
+        optional-target
+      ]
+    # Aliased.
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+        (?=\s+as)
+      captures:
+        1: variable.other.readwrite.js.fjsx15
+      set: alias
     # Simple.
     - match: |
         (?xi)\s*
         ({{commonIdentifier}})
       captures:
-        1: >-
-          export.js.fjsx15
-          entity.name.ambiguous.js.fjsx15
-      push: optional-alias
-
-  optional-alias:
-    - match: |
-        (?x)
-        (?=\s*(?>,|}|from))
+        1: variable.other.readwrite.js.fjsx15
       pop: true
-    - include: alias
+
+  delimiter:
+    - match: \s*(,)
+      captures:
+        1: punctuation.separator.comma.js.fjsx15
+      push: optional-target
+    # From.
+    - include: origin
+    # Anything else.
+    - match: (?=\s*\S)
+      pop: true
 
   alias:
     - match: \s*(as)\b
       captures:
-        1: keyword.other.alias.js.fjsx15
+        1: keyword.control.import-export.as.js.fjsx15
       set: alias-name
 
   alias-name:
@@ -231,28 +107,5 @@ contexts:
         (?xi)\s*
         ({{commonIdentifier}})
       captures:
-        1: entity.name.alias.js.fjsx15
+        1: variable.other.readwrite.js.fjsx15
       pop: true
-
-  types:
-    - match: \s*(,)
-      captures:
-        1: punctuation.definition.export.item.js.fjsx15
-    - match: \s*(})
-      captures:
-        1: punctuation.definition.export.list.end.js.fjsx15
-      pop: true
-    - match: ""
-      push: aliased-type
-
-  aliased-type:
-    - match: |
-        (?xi)
-        (?={{commonIdentifier}})
-      set: [
-        optional-alias,
-        simple-type
-      ]
-
-  simple-type:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/simple.sublime-syntax

@@ -10,18 +10,36 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.variable.other.readwrite,
-.entity.name.variable,
+.variable.other,
 .punctuation.definition.variable {
-  foreground: $gray-400;
+  foreground: $gray-300;
   fontStyle: none;
+}
+
+.entity.name.variable {
+  foreground: $gray-300;
+  fontStyle: italic;
+}
+
+.variable {
+  &.language {
+    &.prototype,
+    &.this {
+      foreground: $red-300;
+      fontStyle: italic;
+    }
+
+    &.super {
+      foreground: $deep-orange-300;
+    }
+
+    &.this {
+      foreground: $purple-a100;
+      fontStyle: italic;
+    }
+  }
 }
 
 .support.variable {
   foreground: $deep-orange-a100;
-}
-
-
-.variable.parameter.function {
-  foreground: $orange-200;
 }

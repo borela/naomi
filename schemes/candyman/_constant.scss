@@ -10,12 +10,28 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.variable.other.constant,
-.entity.name.constant,
-.punctuation.definition.constant {
+.entity.name.constant {
   foreground: $purple-200;
 }
 
+.variable.other.constant,
+.punctuation.definition.constant {
+  foreground: $gray-300;
+}
+
 .support.constant {
-  foreground: $deep-orange-a100;
+  foreground: $purple-a100;
+}
+
+.constant.language {
+  foreground: $red-300;
+}
+
+.constant.language.infinity,
+.constant.language.nan {
+  foreground: $purple-a100;
+}
+
+.constant.language.boolean {
+  foreground: $green-200;
 }

@@ -17,18 +17,64 @@ hidden: true
 
 scope: ...
 
+variables:
+  mathFunctions: |
+    (?> abs
+      | acosh?
+      | asinh?
+      | atan(?>2|h)?
+      | cbrt
+      | ceil
+      | clz32
+      | cosh?
+      | exp
+      | exp(?:m1)?
+      | floor
+      | fround
+      | hypot
+      | imul
+      | log(?>10|1p|2)?
+      | max
+      | min
+      | pow
+      | random
+      | round
+      | sign
+      | sinh?
+      | sqrt
+      | tanh?
+      | trunc
+    )\b
+
+  objectFunctions: |
+    (?> assign
+      | create
+      | definePropert(?>ies|y)
+      | freeze
+      | getOwnProperty(?>Descriptors?|Names|Symbols)
+      | getPrototypeOf
+      | is(?>Extensible|Frozen|Sealed)?
+      | keys
+      | preventExtensions
+      | seal
+      | setPrototypeOf
+    )\b
+
+  symbolFunctions: |
+    (?> for
+      | KeyFor
+    )\b
+
+
 contexts:
   main:
-    - include: symbol-properties
-    # Functions.
-    - include: array-functions
-    - include: object-functions
-    - include: math-constants
-    - include: math-functions
-    - include: symbol-functions
+    - include: console
     # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
     - include: constants
+    - include: variables
     - include: functions
+    - include: function-properties
+    - include: import-properties
     - include: fundamental-objects
     - include: numbers-and-dates
     - include: text-processing
@@ -40,190 +86,127 @@ contexts:
     - include: internationalization
     - include: web-assembly
 
-  function-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/support/arguments.sublime-syntax
-    - match: (?=\S)
+  escape:
+    - match: (?=\s*\S)
       pop: true
 
-  optional-template-and-type-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/flowtype/template/arguments.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/type/support/arguments.sublime-syntax
+  pop-now:
     - match: ""
       pop: true
 
-  array-functions:
-    - match: |
-        (?x)
-        \s*(Array)\b
-        (?:
-          \s*(\.)\s*
-          ((?> from
-            | isArray
-          ))\b
-        )?
-      captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
-      set: function-arguments
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
-  math-constants:
-    - match: |
-        (?x)
-        \s*(Math)
-        \s*(\.)\s*
-        ((?> E
-          | LN(?>10|2)
-          | LOG(?>10E|2E)
-          | PI
-          | SQRT(?>1_2|2)
-        ))\b
+  function-call-meta-scope:
+    - meta_scope: meta.function-call.js.fjsx15
+    - include: pop-now
+
+  console:
+    - match: \s*(console)\s*(\.)
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.constant.js.fjsx15
+        1: support.type.object.console.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: console-property-or-function
+
+  console-property-or-function:
+    # error
+    - match: \s*(error)(?=\s*\()
+      captures:
+        1: support.function.console.error.js.fjsx15
+      set: [
+        console-error-meta-scope,
+        arguments
+      ]
+    - match: \s*(error)
+      captures:
+        1: support.function.console.error.js.fjsx15
       pop: true
-
-  math-functions:
-    - match: |
-        (?x)
-        \s*(Math)\b
-        (?:
-          \s*(\.)\s*
-          ((?> abs
-            | acosh?
-            | asinh?
-            | atan(?>2|h)?
-            | cbrt
-            | ceil
-            | clz32
-            | cosh?
-            | exp
-            | exp(?:m1)?
-            | floor
-            | fround
-            | hypot
-            | imul
-            | log(?>10|1p|2)?
-            | max
-            | min
-            | pow
-            | random
-            | round
-            | sign
-            | sinh?
-            | sqrt
-            | tanh?
-            | trunc
-          ))\b
-        )?
+    # info
+    - match: \s*(info)(?=\s*\()
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
-      set: function-arguments
-
-  object-functions:
-    - match: |
-        (?x)
-        \s*(Object)\b
-        (?:
-          \s*(\.)\s*
-          ((?> assign
-            | create
-            | definePropert(?>ies|y)
-            | freeze
-            | getOwnProperty(?>Descriptors?|Names|Symbols)
-            | getPrototypeOf
-            | is(?>Extensible|Frozen|Sealed)?
-            | keys
-            | preventExtensions
-            | seal
-            | setPrototypeOf
-          ))\b
-        )?
+        1: support.function.console.info.js.fjsx15
+      set: [
+        console-info-meta-scope,
+        arguments
+      ]
+    - match: \s*(info)
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
-      set: function-arguments
-
-  symbol-functions:
-    - match: |
-        (?x)
-        \s*(Symbol)
-        \s*(\.)\s*
-        ((?> for
-          | KeyFor
-        ))\b
-      captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
-      set: function-arguments
-
-  symbol-properties:
-    - match: |
-        (?x)
-        \s*(Symbol)
-        \s*(\.)\s*
-        ((?> asyncIterator
-          | hasInstance
-          | isConcatSpreadable
-          | iterator
-          | match
-          | replace
-          | search
-          | species
-          | split
-          | toPrimitive
-          | toStringTag
-          | unscopables
-        ))\b
-      captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.constant.js.fjsx15
+        1: support.function.console.info.js.fjsx15
       pop: true
+    # log
+    - match: \s*(log)(?=\s*\()
+      captures:
+        1: support.function.console.log.js.fjsx15
+      set: [
+        console-log-meta-scope,
+        arguments
+      ]
+    - match: \s*(log)
+      captures:
+        1: support.function.console.log.js.fjsx15
+      pop: true
+    # warn
+    - match: \s*(warn)(?=\s*\()
+      captures:
+        1: support.function.console.warn.js.fjsx15
+      set: [
+        console-warn-meta-scope,
+        arguments
+      ]
+    - match: \s*(warn)
+      captures:
+        1: support.function.console.warn.js.fjsx15
+      pop: true
+    # Anything else.
+    - include: escape
+
+  console-error-meta-scope:
+    - meta_scope: meta.function-call.console.error.js.fjsx15
+    - include: pop-now
+
+  console-info-meta-scope:
+    - meta_scope: meta.function-call.console.info.js.fjsx15
+    - include: pop-now
+
+  console-log-meta-scope:
+    - meta_scope: meta.function-call.console.log.js.fjsx15
+    - include: pop-now
+
+  console-warn-meta-scope:
+    - meta_scope: meta.function-call.console.warn.js.fjsx15
+    - include: pop-now
 
   constants:
-    - match: |
-        (?x)\s*
-        ((?> false
-          | Infinity
-          | NaN
-          | null
-          | true
-          | undefined
-        ))
+      - match: |
+          (?x)\s*
+          (?> (false)
+            | (Infinity)
+            | (NaN)
+            | (null)
+            | (true)
+            | (undefined)
+          )
+        captures:
+          1: constant.language.boolean.false.js.fjsx15
+          2: constant.language.infinity.js.fjsx15
+          3: constant.language.nan.js.fjsx15
+          4: constant.language.null.js.fjsx15
+          5: constant.language.boolean.true.js.fjsx15
+          6: constant.language.undefined.js.fjsx15
+        pop: true
+
+  variables:
+    - match: \s*(prototype)\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.constant.js.fjsx15
+        1: variable.language.prototype.js.fjsx15
+      pop: true
+    - match: \s*(super)\b
+      captures:
+        1: variable.language.super.js.fjsx15
+      pop: true
+    - match: \s*(this)\b
+      captures:
+        1: variable.language.this.js.fjsx15
       pop: true
 
   functions:
@@ -237,12 +220,34 @@ contexts:
         ))
         (?=\s*\()
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.function.js.fjsx15
-      set: function-arguments
+        1: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+
+  function-properties:
+    - match: |
+        (?x)
+        \s*(function)
+        \s*(\.)
+        \s*(sent)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.variable.js.fsjx15
 
   fundamental-objects:
+    - match: \s*(Object)\s*(\.)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: object-property-or-function
+    - match: \s*(Symbol)\s*(\.)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: symbol-property-or-function
     - match: |
         (?x)\s*
         ((?> Boolean
@@ -253,17 +258,71 @@ contexts:
           | Object
           | RangeError
           | ReferenceError
+          | Symbol
           | SyntaxError
           | TypeError
           | URIError
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+        1: support.type.object.js.fjsx15
+      pop: true
 
+  import-properties:
+    - match: |
+        (?x)
+        \s*(import)
+        \s*(\.)
+        \s*(meta)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.variable.js.fsjx15
+
+  object-property-or-function:
+    # Function call.
+    - match: |
+        (?x)
+        ({{objectFunctions}})
+        (?=\s*\()
+      captures:
+        1: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: |
+        (?x)
+        ({{objectFunctions}})
+      captures:
+        1: support.function.js.fjsx15
+      pop: true
+
+  symbol-property-or-function:
+    # Function call.
+    - match: |
+        (?x)
+        ({{symbolFunctions}})
+        (?=\s*\()
+      captures:
+        1: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: |
+        (?x)
+        ({{symbolFunctions}})
+      captures:
+        1: support.function.js.fjsx15
+      pop: true
   numbers-and-dates:
+    - match: \s*(Math)\s*(\.)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: math-property-or-function
     - match: |
         (?x)\s*
         ((?> Date
@@ -271,10 +330,40 @@ contexts:
           | Number
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+        1: support.type.object.js.fjsx15
+      pop: true
+
+  math-property-or-function:
+    # Function call.
+    - match: |
+        (?x)
+        ({{mathFunctions}})
+        (?=\s*\()
+      captures:
+        1: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: |
+        (?x)
+        ({{mathFunctions}})
+      captures:
+        1: support.function.js.fjsx15
+      pop: true
+    # Constants.
+    - match: |
+        (?x)\s*
+        ((?> E
+          | LN(?>10|2)
+          | LOG(?>10E|2E)
+          | PI
+          | SQRT(?>1_2|2)
+        ))\b
+      captures:
+        1: support.constant.js.fjsx15
+      pop: true
 
   text-processing:
     - match: |
@@ -283,12 +372,15 @@ contexts:
           | String
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+        1: support.type.object.js.fjsx15
+      pop: true
 
   indexed-collections:
+    - match: \s*(Array)\s*(\.)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: array-property-or-function
     - match: |
         (?x)\s*
         ((?> Array
@@ -298,10 +390,22 @@ contexts:
           | Uint8ClampedArray
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+        1: support.type.object.js.fjsx15
+      pop: true
+
+  array-property-or-function:
+    # Function.
+    - match: |
+        (?x)\s*
+        ((?> from
+          | isArray
+        ))\b
+      captures:
+        1: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
 
   keyed-collections:
     - match: |
@@ -311,10 +415,8 @@ contexts:
           | Weak(?>Map|Set)
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+        1: support.type.object.js.fjsx15
+      pop: true
 
   structured-data:
     - match: |
@@ -324,10 +426,8 @@ contexts:
           | JSON
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+        1: support.type.object.js.fjsx15
+      pop: true
 
   control-abstraction-objects:
     - match: |
@@ -336,10 +436,8 @@ contexts:
           | Promise
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+        1: support.type.object.js.fjsx15
+      pop: true
 
   reflection:
     - match: |
@@ -348,10 +446,8 @@ contexts:
           | Reflect
         ))\b
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+        1: support.type.object.js.fjsx15
+      pop: true
 
   internationalization:
     - match: |
@@ -365,14 +461,8 @@ contexts:
           ))\b
         )?
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+        1: support.type.object.js.fjsx15
+      pop: true
 
   web-assembly:
     - match: |
@@ -390,11 +480,5 @@ contexts:
           ))\b
         )?
       captures:
-        1: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-        2: keyword.operator.other.member-access.js.fjsx15
-        3: >-
-          support.core.js.fjsx15
-          entity.name.class.js.fjsx15
-      set: optional-template-and-type-arguments
+        1: support.type.object.js.fjsx15
+      pop: true

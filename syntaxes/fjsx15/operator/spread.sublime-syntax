@@ -21,8 +21,8 @@ contexts:
   main:
     - match: \s*(\.{3})
       captures:
-        1: keyword.operator.other.spread.js.fjsx15
-      set: statement-and-expression
+        1: keyword.operator.spread.js.fjsx15
+      set: optional-expression
 
-  statement-and-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement-and-expression.sublime-syntax
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

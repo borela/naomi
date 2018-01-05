@@ -12,10 +12,17 @@
 
 .meta.annotation {
   .variable.annotation,
-  .punctuation.section.group,
-  .punctuation.separator.comma,
-  .punctuation.definition.annotation {
-    foreground: $deep-purple-200;
+  .punctuation.definition {
+    foreground: $purple-a100;
     fontStyle: italic;
   }
+
+//   .meta.group {
+//     .punctuation {
+//       &.section.group,
+//       &.separator.comma {
+//         foreground: $purple-a100;
+//       }
+//     }
+//   }
 }

@@ -29,8 +29,49 @@ contexts:
         \s*(@)
         (?={{decoratorIdentifier}})
       captures:
-        1: punctuation.definition.decorator.js.fjsx15
-      set: identifier
+        1: >-
+          meta.annotation.js.fjsx15
+          punctuation.definition.annotation.js.fjsx15
+      set: decorator-identifier
 
-  identifier:
-    - include: Packages/Naomi/syntaxes/fjsx15/decorator/identifier.sublime-syntax
+  decorator-identifier:
+    # With arguments.
+    - match: |
+        (?xi)\s*
+        ({{decoratorIdentifier}})
+        (?=\s*\()
+      captures:
+        1: variable.annotation.js.fjsx15
+      set: [
+        possible-chain,
+        meta-scope,
+        arguments
+      ]
+    # Without arguments.
+    - match: |
+        (?xi)\s*
+        ({{decoratorIdentifier}})
+      captures:
+        1: variable.annotation.js.fjsx15
+      set: [
+        possible-chain,
+        meta-scope
+      ]
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
+  # The decorator might be followed by a chain of function calls and we want to
+  # to highlight them as decorators too.
+  possible-chain:
+    - match: \s*(\.)
+      captures:
+        1: punctuation.definition.decorator.chain.js.fjsx15
+      set: decorator-identifier
+    - match: (?=\s*\S)
+      pop: true
+
+  meta-scope:
+    - meta_scope: meta.annotation.js.fjsx15
+    - match: ""
+      pop: true

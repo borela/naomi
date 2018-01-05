@@ -13,14 +13,14 @@
 // the License.
 
    super(1,2);
-// ^^^^^ .support.js.fjsx15
+// ^^^^^ .support.core.js.fjsx15
 // ^^^^^ .entity.name.function.js.fjsx15
 //      ^ .punctuation.definition.function.arguments.begin.js.fjsx15
 //       ^ .constant.numeric.decimal.js.fjsx15
 //        ^ .punctuation.definition.function.arguments.js.fjsx15
 //         ^ .constant.numeric.decimal.js.fjsx15
 //          ^ .punctuation.definition.function.arguments.end.js.fjsx15
-//           ^ .keyword.operator.other.terminator.js.fjsx15
+//           ^ .keyword.other.terminator.js.fjsx15
    foo<A,B>(1,2);
 // ^^^ .entity.name.function.js.fjsx15
 //    ^ .punctuation.definition.template.arguments.begin.flowtype
@@ -33,7 +33,7 @@
 //           ^ .punctuation.definition.function.arguments.js.fjsx15
 //            ^ .constant.numeric.decimal.js.fjsx15
 //             ^ .punctuation.definition.function.arguments.end.js.fjsx15
-//              ^ .keyword.operator.other.terminator.js.fjsx15
+//              ^ .keyword.other.terminator.js.fjsx15
    foo<A|B>(1,2);
 // ^^^ .entity.name.function.js.fjsx15
 //    ^ .punctuation.definition.template.arguments.begin.flowtype
@@ -46,7 +46,7 @@
 //           ^ .punctuation.definition.function.arguments.js.fjsx15
 //            ^ .constant.numeric.decimal.js.fjsx15
 //             ^ .punctuation.definition.function.arguments.end.js.fjsx15
-//              ^ .keyword.operator.other.terminator.js.fjsx15
+//              ^ .keyword.other.terminator.js.fjsx15
    foo<{a:A} & {b:B}>(1,2);
 // ^^^ .entity.name.function.js.fjsx15
 //    ^ .punctuation.definition.template.arguments.begin.flowtype
@@ -67,4 +67,4 @@
 //                     ^ .punctuation.definition.function.arguments.js.fjsx15
 //                      ^ .constant.numeric.decimal.js.fjsx15
 //                       ^ .punctuation.definition.function.arguments.end.js.fjsx15
-//                        ^ .keyword.operator.other.terminator.js.fjsx15
+//                        ^ .keyword.other.terminator.js.fjsx15

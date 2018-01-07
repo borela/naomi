@@ -63,7 +63,7 @@ To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need 
     1. `Enter` creates a new comment line.
     2. `Backspace` deletes the current line and goes to the previous one.
     3. `Shift+Enter` closes the docblock.
-       ![Multline line docblock preview](preview/multi-line.gif)
+       ![Multline line docblock preview](preview/multiline.gif)
 * Add Mac’s curly quotes shortcuts for Windows and Linux:
   1. `Alt+[` produces “.
   2. `Alt+Shift+[` produces ”.

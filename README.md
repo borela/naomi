@@ -55,11 +55,20 @@ To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need 
 #### General
 
 * Auto complete asterisks in documentation blocks.
+  1. Single line comment:
+    1. `Shift+Enter` creates new single line comment.
+    2. `Backspace` deletes the current line and goes to the previous one.
+       ![Single line docblock preview](preview/single-line.png)
+  2. Multiline docblock comment `/**`:
+    1. `Enter` creates a new comment line.
+    2. `Backspace` deletes the current line and goes to the previous one.
+    3. `Shift+Enter` closes the docblock.
+       ![Multline line docblock preview](preview/multi-line.png)
 * Add Mac’s curly quotes shortcuts for Windows and Linux:
-  1. Alt+[ produces “.
-  2. Alt+Shift+[ produces ”.
-  3. Alt+] produces ‘.
-  4. Alt+Shift+] produces ’.
+  1. `Alt+[` produces “.
+  2. `Alt+Shift+[` produces ”.
+  3. `Alt+]` produces ‘.
+  4. `Alt+Shift+]` produces ’.
 * Stable syntaxes:
   * FJSX15 (Combines ES2015+, Flow, React’s JSX).
   * HTML 5.
@@ -71,8 +80,7 @@ To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need 
 
 #### FJSX15 (ES2015 + FlowType + React’s JSX)
 
-![Candyman FJSX15 preview 1](preview/fjsx15/candyman-1.png)
-![Candyman FJSX15 preview 2](preview/fjsx15/candyman-2.png)
+![Candyman FJSX15 preview](preview/fjsx15/candyman.png)
 
 [candyman]: schemes/candyman
 [package-control]: //packagecontrol.io/packages/Naomi

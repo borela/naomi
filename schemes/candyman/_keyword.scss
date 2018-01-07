@@ -59,6 +59,11 @@
       foreground: $purple-200;
       fontStyle: italic;
 
+      &.export {
+        foreground: $green-200;
+        fontStyle: bold italic;
+      }
+
       &.all,
       &.as,
       &.default,

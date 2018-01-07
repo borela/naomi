@@ -920,9 +920,9 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>italic</string>
+				<string>bold italic</string>
 				<key>foreground</key>
-				<string>#ea80fc</string>
+				<string>#f36c60</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1499,6 +1499,17 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.keyword.control.import.export, .keyword.control.export.export, .keyword.control.import-export.export</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold italic</string>
+				<key>foreground</key>
+				<string>#72d572</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.keyword.control.import.all, .keyword.control.import.as, .keyword.control.import.default, .keyword.control.import.star, .keyword.control.export.all, .keyword.control.export.as, .keyword.control.export.default, .keyword.control.export.star, .keyword.control.import-export.all, .keyword.control.import-export.as, .keyword.control.import-export.default, .keyword.control.import-export.star</string>
 			<key>settings</key>
 			<dict>
@@ -1618,7 +1629,7 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>italic</string>
+				<string>bold italic</string>
 				<key>foreground</key>
 				<string>#f36c60</string>
 			</dict>

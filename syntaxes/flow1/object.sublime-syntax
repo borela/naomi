@@ -33,12 +33,30 @@ contexts:
       captures:
         1: punctuation.section.block.begin.flow
         2: punctuation.section.block.begin.flow
-      set: [ delimiters, optional-property-or-method ]
+      set: [
+        meta-scope-exact,
+        delimiters,
+        optional-property-or-method
+      ]
     # Normal.
     - match: \s*({)
       captures:
         1: punctuation.section.block.begin.flow
-      set: [ delimiters, optional-property-or-method ]
+      set: [
+        meta-scope,
+        delimiters,
+        optional-property-or-method
+      ]
+
+  meta-scope-exact:
+    - meta_scope: meta.object.exact.flow
+    - match: ""
+      pop: true
+
+  meta-scope:
+    - meta_scope: meta.object.flow
+    - match: ""
+      pop: true
 
   delimiters:
     - match: \s*(?:(,)|(;))
@@ -82,8 +100,8 @@ contexts:
         (?:\s*(\?\B))?
       captures:
         1: >-
-          object.property.js.fjsx15
-          entity.name.constant.js.fjsx15
+          object.property.flow
+          entity.name.constant.flow
         2: >-
           flow
           keyword.operator.other.optional.flow
@@ -100,8 +118,8 @@ contexts:
         (?:\s*(\?\B))?
       captures:
         1: >-
-          object.property.js.fjsx15
-          entity.name.constant.js.fjsx15
+          object.property.flow
+          entity.name.constant.flow
         2: >-
           flow
           keyword.operator.other.optional.flow
@@ -117,8 +135,8 @@ contexts:
         (?:\s*(\?))?
       captures:
         1: >-
-          object.property.js.fjsx15
-          entity.name.variable.js.fjsx15
+          object.property.flow
+          entity.name.variable.flow
         2: >-
           flow
           keyword.operator.other.optional.flow
@@ -135,8 +153,8 @@ contexts:
         (?:\s*(\?))?
       captures:
         1: >-
-          object.property.js.fjsx15
-          entity.name.variable.js.fjsx15
+          object.property.flow
+          entity.name.variable.flow
         2: >-
           flow
           keyword.operator.other.optional.flow

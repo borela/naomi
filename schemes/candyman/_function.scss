@@ -22,6 +22,10 @@
 .support.function {
   foreground: $purple-a100;
   fontStyle: italic;
+
+  &.magic {
+    foreground: $deep-orange-300;
+  }
 }
 
 .variable.parameter {

@@ -11,7 +11,8 @@
 // the License.
 
 .keyword {
-  foreground: $pink-200;
+  foreground: $pink-300;
+  fontStyle: bold italic;
 
   &.control {
     &.conditional {
@@ -22,6 +23,24 @@
     &.flow {
       foreground: $green-200;
       fontStyle: italic;
+
+      &.conditional {
+        foreground: $teal-a400;
+        fontStyle: italic;
+      }
+
+      &.for,
+      &.do,
+      &.while {
+        foreground: $deep-orange-300;
+        fontStyle: italic;
+      }
+
+      &.for.of,
+      &.for.in {
+        foreground: $pink-300;
+        fontStyle: bold italic;
+      }
 
       &.break.throw {
         foreground: $purple-a100;
@@ -34,14 +53,18 @@
       }
     }
 
+    &.import,
+    &.export,
     &.import-export {
-      foreground: $pink-200;
-      fontStyle: none;
+      foreground: $deep-orange-300;
+      fontStyle: italic;
 
+      &.all,
       &.as,
       &.default,
       &.star {
         foreground: $deep-purple-200;
+        fontStyle: bold;
       }
     }
 

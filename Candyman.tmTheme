@@ -1057,6 +1057,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.support.function.magic</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff8a65</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.variable.parameter</string>
 			<key>settings</key>
 			<dict>
@@ -1394,8 +1403,10 @@
 			<string>.keyword</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>bold italic</string>
 				<key>foreground</key>
-				<string>#f48fb1</string>
+				<string>#f06292</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1422,6 +1433,39 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.keyword.control.flow.conditional</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#1de9b6</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.control.flow.for, .keyword.control.flow.do, .keyword.control.flow.while</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#ff8a65</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.control.flow.for.of, .keyword.control.flow.for.in</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold italic</string>
+				<key>foreground</key>
+				<string>#f06292</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.keyword.control.flow.break.throw</string>
 			<key>settings</key>
 			<dict>
@@ -1444,20 +1488,22 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.control.import-export</string>
+			<string>.keyword.control.import, .keyword.control.export, .keyword.control.import-export</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string></string>
+				<string>italic</string>
 				<key>foreground</key>
-				<string>#f48fb1</string>
+				<string>#ff8a65</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.control.import-export.as, .keyword.control.import-export.default, .keyword.control.import-export.star</string>
+			<string>.keyword.control.import.all, .keyword.control.import.as, .keyword.control.import.default, .keyword.control.import.star, .keyword.control.export.all, .keyword.control.export.as, .keyword.control.export.default, .keyword.control.export.star, .keyword.control.import-export.all, .keyword.control.import-export.as, .keyword.control.import-export.default, .keyword.control.import-export.star</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
 				<key>foreground</key>
 				<string>#b39ddb</string>
 			</dict>

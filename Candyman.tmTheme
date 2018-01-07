@@ -1556,9 +1556,9 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>italic</string>
+				<string>bold italic</string>
 				<key>foreground</key>
-				<string>#84ffff</string>
+				<string>#f06292</string>
 			</dict>
 		</dict>
 		<dict>

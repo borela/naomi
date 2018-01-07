@@ -23,3 +23,12 @@
   foreground: $purple-a100;
   fontStyle: italic;
 }
+
+.variable.parameter {
+  foreground: $amber-200;
+}
+
+.storage.type.function.arrow {
+  foreground: $light-blue-300;
+  fontStyle: bold;
+}

@@ -22,14 +22,11 @@
 @import 'schemes/candyman/annotation';
 @import 'schemes/candyman/array';
 @import 'schemes/candyman/class';
-@import 'schemes/candyman/class/body';
 @import 'schemes/candyman/comment';
 @import 'schemes/candyman/constant';
 @import 'schemes/candyman/destructuring';
 @import 'schemes/candyman/function';
 @import 'schemes/candyman/function-call';
-@import 'schemes/candyman/function/body';
-@import 'schemes/candyman/function/parameters';
 @import 'schemes/candyman/generic';
 @import 'schemes/candyman/global/console';
 @import 'schemes/candyman/global/jest';

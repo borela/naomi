@@ -1057,6 +1057,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.variable.parameter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffe082</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.storage.type.function.arrow</string>
 			<key>settings</key>
 			<dict>
@@ -1064,15 +1073,6 @@
 				<string>bold</string>
 				<key>foreground</key>
 				<string>#4fc3f7</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.variable.parameter.function</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffe082</string>
 			</dict>
 		</dict>
 		<dict>

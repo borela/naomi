@@ -65,7 +65,6 @@ contexts:
     - match: \s*(>)
       captures:
         1: punctuation.definition.tag.end.html.jsx.jsx1
-      # pop: true
       set: optional-content
     # Attribute.
     - match: |

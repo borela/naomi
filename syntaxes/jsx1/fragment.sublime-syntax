@@ -49,9 +49,9 @@ contexts:
       push:
         - clear_scopes: true
         - meta_scope: text.html.basic.jsx.jsx1
-        - include: main
         - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
         - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
+        - include: main
         # Simple text.
         - match: .
           pop: true

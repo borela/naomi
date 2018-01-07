@@ -21,7 +21,7 @@ contexts:
   main:
     - match: \s*(:)
       captures:
-        1: keyword.operator.other.flow
+        1: punctuation.separator.key-value.flow
       set: optional-type-expression
 
   optional-type-expression:

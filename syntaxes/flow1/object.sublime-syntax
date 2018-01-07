@@ -49,12 +49,16 @@ contexts:
       ]
 
   meta-scope-exact:
-    - meta_scope: meta.object.exact.flow
+    - meta_scope: >-
+        meta.object-literal.exact.flow
+        meta.block.flow
     - match: ""
       pop: true
 
   meta-scope:
-    - meta_scope: meta.object.flow
+    - meta_scope: >-
+        meta.object-literal.flow
+        meta.block.flow
     - match: ""
       pop: true
 
@@ -99,12 +103,8 @@ contexts:
         ([_[:upper:]])\b
         (?:\s*(\?\B))?
       captures:
-        1: >-
-          object.property.flow
-          entity.name.constant.flow
-        2: >-
-          flow
-          keyword.operator.other.optional.flow
+        1: meta.object-literal.key.constant.flow
+        2: storage.modifier.optional.flow
       set: associated-type
     # Two or more characters.
     - match: |
@@ -117,12 +117,8 @@ contexts:
         )
         (?:\s*(\?\B))?
       captures:
-        1: >-
-          object.property.flow
-          entity.name.constant.flow
-        2: >-
-          flow
-          keyword.operator.other.optional.flow
+        1: meta.object-literal.key.flow
+        2: storage.modifier.optional.flow
       set: associated-type
 
   variable:
@@ -134,12 +130,8 @@ contexts:
         ))
         (?:\s*(\?))?
       captures:
-        1: >-
-          object.property.flow
-          entity.name.variable.flow
-        2: >-
-          flow
-          keyword.operator.other.optional.flow
+        1: meta.object-literal.key.flow
+        2: storage.modifier.optional.flow
       set: associated-type
     # Two or more characters.
     - match: |
@@ -152,12 +144,8 @@ contexts:
         )
         (?:\s*(\?))?
       captures:
-        1: >-
-          object.property.flow
-          entity.name.variable.flow
-        2: >-
-          flow
-          keyword.operator.other.optional.flow
+        1: meta.object-literal.key.flow
+        2: storage.modifier.optional.flow
       set: associated-type
 
   string:

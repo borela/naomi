@@ -24,13 +24,14 @@ variables:
 
 contexts:
   main:
-    - match: \s*(<)(>)
+    - match: \s*(<)
       captures:
         1: punctuation.definition.tag.begin.jsx.jsx1
-        2: punctuation.definition.tag.end.jsx.jsx1
       push: [
         meta-scope,
-        closing-tag
+        closing-tag,
+        optional-content,
+        close-open-tag
       ]
 
   meta-scope:
@@ -38,5 +39,11 @@ contexts:
     - match: ""
       pop: true
 
+  close-open-tag:
+    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax#close-open-tag
+
   closing-tag:
     - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax#closing-tag
+
+  optional-content:
+    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax#optional-content

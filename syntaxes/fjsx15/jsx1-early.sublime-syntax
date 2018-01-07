@@ -15,13 +15,14 @@
 
 hidden: true
 
-scope: text.html.basic.jsx.jsx1
+scope: ...
 
 contexts:
   main:
-    - clear_scopes: true
-    - include: Packages/Naomi/syntaxes/jsx1/component.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/jsx1/element.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/jsx1/fragment.no-pop.sublime-syntax
-    - match: ""
-      pop: true
+    - match: (?=\s*<)
+      with_prototype:
+       - include: comment-and-embedded-js
+      set: [ Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax ]
+
+  comment-and-embedded-js:
+    - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax#comment-and-embedded-js

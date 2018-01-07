@@ -30,8 +30,9 @@ contexts:
       set: [ optional-tail, regex-literal ]
     # Arrow functions need to be detected before expression groups.
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
-    # JSX tags.
-    - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax
+    # At this point is possible to predict JSX tags before operators because
+    # there’s no left operand for a "<" operator to be valid.
+    - include: Packages/Naomi/syntaxes/fjsx15/jsx1-early.sublime-syntax
     # Detect operators as soon as possible.
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     # Open new expression group.

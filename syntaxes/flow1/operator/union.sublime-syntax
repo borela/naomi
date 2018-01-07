@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\|)
+    - match: \s*(\|)(?!})
       captures:
         1: keyword.operator.other.union.flow
       set: optional-type-expression

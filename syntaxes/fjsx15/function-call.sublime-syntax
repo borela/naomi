@@ -85,6 +85,16 @@ contexts:
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
+  optional-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+    - match: (?=\s*\()
+      push: expression
+    - match: (?=\s*\S)
+      pop: true
+
+  expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
   meta-scope:
     - meta_scope: meta.function-call.js.fjsx15
     - match: ""

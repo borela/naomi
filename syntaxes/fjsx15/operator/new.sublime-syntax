@@ -80,9 +80,7 @@ contexts:
       pop: true
 
   optional-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-    - match: (?=\s*\S)
-      pop: true
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax#optional-arguments
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

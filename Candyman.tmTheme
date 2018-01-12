@@ -964,6 +964,8 @@
 			<string>.entity.name.function, .variable.function, .storage.type.function.arrow</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string></string>
 				<key>foreground</key>
 				<string>#40c4ff</string>
 			</dict>

@@ -95,7 +95,7 @@ contexts:
     - match: |
         (?xi)\s*
         ({{commonIdentifier}})
-        (?=\s+as)
+        (?=\s+as\b)
       captures:
         1: variable.other.readwrite.js.fjsx15
       set: alias

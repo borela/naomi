@@ -67,6 +67,11 @@ contexts:
       pop: true
     # Type.
     - include: Packages/Naomi/syntaxes/flow1/type-export.sublime-syntax
+    # Aliased all.
+    - match: \s*(\*)(?=\s*as\b)
+      captures:
+        1: keyword.control.import-export.star.js.fjsx15
+      set: alias
     # All.
     - match: \s*(\*)
       captures:

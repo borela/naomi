@@ -45,14 +45,19 @@ contexts:
         \s*(\`)
       captures:
         1: entity.name.function.tag.js.fjsx15
-        2: punctuation.definition.string.begin.js.fjsx15
+        2: >-
+          string.template.js.fjsx15
+          punctuation.definition.string.begin.js.fjsx15
       set: string
 
   string:
-    - meta_scope: string.template.js.fjsx15
+    - meta_content_scope: string.template.js.fjsx15
     # Close.
-    - match: \`
-      scope: punctuation.definition.string.end.js.fjsx15
+    - match: \s*(`)
+      captures:
+        1: >-
+          string.template.js.fjsx15
+          punctuation.definition.string.end.js.fjsx15
       pop: true
     # Escape.
     - match: (?xi){{escapeSequences}}

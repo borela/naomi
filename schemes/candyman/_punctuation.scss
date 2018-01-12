@@ -11,10 +11,11 @@
 // the License.
 
 .punctuation {
+  &.accessor,
   &.separator.key-value,
   &.terminator {
 //     foreground: $deep-orange-a100;
-    foreground: $pink-a200;
+    foreground: $pink-a100;
   }
 }
 // .punctuation {

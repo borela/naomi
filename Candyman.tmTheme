@@ -1393,11 +1393,11 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.separator.key-value, .punctuation.terminator</string>
+			<string>.punctuation.accessor, .punctuation.separator.key-value, .punctuation.terminator</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff4081</string>
+				<string>#ff80ab</string>
 			</dict>
 		</dict>
 		<dict>

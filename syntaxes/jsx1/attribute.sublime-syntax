@@ -64,14 +64,14 @@ contexts:
     - match: \s*(=)
       captures:
         1: punctuation.separator.key-value.html.jsx.jsx1
-      push: value
+      set: value
     # Anything else.
     - include: escape
 
   value:
-    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
+    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/literal/string/single-quoted.sublime-syntax
     # Anything else.

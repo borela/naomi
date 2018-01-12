@@ -152,4 +152,18 @@ contexts:
           pop: true
 
   closing-tag:
-    - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax#closing-tag
+    # Self closing tag.
+    - match: \s*(/>)
+      captures:
+        1: punctuation.definition.tag.end.html.jsx.jsx1
+      pop: true
+    # Closing tag.
+    - match: |
+        (?x)\s*
+        ((</)(\2)(>))
+      captures:
+        1: meta.tag.close.html.jsx.jsx1
+        2: punctuation.definition.tag.begin.html.jsx.jsx1
+        3: entity.name.tag.html.jsx.jsx1
+        4: punctuation.definition.tag.end.html.jsx.jsx1
+      pop: true

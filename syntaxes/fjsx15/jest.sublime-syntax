@@ -88,9 +88,35 @@ contexts:
     - include: escape
 
   jest-property-or-function:
-    - match: \s*(fn)(?=\s*\()
+    - match: |
+        (?x)\s*
+        ((?> clearAllTimers
+          | disableAutomock
+          | enableAutomock
+          | fn
+          | isMockFunction
+          | genMockFromModule
+          | mock
+          | unmock
+          | doMock
+          | dontMock
+          | clearAllMocks
+          | resetAllMocks
+          | restoreAllMocks
+          | resetModules
+          | runAllTicks
+          | runAllTimers
+          | advanceTimersByTime
+          | runOnlyPendingTimers
+          | setMock
+          | setTimeout
+          | useFakeTimers
+          | useRealTimers
+          | spyOn
+        ))
+        (?=\s*\()
       captures:
-        1: support.function.jest.fn.js.fjsx15
+        1: support.function.jest.js.fjsx15
       set: [
         meta-scope,
         arguments

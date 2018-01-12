@@ -25,7 +25,7 @@ contexts:
       set: index
 
   index:
-    - meta_scope: meta.item-access.js.fjsx15
+    - meta_scope: meta.brackets.js.fjsx15
     - match: \s*(])
       captures:
         1: punctuation.section.brackets.end.js.fjsx15a

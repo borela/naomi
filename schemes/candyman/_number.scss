@@ -10,39 +10,38 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.storage.type.numeric {
-  foreground: $amber-300;
-}
+// .storage.type.numeric {
+//   foreground: $amber-300;
+// }
 
 .constant.numeric {
   foreground: $amber-300;
-  fontStyle: none;
-
-  &.float {
-    foreground: $cyan-300;
-    .punctuation.defintion {
-      foreground: $cyan-300;
-    }
-  }
-
-  &.binary {
-    foreground: $deep-orange-300;
-    .punctuation.definition {
-      foreground: $deep-orange-300;
-    }
-  }
-
-  &.octal {
-    foreground: $brown-200;
-    .punctuation.definition {
-      foreground: $brown-200;
-    }
-  }
-
-  &.hex {
-    foreground: $green-200;
-    .punctuation.definition {
-      foreground: $green-200;
-    }
-  }
+//   background: rgba($amber-300, .1);
+//   foreground: $pink-a100;
+//   &.float {
+//     foreground: $-300;
+//   }
 }
+
+
+//   &.binary {
+//     foreground: $deep-orange-300;
+//     .punctuation.definition {
+//       foreground: $deep-orange-300;
+//     }
+//   }
+
+//   &.octal {
+//     foreground: $brown-200;
+//     .punctuation.definition {
+//       foreground: $brown-200;
+//     }
+//   }
+
+//   &.hex {
+//     foreground: $green-200;
+//     .punctuation.definition {
+//       foreground: $green-200;
+//     }
+//   }
+// }

@@ -10,11 +10,29 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.meta.tag {
+.text.html {
+  foreground: $brown-400;
+}
+
+.meta.tag,
+.entity.name.tag {
   foreground: $brown-200;
+
+  .punctuation.definition.tag {
+    foreground: rgba($brown-200, .5);
+  }
 }
 
 .entity.other.attribute-name {
-  foreground: $green-200;
-  fontStyle: italic;
+//   foreground: $green-a400;
+  foreground: $cyan-a400;
+}
+
+.meta.tag.other.component,
+.entity.name.tag.component {
+  foreground: $purple-a100;
+
+  .punctuation.definition.tag {
+    foreground: rgba($purple-a100, .5);
+  }
 }

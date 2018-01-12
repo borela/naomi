@@ -10,28 +10,33 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.entity.name.interface,
-.entity.name.type,
+.entity.name,
+.entity.other,
 .variable.type,
 .variable.other.type {
-  foreground: $light-green-300;
+  foreground: $green-a400;
 }
 
 .support.type {
-  foreground: $deep-purple-a100;
-
-  &.existential.flow,
-  &.flow {
-    foreground: $deep-orange-200;
-  }
-
-  &.object {
-    fontStyle: italic;
-    &.console {
-      foreground: $green-200;
-    }
-  }
+  foreground: $deep-orange-a100;
 }
+
+.support.type.object {
+  foreground: $deep-purple-a100;
+}
+
+//   &.existential.flow,
+//   &.flow {
+//     foreground: $deep-orange-300;
+//   }
+
+//   &.object {
+//     fontStyle: italic;
+//     &.console {
+//       foreground: $green-200;
+//     }
+//   }
+// }
 
 
 //   foreground: $light-green-300;

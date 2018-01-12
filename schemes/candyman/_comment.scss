@@ -14,10 +14,3 @@
 .comment .punctuation.definition {
   foreground: $blue-gray-500;
 }
-
-.comment .entity {
-  &.email,
-  &.link {
-    foreground: $blue-gray-100;
-  }
-}

@@ -14,11 +14,6 @@
   &.modifier,
   &.type {
     foreground: $deep-purple-200;
-    fontStyle: none;
-  }
-
-  &.modifier.extends {
-    foreground: $red-300;
-    fontStyle: bold italic;
+    fontStyle: italic;
   }
 }

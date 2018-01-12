@@ -11,25 +11,32 @@
 // the License.
 
 .support.type.object.jest {
-  foreground: $red-300;
+  foreground: $pink-500;
+  background: rgba($pink-500, .1);
+  fontStyle: italic bold;
 
   &.matcher.not {
-    foreground: $red-300;
+    foreground: $red-400;
+    background: rgba($red-400, .1);
     fontStyle: bold;
   }
 }
 
 .support.function.jest {
-  foreground: $red-300;
+  foreground: $pink-500;
+  background: rgba($pink-500, .1);
+//   background: rgba($pink-500, .1);
+  fontStyle: bold;
 
   &.matcher {
-    foreground: $deep-orange-300;
+    foreground: $pink-500;
+//     background: rgba($pink-500, .1);
   }
 
   &.skip,
   &.only {
-    foreground: $red-300;
-    background: rgba($deep-orange-300, .1);
+    foreground: $red-400;
+    background: rgba($red-400, .1);
     fontStyle: bold;
   }
 }

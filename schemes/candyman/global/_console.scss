@@ -10,22 +10,31 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
+support.type.object.console {
+  foreground: $green-a400;
+  background: rgba($green-a400, .05);
+  fontStyle: italic;
+}
+
 .support.function.console {
-  &.error {
-    foreground: $red-300;
-  }
+  foreground: $green-a400;
+  background: rgba($green-a400, .05);
+  fontStyle: italic;
+//   &.error {
+//     foreground: $pink-a200;
+//   }
 
-  &.info {
-    foreground: $teal-300;
-  }
+//   &.info {
+//     foreground: $teal-a400;
+//   }
 
-  &.log {
-    foreground: $brown-200;
-  }
+//   &.log {
+//     foreground: $brown-200;
+//   }
 
-  &.warn {
-    foreground: $deep-orange-300;
-  }
+//   &.warn {
+//     foreground: $deep-orange-a100;
+//   }
 }
 
 // .meta.function-call.console {

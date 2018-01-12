@@ -11,25 +11,32 @@
 // the License.
 
 .punctuation {
-  &.accessor,
-  &.separator,
+  &.separator.key-value,
   &.terminator {
-    foreground: $green-a200;
-    fontStyle: bold;
-  }
-
-  &.separator.key-value {
-    foreground: $deep-orange-300;
-  }
-
-  &.definition {
-    &.tag {
-      foreground: $brown-300;
-      fontStyle: none;
-    }
-    &.template-expression {
-      foreground: $deep-orange-300;
-      fontStyle: bold;
-    }
+//     foreground: $deep-orange-a100;
+    foreground: $pink-a200;
   }
 }
+// .punctuation {
+//   &.accessor,
+//   &.separator,
+//   &.terminator {
+//     foreground: $green-a200;
+//     fontStyle: bold;
+//   }
+
+//   &.separator.key-value {
+//     foreground: $deep-orange-300;
+//   }
+
+//   &.definition {
+//     &.tag {
+//       foreground: $brown-300;
+//       fontStyle: none;
+//     }
+//     &.template-expression {
+//       foreground: $deep-orange-300;
+//       fontStyle: bold;
+//     }
+//   }
+// }

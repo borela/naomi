@@ -10,28 +10,33 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.entity.name.constant {
-  foreground: $purple-200;
-}
-
+.entity.name.constant,
 .variable.other.constant,
 .punctuation.definition.constant {
   foreground: $gray-300;
 }
 
-.support.constant {
-  foreground: $purple-a100;
+.entity.name.constant {
+  fontStyle: italic;
 }
 
 .constant.language {
-  foreground: $red-300;
+  foreground: $deep-orange-a100;
 }
 
-.constant.language.infinity,
-.constant.language.nan {
-  foreground: $purple-a100;
-}
+// .constant.language {
+//   foreground: $red-a200;
+//   background: rgba($red-a200, .05);
+//   fontStyle: italic;
+// }
 
-.constant.language.boolean {
-  foreground: $green-200;
-}
+// .constant.language.infinity,
+// .constant.language.nan {
+//   foreground: $purple-a200;
+//   background: rgba($purple-a200, .05);
+// }
+
+// .constant.language.boolean {
+//   foreground: $green-a400;
+//   background: rgba($green-a400, .05);
+// }

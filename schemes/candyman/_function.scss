@@ -10,29 +10,30 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.entity.name.function {
-  foreground: $blue-300;
-  fontStyle: italic;
+.entity.name.function,
+.variable.function,
+.storage.type.function.arrow {
+  foreground: $light-blue-a200;
 }
 
 .variable.function {
-  foreground: $blue-300;
+  fontStyle: italic;
 }
 
 .support.function {
   foreground: $purple-a100;
   fontStyle: italic;
-
-  &.magic {
-    foreground: $deep-orange-300;
-  }
 }
+
+//   &.magic {
+//     foreground: $deep-orange-300;
+//   }
+// }
 
 .variable.parameter {
-  foreground: $amber-200;
+  foreground: $amber-a100;
 }
 
-.storage.type.function.arrow {
-  foreground: $light-blue-300;
-  fontStyle: bold;
-}
+// .storage.type.function.arrow {
+//   foreground: $light-blue-a200;
+// }

@@ -11,9 +11,10 @@
 // the License.
 
 .string {
-  foreground: $lime-300;
+  foreground: $pink-a200;
+  background: rgba($pink-a200, .1);
+}
 
-  .punctuation.definition.string {
-    foreground: $lime-300;
-  }
+.punctuation.definition.string {
+  foreground: rgba($pink-a200, .5);
 }

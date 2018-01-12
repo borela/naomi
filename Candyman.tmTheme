@@ -1310,6 +1310,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.text.html.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b0bec5</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.text.html</string>
 			<key>settings</key>
 			<dict>

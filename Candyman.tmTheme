@@ -1046,6 +1046,8 @@
 			<string>.source.json .meta.structure.dictionary .meta.structure.dictionary.key .string</string>
 			<key>settings</key>
 			<dict>
+				<key>background</key>
+				<string>#263238</string>
 				<key>foreground</key>
 				<string>#4dd0e1</string>
 			</dict>

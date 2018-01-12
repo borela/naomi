@@ -42,6 +42,13 @@ contexts:
       captures:
         1: keyword.control.import-export.default.js.fjsx15
       set: statements-and-expressions
+    # Renamed default.
+    - match: |
+        (?xi)\s*
+        ({{commonIdentifier}})
+      captures:
+        1: variable.other.readwrite.js.fjsx15
+      set: origin
     # Other statements.
     - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
 

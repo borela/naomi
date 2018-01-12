@@ -49,7 +49,7 @@ contexts:
     # expect
     - match: (?<!\.)\s*(expect)
       captures:
-        1: support.function.jest.fn.js.fjsx15
+        1: support.function.jest.js.fjsx15
       set: [
         expect-chain,
         meta-scope,
@@ -70,7 +70,7 @@ contexts:
         1: punctuation.accessor.js.fjsx15
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
   optional-skip-only:
     - include: accessor-no-pop

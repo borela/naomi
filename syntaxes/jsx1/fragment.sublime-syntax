@@ -19,25 +19,19 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(<)
+    - match: \s*(<)\s*(>)
       captures:
         1: punctuation.definition.tag.begin.jsx.jsx1
+        2: punctuation.definition.tag.end.jsx.jsx1
       set: [
         meta-scope,
         closing-tag,
-        optional-content,
-        close-open-tag
+        optional-content
       ]
 
   meta-scope:
-    - meta_scope: meta.tag.other.fragment.jsx.jsx1
+    - meta_scope: meta.tag.other.html.fragment.jsx.jsx1
     - match: ""
-      pop: true
-
-  close-open-tag:
-    - match: \s*(>)
-      captures:
-        1: punctuation.definition.tag.end.jsx.jsx1
       pop: true
 
   optional-content:

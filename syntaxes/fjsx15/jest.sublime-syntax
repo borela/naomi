@@ -38,7 +38,7 @@ contexts:
           | describe
           | it
           | test
-        ))
+        ))\b
       captures:
         1: support.function.jest.fn.js.fjsx15
       set: [

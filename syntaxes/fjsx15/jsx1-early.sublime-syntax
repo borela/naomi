@@ -17,9 +17,16 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_.:[:alnum:]]*
+
 contexts:
   main:
-    - match: (?=\s*<)
+    - match: |
+        (?xi)
+        (?=\s*<(?>\s*>|{{commonIdentifier}}))
       with_prototype:
        - include: comment-and-embedded-js
       set: [ Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax ]

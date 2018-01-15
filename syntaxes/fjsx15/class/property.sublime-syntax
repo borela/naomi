@@ -24,6 +24,7 @@ variables:
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
     - match: |
         (?xi)
         (?=\s*{{commonIdentifier}})

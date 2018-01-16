@@ -86,7 +86,7 @@ contexts:
     - include: internationalization
     - include: web-assembly
 
-  escape:
+  else-pop:
     - match: (?=\s*\S)
       pop: true
 
@@ -157,8 +157,7 @@ contexts:
       captures:
         1: support.function.console.warn.js.fjsx15
       pop: true
-    # Anything else.
-    - include: escape
+    - include: else-pop
 
   console-error-meta-scope:
     - meta_scope: meta.function-call.console.error.js.fjsx15
@@ -299,6 +298,7 @@ contexts:
       captures:
         1: support.function.js.fjsx15
       pop: true
+    - include: else-pop
 
   symbol-property-or-function:
     # Function call.
@@ -319,6 +319,8 @@ contexts:
       captures:
         1: support.function.js.fjsx15
       pop: true
+    - include: else-pop
+
   numbers-and-dates:
     - match: \s*(Math)\s*(\.)
       captures:
@@ -366,6 +368,7 @@ contexts:
       captures:
         1: support.constant.js.fjsx15
       pop: true
+    - include: else-pop
 
   text-processing:
     - match: |
@@ -408,6 +411,7 @@ contexts:
         function-call-meta-scope,
         arguments
       ]
+    - include: else-pop
 
   keyed-collections:
     - match: |

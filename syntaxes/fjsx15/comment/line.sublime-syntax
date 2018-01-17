@@ -19,9 +19,23 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/flow1/prolog.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/eslint.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/docblock.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/block.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/line.sublime-syntax
+    - match: \s*(//)
+      captures:
+        1: >-
+          comment.line.js.fjsx15
+          punctuation.definition.comment.begin.js.fjsx15
+      set: line
+
+  line:
+    - meta_content_scope: comment.line.js.fjsx15
+    - include: email-no-pop
+    - include: link-no-pop
+    - match: \s*$
+      scope: comment.line.js.fjsx15
+      pop: true
+
+  email-no-pop:
+    - include: Packages/Naomi/syntaxes/shared/email.no-pop.sublime-syntax
+
+  link-no-pop:
+    - include: Packages/Naomi/syntaxes/shared/link.no-pop.sublime-syntax

@@ -51,7 +51,7 @@
     "operand": "^\\s*\\*",
     "match_all": true
   }],
-  "args": { "contents": "\n*/" }
+  "args": { "contents": "\n*/\n" }
 },{
   // Add line to the beginning of the doc block.
   "keys": [ "enter" ],

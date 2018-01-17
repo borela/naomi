@@ -34,7 +34,7 @@
 },{
   // Close the doc block.
   "keys": [ "shift+enter" ],
-  "command": "insert_snippet",
+  "command": "run_macro_file",
   "context": [{
     "key": "selection_empty",
     "operator": "equal",
@@ -51,7 +51,9 @@
     "operand": "^\\s*\\*",
     "match_all": true
   }],
-  "args": { "contents": "\n*/\n" }
+  "args": {
+    "file": "res://Packages/Naomi/macros/close-docblock.sublime-macro"
+  }
 },{
   // Add line to the beginning of the doc block.
   "keys": [ "enter" ],

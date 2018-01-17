@@ -2,7 +2,7 @@
 
 [![Package version](https://img.shields.io/github/release/borela/naomi.svg?style=flat-square)][naomi]
 [![Sublime version](https://img.shields.io/badge/sublime-%E2%89%A53126-orange.svg?style=flat-square)][sublime]
-[![License](https://img.shields.io/badge/license-Apache%20%7C%20BSD%20%7C%20MIT-ff69b4.svg?style=flat-square)][naomi]
+[![License](https://img.shields.io/badge/license-Apache%202.0%20%7C%20BSD%20%7C%20MIT-ba68c8.svg?style=flat-square)][naomi]
 [![Downloads](https://img.shields.io/packagecontrol/dt/Naomi.svg?style=flat-square)][package-control]
 
 [![GitHub watchers](https://img.shields.io/github/watchers/borela/naomi.svg?style=social)][watchers]

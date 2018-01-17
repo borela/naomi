@@ -1,14 +1,16 @@
 [![Naomi](art/logo.png)][naomi]
 
-[![Package version](https://img.shields.io/github/release/borela/naomi.svg?style=flat-square)][naomi]
-[![Sublime version](https://img.shields.io/badge/sublime-%E2%89%A53126-orange.svg?style=flat-square)][sublime]
-[![License](https://img.shields.io/badge/license-Apache%202.0%20%7C%20BSD%20%7C%20MIT-ba68c8.svg?style=flat-square)][naomi]
-[![Downloads](https://img.shields.io/packagecontrol/dt/Naomi.svg?style=flat-square)][package-control]
-
 [![GitHub watchers](https://img.shields.io/github/watchers/borela/naomi.svg?style=social)][watchers]
 [![GitHub stars](https://img.shields.io/github/stars/borela/naomi.svg?style=social)][stars]
 [![GitHub issues](https://img.shields.io/github/issues/borela/naomi.svg?style=social)][issues]
+[![GitHub pulls](https://img.shields.io/github/issues-pr/borela/naomi.svg?style=social)][pulls]
 [![GitHub forks](https://img.shields.io/github/forks/borela/naomi.svg?style=social)][forks]
+
+[![Package version](https://img.shields.io/github/release/borela/naomi.svg?style=flat-square)][naomi]
+[![Sublime version](https://img.shields.io/badge/sublime-%E2%89%A53126-orange.svg?style=flat-square)][sublime]
+[![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20Linux%20%7C%20OSX-bcaaa4.svg?style=flat-square)][naomi]
+[![License](https://img.shields.io/badge/license-Apache%202.0%20%7C%20BSD%20%7C%20MIT-ba68c8.svg?style=flat-square)][naomi]
+[![Downloads](https://img.shields.io/packagecontrol/dt/Naomi.svg?style=flat-square)][package-control]
 
 ## Installation
 
@@ -88,11 +90,10 @@ To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need 
 
 [candyman]: schemes/candyman
 [package-control]: //packagecontrol.io/packages/Naomi
-[csscheme]: //github.com/FichteFoll/CSScheme
-[design]: DESIGN.md
 [sublime]: //www.sublimetext.com
 [naomi]: //github.com/borela/naomi
 [issues]: //github.com/borela/naomi/issues
+[pulls]: //github.com/borela/naomi/pulls
 [stars]: //github.com/borela/naomi/stargazers
 [watchers]: //github.com/borela/naomi/watchers
 [forks]: //github.com/borela/naomi/network/members

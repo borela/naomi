@@ -4,10 +4,9 @@
 | |\  || (_| || (_) || | | | | || |
 |_| \_| \__,_| \___/ |_| |_| |_||_|
 
-================================================================================
-
-Congratulations on installing the most accurate syntax definitions! And please,
-if you find any bugs, don’t hesitate to report it:
+Congratulations on installing the most accurate and actively maintained
+syntax definitions! Please, if you find any bugs, don’t hesitate to report
+it:
 
   https://github.com/borela/naomi/issues
 

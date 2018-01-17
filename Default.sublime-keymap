@@ -11,7 +11,25 @@
 // the License.
 
 [{
-  // Close doc block from the beginning.
+  // Align cursor after docblock line break.
+  "keys": [ "enter" ],
+  "command": "run_macro_file",
+  "context": [{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "meta.comment.postfix-whitespace",
+    "match_all": true
+  }],
+  "args": {
+    "file": "res://Packages/Naomi/macros/break-after-docblock.sublime-macro"
+  }
+},{
+  // Close docblock from the beginning.
   "keys": [ "shift+enter" ],
   "command": "insert_snippet",
   "context": [{
@@ -32,7 +50,7 @@
   }],
   "args": { "contents": "\n * ${0}\n */" }
 },{
-  // Close the doc block.
+  // Close the docblock.
   "keys": [ "shift+enter" ],
   "command": "run_macro_file",
   "context": [{
@@ -55,7 +73,7 @@
     "file": "res://Packages/Naomi/macros/close-docblock.sublime-macro"
   }
 },{
-  // Add line to the beginning of the doc block.
+  // Add line to the beginning of the docblock.
   "keys": [ "enter" ],
   "command": "insert_snippet",
   "context": [{
@@ -76,7 +94,7 @@
   }],
   "args": { "contents": "\n * " }
 },{
-  // Add line to the doc block.
+  // Add line to the docblock.
   "keys": [ "enter" ],
   "command": "insert_snippet",
   "context": [{

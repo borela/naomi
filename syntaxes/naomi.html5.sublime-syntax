@@ -25,5 +25,7 @@ scope: text.html.html5
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/html5/php.sublime-syntax
-    - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
+    - match: ...
+      scope: keyword
+    # - include: Packages/Naomi/syntaxes/html5/php.sublime-syntax
+    # - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax

@@ -63,9 +63,10 @@ contexts:
     - match: (?xi){{escapeSequences}}
       scope: constant.character.escape.js.fjsx15
     # # Embedded expression.
-    - match: \s*(\$\{)
+    - match: (\s*)(\$\{)
       captures:
-        1: punctuation.definition.template-expression.begin.js.fjsx15
+        1: string.template.js.fjsx15
+        2: punctuation.definition.template-expression.begin.js.fjsx15
       push: [ close-embedded-expression, embedded-content ]
 
   close-embedded-expression:

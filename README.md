@@ -3,8 +3,9 @@
 [![Sublime version](https://img.shields.io/badge/sublime-%E2%89%A53126-orange.svg?style=flat-square)][sublime]
 [![License](http://img.shields.io/:license-mixed-blue.svg?style=flat-square)][naomi]
 [![Downloads](https://img.shields.io/packagecontrol/dt/Naomi.svg?style=flat-square)][package-control]
+[![GitHub watchers](https://img.shields.io/github/watchers/borela/naomi.svg?style=social)][watchers]
 [![GitHub stars](https://img.shields.io/github/stars/borela/naomi.svg?style=social)][stars]
-[![GitHub stars](https://img.shields.io/github/issues/borela/naomi.svg?style=social)][issues]
+[![GitHub issues](https://img.shields.io/github/issues/borela/naomi.svg?style=social)][issues]
 [![GitHub forks](https://img.shields.io/github/forks/borela/naomi.svg?style=social)][forks]
 
 ## Installation
@@ -91,5 +92,6 @@ To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need 
 [naomi]: //github.com/borela/naomi
 [issues]: //github.com/borela/naomi/issues
 [stars]: //github.com/borela/naomi/stargazers
+[watchers]: //github.com/borela/naomi/watchers
 [forks]: //github.com/borela/naomi/network/members
 [sublimeLinter]: //github.com/SublimeLinter/SublimeLinter3

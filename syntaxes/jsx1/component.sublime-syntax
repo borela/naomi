@@ -56,6 +56,11 @@ contexts:
       pop: true
 
   open-tag:
+    - include: Packages/Naomi/syntaxes/flow1/prolog.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/eslint.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/docblock.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/block.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/line.sublime-syntax
     # Self closing tag.
     - match: (?=\s*/>)
       captures:

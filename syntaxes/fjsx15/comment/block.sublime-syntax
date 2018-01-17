@@ -32,7 +32,9 @@ contexts:
     - include: link-no-pop
     - match: \s*(\*/)
       captures:
-        1: punctuation.definition.comment.end.js.fjsx15
+        1: >-
+          comment.block.js.fjsx15
+          punctuation.definition.comment.end.js.fjsx15
       pop: true
 
   email-no-pop:

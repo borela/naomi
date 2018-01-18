@@ -38,7 +38,7 @@ contexts:
           | describe
           | it
           | test
-        ))\b
+        ))\b(?=(?>only|skip))
       captures:
         1: support.function.jest.fn.js.fjsx15
       set: [
@@ -47,7 +47,7 @@ contexts:
         optional-skip-only
       ]
     # expect
-    - match: (?<!\.)\s*(expect)
+    - match: (?<!\.)\s*(expect)\b
       captures:
         1: support.function.jest.js.fjsx15
       set: [

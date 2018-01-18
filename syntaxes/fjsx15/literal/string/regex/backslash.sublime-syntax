@@ -26,7 +26,8 @@ contexts:
             | c[A-Z]
             | x[\da-fA-F]{2}
             | u[\da-fA-F]{4}
-            | [0fnrtv/]
+            | [0fnrtv]
+            | .
           )
         )
       captures:

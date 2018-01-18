@@ -19,13 +19,13 @@ scope: ...
 
 contexts:
   main:
-    - match: (\(\?:)
+    - match: \s*(\(\?:)
       captures:
         1: punctuation.definition.group.no-capture.begin.regexp.js.fjsx15
       set: [ meta, close, regex-content ]
 
   close:
-    - match: (\))
+    - match: \s*(\))
       captures:
         1: punctuation.definition.group.no-capture.end.regexp.js.fjsx15
       pop: true

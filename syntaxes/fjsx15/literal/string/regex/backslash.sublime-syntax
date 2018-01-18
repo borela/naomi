@@ -19,14 +19,18 @@ scope: ...
 
 contexts:
   main:
+    # Character classes/sets.
+    - match: (?i)\s*(\\[wsd]|)
+      captures:
+        1: constant.other.character-class.escape.backslash.regexp
+      pop: true
+    # Other escape sequences.
     - match: |
         (?x)\s*
         (\\
-          (?> \\
-            | c[A-Z]
+          (?> c[A-Z]
             | x[\da-fA-F]{2}
             | u[\da-fA-F]{4}
-            | [0fnrtv]
             | .
           )
         )

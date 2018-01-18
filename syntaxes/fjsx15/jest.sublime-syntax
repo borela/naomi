@@ -38,7 +38,12 @@ contexts:
           | describe
           | it
           | test
-        ))\b(?=(?>only|skip))
+        ))\b
+        (?=
+          (?> \.(?>only|skip)
+            | \s*\(
+          )
+        )
       captures:
         1: support.function.jest.fn.js.fjsx15
       set: [

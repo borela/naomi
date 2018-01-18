@@ -38,7 +38,7 @@ contexts:
     - include: pop-now
 
   meta:
-    - meta_scope: meta.group.regexp.js.fjsx15
+    - meta_scope: constant.other.character-class.regexp.js.fjsx15
     - include: pop-now
 
   pop-now:

@@ -19,25 +19,41 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        \s*/
-        (?=
-          .*?
-          (?<!\\)/
-          [a-z]{0,5}
-        )
-      scope: punctuation.definition.string.begin.js.fjsx15
-      set: regex
+    - match: \s*(/)
+      captures:
+        1: punctuation.definition.string.begin.js.fjsx15
+      set: [
+        regex-meta,
+        close-regex,
+        regex-content
+      ]
 
-  regex:
-    - meta_scope: string.regexp.js.fjsx15
-    - include: Packages/JavaScript/Regular Expressions (JavaScript).sublime-syntax
-    - include: regex-end
-
-  regex-end:
-    - match: (/)([a-z]{0,5})
+  close-regex:
+    - match: \s*(/)([a-z]*)
       captures:
         1: punctuation.definition.string.end.js.fjsx15
-        2: regex.flag.js.fjsx15
+        2: keyword.other.flag.js.fjsx15
       pop: true
+    - match:  (?=\s*\S)
+      push: regex-content
+
+  pop-now:
+    - match: ""
+      pop: true
+
+  regex-content:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex/anchor.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex/backref.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex/backslash.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex/capturing-group.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex/character-class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex/lookahead.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex/negative-lookahead.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex/non-capturing-group.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex/operator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex/quantifier.sublime-syntax
+    - include: pop-now
+
+  regex-meta:
+    - meta_content_scope: string.regexp.js.fjsx15
+    - include: pop-now

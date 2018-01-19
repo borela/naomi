@@ -19,28 +19,21 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(/\*)
+    # Character classes/sets.
+    - match: (?i)\s*(\\[wsd]|)
       captures:
-        1: >-
-          comment.block.js.fjsx15
-          punctuation.definition.comment.begin.js.fjsx15
-      set: [ meta, block ]
-
-  block:
-    - include: email-no-pop
-    - include: link-no-pop
-    - match: \s*(\*/)
-      captures:
-        1: punctuation.definition.comment.end.js.fjsx15
+        1: constant.other.character-class.escape.backslash.regexp
       pop: true
-
-  email-no-pop:
-    - include: Packages/Naomi/syntaxes/shared/email.no-pop.sublime-syntax
-
-  link-no-pop:
-    - include: Packages/Naomi/syntaxes/shared/link.no-pop.sublime-syntax
-
-  meta:
-    - meta_content_scope: comment.block.js.fjsx15
-    - match: ""
+    # Other escape sequences.
+    - match: |
+        (?x)\s*
+        (\\
+          (?> c[A-Z]
+            | x[\da-fA-F]{2}
+            | u[\da-fA-F]{4}
+            | .
+          )
+        )
+      captures:
+        1: constant.character.escape.backslash.regexp.js.fjsx15
       pop: true

@@ -17,30 +17,22 @@ hidden: true
 
 scope: ...
 
+variables:
+  possibleRange: |
+    (?> \w
+      | \d
+      | \\
+        (?> c[A-Z]
+          | x[\da-fA-F]{2}
+          | u[\da-fA-F]{4}
+        )
+    )
+
 contexts:
   main:
-    - match: \s*(/\*)
+    - match: |
+        (?xi)\s*
+        ({{possibleRange}}-{{possibleRange}})
       captures:
-        1: >-
-          comment.block.js.fjsx15
-          punctuation.definition.comment.begin.js.fjsx15
-      set: [ meta, block ]
-
-  block:
-    - include: email-no-pop
-    - include: link-no-pop
-    - match: \s*(\*/)
-      captures:
-        1: punctuation.definition.comment.end.js.fjsx15
-      pop: true
-
-  email-no-pop:
-    - include: Packages/Naomi/syntaxes/shared/email.no-pop.sublime-syntax
-
-  link-no-pop:
-    - include: Packages/Naomi/syntaxes/shared/link.no-pop.sublime-syntax
-
-  meta:
-    - meta_content_scope: comment.block.js.fjsx15
-    - match: ""
+        1: constant.other.character-class.range.regexp.js.fjsx15
       pop: true

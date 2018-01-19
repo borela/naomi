@@ -19,28 +19,20 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(/\*)
+    # Operator quantifier.
+    - match: \s*([*+]?\??)
       captures:
-        1: >-
-          comment.block.js.fjsx15
-          punctuation.definition.comment.begin.js.fjsx15
-      set: [ meta, block ]
-
-  block:
-    - include: email-no-pop
-    - include: link-no-pop
-    - match: \s*(\*/)
-      captures:
-        1: punctuation.definition.comment.end.js.fjsx15
+        1: keyword.operator.quantifier.regexp.js.fjsx15
       pop: true
-
-  email-no-pop:
-    - include: Packages/Naomi/syntaxes/shared/email.no-pop.sublime-syntax
-
-  link-no-pop:
-    - include: Packages/Naomi/syntaxes/shared/link.no-pop.sublime-syntax
-
-  meta:
-    - meta_content_scope: comment.block.js.fjsx15
-    - match: ""
+    # Brace quantifier.
+    - match: |
+        (?x)
+        (\{
+          (?> \d+,\d+
+            | \d+,
+            | \d+
+          )
+        })
+      captures:
+        1: keyword.operator.quantifier.regexp
       pop: true

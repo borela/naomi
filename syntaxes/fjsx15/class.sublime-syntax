@@ -30,6 +30,7 @@ contexts:
       set: declaration
 
   declaration:
+    - meta_scope: meta.declaration.class.js.fjsx15
     - include: comment
     # Body.
     - match: (?=\s*\{)

@@ -27,9 +27,9 @@ contexts:
     - match: \s*(export)
       captures:
         1: keyword.control.import-export.export.js.fjsx15
-      set: possible-statements-and-expressions
+      set: possible-statement-or-expression
 
-  possible-statements-and-expressions:
+  possible-statement-or-expression:
     - match: (?=\s*(?>[*{]|type(?:of)?))
       set: [  delimiter, optional-target ]
     # Default from.
@@ -41,7 +41,7 @@ contexts:
     - match: \s*(default)\b
       captures:
         1: keyword.control.import-export.default.js.fjsx15
-      set: statements-and-expressions
+      set: statement-or-expression
     # Other statements.
     - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
     # Renamed default.
@@ -52,7 +52,7 @@ contexts:
         1: variable.other.readwrite.js.fjsx15
       set: origin
 
-  statements-and-expressions:
+  statement-or-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 

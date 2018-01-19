@@ -19,28 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(/\*)
+    - match: \s*(\\[1-9][0-9]*)
       captures:
-        1: >-
-          comment.block.js.fjsx15
-          punctuation.definition.comment.begin.js.fjsx15
-      set: [ meta, block ]
-
-  block:
-    - include: email-no-pop
-    - include: link-no-pop
-    - match: \s*(\*/)
-      captures:
-        1: punctuation.definition.comment.end.js.fjsx15
-      pop: true
-
-  email-no-pop:
-    - include: Packages/Naomi/syntaxes/shared/email.no-pop.sublime-syntax
-
-  link-no-pop:
-    - include: Packages/Naomi/syntaxes/shared/link.no-pop.sublime-syntax
-
-  meta:
-    - meta_content_scope: comment.block.js.fjsx15
-    - match: ""
+        1: keyword.other.back-reference.regexp.js.fjsx15
       pop: true

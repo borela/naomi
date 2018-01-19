@@ -30,7 +30,7 @@ contexts:
   main:
     - match: \s*({)
       scope: punctuation.section.block.begin.js.fjsx15
-      set: [ delimiters, statements-and-expressions ]
+      set: [ delimiters, statement-or-expression ]
 
   delimiters:
     - meta_scope: >-
@@ -40,13 +40,13 @@ contexts:
     - match: \s*(,)
       captures:
         1: punctuation.separator.comma.js.fjsx15
-      push: statements-and-expressions
+      push: statement-or-expression
     - match: \s*(})
       captures:
         1: punctuation.section.block.end.js.fjsx15
       pop: true
 
-  statements-and-expressions:
+  statement-or-expression:
     - include: comment-no-pop
     - match: (?=\s*[,}])
       pop: true

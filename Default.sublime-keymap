@@ -29,6 +29,29 @@
     "file": "res://Packages/Naomi/macros/break-after-docblock.sublime-macro"
   }
 },{
+  // Align cursor after docblock line break.
+  "keys": [ "shift+enter" ],
+  "command": "run_macro_file",
+  "context": [{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "meta.comment.postfix-whitespace",
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_contains",
+    "operand": "^\\s*\\*/",
+    "match_all": true
+  }],
+  "args": {
+    "file": "res://Packages/Naomi/macros/break-after-docblock.sublime-macro"
+  }
+},{
   // Close docblock from the beginning.
   "keys": [ "shift+enter" ],
   "command": "insert_snippet",

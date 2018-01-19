@@ -24,7 +24,7 @@ contexts:
         1: punctuation.section.block.begin.js.fjsx15
       set: [
         close-body,
-        optional-statements-and-expressions
+        optional-statement-or-expression
       ]
 
   close-body:
@@ -36,7 +36,7 @@ contexts:
         1: punctuation.section.block.end.js.fjsx15
       pop: true
     - match: ""
-      push: optional-statements-and-expressions
+      push: optional-statement-or-expression
 
-  optional-statements-and-expressions:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
+  optional-statement-or-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-statement-or-expression.sublime-syntax

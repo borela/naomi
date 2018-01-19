@@ -107,6 +107,10 @@ contexts:
         1: keyword.control.loop.js.fjsx15
       set: optional-expression
 
+  else-pop:
+    - match: (?=\s*\S)
+      pop: true
+
   empty:
     - match: \s*(;)
       captures:
@@ -125,14 +129,6 @@ contexts:
         statement-or-expression-header,
         optional-await
       ]
-
-  header-end:
-    - match: \s*(\))
-      captures:
-        1: punctuation.section.group.end.js.fjsx15
-      pop: true
-    - match: (?=\s*\S)
-      push: statement-or-expression
 
   if-else:
     - match: \s*(if)\b
@@ -197,8 +193,7 @@ contexts:
 
   optional-await:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/await.sublime-syntax#just-pop
-    - match: (?=\s*\S)
-      pop: true
+    - include: else-pop
 
   optional-else-if:
     - include: no-meta-if
@@ -222,6 +217,7 @@ contexts:
 
   statement-or-expression:
     - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax
+    - include: else-pop
 
   statement-or-expression-header:
     - match: \s*(\()
@@ -229,9 +225,16 @@ contexts:
         1: punctuation.section.group.begin.js.fjsx15
       set: [
         meta-group,
-        header-end,
-        statement-or-expression
+        statement-or-expression-header-end
       ]
+
+  statement-or-expression-header-end:
+    - match: \s*(\))
+      captures:
+        1: punctuation.section.group.end.js.fjsx15
+      pop: true
+    - match: (?=\s*\S)
+      push: statement-or-expression
 
   switch-case:
     - match: \s*(switch)\b

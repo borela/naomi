@@ -47,86 +47,10 @@ contexts:
     - include: try-catch-finally
     - include: yield
 
-  optional-statements-and-expressions:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
-
-  optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
-
-  optional-await:
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/await.sublime-syntax#just-pop
-    - match: (?=\s*\S)
-      pop: true
-
   asi-checked-optional-expression:
     - match: (?=\s*\n)
       pop: true
     - include: optional-expression
-
-  header-end:
-    - match: \s*(\))
-      captures:
-        1: punctuation.section.group.end.js.fjsx15
-      pop: true
-
-  # expression-only-header:
-  #   - match: \s*(\()
-  #     captures:
-  #       1: punctuation.section.group.begin.js.fjsx15
-  #     set: [
-  #       meta-group,
-  #       # header-end,
-  #       optional-expression
-  #     ]
-
-  statements-and-expressions-header:
-    - match: \s*(\()
-      captures:
-        1: punctuation.section.group.begin.js.fjsx15
-      set: [
-        meta-group,
-        header-end,
-        statements-and-expressions-header-content
-      ]
-
-  statements-and-expressions-header-content:
-    - match: (?=\s*\))
-      pop: true
-    - match: ""
-      push:
-        - include: optional-statements-and-expressions
-        - match: ""
-          pop: true
-
-  meta-group:
-    - meta_scope: meta.group.js.fjsx15
-    - match: ""
-      pop: true
-
-  meta-conditional:
-    - meta_content_scope: meta.conditional.js.fjsx15
-    - match: ""
-      pop: true
-
-  meta-loop-dowhile:
-    - meta_content_scope: meta.loop.for.js.fjsx15
-    - match: ""
-      pop: true
-
-  meta-loop-for:
-    - meta_content_scope: meta.loop.for.js.fjsx15
-    - match: ""
-      pop: true
-
-  meta-switch:
-    - meta_content_scope: meta.switch.js.fjsx15
-    - match: ""
-      pop: true
-
-  # optional-expression-only-header:
-  #   - include: expression-only-header
-  #   - match: (?=\s*\S)
-  #     pop: true
 
   block:
     - match: \s*({)
@@ -136,7 +60,7 @@ contexts:
           punctuation.section.block.begin.js.fjsx15
       set: [
         block-end,
-        optional-statements-and-expressions
+        optional-statement-or-expression
       ]
 
   block-end:
@@ -148,7 +72,7 @@ contexts:
           punctuation.section.block.end.js.fjsx15
       pop: true
     - match: ""
-      push: optional-statements-and-expressions
+      push: optional-statement-or-expression
 
   break-continue:
     - match: |
@@ -159,6 +83,12 @@ contexts:
         1: keyword.control.flow.break.js.fjsx15
         2: keyword.control.flow.break.continue.js.fjsx15
         3: entity.name.label.js.fjsx15
+      pop: true
+
+  colon:
+    - match: \s*(:)
+      captures:
+        1: punctuation.separator.js.fjsx15
       pop: true
 
   debugger:
@@ -191,10 +121,16 @@ contexts:
           keyword.control.loop.js.fjsx15
       set: [
         meta-loop-for,
-        optional-statements-and-expressions,
-        statements-and-expressions-header,
+        optional-statement-or-expression,
+        statement-or-expression-header,
         optional-await
       ]
+
+  header-end:
+    - match: \s*(\))
+      captures:
+        1: punctuation.section.group.end.js.fjsx15
+      pop: true
 
   if-else:
     - match: \s*(if)\b
@@ -204,7 +140,7 @@ contexts:
           keyword.control.conditional.js.fjsx15
       set: [
         meta-conditional,
-        optional-statements-and-expressions,
+        optional-statement-or-expression,
         optional-expression
       ]
     - match: \s*(else)\b
@@ -217,19 +153,6 @@ contexts:
         optional-else-if
       ]
 
-  optional-else-if:
-    - include: no-meta-if
-    - include: optional-statements-and-expressions
-
-  no-meta-if:
-    - match: \s*(if)\b
-      captures:
-        1: keyword.control.conditional.js.fjsx15
-      set: [
-        optional-statements-and-expressions,
-        optional-expression
-      ]
-
   label:
     - match: |
         (?xi)\s*
@@ -239,13 +162,80 @@ contexts:
       captures:
         1: entity.name.label.js.fjsx15
         2: punctuation.separator.js.fjsx15
-      set: optional-statements-and-expressions
+      set: optional-statement-or-expression
+
+  meta-group:
+    - meta_scope: meta.group.js.fjsx15
+    - include: pop-now
+
+  meta-conditional:
+    - meta_content_scope: meta.conditional.js.fjsx15
+    - include: pop-now
+
+  meta-loop-dowhile:
+    - meta_content_scope: meta.loop.for.js.fjsx15
+    - include: pop-now
+
+  meta-loop-for:
+    - meta_content_scope: meta.loop.for.js.fjsx15
+    - include: pop-now
+
+  meta-switch:
+    - meta_content_scope: meta.switch.js.fjsx15
+    - include: pop-now
+
+  no-meta-if:
+    - match: \s*(if)\b
+      captures:
+        1: keyword.control.conditional.js.fjsx15
+      set: [
+        optional-statement-or-expression,
+        optional-expression
+      ]
+
+  optional-await:
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/await.sublime-syntax#just-pop
+    - match: (?=\s*\S)
+      pop: true
+
+  optional-else-if:
+    - include: no-meta-if
+    - include: optional-statement-or-expression
+
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  optional-statement-or-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-statement-or-expression.sublime-syntax
+
+  pop-now:
+    - match: ""
+      pop: true
 
   return:
     - match: \s*(return)\b
       captures:
         1: keyword.control.flow.return.js.fjsx15
       set: asi-checked-optional-expression
+
+  statement-or-expression-header:
+    - match: \s*(\()
+      captures:
+        1: punctuation.section.group.begin.js.fjsx15
+      set: [
+        meta-group,
+        header-end,
+        statement-or-expression-header-content
+      ]
+
+  statement-or-expression-header-content:
+    - match: (?=\s*\))
+      pop: true
+    - match: ""
+      push:
+        - include: optional-statement-or-expression
+        - match: ""
+          pop: true
 
   switch-case:
     - match: \s*(switch)\b
@@ -269,12 +259,6 @@ contexts:
         colon,
         optional-expression
       ]
-
-  colon:
-    - match: \s*(:)
-      captures:
-        1: punctuation.separator.js.fjsx15
-      pop: true
 
   throw:
     - match: \s*(throw)\b

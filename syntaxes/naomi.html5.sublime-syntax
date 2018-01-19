@@ -37,7 +37,5 @@ scope: text.html.basic.html5
 
 contexts:
   main:
-    - match: ...
-      scope: keyword
     # - include: Packages/Naomi/syntaxes/html5/php.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax

@@ -58,29 +58,37 @@ To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need 
 
 ## Features
 
-#### General
+### Syntaxes:
 
-* Auto complete asterisks in documentation blocks.
-  1. Single line comment:
-     1. `Shift+Enter` creates new single line comment.
-     2. `Backspace` deletes the current line and goes to the previous one.
-        ![Single line docblock preview](preview/single-line.gif)
-  2. Multiline docblock comment `/**`:
-     1. `Enter` creates a new comment line.
-     2. `Backspace` deletes the current line and goes to the previous one.
-     3. `Shift+Enter` closes the docblock.
-        ![Multline line docblock preview](preview/multiline.gif)
-* Add Mac’s curly quotes shortcuts for Windows and Linux:
-  1. `Alt+[` produces “.
-  2. `Alt+Shift+[` produces ”.
-  3. `Alt+]` produces ‘.
-  4. `Alt+Shift+]` produces ’.
-* Stable syntaxes:
-  * FJSX15 (Combines ES2015+, Flow, React’s JSX).
-  * HTML 5.
-  * SCSS3.
-  * MQL4.
-  * PHP 7.
+* FJSX15 (Combines ES2015+, Flow, React’s JSX).
+* HTML 5.
+* SCSS3.
+* MQL4.
+* PHP 7.
+
+### Enhanced go to symbol
+
+![Enhanced go to symbol](preview/go-to-symbol.png)
+
+### Docblock shortcuts
+
+* `Enter` creates a new comment line.
+* `Backspace` deletes the current line and goes to the previous one.
+* `Shift+Enter` closes the docblock.
+  ![Multline line docblock preview](preview/multiline.gif)
+
+### Single line comment shortcuts
+
+* `Shift+Enter` creates new single line comment.
+* `Backspace` deletes the current line and goes to the previous one.
+  ![Single line docblock preview](preview/single-line.gif)
+
+### Mac’s curly quotes for windows and Linux
+
+* `Alt+[` produces “.
+* `Alt+Shift+[` produces ”.
+* `Alt+]` produces ‘.
+* `Alt+Shift+]` produces ’.
 
 ## Preview
 

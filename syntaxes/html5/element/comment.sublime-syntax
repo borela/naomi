@@ -24,21 +24,23 @@ contexts:
         1: >-
           comment.block.html.html5
           punctuation.definition.comment.begin.html.html5
-      set: comment
+      set: [ meta, block ]
 
-  comment:
-    - meta_content_scope: comment.block.html.html5
+  block:
     - include: email-no-pop
     - include: link-no-pop
     - match: \s*(-->)
       captures:
-        1: >-
-          comment.block.html.html5
-          punctuation.definition.comment.end.html.html5
+        1: punctuation.definition.comment.end.html.html5
       pop: true
+
+  email-no-pop:
+    - include: Packages/Naomi/syntaxes/shared/email.no-pop.sublime-syntax
 
   link-no-pop:
     - include: Packages/Naomi/syntaxes/shared/link.no-pop.sublime-syntax
 
-  email-no-pop:
-    - include: Packages/Naomi/syntaxes/shared/email.no-pop.sublime-syntax
+  meta:
+    - meta_content_scope: comment.block.html.html5
+    - match: ""
+      pop: true

@@ -19,22 +19,26 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?xi)
-        <!--
-      scope: punctuation.comment.block.begin.html.html5
+    - match: \s*(<!--)
+      captures:
+        1: >-
+          comment.block.html.html5
+          punctuation.definition.comment.begin.html.html5
       set: comment
 
   comment:
-    - meta_scope: comment.block.html.html5
-    - include: email
-    - include: link
-    - match: -->
-      scope: punctuation.comment.block.end.html.html5
+    - meta_content_scope: comment.block.html.html5
+    - include: email-no-pop
+    - include: link-no-pop
+    - match: \s*(-->)
+      captures:
+        1: >-
+          comment.block.html.html5
+          punctuation.definition.comment.end.html.html5
       pop: true
 
-  link:
-    - include: Packages/Naomi/syntaxes/shared/link.sublime-syntax
+  link-no-pop:
+    - include: Packages/Naomi/syntaxes/shared/link.no-pop.sublime-syntax
 
-  email:
-    - include: Packages/Naomi/syntaxes/shared/email.sublime-syntax
+  email-no-pop:
+    - include: Packages/Naomi/syntaxes/shared/email.no-pop.sublime-syntax

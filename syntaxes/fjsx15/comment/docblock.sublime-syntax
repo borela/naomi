@@ -24,16 +24,26 @@ contexts:
         1: >-
           comment.block.documentation.js.fjsx15
           punctuation.definition.comment.begin.js.fjsx15
-      set: block
+      set: [ meta, block ]
 
   block:
-    - meta_content_scope: comment.block.documentation.js.fjsx15
     - include: email-no-pop
     - include: link-no-pop
     - match: \s*(\*/)
       captures:
         1: punctuation.definition.comment.end.js.fjsx15
       set: new-line-meta
+
+  email-no-pop:
+    - include: Packages/Naomi/syntaxes/shared/email.no-pop.sublime-syntax
+
+  link-no-pop:
+    - include: Packages/Naomi/syntaxes/shared/link.no-pop.sublime-syntax
+
+  meta:
+    - meta_content_scope: comment.block.documentation.js.fjsx15
+    - match: ""
+      pop: true
 
   # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
   new-line-meta:
@@ -42,9 +52,3 @@ contexts:
       pop: true
     - match: ""
       pop: true
-
-  email-no-pop:
-    - include: Packages/Naomi/syntaxes/shared/email.no-pop.sublime-syntax
-
-  link-no-pop:
-    - include: Packages/Naomi/syntaxes/shared/link.no-pop.sublime-syntax

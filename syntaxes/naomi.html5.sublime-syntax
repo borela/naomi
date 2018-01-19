@@ -18,6 +18,18 @@ name: HTML 5
 file_extensions:
   - html
   - html5
+  - htm
+  - htm5
+  - shtml
+  - shtml5
+  - xhtml
+  - xhtml5
+  - inc
+  - inc5
+  - tmpl
+  - tmpl5
+  - tpl
+  - tpl5
 
 first_line_match: <!DOCTYPE html>
 

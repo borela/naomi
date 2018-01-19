@@ -131,6 +131,8 @@ contexts:
       captures:
         1: punctuation.section.group.end.js.fjsx15
       pop: true
+    - match: (?=\s*\S)
+      push: statement-or-expression
 
   if-else:
     - match: \s*(if)\b
@@ -218,6 +220,9 @@ contexts:
         1: keyword.control.flow.return.js.fjsx15
       set: asi-checked-optional-expression
 
+  statement-or-expression:
+    - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax
+
   statement-or-expression-header:
     - match: \s*(\()
       captures:
@@ -225,17 +230,8 @@ contexts:
       set: [
         meta-group,
         header-end,
-        statement-or-expression-header-content
+        statement-or-expression
       ]
-
-  statement-or-expression-header-content:
-    - match: (?=\s*\))
-      pop: true
-    - match: ""
-      push:
-        - include: optional-statement-or-expression
-        - match: ""
-          pop: true
 
   switch-case:
     - match: \s*(switch)\b

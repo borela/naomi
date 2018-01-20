@@ -37,8 +37,8 @@ contexts:
       pop: true
 
   name:
-    - include: Packages/Naomi/syntaxes/html5/attribute/data.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/attribute/builtin.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/attribute/data.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/attribute/normal.sublime-syntax
 
   value:

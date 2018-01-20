@@ -32,12 +32,7 @@ contexts:
                 # async
                 | sync
                 # autocomplete, autofocus, autoplay, autosave
-                | uto
-                  (?> complete
-                    | focus
-                    | play
-                    | save
-                  )
+                | uto(?>complete|focus|play|save)
               )
             | buffered
             | c
@@ -192,7 +187,7 @@ contexts:
             # width, wrap
             | w(?>idth|rap)
           )
-        )
+        )\b(?!-)
       captures:
         1: entity.other.attribute-name.builtin.html.html5
       pop: true

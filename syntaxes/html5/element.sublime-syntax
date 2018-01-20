@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - include: Packages/Naomi/syntaxes/html5/element/comment.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/html5/element/doctype.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/element/doctype.sublime-syntax
     # - include: Packages/Naomi/syntaxes/html5/element/cdata.sublime-syntax
     # - include: Packages/Naomi/syntaxes/html5/element/html.sublime-syntax
     # - include: Packages/Naomi/syntaxes/html5/element/head.sublime-syntax

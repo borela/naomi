@@ -17,8 +17,29 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [_:[:alpha:]]
+    [_:[:alnum:]\-.]*
+
 contexts:
   main:
+    # With value.
+    - match: (?xi)(?=\s*{{commonIdentifier}}\s*=)
+      set: [ meta, value, name ]
+    # Simple attribute.
+    - match: (?xi)(?=\s*{{commonIdentifier}})
+      set: name
+
+  meta:
+    - meta_scope: meta.attribute-with-value.html.html5
+    - match: ""
+      pop: true
+
+  name:
     - include: Packages/Naomi/syntaxes/html5/attribute/data.sublime-syntax
-    - include: Packages/Naomi/syntaxes/html5/attribute/support.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/attribute/builtin.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/attribute/normal.sublime-syntax
+
+  value:
+    - include: Packages/Naomi/syntaxes/html5/attribute/value.sublime-syntax

@@ -21,7 +21,7 @@ contexts:
   main:
     - match: \s*(\=)
       captures:
-        1: keyword.operator.other.assignment.html.html5
+        1: punctuation.separator.key-value.html.html5
       set: value
     - match: (?=\s*\S)
       pop: true

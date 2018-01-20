@@ -23,13 +23,15 @@ contexts:
         (?xi)\s*
         (
           (?> a
-              (?> cce
-                  (?> pt(?:-charset)?
-                    | sskey
-                  )
+              # accept, accept-charset, accessKey
+              (?> cce(?>pt(?:-charset)?|sskey)
+                # action
                 | ction
+                # align, alt
                 | l(?>ign|t)
+                # async
                 | sync
+                # autocomplete, autofocus, autoplay, autosave
                 | uto
                   (?> complete
                     | focus
@@ -39,130 +41,158 @@ contexts:
               )
             | buffered
             | c
-              (?> ha
-                  (?> llenge
-                    | rset
-                  )
+              # challenge, charset
+              (?> ha(?>llenge|rset)
+                # checked
                 | hecked
+                # cite
                 | ite
+                # class
                 | lass
                 | o
+                  # code, codebase
                   (?> de(?:base)?
+                    # cols, colspan
                     | ls(?:pan)?
-                    | nt
-                      (?> e
-                          (?> nt(?:editable)?
-                            | xtmenu
-                          )
-                        | rols
-                      )
+                    # content. contenteditable, contextmenu, controls
+                    | nt(?>e(?>nt(?:editable)?|xtmenu)|rols)
+                    # cords
                     | ords
                   )
               )
             | d
-              (?> at
-                  (?> a
-                    | etime
-                  )
+              # data, datetime
+              (?> at(?>a|etime)
+                # default, defer
                 | ef(?>ault|er)
+                # dir, dirname
                 | ir(?:name)?
+                # disabled
                 | isabled
+                # download
                 | ownload
-                | r
-                  (?> aggable
-                    | opzone
-                  )
+                # draggable, dropzone
+                | r(?>aggable|opzone)
               )
             | enctype
-            | for
-              (?:m
-                (?:action)?
-              )?
+            # form, formaction
+            | for(?:m(?:action)?)?
             | h
+              # headers
               (?> eaders
+                # height
                 | eight
+                # hidden
                 | idden
+                # high
                 | igh
+                # href
                 | ref(?:lang)?
+                # http-equiv
                 | ttp-equiv
               )
             | i
+              # icon
               (?> con
+                # id
                 | d
+                # ismap
                 | smap
+                # itemprop
                 | temprop
               )
+            # keytype, kind
             | k(?>eytype|ind)
             | l
+              # label
               (?> abel
+                # lang, language
                 | ang(?:uage)?
+                # list
                 | ist
+                # loop
                 | oop
+                # low
                 | ow
               )
             | m
+              # manifest
               (?> anifest
+                # max
                 | ax(?:length)?
+                # media
                 | edia
+                # method
                 | ethod
+                # min
                 | in
+                #  multiple
                 | ultiple
+                # muted
                 | uted
               )
+            # name, novalidate
             | n(?>ame|ovalidate)
+            # open, optimum
             | op(?>en|timum)
             | p
+              # pattern
               (?> attern
+                # ping
                 | ing
+                # placeholder
                 | laceholder
+                # poster
                 | oster
+                # preload
                 | reload
               )
             | r
+              # radiogroup
               (?> adiogroup
-                | e
-                  (?> adonly
-                    | l
-                    | quired
-                    | versed
-                  )
+                # readonly, rel, required, reversed
+                | e(?>adonly|l|quired|versed)
+                # rows, rowspan
                 | ows(?:pan)?
               )
             | s
+              # sandbox
               (?> andbox
+                # scope, scoped
                 | coped?
+                # seamless
                 | eamless
+                # selected
                 | elected
+                # shape
                 | hape
+                # size, sizes
                 | izes?
+                # span
                 | pan
+                # spellcheck
                 | pellcheck
-                | rc
-                  (?> doc
-                    | lang
-                    | set
-                  )?
+                # src, srcdoc, srclang, srcset
+                | rc(?>doc|lang|set)?
+                # start, step, style, summary
                 | t(?>art|ep|yle)
+                # summary
                 | ummary
               )
             | t
-              (?> a
-                  (?> bindex
-                    | rget
-                  )
+              # tabindex, target
+              (?> a(?>bindex|rget)
+                # title
                 | itle
+                # type
                 | ype
               )
             | usemap
             | value
+            # width, wrap
             | w(?>idth|rap)
           )
         )
       captures:
-        1: >-
-          support.html.html5
-          entity.name.attribute.html.html5
-      set: value
-
-  value:
-    - include: Packages/Naomi/syntaxes/html5/attribute/value.sublime-syntax
+        1: entity.other.attribute-name.builtin.html.html5
+      pop: true

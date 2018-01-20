@@ -19,59 +19,54 @@ scope: ...
 
 contexts:
   main:
+    - include: form
     - include: void-elements
     - include: other-elements
+
+  close-open-tag:
+    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
+
+  close-tag:
+    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-tag
+
+  form:
+    - match: \s*(<)(form)\b
+      captures:
+        1: punctuation.definition.tag.begin.html.html5
+        2: entity.name.tag.html.html5
+      set: [
+        meta-block,
+        close-tag,
+        close-open-tag
+      ]
+
+  meta-block:
+    - meta_scope: meta.tag.block.form.html.html5
+    - include: pop-now
+
+  meta-inline:
+    - meta_scope: meta.tag.inline.form.html.html5
+    - include: pop-now
+
+  other-elements:
+    # button, label, legend, option, select, textarea
+    - match: \s*(<)((?>(?>button|l?>abel|egend)|option|select|textarea))\b
+      captures:
+        1: punctuation.definition.tag.begin.html.html5
+        2: entity.name.tag.html.html5
+      set: [
+        meta-inline,
+        close-tag,
+        close-open-tag
+      ]
+
+  pop-now:
+    - match: ""
+      pop: true
 
   void-elements:
     - match: (<)(input)\b
       captures:
-        0: tag.form.html.html5
         1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
-      set: attributes
-
-  other-elements:
-    - match: |
-        (?x)
-        (<)
-        (
-          (?> button
-            | form
-            | l
-              (?> abel
-                | egend
-              )
-            | option
-            | select
-            | textarea
-          )
-        )\b
-      captures:
-        0: tag.form.html.html5
-        1: punctuation.definition.tag.begin.html.html5
-        2: entity.name.tag.html.html5
-      set: [
-        content,
-        attributes
-      ]
-
-  attributes:
-    - match: \s*(\>)
-      captures:
-        1: >-
-          tag.form.html.html5
-          punctuation.definition.tag.end.html.html5
-      pop: true
-    - include: Packages/Naomi/syntaxes/html5/element/attributes.sublime-syntax
-
-  content:
-    - match: |
-        (?x)\s*
-        (</)(\2)(>)
-      captures:
-        0: tag.form.html.html5
-        1: punctuation.definition.tag.begin.html.html5
-        2: entity.name.tag.html.html5
-        3: punctuation.definition.tag.end.html.html5
-      pop: true
-    - include: Packages/Naomi/syntaxes/html5/element/content.sublime-syntax
+      set: [ meta-inline, close-open-tag ]

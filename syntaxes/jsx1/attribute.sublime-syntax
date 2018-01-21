@@ -20,53 +20,43 @@ scope: ...
 variables:
   attributeIdentifier: |
     [_[:alpha:]]
-    [._\-[:alnum:]]*
+    [_.[:alnum:]\-]*
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/flow1/prolog.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/eslint.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/docblock.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/block.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/line.sublime-syntax
     # className.
-    - match: |
-        (?xi)\s*
-        (className)
-      captures:
-        1: entity.other.attribute-name.class.html.jsx.jsx1
+    - match: className\b
+      scope: entity.other.attribute-name.class.html.jsx.jsx1
       set: optional-value
     # style.
-    - match: |
-        (?xi)\s*
-        (style)
-      captures:
-        1: entity.other.attribute-name.style.html.jsx.jsx1
+    - match: style\b
+      scope: entity.other.attribute-name.style.html.jsx.jsx1
       set: optional-value
     # Attribute with value.
-    - match: |
-        (?xi)\s*
-        ({{attributeIdentifier}})
-        (?=\s*=)
-      captures:
-        1: entity.other.attribute-name.html.jsx.jsx1
+    - match: (?xi){{attributeIdentifier}}(?=\s*=)
+      scope: entity.other.attribute-name.html.jsx.jsx1
       set: optional-value
     # Simple attribute.
-    - match: |
-        (?xi)\s*
-        ({{attributeIdentifier}})
-      captures:
-        1: entity.other.attribute-name.html.jsx.jsx1
+    - match: (?xi){{attributeIdentifier}}
+      scope: entity.other.attribute-name.html.jsx.jsx1
       pop: true
 
-  escape:
-    - match: (?=\s*\S)
+  else-pop:
+    - match: (?=\S)
       pop: true
 
   optional-value:
     - meta_scope: meta.attribute-with-value.html.jsx.jsx1
     # Normal value.
-    - match: \s*(=)
-      captures:
-        1: punctuation.separator.key-value.html.jsx.jsx1
+    - match: =
+      scope: punctuation.separator.key-value.html.jsx.jsx1
       set: value
-    # Anything else.
-    - include: escape
+    - include: else-pop
 
   value:
     - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
@@ -74,5 +64,4 @@ contexts:
     - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/literal/string/single-quoted.sublime-syntax
-    # Anything else.
-    - include: escape
+    - include: else-pop

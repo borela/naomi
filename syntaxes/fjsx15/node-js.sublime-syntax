@@ -25,13 +25,31 @@ contexts:
     - include: functions
     - include: constants
 
+  constants:
+    - match: |
+        (?x)
+        (?> __dirname
+          | __filename
+        )\b
+      scope: support.variable.js.fjsx15
+      pop: true
+
   function-arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
+  functions:
+    - match: |
+        (?x)
+        (?> (?>clear|set)Immediate
+          | require
+        )\b
+      scope: support.function.js.fjsx15
+      set: function-arguments
 
   module:
     - match: |
         (?x)
-        \s*(module)\b
+        (module)\b
         (?:
           \s*(\.)\s*
           ((?> exports
@@ -48,7 +66,7 @@ contexts:
     # Functions.
     - match: |
         (?x)
-        \s*(process)\b
+        (process)\b
         (?:
           \s*(\.)\s*
           ((?> abort
@@ -77,7 +95,7 @@ contexts:
     # Variables.
     - match: |
         (?x)
-        \s*(process)\b
+        (process)\b
         (?:
           \s*(\.)\s*
           ((?> ar(?>ch|gv0?)
@@ -100,24 +118,4 @@ contexts:
         1: support.type.object.module.js.fjsx15
         2: punctuation.accessor.js.fjsx15
         3: support.variable.js.fjsx15
-      pop: true
-
-  functions:
-    - match: |
-        (?x)\s*
-        ((?> (?>clear|set)Immediate
-          | require
-        ))\b
-      captures:
-        1: support.function.js.fjsx15
-      set: function-arguments
-
-  constants:
-    - match: |
-        (?x)\s*
-        ((?> __dirname
-          | __filename
-        ))\b
-      captures:
-        1: support.variable.js.fjsx15
       pop: true

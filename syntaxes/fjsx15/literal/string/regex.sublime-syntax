@@ -19,11 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(/)
-      captures:
-        1: >-
-          string.regexp.js.fjsx15
-          punctuation.definition.string.begin.js.fjsx15
+    - match: \/
+      scope: punctuation.definition.string.begin.js.fjsx15
       set: [
         regex-meta,
         close-regex,
@@ -31,12 +28,12 @@ contexts:
       ]
 
   close-regex:
-    - match: \s*(/)([a-z]*)
+    - match: (/)([a-z]*)
       captures:
         1: punctuation.definition.string.end.js.fjsx15
         2: keyword.other.flag.js.fjsx15
       pop: true
-    - match:  (?=\s*\S)
+    - match:  (?=\S)
       push: regex-content
 
   pop-now:
@@ -57,5 +54,5 @@ contexts:
     - include: pop-now
 
   regex-meta:
-    - meta_content_scope: string.regexp.js.fjsx15
+    - meta_scope: string.regexp.js.fjsx15
     - include: pop-now

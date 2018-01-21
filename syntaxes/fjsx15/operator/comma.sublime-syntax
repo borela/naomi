@@ -19,9 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(,)
-      captures:
-        1: punctuation.separator.comma.js.fjsx15
+    - match: \,
+      scope: punctuation.separator.comma.js.fjsx15
       set: optional-expression
 
   optional-expression:

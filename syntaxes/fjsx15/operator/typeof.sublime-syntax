@@ -25,17 +25,12 @@ variables:
 contexts:
   main:
     # Type after typeof.
-    - match: |
-        (?xi)\s*
-        (typeof)
-        (?=\s+{{commonIdentifier}})
-      captures:
-        1: keyword.operator.word.typeof.js.fjsx15
+    - match: (?xi)(typeof)(?=\s+{{commonIdentifier}})
+      scope: keyword.operator.word.typeof.js.fjsx15
       set: type
     # Any other expression after the keyword.
-    - match: (?i)\s*(typeof)\b
-      captures:
-        1: keyword.operator.word.typeof.js.fjsx15
+    - match: (?i)typeof\b
+      scope: keyword.operator.word.typeof.js.fjsx15
       pop: true
 
   type:

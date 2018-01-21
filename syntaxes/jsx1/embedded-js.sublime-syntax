@@ -17,30 +17,24 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [$_[:alpha:]]
-    [$_.:[:alnum:]]*
-
 contexts:
   main:
-    - match: \s*(<)\s*(>)
-      captures:
-        1: punctuation.definition.tag.begin.jsx.jsx1
-        2: punctuation.definition.tag.end.jsx.jsx1
-      push: [
-        meta-scope,
-        closing-tag,
-        optional-content
-      ]
+    - match: \{
+      scope: punctuation.definition.template-expression.begin.jsx.jsx1
+      set: [ meta, close ]
 
-  meta-scope:
-    - meta_scope: meta.tag.other.fragment.jsx.jsx1
+  close:
+    - match: \}
+      scope: punctuation.definition.template-expression.end.jsx.jsx1
+      pop: true
+    - match: (?=\S)
+      push: expression
+
+  expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
+  meta:
+    - clear_scopes: true
+    - meta_scope: source.js.fjsx15
     - match: ""
       pop: true
-
-  closing-tag:
-    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax#closing-tag
-
-  optional-content:
-    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax#optional-content

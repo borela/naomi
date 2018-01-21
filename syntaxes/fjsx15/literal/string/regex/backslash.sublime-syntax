@@ -20,20 +20,17 @@ scope: ...
 contexts:
   main:
     # Character classes/sets.
-    - match: (?i)\s*(\\[wsd]|)
-      captures:
-        1: constant.other.character-class.escape.backslash.regexp
+    - match: (?i)\\[wsd]|
+      scope: constant.other.character-class.escape.backslash.regexp
       pop: true
     # Other escape sequences.
     - match: |
-        (?x)\s*
-        (\\
-          (?> c[A-Z]
-            | x[\da-fA-F]{2}
-            | u[\da-fA-F]{4}
-            | .
-          )
+        (?x)
+        \\
+        (?> c[A-Z]
+          | x[\da-fA-F]{2}
+          | u[\da-fA-F]{4}
+          | .
         )
-      captures:
-        1: constant.character.escape.backslash.regexp.js.fjsx15
+      scope: constant.character.escape.backslash.regexp.js.fjsx15
       pop: true

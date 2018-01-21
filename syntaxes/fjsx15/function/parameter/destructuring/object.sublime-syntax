@@ -17,37 +17,26 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [$_[:alpha:]]
-    [$_[:alnum:]]*
-
 contexts:
   main:
-    - match: \s*(\{)
-      captures:
-        1: >-
-          destructuring.object.js.fjsx15
-          punctuation.definition.object.begin.js.fjsx15
+    - match: \{
+      scope: punctuation.definition.object.begin.js.fjsx15
       set: [ delimiters, optional-parameter ]
 
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
   delimiters:
-    - match: \s*(,)
-      captures:
-        1: >-
-          destructuring.object.js.fjsx15
-          punctuation.definition.object.js.fjsx15
+    - match: \,
+      scope: punctuation.definition.object.js.fjsx15
       push: optional-parameter
-    - match: \s*(})
-      captures:
-        1: >-
-          destructuring.object.js.fjsx15
-          punctuation.definition.object.end.js.fjsx15
+    - match: \}
+      scope: punctuation.definition.object.end.js.fjsx15
       set: optional-type-and-default-value
 
   optional-parameter:
     - include: comment-no-pop
-    - match: (?=\s*[,)\]}])
+    - match: (?=[,)\]}])
       pop: true
     - include: Packages/Naomi/syntaxes/fjsx15/operator/rest.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/destructuring/object/property.sublime-syntax
@@ -56,11 +45,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/simple.sublime-syntax
 
   optional-type-and-default-value:
-    - match: (?=\s*,)
+    - match: (?=,)
       pop: true
     - include: Packages/Naomi/syntaxes/flow1/associated-type.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
-
-  comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-

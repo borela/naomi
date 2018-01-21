@@ -41,38 +41,36 @@ contexts:
     - include: integer
 
   float:
-    - match: (?xi)\s*({{scientificNotation}})
-      captures:
-        1: constant.numeric.float.scientific.js.fjsx15
+    - match: (?xi){{scientificNotation}}
+      scope: constant.numeric.float.scientific.js.fjsx15
       pop: true
-    - match: (?x)\s*({{literalFloat}})
-      captures:
-        1: constant.numeric.float.js.fjsx15
+    - match: (?x){{literalFloat}}
+      scope: constant.numeric.float.js.fjsx15
       pop: true
 
   integer:
-    - match: \s*(0[bB])([01_]+)
+    - match: (?i)(0b)([01_]+)
       captures:
         1: >-
           constant.numeric.binary.js.fjsx15
           punctuation.definition.numeric.js.fjsx15
         2: constant.numeric.binary.js.fjsx15
       pop: true
-    - match: \s*(0[oO])([0-7]+)
+    - match: (?i)(0o)([0-7]+)
       captures:
         1: >-
           constant.numeric.octal.js.fjsx15
           punctuation.definition.numeric.js.fjsx15
         2: constant.numeric.octal.js.fjsx15
       pop: true
-    - match: (?i)\s*(0[xX])([0-9a-f_]+)
+    - match: (?i)(0x)([0-9a-f_]+)
       captures:
         1: >-
           constant.numeric.hex.js.fjsx15
           punctuation.definition.numeric.js.fjsx15
         2: constant.numeric.hex.js.fjsx15
       pop: true
-    - match: \s*([1-9][0-9_]*|0)(?:\s*(n))?
+    - match: ([1-9][0-9_]*|0)(?:\s*(n))?
       captures:
         1: constant.numeric.decimal.js.fjsx15
         2: storage.type.numeric.bigint.js.fjsx15

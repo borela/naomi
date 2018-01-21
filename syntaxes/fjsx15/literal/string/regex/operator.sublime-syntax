@@ -19,7 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\|)
-      captures:
-        1: keyword.operator.or.regexp.js.fjsx15
+    - match: \|
+      scope: keyword.operator.or.regexp.js.fjsx15
       pop: true

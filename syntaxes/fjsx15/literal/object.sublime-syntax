@@ -28,27 +28,31 @@ variables:
 
 contexts:
   main:
-    - match: \s*({)
+    - match: \{
       scope: punctuation.section.block.begin.js.fjsx15
       set: [ delimiters, statement-or-expression ]
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  constant:
+    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
 
   delimiters:
     - meta_scope: >-
         meta.object-literal.js.fjsx15
         meta.block.js.fjsx15
     - include: comment-no-pop
-    - match: \s*(,)
-      captures:
-        1: punctuation.separator.comma.js.fjsx15
+    - match: \,
+      scope: punctuation.separator.comma.js.fjsx15
       push: statement-or-expression
-    - match: \s*(})
-      captures:
-        1: punctuation.section.block.end.js.fjsx15
+    - match: \}
+      scope: punctuation.section.block.end.js.fjsx15
       pop: true
 
   statement-or-expression:
     - include: comment-no-pop
-    - match: (?=\s*[,}])
+    - match: (?=[,}])
       pop: true
     # Spread.
     - include: Packages/Naomi/syntaxes/fjsx15/operator/spread.sublime-syntax
@@ -56,23 +60,13 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
     # Simple constant.
-    - match: |
-        (?x)\s*
-        (?={{constantIdentifier}}\s*(?>,|}|$))
+    - match: (?x)(?={{constantIdentifier}}\s*(?>,|}|$))
       set: constant
     # Simple variable.
-    - match: |
-        (?xi)\s*
-        (?={{commonIdentifier}}\s*(?>,|}|$))
+    - match: (?xi)(?={{commonIdentifier}}\s*(?>,|}|$))
       set: variable
     # Property.
     - include: Packages/Naomi/syntaxes/fjsx15/literal/object/property.sublime-syntax
-
-  comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-
-  constant:
-    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
 
   variable:
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

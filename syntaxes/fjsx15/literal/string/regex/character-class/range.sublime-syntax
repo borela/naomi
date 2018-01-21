@@ -30,9 +30,6 @@ variables:
 
 contexts:
   main:
-    - match: |
-        (?xi)\s*
-        ({{possibleRange}}-{{possibleRange}})
-      captures:
-        1: constant.other.character-class.range.regexp.js.fjsx15
+    - match: (?xi){{possibleRange}}-{{possibleRange}}
+      scope: constant.other.character-class.range.regexp.js.fjsx15
       pop: true

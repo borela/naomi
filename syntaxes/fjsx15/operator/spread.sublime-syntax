@@ -19,9 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\.{3})
-      captures:
-        1: keyword.operator.spread.js.fjsx15
+    - match: \.{3}
+      scope: keyword.operator.spread.js.fjsx15
       set: optional-expression
 
   optional-expression:

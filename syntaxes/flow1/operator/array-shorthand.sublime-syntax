@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*((\[)\s*(]))
+    - match: ((\[)\s*(]))
       captures:
         1: meta.sequence.flow
         2: punctuation.section.brackets.begin.flow

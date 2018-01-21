@@ -19,9 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: (?i)\s*(typeof)\b
-      captures:
-        1: keyword.operator.word.typeof.flow
+    - match: (?i)typeof\b
+      scope: keyword.operator.word.typeof.flow
       set: type
 
   type:

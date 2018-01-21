@@ -114,7 +114,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          \s*{{commonIdentifier}}
+          {{commonIdentifier}}
           \s*:
           (?:\s*async\b)?
           \s*function
@@ -128,7 +128,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          \s*{{commonIdentifier}}
+          {{commonIdentifier}}
           \s*:
           (?:\s*async\b)?
           \s*{{commonIdentifier}}
@@ -143,7 +143,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          \s*{{commonIdentifier}}
+          {{commonIdentifier}}
           \s*:
           (?:\s*async\b)?
           \s*{{genericParameters}}?
@@ -155,9 +155,8 @@ contexts:
         method-identifier
       ]
     # Computed property name.
-    - match: \s*(\[)
-      captures:
-        1: punctuation.section.brackets.begin.js.fjsx15
+    - match: \[
+      scope: punctuation.section.brackets.begin.js.fjsx15
       set: [
         associated-value,
         computed-key-meta-scope,
@@ -165,7 +164,7 @@ contexts:
         optional-expression
       ]
     # String.
-    - match: (?=\s*['"`])
+    - match: (?=['"`])
       set: [
         associated-value,
         key-meta-scope,
@@ -175,43 +174,65 @@ contexts:
     - include: constant
     - include: variable
 
-  escape:
-    - match: ""
-      pop: true
+  arrow-function:
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
 
-  key-meta-scope:
-    - meta_scope: meta.object-literal.key.js.fjsx15
-    - include: escape
+  associated-value:
+    - match: ":"
+      scope: punctuation.separator.key-value.js.fjsx15
+      set: optional-expression
 
   computed-key-meta-scope:
     - meta_scope: >-
         meta.object-literal.key.js.fjsx15
         meta.object-literal.key.computed.js.fjsx15
-    - include: escape
+    - include: pop-now
+
+  computed-property-end:
+    - match: \]
+      scope: punctuation.section.brackets.end.js.fjsx15
+      pop: true
+
+  constant:
+    # Single character.
+    - match: "[_[:upper:]]\b"
+      scope: meta.object-literal.key.uppercase.js.fjsx15
+      set: associated-value
+    # Two or more characters.
+    - match: |
+        (?x)
+          {{constantIdentifier}}
+          (?> \$\B
+            | [_[:upper:]]\b
+          )
+      scope: meta.object-literal.key.uppercase.js.fjsx15
+      set: associated-value
+
+  function-declaration:
+    - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax#declaration
+
+  function-keyword:
+    - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax#keyword
+
+  key-meta-scope:
+    - meta_scope: meta.object-literal.key.js.fjsx15
+    - include: pop-now
 
   method-identifier:
     - match: |
         (?xi)
-        \s*({{commonIdentifier}})
+        ({{commonIdentifier}})
         \s*(:)
       captures:
         1: entity.name.function.js.fjsx15
         2: punctuation.separator.key-value.js.fjsx15
       pop: true
 
-  arrow-function:
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
-  function-keyword:
-    - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax#keyword
-
-  function-declaration:
-    - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax#declaration
-
-  computed-property-end:
-    - match: \s*(\])
-      captures:
-        1: punctuation.section.brackets.end.js.fjsx15
+  pop-now:
+    - match: ""
       pop: true
 
   string:
@@ -219,55 +240,23 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
-  constant:
-    # Single character.
-    - match: |
-        (?x)\s*
-        ([_[:upper:]])\b
-      captures:
-        1: meta.object-literal.key.uppercase.js.fjsx15
-      set: associated-value
-    # Two or more characters.
-    - match: |
-        (?x)\s*
-        (
-          {{constantIdentifier}}
-          (?> \$\B
-            | [_[:upper:]]\b
-          )
-        )
-      captures:
-        1: meta.object-literal.key.uppercase.js.fjsx15
-      set: associated-value
-
   variable:
     # Single character.
     - match: |
-        (?xi)\s*
-        ((?> \$\B
+        (?xi)
+        (?> \$\B
           | [_[:alpha:]]\b
-        ))
-      captures:
-        1: meta.object-literal.key.js.fjsx15
+        )
+      scope: meta.object-literal.key.js.fjsx15
       set: associated-value
     # Two or more characters.
     - match: |
-        (?xi)\s*
+        (?xi)
         (
           {{commonIdentifier}}
           (?> \$\B
             | [_[:alnum:]]\b
           )
         )
-      captures:
-        1: meta.object-literal.key.js.fjsx15
+      scope: meta.object-literal.key.js.fjsx15
       set: associated-value
-
-  optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
-
-  associated-value:
-    - match: \s*(:)
-      captures:
-        1: punctuation.separator.key-value.js.fjsx15
-      set: optional-expression

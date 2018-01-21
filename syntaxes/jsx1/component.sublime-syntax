@@ -29,7 +29,7 @@ variables:
 contexts:
   main:
     - match: |
-        (?xi)
+        (?x)
         (<)
         (?:
           \s*({{namespaceIdentifier}})
@@ -40,7 +40,7 @@ contexts:
         1: punctuation.definition.tag.begin.html.jsx.jsx1
         2: entity.name.tag.namespace.html.jsx.jsx1
         3: punctuation.separator.namespace.html.jsx.jsx1
-        4: entity.name.tag.html.jsx.jsx1
+        4: entity.name.tag.component.jsx.jsx1
       set: [
         meta,
         namespaced-closing-tag,
@@ -56,4 +56,4 @@ contexts:
       pop: true
 
   namespaced-closing-tag:
-    - include: Packages/Naomi/syntaxes/jsx1/shared.sublime-syntax#namespaced-closing-tag
+    - include: Packages/Naomi/syntaxes/jsx1/shared.sublime-syntax#component-closing-tag

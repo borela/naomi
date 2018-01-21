@@ -21,11 +21,9 @@ contexts:
   main:
     - match: \{
       scope: punctuation.definition.template-expression.begin.jsx.jsx1
-      set: close
+      set: [ meta, close ]
 
   close:
-    - clear_scopes: true
-    - meta_scope: source.js.fjsx15
     - match: \}
       scope: punctuation.definition.template-expression.end.jsx.jsx1
       pop: true
@@ -34,3 +32,9 @@ contexts:
 
   expression:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
+  meta:
+    - clear_scopes: true
+    - meta_scope: source.js.fjsx15
+    - match: ""
+      pop: true

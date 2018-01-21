@@ -25,9 +25,16 @@ variables:
 contexts:
   main:
     - match: (?xi)(?=<(?>\s*>|{{commonIdentifier}}))
-      with_prototype:
-       - include: comment-and-embedded-js
-      set: [ Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax ]
+      set: [ meta, jsx ]
 
   comment-and-embedded-js:
     - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax#comment-and-embedded-js
+
+  meta:
+    - clear_scopes: true
+    - meta_scope: text.html.basic.jsx.jsx1
+    - match: ""
+      pop: true
+
+  jsx:
+    - include: Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax

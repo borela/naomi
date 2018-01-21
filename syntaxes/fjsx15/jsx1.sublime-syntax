@@ -25,9 +25,7 @@ variables:
 contexts:
   main:
     - match: (?xi)(?=\s*<(?>\s*>|{{commonIdentifier}}))
-      with_prototype:
-        - include: comment-and-embedded-js
-      set: [ Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax ]
+      set: [ meta, jsx ]
 
   comment-and-embedded-js:
     # Single line comment.
@@ -54,6 +52,15 @@ contexts:
     - match: \}
       scope: punctuation.definition.template-expression.end.jsx.jsx1
       pop: true
+
+  meta:
+    - clear_scopes: true
+    - meta_scope: text.html.basic.jsx.jsx1
+    - match: ""
+      pop: true
+
+  jsx:
+    - include: Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

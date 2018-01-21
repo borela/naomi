@@ -19,6 +19,5 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\+)
-      captures:
-        1: storage.modifier.covariant.flow
+    - match: \+
+      scope: storage.modifier.covariant.flow

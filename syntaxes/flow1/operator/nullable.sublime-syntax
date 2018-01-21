@@ -19,9 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\?)
-      captures:
-        1: storage.modifier.nullable.flow
+    - match: \?
+      scope: storage.modifier.nullable.flow
       set: optional-type-expression
 
   optional-type-expression:

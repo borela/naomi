@@ -19,9 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(:)
-      captures:
-        1: punctuation.separator.key-value.flow
+    - match: ":"
+      scope: keyword.operator.type.flow
       set: optional-type-expression
 
   optional-type-expression:

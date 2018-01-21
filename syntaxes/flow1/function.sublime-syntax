@@ -56,10 +56,10 @@ contexts:
 
   declaration:
     # Generic parameters.
-    - match: (?=\s*<)
+    - match: (?=<)
       push: generic-parameters
     # Parameters.
-    - match: (?=\s*\()
+    - match: (?=\()
       set: [
         return,
         parameters
@@ -68,14 +68,13 @@ contexts:
   generic-parameters:
     - include: Packages/Naomi/syntaxes/flow1/generic/parameters.sublime-syntax
 
+  optional-type-expression:
+    - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax
+
   parameters:
     - include: Packages/Naomi/syntaxes/flow1/function/parameters.sublime-syntax
 
   return:
-    - match: \s*(=>)
-      captures:
-        1: storage.type.function.arrow.flow
+    - match: =>
+      scope: storage.type.function.arrow.flow
       set: optional-type-expression
-
-  optional-type-expression:
-    - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax

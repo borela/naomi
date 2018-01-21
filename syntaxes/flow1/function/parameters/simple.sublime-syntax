@@ -25,7 +25,7 @@ variables:
 contexts:
   main:
     - match: |
-        (?xi)\s*
+        (?xi)
         ({{commonIdentifier}})(\?)?
         (?=\s*:)
       captures:

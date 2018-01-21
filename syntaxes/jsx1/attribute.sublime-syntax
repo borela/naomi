@@ -29,6 +29,8 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/comment/docblock.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment/block.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment/line.sublime-syntax
+    # Embedded JS.
+    - include: Packages/Naomi/syntaxes/jsx1/embedded-js.sublime-syntax
     # className.
     - match: className\b
       scope: entity.other.attribute-name.class.html.jsx.jsx1

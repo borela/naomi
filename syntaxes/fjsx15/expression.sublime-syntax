@@ -17,16 +17,12 @@ hidden: true
 
 scope: ...
 
-variables:
-  expressionGroupBegin: \s*(\()
-  expressionBegin: (?=\s*\S)
-
 contexts:
   main:
     - include: comment-no-pop
     - include: comma
     # At this stage, regex literals will have a higher priority than operators.
-    - match: (?=\s*/.*?(?<!\\)/[a-z]{0,5})
+    - match: (?=/.*?(?<!\\)/[a-z]{0,5})
       set: [ optional-tail, regex-literal ]
     # Arrow functions need to be detected before expression groups.
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
@@ -36,56 +32,23 @@ contexts:
     # Detect operators as soon as possible.
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     # Open new expression group.
-    - match: "{{expressionGroupBegin}}"
-      captures:
-        1: punctuation.section.group.begin.js.fjsx15
+    - match: \(
+      scope: punctuation.section.group.begin.js.fjsx15
       set: open-group
     # Start of the expression.
-    - match: "{{expressionBegin}}"
+    - match: (?=\S)
       set: [ optional-tail, head ]
+
+  close-group:
+    - match: \)
+      scope: punctuation.section.group.end.js.fjsx15
+      set: optional-tail
 
   comma:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.sublime-syntax
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-
-  optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
-
-  regex-literal:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
-
-  type-cast:
-    - include: Packages/Naomi/syntaxes/flow1/cast.sublime-syntax
-
-  open-group:
-    - meta_scope: meta.group.js.fjsx15
-    - include: comment-no-pop
-    # Comma operator.
-    - match: (?=\s*,)
-      push: comma
-    # Type cast.
-    - match: (?=\s*:)
-      set: [ close-group, type-cast ]
-    # Arrow functions need to be detect before expression groups.
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.no-pop.sublime-syntax
-    # Open new expression group.
-    - match: "{{expressionGroupBegin}}"
-      captures:
-        1: punctuation.section.group.begin.js.fjsx15
-      push: open-group
-    # Close the current expression group.
-    - include: close-group
-    # Start of the expression.
-    - match: "{{expressionBegin}}"
-      push: optional-expression
-
-  close-group:
-    - match: \s*(\))
-      captures:
-        1: punctuation.section.group.end.js.fjsx15
-      set: optional-tail
 
   globals:
     - include: Packages/Naomi/syntaxes/fjsx15/node-js.sublime-syntax
@@ -106,35 +69,65 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
+  open-group:
+    - meta_scope: meta.group.js.fjsx15
+    - include: comment-no-pop
+    # Comma operator.
+    - match: (?=,)
+      push: comma
+    # Type cast.
+    - match: (?=:)
+      set: [ close-group, type-cast ]
+    # Arrow functions need to be detect before expression groups.
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.no-pop.sublime-syntax
+    # Open new expression group.
+    - match: \(
+      scope: punctuation.section.group.begin.js.fjsx15
+      push: open-group
+    # Close the current expression group.
+    - include: close-group
+    # Start of the expression.
+    - match: (?=\S)
+      push: optional-expression
+
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
   optional-tail:
     - include: comment-no-pop
     - include: globals
     # Function call.
-    - match: (?=\s*\()
+    - match: (?=\()
       set: [
         optional-tail,
         function-call-meta-scope,
         function-call
       ]
     # Property access.
-    - match: (?=\s*\[)
+    - match: (?=\[)
       set: [ optional-tail, property-access ]
     # Other operators. At this point, operators will have a higher priority than
     # regex literals.
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     # Anything else not expected.
-    - match: (?=\s*\S)
-      pop: true
-
-  function-call-meta-scope:
-    - meta_scope: meta.function-call.js.fjsx15
-    - match: ""
+    - match: (?=\S)
       pop: true
 
   function-call:
     - include: comment-no-pop
     - include: main
 
+  function-call-meta-scope:
+    - meta_scope: meta.function-call.js.fjsx15
+    - match: ""
+      pop: true
+
   property-access:
     - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
+
+  regex-literal:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
+
+  type-cast:
+    - include: Packages/Naomi/syntaxes/flow1/cast.sublime-syntax

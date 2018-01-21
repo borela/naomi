@@ -24,9 +24,7 @@ variables:
 
 contexts:
   main:
-    - match: |
-        (?xi)
-        (?=\s*<(?>\s*>|{{commonIdentifier}}))
+    - match: (?xi)(?=<(?>\s*>|{{commonIdentifier}}))
       with_prototype:
        - include: comment-and-embedded-js
       set: [ Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax ]

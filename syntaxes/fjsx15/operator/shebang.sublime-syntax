@@ -19,6 +19,5 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(#!.+$)
-      captures:
-        1: keyword.operator.other.shebang.js.fjsx15
+    - match: ^#!.+$
+      scope: keyword.operator.other.shebang.js.fjsx15

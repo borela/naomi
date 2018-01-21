@@ -19,7 +19,7 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\s*\.{3})
+    - match: (?=\.{3})
       push: rest-operator
 
   rest-operator:

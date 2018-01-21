@@ -20,9 +20,8 @@ scope: ...
 contexts:
   main:
     - include: comment-no-pop
-    - match: \s*(\{)
-      captures:
-        1: punctuation.section.block.begin.js.fjsx15
+    - match: \{
+      scope: punctuation.section.block.begin.js.fjsx15
       set: [ body-end, statement-or-expression ]
 
   body-end:
@@ -30,17 +29,19 @@ contexts:
         meta.class.js.fjsx15
         meta.block.js.fjsx15
     - include: comment-no-pop
-    - match: \s*(?>(,)|(;))
+    - match: (?>(,)|(;))
       captures:
         1: punctuation.separator.comma.js.fjsx15
         2: punctuation.terminator.js.fjsx15
       push: statement-or-expression
-    - match: \s*(})
-      captures:
-        1: punctuation.section.block.end.js.fjsx15
+    - match: \}
+      scope: punctuation.section.block.end.js.fjsx15
       pop: true
-    - match: (?=\s*\S)
+    - match: (?=\S)
       push: statement-or-expression
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   statement-or-expression:
     - include: comment-no-pop
@@ -53,8 +54,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
     - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
-    - match: (?=\s*\S)
+    - match: (?=\S)
       pop: true
-
-  comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

@@ -27,7 +27,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax#function-properties
     - match: |
         (?x)
-        (?=\s*
+        (?=
           (?:async\s+)?
           function\b
         )
@@ -36,45 +36,46 @@ contexts:
         keyword
       ]
 
-  keyword:
-    - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
-    - match: \s*(function)
-      captures:
-        1: storage.type.function.js.fjsx15
-      pop: true
+  body:
+    - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   declaration:
     - meta_scope: meta.function.js.fjsx15
     - include: comment-no-pop
     # Body.
-    - match: (?=\s*\{)
+    - match: (?=\{)
       set: body
     # Generic parameters.
-    - match: (?=\s*<)
+    - match: (?=<)
       push: generic-parameters
     # Parameters.
-    - match: (?=\s*\()
+    - match: (?=\()
       push: parameters
     # Identifier.
     - match: |
-        (?xi)\s*
-        (\*)?
-        (?:\s*({{commonIdentifier}}))?
+        (?xi)
+        (?:(\*)\s*)?
+        (?:({{commonIdentifier}}))?
       captures:
         1: storage.modifier.js.fjsx15
         2: entity.name.function.js.fjsx15
-    # None of the expected items matched, it probably ended.
-    - match: (?=\s*\S)
+    - include: else-pop
+
+  else-pop:
+    - match: (?=\S)
       pop: true
 
-  comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+  keyword:
+    - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
+    - match: function\b
+      scope: storage.type.function.js.fjsx15
+      pop: true
 
   generic-parameters:
     - include: Packages/Naomi/syntaxes/flow1/generic/parameters.sublime-syntax
 
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
-
-  body:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax

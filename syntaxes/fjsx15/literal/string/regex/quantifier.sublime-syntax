@@ -20,19 +20,17 @@ scope: ...
 contexts:
   main:
     # Operator quantifier.
-    - match: \s*([*+]?\??)
-      captures:
-        1: keyword.operator.quantifier.regexp.js.fjsx15
+    - match: "[*+]?\\??"
+      scope: keyword.operator.quantifier.regexp.js.fjsx15
       pop: true
     # Brace quantifier.
     - match: |
         (?x)
-        (\{
+        \{
           (?> \d+,\d+
             | \d+,
             | \d+
           )
-        })
-      captures:
-        1: keyword.operator.quantifier.regexp
+        }
+      scope: keyword.operator.quantifier.regexp
       pop: true

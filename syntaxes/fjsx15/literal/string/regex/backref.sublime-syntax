@@ -19,7 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\\[1-9][0-9]*)
-      captures:
-        1: keyword.other.back-reference.regexp.js.fjsx15
+    - match: \\[1-9][0-9]*
+      scope: keyword.other.back-reference.regexp.js.fjsx15
       pop: true

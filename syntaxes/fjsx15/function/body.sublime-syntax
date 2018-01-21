@@ -19,9 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\{)
-      captures:
-        1: punctuation.section.block.begin.js.fjsx15
+    - match: \{
+      scope: punctuation.section.block.begin.js.fjsx15
       set: [
         close-body,
         optional-statement-or-expression
@@ -31,9 +30,8 @@ contexts:
     - meta_scope: >-
         meta.function.js.fjsx15
         meta.block.js.fjsx15
-    - match: \s*(})
-      captures:
-        1: punctuation.section.block.end.js.fjsx15
+    - match: \}
+      scope: punctuation.section.block.end.js.fjsx15
       pop: true
     - match: ""
       push: optional-statement-or-expression

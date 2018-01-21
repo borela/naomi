@@ -19,8 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?xi)\s*
-        ([[:alnum:]]+://\S+)\s
+    - match: (?i)([[:alnum:]]+://\S+)\s
       captures:
         1: entity.link

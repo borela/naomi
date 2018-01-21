@@ -25,36 +25,30 @@ variables:
 contexts:
   main:
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
-    - match: |
-        (?xi)
-        (?=\s*{{commonIdentifier}})
+    - match: (?xi)(?={{commonIdentifier}})
       set: [
         optional-type-and-value,
         identifier
       ]
 
+  associated-type:
+    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
+
   identifier:
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
-  optional-type-and-value:
-    - match: \s*(\?)
-      captures:
-        1: >-
-          flow
-          keyword.operator.other.optional.flow
-    # Type.
-    - match: (?=\s*:)
-      push: associated-type
-    # Value.
-    - match: (?=\s*=)
-      set: optional-expression
-    # Anything else.
-    - match: (?=\s*\S)
-      pop: true
-
-  associated-type:
-    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
-
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  optional-type-and-value:
+    - match: \?
+      scope: keyword.operator.other.optional.flow
+    # Type.
+    - match: (?=:)
+      push: associated-type
+    # Value.
+    - match: (?==)
+      set: optional-expression
+    - match: (?=\S)
+      pop: true

@@ -95,8 +95,8 @@ contexts:
     - match: |
         (?xi)
         (?=
-          (?:\s*async)?
-          \s*{{genericParameters}}?
+          (?:async\s*)?
+          {{genericParameters}}?
           \s*{{parameters}}
           \s*{{type}}?
           \s*=>
@@ -106,8 +106,8 @@ contexts:
     - match: |
         (?xi)
         (?=
-          (?:\s*async)?
-          \s*{{commonIdentifier}}
+          (?:async\s+)?
+          {{commonIdentifier}}
           \s*{{type}}?
           \s*=>
         )

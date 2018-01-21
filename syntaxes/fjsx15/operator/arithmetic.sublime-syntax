@@ -33,17 +33,14 @@ contexts:
   # |    %=    |                 |
   main:
     - match: |
-        (?x)\s*
-        (
-          (?> [-][-=]?
-            | [+][+=]?
-            | [*][*=]?
-            | /=?
-            | %=?
-          )
+        (?x)
+        (?> [-][-=]?
+          | [+][+=]?
+          | [*][*=]?
+          | /=?
+          | %=?
         )
-      captures:
-        1: keyword.operator.arithmetic.js.fjsx15
+      scope: keyword.operator.arithmetic.js.fjsx15
       set: optional-expression
 
   optional-expression:

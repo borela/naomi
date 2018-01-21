@@ -24,16 +24,14 @@ variables:
 
 contexts:
   main:
-    - match: |
-        (?xi)
-        (?=\s*<(?>\s*>|{{commonIdentifier}}))
+    - match: (?xi)(?=\s*<(?>\s*>|{{commonIdentifier}}))
       with_prototype:
         - include: comment-and-embedded-js
       set: [ Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax ]
 
   comment-and-embedded-js:
     # Single line comment.
-    - match: \s*(\{\s*/\*)(.*)(\*/\s*})
+    - match: (\{\s*/\*)(.*)(\*/\s*})
       captures:
         1: >-
           comment.block.jsx.jsx1
@@ -43,9 +41,8 @@ contexts:
           comment.block.jsx.jsx1
           punctuation.definition.comment.end.jsx.jsx1
     # Embedded javascript.
-    - match: \s*(\{)
-      captures:
-        1: punctuation.definition.template-expression.begin.jsx.jsx1
+    - match: \{
+      scope: punctuation.definition.template-expression.begin.jsx.jsx1
       push: [
         embedded-js-close,
         optional-expression
@@ -54,9 +51,8 @@ contexts:
   embedded-js-close:
     - clear_scopes: true
     - meta_scope: source.js.fjsx15
-    - match: \s*(})
-      captures:
-        1: punctuation.definition.template-expression.end.jsx.jsx1
+    - match: \}
+      scope: punctuation.definition.template-expression.end.jsx.jsx1
       pop: true
 
   optional-expression:

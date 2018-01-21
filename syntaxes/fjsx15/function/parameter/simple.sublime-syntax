@@ -21,6 +21,7 @@ variables:
   commonIdentifier: |
     [$_[:alpha:]]
     [$_[:alnum:]]*
+
   genericArguments: |
     (<
       [^<>]*
@@ -90,7 +91,7 @@ contexts:
   main:
     # With default value.
     - match: |
-        (?xi)\s*
+        (?xi)
         ({{commonIdentifier}})
         (?=
           \s*{{type}}?
@@ -104,25 +105,25 @@ contexts:
       ]
     # Normal parameter.
     - match: |
-        (?xi)\s*
+        (?xi)
         ({{commonIdentifier}})
       captures:
         0: meta.function.parameter.js.fjsx15
         1: variable.parameter.function.js.fjsx15
       set: optional-modifier-and-type
 
-  optional-modifier-and-type:
-    - include: Packages/Naomi/syntaxes/flow1/optional-modifier.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/optional-associated-type.sublime-syntax
-
   optional-default-value:
     - meta_scope: >-
         meta.function.parameter.js.fjsx15
         meta.function.parameter.optional.js.fjsx15
-    - match: (?=\s*(?>[,;:)\]}]|=>))
+    - match: (?=(?>[,;:)\]}]|=>))
       pop: true
     - match: ""
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
         - match: ""
           pop: true
+
+  optional-modifier-and-type:
+    - include: Packages/Naomi/syntaxes/flow1/optional-modifier.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/optional-associated-type.sublime-syntax

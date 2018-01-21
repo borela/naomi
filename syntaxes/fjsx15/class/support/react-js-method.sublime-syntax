@@ -20,41 +20,43 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?x)\s*
-        (
-          (?> component
-              (?> DidMount
-                | DidUpdate
-                | Will
-                  (?> Mount
-                    | ReceiveProps
-                    | Unmount
-                    | Update
-                  )
-              )
-            | render
-            | shouldComponentUpdate
-          )
+        (?x)
+        (?> component
+            # componentDidMount
+            (?> DidMount
+              # componentDidUpdate
+              | DidUpdate
+              | Will
+                # componentWillMount
+                (?> Mount
+                  # componentWillReceiveProps
+                  | ReceiveProps
+                  # componentWillUnmount
+                  | Unmount
+                  # componentWillUpdate
+                  | Update
+                )
+            )
+          | render
+          | shouldComponentUpdate
         )\b
-      captures:
-        1: >-
-          support.lib.react-js.fjsx15
-          entity.name.function.js.fjsx15
+      scope: >-
+        support.lib.react-js.fjsx15
+        entity.name.function.js.fjsx15
       set: declaration
+
+  body:
+    - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
 
   declaration:
     # Body.
-    - match: (?=\s*\{)
+    - match: (?=\{)
       set: body
     # Parameters.
-    - match: (?=\s*\()
+    - match: (?=\()
       push: parameters
-    # None of the expected items matched, it probably ended.
-    - match: (?=\s*\S)
+    - match: (?=\S)
       pop: true
 
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
-
-  body:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax

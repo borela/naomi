@@ -95,7 +95,6 @@ contexts:
 
   optional-tail:
     - include: comment-no-pop
-    - include: globals
     # Function call.
     - match: (?=\()
       push: [

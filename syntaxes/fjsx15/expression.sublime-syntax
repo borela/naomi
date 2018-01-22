@@ -98,14 +98,13 @@ contexts:
     - include: globals
     # Function call.
     - match: (?=\()
-      set: [
-        optional-tail,
+      push: [
         function-call-meta-scope,
         function-call
       ]
     # Property access.
     - match: (?=\[)
-      set: [ optional-tail, property-access ]
+      push: property-access
     # Other operators. At this point, operators will have a higher priority than
     # regex literals.
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax

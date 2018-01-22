@@ -40,15 +40,16 @@ contexts:
           | render
           | shouldComponentUpdate
         )\b
-      scope: >-
-        support.lib.react-js.fjsx15
-        entity.name.function.js.fjsx15
+      scope: entity.name.function.js.fjsx15
       set: declaration
 
   body:
     - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
 
   declaration:
+    - meta_scope: >-
+        meta.declaration.function.method.js.fjsx15
+        meta.function.js.fjsx15
     # Body.
     - match: (?=\{)
       set: body

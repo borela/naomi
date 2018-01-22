@@ -57,6 +57,8 @@ contexts:
     # Method without identifier.
     - match: (?=\()
       set: declaration
+    # React JS’s support methods.
+    - include: Packages/Naomi/syntaxes/fjsx15/class/support/react-js-method.sublime-syntax
     # Normal method.
     - match: |
         (?xi)
@@ -99,8 +101,6 @@ contexts:
         optional-support-body,
         support-parameters
       ]
-    # React JS’s support methods.
-    - include: Packages/Naomi/syntaxes/fjsx15/class/support/react-js-method.sublime-syntax
     # Identifier.
     - match: (?xi){{commonIdentifier}}
       scope: entity.name.function.js.fjsx15

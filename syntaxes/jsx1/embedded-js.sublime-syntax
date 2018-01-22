@@ -20,21 +20,21 @@ scope: ...
 contexts:
   main:
     - match: \{
-      scope: punctuation.definition.template-expression.begin.jsx.jsx1
-      set: [ meta, close ]
+      scope: punctuation.definition.template-expression.begin.html.jsx.jsx1
+      set: [ close, content ]
 
   close:
     - match: \}
-      scope: punctuation.definition.template-expression.end.jsx.jsx1
+      scope: punctuation.definition.template-expression.end.html.jsx.jsx1
+      pop: true
+
+  content:
+    - clear_scopes: true
+    - meta_content_scope: source.js.fjsx15
+    - match: (?=})
       pop: true
     - match: (?=\S)
       push: expression
 
   expression:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-
-  meta:
-    - clear_scopes: true
-    - meta_scope: source.js.fjsx15
-    - match: ""
-      pop: true

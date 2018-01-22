@@ -32,7 +32,7 @@ contexts:
         1: punctuation.definition.tag.begin.html.jsx.jsx1
         2: entity.name.tag.structure.html.jsx.jsx1
       set: [
-        meta-scope-structure,
+        meta-structure,
         simple-closing-tag,
         close-open-tag
       ]
@@ -42,7 +42,7 @@ contexts:
         1: punctuation.definition.tag.begin.html.jsx.jsx1
         2: entity.name.tag.a.html.jsx.jsx1
       set: [
-        meta-scope-a,
+        meta-a,
         simple-closing-tag,
         close-open-tag
       ]
@@ -52,7 +52,7 @@ contexts:
         1: punctuation.definition.tag.begin.html.jsx.jsx1
         2: entity.name.tag.block.any.html.jsx.jsx1
       set: [
-        meta-scope-block-any,
+        meta-block-any,
         simple-closing-tag,
         close-open-tag
       ]
@@ -62,7 +62,7 @@ contexts:
         1: punctuation.definition.tag.begin.html.jsx.jsx1
         2: entity.name.tag.inline.any.html.jsx.jsx1
       set: [
-        meta-scope-inline-any,
+        meta-inline-any,
         simple-closing-tag,
         close-open-tag
       ]
@@ -81,7 +81,7 @@ contexts:
         3: punctuation.separator.namespace.html.jsx.jsx1
         4: entity.name.tag.html.jsx.jsx1
       set: [
-        meta-scope-other,
+        meta-other,
         namespaced-closing-tag,
         close-open-tag
       ]
@@ -89,23 +89,23 @@ contexts:
   close-open-tag:
     - include: Packages/Naomi/syntaxes/jsx1/shared.sublime-syntax#close-open-tag
 
-  meta-scope-a:
+  meta-a:
     - meta_scope: meta.tag.inline.a.html.jsx.jsx1
     - include: pop-now
 
-  meta-scope-block-any:
+  meta-block-any:
     - meta_scope: meta.tag.block.any.html.jsx.jsx1
     - include: pop-now
 
-  meta-scope-inline-any:
+  meta-inline-any:
     - meta_scope: meta.tag.inline.any.html.jsx.jsx1
     - include: pop-now
 
-  meta-scope-other:
+  meta-other:
     - meta_scope: meta.tag.other.html.jsx.jsx1
     - include: pop-now
 
-  meta-scope-structure:
+  meta-structure:
     - meta_scope: meta.tag.structure.html.jsx.jsx1
     - include: pop-now
 

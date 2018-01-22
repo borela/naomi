@@ -92,24 +92,19 @@ contexts:
     # With default value.
     - match: |
         (?xi)
-        ({{commonIdentifier}})
+        {{commonIdentifier}}
         (?=
           \s*{{type}}?
-          \s*=
+          \s*=(?!\s*>)
         )
-      captures:
-        1: variable.parameter.function.js.fjsx15
+      scope: variable.parameter.function.js.fjsx15
       set: [
         optional-default-value,
         optional-modifier-and-type
       ]
     # Normal parameter.
-    - match: |
-        (?xi)
-        ({{commonIdentifier}})
-      captures:
-        0: meta.function.parameter.js.fjsx15
-        1: variable.parameter.function.js.fjsx15
+    - match: (?xi){{commonIdentifier}}
+      scope: variable.parameter.function.js.fjsx15
       set: optional-modifier-and-type
 
   optional-default-value:

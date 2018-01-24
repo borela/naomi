@@ -22,6 +22,10 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  keyIdentifier: |
+    [$_[:alnum:]]
+    [$_[:alnum:]]*
+
   constantIdentifier: |
     [$_[:upper:]]
     [$_[:upper:][:digit:]]*
@@ -114,7 +118,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          {{commonIdentifier}}
+          {{keyIdentifier}}
           \s*:
           (?:\s*async\b)?
           \s*function
@@ -128,7 +132,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          {{commonIdentifier}}
+          {{keyIdentifier}}
           \s*:
           (?:\s*async\b)?
           \s*{{commonIdentifier}}
@@ -143,7 +147,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          {{commonIdentifier}}
+          {{keyIdentifier}}
           \s*:
           (?:\s*async\b)?
           \s*{{genericParameters}}?
@@ -221,7 +225,7 @@ contexts:
   method-identifier:
     - match: |
         (?xi)
-        ({{commonIdentifier}})
+        ({{keyIdentifier}})
         \s*(:)
       captures:
         1: entity.name.function.js.fjsx15
@@ -241,22 +245,8 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
   variable:
-    # Single character.
     - match: |
         (?xi)
-        (?> \$\B
-          | [_[:alpha:]]\b
-        )
-      scope: meta.object-literal.key.js.fjsx15
-      set: associated-value
-    # Two or more characters.
-    - match: |
-        (?xi)
-        (
-          {{commonIdentifier}}
-          (?> \$\B
-            | [_[:alnum:]]\b
-          )
-        )
+        ({{keyIdentifier}})
       scope: meta.object-literal.key.js.fjsx15
       set: associated-value

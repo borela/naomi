@@ -22,13 +22,17 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  keyIdentifier: |
-    [$_[:alnum:]]
-    [$_[:alnum:]]*
-
   constantIdentifier: |
     [$_[:upper:]]
     [$_[:upper:][:digit:]]*
+
+  keyIdentifier: |
+    (?> '.*?(?<!\\)'
+      | ".*?(?<!\\)"
+      | `.*?(?<!\\)`
+      | [$_[:alnum:]]
+        [$_[:alnum:]]*
+    )
 
   indexer: |
     (\[
@@ -167,14 +171,20 @@ contexts:
         computed-property-end,
         optional-expression
       ]
-    # String.
-    - match: (?=['"`])
-      set: [
+    # Other keys.
+    - match: (?xi)(?={{keyIdentifier}}\s*:)
+      push: [
         associated-value,
         key-meta-scope,
-        string
+        any-key
       ]
-    # Simple property.
+    # Simple variables and constants added to the object.
+    - include: constant
+    - include: variable
+
+  any-key:
+    - include: string
+    - include: number
     - include: constant
     - include: variable
 
@@ -186,6 +196,9 @@ contexts:
       scope: punctuation.separator.key-value.js.fjsx15
       set: optional-expression
 
+  constant:
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+
   computed-key-meta-scope:
     - meta_scope: >-
         meta.object-literal.key.js.fjsx15
@@ -196,21 +209,6 @@ contexts:
     - match: \]
       scope: punctuation.section.brackets.end.js.fjsx15
       pop: true
-
-  constant:
-    # Single character.
-    - match: "[_[:upper:]]\b"
-      scope: meta.object-literal.key.uppercase.js.fjsx15
-      set: associated-value
-    # Two or more characters.
-    - match: |
-        (?x)
-          {{constantIdentifier}}
-          (?> \$\B
-            | [_[:upper:]]\b
-          )
-      scope: meta.object-literal.key.uppercase.js.fjsx15
-      set: associated-value
 
   function-declaration:
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax#declaration
@@ -232,6 +230,9 @@ contexts:
         2: punctuation.separator.key-value.js.fjsx15
       pop: true
 
+  number:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/number.sublime-syntax
+
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
@@ -245,8 +246,4 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
   variable:
-    - match: |
-        (?xi)
-        ({{keyIdentifier}})
-      scope: meta.object-literal.key.js.fjsx15
-      set: associated-value
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

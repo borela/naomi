@@ -27,7 +27,7 @@ contexts:
     - match: \)
       scope: punctuation.definition.group.end.regexp.js.fjsx15
       pop: true
-    - match:  (?=\s*\S)
+    - match:  (?=\S)
       push: regex-content
 
   meta:

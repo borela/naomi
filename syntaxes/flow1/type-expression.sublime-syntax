@@ -29,7 +29,7 @@ contexts:
       scope: punctuation.section.group.begin.flow
       set: open-group
     # Start of the type expression.
-    - match: \S
+    - match: (?=\S)
       set: [ optional-tail, head ]
 
   close-group:
@@ -41,7 +41,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   else-pop:
-    - match: (?=\s*\S)
+    - match: (?=\S)
       pop: true
 
   head:
@@ -66,7 +66,7 @@ contexts:
     # Close the current type expression group.
     - include: close-group
     # Start of the type expression.
-    - match: \S
+    - match: (?=\S)
       push: optional-type-expression
 
   optional-tail:

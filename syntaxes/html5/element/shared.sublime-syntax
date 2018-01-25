@@ -44,6 +44,8 @@ contexts:
       push: content
 
   content:
+    - clear_scopes: true
+    - meta_scope: text.html.html5
     - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
     # Normal text.
     - match: .

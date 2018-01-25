@@ -17,6 +17,11 @@ hidden: true
 
 scope: ...
 
+variables:
+  elementIdentifier: |
+    [$_[:alpha:]]
+    [$_.[:alnum:]\-]*
+
 contexts:
   main:
     - match: ""
@@ -26,30 +31,64 @@ contexts:
     - include: Packages/Naomi/syntaxes/html5/attribute.sublime-syntax
 
   close-open-tag:
-    - match: \s*(>)
+    - match: \>
       captures:
         1: punctuation.definition.tag.end.html.html5
       pop: true
-    - match: (?=\s*\S)
+    - match: (?=\S)
       push: attribute
-
-  close-tag:
-    - match: \s*(</)(\2)(>)
-      captures:
-        1: punctuation.definition.tag.begin.html.html5
-        2: entity.name.tag.html.html5
-        3: punctuation.definition.tag.end.html.html5
-      pop: true
-    - match: (?=\s*\S)
-      push: content
 
   content:
     - clear_scopes: true
     - meta_scope: text.html.html5
-    - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
+    # Elements.
+    - match: (?xi)(?=<{{elementIdentifier}})
+      push:
+        - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
     # Normal text.
     - match: .
       pop: true
 
+  namespaced-closing-tag:
+    - include: self-closing-tag
+    - match: |
+        (?x)
+        (
+          (</)
+          (?> (\2)(:)(\4)
+            | (\4)
+          )
+          (>)
+        )
+      captures:
+        1: meta.tag.close.html.html5
+        2: punctuation.definition.tag.begin.html.html5
+        3: entity.name.tag.namespace.html.html5
+        4: punctuation.separator.namespace.html.html5
+        5: entity.name.tag.html5
+        6: entity.name.tag.html5
+        7: punctuation.definition.tag.end.html.html5
+      pop: true
+    - match: (?=.)
+      push: content
+
+  self-closing-tag:
+    - match: />
+      scope: punctuation.definition.tag.end.html.html5
+      pop: true
+
+  simple-closing-tag:
+    - include: self-closing-tag
+    - match: ((</)(\2)(>))
+      captures:
+        1: meta.tag.close.html.html5
+        2: punctuation.definition.tag.begin.html.html5
+        3: entity.name.tag.html.html5
+        4: punctuation.definition.tag.end.html.html5
+      pop: true
+    - match: (?=.)
+      push: content
+
   trap:
-    - meta_scope: trap.html5
+    - match: .
+      scope: trap.html5

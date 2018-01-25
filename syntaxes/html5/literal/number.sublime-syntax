@@ -18,8 +18,7 @@ hidden: true
 scope: ...
 
 variables:
-  literalDecimal: |
-    [0-9]+
+  literalDecimal: "[0-9]+"
 
   literalFloat: |
     -?
@@ -28,14 +27,12 @@ variables:
     )
 
   scientificNotation: |
-    (
-      -?
-      (?> {{literalFloat}}
-        | {{literalDecimal}}
-      )
-      [e][+-]?
-      {{literalDecimal}}
+    -?
+    (?> {{literalFloat}}
+      | {{literalDecimal}}
     )
+    [e][+-]?
+    {{literalDecimal}}
 
 contexts:
   main:

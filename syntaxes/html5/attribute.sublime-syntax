@@ -18,17 +18,17 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
+  attributeIdentifier: |
     [_:[:alpha:]]
     [_:[:alnum:]\-.]*
 
 contexts:
   main:
     # With value.
-    - match: (?xi)(?=\s*{{commonIdentifier}}\s*=)
+    - match: (?xi)(?=\s*{{attributeIdentifier}}\s*=)
       set: [ meta, value, name ]
     # Simple attribute.
-    - match: (?xi)(?=\s*{{commonIdentifier}})
+    - match: (?xi)(?=\s*{{attributeIdentifier}})
       set: name
 
   meta:

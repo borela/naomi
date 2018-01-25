@@ -19,17 +19,15 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\(\?=)
-      captures:
-        1: punctuation.definition.group.assertion.begin.regexp.js.fjsx15
+    - match: \(\?=
+      scope: punctuation.definition.group.assertion.begin.regexp.js.fjsx15
       set: [ meta, close, regex-content ]
 
   close:
-    - match: \s*(\))
-      captures:
-        1: punctuation.definition.group.assertion.end.regexp.js.fjsx15
+    - match: \)
+      scope: punctuation.definition.group.assertion.end.regexp.js.fjsx15
       pop: true
-    - match:  (?=\s*\S)
+    - match:  (?=\S)
       push: regex-content
 
   meta:

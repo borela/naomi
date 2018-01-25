@@ -19,6 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\s*/(?>/|\*))
+    - match: (?=/(?>/|\*))
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax

@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: |
-        (?xi)\s*
+        (?xi)
         (?> ([.[:alnum:]]+@[.[:alnum:]]+)\s
           | (<[.[:alnum:]]+@[.[:alnum:]]+>)
         )

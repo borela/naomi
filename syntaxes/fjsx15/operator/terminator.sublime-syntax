@@ -19,13 +19,12 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(;)
-      captures:
-        1: keyword.other.terminator.js.fjsx15
+    - match: \;
+      scope: keyword.other.terminator.js.fjsx15
       set: entry-point
 
   entry-point:
     - include: main
-    - match: (?=\s*[,:)\]}])
+    - match: (?=[,:)\]}])
       pop: true
     - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax

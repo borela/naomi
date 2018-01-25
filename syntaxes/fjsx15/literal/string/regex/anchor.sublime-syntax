@@ -20,7 +20,6 @@ scope: ...
 contexts:
   main:
     # ^ $ \b
-    - match: \s*((?>\\b|\^|\$))
-      captures:
-        1: keyword.control.anchor.regexp.js.fjsx15
+    - match: (?>\\b|\^|\$)
+      scope: keyword.control.anchor.regexp.js.fjsx15
       pop: true

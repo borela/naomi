@@ -27,7 +27,7 @@ contexts:
     - match: |
         (?xi)
         (?=
-          \s*(?:\.{3})?
+          (?:\.{3})?
           {{commonIdentifier}}
         )
       push: parameter

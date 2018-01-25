@@ -26,14 +26,13 @@ contexts:
   main:
     - include: Packages/Naomi/syntaxes/flow1/namespace-path.no-pop.sublime-syntax
     # Existential.
-    - match: \s*(\*)
-      captures:
-        1: support.type.existential.flow
+    - match: \*
+      scope: support.type.existential.flow
       pop: true
     # Predefined types.
     - match: |
         (?x)\s*\b
-        ((?> any
+        (?> any
           | Array
           | [Bb]oolean
           | false
@@ -47,14 +46,10 @@ contexts:
           | true
           | undefined
           | void
-        ))\b
-      captures:
-        1: support.type.flow
+        )\b
+      scope: support.type.primitive.flow
       pop: true
     # Other types.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: variable.other.type.flow
+    - match: (?xi){{commonIdentifier}}
+      scope: variable.other.type.flow
       pop: true

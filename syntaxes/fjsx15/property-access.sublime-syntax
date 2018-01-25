@@ -19,16 +19,14 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\[)
-      captures:
-        1: punctuation.section.brackets.begin.js.fjsx15
+    - match: \[
+      scope: punctuation.section.brackets.begin.js.fjsx15
       set: index
 
   index:
     - meta_scope: meta.brackets.js.fjsx15
-    - match: \s*(])
-      captures:
-        1: punctuation.section.brackets.end.js.fjsx15a
+    - match: \]
+      scope: punctuation.section.brackets.end.js.fjsx15a
       pop: true
     - match: ""
       push: optional-expression

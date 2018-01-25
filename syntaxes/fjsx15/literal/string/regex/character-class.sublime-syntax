@@ -19,21 +19,20 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*((\[)(\^)?)
+    - match: ((\[)(\^)?)
       captures:
         1: constant.other.character-class.regexp.js.fjsx15
         2: punctuation.definition.character-class.begin.regexp.js.fjsx15
         3: keyword.operator.negation.regexp.js.fjsx15
-      set: [ close, content ]
+      set: close
 
   close:
-    - match: (\])
-      captures:
-        1: >-
+    - match: \]
+      scope: >-
           constant.other.character-class.regexp.js.fjsx15
           punctuation.definition.character-class.end.regexp.js.fjsx15
       pop: true
-    - match:  (?=\s*\S)
+    - match:  (?=\S)
       push: content
 
   content:
@@ -41,9 +40,4 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex/backslash.sublime-syntax
     - match: .
       scope: constant.other.character-class.regexp.js.fjsx15
-      pop: true
-    - include: pop-now
-
-  pop-now:
-    - match: ""
       pop: true

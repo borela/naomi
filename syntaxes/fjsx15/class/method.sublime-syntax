@@ -55,17 +55,30 @@ variables:
 contexts:
   main:
     # Method without identifier.
-    - match:  (?=\s*\()
+    - match: (?=\()
       set: declaration
+    # React JS’s support methods.
+    - include: Packages/Naomi/syntaxes/fjsx15/class/support/react-js-method.sublime-syntax
     # Normal method.
     - match: |
         (?xi)
         (?=
-          \s*{{methodIdentifier}}
+          {{methodIdentifier}}
           \s*{{genericParameters}}?
           \s*\(
         )
       set: declaration
+
+  body:
+    - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  computed-identifier-end:
+    - match: \]
+      scope: punctuation.definition.function.identifier.end.js.fjsx15
+      pop: true
 
   declaration:
     - meta_scope: >-
@@ -73,79 +86,56 @@ contexts:
         meta.function.js.fjsx15
     - include: comment-no-pop
     # Body.
-    - match: (?=\s*\{)
+    - match: (?=\{)
       set: body
     # Generic parameters.
-    - match: (?=\s*<)
+    - match: (?=<)
       push: generic-parameters
     # Parameters.
-    - match: (?=\s*\()
+    - match: (?=\()
       push: parameters
     # Support identifier.
-    - match: |
-        (?x)
-        \s*(constructor)\b
-      captures:
-        1: entity.name.function.constructor.js.fjsx15
+    - match: constructor\b
+      scope: entity.name.function.constructor.js.fjsx15
       set: [
         optional-support-body,
         support-parameters
       ]
-    # React JS’s support methods.
-    - include: Packages/Naomi/syntaxes/fjsx15/class/support/react-js-method.sublime-syntax
     # Identifier.
-    - match: |
-        (?xi)
-        \s*({{commonIdentifier}})
-      captures:
-        1: entity.name.function.js.fjsx15
+    - match: (?xi){{commonIdentifier}}
+      scope: entity.name.function.js.fjsx15
     # Computed identifier.
-    - match: |
-        (?x)
-        \s*(\[)
-      captures:
-        1: punctuation.definition.function.identifier.begin.js.fjsx15
+    - match: \[
+      scope: punctuation.definition.function.identifier.begin.js.fjsx15
       push: [ computed-identifier-end, optional-expression ]
     # String identifiers
-    - match: (?=\s*(?>'|"|`))
+    - match: (?=['"`])
       push:
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
         - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
-    # None of the expected items matched, it probably ended.
-    - match: (?=\s*\S)
+    - include: else-pop
+
+  else-pop:
+    - match: (?=\S)
       pop: true
 
   generic-parameters:
     - include: Packages/Naomi/syntaxes/flow1/generic/parameters.sublime-syntax
+
+  optional-body:
+    - include: body
+    - include: else-pop
+
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  optional-support-body:
+    - include: body
+    - include: else-pop
 
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
 
   support-parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
-
-  body:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
-
-  optional-body:
-    - include: body
-    - match: (?=\s*\S)
-      pop: true
-
-  optional-support-body:
-    - include: body
-    - match: (?=\s*\S)
-      pop: true
-
-  computed-identifier-end:
-    - match: \s*(])
-      captures:
-        1: punctuation.definition.function.identifier.end.js.fjsx15
-      pop: true
-
-  comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-
-  optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

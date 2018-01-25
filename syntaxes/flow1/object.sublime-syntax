@@ -29,83 +29,34 @@ variables:
 contexts:
   main:
     # Exact.
-    - match: \s*({)\s*(\|)
+    - match: ({)\s*(\|)
       captures:
         1: punctuation.section.block.begin.flow
         2: punctuation.section.block.begin.flow
       set: [
-        meta-scope-exact,
+        meta-exact,
         delimiters,
         optional-property-or-method
       ]
     # Normal.
-    - match: \s*({)
-      captures:
-        1: punctuation.section.block.begin.flow
+    - match: \{
+      scope: punctuation.section.block.begin.flow
       set: [
         meta-scope,
         delimiters,
         optional-property-or-method
       ]
 
-  meta-scope-exact:
-    - meta_scope: >-
-        meta.object-literal.exact.flow
-        meta.block.flow
-    - match: ""
-      pop: true
+  associated-type:
+    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
 
-  meta-scope:
-    - meta_scope: >-
-        meta.object-literal.flow
-        meta.block.flow
-    - match: ""
-      pop: true
-
-  delimiters:
-    - match: \s*(?:(,)|(;))
-      captures:
-        1: punctuation.separator.comma.flow
-        2: punctuation.terminator.flow
-      push: optional-property-or-method
-    # Exact.
-    - match: \s*(\|)\s*(})
-      captures:
-        1: punctuation.section.block.end.flow
-        2: punctuation.section.block.end.flow
-      pop: true
-    # Normal.
-    - match: \s*(})
-      captures:
-        1: punctuation.section.block.end.flow
-      pop: true
-
-  optional-property-or-method:
-    - include: comment-no-pop
-    - match: (?=\s*[|}])
-      pop: true
-    - match: \s*(\.{3})
-      captures:
-        1: keyword.operator.spread.flow
-      set: type-expression
-    - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
-    - include: constant
-    - include: variable
-    # String property name.
-    - match: (?=\s*(?>'|"|`))
-      set: [
-        associated-type,
-        string
-      ]
-    - match: (?=\s*\S)
-      pop: true
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   constant:
     # Single character.
     - match: |
-        (?x)\s*
+        (?x)
         ([_[:upper:]])\b
         (?:\s*(\?\B))?
       captures:
@@ -114,7 +65,7 @@ contexts:
       set: associated-type
     # Two or more characters.
     - match: |
-        (?x)\s*
+        (?x)
         (
           {{constantIdentifier}}
           (?> \$\B
@@ -127,10 +78,75 @@ contexts:
         2: storage.modifier.optional.flow
       set: associated-type
 
+  delimiters:
+    - match: (?:(,)|(;))
+      captures:
+        1: punctuation.separator.comma.flow
+        2: punctuation.terminator.flow
+      push: optional-property-or-method
+    # Exact.
+    - match: (\|)\s*(})
+      captures:
+        1: punctuation.section.block.end.flow
+        2: punctuation.section.block.end.flow
+      pop: true
+    # Normal.
+    - match: \}
+      scope: punctuation.section.block.end.flow
+      pop: true
+
+  else-pop:
+    - match: (?=\S)
+      pop: true
+
+  meta-scope:
+    - meta_scope: >-
+        meta.object-literal.flow
+        meta.block.flow
+    - include: pop-now
+
+  meta-exact:
+    - meta_scope: >-
+        meta.object-literal.exact.flow
+        meta.block.flow
+    - include: pop-now
+
+  optional-property-or-method:
+    - include: comment-no-pop
+    - match: (?=[|}])
+      pop: true
+    - match: \.{3}
+      scope: keyword.operator.spread.flow
+      set: type-expression
+    - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
+    - include: constant
+    - include: variable
+    # String property name.
+    - match: (?=(?>'|"|`))
+      set: [
+        associated-type,
+        string
+      ]
+    - include: else-pop
+
+  pop-now:
+    - match: ""
+      pop: true
+
+  string:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
+
+  type-expression:
+    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax
+
   variable:
     # Single character.
     - match: |
-        (?xi)\s*
+        (?xi)
         ((?> \$\B
           | [_[:alpha:]]\b
         ))
@@ -141,7 +157,7 @@ contexts:
       set: associated-type
     # Two or more characters.
     - match: |
-        (?xi)\s*
+        (?xi)
         (
           {{commonIdentifier}}
           (?> \$\B
@@ -153,17 +169,3 @@ contexts:
         1: meta.object-literal.key.flow
         2: storage.modifier.optional.flow
       set: associated-type
-
-  string:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
-
-  associated-type:
-    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
-
-  type-expression:
-    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax
-
-  comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

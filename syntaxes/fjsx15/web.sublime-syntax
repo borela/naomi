@@ -23,16 +23,10 @@ contexts:
     - include: document-properties
     - include: window-functions
 
-  optional-generic-and-arguments:
-    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-    - match: (?=\s*\S)
-      pop: true
-
   document-functions:
     - match: |
         (?x)
-        \s*(document)\b
+        (document)\b
         (?:
           \s*(\.)\s*
           ((?> adoptNode
@@ -86,7 +80,7 @@ contexts:
   document-properties:
     - match: |
         (?x)
-        \s*(document)\b
+        (document)\b
         (?:
           \s*(\.)\s*
           ((?> activeElement
@@ -191,10 +185,19 @@ contexts:
         3: support.variable.js.fjsx15
       pop: true
 
+  else-pop:
+    - match: (?=\S)
+      pop: true
+
+  optional-generic-and-arguments:
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: else-pop
+
   window-functions:
     - match: |
         (?x)
-        \s*(window)\b
+        (window)\b
         (?:
           \s*(\.)\s*
           ((?> addEventListener

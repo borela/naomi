@@ -27,8 +27,7 @@ contexts:
 
   close-open-tag:
     # Self closing tag.
-    - match: \/>
-      scope: punctuation.definition.tag.end.html.jsx.jsx1
+    - match: (?=/>)
       pop: true
     # Normal closing tag.
     - match: \>
@@ -95,7 +94,8 @@ contexts:
       push: content
 
   self-closing-tag:
-    - match: (?<=/>)
+    - match: />
+      scope: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
 
   simple-closing-tag:

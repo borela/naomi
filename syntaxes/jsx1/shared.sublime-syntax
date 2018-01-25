@@ -62,6 +62,8 @@ contexts:
       push: content
 
   content:
+    - clear_scopes: true
+    - meta_scope: text.html.jsx.jsx1
     - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax

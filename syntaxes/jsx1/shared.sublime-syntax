@@ -17,6 +17,11 @@ hidden: true
 
 scope: ...
 
+variables:
+  elementIdentifier: |
+    [$_[:alpha:]]
+    [$_.[:alnum:]\-]*
+
 contexts:
   main:
     - match: ""
@@ -57,16 +62,20 @@ contexts:
         6: entity.name.tag.component.jsx.jsx1
         7: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
-    - match: (?=\S)
+    - match: (?=.)
       push: content
 
   content:
     - clear_scopes: true
     - meta_scope: text.html.jsx.jsx1
-    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
-    - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
-    - include: Packages/Naomi/syntaxes/jsx1/embedded-js.sublime-syntax
+    # Elements.
+    - match: (?xi)(?=<(?>\s*>|{{elementIdentifier}}))
+      push:
+        - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
+        - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
+        - include: Packages/Naomi/syntaxes/jsx1/embedded-js.sublime-syntax
+    # Text.
     - match: .
       pop: true
 
@@ -90,7 +99,7 @@ contexts:
         6: entity.name.tag.jsx.jsx1
         7: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
-    - match: (?=\S)
+    - match: (?=.)
       push: content
 
   self-closing-tag:
@@ -107,7 +116,7 @@ contexts:
         3: entity.name.tag.html.jsx.jsx1
         4: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
-    - match: (?=\S)
+    - match: (?=.)
       push: content
 
   trap:

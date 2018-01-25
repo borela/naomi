@@ -22,7 +22,7 @@ contexts:
     - match: \s*(<!\[)(CDATA)(\[)
       captures:
         1: punctuation.definition.tag.begin.html.html5
-        2: entity.name.tag.html.html5
+        2: entity.name.tag.cdata.html.html5
         3: punctuation.definition.tag.begin.html.html5
       set: content
 

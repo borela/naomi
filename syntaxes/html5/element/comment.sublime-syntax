@@ -19,19 +19,16 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(<!--)
-      captures:
-        1: >-
-          comment.block.html.html5
-          punctuation.definition.comment.begin.html.html5
-      set: [ meta, block ]
+    - match: <!--
+      scope: punctuation.definition.comment.begin.html.html5
+      set: block
 
   block:
+    - meta_scope: comment.block.html.html5
     - include: email-no-pop
     - include: link-no-pop
-    - match: \s*(-->)
-      captures:
-        1: punctuation.definition.comment.end.html.html5
+    - match: -->
+      scope: punctuation.definition.comment.end.html.html5
       pop: true
 
   email-no-pop:
@@ -39,8 +36,3 @@ contexts:
 
   link-no-pop:
     - include: Packages/Naomi/syntaxes/shared/link.no-pop.sublime-syntax
-
-  meta:
-    - meta_content_scope: comment.block.html.html5
-    - match: ""
-      pop: true

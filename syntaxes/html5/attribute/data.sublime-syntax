@@ -19,7 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: (?i)\s*(data-[_:[:alnum:]\-.]*)
-      captures:
-        1: entity.other.attribute-name.data.html.html5
+    - match: (?i)data-[_:[:alnum:]\-.]*
+      scope: entity.other.attribute-name.data.html.html5
       pop: true

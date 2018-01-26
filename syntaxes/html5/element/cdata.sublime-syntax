@@ -29,8 +29,6 @@ contexts:
   content:
     - meta_scope: meta.tag.cdata.html.html5
     - meta_content_scope: constant.other.inline-data.html.html5
-    - match: (\])(\]\>)
-      captures:
-        1: punctuation.definition.inline-data.end.html.html5
-        2: punctuation.definition.tag.end.html.html5
+    - match: \]\]\>
+      scope: punctuation.definition.tag.end.html.html5
       pop: true

@@ -32,21 +32,22 @@ contexts:
 
   close-open-tag:
     - match: \>
-      captures:
-        1: punctuation.definition.tag.end.html.html5
+      scope: punctuation.definition.tag.end.html.html5
       pop: true
     - match: (?=\S)
       push: attribute
 
   content:
+    # Sub element.
+    - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
+    # Text.
+    - match: .|\n
+      pop: true
+
+  meta-content:
     - clear_scopes: true
     - meta_scope: text.html.html5
-    # Elements.
-    - match: (?xi)(?=<{{elementIdentifier}})
-      push:
-        - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
-    # Normal text.
-    - match: .
+    - match: ""
       pop: true
 
   namespaced-closing-tag:
@@ -69,8 +70,9 @@ contexts:
         6: entity.name.tag.html5
         7: punctuation.definition.tag.end.html.html5
       pop: true
-    - match: (?=.)
-      push: content
+    # Content.
+    - match: (?=.|\n)
+      push: [ meta-content, content ]
 
   self-closing-tag:
     - match: />
@@ -86,8 +88,9 @@ contexts:
         3: entity.name.tag.html.html5
         4: punctuation.definition.tag.end.html.html5
       pop: true
-    - match: (?=.)
-      push: content
+    # Content.
+    - match: (?=.|\n)
+      push: [ meta-content, content ]
 
   trap:
     - match: .

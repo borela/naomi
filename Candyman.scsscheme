@@ -16,7 +16,7 @@
 @import 'schemes/candyman/main';
 
 // Old scopes.
-@import 'schemes/candyman/old';
+// @import 'schemes/candyman/old';
 
 // New scopes.
 @import 'schemes/candyman/annotation';

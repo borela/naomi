@@ -10,28 +10,36 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
+// Markdown text.
 .text.html.markdown {
   foreground: $blue-gray-200;
 }
 
+// HTML text.
 .text.html {
-  foreground: $brown-400;
+  foreground: $blue-gray-200;
 }
 
-.meta.tag,
-.entity.name.tag {
-  foreground: $brown-200;
-
+// Tags.
+.meta.tag {
+  .entity.name.tag {
+    foreground: $brown-200;
+  }
   .punctuation.definition.tag {
     foreground: rgba($brown-200, .5);
   }
 }
 
+// Attributes.
 .entity.other.attribute-name {
-//   foreground: $green-a400;
   foreground: $cyan-a400;
 }
 
+// CDATA/DOCTYPE/JSX Component tag.
+.meta.tag.cdata,
+.entity.name.tag.cdata,
+.meta.tag.sgml.doctype,
+.entity.name.tag.doctype,
 .meta.tag.other.component,
 .entity.name.tag.component {
   foreground: $purple-a100;
@@ -40,3 +48,44 @@
     foreground: rgba($purple-a100, .5);
   }
 }
+
+// CDATA Text.
+.constant.other.inline-data {
+  foreground: $pink-a200;
+  background: rgba($pink-a200, .1);
+}
+
+// Sectioning root element.
+.meta.tag.block.form.sectioning.root,
+.meta.tag.block.sectioning.root {
+  .entity.name.tag {
+    foreground: $green-300;
+  }
+  .punctuation.definition.tag {
+    foreground: rgba($green-300, .5);
+  }
+}
+
+// Sectioning element.
+.meta.tag.block.sectioning {
+  .entity.name.tag {
+    foreground: $deep-purple-200;
+  }
+  .punctuation.definition.tag {
+    foreground: rgba($deep-purple-200, .5);
+  }
+}
+
+// Form element.
+.meta.tag.block.form,
+.meta.tag.inline.form {
+  .entity.name.tag {
+    foreground: $teal-500;
+  }
+  .punctuation.definition.tag {
+    foreground: rgba($teal-500, .5);
+  }
+}
+
+// text.html.html5
+// entity.name.tag.html.html5

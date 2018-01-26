@@ -28,6 +28,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/html5/element/sectioning-root.sublime-syntax
     # - include: Packages/Naomi/syntaxes/html5/element/embedded.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/element/form.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/element/form-sectioning-root.sublime-syntax
     # - include: Packages/Naomi/syntaxes/html5/element/css3-style.sublime-syntax
     # - include: Packages/Naomi/syntaxes/html5/element/fjsx15-script.sublime-syntax
     # - include: Packages/Naomi/syntaxes/html5/element/other.sublime-syntax

@@ -19,13 +19,12 @@ scope: ...
 
 contexts:
   main:
-    # article, aside, nav, section
-    - match: \s*(<)((?>a(?>rticle|side)|nav|section))\b
+    - match: \s*(<)(fieldset)\b
       captures:
         1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
       set: [
-        meta,
+        meta-form,
         close-tag,
         close-open-tag
       ]
@@ -36,7 +35,7 @@ contexts:
   close-tag:
     - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#simple-closing-tag
 
-  meta:
-    - meta_scope: meta.tag.block.sectioning.html.html5
+  meta-form:
+    - meta_scope: meta.tag.block.form.sectioning.root.html.html5
     - match: ""
       pop: true

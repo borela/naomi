@@ -27,10 +27,10 @@ contexts:
     - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
 
   close-tag:
-    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-tag
+    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#simple-closing-tag
 
   form:
-    - match: \s*(<)(form)\b
+    - match: (<)(form)\b
       captures:
         1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
@@ -50,7 +50,7 @@ contexts:
 
   other-elements:
     # button, label, legend, option, select, textarea
-    - match: \s*(<)((?>(?>button|l?>abel|egend)|option|select|textarea))\b
+    - match: (<)((?>(?>button|l(?>abel|egend)|option|select|textarea)))\b
       captures:
         1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5

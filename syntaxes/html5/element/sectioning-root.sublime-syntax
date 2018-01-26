@@ -19,8 +19,8 @@ scope: ...
 
 contexts:
   main:
-    # blockquote, body, fieldset, figure, td
-    - match: \s*(<)((?>b(?>lockquote|ody)|fi(?>eldset|gure)|td))\b
+    # blockquote, body, details, dialog, figure, td
+    - match: \s*(<)((?>b(?>lockquote|ody)|d(?>etails|ialog)|figure|td))\b
       captures:
         1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
@@ -34,7 +34,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
 
   close-tag:
-    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-tag
+    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#simple-closing-tag
 
   meta:
     - meta_scope: meta.tag.block.sectioning.root.html.html5

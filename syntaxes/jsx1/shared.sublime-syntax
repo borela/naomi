@@ -66,17 +66,20 @@ contexts:
       push: content
 
   content:
+    # Sub element.
+    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
+    - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
+    # Embedded JS.
+    - include: Packages/Naomi/syntaxes/jsx1/embedded-js.sublime-syntax
+    # Text.
+    - match: .|\n
+      pop: true
+
+  meta-content:
     - clear_scopes: true
     - meta_scope: text.html.jsx.jsx1
-    # Elements.
-    - match: (?xi)(?=<(?>\s*>|{{elementIdentifier}}))
-      push:
-        - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
-        - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
-        - include: Packages/Naomi/syntaxes/jsx1/embedded-js.sublime-syntax
-    # Text.
-    - match: .
+    - match: ""
       pop: true
 
   namespaced-closing-tag:
@@ -99,8 +102,9 @@ contexts:
         6: entity.name.tag.jsx.jsx1
         7: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
-    - match: (?=.)
-      push: content
+    # Content.
+    - match: (?=.|\n)
+      push: [ meta-content, content ]
 
   self-closing-tag:
     - match: />
@@ -116,8 +120,9 @@ contexts:
         3: entity.name.tag.html.jsx.jsx1
         4: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
-    - match: (?=.)
-      push: content
+    # Content.
+    - match: (?=.|\n)
+      push: [ meta-content, content ]
 
   trap:
     - match: .

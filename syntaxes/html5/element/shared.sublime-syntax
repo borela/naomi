@@ -38,7 +38,7 @@ contexts:
       push: attribute
 
   content:
-    # Sub element.
+    - include: Packages/Naomi/syntaxes/html5/literal/character-reference.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
     # Text.
     - match: .|\n

@@ -21,7 +21,7 @@ contexts:
   main:
     - match: |
         (?x)
-        \s*(<)
+        (<)
         ((?> area
           # base, br
           | b(?>ase|r)

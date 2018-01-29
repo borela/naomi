@@ -15,9 +15,19 @@
   foreground: $blue-gray-200;
 }
 
-// HTML text.
+// HTML base text.
 .text.html {
   foreground: $blue-gray-200;
+}
+
+// HTML text element.
+.meta.element.text {
+  foreground: $orange-300;
+}
+
+// Character reference.
+.constant.character.entity {
+  foreground: $pink-a100;
 }
 
 // Tags.
@@ -27,6 +37,14 @@
   }
   .punctuation.definition.tag {
     foreground: rgba($brown-200, .5);
+  }
+}
+
+// Namespace.
+.meta.tag {
+  .entity.name.tag.namespace,
+  .punctuation.separator.namespace {
+    foreground: $orange-300;
   }
 }
 
@@ -86,6 +104,3 @@
     foreground: rgba($teal-500, .5);
   }
 }
-
-// text.html.html5
-// entity.name.tag.html.html5

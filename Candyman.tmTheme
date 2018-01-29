@@ -457,6 +457,24 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.meta.element.text</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffb74d</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.character.entity</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.meta.tag .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
@@ -471,6 +489,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#BCAAA480</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.tag .entity.name.tag.namespace, .meta.tag .punctuation.separator.namespace</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffb74d</string>
 			</dict>
 		</dict>
 		<dict>
@@ -675,6 +702,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.support.variable</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b388ff</string>
 			</dict>
 		</dict>
 	</array>

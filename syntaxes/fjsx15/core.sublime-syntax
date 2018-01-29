@@ -101,7 +101,7 @@ contexts:
     - include: else-pop
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
   console:
     - match: (console)\s*(\.)

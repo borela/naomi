@@ -22,7 +22,7 @@ contexts:
     - include: comment-no-pop
     - include: comma
     # At this stage, regex literals will have a higher priority than operators.
-    - match: (?=/.*?(?<!\\)/[a-z]{0,5})
+    - match: (?=\/)
       set: [ optional-tail, regex-literal ]
     # Arrow functions need to be detected before expression groups.
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax

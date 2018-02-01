@@ -15,13 +15,8 @@
   foreground: $blue-gray-200;
 }
 
-// HTML base text.
+// HTML text.
 .text.html {
-  foreground: $blue-gray-200;
-}
-
-// HTML text element.
-.meta.element.text {
   foreground: $orange-300;
 }
 
@@ -51,6 +46,10 @@
 // Attributes.
 .entity.other.attribute-name {
   foreground: $cyan-a400;
+}
+
+.entity.other.attribute-name.builtin {
+  foreground: $deep-orange-300;
 }
 
 // CDATA/DOCTYPE/JSX Component tag.
@@ -95,12 +94,12 @@
 }
 
 // Form element.
-.meta.tag.block.form,
-.meta.tag.inline.form {
-  .entity.name.tag {
-    foreground: $teal-500;
-  }
-  .punctuation.definition.tag {
-    foreground: rgba($teal-500, .5);
-  }
-}
+// .meta.tag.block.form,
+// .meta.tag.inline.form {
+//   .entity.name.tag {
+//     foreground: $teal-500;
+//   }
+//   .punctuation.definition.tag {
+//     foreground: rgba($teal-500, .5);
+//   }
+// }

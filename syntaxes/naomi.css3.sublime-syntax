@@ -17,9 +17,9 @@ name: CSS 3
 
 file_extensions:
   - css
+  - css3
 
-scope: >-
-  source.css.css3
+scope: source.css.css3
 
 contexts:
   main:

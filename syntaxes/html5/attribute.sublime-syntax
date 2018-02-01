@@ -25,10 +25,10 @@ variables:
 contexts:
   main:
     # With value.
-    - match: (?xi)(?=\s*{{attributeIdentifier}}\s*=)
+    - match: (?xi)(?={{attributeIdentifier}}\s*=)
       set: [ meta, value, name ]
     # Simple attribute.
-    - match: (?xi)(?=\s*{{attributeIdentifier}})
+    - match: (?xi)(?={{attributeIdentifier}})
       set: name
 
   meta:

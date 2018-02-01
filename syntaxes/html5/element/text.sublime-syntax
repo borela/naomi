@@ -21,7 +21,17 @@ variables:
   decimal: \#[0-9]+
   hex: \#x[a-fA-F0-9]+
 
+# https://w3c.github.io/html/dom.html#text-content
 contexts:
   main:
+    - match: ""
+      set: text-element
+
+  text-element:
+    - meta_scope: meta.element.text.html.html5
+    # Any tag or markup declaration.
+    - match: (?=<(?>/?\w|!))
+      pop: true
+    # Character reference.
     - match: (?x)&(?>{{decimal}}|{{hex}}|\w+);
       scope: constant.character.entity.html.html5

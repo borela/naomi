@@ -42,6 +42,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
 
   meta:
-    - meta_scope: meta.tag.block.sectioning.root.html.html5
+    - meta_scope: meta.tag.sectioning.root.html.html5
     - match: ""
       pop: true

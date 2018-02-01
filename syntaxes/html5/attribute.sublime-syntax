@@ -24,12 +24,140 @@ variables:
 
 contexts:
   main:
+    # Event handler.
+    - match: |
+        (?xi)on
+        # onabort
+        (?> abort
+          # onafterprint
+          | afterprint
+          # onauxclick
+          | auxclick
+          # onbeforeprint, onbeforeunload
+          | before(?>print|unload)
+          # onblur
+          | blur
+          # oncancel
+          | cancel
+          # oncanplay, oncanplaythrough
+          | canplay(?:through)?
+          # onchange
+          | change
+          # onclick
+          | click
+          # onclose
+          | close
+          # oncopy
+          | copy
+          # oncuechange
+          | cuechange
+          # oncut
+          | cut
+          # ondblclick
+          | dblclick
+          # ondrag, ondragend ondragenter ondragexit ondragleave ondragover ondragstart
+          | drag(?>end|enter|exit|leave|over|start)?
+          # ondrop
+          | drop
+          # ondurationchange
+          | durationchange
+          # onemptied
+          | emptied
+          # onended
+          | ended
+          # onerror
+          | error
+          # onfocus
+          | focus
+          # onhashchange
+          | hashchange
+          # oninput
+          | input
+          # oninvalid
+          | invalid
+          # onkeydown, onkeypress, onkeyup
+          | key(?>down|press|up)
+          # onlanguagechange
+          | languagechange
+          # onload, onloadeddata, onloadedmetadata, onloadend, onloadstart
+          | load(?>ed(?>data|metadata)|end|start)
+          # onmessage
+          | message
+          # onmousedown, onmouseenter, onmouseleave, onmousemove, onmouseout, onmouseover, onmouseup
+          | mouse(?>down|enter|leave|move|out|over|up)
+          # onoffline
+          | offline
+          # ononline
+          | online
+          # onpagehide, onpageshow
+          | page(?>hide|show)
+          # onpaste
+          | paste
+          # onpause
+          | pause
+          # onplay, onplaying
+          | play(?:ing)?
+          # onpopstate
+          | popstate
+          # onprogress
+          | progress
+          # onratechange
+          | ratechange
+          # onreadystatechange
+          | readystatechange
+          # onrejectionhandled
+          | rejectionhandled
+          # onreset
+          | reset
+          # onresize
+          | resize
+          # onscroll
+          | scroll
+          # onseeked, onseeking
+          | seek(?>ed|ing)
+          # onselect
+          | select
+          # onshow
+          | show
+          # onstalled
+          | stalled
+          # onstorage
+          | storage
+          # onsubmit
+          | submit
+          # onsuspend
+          | suspend
+          # ontimeupdate
+          | timeupdate
+          # ontoggle
+          | toggle
+          # onunhandlerejection
+          | unhandledrejection
+          # onunload
+          | unload
+          # onvolumechange
+          | volumechange
+          # onwaiting
+          | waiting
+          # onwheel
+          | wheel
+        )\b
+      scope: >-
+        meta.attribute.builtin.event-handler.html.html5
+        entity.other.attribute-name.html.html5
+      set: [ meta, script-begin, key-value-separator ]
     # With value.
     - match: (?xi)(?={{attributeIdentifier}}\s*=)
       set: [ meta, value, name ]
     # Simple attribute.
     - match: (?xi)(?={{attributeIdentifier}})
       set: name
+
+  close-quote:
+    - match: \"|'
+      scope: punctuation.definition.string.end.html.html5
+      pop: true
+
 
   meta:
     - meta_scope: meta.attribute-with-value.html.html5
@@ -41,5 +169,33 @@ contexts:
     - include: Packages/Naomi/syntaxes/html5/attribute/data.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/attribute/normal.sublime-syntax
 
+  script:
+    - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax
+
+  script-begin:
+    - match: \'
+      scope: punctuation.definition.string.begin.html.html5
+      set: [ close-quote, script-meta, script ]
+    - match: \"
+      scope: punctuation.definition.string.begin.html.html5
+      set: [ close-quote, script-meta, script ]
+    - match: ""
+      with_prototype:
+        - match: (?=[\s<>])
+          pop: true
+      set: [ script-meta, script ]
+
+  script-meta:
+    - clear_scopes: true
+    - meta_scope: source.js.fjsx15
+    - match: ""
+      pop: true
+
+  key-value-separator:
+    - match: \=
+      scope: punctuation.separator.key-value.html.html5
+      pop: true
+
   value:
     - include: Packages/Naomi/syntaxes/html5/attribute/value.sublime-syntax
+

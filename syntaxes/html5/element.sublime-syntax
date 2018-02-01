@@ -33,3 +33,4 @@ contexts:
     # - include: Packages/Naomi/syntaxes/html5/element/fjsx15-script.sublime-syntax
     # - include: Packages/Naomi/syntaxes/html5/element/other.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/element/void.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/element/text/character-reference.sublime-syntax

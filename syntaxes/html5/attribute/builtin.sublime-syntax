@@ -19,6 +19,12 @@ scope: ...
 
 contexts:
   main:
+    - match: id\b
+      scope: >-
+        meta.attribute.builtin.html.html5
+        entity.other.attribute-name.id.html.html5
+      pop: true
+    # Other builtin.
     - match: |
         (?xi)
         (?> a
@@ -88,8 +94,6 @@ contexts:
           | i
             # icon
             (?> con
-              # id
-              | d
               # ismap
               | smap
               # itemprop

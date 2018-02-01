@@ -31,7 +31,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/html5/attribute.sublime-syntax
 
   close-open-tag:
-    - match: \>
+    - match: \/?>
       scope: punctuation.definition.tag.end.html.html5
       pop: true
     - match: (?=\S)

@@ -19,23 +19,25 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(<)(fieldset)\b
+    # Closing tag.
+    - match: (</)(fieldset)(>)
+      captures:
+        0: meta.tag.close.html.html5
+        1: punctuation.definition.tag.begin.html.html5
+        2: entity.name.tag.html.html5
+        3: punctuation.definition.tag.end.html.html5
+      set: meta
+    # Open tag.
+    - match: (<)(fieldset)\b
       captures:
         1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
-      set: [
-        meta-form,
-        close-tag,
-        close-open-tag
-      ]
+      set: [ meta, close-open-tag ]
 
   close-open-tag:
     - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
 
-  close-tag:
-    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#simple-closing-tag
-
-  meta-form:
-    - meta_scope: meta.tag.block.form.sectioning.root.html.html5
+  meta:
+    - meta_scope: meta.tag.form.sectioning.root.html.html5
     - match: ""
       pop: true

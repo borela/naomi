@@ -17,56 +17,42 @@ hidden: true
 
 scope: ...
 
+variables:
+  # button, form, label, legend, option, select, textarea
+  otherTags: (?>(?>button|form|l(?>abel|egend)|option|select|textarea))
+
 contexts:
   main:
-    - include: form
     - include: void-elements
     - include: other-elements
 
   close-open-tag:
     - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
 
-  close-tag:
-    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#simple-closing-tag
-
-  form:
-    - match: (<)(form)\b
-      captures:
-        1: punctuation.definition.tag.begin.html.html5
-        2: entity.name.tag.html.html5
-      set: [
-        meta-block,
-        close-tag,
-        close-open-tag
-      ]
-
-  meta-block:
-    - meta_scope: meta.tag.block.form.html.html5
-    - include: pop-now
-
-  meta-inline:
-    - meta_scope: meta.tag.inline.form.html.html5
-    - include: pop-now
-
-  other-elements:
-    # button, label, legend, option, select, textarea
-    - match: (<)((?>(?>button|l(?>abel|egend)|option|select|textarea)))\b
-      captures:
-        1: punctuation.definition.tag.begin.html.html5
-        2: entity.name.tag.html.html5
-      set: [
-        meta-inline,
-        close-tag,
-        close-open-tag
-      ]
-
-  pop-now:
+  meta:
+    - meta_scope: meta.tag.form.html.html5
     - match: ""
       pop: true
+
+  other-elements:
+    # Closing tag.
+    - match: (</)({{otherTags}})(>)
+      captures:
+        0: meta.tag.close.html.html5
+        1: punctuation.definition.tag.begin.html.html5
+        2: entity.name.tag.html.html5
+        3: punctuation.definition.tag.end.html.html5
+      set: meta
+    # Open tag.
+    - match: (<)({{otherTags}})\b
+      captures:
+        1: punctuation.definition.tag.begin.html.html5
+        2: entity.name.tag.html.html5
+      set: [ meta, close-open-tag ]
 
   void-elements:
     - match: (<)(input)\b
       captures:
         1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
-      set: [ meta-inline, close-open-tag ]
+      set: [ meta, close-open-tag ]

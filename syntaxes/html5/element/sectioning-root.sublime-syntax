@@ -17,24 +17,29 @@ hidden: true
 
 scope: ...
 
+variables:
+  # blockquote, body, details, dialog, figure, td
+  tags: (?>b(?>lockquote|ody)|d(?>etails|ialog)|figure|td)
+
 contexts:
   main:
-    # blockquote, body, details, dialog, figure, td
-    - match: \s*(<)((?>b(?>lockquote|ody)|d(?>etails|ialog)|figure|td))\b
+    # Closing tag.
+    - match: (</)({{tags}})(>)
+      captures:
+        0: meta.tag.close.html.html5
+        1: punctuation.definition.tag.begin.html.html5
+        2: entity.name.tag.html.html5
+        3: punctuation.definition.tag.end.html.html5
+      set: meta
+    # Open tag.
+    - match: \s*(<)({{tags}})\b
       captures:
         1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
-      set: [
-        meta,
-        close-tag,
-        close-open-tag
-      ]
+      set: [ meta, close-open-tag ]
 
   close-open-tag:
     - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
-
-  close-tag:
-    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#simple-closing-tag
 
   meta:
     - meta_scope: meta.tag.block.sectioning.root.html.html5

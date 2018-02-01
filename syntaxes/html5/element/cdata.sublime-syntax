@@ -17,6 +17,7 @@ hidden: true
 
 scope: ...
 
+# https://w3c.github.io/html/syntax.html#cdata-sections
 contexts:
   main:
     - match: (<!\[)(CDATA)(\[)

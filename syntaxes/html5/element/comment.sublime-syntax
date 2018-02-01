@@ -17,6 +17,7 @@ hidden: true
 
 scope: ...
 
+# https://w3c.github.io/html/syntax.html#comments
 contexts:
   main:
     - match: <!--

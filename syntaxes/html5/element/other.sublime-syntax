@@ -19,22 +19,16 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        (<)
-        ((?> area
-          # base, br
-          | b(?>ase|r)
-          | col
-          | hr
-          | keygen
-          | link
-          | meta
-          | param
-          | source
-          | track
-          | wbr
-        ))\b
+    # Closing tag.
+    - match: (</)(\w+)(>)
+      captures:
+        0: meta.tag.close.html.html5
+        1: punctuation.definition.tag.begin.html.html5
+        2: entity.name.tag.html.html5
+        3: punctuation.definition.tag.end.html.html5
+      set: meta
+    # Open tag.
+    - match: (<)(\w+)\b
       captures:
         1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.inline.any.html.html5
@@ -44,6 +38,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
 
   meta:
-    - meta_scope: meta.tag.inline.void.html.html5
+    - meta_scope: meta.tag.html.html5
     - match: ""
       pop: true

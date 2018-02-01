@@ -187,6 +187,6 @@ contexts:
           | w(?>idth|rap)
         )\b(?!-)
       scope: >-
-        meta.builtin-attribute.html.html5
+        meta.attribute.builtin.html.html5
         entity.other.attribute-name.html.html5
       pop: true

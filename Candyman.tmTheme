@@ -1370,16 +1370,27 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
+				<string>#e57373</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.builtin-attribute .entity.other.attribute-name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
 				<string>#00e5ff</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.other.attribute-name.builtin</string>
+			<string>.meta.data-attribute .entity.other.attribute-name</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 				<key>foreground</key>
-				<string>#ff8a65</string>
+				<string>#cfd8dc</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1413,7 +1424,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.tag.block.form.sectioning.root .entity.name.tag, .meta.tag.block.sectioning.root .entity.name.tag</string>
+			<string>.meta.tag.form.sectioning.root .entity.name.tag, .meta.tag.sectioning.root .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1422,7 +1433,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.tag.block.form.sectioning.root .punctuation.definition.tag, .meta.tag.block.sectioning.root .punctuation.definition.tag</string>
+			<string>.meta.tag.form.sectioning.root .punctuation.definition.tag, .meta.tag.sectioning.root .punctuation.definition.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1431,7 +1442,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.tag.block.sectioning .entity.name.tag</string>
+			<string>.meta.tag.sectioning .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1440,7 +1451,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.tag.block.sectioning .punctuation.definition.tag</string>
+			<string>.meta.tag.sectioning .punctuation.definition.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1482,7 +1493,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#bcaaa4</string>
+				<string>#b0bec5</string>
 			</dict>
 		</dict>
 		<dict>

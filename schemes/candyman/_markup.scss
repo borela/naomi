@@ -45,11 +45,20 @@
 
 // Attributes.
 .entity.other.attribute-name {
+  foreground: $red-300;
+}
+
+// Builtin attribute.
+.meta.builtin-attribute
+.entity.other.attribute-name {
   foreground: $cyan-a400;
 }
 
-.entity.other.attribute-name.builtin {
-  foreground: $deep-orange-300;
+// Data attribute.
+.meta.data-attribute
+.entity.other.attribute-name {
+  foreground: $blue-grey-100;
+  fontStyle: italic;
 }
 
 // CDATA/DOCTYPE/JSX Component tag.
@@ -73,8 +82,8 @@
 }
 
 // Sectioning root element.
-.meta.tag.block.form.sectioning.root,
-.meta.tag.block.sectioning.root {
+.meta.tag.form.sectioning.root,
+.meta.tag.sectioning.root {
   .entity.name.tag {
     foreground: $green-300;
   }
@@ -84,7 +93,7 @@
 }
 
 // Sectioning element.
-.meta.tag.block.sectioning {
+.meta.tag.sectioning {
   .entity.name.tag {
     foreground: $deep-purple-200;
   }
@@ -92,14 +101,3 @@
     foreground: rgba($deep-purple-200, .5);
   }
 }
-
-// Form element.
-// .meta.tag.block.form,
-// .meta.tag.inline.form {
-//   .entity.name.tag {
-//     foreground: $teal-500;
-//   }
-//   .punctuation.definition.tag {
-//     foreground: rgba($teal-500, .5);
-//   }
-// }

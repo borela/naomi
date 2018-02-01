@@ -20,5 +20,7 @@ scope: ...
 contexts:
   main:
     - match: (?i)data-[_:[:alnum:]\-.]*
-      scope: entity.other.attribute-name.data.html.html5
+      scope: >-
+        meta.data-attribute.html.html5
+        entity.other.attribute-name.html.html5
       pop: true

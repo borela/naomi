@@ -186,5 +186,7 @@ contexts:
           # width, wrap
           | w(?>idth|rap)
         )\b(?!-)
-      scope: entity.other.attribute-name.builtin.html.html5
+      scope: >-
+        meta.builtin-attribute.html.html5
+        entity.other.attribute-name.html.html5
       pop: true

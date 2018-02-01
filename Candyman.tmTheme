@@ -1352,7 +1352,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#BCAAA480</string>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1370,21 +1370,30 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#e57373</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.meta.builtin-attribute .entity.other.attribute-name</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
 				<string>#00e5ff</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.data-attribute .entity.other.attribute-name</string>
+			<string>.entity.other.attribute-name.id</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ea80fc</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.attribute.builtin .entity.other.attribute-name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff8a65</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.attribute.data .entity.other.attribute-name</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>

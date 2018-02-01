@@ -31,7 +31,7 @@
     foreground: $brown-200;
   }
   .punctuation.definition.tag {
-    foreground: rgba($brown-200, .5);
+    foreground: $brown-200;
   }
 }
 
@@ -45,17 +45,21 @@
 
 // Attributes.
 .entity.other.attribute-name {
-  foreground: $red-300;
-}
-
-// Builtin attribute.
-.meta.builtin-attribute
-.entity.other.attribute-name {
   foreground: $cyan-a400;
 }
 
+.entity.other.attribute-name.id {
+  foreground: $purple-a100;
+}
+
+// Builtin attribute.
+.meta.attribute.builtin
+.entity.other.attribute-name {
+  foreground: $deep-orange-300;
+}
+
 // Data attribute.
-.meta.data-attribute
+.meta.attribute.data
 .entity.other.attribute-name {
   foreground: $blue-grey-100;
   fontStyle: italic;

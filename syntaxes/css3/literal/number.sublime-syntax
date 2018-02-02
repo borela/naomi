@@ -21,18 +21,42 @@ variables:
   literalDecimal: "[0-9]+"
 
   literalFloat: |
-    -?a
+    [+-]?
     (?> [0-9]*[.]{{literalDecimal}}
-      | {{literalDecimal}}[.][0-9]*
+      | {{literalDecimal}}[.][0-9]+
     )
 
   scientificNotation: |
-    -?
     (?> {{literalFloat}}
-      | {{literalDecimal}}
+      | [+-]?{{literalDecimal}}
     )
     [e][+-]?
     {{literalDecimal}}
+
+  unit: |
+    (?> %
+      | cap
+      | ch
+      | cm
+      | em
+      | ex
+      | ic
+      | in
+      | lh
+      | mm
+      | pc
+      | pt
+      | px
+      | q
+      | rem
+      | rlh
+      | vb
+      | vh
+      | vi
+      | vmax
+      | vmin
+      | vw
+    )\b
 
 contexts:
   main:
@@ -40,23 +64,35 @@ contexts:
     - include: integer
 
   float:
-    - match: (?xi){{scientificNotation}}(?=\s|>|$)
-      scope: constant.numeric.float.scientific.css.css3
+    - match: (?xi){{scientificNotation}}({{unit}})?
+      captures:
+        0: constant.numeric.float.scientific.css.css3
+        1: keyword.other.unit.css.css3
       pop: true
-    - match: (?x){{literalFloat}}(?=\s|>|$)
-      scope: constant.numeric.float.css.css3
+    - match: (?x){{literalFloat}}({{unit}})?
+      captures:
+        0: constant.numeric.float.css.css3
+        1: keyword.other.unit.css.css3
       pop: true
 
   integer:
-    - match: (?i)-?0b[01]+(?=\s|>|$)
-      scope: constant.numeric.binary.css.css3
+    - match: (?i)-?0b[01]+({{unit}})?
+      captures:
+        0: constant.numeric.binary.css.css3
+        1: keyword.other.unit.css.css3
       pop: true
-    - match: (?:-?0[0-7]+)(?=\s|>|$)
-      scope: constant.numeric.octal.css.css3
+    - match: (?:-?0[0-7]+)({{unit}})?
+      captures:
+        0: constant.numeric.octal.css.css3
+        1: keyword.other.unit.css.css3
       pop: true
-    - match: (?i)-?0[x][0-9a-f]+(?=\s|>|$)
-      scope: constant.numeric.hex.css.css3
+    - match: (?i)-?0[x][0-9a-f]+({{unit}})?
+      captures:
+        0: constant.numeric.hex.css.css3
+        1: keyword.other.unit.css.css3
       pop: true
-    - match: (?:-?[1-9][0-9]*|0)(?=\s|>|$)
-      scope: constant.numeric.decimal.css.css3
+    - match: (?:-?[1-9][0-9]*|0)({{unit}})?
+      captures:
+        0: constant.numeric.decimal.css.css3
+        1: keyword.other.unit.css.css3
       pop: true

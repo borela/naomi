@@ -19,15 +19,15 @@ scope: ...
 
 contexts:
   main:
-    - match: ""
-      set: [ optional-tail, head ]
+    - match: \{
+      scope: punctuation.section.property-list.begin.css.css3
+      set: delimiter
 
-  head:
-    - include: Packages/Naomi/syntaxes/css3/selector/id.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/selector/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/selector/type.sublime-syntax
-
-  optional-tail:
-    - match: (?=[,{])
+  delimiter:
+    - meta_scope: meta.property-list.css.css3
+    - match: \}
+      scope: punctuation.section.property-list.end.css.css3
       pop: true
-    - include: Packages/Naomi/syntaxes/css3/combinator.sublime-syntax
+    - match: ;
+      scope: punctuation.terminator.css.css3
+    # - include: Packages/Naomi/syntaxes/css3/selector-expression.sublime-syntax

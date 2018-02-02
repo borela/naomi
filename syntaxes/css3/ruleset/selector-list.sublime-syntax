@@ -20,14 +20,29 @@ scope: ...
 contexts:
   main:
     - match: ""
-      set: [ optional-tail, head ]
+      set: [
+        meta-selector-list,
+        delimiter,
+        meta-selector,
+        selector-expression
+      ]
 
-  head:
-    - include: Packages/Naomi/syntaxes/css3/selector/id.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/selector/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/selector/type.sublime-syntax
-
-  optional-tail:
-    - match: (?=[,{])
+  delimiter:
+    - match: (?=\{)
       pop: true
-    - include: Packages/Naomi/syntaxes/css3/combinator.sublime-syntax
+    - match: \,
+      scope: punctuation.separator.comma.css.css3
+      push: [ meta-selector, selector-expression ]
+
+  meta-selector:
+    - meta_content_scope: meta.selector.css.css3
+    - match: ""
+      pop: true
+
+  meta-selector-list:
+    - meta_content_scope: meta.selector-list.css.css3
+    - match: ""
+      pop: true
+
+  selector-expression:
+    - include: Packages/Naomi/syntaxes/css3/selector-expression.sublime-syntax

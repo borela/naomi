@@ -20,12 +20,15 @@ scope: ...
 contexts:
   main:
     - match: (?=\S)
-      set: [ tail, head ]
+      set: [ meta, block, selector-list ]
 
-  head:
-    - include: Packages/Naomi/syntaxes/css3/selector/id.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/selector/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/selector/type.sublime-syntax
+  block:
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block.sublime-syntax
 
-  tail:
-    - include: Packages/Naomi/syntaxes/css3/combinator.sublime-syntax
+  meta:
+    - meta_scope: meta.rule-set.css.css3
+    - match: ""
+      pop: true
+
+  selector-list:
+    - include: Packages/Naomi/syntaxes/css3/ruleset/selector-list.sublime-syntax

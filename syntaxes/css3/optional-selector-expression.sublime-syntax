@@ -13,17 +13,15 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: CSS 3
+hidden: true
 
-file_extensions:
-  - css
-  - css3
-
-scope: source.css.css3
+scope: ...
 
 contexts:
   main:
-    # - match: ...
-    #   scope: keyword
+    - include: expression-escape
     - include: Packages/Naomi/syntaxes/css3/selector-expression.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax
+
+  expression-escape:
+    - match: (?=[,;:)\]}])
+      pop: true

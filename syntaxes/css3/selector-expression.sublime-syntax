@@ -32,6 +32,9 @@ contexts:
     - match: (?=[,{])
       pop: true
     - include: Packages/Naomi/syntaxes/css3/combinator.sublime-syntax
+    - match: (?=\[)
+      push:
+        - include: Packages/Naomi/syntaxes/css3/selector/attribute.sublime-syntax
     - match: (?=:)
       push:
         - include: Packages/Naomi/syntaxes/css3/selector/pseudo-element.sublime-syntax

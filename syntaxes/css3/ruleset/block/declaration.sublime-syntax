@@ -17,21 +17,28 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [_[:alpha:]\-]
+    [_[:alnum:]\-.]*
+
 contexts:
   main:
-    - match: \{
-      scope: punctuation.section.property-list.begin.css.css3
-      set: delimiter
+    - match: (?xi)(?={{commonIdentifier}}\s*:)
+      set: [ delimiter, attribute ]
 
-  declaration:
-    - include: Packages/Naomi/syntaxes/css3/ruleset/block/declaration.sublime-syntax
+  attribute:
+    - include: Packages/Naomi/syntaxes/css3/attribute.sublime-syntax
 
   delimiter:
-    - meta_scope: meta.property-list.css.css3
-    - match: \}
-      scope: punctuation.section.property-list.end.css.css3
+    - match: ":"
+      scope: punctuation.separator.key-value.css.css3
+      set: [ meta, optional-value ]
+
+  meta:
+    - meta_scope: meta.property-value.css.css3
+    - match: ""
       pop: true
-    - match: ;
-      scope: punctuation.terminator.css.css3
-    - match: (?=\S)
-      push: declaration
+
+  optional-value:
+    - include: Packages/Naomi/syntaxes/css3/optional-value.sublime-syntax

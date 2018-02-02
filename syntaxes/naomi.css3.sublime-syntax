@@ -23,7 +23,4 @@ scope: source.css.css3
 
 contexts:
   main:
-    # - match: ...
-    #   scope: keyword
-    - include: Packages/Naomi/syntaxes/css3/selector-expression.sublime-syntax
-    # - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax

@@ -30,4 +30,10 @@ contexts:
       set: optional-selector-expression
 
   optional-selector-expression:
-    - include: Packages/Naomi/syntaxes/css3/optional-selector-expression.sublime-syntax
+    - match: (?=[,{])
+      pop: true
+    - match: (?=\S)
+      set: selector-expression
+
+  selector-expression:
+    - include: Packages/Naomi/syntaxes/css3/selector-expression.sublime-syntax

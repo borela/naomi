@@ -26,6 +26,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/css3/selector/id.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/selector/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/selector/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/universal.sublime-syntax
 
   optional-tail:
     - match: (?=[,{])

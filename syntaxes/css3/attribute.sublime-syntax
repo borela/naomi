@@ -1,0 +1,102 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [_[:alnum:]\-.]*
+
+  coreAttributes: |
+    # align-content, align-items
+    (?> align-(?>content|items)
+      | animation
+      # background, background-color, background-image, background-size
+      | background(?:-(?>color|image|size))?
+      # border, border-collapse, border-color, border-radius, border-spacing
+      | border(?:-(?>collapse|color|radius|spacing))?
+      | bottom
+      # box-shadow, box-sizing
+      | box-(?>shadow|sizing)
+      | content
+      | color
+      | cursor
+      | display
+      | fill
+      # flex, flex-basis, flex-direction, flex-flow, flex-grow, flex-shrink, flex-wrap
+      | flex(?:-(?>basis|direction|flow|grow|shrink|wrap))?
+      | float
+      # font, font-family, font-size, font-style, font-weight
+      | font(?:-(?>family|size|style|weight))?
+      | height
+      | justify-content
+      | left
+      | letter-spacing
+      | line-height
+      # margin, margin-bottom, margin-left, margin-right, margin-top
+      | margin(?:-(?>bottom|left|right|top))?
+      # max-height, max-width
+      | max-(?>height|width)
+      # min-height, min-width
+      | min(?>height|width)
+      | opacity
+      | orientation
+      | overflow
+      | outline
+      # padding, padding-bottom, padding-left, padding-right, padding-top
+      | padding(?:-(?>bottom|left|right|top))?
+      | pointer-events
+      | position
+      | right
+      | src
+      | stroke(?:-width)?
+      # text-align, text-decoration, text-transform
+      | text-(?>align|decoration|transform)
+      | top
+      # transform, transform-origin
+      | transform(?:-origin)?
+      # transition, transition-duration, transition-timing-function
+      | transition(?:-(?>duration|timing-function))?
+      | type
+      | vertical-align
+      | unicode-range
+      | white-space
+      | width
+      | z-index
+    )
+
+contexts:
+  main:
+    - include: core
+    - include: other
+
+  core:
+    - match: (?xi){{coreAttributes}}
+      scope: support.type.property-name.css.css3
+      pop: true
+
+  # Used on attribute selector.
+  entity:
+    - match: (?xi){{coreAttributes}}
+      scope: entity.other.attribute-name.css.css3
+      pop: true
+
+  other:
+    - match: (?xi){{commonIdentifier}}
+      scope: variable.other.type.property-name.css.css3
+      pop: true

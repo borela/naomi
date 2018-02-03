@@ -24,13 +24,18 @@ variables:
 
 contexts:
   main:
-    - match: (?xi)(?={{commonIdentifier}}\s*:)
+    - match: (?xi)(?={{commonIdentifier}})
       set: [ delimiter, attribute ]
 
   attribute:
+    - include: comment
     - include: Packages/Naomi/syntaxes/css3/attribute.sublime-syntax
 
+  comment:
+    - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+
   delimiter:
+    - include: comment
     - match: ":"
       scope: punctuation.separator.key-value.css.css3
       set: [ meta, optional-value ]
@@ -41,4 +46,5 @@ contexts:
       pop: true
 
   optional-value:
+    - include: comment
     - include: Packages/Naomi/syntaxes/css3/optional-value.sublime-syntax

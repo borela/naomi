@@ -22,8 +22,159 @@ variables:
     [_[:alpha:]]
     [_[:alnum:]\-]*
 
+  tags: |
+    (?> a
+        # abbr
+        (?> bbr
+          # address
+          | ddress
+          # area
+          | rea
+          # article
+          | rticle
+          # aside
+          | side
+          # audio
+          | udio
+        )?
+      | b
+        # base
+        (?> ase
+          # bdi, bdo
+          | d[io]
+          # blockquote
+          | lockquote
+          # body
+          | ody
+          # br
+          | r
+          # button
+          | utton
+        )?
+      # canvas, caption
+      | ca(?>nvas|ption)
+      | cite
+      | code
+      # col, colgroup
+      | col(?:group)?
+      # data, datalist
+      | data(?:list)?
+      | dd
+      | del
+      | details
+      | dfn
+      | dialog
+      | div
+      # dl, dt
+      | d[lt]
+      # em, embed
+      | em(?:bed)?
+      | fieldset
+      | figcaption
+      | figure
+      | footer
+      | form
+      | h1
+      # head, header
+      | head(?:er)?
+      | hgroup
+      | hr
+      | html
+      | i
+        # iframe
+        (?> frame
+          # img
+          | mg
+          # input
+          | nput
+          # ins
+          | ns
+        )?
+      | kbd
+      | label
+      | legend
+      # li, link
+      | li(?:nk)?
+      # main, map, mark
+      | ma(?>in|p|rk)
+      # meta, meter
+      | met(?>a|er)
+      | nav
+      | nextid
+      | noscript
+      | object
+      | ol
+      # optgroup, option
+      | opt(?>group|ion)
+      | output
+      | p
+        # param
+        (?> aram
+          # picture
+          | icture
+          # pre
+          | re
+          # progress
+          | rogress
+        )?
+      | q
+      # rp, rt, rtc
+      | r(?>p|tc?)
+      | ruby
+      | s
+        # sup
+        (?> amp
+          # script
+          | cript
+          # section
+          | ection
+          # select
+          | elect
+          # slot
+          | lot
+          # small
+          | mall
+          # source
+          | ource
+          # span
+          | pan
+          # strong
+          | trong
+          # style
+          | tyle
+          # sub
+          | ub
+          # summary
+          | ummary
+          # sup
+          | up
+        )?
+      | table
+      | tbody
+      | td
+      | template
+      | textarea
+      | tfoot
+      # th, thead
+      | th(?:ead)?
+      # time, title
+      | ti(?>me|tle)
+      # tr, track
+      | tr(?:ack)?
+      # u, ul
+      | ul?
+      | var
+      | video
+      | wbr
+    )
+
 contexts:
   main:
-    - match: (?xi){{commonIdentifier}}
+    # HTML5 tags.
+    - match: (?xi){{tags}}\b
       scope: entity.name.tag.css.cs3
+      pop: true
+    # Other tags.
+    - match: (?xi){{commonIdentifier}}\b
+      scope: variable.other.tag.css.cs3
       pop: true

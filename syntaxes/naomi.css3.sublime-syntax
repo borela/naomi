@@ -23,4 +23,5 @@ scope: source.css.css3
 
 contexts:
   main:
+    - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax

@@ -10,12 +10,16 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.string {
-  foreground: $pink-a200;
-  background: rgba($pink-a200, .1);
+.source.yaml .string {
+  background: $blue-gray-900;
 }
 
-string.regexp {
+.string {
+  foreground: $pink-a200;
+  background: rgba($pink-a200, .15);
+}
+
+.string.regexp {
   foreground: $teal-400;
   background: $blue-gray-900;
 

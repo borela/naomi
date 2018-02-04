@@ -22,10 +22,56 @@ variables:
     [_[:alpha:]]
     [_[:alnum:]\-]*
 
+  corePseudoClasses: |
+    (?> active
+      # any, any-link
+      | any(?:-link)?
+      | checked
+      | default
+      | disabled
+      | empty
+      | enabled
+      # first, first-child, first-of-type
+      | first(?:-(?>child|of-type))?
+      | fullscreen
+      | focus
+      | hover
+      | indeterminate
+      | in-range
+      | invalid
+      | last-(?>child|of-type)
+      | left
+      | link
+      # only-child, only-of-type
+      | only-(?>child|of-type)
+      | optional
+      | out-of-range
+      # read-only, read-write
+      | read-(?>only|write)
+      | required
+      | right
+      | root
+      | scope
+      | target
+      | valid
+      | visited
+    )
+
 contexts:
   main:
+    - include: expected-pseudo-classes
+    - include: fallback
+
+  expected-pseudo-classes:
+    - match: (?xi)(:)({{corePseudoClasses}})
+      captures:
+        0: entity.other.pseudo-class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      pop: true
+
+  fallback:
     - match: (?xi)(:)({{commonIdentifier}})
       captures:
-        0: entity.other.pseudo-class.class.css.cs3
+        0: variable.other.pseudo-class.css.cs3
         1: punctuation.definition.entity.css.css3
       pop: true

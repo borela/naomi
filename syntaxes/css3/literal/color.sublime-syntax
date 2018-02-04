@@ -17,14 +17,20 @@ hidden: true
 
 scope: ...
 
+variables:
+  hex: "[0-9a-f]"
+
 contexts:
   main:
-    - match: (?=[;\]])
+    # RGB
+    - match: (?i)(\#)({{hex}}{3}|{{hex}}{6})\b
+      scope: constant.other.color.rgb-value.css
+      captures:
+        1: punctuation.definition.constant.css
       pop: true
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/css3/literal/color.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/literal/number.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/literal/string/single-quoted.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/literal/string/unquoted.sublime-syntax
+    # RGBA.
+    - match: (?i)(\#)({{hex}}{4}|{{hex}}{8})\b
+      scope: constant.other.color.rgba-value.css
+      captures:
+        1: punctuation.definition.constant.css
+      pop: true

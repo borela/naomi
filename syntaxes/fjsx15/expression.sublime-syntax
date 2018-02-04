@@ -29,6 +29,11 @@ contexts:
     # At this point is possible to predict JSX tags before operators because
     # there’s no left operand for a "<" operator to be valid.
     - include: Packages/Naomi/syntaxes/fjsx15/jsx1-early.sublime-syntax
+    # Prevent floating point being highlighted as a dot operator followed by an
+    # integer.
+    - match: (?=\.\d)
+      set:
+        - include: Packages/Naomi/syntaxes/fjsx15/literal/number.sublime-syntax
     # Detect operators as soon as possible.
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     # Open new expression group.

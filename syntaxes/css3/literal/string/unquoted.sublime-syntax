@@ -19,9 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?xi)
-        (?!-?\d|--).
-        [_[:alnum:]\-]*
+    - match: (?i)(?!--).[_[:alnum:]\-]*
       scope: string.unquoted.css.css3
       pop: true

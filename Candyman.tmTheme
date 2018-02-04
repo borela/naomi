@@ -1276,7 +1276,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#00e676</string>
+				<string>#ff80ab</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1296,7 +1296,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff80ab</string>
+				<string>#00e676</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1325,12 +1325,21 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#8d6e63</string>
+				<string>#ffb74d</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.tag, .entity.name.tag</string>
+			<string>.constant.character.entity</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.tag .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1339,11 +1348,20 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.tag .punctuation.definition.tag, .entity.name.tag .punctuation.definition.tag</string>
+			<string>.meta.tag .punctuation.definition.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#BCAAA480</string>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.tag .entity.name.tag.namespace, .meta.tag .punctuation.separator.namespace</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffb74d</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1357,7 +1375,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.tag.other.component, .entity.name.tag.component</string>
+			<string>.entity.other.attribute-name.id</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1366,11 +1384,87 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.tag.other.component .punctuation.definition.tag, .entity.name.tag.component .punctuation.definition.tag</string>
+			<string>.meta.attribute.builtin .entity.other.attribute-name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff8a65</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.attribute.data .entity.other.attribute-name</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#cfd8dc</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.tag.cdata, .entity.name.tag.cdata, .meta.tag.sgml.doctype, .entity.name.tag.doctype, .meta.tag.other.component, .entity.name.tag.component</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ea80fc</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.tag.cdata .punctuation.definition.tag, .entity.name.tag.cdata .punctuation.definition.tag, .meta.tag.sgml.doctype .punctuation.definition.tag, .entity.name.tag.doctype .punctuation.definition.tag, .meta.tag.other.component .punctuation.definition.tag, .entity.name.tag.component .punctuation.definition.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#EA80FC80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.other.inline-data</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FF40811A</string>
+				<key>foreground</key>
+				<string>#ff4081</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.tag.form.sectioning.root .entity.name.tag, .meta.tag.sectioning.root .entity.name.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#81c784</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.tag.form.sectioning.root .punctuation.definition.tag, .meta.tag.sectioning.root .punctuation.definition.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#81C78480</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.tag.sectioning .entity.name.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b39ddb</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.tag.sectioning .punctuation.definition.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#B39DDB80</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1395,11 +1489,20 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.accessor, .punctuation.separator.key-value, .punctuation.terminator</string>
+			<string>.punctuation.accessor, .punctuation.terminator</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff80ab</string>
+				<string>#00e676</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.separator.key-value</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b0bec5</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1411,6 +1514,35 @@
 				<string>#FF40811A</string>
 				<key>foreground</key>
 				<string>#ff4081</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>string.regexp</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#263238</string>
+				<key>foreground</key>
+				<string>#26a69a</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>string.regexp .punctuation.definition.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#26a69a</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>string.regexp .keyword.operator, string.regexp .keyword.other</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#26a69a</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1483,6 +1615,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.support.variable</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b388ff</string>
 			</dict>
 		</dict>
 	</array>

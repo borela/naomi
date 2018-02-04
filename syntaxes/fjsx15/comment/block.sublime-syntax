@@ -19,22 +19,16 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(/\*)
-      captures:
-        1: >-
-          comment.block.js.fjsx15
-          punctuation.definition.comment.begin.js.fjsx15
+    - match: /\*
+      scope: punctuation.definition.comment.begin.js.fjsx15
       set: block
 
   block:
-    - meta_content_scope: comment.block.js.fjsx15
+    - meta_scope: comment.block.js.fjsx15
     - include: email-no-pop
     - include: link-no-pop
-    - match: \s*(\*/)
-      captures:
-        1: >-
-          comment.block.js.fjsx15
-          punctuation.definition.comment.end.js.fjsx15
+    - match: \*/
+      scope: punctuation.definition.comment.end.js.fjsx15
       pop: true
 
   email-no-pop:

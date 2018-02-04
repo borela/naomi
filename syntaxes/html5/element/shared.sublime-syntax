@@ -18,29 +18,25 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
+  elementIdentifier: |
     [$_[:alpha:]]
-    [$_.:[:alnum:]]*
+    [$_.[:alnum:]\-]*
 
 contexts:
   main:
-    - match: \s*(<)\s*(>)
-      captures:
-        1: punctuation.definition.tag.begin.jsx.jsx1
-        2: punctuation.definition.tag.end.jsx.jsx1
-      push: [
-        meta-scope,
-        closing-tag,
-        optional-content
-      ]
-
-  meta-scope:
-    - meta_scope: meta.tag.other.fragment.jsx.jsx1
     - match: ""
+      set: trap
+
+  attribute:
+    - include: Packages/Naomi/syntaxes/html5/attribute.sublime-syntax
+
+  close-open-tag:
+    - match: \/?>
+      scope: punctuation.definition.tag.end.html.html5
       pop: true
+    - match: (?=\S)
+      push: attribute
 
-  closing-tag:
-    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax#closing-tag
-
-  optional-content:
-    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax#optional-content
+  trap:
+    - match: .
+      scope: trap.html5

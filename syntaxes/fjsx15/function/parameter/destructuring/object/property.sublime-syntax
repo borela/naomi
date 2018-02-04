@@ -25,67 +25,53 @@ variables:
 contexts:
   main:
     # String property name.
-    - match: (?=\s*(?>'|"|`))
+    - match: (?=(?>'|"|`))
       set: [
         optional-alias,
         string
       ]
     # Computed property name.
-    - match: \s*(\[)
-      captures:
-        1: >-
-          destructuring.object.js.fjsx15
-          punctuation.definition.object.computed-property.begin.js.fjsx15
+    - match: \[
+      scope: punctuation.definition.object.computed-property.begin.js.fjsx15
       set: [
         optional-alias,
         computed-property-end,
         optional-expression
       ]
     # Normal property with an alias.
-    - match: |
-        (?xi)
-        \s*({{commonIdentifier}})
-        (?=\s*:)
-      captures:
-        1: >-
-          destructuring.object.js.fjsx15
-          object.property.js.fjsx15
-          entity.name.variable.js.fjsx15
+    - match: (?xi){{commonIdentifier}}(?=\s*:)
+      scope: >-
+        object.property.js.fjsx15
+        entity.name.variable.js.fjsx15
       set: optional-alias
 
-  string:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  computed-property-end:
+    - match: \]
+      scope: punctuation.definition.object.computed-property.end.js.fjsx15
+      pop: true
 
   optional-alias:
-    - match: \s*(:)
-      captures:
-        1: >-
-          destructuring.object.js.fjsx15
-          keyword.operator.other.association.js.fjsx15
+    - match: ":"
+      scope: keyword.operator.other.association.js.fjsx15
       set: optional-parameter
-    - match: (?=\s*\S)
+    - match: (?=\S)
       pop: true
 
   optional-parameter:
     - include: comment-no-pop
-    - match: (?=\s*\))
+    - match: (?=\))
       pop: true
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/destructuring/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/destructuring/object.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/simple.sublime-syntax
 
-  comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
-  computed-property-end:
-    - match: \s*(])
-      captures:
-        1:  >-
-          destructuring.object.js.fjsx15
-          punctuation.definition.object.computed-property.end.js.fjsx15
-      pop: true
+  string:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax

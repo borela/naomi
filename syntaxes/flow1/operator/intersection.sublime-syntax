@@ -19,9 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(&)
-      captures:
-        1: keyword.operator.other.intersection.flow
+    - match: \&
+      scope: keyword.operator.other.intersection.flow
       set: optional-type-expression
 
   optional-type-expression:

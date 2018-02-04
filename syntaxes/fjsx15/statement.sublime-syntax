@@ -47,113 +47,28 @@ contexts:
     - include: try-catch-finally
     - include: yield
 
-  optional-statements-and-expressions:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
-
-  optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
-
-  optional-await:
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/await.sublime-syntax#just-pop
-    - match: (?=\s*\S)
-      pop: true
-
   asi-checked-optional-expression:
     - match: (?=\s*\n)
       pop: true
     - include: optional-expression
 
-  header-end:
-    - match: \s*(\))
-      captures:
-        1: punctuation.section.group.end.js.fjsx15
-      pop: true
-
-  # expression-only-header:
-  #   - match: \s*(\()
-  #     captures:
-  #       1: punctuation.section.group.begin.js.fjsx15
-  #     set: [
-  #       meta-group,
-  #       # header-end,
-  #       optional-expression
-  #     ]
-
-  statements-and-expressions-header:
-    - match: \s*(\()
-      captures:
-        1: punctuation.section.group.begin.js.fjsx15
-      set: [
-        meta-group,
-        header-end,
-        statements-and-expressions-header-content
-      ]
-
-  statements-and-expressions-header-content:
-    - match: (?=\s*\))
-      pop: true
-    - match: ""
-      push:
-        - include: optional-statements-and-expressions
-        - match: ""
-          pop: true
-
-  meta-group:
-    - meta_scope: meta.group.js.fjsx15
-    - match: ""
-      pop: true
-
-  meta-conditional:
-    - meta_content_scope: meta.conditional.js.fjsx15
-    - match: ""
-      pop: true
-
-  meta-loop-dowhile:
-    - meta_content_scope: meta.loop.for.js.fjsx15
-    - match: ""
-      pop: true
-
-  meta-loop-for:
-    - meta_content_scope: meta.loop.for.js.fjsx15
-    - match: ""
-      pop: true
-
-  meta-switch:
-    - meta_content_scope: meta.switch.js.fjsx15
-    - match: ""
-      pop: true
-
-  # optional-expression-only-header:
-  #   - include: expression-only-header
-  #   - match: (?=\s*\S)
-  #     pop: true
-
   block:
-    - match: \s*({)
-      captures:
-        1: >-
-          meta.block.js.fjsx15
-          punctuation.section.block.begin.js.fjsx15
-      set: [
-        block-end,
-        optional-statements-and-expressions
-      ]
+    - match: \{
+      scope: punctuation.section.block.begin.js.fjsx15
+      set: block-end
 
   block-end:
-    - meta_content_scope: meta.block.js.fjsx15
-    - match: \s*(})
-      captures:
-        1: >-
-          meta.block.js.fjsx15
-          punctuation.section.block.end.js.fjsx15
+    - meta_scope: meta.block.js.fjsx15
+    - match: \}
+      scope: punctuation.section.block.end.js.fjsx15
       pop: true
     - match: ""
-      push: optional-statements-and-expressions
+      push: optional-statement-or-expression
 
   break-continue:
     - match: |
         (?xi)
-        \s*(?>(break)|(continue))\b
+        (?>(break)|(continue))\b
         (?:\s+({{commonIdentifier}}))?
       captures:
         1: keyword.control.flow.break.js.fjsx15
@@ -161,143 +76,176 @@ contexts:
         3: entity.name.label.js.fjsx15
       pop: true
 
+  colon:
+    - match: ":"
+      scope: punctuation.separator.js.fjsx15
+      pop: true
+
   debugger:
-    - match: \s*(debugger)\b
-      captures:
-        1: keyword.other.js.fjsx15
+    - match: debugger\b
+      scope: keyword.other.js.fjsx15
       pop: true
 
   do-while:
-    - match: \s*(do)\b
-      captures:
-        1: keyword.control.loop.js.fjsx15
+    - match: do\b
+      scope: keyword.control.loop.js.fjsx15
       pop: true
-    - match: \s*(while)\b
-      captures:
-        1: keyword.control.loop.js.fjsx15
+    - match: while\b
+      scope: keyword.control.loop.js.fjsx15
       set: optional-expression
 
+  else-pop:
+    - match: (?=\S)
+      pop: true
+
   empty:
-    - match: \s*(;)
-      captures:
-        1: punctuation.terminator.js.fjsx15
+    - match: \;
+      scope: punctuation.terminator.js.fjsx15
       pop: true
 
   for:
-    - match: \s*(for)\b
-      captures:
-        1: >-
-          meta.loop.for.js.fjsx15
-          keyword.control.loop.js.fjsx15
+    - match: for\b
+      scope: keyword.control.loop.js.fjsx15
       set: [
         meta-loop-for,
-        optional-statements-and-expressions,
-        statements-and-expressions-header,
+        optional-statement-or-expression,
+        statement-or-expression-header,
         optional-await
       ]
 
   if-else:
-    - match: \s*(if)\b
-      captures:
-        1: >-
-          meta.conditional.js.fjsx15
-          keyword.control.conditional.js.fjsx15
+    - match: if\b
+      scope: keyword.control.conditional.js.fjsx15
       set: [
         meta-conditional,
-        optional-statements-and-expressions,
+        optional-statement-or-expression,
         optional-expression
       ]
-    - match: \s*(else)\b
-      captures:
-        1: >-
-          meta.conditional.js.fjsx15
-          keyword.control.conditional.js.fjsx15
+    - match: else\b
+      scope: keyword.control.conditional.js.fjsx15
       set: [
         meta-conditional,
         optional-else-if
       ]
 
-  optional-else-if:
-    - include: no-meta-if
-    - include: optional-statements-and-expressions
-
-  no-meta-if:
-    - match: \s*(if)\b
-      captures:
-        1: keyword.control.conditional.js.fjsx15
-      set: [
-        optional-statements-and-expressions,
-        optional-expression
-      ]
-
   label:
     - match: |
-        (?xi)\s*
+        (?xi)
         (?!default)
         ({{commonIdentifier}})
         \s*(:)
       captures:
         1: entity.name.label.js.fjsx15
         2: punctuation.separator.js.fjsx15
-      set: optional-statements-and-expressions
+      set: optional-statement-or-expression
+
+  meta-group:
+    - meta_scope: meta.group.js.fjsx15
+    - include: pop-now
+
+  meta-conditional:
+    - meta_scope: meta.conditional.js.fjsx15
+    - include: pop-now
+
+  meta-loop-dowhile:
+    - meta_scope: meta.loop.for.js.fjsx15
+    - include: pop-now
+
+  meta-loop-for:
+    - meta_scope: meta.loop.for.js.fjsx15
+    - include: pop-now
+
+  meta-switch:
+    - meta_scope: meta.switch.js.fjsx15
+    - include: pop-now
+
+  no-meta-if:
+    - match: if\b
+      scope: keyword.control.conditional.js.fjsx15
+      set: [
+        optional-statement-or-expression,
+        optional-expression
+      ]
+
+  optional-await:
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/await.sublime-syntax#just-pop
+    - include: else-pop
+
+  optional-else-if:
+    - include: no-meta-if
+    - include: optional-statement-or-expression
+
+  optional-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  optional-statement-or-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-statement-or-expression.sublime-syntax
+
+  pop-now:
+    - match: ""
+      pop: true
 
   return:
-    - match: \s*(return)\b
-      captures:
-        1: keyword.control.flow.return.js.fjsx15
+    - match: return\b
+      scope: keyword.control.flow.return.js.fjsx15
       set: asi-checked-optional-expression
 
+  statement-or-expression:
+    - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax
+    - include: else-pop
+
+  statement-or-expression-header:
+    - match: \(
+      scope: punctuation.section.group.begin.js.fjsx15
+      set: [
+        meta-group,
+        statement-or-expression-header-end
+      ]
+
+  statement-or-expression-header-end:
+    - match: \)
+      scope: punctuation.section.group.end.js.fjsx15
+      pop: true
+    - match: (?=\S)
+      push: statement-or-expression
+
   switch-case:
-    - match: \s*(switch)\b
-      captures:
-        1: keyword.control.switch.js.fjsx15
+    - match: switch\b
+      scope: keyword.control.switch.js.fjsx15
       set: [
         meta-switch,
         optional-expression
       ]
-    - match: \s*(case)\b
-      captures:
-        1: keyword.control.switch.js.fjsx15
+    - match: case\b
+      scope: keyword.control.switch.js.fjsx15
       set: [
         colon,
         optional-expression
       ]
-    - match: \s*(default)\b
-      captures:
-        1: keyword.control.switch.js.fjsx15
+    - match: default\b
+      scope: keyword.control.switch.js.fjsx15
       set: [
         colon,
         optional-expression
       ]
-
-  colon:
-    - match: \s*(:)
-      captures:
-        1: punctuation.separator.js.fjsx15
-      pop: true
 
   throw:
-    - match: \s*(throw)\b
-      captures:
-        1: keyword.control.flow.break.throw.js.fjsx15
+    - match: throw\b
+      scope: keyword.control.flow.break.throw.js.fjsx15
       set: asi-checked-optional-expression
 
   try-catch-finally:
-    - match: \s*(try)\b
-      captures:
-        1: keyword.control.trycatch.js.fjsx15
+    - match: try\b
+      scope: keyword.control.trycatch.js.fjsx15
       pop: true
-    - match: \s*(catch)\b
-      captures:
-        1: keyword.control.trycatch.js.fjsx15
+    - match: catch\b
+      scope: keyword.control.trycatch.js.fjsx15
       set: optional-expression
-    - match: \s*(finally)\b
-      captures:
-        1: keyword.control.trycatch.js.fjsx15
+    - match: finally\b
+      scope: keyword.control.trycatch.js.fjsx15
       pop: true
 
   yield:
-    - match: \s*(yield)\b
-      captures:
-        1: keyword.control.flow.js.fjsx15
+    - match: yield\b
+      scope: keyword.control.flow.js.fjsx15
       set: optional-expression

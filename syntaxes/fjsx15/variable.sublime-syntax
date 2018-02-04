@@ -92,12 +92,23 @@ contexts:
     - include: object
     - include: simple
 
+  arrow-body:
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/body.sublime-syntax
+
+  assignment:
+    - match: =
+      scope: keyword.operator.assignment.js.fjsx15
+      pop: true
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
   function-assigned-to-variable:
     # Normal arrow function assigned to variable.
     - match: |
         (?x)
         (?=
-          \s*{{commonIdentifier}}
+          {{commonIdentifier}}
           \s*{{type}}?
           \s*=
           \s*(?:async\b)?
@@ -116,7 +127,7 @@ contexts:
     - match: |
         (?x)
         (?=
-          \s*{{commonIdentifier}}
+          {{commonIdentifier}}
           \s*{{type}}?
           \s*=
           \s*(?:async\b)?
@@ -134,7 +145,7 @@ contexts:
     - match: |
         (?x)
         (?=
-          \s*{{commonIdentifier}}
+          {{commonIdentifier}}
           \s*{{type}}?
           \s*=
           \s*(?:async\b)?
@@ -147,45 +158,30 @@ contexts:
         function-identifier
       ]
 
-  comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-
   function:
     - meta_scope: >-
         meta.declaration.function.js.fjsx15
         meta.function.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
 
-  assignment:
-    - match: \s*(=)
-      captures:
-         1: keyword.operator.assignment.js.fjsx15
-      pop: true
-
   function-identifier:
-    - match: |
-        (?xi)
-        \s*({{commonIdentifier}})
-      captures:
-        1: entity.name.function.js.fjsx15
+    - match: (?xi){{commonIdentifier}}
+      scope: entity.name.function.js.fjsx15
       pop: true
-
-  arrow-body:
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/body.sublime-syntax
 
   normal-arrow-function:
     - meta_scope: meta.declaration.function.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/flow1/generic/parameters.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.no-pop.sublime-syntax
-    - match: (?=\s*=>)
+    - match: (?==>)
       set: arrow-body
 
   single-parameter-arrow-function:
     - meta_scope: meta.declaration.function.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/simple.no-pop.sublime-syntax
-    - match: (?=\s*=>)
+    - match: (?==>)
       set: arrow-body
 
   optional-type:
@@ -194,7 +190,7 @@ contexts:
 
   object:
     - match: |
-        (?xi)\s*
+        (?xi)
         (\#)?
         ({{commonIdentifier}})
         (?=\s*\??\.)
@@ -206,7 +202,7 @@ contexts:
   simple:
     # Single character.
     - match: |
-        (?xi)\s*
+        (?xi)
         (\#)?
         ((?> \$\B
           | [_[:alpha:]]\b
@@ -217,7 +213,7 @@ contexts:
       pop: true
     # Two or more characters.
     - match: |
-        (?xi)\s*
+        (?xi)
         (\#)?
         (
           {{commonIdentifier}}

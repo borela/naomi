@@ -26,51 +26,67 @@ contexts:
   main:
     - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax#import-properties
     # Dynamic import.
-    - match: |
-        (?x)\s*
-        (import)\b
-        (?=\s*\()
-      captures:
-        1: support.function.import.js.fjsx15
+    - match: import\b(?=\s*\()
+      scope: support.function.import.js.fjsx15
       set: [
         function-call-meta-scope,
         arguments
       ]
     # Import the entire module.
-    - match: |
-        (?x)\s*
-        (import)\b
-        (?=\s*(?>"|'|`))
-      captures:
-        1: keyword.control.import-export.import.js.fjsx15
+    - match: (?x)import\b(?=\s*(?>"|'|`))
+      scope: keyword.control.import-export.import.js.fjsx15
       set: origin-path
     # Other.
-    - match: |
-        (?x)
-        \s*(import)\b
-      captures:
-        1: keyword.control.import-export.import.js.fjsx15
+    - match: (?x)import\b
+      scope: keyword.control.import-export.import.js.fjsx15
       set: [
         delimiter,
         optional-target
       ]
+
+  alias:
+    - match: as\b
+      scope: keyword.control.import-export.as.js.fjsx15
+      set: alias-name
+
+  alias-name:
+    - match: (?xi){{commonIdentifier}}
+      scope: entity.name.variable.js.fjsx15
+      pop: true
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
+  close-block:
+    - match: \}
+      scope: punctuation.section.block.end.js.fjsx15
+      pop: true
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  delimiter:
+    - include: comment-no-pop
+    - match: \,
+      scope: punctuation.separator.comma.js.fjsx15
+      push: optional-target
+    # From.
+    - include: origin
+    - include: else-pop
+
+  else-pop:
+    - match: (?=\S)
+      pop: true
 
   function-call-meta-scope:
     - meta_scope: meta.function-call.js.fjsx15
     - match: ""
       pop: true
 
-  arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-
-  comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-
   origin:
     - include: comment-no-pop
-    - match: \s*(from)\b
-      captures:
-        1: keyword.control.import-export.origin.js.fjsx15
+    - match: from\b
+      scope: keyword.control.import-export.origin.js.fjsx15
       set: origin-path
 
   origin-path:
@@ -79,70 +95,29 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
-  close-block:
-    - match: \s*(})
-      captures:
-        1: punctuation.section.block.end.js.fjsx15
-      pop: true
-
   optional-target:
     - include: comment-no-pop
-    - match: (?=\s*(?>[,}]|from))
+    - match: (?=(?>[,}]|from))
       pop: true
     # Type.
     - include: Packages/Naomi/syntaxes/flow1/type-import.sublime-syntax
     # All.
-    - match: \s*(\*)
-      captures:
-        1: keyword.control.import-export.star.js.fjsx15
+    - match: \*
+      scope: keyword.control.import-export.star.js.fjsx15
       pop: true
     # Multiple targets.
-    - match: \s*(\{)
-      captures:
-        1: punctuation.section.block.begin.js.fjsx15
+    - match: \{
+      scope: punctuation.section.block.begin.js.fjsx15
       set: [
         close-block,
         delimiter,
         optional-target
       ]
     # Aliased.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-        (?=\s+as)
-      captures:
-        1: variable.other.readwrite.js.fjsx15
+    - match: (?xi){{commonIdentifier}}(?=\s+as)
+      scope: variable.other.readwrite.js.fjsx15
       set: alias
     # Simple.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: entity.name.variable.js.fjsx15
-      pop: true
-
-  delimiter:
-    - include: comment-no-pop
-    - match: \s*(,)
-      captures:
-        1: punctuation.separator.comma.js.fjsx15
-      push: optional-target
-    # From.
-    - include: origin
-    # Anything else.
-    - match: (?=\s*\S)
-      pop: true
-
-  alias:
-    - match: \s*(as)\b
-      captures:
-        1: keyword.control.import-export.as.js.fjsx15
-      set: alias-name
-
-  alias-name:
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: entity.name.variable.js.fjsx15
+    - match: (?xi){{commonIdentifier}}
+      scope: entity.name.variable.js.fjsx15
       pop: true

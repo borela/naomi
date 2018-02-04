@@ -24,23 +24,24 @@ variables:
 
 contexts:
   main:
-    - match: \s*(\[)
-      captures:
-        1: punctuation.section.brackets.begin.flow
+    - match: \[
+      scope: punctuation.section.brackets.begin.flow
       set: [
         optional-associated-type,
         indexer-end,
         optional-name
       ]
 
-  indexer-end:
-    - match: \s*(])
-      captures:
-        1: punctuation.section.brackets.end.flow
-      pop: true
+  associated-type:
+    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
 
-  type-expression:
-    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  indexer-end:
+    - match: \]
+      scope: punctuation.section.brackets.end.flow
+      pop: true
 
   optional-associated-type:
     - include: Packages/Naomi/syntaxes/flow1/optional-associated-type.sublime-syntax
@@ -49,7 +50,7 @@ contexts:
     - include: comment-no-pop
     # Named indexers are similar to function’s parameters.
     - match: |
-        (?xi)\s*
+        (?xi)
         ({{commonIdentifier}})(\?)?
         (?=\s*:)
       captures:
@@ -57,13 +58,13 @@ contexts:
         2: storage.modifier.optional.flow
       set: associated-type
     # Strings.
-    - match: (?=\s*(?>'|"|`))
+    - match: (?=(?>'|"|`))
       set: [
         associated-type,
         string
       ]
     # Other type expressions.
-    - match: (?=\s*\S)
+    - match: (?=\S)
       set: type-expression
 
   string:
@@ -71,8 +72,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
 
-  associated-type:
-    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
-
-  comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+  type-expression:
+    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax

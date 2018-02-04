@@ -18,8 +18,7 @@ hidden: true
 scope: ...
 
 variables:
-  literalDecimal: |
-    [0-9]+
+  literalDecimal: "[0-9]+"
 
   literalFloat: |
     -?
@@ -28,14 +27,12 @@ variables:
     )
 
   scientificNotation: |
-    (
-      -?
-      (?> {{literalFloat}}
-        | {{literalDecimal}}
-      )
-      [e][+-]?
-      {{literalDecimal}}
+    -?
+    (?> {{literalFloat}}
+      | {{literalDecimal}}
     )
+    [e][+-]?
+    {{literalDecimal}}
 
 contexts:
   main:
@@ -43,23 +40,23 @@ contexts:
     - include: integer
 
   float:
-    - match: (?xi){{scientificNotation}}
+    - match: (?xi){{scientificNotation}}(?=\s|>|$)
       scope: constant.numeric.float.scientific.html.html5
       pop: true
-    - match: (?x){{literalFloat}}
+    - match: (?x){{literalFloat}}(?=\s|>|$)
       scope: constant.numeric.float.html.html5
       pop: true
 
   integer:
-    - match: "-?0b[01]+"
+    - match: (?i)-?0b[01]+(?=\s|>|$)
       scope: constant.numeric.binary.html.html5
       pop: true
-    - match: "-?0[0-7]+"
+    - match: (?:-?0[0-7]+)(?=\s|>|$)
       scope: constant.numeric.octal.html.html5
       pop: true
-    - match: "(?i)-?0[x][0-9a-f]+"
+    - match: (?i)-?0[x][0-9a-f]+(?=\s|>|$)
       scope: constant.numeric.hex.html.html5
       pop: true
-    - match: "-?[1-9][0-9]*|0"
+    - match: (?:-?[1-9][0-9]*|0)(?=\s|>|$)
       scope: constant.numeric.decimal.html.html5
       pop: true

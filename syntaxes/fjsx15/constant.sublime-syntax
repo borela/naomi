@@ -29,7 +29,7 @@ contexts:
 
   object:
     - match: |
-        (?x)\s*
+        (?x)
         (\#)?
         ({{constantIdentifier}})
         (?=\s*\??\.)
@@ -41,7 +41,7 @@ contexts:
   normal:
     # Single character.
     - match: |
-        (?x)\s*
+        (?x)
         (\#)?
         ([_[:upper:]])\b
       captures:
@@ -50,7 +50,7 @@ contexts:
       pop: true
     # Two or more characters.
     - match: |
-        (?x)\s*
+        (?x)
         (\#)?
         (
           {{constantIdentifier}}

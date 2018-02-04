@@ -19,8 +19,18 @@ scope: ...
 
 contexts:
   main:
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/html5/attribute.sublime-syntax
-        - match: ""
-          pop: true
+    # Operator quantifier.
+    - match: "[*+]?\\??"
+      scope: keyword.operator.quantifier.regexp.js.fjsx15
+      pop: true
+    # Brace quantifier.
+    - match: |
+        (?x)
+        \{
+          (?> \d+,\d+
+            | \d+,
+            | \d+
+          )
+        }
+      scope: keyword.operator.quantifier.regexp
+      pop: true

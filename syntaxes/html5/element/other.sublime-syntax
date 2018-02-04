@@ -19,147 +19,25 @@ scope: ...
 
 contexts:
   main:
-    - include: void-elements
-    - include: other-elements
-
-  void-elements:
-    - match: |
-        (?x)
-        (<)
-        (
-          (?> area
-            | b
-              (?> ase
-                | r
-              )
-            | col
-            | hr
-            | keygen
-            | link
-            | meta
-            | param
-            | source
-            | track
-            | wbr
-          )
-        )\b
+    # Closing tag.
+    - match: (</)(\w+)(>)
       captures:
-        1: punctuation.definition.tag.begin.html.html5
-        2: entity.name.tag.html.html5
-      set: attributes
-
-  other-elements:
-    - match: |
-        (?x)
-        (<)
-        (
-          (?> a
-              (?> bbr
-                | ddress
-              )?
-            | b(?:d[io])?
-            | c
-              (?> aption
-                | ite
-                | o
-                  (?> lgroup
-                    | de
-                  )
-              )
-            | d
-              (?> ata(?:list)?
-                | [dlt]
-                | e
-                  (?> l
-                    | tails
-                  )
-                | iv
-                | fn
-              )
-            | em
-            | f
-              (?> igcaption
-                | ooter
-              )
-            | h
-              (?> [1-6]
-                | ead(?:er)?
-                | tml
-              )
-            | i(?:ns)?
-            | kbd
-            | li
-            | m
-              (?> a(?>in|p|rk)
-                | eter
-              )
-            | noscript
-            | o
-              (?> l
-                | ptgroup
-                | utput
-              )
-            | p
-              (?:r
-                (?> e
-                  | ogress
-                )
-              )?
-            | q
-            | r
-              (?> [bp]
-                | tc?
-                | uby
-              )
-            | s
-              (?> amp
-                | mall
-                | pan
-                | tyle
-                | trong
-                | u
-                  (?> [bp]
-                    | mmary
-                  )
-              )?
-            | t
-              (?> able
-                | body
-                | emplate
-                | foot
-                | h(?:ead)?
-                | i
-                  (?> me
-                    | tle
-                  )
-                | r
-              )
-            | ul?
-            | var
-          )
-        )\b
-      captures:
-        1: punctuation.definition.tag.begin.html.html5
-        2: entity.name.tag.html.html5
-      set: [
-        content,
-        attributes
-      ]
-
-  attributes:
-    - match: \s*(\>)
-      captures:
-        1: punctuation.definition.tag.end.html.html5
-      pop: true
-    - include: Packages/Naomi/syntaxes/html5/element/attributes.sublime-syntax
-
-  content:
-    - match: |
-        (?x)\s*
-        (</)(\2)(>)
-      captures:
+        0: meta.tag.close.html.html5
         1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
         3: punctuation.definition.tag.end.html.html5
+      set: meta
+    # Open tag.
+    - match: (<)(\w+)\b
+      captures:
+        1: punctuation.definition.tag.begin.html.html5
+        2: entity.name.tag.inline.any.html.html5
+      set: [ meta, close-open-tag ]
+
+  close-open-tag:
+    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
+
+  meta:
+    - meta_scope: meta.tag.html.html5
+    - match: ""
       pop: true
-    - include: Packages/Naomi/syntaxes/html5/element/content.sublime-syntax

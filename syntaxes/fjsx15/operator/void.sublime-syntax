@@ -19,11 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(void)\b
-      captures:
-        1: >-
-          word.js.fjsx15
-          keyword.operator.js.fjsx15
+    - match: void\b
+      scope: keyword.operator.word.void.js.fjsx15
       set: optional-expression
 
   optional-expression:

@@ -17,107 +17,122 @@ hidden: true
 
 scope: ...
 
+variables:
+  processFunctions: |
+    (?> abort
+      | chdir
+      | cpuUsage
+      | cwd
+      | disconnect
+      | emitWarning
+      | exit
+      # getegid, geteuid, getgid, getuid, getgroups
+      | get(?>e[gu]id|[gu]id|groups)
+      | hrtime
+      | initgroups
+      | kill
+      | memoryUsage
+      | nextTick
+      | send
+      # setegid, seteuid, setgid, setuid, setgroups
+      | set(?>e[gu]id|[gu]id|groups)
+      # umask, uptime
+      | u(?>mask|ptime)
+    )\b
+
 contexts:
   main:
-    - include: module
-    - include: process
-    # https://nodejs.org/api/globals.html
-    - include: functions
-    - include: constants
-
-  function-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-
-  module:
-    - match: |
-        (?x)
-        \s*(module)\b
-        (?:
-          \s*(\.)\s*
-          ((?> exports
-            | parent
-          ))\b
-        )?
+    - include: global-constant
+    - include: global-function
+    # Module property or function.
+    - match: (module)\s*(\.)
       captures:
-        1: support.type.object.module.js.fjsx15
+        1: support.type.object.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: support.type.object.module.js.fjsx15
+      set: module-property-or-function
+    # Proccess property or function.
+    - match: (process)\s*(\.)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: process-property-or-function
+    # Just the global objects.
+    - match: (?>module|process)\b
+      scope: support.type.object.js.fjsx15
       pop: true
 
-  process:
-    # Functions.
-    - match: |
-        (?x)
-        \s*(process)\b
-        (?:
-          \s*(\.)\s*
-          ((?> abort
-            | chdir
-            | cpuUsage
-            | cwd
-            | disconnect
-            | emitWarning
-            | exit
-            | get(?>e[gu]id|[gu]id|groups)
-            | hrtime
-            | initgroups
-            | kill
-            | memoryUsage
-            | nextTick
-            | send
-            | set(?>e[gu]id|[gu]id|groups)
-            | u(?>mask|ptime)
-          ))\b
-        )
-      captures:
-        1: support.type.object.module.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.js.fjsx15
-      set: function-arguments
-    # Variables.
-    - match: |
-        (?x)
-        \s*(process)\b
-        (?:
-          \s*(\.)\s*
-          ((?> ar(?>ch|gv0?)
-            | channel
-            | config
-            | connected
-            | env
-            | exec(?>Argv|Path)
-            | exitCode
-            | mainModule
-            | pid
-            | platform
-            | release
-            | std(?>err|in|out)
-            | title
-            | versions?
-          ))\b
-        )?
-      captures:
-        1: support.type.object.module.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.variable.js.fjsx15
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+
+  else-pop:
+    - match: (?=\S)
       pop: true
 
-  functions:
+  function-call-meta-scope:
+    - meta_scope: meta.function-call.js.fjsx15
+    - include: pop-now
+
+  global-constant:
+    - match: __(?>dirname|filename)\b
+      scope: support.constant.js.fjsx15
+      pop: true
+
+  global-function:
     - match: |
-        (?x)\s*
-        ((?> (?>clear|set)Immediate
+        (?x)
+        (?> (?>clear|set)Immediate
           | require
-        ))\b
-      captures:
-        1: support.function.js.fjsx15
-      set: function-arguments
+        )\b
+      scope: support.function.js.fjsx15
+      set: arguments
 
-  constants:
-    - match: |
-        (?x)\s*
-        ((?> __dirname
-          | __filename
-        ))\b
-      captures:
-        1: support.variable.js.fjsx15
+  module-property-or-function:
+    # Properties.
+    - match: (?>exports|parent)\b
+      scope: support.variable.js.fjsx15
       pop: true
+    # Bail.
+    - include: else-pop
+
+  pop-now:
+    - match: ""
+      pop: true
+
+  process-property-or-function:
+    # Function call.
+    - match: (?x){{processFunctions}}(?=\s*\()
+      scope: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: (?x){{processFunctions}}
+      scope: support.function.js.fjsx15
+      pop: true
+    # Properties.
+    - match: |
+        (?x)
+        # arch, argv, argv0
+        (?> ar(?>ch|gv0?)
+          | channel
+          | config
+          | connected
+          | env
+          # execArgv, execPath
+          | exec(?>Argv|Path)
+          | exitCode
+          | mainModule
+          | pid
+          | platform
+          | release
+          # stderr, stdin, stdout
+          | std(?>err|in|out)
+          | title
+          # version, versions
+          | versions?
+        )\b
+      scope: support.variable.js.fjsx15
+      pop: true
+    # Bail.
+    - include: else-pop

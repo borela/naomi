@@ -19,9 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(delete)
-      captures:
-        1: keyword.operator.word.delete.js.fjsx15
+    - match: delete\b
+      scope: keyword.operator.word.delete.js.fjsx15
       set: optional-expression
 
   optional-expression:

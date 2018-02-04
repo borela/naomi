@@ -19,7 +19,6 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\.{3})
-      captures:
-        1: keyword.operator.rest.js.fjsx15
+    - match: \.{3}
+      scope: keyword.operator.rest.js.fjsx15
       pop: true

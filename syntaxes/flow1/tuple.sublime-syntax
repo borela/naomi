@@ -19,19 +19,16 @@ scope: ...
 
 contexts:
   main:
-    - match: \s*(\[)
-      captures:
-        1: punctuation.section.brackets.flow
+    - match: \[
+      scope: punctuation.section.brackets.flow
       set: [ delimiters, optional-type-expression ]
 
   delimiters:
-    - match: \s*(,)
-      captures:
-        1: punctuation.separator.flow
+    - match: \,
+      scope: punctuation.separator.flow
       push: optional-type-expression
-    - match: \s*(])
-      captures:
-        1: punctuation.section.brackets.end.flow
+    - match: \]
+      scope: punctuation.section.brackets.end.flow
       pop: true
 
   optional-type-expression:

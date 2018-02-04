@@ -19,6 +19,21 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=\s*[)\]}])
+    - match: \((?!\?)
+      scope: punctuation.definition.group.begin.regexp.js.fjsx15
+      set: [ meta, close, regex-content ]
+
+  close:
+    - match: \)
+      scope: punctuation.definition.group.end.regexp.js.fjsx15
       pop: true
-    - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax
+    - match:  (?=\S)
+      push: regex-content
+
+  meta:
+    - meta_scope: meta.group.regexp.js.fjsx15
+    - match: ""
+      pop: true
+
+  regex-content:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax#regex-content

@@ -27,25 +27,20 @@ contexts:
   # |    ??      | Nullish coalescing. |
   # |     ?      | Ternary.            |
   main:
-    - match: \s*(\:{2})
-      captures:
-        1: keyword.operator.bind.js.fjsx15
+    - match: \:{2}
+      scope: keyword.operator.bind.js.fjsx15
       set: optional-expression
-    - match: \s*(\?\?)
-      captures:
-        1: keyword.operator.nullish-coalescing.js.fjsx15
+    - match: \?\?
+      scope: keyword.operator.nullish-coalescing.js.fjsx15
       set: optional-expression
-    - match: \s*(\?\.)
-      captures:
-        1: punctuation.accessor.optional-chain.js.fjsx15
+    - match: \?\.
+      scope: punctuation.accessor.optional-chain.js.fjsx15
       set: optional-expression
-    - match: \s*(\.)(?!\.)
-      captures:
-        1: punctuation.accessor.js.fjsx15
+    - match: \.(?!\.)
+      scope: punctuation.accessor.js.fjsx15
       set: optional-expression
-    - match: \s*(\?)
-      captures:
-        1: keyword.operator.ternary.js.fjsx15
+    - match: \?
+      scope: keyword.operator.ternary.js.fjsx15
       set: [
         ternary-else,
         optional-expression
@@ -55,7 +50,6 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
   ternary-else:
-    - match: \s*(:)
-      captures:
-        1: keyword.operator.ternary.js.fjsx15
+    - match: ":"
+      scope: keyword.operator.ternary.js.fjsx15
       set: optional-expression

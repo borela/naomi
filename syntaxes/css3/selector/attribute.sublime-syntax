@@ -24,7 +24,9 @@ contexts:
       set: [ meta, close, optional-value, operator, attribute ]
 
   attribute:
-    - include: Packages/Naomi/syntaxes/css3/attribute.sublime-syntax#entity
+    - include: Packages/Naomi/syntaxes/html5/attribute/builtin.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/attribute/data.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/attribute/other.sublime-syntax
 
   close:
     - match: \]

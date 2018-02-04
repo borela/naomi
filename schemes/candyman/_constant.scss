@@ -24,6 +24,43 @@
   foreground: $deep-orange-a100;
 }
 
+.constant.numeric {
+  foreground: $amber-300;
+
+  &.float {
+    foreground: $deep-purple-200;
+  }
+
+  &.binary {
+    foreground: $deep-orange-300;
+    .punctuation.definition {
+      foreground: $deep-orange-300;
+    }
+  }
+
+  &.octal {
+    foreground: $brown-200;
+    .punctuation.definition {
+      foreground: $brown-200;
+    }
+  }
+
+  &.hex {
+    foreground: $green-300;
+    .punctuation.definition {
+      foreground: $green-300;
+    }
+  }
+}
+
+.constant.other.color {
+  foreground: $deep-purple-200;
+
+  .punctuation.definition.constant {
+    foreground: $deep-purple-200;
+  }
+}
+
 // .constant.language {
 //   foreground: $red-a200;
 //   background: rgba($red-a200, .05);

@@ -167,7 +167,7 @@ contexts:
   name:
     - include: Packages/Naomi/syntaxes/html5/attribute/builtin.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/attribute/data.sublime-syntax
-    - include: Packages/Naomi/syntaxes/html5/attribute/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/html5/attribute/other.sublime-syntax
 
   script:
     - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax

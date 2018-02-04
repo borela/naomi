@@ -25,11 +25,7 @@ variables:
 contexts:
   main:
     - match: (?xi)(?={{commonIdentifier}})
-      set: [ delimiter, attribute ]
-
-  attribute:
-    - include: comment
-    - include: Packages/Naomi/syntaxes/css3/attribute.sublime-syntax
+      set: [ delimiter, property ]
 
   comment:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
@@ -48,3 +44,7 @@ contexts:
   optional-value:
     - include: comment
     - include: Packages/Naomi/syntaxes/css3/optional-value.sublime-syntax
+
+  property:
+    - include: comment
+    - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax

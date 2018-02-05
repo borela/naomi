@@ -63,14 +63,14 @@ contexts:
     - include: fallback
 
   expected-pseudo-classes:
-    - match: (?xi)(:)({{corePseudoClasses}})
+    - match: (?xi)(:){{corePseudoClasses}}
       captures:
         0: entity.other.pseudo-class.css.cs3
         1: punctuation.definition.entity.css.css3
       pop: true
 
   fallback:
-    - match: (?xi)(:)({{commonIdentifier}})
+    - match: (?xi)(:){{commonIdentifier}}
       captures:
         0: variable.other.pseudo-class.css.cs3
         1: punctuation.definition.entity.css.css3

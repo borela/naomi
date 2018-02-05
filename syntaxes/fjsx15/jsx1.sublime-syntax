@@ -27,40 +27,11 @@ contexts:
     - match: (?xi)(?=\s*<(?>\s*>|{{commonIdentifier}}))
       set: [ meta, jsx ]
 
-  comment-and-embedded-js:
-    # Single line comment.
-    - match: (\{\s*/\*)(.*)(\*/\s*})
-      captures:
-        1: >-
-          comment.block.jsx.jsx1
-          punctuation.definition.comment.begin.jsx.jsx1
-        2: comment.block.jsx.jsx1
-        3: >-
-          comment.block.jsx.jsx1
-          punctuation.definition.comment.end.jsx.jsx1
-    # Embedded javascript.
-    - match: \{
-      scope: punctuation.definition.template-expression.begin.jsx.jsx1
-      push: [
-        embedded-js-close,
-        optional-expression
-      ]
-
-  embedded-js-close:
-    - clear_scopes: true
-    - meta_scope: source.js.fjsx15
-    - match: \}
-      scope: punctuation.definition.template-expression.end.jsx.jsx1
-      pop: true
+  jsx:
+    - include: Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax
 
   meta:
     - clear_scopes: true
     - meta_scope: text.html.basic.jsx.jsx1
     - match: ""
       pop: true
-
-  jsx:
-    - include: Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax
-
-  optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

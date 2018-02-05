@@ -28,11 +28,18 @@ contexts:
       scope: punctuation.definition.template-expression.end.html.jsx.jsx1
       pop: true
 
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
   content:
     - clear_scopes: true
     - meta_content_scope: source.js.fjsx15
     - match: (?=})
       pop: true
+    # This is necessary, otherwise the context will be locked if there‘s only a
+    # comment in the embedded code.
+    - include: comment-no-pop
+    # Actual expression.
     - match: (?=\S)
       push: expression
 

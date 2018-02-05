@@ -31,7 +31,7 @@ contexts:
   optional-tail:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
     # Escape.
-    - match: (?=[,{])
+    - match: (?=[,(){}])
       pop: true
     # Operators.
     - include: Packages/Naomi/syntaxes/css3/combinator.sublime-syntax

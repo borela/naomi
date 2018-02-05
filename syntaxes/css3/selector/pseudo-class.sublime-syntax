@@ -60,6 +60,7 @@ variables:
 contexts:
   main:
     - include: expected-pseudo-classes
+    - include: nth-child
     - include: fallback
 
   expected-pseudo-classes:
@@ -75,3 +76,13 @@ contexts:
         0: variable.other.pseudo-class.css.cs3
         1: punctuation.definition.entity.css.css3
       pop: true
+
+  nth-child:
+    - match: (\:)nth\-child\b
+      captures:
+        0: entity.other.pseudo-class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      set: nth-child-arguments
+
+  nth-child-arguments:
+    - include: Packages/Naomi/syntaxes/css3/selector/nth-child/arguments.sublime-syntax

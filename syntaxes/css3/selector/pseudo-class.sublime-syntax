@@ -90,6 +90,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/css3/selector/nth/arguments.sublime-syntax
 
   nth-child:
+    # nth-child, nth-last-child
     - match: (\:)nth(?:-last)?-child\b
       captures:
         0: entity.other.pseudo-class.css.cs3
@@ -97,6 +98,7 @@ contexts:
       set: nth-arguments
 
   nth-of-type:
+    # nth-of-type, nth-last-of-type
     - match: (\:)nth(?:-last)?-of-type\b
       captures:
         0: entity.other.pseudo-class.css.cs3

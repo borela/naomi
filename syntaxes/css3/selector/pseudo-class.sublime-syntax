@@ -86,7 +86,7 @@ contexts:
       set: selector-expression
 
   nth-child:
-    - match: (\:)nth\-child\b
+    - match: (\:)nth(?:-last)?-child\b
       captures:
         0: entity.other.pseudo-class.css.cs3
         1: punctuation.definition.entity.css.css3

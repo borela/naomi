@@ -30,10 +30,8 @@ contexts:
       scope: keyword.other.pseudo-class.css.css3
       pop: true
     # Numbers.
-    - match: (?xi)(?:-?[1-9][0-9]*|0)(n)?
-      captures:
-        0: constant.numeric.decimal.css.css3
-        1: keyword.other.unit.css.css3
+    - match: -?[1-9][0-9]*|0
+      scope: constant.numeric.decimal.css.css3
       pop: true
     - match: n\b
       scope: keyword.other.unit.css.css3

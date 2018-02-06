@@ -62,6 +62,7 @@ contexts:
     - include: expected-pseudo-classes
     - include: not
     - include: nth-child
+    - include: nth-of-type
     - include: fallback
 
   expected-pseudo-classes:
@@ -95,6 +96,12 @@ contexts:
         1: punctuation.definition.entity.css.css3
       set: nth-arguments
 
+  nth-of-type:
+    - match: (\:)nth(?:-last)?-of-type\b
+      captures:
+        0: entity.other.pseudo-class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      set: nth-arguments
 
   selector-expression:
     - include: Packages/Naomi/syntaxes/css3/selector-expression.sublime-syntax

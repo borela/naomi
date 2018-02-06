@@ -1521,6 +1521,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.source.css .meta.attribute.builtin .entity.other.attribute-name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ea80fc</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.meta.attribute.data .entity.other.attribute-name</string>
 			<key>settings</key>
 			<dict>

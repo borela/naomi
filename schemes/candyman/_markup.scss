@@ -58,6 +58,13 @@
   foreground: $deep-orange-300;
 }
 
+.source.css {
+  .meta.attribute.builtin
+  .entity.other.attribute-name {
+    foreground: $purple-a100;
+  }
+}
+
 // Data attribute.
 .meta.attribute.data
 .entity.other.attribute-name {

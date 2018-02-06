@@ -32,6 +32,7 @@ contexts:
     - match: (?=\{)
       pop: true
     # Delimiter.
+    - match: \,
       scope: punctuation.separator.comma.css.css3
       push: [ meta-selector, selector-expression ]
 

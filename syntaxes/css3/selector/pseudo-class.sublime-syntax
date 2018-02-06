@@ -80,11 +80,16 @@ contexts:
       pop: true
 
   not:
+    - match: (\:)not(?=\s*\()
+      captures:
+        0: entity.other.pseudo-class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      set: selector-expression-as-arguments
     - match: (\:)not\b
       captures:
         0: entity.other.pseudo-class.css.cs3
         1: punctuation.definition.entity.css.css3
-      set: selector-expression
+      pop: true
 
   nth-arguments:
     - include: Packages/Naomi/syntaxes/css3/selector/nth/arguments.sublime-syntax
@@ -105,5 +110,5 @@ contexts:
         1: punctuation.definition.entity.css.css3
       set: nth-arguments
 
-  selector-expression:
-    - include: Packages/Naomi/syntaxes/css3/selector-expression.sublime-syntax
+  selector-expression-as-arguments:
+    - include: Packages/Naomi/syntaxes/css3/selector-expression-as-arguments.sublime-syntax

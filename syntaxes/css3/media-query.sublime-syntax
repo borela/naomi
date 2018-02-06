@@ -1,0 +1,89 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+contexts:
+  main:
+    - include: logical-operator
+    - match: (?=\S)
+      set: [ optional-tail, head ]
+
+  close-group:
+    - match: \)
+      scope: punctuation.section.group.end.js.fjsx15
+      set: optional-tail
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+
+  head:
+    # Media type.
+    - match: (?>all|print|screen|speech)\b
+      scope: support.constant.media.css.css3
+      pop: true
+    # Parenthesis.
+    - match: \(
+      scope: punctuation.section.group.begin.css.css3
+      set: open-group
+
+  logical-operator:
+    - match: (?>and|not|only)
+      scope: keyword.operator.word.media-query.css.css3
+      set: [ optional-tail, head]
+
+  open-group:
+    - meta_scope: meta.group.css.css3
+    - include: comment-no-pop
+    # # Comma operator.
+    # - match: (?=,)
+    #   push: comma
+    # # Type cast.
+    # - match: (?=:)
+    #   set: [ close-group, type-cast ]
+    # # Arrow functions need to be detect before expression groups.
+    # - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.no-pop.sublime-syntax
+    # # Open new expression group.
+    # - match: \(
+    #   scope: punctuation.section.group.begin.js.fjsx15
+    #   push: open-group
+    # Close the current expression group.
+    - include: close-group
+    # # Start of the expression.
+    # - match: (?=\S)
+    #   push: optional-expression
+
+  optional-tail:
+    - include: comment-no-pop
+    - include: logical-operator
+    # Escape.
+    - match: (?=[,(){}])
+      pop: true
+    # # Operators.
+    # - include: Packages/Naomi/syntaxes/css3/combinator.sublime-syntax
+    # # Attribute.
+    # - match: (?=\[)
+    #   push:
+    #     - include: Packages/Naomi/syntaxes/css3/selector/attribute.sublime-syntax
+    # # Pseudo element and class.
+    # - match: (?=:)
+    #   push:
+    #     - include: Packages/Naomi/syntaxes/css3/selector/pseudo-element.sublime-syntax
+    #     - include: Packages/Naomi/syntaxes/css3/selector/pseudo-class.sublime-syntax
+    # # Loop.
+    # - match: (?=\S)
+    #   push: head

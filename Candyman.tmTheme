@@ -1051,6 +1051,26 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.support.constant</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string></string>
+				<key>foreground</key>
+				<string>#ea80fc</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .support.constant</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.entity.name.function, .variable.function, .storage.type.function.arrow</string>
 			<key>settings</key>
 			<dict>
@@ -1075,9 +1095,18 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>italic</string>
+				<string></string>
 				<key>foreground</key>
 				<string>#ea80fc</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.meta.function-call .support.function</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1353,7 +1382,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.control.import, .keyword.control.export, .keyword.control.import-export</string>
+			<string>.keyword.control.at-rule, .keyword.control.import, .keyword.control.export, .keyword.control.import-export</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1575,15 +1604,6 @@
 				<string>italic</string>
 				<key>foreground</key>
 				<string>#b39ddb</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.constant.numeric</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffd54f</string>
 			</dict>
 		</dict>
 		<dict>

@@ -61,6 +61,17 @@
   }
 }
 
+.support.constant {
+  foreground: $purple-a100;
+  fontStyle: none;
+}
+
+.source.css {
+  .support.constant {
+    foreground: $deep-orange-a100;
+  }
+}
+
 // .constant.language {
 //   foreground: $red-a200;
 //   background: rgba($red-a200, .05);

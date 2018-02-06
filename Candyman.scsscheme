@@ -29,7 +29,6 @@
 @import 'schemes/candyman/keyword';
 @import 'schemes/candyman/markup';
 @import 'schemes/candyman/storage';
-@import 'schemes/candyman/number';
 @import 'schemes/candyman/punctuation';
 @import 'schemes/candyman/string';
 @import 'schemes/candyman/type';

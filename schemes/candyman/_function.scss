@@ -23,6 +23,10 @@
 
 .support.function {
   foreground: $purple-a100;
+  fontStyle: none;
+}
+
+.meta.function-call .support.function {
   fontStyle: italic;
 }
 

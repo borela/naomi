@@ -15,6 +15,7 @@
 }
 
 .keyword.control {
+  &.at-rule,
   &.import,
   &.export,
   &.import-export {

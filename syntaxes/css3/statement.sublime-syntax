@@ -19,23 +19,44 @@ scope: ...
 
 contexts:
   main:
-    # Terminator.
     - include: empty-statement
-    # At rules.
-    - match: (@)charset
+    - include: charset
+    - include: conditional-group-rules
+
+  charset:
+    - match: (@)charset\b
       captures:
         0: keyword.control.at-rule.charset.css.css3
         1: punctuation.definition.keyword.css.css3
       set: [ meta-charset, double-quoted-string ]
-    - include: conditional-group-rules
 
+  close-conditional-group-body: 
+    - meta_scope: meta.block.css.css3
+    # Close;
+    - match: \}
+      scope: punctuation.section.block.end.css.css3
+      pop: true
+    # Contents.
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/naomi.css3.sublime-syntax
+
+  conditional-group-body: 
+    - match: \{
+      scope: punctuation.section.block.begin.css.css3
+      set: close-conditional-group-body
 
   conditional-group-rules:
-    - match: (@)media
+    - match: (@)media\b
       captures:
         0: keyword.control.at-rule.media.css.css3
         1: punctuation.definition.keyword.css.css3
       set: [ meta-media, conditional-group-body, media-query-list ]
+    - match: (@)supports\b
+      captures:
+        0: keyword.control.at-rule.supports.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [ meta-supports, conditional-group-body, media-query-list ]
 
   double-quoted-string:
     - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
@@ -45,25 +66,21 @@ contexts:
       scope: punctuation.terminator.css.css3
       pop: true
 
-  close-conditional-group-body: 
-    - meta_scope: meta.block.css.css3
-    - match: \}
-      scope: punctuation.section.block.end.css.css3
-
-  conditional-group-body: 
-    - match: \{
-      scope: punctuation.section.block.begin.css.css3
-      set: close-conditional-group-body
-
   media-query-list:
     - include: Packages/Naomi/syntaxes/css3/media-query-list.sublime-syntax
 
   meta-charset:
     - meta_scope: meta.at-rule.charset.css.css3
-    - match: ""
-      pop: true
+    - include: pop-now
 
   meta-media:
     - meta_scope: meta.at-rule.media.css.css3
+    - include: pop-now
+
+  meta-supports:
+    - meta_scope: meta.at-rule.supports.css.css3
+    - include: pop-now
+
+  pop-now:
     - match: ""
       pop: true

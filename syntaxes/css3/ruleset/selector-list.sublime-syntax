@@ -28,9 +28,10 @@ contexts:
       ]
 
   delimiter:
+    # Escape.
     - match: (?=\{)
       pop: true
-    - match: \,
+    # Delimiter.
       scope: punctuation.separator.comma.css.css3
       push: [ meta-selector, selector-expression ]
 

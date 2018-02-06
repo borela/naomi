@@ -24,8 +24,41 @@ variables:
 
 contexts:
   main:
-    - match: (?xi)(::)({{commonIdentifier}})
+    - include: css2
+    - include: other
+    - include: fallback
+    
+  css2:
+    # after, before, first-letter, first-line,
+    - match: (?xi)(::?)(?>after|before|first-(?>letter|line))\b
       captures:
         0: entity.other.pseudo-element.class.css.cs3
         1: punctuation.definition.entity.css.css3
       pop: true
+
+  cue-arguments:
+    - match: \(
+      scope: punctuation
+    - match: (?=\S)
+
+  fallback:
+    - match: (?xi)(::){{commonIdentifier}}
+      captures:
+        0: entity.other.pseudo-element.class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      pop: true
+
+  other:
+    - match: (::)cue(?=\s*\()
+      captures:
+        0: entity.other.pseudo-element.class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      set: selector-expression-as-arguments
+    - match: (?xi)(::)(?>backdrop|cue|selection)\b
+      captures:
+        0: entity.other.pseudo-element.class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      pop: true
+
+  selector-expression-as-arguments:
+    - include: Packages/Naomi/syntaxes/css3/selector-expression-as-arguments.sublime-syntax

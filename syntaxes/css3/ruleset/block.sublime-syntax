@@ -23,7 +23,7 @@ contexts:
       scope: punctuation.section.property-list.begin.css.css3
       set: delimiter
 
-  comment:
+  comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
 
   declaration:
@@ -31,7 +31,7 @@ contexts:
 
   delimiter:
     - meta_scope: meta.property-list.css.css3
-    - include: comment
+    - include: comment-no-pop
     - match: \}
       scope: punctuation.section.property-list.end.css.css3
       pop: true

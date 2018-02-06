@@ -85,15 +85,16 @@ contexts:
         1: punctuation.definition.entity.css.css3
       set: selector-expression
 
+  nth-arguments:
+    - include: Packages/Naomi/syntaxes/css3/selector/nth/arguments.sublime-syntax
+
   nth-child:
     - match: (\:)nth(?:-last)?-child\b
       captures:
         0: entity.other.pseudo-class.css.cs3
         1: punctuation.definition.entity.css.css3
-      set: nth-child-arguments
+      set: nth-arguments
 
-  nth-child-arguments:
-    - include: Packages/Naomi/syntaxes/css3/selector/nth-child/arguments.sublime-syntax
 
   selector-expression:
     - include: Packages/Naomi/syntaxes/css3/selector-expression.sublime-syntax

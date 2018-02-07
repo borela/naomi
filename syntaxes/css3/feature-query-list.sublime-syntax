@@ -30,7 +30,7 @@ contexts:
   delimiter:
     - match: \,
       scope: punctuation.separator.comma.css.css3
-      push: [ meta-query, query ]
+      push: [ meta-query, optional-query ]
     - include: else-pop
 
   else-pop:
@@ -46,6 +46,11 @@ contexts:
     - meta_content_scope: meta.feature-query-list.css.css3
     - match: ""
       pop: true
+
+  optional-query:
+    - match: (?=[,;()\[\]{}])
+      pop: true
+    - include: query
 
   query:
     - include: Packages/Naomi/syntaxes/css3/feature-query.sublime-syntax

@@ -19,6 +19,10 @@ scope: ...
 
 contexts:
   main:
-    - match: (?i)(?!--|\s).[_[:alnum:]\-]*
+    - match: |
+        (?xi)
+        (?!--)
+        [_[:alpha:]\-]
+        (?:\s+[_[:alpha:]\-])?
       scope: string.unquoted.css.css3
       pop: true

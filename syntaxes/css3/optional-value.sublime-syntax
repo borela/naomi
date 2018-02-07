@@ -19,8 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=[;()\[\]{}])
+    - match: (?=[,;()\[\]{}])
       pop: true
     - match: (?=\S)
-      push:
+      set:
         - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax

@@ -19,27 +19,21 @@ scope: ...
 
 contexts:
   main:
-    - match: \(
-      scope: punctuation.section.group.begin.css.css3
-      set: close-group
-
-  close-group:
-    - meta_scope: >-
-        meta.media-feature-expression.css.css3
-        meta.group.css.css3
-    - match: \)
-      scope: punctuation.section.group.end.js.fjsx15
-      pop: true
-    - match: (?=\S)
-      push: [ optional-tail, head ]
+    - include: comment-no-pop
+    - match: ""
+      set: [ optional-tail, head ]
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
 
+  else-pop:
+    - match: (?=\S)
+      pop: true
+
   head:
     - include: comment-no-pop
     - match: |
-        (?x)  
+        (?x)
         (?> any-(?>pointer|hover)
           | aspect-ratio
           | color(?:-(?>gamut|index))?
@@ -59,7 +53,7 @@ contexts:
           | scan
           | scripting
           | update
-          | width 
+          | width
         )
       scope: support.type.media-feature.css.css3
       pop: true
@@ -67,9 +61,6 @@ contexts:
 
   optional-tail:
     - include: comment-no-pop
-    - match: ":"
-      scope: punctuation.separator.key-value.css.css3
-      set: optional-value
     - match: |
         (?x)
         (?> <>
@@ -78,11 +69,7 @@ contexts:
         )
       scope: keyword.operator.comparison.css.css3
       push: head
-    - match: (?=\S)
-      pop: true
+    - include: else-pop
 
-  optional-value:
-    - include: Packages/Naomi/syntaxes/css3/optional-value.sublime-syntax
-    
   value:
     - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax

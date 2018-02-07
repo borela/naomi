@@ -59,19 +59,30 @@ contexts:
           | scan
           | scripting
           | update
-          | width
+          | width 
         )
       scope: support.type.media-feature.css.css3
       pop: true
+    - include: value
 
   optional-tail:
     - include: comment-no-pop
+    - match: ":"
+      scope: punctuation.separator.key-value.css.css3
+      set: optional-value
+    - match: |
+        (?x)
+        (?> <>
+          | <=?
+          | >=?
+        )
+      scope: keyword.operator.comparison.css.css3
+      push: head
+    - match: (?=\S)
+      pop: true
+
+  optional-value:
+    - include: Packages/Naomi/syntaxes/css3/optional-value.sublime-syntax
     
-  # open-group:
-  #   - include: comment-no-pop
-  #   # Close the current expression group.
-  #   - include: close-group
-  #   # Open new expression group.
-  #   - match: \(
-  #     scope: punctuation.section.group.begin.js.fjsx15
-  #     push: open-group
+  value:
+    - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax

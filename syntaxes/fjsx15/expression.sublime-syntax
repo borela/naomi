@@ -51,6 +51,33 @@ contexts:
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
+  do-expression:
+    - match: do\b
+      scope: keyword.control.do-expression.js.fjsx15
+      set: [ meta-do-expression, do-expression-body-begin ]
+
+  do-expression-body-begin:
+    - match: \{
+      scope: punctuation.section.block.begin.js.fjsx15
+      set: do-expression-body-end
+
+  do-expression-body-end:
+    - meta_scope: meta
+    - match: \}
+      scope: punctuation.section.block.end.js.fjsx15
+      pop: true
+    - match: (?=\S)
+      push: statement-or-expression
+
+  function-call:
+    - include: comment-no-pop
+    - include: main
+
+  function-call-meta-scope:
+    - meta_scope: meta.function-call.js.fjsx15
+    - match: ""
+      pop: true
+
   globals:
     - include: Packages/Naomi/syntaxes/fjsx15/node-js.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
@@ -60,6 +87,7 @@ contexts:
 
   head:
     - include: comment-no-pop
+    - include: do-expression
     - include: globals
     - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
@@ -73,6 +101,11 @@ contexts:
     - match: \(
       scope: punctuation.section.group.begin.js.fjsx15
       set: open-group
+
+  meta-do-expression:
+    - meta_scope: meta.do-expression.js.fjsx15
+    - match: ""
+      pop: true 
 
   open-group:
     - meta_scope: meta.group.js.fjsx15
@@ -113,21 +146,15 @@ contexts:
     - match: (?=\S)
       pop: true
 
-  function-call:
-    - include: comment-no-pop
-    - include: main
-
-  function-call-meta-scope:
-    - meta_scope: meta.function-call.js.fjsx15
-    - match: ""
-      pop: true
-
   property-access:
     - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
 
   regex-literal:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
+
+  statement-or-expression:
+    - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax
 
   type-cast:
     - include: Packages/Naomi/syntaxes/flow1/cast.sublime-syntax

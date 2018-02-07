@@ -38,6 +38,7 @@ variables:
       | cap
       | ch
       | cm
+      | dp(?>cm|in?|mm|pt|px)
       | em
       | ex
       | ic

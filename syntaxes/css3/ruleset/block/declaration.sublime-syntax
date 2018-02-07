@@ -17,34 +17,32 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [_[:alpha:]\-]
-    [_[:alnum:]\-.]*
-
 contexts:
   main:
-    - match: (?xi)(?={{commonIdentifier}})
+    - match: ""
       set: [ delimiter, property ]
 
-  comment:
+  comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
 
   delimiter:
-    - include: comment
+    - include: comment-no-pop
     - match: ":"
       scope: punctuation.separator.key-value.css.css3
-      set: [ meta, optional-value ]
+      set: [ meta, optional-value-no-pop ]
 
   meta:
     - meta_scope: meta.property-value.css.css3
     - match: ""
       pop: true
 
-  optional-value:
-    - include: comment
-    - include: Packages/Naomi/syntaxes/css3/optional-value.sublime-syntax
+  optional-value-no-pop:
+    - match: (?=[,;()\[\]{}])
+      pop: true
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
 
   property:
-    - include: comment
+    - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax

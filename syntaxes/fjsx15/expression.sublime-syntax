@@ -62,7 +62,6 @@ contexts:
       set: do-expression-body-end
 
   do-expression-body-end:
-    - meta_scope: meta
     - match: \}
       scope: punctuation.section.block.end.js.fjsx15
       pop: true

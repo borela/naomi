@@ -21,24 +21,57 @@ contexts:
   main:
     - match: \(
       scope: punctuation.section.group.begin.css.css3
-      set: open-group
+      set: close-group
 
   close-group:
+    - meta_scope: >-
+        meta.media-feature-expression.css.css3
+        meta.group.css.css3
     - match: \)
       scope: punctuation.section.group.end.js.fjsx15
       pop: true
+    - match: (?=\S)
+      push: [ optional-tail, head ]
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
 
-  open-group:
-    - meta_scope: >-
-        meta.media-feature-expression.css.css3
-        meta.group.css.css3
+  head:
     - include: comment-no-pop
-    # Close the current expression group.
-    - include: close-group
-    # Open new expression group.
-    - match: \(
-      scope: punctuation.section.group.begin.js.fjsx15
-      push: open-group
+    - match: |
+        (?x)  
+        (?> any-(?>pointer|hover)
+          | aspect-ratio
+          | color(?:-(?>gamut|index))?
+          | device-(?>aspect-ratio|height|width)
+          | display-mode
+          | grid
+          | height
+          | hover
+          | inverted-colors
+          | light-level
+          | max-(?>height|width)
+          | min-(?>height|width)
+          | orientation
+          | overflow-(?>block|inline)
+          | pointer
+          | resolution
+          | scan
+          | scripting
+          | update
+          | width
+        )
+      scope: support.type.media-feature.css.css3
+      pop: true
+
+  optional-tail:
+    - include: comment-no-pop
+    
+  # open-group:
+  #   - include: comment-no-pop
+  #   # Close the current expression group.
+  #   - include: close-group
+  #   # Open new expression group.
+  #   - match: \(
+  #     scope: punctuation.section.group.begin.js.fjsx15
+  #     push: open-group

@@ -27,9 +27,6 @@ contexts:
     - match: (?xi)(?=<(?>\s*>|{{commonIdentifier}}))
       set: [ meta, jsx ]
 
-  comment-and-embedded-js:
-    - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax#comment-and-embedded-js
-
   meta:
     - clear_scopes: true
     - meta_scope: text.html.basic.jsx.jsx1

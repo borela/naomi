@@ -22,7 +22,6 @@ contexts:
     - match: |
         (?xi)
         (?!--)
-        [_[:alpha:]\-]
-        (?:\s+[_[:alpha:]\-])?
+        [_[:alpha:]\-]+
       scope: string.unquoted.css.css3
       pop: true

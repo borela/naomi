@@ -44,10 +44,6 @@
 }
 
 // Attributes.
-.entity.other.attribute-name {
-  foreground: $cyan-a400;
-}
-
 .entity.other.attribute-name.id {
   foreground: $purple-a100;
 }
@@ -55,14 +51,7 @@
 // Builtin attribute.
 .meta.attribute.builtin
 .entity.other.attribute-name {
-  foreground: $deep-orange-300;
-}
-
-.source.css {
-  .meta.attribute.builtin
-  .entity.other.attribute-name {
-    foreground: $purple-a100;
-  }
+  foreground: $cyan-a400;
 }
 
 // Data attribute.

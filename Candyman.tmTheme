@@ -1071,6 +1071,42 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.source.css .meta.attribute.builtin .entity.other.attribute-name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ea80fc</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .support.type.property-name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#00e5ff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .entity.other.pseudo-element</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b388ff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .variable.other.type.property-name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#f5f5f5</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.entity.name.function, .variable.function, .storage.type.function.arrow</string>
 			<key>settings</key>
 			<dict>
@@ -1494,15 +1530,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.other.attribute-name</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#00e5ff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.entity.other.attribute-name.id</string>
 			<key>settings</key>
 			<dict>
@@ -1516,16 +1543,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff8a65</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.source.css .meta.attribute.builtin .entity.other.attribute-name</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ea80fc</string>
+				<string>#00e5ff</string>
 			</dict>
 		</dict>
 		<dict>

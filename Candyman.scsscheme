@@ -22,6 +22,7 @@
 @import 'schemes/candyman/annotation';
 @import 'schemes/candyman/comment';
 @import 'schemes/candyman/constant';
+@import 'schemes/candyman/css';
 @import 'schemes/candyman/function';
 @import 'schemes/candyman/generic';
 @import 'schemes/candyman/global/console';

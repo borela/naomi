@@ -19,8 +19,8 @@ scope: ...
 
 contexts:
   main:
-    - match: (?=[;()\[\]{}])
-      pop: true
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/literal/color.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/literal/number.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/literal/string/unquoted.sublime-syntax

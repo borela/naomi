@@ -19,10 +19,10 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/css3/literal/color.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/literal/ratio.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/literal/number.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/literal/string/unquoted.sublime-syntax
-
+    - match: ([0-9]+)\s*(/)\s*([0-9])
+      captures:
+        0: constant.numeric.ratio.css.css3
+        1: constant.numeric.decimal.css.css3
+        2: keyword.operator.arithmetic.ratio.css.css3
+        3: constant.numeric.decimal.css.css3
+      pop: true

@@ -43,7 +43,7 @@ contexts:
 
   logical-operator:
     - match: (?>and|not|or|only)
-      scope: keyword.operator.word.feature-query.css.css3
+      scope: keyword.operator.word.logical.feature-query.css.css3
       set: optional-feature-query
 
   open-group:

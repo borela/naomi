@@ -50,7 +50,7 @@ contexts:
 
   logical-operator:
     - match: (?>and|not|or|only)
-      scope: keyword.operator.word.media-query.css.css3
+      scope: keyword.operator.word.logical.media-query.css.css3
       set: optional-media-query
 
   open-group:

@@ -36,10 +36,6 @@ contexts:
         - include: Packages/Naomi/syntaxes/fjsx15/literal/number.sublime-syntax
     # Detect operators as soon as possible.
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
-    # Open new expression group.
-    - match: \(
-      scope: punctuation.section.group.begin.js.fjsx15
-      set: open-group
     # Start of the expression.
     - match: (?=\S)
       set: [ optional-tail, head ]
@@ -47,7 +43,7 @@ contexts:
   close-group:
     - match: \)
       scope: punctuation.section.group.end.js.fjsx15
-      set: optional-tail
+      pop: true
 
   comma:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.sublime-syntax
@@ -73,10 +69,20 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+    # Open new expression group.
+    - match: \(
+      scope: punctuation.section.group.begin.js.fjsx15
+      set: open-group
 
   open-group:
     - meta_scope: meta.group.js.fjsx15
     - include: comment-no-pop
+    # Close the current expression group.
+    - include: close-group
+    # Open new expression group.
+    - match: \(
+      scope: punctuation.section.group.begin.js.fjsx15
+      push: open-group
     # Comma operator.
     - match: (?=,)
       push: comma
@@ -85,18 +91,9 @@ contexts:
       set: [ close-group, type-cast ]
     # Arrow functions need to be detect before expression groups.
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.no-pop.sublime-syntax
-    # Open new expression group.
-    - match: \(
-      scope: punctuation.section.group.begin.js.fjsx15
-      push: open-group
-    # Close the current expression group.
-    - include: close-group
     # Start of the expression.
     - match: (?=\S)
-      push: optional-expression
-
-  optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+      push: main
 
   optional-tail:
     - include: comment-no-pop

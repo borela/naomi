@@ -47,6 +47,11 @@ contexts:
       set: close-conditional-group-body
 
   conditional-group-rules:
+    - match: (@)document\b
+      captures:
+        0: keyword.control.at-rule.document.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [ meta-document, conditional-group-body, url-list ]
     - match: (@)media\b
       captures:
         0: keyword.control.at-rule.media.css.css3
@@ -76,6 +81,10 @@ contexts:
     - meta_scope: meta.at-rule.charset.css.css3
     - include: pop-now
 
+  meta-document:
+    - meta_scope: meta.at-rule.document.css.css3
+    - include: pop-now
+
   meta-media:
     - meta_scope: meta.at-rule.media.css.css3
     - include: pop-now
@@ -87,3 +96,6 @@ contexts:
   pop-now:
     - match: ""
       pop: true
+
+  url-list:
+    - include: Packages/Naomi/syntaxes/css3/url-list.sublime-syntax

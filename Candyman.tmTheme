@@ -1467,6 +1467,17 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.source.css .keyword.operator.word</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string></string>
+				<key>foreground</key>
+				<string>#00e676</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.keyword.other.unit</string>
 			<key>settings</key>
 			<dict>

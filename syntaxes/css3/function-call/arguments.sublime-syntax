@@ -19,10 +19,19 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/css3/literal/color.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/literal/ratio.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/literal/number.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/function-call.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/literal/string/unquoted.sublime-syntax
+    - match: \(
+      scope: punctuation.section.group.begin.css.css3
+      set: delimiter
+
+  delimiter:
+    - meta_scope: meta.group.css.css3
+    - match: \)
+      scope: punctuation.section.group.end.css.css3
+      pop: true
+    - match: \,
+      scope: punctuation.separtor.comma.css.css3
+    - match: (?=\S)
+      push: value
+
+  value:
+    - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax

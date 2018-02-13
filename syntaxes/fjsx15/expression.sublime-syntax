@@ -43,7 +43,7 @@ contexts:
   close-group:
     - match: \)
       scope: punctuation.section.group.end.js.fjsx15
-      pop: true
+      set: optional-tail
 
   comma:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.sublime-syntax
@@ -104,7 +104,7 @@ contexts:
   meta-do-expression:
     - meta_scope: meta.do-expression.js.fjsx15
     - match: ""
-      pop: true 
+      pop: true
 
   open-group:
     - meta_scope: meta.group.js.fjsx15

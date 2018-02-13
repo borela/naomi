@@ -43,7 +43,7 @@ contexts:
   close-group:
     - match: \)
       scope: punctuation.section.group.end.js.fjsx15
-      set: optional-tail
+      pop: true
 
   comma:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.sublime-syntax
@@ -112,10 +112,6 @@ contexts:
     - include: comment-no-pop
     # Close the current expression group.
     - include: close-group
-    # Open new expression group.
-    - match: \(
-      scope: punctuation.section.group.begin.js.fjsx15
-      push: open-group
     # Comma operator.
     - match: (?=,)
       push: comma
@@ -126,7 +122,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.no-pop.sublime-syntax
     # Start of the expression.
     - match: (?=\S)
-      push: main
+      push: [ optional-tail, head ]
 
   optional-tail:
     - include: comment-no-pop

@@ -62,8 +62,8 @@ contexts:
         6: entity.name.tag.component.jsx.jsx1
         7: punctuation.definition.tag.end.html.jsx.jsx1
       pop: true
-    - match: (?=.)
-      push: content
+    - match: (?=.|\n)
+      push: [ meta-content, content ]
 
   content:
     # Sub element.
@@ -78,7 +78,7 @@ contexts:
 
   meta-content:
     - clear_scopes: true
-    - meta_scope: text.html.jsx.jsx1
+    - meta_scope: source.jsx.jsx1
     - match: ""
       pop: true
 

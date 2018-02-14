@@ -26,47 +26,6 @@ variables:
 
 contexts:
   main:
-    # html, head, body.
-    - match: (?x)(<)\s*(body|head|html)\b
-      captures:
-        1: punctuation.definition.tag.begin.html.jsx.jsx1
-        2: entity.name.tag.structure.html.jsx.jsx1
-      set: [
-        meta-structure,
-        simple-closing-tag,
-        close-open-tag
-      ]
-    # a.
-    - match: (?x)(<)\s*(a)\b
-      captures:
-        1: punctuation.definition.tag.begin.html.jsx.jsx1
-        2: entity.name.tag.a.html.jsx.jsx1
-      set: [
-        meta-a,
-        simple-closing-tag,
-        close-open-tag
-      ]
-    # div.
-    - match: (?x)(<)\s*(div)\b
-      captures:
-        1: punctuation.definition.tag.begin.html.jsx.jsx1
-        2: entity.name.tag.block.any.html.jsx.jsx1
-      set: [
-        meta-block-any,
-        simple-closing-tag,
-        close-open-tag
-      ]
-    # span.
-    - match: (?x)(<)\s*(span)\b
-      captures:
-        1: punctuation.definition.tag.begin.html.jsx.jsx1
-        2: entity.name.tag.inline.any.html.jsx.jsx1
-      set: [
-        meta-inline-any,
-        simple-closing-tag,
-        close-open-tag
-      ]
-    # Other tags.
     - match: |
         (?xi)
         (<)

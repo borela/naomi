@@ -40,7 +40,7 @@ contexts:
         3: punctuation.separator.namespace.html.jsx.jsx1
         4: entity.name.tag.html.jsx.jsx1
       set: [
-        meta-other,
+        meta,
         namespaced-closing-tag,
         close-open-tag
       ]
@@ -48,24 +48,8 @@ contexts:
   close-open-tag:
     - include: Packages/Naomi/syntaxes/jsx1/shared.sublime-syntax#close-open-tag
 
-  meta-a:
-    - meta_scope: meta.tag.inline.a.html.jsx.jsx1
-    - include: pop-now
-
-  meta-block-any:
-    - meta_scope: meta.tag.block.any.html.jsx.jsx1
-    - include: pop-now
-
-  meta-inline-any:
-    - meta_scope: meta.tag.inline.any.html.jsx.jsx1
-    - include: pop-now
-
-  meta-other:
+  meta:
     - meta_scope: meta.tag.other.html.jsx.jsx1
-    - include: pop-now
-
-  meta-structure:
-    - meta_scope: meta.tag.structure.html.jsx.jsx1
     - include: pop-now
 
   namespaced-closing-tag:

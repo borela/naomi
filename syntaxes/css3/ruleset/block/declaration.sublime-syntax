@@ -37,8 +37,10 @@ contexts:
       pop: true
 
   optional-value-no-pop:
-    - match: (?=[,;()\[\]{}])
+    - match: (?=[;()\[\]{}])
       pop: true
+    - match: \,
+      scope: punctuation.separator.sequence.css.css3
     - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax

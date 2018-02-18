@@ -624,6 +624,7 @@ variables:
           )
         )?
       | speech-rate
+      | src
       | stress
       | string-set
       | stroke

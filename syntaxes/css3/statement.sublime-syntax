@@ -27,6 +27,7 @@ contexts:
     - include: empty-statement
     - include: charset
     - include: conditional-group-rules
+    - include: font-face
     - include: namespace
     - include: import
 
@@ -81,6 +82,13 @@ contexts:
   feature-query-list:
     - include: Packages/Naomi/syntaxes/css3/feature-query-list.sublime-syntax
 
+  font-face:
+    - match: (@)font-face\b
+      captures:
+        0: keyword.control.at-rule.font-face.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [ meta-font-face, ruleset-block ]
+
   import:
     - match: (@)import\b
       captures:
@@ -94,6 +102,10 @@ contexts:
 
   meta-document:
     - meta_scope: meta.at-rule.document.css.css3
+    - include: pop-now
+
+  meta-font-face:
+    - meta_scope: meta.at-rule.font-face.css.css3
     - include: pop-now
 
   meta-import:
@@ -135,6 +147,9 @@ contexts:
   pop-now:
     - match: ""
       pop: true
+
+  ruleset-block:
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block.sublime-syntax
 
   string-or-url:
     - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax

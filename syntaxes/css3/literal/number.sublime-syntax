@@ -66,13 +66,13 @@ variables:
 
   unit: |
     (?> %
-      | {{absoluteLengthUnits}}
-      | {{relativeLengthUnits}}
-      | {{angleUnits}}
-      | {{resolutionUnits}}
-      | {{timeUnits}}
-      | {{frequencyUnits}}
-    )\b
+      | {{absoluteLengthUnits}}\b
+      | {{relativeLengthUnits}}\b
+      | {{angleUnits}}\b
+      | {{resolutionUnits}}\b
+      | {{timeUnits}}\b
+      | {{frequencyUnits}}\b
+    )
 
 contexts:
   main:

@@ -11,28 +11,38 @@
 // the License.
 
 .source.css {
+  // Attribute inside the attribute selector.
   .meta.attribute.builtin
   .entity.other.attribute-name {
     foreground: $purple-a100;
   }
 
-  .support.type.property-name {
-    foreground: $cyan-a400;
-  }
-
+  // Pseudo element.
   .entity.other.pseudo-element {
     foreground: $deep-purple-a100;
   }
 
+  // Property.
+  .support.type.property-name {
+    foreground: $cyan-a400;
+  }
+
+  // Any other unrecognized property.
   .variable.other.type.property-name {
     foreground: $gray-100;
   }
 
+  // Namespace prefix.
   .meta.namespace-prefix {
     .keyword.other.namespace-wildcard,
     .punctuation.separator.key-value,
     .variable.other {
       foreground: $deep-orange-a100;
     }
+  }
+
+  // !important
+  .keyword.other.important {
+    foreground: $deep-purple-a100;
   }
 }

@@ -1080,20 +1080,20 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.source.css .support.type.property-name</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#00e5ff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.source.css .entity.other.pseudo-element</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#b388ff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .support.type.property-name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#00e5ff</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1112,6 +1112,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .keyword.other.important</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b388ff</string>
 			</dict>
 		</dict>
 		<dict>

@@ -20,7 +20,9 @@ scope: ...
 contexts:
   main:
     - include: expression-escape
-    - include: Packages/Naomi/syntaxes/css3/feature-query.sublime-syntax
+    - match: (?=\S)
+      set:
+        - include: Packages/Naomi/syntaxes/css3/feature-query.sublime-syntax
 
   expression-escape:
     - match: (?=[,;:)\]}])

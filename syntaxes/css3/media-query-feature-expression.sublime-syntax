@@ -34,7 +34,7 @@ contexts:
     - include: comment-no-pop
     - match: |
         (?x)
-        (?> any-(?>pointer|hover)
+        ((?> any-(?>pointer|hover)
           | aspect-ratio
           | color(?:-(?>gamut|index))?
           | device-(?>aspect-ratio|height|width)
@@ -54,8 +54,11 @@ contexts:
           | scripting
           | update
           | width
-        )
-      scope: support.type.media-feature.css.css3
+        ))
+        (?:\s*(:))?
+      captures:
+        1: support.type.media-feature.css.css3
+        2: punctuation.separator.key-value.css.css3
       pop: true
     - include: value
 

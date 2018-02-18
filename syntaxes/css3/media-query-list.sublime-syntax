@@ -29,7 +29,7 @@ contexts:
 
   delimiter:
     # Escape.
-    - match: (?=\{)
+    - match: (?=[;{])
       pop: true
     # Delimiter.
     - match: \,
@@ -38,18 +38,18 @@ contexts:
 
   meta-query:
     - meta_content_scope: meta.media-query.css.css3
-    - match: ""
-      pop: true
+    - include: pop-now
 
   meta-query-list:
     - meta_content_scope: meta.media-query-list.css.css3
-    - match: ""
-      pop: true
+    - include: pop-now
 
   optional-query:
-    - match: (?=[,;()\[\]{}])
+    - include: Packages/Naomi/syntaxes/css3/optional-media-query.sublime-syntax
+
+  pop-now:
+    - match: ""
       pop: true
-    - include: query
 
   query:
     - include: Packages/Naomi/syntaxes/css3/media-query.sublime-syntax

@@ -29,7 +29,7 @@ contexts:
       ]
 
   delimiters:
-    - meta_scope: meta.destructuring.array.js.fjsx15
+    - meta_scope: meta.binding.destructuring.sequence.js.fjsx15
     - match: \,
       scope: punctuation.separator.comma.js.fjsx15
       push: [

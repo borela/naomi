@@ -31,7 +31,7 @@ contexts:
 
   delimiters:
     - meta_scope: >-
-        meta.destructuring.object.js.fjsx15
+        meta.binding.destructuring.mapping.js.fjsx15
         meta.block.js.fjsx15
     - match: \,
       scope: punctuation.separator.comma.js.fjsx15

@@ -17,11 +17,12 @@ name: CSS 3
 
 file_extensions:
   - css
+  - css3
 
-scope: >-
-  source.css.css3
+scope: source.css.css3
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/scss3/selector.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax

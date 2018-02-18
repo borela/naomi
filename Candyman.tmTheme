@@ -1107,6 +1107,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.source.css .meta.namespace-prefix .keyword.other.namespace-wildcard, .source.css .meta.namespace-prefix .punctuation.separator.key-value, .source.css .meta.namespace-prefix .variable.other</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.entity.name.function, .variable.function, .storage.type.function.arrow</string>
 			<key>settings</key>
 			<dict>

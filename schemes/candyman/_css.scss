@@ -27,4 +27,12 @@
   .variable.other.type.property-name {
     foreground: $gray-100;
   }
+
+  .meta.namespace-prefix {
+    .keyword.other.namespace-wildcard,
+    .punctuation.separator.key-value,
+    .variable.other {
+      foreground: $deep-orange-a100;
+    }
+  }
 }

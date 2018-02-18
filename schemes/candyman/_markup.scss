@@ -15,9 +15,9 @@
   foreground: $blue-gray-200;
 }
 
-// HTML/JSX text.
+// Other markup text.
 .source.jsx,
-.text.html {
+.text.html \- .source.js {
   foreground: $orange-300;
 }
 

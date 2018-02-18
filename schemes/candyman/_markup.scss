@@ -16,8 +16,11 @@
 }
 
 // Other markup text.
-.source.jsx,
-.text.html \- .source.js {
+.source.jsx {
+  foreground: $orange-300;
+}
+
+.text.html \- \(.source.css, .source.js\) {
   foreground: $orange-300;
 }
 

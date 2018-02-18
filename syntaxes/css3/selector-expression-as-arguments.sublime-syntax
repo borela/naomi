@@ -33,4 +33,3 @@ contexts:
 
   expression:
     - include: Packages/Naomi/syntaxes/css3/selector-expression.sublime-syntax
-

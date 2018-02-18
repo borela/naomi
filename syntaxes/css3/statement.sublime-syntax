@@ -32,6 +32,7 @@ contexts:
     - include: keyframes
     - include: namespace
     - include: import
+    - include: page
     - include: viewport
 
   charset:
@@ -162,6 +163,10 @@ contexts:
     - meta_scope: meta.at-rule.namespace.css.css3
     - include: pop-now
 
+  meta-page:
+    - meta_scope: meta.at-rule.page.css.css3
+    - include: pop-now
+
   meta-supports:
     - meta_scope: meta.at-rule.supports.css.css3
     - include: pop-now
@@ -189,6 +194,19 @@ contexts:
       pop: true
     - match: (?=\S)
       pop: true
+
+  optional-page-selector:
+    - include: Packages/Naomi/syntaxes/css3/optional-page-selector-list.sublime-syntax
+
+  page:
+    - match: (@)page\b
+      captures:
+        0: keyword.control.at-rule.page.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [ meta-page, page-block, optional-page-selector ]
+
+  page-block:
+    - include: Packages/Naomi/syntaxes/css3/page/block.sublime-syntax
 
   pop-now:
     - match: ""

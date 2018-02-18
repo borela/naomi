@@ -30,6 +30,7 @@ contexts:
     - include: font-face
     - include: namespace
     - include: import
+    - include: viewport
 
   charset:
     - match: (@)charset\b
@@ -124,6 +125,10 @@ contexts:
     - meta_scope: meta.at-rule.supports.css.css3
     - include: pop-now
 
+  meta-viewport:
+    - meta_scope: meta.at-rule.viewport.css.css3
+    - include: pop-now
+
   namespace:
     - match: (@)namespace\b
       captures:
@@ -155,6 +160,13 @@ contexts:
     - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/function-call.sublime-syntax
+
+  viewport:
+    - match: (@)viewport\b
+      captures:
+        0: keyword.control.at-rule.viewport.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [ meta-page, ruleset-block ]
 
   url-list:
     - include: Packages/Naomi/syntaxes/css3/url-list.sublime-syntax

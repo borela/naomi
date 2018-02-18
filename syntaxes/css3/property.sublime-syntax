@@ -466,10 +466,10 @@ variables:
             | type
           )
         )?
-      # max-block-size, max-height, max-inline-size, max-lines, max-width
-      | max-(?>block-size|height|inline-size|lines|width)
-      # min-block-size, min-height, min-inline-size|min-width
-      | min-(?>block-size|height|inline-size|width)
+      # max-block-size, max-height, max-inline-size, max-lines, max-width, max-zoom
+      | max-(?>block-size|height|inline-size|lines|width|zoom)
+      # min-block-size, min-height, min-inline-size, min-width, min-zoom
+      | min-(?>block-size|height|inline-size|width|zoom)
       | mix-blend-mode
       # nav-down, nav-left, nav-right, nav-up
       | nav-(?>down|left|right|up)
@@ -752,7 +752,8 @@ variables:
           | through
         )
       | writing-mode
-      | z-index
+      # z-index, zoom
+      | z(?>-index|oom)
     )
 
 contexts:

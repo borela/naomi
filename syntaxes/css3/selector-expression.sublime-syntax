@@ -17,12 +17,25 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [_[:alnum:]\-]*
+
 contexts:
   main:
     - match: ""
       set: [ optional-tail, head ]
 
   head:
+    # Namespace prefix.
+    - match: |
+        (?xi)
+        ({{commonIdentifier}})\s*(\|)
+      captures:
+        0: meta.namespace-prefix.css.css3
+        1: variable.other.namespace-prefix.css.css3
+        2: punctuation.separator.key-value.css.css3
     # Some pseudo elements still allow the CSS2 syntax and could be confused with a pseudo class,
     # to prevent that, we try to match the pseudo element first.
     - include: Packages/Naomi/syntaxes/css3/selector/pseudo-element.sublime-syntax

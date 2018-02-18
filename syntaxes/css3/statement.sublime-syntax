@@ -51,7 +51,9 @@ contexts:
     # Contents.
     - match: (?=\S)
       push:
-        - include: Packages/Naomi/syntaxes/naomi.css3.sublime-syntax
+        - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
+        - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
 
   conditional-group-body:
     - match: \{

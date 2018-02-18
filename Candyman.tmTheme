@@ -673,15 +673,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.source.jsx, .text.html, .text.md, .text.xml</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#BDBDBD66</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.punctuation.definition.code-block</string>
 			<key>settings</key>
 			<dict>
@@ -1514,7 +1505,16 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.source.jsx, .text.html</string>
+			<string>.source.jsx</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffb74d</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.text.html - (.source.css, .source.js)</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

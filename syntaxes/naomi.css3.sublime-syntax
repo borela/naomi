@@ -19,10 +19,12 @@ file_extensions:
   - css
   - css3
 
-scope: source.css.css3
+scope: source.css
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
+        - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax

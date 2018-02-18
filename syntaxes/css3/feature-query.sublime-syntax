@@ -46,7 +46,7 @@ contexts:
     - include: open-group
 
   logical-operator:
-    - match: (?>and|not|or|only)
+    - match: (?>and|not|or|only)\b
       scope: keyword.operator.word.logical.feature-query.css.css3
       set: optional-feature-query
 

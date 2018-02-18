@@ -19,6 +19,9 @@ scope: ...
 
 contexts:
   main:
+    - match: "!important\\b"
+      scope: keyword.other.important.css.css3
+      pop: true
     - include: Packages/Naomi/syntaxes/css3/literal/color.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/literal/ratio.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/literal/number.sublime-syntax

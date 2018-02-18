@@ -39,18 +39,20 @@ contexts:
 
   meta-query:
     - meta_content_scope: meta.feature-query.css.css3
-    - match: ""
-      pop: true
+    - include: pop-now
 
   meta-query-list:
     - meta_content_scope: meta.feature-query-list.css.css3
-    - match: ""
-      pop: true
+    - include: pop-now
 
   optional-query:
     - match: (?=[,;()\[\]{}])
       pop: true
     - include: query
+
+  pop-now:
+    - match: ""
+      pop: true
 
   query:
     - include: Packages/Naomi/syntaxes/css3/optional-feature-query.sublime-syntax

@@ -22,6 +22,7 @@ contexts:
     - include: empty-statement
     - include: charset
     - include: conditional-group-rules
+    - include: import
 
   charset:
     - match: (@)charset\b
@@ -56,7 +57,7 @@ contexts:
       captures:
         0: keyword.control.at-rule.media.css.css3
         1: punctuation.definition.keyword.css.css3
-      set: [ meta-media, conditional-group-body, media-query-list ]
+      set: [ meta-media, conditional-group-body, optional-media-query-list ]
     - match: (@)supports\b
       captures:
         0: keyword.control.at-rule.supports.css.css3
@@ -74,8 +75,17 @@ contexts:
   feature-query-list:
     - include: Packages/Naomi/syntaxes/css3/feature-query-list.sublime-syntax
 
-  media-query-list:
-    - include: Packages/Naomi/syntaxes/css3/media-query-list.sublime-syntax
+  import:
+    - match: (@)import\b
+      captures:
+        0: keyword.control.at-rule.import.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [ meta-import, optional-media-query-list, import-url ]
+
+  import-url:
+    - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/function-call.sublime-syntax
 
   meta-charset:
     - meta_scope: meta.at-rule.charset.css.css3
@@ -85,6 +95,10 @@ contexts:
     - meta_scope: meta.at-rule.document.css.css3
     - include: pop-now
 
+  meta-import:
+    - meta_scope: meta.at-rule.import.css.css3
+    - include: pop-now
+
   meta-media:
     - meta_scope: meta.at-rule.media.css.css3
     - include: pop-now
@@ -92,6 +106,9 @@ contexts:
   meta-supports:
     - meta_scope: meta.at-rule.supports.css.css3
     - include: pop-now
+
+  optional-media-query-list:
+    - include: Packages/Naomi/syntaxes/css3/optional-media-query-list.sublime-syntax
 
   pop-now:
     - match: ""

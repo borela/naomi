@@ -15,6 +15,7 @@
 }
 
 .keyword.control {
+  &.at-rule,
   &.import,
   &.export,
   &.import-export {
@@ -42,4 +43,15 @@
 .keyword.operator.word {
   foreground: $purple-a100;
   fontStyle: italic;
+}
+
+.source.css {
+  .keyword.operator.word {
+    foreground: $green-a400;
+    fontStyle: none;
+  }
+}
+
+.keyword.other.unit {
+  foreground: $deep-orange-a200;
 }

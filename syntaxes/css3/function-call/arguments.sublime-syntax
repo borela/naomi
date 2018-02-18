@@ -13,16 +13,25 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: CSS 3
+hidden: true
 
-file_extensions:
-  - css
-  - css3
-
-scope: source.css.css3
+scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
+    - match: \(
+      scope: punctuation.section.group.begin.css.css3
+      set: delimiter
+
+  delimiter:
+    - meta_scope: meta.group.css.css3
+    - match: \)
+      scope: punctuation.section.group.end.css.css3
+      pop: true
+    - match: \,
+      scope: punctuation.separtor.comma.css.css3
+    - match: (?=\S)
+      push: value
+
+  value:
+    - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax

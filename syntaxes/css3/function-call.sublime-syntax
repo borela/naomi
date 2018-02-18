@@ -1,0 +1,100 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    (?!--)
+    [_[:alpha:]\-]
+    [_[:alnum:]\-]*
+
+contexts:
+  main:
+    - include: domain
+    - include: regexp
+    - include: url-and-url-prefix
+    - include: fallback
+
+  arg-begin:
+    - match: \(
+      scope: punctuation.section.group.begin.css.css3
+      pop: true
+
+  arg-close:
+    - match: \)
+      scope: punctuation.section.group.close.css.css3
+      pop: true
+
+  fallback:
+    - match: |
+        (?xi)
+        (?=
+          {{commonIdentifier}}
+          \s*\(
+        )
+      set: [
+        meta,
+        arguments,
+        identifier
+      ]
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/css3/function-call/arguments.sublime-syntax
+
+  domain:
+    - match: domain(?=\s*\()
+      scope: support.function.domain.css.css3
+      set: [ meta, arg-close, url-argument, arg-begin ]
+
+  identifier:
+    - match: (?xi){{commonIdentifier}}
+      scope: variable.function.css.css3
+      pop: true
+
+  meta:
+    - meta_scope: meta.function-call.css.css3
+    - match: ""
+      pop: true
+
+  quoted-string:
+    - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/literal/string/single-quoted.sublime-syntax
+
+  regexp:
+    - match: regexp(?=\s*\()
+      scope: support.function.regexp.css.css3
+      set: [ meta, arg-close, quoted-string, arg-begin ]
+
+  url-and-url-prefix:
+    - match: url-prefix(?=\s*\()
+      scope: support.function.url-prefix.css.css3
+      set: [ meta, arg-close, url-argument, arg-begin ]
+    - match: url(?=\s*\()
+      scope: support.function.url.css.css3
+      set: [ meta, arg-close, url-argument, arg-begin ]
+
+  url-argument:
+    - match: (?=\))
+      pop: true
+    - include: quoted-string
+    - match: |
+        (?x)
+        (?> \\["'()\s]
+          | [^"'()\s]
+        )
+      scope: string.unquoted.css.css3

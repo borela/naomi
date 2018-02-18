@@ -15,7 +15,8 @@
   foreground: $blue-gray-200;
 }
 
-// HTML text.
+// HTML/JSX text.
+.source.jsx,
 .text.html {
   foreground: $orange-300;
 }
@@ -44,10 +45,6 @@
 }
 
 // Attributes.
-.entity.other.attribute-name {
-  foreground: $cyan-a400;
-}
-
 .entity.other.attribute-name.id {
   foreground: $purple-a100;
 }
@@ -55,7 +52,7 @@
 // Builtin attribute.
 .meta.attribute.builtin
 .entity.other.attribute-name {
-  foreground: $deep-orange-300;
+  foreground: $cyan-a400;
 }
 
 // Data attribute.

@@ -13,16 +13,24 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: CSS 3
+hidden: true
 
-file_extensions:
-  - css
-  - css3
+scope: ...
 
-scope: source.css.css3
+variables:
+  hex: "[0-9a-f]"
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
+    # RGB
+    - match: (?i)(\#)({{hex}}{3}|{{hex}}{6})\b
+      scope: constant.other.color.rgb-value.css
+      captures:
+        1: punctuation.definition.constant.css
+      pop: true
+    # RGBA.
+    - match: (?i)(\#)({{hex}}{4}|{{hex}}{8})\b
+      scope: constant.other.color.rgba-value.css
+      captures:
+        1: punctuation.definition.constant.css
+      pop: true

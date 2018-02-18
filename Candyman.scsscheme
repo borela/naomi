@@ -22,6 +22,7 @@
 @import 'schemes/candyman/annotation';
 @import 'schemes/candyman/comment';
 @import 'schemes/candyman/constant';
+@import 'schemes/candyman/css';
 @import 'schemes/candyman/function';
 @import 'schemes/candyman/generic';
 @import 'schemes/candyman/global/console';
@@ -29,7 +30,6 @@
 @import 'schemes/candyman/keyword';
 @import 'schemes/candyman/markup';
 @import 'schemes/candyman/storage';
-@import 'schemes/candyman/number';
 @import 'schemes/candyman/punctuation';
 @import 'schemes/candyman/string';
 @import 'schemes/candyman/type';

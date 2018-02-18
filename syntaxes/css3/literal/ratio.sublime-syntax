@@ -13,16 +13,16 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: CSS 3
+hidden: true
 
-file_extensions:
-  - css
-  - css3
-
-scope: source.css.css3
+scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
+    - match: ([0-9]+)\s*(/)\s*([0-9])
+      captures:
+        0: constant.numeric.ratio.css.css3
+        1: constant.numeric.decimal.css.css3
+        2: keyword.operator.arithmetic.ratio.css.css3
+        3: constant.numeric.decimal.css.css3
+      pop: true

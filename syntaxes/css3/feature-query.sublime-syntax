@@ -34,11 +34,15 @@ contexts:
         - include: logical-operator
         - include: Packages/Naomi/syntaxes/css3/ruleset/block/declaration.sublime-syntax
 
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+
   else-pop:
     - match: (?=\S)
       pop: true
 
   head:
+    - include: comment-no-pop
     - include: open-group
 
   logical-operator:

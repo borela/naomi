@@ -21,7 +21,7 @@ contexts:
   main:
     - include: comment-no-pop
     - include: logical-operator
-    - match: (?=\S)
+    - match: ""
       set: [ optional-tail, head ]
 
   close-group:
@@ -45,6 +45,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/css3/media-query-feature-expression.sublime-syntax
 
   head:
+    - include: comment-no-pop
     - include: type
     - include: open-group
 
@@ -62,6 +63,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/css3/optional-media-query.sublime-syntax
 
   optional-tail:
+    - include: comment-no-pop
     - include: logical-operator
     - include: else-pop
 

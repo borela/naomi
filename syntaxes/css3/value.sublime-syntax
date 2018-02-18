@@ -28,4 +28,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/literal/string/unquoted.sublime-syntax

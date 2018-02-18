@@ -15,7 +15,8 @@
   foreground: $blue-gray-200;
 }
 
-// HTML text.
+// HTML/JSX text.
+.source.jsx,
 .text.html {
   foreground: $orange-300;
 }

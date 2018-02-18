@@ -1496,7 +1496,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.text.html</string>
+			<string>.source.jsx, .text.html</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

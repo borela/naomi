@@ -21,8 +21,9 @@ variables:
   commonIdentifier: (?!--).[_[:alnum:]\-]*
 
   coreProperties: |
-    # align-content, align-items, align-self
-    (?> align-(?>content|items|self)
+    (?> additive-symbols
+      # align-content, align-items, align-self
+      | align-(?>content|items|self)
       | alignment-baseline
       | all
       | animation
@@ -248,6 +249,7 @@ variables:
       | dominant-baseline
       | elevation
       | empty-cells
+      | fallback
       | fill
         (?:-
           # fill-break
@@ -473,6 +475,7 @@ variables:
       | mix-blend-mode
       # nav-down, nav-left, nav-right, nav-up
       | nav-(?>down|left|right|up)
+      | negative
       # object-fit, object-position
       | object-(?>fit|position)
       | offset
@@ -525,21 +528,23 @@ variables:
             | width
           )
         )?
-      | padding
-        (?:-
-          # padding-block, padding-block-end, padding-block-start
-          (?> block(?:-(?>end|start))?
-            # padding-bottom
-            | bottom
-            # padding-inline, padding-inline-end, padding-inline-start
-            | inline(?:-(?>end|start))?
-            # padding-left
-            | left
-            # padding-right
-            | right
-            # padding-top
-            | top
-          )
+      | pad
+        (?:ding
+          (?:-
+            # padding-block, padding-block-end, padding-block-start
+            (?> block(?:-(?>end|start))?
+              # padding-bottom
+              | bottom
+              # padding-inline, padding-inline-end, padding-inline-start
+              | inline(?:-(?>end|start))?
+              # padding-left
+              | left
+              # padding-right
+              | right
+              # padding-top
+              | top
+            )
+          )?
         )?
       # page, page-break-after, page-break-before, page-break-inside
       | page(?:-break-(?>after|before|inside))?
@@ -552,8 +557,10 @@ variables:
       | play-during
       | position
       | pointer-events
+      | prefix
       | presentation-level
       | quotes
+      | range
       | region-fragment
       | resize
       # rest, rest-after, rest-before
@@ -667,6 +674,8 @@ variables:
             | width
           )
         )?
+      # symbols, system, suffix
+      | s(?>ymbols|ystem|uffix)
       | tab-size
       | table-layout
       | text-

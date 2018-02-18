@@ -27,6 +27,7 @@ contexts:
     - include: empty-statement
     - include: charset
     - include: conditional-group-rules
+    - include: counter-style
     - include: font-face
     - include: namespace
     - include: import
@@ -72,6 +73,20 @@ contexts:
         1: punctuation.definition.keyword.css.css3
       set: [ meta-supports, conditional-group-body, feature-query-list ]
 
+  counter-style:
+    - match: (@)counter-style\b
+      captures:
+        0: keyword.control.at-rule.counter-style.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [ meta-counter-style, ruleset-block, counter-style-name ]
+
+  counter-style-name:
+    - match: |
+        (?xi)
+        {{commonIdentifier}}
+      scope: entity.other.counter-style.css.css3
+      pop: true
+
   double-quoted-string:
     - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
 
@@ -99,6 +114,10 @@ contexts:
 
   meta-charset:
     - meta_scope: meta.at-rule.charset.css.css3
+    - include: pop-now
+
+  meta-counter-style:
+    - meta_scope: meta.at-rule.counter-style.css.css3
     - include: pop-now
 
   meta-document:

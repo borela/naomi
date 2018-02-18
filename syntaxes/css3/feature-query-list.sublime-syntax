@@ -53,4 +53,4 @@ contexts:
     - include: query
 
   query:
-    - include: Packages/Naomi/syntaxes/css3/feature-query.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/optional-feature-query.sublime-syntax

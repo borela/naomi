@@ -21,7 +21,7 @@ contexts:
   main:
     - include: comment-no-pop
     - include: logical-operator
-    - match: (?=\S)
+    - match: ""
       set: [ optional-tail, head ]
 
   close-group:

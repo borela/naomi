@@ -17,11 +17,17 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [_[:alpha:]]
+    [_[:alnum:]\-]*
+
 contexts:
   main:
     - include: empty-statement
     - include: charset
     - include: conditional-group-rules
+    - include: namespace
     - include: import
 
   charset:
@@ -80,12 +86,7 @@ contexts:
       captures:
         0: keyword.control.at-rule.import.css.css3
         1: punctuation.definition.keyword.css.css3
-      set: [ meta-import, optional-media-query-list, import-url ]
-
-  import-url:
-    - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/function-call.sublime-syntax
+      set: [ meta-import, optional-media-query-list, string-or-url ]
 
   meta-charset:
     - meta_scope: meta.at-rule.charset.css.css3
@@ -103,16 +104,41 @@ contexts:
     - meta_scope: meta.at-rule.media.css.css3
     - include: pop-now
 
+  meta-namespace:
+    - meta_scope: meta.at-rule.namespace.css.css3
+    - include: pop-now
+
   meta-supports:
     - meta_scope: meta.at-rule.supports.css.css3
     - include: pop-now
 
+  namespace:
+    - match: (@)namespace\b
+      captures:
+        0: keyword.control.at-rule.namespace.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [ meta-namespace, string-or-url, optional-namespace-prefix ]
+
   optional-media-query-list:
     - include: Packages/Naomi/syntaxes/css3/optional-media-query-list.sublime-syntax
+
+  optional-namespace-prefix:
+    - match: |
+        (?xi)
+        {{commonIdentifier}}\b
+        (?!\s*\()
+      scope: entity.name.namespace.css.css3
+    - match: (?=\S)
+      pop: true
 
   pop-now:
     - match: ""
       pop: true
+
+  string-or-url:
+    - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/function-call.sublime-syntax
 
   url-list:
     - include: Packages/Naomi/syntaxes/css3/url-list.sublime-syntax

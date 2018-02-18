@@ -29,6 +29,7 @@ contexts:
     - include: conditional-group-rules
     - include: counter-style
     - include: font-face
+    - include: keyframes
     - include: namespace
     - include: import
     - include: viewport
@@ -112,6 +113,23 @@ contexts:
         1: punctuation.definition.keyword.css.css3
       set: [ meta-import, optional-media-query-list, string-or-url ]
 
+  keyframe-block-list:
+    - include: Packages/Naomi/syntaxes/css3/keyframe-block-list.sublime-syntax
+
+  keyframe-name:
+    - match: |
+        (?xi)
+        {{commonIdentifier}}
+      scope: entity.other.animation-name.css.css3
+      pop: true
+
+  keyframes:
+    - match: (@)keyframes\b
+      captures:
+        0: keyword.control.at-rule.keyframes.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [ meta-keyframes, keyframe-block-list, keyframe-name ]
+
   meta-charset:
     - meta_scope: meta.at-rule.charset.css.css3
     - include: pop-now
@@ -130,6 +148,10 @@ contexts:
 
   meta-import:
     - meta_scope: meta.at-rule.import.css.css3
+    - include: pop-now
+
+  meta-keyframes:
+    - meta_scope: meta.at-rule.keyframes.css.css3
     - include: pop-now
 
   meta-media:

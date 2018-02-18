@@ -27,7 +27,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
 
   declaration:
-    - include: Packages/Naomi/syntaxes/css3/ruleset/block/declaration.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax
 
   delimiter:
     - meta_scope: meta.property-list.css.css3

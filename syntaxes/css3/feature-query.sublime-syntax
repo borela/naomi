@@ -32,7 +32,7 @@ contexts:
     - match: (?=\S)
       push:
         - include: logical-operator
-        - include: Packages/Naomi/syntaxes/css3/ruleset/block/declaration.sublime-syntax
+        - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax

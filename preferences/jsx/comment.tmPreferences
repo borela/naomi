@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>JSX’s comment</string>
 	<key>scope</key>
-	<string>text.html.basic.jsx</string>
+	<string>text.html.jsx</string>
 	<key>settings</key>
 	<dict>
 		<key>shellVariables</key>

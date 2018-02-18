@@ -13,7 +13,7 @@
 # the License.
 
 name: JSX’s comment
-scope: text.html.basic.jsx
+scope: text.html.jsx
 settings:
   shellVariables:
    - name: TM_COMMENT_START

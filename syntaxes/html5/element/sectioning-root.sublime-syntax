@@ -17,45 +17,31 @@ hidden: true
 
 scope: ...
 
+variables:
+  # blockquote, body, details, dialog, figure, td
+  tags: (?>b(?>lockquote|ody)|d(?>etails|ialog)|figure|td)
+
 contexts:
   main:
-    - match: |
-        (?x)
-        (<)
-        (
-          (?> b
-              (?>lockquote|ody)
-            | fi
-              (?>eldset|gure)
-            | td
-          )
-        )\b
+    # Closing tag.
+    - match: (</)({{tags}})(>)
       captures:
-        0: tag.sectioning.root.html.html5
-        1: punctuation.definition.tag.begin.html.html5
-        2: entity.name.tag.html.html5
-      set: [
-        content,
-        attributes
-      ]
-
-  attributes:
-    - match: \s*(\>)
-      captures:
-        1: >-
-          tag.sectioning.root.html.html5
-          punctuation.definition.tag.end.html.html5
-      pop: true
-    - include: Packages/Naomi/syntaxes/html5/element/attributes.sublime-syntax
-
-  content:
-    - match: |
-        (?x)\s*
-        (</)(\2)(>)
-      captures:
-        0: tag.sectioning.root.html.html5
+        0: meta.tag.close.html.html5
         1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
         3: punctuation.definition.tag.end.html.html5
+      set: meta
+    # Open tag.
+    - match: \s*(<)({{tags}})\b
+      captures:
+        1: punctuation.definition.tag.begin.html.html5
+        2: entity.name.tag.html.html5
+      set: [ meta, close-open-tag ]
+
+  close-open-tag:
+    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
+
+  meta:
+    - meta_scope: meta.tag.sectioning.root.html.html5
+    - match: ""
       pop: true
-    - include: Packages/Naomi/syntaxes/html5/element/content.sublime-syntax

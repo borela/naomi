@@ -19,46 +19,25 @@ scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        (<)
-        (style)
+    # Closing tag.
+    - match: (</)(fieldset)(>)
       captures:
-        0: tag.style.html.html5
-        1: punctuation.definition.tag.begin.html.html5
-        2: entity.name.tag.html.html5
-      set: [
-        embedded-css3,
-        attributes
-      ]
-
-  embedded-css3:
-    - clear_scopes: true
-    - meta_content_scope: >-
-        source.css.css3
-        source.scss.scss3
-    - match: |
-        (?x)\s*
-        (</)(style)(>)
-      captures:
-        0: tag.style.html.html5
+        0: meta.tag.close.html.html5
         1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
         3: punctuation.definition.tag.end.html.html5
-      pop: true
-    - match: ""
-      push:
-        - match: |
-            (?x)
-            (?=\s*</style>)
-          pop: true
-        - include: Packages/Naomi/syntaxes/naomi.scss3.sublime-syntax
-
-  attributes:
-    - match: \s*(\>)
+      set: meta
+    # Open tag.
+    - match: (<)(fieldset)\b
       captures:
-        1: >-
-          tag.style.html.html5
-          punctuation.definition.tag.end.html.html5
+        1: punctuation.definition.tag.begin.html.html5
+        2: entity.name.tag.html.html5
+      set: [ meta, close-open-tag ]
+
+  close-open-tag:
+    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
+
+  meta:
+    - meta_scope: meta.tag.form.sectioning.root.html.html5
+    - match: ""
       pop: true
-    - include: Packages/Naomi/syntaxes/html5/element/attributes.sublime-syntax

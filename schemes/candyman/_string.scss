@@ -15,6 +15,20 @@
   background: rgba($pink-a200, .1);
 }
 
+string.regexp {
+  foreground: $teal-400;
+  background: $blue-gray-900;
+
+  .punctuation.definition.string {
+    foreground: $teal-400;
+  }
+
+  .keyword.operator,
+  .keyword.other {
+    foreground: $teal-400;
+  }
+}
+
 .punctuation.definition.string {
   foreground: rgba($pink-a200, .5);
 }

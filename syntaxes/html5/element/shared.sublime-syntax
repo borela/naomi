@@ -17,10 +17,26 @@ hidden: true
 
 scope: ...
 
+variables:
+  elementIdentifier: |
+    [$_[:alpha:]]
+    [$_.[:alnum:]\-]*
+
 contexts:
   main:
     - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/html5/attribute.sublime-syntax
-        - match: ""
-          pop: true
+      set: trap
+
+  attribute:
+    - include: Packages/Naomi/syntaxes/html5/attribute.sublime-syntax
+
+  close-open-tag:
+    - match: \/?>
+      scope: punctuation.definition.tag.end.html.html5
+      pop: true
+    - match: (?=\S)
+      push: attribute
+
+  trap:
+    - match: .
+      scope: trap.html5

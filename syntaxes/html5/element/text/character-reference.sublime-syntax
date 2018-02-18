@@ -18,18 +18,13 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [_:[:alpha:]]
-    [_:[:alnum:]\-.]*
+  decimal: \#[0-9]+
+  hex: \#x[a-fA-F0-9]+
 
+# https://w3c.github.io/html/dom.html#text-content
 contexts:
   main:
-    - match: |
-        (?xi)
-        \s*({{commonIdentifier}})
-      captures:
-        1: entity.name.attribute.html.html5
-      set: value
-
-  value:
-    - include: Packages/Naomi/syntaxes/html5/attribute/value.sublime-syntax
+    # Character reference.
+    - match: (?x)&(?>{{decimal}}|{{hex}}|\w+);
+      scope: constant.character.entity.html.html5
+      pop: true

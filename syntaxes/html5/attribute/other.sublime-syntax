@@ -17,11 +17,13 @@ hidden: true
 
 scope: ...
 
+variables:
+  commonIdentifier: |
+    [_:[:alpha:]]
+    [_:[:alnum:]\-.]*
+
 contexts:
   main:
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/html5/php.sublime-syntax
-        - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
-        - match: \s*
-          pop: true
+    - match: (?xi){{commonIdentifier}}
+      scope: entity.other.attribute-name.html.html5
+      pop: true

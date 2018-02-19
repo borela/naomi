@@ -19,23 +19,12 @@ scope: ...
 
 contexts:
   main:
-    - include: instance-variables
-    - include: static-variables
     - include: proptypes
     - include: functions
     - include: react-dom-functions
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-
-  class-properties:
-    - match: |
-        (?x)
-        (?> props
-          | state
-        )\b
-      scope: support.type.object.js.fjsx15
-      set: optional-property-type-and-value
 
   functions:
     # React functions.
@@ -66,20 +55,6 @@ contexts:
         2: punctuation.accessor.js.fjsx15
         3: support.function.fjsx15
       set: arguments
-
-  instance-variables:
-    - match: |
-        (?x)
-        (this)
-        \s*(\.)\s*
-        ((?> props
-          | state
-        ))\b
-      captures:
-        1: variable.language.this.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.type.object.js.fjsx15
-      pop: true
 
   optional-property-type-and-value:
     - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax#optional-type-and-value
@@ -163,17 +138,3 @@ contexts:
         2: punctuation.accessor.js.fjsx15
         3: support.function.fjsx15
       set: arguments
-
-  static-variables:
-    - match: |
-        (?x)
-        (static)\s+
-        ((?> contextTypes
-          | childContextTypes
-          | defaultProps
-          | propTypes
-        ))\b
-      captures:
-        1: storage.modifier.js.fjsx15
-        2: support.type.object.fjsx15
-      set: optional-property-type-and-value

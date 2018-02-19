@@ -153,11 +153,25 @@ contexts:
     - match: (?xi)(?={{attributeIdentifier}})
       set: name
 
-  close-quote:
-    - match: \"|'
+  close-double-quote:
+    - match: \"
       scope: punctuation.definition.string.end.html.html5
       pop: true
+    - match: (?=\S)
+      with_prototype:
+        - match: (?=")
+          pop: true
+      push: [ script-meta, script ]
 
+  close-single-quote:
+    - match: \'
+      scope: punctuation.definition.string.end.html.html5
+      pop: true
+    - match: (?=\S)
+      with_prototype:
+        - match: (?=')
+          pop: true
+      push: [ script-meta, script ]
 
   meta:
     - meta_scope: meta.attribute-with-value.html.html5
@@ -175,10 +189,10 @@ contexts:
   script-begin:
     - match: \'
       scope: punctuation.definition.string.begin.html.html5
-      set: [ close-quote, script-meta, script ]
+      set: [ close-single-quote ]
     - match: \"
       scope: punctuation.definition.string.begin.html.html5
-      set: [ close-quote, script-meta, script ]
+      set: [ close-double-quote ]
     - match: ""
       with_prototype:
         - match: (?=[\s<>])

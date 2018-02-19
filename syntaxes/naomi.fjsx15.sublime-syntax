@@ -16,11 +16,11 @@
 name: FJSX15
 
 file_extensions:
-  - fjsx
-  - fjsx15
   - js
   - jsx
   - jsx15
+  - fjsx
+  - fjsx15
 
 scope: source.js
 

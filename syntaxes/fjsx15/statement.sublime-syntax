@@ -191,7 +191,9 @@ contexts:
       set: asi-checked-optional-expression
 
   statement-or-expression:
-    - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
     - include: else-pop
 
   statement-or-expression-header:

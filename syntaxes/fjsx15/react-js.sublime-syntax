@@ -127,7 +127,7 @@ contexts:
   react-dom-functions:
     - match: |
         (?x)
-        (ReactDom)
+        (ReactD[oO][mM])
         \s*(\.)\s*
         ((?> findDOMNode
           | render(?:ToS(?>taticMarkup|tring))?

@@ -82,6 +82,7 @@ contexts:
       pop: true
 
   target-class-or-namespace:
+    - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/flow1/namespace-path.no-pop.sublime-syntax
     - match: (?xi){{commonIdentifier}}
       scope: entity.other.inherited-class.js.fjsx15

@@ -26,7 +26,7 @@ contexts:
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
 
-  declaration:
+  content:
     - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax
 
   delimiter:
@@ -35,7 +35,5 @@ contexts:
     - match: \}
       scope: punctuation.section.property-list.end.css.css3
       pop: true
-    - match: ;
-      scope: punctuation.terminator.css.css3
     - match: (?=\S)
-      push: declaration
+      push: content

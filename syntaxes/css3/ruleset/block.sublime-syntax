@@ -19,9 +19,23 @@ scope: ...
 
 contexts:
   main:
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/html5/php.sublime-syntax
-        - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
-        - match: \s*
-          pop: true
+    - match: \{
+      scope: punctuation.section.property-list.begin.css.css3
+      set: delimiter
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+
+  declaration:
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax
+
+  delimiter:
+    - meta_scope: meta.property-list.css.css3
+    - include: comment-no-pop
+    - match: \}
+      scope: punctuation.section.property-list.end.css.css3
+      pop: true
+    - match: ;
+      scope: punctuation.terminator.css.css3
+    - match: (?=\S)
+      push: declaration

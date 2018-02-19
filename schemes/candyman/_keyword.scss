@@ -15,6 +15,7 @@
 }
 
 .keyword.control {
+  &.at-rule,
   &.import,
   &.export,
   &.import-export {
@@ -26,7 +27,7 @@
   &.conditional,
   &.loop,
   &.trycatch {
-    foreground: $green-a400;
+    foreground: $pink-a100;
   }
 }
 
@@ -36,10 +37,7 @@
 }
 
 .keyword.operator {
-//   foreground: $teal-300;
-//   foreground: $green-a400;
-  foreground: $pink-a100;
-//   foreground: $lime-a400;
+  foreground: $green-a400;
 }
 
 .keyword.operator.word {
@@ -47,132 +45,13 @@
   fontStyle: italic;
 }
 
-// .keyword {
-//   foreground: $pink-300;
-//   fontStyle: bold italic;
+.source.css {
+  .keyword.operator.word {
+    foreground: $green-a400;
+    fontStyle: none;
+  }
+}
 
-//   &.control {
-//     &.conditional {
-//       foreground: $teal-a400;
-//       fontStyle: none;
-//     }
-
-//     &.flow {
-//       foreground: $green-200;
-//       fontStyle: none;
-
-//       &.conditional {
-//         foreground: $teal-a400;
-//         fontStyle: none;
-//       }
-
-//       &.for,
-//       &.do,
-//       &.while {
-//         foreground: $deep-orange-300;
-//         fontStyle: none;
-//       }
-
-//       &.for.of,
-//       &.for.in {
-//         foreground: $pink-300;
-//         fontStyle: bold;
-//       }
-
-//       &.break.throw {
-//         foreground: $purple-a100;
-//         fontStyle: bold;
-//       }
-
-//       &.return {
-//         foreground: $purple-a100;
-//         fontStyle: bold;
-//       }
-//     }
-
-//     &.import,
-//     &.export,
-//     &.import-export {
-//       foreground: $purple-a100;
-// //       background: rgba($purple-400, .1);
-//       fontStyle: none;
-
-//       &.export {
-//         foreground: $green-a400;
-// //         background: rgba($green-a700, .1);
-//         fontStyle: none;
-//       }
-
-// //       &.all,
-// //       &.as,
-// //       &.default,
-// //       &.star {
-// //         foreground: $deep-purple-200;
-// // //         background: $blue-gray-900;
-// //         fontStyle: none;
-// //       }
-//     }
-
-//     &.loop {
-//       foreground: $deep-orange-300;
-//       fontStyle: none;
-//     }
-
-//     &.trycatch {
-//       foreground: $red-a200;
-//       fontStyle: none;
-//     }
-//   }
-// }
-
-// .keyword.operator {
-//   foreground: $green-a400;
-//   fontStyle: bold;
-
-//   &.pipe {
-//     foreground: $light-blue-300;
-//   }
-
-//   &.word {
-//     foreground: $pink-300;
-//     fontStyle: bold;
-
-//     &.of {
-//       foreground: $green-200;
-//     }
-//   }
-// }
-
-// .meta.conditional {
-//   .meta.group {
-//     .punctuation {
-//       &.section.group,
-//       &.separator.comma {
-//         foreground: $brown-200;
-//         fontStyle: none;
-//       }
-//     }
-//   }
-
-//   .punctuation.section.block {
-//     foreground: $brown-200;
-//     fontStyle: none;
-//   }
-// }
-
-// .meta.loop {
-//   .meta.group {
-//     .punctuation {
-//       &.section.group,
-//       &.separator.comma {
-//         foreground: $orange-300;
-//         fontStyle: none;
-//       }
-//     }
-//   }
-
-//   .punctuation.section.block {
-//     foreground: $orange-300;
-//     fontStyle: none;
-//   }
-// }
+.keyword.other.unit {
+  foreground: $deep-orange-a200;
+}

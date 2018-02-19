@@ -17,19 +17,10 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [_:[:alpha:]]
-    [_:[:alnum:]\-.]*
-
 contexts:
   main:
-    - match: |
-        (?xi)
-        \s*({{commonIdentifier}})
-      captures:
-        1: entity.name.attribute.html.html5
-      set: value
-
-  value:
-    - include: Packages/Naomi/syntaxes/html5/attribute/value.sublime-syntax
+    - match: (?=[,;()\[\]{}])
+      pop: true
+    - match: (?=\S)
+      set:
+        - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax

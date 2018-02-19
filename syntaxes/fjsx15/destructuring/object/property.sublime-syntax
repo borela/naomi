@@ -64,13 +64,13 @@ contexts:
       pop: true
 
   meta-key:
-    - meta_scope: meta.destructuring.object.key.js.fjsx15
+    - meta_scope: meta.binding.destructuring.mapping.key.js.fjsx15
     - match: ""
       pop: true
 
   optional-alias:
     - match: ":"
-      scope: punctuation.separator.key-value.js.fjsx15
+      scope: punctuation.separator.key-alias.js.fjsx15
       set: alias
     - match: (?=\S)
       pop: true

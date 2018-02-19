@@ -22,10 +22,12 @@ file_extensions:
   - jsx
   - jsx15
 
-scope: source.js.fjsx15
+scope: source.js
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

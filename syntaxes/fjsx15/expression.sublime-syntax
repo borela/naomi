@@ -149,7 +149,9 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
 
   statement-or-expression:
-    - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax
+    - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   type-cast:
     - include: Packages/Naomi/syntaxes/flow1/cast.sublime-syntax

@@ -39,16 +39,25 @@ variables:
 
 contexts:
   main:
-    - match: (?xi)({{commonIdentifier}})?\s*(\`)
-      captures:
-        1: entity.name.function.tag.js.fjsx15
-        2: punctuation.definition.string.begin.js.fjsx15
+    # Styled components.
+    - match: styled(?=\s*[.\(])
+      scope: support.function.styled-component.js.fjsx15
+      set: [ meta-styled-component, styled-component ]
+    # Simple tag.
+    - match: (?xi){{commonIdentifier}}(?=\s*\`)
+      scope: entity.name.function.tag.js.fjsx15
+      pop: true
+    # Simple template string.
+    - match: \`
+      scope: punctuation.definition.string.begin.js.fjsx15
+      with_prototype:
+        - include: embedded-expression
       set: string
 
   close-embedded-expression:
     - clear_scopes: true
     - meta_scope: >-
-        source.js.fjsx15
+        source.js
         meta.template-expression.js.fjsx15
     - match: \}
       scope: punctuation.definition.template-expression.end.js.fjsx15
@@ -56,6 +65,45 @@ contexts:
 
   embedded-content:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  embedded-expression:
+    # Embedded expression.
+    - match: \$\{
+      scope: punctuation.definition.template-expression.begin.js.fjsx15
+      push: [ close-embedded-expression, embedded-content ]
+
+  meta-styled-component:
+    - meta_scope: meta.styled-component.js.fjsx15
+    - include: pop-now
+
+  pop-now:
+    - match: ""
+      pop: true
+
+  styled-component:
+    # Actual styled component code.
+    - match: \`
+      scope: punctuation.definition.template-expression.begin.js.fjsx15
+      set: styled-component-content
+    # Sub properties or function calls after “styled”.
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
+  styled-component-content:
+    - clear_scopes: true
+    - meta_scope: source.css
+    - match: \`
+      scope: punctuation.definition.template-expression.end.js.fjsx15
+      pop: true
+    - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax
+      # with_prototype:
+      #   - match: (?=`)
+      #     pop: true
 
   string:
     - meta_scope: string.template.js.fjsx15
@@ -66,7 +114,3 @@ contexts:
     # Escape.
     - match: (?xi){{escapeSequences}}
       scope: constant.character.escape.js.fjsx15
-    # Embedded expression.
-    - match: \$\{
-      scope: punctuation.definition.template-expression.begin.js.fjsx15
-      push: [ close-embedded-expression, embedded-content ]

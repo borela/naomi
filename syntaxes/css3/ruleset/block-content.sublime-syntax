@@ -19,6 +19,9 @@ scope: ...
 
 contexts:
   main:
+    - match: ;
+      scope: punctuation.terminator.css.css3
+      pop: true
     - match: ""
       set: [ delimiter, property ]
 

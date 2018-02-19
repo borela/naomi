@@ -39,16 +39,21 @@ variables:
 
 contexts:
   main:
-    - match: (?xi)({{commonIdentifier}})?\s*(\`)
-      captures:
-        1: entity.name.function.tag.js.fjsx15
-        2: punctuation.definition.string.begin.js.fjsx15
+    # Simple tag.
+    - match: (?xi){{commonIdentifier}}(?=\s*\`)
+      scope: entity.name.function.tag.js.fjsx15
+      pop: true
+    # Simple template string.
+    - match: \`
+      scope: punctuation.definition.string.begin.js.fjsx15
+      with_prototype:
+        - include: embedded-expression
       set: string
 
   close-embedded-expression:
     - clear_scopes: true
     - meta_scope: >-
-        source.js.fjsx15
+        source.js
         meta.template-expression.js.fjsx15
     - match: \}
       scope: punctuation.definition.template-expression.end.js.fjsx15
@@ -56,6 +61,11 @@ contexts:
 
   embedded-content:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  embedded-expression:
+    - match: \$\{
+      scope: punctuation.definition.template-expression.begin.js.fjsx15
+      push: [ close-embedded-expression, embedded-content ]
 
   string:
     - meta_scope: string.template.js.fjsx15
@@ -66,7 +76,3 @@ contexts:
     # Escape.
     - match: (?xi){{escapeSequences}}
       scope: constant.character.escape.js.fjsx15
-    # Embedded expression.
-    - match: \$\{
-      scope: punctuation.definition.template-expression.begin.js.fjsx15
-      push: [ close-embedded-expression, embedded-content ]

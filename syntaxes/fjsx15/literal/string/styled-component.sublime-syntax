@@ -1,0 +1,114 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+
+scope: ...
+
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
+  hexEscapedChar: |
+    x[a-f0-9]{2}
+
+  unicodeEscapedChar: |
+    (?> u[a-f0-9]{4}
+      | u\{[a-f0-9]+\}
+    )
+
+  escapeSequences: |
+    \\
+    (?> [`\\$bfnrtv]
+      | {{hexEscapedChar}}
+      | {{unicodeEscapedChar}}
+    )
+
+contexts:
+  main:
+    - match: styled(?=\s*[.\(])
+      scope: support.function.styled-component.js.fjsx15
+      set: [ meta-styled-component, styled-component ]
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+
+  delimiter:
+    - include: comment-no-pop
+    - match: ":"
+      scope: punctuation.separator.key-value.css.css3
+      set: [ meta-property-value, optional-value-no-pop ]
+
+  embedded-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax#embedded-expression
+
+  meta-property-value:
+    - meta_scope: meta.property-value.css.css3
+    - include: pop-now
+
+  meta-styled-component:
+    - meta_scope: meta.styled-component.js.fjsx15
+    - include: pop-now
+
+  optional-value-no-pop:
+    - match: (?=[;()\[\]{}])
+      pop: true
+    - match: \,
+      scope: punctuation.separator.sequence.css.css3
+    - include: embedded-expression
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
+
+  pop-now:
+    - match: ""
+      pop: true
+
+  property:
+    - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax
+
+  styled-component:
+    # Actual styled component code.
+    - match: \`
+      scope: punctuation.definition.template-expression.begin.js.fjsx15
+      set: styled-component-content
+    # Sub properties or function calls after “styled”.
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
+  styled-component-content:
+    - clear_scopes: true
+    - meta_content_scope: source.css
+    - include: comment-no-pop
+    # Close.
+    - match: \`
+      scope: punctuation.definition.template-expression.end.js.fjsx15
+      pop: true
+    - match: ;
+      scope: punctuation.terminator.css.css3
+    - include: embedded-expression
+    - match: (?=\S)
+      push: [ delimiter, property ]
+
+      # push: [ delimiter, property ]
+      # push:
+      #   - include: PackaVkes/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax
+      # with_prototype:
+      #   - match: (?=`)
+      #     pop: true

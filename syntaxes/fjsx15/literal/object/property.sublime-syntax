@@ -178,6 +178,8 @@ contexts:
         key-meta-scope,
         any-key
       ]
+    # Simple methods.
+    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
     # Simple variables and constants added to the object.
     - include: constant
     - include: variable

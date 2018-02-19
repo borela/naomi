@@ -20,19 +20,26 @@ scope: ...
 contexts:
   main:
     - match: \{
-      scope: punctuation.definition.object.begin.js.fjsx15
-      set: [ delimiters, optional-parameter ]
+      scope: punctuation.section.block.begin.js.fjsx15
+      set: [ meta, delimiters, optional-parameter ]
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   delimiters:
     - match: \,
-      scope: punctuation.definition.object.js.fjsx15
+      scope: punctuation.separator.comma.js.fjsx15
       push: optional-parameter
     - match: \}
-      scope: punctuation.definition.object.end.js.fjsx15
+      scope: punctuation.section.block.end.js.fjsx15
       set: optional-type-and-default-value
+
+  meta:
+    - meta_scope: >-
+        meta.binding.destructuring.mapping.js.fjsx15
+        meta.block.js.fjsx15
+    - match: ""
+      pop: true
 
   optional-parameter:
     - include: comment-no-pop

@@ -25,6 +25,7 @@ variables:
 
 contexts:
   main:
+    - include: calc
     - include: domain
     - include: regexp
     - include: url-and-url-prefix
@@ -45,10 +46,38 @@ contexts:
   arguments:
     - include: Packages/Naomi/syntaxes/css3/function-call/arguments.sublime-syntax
 
+  calc:
+    - match: calc(?=\s*\()
+      scope: support.function.css.css3
+      set: [ meta, calc-arg-close, arg-begin ]
+
+  calc-arg-close:
+    - include: comma-no-pop
+    - include: arg-close
+    - match: (?=\S)
+      push: [ calc-optional-tail, calc-head ]
+
+  calc-head:
+    - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
+
+  calc-optional-tail:
+    - match: "[+\\-*/]"
+      scope: keyword.operator.arithmetic.css.css3
+      push: calc-head
+    - include: else-pop
+
+  comma-no-pop:
+    - match: \,
+      scope: punctuation.separator.comma.css.css3
+
   domain:
     - match: domain(?=\s*\()
       scope: support.function.domain.css.css3
       set: [ meta, arg-close, url-argument, arg-begin ]
+
+  else-pop:
+    - match: (?=\S)
+      pop: true
 
   fallback:
     - match: |
@@ -79,7 +108,6 @@ contexts:
     - match: |
         (?x)
         (?> attr
-          | calc
           | cubic-bezier
           | hsla?
           | linear-gradient
@@ -130,8 +158,7 @@ contexts:
       set: [ meta, var-arg-close, arg-begin ]
 
   var-arg-close:
-    - match: \,
-      scope: punctuation.separator.comma.css.css3
+    - include: comma-no-pop
     - include: arg-close
     - match: (?=\S)
       push: optional-var-value

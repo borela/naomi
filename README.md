@@ -12,6 +12,60 @@
 [![License](https://img.shields.io/badge/license-Apache%202.0%20%7C%20BSD%20%7C%20MIT-ba68c8.svg?style=flat-square)][naomi]
 [![Downloads](https://img.shields.io/packagecontrol/dt/Naomi.svg?style=flat-square)][package-control]
 
+Enhanced syntax definitions and doc shortcuts for Sublime Text 3.
+
+[![preview](art/main-preview.png)][naomi]
+
+## What’s included
+
+### Color Schemes
+
+* Candyman;
+
+### Syntaxes
+
+* CSS 3+;
+* Git config;
+* Git ignore;
+* JavaScript;
+  * [Stage 0-3 proposals](//github.com/tc39/proposals);
+  * [Node globals](//nodejs.org/api/globals.html);
+  * [Jest globals](//facebook.github.io/jest/docs/en/api.html);
+  * [Flow](//flow.org);
+  * [JSX](//reactjs.org/docs/introducing-jsx.html);
+* Git attributes;
+* HTML 5+
+* MQL4 (Updating);
+* Jest Snapshot;
+* PHP 7+ (Updating);
+* SCSS (Updating);
+
+### Enhanced Go To Symbol
+
+Go to symbol with emojis:
+
+[![go-to-symbol](art/go-to-symbol.png)][naomi]
+
+### Mac’s curly quotes for Windows and Linux
+
+* `Alt+[` produces “.
+* `Alt+Shift+[` produces ”.
+* `Alt+]` produces ‘.
+* `Alt+Shift+]` produces ’.
+
+### Docblock shortcuts
+
+* `Enter` creates a new comment line.
+* `Backspace` deletes the current line and goes to the previous one.
+* `Shift+Enter` closes the docblock.
+  ![Multline line docblock preview](preview/multiline.gif)
+
+### Single line comment shortcuts
+
+* `Shift+Enter` creates new single line comment.
+* `Backspace` deletes the current line and goes to the previous one.
+  ![Single line docblock preview](preview/single-line.gif)
+
 ## Installation
 
 #### Manual installation
@@ -31,70 +85,20 @@ The “Packages” directory is located at:
 1. Install [Package Control](https://packagecontrol.io/installation).
 2. Run **Package Control: Install Package** command.
 3. Find and install the **Naomi** plugin.
-4. Restart Sublime Text if there are issues.
+4. Restart Sublime Text.
 
 ## Usage
 
-Go to the menu `View / Syntax / Naomi / ...` to select the new syntax.
+To the use syntaxes available you can:
 
-### Sublime Linter
+  1. Go to the “View” menu;
+  2. Then “Syntax”;
+  3. Finally “Naomi”;
 
-To enable [Sublime Linter][sublimeLinter] with the syntaxes available, you need to:
+Or:
 
-1. Go to the menu `Preferences / Package Settings / SublimeLinter / Settings - User `.
-2. Add these entries to the `syntax_map`:
-
-```JSON
-{
-  "syntax_map": {
-    "naomi.fjsx15": "javascript",
-    "naomi.html5": "html",
-    "naomi.mql4": "mql",
-    "naomi.php7": "php",
-    "naomi.scss3": "scss"
-  }
-}
-```
-
-## Features
-
-### Syntaxes:
-
-* FJSX15 (Combines ES2015+, Flow, React’s JSX).
-* HTML 5.
-* SCSS3.
-* MQL4.
-* PHP 7.
-
-### Enhanced go to symbol
-
-![Enhanced go to symbol](preview/go-to-symbol.png)
-
-### Docblock shortcuts
-
-* `Enter` creates a new comment line.
-* `Backspace` deletes the current line and goes to the previous one.
-* `Shift+Enter` closes the docblock.
-  ![Multline line docblock preview](preview/multiline.gif)
-
-### Single line comment shortcuts
-
-* `Shift+Enter` creates new single line comment.
-* `Backspace` deletes the current line and goes to the previous one.
-  ![Single line docblock preview](preview/single-line.gif)
-
-### Mac’s curly quotes for windows and Linux
-
-* `Alt+[` produces “.
-* `Alt+Shift+[` produces ”.
-* `Alt+]` produces ‘.
-* `Alt+Shift+]` produces ’.
-
-## Preview
-
-#### FJSX15 (ES2015 + FlowType + React’s JSX)
-
-![Candyman FJSX15 preview](preview/fjsx15/candyman.png)
+  1. Click at the bottom right corner where it shows the current syntax;
+  2. Then “Naomi”.
 
 [candyman]: schemes/candyman
 [package-control]: //packagecontrol.io/packages/Naomi

@@ -768,12 +768,18 @@ variables:
 contexts:
   main:
     - include: core
+    - include: custom
     - include: prefixed
     - include: other
 
   core:
     - match: (?xi){{coreProperties}}
       scope: support.type.property-name.css.css3
+      pop: true
+
+  custom:
+    - match: --[_[:alnum:]\-]*
+      scope: support.type.custom-property.css.css3
       pop: true
 
   prefixed:

@@ -227,7 +227,7 @@ contexts:
       captures:
         0: keyword.control.at-rule.viewport.css.css3
         1: punctuation.definition.keyword.css.css3
-      set: [ meta-page, ruleset-block ]
+      set: [ meta-viewport, ruleset-block ]
 
   url-list:
     - include: Packages/Naomi/syntaxes/css3/url-list.sublime-syntax

@@ -42,7 +42,7 @@ contexts:
       pop: true
 
   common-js-module:
-    - include: Packages/Naomi/syntaxes/fjsx15/node-js.sublime-syntax#module
+    - include: Packages/Naomi/syntaxes/fjsx15/node-js.sublime-syntax
 
   identifier:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax

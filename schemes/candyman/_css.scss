@@ -12,6 +12,10 @@
 
 .source.css {
   // Attribute inside the attribute selector.
+  .entity.other.attribute-name {
+    foreground: $purple-a100;
+  }
+
   .meta.attribute.builtin
   .entity.other.attribute-name {
     foreground: $purple-a100;
@@ -25,6 +29,11 @@
   // Property.
   .support.type.property-name {
     foreground: $cyan-a400;
+  }
+
+  // Custom property.
+  .support.type.custom-property {
+    foreground: $gray-300;
   }
 
   // Any other unrecognized property.

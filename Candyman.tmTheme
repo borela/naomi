@@ -1062,6 +1062,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.source.css .entity.other.attribute-name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ea80fc</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.source.css .meta.attribute.builtin .entity.other.attribute-name</string>
 			<key>settings</key>
 			<dict>
@@ -1085,6 +1094,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#00e5ff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .support.type.custom-property</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#e0e0e0</string>
 			</dict>
 		</dict>
 		<dict>

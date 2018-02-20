@@ -111,17 +111,15 @@ contexts:
     - include: comment-no-pop
     # Close the current expression group.
     - include: close-group
-    # Comma operator.
-    - match: (?=,)
-      push: comma
     # Type cast.
     - match: (?=:)
       set: [ close-group, type-cast ]
-    # Arrow functions need to be detect before expression groups.
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.no-pop.sublime-syntax
-    # Start of the expression.
-    - match: (?=\S)
-      push: [ optional-tail, head ]
+    # Other expressions.
+    - match: ""
+      push:
+        - include: main
+        - match: ""
+          pop: true
 
   optional-tail:
     - include: comment-no-pop

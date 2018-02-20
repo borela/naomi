@@ -48,7 +48,15 @@ contexts:
       scope: punctuation.definition.string.begin.js.fjsx15
       with_prototype:
         - include: embedded-expression
-      set: string
+      set:
+        - meta_scope: string.template.js.fjsx15
+        # Close.
+        - match: \`
+          scope: punctuation.definition.string.end.js.fjsx15
+          pop: true
+        # Escape.
+        - match: (?xi){{escapeSequences}}
+          scope: constant.character.escape.js.fjsx15
 
   close-embedded-expression:
     - clear_scopes: true
@@ -66,13 +74,3 @@ contexts:
     - match: \$\{
       scope: punctuation.definition.template-expression.begin.js.fjsx15
       push: [ close-embedded-expression, embedded-content ]
-
-  string:
-    - meta_scope: string.template.js.fjsx15
-    # Close.
-    - match: \`
-      scope: punctuation.definition.string.end.js.fjsx15
-      pop: true
-    # Escape.
-    - match: (?xi){{escapeSequences}}
-      scope: constant.character.escape.js.fjsx15

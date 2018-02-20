@@ -89,10 +89,18 @@ contexts:
   do-while:
     - match: do\b
       scope: keyword.control.loop.js.fjsx15
-      pop: true
+      set: [
+        meta-loop-do,
+        optional-while,
+        optional-statement-or-expression
+      ]
     - match: while\b
       scope: keyword.control.loop.js.fjsx15
-      set: optional-expression
+      set: [
+        meta-loop-while,
+        optional-statement-or-expression,
+        optional-expression
+      ]
 
   else-pop:
     - match: (?=\S)
@@ -147,12 +155,16 @@ contexts:
     - meta_scope: meta.conditional.js.fjsx15
     - include: pop-now
 
-  meta-loop-dowhile:
-    - meta_scope: meta.loop.for.js.fjsx15
+  meta-loop-do:
+    - meta_scope: meta.loop.do.js.fjsx15
     - include: pop-now
 
   meta-loop-for:
     - meta_scope: meta.loop.for.js.fjsx15
+    - include: pop-now
+
+  meta-loop-while:
+    - meta_scope: meta.loop.while.js.fjsx15
     - include: pop-now
 
   meta-switch:
@@ -180,6 +192,11 @@ contexts:
 
   optional-statement-or-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-statement-or-expression.sublime-syntax
+
+  optional-while:
+    - match: while\b
+      scope: keyword.control.loop.js.fjsx15
+      set: optional-expression
 
   pop-now:
     - match: ""

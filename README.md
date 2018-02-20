@@ -58,13 +58,13 @@ Go to symbol with emojis:
 * `Enter` creates a new comment line.
 * `Backspace` deletes the current line and goes to the previous one.
 * `Shift+Enter` closes the docblock.
-  ![Multline line docblock preview](preview/multiline.gif)
+  ![Multline line docblock preview](art/multiline.gif)
 
 ### Single line comment shortcuts
 
 * `Shift+Enter` creates new single line comment.
 * `Backspace` deletes the current line and goes to the previous one.
-  ![Single line docblock preview](preview/single-line.gif)
+  ![Single line docblock preview](art/single-line.gif)
 
 ## Installation
 

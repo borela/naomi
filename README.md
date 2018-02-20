@@ -25,6 +25,7 @@ Enhanced syntax definitions and doc shortcuts for Sublime Text 3.
 ### Syntaxes
 
 * CSS 3+;
+* Git attributes;
 * Git config;
 * Git ignore;
 * JavaScript;
@@ -33,7 +34,6 @@ Enhanced syntax definitions and doc shortcuts for Sublime Text 3.
   * [Jest globals](//facebook.github.io/jest/docs/en/api.html);
   * [Flow](//flow.org);
   * [JSX](//reactjs.org/docs/introducing-jsx.html);
-* Git attributes;
 * HTML 5+
 * MQL4 (Updating);
 * Jest Snapshot;

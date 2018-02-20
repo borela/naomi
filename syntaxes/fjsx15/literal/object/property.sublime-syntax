@@ -22,55 +22,36 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  constantIdentifier: |
-    [$_[:upper:]]
-    [$_[:upper:][:digit:]]*
-
   keyIdentifier: |
-    (?> '.*?(?<!\\)'
-      | ".*?(?<!\\)"
-      | `.*?(?<!\\)`
+    (?> {{string}}
       | [$_[:alnum:]]
         [$_[:alnum:]]*
     )
 
   indexer: |
     (\[
-      [^\[\]]*
-      \g<-1>?
-      [^\[\]]*
+      (?> {{string}}
+        | \g<-1>
+        | [^\[\]]
+      )*
     \])
-
-  methodIdentifier: |
-    (?> '.*?(?<!\\)'
-      | ".*?(?<!\\)"
-      | `.*?(?<!\\)`
-      | {{indexer}}
-      | {{commonIdentifier}}
-    )
 
   genericArguments: |
     (<
-      [^<>]*
-      \g<-1>?
-      [^<>]*
+      (?> {{string}}
+        | \g<-1>
+        | [^<>]
+      )*
     >)
 
   genericParameters: "{{genericArguments}}"
 
   parameters: |
     (\(
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
-      )
-      \g<-1>?
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
-      )
+      (?> {{string}}
+        | \g<-1>
+        | [^()]
+      )*
     \))
 
   flowOperators: |

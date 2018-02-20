@@ -28,6 +28,8 @@ contexts:
     - include: domain
     - include: regexp
     - include: url-and-url-prefix
+    - include: var
+    - include: other
     - include: fallback
 
   arg-begin:
@@ -40,19 +42,6 @@ contexts:
       scope: punctuation.section.group.close.css.css3
       pop: true
 
-  fallback:
-    - match: |
-        (?xi)
-        (?=
-          {{commonIdentifier}}
-          \s*\(
-        )
-      set: [
-        meta,
-        arguments,
-        identifier
-      ]
-
   arguments:
     - include: Packages/Naomi/syntaxes/css3/function-call/arguments.sublime-syntax
 
@@ -61,13 +50,49 @@ contexts:
       scope: support.function.domain.css.css3
       set: [ meta, arg-close, url-argument, arg-begin ]
 
+  fallback:
+    - match: |
+        (?xi)
+        (?=
+          {{commonIdentifier}}
+          \s*\(
+        )
+      set: [ meta, arguments, identifier ]
+
   identifier:
     - match: (?xi){{commonIdentifier}}
       scope: variable.function.css.css3
       pop: true
 
   meta:
-    - meta_scope: meta.function-call.css.css3
+    - meta_scope: >-
+        meta.function-call.css.css3
+        meta.group.css.css3
+    - include: pop-now
+
+  optional-var-value:
+    - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax#custom
+    - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
+    - include: else-pop
+
+  other:
+    - match: |
+        (?x)
+        (?> attr
+          | calc
+          | cubic-bezier
+          | hsla?
+          | linear-gradient
+          | polygon
+          | radial-gradient
+          | repeating-(?>linear|radial)-gradient
+          | rgba?
+        )
+        (?=\s*\()
+      scope: support.function.css.css3
+      set: [ meta, arguments ]
+
+  pop-now:
     - match: ""
       pop: true
 
@@ -98,3 +123,15 @@ contexts:
           | [^"'()\s]
         )
       scope: string.unquoted.css.css3
+
+  var:
+    - match: var(?=\s*\()
+      scope: support.function.regexp.css.css3
+      set: [ meta, var-arg-close, arg-begin ]
+
+  var-arg-close:
+    - match: \,
+      scope: punctuation.separator.comma.css.css3
+    - include: arg-close
+    - match: (?=\S)
+      push: optional-var-value

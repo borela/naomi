@@ -74,7 +74,7 @@ variables:
       | figure
       | footer
       | form
-      | h1
+      | h[1-6]
       # head, header
       | head(?:er)?
       | hgroup

@@ -40,6 +40,7 @@ contexts:
           | render
           | shouldComponentUpdate
         )\b
+        (?!\s*:)
       scope: entity.name.function.js.fjsx15
       set: declaration
 

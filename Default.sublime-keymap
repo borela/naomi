@@ -165,7 +165,7 @@
   },{
     "key": "preceding_text",
     "operator": "regex_match",
-    "operand": "^\\s*(?>\\*/?|//)\\s?",
+    "operand": "^\\s*(?>\\*/?)\\s?",
     "match_all": true
   }],
   "args": {

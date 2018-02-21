@@ -63,7 +63,6 @@ Go to symbol with emojis:
 ### Single line comment shortcuts
 
 * `Shift+Enter` creates new single line comment.
-* `Backspace` deletes the current line and goes to the previous one.
   ![Single line docblock preview](art/single-line.gif)
 
 ## Installation

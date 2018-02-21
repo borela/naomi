@@ -20,22 +20,7 @@ scope: ...
 contexts:
   main:
     - include: comment-no-pop
-    - include: comma
-    # At this stage, regex literals will have a higher priority than operators.
-    - match: (?=\/)
-      set: [ optional-tail, regex-literal ]
-    # Arrow functions need to be detected before expression groups.
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
-    # At this point is possible to predict JSX tags before operators because
-    # there’s no left operand for a "<" operator to be valid.
-    - include: Packages/Naomi/syntaxes/fjsx15/jsx1-early.sublime-syntax
-    # Prevent floating point being highlighted as a dot operator followed by an
-    # integer.
-    - match: (?=\.\d)
-      set:
-        - include: Packages/Naomi/syntaxes/fjsx15/literal/number.sublime-syntax
-    # Detect operators as soon as possible.
-    - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
+    - include: shared-main
     # Start of the expression.
     - match: (?=\S)
       set: [ optional-tail, head ]
@@ -115,11 +100,12 @@ contexts:
     - match: (?=:)
       set: [ close-group, type-cast ]
     # Other expressions.
-    - match: ""
+    - match: (?=\S)
       push:
-        - include: main
+        - include: shared-main
+        # Start of the expression.
         - match: ""
-          pop: true
+          set: [ optional-tail, head ]
 
   optional-tail:
     - include: comment-no-pop
@@ -145,6 +131,24 @@ contexts:
 
   regex-literal:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
+
+  shared-main:
+    - include: comma
+    # At this stage, regex literals will have a higher priority than operators.
+    - match: (?=\/)
+      set: [ optional-tail, regex-literal ]
+    # Arrow functions need to be detected before expression groups.
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+    # At this point is possible to predict JSX tags before operators because
+    # there’s no left operand for a "<" operator to be valid.
+    - include: Packages/Naomi/syntaxes/fjsx15/jsx1-early.sublime-syntax
+    # Prevent floating point being highlighted as a dot operator followed by an
+    # integer.
+    - match: (?=\.\d)
+      set:
+        - include: Packages/Naomi/syntaxes/fjsx15/literal/number.sublime-syntax
+    # Detect operators as soon as possible.
+    - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
 
   statement-or-expression:
     - include: comment-no-pop

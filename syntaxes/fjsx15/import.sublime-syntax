@@ -51,7 +51,7 @@ contexts:
 
   alias-name:
     - match: (?xi){{commonIdentifier}}
-      scope: entity.name.variable.js.fjsx15
+      scope: variable.other.readwrite.js.fjsx15
       pop: true
 
   arguments:
@@ -119,5 +119,5 @@ contexts:
       set: alias
     # Simple.
     - match: (?xi){{commonIdentifier}}
-      scope: entity.name.variable.js.fjsx15
+      scope: variable.other.readwrite.js.fjsx15
       pop: true

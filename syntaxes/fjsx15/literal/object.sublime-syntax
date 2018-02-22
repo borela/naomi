@@ -17,15 +17,6 @@ hidden: true
 
 scope: ...
 
-variables:
-  commonIdentifier: |
-    [$_[:alpha:]]
-    [$_[:alnum:]]*
-
-  constantIdentifier: |
-    [$_[:upper:]]
-    [$_[:upper:][:digit:]]*
-
 contexts:
   main:
     - match: \{
@@ -35,9 +26,6 @@ contexts:
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
-  constant:
-    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
-
   delimiters:
     - meta_scope: >-
         meta.object-literal.js.fjsx15
@@ -45,29 +33,21 @@ contexts:
     - include: comment-no-pop
     - match: \,
       scope: punctuation.separator.comma.js.fjsx15
-      # push: statement-or-expression
     - match: \}
       scope: punctuation.section.block.end.js.fjsx15
       pop: true
+    # Key.
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/object/property.sublime-syntax
+    # Anything else.
     - match: (?=\S)
-      push: statement-or-expression
+      push: anything-else
 
-  statement-or-expression:
+  anything-else:
     - include: comment-no-pop
     - match: (?=[,}])
       pop: true
     # Spread.
     - include: Packages/Naomi/syntaxes/fjsx15/operator/spread.sublime-syntax
-    # Method.
+    # Methods.
     - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
-    # Simple constant.
-    - match: (?x)(?={{constantIdentifier}}\s*(?>,|}|$))
-      set: constant
-    # Simple variable.
-    - match: (?xi)(?={{commonIdentifier}}\s*(?>,|}|$))
-      set: variable
-    # Property.
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/object/property.sublime-syntax
-
-  variable:
-    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax

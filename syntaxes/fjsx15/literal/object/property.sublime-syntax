@@ -22,6 +22,10 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  constantIdentifier: |
+    [$_[:upper:]]
+    [$_[:upper:][:digit:]]*
+
   keyIdentifier: |
     (?> {{string}}
       | [$_[:alnum:]]
@@ -99,8 +103,6 @@ variables:
 
 contexts:
   main:
-    # Methods.
-    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
     # Function assigned to property.
     - match: |
         (?xi)
@@ -110,9 +112,10 @@ contexts:
           (?:\s*async\b)?
           \s*function
         )
-      set: [
+      push: [
         function-declaration,
         function-keyword,
+        meta-key,
         method-identifier
       ]
     # Single parameter arrow function assigned to property.
@@ -126,8 +129,9 @@ contexts:
           \s*{{type}}?
           \s*=>
         )
-      set: [
+      push: [
         arrow-function,
+        meta-key,
         method-identifier
       ]
     # Arrow function assigned to property.
@@ -141,29 +145,32 @@ contexts:
           \s*{{parameters}}
           \s*=>
         )
-      set: [
+      push: [
         arrow-function,
+        meta-key,
         method-identifier
       ]
     # Computed property name.
     - match: \[
       scope: punctuation.section.brackets.begin.js.fjsx15
-      set: [
+      push: [
         associated-value,
-        computed-key-meta-scope,
+        meta-computed-key,
         computed-property-end,
         optional-expression
       ]
     # Other keys.
-    - match: (?xi)(?={{keyIdentifier}}\s*:)
+    - match: |
+        (?xi)
+        (?=
+          {{keyIdentifier}}
+          \s*:
+        )
       push: [
         associated-value,
-        key-meta-scope,
+        meta-key,
         any-key
       ]
-    # Simple variables and constants added to the object.
-    - include: constant
-    - include: variable
 
   any-key:
     - include: string
@@ -182,12 +189,6 @@ contexts:
   constant:
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
-  computed-key-meta-scope:
-    - meta_scope: >-
-        meta.object-literal.key.js.fjsx15
-        meta.object-literal.key.computed.js.fjsx15
-    - include: pop-now
-
   computed-property-end:
     - match: \]
       scope: punctuation.section.brackets.end.js.fjsx15
@@ -199,7 +200,11 @@ contexts:
   function-keyword:
     - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax#keyword
 
-  key-meta-scope:
+  meta-computed-key:
+    - meta_scope: meta.object-literal.key.computed.js.fjsx15
+    - include: pop-now
+
+  meta-key:
     - meta_scope: meta.object-literal.key.js.fjsx15
     - include: pop-now
 

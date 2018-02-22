@@ -78,7 +78,7 @@ contexts:
 
   meta-content:
     - clear_scopes: true
-    - meta_scope: source.jsx.jsx1
+    - meta_scope: source.jsx
     - match: ""
       pop: true
 

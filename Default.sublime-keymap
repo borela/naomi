@@ -171,4 +171,22 @@
   "args": {
     "file": "res://Packages/Naomi/macros/delete-to-previous-line.sublime-macro"
   }
+},{
+  // Close tags.
+  "keys": ["/"],
+  "command": "close_tag",
+  "args": { "insert_slash": true },
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "(text.html, text.xml, source.jsx) - string - comment",
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_match",
+    "operand": ".*<$",
+    "match_all": true
+  },{
+    "key": "setting.auto_close_tags"
+  }]
 }]

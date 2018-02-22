@@ -15,7 +15,7 @@
 
 hidden: true
 
-scope: text.html.jsx.jsx1
+scope: source.jsx
 
 contexts:
   main:

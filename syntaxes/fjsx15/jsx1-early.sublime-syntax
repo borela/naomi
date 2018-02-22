@@ -29,7 +29,7 @@ contexts:
 
   meta:
     - clear_scopes: true
-    - meta_scope: text.html.basic.jsx.jsx1
+    - meta_scope: source.jsx
     - match: ""
       pop: true
 

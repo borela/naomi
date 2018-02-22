@@ -179,7 +179,7 @@
   "context": [{
     "key": "selector",
     "operator": "equal",
-    "operand": "(text.html, text.xml, source.jsx) - string - comment",
+    "operand": "(text.html, text.xml, source.jsx) - (string, comment)",
     "match_all": true
   },{
     "key": "preceding_text",

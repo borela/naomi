@@ -16,10 +16,6 @@
   foreground: $gray-300;
 }
 
-.entity.name.variable {
-  fontStyle: italic;
-}
-
 .variable.language {
   &.super,
   &.this {
@@ -34,25 +30,3 @@
 .support.variable {
   foreground: $deep-purple-a100;
 }
-
-// .variable {
-//   &.language {
-//     &.prototype {
-//       foreground: $red-a200;
-//       fontStyle: italic;
-//     }
-
-//     &.super {
-//       foreground: $deep-orange-300;
-//     }
-
-//     &.this {
-//       foreground: $purple-a100;
-//       fontStyle: italic;
-//     }
-//   }
-// }
-
-// .support.variable {
-//   foreground: $deep-orange-a100;
-// }

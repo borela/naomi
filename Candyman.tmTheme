@@ -911,7 +911,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff4081</string>
+				<string>#ea80fc</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1790,15 +1790,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#e0e0e0</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.variable</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 			</dict>
 		</dict>
 		<dict>

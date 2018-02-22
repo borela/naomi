@@ -187,6 +187,48 @@
     "operand": ".*<$",
     "match_all": true
   },{
-    "key": "setting.auto_close_tags"
+    "key": "setting.auto_close_tags",
+    "operator": "equal",
+    "operand": true
+  }]
+},{
+  // JS - Pair template.
+  "keys": ["`"],
+  "command": "insert_snippet",
+  "args": { "contents": "`$0`" },
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.js - (string, comment)",
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "setting.auto_match_enabled",
+    "operator": "equal",
+    "operand": true
+  }]
+},{
+  // JS - Pair template for selected text.
+  "keys": ["`"],
+  "command": "insert_snippet",
+  "args": { "contents": "`${0:$SELECTION}`" },
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.js",
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": false,
+    "match_all": true
+  },{
+    "key": "setting.auto_match_enabled",
+    "operator": "equal",
+    "operand": true
   }]
 }]

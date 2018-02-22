@@ -40,9 +40,7 @@ contexts:
       ]
     # Normal property with an alias.
     - match: (?xi){{commonIdentifier}}(?=\s*:)
-      scope: >-
-        object.property.js.fjsx15
-        entity.name.variable.js.fjsx15
+      scope: meta.binding.destructuring.mapping.key.js.fjsx15
       set: optional-alias
 
   comment-no-pop:

@@ -24,6 +24,12 @@ variables:
 
 contexts:
   main:
+    # Style:
+    - match: style\b
+      scope: >-
+        meta.attribute.builtin.html.html5
+        entity.other.attribute-name.style.html.html5
+      set: [ meta, style-begin, key-value-separator ]
     # Event handler.
     - match: |
         (?xi)on
@@ -157,31 +163,32 @@ contexts:
     - match: \"
       scope: punctuation.definition.string.end.html.html5
       pop: true
-    - match: (?=\S)
-      with_prototype:
-        - match: (?=")
-          pop: true
-      push: [ script-meta, script ]
 
   close-single-quote:
     - match: \'
       scope: punctuation.definition.string.end.html.html5
       pop: true
-    - match: (?=\S)
-      with_prototype:
-        - match: (?=')
-          pop: true
-      push: [ script-meta, script ]
+
+  css:
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax#main-no-pop
+
+  key-value-separator:
+    - match: \=
+      scope: punctuation.separator.key-value.html.html5
+      pop: true
 
   meta:
     - meta_scope: meta.attribute-with-value.html.html5
-    - match: ""
-      pop: true
+    - include: pop-now
 
   name:
     - include: Packages/Naomi/syntaxes/html5/attribute/builtin.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/attribute/data.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/attribute/other.sublime-syntax
+
+  pop-now:
+    - match: ""
+      pop: true
 
   script:
     - include: Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax
@@ -189,27 +196,72 @@ contexts:
   script-begin:
     - match: \'
       scope: punctuation.definition.string.begin.html.html5
-      set: [ close-single-quote ]
+      set: [ script-close-single-quote ]
     - match: \"
       scope: punctuation.definition.string.begin.html.html5
-      set: [ close-double-quote ]
+      set: [ script-close-double-quote ]
+    # Unquoted script.
     - match: ""
       with_prototype:
         - match: (?=[\s<>])
           pop: true
       set: [ script-meta, script ]
 
+  script-close-double-quote:
+    - include: close-double-quote
+    - match: (?=\S)
+      with_prototype:
+        - match: (?=")
+          pop: true
+      push: [ script-meta, script ]
+
+  script-close-single-quote:
+    - include: close-single-quote
+    - match: (?=\S)
+      with_prototype:
+        - match: (?=')
+          pop: true
+      push: [ script-meta, script ]
+
   script-meta:
     - clear_scopes: true
-    - meta_scope: source.js.fjsx15
-    - match: ""
-      pop: true
+    - meta_scope: source.js
+    - include: pop-now
 
-  key-value-separator:
-    - match: \=
-      scope: punctuation.separator.key-value.html.html5
-      pop: true
+  style-begin:
+    - match: \'
+      scope: punctuation.definition.string.begin.html.html5
+      set: [ style-close-single-quote ]
+    - match: \"
+      scope: punctuation.definition.string.begin.html.html5
+      set: [ style-close-double-quote ]
+    # Unquoted style.
+    - match: ""
+      with_prototype:
+        - match: (?=[\s<>])
+          pop: true
+      set: [ style-meta, css ]
+
+  style-close-double-quote:
+    - include: close-double-quote
+    - match: (?=\S)
+      with_prototype:
+        - match: (?=")
+          pop: true
+      push: [ style-meta, css ]
+
+  style-close-single-quote:
+    - include: close-single-quote
+    - match: (?=\S)
+      with_prototype:
+        - match: (?=')
+          pop: true
+      push: [ style-meta, css ]
+
+  style-meta:
+    - clear_scopes: true
+    - meta_scope: source.css
+    - include: pop-now
 
   value:
     - include: Packages/Naomi/syntaxes/html5/attribute/value.sublime-syntax
-

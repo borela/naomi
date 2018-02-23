@@ -29,7 +29,7 @@ contexts:
       scope: punctuation.section.group.end.js.fjsx15
       pop: true
     - match: \,
-      scope: punctuation.separtor.comma.js.fjsx15
+      scope: punctuation.separator.comma.js.fjsx15
     - match: (?=\S)
       push: expression
 

@@ -40,7 +40,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   constant:
-    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
 
   delimiters:
     - meta_scope: >-

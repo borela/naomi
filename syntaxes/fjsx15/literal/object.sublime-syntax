@@ -23,8 +23,24 @@ contexts:
       scope: punctuation.section.block.begin.js.fjsx15
       set: delimiters
 
+  anything-else:
+    - include: comment-no-pop
+    - match: (?=[,}])
+      pop: true
+    # Spread.
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/spread.sublime-syntax
+    # Methods.
+    - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
+    # Shorthand.
+    - include: constant
+    - include: variable
+
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  constant:
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
 
   delimiters:
     - meta_scope: >-
@@ -42,12 +58,5 @@ contexts:
     - match: (?=\S)
       push: anything-else
 
-  anything-else:
-    - include: comment-no-pop
-    - match: (?=[,}])
-      pop: true
-    # Spread.
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/spread.sublime-syntax
-    # Methods.
-    - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
+  variable:
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

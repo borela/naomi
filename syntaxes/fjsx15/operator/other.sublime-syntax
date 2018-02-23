@@ -35,10 +35,10 @@ contexts:
       set: optional-expression
     - match: \?\.
       scope: punctuation.accessor.optional-chain.js.fjsx15
-      set: optional-expression
+      set: optional-expression-after-accessor
     - match: \.(?!\.)
       scope: punctuation.accessor.js.fjsx15
-      set: optional-expression
+      set: optional-expression-after-accessor
     - match: \?
       scope: keyword.operator.ternary.js.fjsx15
       set: [
@@ -48,6 +48,14 @@ contexts:
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  optional-expression-after-accessor:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
+    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+    - match: (?=\S)
+      pop: true
 
   ternary-else:
     - match: ":"

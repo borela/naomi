@@ -12,7 +12,7 @@
 [![License](https://img.shields.io/badge/license-Apache%202.0%20%7C%20BSD%20%7C%20MIT-ba68c8.svg?style=flat-square)][naomi]
 [![Downloads](https://img.shields.io/packagecontrol/dt/Naomi.svg?style=flat-square)][package-control]
 
-Enhanced syntax definitions and doc shortcuts for Sublime Text 3.
+Enhanced syntax definitions for Sublime Text 3.
 
 [![preview](art/main-preview.png)][naomi]
 
@@ -34,7 +34,7 @@ Enhanced syntax definitions and doc shortcuts for Sublime Text 3.
   * [Jest globals](//facebook.github.io/jest/docs/en/api.html);
   * [Flow](//flow.org);
   * [JSX](//reactjs.org/docs/introducing-jsx.html);
-* HTML 5+
+* HTML 5+;
 * MQL4 (Updating);
 * Jest Snapshot;
 * PHP 7+ (Updating);
@@ -42,28 +42,17 @@ Enhanced syntax definitions and doc shortcuts for Sublime Text 3.
 
 ### Enhanced Go To Symbol
 
-Go to symbol with emojis:
+* **Windows or Linux**: `Ctrl+R`;
+* **OSX: `⌘ + R`;
 
 [![go-to-symbol](art/go-to-symbol.png)][naomi]
 
-### Mac’s curly quotes for Windows and Linux
+### OSX’s curly quotes for Windows and Linux
 
 * `Alt+[` produces “.
 * `Alt+Shift+[` produces ”.
 * `Alt+]` produces ‘.
 * `Alt+Shift+]` produces ’.
-
-### Docblock shortcuts
-
-* `Enter` creates a new comment line.
-* `Backspace` deletes the current line and goes to the previous one.
-* `Shift+Enter` closes the docblock.
-  ![Multline line docblock preview](art/multiline.gif)
-
-### Single line comment shortcuts
-
-* `Shift+Enter` creates new single line comment.
-  ![Single line docblock preview](art/single-line.gif)
 
 ## Installation
 

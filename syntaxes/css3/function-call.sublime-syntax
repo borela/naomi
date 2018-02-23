@@ -109,6 +109,7 @@ contexts:
         (?x)
         (?> attr
           | cubic-bezier
+          | format
           | hsla?
           | linear-gradient
           | polygon

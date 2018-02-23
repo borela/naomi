@@ -20,7 +20,7 @@ scope: ...
 contexts:
   main:
     - match: \,
-      scope: punctuation.separator.comma.js.fjsx15
+      scope: keyword.operator.comma.js.fjsx15
       set: optional-expression
 
   optional-expression:

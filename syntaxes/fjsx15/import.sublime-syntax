@@ -101,6 +101,10 @@ contexts:
       pop: true
     # Type.
     - include: Packages/Naomi/syntaxes/flow1/type-import.sublime-syntax
+    # Aliased All.
+    - match: \*(?=\s*as)
+      scope: keyword.control.import-export.star.js.fjsx15
+      set: alias
     # All.
     - match: \*
       scope: keyword.control.import-export.star.js.fjsx15

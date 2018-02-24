@@ -35,5 +35,7 @@ contexts:
     - match: \}
       scope: punctuation.section.property-list.end.css.css3
       pop: true
+    - match: ;
+      scope: punctuation.terminator.css.css3
     - match: (?=\S)
       push: content

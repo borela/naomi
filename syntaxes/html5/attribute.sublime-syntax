@@ -170,15 +170,27 @@ contexts:
       pop: true
 
   css:
-    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax#main-no-pop
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/css3/ruleset/block.sublime-syntax#delimiter
 
   key-value-separator:
     - match: \=
       scope: punctuation.separator.key-value.html.html5
-      pop: true
+      set: wait-non-space
 
   meta:
     - meta_scope: meta.attribute-with-value.html.html5
+    - include: pop-now
+
+  meta-script:
+    - clear_scopes: true
+    - meta_content_scope: source.js
+    - include: pop-now
+
+  meta-style:
+    - clear_scopes: true
+    - meta_content_scope: source.css
     - include: pop-now
 
   name:
@@ -196,72 +208,46 @@ contexts:
   script-begin:
     - match: \'
       scope: punctuation.definition.string.begin.html.html5
-      set: [ script-close-single-quote ]
-    - match: \"
-      scope: punctuation.definition.string.begin.html.html5
-      set: [ script-close-double-quote ]
-    # Unquoted script.
-    - match: ""
-      with_prototype:
-        - match: (?=[\s<>])
-          pop: true
-      set: [ script-meta, script ]
-
-  script-close-double-quote:
-    - include: close-double-quote
-    - match: (?=\S)
-      with_prototype:
-        - match: (?=")
-          pop: true
-      push: [ script-meta, script ]
-
-  script-close-single-quote:
-    - include: close-single-quote
-    - match: (?=\S)
       with_prototype:
         - match: (?=')
           pop: true
-      push: [ script-meta, script ]
-
-  script-meta:
-    - clear_scopes: true
-    - meta_scope: source.js
-    - include: pop-now
+      set: [ close-single-quote, meta-script, script ]
+    - match: \"
+      scope: punctuation.definition.string.begin.html.html5
+      with_prototype:
+        - match: (?=")
+          pop: true
+      set: [ close-double-quote, meta-script, script ]
+    # Unquoted script.
+    - match: ""
+      with_prototype:
+        - match: (?=[\s'"`=<>])
+          pop: true
+      set: [ meta-script, script ]
 
   style-begin:
     - match: \'
       scope: punctuation.definition.string.begin.html.html5
-      set: [ style-close-single-quote ]
-    - match: \"
-      scope: punctuation.definition.string.begin.html.html5
-      set: [ style-close-double-quote ]
-    # Unquoted style.
-    - match: ""
-      with_prototype:
-        - match: (?=[\s<>])
-          pop: true
-      set: [ style-meta, css ]
-
-  style-close-double-quote:
-    - include: close-double-quote
-    - match: (?=\S)
-      with_prototype:
-        - match: (?=")
-          pop: true
-      push: [ style-meta, css ]
-
-  style-close-single-quote:
-    - include: close-single-quote
-    - match: (?=\S)
       with_prototype:
         - match: (?=')
           pop: true
-      push: [ style-meta, css ]
-
-  style-meta:
-    - clear_scopes: true
-    - meta_scope: source.css
-    - include: pop-now
+      set: [ close-single-quote, meta-style, css ]
+    - match: \"
+      scope: punctuation.definition.string.begin.html.html5
+      with_prototype:
+        - match: (?=")
+          pop: true
+      set: [ close-double-quote, meta-style, css ]
+    # Unquoted script.
+    - match: ""
+      with_prototype:
+        - match: (?=[\s'"`=<>])
+          pop: true
+      set: [ meta-style, css ]
 
   value:
     - include: Packages/Naomi/syntaxes/html5/attribute/value.sublime-syntax
+
+  wait-non-space:
+    - match: (?=\S)
+      pop: true

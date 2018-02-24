@@ -43,7 +43,7 @@ Enhanced syntax definitions for Sublime Text 3.
 ### Enhanced Go To Symbol
 
 * **Windows or Linux**: `Ctrl+R`;
-* **OSX: `⌘ + R`;
+* **OSX**: `⌘ + R`;
 
 [![go-to-symbol](art/go-to-symbol.png)][naomi]
 

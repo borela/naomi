@@ -28,3 +28,9 @@ contexts:
         - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
         - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
         - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
+
+  # Used by the core syntax to highlight inline CSS.
+  rule-list-body:
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/css3/ruleset/block.sublime-syntax#delimiter

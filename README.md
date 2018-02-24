@@ -77,7 +77,10 @@ The “Packages” directory is located at:
 
 ## Usage
 
-To the use syntaxes available you can:
+After installing the plugin and restarting Sublime, it will automatically use
+the syntaxes contained in this package.
+
+You can also set them manually through:
 
   1. Go to the “View” menu;
   2. Then “Syntax”;

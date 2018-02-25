@@ -37,5 +37,6 @@ scope: text.html
 
 contexts:
   main:
+    - meta_scope: meta.naomi
     # - include: Packages/Naomi/syntaxes/html5/php.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax

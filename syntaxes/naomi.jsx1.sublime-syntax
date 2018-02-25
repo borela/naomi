@@ -19,6 +19,7 @@ scope: source.jsx
 
 contexts:
   main:
+    - meta_scope: meta.naomi
     - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax

@@ -24,5 +24,7 @@ scope: >-
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/scss3/selector.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax
+    - match: ...
+      scope: keyword
+    # - include: Packages/Naomi/syntaxes/scss3/selector.sublime-syntax
+    # - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax

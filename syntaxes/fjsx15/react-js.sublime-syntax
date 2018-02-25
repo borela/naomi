@@ -17,78 +17,94 @@ hidden: true
 
 scope: ...
 
+variables:
+  componetnFunctions: |
+    (this)
+    \s*(\.)\s*
+    ((?> forceUpdate
+      | setState
+    ))\b
+
+  propTypeFunctions: |
+    (?:
+      (React)
+      \s*(\.)\s*
+    )?
+    (PropTypes)
+    \s*(\.)\s*
+    ((?> arrayOf
+      | instanceOf
+      | oneOf(?:Type)?
+      | shape
+    ))\b
+
+  reactFunctions: |
+    (React)
+    \s*(\.)\s*
+    ((?> createElement
+      | createFactory
+      | cloneElement
+      | isValidElement
+    ))\b
+
+  reactDomFunctions: |
+    (ReactD[oO][mM])
+    \s*(\.)\s*
+    ((?> findDOMNode
+      | render(?:ToS(?>taticMarkup|tring))?
+      | unmountComponentAtNode
+    ))\b
+
 contexts:
   main:
+    - include: proptype-functions
     - include: proptypes
-    - include: functions
+    - include: component-functions
+    - include: react-functions
     - include: react-dom-functions
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
-  functions:
-    # React functions.
-    - match: |
-        (?x)
-        (React)
-        \s*(\.)\s*
-        ((?> createElement
-          | createFactory
-          | cloneElement
-          | isValidElement
-        ))\b
-      captures:
-        1: support.type.object.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.function.fjsx15
-      set: arguments
-    # Component functions.
-    - match: |
-        (?x)
-        (this)
-        \s*(\.)\s*
-        ((?> forceUpdate
-          | setState
-        ))\b
+  component-functions:
+    # Function call.
+    - match: (?x){{reactFunctions}}(?=\s*\()
       captures:
         1: variable.language.this.js.fjsx15
         2: punctuation.accessor.js.fjsx15
         3: support.function.fjsx15
-      set: arguments
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: (?x){{reactFunctions}}
+      captures:
+        1: variable.language.this.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.fjsx15
+      pop: true
+
+  function-call-meta-scope:
+    - meta_scope: meta.function-call.js.fjsx15
+    - include: pop-now
 
   optional-property-type-and-value:
     - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax#optional-type-and-value
 
+  pop-now:
+    - match: ""
+      pop: true
+
   proptypes:
-    # Function call.
-    - match: |
-        (?x)
-        (?:
-          (React\b)
-          \s*(\.)\s*
-        )?
-        (PropTypes\b)
-        \s*(\.)\s*
-        ((?> arrayOf
-          | oneOf(?:Type)?
-          | shape
-        ))
-        (?=\s*\()
-      captures:
-        1: support.type.object.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: support.type.object.fjsx15
-        4: punctuation.accessor.js.fjsx15
-        5: support.function.fjsx15
-      set: arguments
     # Normal.
     - match: |
         (?x)
         (?:
-          (React\b)
+          (React)
           \s*(\.)\s*
         )?
-        (PropTypes\b)
+        (PropTypes)
         \s*(\.)\s*
         ((?> any
           | array
@@ -98,8 +114,9 @@ contexts:
           | node
           | number
           | object
+          | symbol
           | string
-        ))
+        ))\b
         (?:
           \s*(\.)\s*
           (isRequired\b)
@@ -111,7 +128,7 @@ contexts:
         4: punctuation.accessor.js.fjsx15
         5: support.type.object.fjsx15
         6: punctuation.accessor.js.fjsx15
-        7: support.variable.fjsx15
+        7: support.type.object.fjsx15
       pop: true
     # “isRequired” after function call.
     - match: |
@@ -121,20 +138,66 @@ contexts:
         (isRequired\b)
       captures:
         1: punctuation.accessor.js.fjsx15
-        2: support.variable.fjsx15
+        2: support.type.object.fjsx15
+      pop: true
+
+  proptype-functions:
+    # Function call.
+    - match: (?x){{propTypeFunctions}}(?=\s*\()
+      captures:
+        1: support.type.object.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.type.object.fjsx15
+        4: punctuation.accessor.js.fjsx15
+        5: support.function.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: (?x){{propTypeFunctions}}
+      captures:
+        1: support.type.object.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.type.object.fjsx15
+        4: punctuation.accessor.js.fjsx15
+        5: support.function.fjsx15
       pop: true
 
   react-dom-functions:
-    - match: |
-        (?x)
-        (ReactD[oO][mM])
-        \s*(\.)\s*
-        ((?> findDOMNode
-          | render(?:ToS(?>taticMarkup|tring))?
-          | unmountComponentAtNode
-        ))\b
+    # Function call.
+    - match: (?x){{reactDomFunctions}}(?=\s*\()
       captures:
         1: support.type.object.fjsx15
         2: punctuation.accessor.js.fjsx15
         3: support.function.fjsx15
-      set: arguments
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: (?x){{reactDomFunctions}}
+      captures:
+        1: support.type.object.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.fjsx15
+      pop: true
+
+  react-functions:
+    # Function call.
+    - match: (?x){{reactFunctions}}(?=\s*\()
+      captures:
+        1: support.type.object.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: (?x){{reactFunctions}}
+      captures:
+        1: support.type.object.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.fjsx15
+      pop: true

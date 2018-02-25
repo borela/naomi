@@ -18,6 +18,11 @@ hidden: true
 scope: ...
 
 variables:
+  globalFunctions: |
+    (?> (?>clear|set)Immediate
+      | require
+    )\b
+
   processFunctions: |
     (?> abort
       | chdir
@@ -78,13 +83,17 @@ contexts:
       pop: true
 
   global-function:
-    - match: |
-        (?x)
-        (?> (?>clear|set)Immediate
-          | require
-        )\b
+    # Function call.
+    - match: (?x){{globalFunctions}}(?=\s*\()
       scope: support.function.js.fjsx15
-      set: arguments
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: (?x){{globalFunctions}}
+      scope: support.function.js.fjsx15
+      pop: true
 
   module-property-or-function:
     # Properties.

@@ -54,6 +54,10 @@ Enhanced syntax definitions for Sublime Text 3.
 * `Alt+]` produces ‘.
 * `Alt+Shift+]` produces ’.
 
+### Other enhancements
+
+* Pressing enter between `()`, `[]`, `""`, `''` and ``` `` ```  will have the same
+  behavior as `{}`;
 ## Installation
 
 #### Manual installation

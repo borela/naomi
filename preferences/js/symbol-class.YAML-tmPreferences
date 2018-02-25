@@ -12,8 +12,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: Classes in the symbol list
+name: Symbol - JS’s classes
 scope: source.js meta.declaration.class
 settings:
   showInSymbolList: 1
-  symbolTransformation: "/class\s+/\U0001f534/"
+  symbolTransformation: "/class\\s+/\U0001f534 /"

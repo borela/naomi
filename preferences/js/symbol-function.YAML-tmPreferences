@@ -12,13 +12,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: JavaScript’s comment
-scope: source.js
+name: Symbol - JS’s function
+scope: source.js meta.declaration.function
 settings:
-  shellVariables:
-  - name: TM_COMMENT_START
-    value: "// "
-  - name: TM_COMMENT_START_2
-    value: "/* "
-  - name: TM_COMMENT_END_2
-    value: " */"
+  showInSymbolList: 1
+  symbolTransformation: "/^\\s*(?:function\\s+)?/\U0001f530 /"

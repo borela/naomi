@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Functions in the symbol list</string>
+	<string>Symbol - JS’s method</string>
 	<key>scope</key>
 	<string>source.js meta.declaration.function.method</string>
 	<key>settings</key>
@@ -11,7 +11,7 @@
 		<key>showInSymbolList</key>
 		<integer>1</integer>
 		<key>symbolTransformation</key>
-		<string>//🔷/</string>
+		<string>/^\s*/🔷 /</string>
 	</dict>
 </dict>
 </plist>

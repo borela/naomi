@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Functions in the symbol list</string>
+	<string>Symbol - JS’s Classes</string>
 	<key>scope</key>
-	<string>source.js meta.declaration.function</string>
+	<string>source.js meta.declaration.class</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>
 		<integer>1</integer>
 		<key>symbolTransformation</key>
-		<string>/function/🔰/</string>
+		<string>/class\s+/🔴 /</string>
 	</dict>
 </dict>
 </plist>

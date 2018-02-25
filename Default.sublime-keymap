@@ -12,7 +12,7 @@
 
 [{
   // Close tags.
-  "keys": ["/"],
+  "keys": [ "/" ],
   "command": "close_tag",
   "args": { "insert_slash": true },
   "context": [{
@@ -32,7 +32,7 @@
   }]
 },{
   // JS - Pair template.
-  "keys": ["`"],
+  "keys": [ "`" ],
   "command": "insert_snippet",
   "args": { "contents": "`$0`" },
   "context": [{
@@ -52,7 +52,7 @@
   }]
 },{
   // JS - Pair template for selected text.
-  "keys": ["`"],
+  "keys": [ "`" ],
   "command": "insert_snippet",
   "args": { "contents": "`${0:$SELECTION}`" },
   "context": [{
@@ -72,7 +72,7 @@
   }]
 },{
   // JS - Pair interpolation
-  "keys": ["{"],
+  "keys": [ "{" ],
   "command": "insert_snippet",
   "args": { "contents": "{$0}" },
   "context": [{

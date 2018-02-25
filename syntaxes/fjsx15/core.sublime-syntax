@@ -18,6 +18,19 @@ hidden: true
 scope: ...
 
 variables:
+  arrayFunctions: |
+    (?> from
+      | isArray
+    )\b
+
+  globalFunctions: |
+    (?> decodeURI(?:Component)?
+      | encodeURI(?:Component)?
+      | eval
+      | is(?>Finite|NaN)
+      | parse(?>Float|Int)
+    )\b
+
   mathFunctions: |
     (?> abs
       | acosh?
@@ -65,7 +78,6 @@ variables:
       | KeyFor
     )\b
 
-
 contexts:
   main:
     - include: console
@@ -87,17 +99,17 @@ contexts:
     - include: web-assembly
 
   array-property-or-function:
-    # Function.
-    - match: |
-        (?x)
-        (?> from
-          | isArray
-        )\b
+    # Function call.
+    - match: (?x){{arrayFunctions}}(?=\s*\()
       scope: support.function.js.fjsx15
       set: [
         function-call-meta-scope,
         arguments
       ]
+    # Function reference.
+    - match: (?x){{arrayFunctions}}
+      scope: support.function.js.fjsx15
+      pop: true
     - include: else-pop
 
   arguments:
@@ -206,20 +218,17 @@ contexts:
     - include: pop-now
 
   functions:
-    - match: |
-        (?x)
-        (?> decodeURI(?:Component)?
-          | encodeURI(?:Component)?
-          | eval
-          | is(?>Finite|NaN)
-          | parse(?>Float|Int)
-        )
-        (?=\s*\()
+    # Function call.
+    - match: (?x){{globalFunctions}}(?=\s*\()
       scope: support.function.js.fjsx15
       set: [
         function-call-meta-scope,
         arguments
       ]
+    # Function reference.
+    - match: (?x){{globalFunctions}}
+      scope: support.function.js.fjsx15
+      pop: true
 
   fundamental-objects:
     - match: (Object)\s*(\.)

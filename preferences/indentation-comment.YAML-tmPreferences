@@ -12,14 +12,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: JavaScript’s comment indentation settings
-scope: >-
-  source.js comment.block,
-  source.js meta.block-end
+name: Comment’s indentation
+scope: meta.naomi comment
 settings:
-  preserveIndent: true
+  preserveIndent: false
   increaseIndentPattern: ""
   decreaseIndentPattern: ""
   bracketIndentNextLinePattern: ""
   disableIndentNextLinePattern: ""
-  unIndentedLinePattern: .

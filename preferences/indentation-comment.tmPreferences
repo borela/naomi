@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>JavaScript’s comment line indentation settings</string>
+	<string>Comment’s indentation</string>
 	<key>scope</key>
-	<string>source.js comment.line</string>
+	<string>meta.naomi comment</string>
 	<key>settings</key>
 	<dict>
 		<key>bracketIndentNextLinePattern</key>
@@ -18,8 +18,6 @@
 		<string></string>
 		<key>preserveIndent</key>
 		<false/>
-		<key>unIndentedLinePattern</key>
-		<string></string>
 	</dict>
 </dict>
 </plist>

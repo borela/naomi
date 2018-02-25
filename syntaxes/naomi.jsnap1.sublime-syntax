@@ -39,7 +39,7 @@ contexts:
         2: punctuation.definition.snapshot.begin.js.fjsx15
       with_prototype:
         - include: support-type
-      push: [ close-snapshot, jsx ]
+      push: [ close-snapshot, meta-jsx, jsx ]
     # Terminator.
     - match: ;
       scope: punctuation.terminator.js.jest-snapshot
@@ -52,10 +52,24 @@ contexts:
   jsx:
     - include: Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax
 
+  meta-jsx:
+    - clear_scopes: true
+    - meta_scope: >-
+        source.jsx
+        meta.naomi
+    - include: pop-now
+
+  pop-now:
+    - match: ""
+      pop: true
+
   property-access:
     - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
 
   support-type:
     - match: \[Function]
-      scope: support.type.js
+      scope: >-
+        source.js.jest-snapshot
+        meta.naomi
+        support.type.js.jest-snapshot
       pop: true

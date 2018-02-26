@@ -84,7 +84,7 @@ contexts:
   styled-component:
     # Actual styled component code.
     - match: \`
-      scope: punctuation.definition.template-expression.begin.js.fjsx15
+      scope: punctuation.definition.styled-component.begin.js.fjsx15
       set: styled-component-content
     # Sub properties or function calls after “styled”.
     - match: (?=\S)
@@ -98,17 +98,10 @@ contexts:
     - include: comment-no-pop
     # Close.
     - match: \`
-      scope: punctuation.definition.template-expression.end.js.fjsx15
+      scope: punctuation.definition.styled-component.end.js.fjsx15
       pop: true
     - match: ;
       scope: punctuation.terminator.css.css3
     - include: embedded-expression
     - match: (?=\S)
       push: [ delimiter, property ]
-
-      # push: [ delimiter, property ]
-      # push:
-      #   - include: PackaVkes/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax
-      # with_prototype:
-      #   - match: (?=`)
-      #     pop: true

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>JS‘s indentation for conditional blocks</string>
+	<key>scope</key>
+	<string>source.js meta.naomi meta.conditional - (comment, string)</string>
+	<key>settings</key>
+	<dict>
+		<key>bracketIndentNextLinePattern</key>
+		<string>(?x)^
+\s*(?&gt;if|else)\b
+</string>
+	</dict>
+</dict>
+</plist>

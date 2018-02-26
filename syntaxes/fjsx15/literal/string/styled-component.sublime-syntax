@@ -39,9 +39,33 @@ variables:
 
 contexts:
   main:
-    - match: styled(?=\s*[.\(])
+    # styled()
+    - match: styled(?=\s*\()
       scope: support.function.styled-component.js.fjsx15
-      set: [ meta-styled-component, styled-component ]
+      set: [
+        meta-styled-component,
+        styled-component-begin,
+        meta-function-call,
+        arguments
+      ]
+    # styled.tag
+    - match: |
+        (?x)
+        (styled)(.)
+        (\w+)
+        (?> (.)(attrs)(?=\s*\()
+          | (?=\s*`)
+        )
+      captures:
+        1: support.function.styled-component.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: entity.name.tag.html.html5
+        4: punctuation.accessor.js.fjsx15
+        5: support.function.styled-component.js.fjsx15
+      set: styled-component-begin
+
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
@@ -54,6 +78,10 @@ contexts:
 
   embedded-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax#embedded-expression
+
+  meta-function-call:
+    - meta_scope: meta.function-call.js.fjsx15
+    - include: pop-now
 
   meta-property-value:
     - meta_scope: meta.property-value.css.css3
@@ -81,16 +109,10 @@ contexts:
     - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax
 
-  styled-component:
-    # Actual styled component code.
+  styled-component-begin:
     - match: \`
       scope: punctuation.definition.styled-component.begin.js.fjsx15
       set: styled-component-content
-    # Sub properties or function calls after “styled”.
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   styled-component-content:
     - clear_scopes: true

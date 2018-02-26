@@ -115,6 +115,7 @@ contexts:
           | polygon
           | radial-gradient
           | repeating-(?>linear|radial)-gradient
+          | rotate
           | rgba?
         )
         (?=\s*\()

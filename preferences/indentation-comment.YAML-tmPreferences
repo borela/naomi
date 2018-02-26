@@ -13,7 +13,7 @@
 # the License.
 
 name: Comment’s indentation
-scope: meta.naomi
+scope: meta.naomi comment
 settings:
   preserveIndent: false
   increaseIndentPattern: ""

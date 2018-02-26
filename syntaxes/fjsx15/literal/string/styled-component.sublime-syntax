@@ -39,9 +39,21 @@ variables:
 
 contexts:
   main:
-    # styled()
-    - match: styled(?=\s*\()
-      scope: support.function.styled-component.js.fjsx15
+    # styled(), styled.tag.attrs()
+    - match: |
+        (?x)
+        (styled)
+        (?:
+          (.)(\w+)
+          (.)(attrs)
+        )?
+        (?=\s*\()
+      captures:
+        1: support.function.styled-component.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: entity.name.tag.html.html5
+        4: punctuation.accessor.js.fjsx15
+        5: support.function.styled-component.js.fjsx15
       set: [
         meta-styled-component,
         styled-component-begin,
@@ -53,15 +65,11 @@ contexts:
         (?x)
         (styled)(.)
         (\w+)
-        (?> (.)(attrs)(?=\s*\()
-          | (?=\s*`)
-        )
+        (?=\s*`)
       captures:
         1: support.function.styled-component.js.fjsx15
         2: punctuation.accessor.js.fjsx15
         3: entity.name.tag.html.html5
-        4: punctuation.accessor.js.fjsx15
-        5: support.function.styled-component.js.fjsx15
       set: styled-component-begin
 
   arguments:

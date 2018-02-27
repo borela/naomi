@@ -9,7 +9,13 @@
 	<key>settings</key>
 	<dict>
 		<key>bracketIndentNextLinePattern</key>
-		<string></string>
+		<string>(?x)^\s*
+(?&gt; do
+  | else
+  | for
+  | if
+)\b
+</string>
 		<key>decreaseIndentPattern</key>
 		<string>(?x)^
 \s*
@@ -17,7 +23,6 @@
   | \]
   | \)
 )
-.*$
 </string>
 		<key>disableIndentNextLinePattern</key>
 		<string></string>
@@ -32,6 +37,8 @@
 </string>
 		<key>preserveIndent</key>
 		<false/>
+		<key>unIndentedLinePattern</key>
+		<string></string>
 	</dict>
 </dict>
 </plist>

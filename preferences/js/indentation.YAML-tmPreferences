@@ -31,58 +31,12 @@ settings:
       | \]
       | \)
     )
-    .*$
-  bracketIndentNextLinePattern: ""
+  bracketIndentNextLinePattern: |
+    (?x)^\s*
+    (?> do
+      | else
+      | for
+      | if
+    )\b
   disableIndentNextLinePattern: ""
-  # bracketIndentNextLinePattern: |
-  #   (?x)^
-  #   \s*
-  # bracketIndentNextLinePattern: |
-  #   (?x)^
-  #   \s*
-  #   (?> if
-  #     | else(?:\s+if)?
-  #   )
-  #   \s*
-  #   (\(
-  #     (?> (?> '(?:\'|[^'])*?'
-  #           | "(?:\"|[^"])*?"
-  #           | `(?:\`|[^`])*?`
-  #         )
-  #       | \g<-1>
-  #       | [^()]
-  #     )*
-  #   \))
-  #   \s*$
-  # disableIndentNextLinePattern: ""
-
-  # increaseIndentPattern: |
-  #   (?x)
-  #   .*
-  #   (?>[{])
-  #   \s*$
-  # increaseIndentPattern: |
-  #   (?x)
-  #   (?> ^\s*case
-  #     | ^.*
-  #       (?> \{
-  #         | \[
-  #       )\s*$
-  #   )
-  # decreaseIndentPattern: |
-  #   (?x)
-  #   ^\s*
-  #   (?> case
-  #     | }
-  #     | ]
-  #   )
-  # bracketIndentNextLinePattern: |
-  #   (?x)
-  #   ^\s*
-  #   (?> case
-  #     | else
-  #     | for
-  #     | if
-  #     | switch
-  #     | while
-  #   )\b
+  unIndentedLinePattern: ""

@@ -19,10 +19,11 @@ file_extensions:
   - php
   - php7
 
-scope: text.html5
+scope: text.html
 
 contexts:
   main:
+    - meta_scope: meta.naomi
     # Normal open tag.
     - match: \s*(<\?php)
       captures:

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>JSX’s comment</string>
+	<string>JSX‘s comment toggle</string>
 	<key>scope</key>
-	<string>text.html.jsx</string>
+	<string>source.jsx</string>
 	<key>settings</key>
 	<dict>
 		<key>shellVariables</key>

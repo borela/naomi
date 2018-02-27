@@ -12,8 +12,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: Functions in the symbol list
-scope: source.js meta.declaration.function.method
+name: Symbol - JS’s function
+scope: source.js meta.declaration.function
 settings:
   showInSymbolList: 1
-  symbolTransformation: "/\s+/\U0001f537/"
+  symbolTransformation: "/^\\s*(?:function\\s+)?/\U0001f530 /"

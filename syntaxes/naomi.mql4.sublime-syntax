@@ -20,10 +20,11 @@ file_extensions:
   - mqh4
   - mql4
 
-scope: source.mql.mql4
+scope: source.mql
 
 contexts:
   main:
+    - meta_scope: meta.naomi
     - match: ""
       push: statement-and-expression
 

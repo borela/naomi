@@ -3,38 +3,30 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>SCSS’s block indentation settings</string>
+	<string>JSX’s indentation</string>
 	<key>scope</key>
-	<string>source.scss</string>
+	<string>source.jsx</string>
 	<key>settings</key>
 	<dict>
-		<key>bracketIndentNextLinePattern</key>
-		<string>(?x)
-^\s*@
-(?&gt; else
-  | for
-  | if
-  | while
-)\b
-</string>
 		<key>decreaseIndentPattern</key>
 		<string>(?x)
 ^\s*
-(?&gt; }
-  | ]
-  | \)
+(?&gt; /&gt;
+  | &lt;/
 )
 </string>
 		<key>increaseIndentPattern</key>
 		<string>(?x)
-^.*
-(?&gt; \{
-  | \[
-  | \(
-)\s*$
+^\s*
+&lt;
+(?&gt; '(?:\'|[^'])*?'
+  | "(?:\"|[^"])*?"
+  | `(?:\`|[^`])*?`
+  | [^/'"`]
+)*
+&gt;?
+\s*$
 </string>
-		<key>preserveIndent</key>
-		<false/>
 	</dict>
 </dict>
 </plist>

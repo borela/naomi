@@ -3,38 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>PHP’s block indentation settings</string>
+	<string>Comment’s indentation</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>meta.naomi comment</string>
 	<key>settings</key>
 	<dict>
 		<key>bracketIndentNextLinePattern</key>
-		<string>(?x)
-^\s*
-(?&gt; else
-  | for
-  | if
-  | while
-)\b
-</string>
+		<string></string>
 		<key>decreaseIndentPattern</key>
-		<string>(?x)
-^\s*
-(?&gt; }
-  | ]
-  | \)
-)
-</string>
+		<string></string>
+		<key>disableIndentNextLinePattern</key>
+		<string></string>
 		<key>increaseIndentPattern</key>
-		<string>(?x)
-^.*
-(?&gt; \{
-  | \[
-  | \(
-)\s*$
-</string>
+		<string></string>
 		<key>preserveIndent</key>
 		<false/>
+		<key>unIndentedLinePattern</key>
+		<string>.</string>
 	</dict>
 </dict>
 </plist>

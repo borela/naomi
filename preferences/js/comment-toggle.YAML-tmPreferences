@@ -12,14 +12,13 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: JavaScript’s comment indentation settings
-scope: >-
-  source.js comment.block,
-  source.js meta.block-end
+name: JS‘s comment toggle
+scope: source.js meta.naomi
 settings:
-  preserveIndent: true
-  increaseIndentPattern: ""
-  decreaseIndentPattern: ""
-  bracketIndentNextLinePattern: ""
-  disableIndentNextLinePattern: ""
-  unIndentedLinePattern: .
+  shellVariables:
+  - name: TM_COMMENT_START
+    value: "// "
+  - name: TM_COMMENT_START_2
+    value: "/* "
+  - name: TM_COMMENT_END_2
+    value: " */"

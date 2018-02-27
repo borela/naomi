@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>JavaScript’s comment indentation settings</string>
+	<string>Block comment’s indentation</string>
 	<key>scope</key>
-	<string>source.js comment.block, source.js meta.block-end</string>
+	<string>meta.naomi comment.block</string>
 	<key>settings</key>
 	<dict>
 		<key>bracketIndentNextLinePattern</key>
@@ -17,9 +17,9 @@
 		<key>increaseIndentPattern</key>
 		<string></string>
 		<key>preserveIndent</key>
-		<true/>
+		<false/>
 		<key>unIndentedLinePattern</key>
-		<string>.</string>
+		<string></string>
 	</dict>
 </dict>
 </plist>

@@ -78,9 +78,10 @@ contexts:
 
   meta-content:
     - clear_scopes: true
-    - meta_scope: source.jsx
-    - match: ""
-      pop: true
+    - meta_scope: >-
+        source.jsx
+        meta.naomi
+    - include: pop-now
 
   namespaced-closing-tag:
     - include: self-closing-tag
@@ -105,6 +106,10 @@ contexts:
     # Content.
     - match: (?=.|\n)
       push: [ meta-content, content ]
+
+  pop-now:
+    - match: ""
+      pop: true
 
   self-closing-tag:
     - match: />

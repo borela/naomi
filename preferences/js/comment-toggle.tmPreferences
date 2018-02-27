@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>PHP’s comment</string>
+	<string>JS‘s comment toggle</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>source.js meta.naomi</string>
 	<key>settings</key>
 	<dict>
 		<key>shellVariables</key>

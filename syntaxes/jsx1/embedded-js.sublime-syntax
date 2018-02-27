@@ -33,7 +33,9 @@ contexts:
 
   content:
     - clear_scopes: true
-    - meta_content_scope: source.js
+    - meta_content_scope: >-
+        source.js
+        meta.naomi
     - match: (?=})
       pop: true
     # This is necessary, otherwise the context will be locked if there‘s only a

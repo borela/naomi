@@ -18,10 +18,11 @@ name: Markdown (Github)
 file_extensions:
   - md
 
-scope: text.html.markdown.md1
+scope: text.html.markdown
 
 contexts:
   main:
+    - meta_scope: meta.naomi
     - match: ""
       push:
         - include: Packages/Naomi/syntaxes/md1/header.sublime-syntax

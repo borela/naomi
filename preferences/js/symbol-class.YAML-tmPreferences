@@ -12,34 +12,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: JavaScript’s block indentation settings
-scope: source.js
+name: Symbol - JS’s classes
+scope: source.js meta.declaration.class
 settings:
-  preserveIndent: false
-  increaseIndentPattern: |
-    (?x)
-    (?> ^\s*case
-      | ^.*
-        (?> \{
-          | \[
-          | \(
-        )\s*$
-    )
-  decreaseIndentPattern: |
-    (?x)
-    ^\s*
-    (?> case
-      | }
-      | ]
-      | \)
-    )
-  bracketIndentNextLinePattern: |
-    (?x)
-    ^\s*
-    (?> case
-      | else
-      | for
-      | if
-      | switch
-      | while
-    )\b
+  showInSymbolList: 1
+  symbolTransformation: "/class\\s+/\U0001f534 /"

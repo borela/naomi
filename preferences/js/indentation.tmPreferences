@@ -3,23 +3,42 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>PHP’s comment indentation settings</string>
+	<string>JS‘s indentation</string>
 	<key>scope</key>
-	<string>source.php comment, source.php meta.block-end</string>
+	<string>source.js meta.naomi - (comment, string)</string>
 	<key>settings</key>
 	<dict>
 		<key>bracketIndentNextLinePattern</key>
-		<string></string>
+		<string>(?x)^\s*
+(?&gt; do
+  | else
+  | for
+  | if
+)\b
+</string>
 		<key>decreaseIndentPattern</key>
-		<string></string>
+		<string>(?x)^
+\s*
+(?&gt; \}
+  | \]
+  | \)
+)
+</string>
 		<key>disableIndentNextLinePattern</key>
 		<string></string>
 		<key>increaseIndentPattern</key>
-		<string></string>
+		<string>(?x)^
+.*
+(?&gt; \{
+  | \[
+  | \(
+)
+\s*$
+</string>
 		<key>preserveIndent</key>
-		<true/>
+		<false/>
 		<key>unIndentedLinePattern</key>
-		<string>.</string>
+		<string></string>
 	</dict>
 </dict>
 </plist>

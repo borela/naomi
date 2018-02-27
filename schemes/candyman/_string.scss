@@ -36,3 +36,10 @@
 .punctuation.definition.string {
   foreground: rgba($pink-a200, .5);
 }
+
+.meta.object-literal.key {
+  .string.unquoted {
+    foreground: $lime-300;
+    background: $blue-gray-900;
+  }
+}

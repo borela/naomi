@@ -12,13 +12,23 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: JavaScript’s comment
-scope: source.js
+name: JSX’s indentation
+scope: source.jsx
 settings:
-  shellVariables:
-  - name: TM_COMMENT_START
-    value: "// "
-  - name: TM_COMMENT_START_2
-    value: "/* "
-  - name: TM_COMMENT_END_2
-    value: " */"
+  increaseIndentPattern: |
+    (?x)
+    ^\s*
+    <
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
+      | [^/'"`]
+    )*
+    >?
+    \s*$
+  decreaseIndentPattern: |
+    (?x)
+    ^\s*
+    (?> />
+      | </
+    )

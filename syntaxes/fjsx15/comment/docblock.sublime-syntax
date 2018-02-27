@@ -20,28 +20,30 @@ scope: ...
 contexts:
   main:
     - match: /\*\*(?!/)
-      captures:
-        1: punctuation.definition.comment.begin.js.fjsx15
+      scope: punctuation.definition.comment.begin.js.fjsx15
       set: block
 
   block:
     - meta_scope: comment.block.documentation.js.fjsx15
+    # Used to correct indentation.
+    - match: $\n?
+      scope: meta.comment.line-fence.js.fjsx15
+    # Contents.
     - include: email-no-pop
     - include: link-no-pop
     - match: \*/
       scope: punctuation.definition.comment.end.js.fjsx15
-      set: new-line-meta
+      set: block-fence
+
+  block-fence:
+    - match: \s*$\n?
+      scope: meta.comment.block-fence.js.fjsx15
+      pop: true
+    - match: ""
+      pop: true
 
   email-no-pop:
     - include: Packages/Naomi/syntaxes/shared/email.no-pop.sublime-syntax
 
   link-no-pop:
     - include: Packages/Naomi/syntaxes/shared/link.no-pop.sublime-syntax
-
-  # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
-  new-line-meta:
-    - match: \s*$\n?
-      scope: meta.comment.postfix-whitespace.js.fjsx15
-      pop: true
-    - match: ""
-      pop: true

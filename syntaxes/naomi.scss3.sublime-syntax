@@ -18,11 +18,10 @@ name: SCSS
 file_extensions:
   - scss
 
-scope: >-
-  source.css.css3
-  source.scss.scss3
+scope: source.scss
 
 contexts:
   main:
+    - meta_scope: meta.naomi
     - include: Packages/Naomi/syntaxes/scss3/selector.sublime-syntax
     - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax

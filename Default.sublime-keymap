@@ -11,8 +11,34 @@
 // the License.
 
 [{
+  // Make {} [] () "" '' `` have the same behavior.
+  "keys": [ "enter" ],
+  "command": "run_macro_file",
+  "args": { "file": "res://Packages/Default/Add Line in Braces.sublime-macro" },
+  "context": [{
+    "key": "setting.auto_indent",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_contains",
+    "operand": "[\"'`{(\\[]$",
+    "match_all": true
+  },{
+    "key": "following_text",
+    "operator": "regex_contains",
+    "operand": "^[\\])}`'\"]",
+    "match_all": true
+  }]
+},{
   // Close tags.
-  "keys": ["/"],
+  "keys": [ "/" ],
   "command": "close_tag",
   "args": { "insert_slash": true },
   "context": [{
@@ -32,7 +58,7 @@
   }]
 },{
   // JS - Pair template.
-  "keys": ["`"],
+  "keys": [ "`" ],
   "command": "insert_snippet",
   "args": { "contents": "`$0`" },
   "context": [{
@@ -52,7 +78,7 @@
   }]
 },{
   // JS - Pair template for selected text.
-  "keys": ["`"],
+  "keys": [ "`" ],
   "command": "insert_snippet",
   "args": { "contents": "`${0:$SELECTION}`" },
   "context": [{
@@ -72,7 +98,7 @@
   }]
 },{
   // JS - Pair interpolation
-  "keys": ["{"],
+  "keys": [ "{" ],
   "command": "insert_snippet",
   "args": { "contents": "{$0}" },
   "context": [{

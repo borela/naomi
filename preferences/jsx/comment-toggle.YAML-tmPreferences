@@ -12,8 +12,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: JSX’s comment
-scope: text.html.jsx
+name: JSX‘s comment toggle
+scope: source.jsx
 settings:
   shellVariables:
    - name: TM_COMMENT_START

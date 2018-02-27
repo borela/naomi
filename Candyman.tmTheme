@@ -1758,6 +1758,17 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.meta.object-literal.key .string.unquoted</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#263238</string>
+				<key>foreground</key>
+				<string>#dce775</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.entity.name, .entity.other, .variable.type, .variable.other.type</string>
 			<key>settings</key>
 			<dict>

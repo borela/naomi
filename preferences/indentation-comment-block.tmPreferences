@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Comment’s indentation</string>
+	<string>Block comment’s indentation</string>
 	<key>scope</key>
-	<string>meta.naomi comment</string>
+	<string>meta.naomi comment.block</string>
 	<key>settings</key>
 	<dict>
 		<key>bracketIndentNextLinePattern</key>
@@ -19,7 +19,7 @@
 		<key>preserveIndent</key>
 		<false/>
 		<key>unIndentedLinePattern</key>
-		<string>.</string>
+		<string></string>
 	</dict>
 </dict>
 </plist>

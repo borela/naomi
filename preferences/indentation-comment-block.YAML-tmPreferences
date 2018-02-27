@@ -12,12 +12,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: Comment’s indentation
-scope: meta.naomi comment
+name: Block comment’s indentation
+scope: meta.naomi comment.block
 settings:
   preserveIndent: false
   increaseIndentPattern: ""
   decreaseIndentPattern: ""
   bracketIndentNextLinePattern: ""
   disableIndentNextLinePattern: ""
-  unIndentedLinePattern: "."
+  unIndentedLinePattern: ""

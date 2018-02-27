@@ -12,9 +12,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: JS‘s indentation for conditional blocks
-scope: source.js meta.naomi meta.conditional - (comment, string)
+# This is necessary because “while” is also used in “do...while” loops.
+name: JS‘s indentation for while loops
+scope: source.js meta.naomi meta.loop.while - (comment, string)
 settings:
   bracketIndentNextLinePattern: |
-    (?x)^
-    \s*(?>if|else)\b
+    (?x)^\s*while\b

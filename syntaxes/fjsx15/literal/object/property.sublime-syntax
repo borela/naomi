@@ -175,8 +175,14 @@ contexts:
   any-key:
     - include: string
     - include: number
-    - include: constant
-    - include: variable
+    # TODO: The correct option in this case is to highlight keys as unquoted
+    # strings but some users will prefer the old behavior and so a configurable
+    # property is desired in this case.
+    - match: "[^:]*"
+      scope: string.unquoted.js.fjsx15
+      pop: true
+    # - include: constant
+    # - include: variable
 
   arrow-function:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax

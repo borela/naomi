@@ -12,12 +12,23 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: JSX’s tag indentation
+name: JSX’s indentation
 scope: source.jsx
 settings:
   increaseIndentPattern: |
-    (?xi)
-    ^\s*<[^/>]+>$
+    (?x)
+    ^\s*
+    <
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
+      | [^/'"`]
+    )*
+    >?
+    \s*$
   decreaseIndentPattern: |
-    (?xi)
-    ^\s*</[^>]+>$
+    (?x)
+    ^\s*
+    (?> />
+      | </
+    )

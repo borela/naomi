@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>JS‘s indentation for while loops</string>
+	<string>JS’s indentation for while loops</string>
 	<key>scope</key>
 	<string>source.js meta.naomi meta.loop.while - (comment, string)</string>
 	<key>settings</key>

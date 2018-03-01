@@ -11,7 +11,7 @@
 // the License.
 
 [{
-  // Make {} [] () "" '' `` have the same behavior.
+  // () have the same behavior as {}.
   "keys": [ "enter" ],
   "command": "run_macro_file",
   "args": { "file": "res://Packages/Default/Add Line in Braces.sublime-macro" },
@@ -28,12 +28,116 @@
   },{
     "key": "preceding_text",
     "operator": "regex_contains",
-    "operand": "[\"'`{(\\[]$",
+    "operand": "\\($",
     "match_all": true
   },{
     "key": "following_text",
     "operator": "regex_contains",
-    "operand": "^[\\])}`'\"]",
+    "operand": "^\\)",
+    "match_all": true
+  }]
+},{
+  // [] have the same behavior as {}.
+  "keys": [ "enter" ],
+  "command": "run_macro_file",
+  "args": { "file": "res://Packages/Default/Add Line in Braces.sublime-macro" },
+  "context": [{
+    "key": "setting.auto_indent",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_contains",
+    "operand": "\\[$",
+    "match_all": true
+  },{
+    "key": "following_text",
+    "operator": "regex_contains",
+    "operand": "^\\]",
+    "match_all": true
+  }]
+},{
+  // '' have the same behavior as {}.
+  "keys": [ "enter" ],
+  "command": "run_macro_file",
+  "args": { "file": "res://Packages/Default/Add Line in Braces.sublime-macro" },
+  "context": [{
+    "key": "setting.auto_indent",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_contains",
+    "operand": "'$",
+    "match_all": true
+  },{
+    "key": "following_text",
+    "operator": "regex_contains",
+    "operand": "^'",
+    "match_all": true
+  }]
+},{
+  // "" have the same behavior as {}.
+  "keys": [ "enter" ],
+  "command": "run_macro_file",
+  "args": { "file": "res://Packages/Default/Add Line in Braces.sublime-macro" },
+  "context": [{
+    "key": "setting.auto_indent",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_contains",
+    "operand": "\"$",
+    "match_all": true
+  },{
+    "key": "following_text",
+    "operator": "regex_contains",
+    "operand": "^\"",
+    "match_all": true
+  }]
+},{
+  // `` have the same behavior as {}.
+  "keys": [ "enter" ],
+  "command": "run_macro_file",
+  "args": { "file": "res://Packages/Default/Add Line in Braces.sublime-macro" },
+  "context": [{
+    "key": "setting.auto_indent",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_contains",
+    "operand": "`$",
+    "match_all": true
+  },{
+    "key": "following_text",
+    "operator": "regex_contains",
+    "operand": "^`",
     "match_all": true
   }]
 },{

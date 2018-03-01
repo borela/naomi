@@ -18,6 +18,7 @@ name: JavaScript
 file_extensions:
   - js
   - jsx
+  - mjs
 
 scope: source.js
 

@@ -18,15 +18,18 @@ hidden: true
 scope: ...
 
 contexts:
-  # |  Operator  |  Description        |
-  # |:----------:|:--------------------|
-  # |    ...     | Spread.             |
-  # |     ::     | Bind.               |
-  # |     .      | Accessor.           |
-  # |    ?.      | Optional chain.     |
-  # |    ??      | Nullish coalescing. |
-  # |     ?      | Ternary.            |
   main:
+    - match: yield\b
+      scope: keyword.control.flow.js.fjsx15
+      set: [ optional-tail, head ]
+    # |  Operator  |  Description        |
+    # |:----------:|:--------------------|
+    # |    ...     | Spread.             |
+    # |     ::     | Bind.               |
+    # |     .      | Accessor.           |
+    # |    ?.      | Optional chain.     |
+    # |    ??      | Nullish coalescing. |
+    # |     ?      | Ternary.            |
     - match: \:{2}
       scope: keyword.operator.bind.js.fjsx15
       set: optional-expression

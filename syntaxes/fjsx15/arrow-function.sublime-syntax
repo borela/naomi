@@ -53,6 +53,7 @@ variables:
     (?> {{string}}
       | {{commonIdentifier}}
         {{genericArguments}}?
+        (?:\[\s*\])?
     )
 
   flowFunction: |

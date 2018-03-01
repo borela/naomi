@@ -97,7 +97,7 @@ contexts:
 
   module-property-or-function:
     # Properties.
-    - match: (?>exports|parent)\b
+    - match: (?>default|exports|parent)\b
       scope: support.variable.js.fjsx15
       pop: true
     # Bail.

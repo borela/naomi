@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>JS‘s indentation</string>
+	<string>JS’s indentation</string>
 	<key>scope</key>
 	<string>source.js meta.naomi - (comment, string)</string>
 	<key>settings</key>

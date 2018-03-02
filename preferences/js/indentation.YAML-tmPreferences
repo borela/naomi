@@ -12,7 +12,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: JS‘s indentation
+name: JS’s indentation
 scope: source.js meta.naomi - (comment, string)
 settings:
   preserveIndent: false

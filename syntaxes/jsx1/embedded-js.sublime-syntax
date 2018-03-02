@@ -38,7 +38,7 @@ contexts:
         meta.naomi
     - match: (?=})
       pop: true
-    # This is necessary, otherwise the context will be locked if there‘s only a
+    # This is necessary, otherwise the context will be locked if there’s only a
     # comment in the embedded code.
     - include: comment-no-pop
     # Actual expression.

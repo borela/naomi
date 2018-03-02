@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>JS‘s comment toggle</string>
+	<string>JS’s comment toggle</string>
 	<key>scope</key>
 	<string>source.js meta.naomi</string>
 	<key>settings</key>

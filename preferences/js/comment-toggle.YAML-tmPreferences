@@ -12,7 +12,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: JS‘s comment toggle
+name: JS’s comment toggle
 scope: source.js meta.naomi
 settings:
   shellVariables:

@@ -9,3 +9,13 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations under
 # the License.
+
+import os
+import sublime_plugin
+
+class NaomiToggleJsxCommand(sublime_plugin.WindowCommand):
+  def __init__(self, sublime_window):
+    self.sublime_window = sublime_window
+
+  def run(self):
+    print("lol")

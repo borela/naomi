@@ -12,11 +12,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: JSX‘s comment toggle
+name: JSX’s comment toggle
 scope: source.jsx
 settings:
   shellVariables:
    - name: TM_COMMENT_START
-     value: "{/* "
+     value: ""
    - name: TM_COMMENT_END
-     value: " */}"
+     value: ""

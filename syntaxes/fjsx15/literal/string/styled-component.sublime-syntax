@@ -86,6 +86,25 @@ contexts:
         2: punctuation.accessor.js.fjsx15
         3: entity.name.tag.html.html5
       set: styled-component-begin
+    # Other functions.
+    - match: |
+        (?x)
+        (
+          [[:upper:]]
+          [[:alnum:]]*
+        )
+        (.)
+        (withComponent)
+        (?=\s*\()
+      captures:
+        1: variable.other.component.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.styled-component.js.fjsx15
+      set: [
+        meta-styled-component,
+        meta-function-call,
+        arguments
+      ]
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax

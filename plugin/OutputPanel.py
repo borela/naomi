@@ -10,21 +10,29 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-import os
-import sublime
-import sublime_api
-import sublime_plugin
-
 class OutputPanel(object):
-  def __init__(self, window, name):
-    self.window = window
-    self.panelName = name
-    self.panel = window.create_output_panel(name)
-    self.panel.settings().set('word_wrap', False)
-    self.panel.settings().set('line_numbers', True)
+  def __init__(self, sublime_window, settings):
+    self.sublime_window = sublime_window
+    self.settings = settings
+
+    self.settings.setdefault('line_numbers', True)
+    self.settings.setdefault('word_wrap', False)
+
+    self._createPanel()
+    self._configurePanel()
 
   def append(self, text):
     self.panel.run_command('append', { 'characters': text + '\n' })
 
+  def _configurePanel(self):
+    panel_settings = self.panel.settings()
+    for key, value in self.settings.items():
+      panel_settings.set(key, value)
+
+  def _createPanel(self):
+    name = self.settings['name']
+    self.panel = self.sublime_window.create_output_panel(name)
+
   def show(self):
-      self.window.run_command('show_panel', { 'panel': 'output.' + self.panelName })
+    name = self.settings['name']
+    self.sublime_window.run_command('show_panel', { 'panel': 'output.' + name })

@@ -60,6 +60,21 @@ contexts:
         meta-function-call,
         arguments
       ]
+    # Component.extend
+    - match: |
+        (?x)
+        (
+          [[:upper:]]
+          [[:alnum:]]*
+        )
+        (.)
+        (extend)
+        (?=\s*`)
+      captures:
+        1: entity.name.tag.html.html5
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.styled-component.js.fjsx15
+      set: styled-component-begin
     # styled.tag
     - match: |
         (?x)

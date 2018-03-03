@@ -45,7 +45,6 @@ contexts:
     - include: switch-case
     - include: throw
     - include: try-catch-finally
-    - include: yield
 
   asi-checked-optional-expression:
     - match: (?=\s*\n)
@@ -263,8 +262,3 @@ contexts:
     - match: finally\b
       scope: keyword.control.trycatch.js.fjsx15
       pop: true
-
-  yield:
-    - match: yield\b
-      scope: keyword.control.flow.js.fjsx15
-      set: optional-expression

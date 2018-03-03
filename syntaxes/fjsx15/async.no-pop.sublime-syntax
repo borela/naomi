@@ -20,6 +20,4 @@ scope: ...
 contexts:
   main:
     - match: async\b
-      scope: >-
-        storage.modifier.js.fjsx15
-        keyword.other.async.js.fjsx15
+      scope: storage.modifier.async.js.fjsx15

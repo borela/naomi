@@ -97,11 +97,13 @@ contexts:
 
   module-property-or-function:
     # Properties.
-    - match: (?>exports|parent)\b
+    - match: (?>default|exports|parent)\b
       scope: support.variable.js.fjsx15
       pop: true
-    # Bail.
-    - include: else-pop
+    - include: other-property-or-function
+
+  other-property-or-function:
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/other.sublime-syntax#other-property-or-function
 
   pop-now:
     - match: ""
@@ -143,5 +145,4 @@ contexts:
         )\b
       scope: support.variable.js.fjsx15
       pop: true
-    # Bail.
-    - include: else-pop
+    - include: other-property-or-function

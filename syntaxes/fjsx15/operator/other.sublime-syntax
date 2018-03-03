@@ -18,15 +18,18 @@ hidden: true
 scope: ...
 
 contexts:
-  # |  Operator  |  Description        |
-  # |:----------:|:--------------------|
-  # |    ...     | Spread.             |
-  # |     ::     | Bind.               |
-  # |     .      | Accessor.           |
-  # |    ?.      | Optional chain.     |
-  # |    ??      | Nullish coalescing. |
-  # |     ?      | Ternary.            |
   main:
+    - match: yield\b
+      scope: keyword.control.flow.js.fjsx15
+      set: [ optional-tail, head ]
+    # |  Operator  |  Description        |
+    # |:----------:|:--------------------|
+    # |    ...     | Spread.             |
+    # |     ::     | Bind.               |
+    # |     .      | Accessor.           |
+    # |    ?.      | Optional chain.     |
+    # |    ??      | Nullish coalescing. |
+    # |     ?      | Ternary.            |
     - match: \:{2}
       scope: keyword.operator.bind.js.fjsx15
       set: optional-expression
@@ -52,6 +55,11 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+
+  # Used near accessor to highlight global functions and properties.
+  other-property-or-function:
+    - match: (?=\S)
+      set: [ optional-tail, head ]
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

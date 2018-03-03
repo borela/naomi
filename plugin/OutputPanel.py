@@ -18,8 +18,8 @@ class OutputPanel(object):
     self.settings.setdefault('line_numbers', True)
     self.settings.setdefault('word_wrap', False)
 
-    self._createPanel()
-    self._configurePanel()
+    self.__create_panel()
+    self.__configure_panel()
 
   def append(self, text):
     self.panel.run_command('append', { 'characters': text + '\n' })
@@ -28,11 +28,11 @@ class OutputPanel(object):
     name = self.settings['name']
     self.sublime_window.run_command('show_panel', { 'panel': 'output.' + name })
 
-  def _configurePanel(self):
+  def __configure_panel(self):
     panel_settings = self.panel.settings()
     for key, value in self.settings.items():
       panel_settings.set(key, value)
 
-  def _createPanel(self):
+  def __create_panel(self):
     name = self.settings['name']
     self.panel = self.sublime_window.create_output_panel(name)

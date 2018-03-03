@@ -50,8 +50,8 @@ contexts:
         (?=\s*\()
       captures:
         1: support.function.styled-component.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: entity.name.tag.html.html5
+        2: punctuation.accessor.js.fjsxa15
+        3: variable.other.component.js.fjsx15
         4: punctuation.accessor.js.fjsx15
         5: support.function.styled-component.js.fjsx15
       set: [
@@ -71,10 +71,13 @@ contexts:
         (extend)
         (?=\s*`)
       captures:
-        1: entity.name.tag.html.html5
+        1: variable.other.component.js.fjsx15
         2: punctuation.accessor.js.fjsx15
         3: support.function.styled-component.js.fjsx15
-      set: styled-component-begin
+      set: [
+        meta-styled-component,
+        styled-component-begin
+      ]
     # styled.tag
     - match: |
         (?x)
@@ -84,8 +87,11 @@ contexts:
       captures:
         1: support.function.styled-component.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: entity.name.tag.html.html5
-      set: styled-component-begin
+        3: variable.other.component.js.fjsx15
+      set: [
+        meta-styled-component,
+        styled-component-begin
+      ]
     # Other functions.
     - match: |
         (?x)

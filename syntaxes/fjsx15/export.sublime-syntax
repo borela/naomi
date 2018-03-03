@@ -53,6 +53,9 @@ contexts:
     - match: (?=\S)
       pop: true
 
+  expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
   optional-alias:
     - match: (?=as\b)
       set: alias
@@ -105,14 +108,10 @@ contexts:
     # Default statements and expressions.
     - match: default\b
       scope: keyword.control.import-export.default.js.fjsx15
-      set: statement-or-expression
+      set: expression
     # Other statements.
     - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
     # Renamed default.
     - match: (?xi){{commonIdentifier}}
       scope: variable.other.readwrite.js.fjsx15
       set: origin
-
-  statement-or-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

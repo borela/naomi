@@ -24,6 +24,10 @@ class OutputPanel(object):
   def append(self, text):
     self.panel.run_command('append', { 'characters': text + '\n' })
 
+  def show(self):
+    name = self.settings['name']
+    self.sublime_window.run_command('show_panel', { 'panel': 'output.' + name })
+
   def _configurePanel(self):
     panel_settings = self.panel.settings()
     for key, value in self.settings.items():
@@ -32,7 +36,3 @@ class OutputPanel(object):
   def _createPanel(self):
     name = self.settings['name']
     self.panel = self.sublime_window.create_output_panel(name)
-
-  def show(self):
-    name = self.settings['name']
-    self.sublime_window.run_command('show_panel', { 'panel': 'output.' + name })

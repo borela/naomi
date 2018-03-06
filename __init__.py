@@ -11,4 +11,5 @@
 # the License.
 
 from .plugin.RunSyntaxTests import *
+from .plugin.ToggleJsxComment import *
 

@@ -27,7 +27,7 @@ contexts:
     - meta_scope: comment.block.js.fjsx15
     # Used to correct indentation.
     - match: $\n?
-      scope: meta.comment.line-fence.js.fjsx15
+      scope: meta.line-fence.comment.js.fjsx15
     # Contents.
     - include: email-no-pop
     - include: link-no-pop
@@ -37,7 +37,7 @@ contexts:
 
   block-fence:
     - match: \s*$\n?
-      scope: meta.comment.block-fence.js.fjsx15
+      scope: meta.block-fence.comment.js.fjsx15
       pop: true
     - match: ""
       pop: true

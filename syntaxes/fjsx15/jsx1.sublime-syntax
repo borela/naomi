@@ -24,14 +24,18 @@ variables:
 
 contexts:
   main:
-    - match: (?xi)(?=\s*<(?>\s*>|{{commonIdentifier}}))
+    - match: (?xi)(?=<(?>\s*>|{{commonIdentifier}}))
       set: [ meta, jsx ]
 
   jsx:
-    - include: Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax
+    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax#with-js-fence
+    - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax#with-js-fence
+    - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax#with-js-fence
 
   meta:
     - clear_scopes: true
-    - meta_scope: source.jsx
+    - meta_scope: >-
+        source.jsx
+        meta.naomi
     - match: ""
       pop: true

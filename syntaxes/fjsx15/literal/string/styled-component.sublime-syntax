@@ -50,8 +50,8 @@ contexts:
         (?=\s*\()
       captures:
         1: support.function.styled-component.js.fjsx15
-        2: punctuation.accessor.js.fjsx15
-        3: entity.name.tag.html.html5
+        2: punctuation.accessor.js.fjsxa15
+        3: variable.other.component.js.fjsx15
         4: punctuation.accessor.js.fjsx15
         5: support.function.styled-component.js.fjsx15
       set: [
@@ -59,6 +59,24 @@ contexts:
         styled-component-begin,
         meta-function-call,
         arguments
+      ]
+    # Component.extend
+    - match: |
+        (?x)
+        (
+          [[:upper:]]
+          [[:alnum:]]*
+        )
+        (.)
+        (extend)
+        (?=\s*`)
+      captures:
+        1: variable.other.component.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.styled-component.js.fjsx15
+      set: [
+        meta-styled-component,
+        styled-component-begin
       ]
     # styled.tag
     - match: |
@@ -69,8 +87,30 @@ contexts:
       captures:
         1: support.function.styled-component.js.fjsx15
         2: punctuation.accessor.js.fjsx15
-        3: entity.name.tag.html.html5
-      set: styled-component-begin
+        3: variable.other.component.js.fjsx15
+      set: [
+        meta-styled-component,
+        styled-component-begin
+      ]
+    # Other functions.
+    - match: |
+        (?x)
+        (
+          [[:upper:]]
+          [[:alnum:]]*
+        )
+        (.)
+        (withComponent)
+        (?=\s*\()
+      captures:
+        1: variable.other.component.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: support.function.styled-component.js.fjsx15
+      set: [
+        meta-styled-component,
+        meta-function-call,
+        arguments
+      ]
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax

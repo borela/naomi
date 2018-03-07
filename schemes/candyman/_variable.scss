@@ -17,10 +17,7 @@
 }
 
 .variable.language {
-  &.super,
-  &.this {
-    foreground: $purple-a100;
-  }
+  foreground: $purple-a100;
 
   &.prototype {
     foreground: $deep-orange-a100;

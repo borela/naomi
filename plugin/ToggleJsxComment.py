@@ -54,9 +54,9 @@ def comment_lines(view, edit, region):
   meta_tag_scopes = [ 'source.jsx', 'meta.tag' ]
   meta_tag = all(x in first_line_scopes for x in meta_tag_scopes)
 
-  comment_type = 'js'
+  comment_type = 'jsx'
   if unfenced_tag or not meta_tag:
-    comment_type = 'jsx'
+    comment_type = 'js'
 
   for line in reversed(lines):
     begin = get_non_whitespace_pos(view, line)

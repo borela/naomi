@@ -28,17 +28,19 @@ def comment_block(view, edit, region):
   scopes = view.scope_name(begin)
 
   if begin > 0 and 'source.jsx' in scopes and 'meta.jsx-fence' not in scopes:
-    view.insert(edit, end + 1, " */}")
-
     if empty_region:
+      view.insert(edit, end + 1, " */}")
       view.erase(edit, sublime.Region(end, end + 1))
+    else:
+      view.insert(edit, end, " */}")
 
     view.insert(edit, begin, "{/* ")
   else:
-    view.insert(edit, end + 1, " */")
-
     if empty_region:
+      view.insert(edit, end + 1, " */")
       view.erase(edit, sublime.Region(end, end + 1))
+    else:
+      view.insert(edit, end, " */")
 
     view.insert(edit, begin, "/* ")
 

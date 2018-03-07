@@ -24,7 +24,7 @@ variables:
 
 contexts:
   main:
-    - match: (?xi)(?=\s*<(?>\s*>|{{commonIdentifier}}))
+    - match: (?xi)(?=<(?>\s*>|{{commonIdentifier}}))
       set: [ meta, jsx ]
 
   jsx:

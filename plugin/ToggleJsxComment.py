@@ -191,16 +191,30 @@ def expand_partial_comments(view, region):
 
   return sublime.Region(begin, end)
 
+# Scan from the right to the left.
 def get_comment_beginning_pos(view, offset):
   scopes = view.scope_name(offset)
+  not_comment_scopes = [ 'comment.line', 'comment.block' ]
+
   while offset > 0:
-    if 'comment' not in scopes or 'punctuation.definition.comment.end' in scopes:
+    comment = any(x in scopes for x in not_comment_scopes)
+
+    # Not a comment or end of a block comment.
+    if not comment or 'punctuation.definition.comment.end' in scopes:
       offset += 1
       break
+
+    # New line at the end of a line comment.
+    char = view.substr(offset)
+    if char == '\n' and 'comment.line' in scopes:
+      offset += 1
+      break
+
     offset -= 1
     scopes = view.scope_name(offset)
   return offset
 
+# Scan from the left to the right.
 def get_comment_content_beginning(view, offset):
   scopes = view.scope_name(offset)
   while 'punctuation.definition.comment.begin' in scopes:
@@ -246,18 +260,21 @@ def uncomment_lines(view, edit, region):
   begin = region.begin()
   end = region.end()
 
-  i = end
+  i = end + 1
   while i > begin:
+    i -= 1
     scopes = view.scope_name(i)
 
     if 'punctuation.definition.comment' not in scopes:
-      i -= 1
       continue
 
     # Found the second forward slash for the “// ” comment.
     if 'comment.line' in scopes:
-      i -= 1
-      view.erase(edit, sublime.Region(i, i + 3))
+      i = get_comment_beginning_pos(view, i)
+      content_begin = get_comment_content_beginning(view, i)
+      print(view.substr(sublime.Region(i, content_begin)))
+      # return
+      view.erase(edit, sublime.Region(i, content_begin))
       continue
 
     # We found the beginning of the block comment first which means that there’s
@@ -306,8 +323,8 @@ def uncomment_lines(view, edit, region):
     view.erase(edit, close_block)
     view.erase(edit, open_block)
 
-    # Move the cursor before the block.
-    i = open_block.begin() - 1
+    # Move the cursor to the beginning of the block to “consume” it.
+    i = open_block.begin()
 
 # Actual command to toggle the comment lines and blocks.
 class NaomiToggleJsxCommentCommand(sublime_plugin.TextCommand):

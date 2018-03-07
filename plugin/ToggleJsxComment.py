@@ -25,9 +25,9 @@ def comment_block(view, edit, region):
     view.replace(edit, sublime.Region(end), '!')
     empty_region = True
 
-  scopes = view.scope_name(begin)
+  comment_type = get_comment_type(view, begin)
 
-  if begin > 0 and 'source.jsx' in scopes and 'meta.jsx-fence' not in scopes:
+  if comment_type == 'jsx':
     if empty_region:
       view.insert(edit, end + 1, " */}")
       view.erase(edit, sublime.Region(end, end + 1))
@@ -48,17 +48,7 @@ def comment_lines(view, edit, region):
   lines = view.lines(region)
 
   first_line = lines[0]
-  first_line_scopes = view.scope_name(get_non_whitespace_pos(view, first_line))
-
-  unfenced_scopes = [ 'source.jsx', 'punctuation.definition.tag.begin' ]
-  unfenced_tag = all(x in first_line_scopes for x in unfenced_scopes) and 'meta.jsx-fence' not in first_line_scopes
-
-  meta_tag_scopes = [ 'source.jsx', 'meta.tag' ]
-  meta_tag = all(x in first_line_scopes for x in meta_tag_scopes)
-
-  comment_type = 'js'
-  if unfenced_tag or ('source.jsx' in first_line_scopes and not meta_tag):
-    comment_type = 'jsx'
+  comment_type = get_comment_type(view, get_non_whitespace_pos(view, first_line))
 
   for line in reversed(lines):
     begin = get_non_whitespace_pos(view, line)
@@ -229,6 +219,22 @@ def get_comment_content_beginning(view, offset):
     offset += 1
 
   return offset
+
+# Returns the comment type that must be applied calculed at the offset.
+def get_comment_type(view, offset):
+  scopes = view.scope_name(offset)
+
+  unfenced_scopes = [ 'source.jsx', 'punctuation.definition.tag.begin' ]
+  unfenced_tag = all(x in scopes for x in unfenced_scopes) and 'meta.jsx-fence' not in scopes
+
+  meta_tag_scopes = [ 'source.jsx', 'meta.tag' ]
+  meta_tag = all(x in scopes for x in meta_tag_scopes)
+
+  comment_type = 'js'
+  if unfenced_tag or ('source.jsx' in scopes and not meta_tag):
+    comment_type = 'jsx'
+
+  return comment_type
 
 # Returns the position for the first non whitespace character on the target line
 # or the line’s beginning if none is found.

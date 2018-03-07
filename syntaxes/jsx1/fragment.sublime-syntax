@@ -46,3 +46,15 @@ contexts:
     - meta_scope: meta.tag.other.fragment.jsx.jsx1
     - match: ""
       pop: true
+
+  with-js-fence:
+    - match: (<)\s*(>)
+      captures:
+        1: >-
+          meta.jsx-fence.jsx.jsx1
+          punctuation.definition.tag.begin.jsx.jsx1
+        2: punctuation.definition.tag.end.jsx.jsx1
+      set: [
+        meta,
+        closing-tag
+      ]

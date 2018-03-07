@@ -57,3 +57,25 @@ contexts:
 
   namespaced-closing-tag:
     - include: Packages/Naomi/syntaxes/jsx1/shared.sublime-syntax#component-closing-tag
+
+  with-js-fence:
+    - match: |
+        (?x)
+        (<)
+        (?:
+          \s*({{namespaceIdentifier}})
+          \s*(:)
+        )?
+        \s*({{componentIdentifier}})
+      captures:
+        1: >-
+          meta.jsx-fence.jsx.jsx1
+          punctuation.definition.tag.begin.jsx.jsx1
+        2: entity.name.tag.namespace.html.jsx.jsx1
+        3: punctuation.separator.namespace.html.jsx.jsx1
+        4: entity.name.tag.component.jsx.jsx1
+      set: [
+        meta,
+        namespaced-closing-tag,
+        close-open-tag
+      ]

@@ -27,6 +27,9 @@ contexts:
     - match: (?xi)(?=<(?>\s*>|{{commonIdentifier}}))
       set: [ meta, jsx ]
 
+  jsx:
+    - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax#jsx
+
   meta:
     - clear_scopes: true
     - meta_scope: >-
@@ -34,6 +37,3 @@ contexts:
         meta.naomi
     - match: ""
       pop: true
-
-  jsx:
-    - include: Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax

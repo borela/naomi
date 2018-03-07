@@ -337,7 +337,6 @@ class NaomiToggleJsxCommentCommand(sublime_plugin.TextCommand):
 
   def run(self, edit, block):
     for region in reversed(self.view.sel()):
-
       # If the region is just 1 character, we will expand it to affect the entire
       # line.
       if region.size() < 2:

@@ -23,12 +23,18 @@ scope: source.css
 
 contexts:
   main:
+    - match: ""
+      push: [ meta, entry ]
+
+  entry:
+    - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
+
+  meta:
     - meta_scope: meta.naomi
     - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
+      pop: true
 
   # Used by the core syntax to highlight inline CSS.
   rule-list-body:

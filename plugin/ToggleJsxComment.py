@@ -56,9 +56,9 @@ def comment_lines(view, edit, region):
   meta_tag_scopes = [ 'source.jsx', 'meta.tag' ]
   meta_tag = all(x in first_line_scopes for x in meta_tag_scopes)
 
-  comment_type = 'jsx'
-  if unfenced_tag or meta_tag or 'source.js' in first_line_scopes:
-    comment_type = 'js'
+  comment_type = 'js'
+  if unfenced_tag or ('source.jsx' in first_line_scopes and not meta_tag):
+    comment_type = 'jsx'
 
   for line in reversed(lines):
     begin = get_non_whitespace_pos(view, line)
@@ -272,8 +272,6 @@ def uncomment_lines(view, edit, region):
     if 'comment.line' in scopes:
       i = get_comment_beginning_pos(view, i)
       content_begin = get_comment_content_beginning(view, i)
-      print(view.substr(sublime.Region(i, content_begin)))
-      # return
       view.erase(edit, sublime.Region(i, content_begin))
       continue
 

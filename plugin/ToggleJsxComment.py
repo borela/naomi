@@ -49,9 +49,14 @@ def comment_lines(view, edit, region):
   for line in reversed(lines):
     begin = get_non_whitespace_pos(view, line)
     scopes = view.scope_name(begin)
-    required_jsx_scopes = [ 'source.jsx', 'punctuation.definition.tag.begin' ]
 
-    if all(x in scopes for x in required_jsx_scopes) and 'meta.jsx-fence' not in scopes:
+    unfenced_scopes = [ 'source.jsx', 'punctuation.definition.tag.begin' ]
+    unfenced_tag = all(x in scopes for x in unfenced_scopes) and 'meta.jsx-fence' not in scopes
+
+    meta_tag_scopes = [ 'source.jsx', 'meta.tag' ]
+    meta_tag = all(x in scopes for x in meta_tag_scopes)
+
+    if unfenced_tag or not meta_tag:
       # JSX.
       view.insert(edit, line.end(), " */}")
       view.insert(edit, begin, "{/* ")

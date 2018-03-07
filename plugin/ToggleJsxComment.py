@@ -243,7 +243,6 @@ def is_jsx_close_brace(view, offset):
   return all(x in scopes for x in close_brace_scopes)
 
 def uncomment_lines(view, edit, region):
-  region = expand_partial_comments(view, region)
   begin = region.begin()
   end = region.end()
 
@@ -330,6 +329,8 @@ class NaomiToggleJsxCommentCommand(sublime_plugin.TextCommand):
       if 'string' in scopes:
         if 'punctuation.definition.string.begin' not in scopes:
           continue
+
+      region = expand_partial_comments(self.view, region)
 
       # Comments will begin with “//”, “/*” or “{/*”, to simplify the detection
       # on the first line, we can ignore the first character.

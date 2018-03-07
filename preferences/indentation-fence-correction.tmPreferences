@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>Fence indentation correction</string>
 	<key>scope</key>
-	<string>meta.comment.line-fence, meta.comment.block-fence</string>
+	<string>meta.line-fence.comment, meta.block-fence.comment</string>
 	<key>settings</key>
 	<dict>
 		<key>unIndentedLinePattern</key>

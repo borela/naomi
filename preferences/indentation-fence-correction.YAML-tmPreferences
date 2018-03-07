@@ -13,6 +13,6 @@
 # the License.
 
 name: Fence indentation correction
-scope: meta.comment.line-fence, meta.comment.block-fence
+scope: meta.line-fence.comment, meta.block-fence.comment
 settings:
   unIndentedLinePattern: "."

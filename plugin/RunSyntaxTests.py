@@ -14,11 +14,11 @@ import os
 import sublime
 import sublime_api
 import sublime_plugin
-from ..util.OutputPanel import *
+from .OutputPanel import OutputPanel
 
 class NaomiRunSyntaxTestsCommand(sublime_plugin.WindowCommand):
-  def __init__(self, window):
-    self.window = window
+  def __init__(self, sublime_window):
+    self.sublime_window = sublime_window
 
   def run(self):
     totalFiles = 0
@@ -26,7 +26,7 @@ class NaomiRunSyntaxTestsCommand(sublime_plugin.WindowCommand):
     totalFailedAssertions = 0
     testsPath = sublime.packages_path() + '/Naomi/tests/syntaxes';
 
-    self.outputPanel = OutputPanel(self.window, 'naomi')
+    self.outputPanel = OutputPanel(self.sublime_window, { 'name': 'naomi' })
     self.outputPanel.show()
     self.outputPanel.append('Naomi: Running syntax tests...')
 

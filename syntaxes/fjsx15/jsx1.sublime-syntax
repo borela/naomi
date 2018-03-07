@@ -32,6 +32,8 @@ contexts:
 
   meta:
     - clear_scopes: true
-    - meta_scope: source.jsx
+    - meta_scope: >-
+        source.jsx
+        meta.naomi
     - match: ""
       pop: true

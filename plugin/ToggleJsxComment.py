@@ -44,19 +44,24 @@ def comment_block(view, edit, region):
 
 def comment_lines(view, edit, region):
   lines = view.lines(region)
+
   first_line = lines[0]
+  first_line_scopes = view.scope_name(get_non_whitespace_pos(view, first_line))
+
+  unfenced_scopes = [ 'source.jsx', 'punctuation.definition.tag.begin' ]
+  unfenced_tag = all(x in first_line_scopes for x in unfenced_scopes) and 'meta.jsx-fence' not in first_line_scopes
+
+  meta_tag_scopes = [ 'source.jsx', 'meta.tag' ]
+  meta_tag = all(x in first_line_scopes for x in meta_tag_scopes)
+
+  comment_type = 'js'
+  if unfenced_tag or not meta_tag:
+    comment_type = 'jsx'
 
   for line in reversed(lines):
     begin = get_non_whitespace_pos(view, line)
-    scopes = view.scope_name(begin)
 
-    unfenced_scopes = [ 'source.jsx', 'punctuation.definition.tag.begin' ]
-    unfenced_tag = all(x in scopes for x in unfenced_scopes) and 'meta.jsx-fence' not in scopes
-
-    meta_tag_scopes = [ 'source.jsx', 'meta.tag' ]
-    meta_tag = all(x in scopes for x in meta_tag_scopes)
-
-    if unfenced_tag or not meta_tag:
+    if comment_type == 'jsx':
       # JSX.
       view.insert(edit, line.end(), " */}")
       view.insert(edit, begin, "{/* ")

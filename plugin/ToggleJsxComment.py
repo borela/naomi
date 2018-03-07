@@ -22,7 +22,7 @@ def comment_block(view, edit, region):
 
   if begin == end and view.substr(begin).isspace():
     # Added to ensure that the cursor won’t be moved after the comment.
-    view.replace(edit, sublime.Region(end), '!') 
+    view.replace(edit, sublime.Region(end), '!')
     empty_region = True
 
   scopes = view.scope_name(begin)
@@ -154,7 +154,7 @@ def expand_partial_comments(view, region):
         char = view.substr(end)
         scopes = view.scope_name(end)
 
-        if char == '\n':  
+        if char == '\n':
           break
 
         if 'comment.line' not in scopes:
@@ -191,7 +191,7 @@ def get_comment_beginning_pos(view, offset):
 
 def get_comment_content_beginning(view, offset):
   scopes = view.scope_name(offset)
-  while 'punctuation.definition.comment.begin' in scopes: 
+  while 'punctuation.definition.comment.begin' in scopes:
     offset += 1
     scopes = view.scope_name(offset)
 

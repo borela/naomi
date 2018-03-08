@@ -16,6 +16,7 @@ import sublime
 import sublime_plugin
 
 def comment_block(view, edit, region):
+  region = trim_whitespace(view, region)
   begin = get_non_whitespace_pos(view, region)
   end = max(begin, region.end())
   empty_region = False
@@ -261,6 +262,24 @@ def is_jsx_close_brace(view, offset):
   close_brace_scopes = ['source.jsx', 'punctuation.definition.template-expression.end']
   scopes = view.scope_name(offset)
   return all(x in scopes for x in close_brace_scopes)
+
+def trim_whitespace(view, region):
+  begin = region.begin()
+  end = region.end()
+
+  # Trim from the left.
+  char = view.substr(begin)
+  while char.isspace():
+    begin += 1
+    char = view.substr(begin)
+
+  # Trim from the right.
+  char = view.substr(end)
+  while char.isspace():
+    end -= 1
+    char = view.substr(end)
+
+  return sublime.Region(begin, end + 1)
 
 def uncomment_lines(view, edit, region):
   begin = region.begin()

@@ -16,7 +16,6 @@ from sublime import Region
 from sublime_plugin import TextCommand
 
 def comment_block(view, edit, region):
-  region = trim_whitespace(view, region)
   begin = get_non_whitespace_pos(view, region)
   end = max(begin, region.end())
   empty_region = False
@@ -370,6 +369,7 @@ class NaomiToggleJsxCommentCommand(sublime_plugin.TextCommand):
           continue
 
       region = expand_partial_comments(self.view, region)
+      region = trim_whitespace(self.view, region)
 
       # Comments will begin with “//”, “/*” or “{/*”, to simplify the detection
       # on the first line, we can ignore the first character.

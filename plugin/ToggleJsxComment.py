@@ -205,6 +205,7 @@ def get_comment_beginning_pos(view, offset):
 
     offset -= 1
     scopes = view.scope_name(offset)
+
   return offset
 
 # Scan from the left to the right.

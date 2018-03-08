@@ -10,10 +10,10 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-import re
 import os
-import sublime
-import sublime_plugin
+import re
+from sublime import Region
+from sublime_plugin import TextCommand
 
 def comment_block(view, edit, region):
   region = trim_whitespace(view, region)
@@ -23,7 +23,7 @@ def comment_block(view, edit, region):
 
   if begin == end and view.substr(begin).isspace():
     # Added to ensure that the cursor won’t be moved after the comment.
-    view.replace(edit, sublime.Region(end), '!')
+    view.replace(edit, Region(end), '!')
     empty_region = True
 
   comment_type = get_comment_type(view, begin)
@@ -31,7 +31,7 @@ def comment_block(view, edit, region):
   if comment_type == 'jsx':
     if empty_region:
       view.insert(edit, end + 1, " */}")
-      view.erase(edit, sublime.Region(end, end + 1))
+      view.erase(edit, Region(end, end + 1))
     else:
       view.insert(edit, end, " */}")
 
@@ -39,7 +39,7 @@ def comment_block(view, edit, region):
   else:
     if empty_region:
       view.insert(edit, end + 1, " */")
-      view.erase(edit, sublime.Region(end, end + 1))
+      view.erase(edit, Region(end, end + 1))
     else:
       view.insert(edit, end, " */")
 
@@ -83,7 +83,7 @@ def expand_closing_block_punctuation(view, offset):
     end += 1
     scopes = view.scope_name(end)
 
-  return sublime.Region(begin, end)
+  return Region(begin, end)
 
 def expand_openning_block_punctuation(view, offset):
   begin = offset
@@ -107,7 +107,7 @@ def expand_openning_block_punctuation(view, offset):
   if view.substr(end) == ' ':
     end += 1
 
-  return sublime.Region(begin, end)
+  return Region(begin, end)
 
 def expand_partial_comments(view, region):
   begin = region.begin()
@@ -180,7 +180,7 @@ def expand_partial_comments(view, region):
       # include the forward slash.
       end += 1
 
-  return sublime.Region(begin, end)
+  return Region(begin, end)
 
 # Scan from the right to the left.
 def get_comment_beginning_pos(view, offset):
@@ -279,7 +279,7 @@ def trim_whitespace(view, region):
     end -= 1
     char = view.substr(end)
 
-  return sublime.Region(begin, end + 1)
+  return Region(begin, end + 1)
 
 def uncomment_lines(view, edit, region):
   begin = region.begin()
@@ -297,7 +297,7 @@ def uncomment_lines(view, edit, region):
     if 'comment.line' in scopes:
       i = get_comment_beginning_pos(view, i)
       content_begin = get_comment_content_beginning(view, i)
-      view.erase(edit, sublime.Region(i, content_begin))
+      view.erase(edit, Region(i, content_begin))
       continue
 
     # We found the beginning of the block comment first which means that there’s
@@ -314,7 +314,7 @@ def uncomment_lines(view, edit, region):
 
       # We have “i” positioned at the beginning of the comment or the brace if
       # it is a JSX comment.
-      view.erase(edit, sublime.Region(i, content_begin))
+      view.erase(edit, Region(i, content_begin))
       continue
 
     # We are looping backwards, so it is expected to find the closing punctuation
@@ -340,8 +340,8 @@ def uncomment_lines(view, edit, region):
     # Correct the regions to include the JSX braces if necessary.
     if possible_jsx_comment:
       if open_block.begin() > 0 and is_jsx_open_brace(view, open_block.begin() - 1):
-        open_block = sublime.Region(open_block.begin() - 1, open_block.end())
-        close_block = sublime.Region(close_block.begin(), close_block.end() + 1)
+        open_block = Region(open_block.begin() - 1, open_block.end())
+        close_block = Region(close_block.begin(), close_block.end() + 1)
 
     view.erase(edit, close_block)
     view.erase(edit, open_block)

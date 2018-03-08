@@ -12,6 +12,9 @@
 
 import os
 import re
+import sublime
+import sublime_plugin
+
 from sublime import Region
 from sublime_plugin import TextCommand
 

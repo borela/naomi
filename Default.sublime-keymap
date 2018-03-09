@@ -257,4 +257,34 @@
     "operand": true,
     "match_all": true
   }]
+},{
+  // Auto complete tags using tab and emmet.
+  "keys": [ "tab" ],
+  "command": "expand_abbreviation_by_tab",
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.jsx - (comment, string, meta.embedded-js.jsx)",
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "auto_complete_visible",
+    "operator": "equal",
+    "operand": false,
+    "match_all": true
+  },{
+    "key": "is_abbreviation",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "setting.disable_tab_abbreviations",
+    "operator": "equal",
+    "operand": false,
+    "match_all": true
+  }]
 }]

@@ -49,16 +49,26 @@ def comment_block(view, edit, region):
 
 def comment_lines(view, edit, region):
   lines = view.lines(region)
-
   first_line = lines[0]
   comment_type = get_comment_type(view, get_non_whitespace_pos(view, first_line))
 
   for line in reversed(lines):
     begin = get_non_whitespace_pos(view, line)
+    end = max(begin, line.end())
+
+    if begin == end and view.substr(begin).isspace():
+      # Added to ensure that the cursor won’t be moved after the comment.
+      view.replace(edit, Region(end), '!')
+      empty_line = True
 
     if comment_type == 'jsx':
       # JSX.
-      view.insert(edit, line.end(), " */}")
+      if empty_line:
+        view.insert(edit, end + 1, " */}")
+        view.erase(edit, Region(end, end + 1))
+      else:
+        view.insert(edit, end, " */}")
+
       view.insert(edit, begin, "{/* ")
     else:
       # Normal JS comment.

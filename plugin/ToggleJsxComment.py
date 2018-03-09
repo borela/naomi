@@ -56,6 +56,7 @@ def comment_lines(view, edit, region):
     begin = get_non_whitespace_pos(view, line)
     end = max(begin, line.end())
 
+    empty_line = False
     if begin == end and view.substr(begin).isspace():
       # Added to ensure that the cursor won’t be moved after the comment.
       view.replace(edit, Region(end), '!')

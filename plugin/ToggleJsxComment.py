@@ -98,6 +98,24 @@ def expand_closing_block_punctuation(view, offset):
 
   return Region(begin, end)
 
+def expand_edge_lines(view, region):
+  begin = region.begin() - 1
+  end = min(view.size(), region.end() + 1)
+
+  # Expand to the left.
+  char = view.substr(begin)
+  while begin > 0 and char != '\n':
+    begin -= 1
+    char = view.substr(begin)
+
+  # Expand to the right.
+  char = view.substr(end)
+  while end < view.size() and char != '\n':
+    end -= 1
+    char = view.substr(end)
+
+  return Region(begin, end)
+
 def expand_openning_block_punctuation(view, offset):
   begin = offset
   end = offset
@@ -277,6 +295,13 @@ def is_jsx_close_brace(view, offset):
   scopes = view.scope_name(offset)
   return all(x in scopes for x in close_brace_scopes)
 
+# Returns true if the region must be commented or not.
+def must_comment(view, region):
+  # Comments will begin with “//”, “/*” or “{/*”, to simplify the detection
+  # on the first line, we can ignore the first character.
+  scopes = view.scope_name(get_non_whitespace_pos(view, region) + 1)
+  return 'comment' not in scopes
+
 def trim_whitespace(view, region):
   begin = region.begin()
   end = region.end()
@@ -390,16 +415,23 @@ class NaomiToggleJsxCommentCommand(sublime_plugin.TextCommand):
           continue
 
       region = expand_partial_comments(self.view, region)
-      region = trim_whitespace(self.view, region)
 
-      # Comments will begin with “//”, “/*” or “{/*”, to simplify the detection
-      # on the first line, we can ignore the first character.
-      scopes = self.view.scope_name(get_non_whitespace_pos(self.view, region) + 1)
+      # Block comments.
+      if block:
+        region = trim_whitespace(self.view, region)
 
-      if 'comment' in scopes:
-          uncomment_lines(self.view, edit, region)
-      else:
-        if block:
+        if must_comment(self.view, region):
           comment_block(self.view, edit, region)
         else:
-          comment_lines(self.view, edit, region)
+          uncomment_lines(self.view, edit, region)
+
+        continue
+
+      # Line comments.
+      region = expand_edge_lines(self.view, region)
+      region = trim_whitespace(self.view, region)
+
+      if must_comment(self.view, region):
+        comment_lines(self.view, edit, region)
+      else:
+        uncomment_lines(self.view, edit, region)

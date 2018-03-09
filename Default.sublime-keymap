@@ -225,4 +225,36 @@
     "operator": "equal",
     "operand": true
   }]
+},{
+  // Adds “className=""” when “.” is pressed.
+  "keys": [ "." ],
+  "args": { "attribute": "className" },
+  "command": "emmet_insert_attribute",
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.jsx meta.tag - (comment, string, meta.embedded-js.jsx)",
+    "match_all": true
+  },{
+    "operator": "equal",
+    "operand": true,
+    "key": "setting.auto_id_class",
+    "match_all": true
+  }]
+},{
+  // Adds “id=""” when “#” is pressed.
+  "keys": [ "#" ],
+  "args": { "attribute": "id" },
+  "command": "emmet_insert_attribute",
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.jsx meta.tag - (comment, string, meta.embedded-js.jsx)",
+    "match_all": true
+  },{
+    "key": "setting.auto_id_class",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  }]
 }]

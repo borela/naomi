@@ -292,6 +292,10 @@ def trim_whitespace(view, region):
     end -= 1
     char = view.substr(end)
 
+  # The region got inverted, this means that it contains only whitespace.
+  if begin > end:
+    return region
+
   return Region(begin, end + 1)
 
 def uncomment_lines(view, edit, region):

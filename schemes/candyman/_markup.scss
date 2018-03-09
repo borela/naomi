@@ -66,6 +66,13 @@
   foreground: $cyan-a400;
 }
 
+// JSX attribute.
+.source.jsx {
+  .entity.other.attribute-name {
+    foreground: $green-300;
+  }
+}
+
 // Data attribute.
 .meta.attribute.data
 .entity.other.attribute-name {

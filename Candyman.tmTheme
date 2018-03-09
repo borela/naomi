@@ -1604,6 +1604,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.source.jsx .entity.other.attribute-name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#81c784</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.meta.attribute.data .entity.other.attribute-name</string>
 			<key>settings</key>
 			<dict>

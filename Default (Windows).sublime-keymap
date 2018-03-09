@@ -30,4 +30,26 @@
   "keys": [ "alt+shift+[" ],
   "command": "insert_snippet",
   "args": { "contents": "”" }
+},{
+  // Toggle JS/JSX comment (single line).
+  "keys": [ "ctrl+/" ],
+  "command": "naomi_toggle_jsx_comment",
+  "args": { "block": false },
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.js, source.jsx",
+    "match_all": true
+  }]
+},{
+  // Toggle JS/JSX comment (block).
+  "keys": [ "ctrl+shift+/" ],
+  "command": "naomi_toggle_jsx_comment",
+  "args": { "block": true },
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.js, source.jsx",
+    "match_all": true
+  }]
 }]

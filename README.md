@@ -56,8 +56,10 @@ Enhanced syntax definitions for Sublime Text 3.
 
 ### Other enhancements
 
+* JS/JSX comment toggle;
 * Pressing enter between `()`, `[]`, `""`, `''` and ``` `` ```  will have the same
   behavior as `{}`;
+
 ## Installation
 
 #### Manual installation

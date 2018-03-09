@@ -1,5 +1,6 @@
 # The MIT License (MIT)
 
+Copyright © 2018 Francisco Lourenço <francisco@betafabric.com>
 Copyright © 2017 Ihor Oleksandrov <@ihodev>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

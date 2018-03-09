@@ -428,6 +428,14 @@ contexts:
       pop: true
 
   variables:
+    # super()
+    - match: super(?=\s*\()
+      scope: variable.language.super.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Other variables.
     - match: prototype\b
       scope: variable.language.prototype.js.fjsx15
       pop: true

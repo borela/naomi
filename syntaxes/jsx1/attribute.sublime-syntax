@@ -69,7 +69,6 @@ contexts:
       pop: true
 
   optional-value:
-    - meta_scope: meta.attribute-with-value.html.jsx.jsx1
     # Normal value.
     - match: =
       scope: punctuation.separator.key-value.html.jsx.jsx1

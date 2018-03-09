@@ -1577,11 +1577,20 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.other.attribute-name.id</string>
+			<string>.entity.other.attribute-name.id, .entity.other.attribute-name.key, .entity.other.attribute-name.ref</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#ea80fc</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.other.attribute-name.dangerous</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff5252</string>
 			</dict>
 		</dict>
 		<dict>

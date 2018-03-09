@@ -48,8 +48,16 @@
 }
 
 // Attributes.
-.entity.other.attribute-name.id {
-  foreground: $purple-a100;
+.entity.other.attribute-name {
+  &.id,
+  &.key,
+  &.ref {
+    foreground: $purple-a100;
+  }
+}
+
+.entity.other.attribute-name.dangerous {
+  foreground: $red-a200;
 }
 
 // Builtin attribute.

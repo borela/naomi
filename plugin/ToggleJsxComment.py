@@ -298,6 +298,8 @@ def uncomment_lines(view, edit, region):
   begin = region.begin()
   end = region.end()
 
+  # We will loop backwards, this means that it will hit the closing punctuation
+  # for block comments.
   i = end + 1
   while i > begin:
     i -= 1

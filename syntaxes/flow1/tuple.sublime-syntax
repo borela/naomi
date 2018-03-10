@@ -20,12 +20,12 @@ scope: ...
 contexts:
   main:
     - match: \[
-      scope: punctuation.section.brackets.flow
+      scope: punctuation.section.brackets.begin.flow
       set: [ delimiters, optional-type-expression ]
 
   delimiters:
     - match: \,
-      scope: punctuation.separator.flow
+      scope: punctuation.separator.comma.flow
       push: optional-type-expression
     - match: \]
       scope: punctuation.section.brackets.end.flow

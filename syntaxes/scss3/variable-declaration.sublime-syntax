@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -32,7 +31,7 @@ contexts:
         1: >-
           declaration.scss.scss3
           entity.name.variable.scss.scss3
-        2: keyword.operator.other.association.scss.scss3
+        2: punctuation.binding.scss.scss3
       set: value
 
   value:

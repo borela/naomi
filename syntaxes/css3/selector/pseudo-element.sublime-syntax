@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -27,7 +26,7 @@ contexts:
     - include: css2
     - include: other
     - include: fallback
-    
+
   css2:
     # after, before, first-letter, first-line,
     - match: (?xi)(::?)(?>after|before|first-(?>letter|line))\b

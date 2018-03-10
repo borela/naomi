@@ -23,7 +23,7 @@
 //     ^ punctuation.definition.keyword.begin.php.php7
 //            ^^^ support.php.php7
 //                ^ punctuation.definition.variable.begin.php.php7
-//                 ^^^^^^^^ entity.name.variable.php.php7
+//                 ^^^^^^^^ variable.other.readwrite.php.php7
      * @param int|string $variable
 //     ^^^^^^ keyword.documentation.php.php7
 //     ^ punctuation.definition.keyword.begin.php.php7
@@ -31,7 +31,7 @@
 //               ^ keyword.operator.other.php.php7
 //                ^^^^^^ support.php.php7
 //                       ^ punctuation.definition.variable.begin.php.php7
-//                        ^^^^^^^^ entity.name.variable.php.php7
+//                        ^^^^^^^^ variable.other.readwrite.php.php7
      * @return int
 //     ^^^^^^^ keyword.documentation.php.php7
 //     ^ punctuation.definition.keyword.begin.php.php7

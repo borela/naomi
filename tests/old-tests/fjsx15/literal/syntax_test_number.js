@@ -13,34 +13,34 @@
 // the License.
 
    0;
-// ^ .constant.numeric.decimal.js.fjsx15
+// ^ .constant.numeric.decimal.js
    123;
-// ^^^ .constant.numeric.decimal.js.fjsx15
+// ^^^ .constant.numeric.decimal.js
    1_2_3;
-// ^^^^^ .constant.numeric.decimal.js.fjsx15
+// ^^^^^ .constant.numeric.decimal.js
    123_456_789;
-// ^^^^^^^^^^^ .constant.numeric.decimal.js.fjsx15
+// ^^^^^^^^^^^ .constant.numeric.decimal.js
    123.;
-// ^^^^ .constant.numeric.float.js.fjsx15
+// ^^^^ .constant.numeric.float.js
    1_2_3.;
-// ^^^^^^ .constant.numeric.float.js.fjsx15
+// ^^^^^^ .constant.numeric.float.js
    123_456_789.;
-// ^^^^^^^^^^^^ .constant.numeric.float.js.fjsx15
+// ^^^^^^^^^^^^ .constant.numeric.float.js
    123.0;
-// ^^^^^ .constant.numeric.float.js.fjsx15
+// ^^^^^ .constant.numeric.float.js
    .123;
-// ^^^^ .constant.numeric.float.js.fjsx15
+// ^^^^ .constant.numeric.float.js
    0.123;
-// ^^^^^ .constant.numeric.float.js.fjsx15
+// ^^^^^ .constant.numeric.float.js
    123e10;
-// ^^^^^^ .constant.numeric.float.scientific.js.fjsx15
+// ^^^^^^ .constant.numeric.float.scientific.js
    123e+10;
-// ^^^^^^^ .constant.numeric.float.scientific.js.fjsx15
+// ^^^^^^^ .constant.numeric.float.scientific.js
    123e-10;
-// ^^^^^^^ .constant.numeric.float.scientific.js.fjsx15
+// ^^^^^^^ .constant.numeric.float.scientific.js
    0x123;
-// ^^^^^ .constant.numeric.hex.js.fjsx15
+// ^^^^^ .constant.numeric.hex.js
    0x1_2_3;
-// ^^^^^^^ .constant.numeric.hex.js.fjsx15
+// ^^^^^^^ .constant.numeric.hex.js
    0x123_456_789;
-// ^^^^^^^^^^^^^ .constant.numeric.hex.js.fjsx15
+// ^^^^^^^^^^^^^ .constant.numeric.hex.js

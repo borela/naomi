@@ -13,10 +13,10 @@
 // the License.
 
    /\a\b\c/abcde
-// ^^^^^^^^^^^^^ .string.unquoted.regex.js.fjsx15
-// ^ .punctuation.definition.string.begin.js.fjsx15
-//  ^^ .constant.character.escape.a.js.fjsx15
-//    ^^ .constant.character.escape.b.js.fjsx15
-//      ^^ .constant.character.escape.a.js.fjsx15
-//        ^ .punctuation.definition.string.end.js.fjsx15
-//         ^^^^^ .regex.flag.js.fjsx15
+// ^^^^^^^^^^^^^ .string.unquoted.regex.js
+// ^ .punctuation.definition.string.begin.js
+//  ^^ .constant.character.escape.a.js
+//    ^^ .constant.character.escape.b.js
+//      ^^ .constant.character.escape.a.js
+//        ^ .punctuation.definition.string.end.js
+//         ^^^^^ .regex.flag.js

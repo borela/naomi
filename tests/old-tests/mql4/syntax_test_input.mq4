@@ -16,7 +16,7 @@
 //  ^^^^^ keyword.input.mql.mql4
 //        ^^^^^^ support.mql.mql4
 //        ^^^^^^ entity.name.type.mql.mql4
-//               ^^^^^^^^^^ entity.name.variable.mql.mql4
+//               ^^^^^^^^^^ variable.other.readwrite.mql.mql4
 //                          ^ keyword.operator.other.assignment.mql.mql4
 //                            ^^^^^ string.quoted.double.mql.mql4
 //                             ^^^ string.content.mql.mql4
@@ -26,7 +26,7 @@
     input Custom identifier = "...";
 //  ^^^^^ keyword.input.mql.mql4
 //        ^^^^^^ entity.name.type.mql.mql4
-//               ^^^^^^^^^^ entity.name.variable.mql.mql4
+//               ^^^^^^^^^^ variable.other.readwrite.mql.mql4
 //                          ^ keyword.operator.other.assignment.mql.mql4
 //                            ^^^^^ string.quoted.double.mql.mql4
 //                             ^^^ string.content.mql.mql4

@@ -15,88 +15,88 @@
 <?php
     function Myfunction($param){   }
 //  ^^^^^^^^ storage.type.php.php7
-//  ^^^^^^^^ keyword.declaration.function.php.php7
+//  ^^^^^^^^ storage.type.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 //                     ^ punctuation.definition.function.parameters.begin.php.php7
 //                      ^ punctuation.definition.variable.begin.php.php7
-//                       ^^^^^ entity.name.variable.php.php7
+//                       ^^^^^ variable.other.readwrite.php.php7
 //                            ^ punctuation.definition.function.parameters.end.php.php7
-//                             ^ punctuation.definition.function.body.begin.php.php7
-//                                 ^ punctuation.definition.function.body.end.php.php7
+//                             ^ punctuation.section.block.begin.php.php7
+//                                 ^ punctuation.section.block.end.php.php7
     function Myfunction(...$param){   }
 //  ^^^^^^^^ storage.type.php.php7
-//  ^^^^^^^^ keyword.declaration.function.php.php7
+//  ^^^^^^^^ storage.type.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 //                     ^ punctuation.definition.function.parameters.begin.php.php7
-//                      ^^^ keyword.operator.other.rest.php.php7
+//                      ^^^ keyword.operator.rest.php.php7
 //                         ^ punctuation.definition.variable.begin.php.php7
-//                          ^^^^^ entity.name.variable.php.php7
+//                          ^^^^^ variable.other.readwrite.php.php7
 //                               ^ punctuation.definition.function.parameters.end.php.php7
-//                                ^ punctuation.definition.function.body.begin.php.php7
-//                                    ^ punctuation.definition.function.body.end.php.php7
+//                                ^ punctuation.section.block.begin.php.php7
+//                                    ^ punctuation.section.block.end.php.php7
     function Myfunction($param1, int ...$param2){   }
-//  ^^^^^^^^ keyword.declaration.function.php.php7
+//  ^^^^^^^^ storage.type.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 //                     ^ punctuation.definition.function.parameters.begin.php.php7
 //                      ^ punctuation.definition.variable.begin.php.php7
-//                       ^^^^^^ entity.name.variable.php.php7
+//                       ^^^^^^ variable.other.readwrite.php.php7
 //                             ^ punctuation.definition.function.parameters.php.php7
 //                               ^^^ support.php.php7
-//                                   ^^^ keyword.operator.other.rest.php.php7
+//                                   ^^^ keyword.operator.rest.php.php7
 //                                      ^ punctuation.definition.variable.begin.php.php7
-//                                       ^^^^^^ entity.name.variable.php.php7
+//                                       ^^^^^^ variable.other.readwrite.php.php7
 //                                             ^ punctuation.definition.function.parameters.end.php.php7
-//                                              ^ punctuation.definition.function.body.begin.php.php7
-//                                                  ^ punctuation.definition.function.body.end.php.php7
+//                                              ^ punctuation.section.block.begin.php.php7
+//                                                  ^ punctuation.section.block.end.php.php7
     function Myfunction(int $param1, string $param2){   }
 //  ^^^^^^^^ storage.type.php.php7
-//  ^^^^^^^^ keyword.declaration.function.php.php7
+//  ^^^^^^^^ storage.type.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 //                     ^ punctuation.definition.function.parameters.begin.php.php7
 //                      ^^^ support.php.php7
 //                          ^ punctuation.definition.variable.begin.php.php7
-//                           ^^^^^ entity.name.variable.php.php7
+//                           ^^^^^ variable.other.readwrite.php.php7
 //                                 ^ punctuation.definition.function.parameters.php.php7
 //                                   ^^^^^^ support.php.php7
 //                                          ^ punctuation.definition.variable.begin.php.php7
-//                                           ^^^^^ entity.name.variable.php.php7
+//                                           ^^^^^ variable.other.readwrite.php.php7
 //                                                 ^ punctuation.definition.function.parameters.end.php.php7
-//                                                  ^ punctuation.definition.function.body.begin.php.php7
-//                                                      ^ punctuation.definition.function.body.end.php.php7
+//                                                  ^ punctuation.section.block.begin.php.php7
+//                                                      ^ punctuation.section.block.end.php.php7
     function Myfunction(
 //  ^^^^^^^^ storage.type.php.php7
-//  ^^^^^^^^ keyword.declaration.function.php.php7
+//  ^^^^^^^^ storage.type.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 //                     ^ punctuation.definition.function.parameters.begin.php.php7
         int $param1,
 //      ^^^ support.php.php7
 //          ^ punctuation.definition.variable.begin.php.php7
-//           ^^^^^ entity.name.variable.php.php7
+//           ^^^^^ variable.other.readwrite.php.php7
 //                 ^ punctuation.definition.function.parameters.php.php7
         ...$param2
-//      ^^^ keyword.operator.other.rest.php.php7
+//      ^^^ keyword.operator.rest.php.php7
 //         ^ punctuation.definition.variable.begin.php.php7
-//          ^^^^^ entity.name.variable.php.php7
+//          ^^^^^ variable.other.readwrite.php.php7
     ){   }
 //  ^ punctuation.definition.function.parameters.end.php.php7
-//   ^ punctuation.definition.function.body.begin.php.php7
-//       ^ punctuation.definition.function.body.end.php.php7
+//   ^ punctuation.section.block.begin.php.php7
+//       ^ punctuation.section.block.end.php.php7
     function Myfunction(
 //  ^^^^^^^^ storage.type.php.php7
-//  ^^^^^^^^ keyword.declaration.function.php.php7
+//  ^^^^^^^^ storage.type.function.php.php7
 //           ^^^^^^^^^^ entity.name.function.php.php7
 //                     ^ punctuation.definition.function.parameters.begin.php.php7
         int $param1,
 //      ^^^ support.php.php7
 //          ^ punctuation.definition.variable.begin.php.php7
-//           ^^^^^ entity.name.variable.php.php7
+//           ^^^^^ variable.other.readwrite.php.php7
 //                 ^ punctuation.definition.function.parameters.php.php7
         string ...$param2
-//             ^^^ keyword.operator.other.rest.php.php7
+//             ^^^ keyword.operator.rest.php.php7
 //                ^ punctuation.definition.variable.begin.php.php7
-//                 ^^^^^ entity.name.variable.php.php7
+//                 ^^^^^ variable.other.readwrite.php.php7
     ){   }
 //  ^ punctuation.definition.function.parameters.end.php.php7
-//   ^ punctuation.definition.function.body.begin.php.php7
-//       ^ punctuation.definition.function.body.end.php.php7
+//   ^ punctuation.section.block.begin.php.php7
+//       ^ punctuation.section.block.end.php.php7
 ?>

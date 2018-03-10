@@ -39,43 +39,43 @@
     "Variables: $var1$var2"
 //              ^^^^^ variable.a.php.php7
 //              ^ punctuation.definition.variable.begin.php.php7
-//               ^^^^ entity.name.variable.php.php7
+//               ^^^^ variable.other.readwrite.php.php7
 //                   ^^^^^ variable.b.php.php7
 //                   ^ punctuation.definition.variable.begin.php.php7
-//                    ^^^^ entity.name.variable.php.php7
+//                    ^^^^ variable.other.readwrite.php.php7
     "Variables: $var1[123]$var2[abc]"
 //              ^^^^^^^^^^ variable.a.php.php7
 //              ^ punctuation.definition.variable.begin.php.php7
-//               ^^^^ entity.name.variable.php.php7
+//               ^^^^ variable.other.readwrite.php.php7
 //                   ^ keyword.operator.other.subscript.begin.php.php7
 //                    ^^^ array.key.php.php7
 //                       ^ keyword.operator.other.subscript.end.php.php7
 //                        ^^^^^^^^^^ variable.b.php.php7
 //                        ^ punctuation.definition.variable.begin.php.php7
-//                         ^^^^ entity.name.variable.php.php7
+//                         ^^^^ variable.other.readwrite.php.php7
 //                             ^ keyword.operator.other.subscript.begin.php.php7
 //                              ^^^ array.key.php.php7
 //                                 ^ keyword.operator.other.subscript.end.php.php7
     "Variables: $var1\n$var2\n"
 //              ^^^^^ variable.a.php.php7
 //              ^ punctuation.definition.variable.begin.php.php7
-//               ^^^^ entity.name.variable.php.php7
+//               ^^^^ variable.other.readwrite.php.php7
 //                   ^^ constant.character.escape.a.php.php7
 //                     ^^^^^ variable.b.php.php7
 //                     ^ punctuation.definition.variable.begin.php.php7
-//                      ^^^^ entity.name.variable.php.php7
+//                      ^^^^ variable.other.readwrite.php.php7
 //                          ^^ constant.character.escape.b.php.php7
     "Variables: $var1[123]\n$var2[abc]\n"
 //              ^^^^^^^^^^ variable.a.php.php7
 //              ^ punctuation.definition.variable.begin.php.php7
-//               ^^^^ entity.name.variable.php.php7
+//               ^^^^ variable.other.readwrite.php.php7
 //                   ^ keyword.operator.other.subscript.begin.php.php7
 //                    ^^^ array.key.php.php7
 //                       ^ keyword.operator.other.subscript.end.php.php7
 //                        ^^ constant.character.escape.a.php.php7
 //                          ^^^^^^^^^^ variable.b.php.php7
 //                          ^ punctuation.definition.variable.begin.php.php7
-//                           ^^^^ entity.name.variable.php.php7
+//                           ^^^^ variable.other.readwrite.php.php7
 //                               ^ keyword.operator.other.subscript.begin.php.php7
 //                                ^^^ array.key.php.php7
 //                                   ^ keyword.operator.other.subscript.end.php.php7

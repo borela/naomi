@@ -42,7 +42,6 @@ contexts:
     - match: \.(?!\.)
       scope: punctuation.accessor.js.fjsx15
       set: [ optional-tail, head ]
-    - match: \.(?!\.)
     - match: \?
       scope: keyword.operator.ternary.js.fjsx15
       set: [

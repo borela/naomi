@@ -50,6 +50,7 @@ contexts:
       ]
 
   head:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax

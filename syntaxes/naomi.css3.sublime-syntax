@@ -14,12 +14,11 @@
 # the License.
 
 name: CSS
+scope: source.css
 
 file_extensions:
   - css
   - css3
-
-scope: source.css
 
 contexts:
   main:

@@ -14,11 +14,10 @@
 # the License.
 
 name: SCSS
+scope: source.scss
 
 file_extensions:
   - scss
-
-scope: source.scss
 
 contexts:
   main:

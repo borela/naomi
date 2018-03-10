@@ -14,13 +14,12 @@
 # the License.
 
 name: JavaScript
+scope: source.js
 
 file_extensions:
   - js
   - jsx
   - mjs
-
-scope: source.js
 
 contexts:
   main:

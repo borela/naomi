@@ -14,11 +14,10 @@
 # the License.
 
 name: Markdown (Github)
+scope: text.html.markdown
 
 file_extensions:
   - md
-
-scope: text.html.markdown
 
 contexts:
   main:

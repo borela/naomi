@@ -14,11 +14,10 @@
 # the License.
 
 name: Jest Snapshot
+scope: source.js.jest-snapshot
 
 file_extensions:
   - js.snap
-
-scope: source.js.jest-snapshot
 
 contexts:
   main:

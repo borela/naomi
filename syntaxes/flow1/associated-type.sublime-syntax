@@ -19,7 +19,7 @@ scope: ...
 contexts:
   main:
     - match: ":"
-      scope: keyword.operator.type.flow
+      scope: punctuation.binding.flow
       set: optional-type-expression
 
   optional-type-expression:

@@ -52,7 +52,7 @@ contexts:
 
   optional-alias:
     - match: ":"
-      scope: keyword.operator.other.association.js.fjsx15
+      scope: punctuation.binding.js.fjsx15
       set: optional-parameter
     - match: (?=\S)
       pop: true

@@ -25,6 +25,15 @@ def expand_by_scope(view, region, target_scope):
     return target_scope not in scopes
   return expand(view, region, __predicate)
 
+def expand_partial_comments(view, region):
+  return expand_by_scope(view, region, 'comment')
+
+def expand_partial_lines(view, region):
+  def __predicate(view, offset):
+    char = view.substr(offset)
+    return char == '\n'
+  return expand(view, region, __predicate)
+
 # Returns the position for the first non whitespace character or the region’s
 # beginning if none is found.
 def find_non_whitespace(view, region, stop_on_line_feed = True):

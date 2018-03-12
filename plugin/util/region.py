@@ -52,7 +52,7 @@ def find_non_whitespace(view, region, stop_on_line_feed = True):
   return offset
 
 def is_offset_valid(view, offset):
-  return 0 < offset < view.size()
+  return 0 <= offset <= view.size() - 1
 
 def scan(view, offset, predicate, limit = -1):
   if predicate(view, offset):

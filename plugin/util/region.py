@@ -15,43 +15,15 @@ from sublime import Region
 
 def expand(view, region, predicate):
   return Region(
-    expand_left(view, region.begin(), predicate),
-    expand_right(view, region.end(), predicate)
+    scan_reverse(view, region.begin(), predicate),
+    scan(view, region.end(), predicate)
   )
 
 def expand_by_scope(view, region, target_scope):
-  return expand(view, region, scope_predicate(view, region, target_scope))
-
-def expand_left(view, offset, predicate):
-  if predicate(view, offset):
-    return offset
-
-  while True:
-    offset -= 1
-    if predicate(view, offset):
-      offset += 1
-      break
-
-    if offset <= 0:
-      offset = 0
-      break
-
-  return offset
-
-def expand_right(view, offset, predicate):
-  if predicate(view, offset):
-    return offset
-
-  while True:
-    offset += 1
-    if predicate(view, offset):
-      offset -= 1
-      break
-
-    if offset >= view.size():
-      break
-
-  return offset
+  def __predicate(view, offset):
+    scopes = view.scope_name(offset)
+    return target_scope not in scopes
+  return expand(view, region, __predicate)
 
 # Returns the position for the first non whitespace character or the region’s
 # beginning if none is found.
@@ -82,8 +54,33 @@ def find_non_whitespace(view, region, stop_on_line_feed = True):
 def is_offset_valid(view, offset):
   return 0 < offset < view.size()
 
-def scope_predicate(view, offset, target_scope):
-  def __predicate(view, offset):
-    scopes = view.scope_name(offset)
-    return target_scope not in scopes
-  return __predicate
+def scan(view, offset, predicate):
+  if predicate(view, offset):
+    return offset
+
+  while True:
+    offset += 1
+    if predicate(view, offset):
+      offset -= 1
+      break
+
+    if offset >= view.size():
+      break
+
+  return offset
+
+def scan_reverse(view, offset, predicate):
+  if predicate(view, offset):
+    return offset
+
+  while True:
+    offset -= 1
+    if predicate(view, offset):
+      offset += 1
+      break
+
+    if offset <= 0:
+      offset = 0
+      break
+
+  return offset

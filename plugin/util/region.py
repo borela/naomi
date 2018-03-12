@@ -59,15 +59,15 @@ def scan(view, offset, predicate, limit = -1):
     return offset
 
   if limit < 1:
-    limit = view.size()
+    limit = view.size() - 1
 
   while True:
     offset += 1
-    if predicate(view, offset):
-      offset -= 1
+    if offset > limit:
       break
 
-    if offset >= limit:
+    if predicate(view, offset):
+      offset -= 1
       break
 
   return offset
@@ -78,12 +78,12 @@ def scan_reverse(view, offset, predicate):
 
   while True:
     offset -= 1
-    if predicate(view, offset):
-      offset += 1
+    if offset < 0:
+      offset = 0
       break
 
-    if offset <= 0:
-      offset = 0
+    if predicate(view, offset):
+      offset += 1
       break
 
   return offset

@@ -13,22 +13,22 @@
 import sublime
 from sublime import Region
 
-def expand_by_scope(view, region, target_scope):
+def expand(view, region, predicate):
   return Region(
-    expand_by_scope_left(view, region.begin(), target_scope),
-    expand_by_scope_right(view, region.end(), target_scope)
+    expand_left(view, region.begin(), predicate),
+    expand_right(view, region.end(), predicate)
   )
 
-def expand_by_scope_left(view, offset, target_scope):
-  scopes = view.scope_name(offset)
-  if target_scope not in scopes:
+def expand_by_scope(view, region, target_scope):
+  return expand(view, region, scope_predicate(view, region, target_scope))
+
+def expand_left(view, offset, predicate):
+  if predicate(view, offset):
     return offset
 
   while True:
     offset -= 1
-    scopes = view.scope_name(offset)
-
-    if target_scope not in scopes:
+    if predicate(view, offset):
       offset += 1
       break
 
@@ -38,16 +38,13 @@ def expand_by_scope_left(view, offset, target_scope):
 
   return offset
 
-def expand_by_scope_right(view, offset, target_scope):
-  scopes = view.scope_name(offset)
-  if target_scope not in scopes:
+def expand_right(view, offset, predicate):
+  if predicate(view, offset):
     return offset
 
   while True:
     offset += 1
-    scopes = view.scope_name(offset)
-
-    if target_scope not in scopes:
+    if predicate(view, offset):
       offset -= 1
       break
 
@@ -84,3 +81,9 @@ def find_non_whitespace(view, region, stop_on_line_feed = True):
 
 def is_offset_valid(view, offset):
   return 0 < offset < view.size()
+
+def scope_predicate(view, offset, target_scope):
+  def __predicate(view, offset):
+    scopes = view.scope_name(offset)
+    return target_scope not in scopes
+  return __predicate

@@ -61,7 +61,11 @@ def expand_partial_lines(view, region):
   def __predicate(view, offset):
     char = view.substr(offset)
     return char == '\n'
-  return expand(view, region, __predicate)
+
+  return Region(
+    scan_reverse(view, region.begin(), __predicate) + 1,
+    scan(view, region.end(), __predicate)
+  )
 
 # Returns the position for the first non whitespace character or the region’s
 # beginning if none is found.

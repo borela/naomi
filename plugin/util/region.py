@@ -19,10 +19,10 @@ def expand(view, region, predicate):
     scan(view, region.end(), predicate)
   )
 
-def expand_by_scope(view, region, target_scope):
+def expand_by_scope(view, region, scope):
   def __predicate(view, offset):
     scopes = view.scope_name(offset)
-    return target_scope not in scopes
+    return scope in scopes
   return expand(view, region, __predicate)
 
 def expand_partial_comments(view, region):

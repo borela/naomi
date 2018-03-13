@@ -26,7 +26,36 @@ def expand_by_scope(view, region, scope):
   return expand(view, region, __predicate)
 
 def expand_partial_comments(view, region):
-  return expand_by_scope(view, region, 'comment')
+  comment_scopes = [
+    'comment.block',
+    'comment.line'
+  ]
+
+  def __not_comment_begin(view, offset):
+    scopes = view.scope_name(offset)
+    if any(x in scopes for x in comment_scopes):
+      return 'punctuation.definition.comment.begin' not in scopes
+    return False
+
+  def __not_comment_end(view, offset):
+    scopes = view.scope_name(offset)
+    if any(x in scopes for x in comment_scopes):
+      return 'punctuation.definition.comment.end' not in scopes
+    return False
+
+  begin = region.begin()
+  end = region.end() - 1
+
+  if end < begin:
+    end = begin
+
+  begin = scan_reverse(view, begin, __not_comment_begin) + 1
+  end = scan(view, end, __not_comment_end)
+
+  return Region(
+    scan_reverse(view, begin, __not_comment_end) + 1,
+    scan(view, end, __not_comment_begin)
+  )
 
 def expand_partial_lines(view, region):
   def __predicate(view, offset):

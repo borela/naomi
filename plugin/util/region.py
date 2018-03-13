@@ -26,10 +26,7 @@ def expand_by_scope(view, region, scope):
   return expand(view, region, __predicate)
 
 def expand_partial_comments(view, region):
-  comment_scopes = [
-    'comment.block',
-    'comment.line'
-  ]
+  comment_scopes = [ 'comment.block', 'comment.line' ]
 
   def __not_comment_begin(view, offset):
     scopes = view.scope_name(offset)

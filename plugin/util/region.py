@@ -73,6 +73,7 @@ def scan(view, offset, predicate, limit = -1):
   while True:
     offset += 1
     if offset > limit:
+      offset = limit
       break
 
     if not predicate(view, offset):

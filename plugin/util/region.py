@@ -64,7 +64,7 @@ def is_offset_valid(view, offset):
   return 0 <= offset <= view.size() - 1
 
 def scan(view, offset, predicate, limit = -1):
-  if predicate(view, offset):
+  if not predicate(view, offset):
     return offset
 
   if limit < 1:
@@ -75,14 +75,13 @@ def scan(view, offset, predicate, limit = -1):
     if offset > limit:
       break
 
-    if predicate(view, offset):
-      offset -= 1
+    if not predicate(view, offset):
       break
 
   return offset
 
 def scan_reverse(view, offset, predicate):
-  if predicate(view, offset):
+  if not predicate(view, offset):
     return offset
 
   while True:
@@ -91,8 +90,7 @@ def scan_reverse(view, offset, predicate):
       offset = 0
       break
 
-    if predicate(view, offset):
-      offset += 1
+    if not predicate(view, offset):
       break
 
   return offset

@@ -107,6 +107,7 @@ def scan(view, offset, predicate, limit = -1):
       break
 
     if not predicate(view, offset):
+      offset -= 1
       break
 
   return offset
@@ -122,6 +123,7 @@ def scan_reverse(view, offset, predicate):
       break
 
     if not predicate(view, offset):
+      offset += 1
       break
 
   return offset

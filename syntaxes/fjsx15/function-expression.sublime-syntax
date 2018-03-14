@@ -17,45 +17,9 @@ hidden: true
 scope: ...
 
 variables:
-  identifier: |
-    {{identifierStart}}
-    {{identifierPart}}*
-
-  identifierStart: |
-    (?> [{{unicodeLetter}}$_]
-      | {{unicodeEscapeSequence}}
-    )
-
-  identifierPart: |
-    {{identifierStart}}
-    [
-      {{unicodeCombiningMark}}
-      {{unicodeDigit}}
-      {{unicodeConnectorPunctuation}}
-      {{zeroWidthNonJoiner}}
-      {{zeroWidthJoiner}}
-    ]*
-
-  unicodeCombiningMark: |
-    \p{Mn}\p{Mc}
-
-  unicodeDigit: |
-    \p{Nd}
-
-  unicodeEscapeSequence: |
-    \\u\x{4}
-
-  unicodeConnectorPunctuation: |
-    \p{Pc}
-
-  unicodeLetter: |
-    \p{L}\p{Nl}
-
-  zeroWidthJoiner: |
-    \x{200D}
-
-  zeroWidthNonJoiner: |
-    \x{200C}
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
 
 contexts:
   main:
@@ -64,8 +28,7 @@ contexts:
         (?x)
         (?=
           (?:async\s+)?
-          function
-          (?!{{identifierPart}})
+          function\b
         )
       set: [
         declaration,
@@ -94,7 +57,7 @@ contexts:
     - match: |
         (?xi)
         (?:(\*)\s*)?
-        (?:({{identifier}}))?
+        (?:({{commonIdentifier}}))?
       captures:
         1: storage.modifier.js.fjsx15
         2: entity.name.function.js.fjsx15

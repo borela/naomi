@@ -35,6 +35,7 @@ contexts:
     - match: (?xi)new(?=\s+{{commonIdentifier}})
       scope: keyword.operator.word.new.js.fjsx15
       set: [
+        optional-tail,
         meta-instance-call-constructor-scope,
         optional-arguments,
         type
@@ -43,6 +44,7 @@ contexts:
     - match: (?i)new\b
       scope: keyword.operator.word.new.js.fjsx15
       set: [
+        optional-tail,
         meta-instance-scope,
         optional-expression
       ]
@@ -61,6 +63,9 @@ contexts:
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  optional-tail:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax#optional-tail
 
   pop-now:
     - match: ""

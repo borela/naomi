@@ -27,11 +27,14 @@ contexts:
     # Type after typeof.
     - match: (?xi)(typeof)(?=\s+{{commonIdentifier}})
       scope: keyword.operator.word.typeof.js.fjsx15
-      set: type
+      set: [ optional-tail, type ]
     # Any other expression after the keyword.
     - match: (?i)typeof\b
       scope: keyword.operator.word.typeof.js.fjsx15
-      pop: true
+      set: optional-tail
+
+  optional-tail:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax#optional-tail
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/new.sublime-syntax#type

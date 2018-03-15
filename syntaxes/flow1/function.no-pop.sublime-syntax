@@ -42,7 +42,7 @@ variables:
 
   flowFunction: |
     {{parameters}}
-    \s*=>\s*
+    \s*=>
 
 contexts:
   main:

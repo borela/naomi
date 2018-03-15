@@ -18,6 +18,10 @@ hidden: true
 scope: ...
 
 variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
   genericArguments: |
     (<
       [^<>]*
@@ -40,19 +44,67 @@ variables:
       )
     \))
 
+  flowOperators: |
+    (?> &(?!&)
+      | \|(?!\|)
+    )
+
+  string: |
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
+    )
+
+  simpleFlowType: |
+    (?> {{string}}
+      | {{commonIdentifier}}
+        {{genericArguments}}?
+        (?:\[\s*\])?
+    )
+
   flowFunction: |
-    {{parameters}}
-    \s*=>\s*
+    (
+      {{parameters}}
+      \s*=>
+    )
+
+  complexType: |
+    (
+      \??\s*
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
+      )
+      \s*{{flowOperators}}?
+      \s*\g<-3>?
+    )
+
+  flowComment: /\*\s*:.*?\*/
+
+  type: |
+    (?> {{flowComment}}
+      | :{{complexType}}
+    )
 
 contexts:
   main:
+    # Normal.
     - match: |
         (?xi)
-        (?=\s*
+        (?=
           {{genericArguments}}?
           {{flowFunction}}
         )
       set: declaration
+    # Single parameter.
+    - match: |
+        (?xi)
+        (?=
+          {{type}}\s*=>
+        )
+      set: [
+        return,
+        type-expression
+      ]
 
   declaration:
     # Generic parameters.
@@ -78,3 +130,6 @@ contexts:
     - match: =>
       scope: storage.type.function.arrow.flow
       set: optional-type-expression
+
+  type-expression:
+    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax

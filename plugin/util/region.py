@@ -13,6 +13,22 @@
 import sublime
 from sublime import Region
 
+def all_predicate(predicates):
+  def __predicate(view, offset):
+    for predicate in predicates:
+      if not predicate(view, offset):
+        return False
+    return True
+  return __predicate
+
+def any_predicate(predicates):
+  def __predicate(view, offset):
+    for predicate in predicates:
+      if predicate(view, offset):
+        return True
+    return False
+  return __predicate
+
 def expand(view, region, predicate):
   return Region(
     scan_reverse(view, region.begin(), predicate),

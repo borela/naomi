@@ -70,12 +70,12 @@ def expand_partial_comments(view, region):
 def expand_partial_lines(view, region):
   def __predicate(view, offset):
     char = view.substr(offset)
-    return char == '\n'
+    return char != '\n'
 
-  return Region(
-    scan_reverse(view, region.begin(), __predicate) + 1,
-    scan(view, region.end(), __predicate)
-  )
+  begin = scan_reverse(view, region.begin(), __predicate)
+  end = scan(view, region.end(), __predicate)
+
+  return Region(begin, end)
 
 # Returns the position for the first non whitespace character or the region’s
 # beginning if none is found.

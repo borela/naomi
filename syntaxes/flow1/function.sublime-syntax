@@ -22,38 +22,40 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  genericArguments: |
-    (<
-      [^<>]*
-      \g<-1>?
-      [^<>]*
-    >)
+  complexType: |
+    (
+      (?:\?\s*)?
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
+      )
+      (?:\s*{{flowOperators}})?
+      (?:\s*\g<-1>)?
+    )
 
-  parameters: |
-    (\(
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
-      )
-      \g<-1>?
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
-      )
-    \))
+  flowFunction: |
+    {{parameters}}
+    \s*=>
 
   flowOperators: |
     (?> &(?!&)
       | \|(?!\|)
     )
 
-  string: |
-    (?> '(?:\'|[^'])*?'
-      | "(?:\"|[^"])*?"
-      | `(?:\`|[^`])*?`
-    )
+  genericArguments: |
+    (<
+      (?> {{string}}
+        | \g<-1>
+        | [^<>]
+      )*
+    >)
+
+  parameters: |
+    (\(
+      (?> {{string}}
+        | \g<-1>
+        | [^()]
+      )*
+    \))
 
   simpleFlowType: |
     (?> {{string}}
@@ -62,27 +64,10 @@ variables:
         (?:\[\s*\])?
     )
 
-  flowFunction: |
-    (
-      {{parameters}}
-      \s*=>
-    )
-
-  complexType: |
-    (
-      \??\s*
-      (?> {{simpleFlowType}}
-        | {{flowFunction}}
-      )
-      \s*{{flowOperators}}?
-      \s*\g<-3>?
-    )
-
-  flowComment: /\*\s*:.*?\*/
-
-  type: |
-    (?> {{flowComment}}
-      | :{{complexType}}
+  string: |
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
     )
 
 contexts:
@@ -99,11 +84,14 @@ contexts:
     - match: |
         (?xi)
         (?=
-          {{type}}\s*=>
+          (?:{{commonIdentifier}}\s*:\s*)?
+          {{complexType}}
+          \s*=>
         )
       set: [
         return,
-        type-expression
+        type-optional-tail,
+        type-head-or-param
       ]
 
   declaration:
@@ -131,5 +119,9 @@ contexts:
       scope: storage.type.function.arrow.flow
       set: optional-type-expression
 
-  type-expression:
-    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax
+  type-head-or-param:
+    - include: Packages/Naomi/syntaxes/flow1/function/parameters/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax#no-function-head
+
+  type-optional-tail:
+    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax#optional-tail

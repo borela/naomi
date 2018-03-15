@@ -18,41 +18,90 @@ hidden: true
 scope: ...
 
 variables:
-  genericArguments: |
-    (<
-      [^<>]*
-      \g<-1>?
-      [^<>]*
-    >)
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
 
-  parameters: |
-    (\(
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
+  complexType: |
+    (
+      (?:\?\s*)?
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
       )
-      \g<-1>?
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
-      )
-    \))
+      (?:\s*{{flowOperators}})?
+      (?:\s*\g<-1>)?
+    )
 
   flowFunction: |
     {{parameters}}
     \s*=>
 
+  flowOperators: |
+    (?> &(?!&)
+      | \|(?!\|)
+    )
+
+  genericArguments: |
+    (<
+      (?> {{string}}
+        | \g<-1>
+        | [^<>]
+      )*
+    >)
+
+  parameters: |
+    (\(
+      (?> {{string}}
+        | \g<-1>
+        | [^()]
+      )*
+    \))
+
+  simpleFlowType: |
+    (?> {{string}}
+      | {{commonIdentifier}}
+        {{genericArguments}}?
+        (?:\[\s*\])?
+    )
+
+  string: |
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
+    )
+
 contexts:
   main:
+    # Normal.
     - match: |
         (?xi)
         (?=
           {{genericArguments}}?
           {{flowFunction}}
         )
-      push: declaration
+      set: declaration
+    # Single parameter.
+    - match: |
+        (?xi)
+        (?=
+          (?:{{commonIdentifier}}\s*:\s*)?
+          {{complexType}}
+          \s*=>
+        )
+      set: [
+        return,
+        type-optional-tail,
+        type-head-or-param
+      ]
 
   declaration:
     - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#declaration
+
+  return:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#return
+
+  type-head-or-param:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#type-head-or-param
+
+  type-optional-tail:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#type-optional-tail

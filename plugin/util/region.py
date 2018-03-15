@@ -30,10 +30,9 @@ def any_predicate(predicates):
   return __predicate
 
 def expand(view, region, predicate):
-  return Region(
-    scan_reverse(view, region.begin(), predicate),
-    scan(view, region.end(), predicate)
-  )
+  begin = scan_reverse(view, region.begin(), predicate)
+  end = scan(view, region.end(), predicate)
+  return Region(begin, end)
 
 def expand_by_scope(view, region, scope):
   def __predicate(view, offset):

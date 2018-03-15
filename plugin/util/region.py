@@ -105,6 +105,10 @@ def find_non_whitespace(view, region, stop_on_line_feed = True):
       return begin
 
   return offset
+def not_predicate(predicate):
+  def __predicate(view, offset):
+    return not predicate(view, offset)
+  return __predicate
 
 def is_offset_valid(view, offset):
   return 0 <= offset <= view.size() - 1

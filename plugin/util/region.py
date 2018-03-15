@@ -42,33 +42,30 @@ def expand_by_scope(view, region, scope):
   return expand(view, region, __predicate)
 
 def expand_partial_comments(view, region):
-  comment_scopes = [ 'comment.block', 'comment.line' ]
-
-  def __not_comment_begin(view, offset):
+  def __is_comment(view, offset):
+    comment_scopes = [ 'comment.block', 'comment.line' ]
     scopes = view.scope_name(offset)
-    if any(x in scopes for x in comment_scopes):
-      return 'punctuation.definition.comment.begin' not in scopes
-    return False
+    return any(x in scopes for x in comment_scopes)
 
-  def __not_comment_end(view, offset):
+  def __is_comment_begin(view, offset):
     scopes = view.scope_name(offset)
-    if any(x in scopes for x in comment_scopes):
-      return 'punctuation.definition.comment.end' not in scopes
-    return False
+    return 'punctuation.definition.comment.begin' in scopes
 
-  begin = region.begin()
-  end = region.end() - 1
+  def __is_comment_end(view, offset):
+    scopes = view.scope_name(offset)
+    return 'punctuation.definition.comment.end' in scopes
 
-  if end < begin:
-    end = begin
+  begin = scan_reverse(view, region.begin(), all_predicate([
+    __is_comment,
+    not_predicate(__is_comment_end)
+  ]))
 
-  begin = scan_reverse(view, begin, __not_comment_begin) + 1
-  end = scan(view, end, __not_comment_end)
+  end = scan(view, region.end(),all_predicate([
+    __is_comment,
+    not_predicate(__is_comment_begin)
+  ]))
 
-  return Region(
-    scan_reverse(view, begin, __not_comment_end) + 1,
-    scan(view, end, __not_comment_begin)
-  )
+  return Region(begin, end)
 
 def expand_partial_lines(view, region):
   def __predicate(view, offset):

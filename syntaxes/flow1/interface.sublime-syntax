@@ -32,7 +32,7 @@ contexts:
     - include: comment-no-pop
     - match: \{
       scope: punctuation.section.block.begin.flow
-      set: [ body-end, statement-or-expression ]
+      set: body-end
 
   body-end:
     - include: comment-no-pop

@@ -32,7 +32,8 @@ variables:
       \s*\g<-1>?
     )
 
-  flowComment: /\*\s*:.*?\*/
+  flowComment: |
+    /\*\s*:.*?\*/
 
   flowFunction: |
     (

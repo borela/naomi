@@ -46,17 +46,17 @@ def expand_partial_comments(view, region):
   end_scope = search_scope(view, end, 'punctuation\.definition\.comment\.\w+')
 
   if begin_scope is not None:
-    begin = scan_reverse(view, begin, has_scope(begin_scope))
+    begin = scan_reverse(view, begin, has_scope_predicate(begin_scope))
     if begin_scope == 'punctuation.definition.comment.end':
       begin -= 1
 
   if end_scope is not None:
     if end_scope == 'punctuation.definition.comment.begin':
       if view.substr(end) != '/':
-        end = scan(view, end, has_scope(end_scope))
+        end = scan(view, end, has_scope_predicate(end_scope))
         end += 1
     else:
-      end = scan(view, end, has_scope(end_scope))
+      end = scan(view, end, has_scope_predicate(end_scope))
 
   # Expand.
   begin = scan_reverse(view, begin, all_predicate([
@@ -80,19 +80,3 @@ def expand_partial_lines(view, region):
   end = scan(view, region.end(), __predicate)
 
   return Region(begin, end)
-
-def has_any_scope(view, offset, target_scopes):
-  scopes = view.scope_name(offset)
-  return any(x in scopes for x in target_scopes)
-
-def has_all_scopes(view, offset, target_scopes):
-  scopes = view.scope_name(offset)
-  return all(x in scopes for x in target_scopes)
-
-def is_comment(view, offset):
-  comment_scopes = [ 'comment.block', 'comment.line' ]
-  scopes = view.scope_name(offset)
-  return any(x in scopes for x in comment_scopes)
-
-def is_offset_valid(view, offset):
-  return 0 <= offset <= view.size() - 1

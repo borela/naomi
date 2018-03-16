@@ -43,11 +43,6 @@ def expand_by_scope(view, region, scope):
   return expand(view, region, __predicate)
 
 def expand_partial_comments(view, region):
-  def __is_comment(view, offset):
-    comment_scopes = [ 'comment.block', 'comment.line' ]
-    scopes = view.scope_name(offset)
-    return any(x in scopes for x in comment_scopes)
-
   def __is_comment_begin(view, offset):
     scopes = view.scope_name(offset)
     return 'punctuation.definition.comment.begin' in scopes

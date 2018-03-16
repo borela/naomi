@@ -95,19 +95,19 @@ def find_non_whitespace(view, region, stop_on_line_feed = True):
     if stop_on_line_feed and char == '\n':
       break
 
-def has_scope(view, offset, scope):
+def has_scope_predicate(scope):
   def __predicate(view, offset):
     scopes = view.scope_name(offset)
     return scope in scopes
   return __predicate
 
-def has_any_scope(view, offset, target_scopes):
+def has_any_scope_predicate(target_scopes):
   def __predicate(view, offset):
     scopes = view.scope_name(offset)
     return any(x in scopes for x in target_scopes)
   return __predicate
 
-def has_all_scopes(view, offset, target_scopes):
+def has_all_scopes_predicate(target_scopes):
   def __predicate(view, offset):
     scopes = view.scope_name(offset)
     return all(x in scopes for x in target_scopes)
@@ -118,9 +118,9 @@ def not_predicate(predicate):
     return not predicate(view, offset)
   return __predicate
 
-def is_comment(view, offset):
+def is_comment_predicate():
   comment_scopes = [ 'comment.block', 'comment.line' ]
-  return has_any_scope(view, offset, comment_scopes)
+  return has_any_scope(comment_scopes)
 
 def is_offset_valid(view, offset):
   return 0 <= offset <= view.size() - 1

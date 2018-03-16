@@ -117,11 +117,19 @@ def has_scope_predicate(scope):
     return scope in scopes
   return __predicate
 
+def has_any_scope(view, offset, target_scopes):
+  scopes = view.scope_name(offset)
+  return any(x in scopes for x in target_scopes)
+
 def has_any_scope_predicate(target_scopes):
   def __predicate(view, offset):
     scopes = view.scope_name(offset)
     return any(x in scopes for x in target_scopes)
   return __predicate
+
+def has_all_scopes(view, offset, target_scopes):
+  scopes = view.scope_name(offset)
+  return all(x in scopes for x in target_scopes)
 
 def has_all_scopes_predicate(target_scopes):
   def __predicate(view, offset):
@@ -133,6 +141,11 @@ def not_predicate(predicate):
   def __predicate(view, offset):
     return not predicate(view, offset)
   return __predicate
+
+def is_comment(view, offset):
+  comment_scopes = [ 'comment.block', 'comment.line' ]
+  scopes = view.scope_name(offset)
+  return any(x in scopes for x in comment_scopes)
 
 def is_comment_predicate():
   comment_scopes = [ 'comment.block', 'comment.line' ]

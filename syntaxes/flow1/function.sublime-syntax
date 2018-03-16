@@ -104,6 +104,7 @@ contexts:
         )
       set: [
         return,
+        meta-parameters,
         optional-tail,
         head
       ]
@@ -124,6 +125,11 @@ contexts:
 
   head:
     - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax#head
+
+  meta-parameters:
+    - meta_scope: meta.function.parameters.flowaaaaaaaaaa
+    - match: ""
+      pop: true
 
   optional-tail:
     - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax#optional-tail

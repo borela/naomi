@@ -1145,6 +1145,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.storage.type.function.arrow.flow</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.variable.function</string>
 			<key>settings</key>
 			<dict>

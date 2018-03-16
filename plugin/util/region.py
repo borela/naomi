@@ -64,9 +64,12 @@ def expand_partial_comments(view, region):
       begin -= 1
 
   if end_scope is not None:
-    end = scan(view, end, has_scope(end_scope))
     if end_scope == 'punctuation.definition.comment.begin':
-      end += 1
+      if view.substr(end) != '/':
+        end = scan(view, end, has_scope(end_scope))
+        end += 1
+    else:
+      end = scan(view, end, has_scope(end_scope))
 
   # Expand.
   begin = scan_reverse(view, begin, all_predicate([

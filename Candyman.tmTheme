@@ -1698,6 +1698,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.variable.other.namespace</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.storage.modifier, .storage.type</string>
 			<key>settings</key>
 			<dict>

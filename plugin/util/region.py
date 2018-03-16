@@ -96,16 +96,22 @@ def find_non_whitespace(view, region, stop_on_line_feed = True):
       break
 
 def has_scope(view, offset, scope):
-  scopes = view.scope_name(offset)
-  return scope in scopes
+  def __predicate(view, offset):
+    scopes = view.scope_name(offset)
+    return scope in scopes
+  return __predicate
 
 def has_any_scope(view, offset, target_scopes):
-  scopes = view.scope_name(offset)
-  return any(x in scopes for x in target_scopes)
+  def __predicate(view, offset):
+    scopes = view.scope_name(offset)
+    return any(x in scopes for x in target_scopes)
+  return __predicate
 
 def has_all_scopes(view, offset, target_scopes):
-  scopes = view.scope_name(offset)
-  return all(x in scopes for x in target_scopes)
+  def __predicate(view, offset):
+    scopes = view.scope_name(offset)
+    return all(x in scopes for x in target_scopes)
+  return __predicate
 
 def not_predicate(predicate):
   def __predicate(view, offset):

@@ -82,7 +82,7 @@ contexts:
   optional-tail:
     - include: comment-no-pop
     # Array shorthand or generic arguments.
-    - match: (?=\s*[\[<])
+    - match: (?=[\[<])
       set: [ optional-tail, tail ]
     # Other operators.
     - include: Packages/Naomi/syntaxes/flow1/operator.sublime-syntax

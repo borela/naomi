@@ -10,4 +10,4 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-__all__ = [ 'RunSyntaxTests', 'ToggleJsxComment' ]
+__all__ = [ 'functions' ]

@@ -10,8 +10,6 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-import re
-
 # Returns the position for the first non whitespace character or the region’s
 # beginning if none is found.
 def search_non_whitespace(view, region, stop_on_line_feed = True):
@@ -32,8 +30,3 @@ def search_non_whitespace(view, region, stop_on_line_feed = True):
     result = begin
 
   return result
-
-def search_scope(view, offset, pattern):
-  scopes = view.scope_name(offset)
-  matched = re.search(pattern, scopes)
-  return None if matched is None else matched.group(0)

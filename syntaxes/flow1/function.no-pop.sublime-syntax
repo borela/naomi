@@ -80,19 +80,20 @@ contexts:
           {{flowFunction}}
         )
       push: declaration
+    # TODO: Check if this syntax is valid.
     # Single parameter (named).
-    - match: |
-        (?xi)
-        (?=
-          {{commonIdentifier}}
-          \s*:\s*
-          {{complexType}}
-          \s*=>
-        )
-      push: [
-        return,
-        simple-parameter
-      ]
+    # - match: |
+    #     (?xi)
+    #     (?=
+    #       {{commonIdentifier}}
+    #       \s*:\s*
+    #       {{complexType}}
+    #       \s*=>
+    #     )
+    #   push: [
+    #     return,
+    #     simple-parameter
+    #   ]
     # Single parameter.
     - match: |
         (?xi)

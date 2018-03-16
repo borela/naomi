@@ -10,7 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+import re
 import sublime
+
 from sublime import Region
 
 def all_predicate(predicates):
@@ -150,3 +152,8 @@ def scan_reverse(view, offset, predicate):
       break
 
   return offset
+
+def search_scope(view, offset, pattern):
+  scopes = view.scope_name(offset)
+  matched = re.search(pattern, scopes)
+  return None if matched is None else matched.group(0)

@@ -31,7 +31,7 @@ contexts:
       pop: true
     # Predefined types.
     - match: |
-        (?x)\s*\b
+        (?x)
         (?> any
           | Array
           | [Bb]oolean

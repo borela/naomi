@@ -18,34 +18,61 @@ hidden: true
 scope: ...
 
 variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
+  complexType: |
+    (
+      (?:\?\s*)?
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
+      )
+      (?:\s*{{flowOperators}})?
+      (?:\s*\g<-1>)?
+    )
+
+  flowFunction: |
+    {{parameters}}
+    \s*=>
+
+  flowOperators: |
+    (?> &(?!&)
+      | \|(?!\|)
+    )
+
   genericArguments: |
     (<
-      [^<>]*
-      \g<-1>?
-      [^<>]*
+      (?> {{string}}
+        | \g<-1>
+        | [^<>]
+      )*
     >)
 
   parameters: |
     (\(
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
-      )
-      \g<-1>?
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
-      )
+      (?> {{string}}
+        | \g<-1>
+        | [^()]
+      )*
     \))
 
-  flowFunction: |
-    {{parameters}}
-    \s*=>\s*
+  simpleFlowType: |
+    (?> {{string}}
+      | {{commonIdentifier}}
+        {{genericArguments}}?
+        (?:\[\s*\])?
+    )
+
+  string: |
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
+    )
 
 contexts:
   main:
+    # Normal.
     - match: |
         (?xi)
         (?=
@@ -53,6 +80,43 @@ contexts:
           {{flowFunction}}
         )
       push: declaration
+    # TODO: Check if this syntax is valid.
+    # Single parameter (named).
+    # - match: |
+    #     (?xi)
+    #     (?=
+    #       {{commonIdentifier}}
+    #       \s*:\s*
+    #       {{complexType}}
+    #       \s*=>
+    #     )
+    #   push: [
+    #     return,
+    #     simple-parameter
+    #   ]
+    # Single parameter.
+    - match: |
+        (?xi)
+        (?=
+          {{complexType}}
+          \s*=>
+        )
+      push: [
+        return,
+        type-head
+      ]
 
   declaration:
     - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#declaration
+
+  return:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#return
+
+  simple-parameter:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#type-head
+
+  type-head:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#type-head
+
+  type-optional-tail:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#type-optional-tail

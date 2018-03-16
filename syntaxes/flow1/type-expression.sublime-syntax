@@ -46,7 +46,6 @@ contexts:
 
   head:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax
     - include: Packages/Naomi/syntaxes/flow1/object.sublime-syntax
     - include: Packages/Naomi/syntaxes/flow1/tuple.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/number.sublime-syntax
@@ -72,7 +71,7 @@ contexts:
   optional-tail:
     - include: comment-no-pop
     # Array shorthand or generic arguments.
-    - match: (?=\s*[\[<])
+    - match: (?=[\[<])
       set: [ optional-tail, tail ]
     # Other operators.
     - include: Packages/Naomi/syntaxes/flow1/operator.sublime-syntax

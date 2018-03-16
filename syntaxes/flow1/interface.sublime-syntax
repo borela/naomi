@@ -32,7 +32,7 @@ contexts:
     - include: comment-no-pop
     - match: \{
       scope: punctuation.section.block.begin.flow
-      set: [ body-end, statement-or-expression ]
+      set: body-end
 
   body-end:
     - include: comment-no-pop
@@ -40,7 +40,6 @@ contexts:
       captures:
         1: punctuation.separator.comma.flow
         2: punctuation.terminator.flow
-      push: statement-or-expression
     - match: \}
       scope: punctuation.section.brackets.end.flow
       pop: true
@@ -52,6 +51,10 @@ contexts:
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  co-contra-variant-no-pop:
+    - include: Packages/Naomi/syntaxes/flow1/operator/covariant.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/operator/contravariant.no-pop.sublime-syntax
 
   declaration:
     - include: comment-no-pop
@@ -77,8 +80,7 @@ contexts:
 
   statement-or-expression:
     - include: comment
-    - include: Packages/Naomi/syntaxes/flow1/operator/covariant.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/operator/contravariant.no-pop.sublime-syntax
+    - include: co-contra-variant-no-pop
     - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax

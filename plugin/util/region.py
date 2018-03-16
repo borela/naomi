@@ -56,13 +56,31 @@ def expand_partial_comments(view, region):
     scopes = view.scope_name(offset)
     return 'punctuation.definition.comment.end' in scopes
 
-  begin = scan_reverse(view, region.begin(), all_predicate([
-    __is_comment,
+  # When the cursor is at the punctuation, we need to move it to the body.
+  begin = region.begin()
+  end = region.end()
+
+  begin_scope = search_scope(view, begin, 'punctuation\.definition\.comment\.\w+')
+  end_scope = search_scope(view, end, 'punctuation\.definition\.comment\.\w+')
+
+  if begin_scope is not None:
+    begin = scan_reverse(view, begin, has_scope(begin_scope))
+    if begin_scope == 'punctuation.definition.comment.end':
+      begin -= 1
+
+  if end_scope is not None:
+    end = scan(view, end, has_scope(end_scope))
+    if end_scope == 'punctuation.definition.comment.begin':
+      end += 1
+
+  # Expand.
+  begin = scan_reverse(view, begin, all_predicate([
+    is_comment_predicate(),
     not_predicate(__is_comment_end)
   ]))
 
-  end = scan(view, region.end(),all_predicate([
-    __is_comment,
+  end = scan(view, end, all_predicate([
+    is_comment_predicate(),
     not_predicate(__is_comment_begin)
   ]))
 

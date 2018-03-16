@@ -15,37 +15,38 @@ import re
 import sublime
 import sublime_plugin
 
+from .region.expand import expand_partial_comments
 from sublime import Region
 from sublime_plugin import TextCommand
 
-def comment_block(view, edit, region):
-  begin = get_non_whitespace_pos(view, region)
-  end = max(begin, region.end())
-  empty_region = False
+# def comment_block(view, edit, region):
+#   begin = get_non_whitespace_pos(view, region)
+#   end = max(begin, region.end())
+#   empty_region = False
 
-  if begin == end and view.substr(begin).isspace():
-    # Added to ensure that the cursor won’t be moved after the comment.
-    view.replace(edit, Region(end), '!')
-    empty_region = True
+#   if begin == end and view.substr(begin).isspace():
+#     # Added to ensure that the cursor won’t be moved after the comment.
+#     view.replace(edit, Region(end), '!')
+#     empty_region = True
 
-  comment_type = get_comment_type(view, begin)
+#   comment_type = get_comment_type(view, begin)
 
-  if comment_type == 'jsx':
-    if empty_region:
-      view.insert(edit, end + 1, " */}")
-      view.erase(edit, Region(end, end + 1))
-    else:
-      view.insert(edit, end, " */}")
+#   if comment_type == 'jsx':
+#     if empty_region:
+#       view.insert(edit, end + 1, " */}")
+#       view.erase(edit, Region(end, end + 1))
+#     else:
+#       view.insert(edit, end, " */}")
 
-    view.insert(edit, begin, "{/* ")
-  else:
-    if empty_region:
-      view.insert(edit, end + 1, " */")
-      view.erase(edit, Region(end, end + 1))
-    else:
-      view.insert(edit, end, " */")
+#     view.insert(edit, begin, "{/* ")
+#   else:
+#     if empty_region:
+#       view.insert(edit, end + 1, " */")
+#       view.erase(edit, Region(end, end + 1))
+#     else:
+#       view.insert(edit, end, " */")
 
-    view.insert(edit, begin, "/* ")
+#     view.insert(edit, begin, "/* ")
 
 def comment_lines(view, edit, region):
   lines = view.lines(region)
@@ -75,254 +76,254 @@ def comment_lines(view, edit, region):
       # Normal JS comment.
       view.insert(edit, begin, "// ")
 
-def expand_closing_block_punctuation(view, offset):
-  begin = offset
-  end = offset
+# def expand_closing_block_punctuation(view, offset):
+#   begin = offset
+#   end = offset
 
-  # Expand to the left.
-  scopes = view.scope_name(begin)
+#   # Expand to the left.
+#   scopes = view.scope_name(begin)
 
-  while begin > 0 and 'punctuation.definition.comment.end' in scopes:
-    begin -= 1
-    scopes = view.scope_name(begin)
+#   while begin > 0 and 'punctuation.definition.comment.end' in scopes:
+#     begin -= 1
+#     scopes = view.scope_name(begin)
 
-  if view.substr(begin) != ' ':
-    begin += 1
+#   if view.substr(begin) != ' ':
+#     begin += 1
 
-  # Expand to the right.
-  scopes = view.scope_name(end)
+#   # Expand to the right.
+#   scopes = view.scope_name(end)
 
-  while end < view.size() and 'punctuation.definition.comment.end' in scopes:
-    end += 1
-    scopes = view.scope_name(end)
+#   while end < view.size() and 'punctuation.definition.comment.end' in scopes:
+#     end += 1
+#     scopes = view.scope_name(end)
 
-  return Region(begin, end)
+#   return Region(begin, end)
 
-def expand_edge_lines(view, region):
-  begin = region.begin() - 1
-  end = min(view.size(), region.end() + 1)
+# def expand_edge_lines(view, region):
+#   begin = region.begin() - 1
+#   end = min(view.size(), region.end() + 1)
 
-  # Expand to the left.
-  char = view.substr(begin)
-  while begin > 0 and char != '\n':
-    begin -= 1
-    char = view.substr(begin)
+#   # Expand to the left.
+#   char = view.substr(begin)
+#   while begin > 0 and char != '\n':
+#     begin -= 1
+#     char = view.substr(begin)
 
-  # Expand to the right.
-  char = view.substr(end)
-  while end < view.size() and char != '\n':
-    end -= 1
-    char = view.substr(end)
+#   # Expand to the right.
+#   char = view.substr(end)
+#   while end < view.size() and char != '\n':
+#     end -= 1
+#     char = view.substr(end)
 
-  return Region(begin, end)
+#   return Region(begin, end)
 
-def expand_openning_block_punctuation(view, offset):
-  begin = offset
-  end = offset
+# def expand_openning_block_punctuation(view, offset):
+#   begin = offset
+#   end = offset
 
-  # Expand to the left.
-  scopes = view.scope_name(begin)
+#   # Expand to the left.
+#   scopes = view.scope_name(begin)
 
-  while begin > 0 and 'punctuation.definition.comment.begin' in scopes:
-    begin -= 1
-    scopes = view.scope_name(begin)
-  begin += 1
+#   while begin > 0 and 'punctuation.definition.comment.begin' in scopes:
+#     begin -= 1
+#     scopes = view.scope_name(begin)
+#   begin += 1
 
-  # Expand to the right.
-  scopes = view.scope_name(end)
+#   # Expand to the right.
+#   scopes = view.scope_name(end)
 
-  while end < view.size() and 'punctuation.definition.comment.begin' in scopes:
-    end += 1
-    scopes = view.scope_name(end)
+#   while end < view.size() and 'punctuation.definition.comment.begin' in scopes:
+#     end += 1
+#     scopes = view.scope_name(end)
 
-  if view.substr(end) == ' ':
-    end += 1
+#   if view.substr(end) == ' ':
+#     end += 1
 
-  return Region(begin, end)
+#   return Region(begin, end)
 
-def expand_partial_comments(view, region):
-  begin = region.begin()
-  end = region.end()
+# def expand_partial_comments(view, region):
+#   begin = region.begin()
+#   end = region.end()
 
-  # This will allow JSX block comments to be toggled when the cursor is at the
-  # openning or closing brace.
-  if is_jsx_open_brace(view, begin): begin += 1
-  if is_jsx_open_brace(view, end): end += 1
+#   # This will allow JSX block comments to be toggled when the cursor is at the
+#   # openning or closing brace.
+#   if is_jsx_open_brace(view, begin): begin += 1
+#   if is_jsx_open_brace(view, end): end += 1
 
-  if is_jsx_close_brace(view, begin): begin -= 1
-  if is_jsx_close_brace(view, end): end -= 1
+#   if is_jsx_close_brace(view, begin): begin -= 1
+#   if is_jsx_close_brace(view, end): end -= 1
 
-  # Expand to the left.
-  scopes = view.scope_name(begin)
+#   # Expand to the left.
+#   scopes = view.scope_name(begin)
 
-  if 'comment.line' in scopes:
-    while begin > 0:
-      begin -= 1
-      char = view.substr(begin)
-      scopes = view.scope_name(begin)
+#   if 'comment.line' in scopes:
+#     while begin > 0:
+#       begin -= 1
+#       char = view.substr(begin)
+#       scopes = view.scope_name(begin)
 
-      if char == '\n' or 'comment.line' not in scopes:
-        begin += 1
-        break
-  elif 'comment.block' in scopes:
-    char = view.substr(begin)
-    # It won’t be expaned if it is already at the beginning of the block.
-    if char != '/' or 'punctuation.definition.comment.begin' not in scopes:
-      while begin > 0:
-        begin -= 1
-        char = view.substr(begin)
-        scopes = view.scope_name(begin)
+#       if char == '\n' or 'comment.line' not in scopes:
+#         begin += 1
+#         break
+#   elif 'comment.block' in scopes:
+#     char = view.substr(begin)
+#     # It won’t be expaned if it is already at the beginning of the block.
+#     if char != '/' or 'punctuation.definition.comment.begin' not in scopes:
+#       while begin > 0:
+#         begin -= 1
+#         char = view.substr(begin)
+#         scopes = view.scope_name(begin)
 
-        if char == '/' and 'punctuation.definition.comment.begin' in scopes:
-          break
+#         if char == '/' and 'punctuation.definition.comment.begin' in scopes:
+#           break
 
-  # Expand to the right.
-  scopes = view.scope_name(end)
+#   # Expand to the right.
+#   scopes = view.scope_name(end)
 
-  if 'comment.line' in scopes:
-    char = view.substr(end)
-    # If it’s a new line character, it does not need to be expanded.
-    if char != '\n':
-      while end < view.size():
-        end += 1
-        char = view.substr(end)
-        scopes = view.scope_name(end)
+#   if 'comment.line' in scopes:
+#     char = view.substr(end)
+#     # If it’s a new line character, it does not need to be expanded.
+#     if char != '\n':
+#       while end < view.size():
+#         end += 1
+#         char = view.substr(end)
+#         scopes = view.scope_name(end)
 
-        if char == '\n':
-          break
+#         if char == '\n':
+#           break
 
-        if 'comment.line' not in scopes:
-          end -= 1
-          break
-  elif 'comment.block' in scopes:
-    char = view.substr(end)
-    # It won’t be expaned if it is already at the end of the block.
-    if char != '/' or 'punctuation.definition.comment.end' not in scopes:
-      while end < view.size():
-        end += 1
-        char = view.substr(end)
-        scopes = view.scope_name(end)
+#         if 'comment.line' not in scopes:
+#           end -= 1
+#           break
+#   elif 'comment.block' in scopes:
+#     char = view.substr(end)
+#     # It won’t be expaned if it is already at the end of the block.
+#     if char != '/' or 'punctuation.definition.comment.end' not in scopes:
+#       while end < view.size():
+#         end += 1
+#         char = view.substr(end)
+#         scopes = view.scope_name(end)
 
-        if char == '/' and 'punctuation.definition.comment.end' in scopes:
-          end += 1
-          break
-    else:
-      # We are at the end of the block already, this will correct the region to
-      # include the forward slash.
-      end += 1
+#         if char == '/' and 'punctuation.definition.comment.end' in scopes:
+#           end += 1
+#           break
+#     else:
+#       # We are at the end of the block already, this will correct the region to
+#       # include the forward slash.
+#       end += 1
 
-  return Region(begin, end)
+#   return Region(begin, end)
 
 # Scan from the right to the left.
-def get_comment_beginning_pos(view, offset):
-  scopes = view.scope_name(offset)
-  not_comment_scopes = [ 'comment.line', 'comment.block' ]
+# def get_comment_beginning_pos(view, offset):
+#   scopes = view.scope_name(offset)
+#   not_comment_scopes = [ 'comment.line', 'comment.block' ]
 
-  while offset > 0:
-    comment = any(x in scopes for x in not_comment_scopes)
+#   while offset > 0:
+#     comment = any(x in scopes for x in not_comment_scopes)
 
-    # Not a comment or end of a block comment.
-    if not comment or 'punctuation.definition.comment.end' in scopes:
-      offset += 1
-      break
+#     # Not a comment or end of a block comment.
+#     if not comment or 'punctuation.definition.comment.end' in scopes:
+#       offset += 1
+#       break
 
-    # New line at the end of a line comment.
-    char = view.substr(offset)
-    if char == '\n' and 'comment.line' in scopes:
-      offset += 1
-      break
+#     # New line at the end of a line comment.
+#     char = view.substr(offset)
+#     if char == '\n' and 'comment.line' in scopes:
+#       offset += 1
+#       break
 
-    offset -= 1
-    scopes = view.scope_name(offset)
+#     offset -= 1
+#     scopes = view.scope_name(offset)
 
-  return offset
+#   return offset
 
 # Scan from the left to the right.
-def get_comment_content_beginning(view, offset):
-  scopes = view.scope_name(offset)
-  while 'punctuation.definition.comment.begin' in scopes:
-    offset += 1
-    scopes = view.scope_name(offset)
+# def get_comment_content_beginning(view, offset):
+#   scopes = view.scope_name(offset)
+#   while 'punctuation.definition.comment.begin' in scopes:
+#     offset += 1
+#     scopes = view.scope_name(offset)
 
-  char = view.substr(offset)
+#   char = view.substr(offset)
 
-  # The first space will be considered as part of the punctuation because it
-  # might have been inserted by this script.
-  if char == ' ':
-    offset += 1
+#   # The first space will be considered as part of the punctuation because it
+#   # might have been inserted by this script.
+#   if char == ' ':
+#     offset += 1
 
-  return offset
+#   return offset
 
 # Returns the comment type that must be applied calculed at the offset.
-def get_comment_type(view, offset):
-  scopes = view.scope_name(offset)
+# def get_comment_type(view, offset):
+#   scopes = view.scope_name(offset)
 
-  unfenced_scopes = [ 'source.jsx', 'punctuation.definition.tag.begin' ]
-  unfenced_tag = all(x in scopes for x in unfenced_scopes) and 'meta.jsx-fence' not in scopes
+#   unfenced_scopes = [ 'source.jsx', 'punctuation.definition.tag.begin' ]
+#   unfenced_tag = all(x in scopes for x in unfenced_scopes) and 'meta.jsx-fence' not in scopes
 
-  meta_tag_scopes = [ 'source.jsx', 'meta.tag' ]
-  meta_tag = all(x in scopes for x in meta_tag_scopes)
+#   meta_tag_scopes = [ 'source.jsx', 'meta.tag' ]
+#   meta_tag = all(x in scopes for x in meta_tag_scopes)
 
-  comment_type = 'js'
-  if unfenced_tag or ('source.jsx' in scopes and not meta_tag):
-    comment_type = 'jsx'
+#   comment_type = 'js'
+#   if unfenced_tag or ('source.jsx' in scopes and not meta_tag):
+#     comment_type = 'jsx'
 
-  return comment_type
+#   return comment_type
 
 # Returns the position for the first non whitespace character on the target line
 # or the line’s beginning if none is found.
-def get_non_whitespace_pos(view, region, stop_on_new_line = True):
-  begin = region.begin()
-  end = region.end()
+# def get_non_whitespace_pos(view, region, stop_on_new_line = True):
+#   begin = region.begin()
+#   end = region.end()
 
-  while begin < end:
-    char = view.substr(begin)
-    if stop_on_new_line and char == '\n':
-      break
-    if not char.isspace():
-      break
-    begin += 1
+#   while begin < end:
+#     char = view.substr(begin)
+#     if stop_on_new_line and char == '\n':
+#       break
+#     if not char.isspace():
+#       break
+#     begin += 1
 
-  return begin
+#   return begin
 
-def is_jsx_open_brace(view, offset):
-  open_brace_scopes = ['source.jsx', 'punctuation.definition.template-expression.begin']
-  scopes = view.scope_name(offset)
-  return all(x in scopes for x in open_brace_scopes)
+# def is_jsx_open_brace(view, offset):
+#   open_brace_scopes = ['source.jsx', 'punctuation.definition.template-expression.begin']
+#   scopes = view.scope_name(offset)
+#   return all(x in scopes for x in open_brace_scopes)
 
-def is_jsx_close_brace(view, offset):
-  close_brace_scopes = ['source.jsx', 'punctuation.definition.template-expression.end']
-  scopes = view.scope_name(offset)
-  return all(x in scopes for x in close_brace_scopes)
+# def is_jsx_close_brace(view, offset):
+#   close_brace_scopes = ['source.jsx', 'punctuation.definition.template-expression.end']
+#   scopes = view.scope_name(offset)
+#   return all(x in scopes for x in close_brace_scopes)
 
-# Returns true if the region must be commented or not.
-def must_comment(view, region):
-  # Comments will begin with “//”, “/*” or “{/*”, to simplify the detection
-  # on the first line, we can ignore the first character.
-  scopes = view.scope_name(get_non_whitespace_pos(view, region) + 1)
-  return 'comment' not in scopes
+# # Returns true if the region must be commented or not.
+# def must_comment(view, region):
+#   # Comments will begin with “//”, “/*” or “{/*”, to simplify the detection
+#   # on the first line, we can ignore the first character.
+#   scopes = view.scope_name(get_non_whitespace_pos(view, region) + 1)
+#   return 'comment' not in scopes
 
-def trim_whitespace(view, region):
-  begin = region.begin()
-  end = region.end()
+# def trim_whitespace(view, region):
+#   begin = region.begin()
+#   end = region.end()
 
-  # Trim from the left.
-  char = view.substr(begin)
-  while char.isspace():
-    begin += 1
-    char = view.substr(begin)
+#   # Trim from the left.
+#   char = view.substr(begin)
+#   while char.isspace():
+#     begin += 1
+#     char = view.substr(begin)
 
-  # Trim from the right.
-  char = view.substr(end)
-  while char.isspace():
-    end -= 1
-    char = view.substr(end)
+#   # Trim from the right.
+#   char = view.substr(end)
+#   while char.isspace():
+#     end -= 1
+#     char = view.substr(end)
 
-  # The region got inverted, this means that it contains only whitespace.
-  if begin > end:
-    return region
+#   # The region got inverted, this means that it contains only whitespace.
+#   if begin > end:
+#     return region
 
-  return Region(begin, end + 1)
+#   return Region(begin, end + 1)
 
 def uncomment_lines(view, edit, region):
   begin = region.begin()
@@ -400,38 +401,43 @@ class NaomiToggleJsxCommentCommand(sublime_plugin.TextCommand):
     self.view = view
 
   def run(self, edit, block):
+    view = self.view
     for region in reversed(self.view.sel()):
-      # If the region is just 1 character, we will expand it to affect the entire
-      # line.
-      if region.size() < 2:
-        region = self.view.line(region)
-
+      # If the region is just the cursor, we will expand it to affect the entire
+      # line except if the cursor is in a comment.
       scopes = self.view.scope_name(region.begin())
+
+      if region.size() < 1 and 'comment' not in scopes:
+        region = expand_partial_lines(view, region)
 
       # If the beginning of the region is a string but not the beginning of the
       # string, it’ll not be possible to comment this region.
+      scopes = self.view.scope_name(region.begin())
+
       if 'string' in scopes:
         if 'punctuation.definition.string.begin' not in scopes:
           continue
 
       region = expand_partial_comments(self.view, region)
 
-      # Block comments.
-      if block:
-        region = trim_whitespace(self.view, region)
+      print(view.substr(region))
 
-        if must_comment(self.view, region):
-          comment_block(self.view, edit, region)
-        else:
-          uncomment_lines(self.view, edit, region)
+      # # Block comments.
+      # if block:
+      #   region = trim_whitespace(self.view, region)
 
-        continue
+      #   if must_comment(self.view, region):
+      #     comment_block(self.view, edit, region)
+      #   else:
+      #     uncomment_lines(self.view, edit, region)
 
-      # Line comments.
-      region = expand_edge_lines(self.view, region)
-      region = trim_whitespace(self.view, region)
+      #   continue
 
-      if must_comment(self.view, region):
-        comment_lines(self.view, edit, region)
-      else:
-        uncomment_lines(self.view, edit, region)
+      # # Line comments.
+      # region = expand_edge_lines(self.view, region)
+      # region = trim_whitespace(self.view, region)
+
+      # if must_comment(self.view, region):
+      #   comment_lines(self.view, edit, region)
+      # else:
+      #   uncomment_lines(self.view, edit, region)

@@ -102,20 +102,25 @@ contexts:
         )
       push: [
         return,
-        type-head
+        meta-parameters,
+        optional-tail,
+        head
       ]
 
   declaration:
     - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#declaration
 
+  head:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#head
+
+  meta-parameters:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#meta-parameters
+
+  optional-tail:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#optional-tail
+
   return:
     - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#return
 
-  simple-parameter:
-    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#type-head
-
-  type-head:
-    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#type-head
-
-  type-optional-tail:
-    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#type-optional-tail
+  # simple-parameter:
+  #   - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#type-head

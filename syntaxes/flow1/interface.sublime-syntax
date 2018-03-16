@@ -52,6 +52,10 @@ contexts:
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
+  co-contra-variant-no-pop:
+    - include: Packages/Naomi/syntaxes/flow1/operator/covariant.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/operator/contravariant.no-pop.sublime-syntax
+
   declaration:
     - include: comment-no-pop
     # Extension.
@@ -76,8 +80,7 @@ contexts:
 
   statement-or-expression:
     - include: comment
-    - include: Packages/Naomi/syntaxes/flow1/operator/covariant.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/operator/contravariant.no-pop.sublime-syntax
+    - include: co-contra-variant-no-pop
     - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax

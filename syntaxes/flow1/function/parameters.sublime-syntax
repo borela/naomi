@@ -31,7 +31,7 @@ contexts:
       pop: true
 
   optional-parameter:
-    - meta_scope: meta.function.parameters.js.fjsx15
+    - meta_scope: meta.function.parameters.flow
     # Rest.
     - match: \.{3}
       scope: keyword.operator.other.rest.flow

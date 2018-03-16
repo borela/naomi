@@ -21,6 +21,30 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  complexType: |
+    (
+      \??\s*
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
+      )
+      \s*{{flowOperators}}?
+      \s*\g<-1>?
+    )
+
+  flowComment: |
+    /\*\s*:.*?\*/
+
+  flowFunction: |
+    (
+      {{parameters}}
+      \s*=>
+    )
+
+  flowOperators: |
+    (?> &(?!&)
+      | \|(?!\|)
+    )
+
   genericArguments: |
     (<
       (?> {{string}}
@@ -29,7 +53,8 @@ variables:
       )*
     >)
 
-  genericParameters: "{{genericArguments}}"
+  genericParameters: |
+    {{genericArguments}}
 
   parameters: |
     (\(
@@ -39,17 +64,6 @@ variables:
       )*
     \))
 
-  flowOperators: |
-    (?> &(?!&)
-      | \|(?!\|)
-    )
-
-  string: |
-    (?> '(?:\'|[^'])*?'
-      | "(?:\"|[^"])*?"
-      | `(?:\`|[^`])*?`
-    )
-
   simpleFlowType: |
     (?> {{string}}
       | {{commonIdentifier}}
@@ -57,26 +71,11 @@ variables:
         (?:\[\s*\])?
     )
 
-  flowFunction: |
-    (
-      {{parameters}}
-      \s*=>\s*
-      (?> {{simpleFlowType}}
-        | \g<-2>
-      )
+  string: |
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
     )
-
-  complexType: |
-    (
-      \??\s*
-      (?> {{simpleFlowType}}
-        | {{flowFunction}}
-      )
-      \s*{{flowOperators}}?
-      \s*\g<-5>?
-    )
-
-  flowComment: /\*\s*:.*?\*/
 
   type: |
     (?> {{flowComment}}
@@ -90,8 +89,8 @@ contexts:
         (?xi)
         (?=
           (?:async\s*)?
-          {{genericParameters}}?
-          \s*{{parameters}}
+          (?:{{genericArguments}}\s*)?
+          {{parameters}}
           \s*{{type}}?
           \s*=>
         )

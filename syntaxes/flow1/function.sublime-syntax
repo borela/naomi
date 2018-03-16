@@ -17,41 +17,96 @@ hidden: true
 scope: ...
 
 variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
+  complexType: |
+    (
+      (?:\?\s*)?
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
+      )
+      (?:\s*{{flowOperators}})?
+      (?:\s*\g<-1>)?
+    )
+
+  flowFunction: |
+    {{parameters}}
+    \s*=>
+
+  flowOperators: |
+    (?> &(?!&)
+      | \|(?!\|)
+    )
+
   genericArguments: |
     (<
-      [^<>]*
-      \g<-1>?
-      [^<>]*
+      (?> {{string}}
+        | \g<-1>
+        | [^<>]
+      )*
     >)
 
   parameters: |
     (\(
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
-      )
-      \g<-1>?
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
-      )
+      (?> {{string}}
+        | \g<-1>
+        | [^()]
+      )*
     \))
 
-  flowFunction: |
-    {{parameters}}
-    \s*=>\s*
+  simpleFlowType: |
+    (?> {{string}}
+      | {{commonIdentifier}}
+        {{genericArguments}}?
+        (?:\[\s*\])?
+    )
+
+  string: |
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
+    )
 
 contexts:
   main:
+    # Normal.
     - match: |
         (?xi)
-        (?=\s*
+        (?=
           {{genericArguments}}?
           {{flowFunction}}
         )
       set: declaration
+    # TODO: Check if this syntax is valid.
+    # Single parameter (named).
+    # - match: |
+    #     (?xi)
+    #     (?=
+    #       {{commonIdentifier}}
+    #       \s*:\s*
+    #       {{complexType}}
+    #       \s*=>
+    #     )
+    #   set: [
+    #     return,
+    #     meta-parameters,
+    #     simple-parameter
+    #   ]
+    # Single parameter.
+    - match: |
+        (?xi)
+        (?=
+          {{complexType}}
+          \s*=>
+        )
+      set: [
+        return,
+        meta-parameters,
+        optional-tail,
+        head
+      ]
 
   declaration:
     # Generic parameters.
@@ -67,6 +122,17 @@ contexts:
   generic-parameters:
     - include: Packages/Naomi/syntaxes/flow1/generic/parameters.sublime-syntax
 
+  head:
+    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax#head
+
+  meta-parameters:
+    - meta_scope: meta.function.parameters.flowaaaaaaaaaa
+    - match: ""
+      pop: true
+
+  optional-tail:
+    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax#optional-tail
+
   optional-type-expression:
     - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax
 
@@ -77,3 +143,6 @@ contexts:
     - match: =>
       scope: storage.type.function.arrow.flow
       set: optional-type-expression
+
+  simple-parameter:
+    - include: Packages/Naomi/syntaxes/flow1/function/parameters/simple.sublime-syntax

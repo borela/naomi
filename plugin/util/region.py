@@ -14,6 +14,8 @@ import re
 import sublime
 
 from sublime import Region
+from .scan import *
+from .search import *
 from .predicates import *
 
 def expand(view, region, predicate):
@@ -79,24 +81,6 @@ def expand_partial_lines(view, region):
 
   return Region(begin, end)
 
-# Returns the position for the first non whitespace character or the region’s
-# beginning if none is found.
-def find_non_whitespace(view, region, stop_on_line_feed = True):
-  begin = region.begin()
-  end = region.end()
-
-  # Empty region.
-  if begin == end:
-    return begin
-
-  offset = begin
-  while True:
-    char = view.substr(offset)
-
-    if stop_on_line_feed and char == '\n':
-      break
-
-
 def has_any_scope(view, offset, target_scopes):
   scopes = view.scope_name(offset)
   return any(x in scopes for x in target_scopes)
@@ -112,42 +96,3 @@ def is_comment(view, offset):
 
 def is_offset_valid(view, offset):
   return 0 <= offset <= view.size() - 1
-
-def scan(view, offset, predicate, limit = -1):
-  if not predicate(view, offset):
-    return offset
-
-  if limit < 1:
-    limit = view.size() - 1
-
-  while True:
-    offset += 1
-    if offset > limit:
-      offset = limit
-      break
-
-    if not predicate(view, offset):
-      break
-
-  return offset
-
-def scan_reverse(view, offset, predicate):
-  if not predicate(view, offset):
-    return offset
-
-  while True:
-    offset -= 1
-    if offset < 0:
-      offset = 0
-      break
-
-    if not predicate(view, offset):
-      offset += 1
-      break
-
-  return offset
-
-def search_scope(view, offset, pattern):
-  scopes = view.scope_name(offset)
-  matched = re.search(pattern, scopes)
-  return None if matched is None else matched.group(0)

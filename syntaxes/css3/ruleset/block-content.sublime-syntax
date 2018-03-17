@@ -16,10 +16,20 @@
 hidden: true
 scope: ...
 
+variables:
+  cssIdentifier: (?!--)[^\s][_[:alnum:]\-]*
+
 contexts:
   main:
-    - match: ""
+    # property: value.
+    - match: |
+        (?xi)
+        (?={{cssIdentifier}}\s*:)
       set: [ delimiter, property ]
+    # Nesting.
+    - match: (?=\S)
+      set:
+        - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax

@@ -42,6 +42,7 @@ contexts:
       ]
     # Normal property with an alias.
     - match: (?xi)({{commonIdentifier}})(?=\s*:)
+      scope: string.unquoted.js.fjsx15
       set: [
         optional-alias,
         meta-key
@@ -64,7 +65,9 @@ contexts:
       pop: true
 
   meta-key:
-    - meta_scope: meta.binding.destructuring.mapping.key.js.fjsx15
+    - meta_scope: >-
+        meta.binding.destructuring.mapping.key.js.fjsx15
+        meta.object-literal.key.js.fjsx15
     - match: ""
       pop: true
 

@@ -22,21 +22,6 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  hexEscapedChar: |
-    x[a-f0-9]{2}
-
-  unicodeEscapedChar: |
-    (?> u[a-f0-9]{4}
-      | u\{[a-f0-9]+\}
-    )
-
-  escapeSequences: |
-    \\
-    (?> [`\\$bfnrtv]
-      | {{hexEscapedChar}}
-      | {{unicodeEscapedChar}}
-    )
-
 contexts:
   main:
     # styled(), styled.tag.attrs()
@@ -122,6 +107,8 @@ contexts:
     - include: comment-no-pop
     - match: ":"
       scope: punctuation.separator.key-value.css.css3
+      with_prototype:
+        - include: embedded-expression
       set: [ meta-property-value, optional-value-no-pop ]
 
   embedded-expression:
@@ -144,7 +131,6 @@ contexts:
       pop: true
     - match: \,
       scope: punctuation.separator.sequence.css.css3
-    - include: embedded-expression
     - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
@@ -166,12 +152,11 @@ contexts:
     - clear_scopes: true
     - meta_content_scope: source.css
     - include: comment-no-pop
-    # Close.
+    - include: embedded-expression
     - match: \`
       scope: punctuation.definition.styled-component.end.js.fjsx15
       pop: true
     - match: ;
       scope: punctuation.terminator.css.css3
-    - include: embedded-expression
     - match: (?=\S)
       push: [ delimiter, property ]

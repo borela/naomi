@@ -19,7 +19,7 @@ scope: ...
 contexts:
   main:
     - include: comment-no-pop
-    - include: logical-operator-no-pop
+    - include: logical-operator
     - match: ""
       set: [ optional-tail, head ]
 
@@ -42,6 +42,11 @@ contexts:
     - include: comment-no-pop
     - include: open-group
 
+  logical-operator:
+    - match: (?>and|not|or|only)\b
+      scope: keyword.operator.word.logical.feature-query.css.css3
+      set: optional-feature-query
+
   logical-operator-no-pop:
     - match: (?>and|not|or|only)\b
       scope: keyword.operator.word.logical.feature-query.css.css3
@@ -56,5 +61,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/css3/optional-feature-query.sublime-syntax
 
   optional-tail:
-    - include: logical-operator-no-pop
+    - include: logical-operator
     - include: else-pop

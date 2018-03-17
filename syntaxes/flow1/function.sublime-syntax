@@ -80,21 +80,6 @@ contexts:
           {{flowFunction}}
         )
       set: declaration
-    # TODO: Check if this syntax is valid.
-    # Single parameter (named).
-    # - match: |
-    #     (?xi)
-    #     (?=
-    #       {{commonIdentifier}}
-    #       \s*:\s*
-    #       {{complexType}}
-    #       \s*=>
-    #     )
-    #   set: [
-    #     return,
-    #     meta-parameters,
-    #     simple-parameter
-    #   ]
     # Single parameter.
     - match: |
         (?xi)
@@ -147,6 +132,3 @@ contexts:
     - match: =>
       scope: storage.type.function.arrow.flow
       set: optional-type-expression
-
-  # simple-parameter:
-  #   - include: Packages/Naomi/syntaxes/flow1/function/parameters/simple.sublime-syntax

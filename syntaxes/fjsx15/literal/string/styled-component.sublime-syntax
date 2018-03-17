@@ -127,8 +127,8 @@ contexts:
         - include: embedded-expression
       set: [ meta-property-value, optional-value ]
 
-  embedded-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax#embedded-expression
+  embedded-expression-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax#embedded-expression-no-pop
 
   meta-function-call:
     - meta_scope: meta.function-call.js.fjsx15

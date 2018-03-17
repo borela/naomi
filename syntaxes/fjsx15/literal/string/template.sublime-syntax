@@ -46,7 +46,7 @@ contexts:
     - match: \`
       scope: punctuation.definition.string.begin.js.fjsx15
       with_prototype:
-        - include: embedded-expression
+        - include: embedded-expression-no-pop
       set:
         - meta_scope: string.template.js.fjsx15
         # Close.
@@ -69,7 +69,7 @@ contexts:
   embedded-content:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
-  embedded-expression:
+  embedded-expression-no-pop:
     - match: \$\{
       scope: punctuation.definition.template-expression.begin.js.fjsx15
       push: [ close-embedded-expression, embedded-content ]

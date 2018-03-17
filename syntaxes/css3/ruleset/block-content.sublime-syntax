@@ -45,8 +45,19 @@ contexts:
     - match: ""
       pop: true
 
+  no-pop:
+    # property: value.
+    - match: |
+        (?xi)
+        (?={{cssIdentifier}}\s*:)
+      push: [ delimiter, property ]
+    # Nesting.
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
+
   optional-value-no-pop:
-    - match: (?=[;()\[\]{}])
+    - match: (?=[`;()\[\]{}])
       pop: true
     - match: \,
       scope: punctuation.separator.sequence.css.css3

@@ -17,9 +17,7 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]\-]*
+  cssIdentifier: (?!--)[^\s][_[:alnum:]\-]*
 
 contexts:
   main:
@@ -52,7 +50,7 @@ contexts:
     # Properties.
     - match: |
         (?xi)
-        (?={{commonIdentifier}})
+        (?={{cssIdentifier}})
       set: [ delimiter, property ]
 
   comment-no-pop:

@@ -17,13 +17,11 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]\-]*
+  cssIdentifier: (?!--)[^\s][_[:alnum:]\-]*
 
 contexts:
   main:
-    - match: (?xi)(\.)({{commonIdentifier}})
+    - match: (?xi)(\.)({{cssIdentifier}})
       captures:
         0: entity.other.attribute-name.class.css.cs3
         1: punctuation.definition.entity.css.css3

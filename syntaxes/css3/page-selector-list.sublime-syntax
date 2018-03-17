@@ -17,9 +17,7 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]\-]*
+  cssIdentifier: (?!--)[^\s][_[:alnum:]\-]*
 
 contexts:
   main:
@@ -62,7 +60,7 @@ contexts:
     # Named page.
     - match: |
         (?xi)
-        {{commonIdentifier}}\b
+        {{cssIdentifier}}\b
       scope: entity.name.page.css.css3
     # Pseudo class.
     - match: (:)((?>blank|first|left|recto|right|verso))

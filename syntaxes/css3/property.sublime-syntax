@@ -17,7 +17,7 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: (?!--).[_[:alnum:]\-]*
+  cssIdentifier: (?!--)[^\s][_[:alnum:]\-]*
 
   coreProperties: |
     (?> additive-symbols
@@ -792,6 +792,6 @@ contexts:
       pop: true
 
   other:
-    - match: (?i){{commonIdentifier}}
+    - match: (?i){{cssIdentifier}}
       scope: variable.other.type.property-name.css.css3
       pop: true

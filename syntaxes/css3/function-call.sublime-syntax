@@ -17,10 +17,7 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
-    (?!--)
-    [_[:alpha:]\-]
-    [_[:alnum:]\-]*
+  cssIdentifier: (?!--)[^\s][_[:alnum:]\-]*
 
 contexts:
   main:
@@ -82,13 +79,13 @@ contexts:
     - match: |
         (?xi)
         (?=
-          {{commonIdentifier}}
+          {{cssIdentifier}}
           \s*\(
         )
       set: [ meta, arguments, identifier ]
 
   identifier:
-    - match: (?xi){{commonIdentifier}}
+    - match: (?xi){{cssIdentifier}}
       scope: variable.function.css.css3
       pop: true
 

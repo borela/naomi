@@ -17,9 +17,7 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]\-]*
+  cssIdentifier: (?!--)[^\s][_[:alnum:]\-]*
 
 contexts:
   main:
@@ -30,7 +28,7 @@ contexts:
     # Namespace prefix.
     - match: |
         (?xi)
-        (?> ({{commonIdentifier}})
+        (?> ({{cssIdentifier}})
           | (\*)
         )
         \s*(\|)

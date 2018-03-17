@@ -17,9 +17,7 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]\-]*
+  cssIdentifier: (?!--)[^\s][_[:alnum:]\-]*
 
 contexts:
   main:
@@ -41,7 +39,7 @@ contexts:
     - match: (?=\S)
 
   fallback:
-    - match: (?xi)(::){{commonIdentifier}}
+    - match: (?xi)(::){{cssIdentifier}}
       captures:
         0: variable.other.pseudo-element.class.css.cs3
         1: punctuation.definition.entity.css.css3

@@ -17,9 +17,7 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]\-]*
+  cssIdentifier: (?!--)[^\s][_[:alnum:]\-]*
 
 contexts:
   main:
@@ -86,7 +84,7 @@ contexts:
   counter-style-name:
     - match: |
         (?xi)
-        {{commonIdentifier}}
+        {{cssIdentifier}}
       scope: entity.other.counter-style.css.css3
       pop: true
 
@@ -121,7 +119,7 @@ contexts:
   keyframe-name:
     - match: |
         (?xi)
-        {{commonIdentifier}}
+        {{cssIdentifier}}
       scope: entity.other.animation-name.css.css3
       pop: true
 
@@ -189,7 +187,7 @@ contexts:
   optional-namespace-prefix:
     - match: |
         (?xi)
-        {{commonIdentifier}}\b
+        {{cssIdentifier}}\b
         (?!\s*\()
       scope: entity.name.namespace.css.css3
       pop: true

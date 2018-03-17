@@ -17,9 +17,7 @@ hidden: true
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]\-]*
+  cssIdentifier: (?!--)[^\s][_[:alnum:]\-]*
 
   tags: |
     (?> a
@@ -174,6 +172,6 @@ contexts:
       scope: entity.name.tag.css.cs3
       pop: true
     # Other tags.
-    - match: (?xi){{commonIdentifier}}\b
+    - match: (?xi){{cssIdentifier}}\b
       scope: variable.other.tag.css.cs3
       pop: true

@@ -42,7 +42,7 @@ contexts:
     # Simple tag.
     - match: (?xi){{commonIdentifier}}(?=\s*\`)
       scope: entity.name.function.tag.js.fjsx15
-      pop: true
+      set: main
     # Simple template string.
     - match: \`
       scope: punctuation.definition.string.begin.js.fjsx15

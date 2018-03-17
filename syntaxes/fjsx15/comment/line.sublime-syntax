@@ -23,6 +23,11 @@ contexts:
       scope: punctuation.definition.comment.begin.js.fjsx15
       set: line
 
+  no-pop:
+    - match: //
+      scope: punctuation.definition.comment.begin.js.fjsx15
+      push: line
+
   line:
     - meta_scope: comment.line.js.fjsx15
     - include: email-no-pop

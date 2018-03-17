@@ -102,6 +102,7 @@ contexts:
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/line.sublime-syntax#no-pop
 
   delimiter:
     - include: comment-no-pop

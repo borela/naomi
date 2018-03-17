@@ -26,7 +26,7 @@ contexts:
   close-group:
     - meta_scope: meta.group.css.css3
     - match: \)
-      scope: punctuation.section.group.enda.j.fjsx15
+      scope: punctuation.section.group.end.j.fjsx15
       pop: true
     - include: logical-operator-no-pop
     - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax#no-pop

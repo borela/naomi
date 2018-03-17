@@ -76,6 +76,22 @@ contexts:
         meta-styled-component,
         styled-component-begin
       ]
+    # API helpers.
+    - match: |
+        (?x)
+        ((?> css
+          | injectGlobal
+          | keyframes
+        ))
+        (?=\s*`)
+      captures:
+        1: support.function.styled-component.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+        3: variable.other.component.js.fjsx15
+      set: [
+        meta-styled-component,
+        styled-component-begin
+      ]
     # Other functions.
     - match: |
         (?x)
@@ -109,7 +125,7 @@ contexts:
       scope: punctuation.separator.key-value.css.css3
       with_prototype:
         - include: embedded-expression
-      set: [ meta-property-value, optional-value-no-pop ]
+      set: [ meta-property-value, optional-value ]
 
   embedded-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax#embedded-expression
@@ -126,8 +142,8 @@ contexts:
     - meta_scope: meta.styled-component.js.fjsx15
     - include: pop-now
 
-  optional-value-no-pop:
-    - match: (?=[;()\[\]{}])
+  optional-value:
+    - match: (?=[`;()\[\]{}])
       pop: true
     - match: \,
       scope: punctuation.separator.sequence.css.css3
@@ -158,5 +174,6 @@ contexts:
       pop: true
     - match: ;
       scope: punctuation.terminator.css.css3
+    # Property.
     - match: (?=\S)
       push: [ delimiter, property ]

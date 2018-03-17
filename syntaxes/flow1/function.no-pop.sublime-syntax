@@ -79,20 +79,6 @@ contexts:
           {{flowFunction}}
         )
       push: declaration
-    # TODO: Check if this syntax is valid.
-    # Single parameter (named).
-    # - match: |
-    #     (?xi)
-    #     (?=
-    #       {{commonIdentifier}}
-    #       \s*:\s*
-    #       {{complexType}}
-    #       \s*=>
-    #     )
-    #   push: [
-    #     return,
-    #     simple-parameter
-    #   ]
     # Single parameter.
     - match: |
         (?xi)
@@ -121,6 +107,3 @@ contexts:
 
   return:
     - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#return
-
-  # simple-parameter:
-  #   - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#type-head

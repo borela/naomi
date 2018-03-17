@@ -25,16 +25,15 @@ contexts:
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
 
-  content:
-    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax
-
   delimiter:
     - meta_scope: meta.property-list.css.css3
     - include: comment-no-pop
+    # Close.
     - match: \}
       scope: punctuation.section.property-list.end.css.css3
       pop: true
+    # Delimiter.
     - match: ;
       scope: punctuation.terminator.css.css3
-    - match: (?=\S)
-      push: content
+    # Actual rules.
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax#no-pop

@@ -19,7 +19,7 @@ scope: ...
 contexts:
   main:
     - include: comment-no-pop
-    - include: logical-operator
+    - include: logical-operator-no-pop
     - match: ""
       set: [ optional-tail, head ]
 
@@ -28,10 +28,8 @@ contexts:
     - match: \)
       scope: punctuation.section.group.enda.j.fjsx15
       pop: true
-    - match: (?=\S)
-      push:
-        - include: logical-operator
-        - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax
+    - include: logical-operator-no-pop
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax#no-pop
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
@@ -44,10 +42,10 @@ contexts:
     - include: comment-no-pop
     - include: open-group
 
-  logical-operator:
+  logical-operator-no-pop:
     - match: (?>and|not|or|only)\b
       scope: keyword.operator.word.logical.feature-query.css.css3
-      set: optional-feature-query
+      push: optional-feature-query
 
   open-group:
     - match: \(
@@ -58,5 +56,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/css3/optional-feature-query.sublime-syntax
 
   optional-tail:
-    - include: logical-operator
+    - include: logical-operator-no-pop
     - include: else-pop

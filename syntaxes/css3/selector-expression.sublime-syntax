@@ -37,10 +37,11 @@ contexts:
         1: variable.other.namespace-prefix.css.css3
         2: keyword.other.namespace-wildcard.css.css3
         3: punctuation.separator.key-value.css.css3
-    # Some pseudo elements still allow the CSS2 syntax and could be confused with a pseudo class,
-    # to prevent that, we try to match the pseudo element first.
+    # Some pseudo elements still allow the CSS2 syntax and could be confused with
+    # a pseudo class, to prevent that, we try to match the pseudo element first.
     - include: Packages/Naomi/syntaxes/css3/selector/pseudo-element.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/selector/pseudo-class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/ampersand.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/selector/id.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/selector/class.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/selector/type.sublime-syntax

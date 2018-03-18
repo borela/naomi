@@ -14,9 +14,13 @@ import os
 import sublime
 import sublime_api
 import sublime_plugin
-from .OutputPanel import OutputPanel
 
-class NaomiRunSyntaxTestsCommand(sublime_plugin.WindowCommand):
+from sublime import packages_path
+from sublime_api import run_syntax_test
+from sublime_plugin import WindowCommand
+from ..window import OutputPanel
+
+class NaomiRunSyntaxTestsCommand(WindowCommand):
   def __init__(self, sublime_window):
     self.sublime_window = sublime_window
 
@@ -38,7 +42,7 @@ class NaomiRunSyntaxTestsCommand(sublime_plugin.WindowCommand):
         # Remove anything before "Packages/Naomi".
         target = target[target.index('Packages/Naomi'):]
         # Run the tests.
-        assertionsFound, messagesFound = sublime_api.run_syntax_test(target)
+        assertionsFound, messagesFound = run_syntax_test(target)
         # Print the error messages and update the counters.
         if messagesFound != '':
           for message in messagesFound:

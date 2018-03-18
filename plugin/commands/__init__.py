@@ -10,9 +10,5 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-import re
-
-def search_scope(view, offset, pattern):
-  scopes = view.scope_name(offset)
-  matched = re.search(pattern, scopes)
-  return None if matched is None else matched.group(0)
+from .RunSyntaxTests import *
+# from .ToggleJsxComment import *

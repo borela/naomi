@@ -26,6 +26,7 @@ contexts:
     - include: charset
     - include: conditional-group-rules
     - include: counter-style
+    - include: custom-media
     - include: font-face
     - include: keyframes
     - include: namespace
@@ -38,10 +39,7 @@ contexts:
       captures:
         0: keyword.control.at-rule.apply.css.css3
         1: punctuation.definition.keyword.css.css3
-      set: [ meta-apply, apply-value ]
-
-  apply-value:
-    - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax#custom
+      set: [ meta-apply, custom-property ]
 
   charset:
     - match: (@)charset\b
@@ -99,6 +97,20 @@ contexts:
       scope: entity.other.counter-style.css.css3
       pop: true
 
+  custom-media:
+    - match: (@)custom-media\b
+      captures:
+        0: keyword.control.at-rule.media.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [
+        meta-custom-media,
+        optional-media-query-list,
+        custom-property
+      ]
+
+  custom-property:
+    - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax#custom
+
   double-quoted-string:
     - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
 
@@ -151,6 +163,10 @@ contexts:
 
   meta-counter-style:
     - meta_scope: meta.at-rule.counter-style.css.css3
+    - include: pop-now
+
+  meta-custom-media:
+    - meta_scope: meta.at-rule.custom-media.css.css3
     - include: pop-now
 
   meta-document:

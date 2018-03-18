@@ -25,12 +25,16 @@ contexts:
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
 
+  custom-property:
+    - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax#custom
+
   else-pop:
     - match: (?=\S)
       pop: true
 
   head:
     - include: comment-no-pop
+    - include: custom-property
     - match: |
         (?x)
         ((?> any-(?>pointer|hover)

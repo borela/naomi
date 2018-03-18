@@ -1102,7 +1102,7 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>bold italic</string>
+				<string>italic</string>
 				<key>foreground</key>
 				<string>#18ffff</string>
 			</dict>
@@ -1114,6 +1114,26 @@
 			<dict>
 				<key>foreground</key>
 				<string>#e0e0e0</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .support.type.custom-media</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#fff176</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .support.type.custom-selector</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#4db6ac</string>
 			</dict>
 		</dict>
 		<dict>

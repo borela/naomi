@@ -33,12 +33,23 @@
 
   .support.type.vendor-prefix {
     foreground: $cyan-a200;
-    fontStyle: bold italic
+    fontStyle: italic
   }
 
-  // Custom property.
-  .support.type.custom-property {
-    foreground: $gray-300;
+  // Custom property & media.
+  .support.type {
+    &.custom-property {
+      foreground: $gray-300;
+    }
+
+    &.custom-media {
+      foreground: $yellow-300;
+    }
+
+    &.custom-selector {
+      foreground: $teal-300;
+      fontStyle: italic
+    }
   }
 
   // Any other unrecognized property.

@@ -17,7 +17,7 @@ hidden: true
 scope: ...
 
 variables:
-  cssIdentifier: (?!--)[^\s][_[:alnum:]\-]*
+  cssIdentifier: (?!--)[_[:alnum:]\-]+
 
 contexts:
   main:

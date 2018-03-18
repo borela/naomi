@@ -104,13 +104,18 @@ contexts:
     - match: |
         (?x)
         (?> attr
+          | blur
           | cubic-bezier
           | format
+          | gray
           | hsla?
+          | hwb
+          | image-set
           | linear-gradient
           | polygon
           | radial-gradient
           | repeating-(?>linear|radial)-gradient
+          | repeat
           | rotate
           | rgba?
         )

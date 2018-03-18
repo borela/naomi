@@ -48,6 +48,7 @@ variables:
       | r(?>em|lh)
       # vb, vh, vi, vmax, vmin, vw
       | v(?>[bhiw]|m(?>ax|in))
+      | x
     )
 
   absoluteLengthUnits: |

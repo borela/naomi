@@ -221,6 +221,7 @@ contexts:
           | italic
           | landscape
           | left
+          | lining-nums
           | list-item
           | middle
           | no-repeat
@@ -241,12 +242,14 @@ contexts:
           | run-in
           | screen
           | search
+          | small-caps
+          | solid
           | space-arround
           | space-between
           | speech
-          | solid
-          | submit
           | sub
+          | submit
+          | system-ui
           | super
           | table-caption
           | table-cell

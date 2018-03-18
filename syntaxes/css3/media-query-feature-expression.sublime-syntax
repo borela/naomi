@@ -26,7 +26,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
 
   custom-property:
-    - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax#custom
+    - include: Packages/Naomi/syntaxes/css3/custom-media-identifier.sublime-syntax
 
   else-pop:
     - match: (?=\S)

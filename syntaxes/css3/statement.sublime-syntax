@@ -105,8 +105,11 @@ contexts:
       set: [
         meta-custom-media,
         optional-media-query-list,
-        custom-property
+        custom-media-identifier
       ]
+
+  custom-media-identifier:
+    - include: Packages/Naomi/syntaxes/css3/custom-media-identifier.sublime-syntax
 
   custom-property:
     - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax#custom

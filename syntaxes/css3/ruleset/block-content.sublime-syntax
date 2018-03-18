@@ -33,9 +33,10 @@ contexts:
         (?xi)
         (?={{cssIdentifier}}\s*:)
       set: [ delimiter, property ]
-    # Nesting.
     - match: (?=\S)
       set:
+        - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
+        # Nesting rules.
         - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
 
   comment-no-pop:
@@ -63,9 +64,10 @@ contexts:
         (?xi)
         (?={{cssIdentifier}}\s*:)
       push: [ delimiter, property ]
-    # Nesting.
     - match: (?=\S)
       push:
+        - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
+        # Nesting rules.
         - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
 
   optional-value:

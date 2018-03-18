@@ -57,6 +57,7 @@ variables:
 contexts:
   main:
     - include: expected-pseudo-classes
+    - include: matches
     - include: not
     - include: nth-child
     - include: nth-of-type
@@ -75,6 +76,13 @@ contexts:
         0: variable.other.pseudo-class.css.cs3
         1: punctuation.definition.entity.css.css3
       pop: true
+
+  matches:
+    - match: (\:)matches(?=\s*\()
+      captures:
+        0: entity.other.pseudo-class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      set: selector-expression-as-arguments
 
   not:
     - match: (\:)not(?=\s*\()

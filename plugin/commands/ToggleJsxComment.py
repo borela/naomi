@@ -15,7 +15,7 @@ import re
 import sublime
 import sublime_plugin
 
-from ..region.expand import expand_partial_comments
+from ..region import expand_partial_comments, expand_partial_lines
 from sublime import Region
 from sublime_plugin import TextCommand
 

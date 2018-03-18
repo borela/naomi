@@ -15,8 +15,7 @@ import sublime
 
 from sublime import Region
 from .scan import *
-from .search import *
-from .predicates import *
+from ..view import search_scope
 
 def expand(view, region, predicate):
   begin = scan_reverse(view, region.begin(), predicate)

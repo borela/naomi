@@ -11,4 +11,4 @@
 # the License.
 
 from .RunSyntaxTests import *
-# from .ToggleJsxComment import *
+from .ToggleJsxComment import *

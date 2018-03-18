@@ -19,6 +19,8 @@ scope: ...
 variables:
   cssIdentifier: (?!--)[_[:alnum:]\-]+
 
+  customProperty: (--)([_[:alnum:]\-]*)
+
   coreProperties: |
     (?> additive-symbols
       # align-content, align-items, align-self
@@ -777,8 +779,11 @@ contexts:
       pop: true
 
   custom:
-    - match: --[_[:alnum:]\-]*
-      scope: support.type.custom-property.css.css3
+    - match: (?i){{customProperty}}
+      captures:
+        0: support.type.custom-property.css.css3
+        1: punctuation.definition.custom-property.css.css3
+        2: support.type.custom-property.name.css.css3
       pop: true
 
   prefixed:

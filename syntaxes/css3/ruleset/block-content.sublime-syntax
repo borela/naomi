@@ -19,8 +19,15 @@ scope: ...
 variables:
   cssIdentifier: (?!--)[_[:alnum:]\-]+
 
+  customProperty: --[_[:alnum:]\-]+
+
 contexts:
   main:
+    # Custom property.
+    - match: |
+        (?xi)
+        (?={{customProperty}}\s*:)
+      set: [ possible-set, property ]
     # property: value.
     - match: |
         (?xi)
@@ -38,7 +45,7 @@ contexts:
     - include: comment-no-pop
     - match: ":"
       scope: punctuation.separator.key-value.css.css3
-      set: [ meta, optional-value-no-pop ]
+      set: [ meta, optional-value ]
 
   meta:
     - meta_scope: meta.property-value.css.css3
@@ -46,6 +53,11 @@ contexts:
       pop: true
 
   no-pop:
+    # Custom property.
+    - match: |
+        (?xi)
+        (?={{customProperty}}\s*:)
+      push: [ possible-set, property ]
     # property: value.
     - match: |
         (?xi)
@@ -56,7 +68,7 @@ contexts:
       push:
         - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
 
-  optional-value-no-pop:
+  optional-value:
     - match: (?=[`;()\[\]{}])
       pop: true
     - match: \,
@@ -65,6 +77,21 @@ contexts:
       push:
         - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
 
+  possible-set:
+    - include: comment-no-pop
+    - match: ":"
+      scope: punctuation.separator.key-value.css.css3
+      set: [ meta, set-or-optional-value ]
+
   property:
     - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax
+
+  ruleset-block:
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block.sublime-syntax
+
+  set-or-optional-value:
+    - include: comment-no-pop
+    - match: (?=\{)
+      set: ruleset-block
+    - include: optional-value

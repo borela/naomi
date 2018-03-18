@@ -26,12 +26,18 @@ contexts:
     # Custom property.
     - match: |
         (?xi)
-        (?={{customProperty}}\s*:)
+        (?=
+          {{customProperty}}
+          \s*:\s
+        )
       set: [ possible-set, property ]
     # property: value.
     - match: |
         (?xi)
-        (?={{cssIdentifier}}\s*:)
+        (?=
+          {{cssIdentifier}}
+          \s*:\s
+        )
       set: [ delimiter, property ]
     - match: (?=\S)
       set:
@@ -57,12 +63,18 @@ contexts:
     # Custom property.
     - match: |
         (?xi)
-        (?={{customProperty}}\s*:)
+        (?=
+          {{customProperty}}
+          \s*:\s
+        )
       push: [ possible-set, property ]
     # property: value.
     - match: |
         (?xi)
-        (?={{cssIdentifier}}\s*:)
+        (?=
+          {{cssIdentifier}}
+          \s*:\s
+        )
       push: [ delimiter, property ]
     - match: (?=\S)
       push:

@@ -50,23 +50,8 @@ contexts:
         1: punctuation.definition.keyword.css.css3
       set: [ meta-charset, double-quoted-string ]
 
-  close-conditional-group-body:
-    - meta_scope: meta.block.css.css3
-    # Close;
-    - match: \}
-      scope: punctuation.section.block.end.css.css3
-      pop: true
-    # Contents.
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
-
   conditional-group-body:
-    - match: \{
-      scope: punctuation.section.block.begin.css.css3
-      set: close-conditional-group-body
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block.sublime-syntax
 
   conditional-group-rules:
     - match: (@)document\b

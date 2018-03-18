@@ -27,6 +27,7 @@ contexts:
     - include: conditional-group-rules
     - include: counter-style
     - include: custom-media
+    - include: custom-selector
     - include: font-face
     - include: keyframes
     - include: namespace
@@ -111,6 +112,20 @@ contexts:
   custom-media-identifier:
     - include: Packages/Naomi/syntaxes/css3/custom-media-identifier.sublime-syntax
 
+  custom-selector:
+    - match: (@)custom-selector\b
+      captures:
+        0: keyword.control.at-rule.media.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [
+        meta-custom-selector,
+        selector-list,
+        custom-selector-identifier
+      ]
+
+  custom-selector-identifier:
+    - include: Packages/Naomi/syntaxes/css3/selector/custom.sublime-syntax
+
   custom-property:
     - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax#custom
 
@@ -170,6 +185,10 @@ contexts:
 
   meta-custom-media:
     - meta_scope: meta.at-rule.custom-media.css.css3
+    - include: pop-now
+
+  meta-custom-selector:
+    - meta_scope: meta.at-rule.custom-selector.css.css3
     - include: pop-now
 
   meta-document:
@@ -247,6 +266,9 @@ contexts:
 
   ruleset-block:
     - include: Packages/Naomi/syntaxes/css3/ruleset/block.sublime-syntax
+
+  selector-list:
+    - include: Packages/Naomi/syntaxes/css3/ruleset/selector-list.sublime-syntax
 
   string-or-url:
     - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax

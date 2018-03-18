@@ -28,7 +28,7 @@ contexts:
 
   delimiter:
     # Escape.
-    - match: (?=\{)
+    - match: (?=[;{])
       pop: true
     # Delimiter.
     - match: \,

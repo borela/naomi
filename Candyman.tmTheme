@@ -1093,7 +1093,18 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#00e5ff</string>
+				<string>#18ffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .support.type.vendor-prefix</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold italic</string>
+				<key>foreground</key>
+				<string>#18ffff</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1608,7 +1619,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#00e5ff</string>
+				<string>#18ffff</string>
 			</dict>
 		</dict>
 		<dict>

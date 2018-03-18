@@ -28,7 +28,12 @@
 
   // Property.
   .support.type.property-name {
-    foreground: $cyan-a400;
+    foreground: $cyan-a200;
+  }
+
+  .support.type.vendor-prefix {
+    foreground: $cyan-a200;
+    fontStyle: bold italic
   }
 
   // Custom property.

@@ -31,6 +31,7 @@ contexts:
     - include: font-face
     - include: keyframes
     - include: namespace
+    - include: nest
     - include: import
     - include: page
     - include: viewport
@@ -215,6 +216,10 @@ contexts:
     - meta_scope: meta.at-rule.namespace.css.css3
     - include: pop-now
 
+  meta-nest:
+    - meta_scope: meta.at-rule.nest.css.css3
+    - include: pop-now
+
   meta-page:
     - meta_scope: meta.at-rule.page.css.css3
     - include: pop-now
@@ -233,6 +238,13 @@ contexts:
         0: keyword.control.at-rule.namespace.css.css3
         1: punctuation.definition.keyword.css.css3
       set: [ meta-namespace, string-or-url, optional-namespace-prefix ]
+
+  nest:
+    - match: (@)nest\b
+      captures:
+        0: keyword.control.at-rule.nest.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [ meta-nest, ruleset-block,  selector-list ]
 
   optional-media-query-list:
     - include: Packages/Naomi/syntaxes/css3/optional-media-query-list.sublime-syntax

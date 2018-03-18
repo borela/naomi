@@ -20,7 +20,7 @@ contexts:
   main:
     - match: \[
       scope: punctuation.section.brackets.begin.css.css3
-      set: [ meta, close, optional-value, operator, attribute ]
+      set: [ meta, close, operator, attribute ]
 
   attribute:
     - include: Packages/Naomi/syntaxes/html5/attribute/builtin.sublime-syntax
@@ -31,6 +31,8 @@ contexts:
     - match: \]
       scope: punctuation.section.brackets.end.css.css3
       pop: true
+    - match: (?=\S)
+      push: value
 
   meta:
     - meta_scope: meta.attribute-selector.css.css3
@@ -42,5 +44,5 @@ contexts:
       scope: keyword.operator.attribute-selector.css.css3
       pop: true
 
-  optional-value:
-    - include: Packages/Naomi/syntaxes/css3/optional-value.sublime-syntax
+  value:
+    - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax

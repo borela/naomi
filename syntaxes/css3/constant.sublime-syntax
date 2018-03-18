@@ -175,10 +175,13 @@ contexts:
   other:
     - match: |
         (?x)
-        (?> absolute
+        (?> a4
+          | absolute
           | alternate
           | all
           | at
+          | auto-fill
+          | auto-fit
           | auto
           | baseline
           | block
@@ -206,6 +209,7 @@ contexts:
           | flex
           | forwards
           | hidden
+          | grid
           | infinite
           | inline-block
           | inline-flex

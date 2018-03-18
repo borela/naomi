@@ -21,6 +21,7 @@ variables:
 
 contexts:
   main:
+    - include: apply
     - include: empty-statement
     - include: charset
     - include: conditional-group-rules
@@ -31,6 +32,16 @@ contexts:
     - include: import
     - include: page
     - include: viewport
+
+  apply:
+    - match: (@)apply\b
+      captures:
+        0: keyword.control.at-rule.apply.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [ meta-apply, apply-value ]
+
+  apply-value:
+    - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax#custom
 
   charset:
     - match: (@)charset\b
@@ -129,6 +140,10 @@ contexts:
         0: keyword.control.at-rule.keyframes.css.css3
         1: punctuation.definition.keyword.css.css3
       set: [ meta-keyframes, keyframe-block-list, keyframe-name ]
+
+  meta-apply:
+    - meta_scope: meta.at-rule.apply.css.css3
+    - include: pop-now
 
   meta-charset:
     - meta_scope: meta.at-rule.charset.css.css3

@@ -70,7 +70,7 @@ contexts:
           | >=?
         )
       scope: keyword.operator.comparison.css.css3
-      push: head
+      set: head
     - include: else-pop
 
   value:

@@ -28,11 +28,17 @@ contexts:
     - match: \)
       scope: punctuation.section.group.end.j.fjsx15
       pop: true
-    - include: logical-operator-no-pop
-    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax#no-pop
+    - match: (?=\S)
+      push:
+        - include: logical-operator
+        - match: ""
+          set: [ delimiter, property ]
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+
+  delimiter:
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax#delimiter
 
   else-pop:
     - match: (?=\S)
@@ -47,11 +53,6 @@ contexts:
       scope: keyword.operator.word.logical.feature-query.css.css3
       set: optional-feature-query
 
-  logical-operator-no-pop:
-    - match: (?>and|not|or|only)\b
-      scope: keyword.operator.word.logical.feature-query.css.css3
-      push: optional-feature-query
-
   open-group:
     - match: \(
       scope: punctuation.section.group.begin.css.css3
@@ -63,3 +64,6 @@ contexts:
   optional-tail:
     - include: logical-operator
     - include: else-pop
+
+  property:
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax#property

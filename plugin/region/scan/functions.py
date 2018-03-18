@@ -43,3 +43,24 @@ def scan_reverse(view, offset, predicate):
       break
 
   return offset
+
+# Returns the position for the first non whitespace character or the region’s
+# beginning if none is found.
+def search_non_whitespace(view, region, stop_on_line_feed = True):
+  def __predicate(view, offset):
+    char = view.substr(offset)
+    if stop_on_line_feed and char == '\n':
+      return False
+    return char.isspace()
+
+  begin = region.begin()
+  end = region.end() - 1
+
+  if end < begin:
+    end = begin
+
+  result = scan(view, begin, __predicate, end) + 1
+  if result > end:
+    result = begin
+
+  return result

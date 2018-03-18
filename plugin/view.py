@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+import re
+
 def has_any_scope(view, offset, target_scopes):
   scopes = view.scope_name(offset)
   return any(x in scopes for x in target_scopes)
@@ -25,3 +27,9 @@ def is_comment(view, offset):
 
 def is_offset_valid(view, offset):
   return 0 <= offset <= view.size() - 1
+
+# Returns the string that matches the pattern.
+def search_scope(view, offset, pattern):
+  scopes = view.scope_name(offset)
+  matched = re.search(pattern, scopes)
+  return None if matched is None else matched.group(0)

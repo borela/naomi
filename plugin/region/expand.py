@@ -11,11 +11,10 @@
 # the License.
 
 import re
-import sublime
 
 from sublime import Region
 from .scan import *
-from ..view import search_scope
+from ..view import *
 
 def expand(view, region, predicate):
   begin = scan_reverse(view, region.begin(), predicate)

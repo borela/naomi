@@ -415,7 +415,7 @@ class NaomiToggleJsxCommentCommand(TextCommand):
         if 'punctuation.definition.string.begin' not in scopes:
           continue
 
-      region = expand_partial_comments(self.view, region)
+      region = expand_partial_comments_with_jsx(self.view, region)
 
       print(view.substr(region))
 

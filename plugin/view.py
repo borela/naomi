@@ -25,6 +25,16 @@ def is_comment(view, offset):
   scopes = view.scope_name(offset)
   return any(x in scopes for x in comment_scopes)
 
+def is_jsx_open_brace(view, offset):
+  open_brace_scopes = [ 'source.jsx', 'punctuation.definition.template-expression.begin' ]
+  scopes = view.scope_name(offset)
+  return all(x in scopes for x in open_brace_scopes)
+
+def is_jsx_close_brace(view, offset):
+  close_brace_scopes = [ 'source.jsx', 'punctuation.definition.template-expression.end' ]
+  scopes = view.scope_name(offset)
+  return all(x in scopes for x in close_brace_scopes)
+
 def is_offset_valid(view, offset):
   return 0 <= offset <= view.size() - 1
 

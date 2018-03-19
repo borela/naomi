@@ -48,6 +48,12 @@ def is_comment_predicate():
   comment_scopes = [ 'comment.block', 'comment.line' ]
   return has_any_scope_predicate(comment_scopes)
 
+def is_comment_begin_predicate():
+  return has_scope_predicate('punctuation.definition.comment.begin')
+
+def is_comment_end_predicate():
+  return has_scope_predicate('punctuation.definition.comment.end')
+
 def not_predicate(predicate):
   def __predicate(view, offset):
     return not predicate(view, offset)

@@ -28,14 +28,6 @@ def expand_by_scope(view, region, scope):
   return expand(view, region, __predicate)
 
 def expand_partial_comments(view, region):
-  def __is_comment_begin(view, offset):
-    scopes = view.scope_name(offset)
-    return 'punctuation.definition.comment.begin' in scopes
-
-  def __is_comment_end(view, offset):
-    scopes = view.scope_name(offset)
-    return 'punctuation.definition.comment.end' in scopes
-
   begin = region.begin()
   end = region.end()
 
@@ -47,8 +39,8 @@ def expand_partial_comments(view, region):
     if begin_scope == 'punctuation.definition.comment.end':
       begin -= 1
 
-  if end == begin and __is_comment_begin(view, end):
-    end = scan(view, end, __is_comment_begin) + 1
+  if end == begin and is_comment_begin(view, end):
+    end = scan(view, end, is_comment_begin_predicate()) + 1
   else:
     end_scope = search_scope(view, end - 1, 'punctuation\.definition\.comment\.\w+')
     if end_scope is not None:
@@ -57,12 +49,12 @@ def expand_partial_comments(view, region):
   # Expand.
   begin = scan_reverse(view, begin, all_predicate([
     is_comment_predicate(),
-    not_predicate(__is_comment_end)
+    not_predicate(is_comment_end_predicate())
   ]))
 
   end = scan(view, end, all_predicate([
     is_comment_predicate(),
-    not_predicate(__is_comment_begin)
+    not_predicate(is_comment_begin_predicate())
   ]))
 
   return Region(begin, end)

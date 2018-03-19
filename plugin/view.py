@@ -25,6 +25,12 @@ def is_comment(view, offset):
   scopes = view.scope_name(offset)
   return any(x in scopes for x in comment_scopes)
 
+def is_comment_begin(view, offset):
+  return 'punctuation.definition.comment.begin' in view.scope_name(offset)
+
+def is_comment_end(view, offset):
+  return 'punctuation.definition.comment.end' in view.scope_name(offset)
+
 def is_jsx_open_brace(view, offset):
   open_brace_scopes = [ 'source.jsx', 'punctuation.definition.template-expression.begin' ]
   scopes = view.scope_name(offset)

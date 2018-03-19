@@ -11,9 +11,6 @@
 # the License.
 
 import os
-import sublime
-import sublime_api
-import sublime_plugin
 
 from sublime import packages_path
 from sublime_api import run_syntax_test
@@ -28,7 +25,7 @@ class NaomiRunSyntaxTestsCommand(WindowCommand):
     totalFiles = 0
     totalAssertions = 0
     totalFailedAssertions = 0
-    testsPath = sublime.packages_path() + '/Naomi/tests/syntaxes';
+    testsPath = packages_path() + '/Naomi/tests/syntaxes';
 
     self.outputPanel = OutputPanel(self.sublime_window, { 'name': 'naomi' })
     self.outputPanel.show()

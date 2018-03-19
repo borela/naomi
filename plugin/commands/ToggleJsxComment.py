@@ -283,15 +283,6 @@ def comment_lines(view, edit, region):
 
 #   return begin
 
-# def is_jsx_open_brace(view, offset):
-#   open_brace_scopes = ['source.jsx', 'punctuation.definition.template-expression.begin']
-#   scopes = view.scope_name(offset)
-#   return all(x in scopes for x in open_brace_scopes)
-
-# def is_jsx_close_brace(view, offset):
-#   close_brace_scopes = ['source.jsx', 'punctuation.definition.template-expression.end']
-#   scopes = view.scope_name(offset)
-#   return all(x in scopes for x in close_brace_scopes)
 
 # # Returns true if the region must be commented or not.
 # def must_comment(view, region):

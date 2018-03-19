@@ -12,11 +12,8 @@
 
 import os
 import re
-import sublime
-import sublime_plugin
 
-from ..region import expand_partial_comments, expand_partial_lines
-from sublime import Region
+from ..region import *
 from sublime_plugin import TextCommand
 
 # def comment_block(view, edit, region):
@@ -396,7 +393,7 @@ def uncomment_lines(view, edit, region):
     i = open_block.begin()
 
 # Actual command to toggle the comment lines and blocks.
-class NaomiToggleJsxCommentCommand(sublime_plugin.TextCommand):
+class NaomiToggleJsxCommentCommand(TextCommand):
   def __init__(self, view):
     self.view = view
 

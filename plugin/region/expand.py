@@ -67,6 +67,7 @@ def expand_partial_comments_with_jsx(view, region):
   # inside.
   if is_jsx_open_brace(view, begin): begin += 1
   if is_jsx_close_brace(view, begin): begin -= 1
+  if is_jsx_open_brace(view, end - 1): end += 1
 
   if end < begin:
     end = begin

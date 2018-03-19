@@ -46,12 +46,13 @@ def expand_partial_comments(view, region):
     if end_scope is not None:
       end = scan(view, end, has_scope_predicate(end_scope))
 
-  # Expand.
+  # Expand to the left.
   begin = scan_reverse(view, begin, all_predicate([
     is_comment_predicate(),
     not_predicate(is_comment_end_predicate())
   ]))
 
+  # Expand to the right.
   end = scan(view, end, all_predicate([
     is_comment_predicate(),
     not_predicate(is_comment_begin_predicate())
@@ -63,8 +64,8 @@ def expand_partial_comments_with_jsx(view, region):
   begin = region.begin()
   end = region.end()
 
-  # If cursor is at a JSX interpolation brace, correct it if there’s a comment
-  # inside.
+  # If cursor is at a JSX interpolation brace, move it inside so that the
+  # expansion can target a possible comment inside the braces.
   if is_jsx_open_brace(view, begin): begin += 1
   if is_jsx_close_brace(view, begin): begin -= 1
   if is_jsx_open_brace(view, end - 1): end += 1

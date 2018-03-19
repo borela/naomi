@@ -391,10 +391,10 @@ class NaomiToggleJsxCommentCommand(TextCommand):
   def run(self, edit, block):
     view = self.view
     for region in reversed(self.view.sel()):
-      # If the region is just the cursor, we will expand it to affect the entire
-      # line except if the cursor is in a comment.
       scopes = self.view.scope_name(region.begin())
 
+      # If the region is just the cursor and is not in a comment, we will expand
+      # it to affect the entire line.
       if region.size() < 1 and 'comment' not in scopes:
         region = expand_partial_lines(view, region)
 

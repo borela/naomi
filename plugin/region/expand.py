@@ -74,10 +74,10 @@ def expand_partial_comments_with_jsx(view, region):
   # If cursor is at a JSX interpolation brace, correct it if there’s a comment
   # inside.
   if is_jsx_open_brace(view, begin): begin += 1
-  if is_jsx_open_brace(view, end): end += 1
-
   if is_jsx_close_brace(view, begin): begin -= 1
-  if is_jsx_close_brace(view, end): end -= 1
+
+  if end < begin:
+    end = begin
 
   return expand_partial_comments(view, Region(begin, end))
 

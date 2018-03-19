@@ -60,6 +60,8 @@ def search_non_whitespace(view, region, stop_on_line_feed = True):
     end = begin
 
   result = scan(view, begin, __predicate, end) + 1
+
+  # Fail.
   if result > end:
     result = begin
 

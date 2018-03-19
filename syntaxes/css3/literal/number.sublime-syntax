@@ -42,6 +42,7 @@ variables:
     (?> c(?>ap|h)
       # em, ex
       | e[mx]
+      | fr
       | ic
       | lh
       # rem, rlh

@@ -67,6 +67,20 @@ def expand_partial_comments(view, region):
 
   return Region(begin, end)
 
+def expand_partial_comments_with_jsx(view, region):
+  begin = region.begin()
+  end = region.end()
+
+  # If cursor is at a JSX interpolation brace, correct it if there’s a comment
+  # inside.
+  if is_jsx_open_brace(view, begin): begin += 1
+  if is_jsx_open_brace(view, end): end += 1
+
+  if is_jsx_close_brace(view, begin): begin -= 1
+  if is_jsx_close_brace(view, end): end -= 1
+
+  return expand_partial_comments(view, Region(begin, end))
+
 def expand_partial_lines(view, region):
   def __predicate(view, offset):
     char = view.substr(offset)

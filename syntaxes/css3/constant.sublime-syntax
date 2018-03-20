@@ -168,7 +168,8 @@ contexts:
           | wheat
           | white(?:smoke)?
           | yellow(?:green)?
-        )
+        )\b
+        (?!-)
       scope: support.constant.color.css.css3
       pop: true
 
@@ -266,6 +267,7 @@ contexts:
           | tv
           | visible
           | uppercase
-        )
+        )\b
+        (?!-)
       scope: support.constant.property-value.css.css3
       pop: true

@@ -23,6 +23,8 @@ variables:
 
 contexts:
   main:
+    - match: (?=\})
+      pop: true
     # Custom property.
     - match: |
         (?xi)
@@ -38,7 +40,7 @@ contexts:
           {{cssIdentifier}}
           \s*:\s
         )
-      set: [ delimiter, property ]
+      set: [ meta-value, optional-value, delimiter, property ]
     # Nesting.
     - match: (?=\S)
       set:
@@ -52,35 +54,14 @@ contexts:
     - include: comment-no-pop
     - match: ":"
       scope: punctuation.separator.key-value.css.css3
-      set: [ meta, optional-value ]
-
-  meta:
-    - meta_scope: meta.property-value.css.css3
-    - match: ""
       pop: true
 
-  no-pop:
-    # Custom property.
+  meta-value:
+    - meta_scope: meta.property-value.css.css3
+    - include: pop-now
+
     - match: |
         (?xi)
-        (?=
-          {{customProperty}}
-          \s*:\s
-        )
-      push: [ possible-set, property ]
-    # property: value.
-    - match: |
-        (?xi)
-        (?=
-          {{cssIdentifier}}
-          \s*:\s
-        )
-      push: [ delimiter, property ]
-    # Nesting.
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
 
   optional-value:
     - match: (?=[`;()\[\]{}])
@@ -95,7 +76,11 @@ contexts:
     - include: comment-no-pop
     - match: ":"
       scope: punctuation.separator.key-value.css.css3
-      set: [ meta, set-or-optional-value ]
+      set: [ meta-value, set-or-optional-value ]
+
+  pop-now:
+    - match: ""
+      pop: true
 
   property:
     - include: comment-no-pop

@@ -38,4 +38,8 @@ contexts:
     - match: ;
       scope: punctuation.terminator.css.css3
     # Actual rules.
-    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax#no-pop
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax
+        - match: ""
+          pop: true

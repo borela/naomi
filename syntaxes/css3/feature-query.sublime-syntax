@@ -32,7 +32,7 @@ contexts:
       push:
         - include: logical-operator
         - match: ""
-          set: [ delimiter, property ]
+          set: [ meta-value, optional-value, delimiter, property ]
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
@@ -53,6 +53,9 @@ contexts:
       scope: keyword.operator.word.logical.feature-query.css.css3
       set: optional-feature-query
 
+  meta-value:
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax#meta-value
+
   open-group:
     - match: \(
       scope: punctuation.section.group.begin.css.css3
@@ -64,6 +67,9 @@ contexts:
   optional-tail:
     - include: logical-operator
     - include: else-pop
+
+  optional-value:
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax#optional-value
 
   property:
     - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax#property

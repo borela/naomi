@@ -33,6 +33,15 @@ contexts:
           \s*:\s
         )
       set: [ possible-set, property ]
+    # Grid-template.
+    - match: |
+        (?x)
+        # grid-template, grid-template-areas, grid-template-columns,
+        # grid-template-rows
+        grid-template(?:-(?>areas|columns|rows))?
+        (?=\s*:\s)
+      scope: support.type.property-name.css.css3
+      set: [ meta-value, optional-grid-template-value, delimiter ]
     # Grid.
     - match: |
         (?x)
@@ -48,9 +57,6 @@ contexts:
             | gap
             # grid-row, grid-row-end, grid-row-start
             | row(?:-(?>end|start))?
-            # grid-template, grid-template-areas, grid-template-columns,
-            # grid-template-rows
-            | template(?:-(?>areas|columns|rows))?
           )
         )?
         (?=\s*:\s)
@@ -101,6 +107,19 @@ contexts:
   optional-grid-value:
     - match: (?=[`;()\]{}])
       pop: true
+    - match: (?=\S)
+      push:
+        - include: start-end-ratio
+        - include: value-separator
+        - match: span\b(?!-)
+          scope: keyword.operator.word.css.css3
+          pop: true
+        - include: grid-line-name
+        - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
+
+  optional-grid-template-value:
+    - match: (?=[`;()\]{}])
+      pop: true
     # Named lines
     - match: \[
       scope: punctuation.definition.bracket.begin.css.css3
@@ -110,12 +129,7 @@ contexts:
       push:
         - include: start-end-ratio
         - include: value-separator
-        - include: Packages/Naomi/syntaxes/css3/value-no-unquoted-string.sublime-syntax
-        - match: span\b(?!-)
-          scope: keyword.operator.word.css.css3
-          pop: true
-        - include: grid-line-name
-        - include: Packages/Naomi/syntaxes/css3/literal/string/unquoted.sublime-syntax
+        - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
 
   optional-value:
     - match: (?=[`;()\[\]{}])

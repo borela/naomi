@@ -338,21 +338,6 @@ variables:
       | footnote-(?>display|policy)
       | gap
       | glyph-orientation-vertical
-      | grid
-        (?:-
-          # grid-area
-          (?> area
-            # grid-auto-coolums, grid-auto-flow, grid-auto-rows
-            | auto(?:-(?>columns|flow|rows))
-            # grid-column, grid-column-end, grid-column-start
-            | column(?:-(?>end|start))?
-            # grid-row, grid-row-end, grid-row-start
-            | row(?:-(?>end|start))?
-            # grid-template, grid-template-areas, grid-template-columns,
-            # grid-template-rows
-            | template(?:-(?>areas|columns|rows))?
-          )
-        )?
       | hanging-punctuation
       | height
       | hyphenate-

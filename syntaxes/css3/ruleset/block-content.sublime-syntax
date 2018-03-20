@@ -44,6 +44,8 @@ contexts:
             | auto(?:-(?>columns|flow|rows))
             # grid-column, grid-column-end, grid-column-start
             | column(?:-(?>end|start))?
+            # grid-gap
+            | gap
             # grid-row, grid-row-end, grid-row-start
             | row(?:-(?>end|start))?
             # grid-template, grid-template-areas, grid-template-columns,

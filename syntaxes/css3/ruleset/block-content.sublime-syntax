@@ -23,6 +23,7 @@ variables:
 
 contexts:
   main:
+    - include: comment-no-pop
     - match: (?=\})
       pop: true
     # Custom property.
@@ -98,6 +99,7 @@ contexts:
 
   named-grid-line-declaration:
     - meta_scope: meta.named-grid-line.css.css3
+    - include: comment-no-pop
     - match: \]
       scope: punctuation.definition.bracket.end.css.css3
       pop: true
@@ -105,6 +107,7 @@ contexts:
       push: grid-line-name
 
   optional-grid-value:
+    - include: comment-no-pop
     - match: (?=[`;()\]{}])
       pop: true
     - match: (?=\S)
@@ -118,6 +121,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
 
   optional-grid-template-value:
+    - include: comment-no-pop
     - match: (?=[`;()\]{}])
       pop: true
     # Named lines
@@ -132,6 +136,7 @@ contexts:
         - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
 
   optional-value:
+    - include: comment-no-pop
     - match: (?=[`;()\[\]{}])
       pop: true
     - match: (?=\S)

@@ -47,8 +47,6 @@ def scan_reverse(view, offset, predicate, limit = -1):
 
   return offset
 
-# Returns the position for the first non whitespace character or the region’s
-# beginning if none is found.
 def search_non_whitespace(view, region, stop_on_line_feed = True):
   def __predicate(view, offset):
     char = view.substr(offset)

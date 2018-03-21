@@ -11,4 +11,5 @@
 # the License.
 
 from .expand import *
+from .generate import *
 from .scan import *

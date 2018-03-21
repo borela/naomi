@@ -37,6 +37,17 @@ def expand_partial_comments(view, region):
     begin = scan_reverse(view, begin, has_scope_predicate(begin_scope))
     if begin_scope == 'punctuation.definition.comment.end':
       begin -= 1
+  elif begin > 0:
+    begin_scope = view.scope_name(begin)
+    begin_char = view.substr(begin)
+    # If the region begins at a line feed and it is not a comment, the previous
+    # character could be the end of a single line comment.
+    if begin_char == '\n' and 'comment' not in begin_scope:
+      previous_scope = view.scope_name(begin - 1)
+      # The previous char was indeed a single comment, we will move the region’s
+      # beginning to allow the expansion algorithm to catch it.
+      if 'comment.line' in previous_scope:
+        begin -= 1
 
   if end == begin and is_comment_begin(view, end):
     end = scan(view, end, is_comment_begin_predicate()) + 1

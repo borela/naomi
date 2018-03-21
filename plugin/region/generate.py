@@ -16,7 +16,7 @@ from sublime import Region
 def generate_comment_punctuation_region(view, offset, include_one_whitespace = True):
   result = generate_region_for_scope(view, offset, 'punctuation\.definition\.comment\.\w+')
   next_char = view.substr(result.end())
-  if next_char.isspace() and next != '\n':
+  if next_char.isspace() and next_char != '\n':
     return Region(result.begin(), result.end() + 1)
   return result
 

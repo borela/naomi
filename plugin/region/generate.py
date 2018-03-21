@@ -16,10 +16,23 @@ from sublime import Region
 
 def generate_comment_punctuation_region(view, offset, include_one_whitespace = True):
   result = generate_region_for_scope(view, offset, 'punctuation\.definition\.comment\.\w+')
-  next_char = view.substr(result.end())
-  if next_char.isspace() and next_char != '\n':
-    return Region(result.begin(), result.end() + 1)
-  return result
+  begin = result.begin()
+  end = result.end()
+  scopes = view.scope_name(begin)
+
+  if 'punctuation.definition.comment.begin' in scopes:
+    next_char = view.substr(end)
+    if next_char.isspace() and next_char != '\n':
+      if 'punctuation.definition.comment' not in view.scope_name(end + 1):
+        end += 1
+
+  if 'punctuation.definition.comment.end' in scopes:
+    previous_char = view.substr(begin - 1)
+    if previous_char.isspace() and previous_char != '\n':
+      if 'punctuation.definition.comment' not in view.scope_name(begin - 2):
+        begin -= 1
+
+  return Region(begin, end)
 
 def generate_jsjsx_comment_punctuation_region(view, offset, include_one_whitespace = True):
   result = generate_comment_punctuation_region(view, offset, include_one_whitespace)

@@ -10,9 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from sublime import Region
-from .scan import *
 from ..view import *
+from .scan import *
+from sublime import Region
 
 def expand(view, region, predicate):
   begin = scan_reverse(view, region.begin(), predicate)

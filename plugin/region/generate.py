@@ -21,6 +21,16 @@ def generate_comment_punctuation_region(view, offset, include_one_whitespace = T
     return Region(result.begin(), result.end() + 1)
   return result
 
+def generate_jsjsx_comment_punctuation_region(view, offset, include_one_whitespace = True):
+  result = generate_comment_punctuation_region(view, offset, include_one_whitespace)
+  begin = result.begin()
+  end = result.end()
+
+  if is_jsx_open_brace(view, begin - 1): begin -= 1
+  if is_jsx_close_brace(view, end + 1): end += 1
+
+  return Region(begin, end)
+
 def generate_region_for_scope(view, offset, scope_pattern):
   scope = search_scope(view, offset, scope_pattern)
   if scope is None:

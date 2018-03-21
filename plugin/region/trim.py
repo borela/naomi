@@ -10,7 +10,13 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .expand import *
-from .generate import *
 from .scan import *
-from .trim import *
+from sublime import Region
+
+def trim_region(view, region):
+  begin = search_non_whitespace(view, region)
+  end = search_non_whitespace_reverse(view, region)
+  return Region(
+    min(begin, end),
+    max(begin, end)
+  )

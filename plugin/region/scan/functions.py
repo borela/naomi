@@ -47,7 +47,7 @@ def scan_reverse(view, offset, predicate, limit = -1):
 
   return offset
 
-def search_non_whitespace(view, region, stop_on_line_feed = True):
+def search_non_whitespace(view, region, stop_on_line_feed = False):
   def __predicate(view, offset):
     char = view.substr(offset)
     if stop_on_line_feed and char == '\n':
@@ -61,3 +61,18 @@ def search_non_whitespace(view, region, stop_on_line_feed = True):
     end = begin
 
   return scan(view, begin, __predicate, end)
+
+def search_non_whitespace_reverse(view, region, stop_on_line_feed = False):
+  def __predicate(view, offset):
+    char = view.substr(offset)
+    if stop_on_line_feed and char == '\n':
+      return False
+    return char.isspace()
+
+  begin = region.begin()
+  end = region.end() - 1
+
+  if end < begin:
+    end = begin
+
+  return scan_reverse(view, end, __predicate, begin)

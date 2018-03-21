@@ -10,8 +10,6 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-import re
-
 from sublime import Region
 from .scan import *
 from ..view import *

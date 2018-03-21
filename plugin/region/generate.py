@@ -10,8 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .expand import *
 from ..view import *
+from .expand import *
 from sublime import Region
 
 def generate_comment_punctuation_region(view, offset, include_one_whitespace = True):

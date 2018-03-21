@@ -44,6 +44,9 @@ def is_jsx_close_brace(view, offset):
 def is_offset_valid(view, offset):
   return 0 <= offset <= view.size() - 1
 
+def is_whitespace(view, offset):
+  return view.substr(offset).isspace()
+
 # Returns the string that matches the pattern.
 def search_scope(view, offset, pattern):
   scopes = view.scope_name(offset)

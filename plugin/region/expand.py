@@ -74,11 +74,14 @@ def expand_partial_comments_with_jsx(view, region):
   begin = region.begin()
   end = region.end()
 
-  # If cursor is at a JSX interpolation brace, move it inside so that the
-  # expansion can target a possible comment inside the braces.
-  if is_jsx_open_brace(view, begin): begin += 1
-  if is_jsx_close_brace(view, begin): begin -= 1
-  if is_jsx_open_brace(view, end - 1): end += 1
+  if is_jsx_open_brace(view, begin) and is_comment(view, begin + 1):
+    begin += 1
+
+  if is_jsx_close_brace(view, begin) and is_comment(view, begin - 1):
+    begin -= 1
+
+  if is_jsx_open_brace(view, end - 1):
+    end += 1
 
   if end < begin:
     end = begin

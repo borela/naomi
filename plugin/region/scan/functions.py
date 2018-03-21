@@ -28,14 +28,17 @@ def scan(view, offset, predicate, limit = -1):
 
   return offset
 
-def scan_reverse(view, offset, predicate):
+def scan_reverse(view, offset, predicate, limit = -1):
   if not predicate(view, offset):
     return offset
 
+  if limit < 0:
+    limit = 0
+
   while True:
     offset -= 1
-    if offset < 0:
-      offset = 0
+    if offset < limit:
+      offset = limit
       break
 
     if not predicate(view, offset):

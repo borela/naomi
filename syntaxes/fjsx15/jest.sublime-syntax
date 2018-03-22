@@ -138,6 +138,7 @@ contexts:
         meta-scope,
         arguments
       ]
+    - include: else-pop
 
   matcher-meta-scope:
     - meta_scope: meta.function-call.jest.matcher.js.fjsx15

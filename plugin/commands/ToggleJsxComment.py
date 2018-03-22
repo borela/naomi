@@ -227,6 +227,8 @@ class NaomiToggleJsxCommentCommand(TextCommand):
         uncomment_region(view, edit, region)
         continue
 
+      # This will allow the cursor to be in the middle of the string and still
+      # detect correctly if it is possible to comment the region.
       if not block:
         region = expand_partial_lines(view, region)
 

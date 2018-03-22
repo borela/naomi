@@ -36,7 +36,7 @@ contexts:
         1: punctuation.definition.tag.begin.html.html5
         2: entity.name.tag.html.html5
         3: punctuation.definition.tag.end.html.html5
-      set: meta
+      pop: true
 
   meta:
     - meta_scope: meta.tag.html.html5

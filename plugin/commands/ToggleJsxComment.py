@@ -240,5 +240,6 @@ class NaomiToggleJsxCommentCommand(TextCommand):
         continue
 
       # Line comments.
+      region = trim_region(view, region)
       region = expand_partial_lines(view, region)
       comment_lines(view, edit, region)

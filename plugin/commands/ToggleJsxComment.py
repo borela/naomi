@@ -31,16 +31,16 @@ def comment_block(view, edit, region):
 
   if comment_type == 'jsx':
     if empty_region:
-      view.insert(edit, end + 1, " */}")
-      view.erase(edit, Region(end, end + 1))
+      view.insert(edit, end, " */}")
+      view.erase(edit, Region(end, end))
     else:
       view.insert(edit, end, " */}")
 
     view.insert(edit, begin, "{/* ")
   else:
     if empty_region:
-      view.insert(edit, end + 1, " */")
-      view.erase(edit, Region(end, end + 1))
+      view.insert(edit, end, " */")
+      view.erase(edit, Region(end, end))
     else:
       view.insert(edit, end, " */")
 

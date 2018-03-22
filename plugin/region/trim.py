@@ -18,5 +18,5 @@ def trim_region(view, region):
   end = search_non_whitespace_reverse(view, region)
   return Region(
     min(begin, end),
-    max(begin, end)
+    max(begin, end) + 1
   )

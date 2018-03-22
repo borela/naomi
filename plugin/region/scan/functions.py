@@ -75,4 +75,8 @@ def search_non_whitespace_reverse(view, region, stop_on_line_feed = False):
   if end < begin:
     end = begin
 
-  return scan_reverse(view, end, __predicate, begin)
+  result = scan_reverse(view, end, __predicate, begin)
+  if view.substr(result).isspace():
+    result -= 1
+
+  return result

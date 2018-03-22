@@ -221,6 +221,11 @@ class NaomiToggleJsxCommentCommand(TextCommand):
 
     # Toggle comments.
     for region in reversed(consolidated_regions):
+      # Final tweaks to the affected region.
+      region = trim_region(view, region)
+      if not block:
+        region = expand_partial_lines(view, region)
+
       # If the beginning of the region is a string but not the beginning of the
       # string, it’ll not be possible to comment this region.
       scopes = view.scope_name(region.begin())
@@ -235,11 +240,7 @@ class NaomiToggleJsxCommentCommand(TextCommand):
 
       # Block comments.
       if block:
-        region = trim_region(view, region)
         comment_block(view, edit, region)
-        continue
-
+      else:
       # Line comments.
-      region = trim_region(view, region)
-      region = expand_partial_lines(view, region)
-      comment_lines(view, edit, region)
+        comment_lines(view, edit, region)

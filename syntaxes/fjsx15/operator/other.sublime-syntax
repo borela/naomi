@@ -20,7 +20,7 @@ contexts:
   main:
     - match: yield\b
       scope: keyword.control.flow.js.fjsx15
-      set: [ optional-tail, head ]
+      set: [ optional-tail, yield-head ]
     # |  Operator  |  Description        |
     # |:----------:|:--------------------|
     # |    ...     | Spread.             |
@@ -70,3 +70,6 @@ contexts:
     - match: ":"
       scope: keyword.operator.ternary.js.fjsx15
       set: optional-expression
+
+  yield-head:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax#head

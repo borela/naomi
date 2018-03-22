@@ -59,6 +59,7 @@ contexts:
       pop: true
 
   close-object:
+    - meta_scope: meta.object-literal.js.jest-snapshot
     - match: \}
       scope: punctuation.section.block.end.js.jest-snapshot
       pop: true
@@ -78,7 +79,8 @@ contexts:
       scope: punctuation.separator.comma.js.jest-snapshot
 
   key:
-    - include: js-literals
+    - meta_scope: meta.object-literal.key.jest-snapshot
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/object/property.sublime-syntax#any-key
 
   key-bind:
     - match: ":"

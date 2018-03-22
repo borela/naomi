@@ -62,8 +62,7 @@ contexts:
     - match: \}
       scope: punctuation.section.block.end.js.jest-snapshot
       pop: true
-    - match: \,
-      scope: punctuation.separator.comma.js.jest-snapshot
+    - include: comma-no-pop
     - match: (?=\S)
       push: [ key-value, key-bind, key ]
 

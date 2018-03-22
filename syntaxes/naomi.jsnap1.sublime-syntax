@@ -41,11 +41,17 @@ contexts:
       scope: punctuation.terminator.js.jest-snapshot
 
   array:
-    - match: (\[)\s*(])
-      captures:
-        1: punctuation.section.brackets.begin.js.jest-snapshot
-        2: punctuation.section.brackets.begin.js.jest-snapshot
+    - match: \[
+      scope: punctuation.section.brackets.begin.js.jest-snapshot
+      set: array-close
+
+  array-close:
+    - match: \]
+      scope: punctuation.section.brackets.end.js.jest-snapshot
       pop: true
+    - include: comma-no-pop
+    - match: (?=\S)
+      push: snapshot-content
 
   assignment:
     - match: \=
@@ -68,6 +74,10 @@ contexts:
     - match: (?=\S)
       push: snapshot-content
 
+  comma-no-pop:
+    - match: \,
+      scope: punctuation.separator.comma.js.jest-snapshot
+
   key:
     - include: js-literals
 
@@ -77,12 +87,10 @@ contexts:
       pop: true
 
   key-value:
-    - match: (?xi)(?={{commonIdentifier}}\s*\[])
-      set: type-array
     # Core constants.
-    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
-    # Literals.
-    - include: js-literals
+    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax#constants
+    # Other values.
+    - include: snapshot-content
 
   js-literals:
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
@@ -113,6 +121,9 @@ contexts:
     # Object {}
     - match: (?xi)(?={{commonIdentifier}}\s*{)
       set: [ object, type ]
+    # Type[].
+    - match: (?xi)(?={{commonIdentifier}}\s*\[)
+      set: type-array
     # JSX.
     - match: (?xi)(?=<{{commonIdentifier}})
       set: [ meta-jsx, jsx ]

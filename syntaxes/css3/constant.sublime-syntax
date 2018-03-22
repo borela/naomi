@@ -201,6 +201,7 @@ contexts:
           | disabled
           | dotted
           | ease
+            (?:-(?>in|out))?
           | ellipsis
           | ellipse
           | false

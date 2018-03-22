@@ -28,12 +28,28 @@
 
   // Property.
   .support.type.property-name {
-    foreground: $cyan-a400;
+    foreground: $cyan-300;
   }
 
-  // Custom property.
-  .support.type.custom-property {
-    foreground: $gray-300;
+  .support.type.vendor-prefix {
+    foreground: $cyan-300;
+    fontStyle: italic
+  }
+
+  // Custom property & media.
+  .support.type {
+    &.custom-property {
+      foreground: $gray-300;
+    }
+
+    &.custom-media {
+      foreground: $yellow-300;
+    }
+
+    &.custom-selector {
+      foreground: $teal-300;
+      fontStyle: italic
+    }
   }
 
   // Any other unrecognized property.

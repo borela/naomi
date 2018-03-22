@@ -14,19 +14,11 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    # Closing tag.
-    - match: (</)(style)(>)
-      captures:
-        0: meta.tag.close.html.html5
-        1: punctuation.definition.tag.begin.html.html5
-        2: entity.name.tag.html.html5
-        3: punctuation.definition.tag.end.html.html5
-      set: meta
+    - include: closing-tag
     # Open tag.
     - match: (<)(style)\b
       captures:
@@ -37,17 +29,23 @@ contexts:
   close-open-tag:
     - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
 
+  closing-tag:
+    - match: (</)(style)(>)
+      captures:
+        0: meta.tag.close.html.html5
+        1: punctuation.definition.tag.begin.html.html5
+        2: entity.name.tag.html.html5
+        3: punctuation.definition.tag.end.html.html5
+      set: meta
+
   meta:
     - meta_scope: meta.tag.html.html5
     - match: ""
       pop: true
 
-  # TODO: When the embed action become available for non paying users, update this
-  # section of code to simplify the syntax.
   script:
     - clear_scopes: true
-    - match: (?=</style\b)
-      pop: true
+    - include: closing-tag
     - match: ""
       push: scope:source.css
       with_prototype:

@@ -14,26 +14,34 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]\-]*
+  cssIdentifier: (?!--)[_[:alpha:]\-][_[:alnum:]\-]*
 
 contexts:
   main:
+    - include: apply
     - include: empty-statement
     - include: charset
     - include: conditional-group-rules
     - include: counter-style
+    - include: custom-media
+    - include: custom-selector
     - include: font-face
     - include: keyframes
     - include: namespace
+    - include: nest
     - include: import
     - include: page
     - include: viewport
+
+  apply:
+    - match: (@)apply\b
+      captures:
+        0: keyword.control.at-rule.apply.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [ meta-apply, custom-property ]
 
   charset:
     - match: (@)charset\b
@@ -42,23 +50,8 @@ contexts:
         1: punctuation.definition.keyword.css.css3
       set: [ meta-charset, double-quoted-string ]
 
-  close-conditional-group-body:
-    - meta_scope: meta.block.css.css3
-    # Close;
-    - match: \}
-      scope: punctuation.section.block.end.css.css3
-      pop: true
-    # Contents.
-    - match: (?=\S)
-      push:
-        - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
-        - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
-
   conditional-group-body:
-    - match: \{
-      scope: punctuation.section.block.begin.css.css3
-      set: close-conditional-group-body
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block.sublime-syntax
 
   conditional-group-rules:
     - match: (@)document\b
@@ -87,9 +80,40 @@ contexts:
   counter-style-name:
     - match: |
         (?xi)
-        {{commonIdentifier}}
+        {{cssIdentifier}}
       scope: entity.other.counter-style.css.css3
       pop: true
+
+  custom-media:
+    - match: (@)custom-media\b
+      captures:
+        0: keyword.control.at-rule.media.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [
+        meta-custom-media,
+        optional-media-query-list,
+        custom-media-identifier
+      ]
+
+  custom-media-identifier:
+    - include: Packages/Naomi/syntaxes/css3/custom-media-identifier.sublime-syntax
+
+  custom-selector:
+    - match: (@)custom-selector\b
+      captures:
+        0: keyword.control.at-rule.media.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [
+        meta-custom-selector,
+        selector-list,
+        custom-selector-identifier
+      ]
+
+  custom-selector-identifier:
+    - include: Packages/Naomi/syntaxes/css3/selector/custom.sublime-syntax
+
+  custom-property:
+    - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax#custom
 
   double-quoted-string:
     - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
@@ -122,7 +146,7 @@ contexts:
   keyframe-name:
     - match: |
         (?xi)
-        {{commonIdentifier}}
+        {{cssIdentifier}}
       scope: entity.other.animation-name.css.css3
       pop: true
 
@@ -133,12 +157,24 @@ contexts:
         1: punctuation.definition.keyword.css.css3
       set: [ meta-keyframes, keyframe-block-list, keyframe-name ]
 
+  meta-apply:
+    - meta_scope: meta.at-rule.apply.css.css3
+    - include: pop-now
+
   meta-charset:
     - meta_scope: meta.at-rule.charset.css.css3
     - include: pop-now
 
   meta-counter-style:
     - meta_scope: meta.at-rule.counter-style.css.css3
+    - include: pop-now
+
+  meta-custom-media:
+    - meta_scope: meta.at-rule.custom-media.css.css3
+    - include: pop-now
+
+  meta-custom-selector:
+    - meta_scope: meta.at-rule.custom-selector.css.css3
     - include: pop-now
 
   meta-document:
@@ -165,6 +201,10 @@ contexts:
     - meta_scope: meta.at-rule.namespace.css.css3
     - include: pop-now
 
+  meta-nest:
+    - meta_scope: meta.at-rule.nest.css.css3
+    - include: pop-now
+
   meta-page:
     - meta_scope: meta.at-rule.page.css.css3
     - include: pop-now
@@ -184,13 +224,20 @@ contexts:
         1: punctuation.definition.keyword.css.css3
       set: [ meta-namespace, string-or-url, optional-namespace-prefix ]
 
+  nest:
+    - match: (@)nest\b
+      captures:
+        0: keyword.control.at-rule.nest.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: [ meta-nest, ruleset-block,  selector-list ]
+
   optional-media-query-list:
     - include: Packages/Naomi/syntaxes/css3/optional-media-query-list.sublime-syntax
 
   optional-namespace-prefix:
     - match: |
         (?xi)
-        {{commonIdentifier}}\b
+        {{cssIdentifier}}\b
         (?!\s*\()
       scope: entity.name.namespace.css.css3
       pop: true
@@ -216,6 +263,9 @@ contexts:
 
   ruleset-block:
     - include: Packages/Naomi/syntaxes/css3/ruleset/block.sublime-syntax
+
+  selector-list:
+    - include: Packages/Naomi/syntaxes/css3/ruleset/selector-list.sublime-syntax
 
   string-or-url:
     - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax

@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
@@ -169,17 +168,21 @@ contexts:
           | wheat
           | white(?:smoke)?
           | yellow(?:green)?
-        )
+        )\b
+        (?!-)
       scope: support.constant.color.css.css3
       pop: true
 
   other:
     - match: |
         (?x)
-        (?> absolute
+        (?> a4
+          | absolute
           | alternate
           | all
           | at
+          | auto-fill
+          | auto-fit
           | auto
           | baseline
           | block
@@ -198,6 +201,7 @@ contexts:
           | disabled
           | dotted
           | ease
+            (?:-(?>in|out))?
           | ellipsis
           | ellipse
           | false
@@ -207,6 +211,7 @@ contexts:
           | flex
           | forwards
           | hidden
+          | grid
           | infinite
           | inline-block
           | inline-flex
@@ -218,6 +223,7 @@ contexts:
           | italic
           | landscape
           | left
+          | lining-nums
           | list-item
           | middle
           | no-repeat
@@ -238,12 +244,14 @@ contexts:
           | run-in
           | screen
           | search
+          | small-caps
+          | solid
           | space-arround
           | space-between
           | speech
-          | solid
-          | submit
           | sub
+          | submit
+          | system-ui
           | super
           | table-caption
           | table-cell
@@ -260,6 +268,7 @@ contexts:
           | tv
           | visible
           | uppercase
-        )
+        )\b
+        (?!-)
       scope: support.constant.property-value.css.css3
       pop: true

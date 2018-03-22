@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -43,12 +42,14 @@ variables:
     (?> c(?>ap|h)
       # em, ex
       | e[mx]
+      | fr
       | ic
       | lh
       # rem, rlh
       | r(?>em|lh)
       # vb, vh, vi, vmax, vmin, vw
       | v(?>[bhiw]|m(?>ax|in))
+      | x
     )
 
   absoluteLengthUnits: |

@@ -33,7 +33,8 @@ Enhanced syntax definitions for Sublime Text 3.
   * [Node globals](//nodejs.org/api/globals.html);
   * [Jest globals](//facebook.github.io/jest/docs/en/api.html);
   * [Flow](//flow.org);
-  * [JSX](//reactjs.org/docs/introducing-jsx.html);
+  * [JSX](//reactjs.org/docs/introducing-jsx.html) with complete support for
+    [Emmet](//github.com/sergeche/emmet-sublime);
 * HTML 5+;
 * MQL4 (Updating);
 * Jest Snapshot;
@@ -56,8 +57,10 @@ Enhanced syntax definitions for Sublime Text 3.
 
 ### Other enhancements
 
+* JS/JSX comment toggle;
 * Pressing enter between `()`, `[]`, `""`, `''` and ``` `` ```  will have the same
   behavior as `{}`;
+
 ## Installation
 
 #### Manual installation

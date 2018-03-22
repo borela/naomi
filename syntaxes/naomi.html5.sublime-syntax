@@ -14,6 +14,7 @@
 # the License.
 
 name: HTML 5
+scope: text.html
 
 file_extensions:
   - html
@@ -32,8 +33,6 @@ file_extensions:
   - tpl5
 
 first_line_match: <!DOCTYPE html>
-
-scope: text.html
 
 contexts:
   main:

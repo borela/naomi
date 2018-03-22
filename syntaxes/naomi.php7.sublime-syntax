@@ -14,12 +14,11 @@
 # the License.
 
 name: PHP
+scope: text.html
 
 file_extensions:
   - php
   - php7
-
-scope: text.html
 
 contexts:
   main:

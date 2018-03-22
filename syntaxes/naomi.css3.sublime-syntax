@@ -14,12 +14,11 @@
 # the License.
 
 name: CSS
+scope: source.css
 
 file_extensions:
   - css
   - css3
-
-scope: source.css
 
 contexts:
   main:
@@ -29,7 +28,9 @@ contexts:
   entry:
     - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
     - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
 
   meta:
     - meta_scope: meta.naomi

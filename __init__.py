@@ -10,5 +10,4 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .plugin.RunSyntaxTests import *
-from .plugin.ToggleJsxComment import *
+from .plugin import *

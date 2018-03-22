@@ -1093,7 +1093,18 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#00e5ff</string>
+				<string>#4dd0e1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .support.type.vendor-prefix</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#4dd0e1</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1103,6 +1114,26 @@
 			<dict>
 				<key>foreground</key>
 				<string>#e0e0e0</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .support.type.custom-media</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#fff176</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .support.type.custom-selector</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#4db6ac</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1608,7 +1639,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#00e5ff</string>
+				<string>#4dd0e1</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1694,6 +1725,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#B39DDB80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.variable.other.namespace</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1828,6 +1868,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#e0e0e0</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.variable.other.component</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>

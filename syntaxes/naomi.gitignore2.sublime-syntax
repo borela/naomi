@@ -14,11 +14,10 @@
 # the License.
 
 name: Git Ignore
+scope: source.git.ignore
 
 file_extensions:
   - gitignore
-
-scope: source.git.ignore
 
 contexts:
   main:

@@ -14,11 +14,12 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
-  commonIdentifier: (?!--).[_[:alnum:]\-]*
+  cssIdentifier: (?!--)[_[:alpha:]\-][_[:alnum:]\-]*
+
+  customProperty: (--)([_[:alnum:]\-]*)
 
   coreProperties: |
     (?> additive-symbols
@@ -337,21 +338,6 @@ variables:
       | footnote-(?>display|policy)
       | gap
       | glyph-orientation-vertical
-      | grid
-        (?:-
-          # grid-area
-          (?> area
-            # grid-auto-coolums, grid-auto-flow, grid-auto-rows
-            | auto(?:-(?>columns|flow|rows))
-            # grid-column, grid-column-end, grid-column-start
-            | column(?:-(?>end|start))?
-            # grid-row, grid-row-end, grid-row-start
-            | row(?:-(?>end|start))?
-            # grid-template, grid-template-areas, grid-template-columns,
-            # grid-template-rows
-            | template(?:-(?>areas|columns|rows))?
-          )
-        )?
       | hanging-punctuation
       | height
       | hyphenate-
@@ -778,8 +764,11 @@ contexts:
       pop: true
 
   custom:
-    - match: --[_[:alnum:]\-]*
-      scope: support.type.custom-property.css.css3
+    - match: (?i){{customProperty}}
+      captures:
+        0: support.type.custom-property.css.css3
+        1: punctuation.definition.custom-property.css.css3
+        2: support.type.custom-property.name.css.css3
       pop: true
 
   prefixed:
@@ -793,6 +782,6 @@ contexts:
       pop: true
 
   other:
-    - match: (?i){{commonIdentifier}}
+    - match: (?i){{cssIdentifier}}
       scope: variable.other.type.property-name.css.css3
       pop: true

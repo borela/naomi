@@ -14,14 +14,10 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
-  commonIdentifier: |
-    (?!--)
-    [_[:alpha:]\-]
-    [_[:alnum:]\-]*
+  cssIdentifier: (?!--)[_[:alpha:]\-][_[:alnum:]\-]*
 
 contexts:
   main:
@@ -83,13 +79,13 @@ contexts:
     - match: |
         (?xi)
         (?=
-          {{commonIdentifier}}
+          {{cssIdentifier}}
           \s*\(
         )
       set: [ meta, arguments, identifier ]
 
   identifier:
-    - match: (?xi){{commonIdentifier}}
+    - match: (?xi){{cssIdentifier}}
       scope: variable.function.css.css3
       pop: true
 
@@ -108,13 +104,18 @@ contexts:
     - match: |
         (?x)
         (?> attr
+          | blur
           | cubic-bezier
           | format
+          | gray
           | hsla?
+          | hwb
+          | image-set
           | linear-gradient
           | polygon
           | radial-gradient
           | repeating-(?>linear|radial)-gradient
+          | repeat
           | rotate
           | rgba?
         )

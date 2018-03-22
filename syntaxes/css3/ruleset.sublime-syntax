@@ -14,12 +14,11 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: (?=\S)
+    - match: ""
       set: [ meta, block, selector-list ]
 
   block:

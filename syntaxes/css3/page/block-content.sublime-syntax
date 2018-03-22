@@ -14,13 +14,10 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]\-]*
+  cssIdentifier: (?!--)[_[:alpha:]\-][_[:alnum:]\-]*
 
 contexts:
   main:
@@ -53,7 +50,7 @@ contexts:
     # Properties.
     - match: |
         (?xi)
-        (?={{commonIdentifier}})
+        (?={{cssIdentifier}})
       set: [ delimiter, property ]
 
   comment-no-pop:

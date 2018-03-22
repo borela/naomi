@@ -14,13 +14,10 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]\-]*
+  cssIdentifier: (?!--)[_[:alpha:]\-][_[:alnum:]\-]*
 
 contexts:
   main:
@@ -63,7 +60,7 @@ contexts:
     # Named page.
     - match: |
         (?xi)
-        {{commonIdentifier}}\b
+        {{cssIdentifier}}\b
       scope: entity.name.page.css.css3
     # Pseudo class.
     - match: (:)((?>blank|first|left|recto|right|verso))

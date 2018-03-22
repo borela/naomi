@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -73,7 +72,7 @@ contexts:
 
   optional-alias:
     - match: ":"
-      scope: punctuation.separator.key-alias.js.fjsx15
+      scope: punctuation.binding.js.fjsx15
       set: alias
     - match: (?=\S)
       pop: true

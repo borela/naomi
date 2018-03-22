@@ -14,13 +14,12 @@
 # the License.
 
 name: MQL 4
+scope: source.mql
 
 file_extensions:
   - mq4
   - mqh4
   - mql4
-
-scope: source.mql
 
 contexts:
   main:

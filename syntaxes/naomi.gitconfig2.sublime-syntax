@@ -14,11 +14,10 @@
 # the License.
 
 name: Git Config
+scope: source.git.config
 
 file_extensions:
   - gitconfig
-
-scope: source.git.config
 
 contexts:
   main:

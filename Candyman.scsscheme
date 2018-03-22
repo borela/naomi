@@ -29,6 +29,7 @@
 @import 'schemes/candyman/json';
 @import 'schemes/candyman/keyword';
 @import 'schemes/candyman/markup';
+@import 'schemes/candyman/namespace';
 @import 'schemes/candyman/storage';
 @import 'schemes/candyman/punctuation';
 @import 'schemes/candyman/string';

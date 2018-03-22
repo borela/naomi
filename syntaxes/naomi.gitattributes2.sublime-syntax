@@ -14,11 +14,10 @@
 # the License.
 
 name: Git Attributes
+scope: source.git.attributes
 
 file_extensions:
   - gitattributes
-
-scope: source.git.attributes
 
 contexts:
   main:

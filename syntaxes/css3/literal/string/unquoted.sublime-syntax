@@ -14,14 +14,10 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: |
-        (?xi)
-        (?!--)
-        [_[:alpha:]\-]+
+    - match: (?!--)[_[:alnum:]\-]+
       scope: string.unquoted.css.css3
       pop: true

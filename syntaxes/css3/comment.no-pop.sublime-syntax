@@ -14,11 +14,10 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
     - match: (?=/\*)
       push:
-        - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
+        - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax

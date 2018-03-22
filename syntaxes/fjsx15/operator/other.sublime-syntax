@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
@@ -42,7 +41,6 @@ contexts:
     - match: \.(?!\.)
       scope: punctuation.accessor.js.fjsx15
       set: [ optional-tail, head ]
-    - match: \.(?!\.)
     - match: \?
       scope: keyword.operator.ternary.js.fjsx15
       set: [
@@ -51,6 +49,7 @@ contexts:
       ]
 
   head:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax

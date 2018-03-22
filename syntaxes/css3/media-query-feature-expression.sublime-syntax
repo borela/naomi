@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
@@ -26,12 +25,16 @@ contexts:
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
 
+  custom-property:
+    - include: Packages/Naomi/syntaxes/css3/custom-media-identifier.sublime-syntax
+
   else-pop:
     - match: (?=\S)
       pop: true
 
   head:
     - include: comment-no-pop
+    - include: custom-property
     - match: |
         (?x)
         ((?> any-(?>pointer|hover)
@@ -71,7 +74,7 @@ contexts:
           | >=?
         )
       scope: keyword.operator.comparison.css.css3
-      push: head
+      set: head
     - include: else-pop
 
   value:

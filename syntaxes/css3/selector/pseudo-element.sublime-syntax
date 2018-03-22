@@ -14,20 +14,17 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
-  commonIdentifier: |
-    [_[:alpha:]]
-    [_[:alnum:]\-]*
+  cssIdentifier: (?!--)[_[:alpha:]\-][_[:alnum:]\-]*
 
 contexts:
   main:
     - include: css2
     - include: other
     - include: fallback
-    
+
   css2:
     # after, before, first-letter, first-line,
     - match: (?xi)(::?)(?>after|before|first-(?>letter|line))\b
@@ -42,7 +39,7 @@ contexts:
     - match: (?=\S)
 
   fallback:
-    - match: (?xi)(::){{commonIdentifier}}
+    - match: (?xi)(::){{cssIdentifier}}
       captures:
         0: variable.other.pseudo-element.class.css.cs3
         1: punctuation.definition.entity.css.css3

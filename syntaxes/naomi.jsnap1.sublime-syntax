@@ -140,7 +140,8 @@ contexts:
   type:
     - match: |
         (?x)
-        (?> Object
+        (?> Array
+          | Object
           | Promise
         )
       scope: support.type.js.jest-snapshot

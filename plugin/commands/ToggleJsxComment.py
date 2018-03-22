@@ -118,7 +118,7 @@ def resolve_required_comment_type(view, offset):
 
 def uncomment_region(view, edit, region):
   begin = region.begin()
-  end = region.end()
+  end = region.end() - 1
 
   # We will loop backwards, this means that it will hit the closing punctuation
   # for block comments first.
@@ -221,8 +221,12 @@ class NaomiToggleJsxCommentCommand(TextCommand):
 
     # Toggle comments.
     for region in reversed(consolidated_regions):
-      # Final tweaks to the affected region.
       region = trim_region(view, region)
+
+      if not must_comment(view, region):
+        uncomment_region(view, edit, region)
+        continue
+
       if not block:
         region = expand_partial_lines(view, region)
 
@@ -233,10 +237,6 @@ class NaomiToggleJsxCommentCommand(TextCommand):
       if 'string' in scopes:
         if 'punctuation.definition.string.begin' not in scopes:
           continue
-
-      if not must_comment(view, region):
-        uncomment_region(view, edit, region)
-        continue
 
       # Block comments.
       if block:

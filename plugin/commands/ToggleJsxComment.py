@@ -63,7 +63,7 @@ def comment_lines(view, edit, region):
   margin = sys.maxsize
   for line in lines:
     margin = min(
-      search_non_whitespace(view, line) - line.begin(),
+      search_non_whitespace(view, line) - line.begin() + 1,
       margin
     )
 

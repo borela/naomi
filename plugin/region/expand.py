@@ -95,12 +95,11 @@ def expand_partial_lines(view, region):
 
   begin = region.begin()
   end = region.end()
-  char = view.substr(begin)
 
-  if region.size() > 1 and char == '\n':
+  if view.substr(begin) == '\n' and view.substr(begin - 1) != '\n':
     begin -= 1
 
   begin = scan_reverse(view, begin, __predicate)
-  end = scan(view, end - 1, __predicate)
+  end = scan(view, end, __predicate)
 
-  return Region(begin, end + 1)
+  return Region(begin, end)

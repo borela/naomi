@@ -14,6 +14,9 @@ from .scan import *
 from sublime import Region
 
 def trim_region(view, region):
+  # If the region contains just 1 character, it does not need to be trimmed.
+  if region.size() < 2:
+  	return region
   begin = search_non_whitespace(view, region)
   end = search_non_whitespace_reverse(view, region)
   return Region(

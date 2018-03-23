@@ -14,12 +14,16 @@ from .scan import *
 from sublime import Region
 
 def trim_region(view, region):
-  # If the region contains just 1 character, it does not need to be trimmed.
-  if region.size() < 2:
+  # The region is already collapsed.
+  if region.size() < 1:
   	return region
+
   begin = search_non_whitespace(view, region)
-  end = search_non_whitespace_reverse(view, region)
-  return Region(
-    min(begin, end),
-    max(begin, end) + 1
-  )
+  end = search_non_whitespace_reverse(view, region) + 1
+
+  # The entire line is empty.
+  if end < begin:
+  	begin = end
+  	end = begin
+
+  return Region(begin, end)

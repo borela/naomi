@@ -100,6 +100,6 @@ def expand_partial_lines(view, region):
     begin -= 1
 
   begin = scan_reverse(view, begin, __predicate)
-  end = scan(view, end, __predicate)
+  end = scan(view, end - 1, __predicate) + 1
 
   return Region(begin, end)

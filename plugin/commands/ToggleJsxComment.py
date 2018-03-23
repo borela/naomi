@@ -17,6 +17,16 @@ import sys
 from ..region import *
 from sublime_plugin import TextCommand
 
+def can_comment(view, region):
+  # If the beginning of the region is a string but not the beginning of the
+  # string, it’ll not be possible to comment this region.
+  scopes = view.scope_name(region.begin())
+
+  if 'string' in scopes:
+    if 'punctuation.definition.string.begin' not in scopes:
+      return False
+  return True
+
 def comment_block(view, edit, region):
   begin = region.begin()
   end = region.end()
@@ -215,28 +225,27 @@ class NaomiToggleJsxCommentCommand(TextCommand):
 
     # Toggle comments.
     for region in reversed(consolidated_regions):
-      trimmed_region = trim_region(view, region)
+      # Block comments.
+      if block:
+        trimmed_region = trim_region(view, region)
 
-      if not must_comment(view, trimmed_region):
-        uncomment_region(view, edit, trimmed_region)
-        continue
-
-      # This will allow the cursor to be in the middle of the string and still
-      # detect correctly if it is possible to comment the region.
-      if not block:
-        region = expand_partial_lines(view, region)
-
-      # If the beginning of the region is a string but not the beginning of the
-      # string, it’ll not be possible to comment this region.
-      scopes = view.scope_name(trimmed_region.begin())
-
-      if 'string' in scopes:
-        if 'punctuation.definition.string.begin' not in scopes:
+        if not must_comment(view, trimmed_region):
+          uncomment_region(view, edit, trimmed_region)
           continue
 
-      if block:
-        # Block comments.
+        if not can_comment(view, trimmed_region):
+          continue
+
         comment_block(view, edit, trimmed_region)
       else:
+        expanded_partial_lines = expand_partial_lines(view, region)
+
+        if not must_comment(view, expanded_partial_lines):
+          uncomment_region(view, edit, expanded_partial_lines)
+          continue
+
+        if not can_comment(view, expanded_partial_lines):
+          continue
+
         # Line comments.
-        comment_lines(view, edit, region)
+        comment_lines(view, edit, expanded_partial_lines)

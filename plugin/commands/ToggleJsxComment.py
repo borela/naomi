@@ -192,12 +192,6 @@ class NaomiToggleJsxCommentCommand(TextCommand):
     expanded_regions = []
     for region in self.view.sel():
       scopes = self.view.scope_name(region.begin())
-
-      # If the region is just the cursor and is not in a comment, we will expand
-      # it to affect the entire line.
-      if region.size() < 1 and 'comment' not in scopes:
-        region = expand_partial_lines(view, region)
-
       expanded = expand_partial_comments_with_jsx(view, region)
       expanded_regions.append(expanded)
 

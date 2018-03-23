@@ -215,10 +215,10 @@ class NaomiToggleJsxCommentCommand(TextCommand):
 
     # Toggle comments.
     for region in reversed(consolidated_regions):
-      region = trim_region(view, region)
+      trimmed_region = trim_region(view, region)
 
-      if not must_comment(view, region):
-        uncomment_region(view, edit, region)
+      if not must_comment(view, trimmed_region):
+        uncomment_region(view, edit, trimmed_region)
         continue
 
       # This will allow the cursor to be in the middle of the string and still
@@ -228,15 +228,15 @@ class NaomiToggleJsxCommentCommand(TextCommand):
 
       # If the beginning of the region is a string but not the beginning of the
       # string, it’ll not be possible to comment this region.
-      scopes = view.scope_name(region.begin())
+      scopes = view.scope_name(trimmed_region.begin())
 
       if 'string' in scopes:
         if 'punctuation.definition.string.begin' not in scopes:
           continue
 
-      # Block comments.
       if block:
-        comment_block(view, edit, region)
+        # Block comments.
+        comment_block(view, edit, trimmed_region)
       else:
-      # Line comments.
+        # Line comments.
         comment_lines(view, edit, region)

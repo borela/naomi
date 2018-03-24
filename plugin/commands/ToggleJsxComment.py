@@ -17,33 +17,41 @@ import sys
 from ..region import *
 from sublime_plugin import TextCommand
 
+def can_comment(view, region):
+  # If the beginning of the region is a string but not the beginning of the
+  # string, it’ll not be possible to comment this region.
+  scopes = view.scope_name(region.begin())
+
+  if 'string' in scopes:
+    if 'punctuation.definition.string.begin' not in scopes:
+      return False
+  return True
+
 def comment_block(view, edit, region):
   begin = region.begin()
   end = region.end()
-  empty_region = False
+  empty_line = False
 
-  if begin == end and view.substr(begin).isspace():
-    # Added to ensure that the cursor won’t be moved after the comment.
+  # Added to ensure that the cursor won’t be moved after the comment.
+  if begin == end:
     view.replace(edit, Region(end), '!')
-    empty_region = True
+    empty_line = True
 
   comment_type = resolve_required_comment_type(view, begin)
 
   if comment_type == 'jsx':
-    if empty_region:
-      view.insert(edit, end, " */}")
-      view.erase(edit, Region(end, end))
+    if empty_line:
+      view.insert(edit, end + 1, ' */}')
+      view.erase(edit, Region(end, end + 1))
     else:
-      view.insert(edit, end, " */}")
-
+      view.insert(edit, end, ' */}')
     view.insert(edit, begin, "{/* ")
   else:
-    if empty_region:
-      view.insert(edit, end, " */")
-      view.erase(edit, Region(end, end))
+    if empty_line:
+      view.insert(edit, end + 1, ' */')
+      view.erase(edit, Region(end, end + 1))
     else:
-      view.insert(edit, end, " */")
-
+      view.insert(edit, end, ' */')
     view.insert(edit, begin, "/* ")
 
 def comment_lines(view, edit, region):
@@ -52,14 +60,16 @@ def comment_lines(view, edit, region):
   # Calculate the margin.
   margin = sys.maxsize
   for line in lines:
+    non_whitespace_pos = search_non_whitespace(view, line)
+    line_begin = line.begin()
     margin = min(
-      search_non_whitespace(view, line) - line.begin(),
+      non_whitespace_pos - line_begin,
       margin
     )
 
   # Analyse the type of comment that must be used for the entire block.
   first_line = lines[0]
-  comment_type = resolve_required_comment_type(view, first_line.begin() + margin)
+  comment_type = resolve_required_comment_type(view, first_line.begin())
 
   # Comment.
   for line in reversed(lines):
@@ -67,23 +77,24 @@ def comment_lines(view, edit, region):
     end = max(line.end(), begin)
     empty_line = False
 
-    if begin == end and view.substr(begin).isspace():
-      # Added to ensure that the cursor won’t be moved after the comment.
+    # Added to ensure that the cursor won’t be moved after the comment.
+    if begin == end:
       view.replace(edit, Region(end), '!')
       empty_line = True
 
     if comment_type == 'jsx':
-      # JSX.
+      # JSX comment.
       if empty_line:
-        view.insert(edit, end, " */}")
-        view.erase(edit, Region(end, end))
+        view.insert(edit, end + 1, ' */}')
+        view.erase(edit, Region(end, end + 1))
       else:
-        view.insert(edit, end, " */}")
-
+        view.insert(edit, end, ' */}')
       view.insert(edit, begin, "{/* ")
     else:
       # Normal JS comment.
       view.insert(edit, begin, "// ")
+      if empty_line:
+        view.erase(edit, Region(begin + 3, begin + 4))
 
 # Returns true if the region must be commented or not.
 def must_comment(view, region):
@@ -192,12 +203,6 @@ class NaomiToggleJsxCommentCommand(TextCommand):
     expanded_regions = []
     for region in self.view.sel():
       scopes = self.view.scope_name(region.begin())
-
-      # If the region is just the cursor and is not in a comment, we will expand
-      # it to affect the entire line.
-      if region.size() < 1 and 'comment' not in scopes:
-        region = expand_partial_lines(view, region)
-
       expanded = expand_partial_comments_with_jsx(view, region)
       expanded_regions.append(expanded)
 
@@ -221,28 +226,27 @@ class NaomiToggleJsxCommentCommand(TextCommand):
 
     # Toggle comments.
     for region in reversed(consolidated_regions):
-      region = trim_region(view, region)
-
-      if not must_comment(view, region):
-        uncomment_region(view, edit, region)
-        continue
-
-      # This will allow the cursor to be in the middle of the string and still
-      # detect correctly if it is possible to comment the region.
-      if not block:
-        region = expand_partial_lines(view, region)
-
-      # If the beginning of the region is a string but not the beginning of the
-      # string, it’ll not be possible to comment this region.
-      scopes = view.scope_name(region.begin())
-
-      if 'string' in scopes:
-        if 'punctuation.definition.string.begin' not in scopes:
-          continue
-
       # Block comments.
       if block:
-        comment_block(view, edit, region)
+        trimmed_region = trim_region(view, region)
+
+        if not must_comment(view, trimmed_region):
+          uncomment_region(view, edit, trimmed_region)
+          continue
+
+        if not can_comment(view, trimmed_region):
+          continue
+
+        comment_block(view, edit, trimmed_region)
       else:
-      # Line comments.
-        comment_lines(view, edit, region)
+        if not must_comment(view, region):
+          uncomment_region(view, edit, region)
+          continue
+
+        expanded_partial_lines = expand_partial_lines(view, region)
+
+        if not can_comment(view, expanded_partial_lines):
+          continue
+
+        # Line comments.
+        comment_lines(view, edit, expanded_partial_lines)

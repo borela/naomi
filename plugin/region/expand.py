@@ -91,13 +91,15 @@ def expand_partial_comments_with_jsx(view, region):
 def expand_partial_lines(view, region):
   def __predicate(view, offset):
     char = view.substr(offset)
-    return char != '\n'
+    return char != '\n' and not_comment(view, offset)
 
   begin = region.begin()
-  if view.substr(begin) == '\n':
+  end = region.end()
+
+  if view.substr(begin) == '\n' and view.substr(begin - 1) != '\n':
     begin -= 1
 
   begin = scan_reverse(view, begin, __predicate)
-  end = scan(view, region.end() - 1, __predicate)
+  end = scan(view, end - 1, __predicate) + 1
 
-  return Region(begin, end + 1)
+  return Region(begin, end)

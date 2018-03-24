@@ -55,7 +55,7 @@ def search_non_whitespace(view, region, stop_on_line_feed = False):
     return char.isspace()
 
   begin = region.begin()
-  end = region.end() - 1
+  end = region.end()
 
   if end < begin:
     end = begin

@@ -85,6 +85,7 @@ contexts:
         (?=
           {{complexType}}
           \s*=>
+          (?!\s*{)
         )
       push: [
         return,

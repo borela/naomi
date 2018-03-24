@@ -47,6 +47,9 @@ def is_offset_valid(view, offset):
 def is_whitespace(view, offset):
   return view.substr(offset).isspace()
 
+def not_comment(view, offset):
+  return not is_comment(view, offset)
+
 # Returns the string that matches the pattern.
 def search_scope(view, offset, pattern):
   scopes = view.scope_name(offset)

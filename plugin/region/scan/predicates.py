@@ -54,6 +54,9 @@ def is_comment_begin_predicate():
 def is_comment_end_predicate():
   return has_scope_predicate('punctuation.definition.comment.end')
 
+def not_comment_predicate():
+  return not_predicate(is_comment_predicate())
+
 def not_predicate(predicate):
   def __predicate(view, offset):
     return not predicate(view, offset)

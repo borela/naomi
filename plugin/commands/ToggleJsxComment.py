@@ -239,6 +239,10 @@ class NaomiToggleJsxCommentCommand(TextCommand):
 
         comment_block(view, edit, trimmed_region)
       else:
+        if region.size() < 1:
+          region = expand_partial_lines(view, region)
+          region = expand_partial_comments_with_jsx(view, region)
+
         if not must_comment(view, region):
           uncomment_region(view, edit, region)
           continue

@@ -72,6 +72,36 @@ variables:
       | setPrototypeOf
     )\b
 
+  stringFunctions: |
+    (?> from(?>CharCode|CodePoint)
+      | char(?>At|CodeAt)
+      | codePointAt
+      | concat
+      | endsWith
+      | includes
+      | indexOf
+      | lastIndexOf
+      | localeCompare
+      | match
+      | normalize
+      | pad(?>End|start)
+      | repeat
+      | replace
+      | search
+      | slice
+      | split
+      | substr(?:ing)?
+      | to
+        (?> Locale(?>Lower|Upper)
+          | LowerCase
+          | String
+          | UpperCase
+        )
+      | trim(?>Left|Right)?
+      | valueOf
+      | raw
+    )\b
+
   symbolFunctions: |
     (?> for
       | KeyFor
@@ -392,6 +422,20 @@ contexts:
       scope: support.type.object.js.fjsx15
       pop: true
 
+  string-property-or-function:
+    # Function call.
+    - match: (?x){{stringFunctions}}(?=\s*\()
+      scope: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: (?x){{stringFunctions}}
+      scope: support.function.js.fjsx15
+      pop: true
+    - include: other-property-or-function
+
   structured-data:
     - match: |
         (?x)
@@ -417,6 +461,11 @@ contexts:
     - include: other-property-or-function
 
   text-processing:
+    - match: (String)\s*(\.)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: string-property-or-function
     - match: |
         (?x)
         (?> RegExp

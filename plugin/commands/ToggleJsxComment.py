@@ -202,9 +202,15 @@ class NaomiToggleJsxCommentCommand(TextCommand):
     # Expand regions.
     expanded_regions = []
     for region in self.view.sel():
-      scopes = self.view.scope_name(region.begin())
-      expanded = expand_partial_comments_with_jsx(view, region)
-      expanded_regions.append(expanded)
+      region = expand_partial_comments_with_jsx(view, region)
+
+      if block:
+        region = trim_region(view, region)
+      else:
+        region = expand_partial_lines(view, region)
+        region = expand_partial_comments_with_jsx(view, region)
+
+      expanded_regions.append(region)
 
     # Consolidate regions.
     consolidated_regions = []
@@ -226,28 +232,14 @@ class NaomiToggleJsxCommentCommand(TextCommand):
 
     # Toggle comments.
     for region in reversed(consolidated_regions):
-      # Block comments.
+      if not must_comment(view, region):
+        uncomment_region(view, edit, region)
+        continue
+
+      if not can_comment(view, region):
+        continue
+
       if block:
-        trimmed_region = trim_region(view, region)
-
-        if not must_comment(view, trimmed_region):
-          uncomment_region(view, edit, trimmed_region)
-          continue
-
-        if not can_comment(view, trimmed_region):
-          continue
-
-        comment_block(view, edit, trimmed_region)
+        comment_block(view, edit, region)
       else:
-        region = expand_partial_lines(view, region)
-        region = expand_partial_comments_with_jsx(view, region)
-
-        if not must_comment(view, region):
-          uncomment_region(view, edit, region)
-          continue
-
-        if not can_comment(view, region):
-          continue
-
-        # Line comments.
         comment_lines(view, edit, region)

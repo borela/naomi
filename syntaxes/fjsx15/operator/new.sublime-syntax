@@ -77,10 +77,10 @@ contexts:
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
-    # Namespace.
+    # Object before target property.
     - match: (?xi)({{commonIdentifier}})\s*(\.)
       captures:
-        1: variable.other.namespace.js.fjsx15
+        1: variable.other.object.js.fjsx15
         2: punctuation.accessor.js.fjsx15
     # Class constructors.
     - match: (?x){{classIdentifier}}

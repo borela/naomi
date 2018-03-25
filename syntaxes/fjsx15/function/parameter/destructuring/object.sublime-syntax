@@ -26,6 +26,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   delimiters:
+    - include: comment-no-pop
     - match: \,
       scope: punctuation.separator.comma.js.fjsx15
       push: optional-parameter

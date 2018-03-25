@@ -30,6 +30,11 @@ variables:
       | parse(?>Float|Int)
     )\b
 
+  jsonFunctions: |
+    (?> parse
+      | stringify
+    )\b
+
   mathFunctions: |
     (?> abs
       | acosh?
@@ -346,6 +351,20 @@ contexts:
         3: support.type.js.fsjx15
       pop: true
 
+  json-property-or-function:
+    # Function call.
+    - match: (?x){{jsonFunctions}}(?=\s*\()
+      scope: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: (?x){{jsonFunctions}}
+      scope: support.function.js.fjsx15
+      pop: true
+    - include: other-property-or-function
+
   keyed-collections:
     - match: |
         (?x)
@@ -437,6 +456,11 @@ contexts:
     - include: other-property-or-function
 
   structured-data:
+    - match: (JSON)\s*(\.)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: json-property-or-function
     - match: |
         (?x)
         (?> ArrayBuffer

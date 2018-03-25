@@ -109,15 +109,32 @@ contexts:
       scope: punctuation.terminator.js.fjsx15
       pop: true
 
+  expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
   for:
     - match: for\b
       scope: keyword.control.loop.js.fjsx15
       set: [
         meta-loop-for,
         optional-statement-or-expression,
-        statement-or-expression-header,
+        for-header,
         optional-await
       ]
+
+  for-header:
+    - match: \(
+      scope: punctuation.section.group.begin.js.fjsx15
+      set: [ meta-group, for-header-end ]
+
+  for-header-end:
+    - match: \)
+      scope: punctuation.section.group.end.js.fjsx15
+      pop: true
+    - match: (?=(?>const|let|var))
+      push: statement-or-expression
+    - match: (?=\S)
+      push: expression
 
   if-else:
     - match: if\b

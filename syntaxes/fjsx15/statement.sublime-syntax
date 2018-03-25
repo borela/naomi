@@ -134,7 +134,9 @@ contexts:
     - match: (?=(?>const|let|var))
       push: statement-or-expression
     - match: (?=\S)
-      push: expression
+      push:
+        - include: empty
+        - include: expression
 
   if-else:
     - match: if\b

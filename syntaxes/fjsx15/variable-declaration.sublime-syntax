@@ -123,7 +123,7 @@ contexts:
     - match: (?=:)
       push: associated-type
     - match: \,
-      scope: punctuation.separator.js.fjsx15
+      scope: punctuation.separator.comma.js.fjsx15
       push: variable-or-constant
     - match: (?==)
       push: optional-expression

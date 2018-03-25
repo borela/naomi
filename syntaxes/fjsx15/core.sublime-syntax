@@ -109,7 +109,7 @@ contexts:
     - match: (?x){{arrayFunctions}}
       scope: support.function.js.fjsx15
       pop: true
-    - include: else-pop
+    - include: other-property-or-function
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
@@ -162,7 +162,7 @@ contexts:
     - match: warn\b
       scope: support.function.console.warn.js.fjsx15
       pop: true
-    - include: else-pop
+    - include: other-property-or-function
 
   console-error-meta-scope:
     - meta_scope: meta.function-call.console.error.js.fjsx15
@@ -349,7 +349,7 @@ contexts:
         )\b
       scope: support.constant.js.fjsx15
       pop: true
-    - include: else-pop
+    - include: other-property-or-function
 
   numbers-and-dates:
     - match: (Math)\s*(\.)
@@ -378,7 +378,10 @@ contexts:
     - match: (?x){{objectFunctions}}
       scope: support.function.js.fjsx15
       pop: true
-    - include: else-pop
+    - include: other-property-or-function
+
+  other-property-or-function:
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/other.sublime-syntax#other-property-or-function
 
   reflection:
     - match: |
@@ -411,7 +414,7 @@ contexts:
     - match: (?x){{symbolFunctions}}
       scope: support.function.js.fjsx15
       pop: true
-    - include: else-pop
+    - include: other-property-or-function
 
   text-processing:
     - match: |

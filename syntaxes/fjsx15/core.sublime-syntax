@@ -22,6 +22,50 @@ variables:
       | isArray
     )\b
 
+  dateFunctions: |
+    (?> [gs]et
+        (?> Date
+          | Day
+          | FullYear
+          | Hours
+          | Milliseconds
+          | Minutes
+          | Month
+          | Seconds
+          | Time(?>ZoneOffset)
+          | UTC
+            (?> Date
+              | Day
+              | FullYear
+              | Hours
+              | Milliseconds
+              | minutes
+              | Month
+              | Seconds
+            )
+        )
+      | now
+      | parse
+      | to
+        (?> DateString
+          | GMTString
+          | ISOString
+          | JSON
+          | Locale
+            (?> DateString
+              | Format
+              | String
+              | TimeString
+            )
+          | Source
+          | String
+          | TimeString
+          | UTCString
+          | valueOf
+        )
+      | UTC
+    )\b
+
   globalFunctions: |
     (?> decodeURI(?:Component)?
       | encodeURI(?:Component)?
@@ -243,6 +287,20 @@ contexts:
       scope: support.type.object.js.fjsx15
       pop: true
 
+  date-property-or-function:
+    # Function call.
+    - match: (?x){{dateFunctions}}(?=\s*\()
+      scope: support.function.js.fjsx15
+      set: [
+        function-call-meta-scope,
+        arguments
+      ]
+    # Function reference.
+    - match: (?x){{dateFunctions}}
+      scope: support.function.js.fjsx15
+      pop: true
+    - include: other-property-or-function
+
   else-pop:
     - match: (?=\S)
       pop: true
@@ -401,6 +459,11 @@ contexts:
     - include: other-property-or-function
 
   numbers-and-dates:
+    - match: (Date)\s*(\.)
+      captures:
+        1: support.type.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+      set: date-property-or-function
     - match: (Math)\s*(\.)
       captures:
         1: support.type.object.js.fjsx15

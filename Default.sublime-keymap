@@ -233,7 +233,7 @@
   "context": [{
     "key": "selector",
     "operator": "equal",
-    "operand": "source.jsx meta.tag - (comment, string, meta.embedded-js.jsx)",
+    "operand": "source.jsx meta.naomi meta.tag - (comment, string)",
     "match_all": true
   },{
     "operator": "equal",
@@ -249,7 +249,7 @@
   "context": [{
     "key": "selector",
     "operator": "equal",
-    "operand": "source.jsx meta.tag - (comment, string, meta.embedded-js.jsx)",
+    "operand": "source.jsx meta.naomi meta.tag - (comment, string)",
     "match_all": true
   },{
     "key": "setting.auto_id_class",
@@ -264,7 +264,7 @@
   "context": [{
     "key": "selector",
     "operator": "equal",
-    "operand": "source.jsx - (comment, string, meta.embedded-js.jsx)",
+    "operand": "source.jsx meta.naomi - (comment, string)",
     "match_all": true
   },{
     "key": "selection_empty",

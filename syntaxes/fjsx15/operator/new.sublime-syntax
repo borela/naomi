@@ -21,6 +21,11 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  # Convetion.
+  classIdentifier: |
+    [$_[:upper:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
     # new.target
@@ -72,7 +77,14 @@ contexts:
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
-    # Other constructors.
-    - match: (?xi){{commonIdentifier}}
+    # Namespace.
+    - match: (?xi)({{commonIdentifier}})(\.)
+      captures:
+        1: variable.other.namespace.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+    # Class constructors.
+    - match: (?x){{classIdentifier}}
       scope: variable.other.type.js.fjsx15
       pop: true
+    # Other expressions.
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

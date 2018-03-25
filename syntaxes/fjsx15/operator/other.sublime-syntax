@@ -37,10 +37,10 @@ contexts:
       set: optional-expression
     - match: \?\.
       scope: punctuation.accessor.optional-chain.js.fjsx15
-      set: [ optional-tail, head ]
+      set: [ optional-tail, accessor-head ]
     - match: \.(?!\.)
       scope: punctuation.accessor.js.fjsx15
-      set: [ optional-tail, head ]
+      set: [ optional-tail, accessor-head ]
     - match: \?
       scope: keyword.operator.ternary.js.fjsx15
       set: [
@@ -48,7 +48,7 @@ contexts:
         optional-expression
       ]
 
-  head:
+  accessor-head:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
@@ -58,7 +58,7 @@ contexts:
   # Used near accessor to highlight global functions and properties.
   other-property-or-function:
     - match: (?=\S)
-      set: [ optional-tail, head ]
+      set: [ optional-tail, accessor-head ]
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

@@ -12,7 +12,7 @@
 
 [{
   // Toggle JS/JSX comment (single line).
-  "keys": [ "super+forward_slash" ],
+  "keys": [ "super+/" ],
   "command": "naomi_toggle_jsx_comment",
   "args": { "block": false },
   "context": [{
@@ -23,7 +23,7 @@
   }]
 },{
   // Toggle JS/JSX comment (block).
-  "keys": [ "super+alt+forward_slash" ],
+  "keys": [ "super+alt+/" ],
   "command": "naomi_toggle_jsx_comment",
   "args": { "block": true },
   "context": [{

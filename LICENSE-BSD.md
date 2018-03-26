@@ -1,6 +1,6 @@
 # BSD License
 
-Copyright © 2016 Gerard Roche <@gerardroche>
+Copyright © 2016 Gerard Roche (<@gerardroche>)
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

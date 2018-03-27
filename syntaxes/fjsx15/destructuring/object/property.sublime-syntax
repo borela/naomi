@@ -76,7 +76,11 @@ contexts:
     - include: pop-now
 
   meta-key:
-    - meta_scope: meta.binding.destructuring.mapping.key.js.fjsx15
+    # The object literal meta scope is necessary to allow color schemes to make
+    # object destructuring keys similar to object literals.
+    - meta_scope: >-
+        meta.binding.destructuring.mapping.key.js.fjsx15
+        meta.object-literal.key.js.fjsx15
     - include: pop-now
 
   optional-bind:

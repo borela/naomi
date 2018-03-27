@@ -52,6 +52,10 @@ contexts:
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
+  co-contra-variant-no-pop:
+    - include: Packages/Naomi/syntaxes/flow1/operator/covariant.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/operator/contravariant.no-pop.sublime-syntax
+
   constant:
     # Single character.
     - match: |
@@ -114,6 +118,7 @@ contexts:
     - include: comment-no-pop
     - match: (?=[|}])
       pop: true
+    - include: co-contra-variant-no-pop
     - match: \.{3}
       scope: keyword.operator.spread.flow
       set: type-expression

@@ -17,7 +17,7 @@
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.declaration.variable.js
 //     ^ .meta.binding.destructuring.mapping.js
 //      ^^^^^^^ - .meta.binding.destructuring.mapping.js
-//      ^^^^^^^ .meta.binding.destructuring.mapping.key.js
+//      ^^^^^^^ .meta.binding.destructuring.mapping.key.computed.js
 //             ^^^^^^^^^^^^ .meta.binding.destructuring.mapping.js
 //                            ^^^^^ .meta.object-literal.js
 // ^^^ .storage.type.js

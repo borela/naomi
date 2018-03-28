@@ -14,11 +14,17 @@
 # the License.
 
 name: PHP
-scope: text.html
+scope: embedding.php
 
 file_extensions:
   - php
+  - php3
+  - php4
+  - php5
   - php7
+  - phps
+  - phpt
+  - phtml
 
 contexts:
   main:

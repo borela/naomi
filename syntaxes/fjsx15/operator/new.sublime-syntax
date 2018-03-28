@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -22,65 +21,70 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  # Convetion.
+  classIdentifier: |
+    [$_[:upper:]]
+    [$_[:alnum:]]*
+
 contexts:
   main:
     # new.target
-    - match: |
-        (?xi)
-        \s*(new)
-        \s*(\.)
-        \s*(target)
+    - match: (new)\s*(\.)\s*(target)
       captures:
         1: support.type.object.js.fjsx15
         2: punctuation.accessor.js.fjsx15
         3: support.constant.js.fjsx15
       pop: true
     # Type after new.
-    - match: |
-        (?xi)\s*
-        (new)
-        (?=\s+{{commonIdentifier}})
-      captures:
-        1: keyword.operator.word.new.js.fjsx15
+    - match: (?xi)new(?=\s+{{commonIdentifier}})
+      scope: keyword.operator.word.new.js.fjsx15
       set: [
+        optional-tail,
         meta-instance-call-constructor-scope,
         optional-arguments,
         type
       ]
     # Any other expression after the keyword.
-    - match: (?i)\s*(new)\b
-      captures:
-        1: keyword.operator.word.new.js.fjsx15
+    - match: (?i)new\b
+      scope: keyword.operator.word.new.js.fjsx15
       set: [
+        optional-tail,
         meta-instance-scope,
         optional-expression
       ]
 
-  escape:
-    - match: ""
-      pop: true
-
-  meta-instance-scope:
-    - meta_scope: meta.instance.js.fjsx15
-    - include: escape
-
   meta-instance-call-constructor-scope:
     - meta_scope: meta.instance.constructor.js.fjsx15
     - meta_content_scope: meta.function-call.constructor.js.fjsx15
-    - include: escape
+    - include: pop-now
 
-  type:
-    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
-    # Other constructors.
-    - match: |
-        (?xi)
-        \s*({{commonIdentifier}})
-      captures:
-        1: variable.other.type.js.fjsx15
-      pop: true
+  meta-instance-scope:
+    - meta_scope: meta.instance.js.fjsx15
+    - include: pop-now
 
   optional-arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax#optional-arguments
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  optional-tail:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax#optional-tail
+
+  pop-now:
+    - match: ""
+      pop: true
+
+  type:
+    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
+    # Object before target property.
+    - match: (?xi)({{commonIdentifier}})\s*(\.)
+      captures:
+        1: variable.other.object.js.fjsx15
+        2: punctuation.accessor.js.fjsx15
+    # Class constructors.
+    - match: (?x){{classIdentifier}}
+      scope: variable.other.type.js.fjsx15
+      pop: true
+    # Other expressions.
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

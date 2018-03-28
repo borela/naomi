@@ -14,14 +14,12 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(in)\b
-      captures:
-        1: keyword.other.js.fjsx15
+    - match: in\b
+      scope: keyword.other.js.fjsx15
       set: optional-expression
 
   optional-expression:

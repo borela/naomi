@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -25,18 +24,16 @@ variables:
 contexts:
   main:
     # Type after typeof.
-    - match: |
-        (?xi)\s*
-        (typeof)
-        (?=\s+{{commonIdentifier}})
-      captures:
-        1: keyword.operator.word.typeof.js.fjsx15
-      set: type
+    - match: (?xi)(typeof)(?=\s+{{commonIdentifier}})
+      scope: keyword.operator.word.typeof.js.fjsx15
+      set: [ optional-tail, type ]
     # Any other expression after the keyword.
-    - match: (?i)\s*(typeof)\b
-      captures:
-        1: keyword.operator.word.typeof.js.fjsx15
-      pop: true
+    - match: (?i)typeof\b
+      scope: keyword.operator.word.typeof.js.fjsx15
+      set: optional-tail
+
+  optional-tail:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax#optional-tail
 
   type:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/new.sublime-syntax#type

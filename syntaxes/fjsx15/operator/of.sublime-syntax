@@ -14,15 +14,13 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
     # Technically there’s no “of” operator, but this will simplify for loops.
-    - match: \s*(of)\b
-      captures:
-        1: keyword.operator.word.of.js.fjsx15
+    - match: of\b
+      scope: keyword.operator.word.of.js.fjsx15
       set: optional-expression
 
   optional-expression:

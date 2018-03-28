@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -24,40 +23,35 @@ variables:
 
 contexts:
   main:
-    - match: \s*(\|>)
-      captures:
-        1: keyword.operator.pipe.js.fjsx15
+    - match: \|>
+      scope: keyword.operator.pipe.js.fjsx15
       set: target
 
-  other-expressions:
-    - match: (?=\s*\S)
+  else-pop:
+    - match: (?=\S)
       pop: true
 
   target:
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
     # Await keyword.
-    - match: \s*(await)\b
-      captures:
-        1: keyword.control.flow.js.fjsx15
+    - match: await\b
+      scope: keyword.control.flow.js.fjsx15
       set: function-identifier
     # Simple identifier.
     - match: |
         (?xi)
         (?=
-          \s*{{commonIdentifier}}\s*
+          {{commonIdentifier}}\s*
           (?>\|>|$)
         )
       set: function-identifier
-    - include: other-expressions
+    - include: else-pop
 
   function-identifier:
     # Simple function.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: >-
-          meta.function-call.js.fjsx15
-          variable.function.js.fjsx15
+    - match: (?xi){{commonIdentifier}}
+      scope: >-
+        meta.function-call.js.fjsx15
+        variable.function.js.fjsx15
       pop: true
-    - include: other-expressions
+    - include: else-pop

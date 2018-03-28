@@ -14,31 +14,29 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(/\*\*)(?!/)
-      captures:
-        1: >-
-          comment.block.documentation.js.fjsx15
-          punctuation.definition.comment.begin.js.fjsx15
+    - match: /\*\*(?!/)
+      scope: punctuation.definition.comment.begin.js.fjsx15
       set: block
 
   block:
-    - meta_content_scope: comment.block.documentation.js.fjsx15
+    - meta_scope: comment.block.documentation.js.fjsx15
+    # Used to correct indentation.
+    - match: $\n?
+      scope: meta.line-fence.comment.js.fjsx15
+    # Contents.
     - include: email-no-pop
     - include: link-no-pop
-    - match: \s*(\*/)
-      captures:
-        1: punctuation.definition.comment.end.js.fjsx15
-      set: new-line-meta
+    - match: \*/
+      scope: punctuation.definition.comment.end.js.fjsx15
+      set: block-fence
 
-  # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
-  new-line-meta:
+  block-fence:
     - match: \s*$\n?
-      scope: meta.comment.postfix-whitespace.js.fjsx15
+      scope: meta.block-fence.comment.js.fjsx15
       pop: true
     - match: ""
       pop: true

@@ -1,0 +1,177 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+scope: ...
+
+variables:
+  cssIdentifier: (?!--)[_[:alpha:]\-][_[:alnum:]\-]*
+
+  tags: |
+    (?> a
+        # abbr
+        (?> bbr
+          # address
+          | ddress
+          # area
+          | rea
+          # article
+          | rticle
+          # aside
+          | side
+          # audio
+          | udio
+        )?
+      | b
+        # base
+        (?> ase
+          # bdi, bdo
+          | d[io]
+          # blockquote
+          | lockquote
+          # body
+          | ody
+          # br
+          | r
+          # button
+          | utton
+        )?
+      # canvas, caption
+      | ca(?>nvas|ption)
+      | cite
+      | code
+      # col, colgroup
+      | col(?:group)?
+      # data, datalist
+      | data(?:list)?
+      | dd
+      | del
+      | details
+      | dfn
+      | dialog
+      | div
+      # dl, dt
+      | d[lt]
+      # em, embed
+      | em(?:bed)?
+      | fieldset
+      | figcaption
+      | figure
+      | footer
+      | form
+      | h[1-6]
+      # head, header
+      | head(?:er)?
+      | hgroup
+      | hr
+      | html
+      | i
+        # iframe
+        (?> frame
+          # img
+          | mg
+          # input
+          | nput
+          # ins
+          | ns
+        )?
+      | kbd
+      | label
+      | legend
+      # li, link
+      | li(?:nk)?
+      # main, map, mark
+      | ma(?>in|p|rk)
+      # meta, meter
+      | met(?>a|er)
+      | nav
+      | nextid
+      | noscript
+      | object
+      | ol
+      # optgroup, option
+      | opt(?>group|ion)
+      | output
+      | p
+        # param
+        (?> aram
+          # picture
+          | icture
+          # pre
+          | re
+          # progress
+          | rogress
+        )?
+      | q
+      # rp, rt, rtc
+      | r(?>p|tc?)
+      | ruby
+      | s
+        # sup
+        (?> amp
+          # script
+          | cript
+          # section
+          | ection
+          # select
+          | elect
+          # slot
+          | lot
+          # small
+          | mall
+          # source
+          | ource
+          # span
+          | pan
+          # strong
+          | trong
+          # style
+          | tyle
+          # sub
+          | ub
+          # summary
+          | ummary
+          # sup
+          | up
+        )?
+      | table
+      | tbody
+      | td
+      | template
+      | textarea
+      | tfoot
+      # th, thead
+      | th(?:ead)?
+      # time, title
+      | ti(?>me|tle)
+      # tr, track
+      | tr(?:ack)?
+      # u, ul
+      | ul?
+      | var
+      | video
+      | wbr
+    )
+
+contexts:
+  main:
+    # HTML5 tags.
+    - match: (?xi){{tags}}\b
+      scope: entity.name.tag.css.cs3
+      pop: true
+    # Other tags.
+    - match: (?xi){{cssIdentifier}}\b
+      scope: variable.other.tag.css.cs3
+      pop: true

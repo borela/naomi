@@ -14,16 +14,14 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(\=)
-      captures:
-        1: keyword.operator.other.assignment.html.html5
+    - match: \=
+      scope: punctuation.separator.key-value.html.html5
       set: value
-    - match: (?=\s*\S)
+    - match: (?=\S)
       pop: true
 
   value:

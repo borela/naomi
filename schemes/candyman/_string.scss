@@ -10,11 +10,36 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
+.source.yaml .string {
+  background: $blue-gray-900;
+}
+
 .string {
   foreground: $pink-a200;
-  background: rgba($pink-a200, .1);
+  background: rgba($pink-a200, .15);
+}
+
+.string.regexp {
+  foreground: $teal-400;
+  background: $blue-gray-900;
+
+  .punctuation.definition.string {
+    foreground: $teal-400;
+  }
+
+  .keyword.operator,
+  .keyword.other {
+    foreground: $teal-400;
+  }
 }
 
 .punctuation.definition.string {
   foreground: rgba($pink-a200, .5);
+}
+
+.meta.object-literal.key {
+  .string.unquoted {
+    foreground: $lime-300;
+    background: $blue-gray-900;
+  }
 }

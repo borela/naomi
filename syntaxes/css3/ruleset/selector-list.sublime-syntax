@@ -1,0 +1,49 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+scope: ...
+
+contexts:
+  main:
+    - match: ""
+      set: [
+        meta-selector-list,
+        delimiter,
+        meta-selector,
+        selector-expression
+      ]
+
+  delimiter:
+    # Escape.
+    - match: (?=[;{])
+      pop: true
+    # Delimiter.
+    - match: \,
+      scope: punctuation.separator.comma.css.css3
+      push: [ meta-selector, selector-expression ]
+
+  meta-selector:
+    - meta_content_scope: meta.selector.css.css3
+    - match: ""
+      pop: true
+
+  meta-selector-list:
+    - meta_content_scope: meta.selector-list.css.css3
+    - match: ""
+      pop: true
+
+  selector-expression:
+    - include: Packages/Naomi/syntaxes/css3/selector-expression.sublime-syntax

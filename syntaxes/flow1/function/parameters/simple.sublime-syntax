@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -25,7 +24,7 @@ variables:
 contexts:
   main:
     - match: |
-        (?xi)\s*
+        (?xi)
         ({{commonIdentifier}})(\?)?
         (?=\s*:)
       captures:

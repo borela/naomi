@@ -1,0 +1,91 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+scope: ...
+
+variables:
+  cssIdentifier: (?!--)[_[:alpha:]\-][_[:alnum:]\-]*
+
+contexts:
+  main:
+    - match: |
+        (?x)
+        (@)
+        ((?> bottom
+            (?:-
+              (?> center
+                | left(?:-corner)?
+                | right(?:-corner)?
+              )
+            )?
+          | left
+            (?:-(?>bottom|corner|middle|top))?
+          | right
+            (?:-(?>bottom|corner|middle|top))?
+          | top
+            (?:-
+              (?> center
+                | left(?:-corner)?
+                | right(?:-corner)?
+              )
+            )?
+        ))
+      captures:
+        1: punctuation.definition.keyword.css.css3
+        2: keyword.control.at-rule.css.css3
+      set: [ meta-margin-box, margin-box-content ]
+    # Properties.
+    - match: |
+        (?xi)
+        (?={{cssIdentifier}})
+      set: [ delimiter, property ]
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+
+  delimiter:
+    - include: comment-no-pop
+    - match: ":"
+      scope: punctuation.separator.key-value.css.css3
+      set: [ meta-property-value, optional-value-no-pop ]
+
+  margin-box-content:
+    - include: Packages/Naomi/syntaxes/css3/ruleset/block.sublime-syntax
+
+  meta-margin-box:
+    - meta_scope: meta.margin-box.css.css3
+    - include: pop-now
+
+  meta-property-value:
+    - meta_scope: meta.property-value.css.css3
+    - include: pop-now
+
+  optional-value-no-pop:
+    - match: (?=[;()\[\]{}])
+      pop: true
+    - match: \,
+      scope: punctuation.separator.sequence.css.css3
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
+
+  pop-now:
+    - match: ""
+      pop: true
+
+  property:
+    - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax

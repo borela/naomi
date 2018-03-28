@@ -14,37 +14,23 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(=>)
-      captures:
-        1: storage.type.function.arrow.js.fjsx15
+    - match: =>
+      scope: storage.type.function.arrow.js.fjsx15
       set: possible-multi-statement-body
-
-  possible-multi-statement-body:
-    - include: comment-no-pop
-    - match: \s*(\{)
-      captures:
-        1: punctuation.section.block.begin.js.fjsx15
-      set: close-body
-    - include: optional-expression
 
   close-body:
     - meta_scope: >-
         meta.function.js.fjsx15
         meta.block.js.fjsx15
-    - match: \s*(})
-      captures:
-        1: punctuation.section.block.end.js.fjsx15
+    - match: \}
+      scope: punctuation.section.block.end.js.fjsx15
       set: optional-expression-tail
     - match: ""
-      push: optional-statements-and-expressions
-
-  optional-statements-and-expressions:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-statements-and-expressions.sublime-syntax
+      push: optional-statement-or-expression
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
@@ -54,3 +40,13 @@ contexts:
 
   optional-expression-tail:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax#optional-tail
+
+  optional-statement-or-expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/optional-statement-or-expression.sublime-syntax
+
+  possible-multi-statement-body:
+    - include: comment-no-pop
+    - match: \{
+      scope: punctuation.section.block.begin.js.fjsx15
+      set: close-body
+    - include: optional-expression

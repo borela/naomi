@@ -14,16 +14,38 @@
 # the License.
 
 name: HTML 5
+scope: text.html
 
 file_extensions:
   - html
   - html5
+  - htm
+  - htm5
+  - shtml
+  - shtml5
+  - xhtml
+  - xhtml5
+  - inc
+  - inc5
+  - tmpl
+  - tmpl5
+  - tpl
+  - tpl5
 
 first_line_match: <!DOCTYPE html>
 
-scope: text.html.html5
-
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/html5/php.sublime-syntax
+    - match: ""
+      push: [ meta, entry ]
+
+  entry:
+    # - include: Packages/Naomi/syntaxes/html5/php.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
+    - match: ""
+      pop: true
+
+  meta:
+    - meta_scope: meta.naomi
+    - match: ""
+      pop: true

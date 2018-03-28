@@ -14,17 +14,12 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: |
-        (?x)
-        \s*(data-[_:[:alnum:]\-.]*)
-      captures:
-        1: entity.name.data-attribute.html.html5
-      set: value
-
-  value:
-    - include: Packages/Naomi/syntaxes/html5/attribute/value.sublime-syntax
+    - match: (?i)data-[_:[:alnum:]\-.]*
+      scope: >-
+        meta.attribute.data.html.html5
+        entity.other.attribute-name.html.html5
+      pop: true

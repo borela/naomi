@@ -14,11 +14,9 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(-)
-      captures:
-        1: storage.modifier.contravariant.flow
+    - match: \-
+      scope: storage.modifier.contravariant.flow

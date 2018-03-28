@@ -14,52 +14,92 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
+  complexType: |
+    (
+      (?:\?\s*)?
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
+      )
+      (?:\s*{{flowOperators}})?
+      (?:\s*\g<-1>)?
+    )
+
+  flowFunction: |
+    {{parameters}}
+    \s*=>
+
+  flowOperators: |
+    (?> &(?!&)
+      | \|(?!\|)
+    )
+
   genericArguments: |
     (<
-      [^<>]*
-      \g<-1>?
-      [^<>]*
+      (?> {{string}}
+        | \g<-1>
+        | [^<>]
+      )*
     >)
 
   parameters: |
     (\(
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
-      )
-      \g<-1>?
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
-      )
+      (?> {{string}}
+        | \g<-1>
+        | [^()]
+      )*
     \))
 
-  flowFunction: |
-    {{parameters}}
-    \s*=>\s*
+  simpleFlowType: |
+    (?> {{string}}
+      | {{commonIdentifier}}
+        {{genericArguments}}?
+        (?:\[\s*\])?
+    )
+
+  string: |
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
+    )
 
 contexts:
   main:
+    # Normal.
     - match: |
         (?xi)
-        (?=\s*
+        (?=
           {{genericArguments}}?
           {{flowFunction}}
         )
       set: declaration
+    # Single parameter.
+    - match: |
+        (?xi)
+        (?=
+          {{complexType}}
+          \s*=>
+          (?!\s*{)
+        )
+      set: [
+        return,
+        meta-parameters,
+        optional-tail,
+        head
+      ]
 
   declaration:
     # Generic parameters.
-    - match: (?=\s*<)
+    - match: (?=<)
       push: generic-parameters
     # Parameters.
-    - match: (?=\s*\()
+    - match: (?=\()
       set: [
         return,
         parameters
@@ -68,14 +108,27 @@ contexts:
   generic-parameters:
     - include: Packages/Naomi/syntaxes/flow1/generic/parameters.sublime-syntax
 
-  parameters:
-    - include: Packages/Naomi/syntaxes/flow1/function/parameters.sublime-syntax
+  head:
+    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax#head
 
-  return:
-    - match: \s*(=>)
-      captures:
-        1: storage.type.function.arrow.flow
-      set: optional-type-expression
+  meta-parameters:
+    - meta_scope: meta.function.parameters.flow
+    - include: pop-now
+
+  optional-tail:
+    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax#optional-tail
 
   optional-type-expression:
     - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax
+
+  parameters:
+    - include: Packages/Naomi/syntaxes/flow1/function/parameters.sublime-syntax
+
+  pop-now:
+    - match: ""
+      pop: true
+
+  return:
+    - match: =>
+      scope: storage.type.function.arrow.flow
+      set: optional-type-expression

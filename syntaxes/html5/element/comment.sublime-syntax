@@ -14,27 +14,25 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
+# https://w3c.github.io/html/syntax.html#comments
 contexts:
   main:
-    - match: |
-        (?xi)
-        <!--
-      scope: punctuation.comment.block.begin.html.html5
-      set: comment
+    - match: <!--
+      scope: punctuation.definition.comment.begin.html.html5
+      set: block
 
-  comment:
+  block:
     - meta_scope: comment.block.html.html5
-    - include: email
-    - include: link
+    - include: email-no-pop
+    - include: link-no-pop
     - match: -->
-      scope: punctuation.comment.block.end.html.html5
+      scope: punctuation.definition.comment.end.html.html5
       pop: true
 
-  link:
-    - include: Packages/Naomi/syntaxes/shared/link.sublime-syntax
+  email-no-pop:
+    - include: Packages/Naomi/syntaxes/shared/email.no-pop.sublime-syntax
 
-  email:
-    - include: Packages/Naomi/syntaxes/shared/email.sublime-syntax
+  link-no-pop:
+    - include: Packages/Naomi/syntaxes/shared/link.no-pop.sublime-syntax

@@ -11,141 +11,280 @@
 // the License.
 
 [{
-  // Align cursor after docblock line break.
+  // () have the same behavior as {}.
   "keys": [ "enter" ],
   "command": "run_macro_file",
+  "args": { "file": "res://Packages/Default/Add Line in Braces.sublime-macro" },
   "context": [{
-    "key": "selection_empty",
+    "key": "setting.auto_indent",
     "operator": "equal",
     "operand": true,
     "match_all": true
   },{
-    "key": "selector",
-    "operator": "equal",
-    "operand": "meta.comment.postfix-whitespace",
-    "match_all": true
-  }],
-  "args": {
-    "file": "res://Packages/Naomi/macros/break-after-docblock.sublime-macro"
-  }
-},{
-  // Close docblock from the beginning.
-  "keys": [ "shift+enter" ],
-  "command": "insert_snippet",
-  "context": [{
     "key": "selection_empty",
     "operator": "equal",
     "operand": true,
-    "match_all": true
-  },{
-    "key": "selector",
-    "operator": "equal",
-    "operand": "comment.block",
     "match_all": true
   },{
     "key": "preceding_text",
     "operator": "regex_contains",
-    "operand": "^\\s*/\\*\\*",
-    "match_all": true
-  }],
-  "args": { "contents": "\n * ${0}\n */" }
-},{
-  // Close the docblock.
-  "keys": [ "shift+enter" ],
-  "command": "run_macro_file",
-  "context": [{
-    "key": "selection_empty",
-    "operator": "equal",
-    "operand": true,
+    "operand": "\\($",
     "match_all": true
   },{
-    "key": "selector",
-    "operator": "equal",
-    "operand": "comment.block",
-    "match_all": true
-  },{
-    "key": "preceding_text",
+    "key": "following_text",
     "operator": "regex_contains",
-    "operand": "^\\s*\\*",
+    "operand": "^\\)",
     "match_all": true
-  }],
-  "args": {
-    "file": "res://Packages/Naomi/macros/close-docblock.sublime-macro"
-  }
+  }]
 },{
-  // Add line to the beginning of the docblock.
+  // [] have the same behavior as {}.
   "keys": [ "enter" ],
-  "command": "insert_snippet",
-  "context": [{
-    "key": "selection_empty",
-    "operator": "equal",
-    "operand": true,
-    "match_all": true
-  },{
-    "key": "selector",
-    "operator": "equal",
-    "operand": "comment",
-    "match_all": true
-  },{
-    "key": "preceding_text",
-    "operator": "regex_contains",
-    "operand": "^\\s*/\\*\\*\\s*",
-    "match_all": true
-  }],
-  "args": { "contents": "\n * " }
-},{
-  // Add line to the docblock.
-  "keys": [ "enter" ],
-  "command": "insert_snippet",
-  "context": [{
-    "key": "selection_empty",
-    "operator": "equal",
-    "operand": true,
-    "match_all": true
-  },{
-    "key": "selector",
-    "operator": "equal",
-    "operand": "comment",
-    "match_all": true
-  },{
-    "key": "preceding_text",
-    "operator": "regex_contains",
-    "operand": "^\\s+\\*\\s*",
-    "match_all": true
-  }],
-  "args": { "contents": "\n* " }
-},{
-  // Add line to a single line comment.
-  "keys": [ "shift+enter" ],
-  "command": "insert_snippet",
-  "context": [{
-    "key": "selection_empty",
-    "operator": "equal",
-    "operand": true,
-    "match_all": true
-  },{
-    "key": "preceding_text",
-    "operator": "regex_contains",
-    "operand": "^\\s*//",
-    "match_all": true
-  }],
-  "args": { "contents": "\n// " }
-},{
-  // Remove line from comment.
-  "keys": [ "backspace" ],
   "command": "run_macro_file",
+  "args": { "file": "res://Packages/Default/Add Line in Braces.sublime-macro" },
   "context": [{
+    "key": "setting.auto_indent",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
     "key": "selection_empty",
     "operator": "equal",
     "operand": true,
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_contains",
+    "operand": "\\[$",
+    "match_all": true
+  },{
+    "key": "following_text",
+    "operator": "regex_contains",
+    "operand": "^\\]",
+    "match_all": true
+  }]
+},{
+  // '' have the same behavior as {}.
+  "keys": [ "enter" ],
+  "command": "run_macro_file",
+  "args": { "file": "res://Packages/Default/Add Line in Braces.sublime-macro" },
+  "context": [{
+    "key": "setting.auto_indent",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_contains",
+    "operand": "'$",
+    "match_all": true
+  },{
+    "key": "following_text",
+    "operator": "regex_contains",
+    "operand": "^'",
+    "match_all": true
+  }]
+},{
+  // "" have the same behavior as {}.
+  "keys": [ "enter" ],
+  "command": "run_macro_file",
+  "args": { "file": "res://Packages/Default/Add Line in Braces.sublime-macro" },
+  "context": [{
+    "key": "setting.auto_indent",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_contains",
+    "operand": "\"$",
+    "match_all": true
+  },{
+    "key": "following_text",
+    "operator": "regex_contains",
+    "operand": "^\"",
+    "match_all": true
+  }]
+},{
+  // `` have the same behavior as {}.
+  "keys": [ "enter" ],
+  "command": "run_macro_file",
+  "args": { "file": "res://Packages/Default/Add Line in Braces.sublime-macro" },
+  "context": [{
+    "key": "setting.auto_indent",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_contains",
+    "operand": "`$",
+    "match_all": true
+  },{
+    "key": "following_text",
+    "operator": "regex_contains",
+    "operand": "^`",
+    "match_all": true
+  }]
+},{
+  // Close tags.
+  "keys": [ "/" ],
+  "command": "close_tag",
+  "args": { "insert_slash": true },
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "(text.html, text.xml, source.jsx) - (string, comment)",
     "match_all": true
   },{
     "key": "preceding_text",
     "operator": "regex_match",
-    "operand": "^\\s*(?>\\*/?|//)\\s?",
+    "operand": ".*<$",
     "match_all": true
-  }],
-  "args": {
-    "file": "res://Packages/Naomi/macros/delete-to-previous-line.sublime-macro"
-  }
+  },{
+    "key": "setting.auto_close_tags",
+    "operator": "equal",
+    "operand": true
+  }]
+},{
+  // JS - Pair template.
+  "keys": [ "`" ],
+  "command": "insert_snippet",
+  "args": { "contents": "`$0`" },
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.js - (string, comment)",
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "setting.auto_match_enabled",
+    "operator": "equal",
+    "operand": true
+  }]
+},{
+  // JS - Pair template for selected text.
+  "keys": [ "`" ],
+  "command": "insert_snippet",
+  "args": { "contents": "`${0:$SELECTION}`" },
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.js",
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": false,
+    "match_all": true
+  },{
+    "key": "setting.auto_match_enabled",
+    "operator": "equal",
+    "operand": true
+  }]
+},{
+  // JS - Pair interpolation
+  "keys": [ "{" ],
+  "command": "insert_snippet",
+  "args": { "contents": "{$0}" },
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "string.template.js - (comment)",
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_contains",
+    "operand": "\\$$",
+    "match_all": true
+  },{
+    "key": "setting.auto_match_enabled",
+    "operator": "equal",
+    "operand": true
+  }]
+},{
+  // Adds “className=""” when “.” is pressed.
+  "keys": [ "." ],
+  "args": { "attribute": "className" },
+  "command": "emmet_insert_attribute",
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.jsx meta.naomi meta.tag - (comment, string, meta.embedded-js)",
+    "match_all": true
+  },{
+    "operator": "equal",
+    "operand": true,
+    "key": "setting.auto_id_class",
+    "match_all": true
+  }]
+},{
+  // Adds “id=""” when “#” is pressed.
+  "keys": [ "#" ],
+  "args": { "attribute": "id" },
+  "command": "emmet_insert_attribute",
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.jsx meta.naomi meta.tag - (comment, string, meta.embedded-js)",
+    "match_all": true
+  },{
+    "key": "setting.auto_id_class",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  }]
+},{
+  // Auto complete tags using tab and emmet.
+  "keys": [ "tab" ],
+  "command": "expand_abbreviation_by_tab",
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.jsx meta.naomi - (comment, string)",
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "auto_complete_visible",
+    "operator": "equal",
+    "operand": false,
+    "match_all": true
+  },{
+    "key": "is_abbreviation",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "setting.disable_tab_abbreviations",
+    "operator": "equal",
+    "operand": false,
+    "match_all": true
+  }]
 }]

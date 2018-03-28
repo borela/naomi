@@ -14,11 +14,10 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \S.*?(?=\s|>)
+    - match: "[^\\s<>]+"
       scope: string.unquoted.html.html5
       pop: true

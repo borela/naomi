@@ -14,30 +14,17 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
     # Line.
-    - match: |
-        (?x)\s*
-        (\/\/)
-        (?=\s*eslint)
-      captures:
-        1: >-
-          eslint.js.fjsx15
-          punctuation.definition.eslint.begin.js.fjsx15
+    - match: \/\/(?=\s*eslint)
+      scope: punctuation.definition.comment.begin.js.fjsx15
       set: line
     # Block.
-    - match: |
-        (?x)\s*
-        (\/\*)
-        (?=\s*eslint)
-      captures:
-        1: >-
-          eslint.js.fjsx15
-          punctuation.definition.eslint.begin.js.fjsx15
+    - match: \/\*(?=\s*eslint)
+      scope: punctuation.definition.comment.begin.js.fjsx15
       set: block
 
   line:
@@ -47,47 +34,26 @@ contexts:
 
   block:
     - include: enable-disable
-    - match: \s*(\*/)
-      captures:
-        1: >-
-          eslint.js.fjsx15
-          punctuation.definition.eslint.end.js.fjsx15
-      set:
-        # Used to fix the block comment indentation settings.
-        # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
-        - match: \s*$\n?
-          scope: meta.block-end.js.fjsx15
-          pop: true
-        - match: ''
-          pop: true
+    - match: \*/
+      scope: punctuation.definition.comment.end.js.fjsx15
+      pop: true
 
   enable-disable:
-    - match: |
-        (?xi)\s*
-        (eslint-(?>enable|disable)(?:-line)?)
-      captures:
-        1: >-
-          eslint.js.fjsx15
-          keyword.other.js.fjsx15
+    - match: (?i)eslint-(?>enable|disable)(?:-line)?
+      scope: keyword.other.js.fjsx15
       push: rules-loop
 
   rules-loop:
-    - match: (?=\s*(?>$|\*\/))
+    - match: (?=(?>$|\*\/))
       pop: true
     # Delimiter.
-    - match: \s*(,)
-      captures:
-        1: >-
-          eslint.js.fjsx15
-          punctuation.definition.eslint.js.fjsx15
+    - match: \,
+      scope: punctuation.separator.comma.js.fjsx15
     # Rule.
     - match: |
-        (?xi)\s*
+        (?xi)
         (
           [$_[:alpha:]]
           [$_\-/[:alnum:]]*
         )
-      captures:
-        1: >-
-          eslint.js.fjsx15
-          entity.name.eslint-rule.js.fjsx15
+      scope: variable.other.eslint.rule.js.fjsx15

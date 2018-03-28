@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
@@ -30,18 +29,15 @@ contexts:
   # |    <     | Less than.                |
   main:
     - match: |
-        (?x)\s*
-        (
-          (?> ===?
-            | !==?
-            | >=
-            | <=
-            | >(?!>)
-            | <(?!<)
-          )
+        (?x)
+        (?> ===?
+          | !==?
+          | >=
+          | <=
+          | >(?!>)
+          | <(?!<)
         )
-      captures:
-        1: keyword.operator.comparison.js.fjsx15
+      scope: keyword.operator.comparison.js.fjsx15
       set: optional-expression
 
   optional-expression:

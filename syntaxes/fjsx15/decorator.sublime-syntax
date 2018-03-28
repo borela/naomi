@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -24,54 +23,39 @@ variables:
 
 contexts:
   main:
-    - match: |
-        (?xi)
-        \s*(@)
-        (?={{decoratorIdentifier}})
-      captures:
-        1: >-
-          meta.annotation.js.fjsx15
-          punctuation.definition.annotation.js.fjsx15
-      set: decorator-identifier
-
-  decorator-identifier:
-    # With arguments.
-    - match: |
-        (?xi)\s*
-        ({{decoratorIdentifier}})
-        (?=\s*\()
-      captures:
-        1: variable.annotation.js.fjsx15
+    - match: (?xi)(@)(?={{decoratorIdentifier}})
+      scope: punctuation.definition.annotation.js.fjsx15
       set: [
-        possible-chain,
-        meta-scope,
-        arguments
-      ]
-    # Without arguments.
-    - match: |
-        (?xi)\s*
-        ({{decoratorIdentifier}})
-      captures:
-        1: variable.annotation.js.fjsx15
-      set: [
-        possible-chain,
-        meta-scope
+        meta,
+        decorator-identifier
       ]
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
+  decorator-identifier:
+    # With arguments.
+    - match: (?xi){{decoratorIdentifier}}(?=\s*\()
+      scope: variable.annotation.js.fjsx15
+      set: [
+        possible-chain,
+        arguments
+      ]
+    # Without arguments.
+    - match: (?xi){{decoratorIdentifier}}
+      scope: variable.annotation.js.fjsx15
+      set: possible-chain
+
+  meta:
+    - meta_scope: meta.annotation.js.fjsx15
+    - match: ""
+      pop: true
+
   # The decorator might be followed by a chain of function calls and we want to
   # to highlight them as decorators too.
   possible-chain:
-    - match: \s*(\.)
-      captures:
-        1: punctuation.definition.decorator.chain.js.fjsx15
+    - match: \.
+      scope: punctuation.definition.decorator.chain.js.fjsx15
       set: decorator-identifier
-    - match: (?=\s*\S)
-      pop: true
-
-  meta-scope:
-    - meta_scope: meta.annotation.js.fjsx15
-    - match: ""
+    - match: (?=\S)
       pop: true

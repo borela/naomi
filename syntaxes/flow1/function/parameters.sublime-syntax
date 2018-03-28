@@ -14,32 +14,27 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(\()
-      captures:
-        1: punctuation.section.group.begin.flow
+    - match: \(
+      scope: punctuation.section.group.begin.flow
       set: [ delimiters, optional-parameter ]
 
   delimiters:
-    - match: \s*(,)
-      captures:
-        1: punctuation.separator.comma.flow
+    - match: \,
+      scope: punctuation.separator.comma.flow
       push: optional-parameter
-    - match: \s*(\))
-      captures:
-        1: punctuation.section.group.end.flow
+    - match: \)
+      scope: punctuation.section.group.end.flow
       pop: true
 
   optional-parameter:
-    - meta_scope: meta.function.parameters.js.fjsx15
+    - meta_scope: meta.function.parameters.flow
     # Rest.
-    - match: \s*(\.{3})
-      captures:
-        1: keyword.operator.other.rest.flow
+    - match: \.{3}
+      scope: keyword.operator.other.rest.flow
     # Parameter and type.
     - include: Packages/Naomi/syntaxes/flow1/function/parameters/simple.sublime-syntax
     # Just the type.

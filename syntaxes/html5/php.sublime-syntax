@@ -14,11 +14,12 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: (?=\s*<\?php)
-      push:
-        - include: Packages/Naomi/syntaxes/naomi.php7.sublime-syntax
+    - match: (?=<\?php)
+      push: php
+
+  php:
+    - include: Packages/Naomi/syntaxes/naomi.php7.sublime-syntax

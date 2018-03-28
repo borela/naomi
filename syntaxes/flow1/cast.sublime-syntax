@@ -14,14 +14,12 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(:)
-      captures:
-        1: keyword.operator.other.cast.flow
+    - match: ":"
+      scope: keyword.operator.other.cast.flow
       set: optional-type-expression
 
   optional-type-expression:

@@ -14,19 +14,16 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(\')
-      captures:
-        1: punctuation.definition.string.begin.html.jsx.jsx1
+    - match: \'
+      scope: punctuation.definition.string.begin.html.jsx.jsx1
       set: string
 
   string:
     - meta_scope: string.quoted.single.html.jsx.jsx1
-    - match: \s*(\')
-      captures:
-        1: punctuation.definition.string.end.html.jsx.jsx1
+    - match: \'
+      scope: punctuation.definition.string.end.html.jsx.jsx1
       pop: true

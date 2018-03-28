@@ -17,12 +17,20 @@
   fontStyle: none;
 }
 
+.storage.type.function.arrow.flow {
+  foreground: $brown-200;
+}
+
 .variable.function {
   fontStyle: italic;
 }
 
 .support.function {
   foreground: $purple-a100;
+  fontStyle: none;
+}
+
+.meta.function-call .support.function {
   fontStyle: italic;
 }
 

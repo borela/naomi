@@ -14,59 +14,97 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
   attributeIdentifier: |
     [_[:alpha:]]
-    [._\-[:alnum:]]*
+    [_.[:alnum:]\-]*
 
 contexts:
   main:
-    # className.
-    - match: |
-        (?xi)\s*
-        (className)
-      captures:
-        1: entity.other.attribute-name.class.html.jsx.jsx1
-      set: optional-value
-    # style.
-    - match: |
-        (?xi)\s*
-        (style)
-      captures:
-        1: entity.other.attribute-name.style.html.jsx.jsx1
-      set: optional-value
+    - include: Packages/Naomi/syntaxes/flow1/prolog.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/eslint.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/docblock.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/block.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/comment/line.sublime-syntax
+    # Embedded JS.
+    - include: Packages/Naomi/syntaxes/jsx1/embedded-js.sublime-syntax
+    - include: dangerous
+    - include: key
+    - include: ref
+    - include: fallback
+
+  dangerous:
     # Attribute with value.
-    - match: |
-        (?xi)\s*
-        ({{attributeIdentifier}})
-        (?=\s*=)
-      captures:
-        1: entity.other.attribute-name.html.jsx.jsx1
-      set: optional-value
+    - match: dangerouslySetInnerHTML\b(?=\s*=)
+      scope: >-
+        meta.attribute.builtin.html.jsx.jsx1
+        entity.other.attribute-name.dangerous.html.jsx.jsx1
+      set: [ meta, optional-value ]
     # Simple attribute.
-    - match: |
-        (?xi)\s*
-        ({{attributeIdentifier}})
-      captures:
-        1: entity.other.attribute-name.html.jsx.jsx1
+    - match: dangerouslySetInnerHTML\b
+      scope: >-
+        meta.attribute.builtin.html.jsx.jsx1
+        entity.other.attribute-name.dangerous.html.jsx.jsx1
       pop: true
 
-  escape:
-    - match: (?=\s*\S)
+  else-pop:
+    - match: (?=\S)
+      pop: true
+
+  key:
+    # Attribute with value.
+    - match: key(?=\s*=)
+      scope: >-
+        meta.attribute.builtin.html.jsx.jsx1
+        entity.other.attribute-name.key.html.jsx.jsx1
+      set: [ meta, optional-value ]
+    # Simple attribute.
+    - match: key\b
+      scope: >-
+        meta.attribute.builtin.html.jsx.jsx1
+        entity.other.attribute-name.key.html.jsx.jsx1
       pop: true
 
   optional-value:
-    - meta_scope: meta.attribute-with-value.html.jsx.jsx1
     # Normal value.
-    - match: \s*(=)
-      captures:
-        1: punctuation.separator.key-value.html.jsx.jsx1
+    - match: =
+      scope: punctuation.separator.key-value.html.jsx.jsx1
       set: value
-    # Anything else.
-    - include: escape
+    - include: else-pop
+
+  fallback:
+    # Attribute with value.
+    - match: (?xi){{attributeIdentifier}}(?=\s*=)
+      scope: entity.other.attribute-name.html.jsx.jsx1
+      set: [ meta, optional-value ]
+    # Simple attribute.
+    - match: (?xi){{attributeIdentifier}}
+      scope: entity.other.attribute-name.html.jsx.jsx1
+      pop: true
+
+  meta:
+    - meta_scope: meta.attribute-with-value.html.html5
+    - include: pop-now
+
+  pop-now:
+    - match: ""
+      pop: true
+
+  ref:
+    # Attribute with value.
+    - match: ref(?=\s*=)
+      scope: >-
+        meta.attribute.builtin.html.jsx.jsx1
+        entity.other.attribute-name.ref.html.jsx.jsx1
+      set: [ meta, optional-value ]
+    # Simple attribute.
+    - match: ref\b
+      scope: >-
+        meta.attribute.builtin.html.jsx.jsx1
+        entity.other.attribute-name.ref.html.jsx.jsx1
+      pop: true
 
   value:
     - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
@@ -74,5 +112,4 @@ contexts:
     - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/jsx1/literal/string/single-quoted.sublime-syntax
-    # Anything else.
-    - include: escape
+    - include: else-pop

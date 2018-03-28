@@ -14,25 +14,21 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(<)
-      captures:
-        1: punctuation.section.generic.begin.flow
+    - match: \<
+      scope: punctuation.section.generic.begin.flow
       set: [ delimiters, optional-type-expression ]
 
   delimiters:
     - meta_scope: meta.generic.flow
-    - match: \s*(,)
-      captures:
-        1: punctuation.separator.comma.flow
+    - match: \,
+      scope: punctuation.separator.comma.flow
       push: optional-type-expression
-    - match: \s*(>)
-      captures:
-        1: punctuation.section.generic.end.flow
+    - match: \>
+      scope: punctuation.section.generic.end.flow
       pop: true
 
   optional-type-expression:

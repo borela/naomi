@@ -14,65 +14,48 @@
 # the License.
 
 hidden: true
-
 scope: ...
-
-variables:
-  commonIdentifier: |
-    [$_[:alpha:]]
-    [$_[:alnum:]]*
-
-  constantIdentifier: |
-    [$_[:upper:]]
-    [$_[:upper:][:digit:]]*
 
 contexts:
   main:
-    - match: \s*({)
+    - match: \{
       scope: punctuation.section.block.begin.js.fjsx15
-      set: [ delimiters, statements-and-expressions ]
+      set: delimiters
 
-  delimiters:
-    - meta_scope: >-
-        meta.object-literal.js.fjsx15
-        meta.block.js.fjsx15
+  anything-else:
     - include: comment-no-pop
-    - match: \s*(,)
-      captures:
-        1: punctuation.separator.comma.js.fjsx15
-      push: statements-and-expressions
-    - match: \s*(})
-      captures:
-        1: punctuation.section.block.end.js.fjsx15
-      pop: true
-
-  statements-and-expressions:
-    - include: comment-no-pop
-    - match: (?=\s*[,}])
+    - match: (?=[,}])
       pop: true
     # Spread.
     - include: Packages/Naomi/syntaxes/fjsx15/operator/spread.sublime-syntax
-    # Method.
+    # Methods.
     - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
-    # Simple constant.
-    - match: |
-        (?x)\s*
-        (?={{constantIdentifier}}\s*(?>,|}|$))
-      set: constant
-    # Simple variable.
-    - match: |
-        (?xi)\s*
-        (?={{commonIdentifier}}\s*(?>,|}|$))
-      set: variable
-    # Property.
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/object/property.sublime-syntax
+    # Shorthand.
+    - include: constant
+    - include: variable
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
   constant:
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
+
+  delimiters:
+    - meta_scope: >-
+        meta.object-literal.js.fjsx15
+        meta.block.js.fjsx15
+    - include: comment-no-pop
+    - match: \,
+      scope: punctuation.separator.comma.js.fjsx15
+    - match: \}
+      scope: punctuation.section.block.end.js.fjsx15
+      pop: true
+    # Key.
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/object/property.sublime-syntax
+    # Anything else.
+    - match: (?=\S)
+      push: anything-else
 
   variable:
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax

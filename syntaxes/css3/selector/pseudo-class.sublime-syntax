@@ -1,0 +1,119 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+scope: ...
+
+variables:
+  cssIdentifier: (?!--)[_[:alpha:]\-][_[:alnum:]\-]*
+
+  corePseudoClasses: |
+    (?> active
+      # any, any-link
+      | any(?:-link)?
+      | checked
+      | default
+      | disabled
+      | empty
+      | enabled
+      # first, first-child, first-of-type
+      | first(?:-(?>child|of-type))?
+      | fullscreen
+      | focus
+      | hover
+      | indeterminate
+      | in-range
+      | invalid
+      | last-(?>child|of-type)
+      | left
+      | link
+      # only-child, only-of-type
+      | only-(?>child|of-type)
+      | optional
+      | out-of-range
+      # read-only, read-write
+      | read-(?>only|write)
+      | required
+      | right
+      | root
+      | scope
+      | target
+      | valid
+      | visited
+    )
+
+contexts:
+  main:
+    - include: expected-pseudo-classes
+    - include: matches
+    - include: not
+    - include: nth-child
+    - include: nth-of-type
+    - include: fallback
+
+  expected-pseudo-classes:
+    - match: (?xi)(:){{corePseudoClasses}}
+      captures:
+        0: entity.other.pseudo-class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      pop: true
+
+  fallback:
+    - match: (?xi)(:){{cssIdentifier}}
+      captures:
+        0: variable.other.pseudo-class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      pop: true
+
+  matches:
+    - match: (\:)matches(?=\s*\()
+      captures:
+        0: entity.other.pseudo-class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      set: selector-expression-as-arguments
+
+  not:
+    - match: (\:)not(?=\s*\()
+      captures:
+        0: entity.other.pseudo-class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      set: selector-expression-as-arguments
+    - match: (\:)not\b
+      captures:
+        0: entity.other.pseudo-class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      pop: true
+
+  nth-arguments:
+    - include: Packages/Naomi/syntaxes/css3/selector/nth/arguments.sublime-syntax
+
+  nth-child:
+    # nth-child, nth-last-child
+    - match: (\:)nth(?:-last)?-child\b
+      captures:
+        0: entity.other.pseudo-class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      set: nth-arguments
+
+  nth-of-type:
+    # nth-of-type, nth-last-of-type
+    - match: (\:)nth(?:-last)?-of-type\b
+      captures:
+        0: entity.other.pseudo-class.css.cs3
+        1: punctuation.definition.entity.css.css3
+      set: nth-arguments
+
+  selector-expression-as-arguments:
+    - include: Packages/Naomi/syntaxes/css3/selector-expression-as-arguments.sublime-syntax

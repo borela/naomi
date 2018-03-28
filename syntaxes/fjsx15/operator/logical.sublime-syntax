@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
@@ -25,15 +24,12 @@ contexts:
   # |    !     | Not.        |
   main:
     - match: |
-        (?x)\s*
-        (
-          (?> &&
-            | \|\|
-            | !
-          )
+        (?x)
+        (?> &&
+          | \|\|
+          | !
         )
-      captures:
-        1: keyword.operator.logical.js.fjsx15
+      scope: keyword.operator.logical.js.fjsx15
       set: optional-expression
 
   optional-expression:

@@ -11,22 +11,23 @@
 # the License.
 
 import os
-import sublime
-import sublime_api
-import sublime_plugin
-from ..util.OutputPanel import *
 
-class NaomiRunSyntaxTestsCommand(sublime_plugin.WindowCommand):
-  def __init__(self, window):
-    self.window = window
+from sublime import packages_path
+from sublime_api import run_syntax_test
+from sublime_plugin import WindowCommand
+from ..window import OutputPanel
+
+class NaomiRunSyntaxTestsCommand(WindowCommand):
+  def __init__(self, sublime_window):
+    self.sublime_window = sublime_window
 
   def run(self):
     totalFiles = 0
     totalAssertions = 0
     totalFailedAssertions = 0
-    testsPath = sublime.packages_path() + '/Naomi/tests/syntaxes';
+    testsPath = packages_path() + '/Naomi/tests/syntaxes';
 
-    self.outputPanel = OutputPanel(self.window, 'naomi')
+    self.outputPanel = OutputPanel(self.sublime_window, { 'name': 'naomi' })
     self.outputPanel.show()
     self.outputPanel.append('Naomi: Running syntax tests...')
 
@@ -38,7 +39,7 @@ class NaomiRunSyntaxTestsCommand(sublime_plugin.WindowCommand):
         # Remove anything before "Packages/Naomi".
         target = target[target.index('Packages/Naomi'):]
         # Run the tests.
-        assertionsFound, messagesFound = sublime_api.run_syntax_test(target)
+        assertionsFound, messagesFound = run_syntax_test(target)
         # Print the error messages and update the counters.
         if messagesFound != '':
           for message in messagesFound:

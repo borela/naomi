@@ -1,0 +1,71 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+scope: ...
+
+variables:
+  cssIdentifier: (?!--)[_[:alpha:]\-][_[:alnum:]\-]*
+
+contexts:
+  main:
+    - match: ""
+      set: [ optional-tail, head ]
+
+  head:
+    # Namespace prefix.
+    - match: |
+        (?xi)
+        (?> ({{cssIdentifier}})
+          | (\*)
+        )
+        \s*(\|)
+      captures:
+        0: meta.namespace-prefix.css.css3
+        1: variable.other.namespace-prefix.css.css3
+        2: keyword.other.namespace-wildcard.css.css3
+        3: punctuation.separator.key-value.css.css3
+    # Some pseudo elements still allow the CSS2 syntax and could be confused with
+    # a pseudo class, to prevent that, we try to match the pseudo element first.
+    - include: Packages/Naomi/syntaxes/css3/selector/pseudo-element.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/pseudo-class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/ampersand.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/attribute.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/custom.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/id.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/selector/universal.sublime-syntax
+
+  optional-tail:
+    - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+    # Escape.
+    - match: (?=[,;(){}])
+      pop: true
+    # Operators.
+    - include: Packages/Naomi/syntaxes/css3/combinator.sublime-syntax
+    # Attribute.
+    - match: (?=\[)
+      push:
+        - include: Packages/Naomi/syntaxes/css3/selector/attribute.sublime-syntax
+    # Pseudo element, class and custom selector.
+    - match: (?=:)
+      push:
+        - include: Packages/Naomi/syntaxes/css3/selector/pseudo-element.sublime-syntax
+        - include: Packages/Naomi/syntaxes/css3/selector/pseudo-class.sublime-syntax
+        - include: Packages/Naomi/syntaxes/css3/selector/custom.sublime-syntax
+    # Loop.
+    - match: (?=\S)
+      push: head

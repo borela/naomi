@@ -16,39 +16,19 @@
   foreground: $gray-300;
 }
 
-.entity.name.variable {
-  fontStyle: italic;
+// Styled component.
+.variable.other.component {
+  foreground: $brown-200;
 }
 
 .variable.language {
-  &.super,
-  &.this {
-    foreground: $purple-a100;
-  }
+  foreground: $purple-a100;
 
   &.prototype {
     foreground: $deep-orange-a100;
   }
 }
 
-// .variable {
-//   &.language {
-//     &.prototype {
-//       foreground: $red-a200;
-//       fontStyle: italic;
-//     }
-
-//     &.super {
-//       foreground: $deep-orange-300;
-//     }
-
-//     &.this {
-//       foreground: $purple-a100;
-//       fontStyle: italic;
-//     }
-//   }
-// }
-
-// .support.variable {
-//   foreground: $deep-orange-a100;
-// }
+.support.variable {
+  foreground: $deep-purple-a100;
+}

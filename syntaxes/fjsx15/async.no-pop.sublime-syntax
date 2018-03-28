@@ -14,13 +14,9 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(async)
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-          keyword.other.async.js.fjsx15
+    - match: async\b
+      scope: storage.modifier.async.js.fjsx15

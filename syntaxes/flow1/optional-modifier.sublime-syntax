@@ -14,12 +14,10 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(\?)
-      captures:
-        1: storage.modifier.optional.flow
+    - match: \?
+      scope: storage.modifier.optional.flow
       pop: true

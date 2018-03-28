@@ -14,60 +14,35 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(/\*\s*::)
-      captures:
-        1: >-
-          comment.block.flow
-          punctuation.definition.comment.begin.flow
-      set: [ block-end, statements-and-expressions ]
-    - match: \s*(/\*(?=\s*:))
-      captures:
-        1: >-
-          comment.block.flow
-          punctuation.definition.comment.begin.flow
-      set: [ block-end, associated-type ]
+    - match: "/\\*\\s*::"
+      scope: punctuation.definition.comment.begin.flow
+      set: block-end
+    - match: /\*(?=\s*:)
+      scope: punctuation.definition.comment.begin.flow
+      set: block-end
 
   block-end:
     - meta_scope: comment.block.flow
-    - match: \s*(\*/)
-      captures:
-        1: >-
-          comment.block.flow
-          punctuation.definition.comment.end.js.fjsx15
-      set:
-        # Used to fix the block comment indentation settings.
-        # https://forum.sublimetext.com/t/everything-you-n-ever-wanted-to-know-about-indentation-in-st3/26207/6
-        - match: \s*$\n?
-          scope: meta.block-end.js.fjsx15
-          pop: true
-        - match: ''
-          pop: true
+    - match: \*/
+      scope: punctuation.definition.comment.end.js.fjsx15
+      pop: true
+    - match: (?=\S)
+      push: type-statement-or-expression
 
-  associated-type:
-    - match: (?=\s*\*\/)
+  type-statement-or-expression:
+    - match: (;)
+      captures:
+        1: keyword.other.terminator.flow
       pop: true
     - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
-
-  statements-and-expressions:
-    - match: (?=\s*\*\/)
-      pop: true
-    - match: ""
-      push:
-        - match: \s*(;)
-          captures:
-            1: keyword.other.terminator.js.fjsx15
-        - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
-        - include: Packages/Naomi/syntaxes/flow1/declare.sublime-syntax
-        - include: Packages/Naomi/syntaxes/flow1/interface.sublime-syntax
-        - include: Packages/Naomi/syntaxes/flow1/type-aliasing.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
-        - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
-        - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax
-        - match: ""
-          pop: true
+    - include: Packages/Naomi/syntaxes/flow1/declare.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/interface.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/type-aliasing.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax

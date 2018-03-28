@@ -1,0 +1,35 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+scope: ...
+
+variables:
+  hex: "[0-9a-f]"
+
+contexts:
+  main:
+    # RGB
+    - match: (?i)(\#)({{hex}}{3}|{{hex}}{6})\b
+      scope: constant.other.color.rgb-value.css
+      captures:
+        1: punctuation.definition.constant.css
+      pop: true
+    # RGBA.
+    - match: (?i)(\#)({{hex}}{4}|{{hex}}{8})\b
+      scope: constant.other.color.rgba-value.css
+      captures:
+        1: punctuation.definition.constant.css
+      pop: true

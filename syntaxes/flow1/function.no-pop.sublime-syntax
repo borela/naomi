@@ -14,45 +14,97 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
+  complexType: |
+    (
+      (?:\?\s*)?
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
+      )
+      (?:\s*{{flowOperators}})?
+      (?:\s*\g<-1>)?
+    )
+
+  flowFunction: |
+    {{parameters}}
+    \s*=>
+
+  flowOperators: |
+    (?> &(?!&)
+      | \|(?!\|)
+    )
+
   genericArguments: |
     (<
-      [^<>]*
-      \g<-1>?
-      [^<>]*
+      (?> {{string}}
+        | \g<-1>
+        | [^<>]
+      )*
     >)
 
   parameters: |
     (\(
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
-      )
-      \g<-1>?
-      (?> '(?:\'|[^'])*'
-        | "(?:\"|[^"])*"
-        | `(?:\`|[^`])*`
-        | [^'"`()]*
-      )
+      (?> {{string}}
+        | \g<-1>
+        | [^()]
+      )*
     \))
 
-  flowFunction: |
-    {{parameters}}
-    \s*=>\s*
+  simpleFlowType: |
+    (?> {{string}}
+      | {{commonIdentifier}}
+        {{genericArguments}}?
+        (?:\[\s*\])?
+    )
+
+  string: |
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
+    )
 
 contexts:
   main:
+    # Normal.
     - match: |
         (?xi)
-        (?=\s*
+        (?=
           {{genericArguments}}?
           {{flowFunction}}
         )
       push: declaration
+    # Single parameter.
+    - match: |
+        (?xi)
+        (?=
+          {{complexType}}
+          \s*=>
+          (?!\s*{)
+        )
+      push: [
+        return,
+        meta-parameters,
+        optional-tail,
+        head
+      ]
 
   declaration:
     - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#declaration
+
+  head:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#head
+
+  meta-parameters:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#meta-parameters
+
+  optional-tail:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#optional-tail
+
+  return:
+    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#return

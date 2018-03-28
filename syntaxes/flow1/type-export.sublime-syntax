@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -24,80 +23,67 @@ variables:
 
 contexts:
   main:
-    - match: \s*(typeof)\b
-      captures:
-        1: keyword.operator.word.typeof.flow
+    - match: typeof\b
+      scope: keyword.operator.word.typeof.flow
       set: optional-target
     - match: |
         (?xi)
         (?=
-          \s*type
+          type
           \s+{{commonIdentifier}}
         )
       set: type-aliasing
-    - match: \s*(type)\b
-      captures:
-        1: storage.type.flow
+    - match: type\b
+      scope: storage.type.flow
       set: optional-target
 
-  type-aliasing:
-    - include: Packages/Naomi/syntaxes/flow1/type-aliasing.sublime-syntax
+  alias:
+    - match: as\b
+      scope: keyword.control.import-export.as.js.fjsx15
+      set: alias-name
+
+  alias-name:
+    - match: (?xi){{commonIdentifier}}
+      scope: variable.other.type.js.fjsx15
+      pop: true
+
+  close-block:
+    - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax#close-block
+
+  delimiter:
+    - match: \,
+      scope: punctuation.separator.comma.js.fjsx15
+      push: optional-target
+    # From.
+    - include: origin
+    - include: else-pop
+
+  else-pop:
+    - match: (?=\S)
+      pop: true
 
   optional-target:
-    - match: (?=\s*(?>[,}]|from))
+    - match: (?=(?>[,}]|from))
       pop: true
     # Multiple targets.
-    - match: \s*(\{)
-      captures:
-        1: punctuation.section.block.begin.js.fjsx15
+    - match: \{
+      scope: punctuation.section.block.begin.js.fjsx15
       set: [
         close-block,
         delimiter,
         optional-target
       ]
     # Aliased.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-        (?=\s+as)
-      captures:
-        1: variable.other.type.js.fjsx15
+    - match: (?xi){{commonIdentifier}}(?=\s+as)
+      scope: variable.other.type.js.fjsx15
       set: alias
     # Simple.
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: variable.other.type.js.fjsx15
-      pop: true
-
-  delimiter:
-    - match: \s*(,)
-      captures:
-        1: punctuation.separator.comma.js.fjsx15
-      push: optional-target
-    # From.
-    - include: origin
-    # Anything else.
-    - match: (?=\s*\S)
+    - match: (?xi){{commonIdentifier}}
+      scope: variable.other.type.js.fjsx15
       pop: true
 
   origin:
     - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax#origin
 
-  close-block:
-    - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax#close-block
-
-  alias:
-    - match: \s*(as)\b
-      captures:
-        1: keyword.control.import-export.as.js.fjsx15
-      set: alias-name
-
-  alias-name:
-    - match: |
-        (?xi)\s*
-        ({{commonIdentifier}})
-      captures:
-        1: variable.other.type.js.fjsx15
-      pop: true
+  type-aliasing:
+    - include: Packages/Naomi/syntaxes/flow1/type-aliasing.sublime-syntax

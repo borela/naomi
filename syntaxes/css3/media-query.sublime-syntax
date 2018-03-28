@@ -1,0 +1,86 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+scope: ...
+
+contexts:
+  main:
+    - include: comment-no-pop
+    - include: logical-operator
+    - match: ""
+      set: [ optional-tail, head ]
+
+  close-group:
+    - meta_scope: meta.group.css.css3
+    - match: \)
+      scope: punctuation.section.group.end.js.fjsx15
+      pop: true
+    - match: (?=\S)
+      push:
+        - include: logical-operator
+        - include: feature-expression
+
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+
+  else-pop:
+    - match: (?=\S)
+      pop: true
+
+  feature-expression:
+    - include: Packages/Naomi/syntaxes/css3/media-query-feature-expression.sublime-syntax
+
+  head:
+    - include: comment-no-pop
+    - include: type
+    - include: open-group
+
+  logical-operator:
+    - match: (?>and|not|or|only)\b
+      scope: keyword.operator.word.logical.media-query.css.css3
+      set: optional-media-query
+
+  open-group:
+    - match: \(
+      scope: punctuation.section.group.begin.css.css3
+      set: close-group
+
+  optional-media-query:
+    - include: Packages/Naomi/syntaxes/css3/optional-media-query.sublime-syntax
+
+  optional-tail:
+    - include: comment-no-pop
+    - include: logical-operator
+    - include: else-pop
+
+  type:
+    # Media type.
+    - match: |
+        (?x)
+        (?> all
+          | aural
+          | braille
+          | embossed
+          | handheld
+          | print
+          | projection
+          | screen
+          | speech
+          | tty
+          | tv
+        )\b
+      scope: support.constant.media.css.css3
+      pop: true

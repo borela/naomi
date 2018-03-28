@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -39,45 +38,38 @@ variables:
 
 contexts:
   main:
-    - match: |
-        (?xi)
-        \s*({{commonIdentifier}})?
-        \s*(\`)
-      captures:
-        1: entity.name.function.tag.js.fjsx15
-        2: >-
-          string.template.js.fjsx15
-          punctuation.definition.string.begin.js.fjsx15
-      set: string
-
-  string:
-    - meta_content_scope: string.template.js.fjsx15
-    # Close.
-    - match: \s*(`)
-      captures:
-        1: >-
-          string.template.js.fjsx15
-          punctuation.definition.string.end.js.fjsx15
-      pop: true
-    # Escape.
-    - match: (?xi){{escapeSequences}}
-      scope: constant.character.escape.js.fjsx15
-    # # Embedded expression.
-    - match: (\s*)(\$\{)
-      captures:
-        1: string.template.js.fjsx15
-        2: punctuation.definition.template-expression.begin.js.fjsx15
-      push: [ close-embedded-expression, embedded-content ]
+    # Simple tag.
+    - match: (?xi){{commonIdentifier}}(?=\s*\`)
+      scope: entity.name.function.tag.js.fjsx15
+      set: main
+    # Simple template string.
+    - match: \`
+      scope: punctuation.definition.string.begin.js.fjsx15
+      with_prototype:
+        - include: embedded-expression-no-pop
+      set:
+        - meta_scope: string.template.js.fjsx15
+        # Close.
+        - match: \`
+          scope: punctuation.definition.string.end.js.fjsx15
+          pop: true
+        # Escape.
+        - match: (?xi){{escapeSequences}}
+          scope: constant.character.escape.js.fjsx15
 
   close-embedded-expression:
     - clear_scopes: true
     - meta_scope: >-
-        source.js.fjsx15
+        source.js
         meta.template-expression.js.fjsx15
-    - match: \s*(})
-      captures:
-        1: punctuation.definition.template-expression.end.js.fjsx15
+    - match: \}
+      scope: punctuation.definition.template-expression.end.js.fjsx15
       pop: true
 
   embedded-content:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+
+  embedded-expression-no-pop:
+    - match: \$\{
+      scope: punctuation.definition.template-expression.begin.js.fjsx15
+      push: [ close-embedded-expression, embedded-content ]

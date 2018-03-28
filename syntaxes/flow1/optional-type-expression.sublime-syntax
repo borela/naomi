@@ -14,11 +14,10 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: (?=\s*[>,;:)\]}])
+    - match: (?=[>,;:)\]}])
       pop: true
     - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax

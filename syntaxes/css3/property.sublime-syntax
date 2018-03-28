@@ -1,0 +1,787 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+hidden: true
+scope: ...
+
+variables:
+  cssIdentifier: (?!--)[_[:alpha:]\-][_[:alnum:]\-]*
+
+  customProperty: (--)([_[:alnum:]\-]*)
+
+  coreProperties: |
+    (?> additive-symbols
+      # align-content, align-items, align-self
+      | align-(?>content|items|self)
+      | alignment-baseline
+      | all
+      | animation
+        (?:-
+          # animation-delay
+          (?> delay
+            # anmation-direction
+            | direction
+            # animation-duration
+            | duration
+            # animation-fill-mode
+            | fill-mode
+            # aniation-iteration-count
+            | iteration-count
+            # aniamtion-name
+            | name
+            # animation-play-state
+            | play-state
+            # animation-timing-functin
+            | timing-function
+          )
+        )?
+      | appearance
+      | azimuth
+      | background
+        (?:-
+          # background-attachment
+          (?> attachment
+            # background-blend-mode
+            | blend-mode
+            # background-clip
+            | clip
+            # background-color
+            | color
+            # background-image, background-image-transform
+            | image(?:-transform)?
+            # background-origin
+            | origin
+            # background-position
+            | position
+            # background-repeat
+            | repeat
+            # background-size
+            | size
+          )
+        )?
+      | baseline-shift
+      | block-
+        # block-size
+        (?> size
+          # block-step
+          | step
+            # block-step-align, block-step-insert, block-steap-round,
+            # block-step-size
+            (?:-(?>align|insert|round|size))?
+        )
+      # bookmark-label, bookmark-level, bookmark-state
+      | bookmark-(?>label|level|state)
+      | border
+        (?:-
+          # border-block
+          (?> block
+              (?:-
+                # border-block-color
+                (?> color
+                  # border-block-end, border-block-end-color,
+                  # border-block-end-style, border-block-end-width
+                  | end(?:-(?>color|style|width))?
+                  # border-block-start, border-block-start-color,
+                  # border-block-start-style, border-block-start-width
+                  | start(?:-(?>color|style|width))?
+                  # border-block-style
+                  | style
+                  # border-block-width
+                  | width
+                )
+              )?
+            # border-bottom
+            | bottom
+              (?:-
+                # border-bottom-color
+                (?> color
+                  # border-bottom-left-radius
+                  | left-radius
+                  # border-bottom-right-radius
+                  | right-radius
+                  # border-bottom-style
+                  | style
+                  # border-bottom-width
+                  | width
+                )
+              )?
+            # border-boundary
+            | boundary
+            # border-collapse
+            | collapse
+            # border-color
+            | color
+            # border-image
+            | image
+              (?:-
+                # border-image-outset
+                (?> outset
+                  # border-image-repeat
+                  | repeat
+                  # border-image-slice
+                  | slice
+                  # border-image-source
+                  | source
+                  # border-image-transform
+                  | transform
+                  # border-image-width
+                  | width
+                )
+              )?
+            # border-inline
+            | inline
+              (?:-
+                # border-inline-color
+                (?> color
+                  # border-inline-end, border-inline-end-color,
+                  # border-inline-end-style, border-inline-end-width
+                  | end(?:-(?>color|style|width))?
+                  # border-inline-start, border-inline-start-color,
+                  # border-inline-start-style, border-inline-start-width
+                  | start(?:-(?>color|style|width))?
+                  # border-inline-style
+                  | style
+                  # border-inline-width
+                  | width
+                )
+              )?
+            # border-left
+            | left
+              (?:-
+                # border-left-color
+                (?> color
+                  # border-left-style
+                  | style
+                  # border-left-width
+                  | width
+                )
+              )?
+            # border-right
+            | right
+              (?:-
+                # border-right-color
+                (?> color
+                  # border-right-style
+                  | style
+                  # border-right-width
+                  | width
+                )
+              )?
+            # border-radius
+            | radius
+            # border-style
+            | style
+            # border-spacing
+            | spacing
+            # border-top
+            | top
+              (?:-
+                # border-top-color
+                (?> color
+                  # border-top-left-radius
+                  | left-radius
+                  # border-top-right-radius
+                  | right-radius
+                  # border-top-style
+                  | style
+                  # border-top-width
+                  | width
+                )
+              )?
+            # border-width
+            | width
+          )
+        )?
+      | bottom
+      # box-decoration-break, box-shadow, box-sizing, box-snap
+      | box-(?>decoration-break|shadow|sizing|snap)
+      # break-after, break-before, break-inside
+      | break(?:-(?>after|before|inside))?
+      | caption-side
+      # caret, caret-color, caret-shape
+      | caret(?:-(?>color|shape))?
+      | chains
+      | clear
+      # clip, clip-path, clip-rule
+      | clip(?:-(?>path|rule))?
+      # color, color-adjust, color-interpolation-filters
+      | color(?:-(?>adjust|interpolation-filters))?
+      | column
+        # colums
+        (?> s
+          | -
+            # column-count
+            (?> count
+              # column-fill
+              | fill
+              # column-gap
+              | gap
+              # column-rule, column-rule-color, column-rule-style,
+              # column-rule-width
+              | rule(?:-(?>color|style|width))?
+              # column-span
+              | span
+              # column-width
+              | width
+            )
+        )
+      | contain
+      | content
+      | continue
+      # counter-increment, counter-reset, counter-set
+      | counter(?:-(?>increment|reset|set))
+      # cue, cue-after, cue-before
+      | cue(?:-(?>after|before))?
+      | cursor
+      | direction
+      | display
+      | dominant-baseline
+      | elevation
+      | empty-cells
+      | fallback
+      | fill
+        (?:-
+          # fill-break
+          (?> break
+            # fill-color
+            | color
+            # fill-image
+            | image
+            # fill-opacity
+            | opacity
+            # fill-origin
+            | origin
+            # fill-position
+            | position
+            # fill-repeat
+            | repeat
+            # fill-rule
+            | rule
+            # fill-size
+            | size
+          )
+        )?
+      | filter
+      # flex, flex-basis, flex-direction, flex-flow, flex-grow, flex-shrink,
+      # flex-wrap
+      | flex(?:-(?>basis|direction|flow|grow|shrink|wrap))?
+      # float, float-defer, float-offset, float-reference
+      | float(?:-(?>defer|offset|reference))?
+      # flood-color, flood-opacity
+      | flood-(?>color|opacity)
+      # flow, flow-from, flow-into
+      | flow(?:-(?>from|into))?
+      | font
+        (?:-
+          # font-family
+          (?> family
+            # font-feature-settings
+            | feature-settings
+            # font-kerning
+            | kerning
+            # font-language-override
+            | language-override
+            # font-max-size
+            | max-size
+            # font-min-size
+            | min-size
+            # font-optical-sizing
+            | optical-sizing
+            # font-pallete
+            | palette
+            # font-presentation
+            | presentation
+            # font-size, font-size-adjust
+            | size(?:-adjust)?
+            # font-stretch
+            | stretch
+            # font-style
+            | style
+            # font-synthesis
+            | synthesis
+            # font-variant
+            | variant
+              (?:-
+                # font-variant-alternates
+                (?> alternates
+                  # font-variant-caps
+                  | caps
+                  # font-variant-asian
+                  | east-asian
+                  # font-variant-ligatures
+                  | ligatures
+                  # font-variant-numeric
+                  | numeric
+                  # font-variant-position
+                  | position
+                )
+              )?
+            # font-variation-settings
+            | variation-settings
+            # font-weight
+            | weight
+          )
+        )?
+      # footnote-display, footnote-policy
+      | footnote-(?>display|policy)
+      | gap
+      | glyph-orientation-vertical
+      | hanging-punctuation
+      | height
+      | hyphenate-
+        # hyphenate-character
+        (?> character
+          # hyphenate-limit-chars, hyphenate-limit-last, hyphenate-limit-lines,
+          # hyphenate-limit-zone
+          | limit-(?>chars|last|lines|zone)
+        )
+      | hyphens
+      # image-orientation, image-resolution
+      | image(?:-(?>orientation|resolution))
+      # initial-letter, initial-align, initial-wrap
+      | initial-letter(?:-(?>align|wrap))?
+      | inline-size
+      | inset
+        (?:-
+          # inset-block-end, inset-block-start
+          (?> block(?:-(?>end|start))?
+            # inset-inline-end, inset-inline-start
+            | inline(?:-(?>end|start))?
+          )
+        )?
+      | isolation
+      # justify-content, justify-items, justify-self
+      | justify-(?>content|items|self)
+      | left
+      | letter-spacing
+      | lighting-color
+      # line-break, line-grid, line-height, line-height-step, line-snap
+      | line-(?>break|grid|height(?:-step)?|snap)
+      | list-style
+        (?:-
+          # list-style-image
+          (?> image
+            # list-style-position
+            | position
+            # list-style-type
+            | type
+          )
+        )?
+      | margin
+        (?:-
+          # margin-block-end, margin-block-start
+          (?> block(?:-(?>end|start))?
+            # margin-bottom
+            | bottom
+            # margin-inline-end, margin-inline-start
+            | inline(?:-(?>end|start))?
+            # margin-left
+            | left
+            # margin-right
+            | right
+            # margin-top
+            | top
+          )
+        )?
+      | marker
+        (?:-
+          # marker-end
+          (?> end
+            # marker-knockout-left, marker-knockout-right
+            | knockout-(?>left|right)
+            # marker-mid
+            | mid
+            # marker-pattern
+            | pattern
+            # marker-segment
+            | segment
+            # marker-side
+            | side
+            # marker-start
+            | start
+          )
+        )?
+      # marquee-direction, marquee-loop, marquee-speed, marquee-style
+      | marquee-(?>direction|loop|speed|style)
+      | mask
+        (?:-
+          # mask-border
+          (?> border
+              (?:-
+                # mask-border-mode
+                (?> mode
+                  # mask-border-outset
+                  | outset
+                  # mask-border-repeat
+                  | repeat
+                  # mask-border-slice
+                  | slice
+                  # mask-border-source
+                  | source
+                  # mask-border-width
+                  | width
+                )
+              )?
+            # mask-clip
+            | clip
+            # mask-composite
+            | composite
+            # mask-image
+            | image
+            # mask-mode
+            | mode
+            # mask-origin
+            | origin
+            # mask-position
+            | position
+            # mask-repeat
+            | repeat
+            # mask-size
+            | size
+            # mask-type
+            | type
+          )
+        )?
+      # max-block-size, max-height, max-inline-size, max-lines, max-width, max-zoom
+      | max-(?>block-size|height|inline-size|lines|width|zoom)
+      # min-block-size, min-height, min-inline-size, min-width, min-zoom
+      | min-(?>block-size|height|inline-size|width|zoom)
+      | mix-blend-mode
+      # nav-down, nav-left, nav-right, nav-up
+      | nav-(?>down|left|right|up)
+      | negative
+      # object-fit, object-position
+      | object-(?>fit|position)
+      | offset
+        (?:-
+          # offset-after
+          (?> after
+            # offset-anchor
+            | anchor
+            # offset-before
+            | before
+            # offset-distance
+            | distance
+            # offset-end
+            | end
+            # offset-path
+            | path
+            # offset-position
+            | position
+            # offset-rotate
+            | rotate
+            # offset-start
+            | start
+          )
+        )?
+      | opacity
+      | order
+      | orphans
+      | orientation
+      | overflow
+        (?:-
+          # overflow-style
+          (?> style
+            # overflow-wrap
+            | wrap
+            # overflow-x
+            | x
+            # overflow-y
+            | y
+          )
+        )?
+      | outline
+        (?:-
+          # outline-color
+          (?> color
+            # outline-offset
+            | offset
+            # outline-style
+            | style
+            # outline-width
+            | width
+          )
+        )?
+      | pad
+        (?:ding
+          (?:-
+            # padding-block, padding-block-end, padding-block-start
+            (?> block(?:-(?>end|start))?
+              # padding-bottom
+              | bottom
+              # padding-inline, padding-inline-end, padding-inline-start
+              | inline(?:-(?>end|start))?
+              # padding-left
+              | left
+              # padding-right
+              | right
+              # padding-top
+              | top
+            )
+          )?
+        )?
+      # page, page-break-after, page-break-before, page-break-inside
+      | page(?:-break-(?>after|before|inside))?
+      # pause, pause-after, pause-before
+      | pause(?:-(?>after|before))?
+      # pitch, pitch-range
+      | pitch(?:-range)?
+      # place-content, place-items, place-self
+      | place-(?>content|items|self)
+      | play-during
+      | position
+      | pointer-events
+      | prefix
+      | presentation-level
+      | quotes
+      | range
+      | region-fragment
+      | resize
+      # rest, rest-after, rest-before
+      | rest(?:-(?>after|before))?
+      | richness
+      | right
+      # rotation, rotation-point
+      | rotation(?:-point)?
+      | row-gap
+      # ruby-align, ruby-merge, ruby-position
+      | ruby-(?>align|merge|position)
+      | running
+      | scroll-
+        (?> behavior
+          | margin
+            (?:-
+              # scroll-margin-block, scroll-margin-block-end,
+              # scroll-margin-block-start
+              (?> block(?:-(?>end|start))?
+                # scroll-margin-bottom
+                | bottom
+                # scroll-margin-inline, scroll-margin-inline-end,
+                # scroll-margin-inline-start
+                | inline(?:-(?>end|start))?
+                # scroll-margin-left
+                | left
+                # scroll-margin-right
+                | right
+                # scroll-margin-top
+                | top
+              )
+            )?
+        )
+      | scroll-padding
+        (?:-
+          # scroll-padding-block, scroll-padding-block-end,
+          # scroll-padding-block-start
+          (?> block(?:-(?>end|start))?
+            # scroll-padding-bottom
+            | bottom
+            # scroll-padding-inline, scroll-padding-inline-end,
+            # scroll-padding-inline-start
+            | inline(?:-(?>end|start))?
+            # scroll-padding-left
+            | left
+            # scroll-padding-right
+            | right
+            # scroll-padding-top
+            | top
+          )
+        )?
+      # scroll-snap-align, scroll-snap-stop, scroll-snap-type
+      | scroll-snap-(?>align|stop|type)
+      | scrollbar-gutter
+      # shape-inside, shape-image-threshold, shape-margin, shape-outside
+      | shape-(?>inside|image-threshold|margin|outside)
+      | size
+      | speak
+        (?:-
+          # speak-as
+          (?> as
+            # speak-header
+            | header
+            # speak-numeral
+            | numeral
+            # speak-punctuation
+            | punctuation
+          )
+        )?
+      | speech-rate
+      | src
+      | stress
+      | string-set
+      | stroke
+        (?:-
+          # stroke-align, stroke-alignment
+          (?> align(?:ment)?
+            # stroke-break
+            | break
+            # stroke-color
+            | color
+            | dash
+              # stroke-dash-corner, stroke-dash-justify
+              (?> -(?>corner|justify)
+                # stroke-dashadjust
+                | adjust
+                # stroke-array
+                | array
+                # stroke-corner
+                | corner
+                # stroke-offset
+                | offset
+              )
+            # stroke-image
+            | image
+            # stroke-linecap, stroke-linejoin
+            | line(?>cap|join)
+            # stroke-miterlimit
+            | miterlimit
+            # stroke-opacity
+            | opacity
+            # stroke-origin
+            | origin
+            # stroke-position
+            | position
+            # stroke-repeat
+            | repeat
+            # stroke-size
+            | size
+            # stroke-width
+            | width
+          )
+        )?
+      # symbols, system, suffix
+      | s(?>ymbols|ystem|uffix)
+      | tab-size
+      | table-layout
+      | text-
+        # text-align, text-align-all, text-align-last
+        (?> align(?:-(?>all|last))?
+          # text-combine-upright
+          | combine-upright
+          # text-decoration
+          | decoration
+            # text-decoration-color, text-decoration-line, text-decoration-skip
+            # text-decoration-style
+            (?:-(?>color|line|skip|style))?
+          # text-emphasis
+          | emphasis
+            # text-emphasis-color, text-emphasis-position, text-emphasis-style
+            (?:-(?>color|position|style))?
+          # text-indent
+          | indent
+          # text-justify
+          | justify
+          # text-orientation
+          | orientation
+          # text-overflow
+          | overflow
+          # text-shadow
+          | shadow
+          # text-space-collapse, text-space-trim
+          | space-(?>collapse|trim)
+          # text-spacing
+          | spacing
+          # text-transform
+          | transform
+          # text-underline-position
+          | underline-position
+          # text-wrap
+          | wrap
+        )
+      | top
+      # transform, transform-box, transform-origin
+      | transform(?:-(?>box|origin))?
+      # transition, transition-delay, transition-duration, transition-property,
+      # transition-timing-function
+      | transition(?:-(?>delay|duration|property|timing-function))?
+      | unicode-bidi
+      | user-select
+      | vertical-align
+      | visibility
+      | voice-
+        # voice-balance
+        (?> balance
+          # voice-duration
+          | duration
+          # voice-family
+          | family
+          # voice-pitch
+          | pitch
+          # voice-range
+          | range
+          # voice-rate
+          | rate
+          # voice-stress
+          | stress
+          # voice-volume
+          | volume
+        )
+      | volume
+      | white-space
+      | widows
+      | width
+      | will-change
+      # word-break, word-spacing, word-wrap
+      | word-(?>break|spacing|wrap)
+      | wrap-
+        # wrap-after
+        (?> after
+          # wrap-before
+          | before
+          # wrap-flow
+          | flow
+          # wrap-inside
+          | inside
+          # wrap-through
+          | through
+        )
+      | writing-mode
+      # z-index, zoom
+      | z(?>-index|oom)
+    )
+
+contexts:
+  main:
+    - include: core
+    - include: custom
+    - include: prefixed
+    - include: other
+
+  core:
+    - match: (?xi){{coreProperties}}
+      scope: support.type.property-name.css.css3
+      pop: true
+
+  custom:
+    - match: (?i){{customProperty}}
+      captures:
+        0: support.type.custom-property.css.css3
+        1: punctuation.definition.custom-property.css.css3
+        2: support.type.custom-property.name.css.css3
+      pop: true
+
+  prefixed:
+    - match: |
+        (?xi)
+        (-(?>moz|ms|o|webkit)-)
+        ({{coreProperties}})
+      captures:
+        1: support.type.vendor-prefix.css.css3
+        2: support.type.property-name.css.css3
+      pop: true
+
+  other:
+    - match: (?i){{cssIdentifier}}
+      scope: variable.other.type.property-name.css.css3
+      pop: true

@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -35,27 +34,21 @@ variables:
 
 contexts:
   main:
-    - match: \s*(')
-      captures:
-        1: >-
-          string.quoted.single.js.fjsx15
-          punctuation.definition.string.begin.js.fjsx15
+    - match: \'
+      scope: punctuation.definition.string.begin.js.fjsx15
       set: string
 
   trap:
     - meta_content_scope: context.trap
 
   string:
-    - meta_content_scope: string.quoted.single.js.fjsx15
+    - meta_scope: string.quoted.single.js.fjsx15
     # New line trap.
     - match: (?<!\\)\n
       set: trap
     # Close.
-    - match: \s*(')
-      captures:
-        1: >-
-          string.quoted.single.js.fjsx15
-          punctuation.definition.string.end.js.fjsx15
+    - match: \'
+      scope: punctuation.definition.string.end.js.fjsx15
       pop: true
     # Escape.
     - match: (?xi){{singleQuotedEscapeSequences}}

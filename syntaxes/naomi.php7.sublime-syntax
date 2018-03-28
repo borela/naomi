@@ -13,13 +13,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: PHP 7
+name: PHP
+scope: text.html
 
 file_extensions:
   - php
   - php7
-
-scope: text.html5
 
 contexts:
   main:

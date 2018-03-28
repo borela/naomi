@@ -13,15 +13,32 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: CSS 3
+name: CSS
+scope: source.css
 
 file_extensions:
   - css
-
-scope: >-
-  source.css.css3
+  - css3
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/scss3/selector.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax
+    - match: ""
+      push: [ meta, entry ]
+
+  entry:
+    - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/css3/statement.sublime-syntax
+    - match: (?=\S)
+      push:
+        - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
+
+  meta:
+    - meta_scope: meta.naomi
+    - match: ""
+      pop: true
+
+  # Used by the core syntax to highlight inline CSS.
+  rule-list-body:
+    - match: ""
+      push:
+        - include: Packages/Naomi/syntaxes/css3/ruleset/block.sublime-syntax#delimiter

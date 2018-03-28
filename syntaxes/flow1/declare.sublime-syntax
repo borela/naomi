@@ -14,17 +14,15 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(declare)\b
-      captures:
-        1: keyword.declaration.flow
+    - match: declare\b
+      scope: keyword.declaration.flow
       set: possible-module
 
   possible-module:
     - include: Packages/Naomi/syntaxes/flow1/module.sublime-syntax
-    - match: (?=\s*\S)
+    - match: (?=\S)
       pop: true

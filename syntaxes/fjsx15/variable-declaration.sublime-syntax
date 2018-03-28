@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -54,15 +53,16 @@ variables:
     )
 
   string: |
-    (?> '(?:\'|[^'])*'
-      | "(?:\"|[^"])*"
-      | `(?:\`|[^`])*`
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
     )
 
   simpleFlowType: |
     (?> {{string}}
       | {{commonIdentifier}}
         {{genericArguments}}?
+        (?:\[\s*\])?
     )
 
   flowFunction: |
@@ -93,52 +93,41 @@ variables:
 
 contexts:
   main:
-    - match: |
-        (?x)
-        (?=\s*(?>const|let|var)\b)
+    - match: (?=(?>const|let|var)\b)
       set: [
         optional-type-and-initial-value,
         variable-or-constant,
         keyword
       ]
 
+  associated-type:
+    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
+
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  else-pop:
+    - match: (?=\S)
+      pop: true
+
+  keyword:
+    - match: (?>const|let|var)\b
+      scope: storage.type.js.fjsx15
+      pop: true
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
-  associated-type:
-    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
-
   optional-type-and-initial-value:
     - meta_scope: meta.declaration.variable.js.fjsx15
-    - match: (?=\s*:)
+    - match: (?=:)
       push: associated-type
-    - match: \s*(,)
-      captures:
-        1: punctuation.separator.js.fjsx15
+    - match: \,
+      scope: punctuation.separator.comma.js.fjsx15
       push: variable-or-constant
-    - match: (?=\s*=)
+    - match: (?==)
       push: optional-expression
-    - match: (?=\s*\S)
-      pop: true
-
-  keyword:
-    - match: |
-        (?x)\s*
-        ((?>const|let|var))
-      captures:
-        1: storage.type.js.fjsx15
-      pop: true
-
-  variable-or-constant:
-    - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
-    - include: constant
-    - include: variable
+    - include: else-pop
 
   optional-type:
     - include: comment-no-pop
@@ -147,16 +136,16 @@ contexts:
   constant:
     # Single character.
     - match: |
-        (?x)\s*
+        (?x)
         (\#)?
         ([_[:upper:]])\b
       captures:
         1: storage.modifier.js.fjsx15
-        2: entity.name.constant.js.fjsx15
+        2: variable.other.constant.js.fjsx15
       pop: true
     # Two or more characters.
     - match: |
-        (?x)\s*
+        (?x)
         (\#)?
         (
           {{constantIdentifier}}
@@ -166,24 +155,24 @@ contexts:
         )
       captures:
         1: storage.modifier.js.fjsx15
-        2: entity.name.constant.js.fjsx15
+        2: variable.other.constant.js.fjsx15
       pop: true
 
   variable:
     # Single character.
     - match: |
-        (?xi)\s*
+        (?xi)
         (\#)?
         ((?> \$\B
           | [_[:alpha:]]\b
         ))
       captures:
         1: storage.modifier.js.fjsx15
-        2: entity.name.variable.js.fjsx15
+        2: variable.other.readwrite.js.fjsx15
       pop: true
     # Two or more characters.
     - match: |
-        (?xi)\s*
+        (?xi)
         (\#)?
         (
           {{commonIdentifier}}
@@ -193,5 +182,13 @@ contexts:
         )
       captures:
         1: storage.modifier.js.fjsx15
-        2: entity.name.variable.js.fjsx15
+        2: variable.other.readwrite.js.fjsx15
       pop: true
+
+  variable-or-constant:
+    - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
+    - include: constant
+    - include: variable

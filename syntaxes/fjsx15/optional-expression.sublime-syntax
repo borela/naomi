@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
@@ -23,5 +22,5 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   expression-escape:
-    - match: (?=\s*[,;:)\]}])
+    - match: (?=[,;:)\]}])
       pop: true

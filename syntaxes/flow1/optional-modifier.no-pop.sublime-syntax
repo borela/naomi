@@ -14,12 +14,11 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: (?=\s*\?)
+    - match: (?=\?)
       push: optional-modifier
 
   optional-modifier:

@@ -14,14 +14,13 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: (?=\s*:)
+    - match: (?=:)
       set: associated-type
-    - match: (?=\s*\S)
+    - match: (?=\S)
       pop: true
 
   associated-type:

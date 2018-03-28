@@ -14,14 +14,14 @@
 # the License.
 
 name: Git Config
+scope: source.git.config
 
 file_extensions:
   - gitconfig
 
-scope: source.git.config
-
 contexts:
   main:
+    - meta_scope: meta.naomi
     - match: ""
       push:
         - include: Packages/Naomi/syntaxes/git2/comment.sublime-syntax

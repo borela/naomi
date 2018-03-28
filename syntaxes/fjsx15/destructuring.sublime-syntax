@@ -14,30 +14,41 @@
 # the License.
 
 hidden: true
-
 scope: ...
+
+variables:
+  string: |
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
+    )
 
 contexts:
   main:
     # Array.
     - match: |
         (?x)
-        (?<!\))
-        (?=\s*
-          \[
-          [^;]*?
-          ]
-          \s*=[^=]
+        (?=
+          (\[
+            (?> {{string}}
+              | \g<-1>
+              | [^\[\]]
+            )*
+          \])
+          \s*=
         )
       set: destructuring-array
     # Object.
     - match: |
         (?x)
-        (?=\s*
-          \{
-          [^;]*?
-          }
-          \s*=[^=]
+        (?=
+          (\{
+            (?> {{string}}
+              | \g<-1>
+              | [^{}]
+            )*
+          \})
+          \s*=
         )
       set: destructuring-object
 

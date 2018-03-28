@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -24,12 +23,16 @@ variables:
 
 contexts:
   main:
-    - match: |
-        (?xi)
-        (?=\s*<(?>\s*>|{{commonIdentifier}}))
-      with_prototype:
-       - include: comment-and-embedded-js
-      set: [ Packages/Naomi/syntaxes/naomi.jsx1.sublime-syntax ]
+    - match: (?xi)(?=<(?>\s*>|{{commonIdentifier}}))
+      set: [ meta, jsx ]
 
-  comment-and-embedded-js:
-    - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax#comment-and-embedded-js
+  jsx:
+    - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax#jsx
+
+  meta:
+    - clear_scopes: true
+    - meta_scope: >-
+        source.jsx
+        meta.naomi
+    - match: ""
+      pop: true

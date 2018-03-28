@@ -13,15 +13,15 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: Markdown
+name: Markdown (Github)
+scope: text.html.markdown
 
 file_extensions:
   - md
 
-scope: text.html.markdown.md1
-
 contexts:
   main:
+    - meta_scope: meta.naomi
     - match: ""
       push:
         - include: Packages/Naomi/syntaxes/md1/header.sublime-syntax

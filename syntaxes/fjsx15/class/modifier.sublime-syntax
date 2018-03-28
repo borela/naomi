@@ -14,50 +14,43 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - include: modifiers
+    # static
+    - match: static\b(?!\s*:)
+      scope: storage.modifier.js.fjsx15
+      set: modifier-trap
+    # private
+    - match: \#(?!\s*:)
+      scope: storage.modifier.js.fjsx15
+      set: modifier-trap
+    # async
+    - match: async\b(?!\s*:)
+      scope: storage.modifier.js.fjsx15
+      set: modifier-trap
+    # get/set
+    - match: (?>get|set)\b(?!\s*:)
+      scope: storage.modifier.js.fjsx15
+      set: modifier-trap
+    # generator
+    - match: \*(?!\s*:)
+      scope: storage.modifier.js.fjsx15
+      set: modifier-trap
 
-  modifiers:
-    - match: \s*(static)\b(?!\s*:)
-      captures:
-        1: storage.modifier.js.fjsx15
-      set: modifier-trap
-    - match: \s*(\#)(?!\s*:)
-      captures:
-        1: >-
-          storage.modifier.js.fjsx15
-      set: modifier-trap
-    - match: \s*(async)\b(?!\s*:)
-      captures:
-        1: storage.modifier.js.fjsx15
-      set: modifier-trap
-    - match: |
-        (?xi)\s*
-        (get|set)\b(?!\s*:)
-      captures:
-        1: storage.modifier.js.fjsx15
-      set: modifier-trap
-    - match: \s*(\*)(?!\s*:)
-      captures:
-        1: storage.modifier.js.fjsx15
-      set: modifier-trap
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
+  method-declaration:
+    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax#declaration
 
   modifier-trap:
-    - include: modifiers
-    - match: (?=\s*\S)
+    - include: main
+    - match: (?=\S)
       set: property-or-method
 
   property-or-method:
     - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
-
-  method-declaration:
-    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax#declaration
-
-  comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax

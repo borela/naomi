@@ -14,17 +14,12 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
     # jest.
-    - match: |
-        (?x)
-        (?<!\.)
-        \s*(jest)
-        \s*(\.)
+    - match: (jest)\s*(\.)
       captures:
         1: support.type.object.jest.js.fjsx15
         2: punctuation.accessor.js.fjsx15
@@ -32,65 +27,88 @@ contexts:
     # afterAll/Each, beforeAll/Each, describe, it, test.
     - match: |
         (?x)
-        (?<!\.)\s*
-        ((?> after(?>All|Each)
+        (?> after(?>All|Each)
           | before(?>All|Each)
           | describe
           | it
           | test
-        ))\b
-      captures:
-        1: support.function.jest.fn.js.fjsx15
+        )\b
+        (?=
+          (?> \.(?>only|skip)
+            | \s*\(
+          )
+        )
+      scope: support.function.jest.fn.js.fjsx15
       set: [
         meta-scope,
         arguments,
         optional-skip-only
       ]
     # expect
-    - match: (?<!\.)\s*(expect)
-      captures:
-        1: support.function.jest.js.fjsx15
+    - match: expect\b
+      scope: support.function.jest.js.fjsx15
       set: [
         expect-chain,
         meta-scope,
         arguments
       ]
 
-  escape:
-    - match: (?=\s*\S)
-      pop: true
-
-  pop-now:
-    - match: ""
-      pop: true
-
   accessor-no-pop:
-    - match: \s*(\.)
-      captures:
-        1: punctuation.accessor.js.fjsx15
+    - match: \.
+      scope: punctuation.accessor.js.fjsx15
 
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
-  optional-skip-only:
+  else-pop:
+    - match: (?=\S)
+      pop: true
+
+  expect-chain:
     - include: accessor-no-pop
-    # only
-    - match: \s*(only)\b
-      captures:
-        1: support.function.jest.only.js.fjsx15
-      pop: true
-    # skip
-    - match: \s*(skip)\b
-      captures:
-        1: support.function.jest.skip.js.fjsx15
-      pop: true
-    # Anything else.
-    - include: escape
+    # Not.
+    - match: not\b
+      scope: support.type.object.jest.matcher.not.js.fjsx15
+    # Matchers.
+    - match: |
+        (?x)
+        to
+        (?> Be
+            (?> Called
+              | CloseTo
+              | Defined
+              | Falsy
+              | GreaterThan
+              | GreaterThanOrEqual
+              | InstanceOf
+              | LessThan
+              | LessThanOrEqual
+              | Null
+              | Truthy
+              | Undefined
+            )?
+          | Contain(?:Equal)?
+          | Equal
+          | HaveBeen
+            (?> Called(?>Times|With)?
+              | LastCalledWith
+            )
+          | Have(?>Length|Property)
+          | Match(?:Object|Snapshot)?
+          | Throw(?:Error(?:MatchingSnapshot)?)?
+        )\b
+        (?=\s*\()
+      scope: support.function.jest.matcher.fjsx15
+      set: [
+        matcher-meta-scope,
+        arguments
+      ]
+    - include: else-pop
 
   jest-property-or-function:
     - match: |
-        (?x)\s*
-        ((?> clearAllTimers
+        (?x)
+        (?> clearAllTimers
           | disableAutomock
           | enableAutomock
           | fn
@@ -113,65 +131,35 @@ contexts:
           | useFakeTimers
           | useRealTimers
           | spyOn
-        ))
+        )
         (?=\s*\()
-      captures:
-        1: support.function.jest.js.fjsx15
+      scope: support.function.jest.js.fjsx15
       set: [
         meta-scope,
         arguments
       ]
-
-  meta-scope:
-    - meta_scope: meta.function-call.jest.js.fjsx15
-    - include: pop-now
+    - include: else-pop
 
   matcher-meta-scope:
     - meta_scope: meta.function-call.jest.matcher.js.fjsx15
     - include: pop-now
 
-  expect-chain:
+  meta-scope:
+    - meta_scope: meta.function-call.jest.js.fjsx15
+    - include: pop-now
+
+  optional-skip-only:
     - include: accessor-no-pop
-    # Not.
-    - match: \s*(not)\b
-      captures:
-        1: support.type.object.jest.matcher.not.js.fjsx15
-    # Matchers.
-    - match: |
-        (?x)\s*
-        (to
-          (?> Be
-              (?> Called
-                | CloseTo
-                | Defined
-                | Falsy
-                | GreaterThan
-                | GreaterThanOrEqual
-                | InstanceOf
-                | LessThan
-                | LessThanOrEqual
-                | Null
-                | Truthy
-                | Undefined
-              )?
-            | Contain(?:Equal)?
-            | Equal
-            | HaveBeen
-              (?> Called(?>Times|With)?
-                | LastCalledWith
-              )
-            | Have(?>Length|Property)
-            | Match(?:Object|Snapshot)?
-            | Throw(?:Error(?:MatchingSnapshot)?)?
-          )
-        )\b
-        (?=\s*\()
-      captures:
-        1: support.function.jest.matcher.fjsx15
-      set: [
-        matcher-meta-scope,
-        arguments
-      ]
-    # Anything else.
-    - match: (?=\s*\S)
+    # only
+    - match: only\b
+      scope: support.function.jest.only.js.fjsx15
+      pop: true
+    # skip
+    - match: skip\b
+      scope: support.function.jest.skip.js.fjsx15
+      pop: true
+    - include: else-pop
+
+  pop-now:
+    - match: ""
       pop: true

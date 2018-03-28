@@ -14,14 +14,12 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 contexts:
   main:
-    - match: \s*(=)
-      captures:
-        1: keyword.operator.other.assignment.js.fjsx15
+    - match: \=
+      scope: keyword.operator.other.assignment.js.fjsx15
       set: optional-expression
 
   optional-expression:

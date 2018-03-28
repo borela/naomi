@@ -14,35 +14,20 @@
 # the License.
 
 hidden: true
-
 scope: ...
-
-variables:
-  expressionGroupBegin: \s*(\()
-  expressionBegin: (?=\s*\S)
 
 contexts:
   main:
     - include: comment-no-pop
-    - include: comma
-    # At this stage, regex literals will have a higher priority than operators.
-    - match: (?=\s*/.*?(?<!\\)/[a-z]{0,5})
-      set: [ optional-tail, regex-literal ]
-    # Arrow functions need to be detected before expression groups.
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
-    # At this point is possible to predict JSX tags before operators because
-    # there’s no left operand for a "<" operator to be valid.
-    - include: Packages/Naomi/syntaxes/fjsx15/jsx1-early.sublime-syntax
-    # Detect operators as soon as possible.
-    - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
-    # Open new expression group.
-    - match: "{{expressionGroupBegin}}"
-      captures:
-        1: punctuation.section.group.begin.js.fjsx15
-      set: open-group
+    - include: shared-main
     # Start of the expression.
-    - match: "{{expressionBegin}}"
+    - match: (?=\S)
       set: [ optional-tail, head ]
+
+  close-group:
+    - match: \)
+      scope: punctuation.section.group.end.js.fjsx15
+      pop: true
 
   comma:
     - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.sublime-syntax
@@ -50,42 +35,31 @@ contexts:
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
 
-  optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+  do-expression:
+    - match: do\b
+      scope: keyword.control.do-expression.js.fjsx15
+      set: [ meta-do-expression, do-expression-body-begin ]
 
-  regex-literal:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
+  do-expression-body-begin:
+    - match: \{
+      scope: punctuation.section.block.begin.js.fjsx15
+      set: do-expression-body-end
 
-  type-cast:
-    - include: Packages/Naomi/syntaxes/flow1/cast.sublime-syntax
+  do-expression-body-end:
+    - match: \}
+      scope: punctuation.section.block.end.js.fjsx15
+      pop: true
+    - match: (?=\S)
+      push: statement-or-expression
 
-  open-group:
-    - meta_scope: meta.group.js.fjsx15
+  function-call:
     - include: comment-no-pop
-    # Comma operator.
-    - match: (?=\s*,)
-      push: comma
-    # Type cast.
-    - match: (?=\s*:)
-      set: [ close-group, type-cast ]
-    # Arrow functions need to be detect before expression groups.
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.no-pop.sublime-syntax
-    # Open new expression group.
-    - match: "{{expressionGroupBegin}}"
-      captures:
-        1: punctuation.section.group.begin.js.fjsx15
-      push: open-group
-    # Close the current expression group.
-    - include: close-group
-    # Start of the expression.
-    - match: "{{expressionBegin}}"
-      push: optional-expression
+    - include: main
 
-  close-group:
-    - match: \s*(\))
-      captures:
-        1: punctuation.section.group.end.js.fjsx15
-      set: optional-tail
+  function-call-meta-scope:
+    - meta_scope: meta.function-call.js.fjsx15
+    - match: ""
+      pop: true
 
   globals:
     - include: Packages/Naomi/syntaxes/fjsx15/node-js.sublime-syntax
@@ -96,6 +70,7 @@ contexts:
 
   head:
     - include: comment-no-pop
+    - include: do-expression
     - include: globals
     - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
@@ -105,36 +80,79 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
     - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+    # Open new expression group.
+    - match: \(
+      scope: punctuation.section.group.begin.js.fjsx15
+      set: open-group
+
+  meta-do-expression:
+    - meta_scope: meta.do-expression.js.fjsx15
+    - match: ""
+      pop: true
+
+  open-group:
+    - meta_scope: meta.group.js.fjsx15
+    - include: comment-no-pop
+    # Close the current expression group.
+    - include: close-group
+    # Type cast.
+    - match: (?=:)
+      set: [ close-group, type-cast ]
+    # Other expressions.
+    - match: (?=\S)
+      push:
+        - include: shared-main
+        # Start of the expression.
+        - match: ""
+          set: [ optional-tail, head ]
 
   optional-tail:
     - include: comment-no-pop
-    - include: globals
     # Function call.
-    - match: (?=\s*\()
-      set: [
-        optional-tail,
+    - match: (?=\()
+      push: [
         function-call-meta-scope,
         function-call
       ]
     # Property access.
-    - match: (?=\s*\[)
-      set: [ optional-tail, property-access ]
+    - match: (?=\[)
+      push: property-access
     # Other operators. At this point, operators will have a higher priority than
     # regex literals.
     - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
     # Anything else not expected.
-    - match: (?=\s*\S)
+    - match: (?=\S)
       pop: true
-
-  function-call-meta-scope:
-    - meta_scope: meta.function-call.js.fjsx15
-    - match: ""
-      pop: true
-
-  function-call:
-    - include: comment-no-pop
-    - include: main
 
   property-access:
     - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
+
+  regex-literal:
+    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
+
+  shared-main:
+    - include: comma
+    # At this stage, regex literals will have a higher priority than operators.
+    - match: (?=\/)
+      set: [ optional-tail, regex-literal ]
+    # Arrow functions need to be detected before expression groups.
+    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+    # At this point is possible to predict JSX tags before operators because
+    # there’s no left operand for a "<" operator to be valid.
+    - include: Packages/Naomi/syntaxes/fjsx15/jsx1-early.sublime-syntax
+    # Prevent floating point being highlighted as a dot operator followed by an
+    # integer.
+    - match: (?=\.\d)
+      set:
+        - include: Packages/Naomi/syntaxes/fjsx15/literal/number.sublime-syntax
+    # Detect operators as soon as possible.
+    - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
+
+  statement-or-expression:
+    - include: comment-no-pop
+    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
+  type-cast:
+    - include: Packages/Naomi/syntaxes/flow1/cast.sublime-syntax

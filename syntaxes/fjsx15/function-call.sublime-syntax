@@ -14,7 +14,6 @@
 # the License.
 
 hidden: true
-
 scope: ...
 
 variables:
@@ -24,10 +23,17 @@ variables:
 
   genericArguments: |
     (<
-      [^<>]*
-      \g<-1>?
-      [^<>]*
+      (?> {{string}}
+        | \g<-1>
+        | [^<>]
+      )*
     >)
+
+  string: |
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
+    )
 
 contexts:
   main:
@@ -35,14 +41,14 @@ contexts:
     - match: |
         (?xi)
         (?=
-          \s*\#?
-          \s*{{commonIdentifier}}
+          (?:\#\s*)?
+          {{commonIdentifier}}
           \s*{{genericArguments}}
           \s*(\?\.)?
           \s*\(
         )
       set: [
-        meta-scope,
+        meta,
         arguments,
         generic-arguments,
         identifier,
@@ -52,50 +58,48 @@ contexts:
     - match: |
         (?xi)
         (?=
-          \s*\#?
-          \s*{{commonIdentifier}}
+          (?:\#\s*)?
+          {{commonIdentifier}}
           \s*(\?\.)?
           \s*\(
         )
       set: [
-        meta-scope,
+        meta,
         arguments,
         identifier,
         optional-modifier
       ]
 
-  optional-modifier:
-    - match: \s*(\#)
-      captures:
-        1: storage.modifier.js.fjsx15
-    - match: (?=\s*\S)
-      pop: true
-
-  identifier:
-    - match: |
-        (?xi)
-        \s*({{commonIdentifier}})
-      captures:
-        1: variable.function.js.fjsx15
-      pop: true
-
-  generic-arguments:
-    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
-
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
-  optional-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-    - match: (?=\s*\()
-      push: expression
-    - match: (?=\s*\S)
+  else-pop:
+    - match: (?=\S)
       pop: true
 
   expression:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
-  meta-scope:
+  identifier:
+    - match: (?xi){{commonIdentifier}}
+      scope: variable.function.js.fjsx15
+      pop: true
+
+  generic-arguments:
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
+
+  meta:
     - meta_scope: meta.function-call.js.fjsx15
     - match: ""
       pop: true
+
+  optional-arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+    - match: (?=\()
+      push: expression
+    - include: else-pop
+
+  optional-modifier:
+    - match: \#
+      scope: storage.modifier.js.fjsx15
+    - include: else-pop

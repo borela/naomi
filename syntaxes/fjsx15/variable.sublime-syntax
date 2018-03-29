@@ -50,8 +50,17 @@ variables:
       | `(?:\`|[^`])*?`
     )
 
+  flowObject: |
+    (\{
+      (?> {{string}}
+        | \g<-1>
+        | [^{}]
+      )*
+    })
+
   simpleFlowType: |
     (?> {{string}}
+      | {{flowObject}}
       | {{commonIdentifier}}
         {{genericArguments}}?
         (?:\[\s*\])?

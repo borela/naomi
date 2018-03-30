@@ -74,8 +74,8 @@ those files you will need [CSScheme][CSScheme].
 * Name the main syntax file using the following format
   `naomi.[syntax].sublime-syntax`.
 * Additional files must not have the `name` or `file_extension` keys in the
-  header. Also, they must have the key `scope` set to `...` and the key `hidden`
-  set to `true`.
+  header;
+* Files must have the key `scope` set to `...` and the key `hidden` set to `true`.
 * Break the syntax into multiple files to make it easier to maintain and extend.
 * Break the regexes into multiple lines. This rule can be broken if the having
   the patterns on the same line will make it clearer.
@@ -87,9 +87,6 @@ those files you will need [CSScheme][CSScheme].
 
 ### Tests style guide
 
-* Feel free to use the `code-generator.xlsm` to generate tests for lists of
-  constants, it’s just a spreedsheet with macros where can click a button to
-  send the tests to the clipboard.
 * Create multiple files to group related tests.
 * Test as much as possible.
 * Add the appropriate [license header](#license-headers).

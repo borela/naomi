@@ -93,6 +93,7 @@ contexts:
         (?xi)
         {{commonIdentifier}}
         (?=
+          \s*\??
           \s*{{type}}?
           \s*=(?!\s*>)
         )
@@ -106,17 +107,15 @@ contexts:
       scope: variable.parameter.function.js.fjsx15
       set: optional-modifier-and-type
 
+  expression:
+    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+
   optional-default-value:
-    - meta_scope: >-
-        meta.function.parameter.js.fjsx15
-        meta.function.parameter.optional.js.fjsx15
+    - meta_scope: meta.function.parameter.optional.js.fjsx15
     - match: (?=(?>[,;:)\]}]|=>))
       pop: true
-    - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-        - match: ""
-          pop: true
+    - match: (?==)
+      set: expression
 
   optional-modifier-and-type:
     - include: Packages/Naomi/syntaxes/flow1/optional-modifier.no-pop.sublime-syntax

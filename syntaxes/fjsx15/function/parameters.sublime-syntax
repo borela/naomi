@@ -37,15 +37,9 @@ contexts:
       set: optional-return-type
     # Rest.
     - include: Packages/Naomi/syntaxes/fjsx15/operator/rest.no-pop.sublime-syntax
-    # Default value.
-    - match: (?==)
-      push: optional-expression
     # Actual parameter.
     - match: (?=\S)
       push: parameter
-
-  optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
   optional-return-type:
     - include: Packages/Naomi/syntaxes/flow1/optional-associated-type.sublime-syntax

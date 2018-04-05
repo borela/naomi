@@ -22,8 +22,12 @@ contexts:
       scope: punctuation.section.group.begin.js.fjsx15
       set: delimiter
 
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
   delimiter:
     - meta_scope: meta.group.js.fjsx15
+    - include: comment-no-pop
     - match: \)
       scope: punctuation.section.group.end.js.fjsx15
       pop: true

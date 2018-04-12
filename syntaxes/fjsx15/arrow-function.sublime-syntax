@@ -21,30 +21,6 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  complexType: |
-    (
-      \??\s*
-      (?> {{simpleFlowType}}
-        | {{flowFunction}}
-      )
-      \s*{{flowOperators}}?
-      \s*\g<-1>?
-    )
-
-  flowComment: |
-    /\*\s*:.*?\*/
-
-  flowFunction: |
-    (
-      {{parameters}}
-      \s*=>
-    )
-
-  flowOperators: |
-    (?> &(?!&)
-      | \|(?!\|)
-    )
-
   genericArguments: |
     (<
       (?> {{string}}
@@ -52,9 +28,6 @@ variables:
         | [^<>]
       )*
     >)
-
-  genericParameters: |
-    {{genericArguments}}
 
   parameters: |
     (\(
@@ -64,11 +37,9 @@ variables:
       )*
     \))
 
-  simpleFlowType: |
-    (?> {{string}}
-      | {{commonIdentifier}}
-        {{genericArguments}}?
-        (?:\[\s*\])?
+  flowOperators: |
+    (?> &(?!\s*&)
+      | \|(?!\s*\|)
     )
 
   string: |
@@ -77,9 +48,91 @@ variables:
       | `(?:\`|[^`])*?`
     )
 
+  flowObject: |
+    (\{
+      (?> {{string}}
+        | \g<-1>
+        | [^{}]
+      )*
+    })
+
+  simpleFlowType: |
+    (?> {{string}}
+      | {{flowObject}}
+      | {{commonIdentifier}}
+    )
+    (?:\s*{{genericArguments}})?
+    (?:\s*\[\s*\])?
+
+  flowFunction: |
+    (
+      {{parameters}}
+      \s*=>\s*
+      (?> {{simpleFlowType}}
+        | \g<-1>
+      )
+    )
+
+  complexType: |
+    (?:\?\s*)?
+    (
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
+        | \g<-1>
+      )
+    )
+
+  multipleTypes: |
+    (
+      (?> \s*{{flowOperators}}
+        | \s*{{complexType}}
+        | \g<-1>
+      )+
+    )
+
+  flowComment: /\*\s*:.*?\*/
+
   type: |
     (?> {{flowComment}}
-      | :{{complexType}}
+      | \:\s*{{multipleTypes}}
+    )
+
+  normalArrowFunction: |
+    (?:async\b\s*)?
+    (?:{{genericArguments}}\s*)?
+    {{parameters}}
+    (?:\s*{{type}})?
+    \s*=>
+
+  singleParameterArrowFunction: |
+    (?:async\b\s+)?
+    {{commonIdentifier}}
+    (?:\s*{{type}})?
+    \s*=>
+
+  anyArrowFunction: |
+    (?> {{normalArrowFunction}}
+      | {{singleParameterArrowFunction}}
+    )
+
+  normalArrowFunctionAssignedToVariable: |
+    {{commonIdentifier}}
+    (?:\s*{{type}})?
+    \s*=\s*
+    {{normalArrowFunction}}
+
+  singleParameterArrowFunctionAssignedToVariable: |
+    {{commonIdentifier}}
+    (?:\s*{{type}})?
+    \s*=\s*
+    {{singleParameterArrowFunction}}
+
+  anyArrowFunctionAssignedToVariable: |
+    {{commonIdentifier}}
+    (?:\s*{{type}})?
+    \s*=\s*
+    (?> {{normalArrowFunction}}
+      | {{singleParameterArrowFunction}}
     )
 
 contexts:
@@ -87,23 +140,12 @@ contexts:
     # Normal arrow function.
     - match: |
         (?xi)
-        (?=
-          (?:async\s*)?
-          (?:{{genericArguments}}\s*)?
-          {{parameters}}
-          \s*{{type}}?
-          \s*=>
-        )
+        (?={{normalArrowFunction}})
       set: normal-arrow-function
     # Single parameter.
     - match: |
         (?xi)
-        (?=
-          (?:async\s+)?
-          {{commonIdentifier}}
-          \s*{{type}}?
-          \s*=>
-        )
+        (?={{singleParameterArrowFunction}})
       set: single-parameter-arrow-function
 
   normal-arrow-function:

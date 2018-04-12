@@ -164,7 +164,7 @@ contexts:
           (?:async\b\s+)?
           function
         )
-      push: [
+      set: [
         function-declaration,
         function-keyword,
         meta-key,
@@ -178,6 +178,7 @@ contexts:
           \s*:\s*
           {{singleParameterArrowFunction}}
         )
+      set: [
         arrow-function,
         meta-key,
         method-identifier
@@ -190,7 +191,7 @@ contexts:
           \s*:\s*
           {{normalArrowFunction}}
         )
-      push: [
+      set: [
         arrow-function,
         meta-key,
         method-identifier
@@ -198,7 +199,7 @@ contexts:
     # Computed property name.
     - match: \[
       scope: punctuation.section.brackets.begin.js.fjsx15
-      push: [
+      set: [
         associated-value,
         meta-computed-key,
         computed-property-end,
@@ -211,7 +212,7 @@ contexts:
           {{keyIdentifier}}
           \s*:
         )
-      push: [
+      set: [
         associated-value,
         meta-key,
         any-key

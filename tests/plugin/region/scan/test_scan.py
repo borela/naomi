@@ -13,11 +13,14 @@
 from ...NaomiTestCase import NaomiTestCase
 from Naomi.plugin.region.scan import scan
 
+
 def false_predicate(view, offset):
     return False
 
+
 def true_predicate(view, offset):
     return True
+
 
 class TestScanNoLimit(NaomiTestCase):
     def test_stop_at_the_beginning(self):

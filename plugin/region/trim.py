@@ -10,20 +10,24 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .scan import *
+from Naomi.plugin.region.scan import (
+    search_non_whitespace,
+    search_non_whitespace_reverse
+)
 from sublime import Region
 
+
 def trim_region(view, region):
-  # The region is already collapsed.
-  if region.size() < 1:
-  	return region
+    # The region is already collapsed.
+    if region.size() < 1:
+        return region
 
-  begin = search_non_whitespace(view, region)
-  end = search_non_whitespace_reverse(view, region) + 1
+    begin = search_non_whitespace(view, region)
+    end = search_non_whitespace_reverse(view, region) + 1
 
-  # The entire line is empty.
-  if end < begin:
-  	begin = end
-  	end = begin
+    # The entire line is empty.
+    if end < begin:
+        begin = end
+        end = begin
 
-  return Region(begin, end)
+    return Region(begin, end)

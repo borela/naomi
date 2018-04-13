@@ -54,6 +54,6 @@ notifications:
 
 script:
   # Run python tests.
-  - sh travis.sh run_tests
+  - sh travis.sh run_tests --coverage
   # Run syntax tests.
   - sh travis.sh run_syntax_tests

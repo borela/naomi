@@ -25,6 +25,11 @@ env:
     # - UNITTESTING_TAG="master"
 
 install:
+  # Upgrade python on OSX.
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+      brew update;
+      brew upgrade python;
+    fi
   # Install flake8 and coveralls.
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
       pip install flake8;

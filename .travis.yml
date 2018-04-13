@@ -62,3 +62,5 @@ script:
   - sh travis.sh run_tests --coverage
   # Run syntax tests.
   - sh travis.sh run_syntax_tests
+  # Lint the plugin.
+  - flake8

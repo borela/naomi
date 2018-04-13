@@ -11,7 +11,7 @@
 # the License.
 
 from os.path import dirname, join
-from sublime import active_window, set_clipboard
+from sublime import active_window, Region, set_clipboard
 from unittest import TestCase
 import sys
 
@@ -25,10 +25,20 @@ class NaomiTestCase(TestCase):
         full_path = join(base_path, *relative_path)
 
         # Load fixture.
-        # Apply the contents to the view.
-        # Set cursor to the beginning.
+        fixture_content = ""
+        with open(full_path, "r") as file:
+            fixture_content = file.read()
 
+        self.setViewText(fixture_content)
+        self.setCursorPosition(0)
         self.fixture_loaded = True
+
+    def setCursorPosition(self, offset):
+        self.view.sel().clear()
+        self.view.sel().add(Region(offset))
+
+    def setViewText(self, text):
+        self.view.run_command("insert", {"characters": text})
 
     def setUp(self):
         set_clipboard("")
@@ -39,6 +49,3 @@ class NaomiTestCase(TestCase):
     def tearDown(self):
         if self.view:
             self.view.close()
-
-    def __setText(self, string):
-        self.view.run_command("insert", {"characters": string})

@@ -27,7 +27,9 @@ class OutputPanel(object):
 
     def show(self):
         name = self.settings['name']
-        self.sublime_window.run_command('show_panel', {'panel': 'output.' + name})
+        self.sublime_window.run_command(
+            'show_panel', {'panel': 'output.' + name}
+        )
 
     def __configure_panel(self):
         panel_settings = self.panel.settings()

@@ -19,29 +19,42 @@ from Naomi.plugin.view import (
 from sublime import Region
 
 
-def generate_comment_punctuation_region(view, offset, include_one_whitespace=True):
-    result = generate_region_for_scope(view, offset, 'punctuation\.definition\.comment\.\w+')
+ANY_COMMENT_SCOPE = 'punctuation\.definition\.comment\.\w+'
+COMMENT_SCOPE = 'punctuation.definition.comment'
+COMMENT_BEGIN_SCOPE = 'punctuation.definition.comment.begin'
+COMMENT_END_SCOPE = 'punctuation.definition.comment.end'
+
+
+def generate_comment_punctuation_region(
+    view, offset, include_one_whitespace=True
+):
+    result = generate_region_for_scope(view, offset, ANY_COMMENT_SCOPE)
     begin = result.begin()
     end = result.end()
     scopes = view.scope_name(begin)
 
-    if 'punctuation.definition.comment.begin' in scopes:
+    if COMMENT_BEGIN_SCOPE in scopes:
         next_char = view.substr(end)
         if next_char.isspace() and next_char != '\n':
-            if 'punctuation.definition.comment' not in view.scope_name(end + 1):
+            if COMMENT_SCOPE not in view.scope_name(end + 1):
                 end += 1
 
-    if 'punctuation.definition.comment.end' in scopes:
+    if COMMENT_END_SCOPE in scopes:
         previous_char = view.substr(begin - 1)
         if previous_char.isspace() and previous_char != '\n':
-            if 'punctuation.definition.comment' not in view.scope_name(begin - 2):
+            if COMMENT_SCOPE not in view.scope_name(begin - 2):
                 begin -= 1
 
     return Region(begin, end)
 
 
-def generate_jsjsx_comment_punctuation_region(view, offset, include_one_whitespace=True):
-    result = generate_comment_punctuation_region(view, offset, include_one_whitespace)
+def generate_jsjsx_comment_punctuation_region(
+    view, offset, include_one_whitespace=True
+):
+    result = generate_comment_punctuation_region(
+        view, offset, include_one_whitespace
+    )
+
     begin = result.begin()
     end = result.end()
 

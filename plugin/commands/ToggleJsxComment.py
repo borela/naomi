@@ -118,7 +118,9 @@ def comment_lines(view, edit, region):
 
 
 def must_comment(view, region):
-    non_whitespace_pos = search_non_whitespace(view, region, stop_on_line_feed=False)
+    non_whitespace_pos = search_non_whitespace(
+        view, region, stop_on_line_feed=False
+    )
 
     # The entire line is blank, a comment must be inserted in the region.
     if is_whitespace(view, non_whitespace_pos):
@@ -138,7 +140,8 @@ def resolve_required_comment_type(view, offset):
     scopes = view.scope_name(offset)
 
     unfenced_scopes = ['source.jsx', 'punctuation.definition.tag.begin']
-    unfenced_tag = all(x in scopes for x in unfenced_scopes) and 'meta.jsx-fence' not in scopes
+    unfenced_tag = all(x in scopes for x in unfenced_scopes) and \
+        'meta.jsx-fence' not in scopes
 
     meta_tag_scopes = ['source.jsx', 'meta.tag']
     meta_tag = all(x in scopes for x in meta_tag_scopes)
@@ -154,8 +157,8 @@ def uncomment_region(view, edit, region):
     begin = region.begin()
     end = region.end() - 1
 
-    # We will loop backwards, this means that it will hit the closing punctuation
-    # for block comments first.
+    # We will loop backwards, this means that it will hit the closing
+    # punctuation for block comments first.
     i = end + 1
     while i > begin:
         i -= 1
@@ -172,29 +175,36 @@ def uncomment_region(view, edit, region):
             i = punctuation_region.begin()
             continue
 
-        # We found the beginning of the block comment first, this means that there’s
-        # no end to it and we can easily remove it. It can be “/* ”, “/** ”, “{/* ”
-        # or “{/** ”.
+        # We found the beginning of the block comment first, this means that
+        # there’s no end to it and we can easily remove it. It can be “/* ”,
+        # “/** ”, “{/* ” or “{/** ”.
         if 'punctuation.definition.comment.begin' in scopes:
-            punctuation_region = generate_jsjsx_comment_punctuation_region(view, i)
+            punctuation_region = generate_jsjsx_comment_punctuation_region(
+                view, i
+            )
+
             view.erase(edit, punctuation_region)
             i = punctuation_region.begin()
             continue
 
-        # We are looping backwards, so it is expected to find the closing punctuation
-        # first which can be “ */” or “ */}”.
+        # We are looping backwards, so it is expected to find the closing
+        # punctuation first which can be “ */” or “ */}”.
         possible_jsx_comment = False
         if i < view.size() and is_jsx_close_brace(view, i + 1):
             possible_jsx_comment = True
 
-        closing_punctuation_region = generate_comment_punctuation_region(view, i)
+        closing_punctuation_region = generate_comment_punctuation_region(
+            view, i
+        )
 
         # Move the cursor 1 character after the beginning punctuation.
         i = scan_reverse(view, i, not_predicate(has_scope_predicate(
             'punctuation.definition.comment.begin'
         )))
 
-        open_punctuation_region = generate_comment_punctuation_region(view, i - 1)
+        open_punctuation_region = generate_comment_punctuation_region(
+            view, i - 1
+        )
 
         # Correct the regions to include the JSX braces if necessary.
         if possible_jsx_comment:

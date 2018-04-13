@@ -49,9 +49,11 @@ def expand_partial_comments(view, region):
     begin = region.begin()
     end = region.end()
 
-    # When the cursor is at the punctuation, we need to move it to the edges of the
-    # punctuation which will simplify the expansion.
-    begin_scope = search_scope(view, begin, 'punctuation\.definition\.comment\.\w+')
+    # When the cursor is at the punctuation, we need to move it to the edges of
+    # the punctuation which will simplify the expansion.
+    begin_scope = search_scope(
+        view, begin, 'punctuation\.definition\.comment\.\w+'
+    )
 
     if begin_scope is not None:
         begin = scan_reverse(view, begin, has_scope_predicate(begin_scope))
@@ -60,19 +62,21 @@ def expand_partial_comments(view, region):
     elif begin > 0:
         begin_scope = view.scope_name(begin)
         begin_char = view.substr(begin)
-        # If the region begins at a line feed and it is not a comment, the previous
-        # character could be the end of a single line comment.
+        # If the region begins at a line feed and it is not a comment, the
+        # previous character could be the end of a single line comment.
         if begin_char == '\n' and 'comment' not in begin_scope:
             previous_scope = view.scope_name(begin - 1)
-            # The previous char was indeed a single comment, we will move the region’s
-            # beginning to allow the expansion algorithm to catch it.
+            # The previous char was indeed a single comment, we will move the
+            # region’s beginning to allow the expansion algorithm to catch it.
             if 'comment.line' in previous_scope:
                 begin -= 1
 
     if end == begin and is_comment_begin(view, end):
         end = scan(view, end, is_comment_begin_predicate()) + 1
     else:
-        end_scope = search_scope(view, end - 1, 'punctuation\.definition\.comment\.\w+')
+        end_scope = search_scope(
+            view, end - 1, 'punctuation\.definition\.comment\.\w+'
+        )
         if end_scope is not None:
             end = scan(view, end, has_scope_predicate(end_scope))
 

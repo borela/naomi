@@ -11,11 +11,21 @@
 # the License.
 
 from ...NaomiTestCase import NaomiTestCase
+from Naomi.plugin.region.scan import scan
 
+def false_predicate(view, offset):
+    return False
 
-class TestScan(NaomiTestCase):
-    def setUp(self):
-        super().setUp()
+def true_predicate(view, offset):
+    return True
 
-    def test_(self):
+class TestScanNoLimit(NaomiTestCase):
+    def test_stop_at_the_beginning(self):
         self.loadFixture("fixtures", "lorem.txt")
+        resulting_offset = scan(self.view, 0, false_predicate)
+        self.assertEqual(resulting_offset, 0)
+
+    def test_stop_at_the_last_char_pos(self):
+        self.loadFixture("fixtures", "lorem.txt")
+        resulting_offset = scan(self.view, 0, true_predicate)
+        self.assertEqual(resulting_offset, self.view.size() - 1)

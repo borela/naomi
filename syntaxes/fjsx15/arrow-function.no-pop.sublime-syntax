@@ -145,7 +145,7 @@ contexts:
     # Single parameter.
     - match: |
         (?xi)
-        (?={{normalArrowFunction}})
+        (?={{singleParameterArrowFunction}})
       push: single-parameter-arrow-function
 
   normal-arrow-function:

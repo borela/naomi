@@ -51,15 +51,16 @@ contexts:
     - include: comma-no-pop
     - include: arg-close
     - match: (?=\S)
-      push: [ calc-optional-tail, calc-head ]
+      push: [ calc-optional-tail, calc-optional-head ]
 
-  calc-head:
+  calc-optional-head:
     - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
+    - include: else-pop
 
   calc-optional-tail:
     - match: "[+\\-*/]"
       scope: keyword.operator.arithmetic.css.css3
-      push: calc-head
+      set: calc-optional-head
     - include: else-pop
 
   comma-no-pop:

@@ -122,6 +122,11 @@ contexts:
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
+  close:
+    - match: \`
+      scope: punctuation.definition.styled-component.end.js.fjsx15
+      pop: true
+
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/comment/line.sublime-syntax#no-pop
@@ -152,9 +157,8 @@ contexts:
 
   shared-content:
     # Close.
-    - match: \`
-      scope: punctuation.definition.styled-component.end.js.fjsx15
-      pop: true
+    - match: (?=`)
+      set: close
     # Terminator.
     - match: ;
       scope: punctuation.terminator.css.css3

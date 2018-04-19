@@ -10,73 +10,77 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-def scan(view, offset, predicate, limit = -1):
-  if not predicate(view, offset):
+
+def scan(view, offset, predicate, limit=-1):
+    if not predicate(view, offset):
+        return offset
+
+    if limit < 1:
+        limit = view.size() - 1
+
+    while True:
+        offset += 1
+        if offset > limit:
+            offset = limit
+            break
+
+        if not predicate(view, offset):
+            break
+
     return offset
 
-  if limit < 1:
-    limit = view.size() - 1
 
-  while True:
-    offset += 1
-    if offset > limit:
-      offset = limit
-      break
-
+def scan_reverse(view, offset, predicate, limit=-1):
     if not predicate(view, offset):
-      break
+        return offset
 
-  return offset
+    if limit < 0:
+        limit = 0
 
-def scan_reverse(view, offset, predicate, limit = -1):
-  if not predicate(view, offset):
+    while True:
+        offset -= 1
+        if offset < limit:
+            offset = limit
+            break
+
+        if not predicate(view, offset):
+            offset += 1
+            break
+
     return offset
 
-  if limit < 0:
-    limit = 0
 
-  while True:
-    offset -= 1
-    if offset < limit:
-      offset = limit
-      break
+def search_non_whitespace(view, region, stop_on_line_feed=False):
+    def __predicate(view, offset):
+        char = view.substr(offset)
+        if stop_on_line_feed and char == '\n':
+            return False
+        return char.isspace()
 
-    if not predicate(view, offset):
-      offset += 1
-      break
+    begin = region.begin()
+    end = region.end()
 
-  return offset
+    if end < begin:
+        end = begin
 
-def search_non_whitespace(view, region, stop_on_line_feed = False):
-  def __predicate(view, offset):
-    char = view.substr(offset)
-    if stop_on_line_feed and char == '\n':
-      return False
-    return char.isspace()
+    return scan(view, begin, __predicate, end)
 
-  begin = region.begin()
-  end = region.end()
 
-  if end < begin:
-    end = begin
+def search_non_whitespace_reverse(view, region, stop_on_line_feed=False):
+    def __predicate(view, offset):
+        char = view.substr(offset)
+        if stop_on_line_feed and char == '\n':
+            return False
+        return char.isspace()
 
-  return scan(view, begin, __predicate, end)
+    begin = region.begin()
+    end = region.end() - 1
 
-def search_non_whitespace_reverse(view, region, stop_on_line_feed = False):
-  def __predicate(view, offset):
-    char = view.substr(offset)
-    if stop_on_line_feed and char == '\n':
-      return False
-    return char.isspace()
+    if end < begin:
+        end = begin
 
-  begin = region.begin()
-  end = region.end() - 1
+    result = scan_reverse(view, end, __predicate, begin)
+    if view.substr(result).isspace():
+        result -= 1
 
-  if end < begin:
-    end = begin
-
-  result = scan_reverse(view, end, __predicate, begin)
-  if view.substr(result).isspace():
-    result -= 1
-
-  return result
+    return result

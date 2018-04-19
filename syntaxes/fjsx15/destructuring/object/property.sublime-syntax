@@ -26,7 +26,7 @@ contexts:
     # String property name.
     - match: (?=(?>'|"|`))
       set: [
-        optional-alias,
+        optional-bind,
         meta-key,
         string
       ]
@@ -34,20 +34,24 @@ contexts:
     - match: \[
       scope: punctuation.section.brackets.begin.js.fjsx15
       set: [
-        optional-alias,
-        meta-key,
+        optional-bind,
+        meta-computed-key,
         computed-property-end,
         optional-expression
       ]
-    # Normal property with an alias.
+    # Normal property with an bind.
     - match: (?xi)({{commonIdentifier}})(?=\s*:)
       scope: string.unquoted.js.fjsx15
       set: [
-        optional-alias,
+        optional-bind,
         meta-key
       ]
+    # Simple variable or constant.
+    - match: ""
+      set: [ meta-destructuring, variable-or-constant ]
 
-  alias:
+  bind:
+    - meta_scope: meta.binding.destructuring.mapping.js.fjsx15
     - include: comment-no-pop
     - match: (?=\))
       pop: true
@@ -63,24 +67,40 @@ contexts:
       scope:  punctuation.section.brackets.end.js.fjsx15
       pop: true
 
+  meta-computed-key:
+    - meta_scope: meta.binding.destructuring.mapping.key.computed.js.fjsx15
+    - include: pop-now
+
+  meta-destructuring:
+    - meta_scope: meta.binding.destructuring.mapping.js.fjsx15
+    - include: pop-now
+
   meta-key:
+    # The object literal meta scope is necessary to allow color schemes to make
+    # object destructuring keys similar to object literals.
     - meta_scope: >-
         meta.binding.destructuring.mapping.key.js.fjsx15
         meta.object-literal.key.js.fjsx15
-    - match: ""
-      pop: true
+    - include: pop-now
 
-  optional-alias:
+  optional-bind:
     - match: ":"
       scope: punctuation.binding.js.fjsx15
-      set: alias
+      set: bind
     - match: (?=\S)
       pop: true
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
+  pop-now:
+    - match: ""
+      pop: true
+
   string:
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
+
+  variable-or-constant:
+    - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax#variable-or-constant

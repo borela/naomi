@@ -33,7 +33,7 @@ contexts:
           push:
             - match: (?=^\s*```)
               pop: true
-            - include: Packages/Naomi/syntaxes/naomi.json1.sublime-syntax
+            - include: scope:source.json
             - match: ""
               pop: true
     # JavaScript

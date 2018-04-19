@@ -21,8 +21,16 @@ file_extensions:
 
 contexts:
   main:
+    - match: ""
+      push: [ meta, entry ]
+
+  entry:
+    - include: Packages/Naomi/syntaxes/md1/header.sublime-syntax
+    - include: Packages/Naomi/syntaxes/md1/code-block.sublime-syntax
+    - match: ""
+      pop: true
+
+  meta:
     - meta_scope: meta.naomi
     - match: ""
-      push:
-        - include: Packages/Naomi/syntaxes/md1/header.sublime-syntax
-        - include: Packages/Naomi/syntaxes/md1/code-block.sublime-syntax
+      pop: true

@@ -31,7 +31,7 @@ contexts:
         (?xi)
         (?=
           {{customProperty}}
-          \s*:\s
+          \s*:
         )
       set: [ possible-set, property ]
     # Grid-template.
@@ -40,7 +40,7 @@ contexts:
         # grid-template, grid-template-areas, grid-template-columns,
         # grid-template-rows
         grid-template(?:-(?>areas|columns|rows))?
-        (?=\s*:\s)
+        (?=\s*:)
       scope: support.type.property-name.css.css3
       set: [ meta-value, optional-grid-template-value, delimiter ]
     # Grid.
@@ -60,7 +60,7 @@ contexts:
             | row(?:-(?>end|start))?
           )
         )?
-        (?=\s*:\s)
+        (?=\s*:)
       scope: support.type.property-name.css.css3
       set: [ meta-value, optional-grid-value, delimiter ]
     # property: value.
@@ -68,7 +68,7 @@ contexts:
         (?xi)
         (?=
           {{cssIdentifier}}
-          \s*:\s
+          \s*:
         )
       set: [ meta-value, optional-value, delimiter, property ]
     # Nesting.

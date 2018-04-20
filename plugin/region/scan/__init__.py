@@ -10,5 +10,16 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .functions import *
-from .predicates import *
+from .functions import (
+  scan,
+  scan_reverse,
+  search_non_whitespace,
+  search_non_whitespace_reverse
+)
+
+__all__ = [
+  scan,
+  scan_reverse,
+  search_non_whitespace,
+  search_non_whitespace_reverse
+]

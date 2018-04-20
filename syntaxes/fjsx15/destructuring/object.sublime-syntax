@@ -20,7 +20,7 @@ contexts:
   main:
     - match: \{
       scope: punctuation.section.block.begin.js.fjsx15
-      set: [ delimiters, optional-variable ]
+      set: delimiters
 
   comment-no-pop:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
@@ -29,25 +29,29 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
 
   delimiters:
-    - meta_scope: >-
-        meta.binding.destructuring.mapping.js.fjsx15
-        meta.block.js.fjsx15
+    - meta_scope: meta.binding.destructuring.mapping.js.fjsx15
     - match: \,
       scope: punctuation.separator.comma.js.fjsx15
-      push: optional-variable
     - match: \}
       scope: punctuation.section.block.end.js.fjsx15
       pop: true
+    # Rest operator.
+    - include: Packages/Naomi/syntaxes/fjsx15/operator/rest.no-pop.sublime-syntax
     # Default value.
     - match: (?==)
       push: default-value
+    # Property.
+    - match: (?=\S)
+      set: [ go-to-delimiters, property-or-variable ]
 
-  optional-variable:
+  go-to-delimiters:
+    - match: ""
+      set: delimiters
+
+  property-or-variable:
     - include: comment-no-pop
     - match: (?=[,)\]}])
       pop: true
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/rest.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object/property.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax#variable-or-constant

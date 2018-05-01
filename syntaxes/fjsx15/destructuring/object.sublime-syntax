@@ -42,11 +42,7 @@ contexts:
       push: default-value
     # Property.
     - match: (?=\S)
-      set: [ go-to-delimiters, property-or-variable ]
-
-  go-to-delimiters:
-    - match: ""
-      set: delimiters
+      push: property-or-variable
 
   property-or-variable:
     - include: comment-no-pop

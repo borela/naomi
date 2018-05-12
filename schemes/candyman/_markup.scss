@@ -71,6 +71,11 @@
   .entity.other.attribute-name {
     foreground: $green-300;
   }
+  .meta.tag.other.component {
+    .entity.other.attribute-name {
+      foreground: $cyan-300;
+    }
+  }
 }
 
 // Data attribute.

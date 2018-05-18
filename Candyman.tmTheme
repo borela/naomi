@@ -1494,7 +1494,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.keyword.control.conditional, .keyword.control.loop, .keyword.control.trycatch</string>
+			<string>.keyword.control.conditional, .keyword.control.loop, .keyword.control.switch, .keyword.control.trycatch</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1840,7 +1840,7 @@
 				<key>background</key>
 				<string>#263238</string>
 				<key>foreground</key>
-				<string>#e6ee9c</string>
+				<string>#81c784</string>
 			</dict>
 		</dict>
 		<dict>

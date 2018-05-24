@@ -30,6 +30,7 @@ contexts:
 
   delimiters:
     - meta_scope: meta.binding.destructuring.mapping.js.fjsx15
+    - include: comment-no-pop
     - match: \,
       scope: punctuation.separator.comma.js.fjsx15
     - match: \}

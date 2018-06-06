@@ -1801,6 +1801,33 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.constant.other.character-class</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b39ddb</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.keyword.control.anchor.regexp, .keyword.operator.quantifier.regexp</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#81c784</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.definition.group.begin, .punctuation.definition.group.end</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.storage.modifier, .storage.type</string>
 			<key>settings</key>
 			<dict>

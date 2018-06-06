@@ -11,25 +11,30 @@
 // the License.
 
 @name 'Candyman';
-@import 'schemes/candyman/palette';
-@import 'schemes/candyman/repeatString';
+@import 'schemes/candyman/util/palette';
+@import 'schemes/candyman/util/repeatString';
 @import 'schemes/candyman/main';
 
 // Old scopes.
 @import 'schemes/candyman/old';
 
 // New scopes.
+@import 'schemes/candyman/array';
 @import 'schemes/candyman/annotation';
 @import 'schemes/candyman/comment';
+@import 'schemes/candyman/console';
 @import 'schemes/candyman/constant';
 @import 'schemes/candyman/css';
+@import 'schemes/candyman/destructuring';
 @import 'schemes/candyman/function';
+@import 'schemes/candyman/flow';
 @import 'schemes/candyman/generic';
-@import 'schemes/candyman/global/console';
 @import 'schemes/candyman/json';
 @import 'schemes/candyman/keyword';
+@import 'schemes/candyman/label';
 @import 'schemes/candyman/markup';
 @import 'schemes/candyman/namespace';
+@import 'schemes/candyman/object';
 @import 'schemes/candyman/storage';
 @import 'schemes/candyman/punctuation';
 @import 'schemes/candyman/string';

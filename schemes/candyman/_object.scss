@@ -11,5 +11,16 @@
 // the License.
 
 .meta.object-literal.key {
-  foreground: $brown-200;
+  .string.unquoted {
+    foreground: $green-300;
+    background: $blue-gray-900;
+  }
 }
+
+// .meta.object-literal .punctuation {
+//   &.section.block,
+//   &.separator.comma {
+//     foreground: $green-300;
+//     fontStyle: italic bold;
+//   }
+// }

@@ -34,7 +34,7 @@ contexts:
           | test
         )\b
         (?=
-          (?> \.(?>only|skip)
+          (?> \.(?>each|only|skip)
             | \s*\(
           )
         )
@@ -42,16 +42,12 @@ contexts:
       set: [
         meta-scope,
         arguments,
-        optional-skip-only
+        optional-each-skip-only
       ]
     # expect
     - match: expect\b
       scope: support.function.jest.js.fjsx15
-      set: [
-        expect-chain,
-        meta-scope,
-        arguments
-      ]
+      set: expect-chain
 
   accessor-no-pop:
     - match: \.
@@ -66,6 +62,12 @@ contexts:
 
   expect-chain:
     - include: accessor-no-pop
+    # Expect arguments.
+    - match: (?=\s*\()
+      push: [
+        meta-scope,
+        arguments
+      ]
     # Not.
     - match: not\b
       scope: support.type.object.jest.matcher.not.js.fjsx15
@@ -101,6 +103,16 @@ contexts:
       scope: support.function.jest.matcher.fjsx15
       set: [
         matcher-meta-scope,
+        arguments
+      ]
+    # Other.
+    - match: |
+        (?x)
+        assertions\b
+        (?=\s*\()
+      scope: support.function.jest.matcher.fjsx15
+      set: [
+        meta-scope,
         arguments
       ]
     - include: else-pop
@@ -148,8 +160,12 @@ contexts:
     - meta_scope: meta.function-call.jest.js.fjsx15
     - include: pop-now
 
-  optional-skip-only:
+  optional-each-skip-only:
     - include: accessor-no-pop
+    # each
+    - match: each\b
+      scope: support.function.jest.each.js.fjsx15
+      pop: true
     # only
     - match: only\b
       scope: support.function.jest.only.js.fjsx15

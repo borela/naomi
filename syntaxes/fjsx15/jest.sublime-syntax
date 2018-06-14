@@ -108,7 +108,9 @@ contexts:
     # Other.
     - match: |
         (?x)
-        assertions\b
+        (?> assertions
+          | hasAssertions
+        )\b
         (?=\s*\()
       scope: support.function.jest.matcher.fjsx15
       set: [

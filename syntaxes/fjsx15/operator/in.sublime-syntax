@@ -19,7 +19,7 @@ scope: ...
 contexts:
   main:
     - match: in\b
-      scope: keyword.other.js.fjsx15
+      scope: keyword.operator.word.in.js.fjsx15
       set: optional-expression
 
   optional-expression:

@@ -35,7 +35,7 @@ contexts:
         1: punctuation.terminator.flow
     - match: (?=\S)
       embed: statement-or-expression
-      escape: (?=\*/)
+      escape: (?=\*/|;)
 
   statement-or-expression:
     - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax

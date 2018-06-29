@@ -1269,7 +1269,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.binding.flow, .punctuation.section.group.begin.flow, .punctuation.section.group.end.flow</string>
+			<string>.punctuation.binding.flow, .punctuation.separator.comma.flow, .punctuation.section.group.begin.flow, .punctuation.section.group.end.flow</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

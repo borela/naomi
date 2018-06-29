@@ -39,6 +39,7 @@ contexts:
 
   statement-or-expression:
     - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
     - include: statement-without-label
     - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax

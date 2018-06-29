@@ -38,6 +38,8 @@ contexts:
       escape: (?=\*/|;)
 
   statement-or-expression:
+    - match: \?
+      scope: storage.modifier.flow
     - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
     - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
     - include: statement-without-label

@@ -21,6 +21,8 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  comment: /*.+?*/
+
   genericArguments: |
     (<
       (?> {{string}}
@@ -43,6 +45,7 @@ contexts:
         (?=
           (?:\#\s*)?
           {{commonIdentifier}}
+          (?:\s*{{comment}})?
           \s*{{genericArguments}}
           \s*(\?\.)?
           \s*\(
@@ -60,6 +63,7 @@ contexts:
         (?=
           (?:\#\s*)?
           {{commonIdentifier}}
+          (?:\s*{{comment}})?
           \s*(\?\.)?
           \s*\(
         )
@@ -71,6 +75,7 @@ contexts:
       ]
 
   arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
 
   else-pop:
@@ -92,12 +97,6 @@ contexts:
     - meta_scope: meta.function-call.js.fjsx15
     - match: ""
       pop: true
-
-  optional-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
-    - match: (?=\()
-      push: expression
-    - include: else-pop
 
   optional-modifier:
     - match: \#

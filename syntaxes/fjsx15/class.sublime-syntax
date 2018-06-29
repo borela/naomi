@@ -41,7 +41,7 @@ contexts:
       set: body
     # Generic parameters.
     - match: (?=<)
-      push: generic-parameters
+      push: generic-arguments
     # Interfaces.
     - match: implements\b
       scope: storage.modifier.js.fjsx15
@@ -61,8 +61,8 @@ contexts:
     - match: (?xi){{commonIdentifier}}
       scope: entity.name.class.js.fjsx15
 
-  generic-parameters:
-    - include: Packages/Naomi/syntaxes/flow1/generic/parameters.sublime-syntax
+  generic-arguments:
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
 
   optional-generic-arguments:
     - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax

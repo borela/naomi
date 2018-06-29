@@ -151,7 +151,7 @@ contexts:
   normal-arrow-function:
     - meta_scope: meta.function.js.fjsx15
     - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/generic/parameters.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/body.sublime-syntax
 

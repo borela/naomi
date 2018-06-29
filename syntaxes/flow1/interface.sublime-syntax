@@ -63,7 +63,7 @@ contexts:
       push: optional-type-expression
     # Generic parameters.
     - match: (?=<)
-      push: generic-parameters
+      push: generic-arguments
     # Body.
     - match: (?=\{)
       set: body
@@ -71,8 +71,8 @@ contexts:
     - match: (?xi){{commonIdentifier}}
       scope: entity.name.interface.flow
 
-  generic-parameters:
-    - include: Packages/Naomi/syntaxes/flow1/generic/parameters.sublime-syntax
+  generic-arguments:
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
 
   optional-type-expression:
     - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax

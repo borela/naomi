@@ -85,7 +85,7 @@ contexts:
       set: body
     # Generic parameters.
     - match: (?=<)
-      push: generic-parameters
+      push: generic-arguments
     # Parameters.
     - match: (?=\()
       push: parameters
@@ -115,8 +115,8 @@ contexts:
     - match: (?=\S)
       pop: true
 
-  generic-parameters:
-    - include: Packages/Naomi/syntaxes/flow1/generic/parameters.sublime-syntax
+  generic-arguments:
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
 
   optional-body:
     - include: body

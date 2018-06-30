@@ -63,7 +63,7 @@ contexts:
     - include: pop-now
 
   optional-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax#optional-arguments
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax#arguments
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

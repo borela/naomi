@@ -59,7 +59,7 @@ variables:
   simpleFlowType: |
     (?> {{string}}
       | {{flowObject}}
-      | {{commonIdentifier}}
+      | [$_[:alpha:]][$_[:alnum:].]*
     )
     (?:\s*{{genericArguments}})?
     (?:\s*\[\s*\])?

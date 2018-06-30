@@ -30,19 +30,25 @@
   fontStyle: none;
 }
 
-.meta.function-call .support.function {
-  fontStyle: italic;
+.meta.function-call {
+  .support.function {
+    fontStyle: italic;
+  }
 }
-
-//   &.magic {
-//     foreground: $deep-orange-300;
-//   }
-// }
 
 .variable.parameter {
   foreground: $amber-a100;
 }
 
-// .storage.type.function.arrow {
-//   foreground: $light-blue-a200;
+// .meta.function {
+//   .punctuation.section.block {
+//     foreground: $light-blue-a200;
+//   }
+// }
+
+// .meta.function.parameters .punctuation {
+//   &.section.group,
+//   &.separator.comma {
+//     foreground: $light-blue-a200;
+//   }
 // }

@@ -21,25 +21,6 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  complexType: |
-    (
-      (?:\?\s*)?
-      (?> {{simpleFlowType}}
-        | {{flowFunction}}
-      )
-      (?:\s*{{flowOperators}})?
-      (?:\s*\g<-1>)?
-    )
-
-  flowFunction: |
-    {{parameters}}
-    \s*=>
-
-  flowOperators: |
-    (?> &(?!&)
-      | \|(?!\|)
-    )
-
   genericArguments: |
     (<
       (?> {{string}}
@@ -56,17 +37,64 @@ variables:
       )*
     \))
 
-  simpleFlowType: |
-    (?> {{string}}
-      | {{commonIdentifier}}
-        {{genericArguments}}?
-        (?:\[\s*\])?
+  flowOperators: |
+    (?> &(?!\s*&)
+      | \|(?!\s*\|)
     )
 
   string: |
     (?> '(?:\'|[^'])*?'
       | "(?:\"|[^"])*?"
       | `(?:\`|[^`])*?`
+    )
+
+  flowObject: |
+    (\{
+      (?> {{string}}
+        | \g<-1>
+        | [^{}]
+      )*
+    })
+
+  simpleFlowType: |
+    (?> {{string}}
+      | {{flowObject}}
+      | [$_[:alpha:]][$_[:alnum:].]*
+    )
+    (?:\s*{{genericArguments}})?
+    (?:\s*\[\s*\])?
+
+  flowFunction: |
+    (
+      {{parameters}}
+      \s*=>\s*
+      (?> {{simpleFlowType}}
+        | \g<-1>
+      )
+    )
+
+  complexType: |
+    (?:\?\s*)?
+    (
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
+        | \g<-1>
+      )
+    )
+
+  multipleTypes: |
+    (
+      (?> \s*{{flowOperators}}
+        | \s*{{complexType}}
+        | \g<-1>
+      )+
+    )
+
+  flowComment: /\*\s*:.*?\*/
+
+  type: |
+    (?> {{flowComment}}
+      | \:\s*{{multipleTypes}}
     )
 
 contexts:
@@ -98,7 +126,7 @@ contexts:
   declaration:
     # Generic parameters.
     - match: (?=<)
-      push: generic-parameters
+      push: generic-arguments
     # Parameters.
     - match: (?=\()
       set: [
@@ -106,8 +134,8 @@ contexts:
         parameters
       ]
 
-  generic-parameters:
-    - include: Packages/Naomi/syntaxes/flow1/generic/parameters.sublime-syntax
+  generic-arguments:
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
 
   head:
     - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax#head

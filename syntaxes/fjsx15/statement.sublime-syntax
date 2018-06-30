@@ -79,6 +79,9 @@ contexts:
       scope: punctuation.separator.js.fjsx15
       pop: true
 
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
   debugger:
     - match: debugger\b
       scope: keyword.other.js.fjsx15
@@ -211,6 +214,7 @@ contexts:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-statement-or-expression.sublime-syntax
 
   optional-while:
+    - include: comment-no-pop
     - match: while\b
       scope: keyword.control.loop.js.fjsx15
       set: optional-expression

@@ -70,4 +70,15 @@
   .keyword.other.important {
     foreground: $deep-purple-a100;
   }
+
+  // Media and feature query word operators.
+  .keyword.operator.word {
+    foreground: $green-a400;
+    fontStyle: none;
+  }
+
+  // Units.
+  .keyword.other.unit {
+    foreground: $deep-orange-a200;
+  }
 }

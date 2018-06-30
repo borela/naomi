@@ -35,14 +35,24 @@ contexts:
         2: punctuation.definition.tag.begin.jsx.jsx1
         3: punctuation.definition.tag.end.jsx.jsx1
       pop: true
-    - match: (?=\S)
-      push: content
+    - match: (?=.|\n)
+      push: [ meta-content, content ]
 
   content:
     - include: Packages/Naomi/syntaxes/jsx1/shared.sublime-syntax#content
 
   meta:
     - meta_scope: meta.tag.other.fragment.jsx.jsx1
+    - include: pop-now
+
+  meta-content:
+    - clear_scopes: true
+    - meta_scope: >-
+        source.jsx
+        meta.naomi
+    - include: pop-now
+
+  pop-now:
     - match: ""
       pop: true
 

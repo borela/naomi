@@ -25,9 +25,6 @@ Enhanced syntax definitions for Sublime Text 3.
 ### Syntaxes
 
 * CSS 3+;
-* Git attributes;
-* Git config;
-* Git ignore;
 * JavaScript;
   * [Stage 0-3 proposals](//github.com/tc39/proposals);
   * [Node globals](//nodejs.org/api/globals.html);

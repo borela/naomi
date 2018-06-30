@@ -10,27 +10,25 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-// .meta.function-call {
-//   .punctuation {
-//     &.section.group,
-//     &.separator.comma {
-//       foreground: $light-blue-300;
-//       fontStyle: bold;
-//     }
-//   }
-// }
+.keyword.operator.other {
+  &.intersection.flow,
+  &.union.flow {
+    foreground: $brown-200;
+  }
+}
 
-// // Function call inside groups.
-// @for $i from 1 through 7 {
-//   #{repeatString('meta.group', $i)}
-//   .meta.function-call
-//   .meta.group {
-//     .punctuation {
-//       &.section.group,
-//       &.separator.comma {
-//         foreground: $light-blue-300;
-//         fontStyle: bold;
-//       }
-//     }
-//   }
-// }
+.punctuation.binding,
+.punctuation.separator.comma,
+.punctuation.section.group.begin,
+.punctuation.section.group.end {
+  &.flow {
+    foreground: $brown-200;
+  }
+}
+
+.meta.sequence.flow .punctuation {
+  &.section.brackets,
+  &.separator.comma {
+    foreground: $deep-orange-a100;
+  }
+}

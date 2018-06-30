@@ -53,12 +53,9 @@
   }
 }
 
-.constant.other.color {
+.constant.other.color ,
+.punctuation.definition.constant {
   foreground: $deep-purple-200;
-
-  .punctuation.definition.constant {
-    foreground: $deep-purple-200;
-  }
 }
 
 .support.constant {
@@ -71,20 +68,3 @@
     foreground: $deep-orange-a100;
   }
 }
-
-// .constant.language {
-//   foreground: $red-a200;
-//   background: rgba($red-a200, .05);
-//   fontStyle: italic;
-// }
-
-// .constant.language.infinity,
-// .constant.language.nan {
-//   foreground: $purple-a200;
-//   background: rgba($purple-a200, .05);
-// }
-
-// .constant.language.boolean {
-//   foreground: $green-a400;
-//   background: rgba($green-a400, .05);
-// }

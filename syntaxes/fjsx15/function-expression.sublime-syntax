@@ -49,7 +49,7 @@ contexts:
       set: body
     # Generic parameters.
     - match: (?=<)
-      push: generic-parameters
+      push: generic-arguments
     # Parameters.
     - match: (?=\()
       push: parameters
@@ -73,8 +73,8 @@ contexts:
       scope: storage.type.function.js.fjsx15
       pop: true
 
-  generic-parameters:
-    - include: Packages/Naomi/syntaxes/flow1/generic/parameters.sublime-syntax
+  generic-arguments:
+    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
 
   parameters:
     - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax

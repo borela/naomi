@@ -63,7 +63,9 @@ contexts:
         ([_[:upper:]])\b
         (?:\s*(\?\B))?
       captures:
-        1: meta.object-literal.key.constant.flow
+        1: >-
+          meta.object-literal.key.flow
+          string.unquoted.flow
         2: storage.modifier.optional.flow
       set: associated-type
     # Two or more characters.
@@ -77,7 +79,9 @@ contexts:
         )
         (?:\s*(\?\B))?
       captures:
-        1: meta.object-literal.key.flow
+        1: >-
+          meta.object-literal.key.flow
+          string.unquoted.flow
         2: storage.modifier.optional.flow
       set: associated-type
 
@@ -156,7 +160,9 @@ contexts:
         ))
         (?:\s*(\?))?
       captures:
-        1: meta.object-literal.key.flow
+        1: >-
+          meta.object-literal.key.flow
+          string.unquoted.flow
         2: storage.modifier.optional.flow
       set: associated-type
     # Two or more characters.
@@ -170,6 +176,8 @@ contexts:
         )
         (?:\s*(\?))?
       captures:
-        1: meta.object-literal.key.flow
+        1: >-
+          meta.object-literal.key.flow
+          string.unquoted.flow
         2: storage.modifier.optional.flow
       set: associated-type

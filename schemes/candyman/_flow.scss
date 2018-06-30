@@ -25,3 +25,10 @@
     foreground: $brown-200;
   }
 }
+
+.meta.sequence.flow .punctuation {
+  &.section.brackets,
+  &.separator.comma {
+    foreground: $deep-orange-a100;
+  }
+}

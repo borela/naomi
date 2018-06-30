@@ -1278,6 +1278,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.meta.sequence.flow .punctuation.section.brackets, .meta.sequence.flow .punctuation.separator.comma</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.variable.parameter.generic</string>
 			<key>settings</key>
 			<dict>
@@ -1844,15 +1853,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#00e676</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.separator.key-value</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#b0bec5</string>
 			</dict>
 		</dict>
 		<dict>

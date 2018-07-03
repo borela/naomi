@@ -14,6 +14,10 @@
   foreground: $deep-purple-200;
 }
 
+.constant.character.escape {
+  foreground: $orange-200;
+}
+
 .keyword.control.anchor.regexp,
 .keyword.operator.quantifier.regexp {
   foreground: $green-300;

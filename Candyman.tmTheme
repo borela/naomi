@@ -1819,6 +1819,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.constant.character.escape</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffcc80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.keyword.control.anchor.regexp, .keyword.operator.quantifier.regexp</string>
 			<key>settings</key>
 			<dict>

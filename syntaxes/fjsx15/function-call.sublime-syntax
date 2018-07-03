@@ -39,6 +39,23 @@ variables:
 
 contexts:
   main:
+    # Generic function call.
+    - match: |
+        (?xi)
+        (?=
+          (?:\#\s*)?
+          {{commonIdentifier}}
+          \s*{{genericArguments}}
+          \s*(\?\.)?
+          \s*\(
+        )
+      set: [
+        meta,
+        arguments,
+        generic-arguments,
+        identifier,
+        optional-modifier
+      ]
     # Simple function call.
     - match: |
         (?xi)
@@ -52,24 +69,6 @@ contexts:
       set: [
         meta,
         arguments,
-        identifier,
-        optional-modifier
-      ]
-    # Generic function call.
-    - match: |
-        (?xi)
-        (?=
-          (?:\#\s*)?
-          {{commonIdentifier}}
-          (?:\s*{{comment}})?
-          \s*{{genericArguments}}
-          \s*(\?\.)?
-          \s*\(
-        )
-      set: [
-        meta,
-        arguments,
-        generic-arguments,
         identifier,
         optional-modifier
       ]

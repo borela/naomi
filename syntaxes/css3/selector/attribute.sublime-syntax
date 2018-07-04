@@ -20,12 +20,19 @@ contexts:
   main:
     - match: \[
       scope: punctuation.section.brackets.begin.css.css3
-      set: [ meta, close, operator, attribute ]
+      set: [ meta, close, optional-operator, attribute ]
 
   attribute:
     - include: Packages/Naomi/syntaxes/html5/attribute/builtin.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/attribute/data.sublime-syntax
-    - include: Packages/Naomi/syntaxes/html5/attribute/other.sublime-syntax
+    # Other attributes with escaping.
+    - match: |
+        (?xi)
+        (?> [_[:alpha:]\-]
+          | \\\S
+        )+
+      scope: entity.other.attribute-name.css.css3
+      pop: true
 
   close:
     - match: \]
@@ -39,9 +46,11 @@ contexts:
     - match: ""
       pop: true
 
-  operator:
+  optional-operator:
     - match: "[~|^$*]?="
       scope: keyword.operator.attribute-selector.css.css3
+      set: value
+    - match: (?=\S)
       pop: true
 
   value:

@@ -21,7 +21,7 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  comment: /*.+?*/
+  comment: /\*.*?\*/
 
   genericArguments: |
     (<

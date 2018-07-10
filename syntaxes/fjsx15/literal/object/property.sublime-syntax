@@ -86,7 +86,7 @@ variables:
     (
       {{parameters}}
       \s*=>\s*
-      (?> {{simpleFlowType}}
+      (?> (?:\?\s*){{simpleFlowType}}
         | \g<-1>
       )
     )

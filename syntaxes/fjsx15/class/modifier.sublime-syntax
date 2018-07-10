@@ -19,23 +19,23 @@ scope: ...
 contexts:
   main:
     # static
-    - match: static\b(?!\s*(?>[:,=]|$))
+    - match: static\b(?!\s*(?>[:,=(]|$))
       scope: storage.modifier.js.fjsx15
       set: modifier-trap
     # private
-    - match: \#(?!\s*(?>[:,=]|$))
+    - match: \#(?!\s*(?>[:,=(]|$))
       scope: storage.modifier.js.fjsx15
       set: modifier-trap
     # async
-    - match: async\b(?!\s*(?>[:,=]|$))
+    - match: async\b(?!\s*(?>[:,=(]|$))
       scope: storage.modifier.js.fjsx15
       set: modifier-trap
     # get/set
-    - match: (?>get|set)\b(?!\s*(?>[:,=]|$))
+    - match: (?>get|set)\b(?!\s*(?>[:,=(]|$))
       scope: storage.modifier.js.fjsx15
       set: modifier-trap
     # generator
-    - match: \*(?!\s*(?>[:,=]|$))
+    - match: \*(?!\s*(?>[:,=(]|$))
       scope: storage.modifier.js.fjsx15
       set: modifier-trap
 

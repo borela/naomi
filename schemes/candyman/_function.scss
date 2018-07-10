@@ -14,7 +14,7 @@
 .variable.function,
 .storage.type.function.arrow {
   foreground: $light-blue-a200;
-  fontStyle: none;
+  fontStyle: bold;
 }
 
 .storage.type.function.arrow.flow {
@@ -22,18 +22,12 @@
 }
 
 .variable.function {
-  fontStyle: italic;
+  fontStyle: none;
 }
 
 .support.function {
   foreground: $purple-a100;
   fontStyle: none;
-}
-
-.meta.function-call {
-  .support.function {
-    fontStyle: italic;
-  }
 }
 
 .variable.parameter {

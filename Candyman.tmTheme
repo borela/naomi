@@ -1206,7 +1206,7 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string></string>
+				<string>bold</string>
 				<key>foreground</key>
 				<string>#40c4ff</string>
 			</dict>
@@ -1226,7 +1226,7 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>italic</string>
+				<string></string>
 			</dict>
 		</dict>
 		<dict>
@@ -1238,15 +1238,6 @@
 				<string></string>
 				<key>foreground</key>
 				<string>#ea80fc</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.meta.function-call .support.function</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1540,6 +1531,8 @@
 			<string>.keyword</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 				<key>foreground</key>
 				<string>#f06292</string>
 			</dict>
@@ -1567,8 +1560,6 @@
 			<string>.keyword.control.flow</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#b39ddb</string>
 			</dict>
@@ -1578,6 +1569,8 @@
 			<string>.keyword.operator</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string></string>
 				<key>foreground</key>
 				<string>#00e676</string>
 			</dict>
@@ -1587,8 +1580,6 @@
 			<string>.keyword.operator.word</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
 				<string>#ea80fc</string>
 			</dict>
@@ -1929,6 +1920,15 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ffe57f</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.entity.other.inherited-class</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#00e676</string>
 			</dict>
 		</dict>
 		<dict>

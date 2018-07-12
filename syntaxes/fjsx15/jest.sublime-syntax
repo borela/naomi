@@ -68,9 +68,9 @@ contexts:
         meta-scope,
         arguments
       ]
-    # Not.
-    - match: not\b
-      scope: support.type.object.jest.matcher.not.js.fjsx15
+    # Other.
+    - match: (?>not|resolves|rejects)\b
+      scope: support.type.object.jest.matcher.other.js.fjsx15
     # Matchers.
     - match: |
         (?x)
@@ -80,24 +80,29 @@ contexts:
               | CloseTo
               | Defined
               | Falsy
-              | GreaterThan
-              | GreaterThanOrEqual
+              | GreaterThan(?:OrEqual)?
               | InstanceOf
-              | LessThan
-              | LessThanOrEqual
+              | LessThan(?:OrEqual)?
               | Null
               | Truthy
               | Undefined
             )?
           | Contain(?:Equal)?
           | Equal
-          | HaveBeen
-            (?> Called(?>Times|With)?
-              | LastCalledWith
+          | Have
+            (?> Been
+                (?> Called(?>Times|With)?
+                  | LastCalledWith
+                  | NthCalledWith
+                )
+              | LastReturnedWith
+              | NthReturnedWith
+              | Returned(?>Times|With)?
             )
           | Have(?>Length|Property)
-          | Match(?:Object|Snapshot)?
-          | Throw(?:Error(?:MatchingSnapshot)?)?
+          | Match(?:Object|(?:Inline)?Snapshot)?
+          | StrictEqual
+          | Throw(?:Error(?:Matching(?:Inline)?Snapshot)?)?
         )\b
         (?=\s*\()
       scope: support.function.jest.matcher.fjsx15
@@ -108,8 +113,14 @@ contexts:
     # Other.
     - match: |
         (?x)
-        (?> assertions
+        (?> addSnapshotSerializer
+          | any(?:thing)?
+          | array(?:Containing)?
+          | assertions
+          | extend
           | hasAssertions
+          | objectContaining
+          | string(?>Containing|Matching)
         )\b
         (?=\s*\()
       scope: support.function.jest.matcher.fjsx15

@@ -30,6 +30,10 @@
   fontStyle: none;
 }
 
+.support.function.jest.matcher {
+  foreground: rgba($pink-a100, 1);
+}
+
 .variable.parameter {
   foreground: $amber-a100;
 }

@@ -1242,6 +1242,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.support.function.jest.matcher</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff80ab</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.variable.parameter</string>
 			<key>settings</key>
 			<dict>

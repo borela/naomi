@@ -1269,7 +1269,34 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.binding.flow, .punctuation.separator.comma.flow, .punctuation.section.group.begin.flow, .punctuation.section.group.end.flow</string>
+			<string>.punctuation.section.generic.begin.flow, .punctuation.section.generic.end.flow</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#9ccc65</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.binding.flow, .punctuation.section.brackets.begin.flow, .punctuation.section.brackets.end.flow</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ea80fc</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.section.block.begin.flow, .punctuation.section.block.end.flow</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffe57f</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.punctuation.separator.comma.flow, .punctuation.section.group.begin.flow, .punctuation.section.group.end.flow</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1278,11 +1305,11 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.sequence.flow .punctuation.section.brackets, .meta.sequence.flow .punctuation.separator.comma</string>
+			<string>.string.unquoted.flow</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff9e80</string>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1937,7 +1964,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#00e676</string>
+				<string>#9ccc65</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1946,7 +1973,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#00e676</string>
+				<string>#9ccc65</string>
 			</dict>
 		</dict>
 		<dict>

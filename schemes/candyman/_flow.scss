@@ -17,7 +17,29 @@
   }
 }
 
+.punctuation.section.generic.begin,
+.punctuation.section.generic.end {
+  &.flow {
+    // foreground: $deep-purple-200;
+    foreground: $light-green-400;
+  }
+}
+
 .punctuation.binding,
+.punctuation.section.brackets.begin,
+.punctuation.section.brackets.end {
+  &.flow {
+    foreground: $purple-a100;
+  }
+}
+
+.punctuation.section.block.begin,
+.punctuation.section.block.end {
+  &.flow {
+    foreground: $amber-a100;
+  }
+}
+
 .punctuation.separator.comma,
 .punctuation.section.group.begin,
 .punctuation.section.group.end {
@@ -26,9 +48,6 @@
   }
 }
 
-.meta.sequence.flow .punctuation {
-  &.section.brackets,
-  &.separator.comma {
-    foreground: $deep-orange-a100;
-  }
+.string.unquoted.flow {
+  foreground: $brown-200;
 }

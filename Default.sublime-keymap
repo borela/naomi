@@ -287,4 +287,23 @@
     "operand": false,
     "match_all": true
   }]
+},{
+  "keys": [ ">" ],
+  "command": "naomi_close_jsx_tag",
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.jsx meta.naomi meta.tag",
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "setting.auto_close_tags",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  }]
 }]

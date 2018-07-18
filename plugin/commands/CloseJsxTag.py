@@ -10,12 +10,18 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.plugin.commands.CloseJsxTag import NaomiCloseJsxTagCommand
-from Naomi.plugin.commands.RunSyntaxTests import NaomiRunSyntaxTestsCommand
-from Naomi.plugin.commands.ToggleJsxComment import NaomiToggleJsxCommentCommand
+from sublime import Region
+from sublime_plugin import TextCommand
 
-__all__ = [
-  NaomiCloseJsxTagCommand,
-  NaomiRunSyntaxTestsCommand,
-  NaomiToggleJsxCommentCommand
-]
+
+class NaomiCloseJsxTagCommand(TextCommand):
+    def __init__(self, view):
+        self.view = view
+
+    def run(self, edit):
+        cursor = self.view.sel()[0].begin()
+        self.view.run_command('insert', {'characters': '>'})
+        self.view.run_command('close_tag')
+        self.view.sel().clear()
+        self.view.sel().add(Region(cursor + 1))
+

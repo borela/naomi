@@ -13,7 +13,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: Git Attributes
+name: Git Attributes (Naomi)
 scope: source.git.attributes
 
 file_extensions:

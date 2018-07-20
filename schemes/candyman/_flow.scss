@@ -20,7 +20,6 @@
 .punctuation.section.generic.begin,
 .punctuation.section.generic.end {
   &.flow {
-    // foreground: $deep-purple-200;
     foreground: $light-green-400;
   }
 }
@@ -36,7 +35,7 @@
 .punctuation.section.block.begin,
 .punctuation.section.block.end {
   &.flow {
-    foreground: $amber-a100;
+    foreground: $light-green-400;
   }
 }
 

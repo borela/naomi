@@ -17,10 +17,11 @@
   }
 }
 
-// .punctuation {
-//   &.section.block,
-//   &.section.group,
-//   &.separator.key-value {
-//     foreground: $blue-gray-200;
-//   }
-// }
+.meta.conditional .punctuation {
+  &.section.block.begin,
+  &.section.block.end,
+  &.section.group.begin,
+  &.section.group.end {
+    foreground: $blue-gray-200;
+  }
+}

@@ -38,15 +38,15 @@
   foreground: $amber-a100;
 }
 
-// .meta.function {
-//   .punctuation.section.block {
-//     foreground: $light-blue-a200;
-//   }
-// }
-
-// .meta.function.parameters .punctuation {
-//   &.section.group,
-//   &.separator.comma {
-//     foreground: $light-blue-a200;
-//   }
-// }
+.meta.function,
+.meta.function-call {
+  .punctuation {
+    &.section.block.begin,
+    &.section.block.end,
+    &.section.group.begin,
+    &.section.group.end,
+    &.separator.comma {
+      foreground: $light-blue-a200;
+    }
+  }
+}

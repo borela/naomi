@@ -10,9 +10,10 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-// .meta.sequence .punctuation {
-//   &.section.brackets,
-//   &.separator.comma {
-//     foreground: $deep-orange-a100;
-//   }
-// }
+.meta.sequence .punctuation {
+  &.section.brackets.begin,
+  &.section.brackets.end,
+  &.separator.comma {
+    foreground: $deep-orange-a100;
+  }
+}

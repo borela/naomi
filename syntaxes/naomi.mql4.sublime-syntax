@@ -13,7 +13,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: MQL 4
+name: MQL 4 (Naomi)
 scope: source.mql
 
 file_extensions:

@@ -43,10 +43,10 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.annotation #lols div:disabled .variable.annotation, .meta.annotation #lols div:disabled .punctuation.definition</string>
+			<string>.meta.annotation .variable.annotation, .meta.annotation .punctuation.definition</string>
 			<key>settings</key>
 			<dict>
-				<key>width</key>
+				<key>foreground</key>
 				<string>#ea80fc</string>
 			</dict>
 		</dict>
@@ -110,6 +110,24 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.other.color</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#e57373</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.other.color .punctuation.definition.constant</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#E5737380</string>
 			</dict>
 		</dict>
 		<dict>
@@ -219,7 +237,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#4dd0e1</string>
+				<string>#aed581</string>
 			</dict>
 		</dict>
 		<dict>
@@ -228,7 +246,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#4DD0E1B2</string>
+				<string>#AED581B2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -237,12 +255,12 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ea80fc</string>
+				<string>#b39ddb</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.source.css .meta.attribute.builtin .entity.other.attribute-name</string>
+			<string>.source.css .entity.other.pseudo-class</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -843,7 +861,7 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>italic</string>
+				<string>italic bold</string>
 				<key>foreground</key>
 				<string>#cfd8dc</string>
 			</dict>
@@ -1058,7 +1076,7 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.name, .entity.other</string>
+			<string>.entity.name</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

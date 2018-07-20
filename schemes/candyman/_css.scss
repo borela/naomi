@@ -11,6 +11,20 @@
 // the License.
 
 .source.css {
+  // Tag selector.
+  .entity.name.tag {
+    foreground: $brown-200;
+  }
+
+  // Class selector.
+  .entity.other.attribute-name.class {
+    foreground: $cyan-300;
+
+    .punctuation {
+      foreground: rgba($cyan-300, .7);
+    }
+  }
+
   // Attribute inside the attribute selector.
   .entity.other.attribute-name {
     foreground: $purple-a100;

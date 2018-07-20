@@ -18,20 +18,20 @@
 
   // Class selector.
   .entity.other.attribute-name.class {
-    foreground: $cyan-300;
+    foreground: $light-green-300;
 
     .punctuation {
-      foreground: rgba($cyan-300, .7);
+      foreground: rgba($light-green-300, .7);
     }
   }
 
   // Attribute inside the attribute selector.
   .entity.other.attribute-name {
-    foreground: $purple-a100;
+    foreground: $deep-purple-200;
   }
 
-  .meta.attribute.builtin
-  .entity.other.attribute-name {
+  // Pseudo class.
+  .entity.other.pseudo-class {
     foreground: $purple-a100;
   }
 

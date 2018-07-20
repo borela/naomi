@@ -114,10 +114,9 @@ def comment_lines(view, edit, region):
             if empty_line:
                 view.erase(edit, Region(begin + 3, begin + 4))
 
-# Returns true if the region must be commented or not.
-
 
 def must_comment(view, region):
+    """ Returns true if the region must be commented or not. """
     non_whitespace_pos = search_non_whitespace(
         view, region, stop_on_line_feed=False
     )
@@ -133,10 +132,11 @@ def must_comment(view, region):
     # If the cursor is at a comment, it means that the user wants to remove it.
     return not is_comment(view, non_whitespace_pos)
 
-# Returns the comment type that must be applied calculed at the offset.
-
 
 def resolve_required_comment_type(view, offset):
+    """
+    Returns the comment type that must be applied calculed at the offset.
+    """
     scopes = view.scope_name(offset)
 
     unfenced_scopes = ['source.jsx', 'punctuation.definition.tag.begin']
@@ -224,10 +224,9 @@ def uncomment_region(view, edit, region):
         # Move the cursor to the beginning of the block to “consume” it.
         i = open_punctuation_region.begin()
 
-# Actual command to toggle the comment lines and blocks.
-
 
 class NaomiToggleJsxCommentCommand(TextCommand):
+    """ Actual command to toggle the comment lines and blocks. """
     def __init__(self, view):
         self.view = view
 

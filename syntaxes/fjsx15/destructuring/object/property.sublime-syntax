@@ -48,7 +48,7 @@ contexts:
       ]
     # Simple variable or constant.
     - match: ""
-      set: [ meta-destructuring, variable-or-constant ]
+      set: [ object-destructuring-delimiters, variable-or-constant ]
 
   bind:
     - meta_scope: meta.binding.destructuring.mapping.js.fjsx15
@@ -83,12 +83,16 @@ contexts:
         meta.object-literal.key.js.fjsx15
     - include: pop-now
 
+  object-destructuring-delimiters:
+    - meta_scope: meta.binding.destructuring.mapping.js.fjsx15
+    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax#delimiters
+
   optional-bind:
     - match: ":"
       scope: punctuation.binding.js.fjsx15
-      set: bind
+      push: bind
     - match: (?=\S)
-      pop: true
+      set: object-destructuring-delimiters
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

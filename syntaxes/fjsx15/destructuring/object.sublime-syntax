@@ -43,7 +43,7 @@ contexts:
       push: default-value
     # Property.
     - match: (?=\S)
-      push: property-or-variable
+      set: property-or-variable
 
   property-or-variable:
     - include: comment-no-pop

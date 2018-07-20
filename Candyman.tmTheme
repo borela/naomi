@@ -907,15 +907,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.sequence .punctuation.section.brackets.begin, .meta.sequence .punctuation.section.brackets.end, .meta.sequence .punctuation.separator.comma</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff9e80</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.meta.annotation .variable.annotation, .meta.annotation .punctuation.definition</string>
 			<key>settings</key>
 			<dict>
@@ -1055,15 +1046,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#81c784</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.constant.other.color, .punctuation.definition.constant</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#b39ddb</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1214,28 +1196,17 @@
 			<string>.entity.name.function, .variable.function, .storage.type.function.arrow</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
 				<key>foreground</key>
 				<string>#40c4ff</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.storage.type.function.arrow.flow</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.variable.function</string>
+			<string>.entity.name.function</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string></string>
+				<string>bold</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1269,15 +1240,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.function .punctuation.section.block.begin, .meta.function .punctuation.section.block.end, .meta.function .punctuation.section.group.begin, .meta.function .punctuation.section.group.end, .meta.function .punctuation.separator.comma, .meta.function-call .punctuation.section.block.begin, .meta.function-call .punctuation.section.block.end, .meta.function-call .punctuation.section.group.begin, .meta.function-call .punctuation.section.group.end, .meta.function-call .punctuation.separator.comma</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#40c4ff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.keyword.operator.other.intersection.flow, .keyword.operator.other.union.flow</string>
 			<key>settings</key>
 			<dict>
@@ -1287,56 +1249,11 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.section.generic.begin.flow, .punctuation.section.generic.end.flow</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#9ccc65</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.binding.flow, .punctuation.section.brackets.begin.flow, .punctuation.section.brackets.end.flow</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ea80fc</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.section.block.begin.flow, .punctuation.section.block.end.flow</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#9ccc65</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.separator.comma.flow, .punctuation.section.group.begin.flow, .punctuation.section.group.end.flow</string>
+			<string>.storage.type.function.arrow.flow</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.string.unquoted.flow</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.variable.parameter.generic</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff4081</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1844,24 +1761,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.object-literal .meta.block .punctuation.separator.comma, .meta.object-literal .meta.block .punctuation.section.block.begin, .meta.object-literal .meta.block .punctuation.section.block.end</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#9ccc65</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.meta.object-literal .meta.block .punctuation.separator.key-value, .meta.object-literal .meta.block .punctuation.section.brackets.begin, .meta.object-literal .meta.block .punctuation.section.brackets.end</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ea80fc</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.meta.object-literal.key .string.unquoted</string>
 			<key>settings</key>
 			<dict>
@@ -1929,11 +1828,11 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.meta.conditional .punctuation.section.block.begin, .meta.conditional .punctuation.section.block.end, .meta.conditional .punctuation.section.group.begin, .meta.conditional .punctuation.section.group.end</string>
+			<string>.punctuation.section.generic</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#b0bec5</string>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>

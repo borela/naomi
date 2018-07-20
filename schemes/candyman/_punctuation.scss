@@ -15,13 +15,8 @@
   &.terminator {
     foreground: $green-a400;
   }
-}
 
-.meta.conditional .punctuation {
-  &.section.block.begin,
-  &.section.block.end,
-  &.section.group.begin,
-  &.section.group.end {
-    foreground: $blue-gray-200;
+  &.section.generic {
+    foreground: $brown-200;
   }
 }

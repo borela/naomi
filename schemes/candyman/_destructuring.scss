@@ -10,13 +10,11 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-.meta.binding.destructuring .punctuation {
-  &.section.brackets.begin,
-  &.section.brackets.end,
-  &.section.block.begin,
-  &.section.block.end,
-  &.separator.comma {
-    foreground: $gray-0;
-    fontStyle: italic bold;
-  }
-}
+// .meta.binding.destructuring .punctuation {
+//   &.section.brackets,
+//   &.section.block,
+//   &.separator.comma {
+//     foreground: $gray-0;
+//     fontStyle: italic bold;
+//   }
+// }

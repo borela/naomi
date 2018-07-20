@@ -22,11 +22,9 @@
   fontStyle: italic;
 }
 
-.meta.function-call.console {
-  .punctuation {
-    &.section.group,
-    &.separator.comma {
-      foreground: $red-300;
-    }
-  }
-}
+// .meta.function-call.console .punctuation {
+//   &.section.group,
+//   &.separator.comma {
+//     foreground: $green-a400;
+//   }
+// }

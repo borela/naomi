@@ -32,9 +32,8 @@
   foreground: $deep-purple-a100;
 }
 
-.meta.class .punctuation {
-  &.section.block.begin,
-  &.section.block.end {
-    foreground: $amber-a100;
-  }
-}
+// .meta.class .punctuation {
+//   &.section.block {
+//     foreground: $amber-a100;
+//   }
+// }

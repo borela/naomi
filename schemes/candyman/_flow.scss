@@ -17,36 +17,37 @@
   }
 }
 
-.punctuation.section.generic.begin,
-.punctuation.section.generic.end {
-  &.flow {
-    foreground: $light-green-400;
-  }
-}
-
-.punctuation.binding,
-.punctuation.section.brackets.begin,
-.punctuation.section.brackets.end {
-  &.flow {
-    foreground: $purple-a100;
-  }
-}
-
-.punctuation.section.block.begin,
-.punctuation.section.block.end {
-  &.flow {
-    foreground: $light-green-400;
-  }
-}
-
-.punctuation.separator.comma,
-.punctuation.section.group.begin,
-.punctuation.section.group.end {
-  &.flow {
-    foreground: $brown-200;
-  }
-}
-
-.string.unquoted.flow {
+.storage.type.function.arrow.flow {
   foreground: $brown-200;
 }
+
+// .punctuation.section.generic.begin,
+// .punctuation.section.generic.end {
+//   &.flow {
+//     foreground: $light-green-400;
+//   }
+// }
+
+// .punctuation.binding,
+// .punctuation.section.brackets.begin,
+// .punctuation.section.brackets.end {
+//   &.flow {
+//     foreground: $purple-a100;
+//   }
+// }
+
+// .punctuation.section.block.begin,
+// .punctuation.section.block.end {
+//   &.flow {
+//     foreground: $light-green-400;
+//   }
+// }
+
+// .punctuation.separator.comma,
+// .punctuation.section.group.begin,
+// .punctuation.section.group.end {
+//   &.flow {
+//     foreground: $brown-200;
+//   }
+// }
+

@@ -24,4 +24,3 @@ class NaomiCloseJsxTagCommand(TextCommand):
         self.view.run_command('close_tag')
         self.view.sel().clear()
         self.view.sel().add(Region(cursor + 1))
-

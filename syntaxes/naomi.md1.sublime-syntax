@@ -13,7 +13,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: Markdown (Github)
+name: Markdown (Github) (Naomi)
 scope: text.html.markdown
 
 file_extensions:

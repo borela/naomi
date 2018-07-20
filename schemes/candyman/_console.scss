@@ -20,57 +20,13 @@
   foreground: $green-a400;
   background: rgba($green-a400, .05);
   fontStyle: italic;
-//   &.error {
-//     foreground: $pink-a200;
-//   }
-
-//   &.info {
-//     foreground: $teal-a400;
-//   }
-
-//   &.log {
-//     foreground: $brown-200;
-//   }
-
-//   &.warn {
-//     foreground: $deep-orange-a100;
-//   }
 }
 
-// .meta.function-call.console {
-//   &.error .meta.group {
-//     .punctuation {
-//       &.section.group,
-//       &.separator.comma {
-//         foreground: $red-300;
-//       }
-//     }
-//   }
-
-//   &.info .meta.group {
-//     .punctuation {
-//       &.section.group,
-//       &.separator.comma {
-//         foreground: $teal-300;
-//       }
-//     }
-//   }
-
-//   &.log .meta.group {
-//     .punctuation {
-//       &.section.group,
-//       &.separator.comma {
-//         foreground: $brown-200;
-//       }
-//     }
-//   }
-
-//   &.warn .meta.group {
-//     .punctuation {
-//       &.section.group,
-//       &.separator.comma {
-//         foreground: $deep-orange-300;
-//       }
-//     }
-//   }
-// }
+.meta.function-call.console {
+  .punctuation {
+    &.section.group,
+    &.separator.comma {
+      foreground: $red-300;
+    }
+  }
+}

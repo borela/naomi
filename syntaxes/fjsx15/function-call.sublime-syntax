@@ -21,7 +21,7 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
-  comment: /*.+?*/
+  comment: /\*.*?\*/
 
   genericArguments: |
     (<
@@ -45,7 +45,6 @@ contexts:
         (?=
           (?:\#\s*)?
           {{commonIdentifier}}
-          (?:\s*{{comment}})?
           \s*{{genericArguments}}
           \s*(\?\.)?
           \s*\(

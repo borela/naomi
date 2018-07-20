@@ -15,9 +15,13 @@
   foreground: $amber-a100;
 }
 
+.entity.other.inherited-class {
+  foreground: $light-green-400;
+}
+
 .variable.type,
 .variable.other.type {
-  foreground: $green-a400;
+  foreground: $light-green-400;
 }
 
 .support.type {

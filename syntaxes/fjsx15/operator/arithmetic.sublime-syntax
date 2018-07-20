@@ -26,6 +26,8 @@ contexts:
   # |    +=    |                 |
   # |    *     | Multiplication. |
   # |    *=    |                 |
+  # |    **    | Exponentiation. |
+  # |    **=   |                 |
   # |    /     | Division.       |
   # |    /=    |                 |
   # |    %     | Modulus.        |
@@ -33,16 +35,16 @@ contexts:
   main:
     - match: |
         (?x)
-        (?> \-\-
+        (?> --
           | \+\+
         )
       scope: keyword.operator.arithmetic.js.fjsx15
       pop: true
     - match: |
         (?x)
-        (?> \-=?
+        (?> -=?
           | \+=?
-          | \*=?
+          | \*\*?=?
           | /=?
           | %=?
         )

@@ -27,7 +27,7 @@ contexts:
         (?x)
         (?> &&
           | \|\|
-          | !
+          | !!?
         )
       scope: keyword.operator.logical.js.fjsx15
       set: optional-expression

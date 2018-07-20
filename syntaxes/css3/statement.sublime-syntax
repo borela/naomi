@@ -134,6 +134,11 @@ contexts:
       set: [ meta-font-face, ruleset-block ]
 
   import:
+    - match: (@)import-normalize\b
+      captures:
+        0: keyword.control.at-rule.import.css.css3
+        1: punctuation.definition.keyword.css.css3
+      set: meta-import
     - match: (@)import\b
       captures:
         0: keyword.control.at-rule.import.css.css3

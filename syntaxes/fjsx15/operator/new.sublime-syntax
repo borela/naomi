@@ -53,6 +53,13 @@ contexts:
         optional-expression
       ]
 
+  arguments:
+    - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax#arguments
+
+  else-pop:
+    - match: (?=\S)
+      pop: true
+
   meta-instance-call-constructor-scope:
     - meta_scope: meta.instance.constructor.js.fjsx15
     - meta_content_scope: meta.function-call.constructor.js.fjsx15
@@ -63,7 +70,9 @@ contexts:
     - include: pop-now
 
   optional-arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax#arguments
+    - match: (?=\()
+      set: arguments
+    - include: else-pop
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

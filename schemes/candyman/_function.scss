@@ -14,7 +14,7 @@
 .variable.function,
 .storage.type.function.arrow {
   foreground: $light-blue-a200;
-  fontStyle: none;
+  fontStyle: bold;
 }
 
 .storage.type.function.arrow.flow {
@@ -22,7 +22,7 @@
 }
 
 .variable.function {
-  fontStyle: italic;
+  fontStyle: none;
 }
 
 .support.function {
@@ -30,10 +30,8 @@
   fontStyle: none;
 }
 
-.meta.function-call {
-  .support.function {
-    fontStyle: italic;
-  }
+.support.function.jest.matcher {
+  foreground: rgba($pink-a100, 1);
 }
 
 .variable.parameter {

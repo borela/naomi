@@ -12,6 +12,7 @@
 
 .keyword {
   foreground: $pink-300;
+  fontStyle: italic;
 }
 
 .keyword.control {
@@ -34,14 +35,13 @@
 
 .keyword.control.flow {
   foreground: $deep-purple-200;
-  fontStyle: italic;
 }
 
 .keyword.operator {
   foreground: $green-a400;
+  fontStyle: none;
 }
 
 .keyword.operator.word {
   foreground: $purple-a100;
-  fontStyle: italic;
 }

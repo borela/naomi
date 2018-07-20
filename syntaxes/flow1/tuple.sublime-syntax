@@ -23,6 +23,7 @@ contexts:
       set: [ delimiters, optional-type-expression ]
 
   delimiters:
+    - meta_scope: meta.sequence.flow
     - match: \,
       scope: punctuation.separator.comma.flow
       push: optional-type-expression

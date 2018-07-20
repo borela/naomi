@@ -13,7 +13,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: Jest Snapshot
+name: Jest Snapshot (Naomi)
 scope: source.js.jest-snapshot
 
 file_extensions:

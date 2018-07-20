@@ -24,6 +24,13 @@
   foreground: $deep-orange-a100;
 }
 
+.constant.other.color {
+  foreground: $red-300;
+  .punctuation.definition.constant {
+    foreground: rgba($red-300, .5);
+  }
+}
+
 .constant.numeric {
   foreground: $amber-300;
 

@@ -1,5 +1,6 @@
 # The MIT License (MIT)
 
+Copyright © 2018 Tomas Barry (<tomas.barry@hotmail.com>)<br>
 Copyright © 2018 CJ Winslow (<whoaa512@gmail.com>)<br>
 Copyright © 2018 Francisco Lourenço (<francisco@betafabric.com>)<br>
 Copyright © 2017 Ihor Oleksandrov ([@ihodev](https://github.com/ihodev))

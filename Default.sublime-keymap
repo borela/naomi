@@ -301,6 +301,11 @@
     "operand": true,
     "match_all": true
   },{
+    "key": "preceding_text",
+    "operator": "not_regex_contains",
+    "operand": "/\\s*$",
+    "match_all": true
+  },{
     "key": "setting.auto_close_tags",
     "operator": "equal",
     "operand": true,

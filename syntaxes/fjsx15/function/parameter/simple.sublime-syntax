@@ -106,6 +106,7 @@ contexts:
         (?=
           \s*\??
           \s*{{type}}?
+          (?:\s*/\*.*?\*/)?
           \s*=(?!\s*>)
         )
       scope: variable.parameter.function.js.fjsx15
@@ -118,16 +119,21 @@ contexts:
       scope: variable.parameter.function.js.fjsx15
       set: optional-modifier-and-type
 
+  comment-no-pop:
+    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+
   expression:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
   optional-default-value:
     - meta_scope: meta.function.parameter.optional.js.fjsx15
+    - include: comment-no-pop
     - match: (?=(?>[,;:)\]}]|=>))
       pop: true
     - match: (?==)
-      set: expression
+      push: expression
 
   optional-modifier-and-type:
+    - include: comment-no-pop
     - include: Packages/Naomi/syntaxes/flow1/optional-modifier.no-pop.sublime-syntax
     - include: Packages/Naomi/syntaxes/flow1/optional-associated-type.sublime-syntax

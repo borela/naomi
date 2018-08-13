@@ -1,5 +1,4 @@
 [![Naomi](art/logo.png)][naomi]
-[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors)
 
 [![GitHub watchers](https://img.shields.io/github/watchers/borela/naomi.svg?style=social)][watchers]
 [![GitHub stars](https://img.shields.io/github/stars/borela/naomi.svg?style=social)][stars]
@@ -11,6 +10,7 @@
 [![Sublime version](https://img.shields.io/badge/sublime-%E2%89%A53126-orange.svg?style=flat-square)][sublime]
 [![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20Linux%20%7C%20OSX-ff4081.svg?style=flat-square)][naomi]
 [![License](https://img.shields.io/badge/license-Apache%202.0%20%7C%20BSD%20%7C%20MIT-ba68c8.svg?style=flat-square)][naomi]
+[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors)
 [![Downloads](https://img.shields.io/packagecontrol/dt/Naomi.svg?style=flat-square)][package-control]
 
 Enhanced syntax definitions for Sublime Text 3.

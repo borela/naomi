@@ -40,7 +40,7 @@ contexts:
         1: punctuation.separator.comma.flow
         2: punctuation.terminator.flow
     - match: \}
-      scope: punctuation.section.brackets.end.flow
+      scope: punctuation.section.block.end.flow
       pop: true
     - match: (?=\S)
       push: statement-or-expression

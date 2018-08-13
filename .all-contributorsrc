@@ -6,8 +6,8 @@
   "files": [
     "README.md"
   ],
-  "imageSize": 50,
-  "commit": true,
+  "imageSize": 100,
+  "commit": false,
   "contributors": [
     {
       "login": "borela",
@@ -28,8 +28,8 @@
       "profile": "http://cjwinslow.com",
       "contributions": [
         "bug",
-        "ideas",
-        "code"
+        "code",
+        "ideas"
       ]
     },
     {

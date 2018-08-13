@@ -111,9 +111,8 @@ Thanks goes to these wonderful people ([emoji legend][emoji-legend]):
 This project follows the [all-contributors][all-contributors] specification.
 Contributions of any kind welcome!
 
-I’ll try my best to mantain this list updated; If you are not included but
-created bug reports, sent ideas or patches that got incorporated on the project,
-please send a pull request to the `.all-contributorsrc` file.
+If you are not included but created bug reports, sent ideas or patches please
+send a pull request to the `.all-contributorsrc` file.
 
 [all-contributors]: //github.com/kentcdodds/all-contributors
 [candyman]: schemes/candyman

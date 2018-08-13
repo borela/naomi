@@ -141,26 +141,6 @@
     "match_all": true
   }]
 },{
-  // Close tags.
-  "keys": [ "/" ],
-  "command": "close_tag",
-  "args": { "insert_slash": true },
-  "context": [{
-    "key": "selector",
-    "operator": "equal",
-    "operand": "(text.html, text.xml, source.jsx) - (string, comment)",
-    "match_all": true
-  },{
-    "key": "preceding_text",
-    "operator": "regex_match",
-    "operand": ".*<$",
-    "match_all": true
-  },{
-    "key": "setting.auto_close_tags",
-    "operator": "equal",
-    "operand": true
-  }]
-},{
   // JS - Pair template.
   "keys": [ "`" ],
   "command": "insert_snippet",
@@ -288,12 +268,33 @@
     "match_all": true
   }]
 },{
+  // Close HTML, JSX and XML tags.
+  "keys": [ "/" ],
+  "command": "close_tag",
+  "args": { "insert_slash": true },
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "(text.html, text.xml, source.jsx) - (string, comment)",
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "regex_match",
+    "operand": "<\\s*$",
+    "match_all": true
+  },{
+    "key": "setting.auto_close_tags",
+    "operator": "equal",
+    "operand": true
+  }]
+},{
+  // Close JSX tag on “>”.
   "keys": [ ">" ],
   "command": "naomi_close_jsx_tag",
   "context": [{
     "key": "selector",
     "operator": "equal",
-    "operand": "source.jsx meta.naomi meta.tag",
+    "operand": "source.jsx meta.naomi meta.tag - (string, comment)",
     "match_all": true
   },{
     "key": "selection_empty",
@@ -304,6 +305,32 @@
     "key": "preceding_text",
     "operator": "not_regex_contains",
     "operand": "/\\s*$",
+    "match_all": true
+  },{
+    "key": "setting.auto_close_tags",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  }]
+},{
+  // Close self closing JSX tag on “/”.
+  "keys": [ "/" ],
+  "command": "insert_snippet",
+  "args": { "contents": "/>" },
+  "context": [{
+    "key": "selector",
+    "operator": "equal",
+    "operand": "source.jsx meta.naomi meta.tag - (string, comment)",
+    "match_all": true
+  },{
+    "key": "selection_empty",
+    "operator": "equal",
+    "operand": true,
+    "match_all": true
+  },{
+    "key": "preceding_text",
+    "operator": "not_regex_contains",
+    "operand": "<\\s*$",
     "match_all": true
   },{
     "key": "setting.auto_close_tags",

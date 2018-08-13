@@ -1,4 +1,5 @@
 [![Naomi](art/logo.png)][naomi]
+[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors)
 
 [![GitHub watchers](https://img.shields.io/github/watchers/borela/naomi.svg?style=social)][watchers]
 [![GitHub stars](https://img.shields.io/github/stars/borela/naomi.svg?style=social)][stars]
@@ -95,13 +96,30 @@ Or:
   1. Click at the bottom right corner where it shows the current syntax;
   2. Then “Naomi”.
 
+## Contributors
+
+Thanks goes to these wonderful people ([emoji legend][emoji legend]):
+
+<!-- ALL-CONTRIBUTORS-LIST:START -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars3.githubusercontent.com/u/11317458?v=4" width="50px;"/><br /><sub><b>Alexandre Borela</b></sub>](https://github.com/borela)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3Aborela "Bug reports") [💻](https://github.com/borela/naomi/commits?author=borela "Code") [🎨](#design-borela "Design") [📖](https://github.com/borela/naomi/commits?author=borela "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/1581943?v=4" width="50px;"/><br /><sub><b>C.J. Winslow</b></sub>](http://cjwinslow.com)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3AWhoaa512 "Bug reports") [🤔](#ideas-Whoaa512 "Ideas, Planning, & Feedback") [💻](https://github.com/borela/naomi/commits?author=Whoaa512 "Code") | [<img src="https://avatars1.githubusercontent.com/u/744114?v=4" width="50px;"/><br /><sub><b>faiwer</b></sub>](https://faiwer.ru)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3Afaiwer "Bug reports") [🤔](#ideas-faiwer "Ideas, Planning, & Feedback") | [<img src="https://avatars0.githubusercontent.com/u/208149?v=4" width="50px;"/><br /><sub><b>Francisco Lourenço</b></sub>](https://www.betafabric.com/francisco/)<br />[💻](https://github.com/borela/naomi/commits?author=franciscolourenco "Code") | [<img src="https://avatars0.githubusercontent.com/u/9534622?v=4" width="50px;"/><br /><sub><b>Tomas Barry</b></sub>](https://butternutbox.com/)<br />[💻](https://github.com/borela/naomi/commits?author=TomasBarry "Code") | [<img src="https://avatars2.githubusercontent.com/u/1147704?v=4" width="50px;"/><br /><sub><b>crapthings</b></sub>](https://github.com/crapthings)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3Acrapthings "Bug reports") | [<img src="https://avatars3.githubusercontent.com/u/1213198?v=4" width="50px;"/><br /><sub><b>Max Mykhailenko</b></sub>](http://memcrab.com)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3Amax-mykhailenko "Bug reports") |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [<img src="https://avatars3.githubusercontent.com/u/4757944?v=4" width="50px;"/><br /><sub><b>Marko Žarković</b></sub>](https://github.com/2Pacalypse-)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3A2Pacalypse- "Bug reports") [🤔](#ideas-2Pacalypse- "Ideas, Planning, & Feedback") | [<img src="https://avatars0.githubusercontent.com/u/3423750?v=4" width="50px;"/><br /><sub><b>James Wilson</b></sub>](http://neaumusic.github.io)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3Aneaumusic "Bug reports") | [<img src="https://avatars2.githubusercontent.com/u/253298?v=4" width="50px;"/><br /><sub><b>ericbiewener</b></sub>](https://github.com/ericbiewener)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3Aericbiewener "Bug reports") | [<img src="https://avatars1.githubusercontent.com/u/13142923?v=4" width="50px;"/><br /><sub><b>Matt Le</b></sub>](https://lematt1991.github.io/)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3Alematt1991 "Bug reports") | [<img src="https://avatars0.githubusercontent.com/u/1161431?v=4" width="50px;"/><br /><sub><b>Clark Pan</b></sub>](https://github.com/clark-pan)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3Aclark-pan "Bug reports") [🤔](#ideas-clark-pan "Ideas, Planning, & Feedback") | [<img src="https://avatars3.githubusercontent.com/u/7884558?v=4" width="50px;"/><br /><sub><b>Nick K.</b></sub>](https://octetstream.me)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3Aoctet-stream "Bug reports") | [<img src="https://avatars3.githubusercontent.com/u/4448627?v=4" width="50px;"/><br /><sub><b>Alex Cavazos</b></sub>](https://eventa.mx)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3AAlexKvazos "Bug reports") |
+| [<img src="https://avatars3.githubusercontent.com/u/6924108?v=4" width="50px;"/><br /><sub><b>Enrique Ballesté</b></sub>](https://divisionof.com)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3Aeballeste "Bug reports") [🤔](#ideas-eballeste "Ideas, Planning, & Feedback") | [<img src="https://avatars0.githubusercontent.com/u/120596?v=4" width="50px;"/><br /><sub><b>David Calhoun</b></sub>](http://themaingate.net)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3Adavidcalhoun "Bug reports") [🤔](#ideas-davidcalhoun "Ideas, Planning, & Feedback") | [<img src="https://avatars3.githubusercontent.com/u/2124761?v=4" width="50px;"/><br /><sub><b>Strider</b></sub>](https://github.com/StreetStrider)<br />[🐛](https://github.com/borela/naomi/issues?q=author%3AStreetStrider "Bug reports") [🤔](#ideas-StreetStrider "Ideas, Planning, & Feedback") |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors][all-contributors] specification.
+Contributions of any kind welcome!
+
+[all-contributors]: //github.com/kentcdodds/all-contributors
 [candyman]: schemes/candyman
-[package-control]: //packagecontrol.io/packages/Naomi
-[sublime]: //www.sublimetext.com
-[naomi]: //github.com/borela/naomi
+[emoji-legend]: //github.com/kentcdodds/all-contributors#emoji-key
+[forks]: //github.com/borela/naomi/network/members
 [issues]: //github.com/borela/naomi/issues
+[naomi]: //github.com/borela/naomi
+[package-control]: //packagecontrol.io/packages/Naomi
 [pulls]: //github.com/borela/naomi/pulls
 [stars]: //github.com/borela/naomi/stargazers
-[watchers]: //github.com/borela/naomi/watchers
-[forks]: //github.com/borela/naomi/network/members
+[sublime]: //www.sublimetext.com
 [sublimeLinter]: //github.com/SublimeLinter/SublimeLinter3
+[watchers]: //github.com/borela/naomi/watchers

@@ -98,7 +98,7 @@ Or:
 
 ## Contributors
 
-Thanks goes to these wonderful people ([emoji legend][emoji legend]):
+Thanks goes to these wonderful people ([emoji legend][emoji-legend]):
 
 <!-- ALL-CONTRIBUTORS-LIST:START -->
 <!-- prettier-ignore -->

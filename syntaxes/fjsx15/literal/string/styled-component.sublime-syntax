@@ -115,6 +115,7 @@ contexts:
         3: support.function.styled-component.js.fjsx15
       set: [
         meta-styled-component,
+        optional-extend,
         meta-function-call,
         arguments
       ]
@@ -144,6 +145,13 @@ contexts:
   meta-styled-component:
     - meta_scope: meta.styled-component.js.fjsx15
     - include: pop-now
+
+  optional-extend:
+    - match: (\.)(extend)(?=`)
+      captures:
+        1: punctuation.accessor.js.fjsx15
+        2: support.function.styled-component.js.fjsx15
+      set: styled-component-begin
 
   pop-now:
     - match: ""

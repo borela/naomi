@@ -53,7 +53,22 @@ contexts:
     - match: (?=\S)
       push: [ calc-optional-tail, calc-optional-head ]
 
+  calc-close-group:
+    - match: \)
+      scope: punctuation.section.group.end.css.css3
+      pop: true
+
   calc-optional-head:
+    # Group begin.
+    - match: \(
+      scope: punctuation.section.group.begin.css.css3
+      push: [
+        meta-group,
+        calc-close-group,
+        calc-optional-tail,
+        calc-optional-head
+      ]
+    # Value.
     - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
     - include: else-pop
 
@@ -94,6 +109,10 @@ contexts:
     - meta_scope: >-
         meta.function-call.css.css3
         meta.group.css.css3
+    - include: pop-now
+
+  meta-group:
+    - meta_scope: meta.group.css.css3
     - include: pop-now
 
   optional-var-value:

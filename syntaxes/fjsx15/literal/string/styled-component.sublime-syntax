@@ -182,6 +182,10 @@ contexts:
     - meta_content_scope: source.css
     - include: comment-no-pop
     - include: shared-content
+    # Recover ruleset block.
+    - match: (?=\{)
+      push: ruleset-block
+    # Anything else.
     - match: (?=\S)
       push: ruleset-block-content
 

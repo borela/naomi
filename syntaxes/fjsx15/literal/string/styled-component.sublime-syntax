@@ -164,6 +164,8 @@ contexts:
       scope: punctuation.terminator.css.css3
 
   styled-component-begin:
+    - match: (?=\()
+      set: arguments
     - match: \`
       scope: punctuation.definition.styled-component.begin.js.fjsx15
       with_prototype:

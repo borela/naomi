@@ -48,6 +48,7 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/208149?v=4",
       "profile": "https://www.betafabric.com/francisco/",
       "contributions": [
+        "bug",
         "code"
       ]
     },
@@ -171,6 +172,34 @@
       "contributions": [
         "bug",
         "ideas"
+      ]
+    },
+    {
+      "login": "MauricioAndrades",
+      "name": "Mauricio Andrades",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4704508?v=4",
+      "profile": "http://mauricioandrades.com/",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "gerardroche",
+      "name": "Gerard Roche",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/44148?v=4",
+      "profile": "http://blog.gerardroche.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ihodev",
+      "name": "Ihor Oleksandrov",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/9801624?v=4",
+      "profile": "https://github.com/ihodev",
+      "contributions": [
+        "code",
+        "design"
       ]
     }
   ]

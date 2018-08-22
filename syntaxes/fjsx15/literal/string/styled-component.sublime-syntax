@@ -115,6 +115,7 @@ contexts:
         3: support.function.styled-component.js.fjsx15
       set: [
         meta-styled-component,
+        optional-extend,
         meta-function-call,
         arguments
       ]
@@ -145,6 +146,13 @@ contexts:
     - meta_scope: meta.styled-component.js.fjsx15
     - include: pop-now
 
+  optional-extend:
+    - match: (\.)(extend)(?=`)
+      captures:
+        1: punctuation.accessor.js.fjsx15
+        2: support.function.styled-component.js.fjsx15
+      set: styled-component-begin
+
   pop-now:
     - match: ""
       pop: true
@@ -164,6 +172,8 @@ contexts:
       scope: punctuation.terminator.css.css3
 
   styled-component-begin:
+    - match: (?=\()
+      set: arguments
     - match: \`
       scope: punctuation.definition.styled-component.begin.js.fjsx15
       with_prototype:
@@ -182,6 +192,10 @@ contexts:
     - meta_content_scope: source.css
     - include: comment-no-pop
     - include: shared-content
+    # Recover ruleset block.
+    - match: (?=\{)
+      push: ruleset-block
+    # Anything else.
     - match: (?=\S)
       push: ruleset-block-content
 

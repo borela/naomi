@@ -10,6 +10,9 @@ it, don’t hesitate to report here:
 
   https://github.com/borela/naomi/issues
 
+Also, if you find this project useful, don’t forget to star it on Github and
+tell your friends about it, the more bug reports we get the better :D
+
 After installing the plugin and restarting Sublime, it will automatically use
 the syntaxes contained in this package.
 
@@ -23,3 +26,8 @@ Or:
 
   1. Click at the bottom right corner where it shows the current syntax;
   2. Then “Naomi”.
+
+Or:
+
+  1. Open the Command Palette;
+  2. Search for syntax, e.g. `Syntax JavaScript Naomi`;

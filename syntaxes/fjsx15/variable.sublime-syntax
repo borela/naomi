@@ -180,7 +180,7 @@ contexts:
           (?:\s*{{type}})?
           \s*=\s*
           (?:async\b\s+)?
-          function
+          function\s
         )
       set: [
         function,

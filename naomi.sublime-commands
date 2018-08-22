@@ -1,12 +1,21 @@
 [{
-  "caption": "Naomi: Run syntax tests",
+  "caption": "Naomi: Build Keymaps",
+  "command": "naomi_build_keymaps"
+}, {
+  "caption": "Naomi: Build Syntaxes",
+  "command": "naomi_build_syntaxes"
+}, {
+  "caption": "Naomi: Run System Tests",
+  "command": "naomi_run_system_tests"
+}, {
+  "caption": "Naomi: Run Syntax Tests",
   "command": "naomi_run_syntax_tests"
-},{
-  "caption": "Naomi: Toggle JS/JSX Comment",
+}, {
+  "caption": "Toggle JS/JSX Comment (Naomi)",
   "command": "naomi_toggle_jsx_comment",
-  "args": { "block": false }
-},{
-  "caption": "Naomi: Toggle JS/JSX Block Comment",
+  "args": {"block": false}
+}, {
+  "caption": "Toggle JS/JSX Block Comment (Naomi)",
   "command": "naomi_toggle_jsx_comment",
-  "args": { "block": true }
+  "args": {"block": true}
 }]

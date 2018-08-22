@@ -10,17 +10,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from sublime import Region
-from sublime_plugin import TextCommand
+from sublime_plugin import ApplicationCommand
 
 
-class NaomiCloseJsxTagCommand(TextCommand):
-    def __init__(self, view):
-        self.view = view
+class NaomiBuildKeymapsCommand(ApplicationCommand):
+    def __init__(self):
+        print("Constructed")
 
-    def run(self, edit):
-        cursor = self.view.sel()[0].begin()
-        self.view.run_command('insert', {'characters': '>'})
-        self.view.run_command('close_tag')
-        self.view.sel().clear()
-        self.view.sel().add(Region(cursor + 1))
+    def run(self):
+        print("Ran")

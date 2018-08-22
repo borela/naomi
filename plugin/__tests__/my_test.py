@@ -10,16 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .functions import (
-  scan,
-  scan_reverse,
-  search_non_whitespace,
-  search_non_whitespace_reverse
-)
+from unittest import TestCase
 
-__all__ = [
-  scan,
-  scan_reverse,
-  search_non_whitespace,
-  search_non_whitespace_reverse
-]
+
+class HelloTest(TestCase):
+    def test_something(self):
+        self.assertEqual(0, 0)

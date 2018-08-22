@@ -10,12 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.plugin.commands.CloseJsxTag import NaomiCloseJsxTagCommand
-from Naomi.plugin.commands.RunSyntaxTests import NaomiRunSyntaxTestsCommand
-from Naomi.plugin.commands.ToggleJsxComment import NaomiToggleJsxCommentCommand
+from Naomi.commands.BuildKeymaps import NaomiBuildKeymapsCommand
 
 __all__ = [
-  NaomiCloseJsxTagCommand,
-  NaomiRunSyntaxTestsCommand,
-  NaomiToggleJsxCommentCommand
+  NaomiBuildKeymapsCommand,
 ]

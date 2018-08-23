@@ -12,8 +12,10 @@
 
 from os.path import dirname, join, realpath
 
-PLUGIN_DIR = dirname(__file__)
+SYSTEM_DIR = dirname(__file__)
 
-KEYMAPS_DIR = realpath(join(PLUGIN_DIR, '..', 'keymaps'))
+HEADERS_DIR = join(SYSTEM_DIR, 'headers')
+
+KEYMAPS_DIR = realpath(join(SYSTEM_DIR, '..', 'keymaps'))
 KEYMAPS_SRC_DIR = join(KEYMAPS_DIR, 'src')
 KEYMAPS_BUILD_DIR = join(KEYMAPS_DIR, 'build')

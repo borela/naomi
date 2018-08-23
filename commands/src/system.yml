@@ -13,6 +13,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+- caption: 'Naomi System: Build Commands'
+  command: naomi_build_commands
+
 - caption: 'Naomi System: Build Keymaps'
   command: naomi_build_keymaps
 

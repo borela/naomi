@@ -10,8 +10,10 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.commands.BuildKeymaps import NaomiBuildKeymapsCommand
+from Naomi.system.commands.BuildKeymaps import NaomiBuildKeymapsCommand
+from Naomi.system.commands.BuildCommands import NaomiBuildCommandsCommand
 
 __all__ = [
   NaomiBuildKeymapsCommand,
+  NaomiBuildCommandsCommand,
 ]

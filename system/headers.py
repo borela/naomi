@@ -15,4 +15,5 @@ from .paths import HEADERS_DIR
 from .fs import readFile
 
 
+COMMAND = readFile(join(HEADERS_DIR, 'command.txt'))
 KEYMAP = readFile(join(HEADERS_DIR, 'keymap.txt'))

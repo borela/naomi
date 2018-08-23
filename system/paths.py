@@ -13,8 +13,11 @@
 from os.path import dirname, join, realpath
 
 SYSTEM_DIR = dirname(__file__)
-
 HEADERS_DIR = join(SYSTEM_DIR, 'headers')
+
+COMMANDS_DIR = realpath(join(SYSTEM_DIR, '..', 'commands'))
+COMMANDS_SRC_DIR = join(COMMANDS_DIR, 'src')
+COMMANDS_BUILD_DIR = join(COMMANDS_DIR, 'build')
 
 KEYMAPS_DIR = realpath(join(SYSTEM_DIR, '..', 'keymaps'))
 KEYMAPS_SRC_DIR = join(KEYMAPS_DIR, 'src')

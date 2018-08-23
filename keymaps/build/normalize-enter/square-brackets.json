@@ -1,0 +1,39 @@
+[
+  {
+    "args": [
+      {
+        "file": "res://Packages/Default/Add Line in Braces.sublime-macro"
+      }
+    ], 
+    "command": "run_macro_file", 
+    "context": [
+      {
+        "key": "selection_empty", 
+        "match_all": true, 
+        "operand": true, 
+        "operator": "equal"
+      }, 
+      {
+        "key": "preceding_text", 
+        "match_all": true, 
+        "operand": "\\[$", 
+        "operator": "regex_contains"
+      }, 
+      {
+        "key": "following_text", 
+        "match_all": true, 
+        "operand": "^]", 
+        "operator": "regex_contains"
+      }, 
+      {
+        "key": "setting.auto_indent", 
+        "match_all": true, 
+        "operand": true, 
+        "operator": "equal"
+      }
+    ], 
+    "keys": [
+      "enter"
+    ]
+  }
+]

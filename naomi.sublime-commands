@@ -1,16 +1,4 @@
 [{
-  "caption": "Naomi System: Build Keymaps",
-  "command": "naomi_build_keymaps"
-}, {
-  "caption": "Naomi System: Build Syntaxes",
-  "command": "naomi_build_syntaxes"
-}, {
-  "caption": "Naomi System: Run Plugin Tests",
-  "command": "naomi_run_plugin_tests"
-}, {
-  "caption": "Naomi System: Run Syntax Tests",
-  "command": "naomi_run_syntax_tests"
-}, {
   "caption": "Toggle JS/JSX Comment (Naomi)",
   "command": "naomi_toggle_jsx_comment",
   "args": {"block": false}

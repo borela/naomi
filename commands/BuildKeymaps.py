@@ -12,7 +12,6 @@
 
 from Naomi.system.fs import (
     deleteDir,
-    ensureDirExists,
     listFiles,
     loadYaml,
     toJsonString,

@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from ruamel.yaml import load
+from ruamel.yaml import safe_load
 from os import makedirs, walk
 from os.path import dirname, exists, join
 from shutil import rmtree
@@ -36,7 +36,7 @@ def listFiles(dir_path):
 
 def loadYaml(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
-        return load(file)
+        return safe_load(file)
 
 
 def readFile(file_path):

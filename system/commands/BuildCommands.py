@@ -33,7 +33,7 @@ class NaomiBuildCommandsCommand(ApplicationCommand):
         for file in listFiles(COMMANDS_SRC_DIR):
             destination = file
             destination = destination.replace('src', 'build')
-            destination = destination.replace('.yml', '.json')
+            destination = destination.replace('.yml', '.sublime-commands')
 
             yamlData = loadYaml(file)
             jsonString = toJsonString(yamlData)

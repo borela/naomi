@@ -34,8 +34,7 @@ class NaomiBuildIndentationPreferencesCommand(ApplicationCommand):
         for file in list_files(INDENTATION_SRC_DIR):
             destination = file
             destination = destination.replace('src', 'build')
-            destination = destination.replace('.yml', '.temp')
-            # destination = destination.replace('.yml', '.tmPreferences')
+            destination = destination.replace('.yml', '.tmPreferences')
 
             data = load_yaml(file)
             plistString = to_plist_string(data)

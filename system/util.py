@@ -44,41 +44,44 @@ def dict_to_plist_dict(target_dict):
     return plist
 
 
-def dict_to_plist_xml(value):
-    plist = dict_to_plist_dict(value)
-    plist = dict_to_xml(plist, 'plist')
-    return plist
+def dict_to_plist_xml(dict_value, parent = None):
+    plist = dict_to_plist_dict(dict_value)
+    return plist_to_xml(plist)
 
 
-def dict_to_xml(value, tag):
-    if isinstance(tag, str):
-        tag = Element(tag)
+def plist_to_xml(value, parent = None):
+    if parent == None:
+        parent = Element('plist')
+        parent.attrib['version'] = '1.0'
+        value = {
+            'key': 'plist',
+            'dict': value,
+        }
+    else:
+        key = SubElement(parent, 'key')
+        key.text = value['key']
 
     # Sublist.
     if isinstance(value, tuple) or isinstance(value, list):
         for v in value:
-            dict_to_xml(v, tag)
-        return tag
+            plist_to_xml(v, parent)
+        return parent
 
     # Values.
-    key = SubElement(tag, 'key')
-    key.text = value['key']
-
     if 'string' in value:
-        key_value = SubElement(tag, 'string')
+        key_value = SubElement(parent, 'string')
         key_value.text = value['string']
     elif 'bool' in value:
         if value['bool']:
-            SubElement(tag, 'true')
+            SubElement(parent, 'true')
         else:
-            SubElement(tag, 'false')
+            SubElement(parent, 'false')
     elif 'dict' in value:
-        key_value = SubElement(tag, 'dict')
+        key_value = SubElement(parent, 'dict')
         for item in value['dict']:
-            dict_to_xml(item, key_value)
+            plist_to_xml(item, key_value)
 
-    return tag
-
+    return parent
 
 def to_json_string(value):
     return json_dumps(

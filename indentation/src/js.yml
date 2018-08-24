@@ -1,3 +1,5 @@
+# [PackageDev] target_format: plist, ext: tmPreferences
+
 # Licensed under the Apache License, Version 2.0 (the “License”); you may not
 # use this file except in compliance with the License. You may obtain a copy of
 # the License at
@@ -10,11 +12,31 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from os.path import join
-from .paths import HEADERS_DIR
-from .fs import read_file
-
-
-COMMAND = read_file(join(HEADERS_DIR, 'command.txt'))
-INDENTATION = read_file(join(HEADERS_DIR, 'indentation.txt'))
-KEYMAP = read_file(join(HEADERS_DIR, 'keymap.txt'))
+name: JS’s indentation
+scope: source.js meta.naomi - (comment, string)
+settings:
+  preserveIndent: false
+  increaseIndentPattern: |
+    (?x)^
+    .*
+    (?> \{
+      | \[
+      | \(
+    )
+    \s*$
+  decreaseIndentPattern: |
+    (?x)^
+    \s*
+    (?> \}
+      | \]
+      | \)
+    )
+  bracketIndentNextLinePattern: |
+    (?x)^\s*
+    (?> do
+      | else
+      | for
+      | if
+    )\b
+  disableIndentNextLinePattern: ""
+  unIndentedLinePattern: ""

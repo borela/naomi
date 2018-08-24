@@ -10,10 +10,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.commands.BuildKeymaps import NaomiBuildKeymapsCommand
 from Naomi.system.commands.BuildCommands import NaomiBuildCommandsCommand
+from Naomi.system.commands.BuildIndentationPreferences import NaomiBuildIndentationPreferencesCommand
+from Naomi.system.commands.BuildKeymaps import NaomiBuildKeymapsCommand
 
 __all__ = [
-  NaomiBuildKeymapsCommand,
   NaomiBuildCommandsCommand,
+  NaomiBuildIndentationPreferencesCommand,
+  NaomiBuildKeymapsCommand,
 ]

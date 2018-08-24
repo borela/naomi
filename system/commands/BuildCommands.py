@@ -36,6 +36,6 @@ class NaomiBuildCommandsCommand(ApplicationCommand):
             destination = destination.replace('src', 'build')
             destination = destination.replace('.yml', '.sublime-commands')
 
-            yamlData = load_yaml(file)
-            jsonString = to_json_string(yamlData)
+            data = load_yaml(file)
+            jsonString = to_json_string(data)
             write_file(destination, COMMAND_HEADER + jsonString)

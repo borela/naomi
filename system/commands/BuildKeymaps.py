@@ -35,7 +35,7 @@ def get_keymaps():
     osx = []
     for file in list_files(KEYMAPS_SRC_DIR):
         data = load_yaml(file)
-        print()
+
         if 'platform' not in data:
             shared += data['bindings']
             continue

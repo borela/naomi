@@ -23,10 +23,11 @@ from os.path import (
     join,
 )
 
+from .util import dict_to_plist_xml
+from dicttoxml import dicttoxml
+from json import dumps as json_dumps
 from ruamel.yaml import safe_load
 from shutil import rmtree
-from json import dumps
-
 
 def delete_dir(dir_path):
     if exists(dir_path):
@@ -34,6 +35,8 @@ def delete_dir(dir_path):
 
 
 def delete_dir_contents(dir_path):
+    if not exists(dir_path):
+        return
     for node in listdir(dir_path):
         full_path = join(dir_path, node)
         try:
@@ -54,20 +57,16 @@ def list_files(dir_path):
 
 
 def load_yaml(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
+    with open(file_path, 'r', encoding = 'utf-8') as file:
         return safe_load(file)
 
 
 def read_file(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
+    with open(file_path, 'r', encoding = 'utf-8') as file:
         return file.read()
-
-
-def to_json_string(value):
-    return dumps(value, indent=2, sort_keys=True)
 
 
 def write_file(file_path, data):
     ensure_dir_exists(dirname(file_path))
-    with open(file_path, 'w', encoding='utf-8', newline='\n') as file:
+    with open(file_path, 'w', encoding = 'utf-8', newline = '\n') as file:
         return file.write(data)

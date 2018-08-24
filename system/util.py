@@ -74,7 +74,11 @@ def dict_to_xml(value, tag):
 
 
 def to_json_string(value):
-    return json_dumps(value, indent = 2, sort_keys = True)
+    return json_dumps(
+        value,
+        indent = 2,
+        separators = (',', ': '),
+    )
 
 
 def to_plist_string(target_object):

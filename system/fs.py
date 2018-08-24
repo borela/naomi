@@ -24,10 +24,9 @@ from os.path import (
 )
 
 from .util import dict_to_plist_xml
-from dicttoxml import dicttoxml
-from json import dumps as json_dumps
 from ruamel.yaml import safe_load
 from shutil import rmtree
+
 
 def delete_dir(dir_path):
     if exists(dir_path):

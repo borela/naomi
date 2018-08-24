@@ -10,7 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from lxml.etree import Element, SubElement
+from json import dumps as json_dumps
+from lxml.etree import Element, SubElement, tostring as to_xml_string
+
 
 def dict_to_plist_dict(target_dict, root = True):
     plist = []

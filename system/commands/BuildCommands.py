@@ -14,7 +14,6 @@ from Naomi.system.fs import (
     delete_dir_contents,
     list_files,
     load_yaml,
-    to_json_string,
     write_file,
 )
 
@@ -24,6 +23,7 @@ from Naomi.system.paths import (
 )
 
 from Naomi.system.headers import COMMAND as COMMAND_HEADER
+from Naomi.system.util import to_json_string
 from sublime_plugin import ApplicationCommand
 
 

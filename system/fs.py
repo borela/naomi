@@ -68,6 +68,6 @@ def to_json_string(value):
 
 
 def write_file(file_path, data):
-    ensureDirExists(dirname(file_path))
+    ensure_dir_exists(dirname(file_path))
     with open(file_path, 'w', encoding='utf-8', newline='\n') as file:
         return file.write(data)

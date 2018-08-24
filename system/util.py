@@ -46,10 +46,10 @@ def dict_to_plist_dict(target_dict):
 
 def dict_to_plist_xml(dict_value, parent = None):
     plist = dict_to_plist_dict(dict_value)
-    return plist_to_xml(plist)
+    return plist_dict_to_xml(plist)
 
 
-def plist_to_xml(value, parent = None):
+def plist_dict_to_xml(value, parent = None):
     if parent == None:
         parent = Element('plist')
         parent.attrib['version'] = '1.0'
@@ -82,6 +82,7 @@ def plist_to_xml(value, parent = None):
             plist_to_xml(item, key_value)
 
     return parent
+
 
 def to_json_string(value):
     return json_dumps(

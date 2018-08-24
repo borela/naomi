@@ -10,8 +10,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from lxml.etree import (
+    Element,
+    SubElement,
+    tostring as to_xml_string,
+)
+
+from collections import OrderedDict
 from json import dumps as json_dumps
-from lxml.etree import Element, SubElement, tostring as to_xml_string
 
 
 def dict_to_plist_dict(target_dict):
@@ -22,24 +28,19 @@ def dict_to_plist_dict(target_dict):
               'key': key,
               'bool': value,
             })
-            continue
-
-        if isinstance(value, str):
+        elif isinstance(value, str):
             plist.append({
               'key': key,
               'string': value,
             })
-            continue
-
-        if isinstance(value, dict):
+        elif isinstance(value, dict):
             value = dict_to_plist_dict(value)
             plist.append({
               'key': key,
               'dict': value,
             })
-            continue
-
-        raise ValueError('Unexpected type “%s”.' % type(value))
+        else:
+            raise ValueError('Unexpected type “%s”.' % type(value))
     return plist
 
 
@@ -53,24 +54,29 @@ def dict_to_xml(value, tag):
     if isinstance(tag, str):
         tag = Element(tag)
 
-    if isinstance(value, str):
-        tag.text = value
-
-    elif isinstance(value, tuple) or isinstance(value, list):
+    # Sublist.
+    if isinstance(value, tuple) or isinstance(value, list):
         for v in value:
             dict_to_xml(v, tag)
-
-    if isinstance(value, dict):
-        for k, v in value.items():
-            if k == 'bool':
-                if v:
-                    SubElement(tag, 'true')
-                else:
-                    SubElement(tag, 'false')
-                continue
-            child = SubElement(tag, k)
-            dict_to_xml(v, child)
         return tag
+
+    # Values.
+    key = SubElement(tag, 'key')
+    key.text = value['key']
+
+    if 'string' in value:
+        key_value = SubElement(tag, 'string')
+        key_value.text = value['string']
+    elif 'bool' in value:
+        if value['bool']:
+            SubElement(tag, 'true')
+        else:
+            SubElement(tag, 'false')
+    elif 'dict' in value:
+        key_value = SubElement(tag, 'dict')
+        for item in value['dict']:
+            dict_to_xml(item, key_value)
+
     return tag
 
 

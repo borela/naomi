@@ -11,11 +11,11 @@
 # the License.
 
 from Naomi.system.fs import (
-    deleteDir,
-    listFiles,
-    loadYaml,
-    toJsonString,
-    writeFile,
+    delete_dir,
+    list_files,
+    load_yaml,
+    to_json_string,
+    write_file,
 )
 
 from Naomi.system.paths import (
@@ -28,13 +28,13 @@ from os.path import join
 from sublime_plugin import ApplicationCommand
 
 
-def getKeymaps():
+def get_keymaps():
     shared = []
     windows = []
     linux = []
     osx = []
-    for file in listFiles(KEYMAPS_SRC_DIR):
-        data = loadYaml(file)
+    for file in list_files(KEYMAPS_SRC_DIR):
+        data = load_yaml(file)
         print()
         if 'platform' not in data:
             shared += data['bindings']
@@ -61,30 +61,30 @@ def getKeymaps():
 
 class NaomiBuildKeymapsCommand(ApplicationCommand):
     def run(self):
-        deleteDir(KEYMAPS_BUILD_DIR)
+        delete_dir(KEYMAPS_BUILD_DIR)
 
-        shared, windows, linux, osx = getKeymaps()
+        shared, windows, linux, osx = get_keymaps()
 
         if len(shared) > 0:
-            writeFile(
+            write_file(
                 join(KEYMAPS_BUILD_DIR, 'Default.sublime-keymap'),
-                KEYMAP_HEADER + toJsonString(shared)
+                KEYMAP_HEADER + to_json_string(shared)
             )
 
         if len(windows) > 0:
-            writeFile(
+            write_file(
                 join(KEYMAPS_BUILD_DIR, 'Default (Windows).sublime-keymap'),
-                KEYMAP_HEADER + toJsonString(windows)
+                KEYMAP_HEADER + to_json_string(windows)
             )
 
         if len(linux) > 0:
-            writeFile(
+            write_file(
                 join(KEYMAPS_BUILD_DIR, 'Default (Linux).sublime-keymap'),
-                KEYMAP_HEADER + toJsonString(linux)
+                KEYMAP_HEADER + to_json_string(linux)
             )
 
         if len(osx) > 0:
-            writeFile(
+            write_file(
                 join(KEYMAPS_BUILD_DIR, 'Default (OSX).sublime-keymap'),
-                KEYMAP_HEADER + toJsonString(osx)
+                KEYMAP_HEADER + to_json_string(osx)
             )

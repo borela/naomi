@@ -17,37 +17,37 @@ from shutil import rmtree
 from json import dumps
 
 
-def deleteDir(dir_path):
+def delete_dir(dir_path):
     if exists(dir_path):
         rmtree(dir_path)
 
 
-def ensureDirExists(dir_path):
+def ensure_dir_exists(dir_path):
     if not exists(dir_path):
         makedirs(dir_path)
 
 
-def listFiles(dir_path):
+def list_files(dir_path):
     for path, directories, files in walk(dir_path):
         for file in files:
             yield join(path, file)
 
 
-def loadYaml(file_path):
+def load_yaml(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         return safe_load(file)
 
 
-def readFile(file_path):
+def read_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         return file.read()
 
 
-def toJsonString(value):
+def to_json_string(value):
     return dumps(value, indent=2, sort_keys=True)
 
 
-def writeFile(file_path, data):
+def write_file(file_path, data):
     ensureDirExists(dirname(file_path))
     with open(file_path, 'w', encoding='utf-8', newline='\n') as file:
         return file.write(data)

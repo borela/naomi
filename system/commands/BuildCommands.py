@@ -11,11 +11,11 @@
 # the License.
 
 from Naomi.system.fs import (
-    deleteDir,
-    listFiles,
-    loadYaml,
-    toJsonString,
-    writeFile,
+    delete_dir,
+    list_files,
+    load_yaml,
+    to_json_string,
+    write_file,
 )
 
 from Naomi.system.paths import (
@@ -29,12 +29,12 @@ from sublime_plugin import ApplicationCommand
 
 class NaomiBuildCommandsCommand(ApplicationCommand):
     def run(self):
-        deleteDir(COMMANDS_BUILD_DIR)
-        for file in listFiles(COMMANDS_SRC_DIR):
+        delete_dir(COMMANDS_BUILD_DIR)
+        for file in list_files(COMMANDS_SRC_DIR):
             destination = file
             destination = destination.replace('src', 'build')
             destination = destination.replace('.yml', '.sublime-commands')
 
-            yamlData = loadYaml(file)
-            jsonString = toJsonString(yamlData)
-            writeFile(destination, COMMAND_HEADER + jsonString)
+            yamlData = load_yaml(file)
+            jsonString = to_json_string(yamlData)
+            write_file(destination, COMMAND_HEADER + jsonString)

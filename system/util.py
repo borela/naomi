@@ -53,19 +53,24 @@ def dict_to_xml(value, tag):
     if isinstance(tag, str):
         tag = Element(tag)
 
-    if isinstance(value, dict):
-        for k, v in value.items():
-            child = SubElement(tag, k)
-            dict_to_xml(v, child)
-        return tag
+    if isinstance(value, str):
+        tag.text = value
 
     elif isinstance(value, tuple) or isinstance(value, list):
         for v in value:
             dict_to_xml(v, tag)
 
-    if isinstance(value, str):
-        tag.text = value
-
+    if isinstance(value, dict):
+        for k, v in value.items():
+            if k == 'bool':
+                if v:
+                    SubElement(tag, 'true')
+                else:
+                    SubElement(tag, 'false')
+                continue
+            child = SubElement(tag, k)
+            dict_to_xml(v, child)
+        return tag
     return tag
 
 

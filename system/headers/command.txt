@@ -12,8 +12,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-// This code was auto generated, be aware that changes to this file will be lost
-// on the next build. To contribute with commands, edit the files in:
+//  This code was auto generated, be aware that changes to this file will be
+//  lost on the next build. To contribute with commands, edit the files in:
 //
 //     Naomi/commands/src
 //

@@ -12,85 +12,85 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-// This code was auto generated, be aware that changes to this file will be lost
-// on the next build. To contribute with keymaps, edit the files in:
+//  This code was auto generated, be aware that changes to this file will be
+//  lost on the next build. To contribute with commands, edit the files in:
 //
 //     Naomi/keymaps/src
 //
 ////////////////////////////////////////////////////////////////////////////////
 [
   {
+    "keys": [
+      "enter"
+    ],
     "args": [
       {
         "file": "res://Packages/Default/Add Line in Braces.sublime-macro"
       }
-    ], 
-    "command": "run_macro_file", 
+    ],
+    "command": "run_macro_file",
     "context": [
       {
-        "key": "selection_empty", 
-        "match_all": true, 
-        "operand": true, 
-        "operator": "equal"
-      }, 
+        "match_all": true,
+        "operand": true,
+        "operator": "equal",
+        "key": "selection_empty"
+      },
       {
-        "key": "preceding_text", 
-        "match_all": true, 
-        "operand": "\\($", 
-        "operator": "regex_contains"
-      }, 
+        "match_all": true,
+        "operand": "\\($",
+        "operator": "regex_contains",
+        "key": "preceding_text"
+      },
       {
-        "key": "following_text", 
-        "match_all": true, 
-        "operand": "^)", 
-        "operator": "regex_contains"
-      }, 
+        "match_all": true,
+        "operand": "^)",
+        "operator": "regex_contains",
+        "key": "following_text"
+      },
       {
-        "key": "setting.auto_indent", 
-        "match_all": true, 
-        "operand": true, 
-        "operator": "equal"
+        "match_all": true,
+        "operand": true,
+        "operator": "equal",
+        "key": "setting.auto_indent"
       }
-    ], 
-    "keys": [
-      "enter"
     ]
-  }, 
+  },
   {
+    "keys": [
+      "enter"
+    ],
     "args": [
       {
         "file": "res://Packages/Default/Add Line in Braces.sublime-macro"
       }
-    ], 
-    "command": "run_macro_file", 
+    ],
+    "command": "run_macro_file",
     "context": [
       {
-        "key": "selection_empty", 
-        "match_all": true, 
-        "operand": true, 
-        "operator": "equal"
-      }, 
+        "match_all": true,
+        "operand": true,
+        "operator": "equal",
+        "key": "selection_empty"
+      },
       {
-        "key": "preceding_text", 
-        "match_all": true, 
-        "operand": "\\[$", 
-        "operator": "regex_contains"
-      }, 
+        "match_all": true,
+        "operand": "\\[$",
+        "operator": "regex_contains",
+        "key": "preceding_text"
+      },
       {
-        "key": "following_text", 
-        "match_all": true, 
-        "operand": "^]", 
-        "operator": "regex_contains"
-      }, 
+        "match_all": true,
+        "operand": "^]",
+        "operator": "regex_contains",
+        "key": "following_text"
+      },
       {
-        "key": "setting.auto_indent", 
-        "match_all": true, 
-        "operand": true, 
-        "operator": "equal"
+        "match_all": true,
+        "operand": true,
+        "operator": "equal",
+        "key": "setting.auto_indent"
       }
-    ], 
-    "keys": [
-      "enter"
     ]
   }
 ]

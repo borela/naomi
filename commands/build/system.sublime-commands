@@ -12,31 +12,35 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-// This code was auto generated, be aware that changes to this file will be lost
-// on the next build. To contribute with commands, edit the files in:
+//  This code was auto generated, be aware that changes to this file will be
+//  lost on the next build. To contribute with commands, edit the files in:
 //
 //     Naomi/commands/src
 //
 ////////////////////////////////////////////////////////////////////////////////
 [
   {
-    "caption": "Naomi System: Build Commands", 
+    "caption": "Naomi System: Build Commands",
     "command": "naomi_build_commands"
-  }, 
+  },
   {
-    "caption": "Naomi System: Build Keymaps", 
+    "caption": "Naomi System: Build Keymaps",
     "command": "naomi_build_keymaps"
-  }, 
+  },
   {
-    "caption": "Naomi System: Build Syntaxes", 
+    "caption": "Naomi System: Build Indentation Preferences",
+    "command": "naomi_build_indentation_preferences"
+  },
+  {
+    "caption": "Naomi System: Build Syntaxes",
     "command": "naomi_build_syntaxes"
-  }, 
+  },
   {
-    "caption": "Naomi System: Run Plugin Tests", 
+    "caption": "Naomi System: Run Plugin Tests",
     "command": "naomi_run_plugin_tests"
-  }, 
+  },
   {
-    "caption": "Naomi System: Run Syntax Tests", 
+    "caption": "Naomi System: Run Syntax Tests",
     "command": "naomi_run_syntax_tests"
   }
 ]

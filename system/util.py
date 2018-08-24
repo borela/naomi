@@ -14,21 +14,13 @@ from json import dumps as json_dumps
 from lxml.etree import Element, SubElement, tostring as to_xml_string
 
 
-def dict_to_plist_dict(target_dict, root = True):
+def dict_to_plist_dict(target_dict):
     plist = []
     for key, value in target_dict.items():
         if isinstance(value, bool):
             plist.append({
               'key': key,
               'bool': value,
-            })
-            continue
-
-        if isinstance(value, dict):
-            value = dict_to_plist_dict(value, True)
-            plist.append({
-              'key': key,
-              'dict': value,
             })
             continue
 
@@ -39,17 +31,21 @@ def dict_to_plist_dict(target_dict, root = True):
             })
             continue
 
+        if isinstance(value, dict):
+            value = dict_to_plist_dict(value)
+            plist.append({
+              'key': key,
+              'dict': value,
+            })
+            continue
+
         raise ValueError('Unexpected type “%s”.' % type(value))
-
-    if root:
-        plist = {'plist': plist}
-
     return plist
 
 
 def dict_to_plist_xml(value):
     plist = dict_to_plist_dict(value)
-    plist = dict_to_xml(plist['plist'], 'plist')
+    plist = dict_to_xml(plist, 'plist')
     return plist
 
 

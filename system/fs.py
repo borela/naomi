@@ -24,7 +24,7 @@ from os.path import (
 )
 
 from .util import dict_to_plist_xml
-from ruamel.yaml import safe_load
+from ruamel.yaml import round_trip_load
 from shutil import rmtree
 
 
@@ -57,7 +57,7 @@ def list_files(dir_path):
 
 def load_yaml(file_path):
     with open(file_path, 'r', encoding = 'utf-8') as file:
-        return safe_load(file)
+        return round_trip_load(file)
 
 
 def read_file(file_path):

@@ -10,9 +10,20 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from os import (
+    listdir,
+    makedirs,
+    remove,
+    walk,
+)
+
+from os.path import (
+    dirname,
+    exists,
+    join,
+)
+
 from ruamel.yaml import safe_load
-from os import makedirs, walk
-from os.path import dirname, exists, join
 from shutil import rmtree
 from json import dumps
 
@@ -20,6 +31,15 @@ from json import dumps
 def delete_dir(dir_path):
     if exists(dir_path):
         rmtree(dir_path)
+
+
+def delete_dir_contents(dir_path):
+    for node in listdir(dir_path):
+        full_path = join(dir_path, node)
+        try:
+            rmtree(full_path)
+        except OSError:
+            remove(full_path)
 
 
 def ensure_dir_exists(dir_path):

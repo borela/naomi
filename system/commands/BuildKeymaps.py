@@ -11,7 +11,7 @@
 # the License.
 
 from Naomi.system.fs import (
-    delete_dir,
+    delete_dir_contents,
     list_files,
     load_yaml,
     to_json_string,
@@ -61,9 +61,9 @@ def get_keymaps():
 
 class NaomiBuildKeymapsCommand(ApplicationCommand):
     def run(self):
-        delete_dir(KEYMAPS_BUILD_DIR)
-
         shared, windows, linux, osx = get_keymaps()
+
+        delete_dir_contents(KEYMAPS_BUILD_DIR)
 
         if len(shared) > 0:
             write_file(

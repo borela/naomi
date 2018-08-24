@@ -11,7 +11,7 @@
 # the License.
 
 from Naomi.system.fs import (
-    delete_dir,
+    delete_dir_contents,
     list_files,
     load_yaml,
     to_json_string,
@@ -29,7 +29,8 @@ from sublime_plugin import ApplicationCommand
 
 class NaomiBuildCommandsCommand(ApplicationCommand):
     def run(self):
-        delete_dir(COMMANDS_BUILD_DIR)
+        delete_dir_contents(COMMANDS_BUILD_DIR)
+
         for file in list_files(COMMANDS_SRC_DIR):
             destination = file
             destination = destination.replace('src', 'build')

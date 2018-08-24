@@ -18,9 +18,8 @@ from json import dumps
 
 
 def deleteDir(dir_path):
-    if not exists(dir_path):
-        return
-    rmtree(dir_path)
+    if exists(dir_path):
+        rmtree(dir_path)
 
 
 def ensureDirExists(dir_path):

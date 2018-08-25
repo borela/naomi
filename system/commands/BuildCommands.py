@@ -27,15 +27,19 @@ from Naomi.system.util import to_json_string
 from sublime_plugin import ApplicationCommand
 
 
+def build():
+    delete_dir_contents(COMMANDS_BUILD_DIR)
+
+    for file in list_files(COMMANDS_SRC_DIR):
+        destination = file
+        destination = destination.replace('src', 'build')
+        destination = destination.replace('.yml', '.sublime-commands')
+
+        data = load_yaml(file)
+        jsonString = to_json_string(data)
+        write_file(destination, COMMAND_HEADER + jsonString)
+
+
 class NaomiBuildCommandsCommand(ApplicationCommand):
     def run(self):
-        delete_dir_contents(COMMANDS_BUILD_DIR)
-
-        for file in list_files(COMMANDS_SRC_DIR):
-            destination = file
-            destination = destination.replace('src', 'build')
-            destination = destination.replace('.yml', '.sublime-commands')
-
-            data = load_yaml(file)
-            jsonString = to_json_string(data)
-            write_file(destination, COMMAND_HEADER + jsonString)
+        build()

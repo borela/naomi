@@ -28,6 +28,36 @@ from os.path import join
 from sublime_plugin import ApplicationCommand
 
 
+def build():
+    shared, windows, linux, osx = get_keymaps()
+
+    delete_dir_contents(KEYMAPS_BUILD_DIR)
+
+    if len(shared) > 0:
+        write_file(
+            join(KEYMAPS_BUILD_DIR, 'Default.sublime-keymap'),
+            KEYMAP_HEADER + to_json_string(shared),
+        )
+
+    if len(windows) > 0:
+        write_file(
+            join(KEYMAPS_BUILD_DIR, 'Default (Windows).sublime-keymap'),
+            KEYMAP_HEADER + to_json_string(windows),
+        )
+
+    if len(linux) > 0:
+        write_file(
+            join(KEYMAPS_BUILD_DIR, 'Default (Linux).sublime-keymap'),
+            KEYMAP_HEADER + to_json_string(linux),
+        )
+
+    if len(osx) > 0:
+        write_file(
+            join(KEYMAPS_BUILD_DIR, 'Default (OSX).sublime-keymap'),
+            KEYMAP_HEADER + to_json_string(osx),
+        )
+
+
 def get_keymaps():
     shared = []
     windows = []
@@ -71,37 +101,12 @@ def get_keymaps():
         if not_windows and not_linux and not_osx:
             raise ValueError(
                 'Invalid value “%s” for OS on file: %s' %
-                data['os'], file
+                data['os'],
+                file,
             )
     return shared, windows, linux, osx
 
 
 class NaomiBuildKeymapsCommand(ApplicationCommand):
     def run(self):
-        shared, windows, linux, osx = get_keymaps()
-
-        delete_dir_contents(KEYMAPS_BUILD_DIR)
-
-        if len(shared) > 0:
-            write_file(
-                join(KEYMAPS_BUILD_DIR, 'Default.sublime-keymap'),
-                KEYMAP_HEADER + to_json_string(shared)
-            )
-
-        if len(windows) > 0:
-            write_file(
-                join(KEYMAPS_BUILD_DIR, 'Default (Windows).sublime-keymap'),
-                KEYMAP_HEADER + to_json_string(windows)
-            )
-
-        if len(linux) > 0:
-            write_file(
-                join(KEYMAPS_BUILD_DIR, 'Default (Linux).sublime-keymap'),
-                KEYMAP_HEADER + to_json_string(linux)
-            )
-
-        if len(osx) > 0:
-            write_file(
-                join(KEYMAPS_BUILD_DIR, 'Default (OSX).sublime-keymap'),
-                KEYMAP_HEADER + to_json_string(osx)
-            )
+        build()

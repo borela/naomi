@@ -102,8 +102,11 @@ def to_plist_string(target_dict):
     """
     Convert a simple dictionary into a XML plist string.
     """
+    # Prepare the dictionary.
     plist = dict_to_plist_dict(target_dict)
+    # Convert to a XML tree.
     xml = plist_dict_to_xml(plist)
+    # Convert to string.
     xml = to_xml_string(
         xml,
         doctype = '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">',

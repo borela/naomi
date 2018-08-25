@@ -23,36 +23,36 @@
     "keys": [
       "enter"
     ],
+    "command": "run_macro_file",
     "args": [
       {
         "file": "res://Packages/Default/Add Line in Braces.sublime-macro"
       }
     ],
-    "command": "run_macro_file",
     "context": [
       {
-        "match_all": true,
-        "operand": true,
+        "key": "selection_empty",
         "operator": "equal",
-        "key": "selection_empty"
+        "operand": true,
+        "match_all": true
       },
       {
-        "match_all": true,
+        "key": "preceding_text",
+        "operator": "regex_contains",
         "operand": "\\($",
-        "operator": "regex_contains",
-        "key": "preceding_text"
+        "match_all": true
       },
       {
-        "match_all": true,
+        "key": "following_text",
+        "operator": "regex_contains",
         "operand": "^)",
-        "operator": "regex_contains",
-        "key": "following_text"
+        "match_all": true
       },
       {
-        "match_all": true,
-        "operand": true,
+        "key": "setting.auto_indent",
         "operator": "equal",
-        "key": "setting.auto_indent"
+        "operand": true,
+        "match_all": true
       }
     ]
   },
@@ -60,36 +60,36 @@
     "keys": [
       "enter"
     ],
+    "command": "run_macro_file",
     "args": [
       {
         "file": "res://Packages/Default/Add Line in Braces.sublime-macro"
       }
     ],
-    "command": "run_macro_file",
     "context": [
       {
-        "match_all": true,
-        "operand": true,
+        "key": "selection_empty",
         "operator": "equal",
-        "key": "selection_empty"
+        "operand": true,
+        "match_all": true
       },
       {
-        "match_all": true,
+        "key": "preceding_text",
+        "operator": "regex_contains",
         "operand": "\\[$",
-        "operator": "regex_contains",
-        "key": "preceding_text"
+        "match_all": true
       },
       {
-        "match_all": true,
+        "key": "following_text",
+        "operator": "regex_contains",
         "operand": "^]",
-        "operator": "regex_contains",
-        "key": "following_text"
+        "match_all": true
       },
       {
-        "match_all": true,
-        "operand": true,
+        "key": "setting.auto_indent",
         "operator": "equal",
-        "key": "setting.auto_indent"
+        "operand": true,
+        "match_all": true
       }
     ]
   }

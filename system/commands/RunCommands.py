@@ -15,26 +15,29 @@ from sublime_plugin import TextCommand
 
 
 class NaomiRunCommandsCommand(TextCommand):
+    """
+    This command can be used in key bindings to run multiple commands.
+    """
     def run(self, edit, commands = None):
         # Ignore empty commands.
         if commands is None:
             return
 
         for command in commands:
-            if 'type' not in command:
-                command['type'] = 'view'
+            if 'on' not in command:
+                command['on'] = 'view'
 
             command_receiver = None
-            command_type = command['type']
+            command_on = command['on']
 
-            if command_type == 'app':
+            if command_on == 'app':
                 command_receiver = sublime
-            elif command_type == 'window':
+            elif command_on == 'window':
                 command_receiver = self.view.window
-            elif command_type == 'view':
+            elif command_on == 'view':
                 command_receiver = self.view
             else:
-                raise ValueError('Invalid command type “%s”.' %s)
+                raise ValueError('Invalid command destination “%s”.' % command_on)
 
             command_receiver.run_command(
                 command['command'],

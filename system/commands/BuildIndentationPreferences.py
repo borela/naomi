@@ -26,6 +26,7 @@ from Naomi.system.headers import INDENTATION as INDENTATION_HEADER
 from Naomi.system.util import to_plist_string
 from sublime_plugin import ApplicationCommand
 
+
 def build():
     delete_dir_contents(INDENTATION_BUILD_DIR)
 

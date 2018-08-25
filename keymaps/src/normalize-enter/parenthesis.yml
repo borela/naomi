@@ -22,17 +22,22 @@ bindings:
     args:
       commands:
         - command: insert
-          args: {characters: "\n\n"}
+          args:
+            characters: "\n\n"
+
         - command: move
           args:
             by: lines
             forward: false
+
         - command: move_to
           args:
             to: hardeol
             forward: false
+
         - command: reindent
-          args: {single_line: true}
+          args:
+            single_line: true
     context:
       - key: selection_empty
         operator: equal

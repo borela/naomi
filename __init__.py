@@ -13,9 +13,11 @@
 from Naomi.system.commands.BuildCommands import NaomiBuildCommandsCommand
 from Naomi.system.commands.BuildIndentationPreferences import NaomiBuildIndentationPreferencesCommand
 from Naomi.system.commands.BuildKeymaps import NaomiBuildKeymapsCommand
+from Naomi.system.commands.RunCommands import NaomiRunCommandsCommand
 
 __all__ = [
   NaomiBuildCommandsCommand,
   NaomiBuildIndentationPreferencesCommand,
   NaomiBuildKeymapsCommand,
+  NaomiRunCommandsCommand,
 ]

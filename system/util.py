@@ -83,6 +83,8 @@ def plist_dict_to_xml(value, parent = None):
         key_value = SubElement(parent, 'dict')
         for item in value['dict']:
             plist_dict_to_xml(item, key_value)
+    else:
+        raise ValueError('Unsupported value “%s”.' % value)
 
     return parent
 

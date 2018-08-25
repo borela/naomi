@@ -21,6 +21,10 @@ from json import dumps as json_dumps
 
 
 def dict_to_plist_dict(target_dict):
+    """
+    Prepare a common dictionary into a structure that represents a plist and is
+    simpler to convert to a XML tree.
+    """
     plist = []
     for key, value in target_dict.items():
         if isinstance(value, bool):
@@ -44,12 +48,11 @@ def dict_to_plist_dict(target_dict):
     return plist
 
 
-def dict_to_plist_xml(dict_value, parent = None):
-    plist = dict_to_plist_dict(dict_value)
-    return plist_dict_to_xml(plist)
-
-
 def plist_dict_to_xml(value, parent = None):
+    """
+    Convert a dictionary(previously prepared “dict_to_plist_dict”) to a XML tree
+    that represents the plist.
+    """
     if parent == None:
         parent = Element('plist')
         parent.attrib['version'] = '1.0'
@@ -85,6 +88,9 @@ def plist_dict_to_xml(value, parent = None):
 
 
 def to_json_string(value):
+    """
+    Convert a dictionary to an indented JSON string.
+    """
     return json_dumps(
         value,
         indent = 2,
@@ -92,8 +98,12 @@ def to_json_string(value):
     )
 
 
-def to_plist_string(target_object):
-    xml = dict_to_plist_xml(target_object)
+def to_plist_string(target_dict):
+    """
+    Convert a simple dictionary into a XML plist string.
+    """
+    plist = dict_to_plist_dict(target_dict)
+    xml = plist_dict_to_xml(plist)
     xml = to_xml_string(
         xml,
         doctype = '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">',

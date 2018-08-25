@@ -14,11 +14,11 @@
 # the License.
 
 bindings:
-  # Pressing enter between “[]” have the same behavior as “{}”.
+  # Pressing enter between “[]” will have the same behavior as “{}”.
   - keys: [enter]
     command: run_macro_file
     args:
-      - file: res://Packages/Default/Add Line in Braces.sublime-macro
+      file: res://Packages/Default/Add Line in Braces.sublime-macro
     context:
       - key: selection_empty
         operator: equal
@@ -32,7 +32,7 @@ bindings:
 
       - key: following_text
         operator: regex_contains
-        operand: ^]
+        operand: ^\]
         match_all: true
 
       - key: setting.auto_indent

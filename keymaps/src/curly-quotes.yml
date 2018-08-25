@@ -33,4 +33,4 @@ bindings:
   # Closing double curly quote.
   - keys: ['alt+shift+[']
     command: insert_snippet
-    args: {contents: ” }
+    args: {contents: ”}

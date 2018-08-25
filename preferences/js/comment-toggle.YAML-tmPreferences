@@ -13,7 +13,7 @@
 # the License.
 
 name: JS’s comment toggle
-scope: source.js meta.naomi
+scope: source.js
 settings:
   shellVariables:
   - name: TM_COMMENT_START

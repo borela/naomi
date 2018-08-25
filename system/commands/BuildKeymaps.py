@@ -40,22 +40,35 @@ def get_keymaps():
             shared += data['bindings']
             continue
 
-        if data.platform == 'windows':
+        # We convert the simple string platform value to an array to use the
+        # generic algorithm below.
+        if isinstance(data['platform'], str):
+            data['platform'] = [data['platform']]
+
+        not_windows = False
+        not_linux = False
+        not_osx = False
+
+        if 'windows' in data['platform']:
             windows += data['bindings']
-            continue
+        else:
+            not_windows = True
 
-        if data.platform == 'linux':
+        if 'linux' in data['platform']:
             linux += data['bindings']
-            continue
+        else:
+            not_linux = True
 
-        if data.platform == 'osx':
+        if 'osx' in data['platform']:
             osx += data['bindings']
-            continue
+        else:
+            not_osx = True
 
-        raise ValueError(
-            'Invalid platform value “%s” for file: %s' %
-            data['platform'], file
-        )
+        if not_windows and not_linux and not_osx:
+            raise ValueError(
+                'Invalid platform value “%s” for file: %s' %
+                data['platform'], file
+            )
     return shared, windows, linux, osx
 
 

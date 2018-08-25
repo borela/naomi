@@ -14,7 +14,11 @@ from os.path import join
 from .paths import HEADERS_DIR
 from .fs import read_file
 
+def command():
+    return read_file(join(HEADERS_DIR, 'command.txt'))
 
-COMMAND = read_file(join(HEADERS_DIR, 'command.txt'))
-INDENTATION = read_file(join(HEADERS_DIR, 'indentation.txt'))
-KEYMAP = read_file(join(HEADERS_DIR, 'keymap.txt'))
+def indentation():
+    return read_file(join(HEADERS_DIR, 'indentation.txt'))
+
+def keymap():
+    return read_file(join(HEADERS_DIR, 'keymap.txt'))

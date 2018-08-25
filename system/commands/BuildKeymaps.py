@@ -22,7 +22,7 @@ from Naomi.system.paths import (
     KEYMAPS_SRC_DIR,
 )
 
-from Naomi.system.headers import KEYMAP as KEYMAP_HEADER
+from Naomi.system.headers import keymap as keymap_header
 from Naomi.system.util import to_json_string
 from os.path import join
 from sublime_plugin import ApplicationCommand
@@ -36,25 +36,25 @@ def build():
     if len(shared) > 0:
         write_file(
             join(KEYMAPS_BUILD_DIR, 'Default.sublime-keymap'),
-            KEYMAP_HEADER + to_json_string(shared),
+            keymap_header() + to_json_string(shared),
         )
 
     if len(windows) > 0:
         write_file(
             join(KEYMAPS_BUILD_DIR, 'Default (Windows).sublime-keymap'),
-            KEYMAP_HEADER + to_json_string(windows),
+            keymap_header() + to_json_string(windows),
         )
 
     if len(linux) > 0:
         write_file(
             join(KEYMAPS_BUILD_DIR, 'Default (Linux).sublime-keymap'),
-            KEYMAP_HEADER + to_json_string(linux),
+            keymap_header() + to_json_string(linux),
         )
 
     if len(osx) > 0:
         write_file(
             join(KEYMAPS_BUILD_DIR, 'Default (OSX).sublime-keymap'),
-            KEYMAP_HEADER + to_json_string(osx),
+            keymap_header() + to_json_string(osx),
         )
 
 

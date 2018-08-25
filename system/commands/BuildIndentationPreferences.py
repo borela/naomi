@@ -22,7 +22,7 @@ from Naomi.system.paths import (
     INDENTATION_SRC_DIR,
 )
 
-from Naomi.system.headers import INDENTATION as INDENTATION_HEADER
+from Naomi.system.headers import indentation as indentation_header
 from Naomi.system.util import to_plist_string
 from sublime_plugin import ApplicationCommand
 
@@ -44,7 +44,7 @@ def build():
 
         write_file(
             destination,
-            XML_VERSION + DOCTYPE + INDENTATION_HEADER + plistString
+            XML_VERSION + DOCTYPE + indentation_header() + plistString
         )
 
 

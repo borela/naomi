@@ -22,7 +22,7 @@ from Naomi.system.paths import (
     COMMANDS_SRC_DIR,
 )
 
-from Naomi.system.headers import COMMAND as COMMAND_HEADER
+from Naomi.system.headers import command as command_header
 from Naomi.system.util import to_json_string
 from sublime_plugin import ApplicationCommand
 
@@ -37,7 +37,7 @@ def build():
 
         data = load_yaml(file)
         jsonString = to_json_string(data)
-        write_file(destination, COMMAND_HEADER + jsonString)
+        write_file(destination, command_header() + jsonString)
 
 
 class NaomiBuildCommandsCommand(ApplicationCommand):

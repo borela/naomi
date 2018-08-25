@@ -250,7 +250,7 @@
   "context": [{
     "key": "selector",
     "operator": "equal",
-    "operand": "source.jsx meta.naomi meta.tag - (comment, string, meta.embedded-js)",
+    "operand": "source.jsx meta.tag - (comment, string, meta.embedded-js)",
     "match_all": true
   },{
     "operator": "equal",
@@ -266,7 +266,7 @@
   "context": [{
     "key": "selector",
     "operator": "equal",
-    "operand": "source.jsx meta.naomi meta.tag - (comment, string, meta.embedded-js)",
+    "operand": "source.jsx meta.tag - (comment, string, meta.embedded-js)",
     "match_all": true
   },{
     "key": "setting.auto_id_class",
@@ -281,7 +281,7 @@
   "context": [{
     "key": "selector",
     "operator": "equal",
-    "operand": "source.jsx meta.naomi - (comment, string)",
+    "operand": "source.jsx - (comment, string)",
     "match_all": true
   },{
     "key": "selection_empty",
@@ -331,7 +331,7 @@
   "context": [{
     "key": "selector",
     "operator": "equal",
-    "operand": "source.jsx meta.naomi meta.tag - (string, comment)",
+    "operand": "source.jsx meta.tag - (string, comment)",
     "match_all": true
   },{
     "key": "selection_empty",
@@ -357,7 +357,7 @@
   "context": [{
     "key": "selector",
     "operator": "equal",
-    "operand": "source.jsx meta.naomi meta.tag - (string, comment)",
+    "operand": "source.jsx meta.tag - (string, comment)",
     "match_all": true
   },{
     "key": "selection_empty",

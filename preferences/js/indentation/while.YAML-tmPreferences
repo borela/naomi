@@ -14,7 +14,7 @@
 
 # This is necessary because “while” is also used in “do...while” loops.
 name: JS’s indentation for while loops
-scope: source.js meta.naomi meta.loop.while - (comment, string)
+scope: source.js meta.loop.while - (comment, string)
 settings:
   bracketIndentNextLinePattern: |
     (?x)^\s*while\b

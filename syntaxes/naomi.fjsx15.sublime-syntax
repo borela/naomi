@@ -24,14 +24,9 @@ file_extensions:
 contexts:
   main:
     - match: ""
-      push: [ meta, entry ]
+      push: [ entry ]
 
   entry:
     - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
-
-  meta:
-    - meta_scope: meta.naomi
-    - match: ""
-      pop: true

@@ -26,7 +26,6 @@ variables:
 
 contexts:
   main:
-    - meta_scope: meta.naomi
     # Version.
     - match: |
         (?xi)
@@ -101,9 +100,7 @@ contexts:
 
   meta-jsx:
     - clear_scopes: true
-    - meta_content_scope: >-
-        source.jsx
-        meta.naomi
+    - meta_content_scope: source.jsx
     - include: pop-now
 
   object:
@@ -135,7 +132,6 @@ contexts:
     - match: \[Function]
       scope: >-
         source.js.jest-snapshot
-        meta.naomi
         support.type.js.jest-snapshot
       pop: true
 
@@ -160,9 +156,7 @@ contexts:
     # Snapshot.
     - match: (`)
       captures:
-        0: >-
-          source.js.jest-snapshot
-          meta.naomi
+        0: source.js.jest-snapshot
         1: keyword.operator.assignment.js.fjsx15
         2: punctuation.definition.snapshot.begin.js.fjsx15
       with_prototype:

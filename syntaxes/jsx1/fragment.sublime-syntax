@@ -47,9 +47,7 @@ contexts:
 
   meta-content:
     - clear_scopes: true
-    - meta_scope: >-
-        source.jsx
-        meta.naomi
+    - meta_scope: source.jsx
     - include: pop-now
 
   pop-now:

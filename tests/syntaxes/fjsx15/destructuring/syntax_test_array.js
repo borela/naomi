@@ -13,7 +13,6 @@
 // the License.
 
    let [a=0,...b=0] = [1,2,3];
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.naomi
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.declaration.variable.js
 //     ^^^^^^^^^^^^ .meta.binding.destructuring.sequence.js
 //                    ^^^^^^^ .meta.sequence.js
@@ -38,7 +37,6 @@
 //                          ^ .punctuation.section.brackets.end.js
 //                           ^ .punctuation.terminator.js
    let [[a=0,...b=0],[a=0,...b=0]] = [1,2,3];
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.naomi
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.declaration.variable.js
 //     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.binding.destructuring.sequence.js
 // ^^^ .storage.type.js

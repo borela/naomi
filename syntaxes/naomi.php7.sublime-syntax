@@ -22,7 +22,6 @@ file_extensions:
 
 contexts:
   main:
-    - meta_scope: meta.naomi
     # Normal open tag.
     - match: \s*(<\?php)
       captures:

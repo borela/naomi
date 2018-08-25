@@ -13,7 +13,6 @@
 // the License.
 
    let {[a + b]:abc=0, abc:abc, ...abc=0} = {a:1};
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.naomi
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ .meta.declaration.variable.js
 //                                               ^ - .meta.declaration.variable.js
 //     ^ .meta.binding.destructuring.mapping.js

@@ -38,7 +38,7 @@
   "context": [{
     "key": "selector",
     "operator": "equal",
-    "operand": "source.js meta.naomi, source.jsx meta.naomi",
+    "operand": "source.js, source.jsx",
     "match_all": true
   }]
 },{
@@ -49,7 +49,7 @@
   "context": [{
     "key": "selector",
     "operator": "equal",
-    "operand": "source.js meta.naomi, source.jsx meta.naomi",
+    "operand": "source.js, source.jsx",
     "match_all": true
   }]
 }]

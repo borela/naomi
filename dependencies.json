@@ -2,7 +2,9 @@
   "*": {
     "*": [
       "lxml",
-      "ruamel-yaml"
+      "ruamel-yaml",
+      "pathtools",
+      "watchdog"
     ]
   }
 }

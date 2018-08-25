@@ -25,6 +25,9 @@
 - caption: 'Naomi System: Build Syntaxes'
   command: naomi_build_syntaxes
 
+- caption: 'Naomi System: Watch Keymaps'
+  command: naomi_watch_keymaps
+
 - caption: 'Naomi System: Run Plugin Tests'
   command: naomi_run_plugin_tests
 

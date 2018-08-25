@@ -27,6 +27,10 @@ from Naomi.system.util import to_plist_string
 from sublime_plugin import ApplicationCommand
 
 
+XML_VERSION = '<?xml version="1.0" encoding="utf-8"?>\n'
+DOCTYPE = '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n'
+
+
 def build():
     delete_dir_contents(INDENTATION_BUILD_DIR)
 
@@ -37,7 +41,11 @@ def build():
 
         data = load_yaml(file)
         plistString = to_plist_string(data)
-        write_file(destination, plistString)
+
+        write_file(
+            destination,
+            XML_VERSION + DOCTYPE + INDENTATION_HEADER + plistString
+        )
 
 
 class NaomiBuildIndentationPreferencesCommand(ApplicationCommand):

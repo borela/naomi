@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.commands.BuildKeymaps import build_keymaps
+from Naomi.system.commands.BuildKeymaps import build
 from Naomi.system.paths import KEYMAPS_SRC_DIR
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
@@ -30,7 +30,7 @@ class EventHandler(PatternMatchingEventHandler):
         self.process(event)
 
     def process(self, event):
-        build_keymaps()
+        build()
 
 
 class NaomiWatchKeymapsCommand(ApplicationCommand):

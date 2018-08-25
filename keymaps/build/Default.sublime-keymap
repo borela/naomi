@@ -23,12 +23,37 @@
     "keys": [
       "enter"
     ],
-    "command": "run_macro_file",
-    "args": [
-      {
-        "file": "res://Packages/Default/Add Line in Braces.sublime-macro"
-      }
-    ],
+    "command": "naomi_run_commands",
+    "args": {
+      "commands": [
+        {
+          "command": "insert",
+          "args": {
+            "characters": "\n\n"
+          }
+        },
+        {
+          "command": "move",
+          "args": {
+            "by": "lines",
+            "forward": false
+          }
+        },
+        {
+          "command": "move_to",
+          "args": {
+            "to": "hardeol",
+            "forward": false
+          }
+        },
+        {
+          "command": "reindent",
+          "args": {
+            "single_line": true
+          }
+        }
+      ]
+    },
     "context": [
       {
         "key": "selection_empty",
@@ -45,7 +70,7 @@
       {
         "key": "following_text",
         "operator": "regex_contains",
-        "operand": "^)",
+        "operand": "^\\)",
         "match_all": true
       },
       {
@@ -61,11 +86,9 @@
       "enter"
     ],
     "command": "run_macro_file",
-    "args": [
-      {
-        "file": "res://Packages/Default/Add Line in Braces.sublime-macro"
-      }
-    ],
+    "args": {
+      "file": "res://Packages/Default/Add Line in Braces.sublime-macro"
+    },
     "context": [
       {
         "key": "selection_empty",
@@ -82,7 +105,7 @@
       {
         "key": "following_text",
         "operator": "regex_contains",
-        "operand": "^]",
+        "operand": "^\\]",
         "match_all": true
       },
       {

@@ -36,6 +36,14 @@
     "command": "naomi_build_syntaxes"
   },
   {
+    "caption": "Naomi System: Watch Commands",
+    "command": "naomi_watch_commands"
+  },
+  {
+    "caption": "Naomi System: Watch Indentation Preferences",
+    "command": "naomi_watch_indentation_preferences"
+  },
+  {
     "caption": "Naomi System: Watch Keymaps",
     "command": "naomi_watch_keymaps"
   },

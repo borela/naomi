@@ -23,7 +23,6 @@ from os.path import (
     join,
 )
 
-from .util import dict_to_plist_xml
 from ruamel.yaml import round_trip_load
 from shutil import rmtree
 

@@ -67,7 +67,7 @@ def plist_dict_to_xml(value, parent = None):
     # Sublist.
     if isinstance(value, tuple) or isinstance(value, list):
         for v in value:
-            plist_to_xml(v, parent)
+            plist_dict_to_xml(v, parent)
         return parent
 
     # Values.
@@ -82,7 +82,7 @@ def plist_dict_to_xml(value, parent = None):
     elif 'dict' in value:
         key_value = SubElement(parent, 'dict')
         for item in value['dict']:
-            plist_to_xml(item, key_value)
+            plist_dict_to_xml(item, key_value)
 
     return parent
 

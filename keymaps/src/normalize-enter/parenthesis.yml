@@ -17,7 +17,11 @@ bindings:
   # Pressing enter between “()” will have the same behavior as “{}”.
   - keys: [enter]
     # This is an example of how to use the multi command runner, the following
-    # is be same as the “Default/Add Line in Braces.sublime-macro”.
+    # is be same as the “Default/Add Line in Braces.sublime-macro”. You can see
+    # how the command works and usage instructions in:
+    #
+    #     Naomi/system/commands/RunCommands.py
+    #
     command: naomi_run_commands
     args:
       commands:

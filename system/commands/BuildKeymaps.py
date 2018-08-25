@@ -36,6 +36,10 @@ def get_keymaps():
     for file in list_files(KEYMAPS_SRC_DIR):
         data = load_yaml(file)
 
+        # Empty file.
+        if data is None:
+            continue
+
         if 'platform' not in data:
             shared += data['bindings']
             continue

@@ -23,7 +23,6 @@ file_extensions:
 
 contexts:
   main:
-    - meta_scope: meta.naomi
     - match: ""
       push: statement-and-expression
 

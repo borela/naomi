@@ -22,3 +22,6 @@ def indentation():
 
 def keymap():
     return read_file(join(HEADERS_DIR, 'keymap.txt'))
+
+def menu():
+    return read_file(join(HEADERS_DIR, 'menu.txt'))

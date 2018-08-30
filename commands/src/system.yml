@@ -22,6 +22,9 @@
 - caption: 'Naomi System: Build Indentation Preferences'
   command: naomi_build_indentation_preferences
 
+- caption: 'Naomi System: Build Menus'
+  command: naomi_build_menus
+
 - caption: 'Naomi System: Build Syntaxes'
   command: naomi_build_syntaxes
 

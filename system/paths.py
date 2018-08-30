@@ -26,3 +26,7 @@ INDENTATION_BUILD_DIR = join(INDENTATION_DIR, 'build')
 KEYMAPS_DIR = realpath(join(SYSTEM_DIR, '..', 'keymaps'))
 KEYMAPS_SRC_DIR = join(KEYMAPS_DIR, 'src')
 KEYMAPS_BUILD_DIR = join(KEYMAPS_DIR, 'build')
+
+MENUS_DIR = realpath(join(SYSTEM_DIR, '..', 'menus'))
+MENUS_SRC_DIR = join(MENUS_DIR, 'src')
+MENUS_BUILD_DIR = join(MENUS_DIR, 'build')

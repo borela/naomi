@@ -13,6 +13,7 @@
 from Naomi.system.commands.BuildCommands import NaomiBuildCommandsCommand
 from Naomi.system.commands.BuildIndentationPreferences import NaomiBuildIndentationPreferencesCommand
 from Naomi.system.commands.BuildKeymaps import NaomiBuildKeymapsCommand
+from Naomi.system.commands.BuildMenus import NaomiBuildMenusCommand
 from Naomi.system.commands.RunCommands import NaomiRunCommandsCommand
 from Naomi.system.commands.WatchCommands import NaomiWatchCommandsCommand
 from Naomi.system.commands.WatchIndentationPreferences import NaomiWatchIndentationPreferencesCommand
@@ -22,6 +23,7 @@ __all__ = [
   NaomiBuildCommandsCommand,
   NaomiBuildIndentationPreferencesCommand,
   NaomiBuildKeymapsCommand,
+  NaomiBuildMenusCommand,
   NaomiRunCommandsCommand,
   NaomiWatchCommandsCommand,
   NaomiWatchIndentationPreferencesCommand,

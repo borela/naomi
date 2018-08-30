@@ -39,8 +39,8 @@ class NaomiWatchIndentationPreferencesCommand(ApplicationCommand):
         self.observer = Observer()
         self.observer.schedule(
             EventHandler(),
-            path = INDENTATION_SRC_DIR,
-            recursive = True,
+            path=INDENTATION_SRC_DIR,
+            recursive=True,
         )
 
     def run(self):

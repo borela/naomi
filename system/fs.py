@@ -55,16 +55,16 @@ def list_files(dir_path):
 
 
 def load_yaml(file_path):
-    with open(file_path, 'r', encoding = 'utf-8') as file:
+    with open(file_path, 'r', encoding='utf-8') as file:
         return round_trip_load(file)
 
 
 def read_file(file_path):
-    with open(file_path, 'r', encoding = 'utf-8') as file:
+    with open(file_path, 'r', encoding='utf-8') as file:
         return file.read()
 
 
 def write_file(file_path, data):
     ensure_dir_exists(dirname(file_path))
-    with open(file_path, 'w', encoding = 'utf-8', newline = '\n') as file:
+    with open(file_path, 'w', encoding='utf-8', newline='\n') as file:
         return file.write(data)

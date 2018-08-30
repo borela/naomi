@@ -28,7 +28,7 @@ from sublime_plugin import ApplicationCommand
 
 
 XML_VERSION = '<?xml version="1.0" encoding="utf-8"?>\n'
-DOCTYPE = '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n'
+DOCTYPE = '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n'  # noqa
 
 
 def build():

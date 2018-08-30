@@ -10,31 +10,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from logging import (
-    Formatter,
-    getLogger,
-    StreamHandler,
-)
-
-
-loggers = []
-formatter = Formatter(fmt="[{name}]: {message}", style='{')
-handler = StreamHandler()
-handler.setFormatter(formatter)
-
-
-def get_logger(name=__package__):
-    logger = getLogger(name)
-
-    if logger in loggers:
-        return logger
-    else:
-        loggers.append(logger)
-
-    logger.addHandler(handler)
-    return logger
-
-
-def plugin_unloaded():
-    for logger in loggers:
-        logger.removeHandler(handler)
+from .BuildCommands import * # noqa
+from .BuildIndentationPreferences import * # noqa
+from .BuildKeymaps import * # noqa
+from .BuildMenus import * # noqa
+from .RunCommands import * # noqa
+from .WatchCommands import * # noqa
+from .WatchIndentationPreferences import * # noqa
+from .WatchKeymaps import * # noqa

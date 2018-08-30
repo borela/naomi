@@ -39,8 +39,8 @@ class NaomiWatchKeymapsCommand(ApplicationCommand):
         self.observer = Observer()
         self.observer.schedule(
             EventHandler(),
-            path = KEYMAPS_SRC_DIR,
-            recursive = True,
+            path=KEYMAPS_SRC_DIR,
+            recursive=True,
         )
 
     def run(self):

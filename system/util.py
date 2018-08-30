@@ -16,7 +16,6 @@ from lxml.etree import (
     tostring as to_xml_string,
 )
 
-from collections import OrderedDict
 from json import dumps as json_dumps
 
 
@@ -48,12 +47,12 @@ def dict_to_plist_dict(target_dict):
     return plist
 
 
-def plist_dict_to_xml(value, parent = None):
+def plist_dict_to_xml(value, parent=None):
     """
-    Convert a dictionary(previously prepared “dict_to_plist_dict”) to a XML tree
-    that represents the plist.
+    Convert a dictionary(previously prepared “dict_to_plist_dict”) to a XML
+    tree that represents the plist.
     """
-    if parent == None:
+    if parent is None:
         parent = Element('plist')
         parent.attrib['version'] = '1.0'
         value = {
@@ -95,8 +94,8 @@ def to_json_string(value):
     """
     return json_dumps(
         value,
-        indent = 2,
-        separators = (',', ': '),
+        indent=2,
+        separators=(',', ': '),
     )
 
 
@@ -111,8 +110,8 @@ def to_plist_string(target_dict):
     # Convert to string.
     xml = to_xml_string(
         xml,
-        encoding = 'utf-8',
-        pretty_print = True,
+        encoding='utf-8',
+        pretty_print=True,
     )
     xml = xml.decode('utf-8')
     return xml

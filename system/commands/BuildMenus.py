@@ -81,7 +81,8 @@ def validate_location(location, file):
     ]
 
     if location not in valid_locations:
-        raise ValueError('Invalid location “%s” for file: %s' % (location, file))
+        message = 'Invalid location “%s” for file: %s' % (location, file)
+        raise ValueError(message)
 
 
 class NaomiBuildMenusCommand(ApplicationCommand):

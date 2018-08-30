@@ -10,11 +10,15 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from Naomi.system.logging import get_logger
 from Naomi.system.commands.BuildKeymaps import build
 from Naomi.system.paths import KEYMAPS_SRC_DIR
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
+
+
+logger = get_logger()
 
 
 class EventHandler(PatternMatchingEventHandler):
@@ -36,19 +40,19 @@ class EventHandler(PatternMatchingEventHandler):
 class NaomiWatchKeymapsCommand(ApplicationCommand):
     def __init__(self):
         self.watching = False
-        self.observer = Observer()
-        self.observer.schedule(
-            EventHandler(),
-            path=KEYMAPS_SRC_DIR,
-            recursive=True,
-        )
 
     def run(self):
-        self.watching = not self.watching
-
-        if self.watching:
+        if not self.watching:
+            self.observer = Observer()
+            self.observer.schedule(
+                EventHandler(),
+                path=KEYMAPS_SRC_DIR,
+                recursive=True,
+            )
             self.observer.start()
+            self.watching = True
+            logger.info('Started watching keymaps...')
         else:
             self.observer.stop()
-
-        print('Watching keymaps: %s' % self.watching)
+            self.watching = False
+            logger.info('Stopped watching keymaps.')

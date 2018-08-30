@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+import logging
 from logging import (
     Formatter,
     getLogger,
@@ -23,7 +24,12 @@ handler = StreamHandler()
 handler.setFormatter(formatter)
 
 
-def get_logger(name=__package__):
+def get_logger(name=None):
+    if name is not None:
+        name = 'Naomi.' + name
+    else:
+        name = 'Naomi'
+
     logger = getLogger(name)
 
     if logger in loggers:
@@ -32,6 +38,7 @@ def get_logger(name=__package__):
         loggers.append(logger)
 
     logger.addHandler(handler)
+    logger.setLevel(logging.DEBUG)
     return logger
 
 

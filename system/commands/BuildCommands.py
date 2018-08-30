@@ -20,24 +20,37 @@ from Naomi.system.fs import (
 from Naomi.system.paths import (
     COMMANDS_BUILD_DIR,
     COMMANDS_SRC_DIR,
+    package_path,
 )
 
 from Naomi.system.headers import command as command_header
+from Naomi.system.logging import get_logger
 from Naomi.system.util import to_json_string
 from sublime_plugin import ApplicationCommand
 
 
+logger = get_logger()
+
+
 def build():
+    logger.info('Cleaning: %s' % package_path(COMMANDS_BUILD_DIR))
+
     delete_dir_contents(COMMANDS_BUILD_DIR)
+
+    logger.info('Building command files...')
 
     for file in list_files(COMMANDS_SRC_DIR):
         destination = file
         destination = destination.replace('src', 'build')
         destination = destination.replace('.yml', '.sublime-commands')
 
+        logger.debug('Building file: %s' % package_path(file))
+
         data = load_yaml(file)
         jsonString = to_json_string(data)
         write_file(destination, command_header() + jsonString)
+
+    logger.info('Done building commands.')
 
 
 class NaomiBuildCommandsCommand(ApplicationCommand):

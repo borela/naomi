@@ -20,18 +20,27 @@ from Naomi.system.fs import (
 from Naomi.system.paths import (
     KEYMAPS_BUILD_DIR,
     KEYMAPS_SRC_DIR,
+    package_path,
 )
 
 from Naomi.system.headers import keymap as keymap_header
+from Naomi.system.logging import get_logger
 from Naomi.system.util import to_json_string
 from os.path import join
 from sublime_plugin import ApplicationCommand
 
 
+logger = get_logger()
+
+
 def build():
+    logger.info('Cleaning: %s' % package_path(KEYMAPS_BUILD_DIR))
+
     delete_dir_contents(KEYMAPS_BUILD_DIR)
 
     shared, by_os = get_keymaps()
+
+    logger.info('Building shared keymaps...')
 
     if len(shared) > 0:
         write_file(
@@ -40,6 +49,8 @@ def build():
         )
 
     for os in by_os:
+        logger.info('Building keymaps for %s...' % os)
+
         keymaps = by_os[os]
         if len(keymaps) > 0:
             write_file(
@@ -47,8 +58,12 @@ def build():
                 keymap_header() + to_json_string(keymaps),
             )
 
+    logger.info('Done building keymaps.')
+
 
 def get_keymaps():
+    logger.info('Processing keymaps...')
+
     shared = []
     by_os = {}
     for file in list_files(KEYMAPS_SRC_DIR):
@@ -56,7 +71,10 @@ def get_keymaps():
 
         # Empty file.
         if data is None:
+            logger.debug('Empty file: %s' % package_path(file))
             continue
+
+        logger.debug(package_path(file))
 
         bindings = data['bindings']
 

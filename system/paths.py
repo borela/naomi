@@ -10,10 +10,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from os.path import dirname, join, realpath
+from os.path import dirname, join, realpath, relpath
+
 
 SYSTEM_DIR = dirname(__file__)
 HEADERS_DIR = join(SYSTEM_DIR, 'headers')
+PACKAGE_DIR = join(SYSTEM_DIR, '..')
 
 COMMANDS_DIR = realpath(join(SYSTEM_DIR, '..', 'commands'))
 COMMANDS_SRC_DIR = join(COMMANDS_DIR, 'src')
@@ -30,3 +32,10 @@ KEYMAPS_BUILD_DIR = join(KEYMAPS_DIR, 'build')
 MENUS_DIR = realpath(join(SYSTEM_DIR, '..', 'menus'))
 MENUS_SRC_DIR = join(MENUS_DIR, 'src')
 MENUS_BUILD_DIR = join(MENUS_DIR, 'build')
+
+
+def package_path(path):
+    """
+    Calculates the relative path to the package’s root.
+    """
+    return relpath(path, PACKAGE_DIR)

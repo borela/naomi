@@ -20,24 +20,33 @@ from Naomi.system.fs import (
 from Naomi.system.paths import (
     INDENTATION_BUILD_DIR,
     INDENTATION_SRC_DIR,
+    package_path,
 )
 
 from Naomi.system.headers import indentation as indentation_header
+from Naomi.system.logging import get_logger
 from Naomi.system.util import to_plist_string
 from sublime_plugin import ApplicationCommand
 
 
 XML_VERSION = '<?xml version="1.0" encoding="utf-8"?>\n'
 DOCTYPE = '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n'  # noqa
+logger = get_logger()
 
 
 def build():
+    logger.info('Cleaning: %s' % package_path(INDENTATION_BUILD_DIR))
+
     delete_dir_contents(INDENTATION_BUILD_DIR)
+
+    logger.info('Building indentation preferences...')
 
     for file in list_files(INDENTATION_SRC_DIR):
         destination = file
         destination = destination.replace('src', 'build')
         destination = destination.replace('.yml', '.tmPreferences')
+
+        logger.debug('Building file: %s' % package_path(file))
 
         data = load_yaml(file)
         plistString = to_plist_string(data)
@@ -46,6 +55,8 @@ def build():
             destination,
             XML_VERSION + DOCTYPE + indentation_header() + plistString
         )
+
+    logger.info('Done building indentation preferences.')
 
 
 class NaomiBuildIndentationPreferencesCommand(ApplicationCommand):

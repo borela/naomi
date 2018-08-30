@@ -20,34 +20,50 @@ from Naomi.system.fs import (
 from Naomi.system.paths import (
     MENUS_BUILD_DIR,
     MENUS_SRC_DIR,
+    package_path,
 )
 
 from Naomi.system.headers import menu as menu_header
+from Naomi.system.logging import get_logger
 from Naomi.system.util import to_json_string
 from os.path import join
 from sublime_plugin import ApplicationCommand
 
 
+logger = get_logger()
+
+
 def build():
+    logger.info('Cleaning: %s' % package_path(MENUS_BUILD_DIR))
+
     delete_dir_contents(MENUS_BUILD_DIR)
 
     menus = get_menus()
     for group in menus:
+        logger.info('Building menus for %s...' % group)
+
         write_file(
             join(MENUS_BUILD_DIR, '%s.sublime-menu' % group),
             menu_header() + to_json_string(menus[group]),
         )
 
+    logger.info('Done building menus.')
+
 
 def get_menus():
     result = {}
+
+    logger.info('Processing menus...')
 
     for file in list_files(MENUS_SRC_DIR):
         data = load_yaml(file)
 
         # Empty file.
         if data is None:
+            logger.debug('Empty file: %s' % package_path(file))
             continue
+
+        logger.debug(package_path(file))
 
         if 'locations' not in data:
             raise ValueError('Missing “locations” for menu: %s' % file)

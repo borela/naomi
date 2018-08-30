@@ -29,9 +29,9 @@ from sublime_plugin import ApplicationCommand
 
 
 def build():
-    shared, windows, linux, osx = get_keymaps()
-
     delete_dir_contents(KEYMAPS_BUILD_DIR)
+
+    shared, by_os = get_keymaps()
 
     if len(shared) > 0:
         write_file(
@@ -39,30 +39,18 @@ def build():
             keymap_header() + to_json_string(shared),
         )
 
-    if len(windows) > 0:
-        write_file(
-            join(KEYMAPS_BUILD_DIR, 'Default (Windows).sublime-keymap'),
-            keymap_header() + to_json_string(windows),
-        )
-
-    if len(linux) > 0:
-        write_file(
-            join(KEYMAPS_BUILD_DIR, 'Default (Linux).sublime-keymap'),
-            keymap_header() + to_json_string(linux),
-        )
-
-    if len(osx) > 0:
-        write_file(
-            join(KEYMAPS_BUILD_DIR, 'Default (OSX).sublime-keymap'),
-            keymap_header() + to_json_string(osx),
-        )
+    for os in by_os:
+        keymaps = by_os[os]
+        if len(keymaps) > 0:
+            write_file(
+                join(KEYMAPS_BUILD_DIR, 'Default (%s).sublime-keymap' % os),
+                keymap_header() + to_json_string(keymaps),
+            )
 
 
 def get_keymaps():
     shared = []
-    windows = []
-    linux = []
-    osx = []
+    by_os = {}
     for file in list_files(KEYMAPS_SRC_DIR):
         data = load_yaml(file)
 
@@ -70,42 +58,36 @@ def get_keymaps():
         if data is None:
             continue
 
-        if 'os' not in data:
-            shared += data['bindings']
+        bindings = data['bindings']
+
+        # OS is not required and we will assume that the file is valid for all
+        # of them.
+        if 'oss' not in data:
+            shared += bindings
             continue
 
-        # We convert the simple string value to an array to use the generic
-        # algorithm below.
-        if isinstance(data['os'], str):
-            data['os'] = [data['os']]
+        oss = data['oss']
+        if isinstance(oss, str):
+            oss = [oss]
 
-        not_windows = False
-        not_linux = False
-        not_osx = False
+        for os in oss:
+            validate_os(os, file)
+            if os not in by_os:
+                by_os[os] = []
+            by_os[os] += bindings
 
-        if 'windows' in data['os']:
-            windows += data['bindings']
-        else:
-            not_windows = True
+    return shared, by_os
 
-        if 'linux' in data['os']:
-            linux += data['bindings']
-        else:
-            not_linux = True
 
-        if 'osx' in data['os']:
-            osx += data['bindings']
-        else:
-            not_osx = True
+def validate_os(os, file):
+    valid_os = [
+        'Linux',
+        'Windows',
+        'OSX',
+    ]
 
-        if not_windows and not_linux and not_osx:
-            raise ValueError(
-                'Invalid value “%s” for OS on file: %s' %
-                data['os'],
-                file,
-            )
-    return shared, windows, linux, osx
-
+    if os not in valid_os:
+        raise ValueError('Invalid OS “%s” for file: %s' % (os, file))
 
 class NaomiBuildKeymapsCommand(ApplicationCommand):
     def run(self):

@@ -64,6 +64,7 @@ def get_menus():
 
     return result
 
+
 def validate_location(location, file):
     valid_locations = [
         'Context',
@@ -81,6 +82,7 @@ def validate_location(location, file):
 
     if location not in valid_locations:
         raise ValueError('Invalid location “%s” for file: %s' % (location, file))
+
 
 class NaomiBuildMenusCommand(ApplicationCommand):
     def run(self):

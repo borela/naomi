@@ -89,6 +89,7 @@ def validate_os(os, file):
     if os not in valid_os:
         raise ValueError('Invalid OS “%s” for file: %s' % (os, file))
 
+
 class NaomiBuildKeymapsCommand(ApplicationCommand):
     def run(self):
         build()

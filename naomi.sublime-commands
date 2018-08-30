@@ -1,9 +1,0 @@
-[{
-  "caption": "Toggle JS/JSX Comment (Naomi)",
-  "command": "naomi_toggle_jsx_comment",
-  "args": {"block": false}
-}, {
-  "caption": "Toggle JS/JSX Block Comment (Naomi)",
-  "command": "naomi_toggle_jsx_comment",
-  "args": {"block": true}
-}]

@@ -20,43 +20,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 [
   {
-    "caption": "Naomi System: Build Commands",
-    "command": "naomi_build_commands"
-  },
-  {
-    "caption": "Naomi System: Build Keymaps",
-    "command": "naomi_build_keymaps"
-  },
-  {
-    "caption": "Naomi System: Build Indentation Preferences",
-    "command": "naomi_build_indentation_preferences"
-  },
-  {
-    "caption": "Naomi System: Build Menus",
-    "command": "naomi_build_menus"
-  },
-  {
-    "caption": "Naomi System: Build Syntaxes",
-    "command": "naomi_build_syntaxes"
-  },
-  {
-    "caption": "Naomi System: Watch Commands",
-    "command": "naomi_watch_commands"
-  },
-  {
-    "caption": "Naomi System: Watch Indentation Preferences",
-    "command": "naomi_watch_indentation_preferences"
-  },
-  {
-    "caption": "Naomi System: Watch Keymaps",
-    "command": "naomi_watch_keymaps"
-  },
-  {
-    "caption": "Naomi System: Run Plugin Tests",
+    "caption": "Naomi Dev: Run Plugin Tests",
     "command": "naomi_run_plugin_tests"
   },
   {
-    "caption": "Naomi System: Run Syntax Tests",
+    "caption": "Naomi Dev: Run Syntax Tests",
     "command": "naomi_run_syntax_tests"
   }
 ]

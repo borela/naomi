@@ -1,3 +1,6 @@
+%YAML1.2
+---
+
 # Licensed under the Apache License, Version 2.0 (the “License”); you may not
 # use this file except in compliance with the License. You may obtain a copy of
 # the License at
@@ -10,12 +13,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .BuildCommands import * # noqa
-from .BuildIndentationPreferences import * # noqa
-from .BuildKeymaps import * # noqa
-from .BuildMenus import * # noqa
-from .RunCommands import * # noqa
-from .WatchCommands import * # noqa
-from .WatchIndentationPreferences import * # noqa
-from .WatchKeymaps import * # noqa
-from .WatchMenus import * # noqa
+- caption: 'Naomi Dev: Watch Commands'
+  command: naomi_watch_commands
+
+- caption: 'Naomi Dev: Watch Indentation Preferences'
+  command: naomi_watch_indentation_preferences
+
+- caption: 'Naomi Dev: Watch Keymaps'
+  command: naomi_watch_keymaps
+
+- caption: 'Naomi Dev: Watch Menus'
+  command: naomi_watch_menus

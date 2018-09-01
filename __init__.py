@@ -19,6 +19,7 @@ from Naomi.system.commands import (
   NaomiWatchCommandsCommand,
   NaomiWatchIndentationPreferencesCommand,
   NaomiWatchKeymapsCommand,
+  NaomiWatchMenusCommand,
 )
 
 __all__ = [
@@ -30,4 +31,5 @@ __all__ = [
   NaomiWatchCommandsCommand,
   NaomiWatchIndentationPreferencesCommand,
   NaomiWatchKeymapsCommand,
+  NaomiWatchMenusCommand,
 ]

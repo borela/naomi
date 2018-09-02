@@ -35,7 +35,7 @@ DOCTYPE = '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.appl
 
 def build():
     logger = get_logger()
-    logger.info('Cleaning: %s' % package_path(INDENTATION_BUILD_DIR))
+    logger.debug('Cleaning: %s' % package_path(INDENTATION_BUILD_DIR))
 
     delete_dir_contents(INDENTATION_BUILD_DIR)
 

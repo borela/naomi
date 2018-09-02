@@ -31,7 +31,7 @@ from sublime_plugin import ApplicationCommand
 
 def build():
     logger = get_logger()
-    logger.info('Cleaning: %s' % package_path(COMMANDS_BUILD_DIR))
+    logger.debug('Cleaning: %s' % package_path(COMMANDS_BUILD_DIR))
 
     delete_dir_contents(COMMANDS_BUILD_DIR)
 

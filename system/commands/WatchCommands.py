@@ -18,9 +18,6 @@ from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
 
 
-logger = get_logger()
-
-
 class EventHandler(PatternMatchingEventHandler):
     patterns = ['*.yml']
 
@@ -42,6 +39,8 @@ class NaomiWatchCommandsCommand(ApplicationCommand):
         self.watching = False
 
     def run(self):
+        logger = get_logger()
+
         if not self.watching:
             self.observer = Observer()
             self.observer.schedule(

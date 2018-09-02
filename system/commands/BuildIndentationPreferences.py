@@ -31,10 +31,10 @@ from sublime_plugin import ApplicationCommand
 
 XML_VERSION = '<?xml version="1.0" encoding="utf-8"?>\n'
 DOCTYPE = '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n'  # noqa
-logger = get_logger()
 
 
 def build():
+    logger = get_logger()
     logger.info('Cleaning: %s' % package_path(INDENTATION_BUILD_DIR))
 
     delete_dir_contents(INDENTATION_BUILD_DIR)

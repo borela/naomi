@@ -30,10 +30,8 @@ from os.path import join
 from sublime_plugin import ApplicationCommand
 
 
-logger = get_logger()
-
-
 def build():
+    logger = get_logger()
     logger.info('Cleaning: %s' % package_path(KEYMAPS_BUILD_DIR))
 
     delete_dir_contents(KEYMAPS_BUILD_DIR)
@@ -62,6 +60,7 @@ def build():
 
 
 def get_keymaps():
+    logger = get_logger()
     logger.info('Processing keymaps...')
 
     shared = []

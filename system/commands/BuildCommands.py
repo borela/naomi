@@ -29,10 +29,8 @@ from Naomi.system.util import to_json_string
 from sublime_plugin import ApplicationCommand
 
 
-logger = get_logger()
-
-
 def build():
+    logger = get_logger()
     logger.info('Cleaning: %s' % package_path(COMMANDS_BUILD_DIR))
 
     delete_dir_contents(COMMANDS_BUILD_DIR)

@@ -30,10 +30,8 @@ from os.path import join
 from sublime_plugin import ApplicationCommand
 
 
-logger = get_logger()
-
-
 def build():
+    logger = get_logger()
     logger.info('Cleaning: %s' % package_path(MENUS_BUILD_DIR))
 
     delete_dir_contents(MENUS_BUILD_DIR)
@@ -53,6 +51,7 @@ def build():
 def get_menus():
     result = {}
 
+    logger = get_logger()
     logger.info('Processing menus...')
 
     for file in list_files(MENUS_SRC_DIR):

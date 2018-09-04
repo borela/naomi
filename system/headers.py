@@ -29,3 +29,7 @@ def keymap():
 
 def menu():
     return read_file(join(HEADERS_DIR, 'menu.txt'))
+
+
+def plist():
+    return read_file(join(HEADERS_DIR, 'menu.txt'))

@@ -23,15 +23,14 @@ from Naomi.system.paths import (
     package_path,
 )
 
-from Naomi.system.headers import indentation as indentation_header
+from Naomi.system.headers import (
+    indentation as indentation_header,
+    plist as plist_header,
+)
+
 from Naomi.system.logging import get_logger
 from Naomi.system.util import to_plist_string
 from sublime_plugin import ApplicationCommand
-
-
-XML_VERSION = '<?xml version="1.0" encoding="utf-8"?>\n'
-DOCTYPE = '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n'  # noqa
-
 
 def build():
     logger = get_logger()
@@ -53,7 +52,7 @@ def build():
 
         write_file(
             destination,
-            XML_VERSION + DOCTYPE + indentation_header() + plistString
+            plist() + indentation_header() + plistString
         )
 
     logger.info('Done building indentation preferences.')

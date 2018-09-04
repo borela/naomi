@@ -20,23 +20,23 @@
 ////////////////////////////////////////////////////////////////////////////////
 [
   {
-    "caption": "Naomi Dev: Build Commands",
+    "caption": "Naomi System: Build Commands",
     "command": "naomi_build_commands"
   },
   {
-    "caption": "Naomi Dev: Build Keymaps",
+    "caption": "Naomi System: Build Keymaps",
     "command": "naomi_build_keymaps"
   },
   {
-    "caption": "Naomi Dev: Build Indentation Preferences",
+    "caption": "Naomi System: Build Indentation Preferences",
     "command": "naomi_build_indentation_preferences"
   },
   {
-    "caption": "Naomi Dev: Build Menus",
+    "caption": "Naomi System: Build Menus",
     "command": "naomi_build_menus"
   },
   {
-    "caption": "Naomi Dev: Build Syntaxes",
+    "caption": "Naomi System: Build Syntaxes",
     "command": "naomi_build_syntaxes"
   }
 ]

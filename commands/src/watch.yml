@@ -13,14 +13,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-- caption: 'Naomi Dev: Watch Commands'
+- caption: 'Naomi System: Watch Commands'
   command: naomi_watch_commands
 
-- caption: 'Naomi Dev: Watch Indentation Preferences'
+- caption: 'Naomi System: Watch Indentation Preferences'
   command: naomi_watch_indentation_preferences
 
-- caption: 'Naomi Dev: Watch Keymaps'
+- caption: 'Naomi System: Watch Keymaps'
   command: naomi_watch_keymaps
 
-- caption: 'Naomi Dev: Watch Menus'
+- caption: 'Naomi System: Watch Menus'
   command: naomi_watch_menus

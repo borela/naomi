@@ -12,6 +12,7 @@
 
 from Naomi.system.fs import (
     delete_dir_contents,
+    list_files,
     load_yaml,
     write_file,
 )
@@ -23,28 +24,30 @@ from Naomi.system.util import to_json_string
 from os.path import join
 
 
-def compile_keymaps(files, output_dir):
+def compile_keymaps(dir_path, dest_dir_path):
     logger = get_logger()
 
-    logger.debug('Cleaning: %s' % package_path(output_dir))
+    logger.debug('Cleaning: %s' % package_path(dest_dir_path))
 
-    delete_dir_contents(output_dir)
+    delete_dir_contents(dest_dir_path)
 
     logger.info('Compiling keymaps...')
 
+    files = [file for file in list_files(dir_path)]
     (shared, per_os) = load_keymaps(files)
 
-    write_shared_keymap(shared, output_dir)
-    write_per_os_keymap(per_os, output_dir)
+    write_shared_keymap(shared, dest_dir_path)
+    write_per_os_keymap(per_os, dest_dir_path)
 
     logger.info('Done compiling keymaps...')
 
 
-def load_keymaps(files):
+def load_keymaps(files_paths):
     combined_shared = []
     combined_per_os = {}
+    loaded_files = [load_keymap(file_path) for file_path in files_paths]
 
-    for (shared, per_os) in [load_keymap(file) for file in files]:
+    for (shared, per_os) in loaded_files:
         combined_shared += shared
         for os in per_os:
             if os not in combined_per_os:
@@ -54,17 +57,18 @@ def load_keymaps(files):
     return combined_shared, combined_per_os
 
 
-def load_keymap(file):
+def load_keymap(file_path):
     logger = get_logger()
+    relative_file_path = package_path(file_path)
     shared = []
     per_os = {}
 
-    data = load_yaml(file)
+    data = load_yaml(file_path)
     if data is None:
-        logger.debug('Empty file: %s' % package_path(file))
+        logger.debug('Empty file: %s' % relative_file_path)
         return shared, per_os
 
-    logger.debug('Loading: %s' % package_path(file))
+    logger.debug('Loading: %s' % relative_file_path)
 
     # The actual key bindings.
     bindings = data['bindings']
@@ -73,7 +77,7 @@ def load_keymap(file):
     # platforms.
     if 'oss' not in data:
         shared = bindings
-        logger.debug('Done processing: %s' % package_path(file))
+        logger.debug('Done processing: %s' % relative_file_path)
         return shared, per_os
 
     # “oss” can be a string representing a single platform.
@@ -83,22 +87,22 @@ def load_keymap(file):
 
     # Triage the bindings by OS.
     for os in oss:
-        validate_os(os, file)
+        validate_os(os, file_path)
         if os not in per_os:
             per_os[os] = []
         per_os[os] += bindings
 
-    logger.debug('Done processing: %s' % package_path(file))
+    logger.debug('Done processing: %s' % relative_file_path)
     return shared, per_os
 
 
-def validate_os(os, file):
+def validate_os(os, file_path):
     valid_os = ['Linux', 'Windows', 'OSX']
     if os not in valid_os:
-        raise ValueError('Invalid OS “%s” for file: %s' % (os, file))
+        raise ValueError('Invalid OS “%s” for file: %s' % (os, file_path))
 
 
-def write_per_os_keymap(per_os_bindings, output_dir):
+def write_per_os_keymap(per_os_bindings, dest_dir_path):
     logger = get_logger()
 
     for os in per_os_bindings:
@@ -107,19 +111,19 @@ def write_per_os_keymap(per_os_bindings, output_dir):
             continue
 
         file_name = 'Default (%s).sublime-keymap' % os
-        destination = join(output_dir, file_name)
+        destination = join(dest_dir_path, file_name)
         final_string = keymap_header() + to_json_string(bindings)
 
         logger.debug('Writting keymap: %s' % destination)
         write_file(destination, final_string)
 
 
-def write_shared_keymap(bindings, output_dir):
+def write_shared_keymap(bindings, dest_dir_path):
     if len(bindings) < 1:
         return
 
     logger = get_logger()
-    destination = join(output_dir, 'Default.sublime-keymap')
+    destination = join(dest_dir_path, 'Default.sublime-keymap')
     final_string = keymap_header() + to_json_string(bindings)
 
     logger.debug('Writting keymap: %s' % destination)

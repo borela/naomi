@@ -10,7 +10,13 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from os.path import dirname, join, realpath, relpath
+from os.path import (
+    dirname,
+    join,
+    realpath,
+    relpath,
+    splitext,
+)
 
 
 SYSTEM_DIR = dirname(__file__)
@@ -39,3 +45,8 @@ def package_path(path):
     Calculates the relative path to the package’s root.
     """
     return relpath(path, PACKAGE_DIR)
+
+
+def replace_extension(file_path, new_extension):
+    base = splitext(file_path)[0]
+    return base + '.' + new_extension

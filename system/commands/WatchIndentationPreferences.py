@@ -10,9 +10,16 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from Naomi.system.compilers.indentation_preferences import (
+    compile_indentation_preferences
+)
+
+from Naomi.system.paths import (
+    INDENTATION_BUILD_DIR,
+    INDENTATION_SRC_DIR,
+)
+
 from Naomi.system.logging import get_logger
-from Naomi.system.commands.BuildIndentationPreferences import build
-from Naomi.system.paths import INDENTATION_SRC_DIR
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
@@ -31,7 +38,10 @@ class EventHandler(PatternMatchingEventHandler):
         self.process(event)
 
     def process(self, event):
-        build()
+        compile_indentation_preferences(
+            INDENTATION_SRC_DIR,
+            INDENTATION_BUILD_DIR,
+        )
 
 
 class NaomiWatchIndentationPreferencesCommand(ApplicationCommand):

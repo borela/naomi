@@ -10,57 +10,21 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.fs import (
-    delete_dir_contents,
-    list_files,
-    load_yaml,
-    write_file,
+from Naomi.system.compilers.indentation_preferences import (
+    compile_indentation_preferences
 )
 
 from Naomi.system.paths import (
-    change,
     INDENTATION_BUILD_DIR,
     INDENTATION_SRC_DIR,
-    package_path,
 )
 
-from Naomi.system.headers import (
-    indentation as indentation_header,
-    plist as plist_header,
-)
-
-from Naomi.system.logging import get_logger
-from Naomi.system.util import to_plist_string
 from sublime_plugin import ApplicationCommand
-
-
-def build():
-    logger = get_logger()
-    logger.debug('Cleaning: %s' % package_path(INDENTATION_BUILD_DIR))
-
-    delete_dir_contents(INDENTATION_BUILD_DIR)
-
-    logger.info('Building indentation preferences...')
-
-    for file in list_files(INDENTATION_SRC_DIR):
-        destination = change(
-            file,
-            old_base=INDENTATION_SRC_DIR,
-            new_base=INDENTATION_BUILD_DIR,
-            new_extension='tmPreferences',
-        )
-
-        logger.debug('Building file: %s' % package_path(file))
-
-        data = load_yaml(file)
-        plist_string = to_plist_string(data)
-        final_string = plist_header() + indentation_header() + plist_string
-
-        write_file(destination, final_string)
-
-    logger.info('Done building indentation preferences.')
 
 
 class NaomiBuildIndentationPreferencesCommand(ApplicationCommand):
     def run(self):
-        build()
+        compile_indentation_preferences(
+            INDENTATION_SRC_DIR,
+            INDENTATION_BUILD_DIR,
+        )

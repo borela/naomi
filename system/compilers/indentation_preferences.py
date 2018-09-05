@@ -22,6 +22,7 @@ from Naomi.system.headers import (
     plist as plist_header,
 )
 
+
 from Naomi.system.logging import get_logger
 from Naomi.system.paths import change, package_path
 from Naomi.system.util import to_plist_string

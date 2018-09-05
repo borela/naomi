@@ -71,13 +71,14 @@ def load_menus_from_file(file_path):
 
     # Empty file.
     if data is None:
-        logger.debug('Empty file: %s' % package_path(file))
+        logger.debug('Empty file: %s' % relative_file_path)
         return None
 
     logger.debug('Loading: %s' % relative_file_path)
 
     if 'locations' not in data:
-        raise ValueError('Missing “locations” for menu: %s' % file)
+        message = 'Missing “locations” for menu: %s' % relative_file_path
+        raise ValueError(message)
 
     locations = data['locations']
     if isinstance(locations, str):

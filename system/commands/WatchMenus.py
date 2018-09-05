@@ -17,7 +17,6 @@ from Naomi.system.paths import (
 
 from Naomi.system.compilers.menus import compile_menus
 from Naomi.system.logging import get_logger
-from Naomi.system.commands.BuildMenus import build
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer

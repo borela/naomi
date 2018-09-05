@@ -26,7 +26,6 @@ from os.path import join
 
 def compile_keymaps(dir_path, dest_dir_path):
     logger = get_logger()
-
     logger.debug('Cleaning: %s' % package_path(dest_dir_path))
 
     delete_dir_contents(dest_dir_path)

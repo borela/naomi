@@ -17,7 +17,6 @@ from Naomi.system.paths import (
 
 from Naomi.system.compilers.keymap import compile_keymaps
 from Naomi.system.logging import get_logger
-from Naomi.system.paths import KEYMAPS_SRC_DIR
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer

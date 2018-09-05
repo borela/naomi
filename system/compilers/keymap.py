@@ -16,10 +16,10 @@ from Naomi.system.fs import (
     write_file,
 )
 
-from Naomi.system.util import to_json_string
 from Naomi.system.headers import keymap as keymap_header
 from Naomi.system.logging import get_logger
 from Naomi.system.paths import package_path
+from Naomi.system.util import to_json_string
 from os.path import join
 
 
@@ -27,6 +27,7 @@ def compile_keymaps(files, output_dir):
     logger = get_logger()
 
     logger.debug('Cleaning: %s' % package_path(output_dir))
+
     delete_dir_contents(output_dir)
 
     logger.info('Compiling keymaps...')
@@ -72,7 +73,6 @@ def load_keymap(file):
     # platforms.
     if 'oss' not in data:
         shared = bindings
-
         logger.debug('Done processing: %s' % package_path(file))
         return shared, per_os
 
@@ -103,7 +103,6 @@ def write_per_os_keymap(per_os_bindings, output_dir):
 
     for os in per_os_bindings:
         bindings = per_os_bindings[os]
-
         if len(bindings) < 1:
             continue
 

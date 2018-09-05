@@ -24,5 +24,5 @@ class NaomiBuildKeymapsCommand(ApplicationCommand):
     def run(self):
         compile_keymaps(
             [file for file in list_files(KEYMAPS_SRC_DIR)],
-            KEYMAPS_BUILD_DIR
+            KEYMAPS_BUILD_DIR,
         )

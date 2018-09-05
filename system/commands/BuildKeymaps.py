@@ -15,7 +15,7 @@ from Naomi.system.paths import (
     KEYMAPS_SRC_DIR,
 )
 
-from Naomi.system.compilers.keymap import compile_keymaps
+from Naomi.system.compilers.keymaps import compile_keymaps
 from sublime_plugin import ApplicationCommand
 
 

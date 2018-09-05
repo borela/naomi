@@ -10,9 +10,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from Naomi.system.paths import (
+    MENUS_BUILD_DIR,
+    MENUS_SRC_DIR,
+)
+
+from Naomi.system.compilers.menus import compile_menus
 from Naomi.system.logging import get_logger
 from Naomi.system.commands.BuildMenus import build
-from Naomi.system.paths import MENUS_SRC_DIR
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
@@ -31,7 +36,7 @@ class EventHandler(PatternMatchingEventHandler):
         self.process(event)
 
     def process(self, event):
-        build()
+        compile_menus(MENUS_SRC_DIR, MENUS_BUILD_DIR)
 
 
 class NaomiWatchMenusCommand(ApplicationCommand):

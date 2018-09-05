@@ -41,20 +41,21 @@ def build():
     logger.info('Building shared keymaps...')
 
     if len(shared) > 0:
-        write_file(
-            join(KEYMAPS_BUILD_DIR, 'Default.sublime-keymap'),
-            keymap_header() + to_json_string(shared),
-        )
+        destination = join(KEYMAPS_BUILD_DIR, 'Default.sublime-keymap')
+        final_string = keymap_header() + to_json_string(shared)
+
+        write_file(destination, final_string)
 
     for os in by_os:
         logger.info('Building keymaps for %s...' % os)
 
         keymaps = by_os[os]
         if len(keymaps) > 0:
-            write_file(
-                join(KEYMAPS_BUILD_DIR, 'Default (%s).sublime-keymap' % os),
-                keymap_header() + to_json_string(keymaps),
-            )
+            file_name = 'Default (%s).sublime-keymap' % os
+            destination = join(KEYMAPS_BUILD_DIR, file_name)
+            final_string = keymap_header() + to_json_string(keymaps)
+
+            write_file(destination, final_string)
 
     logger.info('Done building keymaps.')
 

@@ -21,10 +21,7 @@ from .settings import (
     get_setting,
 )
 
-import logging
 
-
-plugin_not_loaded = True
 loggers = []
 formatter = Formatter(fmt="[{name}][{levelname}]: {message}", style='{')
 handler = StreamHandler()
@@ -32,8 +29,6 @@ handler.setFormatter(formatter)
 
 
 def get_level():
-    if not plugin_not_loaded:
-        raise SystemError('Plugin not loaded.')
     return get_setting('log_level', 'INFO').upper()
 
 
@@ -55,15 +50,12 @@ def get_logger(name=None):
 
 
 def plugin_loaded():
-    plugin_not_loaded = False
+    def settings_changed():
+        for logger in loggers:
+            logger.setLevel(get_level())
     call_on_change(settings_changed)
 
 
 def plugin_unloaded():
     for logger in loggers:
         logger.removeHandler(handler)
-
-
-def settings_changed():
-    for logger in loggers:
-        logger.setLevel(get_level())

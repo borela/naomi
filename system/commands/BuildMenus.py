@@ -40,10 +40,10 @@ def build():
     for group in menus:
         logger.info('Building menus for %s...' % group)
 
-        write_file(
-            join(MENUS_BUILD_DIR, '%s.sublime-menu' % group),
-            menu_header() + to_json_string(menus[group]),
-        )
+        destination = join(MENUS_BUILD_DIR, '%s.sublime-menu' % group)
+        final_string = menu_header() + to_json_string(menus[group])
+
+        write_file(destination, final_string)
 
     logger.info('Done building menus.')
 

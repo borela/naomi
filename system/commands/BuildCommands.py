@@ -45,8 +45,10 @@ def build():
         logger.debug('Building file: %s' % package_path(file))
 
         data = load_yaml(file)
-        jsonString = to_json_string(data)
-        write_file(destination, command_header() + jsonString)
+        json_string = to_json_string(data)
+        final_string = command_header() + json_string
+
+        write_file(destination, final_string)
 
     logger.info('Done building commands.')
 

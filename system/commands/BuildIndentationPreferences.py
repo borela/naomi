@@ -32,6 +32,7 @@ from Naomi.system.logging import get_logger
 from Naomi.system.util import to_plist_string
 from sublime_plugin import ApplicationCommand
 
+
 def build():
     logger = get_logger()
     logger.debug('Cleaning: %s' % package_path(INDENTATION_BUILD_DIR))
@@ -48,12 +49,10 @@ def build():
         logger.debug('Building file: %s' % package_path(file))
 
         data = load_yaml(file)
-        plistString = to_plist_string(data)
+        plist_string = to_plist_string(data)
+        final_string = plist_header() + indentation_header() + plist_string
 
-        write_file(
-            destination,
-            plist() + indentation_header() + plistString
-        )
+        write_file(destination, final_string)
 
     logger.info('Done building indentation preferences.')
 

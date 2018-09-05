@@ -10,104 +10,20 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.fs import (
-    delete_dir_contents,
-    list_files,
-    load_yaml,
-    write_file,
-)
-
 from Naomi.system.paths import (
     KEYMAPS_BUILD_DIR,
     KEYMAPS_SRC_DIR,
-    package_path,
 )
 
-from Naomi.system.headers import keymap as keymap_header
-from Naomi.system.logging import get_logger
-from Naomi.system.util import to_json_string
-from os.path import join
+from Naomi.system.compilers.keymap import compile_keymaps
+from Naomi.system.fs import list_files
 from sublime_plugin import ApplicationCommand
-
-
-def build():
-    logger = get_logger()
-    logger.debug('Cleaning: %s' % package_path(KEYMAPS_BUILD_DIR))
-
-    delete_dir_contents(KEYMAPS_BUILD_DIR)
-
-    shared, by_os = get_keymaps()
-
-    logger.info('Building shared keymaps...')
-
-    if len(shared) > 0:
-        destination = join(KEYMAPS_BUILD_DIR, 'Default.sublime-keymap')
-        final_string = keymap_header() + to_json_string(shared)
-
-        write_file(destination, final_string)
-
-    for os in by_os:
-        logger.info('Building keymaps for %s...' % os)
-
-        keymaps = by_os[os]
-        if len(keymaps) > 0:
-            file_name = 'Default (%s).sublime-keymap' % os
-            destination = join(KEYMAPS_BUILD_DIR, file_name)
-            final_string = keymap_header() + to_json_string(keymaps)
-
-            write_file(destination, final_string)
-
-    logger.info('Done building keymaps.')
-
-
-def get_keymaps():
-    logger = get_logger()
-    logger.info('Processing keymaps...')
-
-    shared = []
-    by_os = {}
-    for file in list_files(KEYMAPS_SRC_DIR):
-        data = load_yaml(file)
-
-        # Empty file.
-        if data is None:
-            logger.debug('Empty file: %s' % package_path(file))
-            continue
-
-        logger.debug(package_path(file))
-
-        bindings = data['bindings']
-
-        # OS is not required and we will assume that the file is valid for all
-        # of them.
-        if 'oss' not in data:
-            shared += bindings
-            continue
-
-        oss = data['oss']
-        if isinstance(oss, str):
-            oss = [oss]
-
-        for os in oss:
-            validate_os(os, file)
-            if os not in by_os:
-                by_os[os] = []
-            by_os[os] += bindings
-
-    return shared, by_os
-
-
-def validate_os(os, file):
-    valid_os = [
-        'Linux',
-        'Windows',
-        'OSX',
-    ]
-
-    if os not in valid_os:
-        raise ValueError('Invalid OS “%s” for file: %s' % (os, file))
 
 
 class NaomiBuildKeymapsCommand(ApplicationCommand):
     def run(self):
-        build()
+
+        compile_keymaps(
+            [file for file in list_files(KEYMAPS_SRC_DIR)],
+            KEYMAPS_BUILD_DIR
+        )

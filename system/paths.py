@@ -40,13 +40,25 @@ MENUS_SRC_DIR = join(MENUS_DIR, 'src')
 MENUS_BUILD_DIR = join(MENUS_DIR, 'build')
 
 
+def change(path, old_base, new_base, new_extension=None):
+    result = change_base(path, old_base, new_base)
+    if new_extension is not None:
+        result = change_extension(result, new_extension)
+    return result
+
+
+def change_base(path, old_base, new_base):
+    relative = relpath(path, old_base)
+    return join(new_base, relative)
+
+
+def change_extension(file_path, new_extension):
+    base = splitext(file_path)[0]
+    return base + '.' + new_extension
+
+
 def package_path(path):
     """
     Calculates the relative path to the package’s root.
     """
     return relpath(path, PACKAGE_DIR)
-
-
-def replace_extension(file_path, new_extension):
-    base = splitext(file_path)[0]
-    return base + '.' + new_extension

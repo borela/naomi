@@ -18,6 +18,7 @@ from Naomi.system.fs import (
 )
 
 from Naomi.system.paths import (
+    change,
     INDENTATION_BUILD_DIR,
     INDENTATION_SRC_DIR,
     package_path,
@@ -42,9 +43,12 @@ def build():
     logger.info('Building indentation preferences...')
 
     for file in list_files(INDENTATION_SRC_DIR):
-        destination = file
-        destination = destination.replace('src', 'build')
-        destination = destination.replace('.yml', '.tmPreferences')
+        destination = change(
+            file,
+            old_base=INDENTATION_SRC_DIR,
+            new_base=INDENTATION_BUILD_DIR,
+            new_extension='tmPreferences',
+        )
 
         logger.debug('Building file: %s' % package_path(file))
 

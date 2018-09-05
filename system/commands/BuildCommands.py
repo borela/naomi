@@ -18,6 +18,7 @@ from Naomi.system.fs import (
 )
 
 from Naomi.system.paths import (
+    change,
     COMMANDS_BUILD_DIR,
     COMMANDS_SRC_DIR,
     package_path,
@@ -38,9 +39,12 @@ def build():
     logger.info('Building command files...')
 
     for file in list_files(COMMANDS_SRC_DIR):
-        destination = file
-        destination = destination.replace('src', 'build')
-        destination = destination.replace('.yml', '.sublime-commands')
+        destination = change(
+            file,
+            old_base=COMMANDS_SRC_DIR,
+            new_base=COMMANDS_BUILD_DIR,
+            new_extension='sublime-commands',
+        )
 
         logger.debug('Building file: %s' % package_path(file))
 

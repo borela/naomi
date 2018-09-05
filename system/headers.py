@@ -32,4 +32,4 @@ def menu():
 
 
 def plist():
-    return read_file(join(HEADERS_DIR, 'menu.txt'))
+    return read_file(join(HEADERS_DIR, 'plist.txt'))

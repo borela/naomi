@@ -32,10 +32,10 @@ install:
   # Install flake8 and coveralls.
   - if ["$TRAVIS_OS_NAME" == "linux"]; then
       pip install flake8;
-      pip install python-coveralls;
+      pip install pep8-naming;
     elif ["$TRAVIS_OS_NAME" == "osx"]; then
       pip3 install flake8;
-      pip3 install python-coveralls;
+      pip3 install pep8-naming;
     fi
   # Bootstrap the testing environment.
   - sh travis.sh bootstrap
@@ -56,7 +56,7 @@ notifications:
 
 script:
   # Run python tests.
-  - sh travis.sh run_tests --coverage
+  - sh travis.sh run_tests
   # Run syntax tests.
   - sh travis.sh run_syntax_tests
   # Lint the plugin.

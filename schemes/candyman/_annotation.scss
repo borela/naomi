@@ -15,12 +15,11 @@
   .punctuation.definition {
     foreground: $purple-a100;
   }
-//   .meta.group {
-//     .punctuation {
-//       &.section.group,
-//       &.separator.comma {
-//         foreground: $purple-a100;
-//       }
-//     }
-//   }
+
+  // .punctuation {
+  //   &.section.group,
+  //   &.separator.comma {
+  //     foreground: $purple-a100;
+  //   }
+  // }
 }

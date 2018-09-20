@@ -10,9 +10,13 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from Naomi.system.paths import (
+    COMMANDS_SRC_DIR,
+    COMMANDS_BUILD_DIR,
+)
+
+from Naomi.system.compilers.commands import compile_commands
 from Naomi.system.logging import get_logger
-from Naomi.system.commands.BuildCommands import build
-from Naomi.system.paths import COMMANDS_SRC_DIR
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
@@ -31,7 +35,7 @@ class EventHandler(PatternMatchingEventHandler):
         self.process(event)
 
     def process(self, event):
-        build()
+        compile_commands(COMMANDS_SRC_DIR, COMMANDS_BUILD_DIR)
 
 
 class NaomiWatchCommandsCommand(ApplicationCommand):

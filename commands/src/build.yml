@@ -19,8 +19,8 @@
 - caption: 'Naomi System: Build Keymaps'
   command: naomi_build_keymaps
 
-- caption: 'Naomi System: Build Indentation Preferences'
-  command: naomi_build_indentation_preferences
+- caption: 'Naomi System: Build Preferences'
+  command: naomi_build_preferences
 
 - caption: 'Naomi System: Build Menus'
   command: naomi_build_menus

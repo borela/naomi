@@ -27,10 +27,6 @@ COMMANDS_DIR = realpath(join(SYSTEM_DIR, '..', 'commands'))
 COMMANDS_SRC_DIR = join(COMMANDS_DIR, 'src')
 COMMANDS_BUILD_DIR = join(COMMANDS_DIR, 'build')
 
-INDENTATION_DIR = realpath(join(SYSTEM_DIR, '..', 'indentation'))
-INDENTATION_SRC_DIR = join(INDENTATION_DIR, 'src')
-INDENTATION_BUILD_DIR = join(INDENTATION_DIR, 'build')
-
 KEYMAPS_DIR = realpath(join(SYSTEM_DIR, '..', 'keymaps'))
 KEYMAPS_SRC_DIR = join(KEYMAPS_DIR, 'src')
 KEYMAPS_BUILD_DIR = join(KEYMAPS_DIR, 'build')
@@ -38,6 +34,10 @@ KEYMAPS_BUILD_DIR = join(KEYMAPS_DIR, 'build')
 MENUS_DIR = realpath(join(SYSTEM_DIR, '..', 'menus'))
 MENUS_SRC_DIR = join(MENUS_DIR, 'src')
 MENUS_BUILD_DIR = join(MENUS_DIR, 'build')
+
+PREFERENCES_DIR = realpath(join(SYSTEM_DIR, '..', 'preferences'))
+PREFERENCES_SRC_DIR = join(PREFERENCES_DIR, 'src')
+PREFERENCES_BUILD_DIR = join(PREFERENCES_DIR, 'build')
 
 
 def change(path, old_base, new_base, new_extension=None):

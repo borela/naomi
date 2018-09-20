@@ -19,10 +19,6 @@ def command():
     return read_file(join(HEADERS_DIR, 'command.txt'))
 
 
-def indentation():
-    return read_file(join(HEADERS_DIR, 'indentation.txt'))
-
-
 def keymap():
     return read_file(join(HEADERS_DIR, 'keymap.txt'))
 
@@ -33,3 +29,7 @@ def menu():
 
 def plist():
     return read_file(join(HEADERS_DIR, 'plist.txt'))
+
+
+def preferences():
+    return read_file(join(HEADERS_DIR, 'preferences.txt'))

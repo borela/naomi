@@ -11,11 +11,11 @@
 # the License.
 
 from .system.commands.BuildCommands import * # noqa
-from .system.commands.BuildIndentationPreferences import * # noqa
+from .system.commands.BuildPreferences import * # noqa
 from .system.commands.BuildKeymaps import * # noqa
 from .system.commands.BuildMenus import * # noqa
 from .system.commands.RunCommands import * # noqa
 from .system.commands.WatchCommands import * # noqa
-from .system.commands.WatchIndentationPreferences import * # noqa
+from .system.commands.WatchPreferences import * # noqa
 from .system.commands.WatchKeymaps import * # noqa
 from .system.commands.WatchMenus import * # noqa

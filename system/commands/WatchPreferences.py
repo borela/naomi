@@ -10,15 +10,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers.indentation_preferences import (
-    compile_indentation_preferences
-)
-
 from Naomi.system.paths import (
-    INDENTATION_BUILD_DIR,
-    INDENTATION_SRC_DIR,
+    PREFERENCES_BUILD_DIR,
+    PREFERENCES_SRC_DIR,
 )
 
+from Naomi.system.compilers.preferences import compile_preferences
 from Naomi.system.logging import get_logger
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
@@ -38,13 +35,13 @@ class EventHandler(PatternMatchingEventHandler):
         self.process(event)
 
     def process(self, event):
-        compile_indentation_preferences(
-            INDENTATION_SRC_DIR,
-            INDENTATION_BUILD_DIR,
+        compile_preferences(
+            PREFERENCES_SRC_DIR,
+            PREFERENCES_BUILD_DIR,
         )
 
 
-class NaomiWatchIndentationPreferencesCommand(ApplicationCommand):
+class NaomiWatchPreferencesCommand(ApplicationCommand):
     def __init__(self):
         self.watching = False
 
@@ -55,13 +52,13 @@ class NaomiWatchIndentationPreferencesCommand(ApplicationCommand):
             self.observer = Observer()
             self.observer.schedule(
                 EventHandler(),
-                path=INDENTATION_SRC_DIR,
+                path=PREFERENCES_SRC_DIR,
                 recursive=True,
             )
             self.observer.start()
             self.watching = True
-            logger.info('Started watching indentation preferences...')
+            logger.info('Started watching preferences...')
         else:
             self.observer.stop()
             self.watching = False
-            logger.info('Stopped watching indentation preferences.')
+            logger.info('Stopped watching preferences.')

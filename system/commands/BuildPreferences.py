@@ -10,21 +10,18 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers.indentation_preferences import (
-    compile_indentation_preferences
-)
-
 from Naomi.system.paths import (
-    INDENTATION_BUILD_DIR,
-    INDENTATION_SRC_DIR,
+    PREFERENCES_BUILD_DIR,
+    PREFERENCES_SRC_DIR,
 )
 
+from Naomi.system.compilers.preferences import compile_preferences
 from sublime_plugin import ApplicationCommand
 
 
-class NaomiBuildIndentationPreferencesCommand(ApplicationCommand):
+class NaomiBuildPreferencesCommand(ApplicationCommand):
     def run(self):
-        compile_indentation_preferences(
-            INDENTATION_SRC_DIR,
-            INDENTATION_BUILD_DIR,
+        compile_preferences(
+            PREFERENCES_SRC_DIR,
+            PREFERENCES_BUILD_DIR,
         )

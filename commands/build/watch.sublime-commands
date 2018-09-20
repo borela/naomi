@@ -24,8 +24,8 @@
     "command": "naomi_watch_commands"
   },
   {
-    "caption": "Naomi System: Watch Indentation Preferences",
-    "command": "naomi_watch_indentation_preferences"
+    "caption": "Naomi System: Watch Preferences",
+    "command": "naomi_watch_preferences"
   },
   {
     "caption": "Naomi System: Watch Keymaps",

@@ -22,9 +22,12 @@ from Naomi.system.headers import (
     plist as plist_header,
 )
 
+from Naomi.system.paths import (
+    modify_path,
+    package_path,
+)
 
 from Naomi.system.logging import get_logger
-from Naomi.system.paths import change, package_path
 from Naomi.system.util import to_plist_string
 
 
@@ -38,7 +41,7 @@ def compile_preferences(target_dir_path, output_dir_path):
 
     for file_path in list_files(target_dir_path):
         relative_file_path = package_path(file_path)
-        destination = change(
+        destination = modify_path(
             file_path,
             old_base=target_dir_path,
             new_base=output_dir_path,

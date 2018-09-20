@@ -18,7 +18,7 @@ from Naomi.system.fs import (
 )
 
 from Naomi.system.paths import (
-    change,
+    modify_path,
     package_path,
 )
 
@@ -36,7 +36,7 @@ def compile_commands(dir_path, dest_dir_path):
     logger.info('Building command files...')
 
     for file in list_files(dir_path):
-        destination = change(
+        destination = modify_path(
             file,
             old_base=dir_path,
             new_base=dest_dir_path,

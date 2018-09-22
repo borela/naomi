@@ -24,6 +24,18 @@
   foreground: $orange-300;
 }
 
+// Attribute assignment.
+.punctuation.separator.key-value.html {
+  foreground: $brown-200;
+}
+
+.source.jsx {
+  // Interpolation “{}” inside JSX tags.
+  .punctuation.definition.template-expression {
+    foreground: $brown-200;
+  }
+}
+
 // Character reference.
 .constant.character.entity {
   foreground: $pink-a100;

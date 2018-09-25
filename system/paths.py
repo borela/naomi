@@ -25,19 +25,19 @@ PACKAGE_DIR = join(SYSTEM_DIR, '..')
 
 INTEGRATION_DIR = realpath(join(PACKAGE_DIR, 'integration'))
 
-COMMANDS_DIR = join(INTEGRATION_DIR, 'commands'))
+COMMANDS_DIR = join(INTEGRATION_DIR, 'commands')
 COMMANDS_SRC_DIR = join(COMMANDS_DIR, 'src')
 COMMANDS_BUILD_DIR = join(COMMANDS_DIR, 'build')
 
-KEYMAPS_DIR = join(INTEGRATION_DIR, 'keymaps'))
+KEYMAPS_DIR = join(INTEGRATION_DIR, 'keymaps')
 KEYMAPS_SRC_DIR = join(KEYMAPS_DIR, 'src')
 KEYMAPS_BUILD_DIR = join(KEYMAPS_DIR, 'build')
 
-MENUS_DIR = join(INTEGRATION_DIR, 'menus'))
+MENUS_DIR = join(INTEGRATION_DIR, 'menus')
 MENUS_SRC_DIR = join(MENUS_DIR, 'src')
 MENUS_BUILD_DIR = join(MENUS_DIR, 'build')
 
-PREFERENCES_DIR = join(INTEGRATION_DIR, 'preferences'))
+PREFERENCES_DIR = join(INTEGRATION_DIR, 'preferences')
 PREFERENCES_SRC_DIR = join(PREFERENCES_DIR, 'src')
 PREFERENCES_BUILD_DIR = join(PREFERENCES_DIR, 'build')
 

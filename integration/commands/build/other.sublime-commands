@@ -13,46 +13,18 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  This code was auto generated, be aware that changes to this file will be
-//  lost on the next build. To contribute with keymaps, edit the files in:
+//  lost on the next build. To contribute with commands, edit the files in:
 //
-//     Naomi/keymaps/src
+//     Naomi/integration/commands/src
 //
 ////////////////////////////////////////////////////////////////////////////////
 [
   {
-    "keys": [
-      "alt+]"
-    ],
-    "command": "insert_snippet",
-    "args": {
-      "contents": "\u2018"
-    }
+    "caption": "Naomi Dev: Run Plugin Tests",
+    "command": "naomi_run_plugin_tests"
   },
   {
-    "keys": [
-      "alt+shift+]"
-    ],
-    "command": "insert_snippet",
-    "args": {
-      "contents": "\u2019"
-    }
-  },
-  {
-    "keys": [
-      "alt+["
-    ],
-    "command": "insert_snippet",
-    "args": {
-      "contents": "\u201c"
-    }
-  },
-  {
-    "keys": [
-      "alt+shift+["
-    ],
-    "command": "insert_snippet",
-    "args": {
-      "contents": "\u201d"
-    }
+    "caption": "Naomi Dev: Run Syntax Tests",
+    "command": "naomi_run_syntax_tests"
   }
 ]

@@ -15,6 +15,6 @@
 //  This code was auto generated, be aware that changes to this file will be
 //  lost on the next build. To contribute with menus, edit the files in:
 //
-//     Naomi/menus/src
+//     Naomi/integration/menus/src
 //
 ////////////////////////////////////////////////////////////////////////////////

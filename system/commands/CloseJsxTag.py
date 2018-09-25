@@ -10,13 +10,19 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .system.commands.BuildCommands import * # noqa
-from .system.commands.BuildPreferences import * # noqa
-from .system.commands.BuildKeymaps import * # noqa
-from .system.commands.BuildMenus import * # noqa
-from .system.commands.CloseJsxTag import * # noqa
-from .system.commands.RunCommands import * # noqa
-from .system.commands.WatchCommands import * # noqa
-from .system.commands.WatchPreferences import * # noqa
-from .system.commands.WatchKeymaps import * # noqa
-from .system.commands.WatchMenus import * # noqa
+from sublime import Region
+from sublime_plugin import TextCommand
+
+
+class NaomiCloseJsxTagCommand(TextCommand):
+    def __init__(self, view):
+        self.view = view
+
+
+    def run(self, edit):
+        cursor = self.view.sel()[0].begin()
+        self.view.run_command('insert', {'characters': '>'})
+        self.view.run_command('close_tag')
+        self.view.sel().clear()
+        self.view.sel().add(Region(cursor + 1))
+

@@ -1,0 +1,41 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+bindings:
+  # Pressing enter between “[]” will have the same behavior as “{}”.
+  - keys: [enter]
+    command: run_macro_file
+    args:
+      file: res://Packages/Default/Add Line in Braces.sublime-macro
+    context:
+      - key: setting.auto_indent
+        operator: equal
+        operand: true
+        match_all: true
+
+      - key: selection_empty
+        operator: equal
+        operand: true
+        match_all: true
+
+      - key: preceding_text
+        operator: regex_contains
+        operand: \[$
+        match_all: true
+
+      - key: following_text
+        operator: regex_contains
+        operand: ^\]
+        match_all: true

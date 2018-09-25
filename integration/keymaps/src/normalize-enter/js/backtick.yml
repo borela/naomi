@@ -14,32 +14,17 @@
 # the License.
 
 bindings:
-  # Pressing enter between “()” will have the same behavior as “{}”.
+  # Pressing enter between “``” will have the same behavior as “{}”.
   - keys: [enter]
-    # This is an example of how to use the multi command runner, the following
-    # is be same as the “Default/Add Line in Braces.sublime-macro”. You can see
-    # how the command works and usage instructions in:
-    #
-    #     Naomi/system/commands/RunCommands.py
-    #
-    command: naomi_run_commands
+    command: run_macro_file
     args:
-      commands:
-        - command: insert
-          args:
-            characters: "\n\n"
-        - command: move
-          args:
-            by: lines
-            forward: false
-        - command: move_to
-          args:
-            to: hardeol
-            forward: false
-        - command: reindent
-          args:
-            single_line: true
+      file: res://Packages/Default/Add Line in Braces.sublime-macro
     context:
+      - key: setting.auto_indent
+        operator: equal
+        operand: true
+        match_all: true
+
       - key: selection_empty
         operator: equal
         operand: true
@@ -47,15 +32,10 @@ bindings:
 
       - key: preceding_text
         operator: regex_contains
-        operand: \($
+        operand: \`$
         match_all: true
 
       - key: following_text
         operator: regex_contains
-        operand: ^\)
-        match_all: true
-
-      - key: setting.auto_indent
-        operator: equal
-        operand: true
+        operand: ^`
         match_all: true

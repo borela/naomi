@@ -1,4 +1,4 @@
-[![Naomi](art/logo.png)][naomi]
+[![Naomi](art/logo.svg)][naomi]
 
 [![GitHub watchers](https://img.shields.io/github/watchers/borela/naomi.svg?style=social)][watchers]
 [![GitHub stars](https://img.shields.io/github/stars/borela/naomi.svg?style=social)][stars]

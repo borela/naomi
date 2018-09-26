@@ -21,43 +21,7 @@
 [
   {
     "keys": [
-      "alt+]"
-    ],
-    "command": "insert_snippet",
-    "args": {
-      "contents": "\u2018"
-    }
-  },
-  {
-    "keys": [
-      "alt+shift+]"
-    ],
-    "command": "insert_snippet",
-    "args": {
-      "contents": "\u2019"
-    }
-  },
-  {
-    "keys": [
-      "alt+["
-    ],
-    "command": "insert_snippet",
-    "args": {
-      "contents": "\u201c"
-    }
-  },
-  {
-    "keys": [
-      "alt+shift+["
-    ],
-    "command": "insert_snippet",
-    "args": {
-      "contents": "\u201d"
-    }
-  },
-  {
-    "keys": [
-      "ctrl+/"
+      "super+/"
     ],
     "command": "naomi_toggle_jsx_comment",
     "args": {
@@ -74,7 +38,7 @@
   },
   {
     "keys": [
-      "ctrl+shift+/"
+      "super+alt+/"
     ],
     "command": "naomi_toggle_jsx_comment",
     "args": {

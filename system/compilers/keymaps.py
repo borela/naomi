@@ -72,15 +72,15 @@ def load_keymap(file_path):
     # The actual key bindings.
     bindings = data['bindings']
 
-    # If “oss” is not specified, that means that the keymap works on all
+    # If “os” is not specified, that means that the keymap works on all
     # platforms.
-    if 'oss' not in data:
+    if 'os' not in data:
         shared = bindings
         logger.debug('Done processing: %s' % relative_file_path)
         return shared, per_os
 
-    # “oss” can be a string representing a single platform.
-    oss = data['oss']
+    # “os” can be a string representing a single platform.
+    oss = data['os']
     if isinstance(oss, str):
         oss = [oss]
 

@@ -11,8 +11,7 @@
 # the License.
 
 # This scope is added to the new line character at the end of the line or block
-# comment, we use it to fix alignment problems with indentation.
+# comment, we use it to fix alignment problems.
 scope: meta.line-fence.comment, meta.block-fence.comment
 settings:
   unIndentedLinePattern: "."
-

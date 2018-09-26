@@ -46,6 +46,11 @@ def compile_commands(dir_path, dest_dir_path):
         logger.debug('Building file: %s' % package_path(file))
 
         data = load_yaml(file)
+
+        if  data is None:
+            logger.debug('Empty file: %s' % relative_file_path)
+            continue
+
         json_string = to_json_string(data)
         final_string = command_header() + json_string
 

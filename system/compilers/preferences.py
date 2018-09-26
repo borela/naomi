@@ -51,6 +51,11 @@ def compile_preferences(target_dir_path, output_dir_path):
         logger.debug('Processing: %s' % relative_file_path)
 
         data = load_yaml(file_path)
+
+        if  data is None:
+            logger.debug('Empty file: %s' % relative_file_path)
+            continue
+
         plist_string = to_plist_string(data)
         final_string = plist_header() + preferences_header() + plist_string
 

@@ -24,23 +24,46 @@
 <plist version="1.0">
   <dict>
     <key>name</key>
-    <string>Comment’s indentation</string>
+    <string>JavaScript’s indentation</string>
     <key>scope</key>
-    <string>comment, comment.block</string>
+    <string>source.js naomi - (comment, string)</string>
     <key>settings</key>
     <dict>
       <key>preserveIndent</key>
       <false/>
+      <key>indentParens</key>
+      <true/>
+      <key>indentSquareBrackets</key>
+      <true/>
       <key>increaseIndentPattern</key>
-      <string></string>
+      <string>(?x)
+^.*
+(?&gt; \{
+  | \[
+  | \(
+)
+\s*$
+</string>
       <key>decreaseIndentPattern</key>
-      <string></string>
+      <string>(?x)
+^\s*
+(?&gt; \}
+  | \]
+  | \)
+)
+</string>
       <key>bracketIndentNextLinePattern</key>
-      <string></string>
+      <string>(?x)^\s*
+(?&gt; do
+  | else
+  | for
+  | if
+)\b
+</string>
       <key>disableIndentNextLinePattern</key>
       <string></string>
       <key>unIndentedLinePattern</key>
-      <string>.</string>
+      <string></string>
     </dict>
   </dict>
 </plist>

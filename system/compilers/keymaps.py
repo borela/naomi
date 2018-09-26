@@ -20,7 +20,7 @@ from Naomi.system.fs import (
 from Naomi.system.headers import keymap as keymap_header
 from Naomi.system.logging import get_logger
 from Naomi.system.paths import package_path
-from Naomi.system.util import to_json_string
+from Naomi.system.utils import to_json_string
 from os.path import join
 
 

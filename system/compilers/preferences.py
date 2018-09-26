@@ -28,7 +28,7 @@ from Naomi.system.paths import (
 )
 
 from Naomi.system.logging import get_logger
-from Naomi.system.util import to_plist_string
+from Naomi.system.utils import to_plist_string
 
 
 def compile_preferences(target_dir_path, output_dir_path):

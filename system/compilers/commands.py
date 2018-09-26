@@ -24,7 +24,7 @@ from Naomi.system.paths import (
 
 from Naomi.system.headers import command as command_header
 from Naomi.system.logging import get_logger
-from Naomi.system.util import to_json_string
+from Naomi.system.utils import to_json_string
 
 
 def compile_commands(dir_path, dest_dir_path):

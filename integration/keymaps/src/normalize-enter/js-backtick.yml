@@ -32,10 +32,10 @@ bindings:
 
       - key: preceding_text
         operator: regex_contains
-        operand: \`$
+        operand: '`$'
         match_all: true
 
       - key: following_text
         operator: regex_contains
-        operand: ^`
+        operand: '^`'
         match_all: true

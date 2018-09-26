@@ -76,6 +76,7 @@ def load_keymap(file_path):
     # platforms.
     if 'os' not in data:
         shared = bindings
+        logger.debug('Generic shortcut: %s' %relative_file_path)
         logger.debug('Done processing: %s' % relative_file_path)
         return shared, per_os
 
@@ -91,6 +92,7 @@ def load_keymap(file_path):
             per_os[os] = []
         per_os[os] += bindings
 
+    logger.debug('Contains shortcuts for %s: %s' % (oss, relative_file_path))
     logger.debug('Done processing: %s' % relative_file_path)
     return shared, per_os
 

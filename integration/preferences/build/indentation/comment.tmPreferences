@@ -23,8 +23,6 @@
 -->
 <plist version="1.0">
   <dict>
-    <key>name</key>
-    <string>Comment’s indentation</string>
     <key>scope</key>
     <string>comment naomi</string>
     <key>settings</key>

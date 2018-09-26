@@ -23,8 +23,6 @@
 -->
 <plist version="1.0">
   <dict>
-    <key>name</key>
-    <string>JavaScript’s indentation</string>
     <key>scope</key>
     <string>source.js naomi - (comment, string)</string>
     <key>settings</key>

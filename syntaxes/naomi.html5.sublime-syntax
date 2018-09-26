@@ -37,10 +37,15 @@ first_line_match: <!DOCTYPE html>
 contexts:
   main:
     - match: ""
-      push: [ entry ]
+      push: [naomi, entry]
 
   entry:
     # - include: Packages/Naomi/syntaxes/html5/php.sublime-syntax
     - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
+    - match: ""
+      pop: true
+
+  naomi:
+    - meta_scope: naomi
     - match: ""
       pop: true

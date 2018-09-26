@@ -23,7 +23,7 @@ file_extensions:
 contexts:
   main:
     - match: ""
-      push: [ entry ]
+      push: [naomi, entry]
 
   entry:
     - include: Packages/Naomi/syntaxes/css3/comment.sublime-syntax
@@ -31,6 +31,11 @@ contexts:
     - match: (?=\S)
       push:
         - include: Packages/Naomi/syntaxes/css3/ruleset.sublime-syntax
+
+  naomi:
+    - meta_scope: naomi
+    - match: ""
+      pop: true
 
   # Used by the core syntax to highlight inline CSS.
   rule-list-body:

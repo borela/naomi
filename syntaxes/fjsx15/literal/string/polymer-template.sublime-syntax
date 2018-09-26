@@ -39,7 +39,9 @@ contexts:
 
   content:
     - clear_scopes: true
-    - meta_scope: text.html
+    - meta_scope: >-
+        text.html
+        naomi
     - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
 
   close:

@@ -20,7 +20,7 @@ scope: source.flow
 contexts:
   main:
     - match: ""
-      push: [ entry ]
+      push: [naomi, entry]
 
   entry:
     - include: Packages/Naomi/syntaxes/flow1/declare.sublime-syntax
@@ -29,3 +29,8 @@ contexts:
     - include: Packages/Naomi/syntaxes/flow1/prolog.sublime-syntax
     - include: Packages/Naomi/syntaxes/flow1/type-aliasing.sublime-syntax
     - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax
+
+  naomi:
+    - meta_scope: naomi
+    - match: ""
+      pop: true

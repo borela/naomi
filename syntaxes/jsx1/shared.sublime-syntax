@@ -77,7 +77,9 @@ contexts:
 
   meta-content:
     - clear_scopes: true
-    - meta_scope: source.jsx
+    - meta_scope: >-
+        source.jsx
+        naomi
     - include: pop-now
 
   namespaced-closing-tag:

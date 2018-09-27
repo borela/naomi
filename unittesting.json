@@ -1,4 +1,4 @@
 {
   "pattern": "*test.py",
-  "tests_dir": "plugin"
+  "tests_dir": "system"
 }

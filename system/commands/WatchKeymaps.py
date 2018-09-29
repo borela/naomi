@@ -16,7 +16,7 @@ from Naomi.system.paths import (
 )
 
 from Naomi.system.compilers.keymaps import compile_keymaps
-from Naomi.system.logging import get_logger
+from Naomi.system.logging import log
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
@@ -43,8 +43,6 @@ class NaomiWatchKeymapsCommand(ApplicationCommand):
         self.watching = False
 
     def run(self):
-        logger = get_logger()
-
         if not self.watching:
             self.observer = Observer()
             self.observer.schedule(
@@ -54,8 +52,8 @@ class NaomiWatchKeymapsCommand(ApplicationCommand):
             )
             self.observer.start()
             self.watching = True
-            logger.info('Started watching keymaps...')
+            log.info('Started watching keymaps...')
         else:
             self.observer.stop()
             self.watching = False
-            logger.info('Stopped watching keymaps.')
+            log.info('Stopped watching keymaps.')

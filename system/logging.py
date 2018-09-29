@@ -11,9 +11,9 @@
 # the License.
 
 from logging import (
-    Formatter,
-    getLogger,
-    StreamHandler,
+    Formatter as LogFormat,
+    getLogger as create_log,
+    StreamHandler as Stream,
 )
 
 from .settings import (
@@ -22,40 +22,31 @@ from .settings import (
 )
 
 
-loggers = []
-formatter = Formatter(fmt="[{name}][{levelname}]: {message}", style='{')
-handler = StreamHandler()
-handler.setFormatter(formatter)
+# Create the log used by Naomi. If the log already exists, it will return the
+# previous instance.
+log = create_log('Naomi')
+
+# If the log already exists, the output does not need to be configured again.
+if len(log.handlers) < 1:
+    # Create a log format like: [Naomi][INFO]: Some message.
+    logFormat = LogFormat(fmt="[{name}][{levelname}]: {message}", style='{')
+
+    # Output log messages to the console.
+    logOutput = Stream()
+    logOutput.setFormatter(logFormat)
+    log.addHandler(logOutput)
 
 
 def get_level():
+    """Get the log level from the settings and defaults to “INFO”."""
     return get_setting('log_level', 'INFO').upper()
 
 
-def get_logger(name=None):
-    if name is not None:
-        name = 'Naomi.' + name
-    else:
-        name = 'Naomi'
-
-    logger = getLogger(name)
-    if logger in loggers:
-        return logger
-
-    loggers.append(logger)
-    logger.addHandler(handler)
-    logger.setLevel(get_level())
-
-    return logger
-
-
 def plugin_loaded():
+    log.setLevel(get_level())
+
+    # Update level when settings change.
     def settings_changed():
-        for logger in loggers:
-            logger.setLevel(get_level())
+        log.setLevel(get_level())
+
     call_on_change(settings_changed)
-
-
-def plugin_unloaded():
-    for logger in loggers:
-        logger.removeHandler(handler)

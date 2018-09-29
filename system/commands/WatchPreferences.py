@@ -16,7 +16,7 @@ from Naomi.system.paths import (
 )
 
 from Naomi.system.compilers.preferences import compile_preferences
-from Naomi.system.logging import get_logger
+from Naomi.system.logging import log
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
@@ -46,8 +46,6 @@ class NaomiWatchPreferencesCommand(ApplicationCommand):
         self.watching = False
 
     def run(self):
-        logger = get_logger()
-
         if not self.watching:
             self.observer = Observer()
             self.observer.schedule(
@@ -57,8 +55,8 @@ class NaomiWatchPreferencesCommand(ApplicationCommand):
             )
             self.observer.start()
             self.watching = True
-            logger.info('Started watching preferences...')
+            log.info('Started watching preferences...')
         else:
             self.observer.stop()
             self.watching = False
-            logger.info('Stopped watching preferences.')
+            log.info('Stopped watching preferences.')

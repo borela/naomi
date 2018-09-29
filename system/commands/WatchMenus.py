@@ -16,7 +16,7 @@ from Naomi.system.paths import (
 )
 
 from Naomi.system.compilers.menus import compile_menus
-from Naomi.system.logging import get_logger
+from Naomi.system.logging import log
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
@@ -43,8 +43,6 @@ class NaomiWatchMenusCommand(ApplicationCommand):
         self.watching = False
 
     def run(self):
-        logger = get_logger()
-
         if not self.watching:
             self.observer = Observer()
             self.observer.schedule(
@@ -54,8 +52,8 @@ class NaomiWatchMenusCommand(ApplicationCommand):
             )
             self.observer.start()
             self.watching = True
-            logger.info('Started watching menus...')
+            log.info('Started watching menus...')
         else:
             self.observer.stop()
             self.watching = False
-            logger.info('Stopped watching menus.')
+            log.info('Stopped watching menus.')

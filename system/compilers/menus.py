@@ -43,6 +43,10 @@ def compile_menus(dir_path, dest_dir_path):
 
 
 def load_menus(files_paths):
+    """
+    Load all menu sources and returns the result indexed by the destination.
+    """
+
     result = {}
     loaded_files = [
         load_menus_from_file(file_path)
@@ -63,6 +67,11 @@ def load_menus(files_paths):
 
 
 def load_menus_from_file(file_path):
+    """
+    Load menus from a single source and returns the result indexed by
+    destination.
+    """
+
     relative_file_path = package_path(file_path)
     data = load_yaml(file_path)
     result = {}

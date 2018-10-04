@@ -25,6 +25,15 @@ from os.path import join
 
 
 def compile_keymaps(dir_path, dest_dir_path):
+    """
+    Load all keymaps sources and generate files for each OS on demand:
+
+      Default.sublime-keymap
+      Default (Linux).sublime-keymap
+      Default (Windows).sublime-keymap
+      Default (OSX).sublime-keymap
+    """
+
     log.debug('Cleaning: %s' % package_path(dest_dir_path))
 
     delete_dir_contents(dest_dir_path)
@@ -41,6 +50,11 @@ def compile_keymaps(dir_path, dest_dir_path):
 
 
 def load_keymaps(files_paths):
+    """
+    Load keymaps, combine all shared and exclusive bindings into a single
+    result that is used later to generate the final “Default” files.
+    """
+
     combined_shared = []
     combined_per_os = {}
     loaded_files = [load_keymap(file_path) for file_path in files_paths]
@@ -56,6 +70,11 @@ def load_keymaps(files_paths):
 
 
 def load_keymap(file_path):
+    """
+    Load a single keymap source, returns bindings shared by all OSs and the
+    exclusive ones indexed by OS.
+    """
+
     relative_file_path = package_path(file_path)
     shared = []
     per_os = {}
@@ -102,6 +121,14 @@ def validate_os(os, file_path):
 
 
 def write_per_os_keymap(per_os_bindings, dest_dir_path):
+    """
+    Write bindings indexed by OS on their respective files:
+
+      Default (Linux).sublime-keymap
+      Default (Windows).sublime-keymap
+      Default (OSX).sublime-keymap
+    """
+
     for os in per_os_bindings:
         bindings = per_os_bindings[os]
         if len(bindings) < 1:
@@ -116,6 +143,12 @@ def write_per_os_keymap(per_os_bindings, dest_dir_path):
 
 
 def write_shared_keymap(bindings, dest_dir_path):
+    """
+    Write bindings shared by all OSs on:
+
+      Default.sublime-keymap
+    """
+
     if len(bindings) < 1:
         return
 

@@ -28,6 +28,10 @@ from Naomi.system.utils import to_json_string
 
 
 def compile_commands(dir_path, dest_dir_path):
+    """
+    Convert commands from “x.yml” to “x.sublime-commands”.
+    """
+
     log.debug('Cleaning: %s' % package_path(dest_dir_path))
 
     delete_dir_contents(dest_dir_path)

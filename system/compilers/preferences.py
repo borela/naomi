@@ -32,6 +32,10 @@ from Naomi.system.utils import to_plist_string
 
 
 def compile_preferences(target_dir_path, output_dir_path):
+    """
+    Convert preferences from “x.yml” to “x.tmPreferences”.
+    """
+
     log.debug('Cleaning: %s' % package_path(output_dir_path))
 
     delete_dir_contents(output_dir_path)

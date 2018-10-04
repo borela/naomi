@@ -27,7 +27,7 @@
 #   Tab Context
 #   Widget Context
 #
-locations: Main
+location: Main
 menus:
   - id: preferences
     children:

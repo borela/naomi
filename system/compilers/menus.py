@@ -83,11 +83,13 @@ def load_menus_from_file(file_path):
 
     log.debug('Loading: %s' % relative_file_path)
 
-    if 'locations' not in data:
-        message = 'Missing “locations” for menu: %s' % relative_file_path
+    if 'location' not in data:
+        message = 'Missing “location” for menu: %s' % relative_file_path
         raise ValueError(message)
 
-    locations = data['locations']
+    locations = data['location']
+
+    # Single location.
     if isinstance(locations, str):
         locations = [locations]
 

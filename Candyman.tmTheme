@@ -1332,6 +1332,87 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.git-savvy.diff</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#607d8b</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.git-savvy.diff .meta.commit-info.files, .git-savvy.diff .meta.commit-info.diffstat.line</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffffff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.git-savvy.diff .meta.commit-info .meta.filename</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.git-savvy.diff .markup.inserted</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#9ccc65</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.git-savvy.diff .markup.deleted</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff4081</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.git-savvy.diff .punctuation.definition.command</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#40c4ff</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.git-savvy.diff .punctuation.definition.index</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b39ddb</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.git-savvy.diff .meta.diff.header.from-file, .git-savvy.diff .meta.diff.header.to-file</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.git-savvy.diff .meta.diff.range</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.source.json .punctuation.section.dictionary</string>
 			<key>settings</key>
 			<dict>

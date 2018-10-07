@@ -29,6 +29,7 @@
 @import 'schemes/candyman/function';
 @import 'schemes/candyman/flow';
 @import 'schemes/candyman/generic';
+@import 'schemes/candyman/git-savvy';
 @import 'schemes/candyman/json';
 @import 'schemes/candyman/keyword';
 @import 'schemes/candyman/label';

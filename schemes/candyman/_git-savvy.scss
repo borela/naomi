@@ -1,0 +1,51 @@
+// Licensed under the Apache License, Version 2.0 (the “License”); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+.git-savvy.diff {
+  foreground: $blue-gray-500;
+
+  .meta.commit-info {
+    &.files,
+    &.diffstat.line {
+      foreground: $gray-0;
+    }
+
+    .meta.filename {
+      foreground: $brown-200;
+    }
+  }
+
+  .markup.inserted {
+    foreground: $light-green-400;
+  }
+
+  .markup.deleted {
+    foreground: $pink-a200;
+  }
+
+  .punctuation.definition.command {
+    foreground: $light-blue-a200;
+  }
+
+  .punctuation.definition.index {
+    foreground: $deep-purple-200;
+  }
+
+  .meta.diff.header.from-file,
+  .meta.diff.header.to-file {
+    foreground: $brown-200;
+  }
+
+  .meta.diff.range {
+    foreground: $deep-orange-a100;
+  }
+}

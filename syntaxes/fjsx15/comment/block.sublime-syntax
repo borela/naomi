@@ -24,21 +24,10 @@ contexts:
 
   block:
     - meta_scope: comment.block.js.fjsx15
-    # Used to correct indentation.
-    - match: $\n?
-      scope: meta.line-fence.comment.js.fjsx15
-    # Contents.
     - include: email-no-pop
     - include: link-no-pop
     - match: \*/
       scope: punctuation.definition.comment.end.js.fjsx15
-      set: block-fence
-
-  block-fence:
-    - match: \s*$\n?
-      scope: meta.block-fence.comment.js.fjsx15
-      pop: true
-    - match: ""
       pop: true
 
   email-no-pop:

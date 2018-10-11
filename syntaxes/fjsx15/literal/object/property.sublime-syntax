@@ -166,6 +166,7 @@ contexts:
         )
       set: [
         function-declaration,
+        meta-declaration-function,
         function-keyword,
         meta-key,
         method-identifier
@@ -254,6 +255,10 @@ contexts:
 
   meta-computed-key:
     - meta_scope: meta.object-literal.key.computed.js.fjsx15
+    - include: pop-now
+
+  meta-declaration-function:
+    - meta_scope: meta.declaration.function.js.fjsx15
     - include: pop-now
 
   meta-key:

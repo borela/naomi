@@ -31,6 +31,11 @@ def dict_to_plist_dict(target_dict):
               'key': key,
               'bool': value,
             })
+        elif isinstance(value, int):
+            plist.append({
+              'key': key,
+              'integer': value,
+            })
         elif isinstance(value, str):
             plist.append({
               'key': key,
@@ -47,43 +52,49 @@ def dict_to_plist_dict(target_dict):
     return plist
 
 
-def plist_dict_to_xml(value, parent=None):
+def plist_dict_to_xml(node, parent=None):
     """
     Convert a dictionary(previously prepared “dict_to_plist_dict”) to a XML
     tree that represents the plist.
     """
+
+    # Link the current node to a root parent if none is found:
+    #   <plist verison="1.0">
     if parent is None:
         parent = Element('plist')
         parent.attrib['version'] = '1.0'
-        value = {
+        node = {
             'key': 'plist',
-            'dict': value,
+            'dict': node,
         }
     else:
         key = SubElement(parent, 'key')
-        key.text = value['key']
+        key.text = node['key']
 
     # Sublist.
-    if isinstance(value, tuple) or isinstance(value, list):
-        for v in value:
-            plist_dict_to_xml(v, parent)
+    if isinstance(node, tuple) or isinstance(node, list):
+        for n in node:
+            plist_dict_to_xml(n, parent)
         return parent
 
-    # Values.
-    if 'string' in value:
-        key_value = SubElement(parent, 'string')
-        key_value.text = value['string']
-    elif 'bool' in value:
-        if value['bool']:
+    # Create an element for the key and node’s value.
+    if 'string' in node:
+        new_node = SubElement(parent, 'string')
+        new_node.text = node['string']
+    elif 'integer' in node:
+        new_node = SubElement(parent, 'integer')
+        new_node.text = str(node['integer'])
+    elif 'bool' in node:
+        if node['bool']:
             SubElement(parent, 'true')
         else:
             SubElement(parent, 'false')
-    elif 'dict' in value:
-        key_value = SubElement(parent, 'dict')
-        for item in value['dict']:
-            plist_dict_to_xml(item, key_value)
+    elif 'dict' in node:
+        new_node = SubElement(parent, 'dict')
+        for item in node['dict']:
+            plist_dict_to_xml(item, new_node)
     else:
-        raise ValueError('Unsupported value “%s”.' % value)
+        raise ValueError('Unsupported node “%s”.' % node)
 
     return parent
 

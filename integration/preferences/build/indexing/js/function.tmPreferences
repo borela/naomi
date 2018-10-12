@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+ | Licensed under the Apache License, Version 2.0 (the “License”); you may not
+ | use this file except in compliance with the License. You may obtain a copy of
+ | the License at
+ |
+ |     http://www.apache.org/licenses/LICENSE-2.0
+ |
+ | Unless required by applicable law or agreed to in writing, software
+ | distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+ | WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ | License for the specific language governing permissions and limitations under
+ | the License.
+-->
+<!--
+ |
+ |  This code was auto generated, be aware that changes to this file will be
+ |  lost on the next build. To contribute, edit the files in:
+ |
+ |     Naomi/integration/preferences/src
+ |
+-->
+<plist version="1.0">
+  <dict>
+    <key>scope</key>
+    <string>source.js meta.declaration.function</string>
+    <key>settings</key>
+    <dict>
+      <key>showInSymbolList</key>
+      <integer>1</integer>
+      <key>symbolTransformation</key>
+      <string>/^\s*(?:function\s+)?/🔰 /</string>
+    </dict>
+  </dict>
+</plist>

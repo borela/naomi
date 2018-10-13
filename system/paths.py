@@ -23,6 +23,10 @@ SYSTEM_DIR = dirname(__file__)
 HEADERS_DIR = join(SYSTEM_DIR, 'headers')
 PACKAGE_DIR = join(SYSTEM_DIR, '..')
 
+SYNTAXES_DIR = join(PACKAGE_DIR, 'syntaxes')
+SYNTAXES_SRC_DIR = join(SYNTAXES_DIR, 'src')
+SYNTAXES_BUILD_DIR = join(SYNTAXES_DIR, 'build')
+
 INTEGRATION_DIR = realpath(join(PACKAGE_DIR, 'integration'))
 
 COMMANDS_DIR = join(INTEGRATION_DIR, 'commands')

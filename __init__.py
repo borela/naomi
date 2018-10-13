@@ -14,6 +14,7 @@ from .system.commands.BuildCommands import * # noqa
 from .system.commands.BuildKeymaps import * # noqa
 from .system.commands.BuildMenus import * # noqa
 from .system.commands.BuildPreferences import * # noqa
+from .system.commands.BuildSyntaxes import * # noqa
 from .system.commands.CloseJsxTag import * # noqa
 from .system.commands.RunCommands import * # noqa
 from .system.commands.ToggleJsxComment import * # noqa

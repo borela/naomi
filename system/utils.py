@@ -59,7 +59,7 @@ def plist_dict_to_xml(node, parent=None):
     """
 
     # Link the current node to a root parent if none is found:
-    #   <plist verison="1.0">
+    #   <plist version="1.0">
     if parent is None:
         parent = Element('plist')
         parent.attrib['version'] = '1.0'

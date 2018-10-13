@@ -30,7 +30,7 @@
       <key>showInSymbolList</key>
       <integer>1</integer>
       <key>symbolTransformation</key>
-      <string>/^\s*(?:function\s+)?/🔰 /</string>
+      <string>/^\s*(?:function\s+)?/⚙️ /</string>
     </dict>
   </dict>
 </plist>

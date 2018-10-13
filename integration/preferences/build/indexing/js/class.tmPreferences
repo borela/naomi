@@ -30,7 +30,7 @@
       <key>showInSymbolList</key>
       <integer>1</integer>
       <key>symbolTransformation</key>
-      <string>/class\s+/🔴 /</string>
+      <string>/class\s+/🔵 /</string>
     </dict>
   </dict>
 </plist>

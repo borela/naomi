@@ -10,7 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-scope: source.js meta.declaration.function.arrow
+scope: >-
+  source.js
+  meta.declaration.function.arrow
 settings:
   showInSymbolList: 1
   symbolTransformation: /^\s*/➡ /

@@ -24,13 +24,13 @@
 <plist version="1.0">
   <dict>
     <key>scope</key>
-    <string>source.js meta.declaration.function.method</string>
+    <string>entity.name.type</string>
     <key>settings</key>
     <dict>
       <key>showInSymbolList</key>
       <integer>1</integer>
       <key>symbolTransformation</key>
-      <string>/^\s*/🔹 /</string>
+      <string>/^\s*/💢 /</string>
     </dict>
   </dict>
 </plist>

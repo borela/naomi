@@ -56,6 +56,12 @@ contexts:
   arguments:
     - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
 
+  block-optional-target:
+    - include: comment-no-pop
+    - match: (?=(?>[,}]))
+      pop: true
+    - include: shared-optional-target
+
   close-block:
     - match: \}
       scope: punctuation.section.block.end.js.fjsx15
@@ -98,6 +104,9 @@ contexts:
     - include: comment-no-pop
     - match: (?=(?>[,}]|from))
       pop: true
+    - include: shared-optional-target
+
+  shared-optional-target:
     # Type.
     - include: Packages/Naomi/syntaxes/flow1/type-import.sublime-syntax
     # Aliased All.
@@ -114,7 +123,7 @@ contexts:
       set: [
         close-block,
         delimiter,
-        optional-target
+        block-optional-target
       ]
     # Aliased.
     - match: (?xi){{commonIdentifier}}(?=\s+as)

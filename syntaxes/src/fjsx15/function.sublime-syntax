@@ -23,7 +23,7 @@ variables:
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax#function-properties
+    - include: Packages/Naomi/syntaxes/src/fjsx15/core.sublime-syntax#function-properties
     - match: |
         (?x)
         (?=
@@ -36,10 +36,10 @@ contexts:
       ]
 
   body:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/body.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function/body.sublime-syntax
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
 
   declaration:
     - meta_scope: >-
@@ -74,10 +74,10 @@ contexts:
       pop: true
 
   generic-arguments:
-    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/generic/arguments.sublime-syntax
 
   keyword:
-    - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/async.no-pop.sublime-syntax
     - match: function\b
       scope: storage.type.function.js.fjsx15
       pop: true
@@ -93,4 +93,4 @@ contexts:
     - include: else-pop
 
   parameters:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function/parameters.sublime-syntax

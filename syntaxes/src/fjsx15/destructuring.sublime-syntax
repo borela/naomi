@@ -53,7 +53,7 @@ contexts:
       set: destructuring-object
 
   destructuring-array:
-    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/array.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/destructuring/array.sublime-syntax
 
   destructuring-object:
-    - include: Packages/Naomi/syntaxes/fjsx15/destructuring/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/destructuring/object.sublime-syntax

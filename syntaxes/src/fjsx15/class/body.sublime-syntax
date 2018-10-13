@@ -40,17 +40,17 @@ contexts:
       push: statement-or-expression
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
 
   statement-or-expression:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/flow1/operator/covariant.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/operator/contravariant.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/class/modifier.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/class/method.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/indexer.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/operator/covariant.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/operator/contravariant.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/decorator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/react-js.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/class/modifier.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/class/method.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/class/property.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/indexer.sublime-syntax
     - match: (?=\S)
       pop: true

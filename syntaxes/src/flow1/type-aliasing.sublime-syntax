@@ -57,12 +57,12 @@ contexts:
       pop: true
 
   optional-type-expression:
-    - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/optional-type-expression.sublime-syntax
 
   punctuation:
     - meta_scope: meta.declaration.type.flow
-    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/associated-type.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/generic/arguments.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/associated-type.no-pop.sublime-syntax
     - match: =
       scope: keyword.operator.other.assignment.flow
       set: [

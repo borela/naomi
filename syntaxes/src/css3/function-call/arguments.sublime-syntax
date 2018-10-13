@@ -33,4 +33,4 @@ contexts:
       push: value
 
   value:
-    - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/value.sublime-syntax

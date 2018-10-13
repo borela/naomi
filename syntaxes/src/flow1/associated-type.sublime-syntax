@@ -23,4 +23,4 @@ contexts:
       set: optional-type-expression
 
   optional-type-expression:
-    - include: Packages/Naomi/syntaxes/flow1/optional-type-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/optional-type-expression.sublime-syntax

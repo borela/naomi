@@ -221,4 +221,4 @@ contexts:
           pop: true
 
   expression:
-    - include: Packages/Naomi/syntaxes/scss3/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/expression.sublime-syntax

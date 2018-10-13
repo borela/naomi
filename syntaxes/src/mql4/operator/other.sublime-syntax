@@ -52,9 +52,9 @@ contexts:
       push:
         - match: (?=\s*:)
           pop: true
-        - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax
+        - include: Packages/Naomi/syntaxes/src/mql4/statement-and-expression.sublime-syntax
 
   member-access:
-    - include: Packages/Naomi/syntaxes/mql4/function-call/normal.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/constant/normal.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/constant/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/variable.sublime-syntax

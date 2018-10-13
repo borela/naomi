@@ -94,4 +94,4 @@ contexts:
         - include: statement-and-expression
 
   statement-and-expression:
-    - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/statement-and-expression.sublime-syntax

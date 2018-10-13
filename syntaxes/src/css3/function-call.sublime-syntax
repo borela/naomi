@@ -40,7 +40,7 @@ contexts:
       pop: true
 
   arguments:
-    - include: Packages/Naomi/syntaxes/css3/function-call/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/function-call/arguments.sublime-syntax
 
   calc:
     - match: calc(?=\s*\()
@@ -69,7 +69,7 @@ contexts:
         calc-optional-head
       ]
     # Value.
-    - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/value.sublime-syntax
     - include: else-pop
 
   calc-optional-tail:
@@ -116,8 +116,8 @@ contexts:
     - include: pop-now
 
   optional-var-value:
-    - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax#custom
-    - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/property.sublime-syntax#custom
+    - include: Packages/Naomi/syntaxes/src/css3/value.sublime-syntax
     - include: else-pop
 
   other:
@@ -148,8 +148,8 @@ contexts:
       pop: true
 
   quoted-string:
-    - include: Packages/Naomi/syntaxes/css3/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/css3/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/literal/string/single-quoted.sublime-syntax
 
   regexp:
     - match: regexp(?=\s*\()

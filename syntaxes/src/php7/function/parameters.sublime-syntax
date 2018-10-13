@@ -29,7 +29,7 @@ contexts:
       set: parameters
 
   comment:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/comment.no-pop.sublime-syntax
 
   parameters:
     - include: comment
@@ -64,7 +64,7 @@ contexts:
 
   variable-type:
     - include: comment
-    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/type.sublime-syntax
 
   variadic-or-reference-operator:
     - include: comment
@@ -90,7 +90,7 @@ contexts:
 
   param-variable:
     - include: comment
-    - include: Packages/Naomi/syntaxes/php7/function/parameter.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/function/parameter.sublime-syntax
 
   param-optional-default-value:
     - include: comment
@@ -105,8 +105,8 @@ contexts:
     - include: comment
     - match: (?=\s*(?>,|\)))
       pop: true
-    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/literal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/literal.sublime-syntax
     # Constant inside class.
     - match: |
         (?xi)
@@ -127,7 +127,7 @@ contexts:
       pop: true
 
   default-value-type:
-    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/type.sublime-syntax
 
   default-value-scope-operator:
     - match: "::"
@@ -136,4 +136,4 @@ contexts:
       pop: true
 
   default-value-constant:
-    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/constant.sublime-syntax

@@ -28,7 +28,7 @@ contexts:
       pop: true
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
 
   content:
     - clear_scopes: true
@@ -45,7 +45,7 @@ contexts:
       push: expression
 
   expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax
 
   meta:
     - meta_scope: meta.embedded-js.jsx.jsx1

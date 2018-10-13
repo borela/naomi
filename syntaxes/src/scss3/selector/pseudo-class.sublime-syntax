@@ -100,7 +100,7 @@ contexts:
     - include: trap
 
   arguments:
-    - include: Packages/Naomi/syntaxes/scss3/selector/pseudo-class/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/selector/pseudo-class/arguments.sublime-syntax
 
   trap:
-    - include: Packages/Naomi/syntaxes/scss3/selector/trap.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/selector/trap.sublime-syntax

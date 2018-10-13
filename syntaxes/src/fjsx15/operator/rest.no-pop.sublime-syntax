@@ -22,4 +22,4 @@ contexts:
       push: rest-operator
 
   rest-operator:
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/rest.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/operator/rest.sublime-syntax

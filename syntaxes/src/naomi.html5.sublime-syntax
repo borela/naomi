@@ -40,8 +40,8 @@ contexts:
       push: [naomi, entry]
 
   entry:
-    # - include: Packages/Naomi/syntaxes/html5/php.sublime-syntax
-    - include: Packages/Naomi/syntaxes/html5/element.sublime-syntax
+    # - include: Packages/Naomi/syntaxes/src/html5/php.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/html5/element.sublime-syntax
     - match: ""
       pop: true
 

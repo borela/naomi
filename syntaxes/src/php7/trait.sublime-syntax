@@ -32,7 +32,7 @@ contexts:
       set: declaration
 
   comment:
-    - include: Packages/Naomi/syntaxes/php7/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/comment.no-pop.sublime-syntax
 
   declaration:
     - include: comment
@@ -57,6 +57,6 @@ contexts:
   body-content:
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax
+        - include: Packages/Naomi/syntaxes/src/php7/statement-and-expression.sublime-syntax
         - match: ""
           pop: true

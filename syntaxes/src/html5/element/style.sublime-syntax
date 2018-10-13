@@ -27,7 +27,7 @@ contexts:
       set: [ script, meta, close-open-tag ]
 
   close-open-tag:
-    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
+    - include: Packages/Naomi/syntaxes/src/html5/element/shared.sublime-syntax#close-open-tag
 
   closing-tag:
     - match: (</)(style)(>)

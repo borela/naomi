@@ -31,4 +31,4 @@ contexts:
       push: expression
 
   expression:
-    - include: Packages/Naomi/syntaxes/css3/selector-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/selector-expression.sublime-syntax

@@ -137,7 +137,7 @@ contexts:
       pop: true
 
   return-type:
-    - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/type.sublime-syntax
 
   class:
     - match: |
@@ -197,7 +197,7 @@ contexts:
       pop: true
 
   parameters:
-    - include: Packages/Naomi/syntaxes/mql4/function/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function/parameters.sublime-syntax
 
   body:
-    - include: Packages/Naomi/syntaxes/mql4/function/body.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function/body.sublime-syntax

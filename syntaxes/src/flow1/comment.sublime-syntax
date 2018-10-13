@@ -40,30 +40,30 @@ contexts:
   statement-or-expression:
     - match: \?
       scope: storage.modifier.flow
-    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/generic/arguments.sublime-syntax
     - include: statement-without-label
-    - include: Packages/Naomi/syntaxes/fjsx15/class/property.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/class/property.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax
 
   statement-without-label:
-    - include: Packages/Naomi/syntaxes/flow1/declare.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/interface.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/type-aliasing.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/decorator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/import.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/export.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/variable-declaration.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#block
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#break-continue
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#debugger
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#do-while
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#empty
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#for
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#if-else
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#return
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#switch-case
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#throw
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax#try-catch-finally
+    - include: Packages/Naomi/syntaxes/src/flow1/declare.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/interface.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/type-aliasing.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/decorator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/import.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/export.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/variable-declaration.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax#block
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax#break-continue
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax#debugger
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax#do-while
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax#empty
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax#for
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax#if-else
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax#return
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax#switch-case
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax#throw
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax#try-catch-finally

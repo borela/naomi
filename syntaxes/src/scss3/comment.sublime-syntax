@@ -51,7 +51,7 @@ contexts:
           pop: true
 
   link:
-    - include: Packages/Naomi/syntaxes/shared/link.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/shared/link.sublime-syntax
 
   email:
-    - include: Packages/Naomi/syntaxes/shared/email.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/shared/email.sublime-syntax

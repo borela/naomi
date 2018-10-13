@@ -39,7 +39,7 @@ contexts:
       push: [ meta-content, content ]
 
   content:
-    - include: Packages/Naomi/syntaxes/jsx1/shared.sublime-syntax#content
+    - include: Packages/Naomi/syntaxes/src/jsx1/shared.sublime-syntax#content
 
   meta:
     - meta_scope: meta.tag.other.fragment.jsx.jsx1

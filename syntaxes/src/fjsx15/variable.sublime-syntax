@@ -141,7 +141,7 @@ contexts:
     - include: simple
 
   arrow-body:
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function/body.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/arrow-function/body.sublime-syntax
 
   assignment:
     - match: =
@@ -149,7 +149,7 @@ contexts:
       pop: true
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
 
   function-assigned-to-variable:
     # Normal arrow function assigned to variable.
@@ -193,7 +193,7 @@ contexts:
     - meta_scope: >-
         meta.declaration.function.js.fjsx15
         meta.function.js.fjsx15
-    - include: Packages/Naomi/syntaxes/fjsx15/function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function.sublime-syntax
 
   function-identifier:
     - match: (?xi){{commonIdentifier}}
@@ -202,22 +202,22 @@ contexts:
 
   normal-arrow-function:
     - meta_scope: meta.declaration.function.arrow.js.fjsx15
-    - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/function/parameters.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/async.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/generic/arguments.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function/parameters.no-pop.sublime-syntax
     - match: (?==>)
       set: arrow-body
 
   single-parameter-arrow-function:
     - meta_scope: meta.declaration.function.arrow.js.fjsx15
-    - include: Packages/Naomi/syntaxes/fjsx15/async.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/simple.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/async.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function/parameter/simple.no-pop.sublime-syntax
     - match: (?==>)
       set: arrow-body
 
   optional-type:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/flow1/optional-associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/optional-associated-type.sublime-syntax
 
   object:
     - match: |

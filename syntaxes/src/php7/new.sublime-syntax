@@ -32,9 +32,9 @@ contexts:
       ]
 
   optional-arguments:
-    - include: Packages/Naomi/syntaxes/php7/function-call/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/function-call/arguments.sublime-syntax
     - match: (?=\s*\S)
       pop: true
 
   type:
-    - include: Packages/Naomi/syntaxes/php7/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/type.sublime-syntax

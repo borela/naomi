@@ -27,7 +27,7 @@ contexts:
       set: trap
 
   attribute:
-    - include: Packages/Naomi/syntaxes/html5/attribute.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/html5/attribute.sublime-syntax
 
   close-open-tag:
     - match: /?>

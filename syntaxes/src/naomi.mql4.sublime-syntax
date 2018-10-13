@@ -32,4 +32,4 @@ contexts:
       pop: true
 
   statement-and-expression:
-    - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/statement-and-expression.sublime-syntax

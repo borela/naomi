@@ -87,18 +87,18 @@ contexts:
       push:
         - match: (?=\s*:)
           pop: true
-        - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax
+        - include: Packages/Naomi/syntaxes/src/php7/statement-and-expression.sublime-syntax
 
   member-access:
     - meta_content_scope: member.php.php7
-    - include: Packages/Naomi/syntaxes/php7/function-call/normal.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/variable.no-dollar.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/function-call/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/variable.no-dollar.sublime-syntax
 
   scope-resolution:
     - match: \s*\b(class)\b
       scope: keyword.other.php.php7
       pop: true
-    - include: Packages/Naomi/syntaxes/php7/function-call.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/variable.sublime-syntax

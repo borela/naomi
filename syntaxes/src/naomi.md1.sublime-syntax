@@ -25,8 +25,8 @@ contexts:
       push: [naomi, entry]
 
   entry:
-    - include: Packages/Naomi/syntaxes/md1/header.sublime-syntax
-    - include: Packages/Naomi/syntaxes/md1/code-block.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/md1/header.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/md1/code-block.sublime-syntax
     - match: ""
       pop: true
 

@@ -23,6 +23,6 @@ contexts:
       set: possible-module
 
   possible-module:
-    - include: Packages/Naomi/syntaxes/flow1/module.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/module.sublime-syntax
     - match: (?=\S)
       pop: true

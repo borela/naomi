@@ -43,7 +43,7 @@ contexts:
       set: optional-alias
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
 
   computed-property-end:
     - match: \]
@@ -61,14 +61,14 @@ contexts:
     - include: comment-no-pop
     - match: (?=\))
       pop: true
-    - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/destructuring/array.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/destructuring/object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function/parameter/destructuring/array.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function/parameter/destructuring/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function/parameter/simple.sublime-syntax
 
   optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/optional-expression.sublime-syntax
 
   string:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/template.sublime-syntax

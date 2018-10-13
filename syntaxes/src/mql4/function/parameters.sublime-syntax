@@ -56,10 +56,10 @@ contexts:
           pop: true
 
   preprocessor:
-    - include: Packages/Naomi/syntaxes/mql4/preprocessor.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/preprocessor.sublime-syntax
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/comment.no-pop.sublime-syntax
 
   parameter:
-    - include: Packages/Naomi/syntaxes/mql4/function/parameter.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function/parameter.sublime-syntax

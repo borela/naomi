@@ -36,8 +36,8 @@ contexts:
       ]
 
   declaration:
-    - include: Packages/Naomi/syntaxes/php7/variable.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/modifier.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/modifier.no-pop.sublime-syntax
 
   expression:
-    - include: Packages/Naomi/syntaxes/php7/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/expression.sublime-syntax

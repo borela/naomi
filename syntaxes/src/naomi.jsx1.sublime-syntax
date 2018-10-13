@@ -19,6 +19,6 @@ scope: source.jsx
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/jsx1/fragment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/jsx1/component.sublime-syntax
-    - include: Packages/Naomi/syntaxes/jsx1/element.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/jsx1/fragment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/jsx1/component.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/jsx1/element.sublime-syntax

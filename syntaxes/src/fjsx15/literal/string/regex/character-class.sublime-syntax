@@ -35,8 +35,8 @@ contexts:
       push: content
 
   content:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex/character-class/range.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex/backslash.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/regex/character-class/range.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/regex/backslash.sublime-syntax
     - match: .
       scope: constant.other.character-class.regexp.js.fjsx15
       pop: true

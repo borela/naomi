@@ -150,8 +150,8 @@ contexts:
 
   normal-arrow-function:
     - meta_scope: meta.function.js.fjsx15
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax#normal-arrow-function
+    - include: Packages/Naomi/syntaxes/src/fjsx15/arrow-function.sublime-syntax#normal-arrow-function
 
   single-parameter-arrow-function:
     - meta_scope: meta.function.js.fjsx15
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax#single-parameter-arrow-function
+    - include: Packages/Naomi/syntaxes/src/fjsx15/arrow-function.sublime-syntax#single-parameter-arrow-function

@@ -121,7 +121,7 @@ contexts:
       ]
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function-call/arguments.sublime-syntax
 
   close:
     - match: \`
@@ -129,14 +129,14 @@ contexts:
       pop: true
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/comment/line.sublime-syntax#no-pop
+    - include: Packages/Naomi/syntaxes/src/css3/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/comment/line.sublime-syntax#no-pop
 
   embedded-expression-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/template.sublime-syntax#embedded-expression-no-pop
+    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/template.sublime-syntax#embedded-expression-no-pop
 
   keyframe-block-identifier:
-    - include: Packages/Naomi/syntaxes/css3/keyframe-block-list.sublime-syntax#block-identifier
+    - include: Packages/Naomi/syntaxes/src/css3/keyframe-block-list.sublime-syntax#block-identifier
 
   meta-function-call:
     - meta_scope: meta.function-call.js.fjsx15
@@ -158,10 +158,10 @@ contexts:
       pop: true
 
   ruleset-block:
-    - include: Packages/Naomi/syntaxes/css3/ruleset/block.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/ruleset/block.sublime-syntax
 
   ruleset-block-content:
-    - include: Packages/Naomi/syntaxes/css3/ruleset/block-content.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/ruleset/block-content.sublime-syntax
 
   shared-content:
     # Close.

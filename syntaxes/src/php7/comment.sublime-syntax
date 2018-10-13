@@ -18,5 +18,5 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/php7/comment/documentation.sublime-syntax
-    - include: Packages/Naomi/syntaxes/php7/comment/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/comment/documentation.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/comment/normal.sublime-syntax

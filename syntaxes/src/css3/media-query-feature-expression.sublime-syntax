@@ -23,10 +23,10 @@ contexts:
       set: [ optional-tail, head ]
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/comment.no-pop.sublime-syntax
 
   custom-property:
-    - include: Packages/Naomi/syntaxes/css3/custom-media-identifier.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/custom-media-identifier.sublime-syntax
 
   else-pop:
     - match: (?=\S)
@@ -78,4 +78,4 @@ contexts:
     - include: else-pop
 
   value:
-    - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/value.sublime-syntax

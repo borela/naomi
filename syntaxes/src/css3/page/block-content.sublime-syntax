@@ -54,7 +54,7 @@ contexts:
       set: [ delimiter, property ]
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/comment.no-pop.sublime-syntax
 
   delimiter:
     - include: comment-no-pop
@@ -63,7 +63,7 @@ contexts:
       set: [ meta-property-value, optional-value-no-pop ]
 
   margin-box-content:
-    - include: Packages/Naomi/syntaxes/css3/ruleset/block.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/ruleset/block.sublime-syntax
 
   meta-margin-box:
     - meta_scope: meta.margin-box.css.css3
@@ -80,7 +80,7 @@ contexts:
       scope: punctuation.separator.sequence.css.css3
     - match: (?=\S)
       push:
-        - include: Packages/Naomi/syntaxes/css3/value.sublime-syntax
+        - include: Packages/Naomi/syntaxes/src/css3/value.sublime-syntax
 
   pop-now:
     - match: ""
@@ -88,4 +88,4 @@ contexts:
 
   property:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/css3/property.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/property.sublime-syntax

@@ -38,7 +38,7 @@ contexts:
       set: [ meta, close-open-tag ]
 
   close-open-tag:
-    - include: Packages/Naomi/syntaxes/html5/element/shared.sublime-syntax#close-open-tag
+    - include: Packages/Naomi/syntaxes/src/html5/element/shared.sublime-syntax#close-open-tag
 
   meta:
     - meta_scope: meta.tag.sectioning.root.html.html5

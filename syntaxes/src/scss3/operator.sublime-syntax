@@ -18,7 +18,7 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/scss3/operator/comparison.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/operator/logical.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/operator/arithmetic.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/operator/other.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/operator/comparison.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/operator/logical.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/operator/arithmetic.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/operator/other.sublime-syntax

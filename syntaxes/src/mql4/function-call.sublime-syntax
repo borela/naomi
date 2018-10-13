@@ -18,21 +18,21 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/account.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/array.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/chart.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/checkup.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/common.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/conversion.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/custom-indicator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/datetime.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/file.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/indicators.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/market.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/math.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/string.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/timeseries.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/trade-signals.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/support/trade.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/function-call/normal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/account.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/array.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/chart.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/checkup.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/common.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/conversion.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/custom-indicator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/datetime.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/file.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/indicators.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/market.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/math.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/object.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/string.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/timeseries.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/trade-signals.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/support/trade.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/function-call/normal.sublime-syntax

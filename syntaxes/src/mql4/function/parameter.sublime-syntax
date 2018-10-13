@@ -45,7 +45,7 @@ contexts:
         1: >-
           storage.type.mql.mql4
           keyword.declaration.const.mql.mql4
-    - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/type.sublime-syntax
 
   parameter:
     - include: comment-no-pop
@@ -82,8 +82,8 @@ contexts:
 
   identifier:
     - meta_scope: function.parameter.mql.mql4
-    - include: Packages/Naomi/syntaxes/mql4/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/variable.sublime-syntax
 
   array:
     - match: \s*(])
@@ -110,7 +110,7 @@ contexts:
           pop: true
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/mql4/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/comment.no-pop.sublime-syntax
 
   statement-and-expression:
-    - include: Packages/Naomi/syntaxes/mql4/statement-and-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/statement-and-expression.sublime-syntax

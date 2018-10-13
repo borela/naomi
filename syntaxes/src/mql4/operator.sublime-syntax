@@ -18,12 +18,12 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/mql4/operator/other.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/operator/comparison.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/operator/logical.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/operator/bitwise.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/operator/arithmetic.sublime-syntax
-    - include: Packages/Naomi/syntaxes/mql4/operator/pointer.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/operator/other.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/operator/comparison.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/operator/logical.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/operator/bitwise.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/operator/arithmetic.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/operator/pointer.sublime-syntax
     # Assignment.
     - match: \s*(=)
       captures:

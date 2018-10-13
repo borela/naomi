@@ -23,12 +23,12 @@ contexts:
       set: statement-or-expression
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
 
   statement-or-expression:
     - include: main
     - match: (?=[,:)\]}])
       pop: true
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax

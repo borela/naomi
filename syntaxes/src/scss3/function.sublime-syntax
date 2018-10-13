@@ -46,7 +46,7 @@ contexts:
   optional-parameters:
     - match: (?=\s*{)
       pop: true
-    - include: Packages/Naomi/syntaxes/scss3/function/parameters.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/function/parameters.sublime-syntax
 
   body:
     - match: \s*({)
@@ -62,6 +62,6 @@ contexts:
       push:
         - match: (?=\s*})
           pop: true
-        - include: Packages/Naomi/syntaxes/scss3/attribute.sublime-syntax
-        - include: Packages/Naomi/syntaxes/scss3/selector.sublime-syntax
-        - include: Packages/Naomi/syntaxes/scss3/statement-and-expression.sublime-syntax
+        - include: Packages/Naomi/syntaxes/src/scss3/attribute.sublime-syntax
+        - include: Packages/Naomi/syntaxes/src/scss3/selector.sublime-syntax
+        - include: Packages/Naomi/syntaxes/src/scss3/statement-and-expression.sublime-syntax

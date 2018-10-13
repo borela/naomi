@@ -47,4 +47,4 @@ contexts:
       set: arguments
 
   arguments:
-    - include: Packages/Naomi/syntaxes/php7/function-call/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/function-call/arguments.sublime-syntax

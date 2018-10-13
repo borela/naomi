@@ -97,7 +97,7 @@ contexts:
       pop: true
 
   nth-arguments:
-    - include: Packages/Naomi/syntaxes/css3/selector/nth/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/selector/nth/arguments.sublime-syntax
 
   nth-child:
     # nth-child, nth-last-child
@@ -116,4 +116,4 @@ contexts:
       set: nth-arguments
 
   selector-expression-as-arguments:
-    - include: Packages/Naomi/syntaxes/css3/selector-expression-as-arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/selector-expression-as-arguments.sublime-syntax

@@ -123,16 +123,16 @@ contexts:
       ]
 
   declaration:
-    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#declaration
+    - include: Packages/Naomi/syntaxes/src/flow1/function.sublime-syntax#declaration
 
   head:
-    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#head
+    - include: Packages/Naomi/syntaxes/src/flow1/function.sublime-syntax#head
 
   meta-parameters:
-    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#meta-parameters
+    - include: Packages/Naomi/syntaxes/src/flow1/function.sublime-syntax#meta-parameters
 
   optional-tail:
-    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#optional-tail
+    - include: Packages/Naomi/syntaxes/src/flow1/function.sublime-syntax#optional-tail
 
   return:
-    - include: Packages/Naomi/syntaxes/flow1/function.sublime-syntax#return
+    - include: Packages/Naomi/syntaxes/src/flow1/function.sublime-syntax#return

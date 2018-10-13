@@ -54,7 +54,7 @@ contexts:
       ]
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax#arguments
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function-call.sublime-syntax#arguments
 
   else-pop:
     - match: (?=\S)
@@ -75,17 +75,17 @@ contexts:
     - include: else-pop
 
   optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/optional-expression.sublime-syntax
 
   optional-tail:
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax#optional-tail
+    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax#optional-tail
 
   pop-now:
     - match: ""
       pop: true
 
   type:
-    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/core.sublime-syntax
     # Object before target property.
     - match: (?xi)({{commonIdentifier}})\s*(\.)
       captures:
@@ -96,4 +96,4 @@ contexts:
       scope: variable.other.type.js.fjsx15
       pop: true
     # Other expressions.
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax

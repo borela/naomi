@@ -34,4 +34,4 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax
+        - include: Packages/Naomi/syntaxes/src/php7/statement-and-expression.sublime-syntax

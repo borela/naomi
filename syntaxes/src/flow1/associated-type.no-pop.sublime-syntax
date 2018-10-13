@@ -22,4 +22,4 @@ contexts:
       push: associated-type
 
   associated-type:
-    - include: Packages/Naomi/syntaxes/flow1/associated-type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/associated-type.sublime-syntax

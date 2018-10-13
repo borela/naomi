@@ -33,4 +33,4 @@ contexts:
       set: optional-expression
 
   optional-expression:
-    - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/optional-expression.sublime-syntax

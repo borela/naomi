@@ -32,6 +32,6 @@ contexts:
       scope: punctuation.definition.function.arguments.php.php7
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/php7/statement-and-expression.sublime-syntax
+        - include: Packages/Naomi/syntaxes/src/php7/statement-and-expression.sublime-syntax
         - match: ""
           pop: true

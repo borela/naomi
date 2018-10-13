@@ -30,7 +30,7 @@ contexts:
       ]
 
   type:
-    - include: Packages/Naomi/syntaxes/mql4/type.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/type.sublime-syntax
 
   definition:
     - match: \s*(\))

@@ -45,24 +45,24 @@ contexts:
       ]
 
   close-open-tag:
-    - include: Packages/Naomi/syntaxes/jsx1/shared.sublime-syntax#close-open-tag
+    - include: Packages/Naomi/syntaxes/src/jsx1/shared.sublime-syntax#close-open-tag
 
   meta:
     - meta_scope: meta.tag.other.html.jsx.jsx1
     - include: pop-now
 
   namespaced-closing-tag:
-    - include: Packages/Naomi/syntaxes/jsx1/shared.sublime-syntax#namespaced-closing-tag
+    - include: Packages/Naomi/syntaxes/src/jsx1/shared.sublime-syntax#namespaced-closing-tag
 
   pop-now:
     - match: ""
       pop: true
 
   self-closing-tag:
-    - include: Packages/Naomi/syntaxes/jsx1/shared.sublime-syntax#self-closing-tag
+    - include: Packages/Naomi/syntaxes/src/jsx1/shared.sublime-syntax#self-closing-tag
 
   simple-closing-tag:
-    - include: Packages/Naomi/syntaxes/jsx1/shared.sublime-syntax#simple-closing-tag
+    - include: Packages/Naomi/syntaxes/src/jsx1/shared.sublime-syntax#simple-closing-tag
 
   with-js-fence:
     - match: |

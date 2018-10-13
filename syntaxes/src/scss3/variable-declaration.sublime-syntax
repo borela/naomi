@@ -43,7 +43,7 @@ contexts:
         - include: expression
 
   terminator:
-    - include: Packages/Naomi/syntaxes/scss3/terminator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/terminator.sublime-syntax
 
   expression:
-    - include: Packages/Naomi/syntaxes/scss3/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/expression.sublime-syntax

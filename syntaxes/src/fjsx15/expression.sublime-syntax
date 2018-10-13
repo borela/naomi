@@ -30,10 +30,10 @@ contexts:
       pop: true
 
   comma:
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/comma.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/operator/comma.sublime-syntax
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
 
   do-expression:
     - match: do\b
@@ -62,24 +62,24 @@ contexts:
       pop: true
 
   globals:
-    - include: Packages/Naomi/syntaxes/fjsx15/node-js.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/react-js.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/jest.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/web.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/core.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/node-js.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/react-js.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/jest.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/web.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/core.sublime-syntax
 
   head:
     - include: comment-no-pop
     - include: do-expression
     - include: globals
-    - include: Packages/Naomi/syntaxes/fjsx15/jsx1.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/literal.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/function-expression.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax#function-assigned-to-variable
-    - include: Packages/Naomi/syntaxes/fjsx15/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/jsx1.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/literal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/class.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/variable.sublime-syntax#function-assigned-to-variable
+    - include: Packages/Naomi/syntaxes/src/fjsx15/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/variable.sublime-syntax
     # Open new expression group.
     - match: \(
       scope: punctuation.section.group.begin.js.fjsx15
@@ -119,17 +119,17 @@ contexts:
       push: property-access
     # Other operators. At this point, operators will have a higher priority than
     # regex literals.
-    - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/operator.sublime-syntax
     # Anything else not expected.
     - match: (?=\S)
       pop: true
 
   property-access:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/property-access.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/property-access.sublime-syntax
 
   regex-literal:
-    - include: Packages/Naomi/syntaxes/fjsx15/literal/string/regex.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/regex.sublime-syntax
 
   shared-main:
     - include: comma
@@ -137,22 +137,22 @@ contexts:
     - match: (?=/)
       set: [ optional-tail, regex-literal ]
     # Arrow functions need to be detected before expression groups.
-    - include: Packages/Naomi/syntaxes/fjsx15/arrow-function.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/arrow-function.sublime-syntax
     # At this point is possible to predict JSX tags before operators because
     # there’s no left operand for a "<" operator to be valid.
-    - include: Packages/Naomi/syntaxes/fjsx15/jsx1-early.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/jsx1-early.sublime-syntax
     # Prevent floating point being highlighted as a dot operator followed by an
     # integer.
     - match: (?=\.\d)
       set:
-        - include: Packages/Naomi/syntaxes/fjsx15/literal/number.sublime-syntax
+        - include: Packages/Naomi/syntaxes/src/fjsx15/literal/number.sublime-syntax
     # Detect operators as soon as possible.
-    - include: Packages/Naomi/syntaxes/fjsx15/operator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/operator.sublime-syntax
 
   statement-or-expression:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax
 
   type-cast:
-    - include: Packages/Naomi/syntaxes/flow1/cast.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/cast.sublime-syntax

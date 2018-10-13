@@ -157,7 +157,7 @@ contexts:
       pop: true
 
   arguments:
-    - include: Packages/Naomi/syntaxes/fjsx15/function-call/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function-call/arguments.sublime-syntax
 
   document-property-or-function:
     # Function call.
@@ -279,7 +279,7 @@ contexts:
     - include: pop-now
 
   other-property-or-function:
-    - include: Packages/Naomi/syntaxes/fjsx15/operator/other.sublime-syntax#other-property-or-function
+    - include: Packages/Naomi/syntaxes/src/fjsx15/operator/other.sublime-syntax#other-property-or-function
 
   pop-now:
     - match: ""

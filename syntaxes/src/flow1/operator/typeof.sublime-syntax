@@ -23,4 +23,4 @@ contexts:
       set: type
 
   type:
-    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/type-expression.sublime-syntax

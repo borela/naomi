@@ -72,11 +72,11 @@ contexts:
           pop: true
 
   sequence:
-    - include: Packages/Naomi/syntaxes/scss3/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/terminator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/keyword.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/operator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/function-call.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/variable.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/scss3/literal.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/terminator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/keyword.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/operator.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/constant.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/scss3/literal.sublime-syntax

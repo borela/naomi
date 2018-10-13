@@ -117,8 +117,8 @@ contexts:
 
   variable-a:
     - meta_scope: variable.a.php.php7
-    - include: Packages/Naomi/syntaxes/php7/literal/string/embedded-variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/literal/string/embedded-variable.sublime-syntax
 
   variable-b:
     - meta_scope: variable.b.php.php7
-    - include: Packages/Naomi/syntaxes/php7/literal/string/embedded-variable.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/php7/literal/string/embedded-variable.sublime-syntax

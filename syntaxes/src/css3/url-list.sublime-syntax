@@ -26,7 +26,7 @@ contexts:
       ]
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/css3/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/comment.no-pop.sublime-syntax
 
   delimiter:
     - include: comment-no-pop
@@ -50,4 +50,4 @@ contexts:
     - include: url
 
   url:
-    - include: Packages/Naomi/syntaxes/css3/function-call.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/css3/function-call.sublime-syntax

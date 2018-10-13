@@ -27,9 +27,9 @@ contexts:
       push: [naomi, entry]
 
   entry:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/fjsx15/expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax
 
   naomi:
     - meta_scope: naomi

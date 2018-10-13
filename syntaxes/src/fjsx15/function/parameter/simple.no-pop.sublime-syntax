@@ -32,4 +32,4 @@ contexts:
       push: parameter
 
   parameter:
-    - include: Packages/Naomi/syntaxes/fjsx15/function/parameter/simple.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/function/parameter/simple.sublime-syntax

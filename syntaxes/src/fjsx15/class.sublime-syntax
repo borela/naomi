@@ -28,10 +28,10 @@ contexts:
       set: declaration
 
   body:
-    - include: Packages/Naomi/syntaxes/fjsx15/class/body.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/class/body.sublime-syntax
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/fjsx15/comment.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
 
   declaration:
     - meta_scope: meta.declaration.class.js.fjsx15
@@ -62,10 +62,10 @@ contexts:
       scope: entity.name.class.js.fjsx15
 
   generic-arguments:
-    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/generic/arguments.sublime-syntax
 
   optional-generic-arguments:
-    - include: Packages/Naomi/syntaxes/flow1/generic/arguments.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/generic/arguments.sublime-syntax
     - match: ""
       pop: true
 
@@ -82,10 +82,10 @@ contexts:
 
   target-class-or-namespace:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/flow1/namespace-path.no-pop.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/namespace-path.no-pop.sublime-syntax
     - match: (?xi){{commonIdentifier}}
       scope: entity.other.inherited-class.js.fjsx15
       pop: true
 
   type-expression:
-    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/type-expression.sublime-syntax

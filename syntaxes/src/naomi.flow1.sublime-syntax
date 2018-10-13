@@ -23,12 +23,12 @@ contexts:
       push: [naomi, entry]
 
   entry:
-    - include: Packages/Naomi/syntaxes/flow1/declare.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/interface.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/module.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/prolog.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/type-aliasing.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/declare.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/interface.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/module.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/prolog.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/type-aliasing.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/flow1/type-expression.sublime-syntax
 
   naomi:
     - meta_scope: naomi

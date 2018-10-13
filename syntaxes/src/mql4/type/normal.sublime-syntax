@@ -31,4 +31,4 @@ contexts:
       set: modifiers
 
   modifiers:
-    - include: Packages/Naomi/syntaxes/mql4/type/modifiers.sublime-syntax
+    - include: Packages/Naomi/syntaxes/src/mql4/type/modifiers.sublime-syntax

@@ -22,7 +22,7 @@ contexts:
         (?x)
         (?=\s*(?>\*|<))
       push:
-        - include: Packages/Naomi/syntaxes/mql4/operator/pointer.sublime-syntax
-        - include: Packages/Naomi/syntaxes/mql4/type/template-arguments.sublime-syntax
+        - include: Packages/Naomi/syntaxes/src/mql4/operator/pointer.sublime-syntax
+        - include: Packages/Naomi/syntaxes/src/mql4/type/template-arguments.sublime-syntax
     - match: (?=\s*\S)
       pop: true

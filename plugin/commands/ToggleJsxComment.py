@@ -34,13 +34,20 @@ import sys
 
 
 def can_comment(view, region):
-    # If the beginning of the region is a string but not the beginning of the
-    # string, it’ll not be possible to comment this region.
-    scopes = view.scope_name(region.begin())
+    region = region.begin()
+    scopes = view.scope_name(region)
 
-    if 'string' in scopes:
+    while 'string' in scopes:
+        region = region - 1
+
+        if region < 0:
+          return False
+
+        if view.substr(region) == '\n':
+          return False
+
         if 'punctuation.definition.string.begin' not in scopes:
-            return False
+            return True
     return True
 
 

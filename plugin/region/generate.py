@@ -45,7 +45,7 @@ def generate_comment_punctuation_region(
             if COMMENT_SCOPE not in view.scope_name(begin - 2):
                 begin -= 1
 
-    return Region(begin, end + 1)
+    return Region(begin, end)
 
 
 def generate_jsjsx_comment_punctuation_region(

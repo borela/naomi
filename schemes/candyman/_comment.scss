@@ -13,4 +13,5 @@
 .comment,
 .comment .punctuation.definition {
   foreground: $blue-gray-500;
+  background: rgba($blue-gray-500, .05);
 }

@@ -55,6 +55,8 @@
 			<string>.comment, .comment .punctuation.definition</string>
 			<key>settings</key>
 			<dict>
+				<key>background</key>
+				<string>#607D8B0D</string>
 				<key>foreground</key>
 				<string>#607d8b</string>
 			</dict>

@@ -31,7 +31,7 @@ contexts:
     - meta_scope: comment.line.js.fjsx15
     - include: email-no-pop
     - include: link-no-pop
-    - match: (?=$)
+    - match: \n|$
       pop: true
 
   email-no-pop:

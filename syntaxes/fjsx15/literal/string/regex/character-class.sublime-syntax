@@ -18,6 +18,9 @@ scope: ...
 
 contexts:
   main:
+    - match: \.
+      scope: constant.other.character-class.regexp.js.fjsx15
+      pop: true
     - match: ((\[)(\^)?)
       captures:
         1: constant.other.character-class.regexp.js.fjsx15

@@ -156,7 +156,16 @@ contexts:
       pop: true
 
   keyframes:
-    - match: (@)keyframes\b
+    - match: |
+        (?x)
+        (@)
+        (?:-
+          (?> moz
+            | ms
+            | o
+            | webkit
+          )
+        -)?keyframes\b
       captures:
         0: keyword.control.at-rule.keyframes.css.css3
         1: punctuation.definition.keyword.css.css3

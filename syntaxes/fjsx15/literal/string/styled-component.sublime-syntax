@@ -81,7 +81,8 @@ contexts:
     # API helpers.
     - match: |
         (?x)
-        ((?> css
+        ((?> createGlobalStyle
+          | css
           | injectGlobal
         ))
         (?=\s*`)

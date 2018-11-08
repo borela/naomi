@@ -12,7 +12,7 @@
 
 from logging import (
     Formatter as LogFormat,
-    getLogger as create_log,
+    getLogger as get_log_instance,
     StreamHandler as Stream,
 )
 
@@ -24,7 +24,7 @@ from .settings import (
 
 # Create the log used by Naomi. If the log already exists, it will return the
 # previous instance.
-log = create_log('Naomi')
+log = get_log_instance('Naomi')
 
 # If the log already exists, the output does not need to be configured again.
 if len(log.handlers) < 1:

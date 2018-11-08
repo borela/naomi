@@ -10,26 +10,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from os.path import join
-from .paths import HEADERS_DIR
-from .fs import read_file
-
-
-def command():
-    return read_file(join(HEADERS_DIR, 'command.txt'))
-
-
-def keymap():
-    return read_file(join(HEADERS_DIR, 'keymap.txt'))
-
-
-def menu():
-    return read_file(join(HEADERS_DIR, 'menu.txt'))
-
-
-def plist():
-    return read_file(join(HEADERS_DIR, 'plist.txt'))
-
-
-def preferences():
-    return read_file(join(HEADERS_DIR, 'preferences.txt'))
+################################################################################
+#
+#  This code was auto generated, be aware that changes to this file will be
+#  lost on the next build. To contribute with commands, edit the files in:
+#
+#     Naomi/syntaxes/src
+#
+################################################################################

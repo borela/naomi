@@ -23,7 +23,7 @@ from os.path import (
     join,
 )
 
-from ruamel.yaml import round_trip_load
+from ruamel.yaml import round_trip_load as ruamel_load_yaml
 from shutil import rmtree
 
 
@@ -56,7 +56,7 @@ def list_files(dir_path):
 
 def load_yaml(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
-        return round_trip_load(file)
+        return ruamel_load_yaml(file)
 
 
 def read_file(file_path):

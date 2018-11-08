@@ -162,7 +162,10 @@ contexts:
           {{keyIdentifier}}
           \s*:\s*
           (?:async\b\s+)?
-          function\b
+          function
+          (?> \s+{{commonIdentifier}}
+            | \(
+          )
         )
       set: [
         function-declaration,

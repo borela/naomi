@@ -10,7 +10,4 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-def compile_syntaxes(dir_path, dest_dir_path):
-  print(dir_path)
-  print(dest_dir_path)
-  pass
+class Match

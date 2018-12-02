@@ -14,6 +14,6 @@ SETTINGS_UPDATED = 'SETTINGS_UPDATED'
 
 def settings_updated(new_settings):
   return {
-    'event_type': SETTINGS_UPDATED,
+    'type': SETTINGS_UPDATED,
     'payload': new_settings,
   }

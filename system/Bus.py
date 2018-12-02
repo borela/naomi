@@ -13,21 +13,16 @@
 class Bus:
   """ Generic communication bus. """
 
-  subscribers = {
-    'all': [],
-    'specific': [],
-  }
+  def publish(self, topic):
+    for listener in self._listeners['all']:
+      listener(topic)
 
-  def publish(self, subject):
-    for subscriber in self.subscribers['all']:
-      subscriber(subject)
+    topic_type = topic['type']
+    specific__listeners = self._listeners['specific'].get(topic_type, None)
 
-    subject_type = subject['type']
-    specific_subscribers = self.subscribers['specific'].get(subject_type, None)
-
-    if specific_subscribers is not None:
-      for subscriber in specific_subscribers:
-        subscriber(subject)
+    if specific__listeners is not None:
+      for listener in specific__listeners:
+        listener(topic)
 
 
   def subcribe(self, arg):
@@ -36,15 +31,22 @@ class Bus:
     return self._subscribe(**arg)
 
 
-  def _subscribe(self, **kargs):
-    subject_type = kargs.get('type', None)
-    callback = kargs['callback']
+  def _subscribe(self, **args):
+    topic_type = args.get('type', None)
+    callback = args['callback']
 
-    if subject_type is None:
-      self.subscribers['all'].push(callback)
+    if topic_type is None:
+      self._listeners['all'].push(callback)
       return
 
-    subscribers_list = self.subscribers['specific'].get(subject_type, [])
-    subscribers_list.push(callback)
+    _listeners_list = self._listeners['specific'].get(topic_type, [])
+    _listeners_list.push(callback)
 
-    self.subscribers['specific'][subject_type] = subscribers_list
+    self._listeners['specific'][topic_type] = _listeners_list
+
+
+  """Stores listeners for specific topics and all of them."""
+  _listeners = {
+    'all': [],
+    'specific': [],
+  }

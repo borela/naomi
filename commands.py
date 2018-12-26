@@ -10,8 +10,6 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .system.event_bus import *
-
 from .system.commands.BuildCommands import * # noqa
 from .system.commands.BuildKeymaps import * # noqa
 from .system.commands.BuildMenus import * # noqa

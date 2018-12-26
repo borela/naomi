@@ -11,42 +11,54 @@
 # the License.
 
 class Bus:
-  """ Generic communication bus. """
+    """ Generic communication bus. """
 
-  def publish(self, topic):
-    for listener in self._listeners['all']:
-      listener(topic)
+    def publish(self, message):
+        all_listeners = self.__listeners['all']
+        for listener in all_listeners:
+            listener(message)
 
-    topic_type = topic['type']
-    specific__listeners = self._listeners['specific'].get(topic_type, None)
+        topic = message['topic']
+        specific_listeners = self.__listeners['specific'].get(topic, None)
 
-    if specific__listeners is not None:
-      for listener in specific__listeners:
-        listener(topic)
-
-
-  def subcribe(self, arg):
-    if callable(arg):
-      return self._subscribe(callback=arg)
-    return self._subscribe(**arg)
+        if specific_listeners is not None:
+            for listener in specific_listeners:
+                listener(message)
 
 
-  def _subscribe(self, **args):
-    topic_type = args.get('type', None)
-    callback = args['callback']
+    def subscribe(self, *args, **kwargs):
+        topic = None
+        callback = None
 
-    if topic_type is None:
-      self._listeners['all'].push(callback)
-      return
+        if kwargs:
+            topic = kwargs.get('topic', None)
+            callback = kwargs.get('callback', None)
+        elif args:
+            if len(args) < 2:
+                callback = args[0]
+            else:
+                topic = args[0]
+                callback = args[1]
 
-    _listeners_list = self._listeners['specific'].get(topic_type, [])
-    _listeners_list.push(callback)
-
-    self._listeners['specific'][topic_type] = _listeners_list
+        return self._subscribe(topic, callback)
 
 
-  """Stores listeners for specific topics and all of them."""
-  _listeners = {
-    'all': [],
-    'specific': [],
-  }
+    def _subscribe(self, topic, callback):
+        if not callable(callback):
+            raise ValueError('Invalid callback.')
+
+        if topic is None:
+            self.__listeners['all'].append(callback)
+            return
+
+        if topic not in self.__listeners['specific']:
+            self.__listeners['specific'][topic] = []
+
+        self.__listeners['specific'][topic].append(callback)
+
+
+    """Stores listeners for specific topics and all of them."""
+    __listeners = {
+        'all': [],
+        'specific': {},
+    }

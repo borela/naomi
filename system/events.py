@@ -10,7 +10,19 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+LOG_MESSAGE_ADDED = 'LOG_MESSAGE_ADDED'
 SETTINGS_UPDATED = 'SETTINGS_UPDATED'
+
+
+def log_message_added(message, level):
+    return {
+        'type': LOG_MESSAGE_ADDED,
+        'payload': {
+            'message': message,
+            'level': level,
+        }
+    }
+
 
 def settings_updated(settings):
   return {

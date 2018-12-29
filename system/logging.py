@@ -10,43 +10,69 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+import logging
 from logging import (
     Formatter as LogFormat,
     getLogger as get_log_instance,
     StreamHandler as Stream,
 )
 
-from .settings import (
-    call_on_change,
-    get_setting,
+from Naomi.system.events import (
+    LOG_MESSAGE_ADDED,
+    log_message_added,
 )
 
-
-# Create the log used by Naomi. If the log already exists, it will return the
-# previous instance.
-log = get_log_instance('Naomi')
-
-# If the log already exists, the output does not need to be configured again.
-if len(log.handlers) < 1:
-    # Create a log format like: [Naomi][INFO]: Some message.
-    logFormat = LogFormat(fmt="[{name}][{levelname}]: {message}", style='{')
-
-    # Output log messages to the console.
-    logOutput = Stream()
-    logOutput.setFormatter(logFormat)
-    log.addHandler(logOutput)
+from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system.state import STORE
 
 
-def get_level():
-    """Get the log level from the settings and defaults to “INFO”."""
-    return get_setting('log_level', 'INFO').upper()
+def log(message, level):
+    EVENT_BUS.publish(log_message_added(message, level))
+
+
+def log_critical(message):
+    log(message, 'CRITICAL')
+
+
+def log_debug(message):
+    log(message, 'DEBUG')
+
+
+def log_error(message):
+    log(message, 'ERROR')
+
+
+def log_info(message):
+    log(message, 'INFO')
+
+
+def log_warning(message):
+    log(message, 'WARNING')
 
 
 def plugin_loaded():
-    log.setLevel(get_level())
+    LOG = get_log_instance('Naomi')
 
-    # Update level when settings change.
-    def settings_changed():
-        log.setLevel(get_level())
+    # Output to the console: [Naomi][Level]: Some message.
+    if len(LOG.handlers) < 1:
+        FORMAT = LogFormat(fmt="[{name}][{levelname}]: {message}", style='{')
+        OUTPUT = Stream()
+        OUTPUT.setFormatter(FORMAT)
+        LOG.addHandler(OUTPUT)
 
-    call_on_change(settings_changed)
+    def log_message(event):
+        message = event['payload']['message']
+        level = event['payload']['level']
+        LOG.log(getattr(logging, level), message)
+
+    def set_log_level(store):
+        LOG.setLevel(store['settings']['log_level'])
+
+    # Update log level when the state store changes.
+    STORE.on_change(set_log_level)
+
+    # Log messages sent to the event bus.
+    EVENT_BUS.subscribe(
+        type=LOG_MESSAGE_ADDED,
+        callback=log_message,
+    )

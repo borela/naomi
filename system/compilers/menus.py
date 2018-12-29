@@ -17,15 +17,19 @@ from Naomi.system.fs import (
     write_file,
 )
 
+from Naomi.system.logging import (
+    log_debug,
+    log_info,
+)
+
 from Naomi.system.headers import menu as menu_header
-from Naomi.system.logging import log
 from Naomi.system.paths import package_path
 from Naomi.system.utils import to_json_string
 from os.path import join
 
 
 def compile_menus(dir_path, dest_dir_path):
-    log.debug('Cleaning: %s' % package_path(dest_dir_path))
+    log_debug('Cleaning: %s' % package_path(dest_dir_path))
 
     delete_dir_contents(dest_dir_path)
 
@@ -33,13 +37,13 @@ def compile_menus(dir_path, dest_dir_path):
     menus = load_menus(files)
 
     for group in menus:
-        log.info('Building menus for %s...' % group)
+        log_info('Building menus for %s...' % group)
 
         destination = join(dest_dir_path, '%s.sublime-menu' % group)
         final_string = menu_header() + to_json_string(menus[group])
         write_file(destination, final_string)
 
-    log.info('Done building menus.')
+    log_info('Done building menus.')
 
 
 def load_menus(files_paths):
@@ -78,10 +82,10 @@ def load_menus_from_file(file_path):
 
     # Empty file.
     if data is None:
-        log.debug('Empty file: %s' % relative_file_path)
+        log_debug('Empty file: %s' % relative_file_path)
         return None
 
-    log.debug('Loading: %s' % relative_file_path)
+    log_debug('Loading: %s' % relative_file_path)
 
     if 'location' not in data:
         message = 'Missing “location” for menu: %s' % relative_file_path
@@ -99,7 +103,7 @@ def load_menus_from_file(file_path):
             result[location] = []
         result[location] = data['menus']
 
-    log.debug('Done processing: %s' % relative_file_path)
+    log_debug('Done processing: %s' % relative_file_path)
     return result
 
 

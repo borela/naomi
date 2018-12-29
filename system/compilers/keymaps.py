@@ -17,8 +17,12 @@ from Naomi.system.fs import (
     write_file,
 )
 
+from Naomi.system.logging import (
+    log_debug,
+    log_info,
+)
+
 from Naomi.system.headers import keymap as keymap_header
-from Naomi.system.logging import log
 from Naomi.system.paths import package_path
 from Naomi.system.utils import to_json_string
 from os.path import join
@@ -34,11 +38,11 @@ def compile_keymaps(dir_path, dest_dir_path):
       Default (OSX).sublime-keymap
     """
 
-    log.debug('Cleaning: %s' % package_path(dest_dir_path))
+    log_debug('Cleaning: %s' % package_path(dest_dir_path))
 
     delete_dir_contents(dest_dir_path)
 
-    log.info('Compiling keymaps...')
+    log_info('Compiling keymaps...')
 
     files = [file for file in list_files(dir_path)]
     (shared, per_os) = load_keymaps(files)
@@ -46,7 +50,7 @@ def compile_keymaps(dir_path, dest_dir_path):
     write_shared_keymap(shared, dest_dir_path)
     write_per_os_keymap(per_os, dest_dir_path)
 
-    log.info('Done compiling keymaps...')
+    log_info('Done compiling keymaps...')
 
 
 def load_keymaps(files_paths):
@@ -81,10 +85,10 @@ def load_keymap(file_path):
 
     data = load_yaml(file_path)
     if data is None:
-        log.debug('Empty file: %s' % relative_file_path)
+        log_debug('Empty file: %s' % relative_file_path)
         return shared, per_os
 
-    log.debug('Loading: %s' % relative_file_path)
+    log_debug('Loading: %s' % relative_file_path)
 
     # The actual key bindings.
     bindings = data['bindings']
@@ -93,8 +97,8 @@ def load_keymap(file_path):
     # platforms.
     if 'os' not in data:
         shared = bindings
-        log.debug('Generic shortcut: %s' %relative_file_path)
-        log.debug('Done processing: %s' % relative_file_path)
+        log_debug('Generic shortcut: %s' %relative_file_path)
+        log_debug('Done processing: %s' % relative_file_path)
         return shared, per_os
 
     # “os” can be a string representing a single platform.
@@ -109,8 +113,8 @@ def load_keymap(file_path):
             per_os[os] = []
         per_os[os] += bindings
 
-    log.debug('Contains shortcuts for %s: %s' % (oss, relative_file_path))
-    log.debug('Done processing: %s' % relative_file_path)
+    log_debug('Contains shortcuts for %s: %s' % (oss, relative_file_path))
+    log_debug('Done processing: %s' % relative_file_path)
     return shared, per_os
 
 
@@ -138,7 +142,7 @@ def write_per_os_keymap(per_os_bindings, dest_dir_path):
         destination = join(dest_dir_path, file_name)
         final_string = keymap_header() + to_json_string(bindings)
 
-        log.debug('Writting keymap: %s' % destination)
+        log_debug('Writting keymap: %s' % destination)
         write_file(destination, final_string)
 
 
@@ -155,5 +159,5 @@ def write_shared_keymap(bindings, dest_dir_path):
     destination = join(dest_dir_path, 'Default.sublime-keymap')
     final_string = keymap_header() + to_json_string(bindings)
 
-    log.debug('Writting keymap: %s' % destination)
+    log_debug('Writting keymap: %s' % destination)
     write_file(destination, final_string)

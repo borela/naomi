@@ -21,14 +21,18 @@ from os.path import (
   realpath,
 )
 
-from Naomi.system.settings import get_setting
+from Naomi.system.logging import (
+    log_error,
+    log_info,
+)
+
+from Naomi.system.state import STORE
 from Naomi.system.headers import syntax as syntax_header
-from Naomi.system.logging import log
 from Naomi.system.paths import package_path
 
 
 def compile_syntaxes(dir_path, dest_dir_path):
-  log.info('Building syntaxes...')
+  log_info('Building syntaxes...')
 
   syntaxes = get_setting('syntaxes', [])
 
@@ -40,7 +44,7 @@ def compile_syntaxes(dir_path, dest_dir_path):
 
     entry = realpath(join(dir_path, entry))
     if not isfile(entry):
-      log.error('Entry not found: %s' % entry)
+      log_error('Entry not found: %s' % entry)
       continue
 
     output = realpath(join(dest_dir_path, output))

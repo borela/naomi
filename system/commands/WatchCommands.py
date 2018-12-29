@@ -11,7 +11,7 @@
 # the License.
 
 from Naomi.system.compilers.commands import compile_commands
-from Naomi.system.logging import log
+from Naomi.system.logging import log_info
 from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
@@ -51,8 +51,8 @@ class NaomiWatchCommandsCommand(ApplicationCommand):
             )
             self.observer.start()
             self.watching = True
-            log.info('Started watching commands...')
+            log_info('Started watching commands...')
         else:
             self.observer.stop()
             self.watching = False
-            log.info('Stopped watching commands.')
+            log_info('Stopped watching commands.')

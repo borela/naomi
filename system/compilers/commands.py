@@ -22,8 +22,12 @@ from Naomi.system.paths import (
     package_path,
 )
 
+from Naomi.system.logging import (
+    log_debug,
+    log_info,
+)
+
 from Naomi.system.headers import command as command_header
-from Naomi.system.logging import log
 from Naomi.system.utils import to_json_string
 
 
@@ -32,11 +36,11 @@ def compile_commands(dir_path, dest_dir_path):
     Convert commands from “x.yml” to “x.sublime-commands”.
     """
 
-    log.debug('Cleaning: %s' % package_path(dest_dir_path))
+    log_debug('Cleaning: %s' % package_path(dest_dir_path))
 
     delete_dir_contents(dest_dir_path)
 
-    log.info('Building command files...')
+    log_info('Building command files...')
 
     for file in list_files(dir_path):
         destination = modify_path(
@@ -46,12 +50,12 @@ def compile_commands(dir_path, dest_dir_path):
             new_extension='sublime-commands',
         )
 
-        log.debug('Building file: %s' % package_path(file))
+        log_debug('Building file: %s' % package_path(file))
 
         data = load_yaml(file)
 
         if  data is None:
-            log.debug('Empty file: %s' % relative_file_path)
+            log_debug('Empty file: %s' % relative_file_path)
             continue
 
         json_string = to_json_string(data)
@@ -59,4 +63,4 @@ def compile_commands(dir_path, dest_dir_path):
 
         write_file(destination, final_string)
 
-    log.info('Done building commands.')
+    log_info('Done building commands.')

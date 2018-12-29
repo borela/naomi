@@ -27,7 +27,11 @@ from Naomi.system.paths import (
     package_path,
 )
 
-from Naomi.system.logging import log
+from Naomi.system.logging import (
+    log_debug,
+    log_info,
+)
+
 from Naomi.system.utils import to_plist_string
 
 
@@ -36,11 +40,11 @@ def compile_preferences(target_dir_path, output_dir_path):
     Convert preferences from “x.yml” to “x.tmPreferences”.
     """
 
-    log.debug('Cleaning: %s' % package_path(output_dir_path))
+    log_debug('Cleaning: %s' % package_path(output_dir_path))
 
     delete_dir_contents(output_dir_path)
 
-    log.info('Compiling preferences...')
+    log_info('Compiling preferences...')
 
     for file_path in list_files(target_dir_path):
         relative_file_path = package_path(file_path)
@@ -51,12 +55,12 @@ def compile_preferences(target_dir_path, output_dir_path):
             new_extension='tmPreferences',
         )
 
-        log.debug('Processing: %s' % relative_file_path)
+        log_debug('Processing: %s' % relative_file_path)
 
         data = load_yaml(file_path)
 
         if  data is None:
-            log.debug('Empty file: %s' % relative_file_path)
+            log_debug('Empty file: %s' % relative_file_path)
             continue
 
         plist_string = to_plist_string(data)
@@ -64,6 +68,6 @@ def compile_preferences(target_dir_path, output_dir_path):
 
         write_file(destination, final_string)
 
-        log.debug('Done processing: %s' % relative_file_path)
+        log_debug('Done processing: %s' % relative_file_path)
 
-    log.info('Done compiling preferences.')
+    log_info('Done compiling preferences.')

@@ -11,7 +11,7 @@
 # the License.
 
 from Naomi.system.compilers.menus import compile_menus
-from Naomi.system.logging import log
+from Naomi.system.logging import log_info
 from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
@@ -51,8 +51,8 @@ class NaomiWatchMenusCommand(ApplicationCommand):
             )
             self.observer.start()
             self.watching = True
-            log.info('Started watching menus...')
+            log_info('Started watching menus...')
         else:
             self.observer.stop()
             self.watching = False
-            log.info('Stopped watching menus.')
+            log_info('Stopped watching menus.')

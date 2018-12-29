@@ -10,13 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.paths import (
-    PREFERENCES_BUILD_DIR,
-    PREFERENCES_SRC_DIR,
-)
-
 from Naomi.system.compilers.preferences import compile_preferences
 from Naomi.system.logging import log
+from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
@@ -36,8 +32,8 @@ class EventHandler(PatternMatchingEventHandler):
 
     def process(self, event):
         compile_preferences(
-            PREFERENCES_SRC_DIR,
-            PREFERENCES_BUILD_DIR,
+            STORE['directories']['integration']['preferences']['src'],
+            STORE['directories']['integration']['preferences']['build'],
         )
 
 
@@ -50,7 +46,7 @@ class NaomiWatchPreferencesCommand(ApplicationCommand):
             self.observer = Observer()
             self.observer.schedule(
                 EventHandler(),
-                path=PREFERENCES_SRC_DIR,
+                path=STORE['directories']['integration']['preferences']['src'],
                 recursive=True,
             )
             self.observer.start()

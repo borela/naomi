@@ -10,15 +10,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.paths import (
-    KEYMAPS_BUILD_DIR,
-    KEYMAPS_SRC_DIR,
-)
-
 from Naomi.system.compilers.keymaps import compile_keymaps
+from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 
 
 class NaomiBuildKeymapsCommand(ApplicationCommand):
     def run(self):
-        compile_keymaps(KEYMAPS_SRC_DIR, KEYMAPS_BUILD_DIR)
+        compile_keymaps(
+            STORE['directories']['integration']['keymaps']['src'],
+            STORE['directories']['integration']['keymaps']['build'],
+        )

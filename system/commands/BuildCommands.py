@@ -10,15 +10,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.paths import (
-    COMMANDS_BUILD_DIR,
-    COMMANDS_SRC_DIR,
-)
-
 from Naomi.system.compilers.commands import compile_commands
+from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 
 
 class NaomiBuildCommandsCommand(ApplicationCommand):
     def run(self):
-        compile_commands(COMMANDS_SRC_DIR, COMMANDS_BUILD_DIR)
+        compile_commands(
+            STORE['directories']['integration']['commands']['src'],
+            STORE['directories']['integration']['commands']['build'],
+        )

@@ -11,39 +11,12 @@
 # the License.
 
 from os.path import (
-    dirname,
     join,
-    realpath,
     relpath,
     splitext,
 )
 
-
-SYSTEM_DIR = dirname(__file__)
-HEADERS_DIR = join(SYSTEM_DIR, 'headers')
-PACKAGE_DIR = join(SYSTEM_DIR, '..')
-
-SYNTAXES_DIR = join(PACKAGE_DIR, 'syntaxes')
-SYNTAXES_SRC_DIR = join(SYNTAXES_DIR, 'src')
-SYNTAXES_BUILD_DIR = join(SYNTAXES_DIR, 'build')
-
-INTEGRATION_DIR = realpath(join(PACKAGE_DIR, 'integration'))
-
-COMMANDS_DIR = join(INTEGRATION_DIR, 'commands')
-COMMANDS_SRC_DIR = join(COMMANDS_DIR, 'src')
-COMMANDS_BUILD_DIR = join(COMMANDS_DIR, 'build')
-
-KEYMAPS_DIR = join(INTEGRATION_DIR, 'keymaps')
-KEYMAPS_SRC_DIR = join(KEYMAPS_DIR, 'src')
-KEYMAPS_BUILD_DIR = join(KEYMAPS_DIR, 'build')
-
-MENUS_DIR = join(INTEGRATION_DIR, 'menus')
-MENUS_SRC_DIR = join(MENUS_DIR, 'src')
-MENUS_BUILD_DIR = join(MENUS_DIR, 'build')
-
-PREFERENCES_DIR = join(INTEGRATION_DIR, 'preferences')
-PREFERENCES_SRC_DIR = join(PREFERENCES_DIR, 'src')
-PREFERENCES_BUILD_DIR = join(PREFERENCES_DIR, 'build')
+from Naomi.system.state import STORE
 
 
 def change_base(path, old_base, new_base):
@@ -67,4 +40,4 @@ def package_path(path):
     """
     Calculates the relative path to the package’s root.
     """
-    return relpath(path, PACKAGE_DIR)
+    return relpath(path, STORE['directories']['naomi'])

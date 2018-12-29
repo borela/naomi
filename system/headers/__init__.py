@@ -10,30 +10,35 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from os.path import join
-from ..paths import HEADERS_DIR
 from ..fs import read_file
+from Naomi.system.state import STORE
+from os.path import join
 
 
 def command():
-    return read_file(join(HEADERS_DIR, 'command.txt'))
+    return read_header('command.txt')
 
 
 def keymap():
-    return read_file(join(HEADERS_DIR, 'keymap.txt'))
+    return read_header('keymap.txt')
 
 
 def menu():
-    return read_file(join(HEADERS_DIR, 'menu.txt'))
+    return read_header('menu.txt')
 
 
 def plist():
-    return read_file(join(HEADERS_DIR, 'plist.txt'))
+    return read_header('plist.txt')
 
 
 def preferences():
-    return read_file(join(HEADERS_DIR, 'preferences.txt'))
+    return read_header('preferences.txt')
+
+
+def read_header(file_name):
+  HEADERS_DIR = STORE['directories']['system']['headers']
+  return read_file(join(HEADERS_DIR, file_name))
 
 
 def syntax():
-    return read_file(join(HEADERS_DIR, 'syntax.txt'))
+    return read_header('syntax.txt')

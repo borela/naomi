@@ -10,18 +10,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.paths import (
-    PREFERENCES_BUILD_DIR,
-    PREFERENCES_SRC_DIR,
-)
-
 from Naomi.system.compilers.preferences import compile_preferences
+from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 
 
 class NaomiBuildPreferencesCommand(ApplicationCommand):
     def run(self):
         compile_preferences(
-            PREFERENCES_SRC_DIR,
-            PREFERENCES_BUILD_DIR,
+            STORE['directories']['integration']['preferences']['src'],
+            STORE['directories']['integration']['preferences']['build'],
         )

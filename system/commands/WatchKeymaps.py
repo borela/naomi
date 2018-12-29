@@ -10,13 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.paths import (
-    KEYMAPS_BUILD_DIR,
-    KEYMAPS_SRC_DIR,
-)
-
 from Naomi.system.compilers.keymaps import compile_keymaps
 from Naomi.system.logging import log
+from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
@@ -35,7 +31,10 @@ class EventHandler(PatternMatchingEventHandler):
         self.process(event)
 
     def process(self, event):
-        compile_keymaps(KEYMAPS_SRC_DIR, KEYMAPS_BUILD_DIR)
+        compile_keymaps(
+            STORE['directories']['integration']['keymaps']['src'],
+            STORE['directories']['integration']['keymaps']['build'],
+        )
 
 
 class NaomiWatchKeymapsCommand(ApplicationCommand):
@@ -47,7 +46,7 @@ class NaomiWatchKeymapsCommand(ApplicationCommand):
             self.observer = Observer()
             self.observer.schedule(
                 EventHandler(),
-                path=KEYMAPS_SRC_DIR,
+                path=STORE['directories']['integration']['keymaps']['src'],
                 recursive=True,
             )
             self.observer.start()

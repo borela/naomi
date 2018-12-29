@@ -10,15 +10,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.paths import (
-    MENUS_BUILD_DIR,
-    MENUS_SRC_DIR,
-)
-
 from Naomi.system.compilers.menus import compile_menus
+from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 
 
 class NaomiBuildMenusCommand(ApplicationCommand):
     def run(self):
-        compile_menus(MENUS_SRC_DIR, MENUS_BUILD_DIR)
+        compile_menus(
+            STORE['directories']['integration']['menus']['src'],
+            STORE['directories']['integration']['menus']['build'],
+        )

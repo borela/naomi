@@ -10,18 +10,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.paths import (
-    SYNTAXES_BUILD_DIR,
-    SYNTAXES_SRC_DIR,
-)
-
 from Naomi.system.compilers.syntaxes import compile_syntaxes
+from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 
 
 class NaomiBuildSyntaxesCommand(ApplicationCommand):
     def run(self):
         compile_syntaxes(
-            SYNTAXES_SRC_DIR,
-            SYNTAXES_BUILD_DIR,
+            STORE['directories']['integration']['syntaxes']['src'],
+            STORE['directories']['integration']['syntaxes']['build'],
         )

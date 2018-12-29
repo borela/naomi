@@ -11,12 +11,17 @@
 # the License.
 
 from sublime import load_settings
+from Naomi.system.events import settings_updated
+from Naomi.system.event_bus import EVENT_BUS
 
 
-def get_setting(key, default_value=None):
-    settings = get_settings()
-    return settings.get(key, default_value)
+def plugin_loaded():
+    def update_settings():
+        SETTINGS = load_settings('Naomi.sublime-settings')
+        EVENT_BUS.publish(settings_updated(SETTINGS))
 
+    SETTINGS = load_settings('Naomi.sublime-settings')
+    SETTINGS.clear_on_change('naomi-settings-state')
+    SETTINGS.add_on_change('naomi-settings-state', update_settings)
 
-def get_settings():
-    return load_settings('Naomi.sublime-settings')
+    update_settings()

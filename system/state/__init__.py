@@ -10,17 +10,27 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-class Store
-    __reducers = []
-    __state = {}
+from Naomi.system.settings import get_settings
+from Naomi.system.events import settings_updated
 
-    def __init__(self, **reducers):
-        for name, reducer in reducers.iteritems():
-            pass
-
-    def getState():
-      return __state
+from .Store import Store
+from .reducers.directories import reducer as directories_reducer
+from .reducers.settings import reducer as settings_reducer
 
 
-STORE = Store()
-print(STORE.getState())
+STORE = Store(
+    directories=directories_reducer,
+    settings=settings_reducer,
+)
+
+
+def plugin_loaded():
+    def update_settings_state():
+        SETTINGS = get_settings()
+        STORE.apply(settings_updated(SETTINGS))
+
+    SETTINGS = get_settings()
+    SETTINGS.clear_on_change('naomi-settings-state')
+    SETTINGS.add_on_change('naomi-settings-state', update_settings_state)
+
+    update_settings_state()

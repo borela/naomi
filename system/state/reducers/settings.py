@@ -10,10 +10,28 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-SETTINGS_UPDATED = 'SETTINGS_UPDATED'
+VALID_LOG_LEVELS = [
+    "CRITICAL",
+    "ERROR",
+    "WARNING",
+    "INFO",
+    "DEBUG",
+]
 
-def settings_updated(settings):
-  return {
-    'type': SETTINGS_UPDATED,
-    'payload': settings,
-  }
+def get_log_level(settings):
+    result = settings.get('log_level', 'INFO').upper()
+    if  result not in VALID_LOG_LEVELS:
+        return 'INFO'
+    return result
+
+
+def reducer(state={}, event=None):
+    if event is None:
+        return state
+
+    SETTINGS = event['payload']
+
+    new_settings = {}
+    new_settings['log_level'] = get_log_level(SETTINGS)
+
+    return new_settings

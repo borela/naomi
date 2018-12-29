@@ -13,11 +13,10 @@
 from sublime import load_settings
 
 
-def call_on_change(callback):
-    settings = load_settings('Naomi.sublime-settings')
-    settings.add_on_change('Naomi', callback)
-
-
 def get_setting(key, default_value=None):
-    settings = load_settings('Naomi.sublime-settings')
+    settings = get_settings()
     return settings.get(key, default_value)
+
+
+def get_settings():
+    return load_settings('Naomi.sublime-settings')

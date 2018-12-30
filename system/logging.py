@@ -10,18 +10,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-import logging
-from logging import (
-    Formatter as LogFormat,
-    getLogger as get_log_instance,
-    StreamHandler as Stream,
-)
-
 from Naomi.system.events import (
     LOG_MESSAGE_ADDED,
     log_message_added,
 )
 
+import logging
 from Naomi.system.event_bus import EVENT_BUS
 from Naomi.system.state import STORE
 
@@ -51,28 +45,18 @@ def log_warning(message):
 
 
 def plugin_loaded():
-    LOG = get_log_instance('Naomi')
-
-    # Output to the console: [Naomi][Level]: Some message.
-    if len(LOG.handlers) < 1:
-        FORMAT = LogFormat(fmt="[{name}][{levelname}]: {message}", style='{')
-        OUTPUT = Stream()
-        OUTPUT.setFormatter(FORMAT)
-        LOG.addHandler(OUTPUT)
-
-    def log_message(event):
+    def print_log_message(event):
         message = event['payload']['message']
         level = event['payload']['level']
-        LOG.log(getattr(logging, level), message)
 
-    def set_log_level(store):
-        LOG.setLevel(store['settings']['log_level'])
+        message_level = getattr(logging, level)
+        current_level = getattr(logging, STORE['settings']['log_level'])
 
-    # Update log level when the state store changes.
-    STORE.on_change(set_log_level)
+        if message_level >= current_level:
+            print('[Naomi][%s]: %s' % (level, message))
 
-    # Log messages sent to the event bus.
+    # Print log messages sent to the event bus.
     EVENT_BUS.subscribe(
         type=LOG_MESSAGE_ADDED,
-        callback=log_message,
+        callback=print_log_message,
     )

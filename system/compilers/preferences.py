@@ -59,7 +59,7 @@ def compile_preferences(target_dir_path, output_dir_path):
 
         data = load_yaml(file_path)
 
-        if  data is None:
+        if data is None:
             log_debug('Empty file: %s' % relative_file_path)
             continue
 

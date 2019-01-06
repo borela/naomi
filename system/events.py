@@ -25,7 +25,7 @@ def log_message_added(message, level):
 
 
 def settings_updated(settings):
-  return {
-    'type': SETTINGS_UPDATED,
-    'payload': settings,
-  }
+    return {
+        'type': SETTINGS_UPDATED,
+        'payload': settings,
+    }

@@ -50,11 +50,12 @@ def compile_commands(dir_path, dest_dir_path):
             new_extension='sublime-commands',
         )
 
-        log_debug('Building file: %s' % package_path(file))
+        relative_file_path = package_path(file)
+        log_debug('Building file: %s' % relative_file_path)
 
         data = load_yaml(file)
 
-        if  data is None:
+        if data is None:
             log_debug('Empty file: %s' % relative_file_path)
             continue
 

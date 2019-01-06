@@ -36,8 +36,8 @@ def preferences():
 
 
 def read_header(file_name):
-  HEADERS_DIR = STORE['directories']['system']['headers']
-  return read_file(join(HEADERS_DIR, file_name))
+    HEADERS_DIR = STORE['directories']['system']['headers']
+    return read_file(join(HEADERS_DIR, file_name))
 
 
 def syntax():

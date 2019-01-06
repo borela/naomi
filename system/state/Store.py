@@ -12,6 +12,7 @@
 
 from Naomi.system.utils import to_json_string
 
+
 class Store:
     """
     Represents a store for holding and changing state following the event
@@ -25,26 +26,20 @@ class Store:
         for name, reducer in self.__reducers.items():
             self.__state[name] = reducer()
 
-
     def __contains__(self, key):
         return key in self.__state
 
-
     def __getitem__(self, key):
-      return self.__state[key]
-
+        return self.__state[key]
 
     def __iter__(self):
         return iter(self.__state)
 
-
     def __len__(self):
         return len(self.__state)
 
-
     def __str__(self):
         return to_json_string(self.__state)
-
 
     def apply(self, event):
         if event.get('type', None) is None:
@@ -66,10 +61,8 @@ class Store:
             for listener in self.__changeListeners:
                 listener(self.__state)
 
-
     def on_change(self, callback):
         self.__changeListeners.append(callback)
-
 
     __changeListeners = []
     __reducers = {}

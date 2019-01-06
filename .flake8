@@ -1,0 +1,3 @@
+[flake8]
+# M806: Variable in function should be lowercase;
+ignore = N806

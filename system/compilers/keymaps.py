@@ -97,7 +97,7 @@ def load_keymap(file_path):
     # platforms.
     if 'os' not in data:
         shared = bindings
-        log_debug('Generic shortcut: %s' %relative_file_path)
+        log_debug('Generic shortcut: %s' % relative_file_path)
         log_debug('Done processing: %s' % relative_file_path)
         return shared, per_os
 

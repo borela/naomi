@@ -10,14 +10,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from sublime import Region
 from sublime_plugin import TextCommand
 
 
 class NaomiToggleJsxCommentCommand(TextCommand):
     def __init__(self, view):
         self.view = view
-
 
     def run(self, edit, block):
         self.view.run_command('toggle_comment')

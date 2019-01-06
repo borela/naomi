@@ -38,24 +38,24 @@ def dict_to_plist_array(target_dict):
     for key, value in target_dict.items():
         if isinstance(value, bool):
             plist.append({
-              'key': key,
-              'bool': value,
+                'key': key,
+                'bool': value,
             })
         elif isinstance(value, int):
             plist.append({
-              'key': key,
-              'integer': value,
+                'key': key,
+                'integer': value,
             })
         elif isinstance(value, str):
             plist.append({
-              'key': key,
-              'string': value,
+                'key': key,
+                'string': value,
             })
         elif isinstance(value, dict):
             value = dict_to_plist_array(value)
             plist.append({
-              'key': key,
-              'dict': value,
+                'key': key,
+                'dict': value,
             })
         else:
             raise ValueError('Unexpected type “%s”.' % type(value))

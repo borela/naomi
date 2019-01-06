@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+
 class Bus:
     """ Generic communication bus. """
 
@@ -25,7 +26,6 @@ class Bus:
         if specific_listeners is not None:
             for listener in specific_listeners:
                 listener(message)
-
 
     def subscribe(self, *args, **kwargs):
         message_type = None
@@ -43,7 +43,6 @@ class Bus:
 
         return self._subscribe(message_type, callback)
 
-
     def _subscribe(self, message_type, callback):
         if not callable(callback):
             raise ValueError('Invalid callback.')
@@ -56,7 +55,6 @@ class Bus:
             self.__listeners['specific'][message_type] = []
 
         self.__listeners['specific'][message_type].append(callback)
-
 
     """Stores listeners for specific message types and all of them."""
     __listeners = {

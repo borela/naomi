@@ -20,9 +20,10 @@ VALID_LOG_LEVELS = [
     "DEBUG",
 ]
 
+
 def get_log_level(settings):
     result = settings.get('log_level', 'INFO').upper()
-    if  result not in VALID_LOG_LEVELS:
+    if result not in VALID_LOG_LEVELS:
         return 'INFO'
     return result
 

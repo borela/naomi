@@ -29,40 +29,41 @@ MENUS_DIR = join(INTEGRATION_DIR, 'menus')
 PREFERENCES_DIR = join(INTEGRATION_DIR, 'preferences')
 
 INITIAL_STATE = {
-  'naomi': NAOMI_DIR,
-  'system': {
-    'root': SYSTEM_DIR,
-    'headers': join(SYSTEM_DIR, 'headers'),
-  },
-  'syntaxes': {
-    'root': SYNTAXES_DIR,
-    'src': join(SYNTAXES_DIR, 'src'),
-    'build': join(SYNTAXES_DIR, 'build'),
-  },
-  'integration': {
-    'root': join(NAOMI_DIR, 'integration'),
-    'commands': {
-      'root': COMMANDS_DIR,
-      'src': join(COMMANDS_DIR, 'src'),
-      'build': join(COMMANDS_DIR, 'build'),
+    'naomi': NAOMI_DIR,
+    'system': {
+        'root': SYSTEM_DIR,
+        'headers': join(SYSTEM_DIR, 'headers'),
     },
-    'keymaps': {
-      'root': KEYMAPS_DIR,
-      'src': join(KEYMAPS_DIR, 'src'),
-      'build': join(KEYMAPS_DIR, 'build'),
+    'syntaxes': {
+        'root': SYNTAXES_DIR,
+        'src': join(SYNTAXES_DIR, 'src'),
+        'build': join(SYNTAXES_DIR, 'build'),
     },
-    'menus': {
-      'root': MENUS_DIR,
-      'src': join(MENUS_DIR, 'src'),
-      'build': join(MENUS_DIR, 'build'),
+    'integration': {
+        'root': join(NAOMI_DIR, 'integration'),
+        'commands': {
+            'root': COMMANDS_DIR,
+            'src': join(COMMANDS_DIR, 'src'),
+            'build': join(COMMANDS_DIR, 'build'),
+        },
+        'keymaps': {
+            'root': KEYMAPS_DIR,
+            'src': join(KEYMAPS_DIR, 'src'),
+            'build': join(KEYMAPS_DIR, 'build'),
+        },
+        'menus': {
+            'root': MENUS_DIR,
+            'src': join(MENUS_DIR, 'src'),
+            'build': join(MENUS_DIR, 'build'),
+        },
+        'preferences': {
+            'root': PREFERENCES_DIR,
+            'src': join(PREFERENCES_DIR, 'src'),
+            'build': join(PREFERENCES_DIR, 'build'),
+        },
     },
-    'preferences': {
-      'root': PREFERENCES_DIR,
-      'src': join(PREFERENCES_DIR, 'src'),
-      'build': join(PREFERENCES_DIR, 'build'),
-    },
-  },
 }
 
+
 def reducer(state=INITIAL_STATE, event=None):
-  return state
+    return state

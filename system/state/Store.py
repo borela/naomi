@@ -20,50 +20,52 @@ class Store:
     """
 
     def __init__(self, **reducers):
-        self.__reducers = reducers
+        self._reducers = reducers
 
         # Initialize state.
-        for name, reducer in self.__reducers.items():
-            self.__state[name] = reducer()
+        for name, reducer in self._reducers.items():
+            self._state[name] = reducer()
 
     def __contains__(self, key):
-        return key in self.__state
+        return key in self._state
 
     def __getitem__(self, key):
-        return self.__state[key]
+        return self._state[key]
 
     def __iter__(self):
-        return iter(self.__state)
+        return iter(self._state)
 
     def __len__(self):
-        return len(self.__state)
+        return len(self._state)
 
     def __str__(self):
-        return to_json_string(self.__state)
+        return to_json_string(self._state)
 
     def apply(self, event):
-        if event.get('type', None) is None:
-            raise ValueError('Event type is undefined.')
+        event_type = event.get('type', None)
+
+        if not isinstance(event_type, str):
+            raise ValueError('Invalid event type.')
 
         state_changed = False
 
-        for name, reducer in self.__reducers.items():
-            old_state = self.__state.get(name, None)
+        for name, reducer in self._reducers.items():
+            old_state = self._state.get(name, None)
             new_state = reducer(old_state, event)
 
             if new_state == old_state:
                 continue
 
-            self.__state[name] = new_state
+            self._state[name] = new_state
             state_changed = True
 
         if state_changed:
-            for listener in self.__changeListeners:
-                listener(self.__state)
+            for listener in self._change_listeners:
+                listener(self._state)
 
-    def on_change(self, callback):
-        self.__changeListeners.append(callback)
+    def on_change(self, listener):
+        self._change_listeners.append(listener)
 
-    __changeListeners = []
-    __reducers = {}
-    __state = {}
+    _change_listeners = []
+    _reducers = {}
+    _state = {}

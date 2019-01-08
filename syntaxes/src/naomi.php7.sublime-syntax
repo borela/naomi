@@ -22,6 +22,14 @@ file_extensions:
 
 contexts:
   main:
+    - match: ""
+      embed: entry
+      push: html5-element
+
+  html5-element:
+    - include: Packages/Naomi/syntaxes/src/html5/element.sublime-syntax
+
+  entry:
     # Normal open tag.
     - match: \s*(<\?php)
       captures:

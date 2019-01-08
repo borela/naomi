@@ -15,12 +15,12 @@ class Bus:
     """ Generic communication bus. """
 
     def publish(self, message):
-        all_listeners = self.__listeners['all']
+        all_listeners = self._listeners['all']
         for listener in all_listeners:
             listener(message)
 
         message_type = message['type']
-        specific_listeners = self.__listeners['specific']
+        specific_listeners = self._listeners['specific']
         specific_listeners = specific_listeners.get(message_type, None)
 
         if specific_listeners is not None:
@@ -48,16 +48,16 @@ class Bus:
             raise ValueError('Invalid callback.')
 
         if message_type is None:
-            self.__listeners['all'].append(callback)
+            self._listeners['all'].append(callback)
             return
 
-        if message_type not in self.__listeners['specific']:
-            self.__listeners['specific'][message_type] = []
+        if message_type not in self._listeners['specific']:
+            self._listeners['specific'][message_type] = []
 
-        self.__listeners['specific'][message_type].append(callback)
+        self._listeners['specific'][message_type].append(callback)
 
     """Stores listeners for specific message types and all of them."""
-    __listeners = {
+    _listeners = {
         'all': [],
         'specific': {},
     }

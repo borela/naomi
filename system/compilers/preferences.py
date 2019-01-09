@@ -67,7 +67,6 @@ def compile_preferences(target_dir_path, output_dir_path):
         final_string = plist_header() + preferences_header() + plist_string
 
         write_file(destination, final_string)
-
-        log_debug('Done processing: %s' % relative_file_path)
+        log_debug('File generated: %s' % package_path(destination))
 
     log_info('Done compiling preferences.')

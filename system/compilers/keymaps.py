@@ -98,7 +98,6 @@ def load_keymap(file_path):
     if 'os' not in data:
         shared = bindings
         log_debug('Generic shortcut: %s' % relative_file_path)
-        log_debug('Done processing: %s' % relative_file_path)
         return shared, per_os
 
     # “os” can be a string representing a single platform.
@@ -114,7 +113,6 @@ def load_keymap(file_path):
         per_os[os] += bindings
 
     log_debug('Contains shortcuts for %s: %s' % (oss, relative_file_path))
-    log_debug('Done processing: %s' % relative_file_path)
     return shared, per_os
 
 
@@ -142,8 +140,8 @@ def write_per_os_keymap(per_os_bindings, dest_dir_path):
         destination = join(dest_dir_path, file_name)
         final_string = keymap_header() + to_json_string(bindings)
 
-        log_debug('Writting keymap: %s' % destination)
         write_file(destination, final_string)
+        log_debug('File generated: %s' % package_path(destination))
 
 
 def write_shared_keymap(bindings, dest_dir_path):
@@ -159,5 +157,5 @@ def write_shared_keymap(bindings, dest_dir_path):
     destination = join(dest_dir_path, 'Default.sublime-keymap')
     final_string = keymap_header() + to_json_string(bindings)
 
-    log_debug('Writting keymap: %s' % destination)
     write_file(destination, final_string)
+    log_debug('File generated: %s' % package_path(destination))

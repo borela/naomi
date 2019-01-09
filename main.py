@@ -10,18 +10,42 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from Naomi.system.events import (
+    LOG_MESSAGE_ADDED,
+    settings_updated,
+)
+
+import logging
 from sublime import load_settings
-from Naomi.system.events import settings_updated
+from Naomi.system.state import STORE
 from Naomi.system.event_bus import EVENT_BUS
 
 
 def plugin_loaded():
-    def update_settings():
-        SETTINGS = load_settings('Naomi.sublime-settings')
-        EVENT_BUS.publish(settings_updated(SETTINGS))
-
     SETTINGS = load_settings('Naomi.sublime-settings')
     SETTINGS.clear_on_change('naomi-settings-state')
     SETTINGS.add_on_change('naomi-settings-state', update_settings)
 
     update_settings()
+
+    # Print log messages sent to the event bus.
+    EVENT_BUS.subscribe(
+        type=LOG_MESSAGE_ADDED,
+        callback=print_log_message,
+    )
+
+
+def print_log_message(event):
+    message = event['payload']['message']
+    level = event['payload']['level']
+
+    message_level = getattr(logging, level)
+    current_level = getattr(logging, STORE['settings']['log_level'])
+
+    if message_level >= current_level:
+        print('[Naomi][%s]: %s' % (level, message))
+
+
+def update_settings():
+    SETTINGS = load_settings('Naomi.sublime-settings')
+    EVENT_BUS.publish(settings_updated(SETTINGS))

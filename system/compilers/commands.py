@@ -63,5 +63,6 @@ def compile_commands(dir_path, dest_dir_path):
         final_string = command_header() + json_string
 
         write_file(destination, final_string)
+        log_debug('File generated: %s' % package_path(destination))
 
     log_info('Done building commands.')

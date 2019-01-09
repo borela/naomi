@@ -42,6 +42,7 @@ def compile_menus(dir_path, dest_dir_path):
         destination = join(dest_dir_path, '%s.sublime-menu' % group)
         final_string = menu_header() + to_json_string(menus[group])
         write_file(destination, final_string)
+        log_debug('File generated: %s' % package_path(destination))
 
     log_info('Done building menus.')
 

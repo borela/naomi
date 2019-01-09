@@ -42,21 +42,3 @@ def log_info(message):
 
 def log_warning(message):
     log(message, 'WARNING')
-
-
-def plugin_loaded():
-    def print_log_message(event):
-        message = event['payload']['message']
-        level = event['payload']['level']
-
-        message_level = getattr(logging, level)
-        current_level = getattr(logging, STORE['settings']['log_level'])
-
-        if message_level >= current_level:
-            print('[Naomi][%s]: %s' % (level, message))
-
-    # Print log messages sent to the event bus.
-    EVENT_BUS.subscribe(
-        type=LOG_MESSAGE_ADDED,
-        callback=print_log_message,
-    )

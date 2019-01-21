@@ -36,5 +36,6 @@ def reducer(state={}, event=None):
 
     new_settings = {}
     new_settings['log_level'] = get_log_level(SETTINGS)
+    new_settings['syntaxes'] = SETTINGS.get('syntaxes', [])
 
     return new_settings

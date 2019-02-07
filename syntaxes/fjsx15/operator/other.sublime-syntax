@@ -37,7 +37,7 @@ contexts:
       set: optional-expression
     - match: \?\.
       scope: punctuation.accessor.optional-chain.js.fjsx15
-      set: [ optional-tail, accessor-head ]
+      set: [ optional-tail, optional-chain-head ]
     - match: \.(?!\.)
       scope: punctuation.accessor.js.fjsx15
       set: [ optional-tail, accessor-head ]
@@ -59,6 +59,10 @@ contexts:
   other-property-or-function:
     - match: (?=\S)
       set: [ optional-tail, accessor-head ]
+
+  optional-chain-head:
+    - include: accessor-head
+    - include: optional-tail
 
   optional-expression:
     - include: Packages/Naomi/syntaxes/fjsx15/optional-expression.sublime-syntax

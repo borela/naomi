@@ -189,8 +189,7 @@ contexts:
 
   styled-component-content:
     - clear_scopes: true
-    - meta_scope: source.css.embedded.js
-    - meta_content_scope: source.css
+    - meta_content_scope: source.css.embedded.js
     - include: comment-no-pop
     - include: shared-content
     # Recover ruleset block.

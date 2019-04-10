@@ -153,7 +153,6 @@ contexts:
         1: punctuation.accessor.js.fjsx15
         2: support.function.styled-component.js.fjsx15
       set: styled-component-begin
-
   pop-now:
     - match: ""
       pop: true
@@ -190,7 +189,7 @@ contexts:
 
   styled-component-content:
     - clear_scopes: true
-    - meta_content_scope: source.css
+    - meta_content_scope: source.css.embedded.js
     - include: comment-no-pop
     - include: shared-content
     # Recover ruleset block.
@@ -202,7 +201,7 @@ contexts:
 
   styled-component-content-keyframes:
     - clear_scopes: true
-    - meta_content_scope: source.css
+    - meta_content_scope: source.css.embedded.js
     - include: comment-no-pop
     - include: shared-content
     - match: (?=\S)

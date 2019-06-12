@@ -13,7 +13,7 @@
 from Naomi.system.utils import to_json_string
 
 
-class Store:
+class StateStore:
     """
     Represents a store for holding and changing state following the event
     sourcing pattern.

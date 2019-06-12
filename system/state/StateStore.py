@@ -47,25 +47,8 @@ class Store:
         if not isinstance(event_type, str):
             raise ValueError('Invalid event type.')
 
-        state_changed = False
-
         for name, reducer in self._reducers.items():
-            old_state = self._state.get(name, None)
-            new_state = reducer(old_state, event)
+            self._state[name] = reducer(old_state, event)
 
-            if new_state == old_state:
-                continue
-
-            self._state[name] = new_state
-            state_changed = True
-
-        if state_changed:
-            for listener in self._change_listeners:
-                listener(self._state)
-
-    def on_change(self, listener):
-        self._change_listeners.append(listener)
-
-    _change_listeners = []
     _reducers = {}
     _state = {}

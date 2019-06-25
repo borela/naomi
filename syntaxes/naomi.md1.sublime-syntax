@@ -27,5 +27,11 @@ contexts:
   entry:
     - include: Packages/Naomi/syntaxes/md1/header.sublime-syntax
     - include: Packages/Naomi/syntaxes/md1/code-block.sublime-syntax
-    - match: ""
+    - match: |-
+        (?x)^
+        (?= [ ]{,3}>
+        | ([ ]{4}|\t)(?!$)
+        | [#]{1,6}\s*+
+        | [ ]{,3}(?<marker>[-*_])([ ]{,2}\k<marker>){2,}[ \t]*+$
+        )
       pop: true

@@ -10,36 +10,31 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.utils import to_json_string
-
-
 class StateStore:
     """
-    Represents a store for holding and changing state following the event
-    sourcing pattern.
+    Represents a container for the application’s state that can be changed by
+    applying events to it.
     """
 
     def __init__(self, **reducers):
-        self._reducers = reducers
+        self.__reducers = reducers
+        self.__state = {}
 
         # Initialize state.
-        for name, reducer in self._reducers.items():
-            self._state[name] = reducer()
+        for name, reducer in reducers.items():
+            self.__state[name] = reducer()
 
     def __contains__(self, key):
-        return key in self._state
+        return key in self.__state
 
     def __getitem__(self, key):
-        return self._state[key]
+        return self.__state[key]
 
     def __iter__(self):
-        return iter(self._state)
+        return iter(self.__state)
 
     def __len__(self):
-        return len(self._state)
-
-    def __str__(self):
-        return to_json_string(self._state)
+        return len(self.__state)
 
     def apply(self, event):
         event_type = event.get('type', None)
@@ -47,8 +42,13 @@ class StateStore:
         if not isinstance(event_type, str):
             raise ValueError('Invalid event type.')
 
-        for name, reducer in self._reducers.items():
-            self._state[name] = reducer(old_state, event)
+        for name, reducer in self.__reducers.items():
+            self.__state[name] = reducer(old_state, event)
 
-    _reducers = {}
-    _state = {}
+    @property
+    def state(self):
+        return self.__state
+
+    @property
+    def reducers(self):
+        return self.__reducers

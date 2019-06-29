@@ -29,35 +29,35 @@ MENUS_DIR = join(INTEGRATION_DIR, 'menus')
 PREFERENCES_DIR = join(INTEGRATION_DIR, 'preferences')
 
 INITIAL_STATE = {
-    'naomi': NAOMI_DIR,
+    '.': NAOMI_DIR,
     'system': {
-        'root': SYSTEM_DIR,
+        '.': SYSTEM_DIR,
         'headers': join(SYSTEM_DIR, 'headers'),
     },
     'syntaxes': {
-        'root': SYNTAXES_DIR,
+        '.': SYNTAXES_DIR,
         'src': join(SYNTAXES_DIR, 'src'),
         'build': join(SYNTAXES_DIR, 'build'),
     },
     'integration': {
-        'root': join(NAOMI_DIR, 'integration'),
+        '.': join(NAOMI_DIR, 'integration'),
         'commands': {
-            'root': COMMANDS_DIR,
+            '.': COMMANDS_DIR,
             'src': join(COMMANDS_DIR, 'src'),
             'build': join(COMMANDS_DIR, 'build'),
         },
         'keymaps': {
-            'root': KEYMAPS_DIR,
+            '.': KEYMAPS_DIR,
             'src': join(KEYMAPS_DIR, 'src'),
             'build': join(KEYMAPS_DIR, 'build'),
         },
         'menus': {
-            'root': MENUS_DIR,
+            '.': MENUS_DIR,
             'src': join(MENUS_DIR, 'src'),
             'build': join(MENUS_DIR, 'build'),
         },
         'preferences': {
-            'root': PREFERENCES_DIR,
+            '.': PREFERENCES_DIR,
             'src': join(PREFERENCES_DIR, 'src'),
             'build': join(PREFERENCES_DIR, 'build'),
         },

@@ -13,7 +13,7 @@
 ################################################################################
 #
 #  This code was auto generated, be aware that changes to this file will be
-#  lost on the next build. To contribute with commands, edit the files in:
+#  lost on the next build. To contribute, edit the files in:
 #
 #     Naomi/syntaxes/src
 #

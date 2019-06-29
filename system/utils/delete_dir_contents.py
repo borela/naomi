@@ -12,24 +12,15 @@
 
 from os import (
     listdir,
-    makedirs,
     remove,
-    walk,
 )
 
 from os.path import (
-    dirname,
-    exists,
-    join,
+	exists,
+	join,
 )
 
-from ruamel.yaml import round_trip_load as ruamel_load_yaml
 from shutil import rmtree
-
-
-def delete_dir(dir_path):
-    if exists(dir_path):
-        rmtree(dir_path)
 
 
 def delete_dir_contents(dir_path):
@@ -41,30 +32,3 @@ def delete_dir_contents(dir_path):
             rmtree(full_path)
         except OSError:
             remove(full_path)
-
-
-def ensure_dir_exists(dir_path):
-    if not exists(dir_path):
-        makedirs(dir_path)
-
-
-def list_files(dir_path):
-    for path, directories, files in walk(dir_path):
-        for file in files:
-            yield join(path, file)
-
-
-def load_yaml(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        return ruamel_load_yaml(file)
-
-
-def read_file(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        return file.read()
-
-
-def write_file(file_path, data):
-    ensure_dir_exists(dirname(file_path))
-    with open(file_path, 'w', encoding='utf-8', newline='\n') as file:
-        return file.write(data)

@@ -18,8 +18,11 @@ from .EventEngine import EventEngine
 from .EventSubscription import EventSubscription
 from .list_files import list_files
 from .load_yaml import load_yaml
+from .modify_path import modify_path
 from .plist_array_to_xml import plist_array_to_xml
 from .read_text_file import read_text_file
+from .replace_path_base import replace_path_base
+from .replace_path_ext import replace_path_ext
 from .StateStore import StateStore
 from .to_json_string import to_json_string
 from .to_xml_string import to_xml_string
@@ -35,8 +38,11 @@ __all__ = [
     "EventSubscription",
     "list_files",
     "load_yaml",
+    "modify_path",
     "plist_array_to_xml",
     "read_text_file",
+    "replace_path_base",
+    "replace_path_ext",
     "StateStore",
     "to_json_string",
     "to_xml_string",

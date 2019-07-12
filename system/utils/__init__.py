@@ -16,6 +16,7 @@ from .dict_to_plist_array import dict_to_plist_array
 from .ensure_dir_exists import ensure_dir_exists
 from .EventEngine import EventEngine
 from .EventSubscription import EventSubscription
+from .indent_string import indent_string
 from .list_files import list_files
 from .load_yaml import load_yaml
 from .modify_path import modify_path
@@ -36,6 +37,7 @@ __all__ = [
     "ensure_dir_exists",
     "EventEngine",
     "EventSubscription",
+    "indent_string",
     "list_files",
     "load_yaml",
     "modify_path",

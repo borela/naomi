@@ -35,6 +35,9 @@
     "operator": "regex_contains",
     "operand": "^\\)",
     "match_all": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // [] have the same behavior as {}.
@@ -61,6 +64,9 @@
     "operator": "regex_contains",
     "operand": "^\\]",
     "match_all": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // '' have the same behavior as {}.
@@ -87,6 +93,9 @@
     "operator": "regex_contains",
     "operand": "^'",
     "match_all": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // "" have the same behavior as {}.
@@ -113,6 +122,9 @@
     "operator": "regex_contains",
     "operand": "^\"",
     "match_all": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // `` have the same behavior as {}.
@@ -139,6 +151,9 @@
     "operator": "regex_contains",
     "operand": "^`",
     "match_all": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // JS - Pair template.
@@ -164,6 +179,9 @@
     "key": "setting.auto_match_enabled",
     "operator": "equal",
     "operand": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // JS - Pair template for selected text.
@@ -184,6 +202,9 @@
     "key": "setting.auto_match_enabled",
     "operator": "equal",
     "operand": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // Delete empty “`”.
@@ -216,6 +237,9 @@
     "key": "setting.auto_match_enabled",
     "operator": "equal",
     "operand": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // JS - Pair interpolation
@@ -241,6 +265,9 @@
     "key": "setting.auto_match_enabled",
     "operator": "equal",
     "operand": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // Adds “className=""” when “.” is pressed.
@@ -257,6 +284,9 @@
     "operand": true,
     "key": "setting.auto_id_class",
     "match_all": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // Adds “id=""” when “#” is pressed.
@@ -273,6 +303,9 @@
     "operator": "equal",
     "operand": true,
     "match_all": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // Auto complete tags using tab and emmet.
@@ -303,6 +336,9 @@
     "operator": "equal",
     "operand": false,
     "match_all": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // Close HTML, JSX and XML tags.
@@ -323,6 +359,9 @@
     "key": "setting.auto_close_tags",
     "operator": "equal",
     "operand": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // Close JSX tag on “>”.
@@ -348,6 +387,9 @@
     "operator": "equal",
     "operand": true,
     "match_all": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 },{
   // Close self closing JSX tag on “/”.
@@ -374,5 +416,8 @@
     "operator": "equal",
     "operand": true,
     "match_all": true
+  }, {
+    "key": "setting.command_mode",
+    "operand": false
   }]
 }]

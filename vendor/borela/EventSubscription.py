@@ -12,30 +12,30 @@
 
 class EventSubscription:
     def __init__(self, engine, subscriber):
-        self.__engine = engine
-        self.__subscriber = subscriber
+        self._engine = engine
+        self._subscriber = subscriber
 
     def __init__(self, engine, event, subscriber):
-        self.__engine = engine
-        self.__event = event
-        self.__subscriber = subscriber
+        self._engine = engine
+        self._event = event
+        self._subscriber = subscriber
 
     def isActive(self):
         return self.engine.isSubscribed(
-            self.__event,
-            self.__subscriber,
+            self._subscriber,
+            self._event,
         )
 
     def subscribe(self):
         if self.isActive():
             return
         return self.engine.on(
-            self.__event,
-            self.__subscriber,
+            self._event,
+            self._subscriber,
         )
 
     def unsubscribe(self):
-        self.__engine.unsubscribe(
-            self.__event,
-            self.__subscriber,
+        self._engine.unsubscribe(
+            self._subscriber,
+            self._event,
         )

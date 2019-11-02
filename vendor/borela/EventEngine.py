@@ -15,6 +15,7 @@ from collections import (
     OrderedDict,
 )
 
+from .AnyEventSubscription import AnyEventSubscription
 from .EventSubscription import EventSubscription
 
 
@@ -40,10 +41,18 @@ class EventEngine:
         for subscriber in self.__events[event].values():
             subscriber(data)
 
-    def isSubscribed(self, event, subscriber):
-        if subscriber in __anySubscribers:
-            return True
+    def isSubscribed(self, subscriber, event):
+        if event is None:
+            return subscriber in self.__anySubscribers
         return subscriber in self.__events[event]
+
+    def isSubscribedToAnything(self, subscriber):
+        if subscriber in self.__anySubscribers:
+            return True
+        return any(
+            subscriber in subscribers
+            for subscribers in self.__events.values()
+        )
 
     def on(self, event, subscriber=None):
         if subscriber is not None:
@@ -55,13 +64,18 @@ class EventEngine:
         return __decorator
 
     def once(self, event, subscriber):
+        # TODO
         pass
 
     def onAny(self, subscriber):
         self.__anySubscribers.append(subscriber)
-        # return EventSubscription(self, )
+        return AnyEventSubscription(self, subscriber)
 
-    def unsubscribe(self, event, subscriber):
+    def onceAny(self, subscriber):
+        # TODO
+        pass
+
+    def unsubscribe(self, subscriber, event):
         self.__anySubscribers.remove(subscriber)
 
         if event is not None:

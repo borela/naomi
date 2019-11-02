@@ -15,18 +15,19 @@ from .EventSubscription import EventSubscription
 
 class AnyEventSubscription(EventSubscription):
     def __init__(self, engine, subscriber):
-        super.__init__(engine, subscriber)
+        super(AnyEventSubscription, self).__init__(
+            engine=engine,
+            event=None,
+            subscriber=subscriber,
+        )
 
     def isActive(self):
-        return self.engine.isSubscribed(
-            self.__event,
-            self.__subscriber,
-        )
+        return self._engine.isSubscribed(self._subscriber)
 
     def subscribe(self):
         if self.isActive():
             return
-        return self.engine.onAny(self.__subscriber)
+        return self._engine.onAny(self._subscriber)
 
     def unsubscribe(self):
-        self.__engine.unsubscribe(self.__subscriber)
+        self._engine.unsubscribe(self._subscriber)

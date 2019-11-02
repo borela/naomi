@@ -43,32 +43,34 @@ menus:
 
                - caption: '-'
 
-               - caption: Repository
-                 command: open_url
-                 args:
-                   url: https://github.com/borela/naomi
-
                - caption: Issues
                  command: open_url
                  args:
                    url: https://github.com/borela/naomi/issues
+
+               - caption: Fork
+                 command: open_url
+                 args:
+                   url: https://github.com/borela/naomi/fork
 
                - caption: Pull Requests
                  command: open_url
                  args:
                    url: https://github.com/borela/naomi/pulls
 
-               - caption: Watchers
+               - caption: '-'
+
+               - caption: Repository
                  command: open_url
                  args:
-                   url: https://github.com/borela/naomi/watchers
+                   url: https://github.com/borela/naomi
 
                - caption: Stars
                  command: open_url
                  args:
                    url: https://github.com/borela/naomi/stargazers
 
-               - caption: Fork
+               - caption: Watchers
                  command: open_url
                  args:
-                   url: https://github.com/borela/naomi/fork
+                   url: https://github.com/borela/naomi/watchers

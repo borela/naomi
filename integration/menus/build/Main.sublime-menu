@@ -13,7 +13,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  This code was auto generated, be aware that changes to this file will be
-//  lost on the next build. To contribute with menus, edit the files in:
+//  lost on the next build. To contribute, edit the files in:
 //
 //     Naomi/integration/menus/src
 //
@@ -40,17 +40,17 @@
                 "caption": "-"
               },
               {
-                "caption": "Repository",
-                "command": "open_url",
-                "args": {
-                  "url": "https://github.com/borela/naomi"
-                }
-              },
-              {
                 "caption": "Issues",
                 "command": "open_url",
                 "args": {
                   "url": "https://github.com/borela/naomi/issues"
+                }
+              },
+              {
+                "caption": "Fork",
+                "command": "open_url",
+                "args": {
+                  "url": "https://github.com/borela/naomi/fork"
                 }
               },
               {
@@ -61,10 +61,13 @@
                 }
               },
               {
-                "caption": "Watchers",
+                "caption": "-"
+              },
+              {
+                "caption": "Repository",
                 "command": "open_url",
                 "args": {
-                  "url": "https://github.com/borela/naomi/watchers"
+                  "url": "https://github.com/borela/naomi"
                 }
               },
               {
@@ -75,10 +78,10 @@
                 }
               },
               {
-                "caption": "Fork",
+                "caption": "Watchers",
                 "command": "open_url",
                 "args": {
-                  "url": "https://github.com/borela/naomi/fork"
+                  "url": "https://github.com/borela/naomi/watchers"
                 }
               }
             ]

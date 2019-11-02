@@ -1,20 +1,17 @@
 {
   // Define the minimum log level used for logging output on the console.
   // Valid values are: "CRITICAL", "ERROR", "WARNING", "INFO", "DEBUG"
-  "log_level": "INFO",
+  "log_level": "DEBUG",
 
   // Syntaxes to be generated.
   "syntaxes": [{
-    // Name of the syntax shown in all menus.
-    "name": "JavaScript (Naomi)",
+    // Name of the syntax shown in all menus. It’s possible to generate multiple
+    // syntaxes for the same configuration if you need it to be compatible with
+    // some other plugin.
+    "name": ["JavaScript (Naomi)", "JavaScript", "JSX", "React"],
 
     // File used as the entry point relative to “Naomi/syntaxes/src”.
     "entry": "naomi.fjsx15.sublime-syntax",
-
-    // File to be generated in the “Naomi/syntaxes/build” directory, the name
-    // of this file must be unique across all packages to prevent hard to find
-    // bugs.
-    "output": "naomi.js.test",
 
     // Optional features.
     "features": {

@@ -43,6 +43,7 @@ class StateStore:
             raise ValueError('Invalid event type.')
 
         for name, reducer in self.__reducers.items():
+            old_state = self.__state[name]
             self.__state[name] = reducer(old_state, event)
 
     @property

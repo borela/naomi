@@ -10,25 +10,20 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from os import (
-    listdir,
-    remove,
-)
-
-from os.path import (
-	exists,
-	join,
-)
-
-from shutil import rmtree
+from re import split
 
 
-def delete_dir_contents(dir_path):
-    if not exists(dir_path):
-        return
-    for node in listdir(dir_path):
-        full_path = join(dir_path, node)
-        try:
-            rmtree(full_path)
-        except OSError:
-            remove(full_path)
+def indent_string(
+    text,
+    amount=1,
+    spacer='    ',
+):
+    result = ''
+    spacer = spacer * amount
+
+    for line in split(r'\r?\n', text):
+        if result != '':
+            result += '\n'
+        result += '%s%s' % (spacer, line)
+
+    return result

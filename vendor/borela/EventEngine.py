@@ -21,27 +21,53 @@ from .EventSubscription import EventSubscription
 class EventEngine:
     def __init__(self):
         self.__events = defaultdict(OrderedDict)
+        self.__anySubscribers = []
 
-    def emit(self, event, data):
+    def emit(self, data):
+        """
+        Emits an event to the subscribers, it expects a dictionary containing
+        the event type and the payload, for example:
+
+        {
+            "type": "Some Event",
+            "payload": {...}
+        }
+        """
+        for subscriber in self.__anySubscribers:
+            subscriber(data)
+
+        event = data["type"]
         for subscriber in self.__events[event].values():
             subscriber(data)
 
     def isSubscribed(self, event, subscriber):
+        if subscriber in __anySubscribers:
+            return True
         return subscriber in self.__events[event]
 
     def on(self, event, subscriber=None):
         if subscriber is not None:
-            return self.__subscribe(event, subscriber)
+            return self.__on(event, subscriber)
 
         def __decorator(subscriber):
-            return self.__subscribe(event, subscriber)
+            return self.__on(event, subscriber)
 
         return __decorator
 
-    def removeSubscriber(self, event, subscriber):
-        self.__events[event].pop(subscriber)
+    def once(self, event, subscriber):
+        pass
 
-    def __subscribe(self, event, subscriber):
+    def onAny(self, subscriber):
+        self.__anySubscribers.append(subscriber)
+        # return EventSubscription(self, )
+
+    def unsubscribe(self, event, subscriber):
+        self.__anySubscribers.remove(subscriber)
+
+        if event is not None:
+            self.__events[event].pop(subscriber)
+
+    def __on(self, event, subscriber):
         if not callable(subscriber):
             raise Exception("Subscriber is not callable.")
         self.__events[event][subscriber] = subscriber

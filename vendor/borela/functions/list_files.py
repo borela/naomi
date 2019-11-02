@@ -10,16 +10,10 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from re import split
+from os import walk
 
 
-def indent_string(text, amount=1, spacer='    '):
-    result = ''
-    spacer = spacer * amount
-
-    for line in split(r'\r?\n', text):
-        if result != '':
-            result += '\n'
-        result += '%s%s' % (spacer, line)
-
-    return result
+def list_files(dir_path):
+    for path, directories, files in walk(dir_path):
+        for file in files:
+            yield path, file

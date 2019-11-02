@@ -10,11 +10,26 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from os import walk
-from os.path import join
+from os import (
+    listdir,
+    remove,
+)
+
+from os.path import (
+	exists,
+	join,
+)
+
+from shutil import rmtree
 
 
-def list_files(dir_path):
-    for path, directories, files in walk(dir_path):
-        for file in files:
-            yield join(path, file)
+def delete_dir_contents(dir_path):
+    if not exists(dir_path):
+        return
+
+    for node in listdir(dir_path):
+        full_path = join(dir_path, node)
+        try:
+            rmtree(full_path)
+        except OSError:
+            remove(full_path)

@@ -10,12 +10,19 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .replace_path_base import replace_path_base
-from .replace_path_ext import replace_path_ext
+from . import ensure_dir_exists
+from os.path import dirname
 
 
-def modify_path(path, old_base, new_base, new_extension=None):
-    path = replace_path_base(path, old_base, new_base)
-    if new_extension is None:
-      return path
-    return replace_path_ext(path, new_extension)
+def write_text_file(
+    file_path,
+    data,
+    encoding='utf-8',
+    newline='\n',
+    create_dirs=True,
+):
+    if create_dirs:
+        ensure_dir_exists(dirname(file_path))
+
+    with open(file_path, 'w', encoding=encoding, newline=newline) as file:
+        return file.write(data)

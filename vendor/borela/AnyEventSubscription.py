@@ -10,11 +10,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-class EventSubscription:
-    def __init__(self, engine, event, subscriber):
-        self.__engine = engine
-        self.__event = event
-        self.__subscriber = subscriber
+from .EventSubscription import EventSubscription
+
+
+class AnyEventSubscription(EventSubscription):
+    def __init__(self, engine, subscriber):
+        super.__init__(engine, subscriber)
 
     def isActive(self):
         return self.engine.isSubscribed(
@@ -25,13 +26,7 @@ class EventSubscription:
     def subscribe(self):
         if self.isActive():
             return
-        return self.engine.on(
-            self.__event,
-            self.__subscriber,
-        )
+        return self.engine.onAny(self.__subscriber)
 
     def unsubscribe(self):
-        self.__engine.removeSubscriber(
-            self.__event,
-            self.__subscriber,
-        )
+        self.__engine.unsubscribe(self.__subscriber)

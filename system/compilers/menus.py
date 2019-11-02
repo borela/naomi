@@ -31,7 +31,7 @@ def compile_menus(dir_path, dest_dir_path):
 
     delete_dir_contents(dest_dir_path)
 
-    files = [join(path, file) for path, file in list_files(dir_path)]
+    files = [file for file, _, _ in list_files(dir_path)]
     menus = load_menus(files)
 
     for group in menus:

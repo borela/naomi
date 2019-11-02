@@ -26,8 +26,7 @@ def to_plist_string(target_dict):
     # Convert to a binary string.
     xml = to_xml_string(
         xml,
-        encoding='utf-8',
-        pretty_print=True,
+        indent=True,
     )
     # Convert back to a normal string.
     xml = xml.decode('utf-8')

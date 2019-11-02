@@ -42,7 +42,7 @@ def compile_keymaps(dir_path, dest_dir_path):
 
     log_info('Compiling keymaps...')
 
-    files = [file for file in list_files(dir_path)]
+    files = [file for file, _, _ in list_files(dir_path)]
     (shared, per_os) = load_keymaps(files)
 
     write_shared_keymap(shared, dest_dir_path)
@@ -136,7 +136,7 @@ def write_per_os_keymap(per_os_bindings, dest_dir_path):
 
         file_name = 'Default (%s).sublime-keymap' % os
         destination = join(dest_dir_path, file_name)
-        final_string = keymap_header() + to_json_string(bindings)
+        final_string = keymap_header() + to_json_string(bindings, indent=True)
 
         write_text_file(destination, final_string)
         log_debug('File generated: %s' % package_relpath(destination))
@@ -153,7 +153,7 @@ def write_shared_keymap(bindings, dest_dir_path):
         return
 
     destination = join(dest_dir_path, 'Default.sublime-keymap')
-    final_string = keymap_header() + to_json_string(bindings)
+    final_string = keymap_header() + to_json_string(bindings, indent=True)
 
     write_text_file(destination, final_string)
     log_debug('File generated: %s' % package_relpath(destination))

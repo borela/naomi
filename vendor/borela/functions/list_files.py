@@ -11,9 +11,10 @@
 # the License.
 
 from os import walk
+from os.path import join
 
 
 def list_files(dir_path):
     for path, directories, files in walk(dir_path):
         for file in files:
-            yield path, file
+            yield join(path, file), path, file

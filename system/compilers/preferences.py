@@ -40,7 +40,7 @@ def compile_preferences(target_dir_path, output_dir_path):
 
     log_info('Compiling preferences...')
 
-    for file_path in list_files(target_dir_path):
+    for file_path, _, _ in list_files(target_dir_path):
         relative_file_path = package_relpath(file_path)
         destination = modify_path(
             file_path,

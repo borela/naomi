@@ -37,7 +37,7 @@ def compile_commands(dir_path, dest_dir_path):
 
     log_info('Building command files...')
 
-    for file in list_files(dir_path):
+    for file, _, _ in list_files(dir_path):
         destination = modify_path(
             file,
             old_base=dir_path,
@@ -54,7 +54,7 @@ def compile_commands(dir_path, dest_dir_path):
             log_debug('Empty file: %s' % relative_file_path)
             continue
 
-        json_string = to_json_string(data)
+        json_string = to_json_string(data, indent=True)
         final_string = command_header() + json_string
 
         write_text_file(destination, final_string)

@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+
 def read_text_file(file_path, encoding='utf-8'):
     with open(file_path, 'r', encoding=encoding) as file:
         return file.read()

@@ -10,13 +10,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from .AnyEventSubscription import AnyEventSubscription
+from .EventSubscription import EventSubscription
 from collections import (
     defaultdict,
     OrderedDict,
 )
-
-from .AnyEventSubscription import AnyEventSubscription
-from .EventSubscription import EventSubscription
 
 
 class EventEngine:

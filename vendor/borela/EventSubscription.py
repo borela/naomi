@@ -10,18 +10,15 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-class EventSubscription:
-    def __init__(self, engine, subscriber):
-        self._engine = engine
-        self._subscriber = subscriber
 
+class EventSubscription:
     def __init__(self, engine, event, subscriber):
         self._engine = engine
         self._event = event
         self._subscriber = subscriber
 
     def isActive(self):
-        return self.engine.isSubscribed(
+        return self._engine.isSubscribed(
             self._subscriber,
             self._event,
         )

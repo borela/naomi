@@ -14,12 +14,10 @@ from os import (
     listdir,
     remove,
 )
-
 from os.path import (
-	exists,
-	join,
+    exists,
+    join,
 )
-
 from shutil import rmtree
 
 

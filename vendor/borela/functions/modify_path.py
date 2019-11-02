@@ -23,6 +23,6 @@ def modify_path(
     path = replace_path_base(path, old_base, new_base)
 
     if new_extension is not None:
-      path = replace_path_ext(path, new_extension)
+        path = replace_path_ext(path, new_extension)
 
     return path

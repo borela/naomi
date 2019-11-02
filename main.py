@@ -19,20 +19,6 @@ from sublime import load_settings
 from Naomi.system.state import STORE
 from Naomi.system.event_bus import EVENT_BUS
 
-LOG_EVENT_SUBSCRIPTION = EVENT_BUS.on(
-    event=LOG_MESSAGE_ADDED,
-    subscriber=print_log_message,
-)
-
-def plugin_loaded():
-    LOG_EVENT_SUBSCRIPTION.subscribe()
-    SETTINGS = load_settings('Naomi.sublime-settings')
-    SETTINGS.add_on_change('naomi-settings-state', update_settings)
-    update_settings()
-
-def plugin_unloaded():
-    SETTINGS = load_settings('Naomi.sublime-settings')
-    SETTINGS.clear_on_change('naomi-settings-state')
 
 def print_log_message(event):
     message = event['payload']['message']
@@ -43,6 +29,25 @@ def print_log_message(event):
 
     if message_level >= current_level:
         print('[Naomi][%s]: %s' % (level, message))
+
+
+LOG_EVENT_SUBSCRIPTION = EVENT_BUS.on(
+    event=LOG_MESSAGE_ADDED,
+    subscriber=print_log_message,
+)
+
+
+def plugin_loaded():
+    LOG_EVENT_SUBSCRIPTION.subscribe()
+    SETTINGS = load_settings('Naomi.sublime-settings')
+    SETTINGS.add_on_change('naomi-settings-state', update_settings)
+    update_settings()
+
+
+def plugin_unloaded():
+    SETTINGS = load_settings('Naomi.sublime-settings')
+    SETTINGS.clear_on_change('naomi-settings-state')
+
 
 def update_settings():
     SETTINGS = load_settings('Naomi.sublime-settings')

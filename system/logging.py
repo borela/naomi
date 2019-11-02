@@ -10,12 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.events import (
-    LOG_MESSAGE_ADDED,
-    log_message_added,
-)
-
-import logging
+from Naomi.system.events import log_message_added
 from Naomi.system.event_bus import EVENT_BUS
 
 

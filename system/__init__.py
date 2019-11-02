@@ -13,6 +13,7 @@
 from os.path import relpath
 from Naomi.system.state import STORE
 
+
 def package_relpath(path):
     """
     Calculates the relative path to the package’s root.

@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+
 def dict_to_plist_array(target_dict):
     """
     Prepare a common dictionary into a structure that represents a plist and is

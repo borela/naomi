@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+
 class StateStore:
     """
     Represents a container for the application’s state that can be changed by

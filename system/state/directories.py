@@ -17,8 +17,8 @@ from os.path import (
 )
 
 
-NAOMI_DIR = realpath(join(dirname(__file__), '..', '..', '..'))
-SYSTEM_DIR = realpath(join(dirname(__file__), '..', '..'))
+NAOMI_DIR = realpath(join(dirname(__file__), '..', '..'))
+SYSTEM_DIR = realpath(join(dirname(__file__), '..'))
 SCHEMES_DIR = join(NAOMI_DIR, 'schemes')
 SYNTAXES_DIR = join(NAOMI_DIR, 'syntaxes')
 

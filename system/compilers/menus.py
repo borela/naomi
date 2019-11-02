@@ -10,30 +10,28 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.fs import (
+from borela import (
     delete_dir_contents,
-    load_yaml,
     list_files,
-    write_file,
+    load_yaml,
+    to_json_string,
+    write_text_file,
 )
-
 from Naomi.system.logging import (
     log_debug,
     log_info,
 )
-
+from Naomi.system import package_relpath
 from Naomi.system.headers import menu as menu_header
-from Naomi.system.paths import package_path
-from Naomi.system.utils import to_json_string
 from os.path import join
 
 
 def compile_menus(dir_path, dest_dir_path):
-    log_debug('Cleaning: %s' % package_path(dest_dir_path))
+    log_debug('Cleaning: %s' % package_relpath(dest_dir_path))
 
     delete_dir_contents(dest_dir_path)
 
-    files = [file for file in list_files(dir_path)]
+    files = [join(path, file) for path, file in list_files(dir_path)]
     menus = load_menus(files)
 
     for group in menus:
@@ -41,8 +39,8 @@ def compile_menus(dir_path, dest_dir_path):
 
         destination = join(dest_dir_path, '%s.sublime-menu' % group)
         final_string = menu_header() + to_json_string(menus[group])
-        write_file(destination, final_string)
-        log_debug('File generated: %s' % package_path(destination))
+        write_text_file(destination, final_string)
+        log_debug('File generated: %s' % package_relpath(destination))
 
     log_info('Done building menus.')
 
@@ -51,7 +49,6 @@ def load_menus(files_paths):
     """
     Load all menu sources and returns the result indexed by the destination.
     """
-
     result = {}
     loaded_files = [
         load_menus_from_file(file_path)
@@ -77,7 +74,7 @@ def load_menus_from_file(file_path):
     destination.
     """
 
-    relative_file_path = package_path(file_path)
+    relative_file_path = package_relpath(file_path)
     data = load_yaml(file_path)
     result = {}
 

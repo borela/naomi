@@ -10,6 +10,6 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .Bus import Bus
+from borela import EventEngine
 
-EVENT_BUS = Bus()
+EVENT_BUS = EventEngine()

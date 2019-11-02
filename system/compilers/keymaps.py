@@ -10,21 +10,19 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.fs import (
+from borela import (
     delete_dir_contents,
     list_files,
     load_yaml,
-    write_file,
+    to_json_string,
+    write_text_file,
 )
-
 from Naomi.system.logging import (
     log_debug,
     log_info,
 )
-
+from Naomi.system import package_relpath
 from Naomi.system.headers import keymap as keymap_header
-from Naomi.system.paths import package_path
-from Naomi.system.utils import to_json_string
 from os.path import join
 
 
@@ -38,7 +36,7 @@ def compile_keymaps(dir_path, dest_dir_path):
       Default (OSX).sublime-keymap
     """
 
-    log_debug('Cleaning: %s' % package_path(dest_dir_path))
+    log_debug('Cleaning: %s' % package_relpath(dest_dir_path))
 
     delete_dir_contents(dest_dir_path)
 
@@ -79,7 +77,7 @@ def load_keymap(file_path):
     exclusive ones indexed by OS.
     """
 
-    relative_file_path = package_path(file_path)
+    relative_file_path = package_relpath(file_path)
     shared = []
     per_os = {}
 
@@ -140,8 +138,8 @@ def write_per_os_keymap(per_os_bindings, dest_dir_path):
         destination = join(dest_dir_path, file_name)
         final_string = keymap_header() + to_json_string(bindings)
 
-        write_file(destination, final_string)
-        log_debug('File generated: %s' % package_path(destination))
+        write_text_file(destination, final_string)
+        log_debug('File generated: %s' % package_relpath(destination))
 
 
 def write_shared_keymap(bindings, dest_dir_path):
@@ -157,5 +155,5 @@ def write_shared_keymap(bindings, dest_dir_path):
     destination = join(dest_dir_path, 'Default.sublime-keymap')
     final_string = keymap_header() + to_json_string(bindings)
 
-    write_file(destination, final_string)
-    log_debug('File generated: %s' % package_path(destination))
+    write_text_file(destination, final_string)
+    log_debug('File generated: %s' % package_relpath(destination))

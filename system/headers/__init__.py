@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from ..fs import read_file
+from borela import read_text_file
 from Naomi.system.state import STORE
 from os.path import join
 
@@ -37,7 +37,7 @@ def preferences():
 
 def read_header(file_name):
     HEADERS_DIR = STORE['directories']['system']['headers']
-    return read_file(join(HEADERS_DIR, file_name))
+    return read_text_file(join(HEADERS_DIR, file_name))
 
 
 def syntax():

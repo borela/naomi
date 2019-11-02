@@ -10,29 +10,23 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.fs import (
+from borela import (
     delete_dir_contents,
-    load_yaml,
     list_files,
-    write_file,
+    load_yaml,
+    modify_path,
+    to_plist_string,
+    write_text_file,
 )
-
 from Naomi.system.headers import (
     preferences as preferences_header,
     plist as plist_header,
 )
-
-from Naomi.system.paths import (
-    modify_path,
-    package_path,
-)
-
 from Naomi.system.logging import (
     log_debug,
     log_info,
 )
-
-from Naomi.system.utils import to_plist_string
+from Naomi.system import package_relpath
 
 
 def compile_preferences(target_dir_path, output_dir_path):
@@ -40,14 +34,14 @@ def compile_preferences(target_dir_path, output_dir_path):
     Convert preferences from “x.yml” to “x.tmPreferences”.
     """
 
-    log_debug('Cleaning: %s' % package_path(output_dir_path))
+    log_debug('Cleaning: %s' % package_relpath(output_dir_path))
 
     delete_dir_contents(output_dir_path)
 
     log_info('Compiling preferences...')
 
     for file_path in list_files(target_dir_path):
-        relative_file_path = package_path(file_path)
+        relative_file_path = package_relpath(file_path)
         destination = modify_path(
             file_path,
             old_base=target_dir_path,
@@ -66,7 +60,7 @@ def compile_preferences(target_dir_path, output_dir_path):
         plist_string = to_plist_string(data)
         final_string = plist_header() + preferences_header() + plist_string
 
-        write_file(destination, final_string)
-        log_debug('File generated: %s' % package_path(destination))
+        write_text_file(destination, final_string)
+        log_debug('File generated: %s' % package_relpath(destination))
 
     log_info('Done compiling preferences.')

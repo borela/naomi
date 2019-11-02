@@ -10,34 +10,17 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.events import (
-    LOG_MESSAGE_ADDED,
-    log_message_added,
-)
-
-import logging
+from borela import StateStore
 from Naomi.system.event_bus import EVENT_BUS
 
-
-def log(message, level):
-    EVENT_BUS.emit(log_message_added(message, level))
-
-
-def log_critical(message):
-    log(message, 'CRITICAL')
+# Reducers.
+from .directories import reducer as directories_reducer
+from .settings import reducer as settings_reducer
 
 
-def log_debug(message):
-    log(message, 'DEBUG')
+STORE = StateStore(
+    directories=directories_reducer,
+    settings=settings_reducer,
+)
 
-
-def log_error(message):
-    log(message, 'ERROR')
-
-
-def log_info(message):
-    log(message, 'INFO')
-
-
-def log_warning(message):
-    log(message, 'WARNING')
+EVENT_BUS.onAny(lambda event: STORE.apply(event))

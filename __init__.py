@@ -21,6 +21,6 @@ from os.path import (
 PARENT_DIR = dirname(__file__)
 VENDOR_PATH = join(PARENT_DIR, 'vendor')
 
-# Add the “Naomi/vendor” dir to the paths to enable imports.
+# Add the “Naomi/vendor” dir to the paths to enable easy imports.
 if VENDOR_PATH not in sys.path:
     sys.path.append(VENDOR_PATH)

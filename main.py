@@ -14,51 +14,70 @@ from Naomi.system.events import (
     LOG_MESSAGE_ADDED,
     settings_updated,
 )
-import logging
-from sublime import load_settings
-from Naomi.system.state import STORE
+from datetime import datetime, timedelta
 from Naomi.system.event_bus import EVENT_BUS
-from datetime import datetime
-from time import time
+from Naomi.system.state import STORE
+from sublime import load_settings
+import logging
 
-t1 = time()
-t2 = t1
+
+log_event_subscription = None
+time_start = datetime.now()
+time_end = time_start
+time_diff = timedelta()
+
 
 def print_log_message(event):
-    global t1, t2
+    global time_start, time_end, time_diff
 
     message = event['payload']['message']
     level = event['payload']['level']
 
+    # Get the log level as a number to make the comparison easier.
     message_level = getattr(logging, level)
     current_level = getattr(logging, STORE['settings']['log_level'])
 
+    # If multiple messages are sent at the same second, we need to see the
+    # millisecond difference between them to enable easier profiling.
+    time_end = datetime.now()
+    time_diff = time_end - time_start
+
+    if time_diff > timedelta(seconds=1):
+        time_diff = timedelta()
+
     if message_level >= current_level:
-        print('%s [Naomi][%s]: %s +%ims' % (
+        print('%s [Naomi:%s] +%ims: %s' % (
             datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
             level,
+            time_diff.microseconds / 1000,
             message,
-            t2 - t1
         ))
 
-    t1 = t2
-    t2 = time()
-
-
-LOG_EVENT_SUBSCRIPTION = EVENT_BUS.on(
-    event=LOG_MESSAGE_ADDED,
-    subscriber=print_log_message,
-)
+    time_start = time_end
 
 
 def plugin_loaded():
-    LOG_EVENT_SUBSCRIPTION.subscribe()
+    global log_event_subscription
+
+    if log_event_subscription is None:
+        log_event_subscription = EVENT_BUS.on(
+            event=LOG_MESSAGE_ADDED,
+            subscriber=print_log_message,
+        )
+
+    log_event_subscription.subscribe()
     SETTINGS = load_settings('Naomi.sublime-settings')
     SETTINGS.add_on_change('naomi-settings-state', update_settings)
     update_settings()
 
 
 def plugin_unloaded():
+    global log_event_subscription
+
+    if log_event_subscription is not None:
+        log_event_subscription.unsubscribe()
+        log_event_subscription = None
+
     SETTINGS = load_settings('Naomi.sublime-settings')
     SETTINGS.clear_on_change('naomi-settings-state')
 

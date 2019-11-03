@@ -17,7 +17,7 @@ from sublime_plugin import ApplicationCommand
 
 class NaomiBuildMenusCommand(ApplicationCommand):
     def description(self):
-        return "Build Menus"
+        return 'Build Menus'
 
     def run(self):
         compile_menus(

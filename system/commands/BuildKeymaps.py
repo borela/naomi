@@ -17,7 +17,7 @@ from sublime_plugin import ApplicationCommand
 
 class NaomiBuildKeymapsCommand(ApplicationCommand):
     def description(self):
-        return "Build Keymaps"
+        return 'Build Keymaps'
 
     def run(self):
         compile_keymaps(

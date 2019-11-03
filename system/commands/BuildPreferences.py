@@ -17,7 +17,7 @@ from sublime_plugin import ApplicationCommand
 
 class NaomiBuildPreferencesCommand(ApplicationCommand):
     def description(self):
-        return "Build Preferences"
+        return 'Build Preferences'
 
     def run(self):
         compile_preferences(

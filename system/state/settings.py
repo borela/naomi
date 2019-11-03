@@ -13,11 +13,11 @@
 from Naomi.system.events import SETTINGS_UPDATED
 
 VALID_LOG_LEVELS = [
-    "CRITICAL",
-    "ERROR",
-    "WARNING",
-    "INFO",
-    "DEBUG",
+    'CRITICAL',
+    'ERROR',
+    'WARNING',
+    'INFO',
+    'DEBUG',
 ]
 
 

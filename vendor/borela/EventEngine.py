@@ -29,14 +29,14 @@ class EventEngine:
         the event type and the payload, for example:
 
         {
-            "type": "Some Event",
-            "payload": {...}
+            'type': 'Some Event',
+            'payload': {...}
         }
         """
         for subscriber in self.__anySubscribers:
             subscriber(data)
 
-        event = data["type"]
+        event = data['type']
         for subscriber in self.__events[event].values():
             subscriber(data)
 
@@ -83,6 +83,6 @@ class EventEngine:
 
     def __on(self, event, subscriber):
         if not callable(subscriber):
-            raise Exception("Subscriber is not callable.")
+            raise Exception('Subscriber is not callable.')
         self.__events[event][subscriber] = subscriber
         return EventSubscription(self, event, subscriber)

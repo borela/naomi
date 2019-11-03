@@ -22,3 +22,4 @@ from .system.commands.WatchCommands import * # noqa
 from .system.commands.WatchKeymaps import * # noqa
 from .system.commands.WatchMenus import * # noqa
 from .system.commands.WatchPreferences import * # noqa
+from .system.commands.WatchSyntaxes import * # noqa

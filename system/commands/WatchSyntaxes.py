@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers.commands import compile_commands
+# from Naomi.system.compilers.preferences import compile_preferences
 from Naomi.system.logging import log_info
 from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
@@ -31,33 +31,34 @@ class EventHandler(PatternMatchingEventHandler):
         self.process(event)
 
     def process(self, event):
-        compile_commands(
-            STORE['directories']['integration']['commands']['src'],
-            STORE['directories']['integration']['commands']['build'],
-        )
+        pass
+        # compile_preferences(
+        #     STORE['directories']['syntaxes']['src'],
+        #     STORE['directories']['syntaxes']['build'],
+        # )
 
 
-class NaomiWatchCommandsCommand(ApplicationCommand):
+class NaomiWatchSyntaxesCommand(ApplicationCommand):
     def __init__(self):
         self.watching = False
 
     def description(self):
         if self.watching:
-            return 'Unwatch Commands'
-        return 'Watch Commands'
+            return 'Unwatch Syntaxes'
+        return 'Watch Syntaxes'
 
     def run(self):
         if not self.watching:
             self.observer = Observer()
             self.observer.schedule(
                 EventHandler(),
-                path=STORE['directories']['integration']['commands']['src'],
+                path=STORE['directories']['syntaxes']['src'],
                 recursive=True,
             )
             self.observer.start()
             self.watching = True
-            log_info('Started watching commands...')
+            log_info('Started watching syntaxes...')
         else:
             self.observer.stop()
             self.watching = False
-            log_info('Stopped watching commands.')
+            log_info('Stopped watching syntaxes.')

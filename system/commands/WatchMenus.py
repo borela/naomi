@@ -41,6 +41,11 @@ class NaomiWatchMenusCommand(ApplicationCommand):
     def __init__(self):
         self.watching = False
 
+    def description(self):
+        if self.watching:
+            return 'Unwatch Menus'
+        return 'Watch Menus'
+
     def run(self):
         if not self.watching:
             self.observer = Observer()

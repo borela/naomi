@@ -41,6 +41,11 @@ class NaomiWatchKeymapsCommand(ApplicationCommand):
     def __init__(self):
         self.watching = False
 
+    def description(self):
+        if self.watching:
+            return 'Unwatch Keymaps'
+        return 'Watch Keymaps'
+
     def run(self):
         if not self.watching:
             self.observer = Observer()

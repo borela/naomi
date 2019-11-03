@@ -16,6 +16,9 @@ from sublime_plugin import ApplicationCommand
 
 
 class NaomiBuildSyntaxesCommand(ApplicationCommand):
+    def description(self):
+        return "Build Syntaxes"
+
     def run(self):
         compile_syntaxes(
             STORE['directories']['integration']['syntaxes']['src'],

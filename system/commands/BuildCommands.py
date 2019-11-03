@@ -16,6 +16,9 @@ from sublime_plugin import ApplicationCommand
 
 
 class NaomiBuildCommandsCommand(ApplicationCommand):
+    def description(self):
+        return "Build Commands"
+
     def run(self):
         compile_commands(
             STORE['directories']['integration']['commands']['src'],

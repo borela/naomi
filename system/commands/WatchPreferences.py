@@ -41,6 +41,11 @@ class NaomiWatchPreferencesCommand(ApplicationCommand):
     def __init__(self):
         self.watching = False
 
+    def description(self):
+        if self.watching:
+            return 'Unwatch Preferennces'
+        return 'Watch Preferennces'
+
     def run(self):
         if not self.watching:
             self.observer = Observer()

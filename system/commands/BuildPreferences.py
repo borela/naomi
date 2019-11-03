@@ -16,6 +16,9 @@ from sublime_plugin import ApplicationCommand
 
 
 class NaomiBuildPreferencesCommand(ApplicationCommand):
+    def description(self):
+        return "Build Preferences"
+
     def run(self):
         compile_preferences(
             STORE['directories']['integration']['preferences']['src'],

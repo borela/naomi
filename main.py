@@ -18,9 +18,15 @@ import logging
 from sublime import load_settings
 from Naomi.system.state import STORE
 from Naomi.system.event_bus import EVENT_BUS
+from datetime import datetime
+from time import time
 
+t1 = time()
+t2 = t1
 
 def print_log_message(event):
+    global t1, t2
+
     message = event['payload']['message']
     level = event['payload']['level']
 
@@ -28,7 +34,15 @@ def print_log_message(event):
     current_level = getattr(logging, STORE['settings']['log_level'])
 
     if message_level >= current_level:
-        print('[Naomi][%s]: %s' % (level, message))
+        print('%s [Naomi][%s]: %s +%ims' % (
+            datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            level,
+            message,
+            t2 - t1
+        ))
+
+    t1 = t2
+    t2 = time()
 
 
 LOG_EVENT_SUBSCRIPTION = EVENT_BUS.on(

@@ -24,6 +24,11 @@ from Naomi.system.logging import (
 from Naomi.system import package_relpath
 from Naomi.system.headers import keymap as keymap_header
 from os.path import join
+from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system.events import (
+    building_keymaps,
+    not_building_keymaps,
+)
 
 
 def compile_keymaps(dir_path, dest_dir_path):
@@ -36,6 +41,7 @@ def compile_keymaps(dir_path, dest_dir_path):
       Default (OSX).sublime-keymap
     """
 
+    EVENT_BUS.emit(building_keymaps())
     log_debug('Cleaning: %s' % package_relpath(dest_dir_path))
 
     delete_dir_contents(dest_dir_path)
@@ -49,6 +55,7 @@ def compile_keymaps(dir_path, dest_dir_path):
     write_per_os_keymap(per_os, dest_dir_path)
 
     log_info('Done compiling keymaps...')
+    EVENT_BUS.emit(not_building_keymaps())
 
 
 def load_keymaps(files_paths):

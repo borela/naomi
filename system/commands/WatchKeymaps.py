@@ -11,11 +11,16 @@
 # the License.
 
 from Naomi.system.compilers.keymaps import compile_keymaps
+from Naomi.system.event_bus import EVENT_BUS
 from Naomi.system.logging import log_info
 from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
+from Naomi.system.events import (
+    not_watching_keymaps,
+    watching_keymaps,
+)
 
 
 class EventHandler(PatternMatchingEventHandler):
@@ -39,15 +44,15 @@ class EventHandler(PatternMatchingEventHandler):
 
 class NaomiWatchKeymapsCommand(ApplicationCommand):
     def __init__(self):
-        self.watching = False
+        self.observer = None
 
     def description(self):
-        if self.watching:
+        if STORE['watching']['keymaps']:
             return 'Unwatch Keymaps'
         return 'Watch Keymaps'
 
     def run(self):
-        if not self.watching:
+        if not STORE['watching']['keymaps']:
             self.observer = Observer()
             self.observer.schedule(
                 EventHandler(),
@@ -55,9 +60,9 @@ class NaomiWatchKeymapsCommand(ApplicationCommand):
                 recursive=True,
             )
             self.observer.start()
-            self.watching = True
+            EVENT_BUS.emit(watching_keymaps())
             log_info('Started watching keymaps...')
         else:
             self.observer.stop()
-            self.watching = False
+            EVENT_BUS.emit(not_watching_keymaps())
             log_info('Stopped watching keymaps.')

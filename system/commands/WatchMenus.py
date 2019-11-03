@@ -11,11 +11,16 @@
 # the License.
 
 from Naomi.system.compilers.menus import compile_menus
+from Naomi.system.event_bus import EVENT_BUS
 from Naomi.system.logging import log_info
 from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
+from Naomi.system.events import (
+    not_watching_menus,
+    watching_menus,
+)
 
 
 class EventHandler(PatternMatchingEventHandler):
@@ -39,15 +44,15 @@ class EventHandler(PatternMatchingEventHandler):
 
 class NaomiWatchMenusCommand(ApplicationCommand):
     def __init__(self):
-        self.watching = False
+        self.observer = None
 
     def description(self):
-        if self.watching:
+        if STORE['watching']['menus']:
             return 'Unwatch Menus'
         return 'Watch Menus'
 
     def run(self):
-        if not self.watching:
+        if not STORE['watching']['menus']:
             self.observer = Observer()
             self.observer.schedule(
                 EventHandler(),
@@ -55,9 +60,9 @@ class NaomiWatchMenusCommand(ApplicationCommand):
                 recursive=True,
             )
             self.observer.start()
-            self.watching = True
+            EVENT_BUS.emit(watching_menus())
             log_info('Started watching menus...')
         else:
             self.observer.stop()
-            self.watching = False
+            EVENT_BUS.emit(not_watching_menus())
             log_info('Stopped watching menus.')

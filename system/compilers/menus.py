@@ -22,11 +22,18 @@ from Naomi.system.logging import (
     log_info,
 )
 from Naomi.system import package_relpath
+from Naomi.system.state import STORE
 from Naomi.system.headers import menu as menu_header
 from os.path import join
+from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system.events import (
+    building_menus,
+    not_building_menus,
+)
 
 
 def compile_menus(dir_path, dest_dir_path):
+    EVENT_BUS.emit(building_menus())
     log_debug('Cleaning: %s' % package_relpath(dest_dir_path))
 
     delete_dir_contents(dest_dir_path)
@@ -46,6 +53,7 @@ def compile_menus(dir_path, dest_dir_path):
         log_debug('File generated: %s' % package_relpath(destination))
 
     log_info('Done building menus.')
+    EVENT_BUS.emit(not_building_menus())
 
 
 def load_menus(files_paths):

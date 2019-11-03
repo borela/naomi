@@ -10,9 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .building import * #noqa
-from .log_message_added import * #noqa
-from .not_building import * #noqa
-from .not_watching import * #noqa
-from .settings_updated import * #noqa
-from .watching import * #noqa
+from .building import * # noqa
+from .log_message_added import * # noqa
+from .not_building import * # noqa
+from .not_watching import * # noqa
+from .settings_updated import * # noqa
+from .watching import * # noqa

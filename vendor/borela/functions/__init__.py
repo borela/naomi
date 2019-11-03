@@ -10,39 +10,19 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .delete_dir import delete_dir
-from .delete_dir_contents import delete_dir_contents
-from .dict_to_plist_array import dict_to_plist_array
-from .ensure_dir_exists import ensure_dir_exists
-from .indent_string import indent_string
-from .list_files import list_files
-from .load_yaml import load_yaml
-from .modify_path import modify_path
-from .plist_array_to_xml import plist_array_to_xml
-from .read_text_file import read_text_file
-from .replace_path_base import replace_path_base
-from .replace_path_ext import replace_path_ext
-from .to_json_string import to_json_string
-from .to_plist_string import to_plist_string
-from .to_xml_string import to_xml_string
-from .write_text_file import write_text_file
-
-
-__all__ = [
-    'delete_dir',
-    'delete_dir_contents',
-    'dict_to_plist_array',
-    'ensure_dir_exists',
-    'indent_string',
-    'list_files',
-    'load_yaml',
-    'modify_path',
-    'plist_array_to_xml',
-    'read_text_file',
-    'replace_path_base',
-    'replace_path_ext',
-    'to_json_string',
-    'to_plist_string',
-    'to_xml_string',
-    'write_text_file',
-]
+from .delete_dir import * #noqa
+from .delete_dir_contents import * #noqa
+from .dict_to_plist_array import * #noqa
+from .ensure_dir_exists import * #noqa
+from .indent_string import * #noqa
+from .list_files import * #noqa
+from .load_yaml import * #noqa
+from .modify_path import * #noqa
+from .plist_array_to_xml import * #noqa
+from .read_text_file import * #noqa
+from .replace_path_base import * #noqa
+from .replace_path_ext import * #noqa
+from .to_json_string import * #noqa
+from .to_plist_string import * #noqa
+from .to_xml_string import * #noqa
+from .write_text_file import * #noqa

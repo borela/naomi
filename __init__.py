@@ -11,7 +11,6 @@
 # the License.
 
 import sys
-
 from os.path import (
     dirname,
     join,

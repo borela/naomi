@@ -13,17 +13,17 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-- caption: 'Naomi System: Build Commands'
+- caption: 'Naomi: Build Commands'
   command: naomi_build_commands
 
-- caption: 'Naomi System: Build Keymaps'
+- caption: 'Naomi: Build Keymaps'
   command: naomi_build_keymaps
 
-- caption: 'Naomi System: Build Preferences'
+- caption: 'Naomi: Build Preferences'
   command: naomi_build_preferences
 
-- caption: 'Naomi System: Build Menus'
+- caption: 'Naomi: Build Menus'
   command: naomi_build_menus
 
-- caption: 'Naomi System: Build Syntaxes'
+- caption: 'Naomi: Build Syntaxes'
   command: naomi_build_syntaxes

@@ -20,11 +20,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 [
   {
-    "caption": "Naomi System: Run System Tests",
+    "caption": "Naomi: Run System Tests",
     "command": "naomi_run_system_tests"
   },
   {
-    "caption": "Naomi System: Run Syntax Tests",
+    "caption": "Naomi: Run Syntax Tests",
     "command": "naomi_run_syntax_tests"
   }
 ]

@@ -20,19 +20,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 [
   {
-    "caption": "Naomi System: Watch Commands",
+    "caption": "Naomi: Watch Commands",
     "command": "naomi_watch_commands"
   },
   {
-    "caption": "Naomi System: Watch Preferences",
+    "caption": "Naomi: Watch Preferences",
     "command": "naomi_watch_preferences"
   },
   {
-    "caption": "Naomi System: Watch Keymaps",
+    "caption": "Naomi: Watch Keymaps",
     "command": "naomi_watch_keymaps"
   },
   {
-    "caption": "Naomi System: Watch Menus",
+    "caption": "Naomi: Watch Menus",
     "command": "naomi_watch_menus"
   }
 ]

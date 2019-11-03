@@ -13,8 +13,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-- caption: 'Naomi Dev: Run Plugin Tests'
+- caption: 'Naomi: Run Plugin Tests'
   command: naomi_run_plugin_tests
 
-- caption: 'Naomi Dev: Run Syntax Tests'
+- caption: 'Naomi: Run Syntax Tests'
   command: naomi_run_syntax_tests

@@ -27,6 +27,11 @@ from Naomi.system.logging import (
     log_info,
 )
 from Naomi.system import package_relpath
+from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system.events import (
+    building_preferences,
+    not_building_preferences,
+)
 
 
 def compile_preferences(target_dir_path, output_dir_path):
@@ -34,6 +39,7 @@ def compile_preferences(target_dir_path, output_dir_path):
     Convert preferences from “x.yml” to “x.tmPreferences”.
     """
 
+    EVENT_BUS.emit(building_preferences())
     log_debug('Cleaning: %s' % package_relpath(output_dir_path))
 
     delete_dir_contents(output_dir_path)
@@ -64,3 +70,4 @@ def compile_preferences(target_dir_path, output_dir_path):
         log_debug('File generated: %s' % package_relpath(destination))
 
     log_info('Done compiling preferences.')
+    EVENT_BUS.emit(not_building_preferences())

@@ -64,9 +64,10 @@ def load_menus(files_paths):
             continue
 
         for location in loaded_menus:
-            if location not in result:
-                result[location] = {}
-            result[location] = loaded_menus[location]
+            if location in result:
+                result[location].extend(loaded_menus[location])
+            else:
+                result[location] = loaded_menus[location]
 
     return result
 

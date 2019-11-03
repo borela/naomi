@@ -75,10 +75,11 @@ class EventEngine:
         pass
 
     def unsubscribe(self, subscriber, event):
-        self.__anySubscribers.remove(subscriber)
-
         if event is not None:
             self.__events[event].pop(subscriber)
+            return
+
+        self.__anySubscribers.remove(subscriber)
 
     def __on(self, event, subscriber):
         if not callable(subscriber):

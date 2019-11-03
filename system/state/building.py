@@ -47,6 +47,7 @@ EVENTS = [
     BUILDING_SYNTAXES,
 ]
 
+
 def reducer(state=INITIAL_STATE, event=None):
     if event is None or event['type'] not in EVENTS:
         return state
@@ -87,11 +88,11 @@ def reducer(state=INITIAL_STATE, event=None):
         state['syntaxes'] = True
 
     state['working'] = (
-        state['commands'] or
-        state['keymaps'] or
-        state['menus'] or
-        state['preferences'] or
-        state['syntaxes']
+        state['commands']
+        or state['keymaps']
+        or state['menus']
+        or state['preferences']
+        or state['syntaxes']
     )
 
     return state

@@ -22,7 +22,6 @@ from Naomi.system.logging import (
     log_info,
 )
 from Naomi.system import package_relpath
-from Naomi.system.state import STORE
 from Naomi.system.headers import menu as menu_header
 from os.path import join
 from Naomi.system.event_bus import EVENT_BUS

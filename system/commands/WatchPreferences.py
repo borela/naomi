@@ -22,6 +22,7 @@ from Naomi.system.events import (
     watching_preferences,
 )
 
+
 class EventHandler(PatternMatchingEventHandler):
     patterns = ['*.yml']
 

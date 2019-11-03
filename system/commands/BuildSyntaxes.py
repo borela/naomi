@@ -21,6 +21,6 @@ class NaomiBuildSyntaxesCommand(ApplicationCommand):
 
     def run(self):
         compile_syntaxes(
-            STORE['directories']['integration']['syntaxes']['src'],
-            STORE['directories']['integration']['syntaxes']['build'],
+            STORE['directories']['syntaxes']['src'],
+            STORE['directories']['syntaxes']['build'],
         )

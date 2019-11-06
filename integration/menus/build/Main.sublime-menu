@@ -20,6 +20,29 @@
 ////////////////////////////////////////////////////////////////////////////////
 [
   {
+    "id": "preferences",
+    "children": [
+      {
+        "id": "package-settings",
+        "children": [
+          {
+            "caption": "Naomi",
+            "children": [
+              {
+                "caption": "Settings",
+                "command": "edit_settings",
+                "args": {
+                  "base_file": "${packages}/Naomi/Naomi.sublime-settings",
+                  "default": "{\n\t$0\n}\n"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "caption": "Naomi",
     "id": "naomi-main-menu",
     "mnemonic": "a",

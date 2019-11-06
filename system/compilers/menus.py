@@ -21,6 +21,7 @@ from Naomi.system.logging import (
     log_debug,
     log_info,
 )
+from collections import defaultdict
 from Naomi.system import package_relpath
 from Naomi.system.headers import menu as menu_header
 from os.path import join
@@ -40,14 +41,15 @@ def compile_menus(dir_path, dest_dir_path):
     files = [file for file, _, _ in list_files(dir_path)]
     menus = load_menus(files)
 
-    for group in menus:
-        log_info('Building menus for %s...' % group)
+    for location in menus:
+        log_info('Building menus for %s...' % location)
 
-        destination = join(dest_dir_path, '%s.sublime-menu' % group)
+        destination = join(dest_dir_path, '%s.sublime-menu' % location)
         final_string = menu_header() + to_json_string(
-            menus[group],
+            menus[location],
             indent=True,
         )
+
         write_text_file(destination, final_string)
         log_debug('File generated: %s' % package_relpath(destination))
 
@@ -71,12 +73,21 @@ def load_menus(files_paths):
             continue
 
         for location in loaded_menus:
-            if location in result:
-                result[location].extend(loaded_menus[location])
-            else:
-                result[location] = loaded_menus[location]
+            if location not in result:
+                result[location] = defaultdict(dict)
+                result[location]['add'] = []
+                result[location]['extend'] = []
 
-    return result
+            menus = loaded_menus[location]
+            result[location]['add'].extend(menus.get('add', []))
+            result[location]['extend'].extend(menus.get('extend', []))
+
+    # Merge the result putting extensions first.
+    merged_result = defaultdict(list)
+    for location, menus in result.items():
+        merged_result[location] = menus['extend'] + menus['add']
+
+    return merged_result
 
 
 def load_menus_from_file(file_path):

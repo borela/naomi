@@ -29,64 +29,65 @@
 #
 location: Main
 menus:
-  - caption: Naomi
-    id: naomi-main-menu
-    mnemonic: a
-    children:
-       - caption: Settings
-         command: edit_settings
-         args:
-           base_file: ${packages}/Naomi/Naomi.sublime-settings
-           default: "{\n\t$0\n}\n"
-
-       - caption: '-'
-
-       - command: naomi_build_commands
-       - command: naomi_build_keymaps
-       - command: naomi_build_menus
-       - command: naomi_build_preferences
-       - command: naomi_build_syntaxes
-
-       - caption: '-'
-
-       - command: naomi_watch_commands
-       - command: naomi_watch_keymaps
-       - command: naomi_watch_menus
-       - command: naomi_watch_preferences
-       - command: naomi_watch_syntaxes
-
-       - caption: '-'
-
-       - caption: 'Github'
-         children:
-         - caption: Fork
-           command: open_url
+  add:
+    - caption: Naomi
+      id: naomi-main-menu
+      mnemonic: a
+      children:
+         - caption: Settings
+           command: edit_settings
            args:
-             url: https://github.com/borela/naomi/fork
+             base_file: ${packages}/Naomi/Naomi.sublime-settings
+             default: "{\n\t$0\n}\n"
 
          - caption: '-'
 
-         - caption: Repository
-           command: open_url
-           args:
-             url: https://github.com/borela/naomi
+         - command: naomi_build_commands
+         - command: naomi_build_keymaps
+         - command: naomi_build_menus
+         - command: naomi_build_preferences
+         - command: naomi_build_syntaxes
 
-         - caption: Issues
-           command: open_url
-           args:
-             url: https://github.com/borela/naomi/issues
+         - caption: '-'
 
-         - caption: Pull Requests
-           command: open_url
-           args:
-             url: https://github.com/borela/naomi/pulls
+         - command: naomi_watch_commands
+         - command: naomi_watch_keymaps
+         - command: naomi_watch_menus
+         - command: naomi_watch_preferences
+         - command: naomi_watch_syntaxes
 
-         - caption: Stars
-           command: open_url
-           args:
-             url: https://github.com/borela/naomi/stargazers
+         - caption: '-'
 
-         - caption: Watchers
-           command: open_url
-           args:
-             url: https://github.com/borela/naomi/watchers
+         - caption: 'Github'
+           children:
+           - caption: Fork
+             command: open_url
+             args:
+               url: https://github.com/borela/naomi/fork
+
+           - caption: '-'
+
+           - caption: Repository
+             command: open_url
+             args:
+               url: https://github.com/borela/naomi
+
+           - caption: Issues
+             command: open_url
+             args:
+               url: https://github.com/borela/naomi/issues
+
+           - caption: Pull Requests
+             command: open_url
+             args:
+               url: https://github.com/borela/naomi/pulls
+
+           - caption: Stars
+             command: open_url
+             args:
+               url: https://github.com/borela/naomi/stargazers
+
+           - caption: Watchers
+             command: open_url
+             args:
+               url: https://github.com/borela/naomi/watchers

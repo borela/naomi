@@ -10,16 +10,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.events import (
-    LOG_MESSAGE_ADDED,
-    settings_updated,
-)
+import logging
 from datetime import datetime, timedelta
 from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system.events import LOG_MESSAGE_ADDED
 from Naomi.system.state import STORE
-from sublime import load_settings
-import logging
-
 
 log_event_subscription = None
 time_start = datetime.now()
@@ -66,9 +61,6 @@ def plugin_loaded():
         )
 
     log_event_subscription.subscribe()
-    SETTINGS = load_settings('Naomi.sublime-settings')
-    SETTINGS.add_on_change('naomi-settings-state', update_settings)
-    update_settings()
 
 
 def plugin_unloaded():
@@ -77,11 +69,3 @@ def plugin_unloaded():
     if log_event_subscription is not None:
         log_event_subscription.unsubscribe()
         log_event_subscription = None
-
-    SETTINGS = load_settings('Naomi.sublime-settings')
-    SETTINGS.clear_on_change('naomi-settings-state')
-
-
-def update_settings():
-    SETTINGS = load_settings('Naomi.sublime-settings')
-    EVENT_BUS.emit(settings_updated(SETTINGS))

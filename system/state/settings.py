@@ -10,7 +10,15 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.events import SETTINGS_UPDATED
+from Naomi.system.events import (
+    SETTINGS_LOADED,
+    SETTINGS_UPDATED,
+)
+
+SETTINGS_EVENTS = [
+    SETTINGS_LOADED,
+    SETTINGS_UPDATED,
+]
 
 VALID_LOG_LEVELS = [
     'CRITICAL',
@@ -29,7 +37,7 @@ def get_log_level(settings):
 
 
 def reducer(state={}, event=None):
-    if event is None or event['type'] != SETTINGS_UPDATED:
+    if event is None or event['type'] not in SETTINGS_EVENTS:
         return state
 
     SETTINGS = event['payload']

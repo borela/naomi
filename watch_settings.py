@@ -10,15 +10,20 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.events import settings_updated
+from Naomi.system.events import (
+    settings_loaded,
+    settings_updated,
+)
 from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system.logging import log_info
 from sublime import load_settings
 
 
 def plugin_loaded():
     SETTINGS = load_settings('Naomi.sublime-settings')
     SETTINGS.add_on_change('naomi-settings-state', update_settings)
-    update_settings()
+    EVENT_BUS.emit(settings_loaded(SETTINGS))
+    log_info('Settings loaded.')
 
 
 def plugin_unloaded():
@@ -29,3 +34,4 @@ def plugin_unloaded():
 def update_settings():
     SETTINGS = load_settings('Naomi.sublime-settings')
     EVENT_BUS.emit(settings_updated(SETTINGS))
+    log_info('Settings updated.')

@@ -10,7 +10,15 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+SETTINGS_LOADED = 'SETTINGS_LOADED'
 SETTINGS_UPDATED = 'SETTINGS_UPDATED'
+
+
+def settings_loaded(settings):
+    return {
+        'type': SETTINGS_LOADED,
+        'payload': settings,
+    }
 
 
 def settings_updated(settings):

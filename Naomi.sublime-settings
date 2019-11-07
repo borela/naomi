@@ -8,7 +8,7 @@
     // Name of the syntax shown in all menus. It’s possible to generate multiple
     // syntaxes for the same configuration if you need it to be compatible with
     // some other plugin.
-    "name": ["JavaScript (Naomi)", "JavaScript", "JSX", "React"],
+    "names": ["JavaScript (Naomi)", "JavaScript", "JSX", "React"],
 
     // File used as the entry point relative to “Naomi/syntaxes/src”.
     "entry": "naomi.fjsx15.sublime-syntax",

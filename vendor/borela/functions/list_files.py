@@ -14,7 +14,13 @@ from os import walk
 from os.path import join
 
 
-def list_files(dir_path):
-    for path, directories, files in walk(dir_path):
+def list_files(dir_path, recursive=True):
+    if not recursive:
+        path, _, files = next(walk(dir_path))
+        for file in files:
+            yield join(path, file), path, file
+        return
+
+    for path, _, files in walk(dir_path):
         for file in files:
             yield join(path, file), path, file

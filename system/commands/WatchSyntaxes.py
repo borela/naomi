@@ -18,7 +18,7 @@ from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
 from Naomi.system.events import (
-    not_watching_syntaxes,
+    stopped_watching_syntaxes,
     watching_syntaxes,
 )
 
@@ -65,5 +65,5 @@ class NaomiWatchSyntaxesCommand(ApplicationCommand):
             log_info('Started watching syntaxes...')
         else:
             self.observer.stop()
-            EVENT_BUS.emit(not_watching_syntaxes())
+            EVENT_BUS.emit(stopped_watching_syntaxes())
             log_info('Stopped watching syntaxes.')

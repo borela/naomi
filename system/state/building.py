@@ -11,11 +11,11 @@
 # the License.
 
 from Naomi.system.events import (
-    NOT_BUILDING_COMMANDS,
-    NOT_BUILDING_KEYMAPS,
-    NOT_BUILDING_MENUS,
-    NOT_BUILDING_PREFERENCES,
-    NOT_BUILDING_SYNTAXES,
+    FINISHED_BUILDING_COMMANDS,
+    FINISHED_BUILDING_KEYMAPS,
+    FINISHED_BUILDING_MENUS,
+    FINISHED_BUILDING_PREFERENCES,
+    FINISHED_BUILDING_SYNTAXES,
 
     BUILDING_COMMANDS,
     BUILDING_KEYMAPS,
@@ -34,11 +34,11 @@ INITIAL_STATE = {
 }
 
 EVENTS = [
-    NOT_BUILDING_COMMANDS,
-    NOT_BUILDING_KEYMAPS,
-    NOT_BUILDING_MENUS,
-    NOT_BUILDING_PREFERENCES,
-    NOT_BUILDING_SYNTAXES,
+    FINISHED_BUILDING_COMMANDS,
+    FINISHED_BUILDING_KEYMAPS,
+    FINISHED_BUILDING_MENUS,
+    FINISHED_BUILDING_PREFERENCES,
+    FINISHED_BUILDING_SYNTAXES,
 
     BUILDING_COMMANDS,
     BUILDING_KEYMAPS,
@@ -56,19 +56,19 @@ def reducer(state=INITIAL_STATE, event=None):
     state = dict(state)
 
     # NOT Watching.
-    if event['type'] == NOT_BUILDING_COMMANDS:
+    if event['type'] == FINISHED_BUILDING_COMMANDS:
         state['commands'] = False
 
-    if event['type'] == NOT_BUILDING_KEYMAPS:
+    if event['type'] == FINISHED_BUILDING_KEYMAPS:
         state['keymaps'] = False
 
-    if event['type'] == NOT_BUILDING_MENUS:
+    if event['type'] == FINISHED_BUILDING_MENUS:
         state['menus'] = False
 
-    if event['type'] == NOT_BUILDING_PREFERENCES:
+    if event['type'] == FINISHED_BUILDING_PREFERENCES:
         state['preferences'] = False
 
-    if event['type'] == NOT_BUILDING_SYNTAXES:
+    if event['type'] == FINISHED_BUILDING_SYNTAXES:
         state['syntaxes'] = False
 
     # Watching.

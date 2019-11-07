@@ -13,10 +13,10 @@
 from Naomi.system.event_bus import EVENT_BUS
 from Naomi.system.events import (
     building_syntaxes,
-    not_building_syntaxes,
+    finished_building_syntaxes,
 )
 
 
 def compile_syntaxes(target_dir_path, output_dir_path):
     EVENT_BUS.emit(building_syntaxes())
-    EVENT_BUS.emit(not_building_syntaxes())
+    EVENT_BUS.emit(finished_building_syntaxes())

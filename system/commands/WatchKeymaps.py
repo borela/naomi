@@ -18,7 +18,7 @@ from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
 from Naomi.system.events import (
-    not_watching_keymaps,
+    stopped_watching_keymaps,
     watching_keymaps,
 )
 
@@ -64,5 +64,5 @@ class NaomiWatchKeymapsCommand(ApplicationCommand):
             log_info('Started watching keymaps...')
         else:
             self.observer.stop()
-            EVENT_BUS.emit(not_watching_keymaps())
+            EVENT_BUS.emit(stopped_watching_keymaps())
             log_info('Stopped watching keymaps.')

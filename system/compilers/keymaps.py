@@ -27,7 +27,7 @@ from os.path import join
 from Naomi.system.event_bus import EVENT_BUS
 from Naomi.system.events import (
     building_keymaps,
-    not_building_keymaps,
+    finished_building_keymaps,
 )
 
 
@@ -55,7 +55,7 @@ def compile_keymaps(dir_path, dest_dir_path):
     write_per_os_keymap(per_os, dest_dir_path)
 
     log_info('Done compiling keymaps...')
-    EVENT_BUS.emit(not_building_keymaps())
+    EVENT_BUS.emit(finished_building_keymaps())
 
 
 def load_keymaps(files_paths):

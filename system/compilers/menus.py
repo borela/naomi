@@ -28,7 +28,7 @@ from os.path import join
 from Naomi.system.event_bus import EVENT_BUS
 from Naomi.system.events import (
     building_menus,
-    not_building_menus,
+    finished_building_menus,
 )
 
 
@@ -54,7 +54,7 @@ def compile_menus(dir_path, dest_dir_path):
         log_debug('File generated: %s' % package_relpath(destination))
 
     log_info('Done building menus.')
-    EVENT_BUS.emit(not_building_menus())
+    EVENT_BUS.emit(finished_building_menus())
 
 
 def load_menus(files_paths):

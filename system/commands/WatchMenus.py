@@ -18,7 +18,7 @@ from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
 from Naomi.system.events import (
-    not_watching_menus,
+    stopped_watching_menus,
     watching_menus,
 )
 
@@ -64,5 +64,5 @@ class NaomiWatchMenusCommand(ApplicationCommand):
             log_info('Started watching menus...')
         else:
             self.observer.stop()
-            EVENT_BUS.emit(not_watching_menus())
+            EVENT_BUS.emit(stopped_watching_menus())
             log_info('Stopped watching menus.')

@@ -30,7 +30,7 @@ from Naomi.system import package_relpath
 from Naomi.system.event_bus import EVENT_BUS
 from Naomi.system.events import (
     building_preferences,
-    not_building_preferences,
+    finished_building_preferences,
 )
 
 
@@ -70,4 +70,4 @@ def compile_preferences(target_dir_path, output_dir_path):
         log_debug('File generated: %s' % package_relpath(destination))
 
     log_info('Done compiling preferences.')
-    EVENT_BUS.emit(not_building_preferences())
+    EVENT_BUS.emit(finished_building_preferences())

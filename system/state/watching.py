@@ -11,11 +11,11 @@
 # the License.
 
 from Naomi.system.events import (
-    NOT_WATCHING_COMMANDS,
-    NOT_WATCHING_KEYMAPS,
-    NOT_WATCHING_MENUS,
-    NOT_WATCHING_PREFERENCES,
-    NOT_WATCHING_SYNTAXES,
+    STOPPED_WATCHING_COMMANDS,
+    STOPPED_WATCHING_KEYMAPS,
+    STOPPED_WATCHING_MENUS,
+    STOPPED_WATCHING_PREFERENCES,
+    STOPPED_WATCHING_SYNTAXES,
 
     WATCHING_COMMANDS,
     WATCHING_KEYMAPS,
@@ -34,11 +34,11 @@ INITIAL_STATE = {
 }
 
 EVENTS = [
-    NOT_WATCHING_COMMANDS,
-    NOT_WATCHING_KEYMAPS,
-    NOT_WATCHING_MENUS,
-    NOT_WATCHING_PREFERENCES,
-    NOT_WATCHING_SYNTAXES,
+    STOPPED_WATCHING_COMMANDS,
+    STOPPED_WATCHING_KEYMAPS,
+    STOPPED_WATCHING_MENUS,
+    STOPPED_WATCHING_PREFERENCES,
+    STOPPED_WATCHING_SYNTAXES,
 
     WATCHING_COMMANDS,
     WATCHING_KEYMAPS,
@@ -56,19 +56,19 @@ def reducer(state=INITIAL_STATE, event=None):
     state = dict(state)
 
     # NOT Watching.
-    if event['type'] == NOT_WATCHING_COMMANDS:
+    if event['type'] == STOPPED_WATCHING_COMMANDS:
         state['commands'] = False
 
-    if event['type'] == NOT_WATCHING_KEYMAPS:
+    if event['type'] == STOPPED_WATCHING_KEYMAPS:
         state['keymaps'] = False
 
-    if event['type'] == NOT_WATCHING_MENUS:
+    if event['type'] == STOPPED_WATCHING_MENUS:
         state['menus'] = False
 
-    if event['type'] == NOT_WATCHING_PREFERENCES:
+    if event['type'] == STOPPED_WATCHING_PREFERENCES:
         state['preferences'] = False
 
-    if event['type'] == NOT_WATCHING_SYNTAXES:
+    if event['type'] == STOPPED_WATCHING_SYNTAXES:
         state['syntaxes'] = False
 
     # Watching.

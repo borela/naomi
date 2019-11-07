@@ -27,7 +27,7 @@ from Naomi.system.event_bus import EVENT_BUS
 from Naomi.system.headers import command as command_header
 from Naomi.system.events import (
     building_commands,
-    not_building_commands,
+    finished_building_commands,
 )
 
 
@@ -67,4 +67,4 @@ def compile_commands(dir_path, dest_dir_path):
         log_debug('File generated: %s' % package_relpath(destination))
 
     log_info('Done building commands.')
-    EVENT_BUS.emit(not_building_commands())
+    EVENT_BUS.emit(finished_building_commands())

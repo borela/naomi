@@ -11,7 +11,6 @@
 # the License.
 
 from Naomi.system.compilers.syntaxes import compile_syntaxes
-from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 
 
@@ -20,7 +19,4 @@ class NaomiBuildSyntaxesCommand(ApplicationCommand):
         return 'Build Syntaxes'
 
     def run(self):
-        compile_syntaxes(
-            STORE['directories']['syntaxes']['src'],
-            STORE['directories']['syntaxes']['build'],
-        )
+        compile_syntaxes()

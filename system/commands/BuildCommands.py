@@ -11,7 +11,6 @@
 # the License.
 
 from Naomi.system.compilers.commands import compile_commands
-from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 
 
@@ -20,7 +19,4 @@ class NaomiBuildCommandsCommand(ApplicationCommand):
         return 'Build Commands'
 
     def run(self):
-        compile_commands(
-            STORE['directories']['integration']['commands']['src'],
-            STORE['directories']['integration']['commands']['build'],
-        )
+        compile_commands()

@@ -36,10 +36,7 @@ class EventHandler(PatternMatchingEventHandler):
         self.process(event)
 
     def process(self, event):
-        compile_preferences(
-            STORE['directories']['integration']['preferences']['src'],
-            STORE['directories']['integration']['preferences']['build'],
-        )
+        compile_preferences()
 
 
 class NaomiWatchPreferencesCommand(ApplicationCommand):

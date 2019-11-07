@@ -17,21 +17,25 @@ from borela import (
     to_json_string,
     write_text_file,
 )
+
 from Naomi.system.logging import (
     log_debug,
     log_info,
 )
-from Naomi.system import package_relpath
-from Naomi.system.headers import keymap as keymap_header
-from os.path import join
-from Naomi.system.event_bus import EVENT_BUS
+
 from Naomi.system.events import (
     building_keymaps,
     finished_building_keymaps,
 )
 
+from Naomi.system import package_relpath
+from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system.headers import keymap as keymap_header
+from Naomi.system.state import STORE
+from os.path import join
 
-def compile_keymaps(dir_path, dest_dir_path):
+
+def compile_keymaps():
     """
     Load all keymaps sources and generate files for each OS on demand:
 
@@ -40,6 +44,9 @@ def compile_keymaps(dir_path, dest_dir_path):
       Default (Windows).sublime-keymap
       Default (OSX).sublime-keymap
     """
+
+    dir_path = STORE['directories']['integration']['keymaps']['src']
+    dest_dir_path = STORE['directories']['integration']['keymaps']['build']
 
     EVENT_BUS.emit(building_keymaps())
     log_debug('Cleaning: %s' % package_relpath(dest_dir_path))

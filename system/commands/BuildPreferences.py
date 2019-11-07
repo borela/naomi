@@ -11,7 +11,6 @@
 # the License.
 
 from Naomi.system.compilers.preferences import compile_preferences
-from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 
 
@@ -20,7 +19,4 @@ class NaomiBuildPreferencesCommand(ApplicationCommand):
         return 'Build Preferences'
 
     def run(self):
-        compile_preferences(
-            STORE['directories']['integration']['preferences']['src'],
-            STORE['directories']['integration']['preferences']['build'],
-        )
+        compile_preferences()

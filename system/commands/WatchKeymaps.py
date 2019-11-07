@@ -36,10 +36,7 @@ class EventHandler(PatternMatchingEventHandler):
         self.process(event)
 
     def process(self, event):
-        compile_keymaps(
-            STORE['directories']['integration']['keymaps']['src'],
-            STORE['directories']['integration']['keymaps']['build'],
-        )
+        compile_keymaps()
 
 
 class NaomiWatchKeymapsCommand(ApplicationCommand):

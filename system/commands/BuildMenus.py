@@ -11,7 +11,6 @@
 # the License.
 
 from Naomi.system.compilers.menus import compile_menus
-from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 
 
@@ -20,7 +19,4 @@ class NaomiBuildMenusCommand(ApplicationCommand):
         return 'Build Menus'
 
     def run(self):
-        compile_menus(
-            STORE['directories']['integration']['menus']['src'],
-            STORE['directories']['integration']['menus']['build'],
-        )
+        compile_menus()

@@ -36,10 +36,7 @@ class EventHandler(PatternMatchingEventHandler):
         self.process(event)
 
     def process(self, event):
-        compile_menus(
-            STORE['directories']['integration']['menus']['src'],
-            STORE['directories']['integration']['menus']['build'],
-        )
+        compile_menus()
 
 
 class NaomiWatchMenusCommand(ApplicationCommand):

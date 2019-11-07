@@ -18,40 +18,48 @@ from borela import (
     to_plist_string,
     write_text_file,
 )
+
 from Naomi.system.headers import (
     preferences as preferences_header,
     plist as plist_header,
 )
+
 from Naomi.system.logging import (
     log_debug,
     log_info,
 )
-from Naomi.system import package_relpath
-from Naomi.system.event_bus import EVENT_BUS
+
 from Naomi.system.events import (
     building_preferences,
     finished_building_preferences,
 )
 
+from Naomi.system import package_relpath
+from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system.state import STORE
 
-def compile_preferences(target_dir_path, output_dir_path):
+
+def compile_preferences():
     """
     Convert preferences from “x.yml” to “x.tmPreferences”.
     """
 
-    EVENT_BUS.emit(building_preferences())
-    log_debug('Cleaning: %s' % package_relpath(output_dir_path))
+    dir_path = STORE['directories']['integration']['preferences']['src']
+    dest_dir_path = STORE['directories']['integration']['preferences']['build']
 
-    delete_dir_contents(output_dir_path)
+    EVENT_BUS.emit(building_preferences())
+    log_debug('Cleaning: %s' % package_relpath(dest_dir_path))
+
+    delete_dir_contents(dest_dir_path)
 
     log_info('Compiling preferences...')
 
-    for file_path, _, _ in list_files(target_dir_path):
+    for file_path, _, _ in list_files(dir_path):
         relative_file_path = package_relpath(file_path)
         destination = modify_path(
             file_path,
-            old_base=target_dir_path,
-            new_base=output_dir_path,
+            old_base=dir_path,
+            new_base=dest_dir_path,
             new_extension='tmPreferences',
         )
 

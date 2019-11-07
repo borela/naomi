@@ -11,7 +11,6 @@
 # the License.
 
 from Naomi.system.compilers.keymaps import compile_keymaps
-from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 
 
@@ -20,7 +19,4 @@ class NaomiBuildKeymapsCommand(ApplicationCommand):
         return 'Build Keymaps'
 
     def run(self):
-        compile_keymaps(
-            STORE['directories']['integration']['keymaps']['src'],
-            STORE['directories']['integration']['keymaps']['build'],
-        )
+        compile_keymaps()

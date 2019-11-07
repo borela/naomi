@@ -23,11 +23,8 @@ def to_plist_string(target_dict):
     plist_array = dict_to_plist_array(target_dict)
     # Convert to a XML tree.
     xml = plist_array_to_xml(plist_array)
-    # Convert to a binary string.
-    xml = to_xml_string(
+    # Finally convert to string.
+    return to_xml_string(
         xml,
         indent=True,
     )
-    # Convert back to a normal string.
-    xml = xml.decode('utf-8')
-    return xml

@@ -14,8 +14,11 @@ from lxml.etree import tostring
 
 
 def to_xml_string(value, indent=False):
-    return tostring(
+    # Convert to a binary string.
+    result = tostring(
         value,
         encoding='utf-8',
         pretty_print=indent,
     )
+    # Convert to a normal string.
+    return result.decode('utf-8')

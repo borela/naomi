@@ -12,4 +12,6 @@
 
 
 class Variable:
-    pass
+    def __init__(self, name, raw):
+        self.name = name
+        self.raw = raw

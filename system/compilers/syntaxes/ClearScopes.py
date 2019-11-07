@@ -13,5 +13,5 @@
 from .Statement import Statement
 
 
-class Include(Statement):
+class ClearScopes(Statement):
     pass

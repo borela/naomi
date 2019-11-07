@@ -10,8 +10,6 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .Statement import Statement
 
-
-class Include(Statement):
+class Statement:
     pass

@@ -10,18 +10,16 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-import sys
-from os.path import (
-    dirname,
-    join,
-)
-
-PARENT_DIR = dirname(__file__)
-VENDOR_PATH = join(PARENT_DIR, 'vendor')
-
-# Add the “Naomi/vendor” dir to the paths to enable easy imports.
-if VENDOR_PATH not in sys.path:
-    sys.path.append(VENDOR_PATH)
-
-# Import the commands to the Naomi namespace to enable sublime to use them.
-from Naomi.system.commands import * # noqa
+from .BuildCommands import * # noqa
+from .BuildKeymaps import * # noqa
+from .BuildMenus import * # noqa
+from .BuildPreferences import * # noqa
+from .BuildSyntaxes import * # noqa
+from .CloseJsxTag import * # noqa
+from .RunCommands import * # noqa
+from .ToggleJsxComment import * # noqa
+from .WatchCommands import * # noqa
+from .WatchKeymaps import * # noqa
+from .WatchMenus import * # noqa
+from .WatchPreferences import * # noqa
+from .WatchSyntaxes import * # noqa

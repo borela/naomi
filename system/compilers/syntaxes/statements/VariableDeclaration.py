@@ -13,5 +13,12 @@
 from .Statement import Statement
 
 
-class MetaContentScope(Statement):
-    pass
+class VariableDeclaration(Statement):
+    name = None
+    pattern = None
+
+    def __init__(self, name, raw):
+        Statement.__init__(self, raw)
+        self.name = name
+        self.pattern = raw
+

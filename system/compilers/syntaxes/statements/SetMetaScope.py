@@ -13,5 +13,9 @@
 from .Statement import Statement
 
 
-class Set(Statement):
-    pass
+class SetMetaScope(Statement):
+    scope = None
+
+    def __init__(self, raw):
+        Statement.__init__(self, raw)
+        self.scope = raw['meta_scope']

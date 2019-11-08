@@ -10,6 +10,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from .Statement import Statement
 
-class Statement:
-    pass
+
+class SetMetaContentScope(Statement):
+    scope = None
+
+    def __init__(self, raw):
+        Statement.__init__(self, raw)
+        self.scope = raw['meta_content_scope']

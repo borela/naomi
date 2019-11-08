@@ -10,8 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from .Statement import Statement
 
-class Variable:
-    def __init__(self, name, raw):
-        self.name = name
-        self.raw = raw
+
+class StackControlStatement(Statement):
+    pass

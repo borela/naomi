@@ -10,8 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .Statement import Statement
 
+class Statement:
+    raw = None
 
-class Include(Statement):
-    pass
+    def __init__(self, raw):
+        self.raw = raw

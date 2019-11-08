@@ -10,10 +10,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-
-class Context:
-    statements = []
-
-    def __init__(self, name, raw):
-        self.name = name
-        self.raw = raw
+from .ClearScopes import * # noqa
+from .ContextDeclaration import * # noqa
+from .Include import * # noqa
+from .Match import * # noqa
+from .Pop import * # noqa
+from .Push import * # noqa
+from .Set import * # noqa
+from .SetMetaContentScope import * # noqa
+from .SetMetaScope import * # noqa
+from .Statement import * # noqa
+from .VariableDeclaration import * # noqa

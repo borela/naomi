@@ -13,5 +13,9 @@
 from .Statement import Statement
 
 
-class ClearScopes(Statement):
-    pass
+class Include(Statement):
+    path = None
+
+    def __init__(self, raw):
+        Statement.__init__(self, raw)
+        self.path = raw['include']

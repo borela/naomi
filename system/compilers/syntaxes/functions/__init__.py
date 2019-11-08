@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from .make_regex_to_match_words import * # noqa
 from .resolve_path import * # noqa
 from .word_binary_tree_to_string import * # noqa
-from .words_to_binary_tree import * # noqa
+from .word_list_to_word_binary_tree import * # noqa

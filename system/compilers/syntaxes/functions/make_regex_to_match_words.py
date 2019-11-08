@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .words_to_binary_tree import words_to_binary_tree
+from .word_list_to_word_binary_tree import word_list_to_word_binary_tree
 from .word_binary_tree_to_string import word_binary_tree_to_string
 
 
@@ -18,9 +18,9 @@ def make_regex_to_match_words(words):
     # Sorting is not necessary but it will be easier to debug.
     words.sort()
     # This will turn the words into a binary tree and extract the root that
-    # connect them.
-    node = words_to_binary_tree(words)
+    # connect each group of words.
+    tree = word_list_to_word_binary_tree(words)
     # Build the optimized regex.
-    result = word_binary_tree_to_string(node)
+    result = word_binary_tree_to_string(tree)
     # Add a word boundary to to prevent partial matches.
     return '\\b%s\\b' %result

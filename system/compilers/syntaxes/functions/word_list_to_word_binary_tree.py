@@ -11,7 +11,7 @@
 # the License.
 
 
-def words_to_binary_tree(words):
+def word_list_to_word_binary_tree(words):
     if all([len(word) == 1 for word in words]):
         return words
 
@@ -34,7 +34,7 @@ def words_to_binary_tree(words):
     else:
         node['right'] = words[1:]
 
-    node['left'] = words_to_binary_tree(node['left'])
-    node['right'] = words_to_binary_tree(node['right'])
+    node['left'] = word_list_to_word_binary_tree(node['left'])
+    node['right'] = word_list_to_word_binary_tree(node['right'])
 
     return node

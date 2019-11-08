@@ -23,13 +23,12 @@ def word_binary_tree_to_string(node):
     else:
         left_pattern = word_binary_tree_to_string(left)
 
-    right_pattern = ''
     if len(right) < 1:
         return root + left_pattern
 
     right_pattern = word_binary_tree_to_string(right)
 
     if not left_pattern:
-        return '(?:%s)?' % (root + right_pattern)
+        return '(?:%s%s)?' % (root, right_pattern)
 
-    return '(?>%s|%s)' % ((root + left_pattern), right_pattern)
+    return '(?>%s%s|%s)' % (root, left_pattern, right_pattern)

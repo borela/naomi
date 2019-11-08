@@ -10,15 +10,19 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ClearScopes import * # noqa
-from .ContextDeclaration import * # noqa
-from .Include import * # noqa
-from .Match import * # noqa
-from .Pop import * # noqa
-from .Push import * # noqa
-from .Set import * # noqa
-from .SetMetaContentScope import * # noqa
-from .SetMetaScope import * # noqa
-from .Statement import * # noqa
-from .VariableDeclaration import * # noqa
-from .WithPrototype import * # noqa
+from os.path import (
+    isabs,
+    join,
+    realpath,
+)
+
+from Naomi.system.state import STORE
+
+
+def resolve_path(path):
+    """
+    Resolve relative paths to the syntaxes src directory.
+    """
+    if not isabs(path):
+        path = join(STORE['directories']['syntaxes']['src'], path)
+    return realpath(path)

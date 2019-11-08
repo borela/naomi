@@ -10,72 +10,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from .Pop import Pop
+from .Push import Push
+from .Set import Set
 from .Statement import Statement
-
-
-def word_binary_tree_to_string(node):
-    root = node['root']
-    left = node['left']
-    right = node['right']
-
-    left_pattern = ''
-    if isinstance(left, list):
-        if len(left) > 0:
-            left_pattern = '(?>%s)' % '|'.join(left)
-    else:
-        left_pattern = word_binary_tree_to_string(left)
-
-    right_pattern = ''
-    if len(right) < 1:
-        return root + left_pattern
-
-    right_pattern = word_binary_tree_to_string(right)
-
-    if not left_pattern:
-        return '(?:%s)?' % (root + right_pattern)
-
-    return '(?>%s|%s)' % ((root + left_pattern), right_pattern)
-
-
-def words_to_binary_tree(words):
-    if all([len(word) == 1 for word in words]):
-        return words
-
-    node = {
-        'root': '',
-        'left': [],
-        'right': [],
-    }
-
-    character = words[0][:1]
-
-    if character:
-        node['root'] += character
-
-        for word in words:
-            if word.startswith(character):
-                node['left'].append(word[1:])
-            else:
-                node['right'].append(word)
-    else:
-        node['right'] = words[1:]
-
-    node['left'] = words_to_binary_tree(node['left'])
-    node['right'] = words_to_binary_tree(node['right'])
-
-    return node
-
-
-def make_regex_to_match_words(words):
-    # Sorting is not necessary but it will be easier to debug.
-    words.sort()
-    # This will turn the words into a binary tree and extract the root that
-    # connect them.
-    node = words_to_binary_tree(words)
-    # Build the optimized regex.
-    result = word_binary_tree_to_string(node)
-    # Add a word boundary to to prevent partial matches.
-    return '\\b%s\\b' %result
+from .WithPrototype import WithPrototype
+from Naomi.system.compilers.syntaxes.functions import make_regex_to_match_words
 
 
 class Match(Statement):
@@ -83,6 +23,7 @@ class Match(Statement):
     captures = None
     scope = None
     stack_control = None
+    with_prototype = None
 
     def __init__(self, raw):
         Statement.__init__(self, raw)
@@ -103,3 +44,33 @@ class Match(Statement):
             if key == 'captures':
                 self.captures = value
                 continue
+
+            if key == 'with_prototype':
+                self.with_prototype = WithPrototype(value)
+                continue
+
+            if key in ['push', 'set', 'pop']:
+                if self.stack_control:
+                    raise SyntaxError(
+                        'Multiple stack control statements. (%i, %i)' %
+                        value.lc.line,
+                        value.lc.col,
+                    )
+
+                if key == 'push':
+                    self.stack_control = Push(value)
+                    continue
+
+                if key == 'set':
+                    self.stack_control = Pop(value)
+                    continue
+
+                if key == 'pop':
+                    self.stack_control = Pop(value)
+                    continue
+
+            raise SyntaxError('Unexpected statement: %s (%i, %i)' % (
+                key,
+                value.lc.line,
+                value.lc.col,
+            ))

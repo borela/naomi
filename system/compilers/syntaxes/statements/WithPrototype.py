@@ -14,4 +14,4 @@ from .Statement import Statement
 
 
 class WithPrototype(Statement):
-   pass
+    pass

@@ -10,31 +10,6 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from borela import (
-    delete_dir_contents,
-    list_files,
-    load_yaml,
-    to_json_string,
-    write_text_file,
-)
-
-from Naomi.system.logging import (
-    log_debug,
-    log_error,
-    log_info,
-    log_warning,
-)
-
-from Naomi.system.events import (
-    building_syntaxes,
-    finished_building_syntaxes,
-)
-
-from os.path import (
-    isabs,
-    join,
-    realpath,
-)
 
 from .statements import (
     ContextDeclaration,
@@ -42,10 +17,9 @@ from .statements import (
 )
 
 from .functions import resolve_path
+from borela.functions import load_yaml
 from Naomi.system import package_relpath
-from Naomi.system.event_bus import EVENT_BUS
-from Naomi.system.headers import syntax as syntax_header
-from Naomi.system.state import STORE
+from Naomi.system.logging import log_info
 
 
 class Syntax:
@@ -63,7 +37,6 @@ class Syntax:
     variables = []
     contexts = []
 
-
     def __init__(self, path):
         self.path = path
         self.resolved_path = resolve_path(path)
@@ -72,7 +45,7 @@ class Syntax:
         self._compile()
 
     def _load(self):
-        log_debug('Loading syntax file: %s' % self.package_relpath)
+        log_info('Loading syntax file: %s' % self.package_relpath)
 
         self.raw = load_yaml(self.resolved_path)
 
@@ -82,10 +55,10 @@ class Syntax:
         self.first_line_match = self.raw.get('first_line_match', '')
         self.hidden = self.raw.get('hidden', '')
 
-        log_debug('Done loading syntax file: %s' % self.package_relpath)
+        log_info('Done loading syntax file: %s' % self.package_relpath)
 
     def _compile(self):
-        log_debug('Compiling syntax file: %s' % self.package_relpath)
+        log_info('Compiling syntax file: %s' % self.package_relpath)
 
         for name, raw in self.raw.get('variables', []).items():
             self.variables.append(VariableDeclaration(name, raw))
@@ -93,4 +66,4 @@ class Syntax:
         for name, raw in self.raw.get('contexts', []).items():
             self.contexts.append(ContextDeclaration(name, raw))
 
-        log_debug('Done compiling syntax file: %s' % self.package_relpath)
+        log_info('Done compiling syntax file: %s' % self.package_relpath)

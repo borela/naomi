@@ -35,6 +35,7 @@ class Match(Statement):
 
             if key == 'match_words':
                 self.pattern = make_regex_to_match_words(value)
+                print(self.pattern)
                 continue
 
             if key == 'scope':
@@ -62,7 +63,7 @@ class Match(Statement):
                     continue
 
                 if key == 'set':
-                    self.stack_control = Pop(value)
+                    self.stack_control = Set(value)
                     continue
 
                 if key == 'pop':

@@ -57,10 +57,10 @@ class EventEngine:
         if subscriber is not None:
             return self.__on(event, subscriber)
 
-        def __decorator(subscriber):
+        def decorator(subscriber):
             return self.__on(event, subscriber)
 
-        return __decorator
+        return decorator
 
     def once(self, event, subscriber):
         # TODO

@@ -15,6 +15,19 @@ from .word_binary_tree_to_string import word_binary_tree_to_string
 
 
 def make_regex_to_match_words(words):
+    """
+    Transforms a list of words into an optimized regex, for example:
+
+        foo
+        bar
+        baz
+        foobar
+        foobaz
+
+    becomes:
+
+        \b(?>ba(?>r|z)|foo(?:ba(?>r|z))?)\b
+    """
     # Sorting is not necessary but it will be easier to debug.
     words.sort()
     # This will turn the words into a binary tree and extract the root that
@@ -23,4 +36,4 @@ def make_regex_to_match_words(words):
     # Build the optimized regex.
     result = word_binary_tree_to_string(tree)
     # Add a word boundary to to prevent partial matches.
-    return '\\b%s\\b' %result
+    return '\\b%s\\b' % result

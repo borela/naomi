@@ -10,19 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from borela import (
-    delete_dir_contents,
-    list_files,
-    load_yaml,
-    to_json_string,
-    write_text_file,
-)
-
 from Naomi.system.logging import (
-    log_debug,
     log_error,
     log_info,
-    log_warning,
 )
 
 from Naomi.system.events import (
@@ -30,40 +20,9 @@ from Naomi.system.events import (
     finished_building_syntaxes,
 )
 
-from os.path import (
-    isabs,
-    join,
-    realpath,
-)
-
 from .Syntax import Syntax
-from Naomi.system import package_relpath
 from Naomi.system.event_bus import EVENT_BUS
-from Naomi.system.headers import syntax as syntax_header
 from Naomi.system.state import STORE
-
-def compile_syntaxes():
-    EVENT_BUS.emit(building_syntaxes())
-
-    for syntax in STORE['settings']['syntaxes']:
-        compile_syntax(syntax)
-
-    EVENT_BUS.emit(finished_building_syntaxes())
-
-    # syntaxes = get_setting('syntaxes', [])
-
-    # for syntax in syntaxes:
-    #     name = syntax['name']
-    #     entry = syntax['entry']
-    #     output = syntax['output']
-    #     features = syntax['features']
-
-    #     entry = realpath(join(dir_path, entry))
-    #     if not isfile(entry):
-    #         log_error('Entry not found: %s' % entry)
-    #         continue
-
-    #     output = realpath(join(dest_dir_path, output))
 
 
 def compile_syntax(syntax_settings):
@@ -74,16 +33,19 @@ def compile_syntax(syntax_settings):
         log_error('Configured syntax has no entry.')
         return
 
-    log_info('Compiling syntax for: %s' % names)
+    if not names:
+        log_info('Compiling syntax: %s' % entry)
+    else:
+        log_info('Compiling syntax for: %s' % names)
 
     syntax = Syntax(entry)
-    # syntax.compile()
+    # TODO: Save to a file.
 
 
-def resolve_path(path):
-    """
-    Resolve relative paths to the syntaxes src directory.
-    """
-    if not isabs(path):
-        path = join(STORE['directories']['syntaxes']['src'], path)
-    return realpath(path)
+def compile_syntaxes():
+    EVENT_BUS.emit(building_syntaxes())
+
+    for syntax in STORE['settings']['syntaxes']:
+        compile_syntax(syntax)
+
+    EVENT_BUS.emit(finished_building_syntaxes())

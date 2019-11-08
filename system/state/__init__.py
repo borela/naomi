@@ -29,4 +29,4 @@ STORE = StateStore(
 )
 
 # Listen to all events to modify the store through the reducers.
-EVENT_BUS.onAny(lambda event: STORE.apply(event))
+EVENT_BUS.on_any(lambda event: STORE.apply(event))

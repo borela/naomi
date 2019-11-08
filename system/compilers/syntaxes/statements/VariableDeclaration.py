@@ -21,4 +21,3 @@ class VariableDeclaration(Statement):
         Statement.__init__(self, raw)
         self.name = name
         self.pattern = raw
-

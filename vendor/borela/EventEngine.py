@@ -40,12 +40,12 @@ class EventEngine:
         for subscriber in self.__events[event].values():
             subscriber(data)
 
-    def isSubscribed(self, subscriber, event):
+    def is_subscribed(self, subscriber, event):
         if event is None:
             return subscriber in self.__anySubscribers
         return subscriber in self.__events[event]
 
-    def isSubscribedToAnything(self, subscriber):
+    def is_subscribed_to_anything(self, subscriber):
         if subscriber in self.__anySubscribers:
             return True
         return any(
@@ -66,11 +66,11 @@ class EventEngine:
         # TODO
         pass
 
-    def onAny(self, subscriber):
+    def on_any(self, subscriber):
         self.__anySubscribers.append(subscriber)
         return AnyEventSubscription(self, subscriber)
 
-    def onceAny(self, subscriber):
+    def once_any(self, subscriber):
         # TODO
         pass
 

@@ -17,14 +17,14 @@ class EventSubscription:
         self._event = event
         self._subscriber = subscriber
 
-    def isActive(self):
-        return self._engine.isSubscribed(
+    def is_active(self):
+        return self._engine.is_subscribed(
             self._subscriber,
             self._event,
         )
 
     def subscribe(self):
-        if self.isActive():
+        if self.is_active():
             return
         return self.engine.on(
             self._event,

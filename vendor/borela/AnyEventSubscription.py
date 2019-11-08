@@ -21,13 +21,13 @@ class AnyEventSubscription(EventSubscription):
             subscriber=subscriber,
         )
 
-    def isActive(self):
-        return self._engine.isSubscribed(self._subscriber)
+    def is_active(self):
+        return self._engine.is_subscribed(self._subscriber)
 
     def subscribe(self):
-        if self.isActive():
+        if self.is_active():
             return
-        return self._engine.onAny(self._subscriber)
+        return self._engine.on_any(self._subscriber)
 
     def unsubscribe(self):
         self._engine.unsubscribe(self._subscriber)

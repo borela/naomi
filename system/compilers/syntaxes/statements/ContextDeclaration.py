@@ -47,4 +47,8 @@ class ContextDeclaration(Statement):
                 self.statements.append(ClearScopes(statement))
                 continue
 
-            raise SyntaxError('Unexpected statement: %s' % statement)
+            raise SyntaxError('Unexpected statement: %s (%i, %i)' % (
+                statement,
+                statement.lc.line,
+                statement.lc.col,
+            ))

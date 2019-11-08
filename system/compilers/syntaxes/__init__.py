@@ -10,29 +10,45 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-# from Naomi.system.fs import (
-#     load_yaml,
-#     write_file,
-# )
-
-# from os.path import (
-#     isfile,
-#     join,
-#     realpath,
-# )
-
-from Naomi.system.logging import (
-    # log_error,
-    log_info,
+from borela import (
+    delete_dir_contents,
+    list_files,
+    load_yaml,
+    to_json_string,
+    write_text_file,
 )
 
-# from Naomi.system.state import STORE
-# from Naomi.system.headers import syntax as syntax_header
-# from Naomi.system.paths import package_path
+from Naomi.system.logging import (
+    log_debug,
+    log_error,
+    log_info,
+    log_warning,
+)
 
+from Naomi.system.events import (
+    building_syntaxes,
+    finished_building_syntaxes,
+)
 
-def compile_syntaxes(dir_path, dest_dir_path):
-    log_info('Building syntaxes...')
+from os.path import (
+    isabs,
+    join,
+    realpath,
+)
+
+from .Syntax import Syntax
+from Naomi.system import package_relpath
+from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system.headers import syntax as syntax_header
+from Naomi.system.state import STORE
+
+def compile_syntaxes():
+    EVENT_BUS.emit(building_syntaxes())
+
+    for syntax in STORE['settings']['syntaxes']:
+        compile_syntax(syntax)
+
+    EVENT_BUS.emit(finished_building_syntaxes())
 
     # syntaxes = get_setting('syntaxes', [])
 
@@ -50,5 +66,24 @@ def compile_syntaxes(dir_path, dest_dir_path):
     #     output = realpath(join(dest_dir_path, output))
 
 
-def resolve_path(current_dir, target_path):
-    pass
+def compile_syntax(syntax_settings):
+    names = syntax_settings.get('names', None)
+    entry = syntax_settings.get('entry', None)
+
+    if not isinstance(entry, str) or not entry:
+        log_error('Configured syntax has no entry.')
+        return
+
+    log_info('Compiling syntax for: %s' % names)
+
+    syntax = Syntax(entry)
+    # syntax.compile()
+
+
+def resolve_path(path):
+    """
+    Resolve relative paths to the syntaxes src directory.
+    """
+    if not isabs(path):
+        path = join(STORE['directories']['syntaxes']['src'], path)
+    return realpath(path)

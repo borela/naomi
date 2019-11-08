@@ -69,7 +69,7 @@ def words_to_binary_tree(words):
 def make_regex_to_match_words(words):
     # Sorting is not necessary but it will be easier to debug.
     words.sort()
-    # This will turn the words into a binary tree and extracting the root that
+    # This will turn the words into a binary tree and extract the root that
     # connect them.
     node = words_to_binary_tree(words)
     # Build the optimized regex.

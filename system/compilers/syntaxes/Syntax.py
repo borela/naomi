@@ -41,6 +41,7 @@ from .statements import (
     VariableDeclaration,
 )
 
+from .functions import resolve_path
 from Naomi.system import package_relpath
 from Naomi.system.event_bus import EVENT_BUS
 from Naomi.system.headers import syntax as syntax_header

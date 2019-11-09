@@ -36,6 +36,14 @@ from os.path import join
 
 
 def compile_keymaps():
+    for integrated in STATE_STORE['integrated']['keymaps']:
+        _compile_keymaps(
+            integrated['src_dir'],
+            integrated['build_dir'],
+        )
+
+
+def _compile_keymaps(src_dir, build_dir):
     """
     Load all keymaps sources and generate files for each OS on demand:
 
@@ -45,23 +53,18 @@ def compile_keymaps():
       Default (OSX).sublime-keymap
     """
 
-    dir_path = STATE_STORE['directories']['integration']['keymaps']['src']
-    dest_dir_path = (
-        STATE_STORE['directories']['integration']['keymaps']['build']
-    )
-
     EVENT_BUS.emit(building_keymaps())
-    log_debug('Cleaning: %s' % package_relpath(dest_dir_path))
+    log_debug('Cleaning: %s' % package_relpath(build_dir))
 
-    delete_dir_contents(dest_dir_path)
+    delete_dir_contents(build_dir)
 
     log_info('Compiling keymaps...')
 
-    files = [file for file, _, _ in list_files(dir_path)]
+    files = [file for file, _, _ in list_files(src_dir)]
     (shared, per_os) = load_keymaps(files)
 
-    write_shared_keymap(shared, dest_dir_path)
-    write_per_os_keymap(per_os, dest_dir_path)
+    write_shared_keymap(shared, src_dir, build_dir)
+    write_per_os_keymap(per_os, src_dir, build_dir)
 
     log_info('Done compiling keymaps...')
     EVENT_BUS.emit(finished_building_keymaps())
@@ -136,7 +139,7 @@ def validate_os(os, file_path):
         raise ValueError('Invalid OS “%s” for file: %s' % (os, file_path))
 
 
-def write_per_os_keymap(per_os_bindings, dest_dir_path):
+def write_per_os_keymap(per_os_bindings, src_dir, build_dir):
     """
     Write bindings indexed by OS on their respective files:
 
@@ -151,14 +154,14 @@ def write_per_os_keymap(per_os_bindings, dest_dir_path):
             continue
 
         file_name = 'Default (%s).sublime-keymap' % os
-        destination = join(dest_dir_path, file_name)
-        final_string = keymap_header() + to_json_string(bindings, indent=True)
+        destination = join(build_dir, file_name)
+        final_string = keymap_header(src_dir) + to_json_string(bindings, indent=True)
 
         write_text_file(destination, final_string)
         log_debug('File generated: %s' % package_relpath(destination))
 
 
-def write_shared_keymap(bindings, dest_dir_path):
+def write_shared_keymap(bindings, src_dir, build_dir):
     """
     Write bindings shared by all OSs on:
 
@@ -168,8 +171,8 @@ def write_shared_keymap(bindings, dest_dir_path):
     if len(bindings) < 1:
         return
 
-    destination = join(dest_dir_path, 'Default.sublime-keymap')
-    final_string = keymap_header() + to_json_string(bindings, indent=True)
+    destination = join(build_dir, 'Default.sublime-keymap')
+    final_string = keymap_header(src_dir) + to_json_string(bindings, indent=True)
 
     write_text_file(destination, final_string)
     log_debug('File generated: %s' % package_relpath(destination))

@@ -37,24 +37,27 @@ from os.path import join
 
 
 def compile_menus():
-    dir_path = STATE_STORE['directories']['integration']['menus']['src']
-    dest_dir_path = (
-        STATE_STORE['directories']['integration']['menus']['build']
-    )
+    for integrated in STATE_STORE['integrated']['menus']:
+        _compile_menus(
+            integrated['src_dir'],
+            integrated['build_dir'],
+        )
 
+
+def _compile_menus(src_dir, build_dir):
     EVENT_BUS.emit(building_menus())
-    log_debug('Cleaning: %s' % package_relpath(dest_dir_path))
+    log_debug('Cleaning: %s' % package_relpath(build_dir))
 
-    delete_dir_contents(dest_dir_path)
+    delete_dir_contents(build_dir)
 
-    files = [file for file, _, _ in list_files(dir_path)]
+    files = [file for file, _, _ in list_files(src_dir)]
     menus = load_menus(files)
 
     for location in menus:
         log_info('Building menus for %s...' % location)
 
-        destination = join(dest_dir_path, '%s.sublime-menu' % location)
-        final_string = menu_header() + to_json_string(
+        destination = join(build_dir, '%s.sublime-menu' % location)
+        final_string = menu_header(src_dir) + to_json_string(
             menus[location],
             indent=True,
         )

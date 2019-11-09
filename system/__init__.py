@@ -10,7 +10,41 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from os.path import (
+    dirname,
+    join,
+    realpath,
+)
+
 from .event_bus import * # noqa
+from .integration import * # noqa
 from .logging import * # noqa
 from .path import * # noqa
 from .state_store import * # noqa
+
+INTEGRATION_DIR = realpath(join(dirname(__file__), '..', 'integration'))
+
+integrate_commands(
+    join(INTEGRATION_DIR, 'commands', 'src'),
+    join(INTEGRATION_DIR, 'commands', 'build'),
+)
+
+integrate_keymaps(
+    join(INTEGRATION_DIR, 'keymaps', 'src'),
+    join(INTEGRATION_DIR, 'keymaps', 'build'),
+)
+
+integrate_menus(
+    join(INTEGRATION_DIR, 'menus', 'src'),
+    join(INTEGRATION_DIR, 'menus', 'build'),
+)
+
+integrate_preferences(
+    join(INTEGRATION_DIR, 'preferences', 'src'),
+    join(INTEGRATION_DIR, 'preferences', 'build'),
+)
+
+integrate_syntaxes(
+    join(INTEGRATION_DIR, 'syntaxes', 'src'),
+    join(INTEGRATION_DIR, 'syntaxes', 'build'),
+)

@@ -36,27 +36,30 @@ from Naomi.system.headers import command as command_header
 
 
 def compile_commands():
+    for integrated in STATE_STORE['integrated']['commands']:
+        _compile_commands(
+            integrated['src_dir'],
+            integrated['build_dir'],
+        )
+
+
+def _compile_commands(src_dir, build_dir):
     """
     Convert commands from “x.yml” to “x.sublime-commands”.
     """
 
-    dir_path = STATE_STORE['directories']['integration']['commands']['src']
-    dest_dir_path = (
-        STATE_STORE['directories']['integration']['commands']['build']
-    )
-
     EVENT_BUS.emit(building_commands())
-    log_debug('Cleaning: %s' % package_relpath(dest_dir_path))
+    log_debug('Cleaning: %s' % package_relpath(build_dir))
 
-    delete_dir_contents(dest_dir_path)
+    delete_dir_contents(build_dir)
 
     log_info('Building command files...')
 
-    for file, _, _ in list_files(dir_path):
+    for file, _, _ in list_files(src_dir):
         destination = modify_path(
             file,
-            old_base=dir_path,
-            new_base=dest_dir_path,
+            old_base=src_dir,
+            new_base=build_dir,
             new_extension='sublime-commands',
         )
 
@@ -70,7 +73,7 @@ def compile_commands():
             continue
 
         json_string = to_json_string(data, indent=True)
-        final_string = command_header() + json_string
+        final_string = command_header(src_dir) + json_string
 
         write_text_file(destination, final_string)
         log_debug('File generated: %s' % package_relpath(destination))

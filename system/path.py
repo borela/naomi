@@ -32,6 +32,7 @@ def resolve_path(path):
     """
     Resolve relative paths to the syntaxes src directory.
     """
-    if not isabs(path):
-        path = join(STATE_STORE['directories']['syntaxes']['src'], path)
+    # TODO:
+    # if not isabs(path):
+    #     path = join(STATE_STORE['directories']['syntaxes']['src'], path)
     return realpath(path)

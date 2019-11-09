@@ -15,14 +15,14 @@ from borela import StateStore
 
 # Reducers.
 from .state_reducers.building import reducer as building_reducer
-from .state_reducers.directories import reducer as directories_reducer
+from .state_reducers.integrated import reducer as integrated_reducer
 from .state_reducers.settings import reducer as settings_reducer
 from .state_reducers.watching import reducer as watching_reducer
 
 # Store that holds the plugins’ state.
 STATE_STORE = StateStore(
     building=building_reducer,
-    directories=directories_reducer,
+    integrated=integrated_reducer,
     settings=settings_reducer,
     watching=watching_reducer,
 )

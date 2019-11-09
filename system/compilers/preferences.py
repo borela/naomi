@@ -39,28 +39,31 @@ from Naomi.system.events import (
 
 
 def compile_preferences():
+    for integrated in STATE_STORE['integrated']['preferences']:
+        _compile_preferences(
+            integrated['src_dir'],
+            integrated['build_dir'],
+        )
+
+
+def _compile_preferences(src_dir, build_dir):
     """
     Convert preferences from “x.yml” to “x.tmPreferences”.
     """
 
-    dir_path = STATE_STORE['directories']['integration']['preferences']['src']
-    dest_dir_path = (
-        STATE_STORE['directories']['integration']['preferences']['build']
-    )
-
     EVENT_BUS.emit(building_preferences())
-    log_debug('Cleaning: %s' % package_relpath(dest_dir_path))
+    log_debug('Cleaning: %s' % package_relpath(build_dir))
 
-    delete_dir_contents(dest_dir_path)
+    delete_dir_contents(build_dir)
 
     log_info('Compiling preferences...')
 
-    for file_path, _, _ in list_files(dir_path):
+    for file_path, _, _ in list_files(src_dir):
         relative_file_path = package_relpath(file_path)
         destination = modify_path(
             file_path,
-            old_base=dir_path,
-            new_base=dest_dir_path,
+            old_base=src_dir,
+            new_base=build_dir,
             new_extension='tmPreferences',
         )
 
@@ -73,7 +76,11 @@ def compile_preferences():
             continue
 
         plist_string = to_plist_string(data)
-        final_string = plist_header() + preferences_header() + plist_string
+        final_string = (
+            plist_header()
+            + preferences_header(src_dir)
+            + plist_string
+        )
 
         write_text_file(destination, final_string)
         log_debug('File generated: %s' % package_relpath(destination))

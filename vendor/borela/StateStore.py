@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from copy import deepcopy
+
 
 class StateStore:
     """
@@ -17,9 +19,11 @@ class StateStore:
     applying events to it.
     """
 
+    __reducers = {}
+    __state = {}
+
     def __init__(self, **reducers):
         self.__reducers = reducers
-        self.__state = {}
 
         # Initialize state.
         for name, reducer in reducers.items():
@@ -29,10 +33,7 @@ class StateStore:
         return key in self.__state
 
     def __getitem__(self, key):
-        return self.__state[key]
-
-    def __iter__(self):
-        return iter(self.__state)
+        return deepcopy(self.__state[key])
 
     def __len__(self):
         return len(self.__state)
@@ -49,8 +50,8 @@ class StateStore:
 
     @property
     def state(self):
-        return self.__state
+        return deepcopy(self.__state)
 
     @property
     def reducers(self):
-        return self.__reducers
+        return deepcopy(self.__reducers)

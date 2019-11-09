@@ -11,7 +11,7 @@
 # the License.
 
 from borela import StateStore
-from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system import EVENT_BUS
 
 # Reducers.
 from .building import reducer as building_reducer

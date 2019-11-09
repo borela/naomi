@@ -10,15 +10,17 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-
 from .statements import (
     ContextDeclaration,
     VariableDeclaration,
 )
 
-from .functions import resolve_path
+from Naomi.system import (
+    package_relpath,
+    resolve_path,
+)
+
 from borela.functions import load_yaml
-from Naomi.system import package_relpath
 from Naomi.system.logging import log_info
 
 

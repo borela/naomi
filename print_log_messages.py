@@ -12,7 +12,7 @@
 
 import logging
 from datetime import datetime, timedelta
-from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system import EVENT_BUS
 from Naomi.system.events import LOG_MESSAGE_ADDED
 from Naomi.system.state import STORE
 

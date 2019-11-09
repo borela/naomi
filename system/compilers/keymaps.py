@@ -29,7 +29,7 @@ from Naomi.system.events import (
 )
 
 from Naomi.system import package_relpath
-from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system import EVENT_BUS
 from Naomi.system.headers import keymap as keymap_header
 from Naomi.system.state import STORE
 from os.path import join

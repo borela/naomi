@@ -21,7 +21,7 @@ from Naomi.system.events import (
 )
 
 from .Syntax import Syntax
-from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system import EVENT_BUS
 from Naomi.system.state import STORE
 
 

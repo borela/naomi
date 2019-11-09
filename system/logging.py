@@ -11,7 +11,7 @@
 # the License.
 
 from Naomi.system.events import log_message_added
-from Naomi.system.event_bus import EVENT_BUS
+from Naomi.system import EVENT_BUS
 
 
 def log(message, level):

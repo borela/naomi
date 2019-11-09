@@ -59,11 +59,14 @@ class NaomiWatchMenusCommand(ApplicationCommand):
 
         if not STATE_STORE['watching']['menus']:
             self.observer = Observer()
-            self.observer.schedule(
-                EventHandler(),
-                path=src_dir,
-                recursive=True,
-            )
+
+            for integrated in STATE_STORE['integrated']['menus']:
+                self.observer.schedule(
+                    EventHandler(),
+                    path=integrated['src_dir'],
+                    recursive=True,
+                )
+
             self.observer.start()
             EVENT_BUS.emit(watching_menus())
             log_info('Started watching menus...')

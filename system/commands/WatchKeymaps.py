@@ -59,11 +59,14 @@ class NaomiWatchKeymapsCommand(ApplicationCommand):
 
         if not STATE_STORE['watching']['keymaps']:
             self.observer = Observer()
-            self.observer.schedule(
-                EventHandler(),
-                path=src_dir,
-                recursive=True,
-            )
+
+            for integrated in STATE_STORE['integrated']['keymaps']:
+                self.observer.schedule(
+                    EventHandler(),
+                    path=integrated['src_dir'],
+                    recursive=True,
+                )
+
             self.observer.start()
             EVENT_BUS.emit(watching_keymaps())
             log_info('Started watching keymaps...')

@@ -25,6 +25,8 @@ from Naomi.system import log_info
 
 
 class Syntax:
+    settings = None
+
     path = None
     resolved_path = None
     package_relpath = None
@@ -35,12 +37,21 @@ class Syntax:
     first_line_match = None
     hidden = None
     scope = None
+    scope_suffix = None
 
     variables = []
     contexts = []
 
-    def __init__(self, path):
-        self.path = path
+    def __init__(self, settings):
+        self.settings = settings
+
+        entry = settings.get('entry', None)
+
+        if not isinstance(entry, str) or not entry:
+            log_error('Configured syntax has no entry.')
+            return
+
+        self.path = entry
         self.resolved_path = resolve_path(path)
         self.package_relpath = package_relpath(self.resolved_path)
 
@@ -50,6 +61,7 @@ class Syntax:
 
         self.name = self.raw.get('name', '')
         self.scope = self.raw.get('scope', '')
+        self.scope_suffix = self.raw.get('scope_suffix', '')
         self.file_extensions = self.raw.get('file_extensions', [])
         self.first_line_match = self.raw.get('first_line_match', '')
         self.hidden = self.raw.get('hidden', '')

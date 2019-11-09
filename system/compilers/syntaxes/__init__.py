@@ -25,27 +25,18 @@ from Naomi.system.events import (
 from .Syntax import Syntax
 
 
-def compile_syntax(syntax_settings):
-    names = syntax_settings.get('names', None)
-    entry = syntax_settings.get('entry', None)
-
-    if not isinstance(entry, str) or not entry:
-        log_error('Configured syntax has no entry.')
-        return
-
-    if not names:
-        log_info('Compiling syntax: %s' % entry)
-    else:
-        log_info('Compiling syntax for: %s' % names)
-
-    syntax = Syntax(entry)
-    # TODO: Save to a file.
-
-
 def compile_syntaxes():
     EVENT_BUS.emit(building_syntaxes())
 
-    for syntax in STATE_STORE['settings']['syntaxes']:
-        compile_syntax(syntax)
+    for syntax_settings in STATE_STORE['settings']['syntaxes']:
+        names = syntax_settings.get('names', None)
+
+        if not names:
+            log_info('Compiling syntax: %s' % entry)
+        else:
+            log_info('Compiling syntax for: %s' % names)
+
+        syntax = Syntax(syntax_settings)
+        # TODO: Save to a file.
 
     EVENT_BUS.emit(finished_building_syntaxes())

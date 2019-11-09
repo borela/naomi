@@ -12,7 +12,6 @@
 
 from .building import * # noqa
 from .integrated import * # noqa
-from .log_message_added import * # noqa
 from .finished_building import * # noqa
 from .stopped_watching import * # noqa
 from .settings import * # noqa

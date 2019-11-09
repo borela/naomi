@@ -10,29 +10,30 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.events import log_message_added
-from Naomi.system import EVENT_BUS
+from borela.logging import (
+    log as borela_log,
+    set_log_level,
+)
 
-
-def log(message, level):
-    EVENT_BUS.emit(log_message_added(message, level))
+def log(level, message):
+    borela_log('NAOMI', level, message)
 
 
 def log_critical(message):
-    log(message, 'CRITICAL')
+    log('CRITICAL', message)
 
 
 def log_debug(message):
-    log(message, 'DEBUG')
+    log('DEBUG', message)
 
 
 def log_error(message):
-    log(message, 'ERROR')
+    log('ERROR', message)
 
 
 def log_info(message):
-    log(message, 'INFO')
+    log('INFO', message)
 
 
 def log_warning(message):
-    log(message, 'WARNING')
+    log('WARNING', message)

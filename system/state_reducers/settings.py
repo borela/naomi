@@ -15,6 +15,8 @@ from Naomi.system.events import (
     SETTINGS_UPDATED,
 )
 
+from Naomi.system import set_log_level
+
 SETTINGS_EVENTS = [
     SETTINGS_LOADED,
     SETTINGS_UPDATED,
@@ -29,7 +31,7 @@ VALID_LOG_LEVELS = [
 ]
 
 
-def get_log_level(settings):
+def log_level_from_settings(settings):
     result = settings.get('log_level', 'INFO').upper()
     if result not in VALID_LOG_LEVELS:
         return 'INFO'
@@ -42,8 +44,12 @@ def reducer(state={}, event=None):
 
     SETTINGS = event['payload']
 
+    log_level = log_level_from_settings(SETTINGS)
+    set_log_level(log_level)
+
     new_settings = {}
-    new_settings['log_level'] = get_log_level(SETTINGS)
+    new_settings['log_level'] = log_level
     new_settings['syntaxes'] = SETTINGS.get('syntaxes', [])
+
 
     return new_settings

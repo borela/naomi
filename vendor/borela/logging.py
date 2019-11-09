@@ -10,30 +10,31 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system import (
-    EVENT_BUS,
-    STATE_STORE,
-)
-
 import logging
 from datetime import datetime, timedelta
-from Naomi.system.events import LOG_MESSAGE_ADDED
 
-log_event_subscription = None
+global_level = 'DEBUG'
 time_start = datetime.now()
 time_end = time_start
 time_diff = timedelta()
 
 
-def print_log_message(event):
-    global time_start, time_end, time_diff
+def get_log_level():
+    global global_level
+    return global_level
 
-    message = event['payload']['message']
-    level = event['payload']['level']
+
+def set_log_level(new_level):
+    global global_level
+    global_level = new_level
+
+
+def print_log_message(group, level, message):
+    global global_level, time_start, time_end, time_diff
 
     # Get the log level as a number to make the comparison easier.
     message_level = getattr(logging, level)
-    current_level = getattr(logging, STATE_STORE['settings']['log_level'])
+    current_level = getattr(logging, global_level)
 
     # If multiple messages are sent at the same second, we need to see the
     # millisecond difference between them to enable easier profiling.
@@ -44,8 +45,9 @@ def print_log_message(event):
         time_diff = timedelta()
 
     if message_level >= current_level:
-        print('%s [Naomi:%s] +%ims: %s' % (
+        print('%s [%s:%s] +%ims: %s' % (
             datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            group,
             level,
             time_diff.microseconds / 1000,
             message,
@@ -54,21 +56,25 @@ def print_log_message(event):
     time_start = time_end
 
 
-def plugin_loaded():
-    global log_event_subscription
-
-    if log_event_subscription is None:
-        log_event_subscription = EVENT_BUS.on(
-            event=LOG_MESSAGE_ADDED,
-            subscriber=print_log_message,
-        )
-
-    log_event_subscription.subscribe()
+def log(group, level, message):
+    print_log_message(group, level, message)
 
 
-def plugin_unloaded():
-    global log_event_subscription
+def log_critical(message):
+    log('CRITICAL', message)
 
-    if log_event_subscription is not None:
-        log_event_subscription.unsubscribe()
-        log_event_subscription = None
+
+def log_debug(message):
+    log('DEBUG', message)
+
+
+def log_error(message):
+    log('ERROR', message)
+
+
+def log_info(message):
+    log('INFO', message)
+
+
+def log_warning(message):
+    log('WARNING', message)

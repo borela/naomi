@@ -15,7 +15,7 @@ from Naomi.system.events import (
     settings_updated,
 )
 from Naomi.system import EVENT_BUS
-from Naomi.system.logging import log_info
+from Naomi.system import log_info
 from sublime import load_settings
 
 

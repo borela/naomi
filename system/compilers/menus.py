@@ -18,7 +18,7 @@ from borela import (
     write_text_file,
 )
 
-from Naomi.system.logging import (
+from Naomi.system import (
     log_debug,
     log_info,
 )

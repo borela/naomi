@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.logging import (
+from Naomi.system import (
     log_error,
     log_info,
 )

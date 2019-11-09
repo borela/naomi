@@ -24,7 +24,7 @@ from Naomi.system.headers import (
     plist as plist_header,
 )
 
-from Naomi.system.logging import (
+from Naomi.system import (
     log_debug,
     log_info,
 )

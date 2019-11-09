@@ -21,7 +21,7 @@ from Naomi.system import (
 )
 
 from borela.functions import load_yaml
-from Naomi.system.logging import log_info
+from Naomi.system import log_info
 
 
 class Syntax:

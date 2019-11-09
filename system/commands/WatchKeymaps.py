@@ -12,7 +12,7 @@
 
 from Naomi.system.compilers.keymaps import compile_keymaps
 from Naomi.system import EVENT_BUS
-from Naomi.system.logging import log_info
+from Naomi.system import log_info
 from Naomi.system.state import STORE
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler

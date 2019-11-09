@@ -17,6 +17,7 @@ from .ensure_dir_exists import * # noqa
 from .indent_string import * # noqa
 from .list_files import * # noqa
 from .load_yaml import * # noqa
+from .make_regex_to_match_words import * # noqa
 from .modify_path import * # noqa
 from .plist_array_to_xml import * # noqa
 from .read_text_file import * # noqa

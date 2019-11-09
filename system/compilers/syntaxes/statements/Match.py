@@ -15,7 +15,7 @@ from .Push import Push
 from .Set import Set
 from .Statement import Statement
 from .WithPrototype import WithPrototype
-from Naomi.system.compilers.syntaxes.functions import make_regex_to_match_words
+from borela.functions import make_regex_to_match_words
 
 
 class Match(Statement):

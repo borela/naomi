@@ -46,7 +46,9 @@ def compile_keymaps():
     """
 
     dir_path = STATE_STORE['directories']['integration']['keymaps']['src']
-    dest_dir_path = STATE_STORE['directories']['integration']['keymaps']['build']
+    dest_dir_path = (
+        STATE_STORE['directories']['integration']['keymaps']['build']
+    )
 
     EVENT_BUS.emit(building_keymaps())
     log_debug('Cleaning: %s' % package_relpath(dest_dir_path))

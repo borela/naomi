@@ -27,7 +27,6 @@ from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
 
 
-
 class EventHandler(PatternMatchingEventHandler):
     patterns = ['*.yml']
 
@@ -54,11 +53,15 @@ class NaomiWatchKeymapsCommand(ApplicationCommand):
         return 'Watch Keymaps'
 
     def run(self):
+        src_dir = (
+            STATE_STORE['directories']['integration']['keymaps']['src']
+        )
+
         if not STATE_STORE['watching']['keymaps']:
             self.observer = Observer()
             self.observer.schedule(
                 EventHandler(),
-                path=STATE_STORE['directories']['integration']['keymaps']['src'],
+                path=src_dir,
                 recursive=True,
             )
             self.observer.start()

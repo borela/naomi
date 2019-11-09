@@ -38,7 +38,9 @@ from os.path import join
 
 def compile_menus():
     dir_path = STATE_STORE['directories']['integration']['menus']['src']
-    dest_dir_path = STATE_STORE['directories']['integration']['menus']['build']
+    dest_dir_path = (
+        STATE_STORE['directories']['integration']['menus']['build']
+    )
 
     EVENT_BUS.emit(building_menus())
     log_debug('Cleaning: %s' % package_relpath(dest_dir_path))

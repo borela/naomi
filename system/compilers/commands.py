@@ -41,7 +41,9 @@ def compile_commands():
     """
 
     dir_path = STATE_STORE['directories']['integration']['commands']['src']
-    dest_dir_path = STATE_STORE['directories']['integration']['commands']['build']
+    dest_dir_path = (
+        STATE_STORE['directories']['integration']['commands']['build']
+    )
 
     EVENT_BUS.emit(building_commands())
     log_debug('Cleaning: %s' % package_relpath(dest_dir_path))

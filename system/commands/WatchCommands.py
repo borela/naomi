@@ -53,11 +53,15 @@ class NaomiWatchCommandsCommand(ApplicationCommand):
         return 'Watch Commands'
 
     def run(self):
+        src_dir = (
+            STATE_STORE['directories']['integration']['commands']['src']
+        )
+
         if not STATE_STORE['watching']['commands']:
             self.observer = Observer()
             self.observer.schedule(
                 EventHandler(),
-                path=STATE_STORE['directories']['integration']['commands']['src'],
+                path=src_dir,
                 recursive=True,
             )
             self.observer.start()

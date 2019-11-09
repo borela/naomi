@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+
 def word_list_to_word_binary_tree(words):
     if all([len(word) == 1 for word in words]):
         return words

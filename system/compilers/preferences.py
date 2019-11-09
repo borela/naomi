@@ -44,7 +44,9 @@ def compile_preferences():
     """
 
     dir_path = STATE_STORE['directories']['integration']['preferences']['src']
-    dest_dir_path = STATE_STORE['directories']['integration']['preferences']['build']
+    dest_dir_path = (
+        STATE_STORE['directories']['integration']['preferences']['build']
+    )
 
     EVENT_BUS.emit(building_preferences())
     log_debug('Cleaning: %s' % package_relpath(dest_dir_path))

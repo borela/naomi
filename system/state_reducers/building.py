@@ -55,7 +55,7 @@ def reducer(state=INITIAL_STATE, event=None):
     # This dictionary will be simple, deep copy won’t be necessary.
     state = dict(state)
 
-    # NOT Watching.
+    # NOT building.
     if event['type'] == FINISHED_BUILDING_COMMANDS:
         state['commands'] = False
 
@@ -71,7 +71,7 @@ def reducer(state=INITIAL_STATE, event=None):
     if event['type'] == FINISHED_BUILDING_SYNTAXES:
         state['syntaxes'] = False
 
-    # Watching.
+    # Building.
     if event['type'] == BUILDING_COMMANDS:
         state['commands'] = True
 

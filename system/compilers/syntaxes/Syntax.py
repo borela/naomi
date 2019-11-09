@@ -43,10 +43,7 @@ class Syntax:
         self.path = path
         self.resolved_path = resolve_path(path)
         self.package_relpath = package_relpath(self.resolved_path)
-        self._load()
-        self._compile()
 
-    def _load(self):
         log_info('Loading syntax file: %s' % self.package_relpath)
 
         self.raw = load_yaml(self.resolved_path)
@@ -58,8 +55,6 @@ class Syntax:
         self.hidden = self.raw.get('hidden', '')
 
         log_info('Done loading syntax file: %s' % self.package_relpath)
-
-    def _compile(self):
         log_info('Compiling syntax file: %s' % self.package_relpath)
 
         for name, raw in self.raw.get('variables', []).items():

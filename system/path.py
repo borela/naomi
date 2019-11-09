@@ -11,6 +11,7 @@
 # the License.
 
 from os.path import (
+    dirname,
     isabs,
     join,
     realpath,
@@ -24,7 +25,7 @@ def package_relpath(path):
     """
     Calculates the relative path to the package’s root.
     """
-    return relpath(path, STATE_STORE['directories']['.'])
+    return relpath(path, join(dirname(__file__), '..', '..'))
 
 
 def resolve_path(path):

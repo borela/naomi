@@ -10,11 +10,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from Naomi.system import (
+    EVENT_BUS,
+    STATE_STORE,
+)
+
 import logging
 from datetime import datetime, timedelta
-from Naomi.system import EVENT_BUS
 from Naomi.system.events import LOG_MESSAGE_ADDED
-from Naomi.system.state import STORE
 
 log_event_subscription = None
 time_start = datetime.now()
@@ -30,7 +33,7 @@ def print_log_message(event):
 
     # Get the log level as a number to make the comparison easier.
     message_level = getattr(logging, level)
-    current_level = getattr(logging, STORE['settings']['log_level'])
+    current_level = getattr(logging, STATE_STORE['settings']['log_level'])
 
     # If multiple messages are sent at the same second, we need to see the
     # millisecond difference between them to enable easier profiling.

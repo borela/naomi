@@ -25,8 +25,11 @@ from Naomi.system.headers import (
 )
 
 from Naomi.system import (
+    EVENT_BUS,
     log_debug,
     log_info,
+    package_relpath,
+    STATE_STORE,
 )
 
 from Naomi.system.events import (
@@ -34,18 +37,14 @@ from Naomi.system.events import (
     finished_building_preferences,
 )
 
-from Naomi.system import package_relpath
-from Naomi.system import EVENT_BUS
-from Naomi.system.state import STORE
-
 
 def compile_preferences():
     """
     Convert preferences from “x.yml” to “x.tmPreferences”.
     """
 
-    dir_path = STORE['directories']['integration']['preferences']['src']
-    dest_dir_path = STORE['directories']['integration']['preferences']['build']
+    dir_path = STATE_STORE['directories']['integration']['preferences']['src']
+    dest_dir_path = STATE_STORE['directories']['integration']['preferences']['build']
 
     EVENT_BUS.emit(building_preferences())
     log_debug('Cleaning: %s' % package_relpath(dest_dir_path))

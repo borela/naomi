@@ -19,8 +19,11 @@ from borela import (
 )
 
 from Naomi.system import (
+    EVENT_BUS,
     log_debug,
     log_info,
+    package_relpath,
+    STATE_STORE,
 )
 
 from Naomi.system.events import (
@@ -29,16 +32,13 @@ from Naomi.system.events import (
 )
 
 from collections import defaultdict
-from Naomi.system import package_relpath
-from Naomi.system import EVENT_BUS
 from Naomi.system.headers import menu as menu_header
-from Naomi.system.state import STORE
 from os.path import join
 
 
 def compile_menus():
-    dir_path = STORE['directories']['integration']['menus']['src']
-    dest_dir_path = STORE['directories']['integration']['menus']['build']
+    dir_path = STATE_STORE['directories']['integration']['menus']['src']
+    dest_dir_path = STATE_STORE['directories']['integration']['menus']['build']
 
     EVENT_BUS.emit(building_menus())
     log_debug('Cleaning: %s' % package_relpath(dest_dir_path))

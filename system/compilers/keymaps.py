@@ -19,8 +19,11 @@ from borela import (
 )
 
 from Naomi.system import (
+    EVENT_BUS,
     log_debug,
     log_info,
+    package_relpath,
+    STATE_STORE,
 )
 
 from Naomi.system.events import (
@@ -28,10 +31,7 @@ from Naomi.system.events import (
     finished_building_keymaps,
 )
 
-from Naomi.system import package_relpath
-from Naomi.system import EVENT_BUS
 from Naomi.system.headers import keymap as keymap_header
-from Naomi.system.state import STORE
 from os.path import join
 
 
@@ -45,8 +45,8 @@ def compile_keymaps():
       Default (OSX).sublime-keymap
     """
 
-    dir_path = STORE['directories']['integration']['keymaps']['src']
-    dest_dir_path = STORE['directories']['integration']['keymaps']['build']
+    dir_path = STATE_STORE['directories']['integration']['keymaps']['src']
+    dest_dir_path = STATE_STORE['directories']['integration']['keymaps']['build']
 
     EVENT_BUS.emit(building_keymaps())
     log_debug('Cleaning: %s' % package_relpath(dest_dir_path))

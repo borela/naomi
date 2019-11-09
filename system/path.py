@@ -17,14 +17,14 @@ from os.path import (
     relpath,
 )
 
-from Naomi.system.state import STORE
+from .state_store import STATE_STORE
 
 
 def package_relpath(path):
     """
     Calculates the relative path to the package’s root.
     """
-    return relpath(path, STORE['directories']['.'])
+    return relpath(path, STATE_STORE['directories']['.'])
 
 
 def resolve_path(path):
@@ -32,5 +32,5 @@ def resolve_path(path):
     Resolve relative paths to the syntaxes src directory.
     """
     if not isabs(path):
-        path = join(STORE['directories']['syntaxes']['src'], path)
+        path = join(STATE_STORE['directories']['syntaxes']['src'], path)
     return realpath(path)

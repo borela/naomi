@@ -20,8 +20,11 @@ from borela import (
 )
 
 from Naomi.system import (
+    EVENT_BUS,
     log_debug,
     log_info,
+    package_relpath,
+    STATE_STORE,
 )
 
 from Naomi.system.events import (
@@ -29,10 +32,7 @@ from Naomi.system.events import (
     finished_building_commands,
 )
 
-from Naomi.system import package_relpath
-from Naomi.system import EVENT_BUS
 from Naomi.system.headers import command as command_header
-from Naomi.system.state import STORE
 
 
 def compile_commands():
@@ -40,8 +40,8 @@ def compile_commands():
     Convert commands from “x.yml” to “x.sublime-commands”.
     """
 
-    dir_path = STORE['directories']['integration']['commands']['src']
-    dest_dir_path = STORE['directories']['integration']['commands']['build']
+    dir_path = STATE_STORE['directories']['integration']['commands']['src']
+    dest_dir_path = STATE_STORE['directories']['integration']['commands']['build']
 
     EVENT_BUS.emit(building_commands())
     log_debug('Cleaning: %s' % package_relpath(dest_dir_path))

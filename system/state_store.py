@@ -10,18 +10,18 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from .event_bus import EVENT_BUS
 from borela import StateStore
-from Naomi.system import EVENT_BUS
 
 # Reducers.
-from .building import reducer as building_reducer
-from .directories import reducer as directories_reducer
-from .settings import reducer as settings_reducer
-from .watching import reducer as watching_reducer
+from .state_reducers.building import reducer as building_reducer
+from .state_reducers.directories import reducer as directories_reducer
+from .state_reducers.settings import reducer as settings_reducer
+from .state_reducers.watching import reducer as watching_reducer
 
 
 # Store that holds the plugins’ state.
-STORE = StateStore(
+STATE_STORE = StateStore(
     building=building_reducer,
     directories=directories_reducer,
     settings=settings_reducer,
@@ -29,4 +29,4 @@ STORE = StateStore(
 )
 
 # Listen to all events to modify the store through the reducers.
-EVENT_BUS.on_any(lambda event: STORE.apply(event))
+EVENT_BUS.on_any(lambda event: STATE_STORE.apply(event))

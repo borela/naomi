@@ -10,17 +10,21 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-# from Naomi.system.compilers.syntaxes import compile_syntaxes
-from Naomi.system import EVENT_BUS
-from Naomi.system import log_info
-from Naomi.system.state import STORE
-from sublime_plugin import ApplicationCommand
-from watchdog.events import PatternMatchingEventHandler
-from watchdog.observers import Observer
 from Naomi.system.events import (
     stopped_watching_syntaxes,
     watching_syntaxes,
 )
+
+from Naomi.system import (
+    EVENT_BUS,
+    log_info,
+    STATE_STORE,
+)
+
+# from Naomi.system.compilers import compile_syntaxes
+from sublime_plugin import ApplicationCommand
+from watchdog.events import PatternMatchingEventHandler
+from watchdog.observers import Observer
 
 
 class EventHandler(PatternMatchingEventHandler):
@@ -37,8 +41,8 @@ class EventHandler(PatternMatchingEventHandler):
 
     def process(self, event):
         # compile_syntaxes(
-        #     STORE['directories']['syntaxes']['src'],
-        #     STORE['directories']['syntaxes']['build'],
+        #     STATE_STORE['directories']['syntaxes']['src'],
+        #     STATE_STORE['directories']['syntaxes']['build'],
         # )
         pass
 
@@ -48,16 +52,16 @@ class NaomiWatchSyntaxesCommand(ApplicationCommand):
         self.observer = None
 
     def description(self):
-        if STORE['watching']['syntaxes']:
+        if STATE_STORE['watching']['syntaxes']:
             return 'Unwatch Syntaxes'
         return 'Watch Syntaxes'
 
     def run(self):
-        if not STORE['watching']['syntaxes']:
+        if not STATE_STORE['watching']['syntaxes']:
             self.observer = Observer()
             self.observer.schedule(
                 EventHandler(),
-                path=STORE['directories']['syntaxes']['src'],
+                path=STATE_STORE['directories']['syntaxes']['src'],
                 recursive=True,
             )
             self.observer.start()

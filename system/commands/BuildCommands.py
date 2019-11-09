@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers.commands import compile_commands
+from Naomi.system.compilers import compile_commands
 from sublime_plugin import ApplicationCommand
 
 

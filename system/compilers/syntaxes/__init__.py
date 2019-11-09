@@ -11,8 +11,10 @@
 # the License.
 
 from Naomi.system import (
+    EVENT_BUS,
     log_error,
     log_info,
+    STATE_STORE,
 )
 
 from Naomi.system.events import (
@@ -21,8 +23,6 @@ from Naomi.system.events import (
 )
 
 from .Syntax import Syntax
-from Naomi.system import EVENT_BUS
-from Naomi.system.state import STORE
 
 
 def compile_syntax(syntax_settings):
@@ -45,7 +45,7 @@ def compile_syntax(syntax_settings):
 def compile_syntaxes():
     EVENT_BUS.emit(building_syntaxes())
 
-    for syntax in STORE['settings']['syntaxes']:
+    for syntax in STATE_STORE['settings']['syntaxes']:
         compile_syntax(syntax)
 
     EVENT_BUS.emit(finished_building_syntaxes())

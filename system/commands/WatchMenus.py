@@ -10,17 +10,21 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers.menus import compile_menus
-from Naomi.system import EVENT_BUS
-from Naomi.system import log_info
-from Naomi.system.state import STORE
-from sublime_plugin import ApplicationCommand
-from watchdog.events import PatternMatchingEventHandler
-from watchdog.observers import Observer
 from Naomi.system.events import (
     stopped_watching_menus,
     watching_menus,
 )
+
+from Naomi.system import (
+    EVENT_BUS,
+    log_info,
+    STATE_STORE,
+)
+
+from Naomi.system.compilers import compile_menus
+from sublime_plugin import ApplicationCommand
+from watchdog.events import PatternMatchingEventHandler
+from watchdog.observers import Observer
 
 
 class EventHandler(PatternMatchingEventHandler):
@@ -44,16 +48,16 @@ class NaomiWatchMenusCommand(ApplicationCommand):
         self.observer = None
 
     def description(self):
-        if STORE['watching']['menus']:
+        if STATE_STORE['watching']['menus']:
             return 'Unwatch Menus'
         return 'Watch Menus'
 
     def run(self):
-        if not STORE['watching']['menus']:
+        if not STATE_STORE['watching']['menus']:
             self.observer = Observer()
             self.observer.schedule(
                 EventHandler(),
-                path=STORE['directories']['integration']['menus']['src'],
+                path=STATE_STORE['directories']['integration']['menus']['src'],
                 recursive=True,
             )
             self.observer.start()

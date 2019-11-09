@@ -11,7 +11,7 @@
 # the License.
 
 from borela import read_text_file
-from Naomi.system.state import STORE
+from Naomi.system import STATE_STORE
 from os.path import join
 
 
@@ -36,7 +36,7 @@ def preferences():
 
 
 def read_header(file_name):
-    HEADERS_DIR = STORE['directories']['system']['headers']
+    HEADERS_DIR = STATE_STORE['directories']['system']['headers']
     return read_text_file(join(HEADERS_DIR, file_name))
 
 

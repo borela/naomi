@@ -27,20 +27,20 @@ contexts:
     - match: (?=[,}])
       pop: true
     # Spread.
-    - include: Packages/Naomi/syntaxes/src/fjsx15/operator/spread.sublime-syntax
+    - include: ~/fjsx15/operator/spread.sublime-syntax
     # Methods.
-    - include: Packages/Naomi/syntaxes/src/fjsx15/class/modifier.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/class/method.sublime-syntax
+    - include: ~/fjsx15/class/modifier.sublime-syntax
+    - include: ~/fjsx15/class/method.sublime-syntax
     # Key.
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/object/property.sublime-syntax
+    - include: ~/fjsx15/literal/object/property.sublime-syntax
     # Any other expression.
-    - include: Packages/Naomi/syntaxes/src/fjsx15/optional-expression.sublime-syntax
+    - include: ~/fjsx15/optional-expression.sublime-syntax
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.sublime-syntax
 
   constant:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/constant.sublime-syntax
+    - include: ~/fjsx15/constant.sublime-syntax
 
   delimiters:
     - meta_scope: >-
@@ -57,4 +57,4 @@ contexts:
       push: anything-else
 
   variable:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/variable.sublime-syntax
+    - include: ~/fjsx15/variable.sublime-syntax

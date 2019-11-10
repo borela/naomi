@@ -23,15 +23,15 @@ variables:
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/src/flow1/declare.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/flow1/interface.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/flow1/type-aliasing.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/decorator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/import.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/export.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/function.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/variable-declaration.sublime-syntax
+    - include: ~/flow1/declare.sublime-syntax
+    - include: ~/flow1/interface.sublime-syntax
+    - include: ~/flow1/type-aliasing.sublime-syntax
+    - include: ~/fjsx15/decorator.sublime-syntax
+    - include: ~/fjsx15/import.sublime-syntax
+    - include: ~/fjsx15/export.sublime-syntax
+    - include: ~/fjsx15/class.sublime-syntax
+    - include: ~/fjsx15/function.sublime-syntax
+    - include: ~/fjsx15/variable-declaration.sublime-syntax
     - include: block
     - include: break-continue
     - include: debugger
@@ -80,7 +80,7 @@ contexts:
       pop: true
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.sublime-syntax
 
   debugger:
     - match: debugger\b
@@ -113,7 +113,7 @@ contexts:
       pop: true
 
   expression:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/expression.sublime-syntax
 
   for:
     - match: for\b
@@ -200,7 +200,7 @@ contexts:
       ]
 
   optional-await:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/operator/await.sublime-syntax#just-pop
+    - include: ~/fjsx15/operator/await.sublime-syntax#just-pop
     - include: else-pop
 
   optional-else-if:
@@ -208,10 +208,10 @@ contexts:
     - include: optional-statement-or-expression
 
   optional-expression:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/optional-expression.sublime-syntax
+    - include: ~/fjsx15/optional-expression.sublime-syntax
 
   optional-statement-or-expression:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/optional-statement-or-expression.sublime-syntax
+    - include: ~/fjsx15/optional-statement-or-expression.sublime-syntax
 
   optional-while:
     - include: comment-no-pop
@@ -229,9 +229,9 @@ contexts:
       set: asi-checked-optional-expression
 
   statement-or-expression:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/statement.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/comment.sublime-syntax
+    - include: ~/fjsx15/statement.sublime-syntax
+    - include: ~/fjsx15/expression.sublime-syntax
     - include: else-pop
 
   statement-or-expression-header:

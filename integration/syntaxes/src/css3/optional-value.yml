@@ -22,4 +22,4 @@ contexts:
       pop: true
     - match: (?=\S)
       set:
-        - include: Packages/Naomi/syntaxes/src/css3/value.sublime-syntax
+        - include: ~/css3/value.sublime-syntax

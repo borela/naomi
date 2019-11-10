@@ -27,7 +27,7 @@ contexts:
       ]
 
   arguments:
-    - include: Packages/Naomi/syntaxes/src/mql4/function-call/arguments.sublime-syntax
+    - include: ~/mql4/function-call/arguments.sublime-syntax
 
   type:
-    - include: Packages/Naomi/syntaxes/src/mql4/type.sublime-syntax
+    - include: ~/mql4/type.sublime-syntax

@@ -27,7 +27,7 @@ contexts:
       set: trap
 
   attribute:
-    - include: Packages/Naomi/syntaxes/src/jsx1/attribute.sublime-syntax
+    - include: ~/jsx1/attribute.sublime-syntax
 
   close-open-tag:
     # Self closing tag.
@@ -66,11 +66,11 @@ contexts:
 
   content:
     # Sub element.
-    - include: Packages/Naomi/syntaxes/src/jsx1/fragment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/jsx1/component.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/jsx1/element.sublime-syntax
+    - include: ~/jsx1/fragment.sublime-syntax
+    - include: ~/jsx1/component.sublime-syntax
+    - include: ~/jsx1/element.sublime-syntax
     # Embedded JS.
-    - include: Packages/Naomi/syntaxes/src/jsx1/embedded-js.sublime-syntax
+    - include: ~/jsx1/embedded-js.sublime-syntax
     # Text.
     - match: .|\n
       pop: true

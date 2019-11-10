@@ -23,7 +23,7 @@ variables:
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/src/php7/namespace/path.no-pop.sublime-syntax
+    - include: ~/php7/namespace/path.no-pop.sublime-syntax
     - include: support-variable
     - include: common-variable
 

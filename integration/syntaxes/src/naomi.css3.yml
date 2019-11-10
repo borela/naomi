@@ -26,11 +26,11 @@ contexts:
       push: [naomi, entry]
 
   entry:
-    - include: Packages/Naomi/syntaxes/src/css3/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/css3/statement.sublime-syntax
+    - include: ~/css3/comment.sublime-syntax
+    - include: ~/css3/statement.sublime-syntax
     - match: (?=\S)
       push:
-        - include: Packages/Naomi/syntaxes/src/css3/ruleset.sublime-syntax
+        - include: ~/css3/ruleset.sublime-syntax
 
   naomi:
     - meta_scope: naomi
@@ -41,4 +41,4 @@ contexts:
   rule-list-body:
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/src/css3/ruleset/block.sublime-syntax#delimiter
+        - include: ~/css3/ruleset/block.sublime-syntax#delimiter

@@ -74,11 +74,11 @@ contexts:
     # Nesting.
     - match: (?=\S)
       set:
-        - include: Packages/Naomi/syntaxes/src/css3/statement.sublime-syntax
-        - include: Packages/Naomi/syntaxes/src/css3/ruleset.sublime-syntax
+        - include: ~/css3/statement.sublime-syntax
+        - include: ~/css3/ruleset.sublime-syntax
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/src/css3/comment.no-pop.sublime-syntax
+    - include: ~/css3/comment.no-pop.sublime-syntax
 
   delimiter:
     - include: comment-no-pop
@@ -118,7 +118,7 @@ contexts:
           scope: keyword.operator.word.css.css3
           pop: true
         - include: grid-line-name
-        - include: Packages/Naomi/syntaxes/src/css3/value.sublime-syntax
+        - include: ~/css3/value.sublime-syntax
 
   optional-grid-template-value:
     - include: comment-no-pop
@@ -133,7 +133,7 @@ contexts:
       push:
         - include: start-end-ratio
         - include: value-separator
-        - include: Packages/Naomi/syntaxes/src/css3/value.sublime-syntax
+        - include: ~/css3/value.sublime-syntax
 
   optional-value:
     - include: comment-no-pop
@@ -142,7 +142,7 @@ contexts:
     - match: (?=\S)
       push:
         - include: value-separator
-        - include: Packages/Naomi/syntaxes/src/css3/value.sublime-syntax
+        - include: ~/css3/value.sublime-syntax
 
   possible-set:
     - include: comment-no-pop
@@ -156,10 +156,10 @@ contexts:
 
   property:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/src/css3/property.sublime-syntax
+    - include: ~/css3/property.sublime-syntax
 
   ruleset-block:
-    - include: Packages/Naomi/syntaxes/src/css3/ruleset/block.sublime-syntax
+    - include: ~/css3/ruleset/block.sublime-syntax
 
   start-end-ratio:
     - match: /

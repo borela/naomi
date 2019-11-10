@@ -135,23 +135,23 @@ contexts:
       ]
 
   generic-arguments:
-    - include: Packages/Naomi/syntaxes/src/flow1/generic/arguments.sublime-syntax
+    - include: ~/flow1/generic/arguments.sublime-syntax
 
   head:
-    - include: Packages/Naomi/syntaxes/src/flow1/type-expression.sublime-syntax#head
+    - include: ~/flow1/type-expression.sublime-syntax#head
 
   meta-parameters:
     - meta_scope: meta.function.parameters.flow
     - include: pop-now
 
   optional-tail:
-    - include: Packages/Naomi/syntaxes/src/flow1/type-expression.sublime-syntax#optional-tail
+    - include: ~/flow1/type-expression.sublime-syntax#optional-tail
 
   optional-type-expression:
-    - include: Packages/Naomi/syntaxes/src/flow1/optional-type-expression.sublime-syntax
+    - include: ~/flow1/optional-type-expression.sublime-syntax
 
   parameters:
-    - include: Packages/Naomi/syntaxes/src/flow1/function/parameters.sublime-syntax
+    - include: ~/flow1/function/parameters.sublime-syntax
 
   pop-now:
     - match: ""

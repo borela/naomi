@@ -32,10 +32,10 @@ contexts:
       ]
 
   associated-type:
-    - include: Packages/Naomi/syntaxes/src/flow1/associated-type.sublime-syntax
+    - include: ~/flow1/associated-type.sublime-syntax
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.sublime-syntax
 
   indexer-end:
     - match: \]
@@ -43,7 +43,7 @@ contexts:
       pop: true
 
   optional-associated-type:
-    - include: Packages/Naomi/syntaxes/src/flow1/optional-associated-type.sublime-syntax
+    - include: ~/flow1/optional-associated-type.sublime-syntax
 
   optional-name:
     - include: comment-no-pop
@@ -67,9 +67,9 @@ contexts:
       set: type-expression
 
   string:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/template.sublime-syntax
+    - include: ~/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: ~/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: ~/fjsx15/literal/string/template.sublime-syntax
 
   type-expression:
-    - include: Packages/Naomi/syntaxes/src/flow1/type-expression.sublime-syntax
+    - include: ~/flow1/type-expression.sublime-syntax

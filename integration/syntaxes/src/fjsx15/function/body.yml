@@ -36,4 +36,4 @@ contexts:
       push: optional-statement-or-expression
 
   optional-statement-or-expression:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/optional-statement-or-expression.sublime-syntax
+    - include: ~/fjsx15/optional-statement-or-expression.sublime-syntax

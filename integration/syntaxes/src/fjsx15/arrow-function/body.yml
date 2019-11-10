@@ -33,16 +33,16 @@ contexts:
       push: optional-statement-or-expression
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.sublime-syntax
 
   optional-expression:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/optional-expression.sublime-syntax
+    - include: ~/fjsx15/optional-expression.sublime-syntax
 
   optional-expression-tail:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax#optional-tail
+    - include: ~/fjsx15/expression.sublime-syntax#optional-tail
 
   optional-statement-or-expression:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/optional-statement-or-expression.sublime-syntax
+    - include: ~/fjsx15/optional-statement-or-expression.sublime-syntax
 
   possible-multi-statement-body:
     - include: comment-no-pop

@@ -36,6 +36,6 @@ contexts:
     - match: \.{3}
       scope: keyword.operator.other.rest.flow
     # Parameter and type.
-    - include: Packages/Naomi/syntaxes/src/flow1/function/parameters/simple.sublime-syntax
+    - include: ~/flow1/function/parameters/simple.sublime-syntax
     # Just the type.
-    - include: Packages/Naomi/syntaxes/src/flow1/optional-type-expression.sublime-syntax
+    - include: ~/flow1/optional-type-expression.sublime-syntax

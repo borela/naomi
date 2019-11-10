@@ -21,7 +21,7 @@ contexts:
     - include: expression-escape
     - match: (?=\S)
       set:
-        - include: Packages/Naomi/syntaxes/src/css3/media-query-list.sublime-syntax
+        - include: ~/css3/media-query-list.sublime-syntax
 
   expression-escape:
     - match: (?=[,;:)\[\]{}])

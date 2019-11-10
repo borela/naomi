@@ -35,10 +35,10 @@ contexts:
           set: [ meta-value, optional-value, delimiter, property ]
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/src/css3/comment.no-pop.sublime-syntax
+    - include: ~/css3/comment.no-pop.sublime-syntax
 
   delimiter:
-    - include: Packages/Naomi/syntaxes/src/css3/ruleset/block-content.sublime-syntax#delimiter
+    - include: ~/css3/ruleset/block-content.sublime-syntax#delimiter
 
   else-pop:
     - match: (?=\S)
@@ -54,7 +54,7 @@ contexts:
       set: optional-feature-query
 
   meta-value:
-    - include: Packages/Naomi/syntaxes/src/css3/ruleset/block-content.sublime-syntax#meta-value
+    - include: ~/css3/ruleset/block-content.sublime-syntax#meta-value
 
   open-group:
     - match: \(
@@ -62,14 +62,14 @@ contexts:
       set: close-group
 
   optional-feature-query:
-    - include: Packages/Naomi/syntaxes/src/css3/optional-feature-query.sublime-syntax
+    - include: ~/css3/optional-feature-query.sublime-syntax
 
   optional-tail:
     - include: logical-operator
     - include: else-pop
 
   optional-value:
-    - include: Packages/Naomi/syntaxes/src/css3/ruleset/block-content.sublime-syntax#optional-value
+    - include: ~/css3/ruleset/block-content.sublime-syntax#optional-value
 
   property:
-    - include: Packages/Naomi/syntaxes/src/css3/ruleset/block-content.sublime-syntax#property
+    - include: ~/css3/ruleset/block-content.sublime-syntax#property

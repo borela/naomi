@@ -23,13 +23,13 @@ variables:
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/src/flow1/prolog.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment/eslint.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment/docblock.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment/block.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment/line.sublime-syntax
+    - include: ~/flow1/prolog.sublime-syntax
+    - include: ~/fjsx15/comment/eslint.sublime-syntax
+    - include: ~/fjsx15/comment/docblock.sublime-syntax
+    - include: ~/fjsx15/comment/block.sublime-syntax
+    - include: ~/fjsx15/comment/line.sublime-syntax
     # Embedded JS.
-    - include: Packages/Naomi/syntaxes/src/jsx1/embedded-js.sublime-syntax
+    - include: ~/jsx1/embedded-js.sublime-syntax
     - include: dangerous
     - include: key
     - include: ref
@@ -107,9 +107,9 @@ contexts:
       pop: true
 
   value:
-    - include: Packages/Naomi/syntaxes/src/jsx1/component.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/jsx1/element.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/jsx1/fragment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/jsx1/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/jsx1/literal/string/single-quoted.sublime-syntax
+    - include: ~/jsx1/component.sublime-syntax
+    - include: ~/jsx1/element.sublime-syntax
+    - include: ~/jsx1/fragment.sublime-syntax
+    - include: ~/jsx1/literal/string/double-quoted.sublime-syntax
+    - include: ~/jsx1/literal/string/single-quoted.sublime-syntax
     - include: else-pop

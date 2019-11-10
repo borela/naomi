@@ -27,7 +27,7 @@ contexts:
       set: [ meta, jsx ]
 
   jsx:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/jsx1.sublime-syntax#jsx
+    - include: ~/fjsx15/jsx1.sublime-syntax#jsx
 
   meta:
     - clear_scopes: true

@@ -83,7 +83,7 @@ contexts:
 
   key:
     - meta_scope: meta.object-literal.key.jest-snapshot
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/object/property.sublime-syntax#any-key
+    - include: ~/fjsx15/literal/object/property.sublime-syntax#any-key
 
   key-bind:
     - match: ":"
@@ -92,15 +92,15 @@ contexts:
 
   key-value:
     # Core constants.
-    - include: Packages/Naomi/syntaxes/src/fjsx15/core.sublime-syntax#constants
+    - include: ~/fjsx15/core.sublime-syntax#constants
     # Other values.
     - include: snapshot-content
 
   js-literals:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal.sublime-syntax
+    - include: ~/fjsx15/literal.sublime-syntax
 
   jsx:
-    - include: Packages/Naomi/syntaxes/src/naomi.jsx1.sublime-syntax
+    - include: ~/naomi.jsx1.sublime-syntax
 
   naomi:
     - meta_scope: naomi
@@ -124,7 +124,7 @@ contexts:
       pop: true
 
   property-access:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/property-access.sublime-syntax
+    - include: ~/fjsx15/property-access.sublime-syntax
 
   snapshot-content:
     # Object {}

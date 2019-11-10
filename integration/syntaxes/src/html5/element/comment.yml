@@ -32,7 +32,7 @@ contexts:
       pop: true
 
   email-no-pop:
-    - include: Packages/Naomi/syntaxes/src/shared/email.no-pop.sublime-syntax
+    - include: ~/shared/email.no-pop.sublime-syntax
 
   link-no-pop:
-    - include: Packages/Naomi/syntaxes/src/shared/link.no-pop.sublime-syntax
+    - include: ~/shared/link.no-pop.sublime-syntax

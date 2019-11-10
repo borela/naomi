@@ -18,5 +18,5 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/src/css3/value-no-unquoted-string.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/css3/literal/string/unquoted.sublime-syntax
+    - include: ~/css3/value-no-unquoted-string.sublime-syntax
+    - include: ~/css3/literal/string/unquoted.sublime-syntax

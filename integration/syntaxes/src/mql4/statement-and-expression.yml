@@ -80,39 +80,39 @@ contexts:
           pop: true
 
   cast-operator:
-    - include: Packages/Naomi/syntaxes/src/mql4/cast.sublime-syntax
+    - include: ~/mql4/cast.sublime-syntax
 
   sequence:
-    - include: Packages/Naomi/syntaxes/src/mql4/terminator.sublime-syntax
+    - include: ~/mql4/terminator.sublime-syntax
     # Comments.
-    - include: Packages/Naomi/syntaxes/src/mql4/comment.sublime-syntax
+    - include: ~/mql4/comment.sublime-syntax
     # Expression keywords.
-    - include: Packages/Naomi/syntaxes/src/mql4/sizeof.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/new.sublime-syntax
+    - include: ~/mql4/sizeof.sublime-syntax
+    - include: ~/mql4/new.sublime-syntax
     # Simple statements.
-    - include: Packages/Naomi/syntaxes/src/mql4/goto.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/statement/hanging.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/statement/bodied.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/statement/simple.sublime-syntax
+    - include: ~/mql4/goto.sublime-syntax
+    - include: ~/mql4/statement/hanging.sublime-syntax
+    - include: ~/mql4/statement/bodied.sublime-syntax
+    - include: ~/mql4/statement/simple.sublime-syntax
     # Complex statements.
-    - include: Packages/Naomi/syntaxes/src/mql4/preprocessor.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/input.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/cd-tor.outside.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/template.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/struct.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/typedef.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/enum.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/function.sublime-syntax
+    - include: ~/mql4/preprocessor.sublime-syntax
+    - include: ~/mql4/input.sublime-syntax
+    - include: ~/mql4/cd-tor.outside.sublime-syntax
+    - include: ~/mql4/template.sublime-syntax
+    - include: ~/mql4/class.sublime-syntax
+    - include: ~/mql4/struct.sublime-syntax
+    - include: ~/mql4/typedef.sublime-syntax
+    - include: ~/mql4/enum.sublime-syntax
+    - include: ~/mql4/function.sublime-syntax
     # Expression.
-    - include: Packages/Naomi/syntaxes/src/mql4/array-access.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/literal.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/function-call.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/operator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/variable-declaration.sublime-syntax
+    - include: ~/mql4/array-access.sublime-syntax
+    - include: ~/mql4/literal.sublime-syntax
+    - include: ~/mql4/function-call.sublime-syntax
+    - include: ~/mql4/operator.sublime-syntax
+    - include: ~/mql4/variable-declaration.sublime-syntax
     # When it comes to constants and variables, there's no way to tell apart
     # without an intellisense, so it’ll treat that anything that looks a
     # uppercase variable as if it was a constant.
-    - include: Packages/Naomi/syntaxes/src/mql4/constant.sublime-syntax
+    - include: ~/mql4/constant.sublime-syntax
     # Constant matching failed, so it could be a variable.
-    - include: Packages/Naomi/syntaxes/src/mql4/variable.sublime-syntax
+    - include: ~/mql4/variable.sublime-syntax

@@ -24,5 +24,5 @@ contexts:
       set: return-type
 
   return-type:
-    - include: Packages/Naomi/syntaxes/src/php7/comment.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/type.sublime-syntax
+    - include: ~/php7/comment.no-pop.sublime-syntax
+    - include: ~/php7/type.sublime-syntax

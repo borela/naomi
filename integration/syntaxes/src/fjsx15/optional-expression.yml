@@ -19,7 +19,7 @@ scope: ...
 contexts:
   main:
     - include: expression-escape
-    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/expression.sublime-syntax
 
   expression-escape:
     - match: (?=[,;:)\]}])

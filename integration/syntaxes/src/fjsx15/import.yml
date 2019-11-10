@@ -23,7 +23,7 @@ variables:
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/core.sublime-syntax#import-properties
+    - include: ~/fjsx15/core.sublime-syntax#import-properties
     # Dynamic import.
     - match: import\b(?=\s*\()
       scope: support.function.import.js.fjsx15
@@ -54,7 +54,7 @@ contexts:
       pop: true
 
   arguments:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/expression.sublime-syntax
 
   block-optional-target:
     - include: comment-no-pop
@@ -68,7 +68,7 @@ contexts:
       pop: true
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.sublime-syntax
 
   delimiter:
     - include: comment-no-pop
@@ -96,9 +96,9 @@ contexts:
 
   origin-path:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/template.sublime-syntax
+    - include: ~/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: ~/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: ~/fjsx15/literal/string/template.sublime-syntax
 
   optional-target:
     - include: comment-no-pop
@@ -108,7 +108,7 @@ contexts:
 
   shared-optional-target:
     # Type.
-    - include: Packages/Naomi/syntaxes/src/flow1/type-import.sublime-syntax
+    - include: ~/flow1/type-import.sublime-syntax
     # Aliased All.
     - match: \*(?=\s*as)
       scope: keyword.control.import-export.star.js.fjsx15

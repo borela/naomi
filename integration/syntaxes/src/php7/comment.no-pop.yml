@@ -27,4 +27,4 @@ contexts:
           )
         )
       push:
-        - include: Packages/Naomi/syntaxes/src/php7/comment.sublime-syntax
+        - include: ~/php7/comment.sublime-syntax

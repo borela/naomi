@@ -18,8 +18,8 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/src/mql4/literal/string.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/literal/number.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/literal/color.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/literal/datetime.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/mql4/literal/character.sublime-syntax
+    - include: ~/mql4/literal/string.sublime-syntax
+    - include: ~/mql4/literal/number.sublime-syntax
+    - include: ~/mql4/literal/color.sublime-syntax
+    - include: ~/mql4/literal/datetime.sublime-syntax
+    - include: ~/mql4/literal/character.sublime-syntax

@@ -20,4 +20,4 @@ contexts:
   main:
     - match: (?=[>,;:)\]}])
       pop: true
-    - include: Packages/Naomi/syntaxes/src/flow1/type-expression.sublime-syntax
+    - include: ~/flow1/type-expression.sublime-syntax

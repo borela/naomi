@@ -29,10 +29,10 @@ contexts:
       set: declaration
 
   comment:
-    - include: Packages/Naomi/syntaxes/src/php7/comment.no-pop.sublime-syntax
+    - include: ~/php7/comment.no-pop.sublime-syntax
 
   terminator:
-    - include: Packages/Naomi/syntaxes/src/php7/terminator.sublime-syntax
+    - include: ~/php7/terminator.sublime-syntax
 
   declaration:
     - include: comment
@@ -61,14 +61,14 @@ contexts:
 
   namespaced-const:
     - include: comment
-    - include: Packages/Naomi/syntaxes/src/php7/constant.sublime-syntax
+    - include: ~/php7/constant.sublime-syntax
 
   namespaced-function:
     - include: comment
-    - include: Packages/Naomi/syntaxes/src/php7/function/name.sublime-syntax
+    - include: ~/php7/function/name.sublime-syntax
 
   namespace-or-type:
-    - include: Packages/Naomi/syntaxes/src/php7/namespace/path.no-pop.sublime-syntax
+    - include: ~/php7/namespace/path.no-pop.sublime-syntax
     # Target namespace or type.
     - match: |
         (?xi)\s*
@@ -81,7 +81,7 @@ contexts:
 
   target-type:
     - include: comment
-    - include: Packages/Naomi/syntaxes/src/php7/type.sublime-syntax
+    - include: ~/php7/type.sublime-syntax
 
   alias:
     - include: comment

@@ -22,4 +22,4 @@ contexts:
       push: parameters
 
   parameters:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/function/parameters.sublime-syntax
+    - include: ~/fjsx15/function/parameters.sublime-syntax

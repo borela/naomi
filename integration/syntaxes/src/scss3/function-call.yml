@@ -57,4 +57,4 @@ contexts:
       pop: true
 
   arguments:
-    - include: Packages/Naomi/syntaxes/src/scss3/function-call/arguments.sublime-syntax
+    - include: ~/scss3/function-call/arguments.sublime-syntax

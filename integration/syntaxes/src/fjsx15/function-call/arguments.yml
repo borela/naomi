@@ -23,7 +23,7 @@ contexts:
       set: delimiter
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.sublime-syntax
 
   delimiter:
     - meta_scope: meta.group.js.fjsx15
@@ -37,4 +37,4 @@ contexts:
       push: expression
 
   expression:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/expression.sublime-syntax

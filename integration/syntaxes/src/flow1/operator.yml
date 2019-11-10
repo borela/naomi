@@ -18,7 +18,7 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/src/flow1/operator/typeof.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/flow1/operator/intersection.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/flow1/operator/nullable.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/flow1/operator/union.sublime-syntax
+    - include: ~/flow1/operator/typeof.sublime-syntax
+    - include: ~/flow1/operator/intersection.sublime-syntax
+    - include: ~/flow1/operator/nullable.sublime-syntax
+    - include: ~/flow1/operator/union.sublime-syntax

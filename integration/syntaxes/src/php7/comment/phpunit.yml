@@ -40,13 +40,13 @@ contexts:
       pop: true
 
   constant:
-    - include: Packages/Naomi/syntaxes/src/php7/constant/normal.sublime-syntax
+    - include: ~/php7/constant/normal.sublime-syntax
 
   number:
-    - include: Packages/Naomi/syntaxes/src/php7/literal/number.sublime-syntax
+    - include: ~/php7/literal/number.sublime-syntax
 
   type:
-    - include: Packages/Naomi/syntaxes/src/php7/type.sublime-syntax
+    - include: ~/php7/type.sublime-syntax
 
   function:
     - match: (?xi)\s*({{commonIdentifier}})

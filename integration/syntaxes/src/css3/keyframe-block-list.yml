@@ -26,7 +26,7 @@ contexts:
     - match: (?>from|to)
       scope: keyword.keyframe-selector.css.css3
       pop: true
-    - include: Packages/Naomi/syntaxes/src/css3/literal/number.sublime-syntax
+    - include: ~/css3/literal/number.sublime-syntax
 
   block-list-end:
     - match: \}
@@ -44,4 +44,4 @@ contexts:
       pop: true
 
   ruleset-block:
-    - include: Packages/Naomi/syntaxes/src/css3/ruleset/block.sublime-syntax
+    - include: ~/css3/ruleset/block.sublime-syntax

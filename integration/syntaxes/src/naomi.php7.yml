@@ -27,7 +27,7 @@ contexts:
       push: html5-element
 
   html5-element:
-    - include: Packages/Naomi/syntaxes/src/html5/element.sublime-syntax
+    - include: ~/html5/element.sublime-syntax
 
   entry:
     # Normal open tag.
@@ -63,4 +63,4 @@ contexts:
         - match: (?=\s*\?>)
           pop: true
       push:
-        - include: Packages/Naomi/syntaxes/src/php7/statement-and-expression.sublime-syntax
+        - include: ~/php7/statement-and-expression.sublime-syntax

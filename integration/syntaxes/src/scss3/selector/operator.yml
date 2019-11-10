@@ -44,4 +44,4 @@ contexts:
       set: trap
 
   trap:
-    - include: Packages/Naomi/syntaxes/src/scss3/selector/trap.sublime-syntax
+    - include: ~/scss3/selector/trap.sublime-syntax

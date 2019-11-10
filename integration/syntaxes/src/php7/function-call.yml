@@ -18,18 +18,18 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/array.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/class-object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/core.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/directories.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/error.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/filesystem.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/math.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/math-gmp.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/magic.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/mb_string.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/output.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/spl.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/string.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/support/variable.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call/normal.sublime-syntax
+    - include: ~/php7/function-call/support/array.sublime-syntax
+    - include: ~/php7/function-call/support/class-object.sublime-syntax
+    - include: ~/php7/function-call/support/core.sublime-syntax
+    - include: ~/php7/function-call/support/directories.sublime-syntax
+    - include: ~/php7/function-call/support/error.sublime-syntax
+    - include: ~/php7/function-call/support/filesystem.sublime-syntax
+    - include: ~/php7/function-call/support/math.sublime-syntax
+    - include: ~/php7/function-call/support/math-gmp.sublime-syntax
+    - include: ~/php7/function-call/support/magic.sublime-syntax
+    - include: ~/php7/function-call/support/mb_string.sublime-syntax
+    - include: ~/php7/function-call/support/output.sublime-syntax
+    - include: ~/php7/function-call/support/spl.sublime-syntax
+    - include: ~/php7/function-call/support/string.sublime-syntax
+    - include: ~/php7/function-call/support/variable.sublime-syntax
+    - include: ~/php7/function-call/normal.sublime-syntax

@@ -58,4 +58,4 @@ contexts:
           parameter.scss.scss3
           entity.name.variable.scss.scss3
         2: keyword.operator.other.association.scss.scss3
-    - include: Packages/Naomi/syntaxes/src/scss3/statement-and-expression.sublime-syntax
+    - include: ~/scss3/statement-and-expression.sublime-syntax

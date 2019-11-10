@@ -42,7 +42,7 @@ contexts:
     - meta_scope: >-
         text.html
         naomi
-    - include: Packages/Naomi/syntaxes/src/html5/element.sublime-syntax
+    - include: ~/html5/element.sublime-syntax
 
   close:
     - match: \`

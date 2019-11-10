@@ -72,18 +72,18 @@ contexts:
           pop: true
 
   sequence:
-    - include: Packages/Naomi/syntaxes/src/scss3/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/terminator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/interpolation.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/keyword.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/operator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/statement/simple.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/statement/bodied.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/function.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/function-call.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/mixin.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/attribute.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/variable-declaration.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/variable.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/constant.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/literal.sublime-syntax
+    - include: ~/scss3/comment.sublime-syntax
+    - include: ~/scss3/terminator.sublime-syntax
+    - include: ~/scss3/interpolation.sublime-syntax
+    - include: ~/scss3/keyword.sublime-syntax
+    - include: ~/scss3/operator.sublime-syntax
+    - include: ~/scss3/statement/simple.sublime-syntax
+    - include: ~/scss3/statement/bodied.sublime-syntax
+    - include: ~/scss3/function.sublime-syntax
+    - include: ~/scss3/function-call.sublime-syntax
+    - include: ~/scss3/mixin.sublime-syntax
+    - include: ~/scss3/attribute.sublime-syntax
+    - include: ~/scss3/variable-declaration.sublime-syntax
+    - include: ~/scss3/variable.sublime-syntax
+    - include: ~/scss3/constant.sublime-syntax
+    - include: ~/scss3/literal.sublime-syntax

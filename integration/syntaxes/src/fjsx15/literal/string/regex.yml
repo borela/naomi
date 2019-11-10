@@ -40,16 +40,16 @@ contexts:
       pop: true
 
   regex-content:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/regex/anchor.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/regex/backref.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/regex/backslash.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/regex/capturing-group.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/regex/character-class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/regex/lookahead.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/regex/negative-lookahead.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/regex/non-capturing-group.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/regex/operator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/regex/quantifier.sublime-syntax
+    - include: ~/fjsx15/literal/string/regex/anchor.sublime-syntax
+    - include: ~/fjsx15/literal/string/regex/backref.sublime-syntax
+    - include: ~/fjsx15/literal/string/regex/backslash.sublime-syntax
+    - include: ~/fjsx15/literal/string/regex/capturing-group.sublime-syntax
+    - include: ~/fjsx15/literal/string/regex/character-class.sublime-syntax
+    - include: ~/fjsx15/literal/string/regex/lookahead.sublime-syntax
+    - include: ~/fjsx15/literal/string/regex/negative-lookahead.sublime-syntax
+    - include: ~/fjsx15/literal/string/regex/non-capturing-group.sublime-syntax
+    - include: ~/fjsx15/literal/string/regex/operator.sublime-syntax
+    - include: ~/fjsx15/literal/string/regex/quantifier.sublime-syntax
     - include: pop-now
 
   regex-meta:

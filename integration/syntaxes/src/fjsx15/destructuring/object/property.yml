@@ -55,12 +55,12 @@ contexts:
     - include: comment-no-pop
     - match: (?=\))
       pop: true
-    - include: Packages/Naomi/syntaxes/src/fjsx15/destructuring/array.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/destructuring/object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/variable-declaration.sublime-syntax#variable-or-constant
+    - include: ~/fjsx15/destructuring/array.sublime-syntax
+    - include: ~/fjsx15/destructuring/object.sublime-syntax
+    - include: ~/fjsx15/variable-declaration.sublime-syntax#variable-or-constant
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.sublime-syntax
 
   computed-property-end:
     - match: \]
@@ -85,7 +85,7 @@ contexts:
 
   object-destructuring-delimiters:
     - meta_scope: meta.binding.destructuring.mapping.js.fjsx15
-    - include: Packages/Naomi/syntaxes/src/fjsx15/destructuring/object.sublime-syntax#delimiters
+    - include: ~/fjsx15/destructuring/object.sublime-syntax#delimiters
 
   optional-bind:
     - match: ":"
@@ -95,16 +95,16 @@ contexts:
       set: object-destructuring-delimiters
 
   optional-expression:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/optional-expression.sublime-syntax
+    - include: ~/fjsx15/optional-expression.sublime-syntax
 
   pop-now:
     - match: ""
       pop: true
 
   string:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/template.sublime-syntax
+    - include: ~/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: ~/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: ~/fjsx15/literal/string/template.sublime-syntax
 
   variable-or-constant:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/variable-declaration.sublime-syntax#variable-or-constant
+    - include: ~/fjsx15/variable-declaration.sublime-syntax#variable-or-constant

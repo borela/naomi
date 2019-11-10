@@ -34,14 +34,14 @@ contexts:
         - include: feature-expression
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/src/css3/comment.no-pop.sublime-syntax
+    - include: ~/css3/comment.no-pop.sublime-syntax
 
   else-pop:
     - match: (?=\S)
       pop: true
 
   feature-expression:
-    - include: Packages/Naomi/syntaxes/src/css3/media-query-feature-expression.sublime-syntax
+    - include: ~/css3/media-query-feature-expression.sublime-syntax
 
   head:
     - include: comment-no-pop
@@ -59,7 +59,7 @@ contexts:
       set: close-group
 
   optional-media-query:
-    - include: Packages/Naomi/syntaxes/src/css3/optional-media-query.sublime-syntax
+    - include: ~/css3/optional-media-query.sublime-syntax
 
   optional-tail:
     - include: comment-no-pop

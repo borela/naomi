@@ -58,10 +58,10 @@ contexts:
       set: include-value
 
   trap:
-    - include: Packages/Naomi/syntaxes/src/scss3/selector/trap.sublime-syntax
+    - include: ~/scss3/selector/trap.sublime-syntax
 
   statement-and-expression:
-    - include: Packages/Naomi/syntaxes/src/scss3/statement-and-expression.sublime-syntax
+    - include: ~/scss3/statement-and-expression.sublime-syntax
 
   include-value:
     # Mixin.
@@ -78,7 +78,7 @@ contexts:
   value:
     - match: (?=\s*\{)
       set: trap
-    - include: Packages/Naomi/syntaxes/src/scss3/terminator.sublime-syntax
+    - include: ~/scss3/terminator.sublime-syntax
     - match: ""
       push:
         - match: |
@@ -88,13 +88,13 @@ contexts:
         - include: statement-and-expression
 
   value-with-selectors:
-    - include: Packages/Naomi/syntaxes/src/scss3/terminator.sublime-syntax
+    - include: ~/scss3/terminator.sublime-syntax
     - match: ""
       push:
         - match: |
             (?x)
             (?=\s*;)
           pop: true
-        - include: Packages/Naomi/syntaxes/src/scss3/attribute.sublime-syntax
-        - include: Packages/Naomi/syntaxes/src/scss3/selector.sublime-syntax
+        - include: ~/scss3/attribute.sublime-syntax
+        - include: ~/scss3/selector.sublime-syntax
         - include: statement-and-expression

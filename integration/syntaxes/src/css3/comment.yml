@@ -18,4 +18,4 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/src/css3/comment/block.sublime-syntax
+    - include: ~/css3/comment/block.sublime-syntax

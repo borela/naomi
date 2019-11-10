@@ -18,14 +18,14 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/src/html5/element/comment.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/html5/element/doctype.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/html5/element/cdata.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/html5/element/sectioning.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/html5/element/sectioning-root.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/html5/element/form.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/html5/element/form-sectioning-root.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/html5/element/script.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/html5/element/style.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/html5/element/other.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/html5/element/text/character-reference.sublime-syntax
+    - include: ~/html5/element/comment.sublime-syntax
+    - include: ~/html5/element/doctype.sublime-syntax
+    - include: ~/html5/element/cdata.sublime-syntax
+    - include: ~/html5/element/sectioning.sublime-syntax
+    - include: ~/html5/element/sectioning-root.sublime-syntax
+    - include: ~/html5/element/form.sublime-syntax
+    - include: ~/html5/element/form-sectioning-root.sublime-syntax
+    - include: ~/html5/element/script.sublime-syntax
+    - include: ~/html5/element/style.sublime-syntax
+    - include: ~/html5/element/other.sublime-syntax
+    - include: ~/html5/element/text/character-reference.sublime-syntax

@@ -31,7 +31,7 @@ contexts:
       ]
 
   arguments:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/expression.sublime-syntax
 
   decorator-identifier:
     # With arguments.

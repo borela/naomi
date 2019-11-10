@@ -171,7 +171,7 @@ contexts:
   css:
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/src/css3/ruleset/block.sublime-syntax#delimiter
+        - include: ~/css3/ruleset/block.sublime-syntax#delimiter
 
   key-value-separator:
     - match: \=
@@ -193,16 +193,16 @@ contexts:
     - include: pop-now
 
   name:
-    - include: Packages/Naomi/syntaxes/src/html5/attribute/builtin.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/html5/attribute/data.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/html5/attribute/other.sublime-syntax
+    - include: ~/html5/attribute/builtin.sublime-syntax
+    - include: ~/html5/attribute/data.sublime-syntax
+    - include: ~/html5/attribute/other.sublime-syntax
 
   pop-now:
     - match: ""
       pop: true
 
   script:
-    - include: Packages/Naomi/syntaxes/src/naomi.fjsx15.sublime-syntax
+    - include: ~/naomi.fjsx15.sublime-syntax
 
   script-begin:
     - match: \'
@@ -245,7 +245,7 @@ contexts:
       set: [ meta-style, css ]
 
   value:
-    - include: Packages/Naomi/syntaxes/src/html5/attribute/value.sublime-syntax
+    - include: ~/html5/attribute/value.sublime-syntax
 
   wait-non-space:
     - match: (?=\S)

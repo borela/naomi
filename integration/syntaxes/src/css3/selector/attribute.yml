@@ -23,8 +23,8 @@ contexts:
       set: [ meta, close, optional-operator, attribute ]
 
   attribute:
-    - include: Packages/Naomi/syntaxes/src/html5/attribute/builtin.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/html5/attribute/data.sublime-syntax
+    - include: ~/html5/attribute/builtin.sublime-syntax
+    - include: ~/html5/attribute/data.sublime-syntax
     # Other attributes with escaping.
     - match: |
         (?xi)
@@ -54,4 +54,4 @@ contexts:
       pop: true
 
   value:
-    - include: Packages/Naomi/syntaxes/src/css3/value.sublime-syntax
+    - include: ~/css3/value.sublime-syntax

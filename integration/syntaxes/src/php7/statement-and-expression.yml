@@ -73,39 +73,39 @@ contexts:
           pop: true
 
   sequence:
-    - include: Packages/Naomi/syntaxes/src/php7/terminator.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/comment.sublime-syntax
+    - include: ~/php7/terminator.sublime-syntax
+    - include: ~/php7/comment.sublime-syntax
     # Complex statements.
-    - include: Packages/Naomi/syntaxes/src/php7/class.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/interface.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/trait.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/declare.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/namespace.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/closure.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/use.sublime-syntax
+    - include: ~/php7/class.sublime-syntax
+    - include: ~/php7/interface.sublime-syntax
+    - include: ~/php7/trait.sublime-syntax
+    - include: ~/php7/declare.sublime-syntax
+    - include: ~/php7/namespace.sublime-syntax
+    - include: ~/php7/function.sublime-syntax
+    - include: ~/php7/closure.sublime-syntax
+    - include: ~/php7/use.sublime-syntax
     # Simple statements.
-    - include: Packages/Naomi/syntaxes/src/php7/goto.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/statement/label.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/statement/hanging.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/statement/bodied.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/statement/simple.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/statement/other.sublime-syntax
+    - include: ~/php7/goto.sublime-syntax
+    - include: ~/php7/statement/label.sublime-syntax
+    - include: ~/php7/statement/hanging.sublime-syntax
+    - include: ~/php7/statement/bodied.sublime-syntax
+    - include: ~/php7/statement/simple.sublime-syntax
+    - include: ~/php7/statement/other.sublime-syntax
     # Other keywords.
-    - include: Packages/Naomi/syntaxes/src/php7/modifier.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/new.sublime-syntax
+    - include: ~/php7/modifier.sublime-syntax
+    - include: ~/php7/new.sublime-syntax
     # Expression.
-    - include: Packages/Naomi/syntaxes/src/php7/array-access.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/literal.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/function-call.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/php7/operator.sublime-syntax
+    - include: ~/php7/array-access.sublime-syntax
+    - include: ~/php7/literal.sublime-syntax
+    - include: ~/php7/function-call.sublime-syntax
+    - include: ~/php7/operator.sublime-syntax
     # When it comes to constants and variables, there's no way to tell apart
     # without an intellisense, so it’ll treat that anything that looks a
     # uppercase variable as if it was a constant.
-    - include: Packages/Naomi/syntaxes/src/php7/constant.sublime-syntax
+    - include: ~/php7/constant.sublime-syntax
     # Some types can look like constants but we will give the power to the user
     # to override types and in turn we get some predefined constants highlighted
     # correctly..
-    - include: Packages/Naomi/syntaxes/src/php7/type.sublime-syntax
+    - include: ~/php7/type.sublime-syntax
     # Constant matching failed, so it could be a variable.
-    - include: Packages/Naomi/syntaxes/src/php7/variable.sublime-syntax
+    - include: ~/php7/variable.sublime-syntax

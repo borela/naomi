@@ -18,8 +18,8 @@ scope: ...
 
 contexts:
   main:
-    - include: Packages/Naomi/syntaxes/src/scss3/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/literal/color.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/literal/number.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/scss3/literal/string/unquoted.sublime-syntax
+    - include: ~/scss3/literal/string/double-quoted.sublime-syntax
+    - include: ~/scss3/literal/string/single-quoted.sublime-syntax
+    - include: ~/scss3/literal/color.sublime-syntax
+    - include: ~/scss3/literal/number.sublime-syntax
+    - include: ~/scss3/literal/string/unquoted.sublime-syntax

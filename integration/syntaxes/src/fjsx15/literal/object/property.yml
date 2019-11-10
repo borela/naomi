@@ -235,7 +235,7 @@ contexts:
     # - include: variable
 
   arrow-function:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/arrow-function.sublime-syntax
+    - include: ~/fjsx15/arrow-function.sublime-syntax
 
   associated-value:
     - match: ":"
@@ -243,7 +243,7 @@ contexts:
       set: optional-expression
 
   constant:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/variable.sublime-syntax
+    - include: ~/fjsx15/variable.sublime-syntax
 
   computed-property-end:
     - match: \]
@@ -251,10 +251,10 @@ contexts:
       pop: true
 
   function-declaration:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/function.sublime-syntax#declaration
+    - include: ~/fjsx15/function.sublime-syntax#declaration
 
   function-keyword:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/function.sublime-syntax#keyword
+    - include: ~/fjsx15/function.sublime-syntax#keyword
 
   meta-computed-key:
     - meta_scope: meta.object-literal.key.computed.js.fjsx15
@@ -279,19 +279,19 @@ contexts:
       pop: true
 
   number:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/number.sublime-syntax
+    - include: ~/fjsx15/literal/number.sublime-syntax
 
   optional-expression:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/optional-expression.sublime-syntax
+    - include: ~/fjsx15/optional-expression.sublime-syntax
 
   pop-now:
     - match: ""
       pop: true
 
   string:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/string/template.sublime-syntax
+    - include: ~/fjsx15/literal/string/double-quoted.sublime-syntax
+    - include: ~/fjsx15/literal/string/single-quoted.sublime-syntax
+    - include: ~/fjsx15/literal/string/template.sublime-syntax
 
   variable:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/variable.sublime-syntax
+    - include: ~/fjsx15/variable.sublime-syntax

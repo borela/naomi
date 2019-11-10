@@ -68,4 +68,4 @@ contexts:
       set: arguments
 
   arguments:
-    - include: Packages/Naomi/syntaxes/src/mql4/function-call/arguments.sublime-syntax
+    - include: ~/mql4/function-call/arguments.sublime-syntax

@@ -35,10 +35,10 @@ contexts:
       ]
 
   associated-type:
-    - include: Packages/Naomi/syntaxes/src/flow1/associated-type.sublime-syntax
+    - include: ~/flow1/associated-type.sublime-syntax
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.sublime-syntax
 
   else-pop:
     - match: (?=\S)
@@ -50,7 +50,7 @@ contexts:
       pop: true
 
   optional-expression:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/optional-expression.sublime-syntax
+    - include: ~/fjsx15/optional-expression.sublime-syntax
 
   optional-type-and-initial-value:
     - meta_scope: meta.declaration.variable.js.fjsx15
@@ -65,7 +65,7 @@ contexts:
 
   optional-type:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/src/flow1/optional-associated-type.sublime-syntax
+    - include: ~/flow1/optional-associated-type.sublime-syntax
 
   constant:
     # Single character.
@@ -121,8 +121,8 @@ contexts:
 
   variable-or-constant:
     - include: comment-no-pop
-    - include: Packages/Naomi/syntaxes/src/fjsx15/destructuring/array.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/destructuring/object.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/variable.sublime-syntax#function-assigned-to-variable
+    - include: ~/fjsx15/destructuring/array.sublime-syntax
+    - include: ~/fjsx15/destructuring/object.sublime-syntax
+    - include: ~/fjsx15/variable.sublime-syntax#function-assigned-to-variable
     - include: constant
     - include: variable

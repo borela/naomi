@@ -32,7 +32,7 @@ contexts:
       pop: true
 
   target:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/arrow-function.sublime-syntax
+    - include: ~/fjsx15/arrow-function.sublime-syntax
     # Await keyword.
     - match: await\b
       scope: keyword.control.flow.js.fjsx15

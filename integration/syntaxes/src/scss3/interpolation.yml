@@ -30,6 +30,6 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: Packages/Naomi/syntaxes/src/scss3/statement-and-expression.sublime-syntax
+        - include: ~/scss3/statement-and-expression.sublime-syntax
         - match: ""
           pop: true

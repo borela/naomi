@@ -46,14 +46,14 @@ contexts:
       push: statement-or-expression
 
   comment:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.sublime-syntax
+    - include: ~/fjsx15/comment.sublime-syntax
 
   comment-no-pop:
-    - include: Packages/Naomi/syntaxes/src/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.sublime-syntax
 
   co-contra-variant-no-pop:
-    - include: Packages/Naomi/syntaxes/src/flow1/operator/covariant.no-pop.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/flow1/operator/contravariant.no-pop.sublime-syntax
+    - include: ~/flow1/operator/covariant.no-pop.sublime-syntax
+    - include: ~/flow1/operator/contravariant.no-pop.sublime-syntax
 
   declaration:
     - include: comment-no-pop
@@ -72,14 +72,14 @@ contexts:
       scope: entity.name.interface.flow
 
   generic-arguments:
-    - include: Packages/Naomi/syntaxes/src/flow1/generic/arguments.sublime-syntax
+    - include: ~/flow1/generic/arguments.sublime-syntax
 
   optional-type-expression:
-    - include: Packages/Naomi/syntaxes/src/flow1/optional-type-expression.sublime-syntax
+    - include: ~/flow1/optional-type-expression.sublime-syntax
 
   statement-or-expression:
     - include: comment
     - include: co-contra-variant-no-pop
-    - include: Packages/Naomi/syntaxes/src/flow1/indexer.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/class/method.sublime-syntax
-    - include: Packages/Naomi/syntaxes/src/fjsx15/class/property.sublime-syntax
+    - include: ~/flow1/indexer.sublime-syntax
+    - include: ~/fjsx15/class/method.sublime-syntax
+    - include: ~/fjsx15/class/property.sublime-syntax

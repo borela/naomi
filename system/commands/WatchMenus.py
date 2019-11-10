@@ -53,10 +53,6 @@ class NaomiWatchMenusCommand(ApplicationCommand):
         return 'Watch Menus'
 
     def run(self):
-        src_dir = (
-            STATE_STORE['directories']['integration']['menus']['src']
-        )
-
         if not STATE_STORE['watching']['menus']:
             self.observer = Observer()
 

@@ -53,10 +53,6 @@ class NaomiWatchPreferencesCommand(ApplicationCommand):
         return 'Watch Preferennces'
 
     def run(self):
-        src_dir = (
-            STATE_STORE['directories']['integration']['preferences']['src']
-        )
-
         if not STATE_STORE['watching']['preferences']:
             self.observer = Observer()
 

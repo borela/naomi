@@ -48,7 +48,7 @@ def read_header(file_name, src_dir=None):
             # Just to make sure the paths in headers always use forward slashes
             # to prevent build files from showing up on git when compiling on
             # another platform.
-            package_relpath(src_dir).replace("\\","/")
+            package_relpath(src_dir).replace('\\', '/')
         )
 
     return template

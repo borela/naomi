@@ -155,7 +155,10 @@ def write_per_os_keymap(per_os_bindings, src_dir, build_dir):
 
         file_name = 'Default (%s).sublime-keymap' % os
         destination = join(build_dir, file_name)
-        final_string = keymap_header(src_dir) + to_json_string(bindings, indent=True)
+        final_string = (
+            keymap_header(src_dir)
+            + to_json_string(bindings, indent=True)
+        )
 
         write_text_file(destination, final_string)
         log_debug('File generated: %s' % package_relpath(destination))
@@ -172,7 +175,10 @@ def write_shared_keymap(bindings, src_dir, build_dir):
         return
 
     destination = join(build_dir, 'Default.sublime-keymap')
-    final_string = keymap_header(src_dir) + to_json_string(bindings, indent=True)
+    final_string = (
+        keymap_header(src_dir)
+        + to_json_string(bindings, indent=True)
+    )
 
     write_text_file(destination, final_string)
     log_debug('File generated: %s' % package_relpath(destination))

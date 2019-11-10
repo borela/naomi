@@ -10,10 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from borela.logging import (
-    log as borela_log,
-    set_log_level,
-)
+from borela.logging import log as borela_log
+from borela.logging import set_log_level # noqa
+
 
 def log(level, message):
     borela_log('NAOMI', level, message)

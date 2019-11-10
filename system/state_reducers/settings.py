@@ -51,5 +51,4 @@ def reducer(state={}, event=None):
     new_settings['log_level'] = log_level
     new_settings['syntaxes'] = SETTINGS.get('syntaxes', [])
 
-
     return new_settings

@@ -16,8 +16,15 @@ from os.path import (
     realpath,
 )
 
+from .integration import (
+    integrate_commands,
+    integrate_keymaps,
+    integrate_menus,
+    integrate_preferences,
+    integrate_syntaxes,
+)
+
 from .event_bus import * # noqa
-from .integration import * # noqa
 from .logging import * # noqa
 from .path import * # noqa
 from .state_store import * # noqa

@@ -53,10 +53,6 @@ class NaomiWatchKeymapsCommand(ApplicationCommand):
         return 'Watch Keymaps'
 
     def run(self):
-        src_dir = (
-            STATE_STORE['directories']['integration']['keymaps']['src']
-        )
-
         if not STATE_STORE['watching']['keymaps']:
             self.observer = Observer()
 

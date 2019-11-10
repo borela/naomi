@@ -51,6 +51,6 @@ def resolve_syntax_entry(path):
         resolved_path = join(src_dir, path)
 
         if isfile(resolved_path):
-            return resolved_path, build_dir
+            return resolved_path, src_dir, build_dir
 
     raise RuntimeError('File not found: %s' % path)

@@ -22,7 +22,14 @@ from os.path import (
 from .state_store import STATE_STORE
 
 
-def locate_syntax_file(path):
+def package_relpath(path):
+    """
+    Calculates the relative path to the package’s root.
+    """
+    return relpath(path, join(dirname(__file__), '..', '..'))
+
+
+def resolve_syntax_entry(path):
     """
     Resolve relative paths to the syntaxes src directories being managed by
     the Naomi’s system.
@@ -31,26 +38,19 @@ def locate_syntax_file(path):
     if isabs(path):
         return realpath(path)
 
-    src_dirs = [
-        integrated['src_dir']
+    dirs = [
+        (integrated['src_dir'], integrated['build_dir'])
         for integrated in STATE_STORE['integrated']['syntaxes']
     ]
 
     # Allow external packages to override Naomi’s syntax files.
-    src_dirs.reverse()
+    dirs.reverse()
 
     # Try to find a file with the integrated src directories.
-    for src_dir in src_dirs:
+    for src_dir, build_dir in dirs:
         resolved_path = join(src_dir, path)
 
         if isfile(resolved_path):
-            return resolved_path
+            return resolved_path, build_dir
 
     raise RuntimeError('File not found: %s' % path)
-
-
-def package_relpath(path):
-    """
-    Calculates the relative path to the package’s root.
-    """
-    return relpath(path, join(dirname(__file__), '..', '..'))

@@ -14,7 +14,7 @@ from Naomi.system import (
     EVENT_BUS,
     log_error,
     log_info,
-    locate_syntax_file,
+    resolve_syntax_entry,
     STATE_STORE,
 )
 
@@ -43,11 +43,10 @@ def compile_syntaxes():
         else:
             log_info('Compiling syntax: %s/%s' % (entry, names))
 
-        syntax = Syntax(
-            locate_syntax_file(entry),
-            settings,
-        )
+        entry, build_dir = resolve_syntax_entry(entry)
+        syntax = Syntax(entry, settings)
 
         # TODO: Save to a file.
+        # syntax -> build_dir
 
     EVENT_BUS.emit(finished_building_syntaxes())

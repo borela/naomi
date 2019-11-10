@@ -22,29 +22,49 @@ class ContextDeclaration(Statement):
     name = None
     statements = []
 
-    def __init__(self, name, raw):
-        Statement.__init__(self, raw)
+    def __init__(self, syntax, name, raw):
+        Statement.__init__(self, syntax, raw)
         self.name = name
 
         for statement in self.raw:
             if any(key in ['match', 'match_words'] for key in statement):
-                self.statements.append(Match(statement))
+                self.statements.append(Match(
+                    self.syntax,
+                    self,
+                    statement,
+                ))
                 continue
 
             if 'include' in statement:
-                self.statements.append(Include(statement))
+                self.statements.append(Include(
+                    self.syntax,
+                    self,
+                    statement,
+                ))
                 continue
 
             if 'meta_scope' in statement:
-                self.statements.append(SetMetaScope(statement))
+                self.statements.append(SetMetaScope(
+                    self.syntax,
+                    self,
+                    statement,
+                ))
                 continue
 
             if 'meta_content_scope' in statement:
-                self.statements.append(SetMetaContentScope(statement))
+                self.statements.append(SetMetaContentScope(
+                    self.syntax,
+                    self,
+                    statement,
+                ))
                 continue
 
             if 'clear_scopes' in statement:
-                self.statements.append(ClearScopes(statement))
+                self.statements.append(ClearScopes(
+                    self.syntax,
+                    self,
+                    statement,
+                ))
                 continue
 
             raise SyntaxError('Unexpected statement: %s (%i, %i)' % (

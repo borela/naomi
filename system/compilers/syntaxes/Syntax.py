@@ -15,21 +15,15 @@ from .statements import (
     VariableDeclaration,
 )
 
-from Naomi.system import (
-    package_relpath,
-    resolve_path,
-)
-
 from borela.functions import load_yaml
 from Naomi.system import log_info
+from Naomi.system import package_relpath
 
 
 class Syntax:
-    settings = None
-
     path = None
-    resolved_path = None
     package_relpath = None
+    settings = None
     raw = None
 
     name = None
@@ -42,22 +36,14 @@ class Syntax:
     variables = []
     contexts = []
 
-    def __init__(self, settings):
+    def __init__(self, path, settings):
+        self.path = path
+        self.package_relpath = package_relpath(path)
         self.settings = settings
-
-        entry = settings.get('entry', None)
-
-        if not isinstance(entry, str) or not entry:
-            log_error('Configured syntax has no entry.')
-            return
-
-        self.path = entry
-        self.resolved_path = resolve_path(path)
-        self.package_relpath = package_relpath(self.resolved_path)
 
         log_info('Loading syntax file: %s' % self.package_relpath)
 
-        self.raw = load_yaml(self.resolved_path)
+        self.raw = load_yaml(path)
 
         self.name = self.raw.get('name', '')
         self.scope = self.raw.get('scope', '')
@@ -70,9 +56,9 @@ class Syntax:
         log_info('Compiling syntax file: %s' % self.package_relpath)
 
         for name, raw in self.raw.get('variables', []).items():
-            self.variables.append(VariableDeclaration(name, raw))
+            self.variables.append(VariableDeclaration(self, name, raw))
 
         for name, raw in self.raw.get('contexts', []).items():
-            self.contexts.append(ContextDeclaration(name, raw))
+            self.contexts.append(ContextDeclaration(self, name, raw))
 
         log_info('Done compiling syntax file: %s' % self.package_relpath)

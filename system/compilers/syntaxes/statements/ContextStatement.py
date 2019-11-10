@@ -10,8 +10,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ContextStatement import ContextStatement
+from .Statement import Statement
 
 
-class WithPrototype(ContextStatement):
-    pass
+class ContextStatement(Statement):
+    context = None
+
+    def __init__(self, syntax, context, raw):
+        Statement.__init__(self, syntax, raw)
+        self.context = context

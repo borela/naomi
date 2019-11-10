@@ -12,7 +12,9 @@
 
 
 class Statement:
+    syntax = None
     raw = None
 
-    def __init__(self, raw):
+    def __init__(self, syntax, raw):
+        self.syntax = syntax
         self.raw = raw

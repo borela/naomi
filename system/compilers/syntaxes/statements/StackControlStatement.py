@@ -10,8 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .Statement import Statement
+from .ContextStatement import ContextStatement
 
 
-class StackControlStatement(Statement):
+class StackControlStatement(ContextStatement):
     pass

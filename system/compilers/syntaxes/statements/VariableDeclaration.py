@@ -17,7 +17,7 @@ class VariableDeclaration(Statement):
     name = None
     pattern = None
 
-    def __init__(self, name, raw):
-        Statement.__init__(self, raw)
+    def __init__(self, syntax, name, raw):
+        Statement.__init__(self, syntax, raw)
         self.name = name
         self.pattern = raw

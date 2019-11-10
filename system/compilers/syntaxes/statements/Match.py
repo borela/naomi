@@ -13,20 +13,20 @@
 from .Pop import Pop
 from .Push import Push
 from .Set import Set
-from .Statement import Statement
+from .ContextStatement import ContextStatement
 from .WithPrototype import WithPrototype
 from borela.functions import make_regex_to_match_words
 
 
-class Match(Statement):
+class Match(ContextStatement):
     pattern = None
     captures = None
     scope = None
     stack_control = None
     with_prototype = None
 
-    def __init__(self, raw):
-        Statement.__init__(self, raw)
+    def __init__(self, syntax, context, raw):
+        ContextStatement.__init__(self, syntax, context, raw)
 
         for key, value in raw.items():
             if key == 'match':
@@ -47,7 +47,11 @@ class Match(Statement):
                 continue
 
             if key == 'with_prototype':
-                self.with_prototype = WithPrototype(value)
+                self.with_prototype = WithPrototype(
+                    self.syntax,
+                    self.context,
+                    value,
+                )
                 continue
 
             if key in ['push', 'set', 'pop']:
@@ -59,15 +63,27 @@ class Match(Statement):
                     )
 
                 if key == 'push':
-                    self.stack_control = Push(value)
+                    self.stack_control = Push(
+                        self.syntax,
+                        self.context,
+                        value,
+                    )
                     continue
 
                 if key == 'set':
-                    self.stack_control = Set(value)
+                    self.stack_control = Set(
+                        self.syntax,
+                        self.context,
+                        value,
+                    )
                     continue
 
                 if key == 'pop':
-                    self.stack_control = Pop(value)
+                    self.stack_control = Pop(
+                        self.syntax,
+                        self.context,
+                        value,
+                    )
                     continue
 
             raise SyntaxError('Unexpected statement: %s (%i, %i)' % (

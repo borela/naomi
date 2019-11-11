@@ -20,5 +20,6 @@ from .Set import * # noqa
 from .SetMetaContentScope import * # noqa
 from .SetMetaScope import * # noqa
 from .Statement import * # noqa
+from .Syntax import * # noqa
 from .VariableDeclaration import * # noqa
 from .WithPrototype import * # noqa

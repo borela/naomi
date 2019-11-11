@@ -30,7 +30,7 @@ from Naomi.system.events import (
     finished_building_syntaxes,
 )
 
-from .statements import (
+from .ast import (
     ClearScopes,
     Include,
     Match,
@@ -39,6 +39,7 @@ from .statements import (
     Set,
     SetMetaContentScope,
     SetMetaScope,
+    Syntax,
     WithPrototype,
 )
 
@@ -47,7 +48,6 @@ from borela.functions import (
     make_regex_to_match_words,
 )
 
-from .Syntax import Syntax
 from os.path import dirname
 
 

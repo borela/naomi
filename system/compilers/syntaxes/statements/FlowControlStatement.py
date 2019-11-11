@@ -14,4 +14,12 @@ from .Statement import Statement
 
 
 class FlowControlStatement(Statement):
-    pass
+    def __init__(self, syntax, context, raw):
+        Statement.__init__(self, syntax, context, raw)
+
+        if isinstance(raw, list):
+            print('list')
+        else:
+            print(raw)
+
+        # if isinstance(raw, ordereddict)

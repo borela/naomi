@@ -10,8 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ContextStatement import ContextStatement
+from .ContextualStatement import ContextualStatement
 
 
-class WithPrototype(ContextStatement):
+class WithPrototype(ContextualStatement):
     pass

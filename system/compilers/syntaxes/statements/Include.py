@@ -10,9 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ContextStatement import ContextStatement
+from .ContextualStatement import ContextualStatement
 
 
-class Include(ContextStatement):
-    def __init__(self, syntax, context, raw):
-        ContextStatement.__init__(self, syntax, context, raw)
+class Include(ContextualStatement):
+    path = None
+    resource = None

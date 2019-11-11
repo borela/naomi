@@ -13,9 +13,5 @@
 from .Statement import Statement
 
 
-class ContextStatement(Statement):
+class ContextualStatement(Statement):
     context = None
-
-    def __init__(self, syntax, context, raw):
-        Statement.__init__(self, syntax, raw)
-        self.context = context

@@ -10,12 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ContextStatement import ContextStatement
+from .ContextualStatement import ContextualStatement
 
 
-class SetMetaScope(ContextStatement):
+class SetMetaScope(ContextualStatement):
     scope = None
-
-    def __init__(self, syntax, context, raw):
-        ContextStatement.__init__(self, syntax, context, raw)
-        self.scope = raw['meta_scope']

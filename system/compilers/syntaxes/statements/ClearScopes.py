@@ -10,12 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ContextStatement import ContextStatement
+from .ContextualStatement import ContextualStatement
 
 
-class ClearScopes(ContextStatement):
+class ClearScopes(ContextualStatement):
     value = None
-
-    def __init__(self, syntax, context, raw):
-        ContextStatement.__init__(self, syntax, context, raw)
-        self.value = raw['clear_scopes']

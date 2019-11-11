@@ -10,65 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ClearScopes import ClearScopes
-from .Include import Include
-from .Match import Match
 from .Statement import Statement
-from .SetMetaScope import SetMetaScope
-from .SetMetaContentScope import SetMetaContentScope
 
 
 class ContextDeclaration(Statement):
     name = None
     statements = []
-
-    def __init__(self, syntax, name, raw):
-        Statement.__init__(self, syntax, raw)
-        self.name = name
-
-        for statement in self.raw:
-            if any(key in ['match', 'match_words'] for key in statement):
-                self.statements.append(Match(
-                    self.syntax,
-                    self,
-                    statement,
-                ))
-                continue
-
-            if 'include' in statement:
-                self.statements.append(Include(
-                    self.syntax,
-                    self,
-                    statement,
-                ))
-                continue
-
-            if 'meta_scope' in statement:
-                self.statements.append(SetMetaScope(
-                    self.syntax,
-                    self,
-                    statement,
-                ))
-                continue
-
-            if 'meta_content_scope' in statement:
-                self.statements.append(SetMetaContentScope(
-                    self.syntax,
-                    self,
-                    statement,
-                ))
-                continue
-
-            if 'clear_scopes' in statement:
-                self.statements.append(ClearScopes(
-                    self.syntax,
-                    self,
-                    statement,
-                ))
-                continue
-
-            raise SyntaxError('Unexpected statement: %s (%i, %i)' % (
-                statement,
-                statement.lc.line,
-                statement.lc.col,
-            ))

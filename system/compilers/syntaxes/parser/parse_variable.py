@@ -10,9 +10,13 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from .ast import VariableDeclaration
 
-def make_contextual_statement(statement, syntax, context, raw):
+
+def parse_variable(syntax, name, raw):
+    statement = VariableDeclaration()
     statement.syntax = syntax
-    statement.context = context
     statement.raw = raw
+    statement.name = name
+    statement.pattern = raw
     return statement

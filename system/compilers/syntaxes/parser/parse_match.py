@@ -11,20 +11,17 @@
 # the License.
 
 from .ast import Match
-from .make_contextual_statement import make_contextual_statement
-from .parse_push import * # noqa
-from .parse_pop import * # noqa
-from .parse_set import * # noqa
+from .parse_push import parse_push
+from .parse_pop import parse_pop
+from .parse_set import parse_set
 from borela.functions import make_regex_to_match_words
 
 
 def parse_match(syntax, context, raw):
-    statement = make_contextual_statement(
-        Match(),
-        syntax,
-        context,
-        raw,
-    )
+    statement = Match()
+    statement.syntax = syntax
+    statement.context = context
+    statement.raw = raw
 
     for key, value in raw.items():
         if key == 'match':

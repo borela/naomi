@@ -11,15 +11,11 @@
 # the License.
 
 from .ast import Pop
-from .make_contextual_statement import make_contextual_statement
 
 
 def parse_pop(syntax, context, raw):
-    statement = make_contextual_statement(
-        Pop(),
-        syntax,
-        context,
-        raw,
-    )
-    # TODO.
+    statement = Pop()
+    statement.syntax = syntax
+    statement.context = context
+    statement.raw = raw
     return statement

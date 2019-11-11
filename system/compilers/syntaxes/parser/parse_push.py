@@ -11,15 +11,11 @@
 # the License.
 
 from .ast import Push
-from .make_contextual_statement import make_contextual_statement
 
 
 def parse_push(syntax, context, raw):
-    statement = make_contextual_statement(
-        Push(),
-        syntax,
-        context,
-        raw,
-    )
-    # TODO.
+    statement = Push()
+    statement.syntax = syntax
+    statement.context = context
+    statement.raw = raw
     return statement

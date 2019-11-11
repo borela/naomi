@@ -11,16 +11,12 @@
 # the License.
 
 from .ast import Include
-from .make_contextual_statement import make_contextual_statement
 
 
 def parse_include(syntax, context, raw):
-    statement = make_contextual_statement(
-        Include(),
-        syntax,
-        context,
-        raw,
-    )
-    # TODO.
+    statement = Include()
+    statement.syntax = syntax
+    statement.context = context
+    statement.raw = raw
     statement.value = raw['include']
     return statement

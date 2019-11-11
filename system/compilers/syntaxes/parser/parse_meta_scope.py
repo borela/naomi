@@ -11,16 +11,12 @@
 # the License.
 
 from .ast import SetMetaScope
-from .make_contextual_statement import make_contextual_statement
 
 
 def parse_meta_scope(syntax, context, raw):
-    statement = make_contextual_statement(
-        SetMetaScope(),
-        syntax,
-        context,
-        raw,
-    )
-    # TODO.
+    statement = SetMetaScope()
+    statement.syntax = syntax
+    statement.context = context
+    statement.raw = raw
     statement.value = raw['meta_scope']
     return statement

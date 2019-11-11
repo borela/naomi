@@ -11,15 +11,12 @@
 # the License.
 
 from .ast import ClearScopes
-from .make_contextual_statement import make_contextual_statement
 
 
 def parse_clear_scopes(syntax, context, raw):
-    statement = make_contextual_statement(
-        ClearScopes(),
-        syntax,
-        context,
-        raw,
-    )
+    statement = ClearScopes()
+    statement.syntax = syntax
+    statement.context = context
+    statement.raw = raw
     statement.value = raw['clear_scopes']
     return statement

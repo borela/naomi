@@ -11,15 +11,11 @@
 # the License.
 
 from .ast import Set
-from .make_contextual_statement import make_contextual_statement
 
 
 def parse_set(syntax, context, raw):
-    statement = make_contextual_statement(
-        Set(),
-        syntax,
-        context,
-        raw,
-    )
-    # TODO.
+    statement = Set()
+    statement.syntax = syntax
+    statement.context = context
+    statement.raw = raw
     return statement

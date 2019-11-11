@@ -18,7 +18,7 @@ from .parse_meta_content_scope import parse_meta_content_scope
 from .parse_meta_scope import parse_meta_scope
 
 
-def parse_context_declaration(syntax, name, raw):
+def parse_context(syntax, name, raw):
     context = ContextDeclaration()
     context.syntax = syntax
     context.raw = raw

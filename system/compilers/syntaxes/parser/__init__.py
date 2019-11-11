@@ -10,8 +10,4 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ContextualStatement import ContextualStatement
-
-
-class WithPrototype(ContextualStatement):
-    pass
+from .parse_syntax_entry import * # noqa

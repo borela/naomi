@@ -21,7 +21,7 @@ from Naomi.system import (
     STATE_STORE,
 )
 
-from Naomi.system.compilers import compile_commands
+from Naomi.system.compilers import compile_integrated_commands
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
@@ -40,7 +40,7 @@ class EventHandler(PatternMatchingEventHandler):
         self.process(event)
 
     def process(self, event):
-        compile_commands()
+        compile_integrated_commands()
 
 
 class NaomiWatchCommandsCommand(ApplicationCommand):

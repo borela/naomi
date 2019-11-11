@@ -10,13 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers import compile_configured_syntaxes
-from sublime_plugin import ApplicationCommand
 
-
-class NaomiBuildSyntaxesCommand(ApplicationCommand):
-    def description(self):
-        return 'Build Syntaxes'
-
-    def run(self):
-        compile_configured_syntaxes()
+def make_contextual_statement(statement, syntax, context, raw):
+    statement.syntax = syntax
+    statement.context = context
+    statement.raw = raw
+    return statement

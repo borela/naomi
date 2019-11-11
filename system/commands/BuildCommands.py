@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers import compile_commands
+from Naomi.system.compilers import compile_integrated_commands
 from sublime_plugin import ApplicationCommand
 
 
@@ -19,4 +19,4 @@ class NaomiBuildCommandsCommand(ApplicationCommand):
         return 'Build Commands'
 
     def run(self):
-        compile_commands()
+        compile_integrated_commands()

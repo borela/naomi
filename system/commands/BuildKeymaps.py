@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers import compile_keymaps
+from Naomi.system.compilers import compile_integrated_keymaps
 from sublime_plugin import ApplicationCommand
 
 
@@ -19,4 +19,4 @@ class NaomiBuildKeymapsCommand(ApplicationCommand):
         return 'Build Keymaps'
 
     def run(self):
-        compile_keymaps()
+        compile_integrated_keymaps()

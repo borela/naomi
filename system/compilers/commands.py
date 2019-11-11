@@ -24,7 +24,6 @@ from Naomi.system import (
     log_debug,
     log_info,
     package_relpath,
-    STATE_STORE,
 )
 
 from Naomi.system.events import (
@@ -35,15 +34,7 @@ from Naomi.system.events import (
 from Naomi.system.headers import command as command_header
 
 
-def compile_commands():
-    for integrated in STATE_STORE['integrated']['commands']:
-        _compile_commands(
-            integrated['src_dir'],
-            integrated['build_dir'],
-        )
-
-
-def _compile_commands(src_dir, build_dir):
+def compile_commands(src_dir, build_dir):
     """
     Convert commands from “x.yml” to “x.sublime-commands”.
     """

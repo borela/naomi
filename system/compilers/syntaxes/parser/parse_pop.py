@@ -10,13 +10,16 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers import compile_configured_syntaxes
-from sublime_plugin import ApplicationCommand
+from .ast import Pop
+from .make_contextual_statement import make_contextual_statement
 
 
-class NaomiBuildSyntaxesCommand(ApplicationCommand):
-    def description(self):
-        return 'Build Syntaxes'
-
-    def run(self):
-        compile_configured_syntaxes()
+def parse_pop(syntax, context, raw):
+    statement = make_contextual_statement(
+        Pop(),
+        syntax,
+        context,
+        raw,
+    )
+    # TODO.
+    return statement

@@ -29,7 +29,6 @@ from Naomi.system import (
     log_debug,
     log_info,
     package_relpath,
-    STATE_STORE,
 )
 
 from Naomi.system.events import (
@@ -38,15 +37,7 @@ from Naomi.system.events import (
 )
 
 
-def compile_preferences():
-    for integrated in STATE_STORE['integrated']['preferences']:
-        _compile_preferences(
-            integrated['src_dir'],
-            integrated['build_dir'],
-        )
-
-
-def _compile_preferences(src_dir, build_dir):
+def compile_preferences(src_dir, build_dir):
     """
     Convert preferences from “x.yml” to “x.tmPreferences”.
     """

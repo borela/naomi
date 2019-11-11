@@ -10,13 +10,16 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers import compile_configured_syntaxes
-from sublime_plugin import ApplicationCommand
+from .ast import SetMetaContentScope
+from .make_contextual_statement import make_contextual_statement
 
 
-class NaomiBuildSyntaxesCommand(ApplicationCommand):
-    def description(self):
-        return 'Build Syntaxes'
-
-    def run(self):
-        compile_configured_syntaxes()
+def parse_meta_content_scope(syntax, context, raw):
+    statement = make_contextual_statement(
+        SetMetaContentScope(),
+        syntax,
+        context,
+        raw,
+    )
+    statement.value = raw['meta_content_scope']
+    return statement

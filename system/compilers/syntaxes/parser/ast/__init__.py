@@ -10,13 +10,15 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers import compile_configured_syntaxes
-from sublime_plugin import ApplicationCommand
-
-
-class NaomiBuildSyntaxesCommand(ApplicationCommand):
-    def description(self):
-        return 'Build Syntaxes'
-
-    def run(self):
-        compile_configured_syntaxes()
+from .ClearScopes import * # noqa
+from .ContextDeclaration import * # noqa
+from .Include import * # noqa
+from .Match import * # noqa
+from .Pop import * # noqa
+from .Push import * # noqa
+from .Set import * # noqa
+from .SetMetaContentScope import * # noqa
+from .SetMetaScope import * # noqa
+from .Statement import * # noqa
+from .Syntax import * # noqa
+from .VariableDeclaration import * # noqa

@@ -10,13 +10,13 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers import compile_configured_syntaxes
-from sublime_plugin import ApplicationCommand
+from .ast import VariableDeclaration
 
 
-class NaomiBuildSyntaxesCommand(ApplicationCommand):
-    def description(self):
-        return 'Build Syntaxes'
-
-    def run(self):
-        compile_configured_syntaxes()
+def parse_variable_declaration(syntax, name, raw):
+    statement = VariableDeclaration()
+    statement.syntax = syntax
+    statement.raw = raw
+    statement.name = name
+    statement.pattern = raw
+    return statement

@@ -10,16 +10,16 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ClearScopes import * # noqa
-from .ContextDeclaration import * # noqa
-from .Include import * # noqa
-from .Match import * # noqa
-from .Pop import * # noqa
-from .Push import * # noqa
-from .Set import * # noqa
-from .SetMetaContentScope import * # noqa
-from .SetMetaScope import * # noqa
-from .Statement import * # noqa
-from .Syntax import * # noqa
-from .VariableDeclaration import * # noqa
-from .WithPrototype import * # noqa
+from .ast import Push
+from .make_contextual_statement import make_contextual_statement
+
+
+def parse_push(syntax, context, raw):
+    statement = make_contextual_statement(
+        Push(),
+        syntax,
+        context,
+        raw,
+    )
+    # TODO.
+    return statement

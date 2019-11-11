@@ -23,7 +23,6 @@ from Naomi.system import (
     log_debug,
     log_info,
     package_relpath,
-    STATE_STORE,
 )
 
 from Naomi.system.events import (
@@ -36,15 +35,7 @@ from Naomi.system.headers import menu as menu_header
 from os.path import join
 
 
-def compile_menus():
-    for integrated in STATE_STORE['integrated']['menus']:
-        _compile_menus(
-            integrated['src_dir'],
-            integrated['build_dir'],
-        )
-
-
-def _compile_menus(src_dir, build_dir):
+def compile_menus(src_dir, build_dir):
     EVENT_BUS.emit(building_menus())
     log_debug('Cleaning: %s' % package_relpath(build_dir))
 

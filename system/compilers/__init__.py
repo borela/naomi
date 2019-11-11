@@ -10,8 +10,59 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .syntaxes import compile_syntaxes # noqa
+from Naomi.system import (
+    EVENT_BUS,
+    STATE_STORE,
+)
+
+from Naomi.system.events import (
+    building_syntaxes,
+    finished_building_syntaxes,
+)
+
+from .syntaxes import compile_syntax # noqa
 from .commands import compile_commands # noqa
 from .keymaps import compile_keymaps # noqa
 from .menus import compile_menus # noqa
 from .preferences import compile_preferences # noqa
+
+
+def compile_integrated_commands():
+    for integrated in STATE_STORE['integrated']['commands']:
+        compile_commands(
+            integrated['src_dir'],
+            integrated['build_dir'],
+        )
+
+
+def compile_integrated_keymaps():
+    for integrated in STATE_STORE['integrated']['keymaps']:
+        compile_keymaps(
+            integrated['src_dir'],
+            integrated['build_dir'],
+        )
+
+
+def compile_integrated_menus():
+    for integrated in STATE_STORE['integrated']['menus']:
+        compile_menus(
+            integrated['src_dir'],
+            integrated['build_dir'],
+        )
+
+
+def compile_integrated_preferences():
+    for integrated in STATE_STORE['integrated']['preferences']:
+        compile_preferences(
+            integrated['src_dir'],
+            integrated['build_dir'],
+        )
+
+
+def compile_configured_syntaxes():
+    EVENT_BUS.emit(building_syntaxes())
+
+    for settings in STATE_STORE['settings']['syntaxes']:
+        compile_syntax(settings)
+
+    EVENT_BUS.emit(finished_building_syntaxes())

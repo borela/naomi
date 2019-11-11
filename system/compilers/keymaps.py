@@ -23,7 +23,6 @@ from Naomi.system import (
     log_debug,
     log_info,
     package_relpath,
-    STATE_STORE,
 )
 
 from Naomi.system.events import (
@@ -35,15 +34,7 @@ from Naomi.system.headers import keymap as keymap_header
 from os.path import join
 
 
-def compile_keymaps():
-    for integrated in STATE_STORE['integrated']['keymaps']:
-        _compile_keymaps(
-            integrated['src_dir'],
-            integrated['build_dir'],
-        )
-
-
-def _compile_keymaps(src_dir, build_dir):
+def compile_keymaps(src_dir, build_dir):
     """
     Load all keymaps sources and generate files for each OS on demand:
 

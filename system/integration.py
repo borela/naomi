@@ -10,14 +10,15 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system import EVENT_BUS
-from Naomi.system.events import (
+from .events import (
     integrated_commands,
     integrated_keymaps,
     integrated_menus,
     integrated_preferences,
     integrated_syntaxes,
 )
+
+from .event_bus import EVENT_BUS
 
 
 def integrate_commands(src_dir, build_dir):

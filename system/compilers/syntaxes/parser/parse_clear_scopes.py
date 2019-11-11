@@ -10,13 +10,16 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers import compile_configured_syntaxes
-from sublime_plugin import ApplicationCommand
+from .ast import ClearScopes
+from .make_contextual_statement import make_contextual_statement
 
 
-class NaomiBuildSyntaxesCommand(ApplicationCommand):
-    def description(self):
-        return 'Build Syntaxes'
-
-    def run(self):
-        compile_configured_syntaxes()
+def parse_clear_scopes(syntax, context, raw):
+    statement = make_contextual_statement(
+        ClearScopes(),
+        syntax,
+        context,
+        raw,
+    )
+    statement.value = raw['clear_scopes']
+    return statement

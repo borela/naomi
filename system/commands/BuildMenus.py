@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.system.compilers import compile_menus
+from Naomi.system.compilers import compile_integrated_menus
 from sublime_plugin import ApplicationCommand
 
 
@@ -19,4 +19,4 @@ class NaomiBuildMenusCommand(ApplicationCommand):
         return 'Build Menus'
 
     def run(self):
-        compile_menus()
+        compile_integrated_menus()

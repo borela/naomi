@@ -11,3 +11,4 @@
 # the License.
 
 from .parse_syntax_entry import * # noqa
+from .ParsingError import * # noqa

@@ -10,18 +10,6 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .parser import (
-    parse_syntax_entry,
-    ParsingError,
-)
 
-from Naomi.system import log_error
-
-
-def compile_syntax(settings):
-    try:
-        syntax = parse_syntax_entry(settings)
-        # print(syntax.resources)
-        # TODO: Save to a file.
-    except ParsingError as error:
-        log_error(str(error))
+class ParsingError(Exception):
+    pass

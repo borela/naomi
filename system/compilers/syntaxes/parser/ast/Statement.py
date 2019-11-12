@@ -10,7 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from .Node import Node
 
-class Statement:
+
+class Statement(Node):
     syntax = None
     raw = None

@@ -13,23 +13,10 @@
 from .Node import Node
 
 
-class Syntax(Node):
-    home_dir = None
-    build_dir = None
-
-    path = None
-    parent_dir = None
-    package_relpath = None
-
-    settings = None
-    raw = None
-
+class FunctionCall(Node):
     name = None
-    hidden = None
-    scope = None
-    scope_suffix = None
-    file_extensions = None
-    first_line_match = None
+    arguments = None
 
-    variables = []
-    contexts = []
+    def __init__(self, name, arguments=[]):
+        self.name = name
+        self.arguments = arguments

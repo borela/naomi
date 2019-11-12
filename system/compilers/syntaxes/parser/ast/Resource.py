@@ -13,23 +13,9 @@
 from .Node import Node
 
 
-class Syntax(Node):
-    home_dir = None
-    build_dir = None
-
+class Resource(Node):
+    syntax = None
+    context = None
+    statement = None
     path = None
-    parent_dir = None
-    package_relpath = None
-
-    settings = None
-    raw = None
-
-    name = None
-    hidden = None
-    scope = None
-    scope_suffix = None
-    file_extensions = None
-    first_line_match = None
-
-    variables = []
-    contexts = []
+    resolved = None

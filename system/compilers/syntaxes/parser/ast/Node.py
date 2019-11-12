@@ -10,26 +10,25 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .Node import Node
+from borela.functions import indent_string
 
 
-class Syntax(Node):
-    home_dir = None
-    build_dir = None
+class Node:
+    def __repr__(self):
+        body = ''
 
-    path = None
-    parent_dir = None
-    package_relpath = None
+        for member in vars(self):
+            if member == 'raw':
+                value = '...'
+            else:
+                value = getattr(self, member)
 
-    settings = None
-    raw = None
+            if body:
+                body += '\n'
 
-    name = None
-    hidden = None
-    scope = None
-    scope_suffix = None
-    file_extensions = None
-    first_line_match = None
+            body += '%s: %s' % (member, repr(value))
 
-    variables = []
-    contexts = []
+        return '%s {\n%s\n}' % (
+            self.__class__.__name__,
+            indent_string(body),
+        )

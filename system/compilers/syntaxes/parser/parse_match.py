@@ -25,6 +25,15 @@ from collections import OrderedDict
 from pprint import pprint
 
 
+def function_calls(calls_dict):
+    result = []
+
+    for name, args in calls_dict.items():
+        result.append(FunctionCall(name, args))
+
+    return result
+
+
 def parse_match(syntax, context, raw):
     statement = Match()
     statement.syntax = syntax
@@ -33,20 +42,49 @@ def parse_match(syntax, context, raw):
 
     for i, (key, value) in enumerate(raw.items(), 1):
         if key == 'match':
-            # Function calls.
-            if isinstance(value, OrderedDict):
-                join = FunctionCall('join')
-
-                for name, args in value.items():
-                    join.arguments.append(FunctionCall(name, args))
-
-                statement.pattern = join
-                pprint(statement)
+            # Literal pattern.
+            if isinstance(value, (bool, str, float, int)):
+                statement.pattern = str(value)
                 continue
 
-            # Normal string pattern.
-            statement.pattern = value
-            continue
+            if isinstance(value, (list, OrderedDict)):
+                join = FunctionCall('join')
+
+                # List of expressions, for example a list containing a string
+                # literal and two function calls:
+                #
+                # - match:
+                #   - (?i)
+                #   - word: awesome
+                #     words:
+                #     - foo
+                #     - bar
+                if isinstance(value, list):
+                    for item in value:
+                        if isinstance(item, str):
+                            join.arguments.append(item)
+                            continue
+
+                        join.arguments.extend(function_calls(item))
+
+                # Similar to the list but does not support literals:
+                #
+                # - match:
+                #     word: awesome
+                #     words:
+                #       - foo
+                #       - bar
+                if isinstance(value, OrderedDict):
+                    join.arguments.extend(function_calls(value))
+
+                statement.pattern = join
+                continue
+
+            raise ParsingError(
+                '(%i, %i) Unsupported match pattern.' % (
+                raw.lc.line + i,
+                raw.lc.col,
+            ))
 
         if key == 'match_word':
             statement.pattern = FunctionCall('word', value)
@@ -106,4 +144,6 @@ def parse_match(syntax, context, raw):
             key,
         ))
 
+    if not isinstance(statement.pattern, str):
+        print(statement)
     return statement

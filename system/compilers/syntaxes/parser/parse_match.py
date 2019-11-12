@@ -10,11 +10,19 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ast import Match
-from .parse_push import parse_push
+from .ast import (
+    FunctionCall,
+    Match,
+    Pop,
+)
+
 from .parse_pop import parse_pop
+from .parse_push import parse_push
 from .parse_set import parse_set
-from borela.functions import make_regex_to_match_words
+from .ParsingError import ParsingError
+from borela.functions import make_words_regex
+from collections import OrderedDict
+from pprint import pprint
 
 
 def parse_match(syntax, context, raw):
@@ -23,15 +31,26 @@ def parse_match(syntax, context, raw):
     statement.context = context
     statement.raw = raw
 
-    for key, value in raw.items():
-        if key == 'match':
+    for i, (key, value) in enumerate(raw.items(), 1):
+        if key in 'match':
+            # Function calls.
+            if isinstance(value, OrderedDict):
+                join = FunctionCall('join')
+
+                for name, args in value.items():
+                    join.arguments.append(FunctionCall(name, args))
+
+                statement.pattern = join
+                pprint(statement)
+                continue
+
+            # Normal string pattern.
             statement.pattern = value
             continue
 
-        if key == 'match_words':
-            statement.pattern = make_regex_to_match_words(value)
-            print(statement.pattern)
-            continue
+        # if key == 'match_words':
+        #     statement.pattern = make_words_regex(value)
+        #     continue
 
         if key == 'scope':
             statement.scope = value
@@ -46,15 +65,15 @@ def parse_match(syntax, context, raw):
             continue
 
         if key in ['push', 'set', 'pop']:
-            if statement.stack_control:
-                raise SyntaxError(
-                    'Multiple stack control statements. (%i, %i)' %
-                    value.lc.line,
-                    value.lc.col,
-                )
+            if statement.stack_action:
+                raise ParsingError(
+                    '(%i, %i) Multiple stack control statements.' % (
+                    raw.lc.line + i,
+                    raw.lc.col,
+                ))
 
             if key == 'push':
-                statement.stack_control = parse_push(
+                statement.stack_action = parse_push(
                     syntax,
                     context,
                     value,
@@ -62,7 +81,7 @@ def parse_match(syntax, context, raw):
                 continue
 
             if key == 'set':
-                statement.stack_control = parse_set(
+                statement.stack_action = parse_set(
                     syntax,
                     context,
                     value,
@@ -70,17 +89,17 @@ def parse_match(syntax, context, raw):
                 continue
 
             if key == 'pop':
-                statement.stack_control = parse_pop(
+                statement.stack_action = parse_pop(
                     syntax,
                     context,
                     value,
                 )
                 continue
 
-        raise SyntaxError('Unexpected statement: %s (%i, %i)' % (
+        raise ParsingError('(%i, %i) Unexpected statement: %s' % (
+            raw.lc.line + i,
+            raw.lc.col,
             key,
-            value.lc.line,
-            value.lc.col,
         ))
 
     return statement

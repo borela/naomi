@@ -18,5 +18,5 @@ def parse_meta_content_scope(syntax, context, raw):
     statement.syntax = syntax
     statement.context = context
     statement.raw = raw
-    statement.value = raw['meta_content_scope']
+    statement.scope = raw['meta_content_scope']
     return statement

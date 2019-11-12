@@ -17,5 +17,5 @@ class Match(ContextualStatement):
     pattern = None
     captures = None
     scope = None
-    stack_control = None
+    stack_action = None
     with_prototype = None

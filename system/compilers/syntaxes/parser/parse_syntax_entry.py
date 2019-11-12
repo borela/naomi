@@ -19,8 +19,8 @@ from Naomi.system import (
 )
 
 from .ast import Syntax
-from .parse_variable import parse_variable
-from .parse_context import parse_context
+from .parse_variables import parse_variables
+from .parse_contexts import parse_contexts
 from borela.functions import load_yaml
 from os.path import dirname
 
@@ -58,6 +58,7 @@ def parse_syntax_entry(settings):
 
     log_debug('Done loading syntax file: %s' % syntax.package_relpath)
 
+    syntax.entry = True
     syntax.name = raw.get('name', '')
     syntax.hidden = raw.get('hidden', '')
     syntax.scope = raw.get('scope', '')
@@ -65,10 +66,9 @@ def parse_syntax_entry(settings):
     syntax.file_extensions = raw.get('file_extensions', [])
     syntax.first_line_match = raw.get('first_line_match', '')
 
-    for name, raw in syntax.raw.get('variables', {}).items():
-        syntax.variables.append(parse_variable(syntax, name, raw))
+    syntax.index_file(syntax)
 
-    for name, raw in syntax.raw.get('contexts', {}).items():
-        syntax.contexts.append(parse_context(syntax, name, raw))
+    parse_variables(syntax)
+    parse_contexts(syntax)
 
     return syntax

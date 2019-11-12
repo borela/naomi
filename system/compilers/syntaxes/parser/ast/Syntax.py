@@ -11,6 +11,7 @@
 # the License.
 
 from .Node import Node
+from collections import OrderedDict
 
 
 class Syntax(Node):
@@ -24,6 +25,7 @@ class Syntax(Node):
     settings = None
     raw = None
 
+    entry = False
     name = None
     hidden = None
     scope = None
@@ -31,5 +33,28 @@ class Syntax(Node):
     file_extensions = None
     first_line_match = None
 
-    variables = []
-    contexts = []
+    variables = OrderedDict()
+    contexts = OrderedDict()
+
+    """
+    Files used in the compilation indexed by their path. We are using a
+    OrderedDict to be able to see the order in which the files were included
+    which could be useful when debugging.
+    """
+    files = OrderedDict()
+
+    """
+    The file id will be prepended in all contexts to allow us to see the
+    context’s origin.
+    """
+    files_ids = {}
+
+
+    def index_file(self, syntax):
+        path = syntax.path
+
+        if path in self.files:
+            return
+
+        self.files[path] = syntax
+        self.files_ids[path] = len(self.files)

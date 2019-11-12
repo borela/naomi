@@ -10,13 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ast import SetMetaScope
+from .parse_variable import parse_variable
 
 
-def parse_meta_scope(syntax, context, raw):
-    statement = SetMetaScope()
-    statement.syntax = syntax
-    statement.context = context
-    statement.raw = raw
-    statement.scope = raw['meta_scope']
-    return statement
+def parse_variables(syntax):
+    for name, raw in syntax.raw.get('variables', {}).items():
+        syntax.variables[name] = parse_variable(syntax, name, raw)

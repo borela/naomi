@@ -25,8 +25,8 @@ def parse_context(syntax, name, raw):
     context.name = name
 
     for statement in raw:
-        if any(key in ['match', 'match_words'] for key in statement):
-            context.statements.append(parse_match(
+        if 'clear_scopes' in statement:
+            context.statements.append(parse_clear_scopes(
                 syntax,
                 context,
                 statement,
@@ -41,8 +41,8 @@ def parse_context(syntax, name, raw):
             ))
             continue
 
-        if 'meta_scope' in statement:
-            context.statements.append(parse_meta_scope(
+        if any(key in ['match', 'match_words'] for key in statement):
+            context.statements.append(parse_match(
                 syntax,
                 context,
                 statement,
@@ -57,8 +57,8 @@ def parse_context(syntax, name, raw):
             ))
             continue
 
-        if 'clear_scopes' in statement:
-            context.statements.append(parse_clear_scopes(
+        if 'meta_scope' in statement:
+            context.statements.append(parse_meta_scope(
                 syntax,
                 context,
                 statement,

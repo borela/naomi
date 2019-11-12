@@ -15,27 +15,11 @@ from .ast import (
     Match,
 )
 
+from .parse_expression import parse_expression
 from .parse_pop import parse_pop
 from .parse_push import parse_push
 from .parse_set import parse_set
 from .ParsingError import ParsingError
-from collections import OrderedDict
-
-
-def dict_to_function_calls(calls):
-    result = []
-    for name, args in calls.items():
-        result.append(FunctionCall(name, args))
-    return result
-
-
-LITERAL_TYPES = (
-    bool,
-    complex,
-    float,
-    int,
-    str,
-)
 
 
 def parse_match(syntax, context, raw):
@@ -44,42 +28,10 @@ def parse_match(syntax, context, raw):
     statement.context = context
     statement.raw = raw
 
-    for i, (key, value) in enumerate(raw.items(), 1):
+    for key, value in raw.items():
         if key == 'match':
-            # Literal pattern.
-            if isinstance(value, LITERAL_TYPES):
-                statement.pattern = str(value)
-                continue
-
-            # Function calls.
-            if isinstance(value, (list, OrderedDict)):
-                nodes = []
-
-                # Simple function calls.
-                if isinstance(value, OrderedDict):
-                    nodes = dict_to_function_calls(value)
-                # Function calls mixed with literals.
-                else:
-                    for item in value:
-                        if isinstance(item, str):
-                            nodes.append(item)
-                            continue
-
-                        if isinstance(item, OrderedDict):
-                            nodes.extend(dict_to_function_calls(item))
-
-                if len(nodes) > 1:
-                    nodes = FunctionCall('join', nodes)
-
-                statement.pattern = nodes
-                continue
-
-            # Anything else.
-            raise ParsingError(
-                '(%i, %i) Unsupported statement or expression.' % (
-                raw.lc.line + i,
-                raw.lc.col,
-            ))
+            statement.pattern = parse_expression(value)
+            continue
 
         if key == 'match_word':
             statement.pattern = FunctionCall('word', value)
@@ -104,10 +56,9 @@ def parse_match(syntax, context, raw):
         if key in ['push', 'set', 'pop']:
             if statement.stack_action:
                 raise ParsingError(
-                    '(%i, %i) Multiple stack control statements.' % (
-                    raw.lc.line + i,
-                    raw.lc.col,
-                ))
+                    'Multiple stack control statements.',
+                    key,
+                )
 
             if key == 'push':
                 statement.stack_action = parse_push(
@@ -134,10 +85,8 @@ def parse_match(syntax, context, raw):
                 continue
 
         raise ParsingError(
-            '(%i, %i) Unexpected statement: %s' % (
-            raw.lc.line + i,
-            raw.lc.col,
+            'Unexpected statement: %s' % key,
             key,
-        ))
+        )
 
     return statement

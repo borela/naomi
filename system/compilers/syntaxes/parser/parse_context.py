@@ -16,6 +16,7 @@ from .parse_include import parse_include
 from .parse_match import parse_match
 from .parse_meta_content_scope import parse_meta_content_scope
 from .parse_meta_scope import parse_meta_scope
+from .ParsingError import ParsingError
 
 
 def parse_context(syntax, name, raw):
@@ -65,10 +66,9 @@ def parse_context(syntax, name, raw):
             ))
             continue
 
-        raise SyntaxError('Unexpected statement: %s (%i, %i)' % (
+        raise ParsingError(
+            'Unexpected statement: %s' % statement,
             statement,
-            statement.lc.line,
-            statement.lc.col,
-        ))
+        )
 
     return context

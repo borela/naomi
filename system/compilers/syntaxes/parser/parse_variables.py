@@ -14,5 +14,11 @@ from .parse_variable import parse_variable
 
 
 def parse_variables(syntax):
-    for name, raw in syntax.raw.get('variables', {}).items():
-        syntax.variables[name] = parse_variable(syntax, name, raw)
+    variables = syntax.raw.get('variables', {})
+
+    for name, value in variables.items():
+        syntax.variables[name] = parse_variable(
+            syntax,
+            name,
+            value,
+        )

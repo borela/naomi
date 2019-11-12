@@ -11,12 +11,13 @@
 # the License.
 
 from .ast import VariableDeclaration
+from .parse_expression import parse_expression
 
 
-def parse_variable(syntax, name, raw):
+def parse_variable(syntax, name, value):
     statement = VariableDeclaration()
     statement.syntax = syntax
-    statement.raw = raw
     statement.name = name
-    statement.pattern = raw
+    statement.pattern = value
+    statement.pattern = parse_expression(value)
     return statement

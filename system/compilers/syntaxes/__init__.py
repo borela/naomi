@@ -16,6 +16,7 @@ from .parser import (
 )
 
 from Naomi.system import log_error
+from ruamel.yaml.constructor import DuplicateKeyError
 
 
 def compile_syntax(settings):
@@ -25,3 +26,9 @@ def compile_syntax(settings):
         # TODO: Save to a file.
     except ParsingError as error:
         log_error(str(error))
+    except DuplicateKeyError as error:
+        lc = error.problem_mark
+        log_error('(%i, %i) Duplicated key.' % (
+            lc.line + 1,
+            lc.column + 1,
+        ))

@@ -32,7 +32,7 @@ def parse_match(syntax, context, raw):
     statement.raw = raw
 
     for i, (key, value) in enumerate(raw.items(), 1):
-        if key in 'match':
+        if key == 'match':
             # Function calls.
             if isinstance(value, OrderedDict):
                 join = FunctionCall('join')
@@ -48,9 +48,13 @@ def parse_match(syntax, context, raw):
             statement.pattern = value
             continue
 
-        # if key == 'match_words':
-        #     statement.pattern = make_words_regex(value)
-        #     continue
+        if key == 'match_word':
+            statement.pattern = FunctionCall('word', value)
+            continue
+
+        if key == 'match_words':
+            statement.pattern = FunctionCall('words', value)
+            continue
 
         if key == 'scope':
             statement.scope = value

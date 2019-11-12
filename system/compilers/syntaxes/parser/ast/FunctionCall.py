@@ -17,6 +17,6 @@ class FunctionCall(Node):
     name = None
     arguments = None
 
-    def __init__(self, name, arguments=[]):
+    def __init__(self, name, arguments=None):
         self.name = name
-        self.arguments = arguments
+        self.arguments = arguments or []

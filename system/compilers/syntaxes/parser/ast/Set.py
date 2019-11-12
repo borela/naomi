@@ -10,8 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .StackControlStatement import StackControlStatement
+from .Statement import Statement
 
 
-class Set(StackControlStatement):
-    pass
+class Set(Statement):
+    sequence = []

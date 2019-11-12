@@ -17,6 +17,5 @@ def parse_pop(syntax, context, raw):
     statement = Pop()
     statement.syntax = syntax
     statement.context = context
-    statement.raw = raw
     statement.value = bool(raw)
     return statement

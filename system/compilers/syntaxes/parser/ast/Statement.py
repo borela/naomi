@@ -15,4 +15,3 @@ from .Node import Node
 
 class Statement(Node):
     syntax = None
-    raw = None

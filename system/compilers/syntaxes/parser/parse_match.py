@@ -26,7 +26,6 @@ def parse_match(syntax, context, raw):
     statement = Match()
     statement.syntax = syntax
     statement.context = context
-    statement.raw = raw
 
     for key, value in raw.items():
         if key == 'match':

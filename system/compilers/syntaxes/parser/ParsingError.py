@@ -16,5 +16,5 @@ class ParsingError(Exception):
         Exception.__init__(self, '(%i, %i) %s' % (
             node.lc.line + 1,
             node.lc.col + 1,
-            message
+            message,
         ))

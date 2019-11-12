@@ -17,5 +17,4 @@ def parse_push(syntax, context, raw):
     statement = Push()
     statement.syntax = syntax
     statement.context = context
-    statement.raw = raw
     return statement

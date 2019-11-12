@@ -17,5 +17,4 @@ def parse_set(syntax, context, raw):
     statement = Set()
     statement.syntax = syntax
     statement.context = context
-    statement.raw = raw
     return statement

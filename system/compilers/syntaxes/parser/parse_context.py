@@ -22,7 +22,6 @@ from .ParsingError import ParsingError
 def parse_context(syntax, name, raw):
     context = ContextDeclaration()
     context.syntax = syntax
-    context.raw = raw
     context.name = name
 
     for statement in raw:

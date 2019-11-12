@@ -17,6 +17,5 @@ def parse_meta_scope(syntax, context, raw):
     statement = SetMetaScope()
     statement.syntax = syntax
     statement.context = context
-    statement.raw = raw
     statement.scope = raw['meta_scope']
     return statement

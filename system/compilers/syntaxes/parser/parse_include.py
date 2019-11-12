@@ -20,7 +20,6 @@ def parse_include(syntax, context, raw):
     statement = Include()
     statement.syntax = syntax
     statement.context = context
-    statement.raw = raw
     statement.path = raw['include']
 
     resource = Resource()

@@ -54,7 +54,6 @@ def parse_syntax_entry(settings):
     log_debug('Loading syntax file: %s' % syntax.package_relpath)
 
     raw = load_yaml(syntax.path)
-    syntax.raw = raw
 
     log_debug('Done loading syntax file: %s' % syntax.package_relpath)
 

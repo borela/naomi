@@ -17,6 +17,5 @@ def parse_clear_scopes(syntax, context, raw):
     statement = ClearScopes()
     statement.syntax = syntax
     statement.context = context
-    statement.raw = raw
     statement.value = raw['clear_scopes']
     return statement

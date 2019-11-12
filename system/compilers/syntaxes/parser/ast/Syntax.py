@@ -49,7 +49,6 @@ class Syntax(Node):
     """
     files_ids = {}
 
-
     def index_file(self, syntax):
         path = syntax.path
 

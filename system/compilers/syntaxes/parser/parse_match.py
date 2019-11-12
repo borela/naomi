@@ -13,14 +13,12 @@
 from .ast import (
     FunctionCall,
     Match,
-    Pop,
 )
 
 from .parse_pop import parse_pop
 from .parse_push import parse_push
 from .parse_set import parse_set
 from .ParsingError import ParsingError
-from borela.functions import make_words_regex
 from collections import OrderedDict
 
 
@@ -29,6 +27,15 @@ def dict_to_function_calls(calls):
     for name, args in calls.items():
         result.append(FunctionCall(name, args))
     return result
+
+
+LITERAL_TYPES = (
+    bool,
+    complex,
+    float,
+    int,
+    str,
+)
 
 
 def parse_match(syntax, context, raw):
@@ -40,12 +47,12 @@ def parse_match(syntax, context, raw):
     for i, (key, value) in enumerate(raw.items(), 1):
         if key == 'match':
             # Literal pattern.
-            if isinstance(value, (bool, str, float, int)):
+            if isinstance(value, LITERAL_TYPES):
                 statement.pattern = str(value)
                 continue
 
             # Function calls.
-            if isinstance(value, (list, OrderedDict)) and len(value) > 0:
+            if isinstance(value, (list, OrderedDict)):
                 nodes = []
 
                 # Simple function calls.
@@ -67,6 +74,7 @@ def parse_match(syntax, context, raw):
                 statement.pattern = nodes
                 continue
 
+            # Anything else.
             raise ParsingError(
                 '(%i, %i) Unsupported statement or expression.' % (
                 raw.lc.line + i,
@@ -125,7 +133,8 @@ def parse_match(syntax, context, raw):
                 )
                 continue
 
-        raise ParsingError('(%i, %i) Unexpected statement: %s' % (
+        raise ParsingError(
+            '(%i, %i) Unexpected statement: %s' % (
             raw.lc.line + i,
             raw.lc.col,
             key,

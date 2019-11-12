@@ -24,9 +24,27 @@ variables:
     [$_[:alpha:]]
     [$_[:alnum:]]*
 
+  myVariable:
+    words:
+    - foo
+    - bar
+    - baz
+
 contexts:
   main:
-    - match_words:
+    - match:
+        words:
+        - foo
+        - bar
+        - baz
+        - foobar
+        - foobaz
+      scope: test
+      pop:
+
+    - match:
+      - (?i)
+      - words:
         - foo
         - bar
         - baz
@@ -48,7 +66,7 @@ contexts:
   array-close:
     - match: \]
       scope: punctuation.section.brackets.end.js.jest-snapshot
-      pop: true
+      pop: false
     - include: comma-no-pop
     - match: (?=\S)
       push: snapshot-content
@@ -56,13 +74,12 @@ contexts:
   assignment:
     - match: \=
       scope: keyword.operator.other.assignment.js.jest-snapshot
-      pop: true
 
   close-object:
     - meta_scope: meta.object-literal.js.jest-snapshot
     - match: \}
       scope: punctuation.section.block.end.js.jest-snapshot
-      pop: true
+      pop: false
     - include: comma-no-pop
     - match: (?=\S)
       push: [ key-value, key-bind, key ]
@@ -94,7 +111,7 @@ contexts:
 
   key:
     - meta_scope: meta.object-literal.key.jest-snapshot
-    - include: Packages/Naomi/syntaxes/src/fjsx15/literal/object/property.sublime-syntax#any-key
+    # - include: Packages/Naomi/syntaxes/src/fjsx15/literal/object/property.sublime-syntax#any-key
 
   key-bind:
     - match: ":"

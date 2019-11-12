@@ -22,15 +22,12 @@ from .parse_set import parse_set
 from .ParsingError import ParsingError
 from borela.functions import make_words_regex
 from collections import OrderedDict
-from pprint import pprint
 
 
-def function_calls(calls_dict):
+def dict_to_function_calls(calls):
     result = []
-
-    for name, args in calls_dict.items():
+    for name, args in calls.items():
         result.append(FunctionCall(name, args))
-
     return result
 
 
@@ -47,41 +44,31 @@ def parse_match(syntax, context, raw):
                 statement.pattern = str(value)
                 continue
 
-            if isinstance(value, (list, OrderedDict)):
-                join = FunctionCall('join')
+            # Function calls.
+            if isinstance(value, (list, OrderedDict)) and len(value) > 0:
+                nodes = []
 
-                # List of expressions, for example a list containing a string
-                # literal and two function calls:
-                #
-                # - match:
-                #   - (?i)
-                #   - word: awesome
-                #     words:
-                #     - foo
-                #     - bar
-                if isinstance(value, list):
+                # Simple function calls.
+                if isinstance(value, OrderedDict):
+                    nodes = dict_to_function_calls(value)
+                # Function calls mixed with literals.
+                else:
                     for item in value:
                         if isinstance(item, str):
-                            join.arguments.append(item)
+                            nodes.append(item)
                             continue
 
-                        join.arguments.extend(function_calls(item))
+                        if isinstance(item, OrderedDict):
+                            nodes.extend(dict_to_function_calls(item))
 
-                # Similar to the list but does not support literals:
-                #
-                # - match:
-                #     word: awesome
-                #     words:
-                #       - foo
-                #       - bar
-                if isinstance(value, OrderedDict):
-                    join.arguments.extend(function_calls(value))
+                if len(nodes) > 1:
+                    nodes = FunctionCall('join', nodes)
 
-                statement.pattern = join
+                statement.pattern = nodes
                 continue
 
             raise ParsingError(
-                '(%i, %i) Unsupported match pattern.' % (
+                '(%i, %i) Unsupported statement or expression.' % (
                 raw.lc.line + i,
                 raw.lc.col,
             ))
@@ -144,6 +131,4 @@ def parse_match(syntax, context, raw):
             key,
         ))
 
-    if not isinstance(statement.pattern, str):
-        print(statement)
     return statement

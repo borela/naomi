@@ -63,7 +63,7 @@ def word_binary_tree_to_string(node):
     return '(?>%s%s|%s)' % (root, left_pattern, right_pattern)
 
 
-def make_regex_to_match_words(words):
+def make_words_regex(words):
     """
     Transforms a list of words into an optimized regex, for example:
 

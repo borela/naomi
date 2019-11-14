@@ -87,7 +87,7 @@ def make_words_regex(words):
     # Sorting is not necessary but it will be easier to debug.
     words.sort()
     # This will turn the words into a binary tree and extract the root that
-    # connect each group of words.
+    # connect each character of them.
     tree = words_to_binary_tree(words)
     # Build the optimized regex.
     return '\\b%s\\b' % tree_to_string(tree)

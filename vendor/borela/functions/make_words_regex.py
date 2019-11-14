@@ -10,57 +10,63 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from .indent_string import indent_string
 
-def word_list_to_word_binary_tree(words):
-    if all([len(word) == 1 for word in words]):
-        return words
 
-    node = {
-        'root': '',
-        'left': [],
-        'right': [],
-    }
+class Node:
+    root = None
+    child = None
+    orphan = None
 
-    character = words[0][:1]
+    def __init__(self, root=None, child=None, orphan=None):
+        self.root = root
+        self.child = child or []
+        self.orphan = orphan or []
 
-    if character:
-        node['root'] += character
+    def __repr__(self):
+        body = '>> %s' % repr(self.child)
+        body += '\n'
+        body += '|| %s' % repr(self.orphan)
 
+        return '%s {\n%s\n}' % (
+            self.root,
+            indent_string(body),
+        )
+
+
+class Child(Node):
+    pass
+
+
+class Orphan(Node):
+    pass
+
+
+def extract_root(words, constructor):
+    if len(words) == 0:
+        return None
+
+    if len(words) == 1 and not words[0]:
+        return None
+
+    root = words[0][:1]
+
+    if not root:
+        return constructor('', words[1:])
+
+    child = []
+    orphan = []
+
+    if root:
         for word in words:
-            if word.startswith(character):
-                node['left'].append(word[1:])
+            if word.startswith(root):
+                child.append(word[1:])
             else:
-                node['right'].append(word)
+                orphan.append(word)
     else:
-        node['right'] = words[1:]
+        orphan = words[1:]
 
-    node['left'] = word_list_to_word_binary_tree(node['left'])
-    node['right'] = word_list_to_word_binary_tree(node['right'])
-
-    return node
-
-
-def word_binary_tree_to_string(node):
-    root = node['root']
-    left = node['left']
-    right = node['right']
-
-    left_pattern = ''
-    if isinstance(left, list):
-        if len(left) > 0:
-            left_pattern = '(?>%s)' % '|'.join(left)
-    else:
-        left_pattern = word_binary_tree_to_string(left)
-
-    if len(right) < 1:
-        return root + left_pattern
-
-    right_pattern = word_binary_tree_to_string(right)
-
-    if not left_pattern:
-        return '(?:%s%s)?' % (root, right_pattern)
-
-    return '(?>%s%s|%s)' % (root, left_pattern, right_pattern)
+    return constructor(root, child, orphan)
 
 
 def make_words_regex(words):
@@ -77,12 +83,86 @@ def make_words_regex(words):
 
         \b(?>ba(?>r|z)|foo(?:ba(?>r|z))?)\b
     """
+
     # Sorting is not necessary but it will be easier to debug.
     words.sort()
     # This will turn the words into a binary tree and extract the root that
     # connect each group of words.
-    tree = word_list_to_word_binary_tree(words)
+    tree = words_to_binary_tree(words)
     # Build the optimized regex.
-    result = word_binary_tree_to_string(tree)
-    # Add a word boundary to to prevent partial matches.
-    return '\\b%s\\b' % result
+    return '\\b%s\\b' % tree_to_string(tree)
+
+
+def tree_to_string(tree):
+    stack = [tree]
+    queue = []
+
+    # Generate a queue to visit the nodes using postorder traversal. The
+    # “child” is left node and “orphan” is right node of the binary tree.
+    while len(stack) > 0:
+        node = stack.pop()
+
+        if isinstance(node.orphan, Node):
+            stack.append(node.orphan)
+
+        if isinstance(node.child, Node):
+            stack.append(node.child)
+
+        queue.insert(0, node)
+
+    # Collapse nodes while generating the pattern.
+    for node in queue:
+        if node.root == '':
+            node.root = '(?:%s)?' % node.child.root
+            continue
+
+        child = node.child
+        orphan = node.orphan
+
+        if child and orphan:
+            # This is not necessary but it will eliminate unnecessary atomic
+            # groups resulting in a cleaner regex.
+            if orphan.root.startswith('(?>'):
+                orphan.root = orphan.root[3:-1]
+
+            node.root = '(?>%s%s|%s)' % (
+                node.root,
+                child.root,
+                orphan.root,
+            )
+            continue
+
+        if isinstance(node, Child):
+            if orphan and not child:
+                node.root = '(?>%s|%s)' % (node.root, orphan.root)
+                continue
+
+        if isinstance(node, Orphan):
+            if orphan and not child:
+                node.root += '|' + orphan.root
+                continue
+
+        if child and not orphan:
+            node.root += child.root
+
+    # The last node visited will have the full pattern.
+    return node.root
+
+
+def words_to_binary_tree(words):
+    main = extract_root(words, Node)
+    node = None
+    queue = [main]
+
+    while len(queue) > 0:
+        node = queue.pop(0)
+        node.child = extract_root(node.child, Child)
+        node.orphan = extract_root(node.orphan, Orphan)
+
+        if isinstance(node.child, Node):
+            queue.append(node.child)
+
+        if isinstance(node.orphan, Node):
+            queue.append(node.orphan)
+
+    return main

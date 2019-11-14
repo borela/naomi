@@ -33,21 +33,27 @@ class Syntax(Node):
     file_extensions = None
     first_line_match = None
 
-    variables = OrderedDict()
-    contexts = OrderedDict()
+    variables = None
+    contexts = None
 
     """
     Files used in the compilation indexed by their path. We are using a
     OrderedDict to be able to see the order in which the files were included
     which could be useful when debugging.
     """
-    files = OrderedDict()
+    files = None
 
     """
     The file id will be prepended in all contexts to allow us to see the
     context’s origin.
     """
-    files_ids = {}
+    files_ids = None
+
+
+    def __init__(self):
+        self.files = OrderedDict()
+        self.files_ids = {}
+
 
     def index_file(self, syntax):
         path = syntax.path

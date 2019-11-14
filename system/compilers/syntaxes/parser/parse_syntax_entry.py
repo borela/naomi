@@ -70,11 +70,11 @@ def parse_syntax_entry(settings):
 
     log_debug('Parsing variables: %s' % syntax.package_relpath)
 
-    parse_variables(syntax)
+    syntax.variables = parse_variables(syntax, raw)
 
     log_debug('Parsing contexts: %s' % syntax.package_relpath)
 
-    parse_contexts(syntax)
+    syntax.contexts = parse_contexts(syntax, raw)
 
     log_info('Done compiling: %s' % syntax.package_relpath)
 

@@ -14,5 +14,11 @@ from .parse_context import parse_context
 
 
 def parse_contexts(syntax):
-    for name, raw in syntax.raw.get('contexts', {}).items():
-        syntax.contexts[name] = parse_context(syntax, name, raw)
+    contexts = syntax.raw.get('contexts', {})
+
+    for name, statements in contexts.items():
+        syntax.contexts[name] = parse_context(
+            syntax,
+            name,
+            statements,
+        )

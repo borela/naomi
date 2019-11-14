@@ -23,6 +23,7 @@ class Syntax(Node):
     package_relpath = None
 
     settings = None
+    raw = None
 
     entry = False
     name = None

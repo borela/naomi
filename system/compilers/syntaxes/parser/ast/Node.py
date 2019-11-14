@@ -18,7 +18,7 @@ class Node:
         body = ''
 
         for member in vars(self):
-            if member == 'raw':
+            if member in ['syntax', 'raw']:
                 value = '...'
             else:
                 value = getattr(self, member)

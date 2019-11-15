@@ -10,18 +10,13 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from ruamel.yaml.constructor import (
-    ConstructorError,
-    RoundTripConstructor,
-)
-
 from ruamel.yaml import (
     scalarstring,
     YAML,
 )
 
 from ruamel.yaml.comments import LineCol
-from ruamel.yaml.compat import text_type
+from ruamel.yaml.constructor import RoundTripConstructor
 
 
 class DoubleQuotedScalarString(scalarstring.DoubleQuotedScalarString):

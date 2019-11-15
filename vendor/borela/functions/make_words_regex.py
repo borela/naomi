@@ -12,7 +12,6 @@
 
 from .indent_string import indent_string
 from borela import Stack
-from collections import deque
 
 
 class Node:

@@ -11,6 +11,8 @@
 # the License.
 
 from .indent_string import indent_string
+from borela import Stack
+from collections import deque
 
 
 class Node:
@@ -94,26 +96,29 @@ def make_words_regex(words):
 
 
 def tree_to_string(tree):
-    stack = [tree]
-    queue = []
+    temp = Stack([tree])
+    queue = Stack()
 
     # Generate a queue to visit the nodes using postorder traversal. The
     # “child” is left node and “orphan” is right node of the binary tree.
-    while len(stack) > 0:
-        node = stack.pop()
+    while len(temp) > 0:
+        node = temp.pop()
 
         if isinstance(node.orphan, Node):
-            stack.append(node.orphan)
+            temp.push(node.orphan)
 
         if isinstance(node.child, Node):
-            stack.append(node.child)
+            temp.push(node.child)
 
-        queue.insert(0, node)
+        queue.push(node)
 
     # Collapse nodes while generating the pattern.
     for node in queue:
         if node.root == '':
-            node.root = '(?:%s)?' % node.child.root
+            if node.child.root.startswith('(?'):
+                node.root = node.child.root + '?'
+            else:
+                node.root = '(?:%s)?' % node.child.root
             continue
 
         child = node.child

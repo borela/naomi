@@ -18,4 +18,5 @@ class Resource(Node):
     context = None
     statement = None
     path = None
-    resolved = None
+    resolved_path = None
+    resolved_resource = None

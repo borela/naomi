@@ -21,13 +21,10 @@ def parse_include(syntax, context, raw):
     statement.syntax = syntax
     statement.context = context
     statement.path = raw['include']
-
-    resource = Resource()
-    resource.syntax = syntax
-    resource.context = context
-    resource.statement = statement
-    resource.path = statement.path
-
-    statement.resource = resource
-
+    statement.resource = Resource(
+        syntax,
+        context,
+        statement,
+        statement.path,
+    )
     return statement

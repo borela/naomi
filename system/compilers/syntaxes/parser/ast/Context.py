@@ -13,6 +13,6 @@
 from .Statement import Statement
 
 
-class ContextDeclaration(Statement):
+class Context(Statement):
     name = None
     statements = []

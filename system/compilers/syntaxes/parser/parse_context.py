@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ast import ContextDeclaration
+from .ast import Context
 from .parse_clear_scopes import parse_clear_scopes
 from .parse_include import parse_include
 from .parse_match import parse_match
@@ -20,7 +20,7 @@ from .ParsingError import ParsingError
 
 
 def parse_context(syntax, name, raw):
-    context = ContextDeclaration()
+    context = Context()
     context.syntax = syntax
     context.name = name
 

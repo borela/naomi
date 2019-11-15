@@ -17,6 +17,26 @@ class Resource(Node):
     syntax = None
     context = None
     statement = None
+
+    """
+    Path used to import the resource without any modifcation.
+    """
     path = None
+
+    """
+    Full path to the resource.
+    """
     resolved_path = None
-    resolved_resource = None
+
+    """
+    The actual resource.
+    """
+    resolved = None
+
+    def __init__(self, syntax, context, statement, path):
+        self.syntax = syntax
+        self.context = context
+        self.statement = statement
+        self.path = path
+
+        syntax.index_resource(self)

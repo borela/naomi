@@ -13,6 +13,6 @@
 from .Statement import Statement
 
 
-class VariableDeclaration(Statement):
+class Variable(Statement):
     name = None
     pattern = None

@@ -18,7 +18,7 @@ class Node:
         body = ''
 
         for member in vars(self):
-            if member in ['syntax', 'raw']:
+            if member in ['syntax', 'context', 'statement', 'raw']:
                 value = '...'
             else:
                 value = getattr(self, member)
@@ -32,3 +32,10 @@ class Node:
             self.__class__.__name__,
             indent_string(body),
         )
+
+    def get_sub_nodes(self):
+        """
+        This method is used by the traversal function to collect and visit
+        the tree nodes without using recursion.
+        """
+        raise None

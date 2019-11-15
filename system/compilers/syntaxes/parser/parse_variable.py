@@ -10,12 +10,12 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ast import VariableDeclaration
+from .ast import Variable
 from .parse_expression import parse_expression
 
 
 def parse_variable(syntax, name, value):
-    statement = VariableDeclaration()
+    statement = Variable()
     statement.syntax = syntax
     statement.name = name
     statement.pattern = value

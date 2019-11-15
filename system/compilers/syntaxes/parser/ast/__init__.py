@@ -11,7 +11,7 @@
 # the License.
 
 from .ClearScopes import * # noqa
-from .ContextDeclaration import * # noqa
+from .Context import * # noqa
 from .FunctionCall import * # noqa
 from .Include import * # noqa
 from .Match import * # noqa
@@ -23,4 +23,4 @@ from .SetMetaContentScope import * # noqa
 from .SetMetaScope import * # noqa
 from .Statement import * # noqa
 from .Syntax import * # noqa
-from .VariableDeclaration import * # noqa
+from .Variable import * # noqa

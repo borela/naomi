@@ -10,7 +10,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from ..ParsingError import ParsingError
+from .Context import Context
 from .Node import Node
+from .Resource import Resource
+from .Variable import Variable
 from collections import OrderedDict
 
 
@@ -25,7 +29,6 @@ class Syntax(Node):
     settings = None
     raw = None
 
-    entry = False
     name = None
     hidden = None
     scope = None
@@ -60,17 +63,19 @@ class Syntax(Node):
     """
     resources = None
 
-    def __init__(self):
+    def __init__(self, settings):
+        self.settings = settings
+
         self.variables = OrderedDict()
         self.contexts = OrderedDict()
 
         self.files = OrderedDict()
         self.files_ids = {}
 
-        self.resolved_resources = {}
+        self.resources = OrderedDict()
 
-    def getSubNodes(self):
-        return variables + contexts
+    def get_sub_nodes(self):
+        return self.variables + self.contexts
 
     def index_context(self, context):
         if not isinstance(context, Context):

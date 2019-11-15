@@ -42,6 +42,7 @@ def parse(settings):
     entry, src_dir, build_dir = resolve_syntax_entry(entry)
 
     syntax = Syntax()
+    syntax.entry = True
     syntax.settings = settings
 
     syntax.home_dir = src_dir
@@ -58,7 +59,6 @@ def parse(settings):
 
     log_debug('Done loading syntax file: %s' % syntax.package_relpath)
 
-    syntax.entry = True
     syntax.name = raw.get('name', '')
     syntax.hidden = raw.get('hidden', '')
     syntax.scope = raw.get('scope', '')
@@ -70,11 +70,11 @@ def parse(settings):
 
     log_debug('Parsing variables: %s' % syntax.package_relpath)
 
-    syntax.variables = parse_variables(syntax, raw)
+    parse_variables(syntax)
 
     log_debug('Parsing contexts: %s' % syntax.package_relpath)
 
-    syntax.contexts = parse_contexts(syntax, raw)
+    parse_contexts(syntax)
 
     log_info('Done compiling: %s' % syntax.package_relpath)
 

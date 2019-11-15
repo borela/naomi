@@ -33,13 +33,18 @@ class Syntax(Node):
     file_extensions = None
     first_line_match = None
 
+    """
+    Variables indexed by their name.
+    """
     variables = None
+
+    """
+    Contexts indexed by their name.
+    """
     contexts = None
 
     """
-    Files used in the compilation indexed by their path. We are using a
-    OrderedDict to be able to see the order in which the files were included
-    which could be useful when debugging.
+    Files used in the compilation indexed by their path.
     """
     files = None
 
@@ -49,13 +54,34 @@ class Syntax(Node):
     """
     files_ids = None
 
+    """
+    Some statements references external files or contexts, these are added to
+    this dictionary to speed up the path resolution.
+    """
+    resources = None
 
     def __init__(self):
+        self.variables = OrderedDict()
+        self.contexts = OrderedDict()
+
         self.files = OrderedDict()
         self.files_ids = {}
 
+        self.resolved_resources = {}
+
+    def getSubNodes(self):
+        return variables + contexts
+
+    def index_context(self, context):
+        if not isinstance(context, Context):
+            raise ParsingError('Object is not a context: %s' % context)
+
+        self.contexts[context.name] = Context
 
     def index_file(self, syntax):
+        if not isinstance(syntax, Syntax):
+            raise ParsingError('Object is not a syntax file: %s' % syntax)
+
         path = syntax.path
 
         if path in self.files:
@@ -63,3 +89,15 @@ class Syntax(Node):
 
         self.files[path] = syntax
         self.files_ids[path] = len(self.files)
+
+    def index_resource(self, resource):
+        if not isinstance(resource, Resource):
+            raise ParsingError('Object is not a Resource: %s' % resource)
+
+        self.resources[resource.path] = resource
+
+    def index_variable(self, variable):
+        if not isinstance(variable, Variable):
+            raise ParsingError('Object is not a variable: %s' % variable)
+
+        self.variables[variable.name] = variable

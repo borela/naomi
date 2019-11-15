@@ -11,18 +11,14 @@
 # the License.
 
 from .parse_variable import parse_variable
-from collections import OrderedDict
 
 
-def parse_variables(syntax, raw):
-    result = OrderedDict()
-    variables = raw.get('variables', {})
+def parse_variables(syntax):
+    variables = syntax.raw.get('variables', {})
 
     for name, value in variables.items():
-        result[name] = parse_variable(
+        syntax.index_variable(parse_variable(
             syntax,
             name,
             value,
-        )
-
-    return result
+        ))

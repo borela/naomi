@@ -11,18 +11,14 @@
 # the License.
 
 from .parse_context import parse_context
-from collections import OrderedDict
 
 
-def parse_contexts(syntax, raw):
-    result = OrderedDict()
+def parse_contexts(syntax):
     contexts = syntax.raw.get('contexts', {})
 
     for name, statements in contexts.items():
-        result[name] = parse_context(
+        syntax.index_context(parse_context(
             syntax,
             name,
             statements,
-        )
-
-    return result
+        ))

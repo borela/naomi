@@ -17,18 +17,18 @@ from collections import deque
 
 class Node:
     root = None
-    child = None
-    orphan = None
+    left = None
+    right = None
 
-    def __init__(self, root=None, child=None, orphan=None):
+    def __init__(self, root=None, left=None, right=None):
         self.root = root
-        self.child = child or []
-        self.orphan = orphan or []
+        self.left = left or []
+        self.right = right or []
 
     def __repr__(self):
-        body = '>> %s' % repr(self.child)
+        body = '>> %s' % repr(self.left)
         body += '\n'
-        body += '|| %s' % repr(self.orphan)
+        body += '|| %s' % repr(self.right)
 
         return '%s {\n%s\n}' % (
             self.root,
@@ -36,11 +36,11 @@ class Node:
         )
 
 
-class Child(Node):
+class Left(Node):
     pass
 
 
-class Orphan(Node):
+class Right(Node):
     pass
 
 
@@ -56,19 +56,19 @@ def extract_root(words, constructor):
     if not root:
         return constructor('', words[1:])
 
-    child = []
-    orphan = []
+    left = []
+    right = []
 
     if root:
         for word in words:
             if word.startswith(root):
-                child.append(word[1:])
+                left.append(word[1:])
             else:
-                orphan.append(word)
+                right.append(word)
     else:
-        orphan = words[1:]
+        right = words[1:]
 
-    return constructor(root, child, orphan)
+    return constructor(root, left, right)
 
 
 def make_words_regex(words):
@@ -99,56 +99,55 @@ def tree_to_string(tree):
     temp = Stack([tree])
     queue = Stack()
 
-    # Generate a queue to visit the nodes using postorder traversal. The
-    # “child” is left node and “orphan” is right node of the binary tree.
+    # Generate a queue to visit the nodes using postorder traversal.
     while len(temp) > 0:
         node = temp.pop()
 
-        if isinstance(node.orphan, Node):
-            temp.push(node.orphan)
+        if isinstance(node.right, Node):
+            temp.push(node.right)
 
-        if isinstance(node.child, Node):
-            temp.push(node.child)
+        if isinstance(node.left, Node):
+            temp.push(node.left)
 
         queue.push(node)
 
     # Collapse nodes while generating the pattern.
     for node in queue:
         if node.root == '':
-            if node.child.root.startswith('(?'):
-                node.root = node.child.root + '?'
+            if node.left.root.startswith('(?'):
+                node.root = node.left.root + '?'
             else:
-                node.root = '(?:%s)?' % node.child.root
+                node.root = '(?:%s)?' % node.left.root
             continue
 
-        child = node.child
-        orphan = node.orphan
+        left = node.left
+        right = node.right
 
-        if child and orphan:
+        if left and right:
             # This is not necessary but it will eliminate unnecessary atomic
             # groups resulting in a cleaner regex.
-            if orphan.root.startswith('(?>'):
-                orphan.root = orphan.root[3:-1]
+            if right.root.startswith('(?>'):
+                right.root = right.root[3:-1]
 
             node.root = '(?>%s%s|%s)' % (
                 node.root,
-                child.root,
-                orphan.root,
+                left.root,
+                right.root,
             )
             continue
 
-        if isinstance(node, Child):
-            if orphan and not child:
-                node.root = '(?>%s|%s)' % (node.root, orphan.root)
+        if isinstance(node, Left):
+            if right and not left:
+                node.root = '(?>%s|%s)' % (node.root, right.root)
                 continue
 
-        if isinstance(node, Orphan):
-            if orphan and not child:
-                node.root += '|' + orphan.root
+        if isinstance(node, Right):
+            if right and not left:
+                node.root += '|' + right.root
                 continue
 
-        if child and not orphan:
-            node.root += child.root
+        if left and not right:
+            node.root += left.root
 
     # The last node visited will have the full pattern.
     return node.root
@@ -161,13 +160,13 @@ def words_to_binary_tree(words):
 
     while len(queue) > 0:
         node = queue.pop(0)
-        node.child = extract_root(node.child, Child)
-        node.orphan = extract_root(node.orphan, Orphan)
+        node.left = extract_root(node.left, Left)
+        node.right = extract_root(node.right, Right)
 
-        if isinstance(node.child, Node):
-            queue.append(node.child)
+        if isinstance(node.left, Node):
+            queue.append(node.left)
 
-        if isinstance(node.orphan, Node):
-            queue.append(node.orphan)
+        if isinstance(node.right, Node):
+            queue.append(node.right)
 
     return main

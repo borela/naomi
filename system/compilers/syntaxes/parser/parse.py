@@ -25,7 +25,7 @@ from borela.functions import load_yaml
 from os.path import dirname
 
 
-def parse_syntax_entry(settings):
+def parse(settings):
     entry = settings.get('entry', None)
 
     if not isinstance(entry, str) or not entry:

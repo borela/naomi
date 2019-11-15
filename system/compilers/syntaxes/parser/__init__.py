@@ -10,5 +10,5 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .parse_syntax_entry import * # noqa
+from .parse import * # noqa
 from .ParsingError import * # noqa

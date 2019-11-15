@@ -11,7 +11,7 @@
 # the License.
 
 from .parser import (
-    parse_syntax_entry,
+    parse,
     ParsingError,
 )
 
@@ -21,7 +21,7 @@ from ruamel.yaml.constructor import DuplicateKeyError
 
 def compile_syntax(settings):
     try:
-        syntax = parse_syntax_entry(settings)
+        syntax = parse(settings)
         # print(syntax.resources)
         # TODO: Save to a file.
     except ParsingError as error:

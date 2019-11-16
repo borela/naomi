@@ -12,6 +12,8 @@
 
 
 class Stack(list):
+    __slots__ = ['__i']
+
     def __iter__(self):
         self.__i = len(self)
         return self

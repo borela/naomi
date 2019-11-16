@@ -19,6 +19,11 @@ from collections import (
 
 
 class EventEngine:
+    __slots__ = [
+        '__events',
+        '__anySubscribers',
+    ]
+
     def __init__(self):
         self.__events = defaultdict(OrderedDict)
         self.__anySubscribers = []

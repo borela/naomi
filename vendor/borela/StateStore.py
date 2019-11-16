@@ -19,10 +19,13 @@ class StateStore:
     applying events to it.
     """
 
-    __reducers = {}
-    __state = {}
+    __slots__ = [
+        '__reducers',
+        '__state',
+    ]
 
     def __init__(self, **reducers):
+        self.__state = {}
         self.__reducers = reducers
 
         # Initialize state.

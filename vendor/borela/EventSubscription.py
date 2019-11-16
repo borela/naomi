@@ -12,6 +12,12 @@
 
 
 class EventSubscription:
+    __slots__ = [
+        '_engine',
+        '_event',
+        '_subscriber',
+    ]
+
     def __init__(self, engine, event, subscriber):
         self._engine = engine
         self._event = event

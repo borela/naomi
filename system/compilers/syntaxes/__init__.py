@@ -10,11 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .parser import (
-    parse,
-    ParsingError,
-)
-
+from .parse import parse
+from .ParsingError import ParsingError
 from Naomi.system import log_error
 from ruamel.yaml.constructor import DuplicateKeyError
 

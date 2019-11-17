@@ -13,6 +13,9 @@
 from sublime_plugin import ApplicationCommand
 
 
-class NaomiRunSyntaxTestsCommand(ApplicationCommand):
-    def run(self):
-        print('Running syntax tests...')
+class NaomiRunTestsCommand(ApplicationCommand):
+    def description(self, test_type):
+        return 'Run %s tests' % test_type
+
+    def run(self, test_type):
+        print('Running %s tests...' % test_type)

@@ -13,5 +13,6 @@
 from .Build import * # noqa
 from .CloseJsxTag import * # noqa
 from .RunCommands import * # noqa
+from .RunTests import * # noqa
 from .ToggleJsxComment import * # noqa
 from .Watch import * # noqa

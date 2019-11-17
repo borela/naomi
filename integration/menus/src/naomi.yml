@@ -86,6 +86,16 @@ menus:
 
          - caption: '-'
 
+         - command: naomi_run_tests
+           args:
+             test_type: plugin
+
+         - command: naomi_run_tests
+           args:
+             test_type: syntax
+
+         - caption: '-'
+
          - caption: 'Github'
            children:
            - caption: Fork

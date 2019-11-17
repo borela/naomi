@@ -16,9 +16,9 @@
 - caption: 'Naomi: Run Plugin Tests'
   command: naomi_run_tests
   args:
-    type: plugin
+    test_type: plugin
 
 - caption: 'Naomi: Run Syntax Tests'
   command: naomi_run_tests
   args:
-    type: syntax
+    test_type: syntax

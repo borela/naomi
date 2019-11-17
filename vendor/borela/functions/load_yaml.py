@@ -19,27 +19,33 @@ from ruamel.yaml.comments import LineCol
 from ruamel.yaml.constructor import RoundTripConstructor
 
 class DoubleQuotedScalarString(scalarstring.DoubleQuotedScalarString):
-    pass
+    __slots__ = 'lc'
 
-class PreservedScalarString(scalarstring.PreservedScalarString):
-    pass
+class FoldedScalarString(scalarstring.FoldedScalarString):
+    __slots__ = 'lc'
+
+class LiteralScalarString(scalarstring.LiteralScalarString):
+    __slots__ = 'lc'
 
 class ScalarString(scalarstring.ScalarString):
-    pass
+    __slots__ = 'lc'
 
 class SingleQuotedScalarString(scalarstring.SingleQuotedScalarString):
-    pass
+    __slots__ = 'lc'
 
 class YamlConstructor(RoundTripConstructor):
     def construct_scalar(self, node):
         result = None
 
         if node.style == '|':
-            result = PreservedScalarString(node.value)
-        elif node.style == "'":
-            result = SingleQuotedScalarString(node.value)
-        elif node.style == '"':
-            result = DoubleQuotedScalarString(node.value)
+            result = LiteralScalarString(node.value)
+        elif node.style == '>':
+            result = FoldedScalarString(node.value.replace('\a', ''))
+        elif self._preserve_quotes:
+            if node.style == "'":
+                result = SingleQuotedScalarString(node.value)
+            elif node.style == '"':
+                result = DoubleQuotedScalarString(node.value)
         else:
             result = ScalarString(node.value)
 

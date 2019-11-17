@@ -14,24 +14,17 @@ from .Node import Node
 
 
 class Resource(Node):
-    syntax = None
-    context = None
-    statement = None
-
-    """
-    Path used to import the resource without any modifcation.
-    """
-    path = None
-
-    """
-    Full path to the resource.
-    """
-    resolved_path = None
-
-    """
-    The actual resource.
-    """
-    resolved = None
+    __slots__ = [
+        'syntax',
+        'context',
+        'statement',
+        # Path used to import the resource without any modifcation.
+        'path',
+        # Full path to the resource.
+        'resolved_path',
+        # The actual resource.
+        'resolved',
+    ]
 
     def __init__(self, syntax, context, statement, path):
         self.syntax = syntax

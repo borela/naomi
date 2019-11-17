@@ -12,7 +12,6 @@
 
 from .ast import Set
 
-
 def parse_set(syntax, context, raw):
     statement = Set()
     statement.syntax = syntax

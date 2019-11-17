@@ -11,6 +11,7 @@
 # the License.
 
 from .ClearScopes import * # noqa
+from .Compilation import * # noqa
 from .Context import * # noqa
 from .FunctionCall import * # noqa
 from .Include import * # noqa

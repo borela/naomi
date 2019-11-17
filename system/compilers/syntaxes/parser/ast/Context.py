@@ -12,7 +12,11 @@
 
 from .Statement import Statement
 
-
 class Context(Statement):
-    name = None
-    statements = []
+    __slots__ = [
+        'name',
+        'statements',
+    ]
+
+    def __init__(self):
+        self.statements = []

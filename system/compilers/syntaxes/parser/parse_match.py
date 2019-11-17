@@ -21,7 +21,6 @@ from .parse_push import parse_push
 from .parse_set import parse_set
 from .ParsingError import ParsingError
 
-
 def parse_match(syntax, context, raw):
     statement = Match()
     statement.syntax = syntax

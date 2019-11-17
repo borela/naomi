@@ -12,7 +12,6 @@
 
 from .ast import Push
 
-
 def parse_push(syntax, context, raw):
     statement = Push()
     statement.syntax = syntax

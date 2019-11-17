@@ -12,10 +12,11 @@
 
 from .ContextualStatement import ContextualStatement
 
-
 class Match(ContextualStatement):
-    pattern = None
-    captures = None
-    scope = None
-    stack_action = None
-    with_prototype = None
+    __slots__ = [
+        'pattern',
+        'captures',
+        'scope',
+        'stack_action',
+        'with_prototype',
+    ]

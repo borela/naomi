@@ -12,6 +12,5 @@
 
 from .Statement import Statement
 
-
 class ContextualStatement(Statement):
-    context = None
+    __slots__ = 'context'

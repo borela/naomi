@@ -15,7 +15,6 @@ from .ast import (
     Resource,
 )
 
-
 def parse_include(syntax, context, raw):
     statement = Include()
     statement.syntax = syntax

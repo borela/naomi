@@ -12,7 +12,6 @@
 
 from .parse_variable import parse_variable
 
-
 def parse_variables(syntax):
     variables = syntax.raw.get('variables', {})
 

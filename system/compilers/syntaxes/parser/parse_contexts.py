@@ -12,7 +12,6 @@
 
 from .parse_context import parse_context
 
-
 def parse_contexts(syntax):
     contexts = syntax.raw.get('contexts', {})
 

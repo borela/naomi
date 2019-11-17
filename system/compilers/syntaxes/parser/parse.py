@@ -16,8 +16,8 @@ from Naomi.system import (
     resolve_syntax_entry,
 )
 
+from .ast import Compilation
 from .parse_syntax import parse_syntax
-
 
 def parse(settings):
     entry = settings.get('entry', None)
@@ -33,13 +33,17 @@ def parse(settings):
     else:
         log_info('Compiling syntax: %s %s' % (entry, names))
 
-    path, src_dir, build_dir = resolve_syntax_entry(entry)
+    entry_path, home_dir, build_dir = resolve_syntax_entry(entry)
 
-    syntax = parse_syntax(
-        path,
-        src_dir,
-        build_dir,
+    compilation = Compilation(
         settings,
+        build_dir,
     )
 
-    return syntax
+    syntax = parse_syntax(
+        compilation,
+        home_dir,
+        entry_path,
+    )
+
+    return compilation

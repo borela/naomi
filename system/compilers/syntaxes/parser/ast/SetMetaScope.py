@@ -12,6 +12,5 @@
 
 from .ContextualStatement import ContextualStatement
 
-
 class SetMetaScope(ContextualStatement):
-    scope = None
+    __slots__ = 'scope'

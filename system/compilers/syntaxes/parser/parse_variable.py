@@ -13,7 +13,6 @@
 from .ast import Variable
 from .parse_expression import parse_expression
 
-
 def parse_variable(syntax, name, value):
     statement = Variable()
     statement.syntax = syntax

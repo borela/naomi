@@ -12,6 +12,5 @@
 
 from .Statement import Statement
 
-
 class Pop(Statement):
     pass

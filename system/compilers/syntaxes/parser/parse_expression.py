@@ -14,13 +14,11 @@ from .ast import FunctionCall
 from collections import OrderedDict
 from .ParsingError import ParsingError
 
-
 def dict_to_function_calls(calls):
     result = []
     for name, args in calls.items():
         result.append(FunctionCall(name, args))
     return result
-
 
 LITERAL_TYPES = (
     bool,
@@ -29,7 +27,6 @@ LITERAL_TYPES = (
     int,
     str,
 )
-
 
 def parse_expression(value):
     # Literal pattern.

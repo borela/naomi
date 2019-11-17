@@ -10,7 +10,6 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-
 class ParsingError(Exception):
     def __init__(self, message, node):
         Exception.__init__(self, '(%i, %i) %s' % (

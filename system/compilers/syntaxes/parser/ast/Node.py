@@ -12,14 +12,13 @@
 
 from borela.functions import indent_string
 
-
 class Node:
     def __repr__(self):
         body = ''
 
         for member in vars(self):
             if member in ['syntax', 'context', 'statement', 'raw']:
-                value = '...'
+                value = '<%s ...>' % member.title()
             else:
                 value = getattr(self, member)
 

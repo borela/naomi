@@ -12,7 +12,6 @@
 
 from .ast import Pop
 
-
 def parse_pop(syntax, context, raw):
     statement = Pop()
     statement.syntax = syntax

@@ -12,10 +12,11 @@
 
 from .Node import Node
 
-
 class FunctionCall(Node):
-    name = None
-    arguments = None
+    __slots__ = [
+        'name',
+        'arguments',
+    ]
 
     def __init__(self, name, arguments=None):
         self.name = name

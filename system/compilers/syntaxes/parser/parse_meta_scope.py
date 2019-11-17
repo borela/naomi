@@ -12,7 +12,6 @@
 
 from .ast import SetMetaScope
 
-
 def parse_meta_scope(syntax, context, raw):
     statement = SetMetaScope()
     statement.syntax = syntax

@@ -16,63 +16,45 @@ from .Node import Node
 from .Resource import Resource
 from .Variable import Variable
 from collections import OrderedDict
-
+from Naomi.system import package_relpath
+from os.path import dirname
 
 class Syntax(Node):
-    home_dir = None
-    build_dir = None
+    __slots__ = [
+        'syntax_id',
+        'compilation',
 
-    path = None
-    parent_dir = None
-    package_relpath = None
+        'home_dir',
+        'path',
+        'parent_dir',
+        'package_relpath',
 
-    settings = None
-    raw = None
+        # Unmodified YAML data.
+        'raw',
 
-    name = None
-    hidden = None
-    scope = None
-    scope_suffix = None
-    file_extensions = None
-    first_line_match = None
+        'name',
+        'hidden',
+        'scope',
+        'scope_suffix',
+        'file_extensions',
+        'first_line_match',
 
-    """
-    Variables indexed by their name.
-    """
-    variables = None
+        # Variables indexed by their name.
+        'variables',
+        # Contexts indexed by their name.
+        'contexts',
+    ]
 
-    """
-    Contexts indexed by their name.
-    """
-    contexts = None
+    def __init__(self, compilation, home_dir, path):
+        self.compilation = compilation
 
-    """
-    Files used in the compilation indexed by their path.
-    """
-    files = None
-
-    """
-    The file id will be prepended in all contexts to allow us to see the
-    context’s origin.
-    """
-    files_ids = None
-
-    """
-    Some statements references external files or contexts, these are added to
-    this dictionary to speed up the path resolution.
-    """
-    resources = None
-
-    def __init__(self, settings):
-        self.settings = settings
+        self.home_dir = home_dir
+        self.path = path
+        self.parent_dir = dirname(path)
+        self.package_relpath = package_relpath(path)
 
         self.variables = OrderedDict()
         self.contexts = OrderedDict()
-
-        self.files = OrderedDict()
-        self.files_ids = {}
-
-        self.resources = OrderedDict()
 
     def get_sub_nodes(self):
         return self.variables + self.contexts
@@ -82,18 +64,6 @@ class Syntax(Node):
             raise ParsingError('Object is not a context: %s' % context)
 
         self.contexts[context.name] = Context
-
-    def index_file(self, syntax):
-        if not isinstance(syntax, Syntax):
-            raise ParsingError('Object is not a syntax file: %s' % syntax)
-
-        path = syntax.path
-
-        if path in self.files:
-            return
-
-        self.files[path] = syntax
-        self.files_ids[path] = len(self.files)
 
     def index_resource(self, resource):
         if not isinstance(resource, Resource):

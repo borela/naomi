@@ -12,7 +12,6 @@
 
 from .ast import ClearScopes
 
-
 def parse_clear_scopes(syntax, context, raw):
     statement = ClearScopes()
     statement.syntax = syntax

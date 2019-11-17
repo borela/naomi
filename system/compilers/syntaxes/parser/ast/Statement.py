@@ -12,6 +12,5 @@
 
 from .Node import Node
 
-
 class Statement(Node):
-    syntax = None
+    __slots__ = 'syntax'

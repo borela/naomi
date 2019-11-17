@@ -18,7 +18,6 @@ from .parse_meta_content_scope import parse_meta_content_scope
 from .parse_meta_scope import parse_meta_scope
 from .ParsingError import ParsingError
 
-
 def parse_context(syntax, name, raw):
     context = Context()
     context.syntax = syntax

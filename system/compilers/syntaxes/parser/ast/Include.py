@@ -12,7 +12,8 @@
 
 from .ContextualStatement import ContextualStatement
 
-
 class Include(ContextualStatement):
-    path = None
-    resource = None
+    __slots__ = [
+        'path',
+        'resource',
+    ]

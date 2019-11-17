@@ -12,7 +12,8 @@
 
 from .Statement import Statement
 
-
 class Variable(Statement):
-    name = None
-    pattern = None
+    __slots__ = [
+        'name',
+        'pattern',
+    ]

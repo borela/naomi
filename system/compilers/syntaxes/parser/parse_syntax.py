@@ -13,26 +13,21 @@
 from Naomi.system import (
     log_debug,
     log_info,
-    package_relpath,
 )
 
 from .ast import Syntax
 from .parse_variables import parse_variables
 from .parse_contexts import parse_contexts
 from borela.functions import load_yaml
-from os.path import dirname
 
+def parse_syntax(compilation, home_dir, path):
+    syntax = Syntax(
+        compilation,
+        home_dir,
+        path,
+    )
 
-def parse_syntax(path, src_dir, build_dir, settings):
-    syntax = Syntax(settings)
-
-    syntax.path = path
-    syntax.home_dir = src_dir
-    syntax.build_dir = build_dir
-    syntax.parent_dir = dirname(path)
-    syntax.package_relpath = package_relpath(path)
-
-    syntax.index_file(syntax)
+    compilation.index_file(syntax, parent=None)
 
     log_debug('Loading syntax file: %s' % syntax.package_relpath)
 

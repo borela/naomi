@@ -12,6 +12,8 @@
 
 from .Statement import Statement
 
-
 class Set(Statement):
-    sequence = []
+    __slots__ = 'sequence'
+
+    def __init__(self):
+        self.sequence = []

@@ -13,25 +13,22 @@
 import sublime
 from sublime_plugin import TextCommand
 
-
+# This command can be used in key bindings to run multiple commands, it
+# expects a single argument “commands” containing the list of commands to
+# run.
+#
+# Each command have 3 properties:
+#
+#     * “command”: The actual command to run;
+#     * “on”: Where the command will run, it accepts: app, window and view; If
+#       no value is specified, the default one “view” will be used;
+#     * “args”: Arguments to pass directly to the command;
+#
+# There’s an example in:
+#
+#     Naomi/keymaps/src/normalize-enter/parenthesis.yml
+#
 class NaomiRunCommandsCommand(TextCommand):
-    """
-    This command can be used in key bindings to run multiple commands, it
-    expects a single argument “commands” containing the list of commands to
-    run.
-
-    Each command have 3 properties:
-
-    * “command”: The actual command to run;
-    * “on”: Where the command will run, it accepts: app, window and view; If
-      no value is specified, the default one “view” will be used;
-    * “args”: Arguments to pass directly to the command;
-
-    There’s an example in:
-
-        Naomi/keymaps/src/normalize-enter/parenthesis.yml
-
-    """
     def run(self, edit, commands=None):
         # Ignore empty commands.
         if commands is None:

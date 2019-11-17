@@ -33,12 +33,8 @@ from Naomi.system.events import (
 
 from Naomi.system.headers import command as command_header
 
-
+# Convert commands from “x.yml” to “x.sublime-commands”.
 def compile_commands(src_dir, build_dir):
-    """
-    Convert commands from “x.yml” to “x.sublime-commands”.
-    """
-
     EVENT_BUS.emit(building_commands())
     log_debug('Cleaning: %s' % package_relpath(build_dir))
 

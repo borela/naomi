@@ -13,26 +13,20 @@
 from borela.logging import log as borela_log
 from borela.logging import set_log_level # noqa
 
-
 def log(level, message):
     borela_log('NAOMI', level, message)
-
 
 def log_critical(message):
     log('CRITICAL', message)
 
-
 def log_debug(message):
     log('DEBUG', message)
-
 
 def log_error(message):
     log('ERROR', message)
 
-
 def log_info(message):
     log('INFO', message)
-
 
 def log_warning(message):
     log('WARNING', message)

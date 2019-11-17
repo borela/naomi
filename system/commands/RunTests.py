@@ -12,7 +12,6 @@
 
 from sublime_plugin import ApplicationCommand
 
-
 class NaomiRunTestsCommand(ApplicationCommand):
     def description(self, test_type):
         return 'Run %s tests' % test_type

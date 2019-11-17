@@ -20,22 +20,17 @@ from .events import (
 
 from .event_bus import EVENT_BUS
 
-
 def integrate_commands(src_dir, build_dir):
     EVENT_BUS.emit(integrated_commands(src_dir, build_dir))
-
 
 def integrate_keymaps(src_dir, build_dir):
     EVENT_BUS.emit(integrated_keymaps(src_dir, build_dir))
 
-
 def integrate_menus(src_dir, build_dir):
     EVENT_BUS.emit(integrated_menus(src_dir, build_dir))
 
-
 def integrate_preferences(src_dir, build_dir):
     EVENT_BUS.emit(integrated_preferences(src_dir, build_dir))
-
 
 def integrate_syntaxes(src_dir, build_dir):
     EVENT_BUS.emit(integrated_syntaxes(src_dir, build_dir))

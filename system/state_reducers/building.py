@@ -47,7 +47,6 @@ EVENTS = [
     BUILDING_SYNTAXES,
 ]
 
-
 def reducer(state=INITIAL_STATE, event=None):
     if event is None or event['type'] not in EVENTS:
         return state

@@ -16,22 +16,17 @@ STOPPED_WATCHING_MENUS = 'STOPPED_WATCHING_MENUS'
 STOPPED_WATCHING_PREFERENCES = 'STOPPED_WATCHING_PREFERENCES'
 STOPPED_WATCHING_SYNTAXES = 'STOPPED_WATCHING_SYNTAXES'
 
-
 def stopped_watching_commands():
     return {'type': STOPPED_WATCHING_COMMANDS}
-
 
 def stopped_watching_keymaps():
     return {'type': STOPPED_WATCHING_KEYMAPS}
 
-
 def stopped_watching_menus():
     return {'type': STOPPED_WATCHING_MENUS}
 
-
 def stopped_watching_preferences():
     return {'type': STOPPED_WATCHING_PREFERENCES}
-
 
 def stopped_watching_syntaxes():
     return {'type': STOPPED_WATCHING_SYNTAXES}

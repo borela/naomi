@@ -16,22 +16,17 @@ WATCHING_MENUS = 'WATCHING_MENUS'
 WATCHING_PREFERENCES = 'WATCHING_PREFERENCES'
 WATCHING_SYNTAXES = 'WATCHING_SYNTAXES'
 
-
 def watching_commands():
     return {'type': WATCHING_COMMANDS}
-
 
 def watching_keymaps():
     return {'type': WATCHING_KEYMAPS}
 
-
 def watching_menus():
     return {'type': WATCHING_MENUS}
 
-
 def watching_preferences():
     return {'type': WATCHING_PREFERENCES}
-
 
 def watching_syntaxes():
     return {'type': WATCHING_SYNTAXES}

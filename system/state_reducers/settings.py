@@ -30,13 +30,11 @@ VALID_LOG_LEVELS = [
     'DEBUG',
 ]
 
-
 def log_level_from_settings(settings):
     result = settings.get('log_level', 'INFO').upper()
     if result not in VALID_LOG_LEVELS:
         return 'INFO'
     return result
-
 
 def reducer(state={}, event=None):
     if event is None or event['type'] not in SETTINGS_EVENTS:

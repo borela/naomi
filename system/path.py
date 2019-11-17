@@ -21,20 +21,13 @@ from os.path import (
 
 from .state_store import STATE_STORE
 
-
+# Calculates the relative path to the package’s root.
 def package_relpath(path):
-    """
-    Calculates the relative path to the package’s root.
-    """
     return relpath(path, join(dirname(__file__), '..', '..'))
 
-
+# Resolve relative paths to the syntaxes src directories being managed by
+# the Naomi’s system.
 def resolve_syntax_entry(path):
-    """
-    Resolve relative paths to the syntaxes src directories being managed by
-    the Naomi’s system.
-    """
-
     if isabs(path):
         return realpath(path)
 

@@ -13,13 +13,11 @@
 SETTINGS_LOADED = 'SETTINGS_LOADED'
 SETTINGS_UPDATED = 'SETTINGS_UPDATED'
 
-
 def settings_loaded(settings):
     return {
         'type': SETTINGS_LOADED,
         'payload': settings,
     }
-
 
 def settings_updated(settings):
     return {

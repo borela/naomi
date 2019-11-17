@@ -18,7 +18,6 @@ from .parser import (
 from Naomi.system import log_error
 from ruamel.yaml.constructor import DuplicateKeyError
 
-
 def compile_syntax(settings):
     try:
         syntax = parse(settings)

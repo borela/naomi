@@ -13,7 +13,6 @@
 from sublime import Region
 from sublime_plugin import TextCommand
 
-
 class NaomiCloseJsxTagCommand(TextCommand):
     def __init__(self, view):
         self.view = view

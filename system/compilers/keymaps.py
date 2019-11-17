@@ -33,17 +33,14 @@ from Naomi.system.events import (
 from Naomi.system.headers import keymap as keymap_header
 from os.path import join
 
-
+# Load all keymaps sources and generate files for each OS on demand:
+#
+#     Default.sublime-keymap
+#     Default (Linux).sublime-keymap
+#     Default (Windows).sublime-keymap
+#     Default (OSX).sublime-keymap
+#
 def compile_keymaps(src_dir, build_dir):
-    """
-    Load all keymaps sources and generate files for each OS on demand:
-
-      Default.sublime-keymap
-      Default (Linux).sublime-keymap
-      Default (Windows).sublime-keymap
-      Default (OSX).sublime-keymap
-    """
-
     EVENT_BUS.emit(building_keymaps())
     log_debug('Cleaning: %s' % package_relpath(build_dir))
 
@@ -60,13 +57,9 @@ def compile_keymaps(src_dir, build_dir):
     log_info('Done compiling keymaps...')
     EVENT_BUS.emit(finished_building_keymaps())
 
-
+# Load keymaps, combine all shared and exclusive bindings into a single
+# result that is used later to generate the final “Default” files.
 def load_keymaps(files_paths):
-    """
-    Load keymaps, combine all shared and exclusive bindings into a single
-    result that is used later to generate the final “Default” files.
-    """
-
     combined_shared = []
     combined_per_os = {}
     loaded_files = [load_keymap(file_path) for file_path in files_paths]
@@ -80,13 +73,9 @@ def load_keymaps(files_paths):
 
     return combined_shared, combined_per_os
 
-
+# Load a single keymap source, returns bindings shared by all OSs and the
+# exclusive ones indexed by OS.
 def load_keymap(file_path):
-    """
-    Load a single keymap source, returns bindings shared by all OSs and the
-    exclusive ones indexed by OS.
-    """
-
     relative_file_path = package_relpath(file_path)
     shared = []
     per_os = {}
@@ -123,22 +112,18 @@ def load_keymap(file_path):
     log_debug('Contains shortcuts for %s: %s' % (oss, relative_file_path))
     return shared, per_os
 
-
 def validate_os(os, file_path):
     valid_os = ['Linux', 'Windows', 'OSX']
     if os not in valid_os:
         raise ValueError('Invalid OS “%s” for file: %s' % (os, file_path))
 
-
+# Write bindings indexed by OS on their respective files:
+#
+#     Default (Linux).sublime-keymap
+#     Default (Windows).sublime-keymap
+#     Default (OSX).sublime-keymap
+#
 def write_per_os_keymap(per_os_bindings, src_dir, build_dir):
-    """
-    Write bindings indexed by OS on their respective files:
-
-      Default (Linux).sublime-keymap
-      Default (Windows).sublime-keymap
-      Default (OSX).sublime-keymap
-    """
-
     for os in per_os_bindings:
         bindings = per_os_bindings[os]
         if len(bindings) < 1:
@@ -154,14 +139,11 @@ def write_per_os_keymap(per_os_bindings, src_dir, build_dir):
         write_text_file(destination, final_string)
         log_debug('File generated: %s' % package_relpath(destination))
 
-
+# Write bindings shared by all OSs on:
+#
+#     Default.sublime-keymap
+#
 def write_shared_keymap(bindings, src_dir, build_dir):
-    """
-    Write bindings shared by all OSs on:
-
-      Default.sublime-keymap
-    """
-
     if len(bindings) < 1:
         return
 

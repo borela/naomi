@@ -34,7 +34,6 @@ from collections import defaultdict
 from Naomi.system.headers import menu as menu_header
 from os.path import join
 
-
 def compile_menus(src_dir, build_dir):
     EVENT_BUS.emit(building_menus())
     log_debug('Cleaning: %s' % package_relpath(build_dir))
@@ -59,11 +58,8 @@ def compile_menus(src_dir, build_dir):
     log_info('Done building menus.')
     EVENT_BUS.emit(finished_building_menus())
 
-
+# Load all menu sources and returns the result indexed by the destination.
 def load_menus(files_paths):
-    """
-    Load all menu sources and returns the result indexed by the destination.
-    """
     result = {}
     loaded_files = [
         load_menus_from_file(file_path)
@@ -92,13 +88,9 @@ def load_menus(files_paths):
 
     return merged_result
 
-
+# Load menus from a single source and returns the result indexed by
+# destination.
 def load_menus_from_file(file_path):
-    """
-    Load menus from a single source and returns the result indexed by
-    destination.
-    """
-
     relative_file_path = package_relpath(file_path)
     data = load_yaml(file_path)
     result = {}
@@ -128,7 +120,6 @@ def load_menus_from_file(file_path):
 
     log_debug('Done processing: %s' % relative_file_path)
     return result
-
 
 def validate_location(location, file_path):
     valid_locations = [

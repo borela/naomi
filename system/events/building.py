@@ -16,22 +16,17 @@ BUILDING_MENUS = 'BUILDING_MENUS'
 BUILDING_PREFERENCES = 'BUILDING_PREFERENCES'
 BUILDING_SYNTAXES = 'BUILDING_SYNTAXES'
 
-
 def building_commands():
     return {'type': BUILDING_COMMANDS}
-
 
 def building_keymaps():
     return {'type': BUILDING_KEYMAPS}
 
-
 def building_menus():
     return {'type': BUILDING_MENUS}
 
-
 def building_preferences():
     return {'type': BUILDING_PREFERENCES}
-
 
 def building_syntaxes():
     return {'type': BUILDING_SYNTAXES}

@@ -16,22 +16,17 @@ FINISHED_BUILDING_MENUS = 'FINISHED_BUILDING_MENUS'
 FINISHED_BUILDING_PREFERENCES = 'FINISHED_BUILDING_PREFERENCES'
 FINISHED_BUILDING_SYNTAXES = 'FINISHED_BUILDING_SYNTAXES'
 
-
 def finished_building_commands():
     return {'type': FINISHED_BUILDING_COMMANDS}
-
 
 def finished_building_keymaps():
     return {'type': FINISHED_BUILDING_KEYMAPS}
 
-
 def finished_building_menus():
     return {'type': FINISHED_BUILDING_MENUS}
 
-
 def finished_building_preferences():
     return {'type': FINISHED_BUILDING_PREFERENCES}
-
 
 def finished_building_syntaxes():
     return {'type': FINISHED_BUILDING_SYNTAXES}

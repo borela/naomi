@@ -16,7 +16,6 @@ INTEGRATED_MENUS = 'INTEGRATED_MENUS'
 INTEGRATED_PREFERENCES = 'INTEGRATED_PREFERENCES'
 INTEGRATED_SYNTAXES = 'INTEGRATED_SYNTAXES'
 
-
 def integrated_commands(src_dir, build_dir):
     return {
         'type': INTEGRATED_COMMANDS,
@@ -25,7 +24,6 @@ def integrated_commands(src_dir, build_dir):
             'build_dir': build_dir,
         }
     }
-
 
 def integrated_keymaps(src_dir, build_dir):
     return {
@@ -36,7 +34,6 @@ def integrated_keymaps(src_dir, build_dir):
         }
     }
 
-
 def integrated_menus(src_dir, build_dir):
     return {
         'type': INTEGRATED_MENUS,
@@ -46,7 +43,6 @@ def integrated_menus(src_dir, build_dir):
         }
     }
 
-
 def integrated_preferences(src_dir, build_dir):
     return {
         'type': INTEGRATED_PREFERENCES,
@@ -55,7 +51,6 @@ def integrated_preferences(src_dir, build_dir):
             'build_dir': build_dir,
         }
     }
-
 
 def integrated_syntaxes(src_dir, build_dir):
     return {

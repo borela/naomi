@@ -12,7 +12,6 @@
 
 from sublime_plugin import TextCommand
 
-
 class NaomiToggleJsxCommentCommand(TextCommand):
     def __init__(self, view):
         self.view = view

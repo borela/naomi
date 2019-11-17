@@ -18,26 +18,20 @@ from os.path import (
 from borela import read_text_file
 from Naomi.system import package_relpath
 
-
 def command(src_dir):
     return read_header('command.txt', src_dir)
-
 
 def keymap(src_dir):
     return read_header('keymap.txt', src_dir)
 
-
 def menu(src_dir):
     return read_header('menu.txt', src_dir)
-
 
 def plist():
     return read_header('plist.txt')
 
-
 def preferences(src_dir):
     return read_header('preferences.txt', src_dir)
-
 
 def read_header(file_name, src_dir=None):
     template = read_text_file(join(dirname(__file__), file_name))
@@ -52,7 +46,6 @@ def read_header(file_name, src_dir=None):
         )
 
     return template
-
 
 def syntax(src_dir):
     return read_header('syntax.txt', src_dir)

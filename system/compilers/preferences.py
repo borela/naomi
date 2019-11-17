@@ -36,12 +36,8 @@ from Naomi.system.events import (
     finished_building_preferences,
 )
 
-
+# Convert preferences from “x.yml” to “x.tmPreferences”.
 def compile_preferences(src_dir, build_dir):
-    """
-    Convert preferences from “x.yml” to “x.tmPreferences”.
-    """
-
     EVENT_BUS.emit(building_preferences())
     log_debug('Cleaning: %s' % package_relpath(build_dir))
 

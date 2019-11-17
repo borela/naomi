@@ -26,14 +26,12 @@ from .keymaps import compile_keymaps # noqa
 from .menus import compile_menus # noqa
 from .preferences import compile_preferences # noqa
 
-
 def compile_integrated_commands():
     for integrated in STATE_STORE['integrated']['commands']:
         compile_commands(
             integrated['src_dir'],
             integrated['build_dir'],
         )
-
 
 def compile_integrated_keymaps():
     for integrated in STATE_STORE['integrated']['keymaps']:
@@ -42,7 +40,6 @@ def compile_integrated_keymaps():
             integrated['build_dir'],
         )
 
-
 def compile_integrated_menus():
     for integrated in STATE_STORE['integrated']['menus']:
         compile_menus(
@@ -50,14 +47,12 @@ def compile_integrated_menus():
             integrated['build_dir'],
         )
 
-
 def compile_integrated_preferences():
     for integrated in STATE_STORE['integrated']['preferences']:
         compile_preferences(
             integrated['src_dir'],
             integrated['build_dir'],
         )
-
 
 def compile_configured_syntaxes():
     EVENT_BUS.emit(building_syntaxes())

@@ -21,22 +21,37 @@
 [
   {
     "caption": "Naomi: Build Commands",
-    "command": "naomi_build_commands"
+    "command": "naomi_build",
+    "args": {
+      "what": "commands"
+    }
   },
   {
     "caption": "Naomi: Build Keymaps",
-    "command": "naomi_build_keymaps"
+    "command": "naomi_build",
+    "args": {
+      "what": "keymaps"
+    }
   },
   {
     "caption": "Naomi: Build Preferences",
-    "command": "naomi_build_preferences"
+    "command": "naomi_build",
+    "args": {
+      "what": "preferences"
+    }
   },
   {
     "caption": "Naomi: Build Menus",
-    "command": "naomi_build_menus"
+    "command": "naomi_build",
+    "args": {
+      "what": "menus"
+    }
   },
   {
     "caption": "Naomi: Build Syntaxes",
-    "command": "naomi_build_syntaxes"
+    "command": "naomi_build",
+    "args": {
+      "what": "syntaxes"
+    }
   }
 ]

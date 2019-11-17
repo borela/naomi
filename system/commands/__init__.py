@@ -10,16 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .BuildCommands import * # noqa
-from .BuildKeymaps import * # noqa
-from .BuildMenus import * # noqa
-from .BuildPreferences import * # noqa
-from .BuildSyntaxes import * # noqa
+from .Build import * # noqa
 from .CloseJsxTag import * # noqa
 from .RunCommands import * # noqa
 from .ToggleJsxComment import * # noqa
-from .WatchCommands import * # noqa
-from .WatchKeymaps import * # noqa
-from .WatchMenus import * # noqa
-from .WatchPreferences import * # noqa
-from .WatchSyntaxes import * # noqa
+from .Watch import * # noqa

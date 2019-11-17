@@ -42,19 +42,47 @@ menus:
 
          - caption: '-'
 
-         - command: naomi_build_commands
-         - command: naomi_build_keymaps
-         - command: naomi_build_menus
-         - command: naomi_build_preferences
-         - command: naomi_build_syntaxes
+         - command: naomi_build
+           args:
+             what: commands
+
+         - command: naomi_build
+           args:
+             what: keymaps
+
+         - command: naomi_build
+           args:
+             what: preferences
+
+         - command: naomi_build
+           args:
+             what: menus
+
+         - command: naomi_build
+           args:
+             what: syntaxes
 
          - caption: '-'
 
-         - command: naomi_watch_commands
-         - command: naomi_watch_keymaps
-         - command: naomi_watch_menus
-         - command: naomi_watch_preferences
-         - command: naomi_watch_syntaxes
+         - command: naomi_watch
+           args:
+             what: commands
+
+         - command: naomi_watch
+           args:
+             what: preferences
+
+         - command: naomi_watch
+           args:
+             what: keymaps
+
+         - command: naomi_watch
+           args:
+             what: menus
+
+         - command: naomi_watch
+           args:
+             what: syntaxes
 
          - caption: '-'
 

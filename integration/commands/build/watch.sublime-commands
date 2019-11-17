@@ -21,18 +21,37 @@
 [
   {
     "caption": "Naomi: Watch Commands",
-    "command": "naomi_watch_commands"
+    "command": "naomi_watch",
+    "args": {
+      "what": "commands"
+    }
   },
   {
     "caption": "Naomi: Watch Preferences",
-    "command": "naomi_watch_preferences"
+    "command": "naomi_watch",
+    "args": {
+      "what": "preferences"
+    }
   },
   {
     "caption": "Naomi: Watch Keymaps",
-    "command": "naomi_watch_keymaps"
+    "command": "naomi_watch",
+    "args": {
+      "what": "keymaps"
+    }
   },
   {
     "caption": "Naomi: Watch Menus",
-    "command": "naomi_watch_menus"
+    "command": "naomi_watch",
+    "args": {
+      "what": "menus"
+    }
+  },
+  {
+    "caption": "Naomi: Watch Syntaxes",
+    "command": "naomi_watch",
+    "args": {
+      "what": "syntaxes"
+    }
   }
 ]

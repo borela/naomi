@@ -14,12 +14,13 @@ from os import (
     listdir,
     remove,
 )
+
 from os.path import (
     exists,
     join,
 )
-from shutil import rmtree
 
+from shutil import rmtree
 
 def delete_dir_contents(dir_path):
     if not exists(dir_path):

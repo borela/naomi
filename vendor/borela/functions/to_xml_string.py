@@ -12,7 +12,6 @@
 
 from lxml.etree import tostring
 
-
 def to_xml_string(value, indent=False):
     # Convert to a binary string.
     result = tostring(

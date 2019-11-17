@@ -10,13 +10,13 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .AnyEventSubscription import AnyEventSubscription
-from .EventSubscription import EventSubscription
 from collections import (
     defaultdict,
     OrderedDict,
 )
 
+from .AnyEventSubscription import AnyEventSubscription
+from .EventSubscription import EventSubscription
 
 class EventEngine:
     __slots__ = [
@@ -28,16 +28,17 @@ class EventEngine:
         self.__events = defaultdict(OrderedDict)
         self.__anySubscribers = []
 
+    # Emits an event to the subscribers, it expects a dictionary containing the
+    # event type and the payload, for example:
+    #
+    # {
+    #     'type': 'Some Event',
+    #     'payload': {...}
+    # }
+    #
+    # @param data
+    #   Any value that will be passed to the subscribers.
     def emit(self, data):
-        """
-        Emits an event to the subscribers, it expects a dictionary containing
-        the event type and the payload, for example:
-
-        {
-            'type': 'Some Event',
-            'payload': {...}
-        }
-        """
         for subscriber in self.__anySubscribers:
             subscriber(data)
 

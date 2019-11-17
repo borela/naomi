@@ -13,7 +13,6 @@
 from os.path import exists
 from shutil import rmtree
 
-
 def delete_dir(dir_path):
     if exists(dir_path):
         rmtree(dir_path)

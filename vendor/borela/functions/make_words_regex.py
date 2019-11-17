@@ -13,7 +13,6 @@
 from .indent_string import indent_string
 from borela import Stack
 
-
 class Node:
     root = None
     left = None
@@ -34,14 +33,11 @@ class Node:
             indent_string(body),
         )
 
-
 class Left(Node):
     pass
 
-
 class Right(Node):
     pass
-
 
 def extract_root(words, constructor):
     if len(words) == 0:
@@ -70,21 +66,18 @@ def extract_root(words, constructor):
     return constructor(root, left, right)
 
 
+# Transforms a list of words into an optimized regex, for example:
+#
+#     foo
+#     bar
+#     baz
+#     foobar
+#     foobaz
+#
+# becomes:
+#
+#    \b(?>ba(?>r|z)|foo(?:ba(?>r|z))?)\b
 def make_words_regex(words):
-    """
-    Transforms a list of words into an optimized regex, for example:
-
-        foo
-        bar
-        baz
-        foobar
-        foobaz
-
-    becomes:
-
-        \b(?>ba(?>r|z)|foo(?:ba(?>r|z))?)\b
-    """
-
     # Sorting is not necessary but it will be easier to debug.
     words.sort()
     # This will turn the words into a binary tree and extract the root that
@@ -92,7 +85,6 @@ def make_words_regex(words):
     tree = words_to_binary_tree(words)
     # Build the optimized regex.
     return '\\b%s\\b' % tree_to_string(tree)
-
 
 def tree_to_string(tree):
     temp = Stack([tree])
@@ -150,7 +142,6 @@ def tree_to_string(tree):
 
     # The last node visited will have the full pattern.
     return node.root
-
 
 def words_to_binary_tree(words):
     main = extract_root(words, Node)

@@ -13,7 +13,6 @@
 from . import ensure_dir_exists
 from os.path import dirname
 
-
 def write_text_file(
     file_path,
     data,

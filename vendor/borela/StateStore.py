@@ -12,13 +12,9 @@
 
 from copy import deepcopy
 
-
+# Represents a container for the application’s state that can be changed by
+# applying events to it.
 class StateStore:
-    """
-    Represents a container for the application’s state that can be changed by
-    applying events to it.
-    """
-
     __slots__ = [
         '__reducers',
         '__state',

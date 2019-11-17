@@ -13,7 +13,6 @@
 from os import walk
 from os.path import join
 
-
 def list_files(dir_path, recursive=True):
     if not recursive:
         path, _, files = next(walk(dir_path))

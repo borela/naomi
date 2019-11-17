@@ -13,7 +13,6 @@
 from os import makedirs
 from os.path import exists
 
-
 def ensure_dir_exists(dir_path):
     if not exists(dir_path):
         makedirs(dir_path)

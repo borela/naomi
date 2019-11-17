@@ -15,7 +15,6 @@ from os.path import (
     relpath,
 )
 
-
 def replace_path_base(path, old_base, new_base):
     relative = relpath(path, old_base)
     return join(new_base, relative)

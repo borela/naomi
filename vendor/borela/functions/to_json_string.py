@@ -12,11 +12,8 @@
 
 from json import dumps
 
-
+# Convert a dictionary to a JSON string.
 def to_json_string(data, indent=False):
-    """
-    Convert a dictionary to a JSON string.
-    """
     if indent:
         return dumps(
             data,

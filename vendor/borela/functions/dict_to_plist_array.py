@@ -10,22 +10,19 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-
+# Prepare a common dictionary into a structure that represents a plist and is
+# simpler to convert to a XML tree:
+#
+#     {'foo': true}
+#     {'bar': 'baz'}
+#
+# becomes:
+#
+#     [{'key': 'foo', 'bool': true}]
+#     [{'key': 'bar', 'string': 'baz'}]
+#
+# The result is an array of the key value pairs.
 def dict_to_plist_array(target_dict):
-    """
-    Prepare a common dictionary into a structure that represents a plist and is
-    simpler to convert to a XML tree:
-
-    {'foo': true}
-    {'bar': 'baz'}
-
-    becomes:
-
-    [{'key': 'foo', 'bool': true}]
-    [{'key': 'bar', 'string': 'baz'}]
-
-    The result is an array of the key value pairs.
-    """
     plist = []
     for key, value in target_dict.items():
         if isinstance(value, bool):

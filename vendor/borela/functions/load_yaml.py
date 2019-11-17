@@ -18,22 +18,17 @@ from ruamel.yaml import (
 from ruamel.yaml.comments import LineCol
 from ruamel.yaml.constructor import RoundTripConstructor
 
-
 class DoubleQuotedScalarString(scalarstring.DoubleQuotedScalarString):
     pass
-
 
 class PreservedScalarString(scalarstring.PreservedScalarString):
     pass
 
-
 class ScalarString(scalarstring.ScalarString):
     pass
 
-
 class SingleQuotedScalarString(scalarstring.SingleQuotedScalarString):
     pass
-
 
 class YamlConstructor(RoundTripConstructor):
     def construct_scalar(self, node):
@@ -53,7 +48,6 @@ class YamlConstructor(RoundTripConstructor):
         result.lc.col = node.start_mark.column
 
         return result
-
 
 def load_yaml(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:

@@ -14,11 +14,8 @@ from .dict_to_plist_array import dict_to_plist_array
 from .plist_array_to_xml import plist_array_to_xml
 from .to_xml_string import to_xml_string
 
-
+# Convert a simple dictionary into a XML plist string.
 def to_plist_string(target_dict):
-    """
-    Convert a simple dictionary into a XML plist string.
-    """
     # Prepare the dictionary.
     plist_array = dict_to_plist_array(target_dict)
     # Convert to a XML tree.

@@ -18,16 +18,13 @@ time_start = datetime.now()
 time_end = time_start
 time_diff = timedelta()
 
-
 def get_log_level():
     global global_level
     return global_level
 
-
 def set_log_level(new_level):
     global global_level
     global_level = new_level
-
 
 def print_log_message(group, level, message):
     global global_level, time_start, time_end, time_diff
@@ -55,26 +52,20 @@ def print_log_message(group, level, message):
 
     time_start = time_end
 
-
 def log(group, level, message):
     print_log_message(group, level, message)
-
 
 def log_critical(message):
     log('CRITICAL', message)
 
-
 def log_debug(message):
     log('DEBUG', message)
-
 
 def log_error(message):
     log('ERROR', message)
 
-
 def log_info(message):
     log('INFO', message)
-
 
 def log_warning(message):
     log('WARNING', message)

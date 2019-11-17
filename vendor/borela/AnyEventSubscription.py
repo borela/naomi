@@ -12,7 +12,6 @@
 
 from .EventSubscription import EventSubscription
 
-
 class AnyEventSubscription(EventSubscription):
     def __init__(self, engine, subscriber):
         super(AnyEventSubscription, self).__init__(

@@ -13,7 +13,6 @@
 from .replace_path_base import replace_path_base
 from .replace_path_ext import replace_path_ext
 
-
 def modify_path(
     path,
     old_base,

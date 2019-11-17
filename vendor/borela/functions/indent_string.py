@@ -12,7 +12,6 @@
 
 from re import split
 
-
 def indent_string(
     text,
     amount=1,

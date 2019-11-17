@@ -12,7 +12,6 @@
 
 from os.path import splitext
 
-
 def replace_path_ext(path, new_extension):
     base = splitext(path)[0]
     return base + '.' + new_extension

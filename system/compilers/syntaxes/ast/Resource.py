@@ -12,7 +12,6 @@
 
 from .Node import Node
 
-
 class Resource(Node):
     __slots__ = [
         'syntax',
@@ -32,4 +31,4 @@ class Resource(Node):
         self.statement = statement
         self.path = path
 
-        syntax.index_resource(self)
+        syntax.compilation.index_resource(self)

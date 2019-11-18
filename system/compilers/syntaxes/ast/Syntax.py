@@ -13,7 +13,6 @@
 from ..ParsingError import ParsingError
 from .Context import Context
 from .Node import Node
-from .Resource import Resource
 from .Variable import Variable
 from collections import OrderedDict
 from Naomi.system import package_relpath
@@ -64,12 +63,6 @@ class Syntax(Node):
             raise ParsingError('Object is not a context: %s' % context)
 
         self.contexts[context.name] = Context
-
-    def index_resource(self, resource):
-        if not isinstance(resource, Resource):
-            raise ParsingError('Object is not a Resource: %s' % resource)
-
-        self.resources[resource.path] = resource
 
     def index_variable(self, variable):
         if not isinstance(variable, Variable):

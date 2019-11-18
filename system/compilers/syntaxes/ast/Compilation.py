@@ -10,7 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from ..ParsingError import ParsingError
 from .Node import Node
+from .Resource import Resource
 from .Syntax import Syntax
 from collections import OrderedDict
 
@@ -62,3 +64,9 @@ class Compilation(Node):
         if path not in self.files:
             self.files[path] = syntax
             self.files_ids[path] = len(self.files)
+
+    def index_resource(self, resource):
+        if not isinstance(resource, Resource):
+            raise ParsingError('Object is not a Resource: %s' % resource)
+
+        self.resources[resource.path] = resource

@@ -42,12 +42,13 @@ def dict_to_plist_array(target_dict):
         raise ValueError('Dictionary must be an OrderedDict.')
 
     plist = []
+
+    # Queue containing a tupple: plist index, key, dictionary.
     dict_queue = Stack()
     dict_queue.push((0, None, target_dict))
 
     i = -1
     while len(dict_queue):
-
         temp_list = []
         j, dict_key, target_dict = dict_queue.pop()
 

@@ -101,7 +101,7 @@ def tree_to_string(tree):
 
         queue.push(node)
 
-    # Collapse nodes while generating the pattern.
+    # Compute the pattern from the deepest nodes first.
     for node in queue:
         if node.root == '':
             if node.left.root.startswith('(?'):
@@ -144,18 +144,19 @@ def tree_to_string(tree):
 
 def words_to_binary_tree(words):
     main = extract_root(words, Node)
-    node = None
-    queue = [main]
+
+    queue = Stack()
+    queue.push(main)
 
     while len(queue):
-        node = queue.pop(0)
+        node = queue.pop()
         node.left = extract_root(node.left, Left)
         node.right = extract_root(node.right, Right)
 
         if isinstance(node.left, Node):
-            queue.append(node.left)
+            queue.push(node.left)
 
         if isinstance(node.right, Node):
-            queue.append(node.right)
+            queue.push(node.right)
 
     return main

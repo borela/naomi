@@ -91,7 +91,7 @@ def tree_to_string(tree):
     queue = Stack()
 
     # Generate a queue to visit the nodes using postorder traversal.
-    while len(temp) > 0:
+    while len(temp):
         node = temp.pop()
 
         if isinstance(node.right, Node):
@@ -148,7 +148,7 @@ def words_to_binary_tree(words):
     node = None
     queue = [main]
 
-    while len(queue) > 0:
+    while len(queue):
         node = queue.pop(0)
         node.left = extract_root(node.left, Left)
         node.right = extract_root(node.right, Right)

@@ -1,2 +1,3 @@
 [flake8]
+exclude = systemold
 ignore = E302, E122, N806, W503

@@ -27,3 +27,6 @@ class Stack(list):
 
     def push(self, value):
         self.append(value)
+
+    def push_back(self, value):
+        self.insert(0, value)

@@ -12,14 +12,12 @@
 
 from .delete_dir import * # noqa
 from .delete_dir_contents import * # noqa
-from .dict_to_plist_array import * # noqa
 from .ensure_dir_exists import * # noqa
 from .indent_string import * # noqa
 from .list_files import * # noqa
 from .load_yaml import * # noqa
 from .make_words_regex import * # noqa
 from .modify_path import * # noqa
-from .plist_array_to_xml import * # noqa
 from .read_text_file import * # noqa
 from .replace_path_base import * # noqa
 from .replace_path_ext import * # noqa

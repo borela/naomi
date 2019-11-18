@@ -15,8 +15,11 @@ from .ContextualStatement import ContextualStatement
 class Match(ContextualStatement):
     __slots__ = [
         'pattern',
-        'captures',
         'scope',
         'stack_action',
+        'captures',
         'with_prototype',
     ]
+
+    def __init__(self):
+        self.stack_action = None

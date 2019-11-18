@@ -10,8 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from ..Stack import Stack
 from .indent_string import indent_string
-from borela import Stack
 
 class Node:
     root = None

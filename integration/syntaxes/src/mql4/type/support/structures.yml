@@ -16,7 +16,6 @@
 hidden: true
 scope: ...
 
-
 contexts:
   main:
     - match: |

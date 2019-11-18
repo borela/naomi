@@ -12,6 +12,5 @@
 
 from .ContextualStatement import ContextualStatement
 
-
 class ClearScopes(ContextualStatement):
     __slots__ = 'value'

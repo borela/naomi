@@ -68,7 +68,6 @@ contexts:
     #       keyword.declaration.typedef.mql.mql4
     #   set: identifier
 
-
   identifieraaaa:
     - match: |
         (?xi)\s*

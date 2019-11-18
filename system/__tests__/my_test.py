@@ -12,7 +12,6 @@
 
 from unittest import TestCase
 
-
 class HelloTest(TestCase):
     def test_something(self):
         self.assertEqual(0, 0)

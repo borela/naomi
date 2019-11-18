@@ -22,18 +22,15 @@ from Naomi.system import (
 
 from sublime import load_settings
 
-
 def plugin_loaded():
     SETTINGS = load_settings('Naomi.sublime-settings')
     SETTINGS.add_on_change('naomi-settings-state', update_settings)
     EVENT_BUS.emit(settings_loaded(SETTINGS))
     log_info('Settings loaded.')
 
-
 def plugin_unloaded():
     SETTINGS = load_settings('Naomi.sublime-settings')
     SETTINGS.clear_on_change('naomi-settings-state')
-
 
 def update_settings():
     SETTINGS = load_settings('Naomi.sublime-settings')

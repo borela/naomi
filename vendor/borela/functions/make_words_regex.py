@@ -65,7 +65,6 @@ def extract_root(words, constructor):
 
     return constructor(root, left, right)
 
-
 # Transforms a list of words into an optimized regex, for example:
 #
 #     foo

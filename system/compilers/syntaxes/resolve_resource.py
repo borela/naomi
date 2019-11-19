@@ -13,29 +13,57 @@
 from os.path import (
     dirname,
     join,
+    realpath,
 )
 
 from .ast import Resource
+from .parse_syntax import parse_syntax
 from Naomi.system import packages_dir
 
-def resolve_resource(syntax, statement, path):
+def resolve_resource(compilation, resource):
+    syntax = resource.statement.context.syntax
+    home_dir = syntax.home_dir
+    path = resource.path
+
     # Normal sublime path.
     if path.startswith('Packages/'):
-        resolved_path = join(packages_dir(), '..', path)
+        path = join(packages_dir(), '..', path)
+        path = realpath(path)
     # Relative to the syntax file.
     elif path.startswith('./'):
-        resolved_path = join(dirname(syntax.path), path)
+        syntax_dir = dirname(syntax.path)
+        path = join(syntax_dir, path)
+        path = realpath(path)
     # Relative to the home dir.
     elif path.startswith('~/'):
-        resolved_path = join(syntax.home_dir, path)
+        path = path.replace('~/', '')
+        path = join(home_dir, path)
+        path = realpath(path)
     # Context in the syntax file.
     else:
-        resolved_path = syntax.path + '#' + path
+        path = syntax.path + '#' + path
 
-    resource = Resource(
-        statement,
-        statement.path,
-    )
+    # If not context is targeted, the “main” will be used.
+    if '#' not in path:
+        path += '#main'
 
     resource.resolved_path = path
-    syntax.compilation.index_resource(resource)
+
+    # The target context was loaded before.
+    if path in compilation.resources:
+        resource.resolved = compilation.resources[path].resolved
+        return
+
+    compilation.index_resource(resource)
+
+    # Load the target syntax and context.
+    target_syntax, _ = path.split('#')
+
+    if target_syntax not in compilation.syntaxes:
+        parse_syntax(
+            compilation,
+            home_dir,
+            target_syntax,
+        )
+
+    resource.resolved = compilation.contexts[path]

@@ -40,6 +40,7 @@ class Syntax(Node):
 
         # Variables indexed by their name.
         'variables',
+
         # Contexts indexed by their name.
         'contexts',
     ]
@@ -60,12 +61,14 @@ class Syntax(Node):
 
     def index_context(self, context):
         if not isinstance(context, Context):
-            raise ParsingError('Object is not a context: %s' % context)
+            raise ParsingError('Object is not a Context: %s' % context)
 
-        self.contexts[context.name] = Context
+        self.contexts[context.name] = context
+        self.compilation.index_context(context)
 
     def index_variable(self, variable):
         if not isinstance(variable, Variable):
-            raise ParsingError('Object is not a variable: %s' % variable)
+            raise ParsingError('Object is not a Variable: %s' % variable)
 
         self.variables[variable.name] = variable
+        self.compilation.index_variable(variable)

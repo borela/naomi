@@ -27,7 +27,7 @@ def parse_syntax(compilation, home_dir, path):
         path,
     )
 
-    compilation.index_file(syntax, parent=None)
+    compilation.index_syntax(syntax)
 
     log_debug('Loading syntax file: %s' % syntax.package_relpath)
 

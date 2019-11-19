@@ -11,14 +11,15 @@
 # the License.
 
 from .ast import Include
-from .resolve_resource import resolve_resource
 
 def parse_include(context, raw):
+    compilation = context.syntax.compilation
+
     statement = Include(context)
     statement.path = raw['include']
-    statement.resource = resolve_resource(
-        context.syntax,
+    statement.resource = compilation.enqueue_resource(
         statement,
         statement.path,
     )
+
     return statement

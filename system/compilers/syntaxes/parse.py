@@ -18,6 +18,7 @@ from Naomi.system import (
 
 from .ast import Compilation
 from .parse_syntax import parse_syntax
+from .resolve_resource import resolve_resource
 
 def parse(settings):
     entry = settings.get('entry', None)
@@ -45,5 +46,13 @@ def parse(settings):
         home_dir,
         entry_path,
     )
+
+    resources = compilation.queued_resources
+
+    while len(resources):
+        resolve_resource(
+            compilation,
+            resources.pop(),
+        )
 
     return compilation

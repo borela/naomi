@@ -16,7 +16,7 @@ from .Resource import Resource
 from .Syntax import Syntax
 from collections import OrderedDict
 
-class Statistics:
+class Statistics(Node):
     __slots__ = [
         'contexts',
         'files',

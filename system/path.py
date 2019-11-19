@@ -25,6 +25,9 @@ from .state_store import STATE_STORE
 def package_relpath(path):
     return relpath(path, join(dirname(__file__), '..', '..'))
 
+def packages_dir():
+    return realpath(join(dirname(__file__), '..', '..'))
+
 # Resolve relative paths to the syntaxes src directories being managed by
 # the Naomi’s system.
 def resolve_syntax_entry(path):

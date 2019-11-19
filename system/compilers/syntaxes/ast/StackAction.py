@@ -10,7 +10,10 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .Statement import Statement
+from .Node import Node
 
-class ContextualStatement(Statement):
-    __slots__ = 'context'
+class StackAction(Node):
+    __slots__ = 'match_statement'
+
+    def __init__(self, match_statement):
+        self.match_statement = match_statement

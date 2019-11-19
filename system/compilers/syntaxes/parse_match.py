@@ -21,10 +21,8 @@ from .parse_push import parse_push
 from .parse_set import parse_set
 from .ParsingError import ParsingError
 
-def parse_match(syntax, context, raw):
-    statement = Match()
-    statement.syntax = syntax
-    statement.context = context
+def parse_match(context, raw):
+    statement = Match(context)
 
     for key, value in raw.items():
         if key == 'match':
@@ -60,24 +58,21 @@ def parse_match(syntax, context, raw):
 
             if key == 'push':
                 statement.stack_action = parse_push(
-                    syntax,
-                    context,
+                    statement,
                     value,
                 )
                 continue
 
             if key == 'set':
                 statement.stack_action = parse_set(
-                    syntax,
-                    context,
+                    statement,
                     value,
                 )
                 continue
 
             if key == 'pop':
                 statement.stack_action = parse_pop(
-                    syntax,
-                    context,
+                    statement,
                     value,
                 )
                 continue

@@ -10,10 +10,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .Statement import Statement
+from .StackAction import StackAction
 
-class Set(Statement):
+class Set(StackAction):
     __slots__ = 'sequence'
 
-    def __init__(self):
+    def __init__(self, match_statement):
+        StackAction.__init__(self, match_statement)
         self.sequence = []

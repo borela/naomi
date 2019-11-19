@@ -14,9 +14,11 @@ from .Statement import Statement
 
 class Context(Statement):
     __slots__ = [
+        'syntax',
         'name',
         'statements',
     ]
 
-    def __init__(self):
+    def __init__(self, syntax):
+        self.syntax = syntax
         self.statements = []

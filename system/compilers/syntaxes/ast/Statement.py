@@ -13,4 +13,7 @@
 from .Node import Node
 
 class Statement(Node):
-    __slots__ = 'syntax'
+    __slots__ = 'context'
+
+    def __init__(self, context):
+        self.context = context

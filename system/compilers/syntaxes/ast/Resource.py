@@ -14,8 +14,6 @@ from .Node import Node
 
 class Resource(Node):
     __slots__ = [
-        'syntax',
-        'context',
         'statement',
         # Path used to import the resource without any modifcation.
         'path',
@@ -25,10 +23,6 @@ class Resource(Node):
         'resolved',
     ]
 
-    def __init__(self, syntax, context, statement, path):
-        self.syntax = syntax
-        self.context = context
+    def __init__(self, statement, path):
         self.statement = statement
         self.path = path
-
-        syntax.compilation.index_resource(self)

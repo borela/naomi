@@ -10,9 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ContextualStatement import ContextualStatement
+from .Statement import Statement
 
-class Match(ContextualStatement):
+class Match(Statement):
     __slots__ = [
         'pattern',
         'scope',
@@ -21,5 +21,6 @@ class Match(ContextualStatement):
         'with_prototype',
     ]
 
-    def __init__(self):
+    def __init__(self, context):
+        Statement.__init__(self, context)
         self.stack_action = None

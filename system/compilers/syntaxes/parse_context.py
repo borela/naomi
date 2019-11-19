@@ -19,14 +19,12 @@ from .parse_meta_scope import parse_meta_scope
 from .ParsingError import ParsingError
 
 def parse_context(syntax, name, raw):
-    context = Context()
-    context.syntax = syntax
+    context = Context(syntax)
     context.name = name
 
     for statement in raw:
         if 'clear_scopes' in statement:
             context.statements.append(parse_clear_scopes(
-                syntax,
                 context,
                 statement,
             ))
@@ -34,7 +32,6 @@ def parse_context(syntax, name, raw):
 
         if 'include' in statement:
             context.statements.append(parse_include(
-                syntax,
                 context,
                 statement,
             ))
@@ -42,7 +39,6 @@ def parse_context(syntax, name, raw):
 
         if any(key in ['match', 'match_words'] for key in statement):
             context.statements.append(parse_match(
-                syntax,
                 context,
                 statement,
             ))
@@ -50,7 +46,6 @@ def parse_context(syntax, name, raw):
 
         if 'meta_content_scope' in statement:
             context.statements.append(parse_meta_content_scope(
-                syntax,
                 context,
                 statement,
             ))
@@ -58,7 +53,6 @@ def parse_context(syntax, name, raw):
 
         if 'meta_scope' in statement:
             context.statements.append(parse_meta_scope(
-                syntax,
                 context,
                 statement,
             ))

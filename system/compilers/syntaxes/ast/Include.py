@@ -10,9 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ContextualStatement import ContextualStatement
+from .Statement import Statement
 
-class Include(ContextualStatement):
+class Include(Statement):
     __slots__ = [
         'path',
         'resource',

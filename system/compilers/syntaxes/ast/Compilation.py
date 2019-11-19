@@ -38,8 +38,7 @@ class Compilation(Node):
         # dict: The file id will be prepended in all contexts to allow us to
         # see the context’s origin.
         'files_ids',
-        # Some statements references external files or contexts, these are
-        # added to this dictionary to speed up the path resolution.
+        # Some statements references external files or contexts.
         'resources',
         # Statistics: Data such as number of contexts, files used, etc...
         'statistics',

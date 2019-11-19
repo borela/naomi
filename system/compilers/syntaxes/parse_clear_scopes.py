@@ -12,9 +12,7 @@
 
 from .ast import ClearScopes
 
-def parse_clear_scopes(syntax, context, raw):
-    statement = ClearScopes()
-    statement.syntax = syntax
-    statement.context = context
+def parse_clear_scopes(context, raw):
+    statement = ClearScopes(context)
     statement.value = raw['clear_scopes']
     return statement

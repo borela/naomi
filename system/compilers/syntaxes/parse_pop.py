@@ -12,9 +12,7 @@
 
 from .ast import Pop
 
-def parse_pop(syntax, context, raw):
-    statement = Pop()
-    statement.syntax = syntax
-    statement.context = context
+def parse_pop(match_statement, raw):
+    statement = Pop(match_statement)
     statement.value = bool(raw)
     return statement

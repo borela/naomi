@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ContextualStatement import ContextualStatement
+from .Statement import Statement
 
-class ClearScopes(ContextualStatement):
+class ClearScopes(Statement):
     __slots__ = 'value'

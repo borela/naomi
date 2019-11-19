@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ContextualStatement import ContextualStatement
+from .Statement import Statement
 
-class SetMetaScope(ContextualStatement):
+class SetMetaScope(Statement):
     __slots__ = 'scope'

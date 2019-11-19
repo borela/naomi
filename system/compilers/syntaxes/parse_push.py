@@ -12,8 +12,6 @@
 
 from .ast import Push
 
-def parse_push(syntax, context, raw):
-    statement = Push()
-    statement.syntax = syntax
-    statement.context = context
+def parse_push(match_statement, raw):
+    statement = Push(match_statement)
     return statement

@@ -10,19 +10,14 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ast import (
-    Include,
-    Resource,
-)
+from .ast import Include
+from .resolve_resource import resolve_resource
 
-def parse_include(syntax, context, raw):
-    statement = Include()
-    statement.syntax = syntax
-    statement.context = context
+def parse_include(context, raw):
+    statement = Include(context)
     statement.path = raw['include']
-    statement.resource = Resource(
-        syntax,
-        context,
+    statement.resource = resolve_resource(
+        context.syntax,
         statement,
         statement.path,
     )

@@ -12,9 +12,7 @@
 
 from .ast import SetMetaContentScope
 
-def parse_meta_content_scope(syntax, context, raw):
-    statement = SetMetaContentScope()
-    statement.syntax = syntax
-    statement.context = context
+def parse_meta_content_scope(context, raw):
+    statement = SetMetaContentScope(context)
     statement.scope = raw['meta_content_scope']
     return statement

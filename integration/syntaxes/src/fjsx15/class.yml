@@ -28,10 +28,10 @@ contexts:
       set: declaration
 
   body:
-    - include: ~/fjsx15/class/body.sublime-syntax
+    - include: ~/fjsx15/class/body.yml
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.yml
 
   declaration:
     - meta_scope: meta.declaration.class.js.fjsx15
@@ -62,10 +62,10 @@ contexts:
       scope: entity.name.class.js.fjsx15
 
   generic-arguments:
-    - include: ~/flow1/generic/arguments.sublime-syntax
+    - include: ~/flow1/generic/arguments.yml
 
   optional-generic-arguments:
-    - include: ~/flow1/generic/arguments.sublime-syntax
+    - include: ~/flow1/generic/arguments.yml
     - match: ""
       pop: true
 
@@ -82,10 +82,10 @@ contexts:
 
   target-class-or-namespace:
     - include: comment-no-pop
-    - include: ~/flow1/namespace-path.no-pop.sublime-syntax
+    - include: ~/flow1/namespace-path.no-pop.yml
     - match: (?xi){{commonIdentifier}}
       scope: entity.other.inherited-class.js.fjsx15
       pop: true
 
   type-expression:
-    - include: ~/flow1/type-expression.sublime-syntax
+    - include: ~/flow1/type-expression.yml

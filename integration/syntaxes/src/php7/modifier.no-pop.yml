@@ -20,4 +20,4 @@ contexts:
   main:
     - match: (?=\S)
       push:
-        - include: ~/php7/modifier.sublime-syntax
+        - include: ~/php7/modifier.yml

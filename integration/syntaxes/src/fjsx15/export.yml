@@ -38,7 +38,7 @@ contexts:
       pop: true
 
   close-block:
-    - include: ~/fjsx15/import.sublime-syntax#close-block
+    - include: ~/fjsx15/import.yml#close-block
 
   delimiter:
     - match: \,
@@ -53,7 +53,7 @@ contexts:
       pop: true
 
   expression:
-    - include: ~/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/expression.yml
 
   optional-alias:
     - match: (?=as\b)
@@ -64,7 +64,7 @@ contexts:
     - match: (?=(?>[,}]|from))
       pop: true
     # Type.
-    - include: ~/flow1/type-export.sublime-syntax
+    - include: ~/flow1/type-export.yml
     # Aliased all.
     - match: \*(?=\s*as\b)
       scope: keyword.control.import-export.star.js.fjsx15
@@ -95,7 +95,7 @@ contexts:
       pop: true
 
   origin:
-    - include: ~/fjsx15/import.sublime-syntax#origin
+    - include: ~/fjsx15/import.yml#origin
 
   possible-statement-or-expression:
     - match: (?=(?>[*{]|type(?:of)?))
@@ -109,7 +109,7 @@ contexts:
       scope: keyword.control.import-export.default.js.fjsx15
       set: expression
     # Other statements.
-    - include: ~/fjsx15/statement.sublime-syntax
+    - include: ~/fjsx15/statement.yml
     # Renamed default.
     - match: (?xi){{commonIdentifier}}
       scope: variable.other.readwrite.js.fjsx15

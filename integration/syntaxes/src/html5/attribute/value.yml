@@ -25,7 +25,7 @@ contexts:
       pop: true
 
   value:
-    - include: ~/html5/literal/string/double-quoted.sublime-syntax
-    - include: ~/html5/literal/string/single-quoted.sublime-syntax
-    - include: ~/html5/literal/number.sublime-syntax
-    - include: ~/html5/literal/string/unquoted.sublime-syntax
+    - include: ~/html5/literal/string/double-quoted.yml
+    - include: ~/html5/literal/string/single-quoted.yml
+    - include: ~/html5/literal/number.yml
+    - include: ~/html5/literal/string/unquoted.yml

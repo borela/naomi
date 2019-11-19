@@ -191,7 +191,7 @@ contexts:
     - include: other-property-or-function
 
   arguments:
-    - include: ~/fjsx15/function-call/arguments.sublime-syntax
+    - include: ~/fjsx15/function-call/arguments.yml
 
   console:
     - match: (console)\s*(\.)
@@ -493,7 +493,7 @@ contexts:
     - include: other-property-or-function
 
   other-property-or-function:
-    - include: ~/fjsx15/operator/other.sublime-syntax#other-property-or-function
+    - include: ~/fjsx15/operator/other.yml#other-property-or-function
 
   reflection:
     - match: |

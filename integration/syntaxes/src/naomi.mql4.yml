@@ -32,4 +32,4 @@ contexts:
       pop: true
 
   statement-and-expression:
-    - include: ~/mql4/statement-and-expression.sublime-syntax
+    - include: ~/mql4/statement-and-expression.yml

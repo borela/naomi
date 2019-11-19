@@ -53,7 +53,7 @@ contexts:
       set: destructuring-object
 
   destructuring-array:
-    - include: ~/fjsx15/destructuring/array.sublime-syntax
+    - include: ~/fjsx15/destructuring/array.yml
 
   destructuring-object:
-    - include: ~/fjsx15/destructuring/object.sublime-syntax
+    - include: ~/fjsx15/destructuring/object.yml

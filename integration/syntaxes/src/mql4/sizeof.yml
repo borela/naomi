@@ -30,7 +30,7 @@ contexts:
       ]
 
   type:
-    - include: ~/mql4/type.sublime-syntax
+    - include: ~/mql4/type.yml
 
   definition:
     - match: \s*(\))

@@ -150,8 +150,8 @@ contexts:
 
   normal-arrow-function:
     - meta_scope: meta.function.js.fjsx15
-    - include: ~/fjsx15/arrow-function.sublime-syntax#normal-arrow-function
+    - include: ~/fjsx15/arrow-function.yml#normal-arrow-function
 
   single-parameter-arrow-function:
     - meta_scope: meta.function.js.fjsx15
-    - include: ~/fjsx15/arrow-function.sublime-syntax#single-parameter-arrow-function
+    - include: ~/fjsx15/arrow-function.yml#single-parameter-arrow-function

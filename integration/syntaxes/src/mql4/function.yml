@@ -137,7 +137,7 @@ contexts:
       pop: true
 
   return-type:
-    - include: ~/mql4/type.sublime-syntax
+    - include: ~/mql4/type.yml
 
   class:
     - match: |
@@ -197,7 +197,7 @@ contexts:
       pop: true
 
   parameters:
-    - include: ~/mql4/function/parameters.sublime-syntax
+    - include: ~/mql4/function/parameters.yml
 
   body:
-    - include: ~/mql4/function/body.sublime-syntax
+    - include: ~/mql4/function/body.yml

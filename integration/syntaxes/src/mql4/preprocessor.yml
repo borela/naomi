@@ -67,7 +67,7 @@ contexts:
     - match: \s*(\<.+?\>)
       scope: string.unquoted.mql.mql4
       pop: true
-    - include: ~/mql4/literal/string.sublime-syntax
+    - include: ~/mql4/literal/string.yml
 
   value:
     - match: \s*$
@@ -77,7 +77,7 @@ contexts:
         - include: statement-and-expression
 
   statement-and-expression:
-    - include: ~/mql4/statement-and-expression.sublime-syntax
+    - include: ~/mql4/statement-and-expression.yml
 
   property-identifier:
     # Expected properties.

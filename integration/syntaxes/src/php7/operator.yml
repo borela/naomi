@@ -18,12 +18,12 @@ scope: ...
 
 contexts:
   main:
-    - include: ~/php7/operator/other.sublime-syntax
-    - include: ~/php7/operator/comparison.sublime-syntax
-    - include: ~/php7/operator/logical.sublime-syntax
-    - include: ~/php7/operator/bitwise.sublime-syntax
-    - include: ~/php7/operator/arithmetic.sublime-syntax
-    - include: ~/php7/operator/string.sublime-syntax
+    - include: ~/php7/operator/other.yml
+    - include: ~/php7/operator/comparison.yml
+    - include: ~/php7/operator/logical.yml
+    - include: ~/php7/operator/bitwise.yml
+    - include: ~/php7/operator/arithmetic.yml
+    - include: ~/php7/operator/string.yml
     - match: \s*(=)
       captures:
         1: keyword.operator.other.assignment.php.php7

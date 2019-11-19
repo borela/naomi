@@ -27,7 +27,7 @@ contexts:
       ]
 
   arguments:
-    - include: ~/mql4/function-call/arguments.sublime-syntax
+    - include: ~/mql4/function-call/arguments.yml
 
   type:
-    - include: ~/mql4/type.sublime-syntax
+    - include: ~/mql4/type.yml

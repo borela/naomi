@@ -33,4 +33,4 @@ contexts:
       set: optional-associated-type
 
   optional-associated-type:
-    - include: ~/flow1/optional-associated-type.sublime-syntax
+    - include: ~/flow1/optional-associated-type.yml

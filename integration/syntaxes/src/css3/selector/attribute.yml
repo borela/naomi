@@ -23,8 +23,8 @@ contexts:
       set: [ meta, close, optional-operator, attribute ]
 
   attribute:
-    - include: ~/html5/attribute/builtin.sublime-syntax
-    - include: ~/html5/attribute/data.sublime-syntax
+    - include: ~/html5/attribute/builtin.yml
+    - include: ~/html5/attribute/data.yml
     # Other attributes with escaping.
     - match: |
         (?xi)
@@ -54,4 +54,4 @@ contexts:
       pop: true
 
   value:
-    - include: ~/css3/value.sublime-syntax
+    - include: ~/css3/value.yml

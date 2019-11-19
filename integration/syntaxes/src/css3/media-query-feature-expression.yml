@@ -23,10 +23,10 @@ contexts:
       set: [ optional-tail, head ]
 
   comment-no-pop:
-    - include: ~/css3/comment.no-pop.sublime-syntax
+    - include: ~/css3/comment.no-pop.yml
 
   custom-property:
-    - include: ~/css3/custom-media-identifier.sublime-syntax
+    - include: ~/css3/custom-media-identifier.yml
 
   else-pop:
     - match: (?=\S)
@@ -78,4 +78,4 @@ contexts:
     - include: else-pop
 
   value:
-    - include: ~/css3/value.sublime-syntax
+    - include: ~/css3/value.yml

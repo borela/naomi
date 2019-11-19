@@ -38,8 +38,8 @@ contexts:
       push: content
 
   content:
-    - include: ~/fjsx15/literal/string/regex/character-class/range.sublime-syntax
-    - include: ~/fjsx15/literal/string/regex/backslash.sublime-syntax
+    - include: ~/fjsx15/literal/string/regex/character-class/range.yml
+    - include: ~/fjsx15/literal/string/regex/backslash.yml
     - match: .
       scope: constant.other.character-class.regexp.js.fjsx15
       pop: true

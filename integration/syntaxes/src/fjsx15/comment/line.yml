@@ -35,7 +35,7 @@ contexts:
       pop: true
 
   email-no-pop:
-    - include: ~/shared/email.no-pop.sublime-syntax
+    - include: ~/shared/email.no-pop.yml
 
   link-no-pop:
-    - include: ~/shared/link.no-pop.sublime-syntax
+    - include: ~/shared/link.no-pop.yml

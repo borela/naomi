@@ -27,4 +27,4 @@ contexts:
           )
         )
       push:
-        - include: ~/php7/comment.sublime-syntax
+        - include: ~/php7/comment.yml

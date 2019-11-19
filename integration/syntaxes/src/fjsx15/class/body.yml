@@ -40,17 +40,17 @@ contexts:
       push: statement-or-expression
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.yml
 
   statement-or-expression:
     - include: comment-no-pop
-    - include: ~/flow1/operator/covariant.no-pop.sublime-syntax
-    - include: ~/flow1/operator/contravariant.no-pop.sublime-syntax
-    - include: ~/fjsx15/decorator.sublime-syntax
-    - include: ~/fjsx15/react-js.sublime-syntax
-    - include: ~/fjsx15/class/modifier.sublime-syntax
-    - include: ~/fjsx15/class/method.sublime-syntax
-    - include: ~/fjsx15/class/property.sublime-syntax
-    - include: ~/flow1/indexer.sublime-syntax
+    - include: ~/flow1/operator/covariant.no-pop.yml
+    - include: ~/flow1/operator/contravariant.no-pop.yml
+    - include: ~/fjsx15/decorator.yml
+    - include: ~/fjsx15/react-js.yml
+    - include: ~/fjsx15/class/modifier.yml
+    - include: ~/fjsx15/class/method.yml
+    - include: ~/fjsx15/class/property.yml
+    - include: ~/flow1/indexer.yml
     - match: (?=\S)
       pop: true

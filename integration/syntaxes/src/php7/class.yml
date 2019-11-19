@@ -52,10 +52,10 @@ contexts:
           storage.type.php.php7
           keyword.declaration.class.php.php7
       pop: true
-    - include: ~/php7/modifier.no-pop.sublime-syntax
+    - include: ~/php7/modifier.no-pop.yml
 
   comment:
-    - include: ~/php7/comment.no-pop.sublime-syntax
+    - include: ~/php7/comment.no-pop.yml
 
   declaration:
     - include: comment
@@ -92,7 +92,7 @@ contexts:
   body-content:
     - match: ""
       push:
-        - include: ~/php7/statement-and-expression.sublime-syntax
+        - include: ~/php7/statement-and-expression.yml
         - match: ""
           pop: true
 
@@ -102,7 +102,7 @@ contexts:
       pop: true
     - match: (?i)(?=\s*\bimplements\b)
       pop: true
-    - include: ~/php7/type.sublime-syntax
+    - include: ~/php7/type.yml
 
   implement-targets:
     - include: comment
@@ -116,7 +116,7 @@ contexts:
 
   implement-target:
     - include: comment
-    - include: ~/php7/type.sublime-syntax
+    - include: ~/php7/type.yml
 
   implement-target-definition:
     - include: comment

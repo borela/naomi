@@ -48,7 +48,7 @@ contexts:
       set: arguments
 
   variable:
-    - include: ~/php7/variable.sublime-syntax
+    - include: ~/php7/variable.yml
 
   arguments:
-    - include: ~/php7/function-call/arguments.sublime-syntax
+    - include: ~/php7/function-call/arguments.yml

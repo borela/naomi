@@ -23,12 +23,12 @@ contexts:
       push: [naomi, entry]
 
   entry:
-    - include: ~/flow1/declare.sublime-syntax
-    - include: ~/flow1/interface.sublime-syntax
-    - include: ~/flow1/module.sublime-syntax
-    - include: ~/flow1/prolog.sublime-syntax
-    - include: ~/flow1/type-aliasing.sublime-syntax
-    - include: ~/flow1/type-expression.sublime-syntax
+    - include: ~/flow1/declare.yml
+    - include: ~/flow1/interface.yml
+    - include: ~/flow1/module.yml
+    - include: ~/flow1/prolog.yml
+    - include: ~/flow1/type-aliasing.yml
+    - include: ~/flow1/type-expression.yml
 
   naomi:
     - meta_scope: naomi

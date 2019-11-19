@@ -18,12 +18,12 @@ scope: ...
 
 contexts:
   main:
-    - include: ~/fjsx15/literal/number.sublime-syntax
-    - include: ~/fjsx15/literal/array.sublime-syntax
-    - include: ~/fjsx15/literal/object.sublime-syntax
-    - include: ~/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: ~/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: ~/fjsx15/literal/string/styled-component.sublime-syntax
-    # - include: ~/fjsx15/literal/string/polymer-template.sublime-syntax
-    - include: ~/fjsx15/literal/string/template.sublime-syntax
-    - include: ~/fjsx15/literal/string/regex.sublime-syntax
+    - include: ~/fjsx15/literal/number.yml
+    - include: ~/fjsx15/literal/array.yml
+    - include: ~/fjsx15/literal/object.yml
+    - include: ~/fjsx15/literal/string/double-quoted.yml
+    - include: ~/fjsx15/literal/string/single-quoted.yml
+    - include: ~/fjsx15/literal/string/styled-component.yml
+    # - include: ~/fjsx15/literal/string/polymer-template.yml
+    - include: ~/fjsx15/literal/string/template.yml
+    - include: ~/fjsx15/literal/string/regex.yml

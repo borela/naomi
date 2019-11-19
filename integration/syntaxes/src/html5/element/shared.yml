@@ -27,7 +27,7 @@ contexts:
       set: trap
 
   attribute:
-    - include: ~/html5/attribute.sublime-syntax
+    - include: ~/html5/attribute.yml
 
   close-open-tag:
     - match: /?>

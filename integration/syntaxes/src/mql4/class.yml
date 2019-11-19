@@ -70,7 +70,7 @@ contexts:
     # Inherited class.
     - match: ""
       push:
-        - include: ~/mql4/type.sublime-syntax
+        - include: ~/mql4/type.yml
 
   body-content:
     - include: comment
@@ -83,10 +83,10 @@ contexts:
         - match: (?=\s*})
           pop: true
         - include: comment
-        - include: ~/mql4/cd-tor.inside.sublime-syntax
-        - include: ~/mql4/statement/hanging.sublime-syntax
-        - include: ~/mql4/function.sublime-syntax
-        - include: ~/mql4/variable-declaration.sublime-syntax
+        - include: ~/mql4/cd-tor.inside.yml
+        - include: ~/mql4/statement/hanging.yml
+        - include: ~/mql4/function.yml
+        - include: ~/mql4/variable-declaration.yml
 
   comment:
-    - include: ~/mql4/comment.no-pop.sublime-syntax
+    - include: ~/mql4/comment.no-pop.yml

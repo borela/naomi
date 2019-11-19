@@ -131,4 +131,4 @@ contexts:
       set: arguments
 
   arguments:
-    - include: ~/php7/function-call/arguments.sublime-syntax
+    - include: ~/php7/function-call/arguments.yml

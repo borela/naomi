@@ -28,7 +28,7 @@ contexts:
       pop: true
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.yml
 
   content:
     - clear_scopes: true
@@ -45,7 +45,7 @@ contexts:
       push: expression
 
   expression:
-    - include: ~/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/expression.yml
 
   meta:
     - meta_scope: meta.embedded-js.jsx.jsx1

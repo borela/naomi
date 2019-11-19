@@ -23,8 +23,8 @@ variables:
 
 contexts:
   main:
-    - include: ~/php7/namespace/path.no-pop.sublime-syntax
-    - include: ~/php7/function/support/magic.sublime-syntax
+    - include: ~/php7/namespace/path.no-pop.yml
+    - include: ~/php7/function/support/magic.yml
     - match: |
         (?xi)\s*
         ((?>\\|\b))

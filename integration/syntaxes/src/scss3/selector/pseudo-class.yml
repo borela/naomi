@@ -100,7 +100,7 @@ contexts:
     - include: trap
 
   arguments:
-    - include: ~/scss3/selector/pseudo-class/arguments.sublime-syntax
+    - include: ~/scss3/selector/pseudo-class/arguments.yml
 
   trap:
-    - include: ~/scss3/selector/trap.sublime-syntax
+    - include: ~/scss3/selector/trap.yml

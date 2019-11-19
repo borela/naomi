@@ -40,13 +40,13 @@ contexts:
       pop: true
 
   constant:
-    - include: ~/php7/constant/normal.sublime-syntax
+    - include: ~/php7/constant/normal.yml
 
   number:
-    - include: ~/php7/literal/number.sublime-syntax
+    - include: ~/php7/literal/number.yml
 
   type:
-    - include: ~/php7/type.sublime-syntax
+    - include: ~/php7/type.yml
 
   function:
     - match: (?xi)\s*({{commonIdentifier}})

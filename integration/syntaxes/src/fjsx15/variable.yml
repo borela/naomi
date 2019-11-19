@@ -141,7 +141,7 @@ contexts:
     - include: simple
 
   arrow-body:
-    - include: ~/fjsx15/arrow-function/body.sublime-syntax
+    - include: ~/fjsx15/arrow-function/body.yml
 
   assignment:
     - match: =
@@ -149,7 +149,7 @@ contexts:
       pop: true
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.yml
 
   function-assigned-to-variable:
     # Normal arrow function assigned to variable.
@@ -193,7 +193,7 @@ contexts:
     - meta_scope: >-
         meta.declaration.function.js.fjsx15
         meta.function.js.fjsx15
-    - include: ~/fjsx15/function.sublime-syntax
+    - include: ~/fjsx15/function.yml
 
   function-identifier:
     - match: (?xi){{commonIdentifier}}
@@ -202,22 +202,22 @@ contexts:
 
   normal-arrow-function:
     - meta_scope: meta.declaration.function.arrow.js.fjsx15
-    - include: ~/fjsx15/async.no-pop.sublime-syntax
-    - include: ~/flow1/generic/arguments.no-pop.sublime-syntax
-    - include: ~/fjsx15/function/parameters.no-pop.sublime-syntax
+    - include: ~/fjsx15/async.no-pop.yml
+    - include: ~/flow1/generic/arguments.no-pop.yml
+    - include: ~/fjsx15/function/parameters.no-pop.yml
     - match: (?==>)
       set: arrow-body
 
   single-parameter-arrow-function:
     - meta_scope: meta.declaration.function.arrow.js.fjsx15
-    - include: ~/fjsx15/async.no-pop.sublime-syntax
-    - include: ~/fjsx15/function/parameter/simple.no-pop.sublime-syntax
+    - include: ~/fjsx15/async.no-pop.yml
+    - include: ~/fjsx15/function/parameter/simple.no-pop.yml
     - match: (?==>)
       set: arrow-body
 
   optional-type:
     - include: comment-no-pop
-    - include: ~/flow1/optional-associated-type.sublime-syntax
+    - include: ~/flow1/optional-associated-type.yml
 
   object:
     - match: |

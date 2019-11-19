@@ -32,7 +32,7 @@ contexts:
       set: declaration
 
   comment:
-    - include: ~/php7/comment.no-pop.sublime-syntax
+    - include: ~/php7/comment.no-pop.yml
 
   declaration:
     - include: comment
@@ -63,7 +63,7 @@ contexts:
   body-content:
     - match: ""
       push:
-        - include: ~/php7/statement-and-expression.sublime-syntax
+        - include: ~/php7/statement-and-expression.yml
         - match: ""
           pop: true
 
@@ -79,7 +79,7 @@ contexts:
 
   extend-target:
     - include: comment
-    - include: ~/php7/type.sublime-syntax
+    - include: ~/php7/type.yml
 
   extend-target-definition:
     - include: comment

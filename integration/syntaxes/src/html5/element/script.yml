@@ -27,7 +27,7 @@ contexts:
       set: [ script, meta, close-open-tag ]
 
   close-open-tag:
-    - include: ~/html5/element/shared.sublime-syntax#close-open-tag
+    - include: ~/html5/element/shared.yml#close-open-tag
 
   closing-tag:
     - match: (</)(script)(>)

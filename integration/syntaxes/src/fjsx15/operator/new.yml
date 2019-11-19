@@ -54,7 +54,7 @@ contexts:
       ]
 
   arguments:
-    - include: ~/fjsx15/function-call.sublime-syntax#arguments
+    - include: ~/fjsx15/function-call.yml#arguments
 
   else-pop:
     - match: (?=\S)
@@ -75,17 +75,17 @@ contexts:
     - include: else-pop
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.sublime-syntax
+    - include: ~/fjsx15/optional-expression.yml
 
   optional-tail:
-    - include: ~/fjsx15/expression.sublime-syntax#optional-tail
+    - include: ~/fjsx15/expression.yml#optional-tail
 
   pop-now:
     - match: ""
       pop: true
 
   type:
-    - include: ~/fjsx15/core.sublime-syntax
+    - include: ~/fjsx15/core.yml
     # Object before target property.
     - match: (?xi)({{commonIdentifier}})\s*(\.)
       captures:
@@ -96,4 +96,4 @@ contexts:
       scope: variable.other.type.js.fjsx15
       pop: true
     # Other expressions.
-    - include: ~/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/expression.yml

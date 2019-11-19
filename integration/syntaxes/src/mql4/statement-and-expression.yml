@@ -80,39 +80,39 @@ contexts:
           pop: true
 
   cast-operator:
-    - include: ~/mql4/cast.sublime-syntax
+    - include: ~/mql4/cast.yml
 
   sequence:
-    - include: ~/mql4/terminator.sublime-syntax
+    - include: ~/mql4/terminator.yml
     # Comments.
-    - include: ~/mql4/comment.sublime-syntax
+    - include: ~/mql4/comment.yml
     # Expression keywords.
-    - include: ~/mql4/sizeof.sublime-syntax
-    - include: ~/mql4/new.sublime-syntax
+    - include: ~/mql4/sizeof.yml
+    - include: ~/mql4/new.yml
     # Simple statements.
-    - include: ~/mql4/goto.sublime-syntax
-    - include: ~/mql4/statement/hanging.sublime-syntax
-    - include: ~/mql4/statement/bodied.sublime-syntax
-    - include: ~/mql4/statement/simple.sublime-syntax
+    - include: ~/mql4/goto.yml
+    - include: ~/mql4/statement/hanging.yml
+    - include: ~/mql4/statement/bodied.yml
+    - include: ~/mql4/statement/simple.yml
     # Complex statements.
-    - include: ~/mql4/preprocessor.sublime-syntax
-    - include: ~/mql4/input.sublime-syntax
-    - include: ~/mql4/cd-tor.outside.sublime-syntax
-    - include: ~/mql4/template.sublime-syntax
-    - include: ~/mql4/class.sublime-syntax
-    - include: ~/mql4/struct.sublime-syntax
-    - include: ~/mql4/typedef.sublime-syntax
-    - include: ~/mql4/enum.sublime-syntax
-    - include: ~/mql4/function.sublime-syntax
+    - include: ~/mql4/preprocessor.yml
+    - include: ~/mql4/input.yml
+    - include: ~/mql4/cd-tor.outside.yml
+    - include: ~/mql4/template.yml
+    - include: ~/mql4/class.yml
+    - include: ~/mql4/struct.yml
+    - include: ~/mql4/typedef.yml
+    - include: ~/mql4/enum.yml
+    - include: ~/mql4/function.yml
     # Expression.
-    - include: ~/mql4/array-access.sublime-syntax
-    - include: ~/mql4/literal.sublime-syntax
-    - include: ~/mql4/function-call.sublime-syntax
-    - include: ~/mql4/operator.sublime-syntax
-    - include: ~/mql4/variable-declaration.sublime-syntax
+    - include: ~/mql4/array-access.yml
+    - include: ~/mql4/literal.yml
+    - include: ~/mql4/function-call.yml
+    - include: ~/mql4/operator.yml
+    - include: ~/mql4/variable-declaration.yml
     # When it comes to constants and variables, there's no way to tell apart
     # without an intellisense, so it’ll treat that anything that looks a
     # uppercase variable as if it was a constant.
-    - include: ~/mql4/constant.sublime-syntax
+    - include: ~/mql4/constant.yml
     # Constant matching failed, so it could be a variable.
-    - include: ~/mql4/variable.sublime-syntax
+    - include: ~/mql4/variable.yml

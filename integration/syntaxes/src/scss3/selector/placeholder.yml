@@ -32,4 +32,4 @@ contexts:
       set: trap
 
   trap:
-    - include: ~/scss3/selector/trap.sublime-syntax
+    - include: ~/scss3/selector/trap.yml

@@ -45,24 +45,24 @@ contexts:
       ]
 
   close-open-tag:
-    - include: ~/jsx1/shared.sublime-syntax#close-open-tag
+    - include: ~/jsx1/shared.yml#close-open-tag
 
   meta:
     - meta_scope: meta.tag.other.html.jsx.jsx1
     - include: pop-now
 
   namespaced-closing-tag:
-    - include: ~/jsx1/shared.sublime-syntax#namespaced-closing-tag
+    - include: ~/jsx1/shared.yml#namespaced-closing-tag
 
   pop-now:
     - match: ""
       pop: true
 
   self-closing-tag:
-    - include: ~/jsx1/shared.sublime-syntax#self-closing-tag
+    - include: ~/jsx1/shared.yml#self-closing-tag
 
   simple-closing-tag:
-    - include: ~/jsx1/shared.sublime-syntax#simple-closing-tag
+    - include: ~/jsx1/shared.yml#simple-closing-tag
 
   with-js-fence:
     - match: |

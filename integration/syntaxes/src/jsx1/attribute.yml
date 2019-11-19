@@ -23,13 +23,13 @@ variables:
 
 contexts:
   main:
-    - include: ~/flow1/prolog.sublime-syntax
-    - include: ~/fjsx15/comment/eslint.sublime-syntax
-    - include: ~/fjsx15/comment/docblock.sublime-syntax
-    - include: ~/fjsx15/comment/block.sublime-syntax
-    - include: ~/fjsx15/comment/line.sublime-syntax
+    - include: ~/flow1/prolog.yml
+    - include: ~/fjsx15/comment/eslint.yml
+    - include: ~/fjsx15/comment/docblock.yml
+    - include: ~/fjsx15/comment/block.yml
+    - include: ~/fjsx15/comment/line.yml
     # Embedded JS.
-    - include: ~/jsx1/embedded-js.sublime-syntax
+    - include: ~/jsx1/embedded-js.yml
     - include: dangerous
     - include: key
     - include: ref
@@ -107,9 +107,9 @@ contexts:
       pop: true
 
   value:
-    - include: ~/jsx1/component.sublime-syntax
-    - include: ~/jsx1/element.sublime-syntax
-    - include: ~/jsx1/fragment.sublime-syntax
-    - include: ~/jsx1/literal/string/double-quoted.sublime-syntax
-    - include: ~/jsx1/literal/string/single-quoted.sublime-syntax
+    - include: ~/jsx1/component.yml
+    - include: ~/jsx1/element.yml
+    - include: ~/jsx1/fragment.yml
+    - include: ~/jsx1/literal/string/double-quoted.yml
+    - include: ~/jsx1/literal/string/single-quoted.yml
     - include: else-pop

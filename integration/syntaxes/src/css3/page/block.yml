@@ -23,7 +23,7 @@ contexts:
       set: delimiter
 
   comment-no-pop:
-    - include: ~/css3/comment.no-pop.sublime-syntax
+    - include: ~/css3/comment.no-pop.yml
 
   delimiter:
     - meta_scope: >-
@@ -40,6 +40,6 @@ contexts:
     # Actual rules.
     - match: ""
       push:
-        - include: ~/css3/ruleset/block-content.sublime-syntax
+        - include: ~/css3/ruleset/block-content.yml
         - match: ""
           pop: true

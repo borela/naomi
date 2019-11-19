@@ -33,7 +33,7 @@ contexts:
       set: optional-tail
 
   optional-tail:
-    - include: ~/fjsx15/expression.sublime-syntax#optional-tail
+    - include: ~/fjsx15/expression.yml#optional-tail
 
   type:
-    - include: ~/fjsx15/operator/new.sublime-syntax#type
+    - include: ~/fjsx15/operator/new.yml#type

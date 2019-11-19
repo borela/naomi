@@ -21,10 +21,10 @@ contexts:
     - match: "!important\\b"
       scope: keyword.other.important.css.css3
       pop: true
-    - include: ~/css3/literal/color.sublime-syntax
-    - include: ~/css3/literal/ratio.sublime-syntax
-    - include: ~/css3/literal/number.sublime-syntax
-    - include: ~/css3/literal/string/double-quoted.sublime-syntax
-    - include: ~/css3/literal/string/single-quoted.sublime-syntax
-    - include: ~/css3/function-call.sublime-syntax
-    - include: ~/css3/constant.sublime-syntax
+    - include: ~/css3/literal/color.yml
+    - include: ~/css3/literal/ratio.yml
+    - include: ~/css3/literal/number.yml
+    - include: ~/css3/literal/string/double-quoted.yml
+    - include: ~/css3/literal/string/single-quoted.yml
+    - include: ~/css3/function-call.yml
+    - include: ~/css3/constant.yml

@@ -235,7 +235,7 @@ contexts:
     # - include: variable
 
   arrow-function:
-    - include: ~/fjsx15/arrow-function.sublime-syntax
+    - include: ~/fjsx15/arrow-function.yml
 
   associated-value:
     - match: ":"
@@ -243,7 +243,7 @@ contexts:
       set: optional-expression
 
   constant:
-    - include: ~/fjsx15/variable.sublime-syntax
+    - include: ~/fjsx15/variable.yml
 
   computed-property-end:
     - match: \]
@@ -251,10 +251,10 @@ contexts:
       pop: true
 
   function-declaration:
-    - include: ~/fjsx15/function.sublime-syntax#declaration
+    - include: ~/fjsx15/function.yml#declaration
 
   function-keyword:
-    - include: ~/fjsx15/function.sublime-syntax#keyword
+    - include: ~/fjsx15/function.yml#keyword
 
   meta-computed-key:
     - meta_scope: meta.object-literal.key.computed.js.fjsx15
@@ -279,19 +279,19 @@ contexts:
       pop: true
 
   number:
-    - include: ~/fjsx15/literal/number.sublime-syntax
+    - include: ~/fjsx15/literal/number.yml
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.sublime-syntax
+    - include: ~/fjsx15/optional-expression.yml
 
   pop-now:
     - match: ""
       pop: true
 
   string:
-    - include: ~/fjsx15/literal/string/double-quoted.sublime-syntax
-    - include: ~/fjsx15/literal/string/single-quoted.sublime-syntax
-    - include: ~/fjsx15/literal/string/template.sublime-syntax
+    - include: ~/fjsx15/literal/string/double-quoted.yml
+    - include: ~/fjsx15/literal/string/single-quoted.yml
+    - include: ~/fjsx15/literal/string/template.yml
 
   variable:
-    - include: ~/fjsx15/variable.sublime-syntax
+    - include: ~/fjsx15/variable.yml

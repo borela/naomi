@@ -23,15 +23,15 @@ variables:
 
 contexts:
   main:
-    - include: ~/flow1/declare.sublime-syntax
-    - include: ~/flow1/interface.sublime-syntax
-    - include: ~/flow1/type-aliasing.sublime-syntax
-    - include: ~/fjsx15/decorator.sublime-syntax
-    - include: ~/fjsx15/import.sublime-syntax
-    - include: ~/fjsx15/export.sublime-syntax
-    - include: ~/fjsx15/class.sublime-syntax
-    - include: ~/fjsx15/function.sublime-syntax
-    - include: ~/fjsx15/variable-declaration.sublime-syntax
+    - include: ~/flow1/declare.yml
+    - include: ~/flow1/interface.yml
+    - include: ~/flow1/type-aliasing.yml
+    - include: ~/fjsx15/decorator.yml
+    - include: ~/fjsx15/import.yml
+    - include: ~/fjsx15/export.yml
+    - include: ~/fjsx15/class.yml
+    - include: ~/fjsx15/function.yml
+    - include: ~/fjsx15/variable-declaration.yml
     - include: block
     - include: break-continue
     - include: debugger
@@ -80,7 +80,7 @@ contexts:
       pop: true
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.yml
 
   debugger:
     - match: debugger\b
@@ -113,7 +113,7 @@ contexts:
       pop: true
 
   expression:
-    - include: ~/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/expression.yml
 
   for:
     - match: for\b
@@ -200,7 +200,7 @@ contexts:
       ]
 
   optional-await:
-    - include: ~/fjsx15/operator/await.sublime-syntax#just-pop
+    - include: ~/fjsx15/operator/await.yml#just-pop
     - include: else-pop
 
   optional-else-if:
@@ -208,10 +208,10 @@ contexts:
     - include: optional-statement-or-expression
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.sublime-syntax
+    - include: ~/fjsx15/optional-expression.yml
 
   optional-statement-or-expression:
-    - include: ~/fjsx15/optional-statement-or-expression.sublime-syntax
+    - include: ~/fjsx15/optional-statement-or-expression.yml
 
   optional-while:
     - include: comment-no-pop
@@ -229,9 +229,9 @@ contexts:
       set: asi-checked-optional-expression
 
   statement-or-expression:
-    - include: ~/fjsx15/comment.sublime-syntax
-    - include: ~/fjsx15/statement.sublime-syntax
-    - include: ~/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/comment.yml
+    - include: ~/fjsx15/statement.yml
+    - include: ~/fjsx15/expression.yml
     - include: else-pop
 
   statement-or-expression-header:

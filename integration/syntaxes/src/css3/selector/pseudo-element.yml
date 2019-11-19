@@ -58,4 +58,4 @@ contexts:
       pop: true
 
   selector-expression-as-arguments:
-    - include: ~/css3/selector-expression-as-arguments.sublime-syntax
+    - include: ~/css3/selector-expression-as-arguments.yml

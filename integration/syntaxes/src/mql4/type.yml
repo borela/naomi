@@ -18,7 +18,7 @@ scope: ...
 
 contexts:
   main:
-    - include: ~/mql4/type/support/core.sublime-syntax
-    - include: ~/mql4/type/support/enums.sublime-syntax
-    - include: ~/mql4/type/support/structures.sublime-syntax
-    - include: ~/mql4/type/normal.sublime-syntax
+    - include: ~/mql4/type/support/core.yml
+    - include: ~/mql4/type/support/enums.yml
+    - include: ~/mql4/type/support/structures.yml
+    - include: ~/mql4/type/normal.yml

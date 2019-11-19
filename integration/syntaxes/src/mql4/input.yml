@@ -24,4 +24,4 @@ contexts:
       set: input
 
   input:
-    - include: ~/mql4/unguarded-variable-declaration.sublime-syntax
+    - include: ~/mql4/unguarded-variable-declaration.yml

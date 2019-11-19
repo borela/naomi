@@ -19,7 +19,7 @@ scope: ...
 contexts:
   main:
     - include: expression-escape
-    - include: ~/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/expression.yml
 
   expression-escape:
     - match: (?=[,;:)\]}])

@@ -49,4 +49,4 @@ contexts:
       set: arguments
 
   arguments:
-    - include: ~/mql4/function-call/arguments.sublime-syntax
+    - include: ~/mql4/function-call/arguments.yml

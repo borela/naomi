@@ -34,5 +34,5 @@ contexts:
       set: modifiers
 
   modifiers:
-    - include: ~/mql4/type/modifiers.sublime-syntax
+    - include: ~/mql4/type/modifiers.yml
 

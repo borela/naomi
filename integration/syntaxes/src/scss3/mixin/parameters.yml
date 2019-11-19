@@ -46,7 +46,7 @@ contexts:
           scope: keyword.other.association.scss.scss3
           set: value
         # Parameter.
-        - include: ~/scss3/function/parameter.sublime-syntax
+        - include: ~/scss3/function/parameter.yml
 
   value:
-    - include: ~/scss3/statement-and-expression.sublime-syntax
+    - include: ~/scss3/statement-and-expression.yml

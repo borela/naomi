@@ -21,5 +21,5 @@ file_extensions:
 
 contexts:
   main:
-    - include: ~/scss3/selector.sublime-syntax
-    - include: ~/scss3/statement-and-expression.sublime-syntax
+    - include: ~/scss3/selector.yml
+    - include: ~/scss3/statement-and-expression.yml

@@ -73,39 +73,39 @@ contexts:
           pop: true
 
   sequence:
-    - include: ~/php7/terminator.sublime-syntax
-    - include: ~/php7/comment.sublime-syntax
+    - include: ~/php7/terminator.yml
+    - include: ~/php7/comment.yml
     # Complex statements.
-    - include: ~/php7/class.sublime-syntax
-    - include: ~/php7/interface.sublime-syntax
-    - include: ~/php7/trait.sublime-syntax
-    - include: ~/php7/declare.sublime-syntax
-    - include: ~/php7/namespace.sublime-syntax
-    - include: ~/php7/function.sublime-syntax
-    - include: ~/php7/closure.sublime-syntax
-    - include: ~/php7/use.sublime-syntax
+    - include: ~/php7/class.yml
+    - include: ~/php7/interface.yml
+    - include: ~/php7/trait.yml
+    - include: ~/php7/declare.yml
+    - include: ~/php7/namespace.yml
+    - include: ~/php7/function.yml
+    - include: ~/php7/closure.yml
+    - include: ~/php7/use.yml
     # Simple statements.
-    - include: ~/php7/goto.sublime-syntax
-    - include: ~/php7/statement/label.sublime-syntax
-    - include: ~/php7/statement/hanging.sublime-syntax
-    - include: ~/php7/statement/bodied.sublime-syntax
-    - include: ~/php7/statement/simple.sublime-syntax
-    - include: ~/php7/statement/other.sublime-syntax
+    - include: ~/php7/goto.yml
+    - include: ~/php7/statement/label.yml
+    - include: ~/php7/statement/hanging.yml
+    - include: ~/php7/statement/bodied.yml
+    - include: ~/php7/statement/simple.yml
+    - include: ~/php7/statement/other.yml
     # Other keywords.
-    - include: ~/php7/modifier.sublime-syntax
-    - include: ~/php7/new.sublime-syntax
+    - include: ~/php7/modifier.yml
+    - include: ~/php7/new.yml
     # Expression.
-    - include: ~/php7/array-access.sublime-syntax
-    - include: ~/php7/literal.sublime-syntax
-    - include: ~/php7/function-call.sublime-syntax
-    - include: ~/php7/operator.sublime-syntax
+    - include: ~/php7/array-access.yml
+    - include: ~/php7/literal.yml
+    - include: ~/php7/function-call.yml
+    - include: ~/php7/operator.yml
     # When it comes to constants and variables, there's no way to tell apart
     # without an intellisense, so it’ll treat that anything that looks a
     # uppercase variable as if it was a constant.
-    - include: ~/php7/constant.sublime-syntax
+    - include: ~/php7/constant.yml
     # Some types can look like constants but we will give the power to the user
     # to override types and in turn we get some predefined constants highlighted
     # correctly..
-    - include: ~/php7/type.sublime-syntax
+    - include: ~/php7/type.yml
     # Constant matching failed, so it could be a variable.
-    - include: ~/php7/variable.sublime-syntax
+    - include: ~/php7/variable.yml

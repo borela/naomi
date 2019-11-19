@@ -45,11 +45,11 @@ contexts:
         1: >-
           storage.modifier.mql.mql4
           keyword.other.access.mql.mql4
-    - include: ~/mql4/type.sublime-syntax
+    - include: ~/mql4/type.yml
 
   variable:
-    - include: ~/mql4/constant.sublime-syntax
-    - include: ~/mql4/variable.sublime-syntax
+    - include: ~/mql4/constant.yml
+    - include: ~/mql4/variable.yml
 
   punctuation:
     - include: terminator
@@ -97,7 +97,7 @@ contexts:
         - include: statement-and-expression
 
   statement-and-expression:
-    - include: ~/mql4/statement-and-expression.sublime-syntax
+    - include: ~/mql4/statement-and-expression.yml
 
   terminator:
-    - include: ~/mql4/terminator.sublime-syntax
+    - include: ~/mql4/terminator.yml

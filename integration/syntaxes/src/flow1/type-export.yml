@@ -48,7 +48,7 @@ contexts:
       pop: true
 
   close-block:
-    - include: ~/fjsx15/import.sublime-syntax#close-block
+    - include: ~/fjsx15/import.yml#close-block
 
   delimiter:
     - match: \,
@@ -83,7 +83,7 @@ contexts:
       pop: true
 
   origin:
-    - include: ~/fjsx15/import.sublime-syntax#origin
+    - include: ~/fjsx15/import.yml#origin
 
   type-aliasing:
-    - include: ~/flow1/type-aliasing.sublime-syntax
+    - include: ~/flow1/type-aliasing.yml

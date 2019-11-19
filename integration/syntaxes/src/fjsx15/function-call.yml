@@ -74,15 +74,15 @@ contexts:
       ]
 
   arguments:
-    - include: ~/fjsx15/comment.no-pop.sublime-syntax
-    - include: ~/fjsx15/function-call/arguments.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/fjsx15/function-call/arguments.yml
 
   else-pop:
     - match: (?=\S)
       pop: true
 
   expression:
-    - include: ~/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/expression.yml
 
   identifier:
     - match: (?xi){{commonIdentifier}}
@@ -90,7 +90,7 @@ contexts:
       pop: true
 
   generic-arguments:
-    - include: ~/flow1/generic/arguments.sublime-syntax
+    - include: ~/flow1/generic/arguments.yml
 
   meta:
     - meta_scope: meta.function-call.js.fjsx15

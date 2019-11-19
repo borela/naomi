@@ -18,8 +18,8 @@ scope: ...
 
 contexts:
   main:
-    - include: ~/mql4/literal/string.sublime-syntax
-    - include: ~/mql4/literal/number.sublime-syntax
-    - include: ~/mql4/literal/color.sublime-syntax
-    - include: ~/mql4/literal/datetime.sublime-syntax
-    - include: ~/mql4/literal/character.sublime-syntax
+    - include: ~/mql4/literal/string.yml
+    - include: ~/mql4/literal/number.yml
+    - include: ~/mql4/literal/color.yml
+    - include: ~/mql4/literal/datetime.yml
+    - include: ~/mql4/literal/character.yml

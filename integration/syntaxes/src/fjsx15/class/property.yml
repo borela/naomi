@@ -23,7 +23,7 @@ variables:
 
 contexts:
   main:
-    - include: ~/fjsx15/variable.sublime-syntax#function-assigned-to-variable
+    - include: ~/fjsx15/variable.yml#function-assigned-to-variable
     - match: (?xi)(?={{commonIdentifier}})
       set: [
         optional-type-and-value,
@@ -31,14 +31,14 @@ contexts:
       ]
 
   associated-type:
-    - include: ~/flow1/associated-type.sublime-syntax
+    - include: ~/flow1/associated-type.yml
 
   identifier:
-    - include: ~/fjsx15/constant.sublime-syntax
-    - include: ~/fjsx15/variable.sublime-syntax
+    - include: ~/fjsx15/constant.yml
+    - include: ~/fjsx15/variable.yml
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.sublime-syntax
+    - include: ~/fjsx15/optional-expression.yml
 
   optional-type-and-value:
     - match: \?

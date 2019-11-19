@@ -20,23 +20,23 @@ contexts:
   main:
     # It is impossible to detect multiline arrow functions, but we can still
     # detect its body as if it were an operator.
-    - include: ~/fjsx15/arrow-function/body.sublime-syntax
+    - include: ~/fjsx15/arrow-function/body.yml
     # Position dependent operators.
-    - include: ~/fjsx15/operator/pipe.sublime-syntax
-    - include: ~/fjsx15/operator/comparison.sublime-syntax
-    - include: ~/fjsx15/operator/assignment.sublime-syntax
+    - include: ~/fjsx15/operator/pipe.yml
+    - include: ~/fjsx15/operator/comparison.yml
+    - include: ~/fjsx15/operator/assignment.yml
     # Position independent operators.
-    - include: ~/fjsx15/operator/arithmetic.sublime-syntax
-    - include: ~/fjsx15/operator/await.sublime-syntax
-    - include: ~/fjsx15/operator/bitwise.sublime-syntax
-    - include: ~/fjsx15/operator/delete.sublime-syntax
-    - include: ~/fjsx15/operator/in.sublime-syntax
-    - include: ~/fjsx15/operator/logical.sublime-syntax
-    - include: ~/fjsx15/operator/new.sublime-syntax
-    - include: ~/fjsx15/operator/of.sublime-syntax
-    - include: ~/fjsx15/operator/other.sublime-syntax
-    - include: ~/fjsx15/operator/relational.sublime-syntax
-    - include: ~/fjsx15/operator/shebang.sublime-syntax
-    - include: ~/fjsx15/operator/spread.sublime-syntax
-    - include: ~/fjsx15/operator/typeof.sublime-syntax
-    - include: ~/fjsx15/operator/void.sublime-syntax
+    - include: ~/fjsx15/operator/arithmetic.yml
+    - include: ~/fjsx15/operator/await.yml
+    - include: ~/fjsx15/operator/bitwise.yml
+    - include: ~/fjsx15/operator/delete.yml
+    - include: ~/fjsx15/operator/in.yml
+    - include: ~/fjsx15/operator/logical.yml
+    - include: ~/fjsx15/operator/new.yml
+    - include: ~/fjsx15/operator/of.yml
+    - include: ~/fjsx15/operator/other.yml
+    - include: ~/fjsx15/operator/relational.yml
+    - include: ~/fjsx15/operator/shebang.yml
+    - include: ~/fjsx15/operator/spread.yml
+    - include: ~/fjsx15/operator/typeof.yml
+    - include: ~/fjsx15/operator/void.yml

@@ -34,7 +34,7 @@ contexts:
       set: [ meta, close-open-tag ]
 
   close-open-tag:
-    - include: ~/html5/element/shared.sublime-syntax#close-open-tag
+    - include: ~/html5/element/shared.yml#close-open-tag
 
   meta:
     - meta_scope: meta.tag.html.html5

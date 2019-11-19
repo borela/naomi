@@ -18,21 +18,21 @@ scope: ...
 
 contexts:
   main:
-    - include: ~/mql4/function-call/support/account.sublime-syntax
-    - include: ~/mql4/function-call/support/array.sublime-syntax
-    - include: ~/mql4/function-call/support/chart.sublime-syntax
-    - include: ~/mql4/function-call/support/checkup.sublime-syntax
-    - include: ~/mql4/function-call/support/common.sublime-syntax
-    - include: ~/mql4/function-call/support/conversion.sublime-syntax
-    - include: ~/mql4/function-call/support/custom-indicator.sublime-syntax
-    - include: ~/mql4/function-call/support/datetime.sublime-syntax
-    - include: ~/mql4/function-call/support/file.sublime-syntax
-    - include: ~/mql4/function-call/support/indicators.sublime-syntax
-    - include: ~/mql4/function-call/support/market.sublime-syntax
-    - include: ~/mql4/function-call/support/math.sublime-syntax
-    - include: ~/mql4/function-call/support/object.sublime-syntax
-    - include: ~/mql4/function-call/support/string.sublime-syntax
-    - include: ~/mql4/function-call/support/timeseries.sublime-syntax
-    - include: ~/mql4/function-call/support/trade-signals.sublime-syntax
-    - include: ~/mql4/function-call/support/trade.sublime-syntax
-    - include: ~/mql4/function-call/normal.sublime-syntax
+    - include: ~/mql4/function-call/support/account.yml
+    - include: ~/mql4/function-call/support/array.yml
+    - include: ~/mql4/function-call/support/chart.yml
+    - include: ~/mql4/function-call/support/checkup.yml
+    - include: ~/mql4/function-call/support/common.yml
+    - include: ~/mql4/function-call/support/conversion.yml
+    - include: ~/mql4/function-call/support/custom-indicator.yml
+    - include: ~/mql4/function-call/support/datetime.yml
+    - include: ~/mql4/function-call/support/file.yml
+    - include: ~/mql4/function-call/support/indicators.yml
+    - include: ~/mql4/function-call/support/market.yml
+    - include: ~/mql4/function-call/support/math.yml
+    - include: ~/mql4/function-call/support/object.yml
+    - include: ~/mql4/function-call/support/string.yml
+    - include: ~/mql4/function-call/support/timeseries.yml
+    - include: ~/mql4/function-call/support/trade-signals.yml
+    - include: ~/mql4/function-call/support/trade.yml
+    - include: ~/mql4/function-call/normal.yml

@@ -18,18 +18,18 @@ scope: ...
 
 contexts:
   main:
-    - include: ~/php7/function-call/support/array.sublime-syntax
-    - include: ~/php7/function-call/support/class-object.sublime-syntax
-    - include: ~/php7/function-call/support/core.sublime-syntax
-    - include: ~/php7/function-call/support/directories.sublime-syntax
-    - include: ~/php7/function-call/support/error.sublime-syntax
-    - include: ~/php7/function-call/support/filesystem.sublime-syntax
-    - include: ~/php7/function-call/support/math.sublime-syntax
-    - include: ~/php7/function-call/support/math-gmp.sublime-syntax
-    - include: ~/php7/function-call/support/magic.sublime-syntax
-    - include: ~/php7/function-call/support/mb_string.sublime-syntax
-    - include: ~/php7/function-call/support/output.sublime-syntax
-    - include: ~/php7/function-call/support/spl.sublime-syntax
-    - include: ~/php7/function-call/support/string.sublime-syntax
-    - include: ~/php7/function-call/support/variable.sublime-syntax
-    - include: ~/php7/function-call/normal.sublime-syntax
+    - include: ~/php7/function-call/support/array.yml
+    - include: ~/php7/function-call/support/class-object.yml
+    - include: ~/php7/function-call/support/core.yml
+    - include: ~/php7/function-call/support/directories.yml
+    - include: ~/php7/function-call/support/error.yml
+    - include: ~/php7/function-call/support/filesystem.yml
+    - include: ~/php7/function-call/support/math.yml
+    - include: ~/php7/function-call/support/math-gmp.yml
+    - include: ~/php7/function-call/support/magic.yml
+    - include: ~/php7/function-call/support/mb_string.yml
+    - include: ~/php7/function-call/support/output.yml
+    - include: ~/php7/function-call/support/spl.yml
+    - include: ~/php7/function-call/support/string.yml
+    - include: ~/php7/function-call/support/variable.yml
+    - include: ~/php7/function-call/normal.yml

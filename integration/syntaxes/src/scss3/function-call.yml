@@ -57,4 +57,4 @@ contexts:
       pop: true
 
   arguments:
-    - include: ~/scss3/function-call/arguments.sublime-syntax
+    - include: ~/scss3/function-call/arguments.yml

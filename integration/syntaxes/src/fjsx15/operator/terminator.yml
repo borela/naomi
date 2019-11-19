@@ -23,12 +23,12 @@ contexts:
       set: statement-or-expression
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.yml
 
   statement-or-expression:
     - include: main
     - match: (?=[,:)\]}])
       pop: true
     - include: comment-no-pop
-    - include: ~/fjsx15/statement.sublime-syntax
-    - include: ~/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/statement.yml
+    - include: ~/fjsx15/expression.yml

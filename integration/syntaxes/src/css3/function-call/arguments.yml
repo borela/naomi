@@ -33,4 +33,4 @@ contexts:
       push: value
 
   value:
-    - include: ~/css3/value.sublime-syntax
+    - include: ~/css3/value.yml

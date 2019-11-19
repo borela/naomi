@@ -32,9 +32,9 @@ contexts:
       ]
 
   optional-arguments:
-    - include: ~/php7/function-call/arguments.sublime-syntax
+    - include: ~/php7/function-call/arguments.yml
     - match: (?=\s*\S)
       pop: true
 
   type:
-    - include: ~/php7/type.sublime-syntax
+    - include: ~/php7/type.yml

@@ -67,7 +67,7 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: ~/scss3/statement-and-expression.sublime-syntax
+        - include: ~/scss3/statement-and-expression.yml
         - match: ""
           pop: true
 
@@ -79,14 +79,14 @@ contexts:
       push:
         - match: (?=\))
           pop: true
-        - include: ~/scss3/statement-and-expression.sublime-syntax
+        - include: ~/scss3/statement-and-expression.yml
 
   body:
     - match: \s*({)
       captures:
         1: punctuation.definition.control.body.begin.scss.scss3
       set: body-content
-    - include: ~/scss3/statement-and-expression.sublime-syntax
+    - include: ~/scss3/statement-and-expression.yml
 
   body-content:
     - match: \s*(})
@@ -97,6 +97,6 @@ contexts:
       push:
         - match: (?=\s*})
           pop: true
-        - include: ~/scss3/attribute.sublime-syntax
-        - include: ~/scss3/selector.sublime-syntax
-        - include: ~/scss3/statement-and-expression.sublime-syntax
+        - include: ~/scss3/attribute.yml
+        - include: ~/scss3/selector.yml
+        - include: ~/scss3/statement-and-expression.yml

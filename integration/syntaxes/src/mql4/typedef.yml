@@ -48,10 +48,10 @@ contexts:
       ]
 
   comment:
-    - include: ~/mql4/comment.no-pop.sublime-syntax
+    - include: ~/mql4/comment.no-pop.yml
 
   type:
-    - include: ~/mql4/type.sublime-syntax
+    - include: ~/mql4/type.yml
 
   identifier:
     - match: |
@@ -98,7 +98,7 @@ contexts:
         2: >-
           storage.modifier.mql.mql4
           keyword.other.access.mql.mql4
-    - include: ~/mql4/type.sublime-syntax
+    - include: ~/mql4/type.yml
 
   body:
     - include: comment
@@ -118,7 +118,7 @@ contexts:
         - match: (?=\s*})
           pop: true
         - include: comment
-        - include: ~/mql4/cd-tor.inside.sublime-syntax
-        - include: ~/mql4/statement/hanging.sublime-syntax
-        - include: ~/mql4/function.sublime-syntax
-        - include: ~/mql4/variable-declaration.sublime-syntax
+        - include: ~/mql4/cd-tor.inside.yml
+        - include: ~/mql4/statement/hanging.yml
+        - include: ~/mql4/function.yml
+        - include: ~/mql4/variable-declaration.yml

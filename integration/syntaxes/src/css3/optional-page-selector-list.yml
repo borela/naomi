@@ -21,7 +21,7 @@ contexts:
     - include: expression-escape
     - match: (?=\S)
       set:
-        - include: ~/css3/page-selector-list.sublime-syntax
+        - include: ~/css3/page-selector-list.yml
 
   expression-escape:
     - match: (?=[,;)\[\]{}])

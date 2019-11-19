@@ -43,7 +43,7 @@ contexts:
         - include: expression
 
   terminator:
-    - include: ~/scss3/terminator.sublime-syntax
+    - include: ~/scss3/terminator.yml
 
   expression:
-    - include: ~/scss3/expression.sublime-syntax
+    - include: ~/scss3/expression.yml

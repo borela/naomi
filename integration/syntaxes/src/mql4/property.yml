@@ -18,4 +18,4 @@ scope: ...
 
 contexts:
   main:
-    - include: ~/mql4/variable-declaration.sublime-syntax
+    - include: ~/mql4/variable-declaration.yml

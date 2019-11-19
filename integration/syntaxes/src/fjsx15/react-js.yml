@@ -63,7 +63,7 @@ contexts:
     - include: react-dom-functions
 
   arguments:
-    - include: ~/fjsx15/expression.sublime-syntax
+    - include: ~/fjsx15/expression.yml
 
   component-functions:
     # Function call.
@@ -89,7 +89,7 @@ contexts:
     - include: pop-now
 
   optional-property-type-and-value:
-    - include: ~/fjsx15/class/property.sublime-syntax#optional-type-and-value
+    - include: ~/fjsx15/class/property.yml#optional-type-and-value
 
   pop-now:
     - match: ""

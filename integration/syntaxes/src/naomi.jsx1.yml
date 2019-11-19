@@ -19,6 +19,6 @@ scope: source.jsx
 
 contexts:
   main:
-    - include: ~/jsx1/fragment.sublime-syntax
-    - include: ~/jsx1/component.sublime-syntax
-    - include: ~/jsx1/element.sublime-syntax
+    - include: ~/jsx1/fragment.yml
+    - include: ~/jsx1/component.yml
+    - include: ~/jsx1/element.yml

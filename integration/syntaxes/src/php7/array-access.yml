@@ -36,6 +36,6 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: ~/php7/statement-and-expression.sublime-syntax
+        - include: ~/php7/statement-and-expression.yml
         - match: ""
           pop: true

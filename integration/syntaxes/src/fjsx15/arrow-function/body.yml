@@ -33,16 +33,16 @@ contexts:
       push: optional-statement-or-expression
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.yml
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.sublime-syntax
+    - include: ~/fjsx15/optional-expression.yml
 
   optional-expression-tail:
-    - include: ~/fjsx15/expression.sublime-syntax#optional-tail
+    - include: ~/fjsx15/expression.yml#optional-tail
 
   optional-statement-or-expression:
-    - include: ~/fjsx15/optional-statement-or-expression.sublime-syntax
+    - include: ~/fjsx15/optional-statement-or-expression.yml
 
   possible-multi-statement-body:
     - include: comment-no-pop

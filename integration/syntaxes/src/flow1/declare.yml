@@ -23,6 +23,6 @@ contexts:
       set: possible-module
 
   possible-module:
-    - include: ~/flow1/module.sublime-syntax
+    - include: ~/flow1/module.yml
     - match: (?=\S)
       pop: true

@@ -54,7 +54,7 @@ contexts:
       scope: punctuation.accessor.js.fjsx15
 
   arguments:
-    - include: ~/fjsx15/function-call/arguments.sublime-syntax
+    - include: ~/fjsx15/function-call/arguments.yml
 
   else-pop:
     - match: (?=\S)

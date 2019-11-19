@@ -22,7 +22,7 @@ contexts:
         (?x)
         (?=\s*(?>\*|<))
       push:
-        - include: ~/mql4/operator/pointer.sublime-syntax
-        - include: ~/mql4/type/template-arguments.sublime-syntax
+        - include: ~/mql4/operator/pointer.yml
+        - include: ~/mql4/type/template-arguments.yml
     - match: (?=\s*\S)
       pop: true

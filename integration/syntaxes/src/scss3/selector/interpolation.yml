@@ -30,9 +30,9 @@ contexts:
       set: trap
     - match: ""
       push:
-        - include: ~/scss3/statement-and-expression.sublime-syntax
+        - include: ~/scss3/statement-and-expression.yml
         - match: ""
           pop: true
 
   trap:
-    - include: ~/scss3/selector/trap.sublime-syntax
+    - include: ~/scss3/selector/trap.yml

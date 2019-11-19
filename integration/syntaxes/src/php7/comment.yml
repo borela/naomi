@@ -18,5 +18,5 @@ scope: ...
 
 contexts:
   main:
-    - include: ~/php7/comment/documentation.sublime-syntax
-    - include: ~/php7/comment/normal.sublime-syntax
+    - include: ~/php7/comment/documentation.yml
+    - include: ~/php7/comment/normal.yml

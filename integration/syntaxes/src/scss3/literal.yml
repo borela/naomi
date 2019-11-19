@@ -18,8 +18,8 @@ scope: ...
 
 contexts:
   main:
-    - include: ~/scss3/literal/string/double-quoted.sublime-syntax
-    - include: ~/scss3/literal/string/single-quoted.sublime-syntax
-    - include: ~/scss3/literal/color.sublime-syntax
-    - include: ~/scss3/literal/number.sublime-syntax
-    - include: ~/scss3/literal/string/unquoted.sublime-syntax
+    - include: ~/scss3/literal/string/double-quoted.yml
+    - include: ~/scss3/literal/string/single-quoted.yml
+    - include: ~/scss3/literal/color.yml
+    - include: ~/scss3/literal/number.yml
+    - include: ~/scss3/literal/string/unquoted.yml

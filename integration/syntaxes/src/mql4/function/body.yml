@@ -120,7 +120,7 @@ contexts:
           pop: true
 
   comment-no-pop:
-    - include: ~/mql4/comment.no-pop.sublime-syntax
+    - include: ~/mql4/comment.no-pop.yml
 
   statement-and-expression:
-    - include: ~/mql4/statement-and-expression.sublime-syntax
+    - include: ~/mql4/statement-and-expression.yml

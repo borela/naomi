@@ -18,12 +18,12 @@ scope: ...
 
 contexts:
   main:
-    - include: ~/mql4/operator/other.sublime-syntax
-    - include: ~/mql4/operator/comparison.sublime-syntax
-    - include: ~/mql4/operator/logical.sublime-syntax
-    - include: ~/mql4/operator/bitwise.sublime-syntax
-    - include: ~/mql4/operator/arithmetic.sublime-syntax
-    - include: ~/mql4/operator/pointer.sublime-syntax
+    - include: ~/mql4/operator/other.yml
+    - include: ~/mql4/operator/comparison.yml
+    - include: ~/mql4/operator/logical.yml
+    - include: ~/mql4/operator/bitwise.yml
+    - include: ~/mql4/operator/arithmetic.yml
+    - include: ~/mql4/operator/pointer.yml
     # Assignment.
     - match: \s*(=)
       captures:

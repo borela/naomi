@@ -67,7 +67,7 @@ contexts:
       pop: true
 
   embedded-content:
-    - include: ~/fjsx15/optional-expression.sublime-syntax
+    - include: ~/fjsx15/optional-expression.yml
 
   embedded-expression-no-pop:
     - match: \$\{

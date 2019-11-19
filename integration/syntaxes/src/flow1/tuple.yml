@@ -32,4 +32,4 @@ contexts:
       pop: true
 
   optional-type-expression:
-    - include: ~/flow1/optional-type-expression.sublime-syntax
+    - include: ~/flow1/optional-type-expression.yml

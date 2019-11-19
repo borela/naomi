@@ -69,8 +69,8 @@ contexts:
       pop: true
 
   value:
-    - include: ~/php7/literal.sublime-syntax
-    - include: ~/php7/constant.sublime-syntax
+    - include: ~/php7/literal.yml
+    - include: ~/php7/constant.yml
 
   body:
     - match: \s*(;)
@@ -89,7 +89,7 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: ~/php7/statement-and-expression.sublime-syntax
+        - include: ~/php7/statement-and-expression.yml
         - match: ""
           pop: true
 

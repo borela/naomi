@@ -46,7 +46,7 @@ contexts:
   optional-parameters:
     - match: (?=\s*{)
       pop: true
-    - include: ~/scss3/mixin/parameters.sublime-syntax
+    - include: ~/scss3/mixin/parameters.yml
 
   body:
     - match: \s*({)
@@ -60,6 +60,6 @@ contexts:
       push:
         - match: (?=\s*})
           pop: true
-        - include: ~/scss3/attribute.sublime-syntax
-        - include: ~/scss3/selector.sublime-syntax
-        - include: ~/scss3/statement-and-expression.sublime-syntax
+        - include: ~/scss3/attribute.yml
+        - include: ~/scss3/selector.yml
+        - include: ~/scss3/statement-and-expression.yml

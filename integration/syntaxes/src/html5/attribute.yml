@@ -171,7 +171,7 @@ contexts:
   css:
     - match: ""
       push:
-        - include: ~/css3/ruleset/block.sublime-syntax#delimiter
+        - include: ~/css3/ruleset/block.yml#delimiter
 
   key-value-separator:
     - match: \=
@@ -193,16 +193,16 @@ contexts:
     - include: pop-now
 
   name:
-    - include: ~/html5/attribute/builtin.sublime-syntax
-    - include: ~/html5/attribute/data.sublime-syntax
-    - include: ~/html5/attribute/other.sublime-syntax
+    - include: ~/html5/attribute/builtin.yml
+    - include: ~/html5/attribute/data.yml
+    - include: ~/html5/attribute/other.yml
 
   pop-now:
     - match: ""
       pop: true
 
   script:
-    - include: ~/naomi.fjsx15.sublime-syntax
+    - include: ~/naomi.fjsx15.yml
 
   script-begin:
     - match: \'
@@ -245,7 +245,7 @@ contexts:
       set: [ meta-style, css ]
 
   value:
-    - include: ~/html5/attribute/value.sublime-syntax
+    - include: ~/html5/attribute/value.yml
 
   wait-non-space:
     - match: (?=\S)

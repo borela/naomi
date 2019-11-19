@@ -51,4 +51,4 @@ contexts:
       pop: true
 
   selector-expression:
-    - include: ~/css3/selector-expression.sublime-syntax
+    - include: ~/css3/selector-expression.yml

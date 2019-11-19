@@ -51,7 +51,7 @@ contexts:
       set: [ meta-charset, double-quoted-string ]
 
   conditional-group-body:
-    - include: ~/css3/ruleset/block.sublime-syntax
+    - include: ~/css3/ruleset/block.yml
 
   conditional-group-rules:
     - match: (@)document\b
@@ -96,7 +96,7 @@ contexts:
       ]
 
   custom-media-identifier:
-    - include: ~/css3/custom-media-identifier.sublime-syntax
+    - include: ~/css3/custom-media-identifier.yml
 
   custom-selector:
     - match: (@)custom-selector\b
@@ -110,13 +110,13 @@ contexts:
       ]
 
   custom-selector-identifier:
-    - include: ~/css3/selector/custom.sublime-syntax
+    - include: ~/css3/selector/custom.yml
 
   custom-property:
-    - include: ~/css3/property.sublime-syntax#custom
+    - include: ~/css3/property.yml#custom
 
   double-quoted-string:
-    - include: ~/css3/literal/string/double-quoted.sublime-syntax
+    - include: ~/css3/literal/string/double-quoted.yml
 
   empty-statement:
     - match: ;
@@ -124,7 +124,7 @@ contexts:
       pop: true
 
   feature-query-list:
-    - include: ~/css3/feature-query-list.sublime-syntax
+    - include: ~/css3/feature-query-list.yml
 
   font-face:
     - match: (@)font-face\b
@@ -146,7 +146,7 @@ contexts:
       set: [ meta-import, optional-media-query-list, string-or-url ]
 
   keyframe-block-list:
-    - include: ~/css3/keyframe-block-list.sublime-syntax
+    - include: ~/css3/keyframe-block-list.yml
 
   keyframe-name:
     - match: |
@@ -246,7 +246,7 @@ contexts:
       set: [ meta-nest, ruleset-block,  selector-list ]
 
   optional-media-query-list:
-    - include: ~/css3/optional-media-query-list.sublime-syntax
+    - include: ~/css3/optional-media-query-list.yml
 
   optional-namespace-prefix:
     - match: |
@@ -259,7 +259,7 @@ contexts:
       pop: true
 
   optional-page-selector:
-    - include: ~/css3/optional-page-selector-list.sublime-syntax
+    - include: ~/css3/optional-page-selector-list.yml
 
   page:
     - match: (@)page\b
@@ -269,22 +269,22 @@ contexts:
       set: [ meta-page, page-block, optional-page-selector ]
 
   page-block:
-    - include: ~/css3/page/block.sublime-syntax
+    - include: ~/css3/page/block.yml
 
   pop-now:
     - match: ""
       pop: true
 
   ruleset-block:
-    - include: ~/css3/ruleset/block.sublime-syntax
+    - include: ~/css3/ruleset/block.yml
 
   selector-list:
-    - include: ~/css3/ruleset/selector-list.sublime-syntax
+    - include: ~/css3/ruleset/selector-list.yml
 
   string-or-url:
-    - include: ~/css3/literal/string/double-quoted.sublime-syntax
-    - include: ~/css3/literal/string/single-quoted.sublime-syntax
-    - include: ~/css3/function-call.sublime-syntax
+    - include: ~/css3/literal/string/double-quoted.yml
+    - include: ~/css3/literal/string/single-quoted.yml
+    - include: ~/css3/function-call.yml
 
   viewport:
     - match: (@)viewport\b
@@ -294,4 +294,4 @@ contexts:
       set: [ meta-viewport, ruleset-block ]
 
   url-list:
-    - include: ~/css3/url-list.sublime-syntax
+    - include: ~/css3/url-list.yml

@@ -18,7 +18,7 @@ scope: ...
 
 contexts:
   main:
-    - include: ~/scss3/operator/comparison.sublime-syntax
-    - include: ~/scss3/operator/logical.sublime-syntax
-    - include: ~/scss3/operator/arithmetic.sublime-syntax
-    - include: ~/scss3/operator/other.sublime-syntax
+    - include: ~/scss3/operator/comparison.yml
+    - include: ~/scss3/operator/logical.yml
+    - include: ~/scss3/operator/arithmetic.yml
+    - include: ~/scss3/operator/other.yml

@@ -31,4 +31,4 @@ contexts:
       push: expression
 
   expression:
-    - include: ~/css3/selector/nth/expression.sublime-syntax
+    - include: ~/css3/selector/nth/expression.yml

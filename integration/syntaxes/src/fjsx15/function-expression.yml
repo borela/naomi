@@ -23,7 +23,7 @@ variables:
 
 contexts:
   main:
-    - include: ~/fjsx15/core.sublime-syntax#function-properties
+    - include: ~/fjsx15/core.yml#function-properties
     - match: |
         (?x)
         (?=
@@ -36,10 +36,10 @@ contexts:
       ]
 
   body:
-    - include: ~/fjsx15/function/body.sublime-syntax
+    - include: ~/fjsx15/function/body.yml
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.sublime-syntax
+    - include: ~/fjsx15/comment.no-pop.yml
 
   declaration:
     - meta_scope: meta.function.js.fjsx15
@@ -68,13 +68,13 @@ contexts:
       pop: true
 
   keyword:
-    - include: ~/fjsx15/async.no-pop.sublime-syntax
+    - include: ~/fjsx15/async.no-pop.yml
     - match: function\b
       scope: storage.type.function.js.fjsx15
       pop: true
 
   generic-arguments:
-    - include: ~/flow1/generic/arguments.sublime-syntax
+    - include: ~/flow1/generic/arguments.yml
 
   parameters:
-    - include: ~/fjsx15/function/parameters.sublime-syntax
+    - include: ~/fjsx15/function/parameters.yml

@@ -40,8 +40,8 @@ contexts:
       push: [naomi, entry]
 
   entry:
-    # - include: Packages/Naomi/syntaxes/src/html5/php.yml
-    # - include: Packages/Naomi/syntaxes/src/html5/element.yml
+    # - include: ~/html5/php.yml
+    # - include: ~/html5/element.yml
     - match: ""
       pop: true
 

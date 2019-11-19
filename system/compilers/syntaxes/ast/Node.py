@@ -16,16 +16,17 @@ class Node:
     def __repr__(self):
         body = ''
 
-        for member in vars(self):
+        for member in self.__slots__:
             if member in ['syntax', 'context', 'statement', 'raw']:
-                value = '<%s ...>' % member.title()
+                value = '<%s>' % member.title()
             else:
-                value = getattr(self, member)
+                value = getattr(self, member, None)
+                value = repr(value)
 
             if body:
                 body += '\n'
 
-            body += '%s: %s' % (member, repr(value))
+            body += '%s: %s' % (member, value)
 
         return '%s {\n%s\n}' % (
             self.__class__.__name__,

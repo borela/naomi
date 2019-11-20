@@ -35,9 +35,10 @@ def parse_match(context, raw):
         if key == 'escape':
             if 'embed' not in raw:
                 raise ParsingError(
-                    'Scape statement without embed.',
+                    '“escape” statement without embed.',
                     key,
                 )
+            statement.escape = value
             continue
 
         if key == 'match':

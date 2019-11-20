@@ -13,7 +13,12 @@
 from .ast import Embed
 
 def parse_embed(match_statement, value):
+    compilation = match_statement.compilation
+
     statement = Embed(match_statement)
-    statement.context = ''
-    statement.escape_pattern = ''
+    statement.context = compilation.enqueue_resource(
+        statement,
+        value,
+    )
+
     return statement

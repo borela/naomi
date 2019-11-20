@@ -17,3 +17,15 @@ class StackAction(Node):
 
     def __init__(self, match_statement):
         self.match_statement = match_statement
+
+    @property
+    def compilation(self):
+        return self.match_statement.compilation
+
+    @property
+    def context(self):
+        return self.match_statement.context
+
+    @property
+    def syntax(self):
+        return self.match_statement.syntax

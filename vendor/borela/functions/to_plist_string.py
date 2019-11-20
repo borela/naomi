@@ -34,7 +34,7 @@ from collections import OrderedDict
 #         ('bool', 'true'),
 #         ('key', 'bar'),
 #         ('string', 'baz'),
-#     }]
+#     ]
 #
 # The result is an array of the key value pairs.
 def dict_to_plist_array(target_dict):

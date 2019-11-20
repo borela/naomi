@@ -12,7 +12,7 @@
 
 from .ast import Pop
 
-def parse_pop(match_statement, raw):
+def parse_pop(match_statement, value):
     statement = Pop(match_statement)
-    statement.value = bool(raw)
+    statement.value = bool(value)
     return statement

@@ -12,6 +12,6 @@
 
 from .ast import Set
 
-def parse_set(match_statement, raw):
+def parse_set(match_statement, value):
     statement = Set(match_statement)
     return statement

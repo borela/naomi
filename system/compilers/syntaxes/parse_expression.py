@@ -29,10 +29,6 @@ LITERAL_TYPES = (
 )
 
 def parse_expression(value):
-    # Literal pattern.
-    if isinstance(value, LITERAL_TYPES):
-        return str(value)
-
     # Function calls.
     if isinstance(value, (list, OrderedDict)):
         nodes = []
@@ -55,8 +51,5 @@ def parse_expression(value):
 
         return nodes
 
-    # Anything else.
-    raise ParsingError(
-        'Unsupported statement or expression.',
-        value,
-    )
+    # Literal pattern.
+    return str(value)

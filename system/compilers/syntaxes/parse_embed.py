@@ -10,19 +10,10 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .ClearScopes import * # noqa
-from .Compilation import * # noqa
-from .Context import * # noqa
-from .Embed import * # noqa
-from .FunctionCall import * # noqa
-from .Include import * # noqa
-from .Match import * # noqa
-from .Pop import * # noqa
-from .Push import * # noqa
-from .Resource import * # noqa
-from .Set import * # noqa
-from .SetMetaContentScope import * # noqa
-from .SetMetaScope import * # noqa
-from .Statement import * # noqa
-from .Syntax import * # noqa
-from .Variable import * # noqa
+from .ast import Embed
+
+def parse_embed(match_statement, value):
+    statement = Embed(match_statement)
+    statement.context = ''
+    statement.escape_pattern = ''
+    return statement

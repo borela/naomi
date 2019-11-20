@@ -15,6 +15,7 @@ from .ast import (
     Match,
 )
 
+from .parse_embed import parse_embed
 from .parse_expression import parse_expression
 from .parse_pop import parse_pop
 from .parse_push import parse_push
@@ -24,37 +25,83 @@ from .ParsingError import ParsingError
 def parse_match(context, raw):
     statement = Match(context)
 
+    match_parsed = False
+    scope_parsed = False
+    captures_parsed = False
+
     for key, value in raw.items():
+        # This key is processed by the embed statement and can be ignored if
+        # one is present.
+        if key == 'escape':
+            if 'embed' not in raw:
+                raise ParsingError(
+                    'Scape statement without embed.',
+                    key,
+                )
+            continue
+
         if key == 'match':
+            if match_parsed:
+                raise_multiple_match(key)
+
             statement.pattern = parse_expression(value)
+            match_parsed = True
             continue
 
         if key == 'match_word':
+            if match_parsed:
+                raise_multiple_match(key)
+
             statement.pattern = FunctionCall('word', value)
+            match_parsed = True
             continue
 
         if key == 'match_words':
+            if match_parsed:
+                raise_multiple_match(key)
+
             statement.pattern = FunctionCall('words', value)
+            match_parsed = True
             continue
 
         if key == 'scope':
+            if captures_parsed:
+                raise_multiple_scope(key)
             statement.scope = value
+            scope_parsed = True
             continue
 
         if key == 'captures':
+            if scope_parsed:
+                raise_multiple_scope(key)
             statement.captures = value
+            captures_parsed = True
             continue
 
         if key == 'with_prototype':
             statement.with_prototype = value
             continue
 
-        if key in ['push', 'set', 'pop']:
+        if key in ['embed', 'pop', 'push', 'set']:
             if statement.stack_action:
                 raise ParsingError(
                     'Multiple stack control statements.',
                     key,
                 )
+
+            if key == 'embed':
+                statement.stack_action = parse_embed(
+                    statement,
+                    value,
+                )
+                continue
+
+            if key == 'pop':
+                statement.stack_action = parse_pop(
+                    statement,
+                    value,
+                )
+                continue
 
             if key == 'push':
                 statement.stack_action = parse_push(
@@ -70,16 +117,21 @@ def parse_match(context, raw):
                 )
                 continue
 
-            if key == 'pop':
-                statement.stack_action = parse_pop(
-                    statement,
-                    value,
-                )
-                continue
-
         raise ParsingError(
             'Unexpected statement: %s' % key,
             key,
         )
 
     return statement
+
+def raise_multiple_match(key):
+    raise ParsingError(
+        'Multiple match statements.',
+        key,
+    )
+
+def raise_multiple_scope(key):
+    raise ParsingError(
+        'A match must not contain both “captures” and “scope” statements.',
+        key,
+    )

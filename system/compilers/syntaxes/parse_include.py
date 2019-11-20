@@ -13,7 +13,7 @@
 from .ast import Include
 
 def parse_include(context, raw):
-    compilation = context.syntax.compilation
+    compilation = context.compilation
 
     statement = Include(context)
     statement.path = raw['include']

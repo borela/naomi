@@ -33,9 +33,7 @@ class Node:
             indent_string(body),
         )
 
+    # This method is used by the traversal function to collect and visit the
+    # tree nodes without using recursion.
     def get_sub_nodes(self):
-        """
-        This method is used by the traversal function to collect and visit
-        the tree nodes without using recursion.
-        """
         raise None

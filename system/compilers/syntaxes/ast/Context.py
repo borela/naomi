@@ -10,9 +10,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .Statement import Statement
+from .Node import Node
 
-class Context(Statement):
+class Context(Node):
     __slots__ = [
         'syntax',
         'name',
@@ -22,3 +22,7 @@ class Context(Statement):
     def __init__(self, syntax):
         self.syntax = syntax
         self.statements = []
+
+    @property
+    def compilation(self):
+        return self.syntax.compilation

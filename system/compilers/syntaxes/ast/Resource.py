@@ -26,3 +26,15 @@ class Resource(Node):
     def __init__(self, statement, path):
         self.statement = statement
         self.path = path
+
+    @property
+    def compilation(self):
+        return self.statement.compilation
+
+    @property
+    def context(self):
+        return self.statement.context
+
+    @property
+    def syntax(self):
+        return self.statement.syntax

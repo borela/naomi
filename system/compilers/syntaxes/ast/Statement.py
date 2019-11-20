@@ -17,3 +17,11 @@ class Statement(Node):
 
     def __init__(self, context):
         self.context = context
+
+    @property
+    def compilation(self):
+        return self.context.syntax.compilation
+
+    @property
+    def syntax(self):
+        return self.context.syntax

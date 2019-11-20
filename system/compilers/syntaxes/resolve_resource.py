@@ -21,7 +21,7 @@ from .parse_syntax import parse_syntax
 from Naomi.system import packages_dir
 
 def resolve_resource(compilation, resource):
-    syntax = resource.statement.context.syntax
+    syntax = resource.syntax
     home_dir = syntax.home_dir
     path = resource.path
 

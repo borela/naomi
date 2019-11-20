@@ -34,7 +34,7 @@ from collections import OrderedDict
 #         ('bool', 'true'),
 #         ('key', 'bar'),
 #         ('string', 'baz'),
-#     }]
+#     ]
 #
 # The result is an array of the key value pairs.
 def dict_to_plist_array(target_dict):
@@ -83,7 +83,7 @@ def dict_to_plist_array(target_dict):
 
     return plist
 
-# Convert a plist stack to a XML tree that represents the plist.
+# Convert a plist array to a XML tree that represents the plist.
 def plist_array_to_xml(nodes):
     plist = Element('plist')
     plist.attrib['version'] = '1.0'
@@ -112,11 +112,8 @@ def plist_array_to_xml(nodes):
 
 # Convert a simple dictionary into a XML plist string.
 def to_plist_string(target_dict):
-    # Prepare the dictionary.
     plist_array = dict_to_plist_array(target_dict)
-    # Convert to a XML tree.
     xml = plist_array_to_xml(plist_array)
-    # Finally convert to string.
     return to_xml_string(
         xml,
         indent=True,

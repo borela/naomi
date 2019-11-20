@@ -18,6 +18,7 @@ from Naomi.system.compilers import (
     compile_integrated_preferences,
 )
 
+from sublime import set_timeout_async
 from sublime_plugin import ApplicationCommand
 
 COMPILERS = {
@@ -33,4 +34,4 @@ class NaomiBuildCommand(ApplicationCommand):
         return 'Build %s' % what.title()
 
     def run(self, what):
-        COMPILERS[what]()
+        set_timeout_async(lambda: COMPILERS[what]())

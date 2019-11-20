@@ -38,6 +38,7 @@ from Naomi.system.compilers import (
     compile_integrated_preferences,
 )
 
+from sublime import set_timeout_async
 from sublime_plugin import ApplicationCommand
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
@@ -79,7 +80,7 @@ class EventHandler(PatternMatchingEventHandler):
         self.process(event)
 
     def process(self, event):
-        COMPILERS[what]()
+        set_timeout_async(lambda: COMPILERS[what]())
 
 class NaomiWatchCommand(ApplicationCommand):
     def __init__(self):

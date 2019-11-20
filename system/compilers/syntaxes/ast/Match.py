@@ -14,10 +14,16 @@ from .Statement import Statement
 
 class Match(Statement):
     __slots__ = [
+        # The actual match pattern.
         'pattern',
+        # Scope to be applied to the entire pattern.
         'scope',
+        # An optional action to the stack: embed, pop, push, set.
         'stack_action',
+        # Applies scopes to capturing groups.
         'captures',
+        # Creates a copy of the entire graph of contexts with the rules
+        # defined here.
         'with_prototype',
     ]
 

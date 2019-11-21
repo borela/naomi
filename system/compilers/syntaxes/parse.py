@@ -41,7 +41,7 @@ def parse(settings):
         build_dir,
     )
 
-    syntax = parse_syntax(
+    parse_syntax(
         compilation,
         home_dir,
         entry_path,

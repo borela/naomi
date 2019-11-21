@@ -70,6 +70,9 @@ WATCHING_EVENTS = {
 class EventHandler(PatternMatchingEventHandler):
     patterns = ['*.yml']
 
+    def __init__(self, compiler):
+        self.compiler = compiler
+
     def on_created(self, event):
         self.process(event)
 
@@ -80,7 +83,7 @@ class EventHandler(PatternMatchingEventHandler):
         self.process(event)
 
     def process(self, event):
-        set_timeout_async(lambda: COMPILERS[what]())
+        set_timeout_async(lambda: self.compiler())
 
 class NaomiWatchCommand(ApplicationCommand):
     def __init__(self):
@@ -97,7 +100,7 @@ class NaomiWatchCommand(ApplicationCommand):
 
             for integrated in STATE_STORE['integrated'][what]:
                 self.observers[what].schedule(
-                    EventHandler(),
+                    EventHandler(COMPILERS[what]),
                     path=integrated['src_dir'],
                     recursive=True,
                 )

@@ -12,7 +12,6 @@
 
 from .ast import FunctionCall
 from collections import OrderedDict
-from .ParsingError import ParsingError
 
 def dict_to_function_calls(calls):
     result = []

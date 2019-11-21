@@ -16,7 +16,6 @@ from os.path import (
     realpath,
 )
 
-from .ast import Resource
 from .parse_syntax import parse_syntax
 from Naomi.system import packages_dir
 

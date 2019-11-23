@@ -31,8 +31,6 @@ def parse_match(context, raw):
     captures_parsed = False
 
     for key, value in raw.items():
-        # This key is processed by the embed statement and can be ignored if
-        # one is present.
         if key == 'escape':
             if 'embed' not in raw:
                 raise ParsingError(
@@ -88,7 +86,7 @@ def parse_match(context, raw):
         if key in ['embed', 'pop', 'push', 'set']:
             if statement.stack_action:
                 raise ParsingError(
-                    'Multiple stack control statements.',
+                    'Multiple stack paths.',
                     syntax,
                     key.lc,
                 )

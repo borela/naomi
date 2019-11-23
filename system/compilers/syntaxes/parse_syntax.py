@@ -29,12 +29,8 @@ def parse_syntax(compilation, home_dir, path):
 
     compilation.index_syntax(syntax)
 
-    log_debug('Loading syntax file: %s' % syntax.package_relpath)
-
     raw = load_yaml(syntax.path)
     syntax.raw = raw
-
-    log_debug('Done loading syntax file: %s' % syntax.package_relpath)
 
     syntax.name = raw.get('name', '')
     syntax.hidden = raw.get('hidden', '')
@@ -43,12 +39,7 @@ def parse_syntax(compilation, home_dir, path):
     syntax.file_extensions = raw.get('file_extensions', [])
     syntax.first_line_match = raw.get('first_line_match', '')
 
-    log_debug('Parsing variables: %s' % syntax.package_relpath)
-
     parse_variables(syntax)
-
-    log_debug('Parsing contexts: %s' % syntax.package_relpath)
-
     parse_contexts(syntax)
 
     log_info('Done parsing: %s' % syntax.package_relpath)

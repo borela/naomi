@@ -17,7 +17,7 @@ from re import sub
 class Node:
     __slots__ = [
         # Character that this node represents. An empty string means that it
-        # is an optional group.
+        # is an optional group and “None” means the root node.
         'char',
 
         # Node level in the tree.
@@ -28,7 +28,7 @@ class Node:
         'children',
     ]
 
-    def __init__(self, parent, char):
+    def __init__(self, parent=None, char=None):
         self.char = char
         self.level = parent.level + 1 if parent else 0
         self.parent = parent
@@ -197,7 +197,7 @@ def tree_to_string(root):
 #                                >> r
 #                                >> z
 def words_to_tree(words):
-    root = Node(parent=None, char=None)
+    root = Node()
     root.children = words
 
     queue = Stack()

@@ -12,58 +12,108 @@
 
 from ..Stack import Stack
 from .indent_string import indent_string
+from re import sub
 
 class Node:
-    root = None
-    left = None
-    right = None
+    __slots__ = [
+        # Character that this node represents. An empty string means that it
+        # is an optional group.
+        'char',
 
-    def __init__(self, root=None, left=None, right=None):
-        self.root = root
-        self.left = left or []
-        self.right = right or []
+        # Node level in the tree.
+        'level',
+
+        # Nodes.
+        'parent',
+        'children',
+    ]
+
+    def __init__(self, parent, char):
+        self.char = char
+        self.level = parent.level + 1 if parent else 0
+        self.parent = parent
+        self.children = []
 
     def __repr__(self):
-        body = '>> %s' % repr(self.left)
-        body += '\n'
-        body += '|| %s' % repr(self.right)
+        node_id = self.char
 
-        return '%s {\n%s\n}' % (
-            self.root,
-            indent_string(body),
+        if self.char == None:
+            node_id = '[Root]'
+
+        if self.char == '':
+            node_id = '[Optional]'
+
+        if len(self.children) < 1:
+            return node_id
+
+        children_string = ''
+
+        for child in self.children:
+            children_string += '\n>> ' + repr(child)
+
+        return '%i: %s%s' % (
+            self.level,
+            node_id,
+            indent_string(children_string),
         )
 
-class Left(Node):
-    pass
+class Visitor:
+    __slots__ = [
+        'groups',
+        'pattern',
+    ]
 
-class Right(Node):
-    pass
+    def __init__(self):
+        self.groups = Stack()
+        self.pattern = ''
 
-def extract_root(words, constructor):
-    if len(words) == 0:
-        return None
+    def on_enter(self, node):
+        if node.char:
+            self.pattern += node.char
 
-    if len(words) == 1 and not words[0]:
-        return None
+        if len(node.children) > 1:
+            self.groups.push(node)
+            self.pattern += '(?>'
+        elif node.char == '':
+            self.groups.push(node)
+            self.pattern += '(?:'
 
-    root = words[0][:1]
+    def on_exit(self, node):
+        if node != self.groups[-1]:
+            self.pattern += '|'
+            return
 
-    if not root:
-        return constructor('', words[1:])
+        self.groups.pop()
+        self.pattern += ')'
 
-    left = []
-    right = []
+        if node.char == '':
+            self.pattern += '?'
 
-    if root:
-        for word in words:
-            if word.startswith(root):
-                left.append(word[1:])
-            else:
-                right.append(word)
-    else:
-        right = words[1:]
+# Groups a list of words by their first character and remove it from the them.
+# This is used to construct the tree.
+def extract_char(parent, words):
+    if not words:
+        return words
 
-    return constructor(root, left, right)
+    if len(words) < 2 and not words[0]:
+        return []
+
+    char = None
+    children = []
+
+    for word in words:
+        if char == None or char and not word.startswith(char):
+            char = word[:1]
+            node = Node(parent, char)
+            children.append(node)
+
+        if char:
+            word = word[1:]
+
+        if char or word:
+            node.children.append(word)
+
+    return children
 
 # Transforms a list of words into an optimized regex, for example:
 #
@@ -79,84 +129,85 @@ def extract_root(words, constructor):
 def make_words_regex(words):
     # Sorting is not necessary but it will be easier to debug.
     words.sort()
-    # This will turn the words into a binary tree and extract the root that
+    # This will turn the words into a binary tree and extract the char that
     # connect each character of them.
-    tree = words_to_binary_tree(words)
+    tree = words_to_tree(words)
     # Build the optimized regex.
-    return '\\b%s\\b' % tree_to_string(tree)
+    return tree_to_string(tree)
 
-def tree_to_string(tree):
-    temp = Stack([tree])
-    queue = Stack()
-
-    # Generate a queue to visit the nodes using postorder traversal.
-    while len(temp):
-        node = temp.pop()
-
-        if isinstance(node.right, Node):
-            temp.push(node.right)
-
-        if isinstance(node.left, Node):
-            temp.push(node.left)
-
-        queue.push(node)
-
-    # Compute the pattern from the deepest nodes first.
-    for node in queue:
-        if node.root == '':
-            if node.left.root.startswith('(?'):
-                node.root = node.left.root + '?'
-            else:
-                node.root = '(?:%s)?' % node.left.root
-            continue
-
-        left = node.left
-        right = node.right
-
-        if left and right:
-            # This is not necessary but it will eliminate unnecessary atomic
-            # groups resulting in a cleaner regex.
-            if right.root.startswith('(?>'):
-                right.root = right.root[3:-1]
-
-            node.root = '(?>%s%s|%s)' % (
-                node.root,
-                left.root,
-                right.root,
-            )
-            continue
-
-        if isinstance(node, Left):
-            if right and not left:
-                node.root = '(?>%s|%s)' % (node.root, right.root)
-                continue
-
-        if isinstance(node, Right):
-            if right and not left:
-                node.root += '|' + right.root
-                continue
-
-        if left and not right:
-            node.root += left.root
-
-    # The last node visited will have the full pattern.
-    return node.root
-
-def words_to_binary_tree(words):
-    main = extract_root(words, Node)
+# Traverse the tree to generate the pattern using the visitor.
+def tree_to_string(root):
+    visitor = Visitor()
+    visited = Stack()
 
     queue = Stack()
-    queue.push(main)
+    queue.push(root)
+    previous = root
 
-    while len(queue):
+    while queue:
         node = queue.pop()
-        node.left = extract_root(node.left, Left)
-        node.right = extract_root(node.right, Right)
 
-        if isinstance(node.left, Node):
-            queue.push(node.left)
+        while node.level < previous.level:
+            previous = visited.pop()
+            visitor.on_exit(previous)
 
-        if isinstance(node.right, Node):
-            queue.push(node.right)
+        visitor.on_enter(node)
+        visited.push(node)
 
-    return main
+        if not node.children:
+            visitor.on_exit(node)
+            visited.pop()
+        else:
+            for child in reversed(node.children):
+                queue.push(child)
+
+        previous = node
+
+    while visited:
+        node = visited.pop()
+        visitor.on_exit(node)
+
+    pattern = visitor.pattern
+    pattern = sub(r'\|+', '|', pattern)
+    pattern = sub(r'\|\)', ')', pattern)
+
+    return r'\b%s\b' % pattern
+
+# Transforms the words into a tree:
+#
+#     foo
+#     bar
+#     baz
+#     foobar
+#     foobaz
+#
+# becomes:
+#
+#     0: [Root]
+#        >> 1: b
+#            >> 2: a
+#                >> r
+#                >> z
+#        >> 1: f
+#            >> 2: o
+#                >> 3: o
+#                    >> 4: [Optional]
+#                        >> 5: b
+#                            >> 6: a
+#                                >> r
+#                                >> z
+def words_to_tree(words):
+    root = Node(parent=None, char=None)
+    root.children = words
+
+    queue = Stack()
+    queue.push(root)
+
+    while queue:
+        node = queue.pop()
+        node.children = extract_char(node, node.children)
+
+        for child in node.children:
+            queue.push(child)
+
+    return root

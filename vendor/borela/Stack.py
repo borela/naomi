@@ -13,17 +13,28 @@
 class Stack(list):
     __slots__ = ['__i']
 
+    def __getitem__(self, index):
+        return list.__getitem__(self, len(self) - 1 - index)
+
     def __iter__(self):
-        self.__i = len(self)
+        self.__i = -1
         return self
 
     def __next__(self):
-        self.__i -= 1
+        self.__i += 1
 
-        if self.__i < 0:
+        if self.__i >= len(self):
             raise StopIteration()
 
         return self[self.__i]
+
+    def __repr__(self):
+        items = ''
+        for item in self:
+            if items:
+                items += ','
+            items += repr(item)
+        return '[%s]' % items
 
     def push(self, value):
         self.append(value)

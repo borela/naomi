@@ -29,17 +29,17 @@ class Compilation(Node):
     __slots__ = [
         'settings',
 
-        # str: Location where the compiled file will be saved.
+        # Location where the compiled file will be saved.
         'build_dir',
 
-        # Syntax: Entry syntax file.
+        # Entry syntax file.
         'entry',
 
-        # OrderedDict: Files used in the compilation indexed by their path.
+        # Files used in the compilation indexed by their path.
         'syntaxes',
 
-        # OrderedDict: The file id will be prepended in all contexts to allow
-        # us to see the context’s origin.
+        # The file id will be prepended in all contexts to allow us to see the
+        # context’s origin.
         'syntaxes_ids',
 
         # Contexts indexed by their full path.
@@ -52,7 +52,7 @@ class Compilation(Node):
         'resources',
         'queued_resources',
 
-        # Statistics: Data such as number of contexts, files used, etc...
+        # Data such as number of contexts, files used, etc...
         'statistics',
     ]
 

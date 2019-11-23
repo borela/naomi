@@ -42,7 +42,7 @@ def resolve_resource(compilation, resource):
     else:
         path = syntax.path + '#' + path
 
-    # If not context is targeted, the “main” will be used.
+    # If no context is targeted, the “main” will be used.
     if '#' not in path:
         path += '#main'
 

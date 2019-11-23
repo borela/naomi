@@ -24,6 +24,7 @@ from .ParsingError import ParsingError
 
 def parse_match(context, raw):
     statement = Match(context)
+    syntax = statement.syntax
 
     match_parsed = False
     scope_parsed = False
@@ -36,14 +37,15 @@ def parse_match(context, raw):
             if 'embed' not in raw:
                 raise ParsingError(
                     '“escape” statement without embed.',
-                    key,
+                    syntax,
+                    key.lc,
                 )
             statement.escape = value
             continue
 
         if key == 'match':
             if match_parsed:
-                raise_multiple_match(key)
+                raise_multiple_match(syntax, key.lc)
 
             statement.pattern = parse_expression(value)
             match_parsed = True
@@ -51,7 +53,7 @@ def parse_match(context, raw):
 
         if key == 'match_word':
             if match_parsed:
-                raise_multiple_match(key)
+                raise_multiple_match(syntax, key.lc)
 
             statement.pattern = FunctionCall('word', value)
             match_parsed = True
@@ -59,7 +61,7 @@ def parse_match(context, raw):
 
         if key == 'match_words':
             if match_parsed:
-                raise_multiple_match(key)
+                raise_multiple_match(syntax, key.lc)
 
             statement.pattern = FunctionCall('words', value)
             match_parsed = True
@@ -67,14 +69,14 @@ def parse_match(context, raw):
 
         if key == 'scope':
             if captures_parsed:
-                raise_multiple_scope(key)
+                raise_multiple_scope(syntax, key.lc)
             statement.scope = value
             scope_parsed = True
             continue
 
         if key == 'captures':
             if scope_parsed:
-                raise_multiple_scope(key)
+                raise_multiple_scope(syntax, key.lc)
             statement.captures = value
             captures_parsed = True
             continue
@@ -87,7 +89,8 @@ def parse_match(context, raw):
             if statement.stack_action:
                 raise ParsingError(
                     'Multiple stack control statements.',
-                    key,
+                    syntax,
+                    key.lc,
                 )
 
             if key == 'embed':
@@ -120,19 +123,22 @@ def parse_match(context, raw):
 
         raise ParsingError(
             'Unexpected statement: %s' % key,
-            key,
+            syntax,
+            key.lc,
         )
 
     return statement
 
-def raise_multiple_match(key):
+def raise_multiple_match(syntax, location):
     raise ParsingError(
         'Multiple match statements.',
-        key,
+        syntax,
+        location,
     )
 
-def raise_multiple_scope(key):
+def raise_multiple_scope(syntax, location):
     raise ParsingError(
         'A match must not contain both “captures” and “scope” statements.',
-        key,
+        syntax,
+        location,
     )

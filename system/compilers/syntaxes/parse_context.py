@@ -60,7 +60,8 @@ def parse_context(syntax, name, raw):
 
         raise ParsingError(
             'Unexpected statement: %s' % statement,
-            statement,
+            statement.syntax,
+            statement.lc,
         )
 
     return context

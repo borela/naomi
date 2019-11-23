@@ -11,12 +11,15 @@
 # the License.
 
 class ParsingError(Exception):
-    def __init__(self, message, node=None):
-        if node:
-            Exception.__init__(self, '(%i, %i) %s' % (
-                node.lc.line + 1,
-                node.lc.col + 1,
+    def __init__(self, message, syntax=None, location=None):
+        if location:
+            message =  '(%i, %i) “%s”' % (
+                location.line + 1,
+                location.col + 1,
                 message,
-            ))
-        else:
-            Exception.__init__(self, message)
+            )
+
+        if syntax:
+            message += ' at ' + syntax.package_relpath
+
+        Exception.__init__(self, message)

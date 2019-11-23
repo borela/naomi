@@ -12,26 +12,17 @@
 
 from ..Stack import Stack
 from .indent_string import indent_string
-from re import sub
 
 class Node:
     __slots__ = [
         # Character that this node represents. An empty string means that it
         # is an optional group and “None” means the root node.
         'char',
-
-        # Node level in the tree.
-        'level',
-
-        # Nodes.
-        'parent',
         'children',
     ]
 
-    def __init__(self, parent=None, char=None):
+    def __init__(self, char=None):
         self.char = char
-        self.level = parent.level + 1 if parent else 0
-        self.parent = parent
         self.children = []
 
     def __repr__(self):
@@ -47,73 +38,72 @@ class Node:
             return node_id
 
         children_string = ''
-
         for child in self.children:
             children_string += '\n>> ' + repr(child)
 
-        return '%i: %s%s' % (
-            self.level,
+        return '%s%s' % (
             node_id,
             indent_string(children_string),
         )
 
-class Visitor:
-    __slots__ = [
-        'groups',
-        'pattern',
-    ]
+    def __str__(self):
+        children_string = ''
 
-    def __init__(self):
-        self.groups = Stack()
-        self.pattern = ''
+        for child in self.children:
+            if children_string:
+                children_string += '|'
+            children_string += str(child)
 
-    def on_enter(self, node):
-        if node.char:
-            self.pattern += node.char
+        if len(self.children) > 1:
+            children_string = '(?>%s)' % children_string
 
-        if len(node.children) > 1:
-            self.groups.push(node)
-            self.pattern += '(?>'
-        elif node.char == '':
-            self.groups.push(node)
-            self.pattern += '(?:'
+        if self.char == None:
+            return r'\b%s\b' % children_string
 
-    def on_exit(self, node):
-        if node != self.groups[0]:
-            self.pattern += '|'
-            return
+        if self.char == '':
+            if children_string.startswith('('):
+                return children_string + '?'
+            else:
+                return '(?:%s)?' % children_string
 
-        self.groups.pop()
-        self.pattern += ')'
-
-        if node.char == '':
-            self.pattern += '?'
+        return self.char + children_string
 
 # Groups a list of words by their first character and remove it from the them.
 # This is used to construct the tree.
-def extract_char(parent, words):
+def group_words(words):
     if not words:
         return words
 
     if len(words) < 2 and not words[0]:
         return []
 
+    # Optional group.
+    if words[0] == '':
+       node = Node('')
+       node.children = words[1:]
+       return [node]
+
     char = None
-    children = []
+    node = None
+    result = []
 
     for word in words:
-        if char == None or char and not word.startswith(char):
+        if char == None or not word.startswith(char):
             char = word[:1]
-            node = Node(parent, char)
-            children.append(node)
+            node = Node(char)
+            result.append(node)
 
-        if char:
-            word = word[1:]
+        word = word[1:]
 
-        if char or word:
-            node.children.append(word)
+        if word == '' and node.children:
+            if node.children[0] == '':
+                # The only sittuation we will get here is if there are
+                # duplicated words.
+                continue
 
-    return children
+        node.children.append(word)
+
+    return result
 
 # Transforms a list of words into an optimized regex, for example:
 #
@@ -127,51 +117,12 @@ def extract_char(parent, words):
 #
 #    \b(?>ba(?>r|z)|foo(?:ba(?>r|z))?)\b
 def make_words_regex(words):
-    # Sorting is not necessary but it will be easier to debug.
     words.sort()
-    # This will turn the words into a binary tree and extract the char that
-    # connect each character of them.
+    # This will turn the words into a tree grouping their parts by the left
+    # most character until each node is a single character.
     tree = words_to_tree(words)
     # Build the optimized regex.
-    return tree_to_string(tree)
-
-# Traverse the tree to generate the pattern using the visitor.
-def tree_to_string(root):
-    visitor = Visitor()
-    visited = Stack()
-
-    queue = Stack()
-    queue.push(root)
-    previous = root
-
-    while queue:
-        node = queue.pop()
-
-        while node.level < previous.level:
-            previous = visited.pop()
-            visitor.on_exit(previous)
-
-        visitor.on_enter(node)
-        visited.push(node)
-
-        if not node.children:
-            visitor.on_exit(node)
-            visited.pop()
-        else:
-            for child in reversed(node.children):
-                queue.push(child)
-
-        previous = node
-
-    while visited:
-        node = visited.pop()
-        visitor.on_exit(node)
-
-    pattern = visitor.pattern
-    pattern = sub(r'\|+', '|', pattern)
-    pattern = sub(r'\|\)', ')', pattern)
-
-    return r'\b%s\b' % pattern
+    return str(tree)
 
 # Transforms the words into a tree:
 #
@@ -183,31 +134,27 @@ def tree_to_string(root):
 #
 # becomes:
 #
-#     0: [Root]
-#        >> 1: b
-#            >> 2: a
-#                >> r
-#                >> z
-#        >> 1: f
-#            >> 2: o
-#                >> 3: o
-#                    >> 4: [Optional]
-#                        >> 5: b
-#                            >> 6: a
-#                                >> r
-#                                >> z
+#     [Root]
+#         >> b
+#             >> a
+#                 >> r
+#                 >> z
+#         >> f
+#             >> o
+#                 >> o
+#                     >> [Optional]
+#                         >> b
+#                             >> a
+#                                 >> r
+#                                 >> z
 def words_to_tree(words):
     root = Node()
     root.children = words
 
-    queue = Stack()
-    queue.push(root)
+    def group_children(node):
+        node.children = group_words(node.children)
+        for node in node.children:
+            group_children(node)
 
-    while queue:
-        node = queue.pop()
-        node.children = extract_char(node, node.children)
-
-        for child in node.children:
-            queue.push(child)
-
+    group_children(root)
     return root

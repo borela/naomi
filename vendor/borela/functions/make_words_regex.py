@@ -79,7 +79,7 @@ class Visitor:
             self.pattern += '(?:'
 
     def on_exit(self, node):
-        if node != self.groups[-1]:
+        if node != self.groups[0]:
             self.pattern += '|'
             return
 

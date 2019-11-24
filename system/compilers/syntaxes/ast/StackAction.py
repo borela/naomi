@@ -13,19 +13,19 @@
 from .Node import Node
 
 class StackAction(Node):
-    __slots__ = 'match_statement'
+    __slots__ = 'match'
 
-    def __init__(self, match_statement):
-        self.match_statement = match_statement
+    def __init__(self, match):
+        self.match = match
 
     @property
     def compilation(self):
-        return self.match_statement.compilation
+        return self.match.compilation
 
     @property
     def context(self):
-        return self.match_statement.context
+        return self.match.context
 
     @property
     def syntax(self):
-        return self.match_statement.syntax
+        return self.match.syntax

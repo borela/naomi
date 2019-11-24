@@ -13,8 +13,8 @@
 from .StackAction import StackAction
 
 class Embed(StackAction):
-    __slots__ = 'context'
-
-    @property
-    def escape_pattern(self):
-        return self.match_statement.escape_pattern
+    __slots__ = [
+      'embed_context',
+      'embed_scope',
+      'escape',
+    ]

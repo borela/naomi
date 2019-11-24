@@ -14,6 +14,7 @@ from .Node import Node
 
 class Variable(Node):
     __slots__ = [
+        'syntax',
         'name',
         'pattern',
     ]

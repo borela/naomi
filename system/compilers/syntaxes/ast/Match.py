@@ -19,7 +19,7 @@ class Match(Statement):
         # Scope to be applied to the entire pattern.
         'scope',
         # An optional action to the stack: embed, pop, push, set.
-        'stack_action',
+        'action',
         # Applies scopes to capturing groups.
         'captures',
         # Creates a copy of the entire graph of contexts with the rules
@@ -29,4 +29,4 @@ class Match(Statement):
 
     def __init__(self, context):
         Statement.__init__(self, context)
-        self.stack_action = None
+        self.action = None

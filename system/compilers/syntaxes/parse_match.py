@@ -11,16 +11,31 @@
 # the License.
 
 from .ast import (
+    Embed,
     FunctionCall,
     Match,
+    Pop,
+    Push,
+    Set,
 )
 
-from .parse_embed import parse_embed
 from .parse_expression import parse_expression
-from .parse_pop import parse_pop
-from .parse_push import parse_push
-from .parse_set import parse_set
 from .ParsingError import ParsingError
+
+def check_embed_exists(key, statement, raw):
+  if 'embed' not in raw:
+      raise ParsingError(
+          '“%s” without embed.' % key,
+          statement.syntax,
+          key.lc,
+      )
+
+  if not statement.action:
+      raise ParsingError(
+          '“%s” must be after embed.' % key,
+          statement.syntax,
+          key.lc,
+      )
 
 def parse_match(context, raw):
     statement = Match(context)
@@ -28,23 +43,21 @@ def parse_match(context, raw):
 
     match_parsed = False
     scope_parsed = False
-    captures_parsed = False
 
     for key, value in raw.items():
         if key == 'escape':
-            if 'embed' not in raw:
-                raise ParsingError(
-                    '“escape” statement without embed.',
-                    syntax,
-                    key.lc,
-                )
-            statement.escape = value
+            check_embed_exists(key, statement, raw)
+            statement.action.escape = value
+            continue
+
+        if key == 'embed_scope':
+            check_embed_exists(key, statement, raw)
+            statement.action.embed_scope = value
             continue
 
         if key == 'match':
             if match_parsed:
                 raise_multiple_match(syntax, key.lc)
-
             statement.pattern = parse_expression(value)
             match_parsed = True
             continue
@@ -52,7 +65,6 @@ def parse_match(context, raw):
         if key == 'match_word':
             if match_parsed:
                 raise_multiple_match(syntax, key.lc)
-
             statement.pattern = FunctionCall('word', value)
             match_parsed = True
             continue
@@ -60,13 +72,12 @@ def parse_match(context, raw):
         if key == 'match_words':
             if match_parsed:
                 raise_multiple_match(syntax, key.lc)
-
             statement.pattern = FunctionCall('words', value)
             match_parsed = True
             continue
 
         if key == 'scope':
-            if captures_parsed:
+            if scope_parsed:
                 raise_multiple_scope(syntax, key.lc)
             statement.scope = value
             scope_parsed = True
@@ -76,7 +87,7 @@ def parse_match(context, raw):
             if scope_parsed:
                 raise_multiple_scope(syntax, key.lc)
             statement.captures = value
-            captures_parsed = True
+            scope_parsed = True
             continue
 
         if key == 'with_prototype':
@@ -84,39 +95,28 @@ def parse_match(context, raw):
             continue
 
         if key in ['embed', 'pop', 'push', 'set']:
-            if statement.stack_action:
+            if statement.action:
                 raise ParsingError(
-                    'Multiple stack paths.',
+                    'Multiple stack actions.',
                     syntax,
                     key.lc,
                 )
 
             if key == 'embed':
-                statement.stack_action = parse_embed(
-                    statement,
-                    value,
-                )
+                statement.action = Embed(statement)
+                statement.action.embed_context = value
                 continue
 
             if key == 'pop':
-                statement.stack_action = parse_pop(
-                    statement,
-                    value,
-                )
+                statement.action = Pop(statement)
                 continue
 
             if key == 'push':
-                statement.stack_action = parse_push(
-                    statement,
-                    value,
-                )
+                statement.action = Push(statement)
                 continue
 
             if key == 'set':
-                statement.stack_action = parse_set(
-                    statement,
-                    value,
-                )
+                statement.action = Set(statement)
                 continue
 
         raise ParsingError(

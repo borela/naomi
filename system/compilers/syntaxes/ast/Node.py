@@ -13,27 +13,4 @@
 from borela.functions import indent_string
 
 class Node:
-    def __repr__(self):
-        body = ''
-
-        for member in self.__slots__:
-            if member in ['syntax', 'context', 'statement', 'raw']:
-                value = '<%s>' % member.title()
-            else:
-                value = getattr(self, member, None)
-                value = repr(value)
-
-            if body:
-                body += '\n'
-
-            body += '%s: %s' % (member, value)
-
-        return '%s {\n%s\n}' % (
-            self.__class__.__name__,
-            indent_string(body),
-        )
-
-    # This method is used by the traversal function to collect and visit the
-    # tree nodes without using recursion.
-    def get_sub_nodes(self):
-        raise None
+    __slots__ = []

@@ -15,6 +15,6 @@ from .StackAction import StackAction
 class Push(StackAction):
     __slots__ = 'sequence'
 
-    def __init__(self, match_statement):
-        StackAction.__init__(self, match_statement)
+    def __init__(self, match):
+        StackAction.__init__(self, match)
         self.sequence = []

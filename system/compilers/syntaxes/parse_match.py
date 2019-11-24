@@ -37,6 +37,9 @@ def check_embed_exists(key, statement, raw):
           key.lc,
       )
 
+def parse_context_sequence(value):
+    return []
+
 def parse_match(context, raw):
     statement = Match(context)
     syntax = statement.syntax
@@ -109,14 +112,17 @@ def parse_match(context, raw):
 
             if key == 'pop':
                 statement.action = Pop(statement)
+                statement.action.value = str(value)
                 continue
 
             if key == 'push':
                 statement.action = Push(statement)
+                statement.sequence = parse_context_sequence(value)
                 continue
 
             if key == 'set':
                 statement.action = Set(statement)
+                statement.sequence = parse_context_sequence(value)
                 continue
 
         raise ParsingError(

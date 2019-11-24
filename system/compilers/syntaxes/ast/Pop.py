@@ -13,4 +13,4 @@
 from .StackAction import StackAction
 
 class Pop(StackAction):
-    pass
+    __slots__ = 'value'

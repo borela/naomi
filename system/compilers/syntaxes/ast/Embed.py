@@ -14,7 +14,7 @@ from .StackAction import StackAction
 
 class Embed(StackAction):
     __slots__ = [
-      'embed_context',
-      'embed_scope',
-      'escape',
+        'embed_context',
+        'embed_scope',
+        'escape',
     ]

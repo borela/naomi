@@ -10,7 +10,6 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from ..Stack import Stack
 from .indent_string import indent_string
 
 class Node:
@@ -28,7 +27,7 @@ class Node:
     def __repr__(self):
         node_id = self.char
 
-        if self.char == None:
+        if self.char is None:
             node_id = '[Root]'
 
         if self.char == '':
@@ -57,7 +56,7 @@ class Node:
         if len(self.children) > 1:
             children_string = '(?>%s)' % children_string
 
-        if self.char == None:
+        if self.char is None:
             return r'\b%s\b' % children_string
 
         if self.char == '':
@@ -79,16 +78,16 @@ def group_words(words):
 
     # Optional group.
     if words[0] == '':
-       node = Node('')
-       node.children = words[1:]
-       return [node]
+        node = Node('')
+        node.children = words[1:]
+        return [node]
 
     char = None
     node = None
     result = []
 
     for word in words:
-        if char == None or not word.startswith(char):
+        if char is None or not word.startswith(char):
             char = word[:1]
             node = Node(char)
             result.append(node)

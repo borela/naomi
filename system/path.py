@@ -12,7 +12,6 @@
 
 from os.path import (
     dirname,
-    isabs,
     isdir,
     isfile,
     join,

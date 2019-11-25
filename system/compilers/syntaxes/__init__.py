@@ -11,7 +11,6 @@
 # the License.
 
 from .parser import parse
-from .ParsingError import ParsingError
 from Naomi.system import log_error
 from ruamel.yaml.constructor import DuplicateKeyError
 

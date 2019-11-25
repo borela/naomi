@@ -37,7 +37,6 @@ from Naomi.system import (
 )
 
 from os.path import (
-    dirname,
     isdir,
     isfile,
     join,
@@ -49,19 +48,19 @@ from borela.functions import load_yaml
 from collections import OrderedDict
 
 def check_embed_exists(key, statement, raw):
-  if 'embed' not in raw:
-      raise ParsingError(
-          '“%s” without embed.' % key,
-          statement.syntax,
-          key.lc,
-      )
+    if 'embed' not in raw:
+        raise ParsingError(
+            '“%s” without embed.' % key,
+            statement.syntax,
+            key.lc,
+        )
 
-  if not statement.action:
-      raise ParsingError(
-          '“%s” must be after embed.' % key,
-          statement.syntax,
-          key.lc,
-      )
+    if not statement.action:
+        raise ParsingError(
+            '“%s” must be after embed.' % key,
+            statement.syntax,
+            key.lc,
+        )
 
 def parse(settings):
     entry = settings.get('entry', None)
@@ -140,7 +139,6 @@ def parse_context_sequence(statement, raw):
         # Anything else means that we are referencing a single context.
         raw = [raw]
 
-
     # Mixed, list containing references to or inline contexts.
     result = []
 
@@ -155,7 +153,7 @@ def parse_context_sequence(statement, raw):
         else:
             result.append(compilation.enqueue_resource(
                 statement,
-                item, 
+                item,
                 str(item),
             ))
 
@@ -250,7 +248,7 @@ def parse_include(context, raw):
     statement.path = path
     statement.resource = compilation.enqueue_resource(
         statement,
-        raw, 
+        raw,
         path,
     )
 
@@ -428,18 +426,18 @@ def resolve_resource(compilation, resource):
     home_dir = syntax.home_dir
     path = resource.path
 
-    # Normal sublime path.
     if path.startswith('Packages/'):
+        # Normal sublime path.
         path = join(packages_dir(), '..', path)
-    # Relative to the syntax file_path.
     elif path.startswith('./'):
+        # Relative to the syntax file_path.
         path = join(syntax.parent_dir, path)
-    # Relative to the home dir.
     elif path.startswith('~/'):
+        # Relative to the home dir.
         path = path.replace('~/', '')
         path = join(home_dir, path)
     else:
-    # Context.
+        # Context.
         path = '%s#%s' % (syntax.path, path)
 
     if '#' not in path:

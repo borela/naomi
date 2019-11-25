@@ -10,7 +10,5 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from borela.functions import indent_string
-
 class Node:
     __slots__ = []

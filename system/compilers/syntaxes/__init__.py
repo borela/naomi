@@ -20,7 +20,7 @@ def compile_syntax(settings):
         syntax = parse(settings)
         # print(syntax.resources)
         # TODO: Save to a file.
-    except ParsingError as error:
+    except Exception as error:
         log_error(str(error))
     except DuplicateKeyError as error:
         lc = error.problem_mark

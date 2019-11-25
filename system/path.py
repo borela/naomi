@@ -13,6 +13,7 @@
 from os.path import (
     dirname,
     isabs,
+    isdir,
     isfile,
     join,
     realpath,
@@ -31,7 +32,7 @@ def packages_dir():
 # Resolve relative paths to the syntaxes src directories being managed by
 # the Naomi’s system.
 def resolve_syntax_entry(path):
-    if isabs(path):
+    if isfile(path):
         return realpath(path)
 
     dirs = [
@@ -45,6 +46,11 @@ def resolve_syntax_entry(path):
     # Try to find a file with the integrated src directories.
     for src_dir, build_dir in dirs:
         resolved_path = join(src_dir, path)
+
+        if isdir(resolved_path):
+            resolved_path = join(resolved_path, 'index.yml')
+
+        print(resolved_path)
 
         if isfile(resolved_path):
             return resolved_path, src_dir, build_dir

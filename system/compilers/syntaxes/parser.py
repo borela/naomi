@@ -38,6 +38,7 @@ from Naomi.system import (
 
 from os.path import (
     dirname,
+    isdir,
     join,
     realpath,
 )
@@ -426,29 +427,31 @@ def resolve_resource(compilation, resource):
     home_dir = syntax.home_dir
     path = resource.path
 
-    # Normal sublime path.
-    if path.startswith('Packages/'):
-        path = join(packages_dir(), '..', path)
-        path = realpath(path)
-    # Relative to the syntax file.
-    elif path.startswith('./'):
-        syntax_dir = dirname(syntax.path)
-        path = join(syntax_dir, path)
-        path = realpath(path)
-    # Relative to the home dir.
-    elif path.startswith('~/'):
-        path = path.replace('~/', '')
-        path = join(home_dir, path)
-        path = realpath(path)
-    # Context in the syntax file.
-    else:
-        path = syntax.path + '#' + path
-
     # If no context is targeted, the “main” will be used.
     if '#' not in path:
         path += '#main'
 
-    resource.resolved_path = path
+    file_path, context = path.split('#')
+
+    # Normal sublime path.
+    if file_path.startswith('Packages/'):
+        file_path = join(packages_dir(), '..', file_path)
+    # Relative to the syntax file_path.
+    elif file_path.startswith('./'):
+        file_path = join(syntax.parent_dir, file_path)
+    # Relative to the home dir.
+    elif file_path.startswith('~/'):
+        file_path = file_path.replace('~/', '')
+        file_path = join(home_dir, file_path)
+
+    if isdir(file_path):
+        file_path = join(file_path, 'index.yml')
+
+    # Final file path.
+    file_path = realpath(file_path)
+
+    # Full path to the context.
+    resource.resolved_path = path = '%s#%s' % (file_path, context)
 
     # The target context was loaded before.
     if path in compilation.resources:
@@ -457,14 +460,11 @@ def resolve_resource(compilation, resource):
 
     compilation.index_resource(resource)
 
-    # Load the target syntax and context.
-    target_syntax, _ = path.split('#')
-
-    if target_syntax not in compilation.syntaxes:
+    if file_path not in compilation.syntaxes:
         parse_syntax(
             compilation,
             home_dir,
-            target_syntax,
+            file_path,
         )
 
     resource.resolved = compilation.contexts.get(path, None)

@@ -39,6 +39,7 @@ from Naomi.system import (
 from os.path import (
     dirname,
     isdir,
+    isfile,
     join,
     realpath,
 )
@@ -427,25 +428,30 @@ def resolve_resource(compilation, resource):
     home_dir = syntax.home_dir
     path = resource.path
 
-    # If no context is targeted, the “main” will be used.
+    # Normal sublime path.
+    if path.startswith('Packages/'):
+        path = join(packages_dir(), '..', path)
+    # Relative to the syntax file_path.
+    elif path.startswith('./'):
+        path = join(syntax.parent_dir, path)
+    # Relative to the home dir.
+    elif path.startswith('~/'):
+        path = path.replace('~/', '')
+        path = join(home_dir, path)
+    else:
+    # Context.
+        path = '%s#%s' % (syntax.path, path)
+
     if '#' not in path:
         path += '#main'
 
     file_path, context = path.split('#')
 
-    # Normal sublime path.
-    if file_path.startswith('Packages/'):
-        file_path = join(packages_dir(), '..', file_path)
-    # Relative to the syntax file_path.
-    elif file_path.startswith('./'):
-        file_path = join(syntax.parent_dir, file_path)
-    # Relative to the home dir.
-    elif file_path.startswith('~/'):
-        file_path = file_path.replace('~/', '')
-        file_path = join(home_dir, file_path)
-
     if isdir(file_path):
         file_path = join(file_path, 'index.yml')
+
+    if not isfile(file_path) and not file_path.endswith('.yml'):
+        file_path += '.yml'
 
     # Final file path.
     file_path = realpath(file_path)

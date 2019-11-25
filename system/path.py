@@ -49,10 +49,13 @@ def resolve_syntax_entry(path):
 
         if isdir(resolved_path):
             resolved_path = join(resolved_path, 'index.yml')
-
-        print(resolved_path)
-
-        if isfile(resolved_path):
             return resolved_path, src_dir, build_dir
+        elif isfile(resolved_path):
+            return resolved_path, src_dir, build_dir
+        else:
+            resolved_path += '.yml'
 
-    raise RuntimeError('File not found: %s' % path)
+            if isfile(resolved_path):
+                return resolved_path, src_dir, build_dir
+
+    raise RuntimeError('Syntax entry not found: %s' % path)

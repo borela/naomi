@@ -23,13 +23,13 @@ contexts:
   main:
     # RGB
     - match: (?i)(\#)({{hex}}{3}|{{hex}}{6})\b
-      scope: constant.other.color.rgb-value.css
       captures:
+        0: constant.other.color.rgb-value.css
         1: punctuation.definition.constant.css
       pop: true
     # RGBA.
     - match: (?i)(\#)({{hex}}{4}|{{hex}}{8})\b
-      scope: constant.other.color.rgba-value.css
       captures:
+        0: constant.other.color.rgba-value.css
         1: punctuation.definition.constant.css
       pop: true

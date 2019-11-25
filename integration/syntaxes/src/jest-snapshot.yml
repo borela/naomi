@@ -32,29 +32,6 @@ variables:
 
 contexts:
   main:
-    - match:
-        words:
-        - foo
-        - bar
-        - baz
-        - foobar
-        - foobaz
-      scope: test
-      pop:
-
-    - match:
-      - (?i)
-      - words:
-        - foo
-        - bar
-        - baz
-        - foobar
-        - foobaz
-      scope: test
-      push:
-        - clear_scopes: 1
-        - match: abc
-          scope: abc
     - match: ""
       push: [naomi, entry]
 

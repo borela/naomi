@@ -27,7 +27,7 @@ contexts:
       set: trap
 
   attribute:
-    - include: ~/jsx1/attribute.yml
+    - include: ~/facebook-jsx/attribute
 
   close-open-tag:
     # Self closing tag.
@@ -66,11 +66,11 @@ contexts:
 
   content:
     # Sub element.
-    - include: ~/jsx1/fragment.yml
-    - include: ~/jsx1/component.yml
-    - include: ~/jsx1/element.yml
+    - include: ~/facebook-jsx/fragment
+    - include: ~/facebook-jsx/component
+    - include: ~/facebook-jsx/element
     # Embedded JS.
-    - include: ~/jsx1/embedded-js.yml
+    - include: ~/facebook-jsx/embedded-js
     # Text.
     - match: .|\n
       pop: true

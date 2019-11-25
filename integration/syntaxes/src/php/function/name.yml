@@ -23,8 +23,8 @@ variables:
 
 contexts:
   main:
-    - include: ~/php7/namespace/path.no-pop.yml
-    - include: ~/php7/function/support/magic.yml
+    - include: ~/php/namespace/path.no-pop
+    - include: ~/php/function/support/magic
     - match: |
         (?xi)\s*
         ((?>\\|\b))

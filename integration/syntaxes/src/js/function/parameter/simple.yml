@@ -120,10 +120,10 @@ contexts:
       set: optional-modifier-and-type
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   expression:
-    - include: ~/fjsx15/expression.yml
+    - include: ~/js/expression
 
   optional-default-value:
     - meta_scope: meta.function.parameter.optional.js.fjsx15
@@ -135,5 +135,5 @@ contexts:
 
   optional-modifier-and-type:
     - include: comment-no-pop
-    - include: ~/flow1/optional-modifier.no-pop.yml
-    - include: ~/flow1/optional-associated-type.yml
+    - include: ~/facebook-flow/optional-modifier.no-pop
+    - include: ~/facebook-flow/optional-associated-type

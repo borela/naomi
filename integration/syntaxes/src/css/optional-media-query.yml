@@ -21,7 +21,7 @@ contexts:
     - include: expression-escape
     - match: (?=\S)
       set:
-        - include: ~/css3/media-query.yml
+        - include: ~/css/media-query
 
   expression-escape:
     - match: (?=[,;:)\]{}])

@@ -40,10 +40,10 @@ contexts:
       set: modifier-trap
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   method-declaration:
-    - include: ~/fjsx15/class/method.yml#declaration
+    - include: ~/js/class/method#declaration
 
   modifier-trap:
     - include: main
@@ -52,5 +52,5 @@ contexts:
 
   property-or-method:
     - include: comment-no-pop
-    - include: ~/fjsx15/class/method.yml
-    - include: ~/fjsx15/class/property.yml
+    - include: ~/js/class/method
+    - include: ~/js/class/property

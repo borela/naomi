@@ -27,7 +27,7 @@ contexts:
       set: [ meta, jsx ]
 
   jsx:
-    - include: ~/fjsx15/jsx1.yml#jsx
+    - include: ~/js/jsx1#jsx
 
   meta:
     - clear_scopes: true

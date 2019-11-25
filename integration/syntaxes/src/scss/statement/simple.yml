@@ -58,10 +58,10 @@ contexts:
       set: include-value
 
   trap:
-    - include: ~/scss3/selector/trap.yml
+    - include: ~/scss/selector/trap
 
   statement-and-expression:
-    - include: ~/scss3/statement-and-expression.yml
+    - include: ~/scss/statement-and-expression
 
   include-value:
     # Mixin.
@@ -78,7 +78,7 @@ contexts:
   value:
     - match: (?=\s*\{)
       set: trap
-    - include: ~/scss3/terminator.yml
+    - include: ~/scss/terminator
     - match: ""
       push:
         - match: |
@@ -88,13 +88,13 @@ contexts:
         - include: statement-and-expression
 
   value-with-selectors:
-    - include: ~/scss3/terminator.yml
+    - include: ~/scss/terminator
     - match: ""
       push:
         - match: |
             (?x)
             (?=\s*;)
           pop: true
-        - include: ~/scss3/attribute.yml
-        - include: ~/scss3/selector.yml
+        - include: ~/scss/attribute
+        - include: ~/scss/selector
         - include: statement-and-expression

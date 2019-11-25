@@ -45,24 +45,24 @@ contexts:
       ]
 
   close-open-tag:
-    - include: ~/jsx1/shared.yml#close-open-tag
+    - include: ~/facebook-jsx/shared#close-open-tag
 
   meta:
     - meta_scope: meta.tag.other.html.jsx.jsx1
     - include: pop-now
 
   namespaced-closing-tag:
-    - include: ~/jsx1/shared.yml#namespaced-closing-tag
+    - include: ~/facebook-jsx/shared#namespaced-closing-tag
 
   pop-now:
     - match: ""
       pop: true
 
   self-closing-tag:
-    - include: ~/jsx1/shared.yml#self-closing-tag
+    - include: ~/facebook-jsx/shared#self-closing-tag
 
   simple-closing-tag:
-    - include: ~/jsx1/shared.yml#simple-closing-tag
+    - include: ~/facebook-jsx/shared#simple-closing-tag
 
   with-js-fence:
     - match: |

@@ -26,11 +26,11 @@ contexts:
       push: [naomi, entry]
 
   entry:
-    - include: ~/css3/comment.yml
-    - include: ~/css3/statement.yml
+    - include: ~/css/comment
+    - include: ~/css/statement
     - match: (?=\S)
       push:
-        - include: ~/css3/ruleset.yml
+        - include: ~/css/ruleset
 
   naomi:
     - meta_scope: naomi
@@ -41,4 +41,4 @@ contexts:
   rule-list-body:
     - match: ""
       push:
-        - include: ~/css3/ruleset/block.yml#delimiter
+        - include: ~/css/ruleset/block#delimiter

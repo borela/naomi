@@ -32,10 +32,10 @@ contexts:
       ]
 
   associated-type:
-    - include: ~/flow1/associated-type.yml
+    - include: ~/facebook-flow/associated-type
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   indexer-end:
     - match: \]
@@ -43,7 +43,7 @@ contexts:
       pop: true
 
   optional-associated-type:
-    - include: ~/flow1/optional-associated-type.yml
+    - include: ~/facebook-flow/optional-associated-type
 
   optional-name:
     - include: comment-no-pop
@@ -67,9 +67,9 @@ contexts:
       set: type-expression
 
   string:
-    - include: ~/fjsx15/literal/string/double-quoted.yml
-    - include: ~/fjsx15/literal/string/single-quoted.yml
-    - include: ~/fjsx15/literal/string/template.yml
+    - include: ~/js/literal/string/double-quoted
+    - include: ~/js/literal/string/single-quoted
+    - include: ~/js/literal/string/template
 
   type-expression:
-    - include: ~/flow1/type-expression.yml
+    - include: ~/facebook-flow/type-expression

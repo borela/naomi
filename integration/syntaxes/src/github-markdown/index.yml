@@ -25,8 +25,8 @@ contexts:
       push: [naomi, entry]
 
   entry:
-    - include: ~/md1/header.yml
-    - include: ~/md1/code-block.yml
+    - include: ~/github-markdown/header
+    - include: ~/github-markdown/code-block
     - match: ""
       pop: true
 

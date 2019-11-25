@@ -29,10 +29,10 @@ contexts:
       set: declaration
 
   comment:
-    - include: ~/php7/comment.no-pop.yml
+    - include: ~/php/comment.no-pop
 
   terminator:
-    - include: ~/php7/terminator.yml
+    - include: ~/php/terminator
 
   declaration:
     - include: comment
@@ -61,14 +61,14 @@ contexts:
 
   namespaced-const:
     - include: comment
-    - include: ~/php7/constant.yml
+    - include: ~/php/constant
 
   namespaced-function:
     - include: comment
-    - include: ~/php7/function/name.yml
+    - include: ~/php/function/name
 
   namespace-or-type:
-    - include: ~/php7/namespace/path.no-pop.yml
+    - include: ~/php/namespace/path.no-pop
     # Target namespace or type.
     - match: |
         (?xi)\s*
@@ -81,7 +81,7 @@ contexts:
 
   target-type:
     - include: comment
-    - include: ~/php7/type.yml
+    - include: ~/php/type
 
   alias:
     - include: comment

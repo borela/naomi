@@ -44,11 +44,11 @@ contexts:
     - include: pop-now
 
   optional-query:
-    - include: ~/css3/optional-media-query.yml
+    - include: ~/css/optional-media-query
 
   pop-now:
     - match: ""
       pop: true
 
   query:
-    - include: ~/css3/media-query.yml
+    - include: ~/css/media-query

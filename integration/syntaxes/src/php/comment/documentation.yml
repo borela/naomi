@@ -38,7 +38,7 @@ contexts:
           pop: true
     - match: ""
       push:
-        - include: ~/php7/comment/phpdoc.yml
-        - include: ~/php7/comment/phpunit.yml
+        - include: ~/php/comment/phpdoc
+        - include: ~/php/comment/phpunit
         - match: (?=\s*\*/)
           pop: true

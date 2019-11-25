@@ -122,7 +122,7 @@ contexts:
       ]
 
   arguments:
-    - include: ~/fjsx15/function-call/arguments.yml
+    - include: ~/js/function-call/arguments
 
   close:
     - match: \`
@@ -130,14 +130,14 @@ contexts:
       pop: true
 
   comment-no-pop:
-    - include: ~/css3/comment.no-pop.yml
-    - include: ~/fjsx15/comment/line.yml#no-pop
+    - include: ~/css/comment.no-pop
+    - include: ~/js/comment/line#no-pop
 
   embedded-expression-no-pop:
-    - include: ~/fjsx15/literal/string/template.yml#embedded-expression-no-pop
+    - include: ~/js/literal/string/template#embedded-expression-no-pop
 
   keyframe-block-identifier:
-    - include: ~/css3/keyframe-block-list.yml#block-identifier
+    - include: ~/css/keyframe-block-list#block-identifier
 
   meta-function-call:
     - meta_scope: meta.function-call.js.fjsx15
@@ -159,10 +159,10 @@ contexts:
       pop: true
 
   ruleset-block:
-    - include: ~/css3/ruleset/block.yml
+    - include: ~/css/ruleset/block
 
   ruleset-block-content:
-    - include: ~/css3/ruleset/block-content.yml
+    - include: ~/css/ruleset/block-content
 
   shared-content:
     # Close.

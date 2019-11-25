@@ -33,7 +33,8 @@ contexts:
           push:
             - match: (?=^\s*```)
               pop: true
-            - include: scope:source.json
+            # TODO:
+            # - include: scope:source.json
             - match: ""
               pop: true
     # JavaScript
@@ -61,6 +62,6 @@ contexts:
           push:
             - match: (?=^\s*```)
               pop: true
-            - include: ~/naomi.fjsx15.yml
+            - include: ~/~/js
             - match: ""
               pop: true

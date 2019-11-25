@@ -37,8 +37,8 @@ contexts:
     - match: \s*(,)
       captures:
         1: keyword.operator.other.comma.scss.scss3
-    - include: ~/scss3/keyword.yml
-    - include: ~/scss3/selector.yml
+    - include: ~/scss/keyword
+    - include: ~/scss/selector
 
   body:
     - match: \s*(})
@@ -49,6 +49,6 @@ contexts:
       push:
         - match: (?=\s*})
           pop: true
-        - include: ~/scss3/attribute.yml
-        - include: ~/scss3/selector.yml
-        - include: ~/scss3/statement-and-expression.yml
+        - include: ~/scss/attribute
+        - include: ~/scss/selector
+        - include: ~/scss/statement-and-expression

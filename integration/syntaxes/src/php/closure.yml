@@ -50,15 +50,15 @@ contexts:
           storage.type.php.php7
           keyword.declaration.function.php.php7
       pop: true
-    - include: ~/php7/modifier.no-pop.yml
+    - include: ~/php/modifier.no-pop
 
   parameters:
-    - include: ~/php7/function/parameters.yml
+    - include: ~/php/function/parameters
 
   optional-imported-variables-and-return-type-hint:
     - match: (?=\s*(?>:|\{))
       pop: true
-    - include: ~/php7/function/return-type-hint.yml
+    - include: ~/php/function/return-type-hint
     - match: \s*(use)
       captures:
         1: >-
@@ -92,7 +92,7 @@ contexts:
       ]
 
   comment:
-    - include: ~/php7/comment.no-pop.yml
+    - include: ~/php/comment.no-pop
 
   reference-operator:
     - include: comment
@@ -114,7 +114,7 @@ contexts:
 
   target-variable:
     - include: comment
-    - include: ~/php7/variable.yml
+    - include: ~/php/variable
 
   body:
-    - include: ~/php7/function/body.yml
+    - include: ~/php/function/body

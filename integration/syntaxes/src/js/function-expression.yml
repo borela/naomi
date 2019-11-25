@@ -23,7 +23,7 @@ variables:
 
 contexts:
   main:
-    - include: ~/fjsx15/core.yml#function-properties
+    - include: ~/js/core#function-properties
     - match: |
         (?x)
         (?=
@@ -36,10 +36,10 @@ contexts:
       ]
 
   body:
-    - include: ~/fjsx15/function/body.yml
+    - include: ~/js/function/body
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   declaration:
     - meta_scope: meta.function.js.fjsx15
@@ -68,13 +68,13 @@ contexts:
       pop: true
 
   keyword:
-    - include: ~/fjsx15/async.no-pop.yml
+    - include: ~/js/async.no-pop
     - match: function\b
       scope: storage.type.function.js.fjsx15
       pop: true
 
   generic-arguments:
-    - include: ~/flow1/generic/arguments.yml
+    - include: ~/facebook-flow/generic/arguments
 
   parameters:
-    - include: ~/fjsx15/function/parameters.yml
+    - include: ~/js/function/parameters

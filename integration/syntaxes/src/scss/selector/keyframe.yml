@@ -26,4 +26,4 @@ contexts:
       set: trap
 
   trap:
-    - include: ~/scss3/selector/trap.yml
+    - include: ~/scss/selector/trap

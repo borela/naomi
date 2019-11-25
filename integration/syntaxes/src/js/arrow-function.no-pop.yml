@@ -150,8 +150,8 @@ contexts:
 
   normal-arrow-function:
     - meta_scope: meta.function.js.fjsx15
-    - include: ~/fjsx15/arrow-function.yml#normal-arrow-function
+    - include: ~/js/arrow-function#normal-arrow-function
 
   single-parameter-arrow-function:
     - meta_scope: meta.function.js.fjsx15
-    - include: ~/fjsx15/arrow-function.yml#single-parameter-arrow-function
+    - include: ~/js/arrow-function#single-parameter-arrow-function

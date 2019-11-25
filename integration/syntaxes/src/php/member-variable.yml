@@ -36,8 +36,8 @@ contexts:
       ]
 
   declaration:
-    - include: ~/php7/variable.yml
-    - include: ~/php7/modifier.no-pop.yml
+    - include: ~/php/variable
+    - include: ~/php/modifier.no-pop
 
   expression:
-    - include: ~/php7/expression.yml
+    - include: ~/php/expression

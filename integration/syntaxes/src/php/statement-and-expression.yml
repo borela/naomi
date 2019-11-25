@@ -73,39 +73,39 @@ contexts:
           pop: true
 
   sequence:
-    - include: ~/php7/terminator.yml
-    - include: ~/php7/comment.yml
+    - include: ~/php/terminator
+    - include: ~/php/comment
     # Complex statements.
-    - include: ~/php7/class.yml
-    - include: ~/php7/interface.yml
-    - include: ~/php7/trait.yml
-    - include: ~/php7/declare.yml
-    - include: ~/php7/namespace.yml
-    - include: ~/php7/function.yml
-    - include: ~/php7/closure.yml
-    - include: ~/php7/use.yml
+    - include: ~/php/class
+    - include: ~/php/interface
+    - include: ~/php/trait
+    - include: ~/php/declare
+    - include: ~/php/namespace
+    - include: ~/php/function
+    - include: ~/php/closure
+    - include: ~/php/use
     # Simple statements.
-    - include: ~/php7/goto.yml
-    - include: ~/php7/statement/label.yml
-    - include: ~/php7/statement/hanging.yml
-    - include: ~/php7/statement/bodied.yml
-    - include: ~/php7/statement/simple.yml
-    - include: ~/php7/statement/other.yml
+    - include: ~/php/goto
+    - include: ~/php/statement/label
+    - include: ~/php/statement/hanging
+    - include: ~/php/statement/bodied
+    - include: ~/php/statement/simple
+    - include: ~/php/statement/other
     # Other keywords.
-    - include: ~/php7/modifier.yml
-    - include: ~/php7/new.yml
+    - include: ~/php/modifier
+    - include: ~/php/new
     # Expression.
-    - include: ~/php7/array-access.yml
-    - include: ~/php7/literal.yml
-    - include: ~/php7/function-call.yml
-    - include: ~/php7/operator.yml
+    - include: ~/php/array-access
+    - include: ~/php/literal
+    - include: ~/php/function-call
+    - include: ~/php/operator
     # When it comes to constants and variables, there's no way to tell apart
     # without an intellisense, so it’ll treat that anything that looks a
     # uppercase variable as if it was a constant.
-    - include: ~/php7/constant.yml
+    - include: ~/php/constant
     # Some types can look like constants but we will give the power to the user
     # to override types and in turn we get some predefined constants highlighted
     # correctly..
-    - include: ~/php7/type.yml
+    - include: ~/php/type
     # Constant matching failed, so it could be a variable.
-    - include: ~/php7/variable.yml
+    - include: ~/php/variable

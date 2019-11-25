@@ -47,14 +47,14 @@ contexts:
       ]
 
   associated-type:
-    - include: ~/flow1/associated-type.yml
+    - include: ~/facebook-flow/associated-type
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   co-contra-variant-no-pop:
-    - include: ~/flow1/operator/covariant.no-pop.yml
-    - include: ~/flow1/operator/contravariant.no-pop.yml
+    - include: ~/facebook-flow/operator/covariant.no-pop
+    - include: ~/facebook-flow/operator/contravariant.no-pop
 
   constant:
     # Single character.
@@ -126,9 +126,9 @@ contexts:
     - match: \.{3}
       scope: keyword.operator.spread.flow
       set: type-expression
-    - include: ~/fjsx15/class/modifier.yml
-    - include: ~/fjsx15/class/method.yml
-    - include: ~/flow1/indexer.yml
+    - include: ~/js/class/modifier
+    - include: ~/js/class/method
+    - include: ~/facebook-flow/indexer
     - include: constant
     - include: variable
     # String property name.
@@ -144,12 +144,12 @@ contexts:
       pop: true
 
   string:
-    - include: ~/fjsx15/literal/string/double-quoted.yml
-    - include: ~/fjsx15/literal/string/single-quoted.yml
-    - include: ~/fjsx15/literal/string/template.yml
+    - include: ~/js/literal/string/double-quoted
+    - include: ~/js/literal/string/single-quoted
+    - include: ~/js/literal/string/template
 
   type-expression:
-    - include: ~/flow1/type-expression.yml
+    - include: ~/facebook-flow/type-expression
 
   variable:
     # Single character.

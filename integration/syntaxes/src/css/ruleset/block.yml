@@ -23,7 +23,7 @@ contexts:
       set: delimiter
 
   comment-no-pop:
-    - include: ~/css3/comment.no-pop.yml
+    - include: ~/css/comment.no-pop
 
   delimiter:
     - meta_scope: meta.property-list.css.css3
@@ -38,6 +38,6 @@ contexts:
     # Actual rules.
     - match: ""
       push:
-        - include: ~/css3/ruleset/block-content.yml
+        - include: ~/css/ruleset/block-content
         - match: ""
           pop: true

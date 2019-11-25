@@ -72,18 +72,18 @@ contexts:
           pop: true
 
   sequence:
-    - include: ~/scss3/comment.yml
-    - include: ~/scss3/terminator.yml
-    - include: ~/scss3/interpolation.yml
-    - include: ~/scss3/keyword.yml
-    - include: ~/scss3/operator.yml
-    - include: ~/scss3/statement/simple.yml
-    - include: ~/scss3/statement/bodied.yml
-    - include: ~/scss3/function.yml
-    - include: ~/scss3/function-call.yml
-    - include: ~/scss3/mixin.yml
-    - include: ~/scss3/attribute.yml
-    - include: ~/scss3/variable-declaration.yml
-    - include: ~/scss3/variable.yml
-    - include: ~/scss3/constant.yml
-    - include: ~/scss3/literal.yml
+    - include: ~/scss/comment
+    - include: ~/scss/terminator
+    - include: ~/scss/interpolation
+    - include: ~/scss/keyword
+    - include: ~/scss/operator
+    - include: ~/scss/statement/simple
+    - include: ~/scss/statement/bodied
+    - include: ~/scss/function
+    - include: ~/scss/function-call
+    - include: ~/scss/mixin
+    - include: ~/scss/attribute
+    - include: ~/scss/variable-declaration
+    - include: ~/scss/variable
+    - include: ~/scss/constant
+    - include: ~/scss/literal

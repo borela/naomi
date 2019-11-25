@@ -23,7 +23,7 @@ variables:
 
 contexts:
   main:
-    - include: ~/flow1/namespace-path.no-pop.yml
+    - include: ~/facebook-flow/namespace-path.no-pop
     # Existential.
     - match: \*
       scope: support.type.existential.flow

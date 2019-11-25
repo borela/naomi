@@ -29,7 +29,7 @@ contexts:
       set: parameters
 
   comment:
-    - include: ~/php7/comment.no-pop.yml
+    - include: ~/php/comment.no-pop
 
   parameters:
     - include: comment
@@ -64,7 +64,7 @@ contexts:
 
   variable-type:
     - include: comment
-    - include: ~/php7/type.yml
+    - include: ~/php/type
 
   variadic-or-reference-operator:
     - include: comment
@@ -90,7 +90,7 @@ contexts:
 
   param-variable:
     - include: comment
-    - include: ~/php7/function/parameter.yml
+    - include: ~/php/function/parameter
 
   param-optional-default-value:
     - include: comment
@@ -105,8 +105,8 @@ contexts:
     - include: comment
     - match: (?=\s*(?>,|\)))
       pop: true
-    - include: ~/php7/constant.yml
-    - include: ~/php7/literal.yml
+    - include: ~/php/constant
+    - include: ~/php/literal
     # Constant inside class.
     - match: |
         (?xi)
@@ -127,7 +127,7 @@ contexts:
       pop: true
 
   default-value-type:
-    - include: ~/php7/type.yml
+    - include: ~/php/type
 
   default-value-scope-operator:
     - match: "::"
@@ -136,4 +136,4 @@ contexts:
       pop: true
 
   default-value-constant:
-    - include: ~/php7/constant.yml
+    - include: ~/php/constant

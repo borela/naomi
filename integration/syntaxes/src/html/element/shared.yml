@@ -27,7 +27,7 @@ contexts:
       set: trap
 
   attribute:
-    - include: ~/html5/attribute.yml
+    - include: ~/html/attribute
 
   close-open-tag:
     - match: /?>

@@ -27,4 +27,4 @@ contexts:
           )
         )
       push:
-        - include: ~/php7/comment.yml
+        - include: ~/php/comment

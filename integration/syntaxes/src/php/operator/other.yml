@@ -87,18 +87,18 @@ contexts:
       push:
         - match: (?=\s*:)
           pop: true
-        - include: ~/php7/statement-and-expression.yml
+        - include: ~/php/statement-and-expression
 
   member-access:
     - meta_content_scope: member.php.php7
-    - include: ~/php7/function-call/normal.yml
-    - include: ~/php7/constant.yml
-    - include: ~/php7/variable.no-dollar.yml
+    - include: ~/php/function-call/normal
+    - include: ~/php/constant
+    - include: ~/php/variable.no-dollar
 
   scope-resolution:
     - match: \s*\b(class)\b
       scope: keyword.other.php.php7
       pop: true
-    - include: ~/php7/function-call.yml
-    - include: ~/php7/constant.yml
-    - include: ~/php7/variable.yml
+    - include: ~/php/function-call
+    - include: ~/php/constant
+    - include: ~/php/variable

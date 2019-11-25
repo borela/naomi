@@ -25,7 +25,7 @@ contexts:
       pop: true
 
   value:
-    - include: ~/html5/literal/string/double-quoted.yml
-    - include: ~/html5/literal/string/single-quoted.yml
-    - include: ~/html5/literal/number.yml
-    - include: ~/html5/literal/string/unquoted.yml
+    - include: ~/html/literal/string/double-quoted
+    - include: ~/html/literal/string/single-quoted
+    - include: ~/html/literal/number
+    - include: ~/html/literal/string/unquoted

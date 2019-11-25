@@ -49,11 +49,11 @@ contexts:
       ]
 
   accessor-head:
-    - include: ~/fjsx15/comment.no-pop.yml
-    - include: ~/fjsx15/function-call.yml
-    - include: ~/fjsx15/variable.yml#function-assigned-to-variable
-    - include: ~/fjsx15/constant.yml
-    - include: ~/fjsx15/variable.yml
+    - include: ~/js/comment.no-pop
+    - include: ~/js/function-call
+    - include: ~/js/variable#function-assigned-to-variable
+    - include: ~/js/constant
+    - include: ~/js/variable
 
   # Used near accessor to highlight global functions and properties.
   other-property-or-function:
@@ -61,10 +61,10 @@ contexts:
       set: [ optional-tail, accessor-head ]
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.yml
+    - include: ~/js/optional-expression
 
   optional-tail:
-    - include: ~/fjsx15/expression.yml#optional-tail
+    - include: ~/js/expression#optional-tail
 
   ternary-else:
     - match: ":"
@@ -72,4 +72,4 @@ contexts:
       set: optional-expression
 
   yield-head:
-    - include: ~/fjsx15/expression.yml#head
+    - include: ~/js/expression#head

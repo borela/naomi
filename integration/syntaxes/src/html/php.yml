@@ -22,4 +22,4 @@ contexts:
       push: php
 
   php:
-    - include: ~/naomi.php7.yml
+    - include: ~/naomi.php7

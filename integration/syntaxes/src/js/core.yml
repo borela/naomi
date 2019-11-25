@@ -191,7 +191,7 @@ contexts:
     - include: other-property-or-function
 
   arguments:
-    - include: ~/fjsx15/function-call/arguments.yml
+    - include: ~/js/function-call/arguments
 
   console:
     - match: (console)\s*(\.)
@@ -493,7 +493,7 @@ contexts:
     - include: other-property-or-function
 
   other-property-or-function:
-    - include: ~/fjsx15/operator/other.yml#other-property-or-function
+    - include: ~/js/operator/other#other-property-or-function
 
   reflection:
     - match: |

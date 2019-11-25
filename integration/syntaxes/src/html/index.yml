@@ -40,8 +40,8 @@ contexts:
       push: [naomi, entry]
 
   entry:
-    # - include: ~/html5/php.yml
-    - include: ~/html5/element.yml
+    # - include: ~/html/php
+    - include: ~/html/element
     - match: ""
       pop: true
 

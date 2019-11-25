@@ -26,7 +26,7 @@ contexts:
       ]
 
   comment-no-pop:
-    - include: ~/css3/comment.no-pop.yml
+    - include: ~/css/comment.no-pop
 
   delimiter:
     - include: comment-no-pop
@@ -50,4 +50,4 @@ contexts:
     - include: url
 
   url:
-    - include: ~/css3/function-call.yml
+    - include: ~/css/function-call

@@ -127,8 +127,8 @@ contexts:
 
   variable-a:
     - meta_scope: variable.a.php.php7
-    - include: ~/php7/literal/string/embedded-variable.yml
+    - include: ~/php/literal/string/embedded-variable
 
   variable-b:
     - meta_scope: variable.b.php.php7
-    - include: ~/php7/literal/string/embedded-variable.yml
+    - include: ~/php/literal/string/embedded-variable

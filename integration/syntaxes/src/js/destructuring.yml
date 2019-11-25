@@ -53,7 +53,7 @@ contexts:
       set: destructuring-object
 
   destructuring-array:
-    - include: ~/fjsx15/destructuring/array.yml
+    - include: ~/js/destructuring/array
 
   destructuring-object:
-    - include: ~/fjsx15/destructuring/object.yml
+    - include: ~/js/destructuring/object

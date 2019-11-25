@@ -141,7 +141,7 @@ contexts:
     - include: simple
 
   arrow-body:
-    - include: ~/fjsx15/arrow-function/body.yml
+    - include: ~/js/arrow-function/body
 
   assignment:
     - match: =
@@ -149,7 +149,7 @@ contexts:
       pop: true
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   function-assigned-to-variable:
     # Normal arrow function assigned to variable.
@@ -193,7 +193,7 @@ contexts:
     - meta_scope: >-
         meta.declaration.function.js.fjsx15
         meta.function.js.fjsx15
-    - include: ~/fjsx15/function.yml
+    - include: ~/js/function
 
   function-identifier:
     - match: (?xi){{commonIdentifier}}
@@ -202,22 +202,22 @@ contexts:
 
   normal-arrow-function:
     - meta_scope: meta.declaration.function.arrow.js.fjsx15
-    - include: ~/fjsx15/async.no-pop.yml
-    - include: ~/flow1/generic/arguments.no-pop.yml
-    - include: ~/fjsx15/function/parameters.no-pop.yml
+    - include: ~/js/async.no-pop
+    - include: ~/facebook-flow/generic/arguments.no-pop
+    - include: ~/js/function/parameters.no-pop
     - match: (?==>)
       set: arrow-body
 
   single-parameter-arrow-function:
     - meta_scope: meta.declaration.function.arrow.js.fjsx15
-    - include: ~/fjsx15/async.no-pop.yml
-    - include: ~/fjsx15/function/parameter/simple.no-pop.yml
+    - include: ~/js/async.no-pop
+    - include: ~/js/function/parameter/simple.no-pop
     - match: (?==>)
       set: arrow-body
 
   optional-type:
     - include: comment-no-pop
-    - include: ~/flow1/optional-associated-type.yml
+    - include: ~/facebook-flow/optional-associated-type
 
   object:
     - match: |

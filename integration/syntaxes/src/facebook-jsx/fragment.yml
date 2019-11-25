@@ -39,7 +39,7 @@ contexts:
       push: [ meta-content, content ]
 
   content:
-    - include: ~/jsx1/shared.yml#content
+    - include: ~/facebook-jsx/shared#content
 
   meta:
     - meta_scope: meta.tag.other.fragment.jsx.jsx1

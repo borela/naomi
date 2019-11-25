@@ -32,7 +32,7 @@ contexts:
       set: declaration
 
   comment:
-    - include: ~/php7/comment.no-pop.yml
+    - include: ~/php/comment.no-pop
 
   declaration:
     - include: comment
@@ -57,6 +57,6 @@ contexts:
   body-content:
     - match: ""
       push:
-        - include: ~/php7/statement-and-expression.yml
+        - include: ~/php/statement-and-expression
         - match: ""
           pop: true

@@ -235,7 +235,7 @@ contexts:
     # - include: variable
 
   arrow-function:
-    - include: ~/fjsx15/arrow-function.yml
+    - include: ~/js/arrow-function
 
   associated-value:
     - match: ":"
@@ -243,7 +243,7 @@ contexts:
       set: optional-expression
 
   constant:
-    - include: ~/fjsx15/variable.yml
+    - include: ~/js/variable
 
   computed-property-end:
     - match: \]
@@ -251,10 +251,10 @@ contexts:
       pop: true
 
   function-declaration:
-    - include: ~/fjsx15/function.yml#declaration
+    - include: ~/js/function#declaration
 
   function-keyword:
-    - include: ~/fjsx15/function.yml#keyword
+    - include: ~/js/function#keyword
 
   meta-computed-key:
     - meta_scope: meta.object-literal.key.computed.js.fjsx15
@@ -279,19 +279,19 @@ contexts:
       pop: true
 
   number:
-    - include: ~/fjsx15/literal/number.yml
+    - include: ~/js/literal/number
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.yml
+    - include: ~/js/optional-expression
 
   pop-now:
     - match: ""
       pop: true
 
   string:
-    - include: ~/fjsx15/literal/string/double-quoted.yml
-    - include: ~/fjsx15/literal/string/single-quoted.yml
-    - include: ~/fjsx15/literal/string/template.yml
+    - include: ~/js/literal/string/double-quoted
+    - include: ~/js/literal/string/single-quoted
+    - include: ~/js/literal/string/template
 
   variable:
-    - include: ~/fjsx15/variable.yml
+    - include: ~/js/variable

@@ -27,9 +27,9 @@ contexts:
       push: [naomi, entry]
 
   entry:
-    - include: ~/fjsx15/comment.yml
-    - include: ~/fjsx15/statement.yml
-    - include: ~/fjsx15/expression.yml
+    - include: ~/js/comment
+    - include: ~/js/statement
+    - include: ~/js/expression
 
   naomi:
     - meta_scope: naomi

@@ -18,5 +18,5 @@ scope: ...
 
 contexts:
   main:
-    - include: ~/css3/value-no-unquoted-string.yml
-    - include: ~/css3/literal/string/unquoted.yml
+    - include: ~/css/value-no-unquoted-string
+    - include: ~/css/literal/string/unquoted

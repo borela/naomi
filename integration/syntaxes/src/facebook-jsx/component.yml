@@ -47,7 +47,7 @@ contexts:
       ]
 
   close-open-tag:
-    - include: ~/jsx1/shared.yml#close-open-tag
+    - include: ~/facebook-jsx/shared#close-open-tag
 
   meta:
     - meta_scope: meta.tag.other.component.html.jsx.jsx1
@@ -55,7 +55,7 @@ contexts:
       pop: true
 
   namespaced-closing-tag:
-    - include: ~/jsx1/shared.yml#component-closing-tag
+    - include: ~/facebook-jsx/shared#component-closing-tag
 
   with-js-fence:
     - match: |

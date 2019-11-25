@@ -24,4 +24,4 @@ contexts:
       pop: true
 
   associated-type:
-    - include: ~/flow1/associated-type.yml
+    - include: ~/facebook-flow/associated-type

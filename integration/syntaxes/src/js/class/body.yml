@@ -40,17 +40,17 @@ contexts:
       push: statement-or-expression
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   statement-or-expression:
     - include: comment-no-pop
-    - include: ~/flow1/operator/covariant.no-pop.yml
-    - include: ~/flow1/operator/contravariant.no-pop.yml
-    - include: ~/fjsx15/decorator.yml
-    - include: ~/fjsx15/react-js.yml
-    - include: ~/fjsx15/class/modifier.yml
-    - include: ~/fjsx15/class/method.yml
-    - include: ~/fjsx15/class/property.yml
-    - include: ~/flow1/indexer.yml
+    - include: ~/facebook-flow/operator/covariant.no-pop
+    - include: ~/facebook-flow/operator/contravariant.no-pop
+    - include: ~/js/decorator
+    - include: ~/js/react-js
+    - include: ~/js/class/modifier
+    - include: ~/js/class/method
+    - include: ~/js/class/property
+    - include: ~/facebook-flow/indexer
     - match: (?=\S)
       pop: true

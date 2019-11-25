@@ -72,11 +72,11 @@ contexts:
           pop: true
 
   sequence:
-    - include: ~/scss3/comment.yml
-    - include: ~/scss3/terminator.yml
-    - include: ~/scss3/keyword.yml
-    - include: ~/scss3/operator.yml
-    - include: ~/scss3/function-call.yml
-    - include: ~/scss3/variable.yml
-    - include: ~/scss3/constant.yml
-    - include: ~/scss3/literal.yml
+    - include: ~/scss/comment
+    - include: ~/scss/terminator
+    - include: ~/scss/keyword
+    - include: ~/scss/operator
+    - include: ~/scss/function-call
+    - include: ~/scss/variable
+    - include: ~/scss/constant
+    - include: ~/scss/literal

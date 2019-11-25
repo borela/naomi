@@ -41,7 +41,7 @@ contexts:
         - include: operator
 
   trap:
-    - include: ~/scss3/selector/trap.yml
+    - include: ~/scss/selector/trap
 
   attribute:
     - match: |
@@ -139,7 +139,7 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: ~/scss3/statement-and-expression.yml
+        - include: ~/scss/statement-and-expression
         - match: ""
           pop: true
 

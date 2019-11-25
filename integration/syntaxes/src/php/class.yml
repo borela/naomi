@@ -52,10 +52,10 @@ contexts:
           storage.type.php.php7
           keyword.declaration.class.php.php7
       pop: true
-    - include: ~/php7/modifier.no-pop.yml
+    - include: ~/php/modifier.no-pop
 
   comment:
-    - include: ~/php7/comment.no-pop.yml
+    - include: ~/php/comment.no-pop
 
   declaration:
     - include: comment
@@ -92,7 +92,7 @@ contexts:
   body-content:
     - match: ""
       push:
-        - include: ~/php7/statement-and-expression.yml
+        - include: ~/php/statement-and-expression
         - match: ""
           pop: true
 
@@ -102,7 +102,7 @@ contexts:
       pop: true
     - match: (?i)(?=\s*\bimplements\b)
       pop: true
-    - include: ~/php7/type.yml
+    - include: ~/php/type
 
   implement-targets:
     - include: comment
@@ -116,7 +116,7 @@ contexts:
 
   implement-target:
     - include: comment
-    - include: ~/php7/type.yml
+    - include: ~/php/type
 
   implement-target-definition:
     - include: comment

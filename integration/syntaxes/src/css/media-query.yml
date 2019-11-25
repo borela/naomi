@@ -34,14 +34,14 @@ contexts:
         - include: feature-expression
 
   comment-no-pop:
-    - include: ~/css3/comment.no-pop.yml
+    - include: ~/css/comment.no-pop
 
   else-pop:
     - match: (?=\S)
       pop: true
 
   feature-expression:
-    - include: ~/css3/media-query-feature-expression.yml
+    - include: ~/css/media-query-feature-expression
 
   head:
     - include: comment-no-pop
@@ -59,7 +59,7 @@ contexts:
       set: close-group
 
   optional-media-query:
-    - include: ~/css3/optional-media-query.yml
+    - include: ~/css/optional-media-query
 
   optional-tail:
     - include: comment-no-pop

@@ -20,9 +20,9 @@ contexts:
   main:
     - include: comment-no-pop
     # Functions need to be detected before expression groups.
-    - include: ~/flow1/function.yml
+    - include: ~/facebook-flow/function
     # Detect operators as soon as possible.
-    - include: ~/flow1/operator.yml
+    - include: ~/facebook-flow/operator
     # Open new type expression group.
     - match: \(
       scope: punctuation.section.group.begin.flow
@@ -37,7 +37,7 @@ contexts:
       set: optional-tail
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   else-pop:
     - match: (?=\S)
@@ -45,18 +45,18 @@ contexts:
 
   head:
     - include: comment-no-pop
-    - include: ~/flow1/object.yml
-    - include: ~/flow1/tuple.yml
-    - include: ~/fjsx15/literal/number.yml
-    - include: ~/fjsx15/literal/string/double-quoted.yml
-    - include: ~/fjsx15/literal/string/single-quoted.yml
-    - include: ~/fjsx15/literal/string/template.yml
-    - include: ~/flow1/simple.yml
+    - include: ~/facebook-flow/object
+    - include: ~/facebook-flow/tuple
+    - include: ~/js/literal/number
+    - include: ~/js/literal/string/double-quoted
+    - include: ~/js/literal/string/single-quoted
+    - include: ~/js/literal/string/template
+    - include: ~/facebook-flow/simple
 
   open-group:
     - include: comment-no-pop
     # Functions need to be detected before expression groups.
-    - include: ~/flow1/function.no-pop.yml
+    - include: ~/facebook-flow/function.no-pop
     # Open new type expression group.
     - match: \(
       scope: punctuation.section.group.begin.flow
@@ -73,13 +73,13 @@ contexts:
     - match: (?=[\[<])
       set: [ optional-tail, tail ]
     # Other operators.
-    - include: ~/flow1/operator.yml
+    - include: ~/facebook-flow/operator
     - include: else-pop
 
   optional-type-expression:
-    - include: ~/flow1/optional-type-expression.yml
+    - include: ~/facebook-flow/optional-type-expression
 
   tail:
     - include: comment-no-pop
-    - include: ~/flow1/operator/array-shorthand.yml
-    - include: ~/flow1/generic/arguments.yml
+    - include: ~/facebook-flow/operator/array-shorthand
+    - include: ~/facebook-flow/generic/arguments

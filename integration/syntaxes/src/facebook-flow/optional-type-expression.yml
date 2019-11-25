@@ -20,4 +20,4 @@ contexts:
   main:
     - match: (?=[>,;:)\]}])
       pop: true
-    - include: ~/flow1/type-expression.yml
+    - include: ~/facebook-flow/type-expression

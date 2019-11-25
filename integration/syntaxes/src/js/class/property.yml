@@ -23,7 +23,7 @@ variables:
 
 contexts:
   main:
-    - include: ~/fjsx15/variable.yml#function-assigned-to-variable
+    - include: ~/js/variable#function-assigned-to-variable
     - match: (?xi)(?={{commonIdentifier}})
       set: [
         optional-type-and-value,
@@ -31,14 +31,14 @@ contexts:
       ]
 
   associated-type:
-    - include: ~/flow1/associated-type.yml
+    - include: ~/facebook-flow/associated-type
 
   identifier:
-    - include: ~/fjsx15/constant.yml
-    - include: ~/fjsx15/variable.yml
+    - include: ~/js/constant
+    - include: ~/js/variable
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.yml
+    - include: ~/js/optional-expression
 
   optional-type-and-value:
     - match: \?

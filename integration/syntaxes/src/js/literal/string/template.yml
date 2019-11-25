@@ -67,7 +67,7 @@ contexts:
       pop: true
 
   embedded-content:
-    - include: ~/fjsx15/optional-expression.yml
+    - include: ~/js/optional-expression
 
   embedded-expression-no-pop:
     - match: \$\{

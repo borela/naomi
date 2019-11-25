@@ -35,4 +35,4 @@ contexts:
       pop: true
 
   regex-content:
-    - include: ~/fjsx15/literal/string/regex.yml#regex-content
+    - include: ~/js/literal/string/regex#regex-content

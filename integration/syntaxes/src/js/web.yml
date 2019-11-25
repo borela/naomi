@@ -157,7 +157,7 @@ contexts:
       pop: true
 
   arguments:
-    - include: ~/fjsx15/function-call/arguments.yml
+    - include: ~/js/function-call/arguments
 
   document-property-or-function:
     # Function call.
@@ -279,7 +279,7 @@ contexts:
     - include: pop-now
 
   other-property-or-function:
-    - include: ~/fjsx15/operator/other.yml#other-property-or-function
+    - include: ~/js/operator/other#other-property-or-function
 
   pop-now:
     - match: ""

@@ -39,33 +39,33 @@ contexts:
         3: punctuation.separator.key-value.css.css3
     # Some pseudo elements still allow the CSS2 syntax and could be confused with
     # a pseudo class, to prevent that, we try to match the pseudo element first.
-    - include: ~/css3/selector/pseudo-element.yml
-    - include: ~/css3/selector/pseudo-class.yml
-    - include: ~/css3/selector/ampersand.yml
-    - include: ~/css3/selector/attribute.yml
-    - include: ~/css3/selector/custom.yml
-    - include: ~/css3/selector/id.yml
-    - include: ~/css3/selector/class.yml
-    - include: ~/css3/selector/type.yml
-    - include: ~/css3/selector/universal.yml
+    - include: ~/css/selector/pseudo-element
+    - include: ~/css/selector/pseudo-class
+    - include: ~/css/selector/ampersand
+    - include: ~/css/selector/attribute
+    - include: ~/css/selector/custom
+    - include: ~/css/selector/id
+    - include: ~/css/selector/class
+    - include: ~/css/selector/type
+    - include: ~/css/selector/universal
 
   optional-tail:
-    - include: ~/css3/comment.no-pop.yml
+    - include: ~/css/comment.no-pop
     # Escape.
     - match: (?=[,;(){}])
       pop: true
     # Operators.
-    - include: ~/css3/combinator.yml
+    - include: ~/css/combinator
     # Attribute.
     - match: (?=\[)
       push:
-        - include: ~/css3/selector/attribute.yml
+        - include: ~/css/selector/attribute
     # Pseudo element, class and custom selector.
     - match: (?=:)
       push:
-        - include: ~/css3/selector/pseudo-element.yml
-        - include: ~/css3/selector/pseudo-class.yml
-        - include: ~/css3/selector/custom.yml
+        - include: ~/css/selector/pseudo-element
+        - include: ~/css/selector/pseudo-class
+        - include: ~/css/selector/custom
     # Loop.
     - match: (?=\S)
       push: head

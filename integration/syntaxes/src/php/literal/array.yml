@@ -52,7 +52,7 @@ contexts:
     - include: item-definition
     - match: ""
       push:
-        - include: ~/php7/statement-and-expression.yml
+        - include: ~/php/statement-and-expression
         - match: ""
           pop: true
 
@@ -61,7 +61,7 @@ contexts:
     - include: item-definition
     - match: ""
       push:
-        - include: ~/php7/statement-and-expression.yml
+        - include: ~/php/statement-and-expression
         - match: ""
           pop: true
 

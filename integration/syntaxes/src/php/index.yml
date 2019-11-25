@@ -24,10 +24,9 @@ contexts:
   main:
     - match: ""
       embed: entry
-      push: html5-element
 
   html5-element:
-    - include: ~/html5/element.yml
+    - include: ~/html/element
 
   entry:
     # Normal open tag.
@@ -63,4 +62,4 @@ contexts:
         - match: (?=\s*\?>)
           pop: true
       push:
-        - include: ~/php7/statement-and-expression.yml
+        - include: ~/php/statement-and-expression

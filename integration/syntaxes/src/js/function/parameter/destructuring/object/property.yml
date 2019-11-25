@@ -43,7 +43,7 @@ contexts:
       set: optional-alias
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   computed-property-end:
     - match: \]
@@ -61,14 +61,14 @@ contexts:
     - include: comment-no-pop
     - match: (?=\))
       pop: true
-    - include: ~/fjsx15/function/parameter/destructuring/array.yml
-    - include: ~/fjsx15/function/parameter/destructuring/object.yml
-    - include: ~/fjsx15/function/parameter/simple.yml
+    - include: ~/js/function/parameter/destructuring/array
+    - include: ~/js/function/parameter/destructuring/object
+    - include: ~/js/function/parameter/simple
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.yml
+    - include: ~/js/optional-expression
 
   string:
-    - include: ~/fjsx15/literal/string/double-quoted.yml
-    - include: ~/fjsx15/literal/string/single-quoted.yml
-    - include: ~/fjsx15/literal/string/template.yml
+    - include: ~/js/literal/string/double-quoted
+    - include: ~/js/literal/string/single-quoted
+    - include: ~/js/literal/string/template

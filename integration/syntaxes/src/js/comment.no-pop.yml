@@ -20,4 +20,4 @@ contexts:
   main:
     - match: (?=/(?>/|\*))
       push:
-        - include: ~/fjsx15/comment.yml
+        - include: ~/js/comment

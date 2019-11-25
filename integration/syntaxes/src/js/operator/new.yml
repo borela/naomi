@@ -54,7 +54,7 @@ contexts:
       ]
 
   arguments:
-    - include: ~/fjsx15/function-call.yml#arguments
+    - include: ~/js/function-call#arguments
 
   else-pop:
     - match: (?=\S)
@@ -75,17 +75,17 @@ contexts:
     - include: else-pop
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.yml
+    - include: ~/js/optional-expression
 
   optional-tail:
-    - include: ~/fjsx15/expression.yml#optional-tail
+    - include: ~/js/expression#optional-tail
 
   pop-now:
     - match: ""
       pop: true
 
   type:
-    - include: ~/fjsx15/core.yml
+    - include: ~/js/core
     # Object before target property.
     - match: (?xi)({{commonIdentifier}})\s*(\.)
       captures:
@@ -96,4 +96,4 @@ contexts:
       scope: variable.other.type.js.fjsx15
       pop: true
     # Other expressions.
-    - include: ~/fjsx15/expression.yml
+    - include: ~/js/expression

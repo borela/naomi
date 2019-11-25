@@ -57,12 +57,12 @@ contexts:
       pop: true
 
   optional-type-expression:
-    - include: ~/flow1/optional-type-expression.yml
+    - include: ~/facebook-flow/optional-type-expression
 
   punctuation:
     - meta_scope: meta.declaration.type.flow
-    - include: ~/flow1/generic/arguments.no-pop.yml
-    - include: ~/flow1/associated-type.no-pop.yml
+    - include: ~/facebook-flow/generic/arguments.no-pop
+    - include: ~/facebook-flow/associated-type.no-pop
     - match: =
       scope: keyword.operator.other.assignment.flow
       set: [

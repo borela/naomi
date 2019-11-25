@@ -23,7 +23,7 @@ variables:
 
 contexts:
   main:
-    - include: ~/fjsx15/core.yml#import-properties
+    - include: ~/js/core#import-properties
     # Dynamic import.
     - match: import\b(?=\s*\()
       scope: support.function.import.js.fjsx15
@@ -54,7 +54,7 @@ contexts:
       pop: true
 
   arguments:
-    - include: ~/fjsx15/expression.yml
+    - include: ~/js/expression
 
   block-optional-target:
     - include: comment-no-pop
@@ -68,7 +68,7 @@ contexts:
       pop: true
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   delimiter:
     - include: comment-no-pop
@@ -96,9 +96,9 @@ contexts:
 
   origin-path:
     - include: comment-no-pop
-    - include: ~/fjsx15/literal/string/double-quoted.yml
-    - include: ~/fjsx15/literal/string/single-quoted.yml
-    - include: ~/fjsx15/literal/string/template.yml
+    - include: ~/js/literal/string/double-quoted
+    - include: ~/js/literal/string/single-quoted
+    - include: ~/js/literal/string/template
 
   optional-target:
     - include: comment-no-pop
@@ -108,7 +108,7 @@ contexts:
 
   shared-optional-target:
     # Type.
-    - include: ~/flow1/type-import.yml
+    - include: ~/facebook-flow/type-import
     # Aliased All.
     - match: \*(?=\s*as)
       scope: keyword.control.import-export.star.js.fjsx15

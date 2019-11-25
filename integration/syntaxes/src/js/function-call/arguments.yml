@@ -23,7 +23,7 @@ contexts:
       set: delimiter
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   delimiter:
     - meta_scope: meta.group.js.fjsx15
@@ -37,4 +37,4 @@ contexts:
       push: expression
 
   expression:
-    - include: ~/fjsx15/expression.yml
+    - include: ~/js/expression

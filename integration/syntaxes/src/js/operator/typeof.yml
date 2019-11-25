@@ -33,7 +33,7 @@ contexts:
       set: optional-tail
 
   optional-tail:
-    - include: ~/fjsx15/expression.yml#optional-tail
+    - include: ~/js/expression#optional-tail
 
   type:
-    - include: ~/fjsx15/operator/new.yml#type
+    - include: ~/js/operator/new#type

@@ -23,13 +23,13 @@ variables:
 
 contexts:
   main:
-    - include: ~/flow1/prolog.yml
-    - include: ~/fjsx15/comment/eslint.yml
-    - include: ~/fjsx15/comment/docblock.yml
-    - include: ~/fjsx15/comment/block.yml
-    - include: ~/fjsx15/comment/line.yml
+    - include: ~/facebook-flow/prolog
+    - include: ~/js/comment/eslint
+    - include: ~/js/comment/docblock
+    - include: ~/js/comment/block
+    - include: ~/js/comment/line
     # Embedded JS.
-    - include: ~/jsx1/embedded-js.yml
+    - include: ~/facebook-jsx/embedded-js
     - include: dangerous
     - include: key
     - include: ref
@@ -107,9 +107,9 @@ contexts:
       pop: true
 
   value:
-    - include: ~/jsx1/component.yml
-    - include: ~/jsx1/element.yml
-    - include: ~/jsx1/fragment.yml
-    - include: ~/jsx1/literal/string/double-quoted.yml
-    - include: ~/jsx1/literal/string/single-quoted.yml
+    - include: ~/facebook-jsx/component
+    - include: ~/facebook-jsx/element
+    - include: ~/facebook-jsx/fragment
+    - include: ~/facebook-jsx/literal/string/double-quoted
+    - include: ~/facebook-jsx/literal/string/single-quoted
     - include: else-pop

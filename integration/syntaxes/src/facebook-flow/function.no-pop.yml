@@ -123,16 +123,16 @@ contexts:
       ]
 
   declaration:
-    - include: ~/flow1/function.yml#declaration
+    - include: ~/facebook-flow/function#declaration
 
   head:
-    - include: ~/flow1/function.yml#head
+    - include: ~/facebook-flow/function#head
 
   meta-parameters:
-    - include: ~/flow1/function.yml#meta-parameters
+    - include: ~/facebook-flow/function#meta-parameters
 
   optional-tail:
-    - include: ~/flow1/function.yml#optional-tail
+    - include: ~/facebook-flow/function#optional-tail
 
   return:
-    - include: ~/flow1/function.yml#return
+    - include: ~/facebook-flow/function#return

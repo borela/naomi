@@ -42,7 +42,7 @@ contexts:
     - meta_scope: >-
         text.html
         naomi
-    - include: ~/html5/element.yml
+    - include: ~/html/element
 
   close:
     - match: \`

@@ -19,6 +19,6 @@ scope: source.jsx
 
 contexts:
   main:
-    - include: ~/jsx1/fragment.yml
-    - include: ~/jsx1/component.yml
-    - include: ~/jsx1/element.yml
+    - include: ~/facebook-jsx/fragment
+    - include: ~/facebook-jsx/component
+    - include: ~/facebook-jsx/element

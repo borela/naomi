@@ -41,5 +41,5 @@ contexts:
               )
             )
           pop: true
-        - include: ~/scss3/attribute.yml
-        - include: ~/scss3/selector.yml
+        - include: ~/scss/attribute
+        - include: ~/scss/selector

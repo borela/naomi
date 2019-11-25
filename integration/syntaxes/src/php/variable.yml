@@ -23,7 +23,7 @@ variables:
 
 contexts:
   main:
-    - include: ~/php7/namespace/path.no-pop.yml
+    - include: ~/php/namespace/path.no-pop
     - include: support-variable
     - include: common-variable
 

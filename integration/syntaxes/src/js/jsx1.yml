@@ -27,9 +27,9 @@ contexts:
       set: [ meta, jsx ]
 
   jsx:
-    - include: ~/jsx1/fragment.yml#with-js-fence
-    - include: ~/jsx1/component.yml#with-js-fence
-    - include: ~/jsx1/element.yml#with-js-fence
+    - include: ~/facebook-jsx/fragment#with-js-fence
+    - include: ~/facebook-jsx/component#with-js-fence
+    - include: ~/facebook-jsx/element#with-js-fence
 
   meta:
     - clear_scopes: true

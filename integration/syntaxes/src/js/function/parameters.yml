@@ -23,7 +23,7 @@ contexts:
       set: delimiters
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   delimiters:
     - meta_scope: >-
@@ -36,16 +36,16 @@ contexts:
       scope: punctuation.section.group.end.js.fjsx15
       set: optional-return-type
     # Rest.
-    - include: ~/fjsx15/operator/rest.no-pop.yml
+    - include: ~/js/operator/rest.no-pop
     # Actual parameter.
     - match: (?=\S)
       push: parameter
 
   optional-return-type:
-    - include: ~/flow1/optional-associated-type.yml
+    - include: ~/facebook-flow/optional-associated-type
 
   parameter:
     - include: comment-no-pop
-    - include: ~/fjsx15/function/parameter/destructuring/array.yml
-    - include: ~/fjsx15/function/parameter/destructuring/object.yml
-    - include: ~/fjsx15/function/parameter/simple.yml
+    - include: ~/js/function/parameter/destructuring/array
+    - include: ~/js/function/parameter/destructuring/object
+    - include: ~/js/function/parameter/simple

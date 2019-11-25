@@ -74,11 +74,11 @@ contexts:
     # Nesting.
     - match: (?=\S)
       set:
-        - include: ~/css3/statement.yml
-        - include: ~/css3/ruleset.yml
+        - include: ~/css/statement
+        - include: ~/css/ruleset
 
   comment-no-pop:
-    - include: ~/css3/comment.no-pop.yml
+    - include: ~/css/comment.no-pop
 
   delimiter:
     - include: comment-no-pop
@@ -118,7 +118,7 @@ contexts:
           scope: keyword.operator.word.css.css3
           pop: true
         - include: grid-line-name
-        - include: ~/css3/value.yml
+        - include: ~/css/value
 
   optional-grid-template-value:
     - include: comment-no-pop
@@ -133,7 +133,7 @@ contexts:
       push:
         - include: start-end-ratio
         - include: value-separator
-        - include: ~/css3/value.yml
+        - include: ~/css/value
 
   optional-value:
     - include: comment-no-pop
@@ -142,7 +142,7 @@ contexts:
     - match: (?=\S)
       push:
         - include: value-separator
-        - include: ~/css3/value.yml
+        - include: ~/css/value
 
   possible-set:
     - include: comment-no-pop
@@ -156,10 +156,10 @@ contexts:
 
   property:
     - include: comment-no-pop
-    - include: ~/css3/property.yml
+    - include: ~/css/property
 
   ruleset-block:
-    - include: ~/css3/ruleset/block.yml
+    - include: ~/css/ruleset/block
 
   start-end-ratio:
     - match: /

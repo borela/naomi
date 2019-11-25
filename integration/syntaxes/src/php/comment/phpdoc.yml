@@ -42,7 +42,7 @@ contexts:
     - include: other-tags
 
   variable:
-    - include: ~/php7/variable.yml
+    - include: ~/php/variable
 
   types:
     # $this.
@@ -63,7 +63,7 @@ contexts:
       ]
 
   type:
-    - include: ~/php7/type.yml
+    - include: ~/php/type
 
   type-definition:
     - match: |

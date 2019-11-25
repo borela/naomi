@@ -35,10 +35,10 @@ contexts:
           set: [ meta-value, optional-value, delimiter, property ]
 
   comment-no-pop:
-    - include: ~/css3/comment.no-pop.yml
+    - include: ~/css/comment.no-pop
 
   delimiter:
-    - include: ~/css3/ruleset/block-content.yml#delimiter
+    - include: ~/css/ruleset/block-content#delimiter
 
   else-pop:
     - match: (?=\S)
@@ -54,7 +54,7 @@ contexts:
       set: optional-feature-query
 
   meta-value:
-    - include: ~/css3/ruleset/block-content.yml#meta-value
+    - include: ~/css/ruleset/block-content#meta-value
 
   open-group:
     - match: \(
@@ -62,14 +62,14 @@ contexts:
       set: close-group
 
   optional-feature-query:
-    - include: ~/css3/optional-feature-query.yml
+    - include: ~/css/optional-feature-query
 
   optional-tail:
     - include: logical-operator
     - include: else-pop
 
   optional-value:
-    - include: ~/css3/ruleset/block-content.yml#optional-value
+    - include: ~/css/ruleset/block-content#optional-value
 
   property:
-    - include: ~/css3/ruleset/block-content.yml#property
+    - include: ~/css/ruleset/block-content#property

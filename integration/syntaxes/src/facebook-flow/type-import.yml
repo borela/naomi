@@ -41,7 +41,7 @@ contexts:
       pop: true
 
   close-block:
-    - include: ~/fjsx15/import.yml#close-block
+    - include: ~/js/import#close-block
 
   delimiter:
     - match: \,
@@ -76,4 +76,4 @@ contexts:
       pop: true
 
   origin:
-    - include: ~/fjsx15/import.yml#origin
+    - include: ~/js/import#origin

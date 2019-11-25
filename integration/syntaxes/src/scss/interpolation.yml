@@ -30,6 +30,6 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: ~/scss3/statement-and-expression.yml
+        - include: ~/scss/statement-and-expression
         - match: ""
           pop: true

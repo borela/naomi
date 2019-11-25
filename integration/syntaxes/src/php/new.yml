@@ -32,9 +32,9 @@ contexts:
       ]
 
   optional-arguments:
-    - include: ~/php7/function-call/arguments.yml
+    - include: ~/php/function-call/arguments
     - match: (?=\s*\S)
       pop: true
 
   type:
-    - include: ~/php7/type.yml
+    - include: ~/php/type

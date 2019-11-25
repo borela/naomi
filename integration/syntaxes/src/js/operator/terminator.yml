@@ -23,12 +23,12 @@ contexts:
       set: statement-or-expression
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   statement-or-expression:
     - include: main
     - match: (?=[,:)\]}])
       pop: true
     - include: comment-no-pop
-    - include: ~/fjsx15/statement.yml
-    - include: ~/fjsx15/expression.yml
+    - include: ~/js/statement
+    - include: ~/js/expression

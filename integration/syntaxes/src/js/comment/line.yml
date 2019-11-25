@@ -35,7 +35,7 @@ contexts:
       pop: true
 
   email-no-pop:
-    - include: ~/shared/email.no-pop.yml
+    - include: ~/shared/email.no-pop
 
   link-no-pop:
-    - include: ~/shared/link.no-pop.yml
+    - include: ~/shared/link.no-pop

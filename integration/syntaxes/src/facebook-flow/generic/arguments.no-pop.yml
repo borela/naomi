@@ -22,4 +22,4 @@ contexts:
       push: arguments
 
   arguments:
-    - include: ~/flow1/generic/arguments.yml
+    - include: ~/facebook-flow/generic/arguments

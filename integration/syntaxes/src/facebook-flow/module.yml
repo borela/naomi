@@ -41,15 +41,15 @@ contexts:
       pop: true
 
   common-js-module:
-    - include: ~/fjsx15/node-js.yml
+    - include: ~/js/node-js
 
   identifier:
-    - include: ~/fjsx15/literal/string/double-quoted.yml
-    - include: ~/fjsx15/literal/string/single-quoted.yml
-    - include: ~/fjsx15/literal/string/template.yml
+    - include: ~/js/literal/string/double-quoted
+    - include: ~/js/literal/string/single-quoted
+    - include: ~/js/literal/string/template
     - match: (?xi){{commonIdentifier}}
       scope: entity.name.module.flow
       pop: true
 
   object-literal:
-    - include: ~/fjsx15/literal/object.yml
+    - include: ~/js/literal/object

@@ -35,10 +35,10 @@ contexts:
       ]
 
   associated-type:
-    - include: ~/flow1/associated-type.yml
+    - include: ~/facebook-flow/associated-type
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   else-pop:
     - match: (?=\S)
@@ -50,7 +50,7 @@ contexts:
       pop: true
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.yml
+    - include: ~/js/optional-expression
 
   optional-type-and-initial-value:
     - meta_scope: meta.declaration.variable.js.fjsx15
@@ -65,7 +65,7 @@ contexts:
 
   optional-type:
     - include: comment-no-pop
-    - include: ~/flow1/optional-associated-type.yml
+    - include: ~/facebook-flow/optional-associated-type
 
   constant:
     # Single character.
@@ -121,8 +121,8 @@ contexts:
 
   variable-or-constant:
     - include: comment-no-pop
-    - include: ~/fjsx15/destructuring/array.yml
-    - include: ~/fjsx15/destructuring/object.yml
-    - include: ~/fjsx15/variable.yml#function-assigned-to-variable
+    - include: ~/js/destructuring/array
+    - include: ~/js/destructuring/object
+    - include: ~/js/variable#function-assigned-to-variable
     - include: constant
     - include: variable

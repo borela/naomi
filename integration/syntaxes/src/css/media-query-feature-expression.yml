@@ -23,10 +23,10 @@ contexts:
       set: [ optional-tail, head ]
 
   comment-no-pop:
-    - include: ~/css3/comment.no-pop.yml
+    - include: ~/css/comment.no-pop
 
   custom-property:
-    - include: ~/css3/custom-media-identifier.yml
+    - include: ~/css/custom-media-identifier
 
   else-pop:
     - match: (?=\S)
@@ -78,4 +78,4 @@ contexts:
     - include: else-pop
 
   value:
-    - include: ~/css3/value.yml
+    - include: ~/css/value

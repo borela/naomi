@@ -54,7 +54,7 @@ contexts:
       scope: punctuation.accessor.js.fjsx15
 
   arguments:
-    - include: ~/fjsx15/function-call/arguments.yml
+    - include: ~/js/function-call/arguments
 
   else-pop:
     - match: (?=\S)

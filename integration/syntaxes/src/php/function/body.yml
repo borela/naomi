@@ -36,6 +36,6 @@ contexts:
       pop: true
     - match: ""
       push:
-        - include: ~/php7/statement-and-expression.yml
+        - include: ~/php/statement-and-expression
         - match: ""
           pop: true

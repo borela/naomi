@@ -65,10 +65,10 @@ contexts:
       set: declaration
 
   body:
-    - include: ~/fjsx15/function/body.yml
+    - include: ~/js/function/body
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   computed-identifier-end:
     - match: \]
@@ -106,9 +106,9 @@ contexts:
     # String identifiers
     - match: (?=['"`])
       push:
-        - include: ~/fjsx15/literal/string/double-quoted.yml
-        - include: ~/fjsx15/literal/string/single-quoted.yml
-        - include: ~/fjsx15/literal/string/template.yml
+        - include: ~/js/literal/string/double-quoted
+        - include: ~/js/literal/string/single-quoted
+        - include: ~/js/literal/string/template
     - include: else-pop
 
   else-pop:
@@ -116,21 +116,21 @@ contexts:
       pop: true
 
   generic-arguments:
-    - include: ~/flow1/generic/arguments.yml
+    - include: ~/facebook-flow/generic/arguments
 
   optional-body:
     - include: body
     - include: else-pop
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.yml
+    - include: ~/js/optional-expression
 
   optional-support-body:
     - include: body
     - include: else-pop
 
   parameters:
-    - include: ~/fjsx15/function/parameters.yml
+    - include: ~/js/function/parameters
 
   support-parameters:
-    - include: ~/fjsx15/function/parameters.yml
+    - include: ~/js/function/parameters

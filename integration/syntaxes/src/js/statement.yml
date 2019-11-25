@@ -23,15 +23,15 @@ variables:
 
 contexts:
   main:
-    - include: ~/flow1/declare.yml
-    - include: ~/flow1/interface.yml
-    - include: ~/flow1/type-aliasing.yml
-    - include: ~/fjsx15/decorator.yml
-    - include: ~/fjsx15/import.yml
-    - include: ~/fjsx15/export.yml
-    - include: ~/fjsx15/class.yml
-    - include: ~/fjsx15/function.yml
-    - include: ~/fjsx15/variable-declaration.yml
+    - include: ~/facebook-flow/declare
+    - include: ~/facebook-flow/interface
+    - include: ~/facebook-flow/type-aliasing
+    - include: ~/js/decorator
+    - include: ~/js/import
+    - include: ~/js/export
+    - include: ~/js/class
+    - include: ~/js/function
+    - include: ~/js/variable-declaration
     - include: block
     - include: break-continue
     - include: debugger
@@ -80,7 +80,7 @@ contexts:
       pop: true
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   debugger:
     - match: debugger\b
@@ -113,7 +113,7 @@ contexts:
       pop: true
 
   expression:
-    - include: ~/fjsx15/expression.yml
+    - include: ~/js/expression
 
   for:
     - match: for\b
@@ -200,7 +200,7 @@ contexts:
       ]
 
   optional-await:
-    - include: ~/fjsx15/operator/await.yml#just-pop
+    - include: ~/js/operator/await#just-pop
     - include: else-pop
 
   optional-else-if:
@@ -208,10 +208,10 @@ contexts:
     - include: optional-statement-or-expression
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.yml
+    - include: ~/js/optional-expression
 
   optional-statement-or-expression:
-    - include: ~/fjsx15/optional-statement-or-expression.yml
+    - include: ~/js/optional-statement-or-expression
 
   optional-while:
     - include: comment-no-pop
@@ -229,9 +229,9 @@ contexts:
       set: asi-checked-optional-expression
 
   statement-or-expression:
-    - include: ~/fjsx15/comment.yml
-    - include: ~/fjsx15/statement.yml
-    - include: ~/fjsx15/expression.yml
+    - include: ~/js/comment
+    - include: ~/js/statement
+    - include: ~/js/expression
     - include: else-pop
 
   statement-or-expression-header:

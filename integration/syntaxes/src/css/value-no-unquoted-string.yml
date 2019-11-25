@@ -21,10 +21,10 @@ contexts:
     - match: "!important\\b"
       scope: keyword.other.important.css.css3
       pop: true
-    - include: ~/css3/literal/color.yml
-    - include: ~/css3/literal/ratio.yml
-    - include: ~/css3/literal/number.yml
-    - include: ~/css3/literal/string/double-quoted.yml
-    - include: ~/css3/literal/string/single-quoted.yml
-    - include: ~/css3/function-call.yml
-    - include: ~/css3/constant.yml
+    - include: ~/css/literal/color
+    - include: ~/css/literal/ratio
+    - include: ~/css/literal/number
+    - include: ~/css/literal/string/double-quoted
+    - include: ~/css/literal/string/single-quoted
+    - include: ~/css/function-call
+    - include: ~/css/constant

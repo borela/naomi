@@ -23,12 +23,12 @@ contexts:
       push: [naomi, entry]
 
   entry:
-    - include: ~/flow1/declare.yml
-    - include: ~/flow1/interface.yml
-    - include: ~/flow1/module.yml
-    - include: ~/flow1/prolog.yml
-    - include: ~/flow1/type-aliasing.yml
-    - include: ~/flow1/type-expression.yml
+    - include: ~/facebook-flow/declare
+    - include: ~/facebook-flow/interface
+    - include: ~/facebook-flow/module
+    - include: ~/facebook-flow/prolog
+    - include: ~/facebook-flow/type-aliasing
+    - include: ~/facebook-flow/type-expression
 
   naomi:
     - meta_scope: naomi

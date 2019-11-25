@@ -34,7 +34,7 @@ contexts:
       set: [ meta, close-open-tag ]
 
   close-open-tag:
-    - include: ~/html5/element/shared.yml#close-open-tag
+    - include: ~/html/element/shared#close-open-tag
 
   meta:
     - meta_scope: meta.tag.form.sectioning.root.html.html5

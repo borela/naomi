@@ -46,14 +46,14 @@ contexts:
       push: statement-or-expression
 
   comment:
-    - include: ~/fjsx15/comment.yml
+    - include: ~/js/comment
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   co-contra-variant-no-pop:
-    - include: ~/flow1/operator/covariant.no-pop.yml
-    - include: ~/flow1/operator/contravariant.no-pop.yml
+    - include: ~/facebook-flow/operator/covariant.no-pop
+    - include: ~/facebook-flow/operator/contravariant.no-pop
 
   declaration:
     - include: comment-no-pop
@@ -72,14 +72,14 @@ contexts:
       scope: entity.name.interface.flow
 
   generic-arguments:
-    - include: ~/flow1/generic/arguments.yml
+    - include: ~/facebook-flow/generic/arguments
 
   optional-type-expression:
-    - include: ~/flow1/optional-type-expression.yml
+    - include: ~/facebook-flow/optional-type-expression
 
   statement-or-expression:
     - include: comment
     - include: co-contra-variant-no-pop
-    - include: ~/flow1/indexer.yml
-    - include: ~/fjsx15/class/method.yml
-    - include: ~/fjsx15/class/property.yml
+    - include: ~/facebook-flow/indexer
+    - include: ~/js/class/method
+    - include: ~/js/class/property

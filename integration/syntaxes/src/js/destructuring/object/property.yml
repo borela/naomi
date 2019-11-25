@@ -55,12 +55,12 @@ contexts:
     - include: comment-no-pop
     - match: (?=\))
       pop: true
-    - include: ~/fjsx15/destructuring/array.yml
-    - include: ~/fjsx15/destructuring/object.yml
-    - include: ~/fjsx15/variable-declaration.yml#variable-or-constant
+    - include: ~/js/destructuring/array
+    - include: ~/js/destructuring/object
+    - include: ~/js/variable-declaration#variable-or-constant
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   computed-property-end:
     - match: \]
@@ -85,7 +85,7 @@ contexts:
 
   object-destructuring-delimiters:
     - meta_scope: meta.binding.destructuring.mapping.js.fjsx15
-    - include: ~/fjsx15/destructuring/object.yml#delimiters
+    - include: ~/js/destructuring/object#delimiters
 
   optional-bind:
     - match: ":"
@@ -95,16 +95,16 @@ contexts:
       set: object-destructuring-delimiters
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.yml
+    - include: ~/js/optional-expression
 
   pop-now:
     - match: ""
       pop: true
 
   string:
-    - include: ~/fjsx15/literal/string/double-quoted.yml
-    - include: ~/fjsx15/literal/string/single-quoted.yml
-    - include: ~/fjsx15/literal/string/template.yml
+    - include: ~/js/literal/string/double-quoted
+    - include: ~/js/literal/string/single-quoted
+    - include: ~/js/literal/string/template
 
   variable-or-constant:
-    - include: ~/fjsx15/variable-declaration.yml#variable-or-constant
+    - include: ~/js/variable-declaration#variable-or-constant

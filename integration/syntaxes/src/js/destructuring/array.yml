@@ -41,15 +41,15 @@ contexts:
       pop: true
 
   optional-expression:
-    - include: ~/fjsx15/optional-expression.yml
+    - include: ~/js/optional-expression
 
   optional-type:
-    - include: ~/flow1/optional-associated-type.yml
+    - include: ~/facebook-flow/optional-associated-type
 
   optional-variable:
     - match: (?=[,)\]}])
       pop: true
-    - include: ~/fjsx15/operator/rest.no-pop.yml
-    - include: ~/fjsx15/destructuring/array.yml
-    - include: ~/fjsx15/destructuring/object.yml
-    - include: ~/fjsx15/variable-declaration.yml#variable-or-constant
+    - include: ~/js/operator/rest.no-pop
+    - include: ~/js/destructuring/array
+    - include: ~/js/destructuring/object
+    - include: ~/js/variable-declaration#variable-or-constant

@@ -40,30 +40,30 @@ contexts:
   statement-or-expression:
     - match: \?
       scope: storage.modifier.flow
-    - include: ~/flow1/associated-type.yml
-    - include: ~/flow1/generic/arguments.yml
+    - include: ~/facebook-flow/associated-type
+    - include: ~/facebook-flow/generic/arguments
     - include: statement-without-label
-    - include: ~/fjsx15/class/property.yml
-    - include: ~/fjsx15/expression.yml
+    - include: ~/js/class/property
+    - include: ~/js/expression
 
   statement-without-label:
-    - include: ~/flow1/declare.yml
-    - include: ~/flow1/interface.yml
-    - include: ~/flow1/type-aliasing.yml
-    - include: ~/fjsx15/decorator.yml
-    - include: ~/fjsx15/import.yml
-    - include: ~/fjsx15/export.yml
-    - include: ~/fjsx15/class.yml
-    - include: ~/fjsx15/function.yml
-    - include: ~/fjsx15/variable-declaration.yml
-    - include: ~/fjsx15/statement.yml#block
-    - include: ~/fjsx15/statement.yml#break-continue
-    - include: ~/fjsx15/statement.yml#debugger
-    - include: ~/fjsx15/statement.yml#do-while
-    - include: ~/fjsx15/statement.yml#empty
-    - include: ~/fjsx15/statement.yml#for
-    - include: ~/fjsx15/statement.yml#if-else
-    - include: ~/fjsx15/statement.yml#return
-    - include: ~/fjsx15/statement.yml#switch-case
-    - include: ~/fjsx15/statement.yml#throw
-    - include: ~/fjsx15/statement.yml#try-catch-finally
+    - include: ~/facebook-flow/declare
+    - include: ~/facebook-flow/interface
+    - include: ~/facebook-flow/type-aliasing
+    - include: ~/js/decorator
+    - include: ~/js/import
+    - include: ~/js/export
+    - include: ~/js/class
+    - include: ~/js/function
+    - include: ~/js/variable-declaration
+    - include: ~/js/statement#block
+    - include: ~/js/statement#break-continue
+    - include: ~/js/statement#debugger
+    - include: ~/js/statement#do-while
+    - include: ~/js/statement#empty
+    - include: ~/js/statement#for
+    - include: ~/js/statement#if-else
+    - include: ~/js/statement#return
+    - include: ~/js/statement#switch-case
+    - include: ~/js/statement#throw
+    - include: ~/js/statement#try-catch-finally

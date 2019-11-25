@@ -31,7 +31,7 @@ contexts:
       ]
 
   arguments:
-    - include: ~/fjsx15/expression.yml
+    - include: ~/js/expression
 
   decorator-identifier:
     # With arguments.

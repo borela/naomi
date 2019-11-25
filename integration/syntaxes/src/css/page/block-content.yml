@@ -54,7 +54,7 @@ contexts:
       set: [ delimiter, property ]
 
   comment-no-pop:
-    - include: ~/css3/comment.no-pop.yml
+    - include: ~/css/comment.no-pop
 
   delimiter:
     - include: comment-no-pop
@@ -63,7 +63,7 @@ contexts:
       set: [ meta-property-value, optional-value-no-pop ]
 
   margin-box-content:
-    - include: ~/css3/ruleset/block.yml
+    - include: ~/css/ruleset/block
 
   meta-margin-box:
     - meta_scope: meta.margin-box.css.css3
@@ -80,7 +80,7 @@ contexts:
       scope: punctuation.separator.sequence.css.css3
     - match: (?=\S)
       push:
-        - include: ~/css3/value.yml
+        - include: ~/css/value
 
   pop-now:
     - match: ""
@@ -88,4 +88,4 @@ contexts:
 
   property:
     - include: comment-no-pop
-    - include: ~/css3/property.yml
+    - include: ~/css/property

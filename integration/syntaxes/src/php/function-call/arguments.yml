@@ -32,6 +32,6 @@ contexts:
       scope: punctuation.definition.function.arguments.php.php7
     - match: ""
       push:
-        - include: ~/php7/statement-and-expression.yml
+        - include: ~/php/statement-and-expression
         - match: ""
           pop: true

@@ -27,7 +27,7 @@ contexts:
       set: [ script, meta, close-open-tag ]
 
   close-open-tag:
-    - include: ~/html5/element/shared.yml#close-open-tag
+    - include: ~/html/element/shared#close-open-tag
 
   closing-tag:
     - match: (</)(style)(>)
@@ -46,8 +46,9 @@ contexts:
   script:
     - clear_scopes: true
     - include: closing-tag
-    - match: ""
-      push: scope:source.css
+    # TODO:
+    # - match: ""
+      # push: scope:source.css
       with_prototype:
         - match: (?=</style\b)
           pop: true

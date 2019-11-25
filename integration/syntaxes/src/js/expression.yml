@@ -30,10 +30,10 @@ contexts:
       pop: true
 
   comma:
-    - include: ~/fjsx15/operator/comma.yml
+    - include: ~/js/operator/comma
 
   comment-no-pop:
-    - include: ~/fjsx15/comment.no-pop.yml
+    - include: ~/js/comment.no-pop
 
   do-expression:
     - match: do\b
@@ -62,24 +62,24 @@ contexts:
       pop: true
 
   globals:
-    - include: ~/fjsx15/node-js.yml
-    - include: ~/fjsx15/react-js.yml
-    - include: ~/fjsx15/jest.yml
-    - include: ~/fjsx15/web.yml
-    - include: ~/fjsx15/core.yml
+    - include: ~/js/node-js
+    - include: ~/js/react-js
+    - include: ~/js/jest
+    - include: ~/js/web
+    - include: ~/js/core
 
   head:
     - include: comment-no-pop
     - include: do-expression
     - include: globals
-    - include: ~/fjsx15/jsx1.yml
-    - include: ~/fjsx15/literal.yml
-    - include: ~/fjsx15/class.yml
-    - include: ~/fjsx15/function-expression.yml
-    - include: ~/fjsx15/function-call.yml
-    - include: ~/fjsx15/variable.yml#function-assigned-to-variable
-    - include: ~/fjsx15/constant.yml
-    - include: ~/fjsx15/variable.yml
+    - include: ~/js/jsx1
+    - include: ~/js/literal
+    - include: ~/js/class
+    - include: ~/js/function-expression
+    - include: ~/js/function-call
+    - include: ~/js/variable#function-assigned-to-variable
+    - include: ~/js/constant
+    - include: ~/js/variable
     # Open new expression group.
     - match: \(
       scope: punctuation.section.group.begin.js.fjsx15
@@ -119,17 +119,17 @@ contexts:
       push: property-access
     # Other operators. At this point, operators will have a higher priority than
     # regex literals.
-    - include: ~/fjsx15/operator.yml
+    - include: ~/js/operator
     # Anything else not expected.
     - match: (?=\S)
       pop: true
 
   property-access:
     - include: comment-no-pop
-    - include: ~/fjsx15/property-access.yml
+    - include: ~/js/property-access
 
   regex-literal:
-    - include: ~/fjsx15/literal/string/regex.yml
+    - include: ~/js/literal/string/regex
 
   shared-main:
     - include: comma
@@ -137,22 +137,22 @@ contexts:
     - match: (?=/)
       set: [ optional-tail, regex-literal ]
     # Arrow functions need to be detected before expression groups.
-    - include: ~/fjsx15/arrow-function.yml
+    - include: ~/js/arrow-function
     # At this point is possible to predict JSX tags before operators because
     # there’s no left operand for a "<" operator to be valid.
-    - include: ~/fjsx15/jsx1-early.yml
+    - include: ~/js/jsx1-early
     # Prevent floating point being highlighted as a dot operator followed by an
     # integer.
     - match: (?=\.\d)
       set:
-        - include: ~/fjsx15/literal/number.yml
+        - include: ~/js/literal/number
     # Detect operators as soon as possible.
-    - include: ~/fjsx15/operator.yml
+    - include: ~/js/operator
 
   statement-or-expression:
     - include: comment-no-pop
-    - include: ~/fjsx15/statement.yml
-    - include: ~/fjsx15/expression.yml
+    - include: ~/js/statement
+    - include: ~/js/expression
 
   type-cast:
-    - include: ~/flow1/cast.yml
+    - include: ~/facebook-flow/cast

@@ -24,5 +24,5 @@ contexts:
       set: return-type
 
   return-type:
-    - include: ~/php7/comment.no-pop.yml
-    - include: ~/php7/type.yml
+    - include: ~/php/comment.no-pop
+    - include: ~/php/type

@@ -21,6 +21,7 @@ class Context(Node):
 
     def __init__(self, syntax):
         self.syntax = syntax
+        self.name = None
         self.statements = []
 
     @property

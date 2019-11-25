@@ -12,14 +12,12 @@
 
 class ParsingError(Exception):
     def __init__(self, message, syntax=None, location=None):
-        if location:
-            message =  '(%i, %i) “%s”' % (
+        if syntax and location:
+            message = '%s (%i, %i): %s' % (
+                syntax.package_relpath,
                 location.line + 1,
                 location.col + 1,
                 message,
             )
-
-        if syntax:
-            message += ' at ' + syntax.package_relpath
 
         Exception.__init__(self, message)

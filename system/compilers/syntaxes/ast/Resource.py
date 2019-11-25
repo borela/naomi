@@ -15,6 +15,10 @@ from .Node import Node
 class Resource(Node):
     __slots__ = [
         'statement',
+        # In most cases the instruction that requests a resource is a
+        # statement e.g. “Include”, but we still have stack actions that are
+        # inside “Match” statements and can request resources..
+        'origin',
         # Path used to import the resource without any modifcation.
         'path',
         # Full path to the resource.
@@ -23,8 +27,9 @@ class Resource(Node):
         'resolved',
     ]
 
-    def __init__(self, statement, path):
+    def __init__(self, statement, origin, path):
         self.statement = statement
+        self.origin = origin
         self.path = path
 
     @property

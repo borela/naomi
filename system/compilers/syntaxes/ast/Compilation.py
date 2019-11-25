@@ -71,9 +71,10 @@ class Compilation(Node):
 
         self.statistics = Statistics()
 
-    def enqueue_resource(self, statement, path):
+    def enqueue_resource(self, statement, origin, path):
         self.queued_resources.push(Resource(
             statement,
+            origin,
             path,
         ))
 

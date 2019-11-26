@@ -375,12 +375,13 @@ def parse_syntax(compilation, home_dir, path):
     raw = load_yaml(syntax.path)
     syntax.raw = raw
 
-    syntax.name = raw.get('name', '')
-    syntax.hidden = raw.get('hidden', '')
-    syntax.scope = raw.get('scope', '')
-    syntax.scope_suffix = raw.get('scope_suffix', '')
+    syntax.name = raw.get('name', None)
+    syntax.hidden = raw.get('hidden', False)
+    syntax.scope = raw.get('scope', None)
+    syntax.scope_prefix = raw.get('scope_prefix', None)
+    syntax.scope_suffix = raw.get('scope_suffix', None)
     syntax.file_extensions = raw.get('file_extensions', [])
-    syntax.first_line_match = raw.get('first_line_match', '')
+    syntax.first_line_match = raw.get('first_line_match', None)
 
     parse_variables(syntax)
     parse_contexts(syntax)

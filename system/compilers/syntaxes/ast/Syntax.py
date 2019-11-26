@@ -34,6 +34,7 @@ class Syntax(Node):
         'name',
         'hidden',
         'scope',
+        'scope_prefix',
         'scope_suffix',
         'file_extensions',
         'first_line_match',

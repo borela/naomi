@@ -490,16 +490,13 @@ def resolve_context_request(compilation, context_request):
     context_request.resolved_path = path = '%s#%s' % (file_path, context)
 
     # The target context was loaded before.
-    if path in compilation.contexts:
-        context_request.resolved = compilation.contexts[path]
-        return
-
-    if file_path not in compilation.syntaxes:
-        parse_syntax(
-            compilation,
-            home_dir,
-            file_path,
-        )
+    if path not in compilation.contexts:
+        if file_path not in compilation.syntaxes:
+            parse_syntax(
+                compilation,
+                home_dir,
+                file_path,
+            )
 
     context_request.resolved = compilation.contexts.get(path, None)
 

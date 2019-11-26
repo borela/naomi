@@ -12,8 +12,8 @@
 
 from ..ParsingError import ParsingError
 from .Context import Context
+from .ContextRequest import ContextRequest
 from .Node import Node
-from .Resource import Resource
 from .Syntax import Syntax
 from .Variable import Variable
 from borela import Stack
@@ -54,9 +54,8 @@ class Compilation(Node):
         # Variables indexed by their full path.
         'variables',
 
-        # Some statements references internal/external files or contexts.
-        'resources',
-        'queued_resources',
+        # Some statements references internal/external contexts.
+        'context_requests',
 
         # Data such as number of contexts, files used, etc...
         'statistics',
@@ -72,13 +71,12 @@ class Compilation(Node):
         self.contexts = OrderedDict()
         self.variables = OrderedDict()
 
-        self.resources = OrderedDict()
-        self.queued_resources = Stack()
+        self.context_requests = Stack()
 
         self.statistics = Statistics()
 
-    def enqueue_resource(self, statement, origin, path):
-        self.queued_resources.push(Resource(
+    def enqueue_context_request(self, statement, origin, path):
+        self.context_requests.push(ContextRequest(
             statement,
             origin,
             path,
@@ -104,12 +102,6 @@ class Compilation(Node):
             self.syntaxes[path] = syntax
             self.syntaxes_ids[path] = len(self.syntaxes)
             self.statistics.files += 1
-
-    def index_resource(self, resource):
-        if not isinstance(resource, Resource):
-            raise ParsingError('Object is not a Resource: %s' % resource)
-
-        self.resources[resource.path] = resource
 
     def index_variable(self, variable):
         if not isinstance(variable, Variable):

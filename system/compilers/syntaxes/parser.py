@@ -92,12 +92,12 @@ def parse(settings):
         entry_path,
     )
 
-    resources = compilation.queued_resources
+    requests = compilation.context_requests
 
-    while len(resources):
-        resolve_resource(
+    while len(requests):
+        resolve_context_request(
             compilation,
-            resources.pop(),
+            requests.pop(),
         )
 
     log_info('Done parsing syntax.')
@@ -154,7 +154,7 @@ def parse_context_sequence(statement, raw):
             ))
         # Context reference.
         else:
-            result.append(compilation.enqueue_resource(
+            result.append(compilation.enqueue_context_request(
                 statement,
                 item,
                 str(item),
@@ -272,7 +272,7 @@ def parse_include(context, raw):
 
     statement = Include(context)
     statement.path = path
-    statement.resource = compilation.enqueue_resource(
+    statement.context_request = compilation.enqueue_context_request(
         statement,
         raw,
         path,
@@ -453,10 +453,10 @@ def raise_multiple_scope(syntax, location):
         location,
     )
 
-def resolve_resource(compilation, resource):
-    syntax = resource.syntax
+def resolve_context_request(compilation, context_request):
+    syntax = context_request.syntax
     home_dir = syntax.home_dir
-    path = resource.path
+    path = context_request.path
 
     if path.startswith('Packages/'):
         # Normal sublime path.
@@ -487,14 +487,12 @@ def resolve_resource(compilation, resource):
     file_path = realpath(file_path)
 
     # Full path to the context.
-    resource.resolved_path = path = '%s#%s' % (file_path, context)
+    context_request.resolved_path = path = '%s#%s' % (file_path, context)
 
     # The target context was loaded before.
-    if path in compilation.resources:
-        resource.resolved = compilation.resources[path].resolved
+    if path in compilation.contexts:
+        context_request.resolved = compilation.contexts[path]
         return
-
-    compilation.index_resource(resource)
 
     if file_path not in compilation.syntaxes:
         parse_syntax(
@@ -503,13 +501,13 @@ def resolve_resource(compilation, resource):
             file_path,
         )
 
-    resource.resolved = compilation.contexts.get(path, None)
+    context_request.resolved = compilation.contexts.get(path, None)
 
-    if not resource.resolved:
+    if not context_request.resolved:
         raise ParsingError(
             'Context not found: %s' % package_relpath(path),
-            resource.syntax,
-            resource.origin.lc,
+            context_request.syntax,
+            context_request.origin.lc,
         )
 
 # Resolve relative paths to the syntaxes src directories being managed by

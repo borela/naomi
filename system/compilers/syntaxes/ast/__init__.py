@@ -13,13 +13,13 @@
 from .ClearScopes import * # noqa
 from .Compilation import * # noqa
 from .Context import * # noqa
+from .ContextRequest import * # noqa
 from .Embed import * # noqa
 from .FunctionCall import * # noqa
 from .Include import * # noqa
 from .Match import * # noqa
 from .Pop import * # noqa
 from .Push import * # noqa
-from .Resource import * # noqa
 from .Set import * # noqa
 from .SetMetaContentScope import * # noqa
 from .SetMetaScope import * # noqa

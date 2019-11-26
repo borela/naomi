@@ -12,18 +12,18 @@
 
 from .Node import Node
 
-class Resource(Node):
+class ContextRequest(Node):
     __slots__ = [
         'statement',
-        # In most cases the instruction that requests a resource is a
+        # In most cases the instruction that requests a context is a
         # statement e.g. “Include”, but we still have stack actions that are
-        # inside “Match” statements and can request resources..
+        # inside “Match” statements and can request them too.
         'origin',
-        # Path used to import the resource without any modifcation.
+        # Path used to import the context without any modifcation.
         'path',
-        # Full path to the resource.
+        # Full path to the context.
         'resolved_path',
-        # The actual resource.
+        # The actual context.
         'resolved',
     ]
 

@@ -15,5 +15,5 @@ from .Statement import Statement
 class Include(Statement):
     __slots__ = [
         'path',
-        'resource',
+        'context_request',
     ]

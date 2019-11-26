@@ -46,6 +46,9 @@ from .ParsingError import ParsingError
 from borela.functions import load_yaml
 from collections import OrderedDict
 from Naomi.system.state_store import STATE_STORE
+from re import split
+
+import re
 
 def check_embed_exists(key, statement, raw):
     if 'embed' not in raw:
@@ -214,31 +217,54 @@ def parse_contexts(syntax):
             statements,
         ))
 
-def parse_expression(value):
+VARIABLE_PATTERN = re.compile(r'{{(\w[\w-]*?)}}')
+
+def parse_expression(syntax, value):
+    nodes = []
+    compilation = syntax.compilation
+
     # Function calls.
     if isinstance(value, (list, OrderedDict)):
-        nodes = []
-
         # Simple function calls.
         if isinstance(value, OrderedDict):
             nodes = dict_to_function_calls(value)
         # Function calls mixed with literals.
         else:
             for item in value:
-                if isinstance(item, str):
-                    nodes.append(item)
-                    continue
-
+                # Function call.
                 if isinstance(item, OrderedDict):
                     nodes.extend(dict_to_function_calls(item))
+                    continue
+                # Literal.
+                nodes.append(str(item))
 
-        if len(nodes) > 1:
-            nodes = FunctionCall('join', nodes)
+    # Pattern.
+    for item in split(r'({{\w[\w-]*?}})', str(value)):
+        if not item:
+            continue
 
-        return nodes
+        found = VARIABLE_PATTERN.findall(item)
 
-    # Literal pattern.
-    return str(value)
+        # Literal.
+        if not found:
+            nodes.append(item)
+            continue
+
+        # Variable.
+        name = '%s#%s' % (
+            syntax.path,
+            found[0],
+        )
+
+        variable = compilation.variables.get(name, None)
+
+        if variable is None:
+            raise ParsingError('Variable “%s” not found.' % name)
+
+    if len(nodes) > 1:
+        nodes = FunctionCall('join', nodes)
+
+    return nodes
 
 def parse_include(context, raw):
     compilation = context.compilation
@@ -275,7 +301,10 @@ def parse_match(context, raw):
         if key == 'match':
             if match_parsed:
                 raise_multiple_match(syntax, key.lc)
-            statement.pattern = parse_expression(value)
+            statement.pattern = parse_expression(
+                syntax,
+                value,
+            )
             match_parsed = True
             continue
 
@@ -394,8 +423,10 @@ def parse_variable(syntax, name, value):
     statement = Variable()
     statement.syntax = syntax
     statement.name = name
-    statement.pattern = value
-    statement.pattern = parse_expression(value)
+    statement.pattern = parse_expression(
+        syntax,
+        value,
+    )
     return statement
 
 def parse_variables(syntax):

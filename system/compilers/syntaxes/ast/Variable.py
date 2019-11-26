@@ -18,3 +18,7 @@ class Variable(Node):
         'name',
         'pattern',
     ]
+
+    @property
+    def compilation(self):
+        return self.syntax.compilation

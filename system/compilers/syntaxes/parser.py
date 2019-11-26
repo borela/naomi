@@ -33,7 +33,6 @@ from Naomi.system import (
     log_info,
     packages_dir,
     package_relpath,
-    resolve_syntax_entry,
 )
 
 from os.path import (
@@ -46,6 +45,7 @@ from os.path import (
 from .ParsingError import ParsingError
 from borela.functions import load_yaml
 from collections import OrderedDict
+from Naomi.system.state_store import STATE_STORE
 
 def check_embed_exists(key, statement, raw):
     if 'embed' not in raw:
@@ -480,3 +480,34 @@ def resolve_resource(compilation, resource):
             resource.syntax,
             resource.origin.lc,
         )
+
+# Resolve relative paths to the syntaxes src directories being managed by
+# the Naomi’s system.
+def resolve_syntax_entry(path):
+    if isfile(path):
+        return realpath(path)
+
+    dirs = [
+        (integrated['src_dir'], integrated['build_dir'])
+        for integrated in STATE_STORE['integrated']['syntaxes']
+    ]
+
+    # Allow external packages to override Naomi’s syntax files.
+    dirs.reverse()
+
+    # Try to find a file with the integrated src directories.
+    for src_dir, build_dir in dirs:
+        resolved_path = join(src_dir, path)
+
+        if isdir(resolved_path):
+            resolved_path = join(resolved_path, 'index.yml')
+            return resolved_path, src_dir, build_dir
+        elif isfile(resolved_path):
+            return resolved_path, src_dir, build_dir
+        else:
+            resolved_path += '.yml'
+
+            if isfile(resolved_path):
+                return resolved_path, src_dir, build_dir
+
+    raise ParsingError('Syntax entry not found: %s' % path)

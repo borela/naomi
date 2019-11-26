@@ -12,8 +12,6 @@
 
 from os.path import (
     dirname,
-    isdir,
-    isfile,
     join,
     realpath,
     relpath,
@@ -28,33 +26,3 @@ def package_relpath(path):
 def packages_dir():
     return realpath(join(dirname(__file__), '..', '..'))
 
-# Resolve relative paths to the syntaxes src directories being managed by
-# the Naomi’s system.
-def resolve_syntax_entry(path):
-    if isfile(path):
-        return realpath(path)
-
-    dirs = [
-        (integrated['src_dir'], integrated['build_dir'])
-        for integrated in STATE_STORE['integrated']['syntaxes']
-    ]
-
-    # Allow external packages to override Naomi’s syntax files.
-    dirs.reverse()
-
-    # Try to find a file with the integrated src directories.
-    for src_dir, build_dir in dirs:
-        resolved_path = join(src_dir, path)
-
-        if isdir(resolved_path):
-            resolved_path = join(resolved_path, 'index.yml')
-            return resolved_path, src_dir, build_dir
-        elif isfile(resolved_path):
-            return resolved_path, src_dir, build_dir
-        else:
-            resolved_path += '.yml'
-
-            if isfile(resolved_path):
-                return resolved_path, src_dir, build_dir
-
-    raise RuntimeError('Syntax entry not found: %s' % path)

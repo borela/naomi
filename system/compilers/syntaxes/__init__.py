@@ -11,15 +11,18 @@
 # the License.
 
 from .parser import parse
+from .ParsingError import ParsingError
 from Naomi.system import log_error
 from ruamel.yaml.constructor import DuplicateKeyError
 
 def compile_syntax(settings):
     try:
         syntax = parse(settings)
+
+
         # print(syntax.resources)
         # TODO: Save to a file.
-    except Exception as error:
+    except ParsingError as error:
         log_error(str(error))
     except DuplicateKeyError as error:
         lc = error.problem_mark

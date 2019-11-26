@@ -23,7 +23,13 @@ class Statistics(Node):
     __slots__ = [
         'contexts',
         'files',
+        'variables',
     ]
+
+    def __init__(self):
+        self.contexts = 0
+        self.files = 0
+        self.variables = 0
 
 class Compilation(Node):
     __slots__ = [
@@ -86,6 +92,7 @@ class Compilation(Node):
         name = context.name
 
         self.contexts['%s#%s' % (path, name)] = context
+        self.statistics.contexts += 1
 
     def index_syntax(self, syntax):
         if not isinstance(syntax, Syntax):
@@ -96,6 +103,7 @@ class Compilation(Node):
         if path not in self.syntaxes:
             self.syntaxes[path] = syntax
             self.syntaxes_ids[path] = len(self.syntaxes)
+            self.statistics.files += 1
 
     def index_resource(self, resource):
         if not isinstance(resource, Resource):
@@ -111,3 +119,4 @@ class Compilation(Node):
         name = variable.name
 
         self.variables['%s#%s' % (path, name)] = variable
+        self.statistics.variables += 1

@@ -13,9 +13,6 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-hidden: true
-scope: ...
-
 contexts:
   main:
     # It is impossible to detect multiline arrow functions, but we can still

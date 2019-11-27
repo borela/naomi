@@ -46,7 +46,6 @@ from .ParsingError import ParsingError
 from borela.functions import load_yaml
 from collections import OrderedDict
 from Naomi.system.state_store import STATE_STORE
-from re import split
 
 import re
 
@@ -247,7 +246,7 @@ def parse_expression(syntax, origin, pattern):
                 nodes.append(str(item))
 
     # Pattern.
-    for item in split(r'({{\w[\w-]*?}})', str(pattern)):
+    for item in re.split(r'({{\w[\w-]*?}})', str(pattern)):
         item = item.strip()
         if not item:
             continue

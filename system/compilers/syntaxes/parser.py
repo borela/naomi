@@ -64,6 +64,12 @@ def check_embed_exists(key, statement, raw):
             key.lc,
         )
 
+def dict_to_function_calls(calls):
+    result = []
+    for name, args in calls.items():
+        result.append(FunctionCall(name, args))
+    return result
+
 def parse(settings):
     entry = settings.get('entry', None)
 
@@ -109,12 +115,6 @@ def parse(settings):
 
     log_info('Done parsing syntax.')
     return compilation
-
-def dict_to_function_calls(calls):
-    result = []
-    for name, args in calls.items():
-        result.append(FunctionCall(name, args))
-    return result
 
 def parse_clear_scopes(context, raw):
     statement = ClearScopes(context)
@@ -185,7 +185,8 @@ def parse_context_statements(context, raw):
             ))
             continue
 
-        if any(key in ['match', 'match_words'] for key in statement):
+        MATCH_STATEMENTS = ['match', 'match_word', 'match_words']
+        if any(key in MATCH_STATEMENTS for key in statement):
             context.statements.append(parse_match(
                 context,
                 statement,

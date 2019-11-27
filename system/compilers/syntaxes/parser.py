@@ -155,9 +155,9 @@ def parse_context_sequence(statement, raw):
         # Context reference.
         else:
             result.append(compilation.enqueue_context_request(
-                statement,
-                item,
-                str(item),
+                statement=statement,
+                origin=item,
+                path=str(item),
             ))
 
     return result
@@ -273,9 +273,9 @@ def parse_include(context, raw):
     statement = Include(context)
     statement.path = path
     statement.context_request = compilation.enqueue_context_request(
-        statement,
-        raw,
-        path,
+        statement=statement,
+        origin=raw,
+        path=path,
     )
 
     return statement

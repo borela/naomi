@@ -24,6 +24,9 @@ class Context(Node):
         self.name = None
         self.statements = []
 
+    def __repr__(self):
+        return '[Context]: %s' % self.name
+
     @property
     def compilation(self):
         return self.syntax.compilation

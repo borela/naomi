@@ -18,6 +18,7 @@ from .Syntax import Syntax
 from .Variable import Variable
 from .VariableRequest import VariableRequest
 from borela import Stack
+from borela.functions import indent_string
 from collections import OrderedDict
 
 class Statistics(Node):
@@ -79,6 +80,16 @@ class Compilation(Node):
 
         self.statistics = Statistics()
 
+    def __repr__(self):
+        body = ''
+
+        for _, syntax in self.syntaxes.items():
+            if body:
+                body += '\n'
+            body += repr(syntax)
+
+        return '[Compilation] {\n%s\n}' % indent_string(body)
+
     def enqueue_context_request(self, statement, origin, path):
         self.context_requests.push(ContextRequest(
             statement,
@@ -113,6 +124,8 @@ class Compilation(Node):
             self.syntaxes[path] = syntax
             self.syntaxes_ids[path] = len(self.syntaxes)
             self.statistics.files += 1
+
+        syntax.syntax_id = self.syntaxes_ids[path]
 
     def index_variable(self, variable):
         if not isinstance(variable, Variable):

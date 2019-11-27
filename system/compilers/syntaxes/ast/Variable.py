@@ -19,6 +19,9 @@ class Variable(Node):
         'pattern',
     ]
 
+    def __repr__(self):
+        return '[Variable]: %s' % self.name
+
     @property
     def compilation(self):
         return self.syntax.compilation

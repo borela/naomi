@@ -16,7 +16,8 @@ class ContextRequest(Node):
     __slots__ = [
         'statement',
         # In most cases the instruction that requests a context is a
-        # statement e.g. “Include”, but we still have stack actions that are
+        # statement e.g. “Include” which we already have a reference in the
+        # previous attribute, but we still have stack actions that are
         # inside “Match” statements and can request them too.
         'origin',
         # Path used to import the context without any modifcation.

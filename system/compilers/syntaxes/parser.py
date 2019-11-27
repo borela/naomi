@@ -453,10 +453,10 @@ def raise_multiple_scope(syntax, location):
         location,
     )
 
-def resolve_context_request(compilation, context_request):
-    syntax = context_request.syntax
+def resolve_context_request(compilation, request):
+    syntax = request.syntax
     home_dir = syntax.home_dir
-    path = context_request.path
+    path = request.path
 
     if path.startswith('Packages/'):
         # Normal sublime path.
@@ -487,7 +487,7 @@ def resolve_context_request(compilation, context_request):
     file_path = realpath(file_path)
 
     # Full path to the context.
-    context_request.resolved_path = path = '%s#%s' % (file_path, context)
+    request.resolved_path = path = '%s#%s' % (file_path, context)
 
     # The target context was loaded before.
     if path not in compilation.contexts:
@@ -498,13 +498,13 @@ def resolve_context_request(compilation, context_request):
                 file_path,
             )
 
-    context_request.resolved = compilation.contexts.get(path, None)
+    request.resolved = compilation.contexts.get(path, None)
 
-    if not context_request.resolved:
+    if not request.resolved:
         raise ParsingError(
             'Context not found: %s' % package_relpath(path),
-            context_request.syntax,
-            context_request.origin.lc,
+            request.syntax,
+            request.origin.lc,
         )
 
 # Resolve relative paths to the syntaxes src directories being managed by

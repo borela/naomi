@@ -92,10 +92,18 @@ def parse(settings):
         entry_path,
     )
 
+    # Link context resquests.
     requests = compilation.context_requests
-
     while len(requests):
         resolve_context_request(
+            compilation,
+            requests.pop(),
+        )
+
+    # Link variable resquests.
+    requests = compilation.variable_requests
+    while len(requests):
+        resolve_variable_request(
             compilation,
             requests.pop(),
         )
@@ -219,18 +227,18 @@ def parse_contexts(syntax):
 
 VARIABLE_PATTERN = re.compile(r'{{(\w[\w-]*?)}}')
 
-def parse_expression(syntax, value):
+def parse_expression(syntax, origin, pattern):
     nodes = []
     compilation = syntax.compilation
 
     # Function calls.
-    if isinstance(value, (list, OrderedDict)):
+    if isinstance(pattern, (list, OrderedDict)):
         # Simple function calls.
-        if isinstance(value, OrderedDict):
-            nodes = dict_to_function_calls(value)
+        if isinstance(pattern, OrderedDict):
+            nodes = dict_to_function_calls(pattern)
         # Function calls mixed with literals.
         else:
-            for item in value:
+            for item in pattern:
                 # Function call.
                 if isinstance(item, OrderedDict):
                     nodes.extend(dict_to_function_calls(item))
@@ -239,7 +247,8 @@ def parse_expression(syntax, value):
                 nodes.append(str(item))
 
     # Pattern.
-    for item in split(r'({{\w[\w-]*?}})', str(value)):
+    for item in split(r'({{\w[\w-]*?}})', str(pattern)):
+        item = item.strip()
         if not item:
             continue
 
@@ -256,10 +265,11 @@ def parse_expression(syntax, value):
             found[0],
         )
 
-        variable = compilation.variables.get(name, None)
-
-        if variable is None:
-            raise ParsingError('Variable “%s” not found.' % name)
+        compilation.enqueue_variable_request(
+            syntax,
+            origin,
+            name,
+        )
 
     if len(nodes) > 1:
         nodes = FunctionCall('join', nodes)
@@ -302,8 +312,9 @@ def parse_match(context, raw):
             if match_parsed:
                 raise_multiple_match(syntax, key.lc)
             statement.pattern = parse_expression(
-                syntax,
-                value,
+                syntax=syntax,
+                origin=key,
+                pattern=value,
             )
             match_parsed = True
             continue
@@ -424,8 +435,9 @@ def parse_variable(syntax, name, value):
     statement.syntax = syntax
     statement.name = name
     statement.pattern = parse_expression(
-        syntax,
-        value,
+        syntax=syntax,
+        origin=name,
+        pattern=value,
     )
     return statement
 
@@ -503,6 +515,17 @@ def resolve_context_request(compilation, request):
     if not request.resolved:
         raise ParsingError(
             'Context not found: %s' % package_relpath(path),
+            request.syntax,
+            request.origin.lc,
+        )
+
+def resolve_variable_request(compilation, request):
+    path = request.path
+    request.resolved = compilation.variables.get(path, None)
+
+    if not request.resolved:
+        raise ParsingError(
+            'Variable not found: %s' % path.split('#')[1],
             request.syntax,
             request.origin.lc,
         )

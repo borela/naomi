@@ -16,6 +16,7 @@ from .ContextRequest import ContextRequest
 from .Node import Node
 from .Syntax import Syntax
 from .Variable import Variable
+from .VariableRequest import VariableRequest
 from borela import Stack
 from collections import OrderedDict
 
@@ -54,8 +55,10 @@ class Compilation(Node):
         # Variables indexed by their full path.
         'variables',
 
-        # Some statements references internal/external contexts.
+        # Variables and contexts that need to be resolved after parsing the
+        # syntax.
         'context_requests',
+        'variable_requests',
 
         # Data such as number of contexts, files used, etc...
         'statistics',
@@ -72,12 +75,20 @@ class Compilation(Node):
         self.variables = OrderedDict()
 
         self.context_requests = Stack()
+        self.variable_requests = Stack()
 
         self.statistics = Statistics()
 
     def enqueue_context_request(self, statement, origin, path):
         self.context_requests.push(ContextRequest(
             statement,
+            origin,
+            path,
+        ))
+
+    def enqueue_variable_request(self, syntax, origin, path):
+        self.variable_requests.push(VariableRequest(
+            syntax,
             origin,
             path,
         ))

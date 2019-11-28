@@ -226,6 +226,7 @@ def parse_contexts(syntax):
         ))
 
 VARIABLE_PATTERN = re.compile(r'{{(\w[\w-]*?)}}')
+WHITESPACE = re.compile(r'\s')
 
 def parse_expression(syntax, origin, pattern):
     nodes = []
@@ -248,7 +249,7 @@ def parse_expression(syntax, origin, pattern):
 
     # Pattern.
     for item in re.split(r'({{\w[\w-]*?}})', str(pattern)):
-        item = item.strip()
+        item = WHITESPACE.sub('', item)
         if not item:
             continue
 

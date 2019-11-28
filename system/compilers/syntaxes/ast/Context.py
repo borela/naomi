@@ -17,12 +17,16 @@ class Context(Node):
         'syntax',
         'name',
         'statements',
+        # References to this context. This can be used to eliminate unused
+        # contexts.
+        'references',
     ]
 
     def __init__(self, syntax):
         self.syntax = syntax
         self.name = None
         self.statements = []
+        self.references = []
 
     def __repr__(self):
         return '[Context]: %s' % self.name

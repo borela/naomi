@@ -520,6 +520,8 @@ def resolve_context_request(compilation, request):
             request.syntax,
             request.origin.lc,
         )
+    else:
+        request.resolved.references.append(request)
 
 def resolve_variable_request(compilation, request):
     path = request.path
@@ -531,6 +533,8 @@ def resolve_variable_request(compilation, request):
             request.syntax,
             request.origin.lc,
         )
+    else:
+        request.resolved.references.append(request)
 
 # Resolve relative paths to the syntaxes src directories being managed by
 # the Naomi’s system.

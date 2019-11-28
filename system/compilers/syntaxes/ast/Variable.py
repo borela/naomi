@@ -17,7 +17,13 @@ class Variable(Node):
         'syntax',
         'name',
         'pattern',
+        # References to this context. This can be used to eliminate unused
+        # contexts.
+        'references',
     ]
+
+    def __init__(self):
+        self.references = []
 
     def __repr__(self):
         return '[Variable]: %s' % self.name

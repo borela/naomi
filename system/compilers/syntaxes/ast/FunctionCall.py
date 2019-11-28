@@ -11,6 +11,7 @@
 # the License.
 
 from .Node import Node
+from borela.functions import indent_string
 
 class FunctionCall(Node):
     __slots__ = [
@@ -21,3 +22,14 @@ class FunctionCall(Node):
     def __init__(self, name, arguments=None):
         self.name = name
         self.arguments = arguments or []
+
+    def __repr__(self):
+        body = ''
+        for arg in self.arguments:
+            if body:
+                body += '\n'
+            body += repr(arg)
+        return '[FunctionCall] %s (\n%s\n)' % (
+            self.name,
+            indent_string(body),
+        )

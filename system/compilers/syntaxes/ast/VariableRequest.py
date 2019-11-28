@@ -11,6 +11,7 @@
 # the License.
 
 from .Node import Node
+from Naomi.system import package_relpath
 
 class VariableRequest(Node):
     __slots__ = [
@@ -28,6 +29,9 @@ class VariableRequest(Node):
         self.syntax = syntax
         self.origin = origin
         self.path = path
+
+    def __repr__(self):
+        return '[VariableRequest] %s' % package_relpath(self.path)
 
     @property
     def compilation(self):

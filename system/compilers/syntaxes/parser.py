@@ -265,11 +265,13 @@ def parse_expression(syntax, origin, pattern):
             found[0],
         )
 
-        compilation.enqueue_variable_request(
+        variable = compilation.enqueue_variable_request(
             syntax,
             origin,
             name,
         )
+
+        nodes.append(variable)
 
     if len(nodes) > 1:
         nodes = FunctionCall('join', nodes)

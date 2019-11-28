@@ -91,18 +91,22 @@ class Compilation(Node):
         return '[Compilation] {\n%s\n}' % indent_string(body)
 
     def enqueue_context_request(self, statement, origin, path):
-        self.context_requests.push(ContextRequest(
+        request = ContextRequest(
             statement,
             origin,
             path,
-        ))
+        )
+        self.context_requests.push(request)
+        return request
 
     def enqueue_variable_request(self, syntax, origin, path):
-        self.variable_requests.push(VariableRequest(
+        request = VariableRequest(
             syntax,
             origin,
             path,
-        ))
+        )
+        self.variable_requests.push(request)
+        return request
 
     def index_context(self, context):
         if not isinstance(context, Context):

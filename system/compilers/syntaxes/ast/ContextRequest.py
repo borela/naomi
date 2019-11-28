@@ -33,6 +33,9 @@ class ContextRequest(Node):
         self.origin = origin
         self.path = path
 
+    def __repr__(self):
+        return '[ContextRequest]: %s' % self.path
+
     @property
     def compilation(self):
         return self.statement.compilation

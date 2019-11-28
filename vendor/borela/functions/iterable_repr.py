@@ -10,25 +10,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .Node import Node
+def iterable_repr(data):
+    result = ''
+    for item in data:
+        if result:
+            result += '\n'
+        result += repr(item)
+    return result
 
-class StackAction(Node):
-    __slots__ = 'match'
-
-    def __init__(self, match):
-        self.match = match
-
-    def __repr__(self):
-        return '[%s]' % self.__class__.__name__
-
-    @property
-    def compilation(self):
-        return self.match.compilation
-
-    @property
-    def context(self):
-        return self.match.context
-
-    @property
-    def syntax(self):
-        return self.match.syntax

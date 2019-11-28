@@ -10,6 +10,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from borela.functions import (
+    indent_string,
+    iterable_repr,
+)
+
 from ..ParsingError import ParsingError
 from .Context import Context
 from .ContextRequest import ContextRequest
@@ -18,7 +23,6 @@ from .Syntax import Syntax
 from .Variable import Variable
 from .VariableRequest import VariableRequest
 from borela import Stack
-from borela.functions import indent_string
 from collections import OrderedDict
 
 class Statistics(Node):
@@ -87,14 +91,9 @@ class Compilation(Node):
         self.statistics = Statistics()
 
     def __repr__(self):
-        body = ''
-
-        for _, syntax in self.syntaxes.items():
-            if body:
-                body += '\n'
-            body += repr(syntax)
-
-        return '[Compilation] {\n%s\n}' % indent_string(body)
+        return '[Compilation] {\n%s\n}' % indent_string(
+            iterable_repr(self.syntaxes.values())
+        )
 
     def enqueue_context_request(self, statement, origin, path):
         request = ContextRequest(

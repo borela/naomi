@@ -10,6 +10,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from borela.functions import (
+    indent_string,
+    iterable_repr,
+)
+
 from .Statement import Statement
 
 class Match(Statement):
@@ -29,4 +34,25 @@ class Match(Statement):
 
     def __init__(self, context):
         Statement.__init__(self, context)
+        self.pattern = None
+        self.scope = None
         self.action = None
+        self.captures = None
+        self.with_prototype = None
+
+    def __repr__(self):
+        body = 'Pattern: ' + repr(self.pattern)
+
+        if self.scope:
+            body += '\nScope: ' + repr(self.scope)
+
+        if self.captures:
+            body += '\nCaptures: ' + repr(self.captures)
+
+        if self.action:
+            body += '\n' + repr(self.action)
+
+        if self.with_prototype:
+            body += '\n' + repr(self.with_prototype)
+
+        return '[Match] {\n%s\n}' % indent_string(body)

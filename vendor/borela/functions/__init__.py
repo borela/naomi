@@ -14,6 +14,7 @@ from .delete_dir import * # noqa
 from .delete_dir_contents import * # noqa
 from .ensure_dir_exists import * # noqa
 from .indent_string import * # noqa
+from .iterable_repr import * # noqa
 from .list_files import * # noqa
 from .load_yaml import * # noqa
 from .make_words_regex import * # noqa

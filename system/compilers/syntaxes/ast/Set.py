@@ -10,6 +10,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from borela.functions import (
+    indent_string,
+    iterable_repr,
+)
+
 from .StackAction import StackAction
 
 class Set(StackAction):
@@ -18,3 +23,8 @@ class Set(StackAction):
     def __init__(self, match):
         StackAction.__init__(self, match)
         self.sequence = []
+
+    def __repr__(self):
+        return '[Set] [\n%s\n]' % indent_string(
+            iterable_repr(self.sequence)
+        )

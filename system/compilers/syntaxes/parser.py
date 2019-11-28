@@ -275,6 +275,10 @@ def parse_expression(syntax, origin, pattern):
 
     if len(nodes) > 1:
         nodes = FunctionCall('join', nodes)
+    elif len(nodes) == 1:
+        nodes = nodes[0]
+    else:
+        nodes = ''
 
     return nodes
 

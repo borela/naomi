@@ -10,6 +10,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from borela.functions import (
+    indent_string,
+    iterable_repr,
+)
+
 from .Node import Node
 
 class Context(Node):
@@ -29,7 +34,12 @@ class Context(Node):
         self.references = []
 
     def __repr__(self):
-        return '[Context]: %s' % self.name
+        return '[Context]: %s {\n%s\n}' % (
+            self.name,
+            indent_string(
+                iterable_repr(self.statements)
+            ),
+        )
 
     @property
     def compilation(self):

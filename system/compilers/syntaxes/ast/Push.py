@@ -10,6 +10,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from borela.functions import (
+    indent_string,
+    iterable_repr,
+)
+
 from .StackAction import StackAction
 
 class Push(StackAction):
@@ -18,3 +23,8 @@ class Push(StackAction):
     def __init__(self, match):
         StackAction.__init__(self, match)
         self.sequence = []
+
+    def __repr__(self):
+        return '[Push] [\n%s\n]' % indent_string(
+            iterable_repr(self.sequence)
+        )

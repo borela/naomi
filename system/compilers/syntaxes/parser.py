@@ -225,7 +225,8 @@ def parse_contexts(syntax):
             statements,
         ))
 
-VARIABLE_PATTERN = re.compile(r'{{(\w[\w-]*?)}}')
+VARIABLE_PATTERN = re.compile(r'(?<!\\){{(\w[\w-]*?)}}')
+COMMENT = re.compile(r'#.*?\n')
 WHITESPACE = re.compile(r'\s')
 
 def parse_expression(syntax, origin, pattern):
@@ -249,7 +250,10 @@ def parse_expression(syntax, origin, pattern):
 
     # Pattern.
     for item in re.split(r'({{\w[\w-]*?}})', str(pattern)):
+        # Remove comments and whitespaces.
+        item = COMMENT.sub('', item)
         item = WHITESPACE.sub('', item)
+
         if not item:
             continue
 

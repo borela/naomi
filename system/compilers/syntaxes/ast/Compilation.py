@@ -24,14 +24,20 @@ from collections import OrderedDict
 class Statistics(Node):
     __slots__ = [
         'contexts',
+        'contexts_inlined',
+        'contexts_removed',
         'files',
         'variables',
+        'variables_removed',
     ]
 
     def __init__(self):
         self.contexts = 0
+        self.contexts_inlined = 0
+        self.contexts_removed = 0
         self.files = 0
         self.variables = 0
+        self.variables_removed = 0
 
 class Compilation(Node):
     __slots__ = [

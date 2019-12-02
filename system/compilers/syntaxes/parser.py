@@ -91,7 +91,7 @@ def parse(settings):
         build_dir,
     )
 
-    parse_syntax(
+    compilation.entry = parse_syntax(
         compilation,
         home_dir,
         entry_path,
@@ -247,36 +247,36 @@ def parse_expression(syntax, origin, pattern):
                     continue
                 # Literal.
                 nodes.append(str(item))
+    else:
+        # Simple string pattern.
+        for item in re.split(r'({{\w[\w-]*?}})', str(pattern)):
+            # Remove comments and whitespaces.
+            item = COMMENT.sub('', item)
+            item = WHITESPACE.sub('', item)
 
-    # Pattern.
-    for item in re.split(r'({{\w[\w-]*?}})', str(pattern)):
-        # Remove comments and whitespaces.
-        item = COMMENT.sub('', item)
-        item = WHITESPACE.sub('', item)
+            if not item:
+                continue
 
-        if not item:
-            continue
+            found = VARIABLE_PATTERN.findall(item)
 
-        found = VARIABLE_PATTERN.findall(item)
+            # Literal.
+            if not found:
+                nodes.append(item)
+                continue
 
-        # Literal.
-        if not found:
-            nodes.append(item)
-            continue
+            # Variable.
+            name = '%s#%s' % (
+                syntax.path,
+                found[0],
+            )
 
-        # Variable.
-        name = '%s#%s' % (
-            syntax.path,
-            found[0],
-        )
+            variable = compilation.enqueue_variable_request(
+                syntax,
+                origin,
+                name,
+            )
 
-        variable = compilation.enqueue_variable_request(
-            syntax,
-            origin,
-            name,
-        )
-
-        nodes.append(variable)
+            nodes.append(variable)
 
     if len(nodes) > 1:
         nodes = FunctionCall('join', nodes)

@@ -45,27 +45,27 @@ class Node:
             indent_string(children_string),
         )
 
-    def __str__(self):
-        children_string = ''
+def generate_pattern(node):
+    children_string = ''
 
-        for child in self.children:
-            if children_string:
-                children_string += '|'
-            children_string += str(child)
+    for child in node.children:
+        if children_string:
+            children_string += '|'
+        children_string += generate_pattern(child)
 
-        if len(self.children) > 1:
-            children_string = '(?>%s)' % children_string
+    if len(node.children) > 1:
+        children_string = '(?>%s)' % children_string
 
-        if self.char is None:
-            return r'\b%s\b' % children_string
+    if node.char is None:
+        return r'\b%s\b' % children_string
 
-        if self.char == '':
-            if children_string.startswith('('):
-                return children_string + '?'
-            else:
-                return '(?:%s)?' % children_string
+    if node.char == '':
+        if children_string.startswith('('):
+            return children_string + '?'
+        else:
+            return '(?:%s)?' % children_string
 
-        return self.char + children_string
+    return node.char + children_string
 
 # Groups a list of words by their first character and remove it from the them.
 # This is used to construct the tree.
@@ -121,7 +121,7 @@ def make_words_regex(words):
     # most character until each node is a single character.
     tree = words_to_tree(words)
     # Build the optimized regex.
-    return str(tree)
+    return generate_pattern(tree)
 
 # Transforms the words into a tree:
 #

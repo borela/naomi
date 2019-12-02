@@ -36,3 +36,6 @@ class VariableRequest(Node):
     @property
     def compilation(self):
         return self.syntax.compilation
+
+    def get_subnodes(self):
+        return ['resolved']

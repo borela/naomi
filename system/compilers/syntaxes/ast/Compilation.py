@@ -114,7 +114,7 @@ class Compilation(Node):
         return request
 
     def get_subnodes(self):
-        return ['variables', 'contexts']
+        return ['entry']
 
     def index_context(self, context):
         if not isinstance(context, Context):

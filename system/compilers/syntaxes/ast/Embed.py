@@ -18,3 +18,6 @@ class Embed(StackAction):
         'embed_scope',
         'escape',
     ]
+
+    def get_subnodes(self):
+        return ['embed_context']

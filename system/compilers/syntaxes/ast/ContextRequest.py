@@ -47,3 +47,6 @@ class ContextRequest(Node):
     @property
     def syntax(self):
         return self.statement.syntax
+
+    def get_subnodes(self):
+        return ['resolved']

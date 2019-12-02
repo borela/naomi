@@ -10,14 +10,19 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from .visitors import (
+    ExecuteFunctionCall,
+    ResolveVariableRequest,
+)
+
 from ..ast import Node
 from .Path import Path
-from .visitors import ExecuteFunctionCall
 from collections import OrderedDict
 
 def transform(root):
     visitors = {
         'FunctionCall': ExecuteFunctionCall(),
+        'VariableRequest': ResolveVariableRequest(),
     }
     visit(Path(node=root), visitors)
 
@@ -34,9 +39,21 @@ def transform(root):
 #         # TODO: Visit only NodeTypeA and NodeTypeB.
 #         'NodeTypeA | NodeTypeB': VisitorInstance,
 #     }
+def visit(path, visitors, visited=None):
+    if not isinstance(path.node, Node):
+        return
 
-def visit(path, visitors):
+    if visited is None:
+        visited = {}
+
     node = path.node
+    node_hash = hash(node)
+
+    if node_hash not in visited:
+        visited[node_hash] = True
+    else:
+        return
+
     name = node.__class__.__name__
     visitor = visitors.get(name, None)
 
@@ -46,13 +63,13 @@ def visit(path, visitors):
 
         # Node changed, revisit.
         if path.node is not node:
-            return visit(path, visitors)
+            return visit(path, visitors, visited)
 
     # Visit the subnodes.
     for subnode_path in node.get_subnodes():
         subnode = getattr(node, subnode_path)
 
-        if isinstance(subnode, (str, bool, int, float)):
+        if not isinstance(subnode, (Node, OrderedDict, list)):
             continue
 
         # Subnode is a simple node.
@@ -64,6 +81,7 @@ def visit(path, visitors):
                     node=subnode,
                 ),
                 visitors,
+                visited,
             )
             continue
 
@@ -72,15 +90,22 @@ def visit(path, visitors):
             subnodes = subnode.values()
         elif isinstance(subnode, list):
             subnodes = subnode
+        else:
+            raise ValueError('Unexpected node type: %s' % type(subnode))
 
-        for subnode in subnodes:
+        for i, subnode in enumerate(subnodes):
+            if not isinstance(subnode, Node):
+                continue
+
             visit(
                 Path(
                     parent=node,
                     node_path=subnode_path,
+                    node_index=i,
                     node=subnode,
                 ),
                 visitors,
+                visited,
             )
 
     # Exit.
@@ -89,4 +114,4 @@ def visit(path, visitors):
 
     # Node changed, revisit.
     if path.node is not node:
-        return visit(path, visitors)
+        return visit(path, visitors, visited)

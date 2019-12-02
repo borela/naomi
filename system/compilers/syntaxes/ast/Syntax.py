@@ -89,8 +89,11 @@ class Syntax(Node):
             indent_string(contexts),
         )
 
-    def get_sub_nodes(self):
-        return self.variables + self.contexts
+    def get_subnodes(self):
+        return [
+            'variables',
+            'contexts',
+        ]
 
     def index_context(self, context):
         if not isinstance(context, Context):

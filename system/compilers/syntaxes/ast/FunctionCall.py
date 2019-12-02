@@ -34,3 +34,6 @@ class FunctionCall(Node):
                 iterable_repr(self.arguments)
             ),
         )
+
+    def get_subnodes(self):
+        return ['arguments']

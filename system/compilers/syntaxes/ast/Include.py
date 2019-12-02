@@ -17,3 +17,6 @@ class Include(Statement):
         'path',
         'context_request',
     ]
+
+    def get_subnodes(self):
+        return ['context_request']

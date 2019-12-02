@@ -10,24 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from borela.functions import (
-    indent_string,
-    iterable_repr,
-)
+from ..Visitor import Visitor
 
-from .StackAction import StackAction
-
-class Push(StackAction):
-    __slots__ = 'sequence'
-
-    def __init__(self, match):
-        StackAction.__init__(self, match)
-        self.sequence = []
-
-    def __repr__(self):
-        return '[Push] [\n%s\n]' % indent_string(
-            iterable_repr(self.sequence)
-        )
-
-    def get_subnodes(self):
-        return ['sequence']
+class ResolveVariableRequest(Visitor):
+    def exit(self, path):
+        path.replace_with(path.node.resolved.pattern)

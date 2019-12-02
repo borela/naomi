@@ -11,7 +11,25 @@
 # the License.
 
 from ..Visitor import Visitor
+from borela.functions import make_words_regex
+
+def join(arguments):
+    return ''.join(arguments)
+
+def word(argument):
+    return '\b%s\b' % argument
+
+def words(arguments):
+    return make_words_regex(arguments)
+
+FUNCTIONS = {
+    'join': join,
+    'word': word,
+    'words': words,
+}
 
 class ExecuteFunctionCall(Visitor):
     def exit(self, path):
-        print('ExecuteFunctionCall exit.')
+        name = path.node.name
+        arguments = path.node.arguments
+        path.replace_with(FUNCTIONS[name](arguments))

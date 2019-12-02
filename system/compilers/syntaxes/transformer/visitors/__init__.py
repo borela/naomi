@@ -11,3 +11,4 @@
 # the License.
 
 from .ExecuteFunctionCall import * # noqa
+from .ResolveVariableRequest import * # noqa

@@ -28,3 +28,6 @@ class Set(StackAction):
         return '[Set] [\n%s\n]' % indent_string(
             iterable_repr(self.sequence)
         )
+
+    def get_subnodes(self):
+        return ['sequence']

@@ -128,33 +128,32 @@ contexts:
     - include: else-pop
 
   jest-property-or-function:
-    - match: |
-        (?x)
-        (?> clearAllTimers
-          | disableAutomock
-          | enableAutomock
-          | fn
-          | isMockFunction
-          | genMockFromModule
-          | mock
-          | unmock
-          | doMock
-          | dontMock
-          | clearAllMocks
-          | resetAllMocks
-          | restoreAllMocks
-          | resetModules
-          | runAllTicks
-          | runAllTimers
-          | advanceTimersByTime
-          | runOnlyPendingTimers
-          | setMock
-          | setTimeout
-          | useFakeTimers
-          | useRealTimers
-          | spyOn
-        )
-        (?=\s*\()
+    - match:
+        - words:
+            - clearAllTimers
+            - disableAutomock
+            - enableAutomock
+            - fn
+            - isMockFunction
+            - genMockFromModule
+            - mock
+            - unmock
+            - doMock
+            - dontMock
+            - clearAllMocks
+            - resetAllMocks
+            - restoreAllMocks
+            - resetModules
+            - runAllTicks
+            - runAllTimers
+            - advanceTimersByTime
+            - runOnlyPendingTimers
+            - setMock
+            - setTimeout
+            - useFakeTimers
+            - useRealTimers
+            - spyOn
+        - (?=\s*\()
       scope: support.function.jest.js.fjsx15
       set: [
         meta-scope,

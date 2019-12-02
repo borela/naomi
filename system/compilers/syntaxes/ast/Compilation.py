@@ -113,6 +113,9 @@ class Compilation(Node):
         self.variable_requests.push(request)
         return request
 
+    def get_subnodes(self):
+        return ['variables', 'contexts']
+
     def index_context(self, context):
         if not isinstance(context, Context):
             raise ParsingError('Object is not a Context: %s' % context)

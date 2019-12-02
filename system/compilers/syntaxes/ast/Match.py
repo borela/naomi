@@ -56,3 +56,6 @@ class Match(Statement):
             body += '\n' + repr(self.with_prototype)
 
         return '[Match] {\n%s\n}' % indent_string(body)
+
+    def get_subnodes(self):
+        return ['pattern']

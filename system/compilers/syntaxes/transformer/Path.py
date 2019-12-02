@@ -10,27 +10,18 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .Node import Node
-
-class Variable(Node):
+class Path:
     __slots__ = [
-        'syntax',
-        'name',
-        'pattern',
-        # References to this context. This can be used to eliminate unused
-        # contexts.
-        'references',
+        'parent',
+        'node_path',
+        'node',
     ]
 
-    def __init__(self):
-        self.references = []
+    def __init__(self, parent=None, node_path=None, node=None):
+        self.parent = parent
+        self.node_path = node_path
+        self.node = node
 
-    def __repr__(self):
-        return '[Variable]: %s' % self.name
-
-    @property
-    def compilation(self):
-        return self.syntax.compilation
-
-    def get_subnodes(self):
-        return ['pattern']
+    def replace_with(self, new_node):
+        setattr(self.parent, self.node_path, new_node)
+        self.node = new_node

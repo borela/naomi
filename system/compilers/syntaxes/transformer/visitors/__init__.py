@@ -10,27 +10,4 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .Node import Node
-
-class Variable(Node):
-    __slots__ = [
-        'syntax',
-        'name',
-        'pattern',
-        # References to this context. This can be used to eliminate unused
-        # contexts.
-        'references',
-    ]
-
-    def __init__(self):
-        self.references = []
-
-    def __repr__(self):
-        return '[Variable]: %s' % self.name
-
-    @property
-    def compilation(self):
-        return self.syntax.compilation
-
-    def get_subnodes(self):
-        return ['pattern']
+from .ExecuteFunctionCall import * # noqa

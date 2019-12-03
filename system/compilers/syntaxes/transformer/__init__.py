@@ -15,29 +15,78 @@ from .visitors import (
     ResolveVariableRequest,
 )
 
+from collections import (
+    defaultdict,
+    OrderedDict,
+)
+
 from ..ast import Node
 from .Path import Path
-from collections import OrderedDict
+
+import re
+
+def get_visitors(name, visitors):
+    result = []
+
+    any_visitor = visitors.get('*', None)
+    if any_visitor:
+        result.extend(any_visitor)
+
+    type_visitor = visitors.get(name, None)
+    if type_visitor:
+        result.extend(type_visitor)
+
+    return result
+
+WHITESPACE = re.compile(r'\s')
+
+def prepare_visitors(visitors):
+    result = defaultdict(list)
+
+    for key, visitors in visitors.items():
+        if '|' not in key:
+            if isinstance(visitors, list):
+                result[key].extend(visitors)
+            else:
+                result[key].append(visitors)
+            continue
+
+        for node_type in key.split('|'):
+            node_type = WHITESPACE.sub('', node_type)
+
+            if isinstance(visitors, list):
+                result[node_type].extend(visitors)
+            else:
+                result[node_type].append(visitors)
+
+    return result
 
 def transform(root):
     visitors = {
         'FunctionCall': ExecuteFunctionCall(),
         'VariableRequest': ResolveVariableRequest(),
     }
-    visit(Path(node=root), visitors)
+    visit(
+        Path(node=root),
+        prepare_visitors(visitors),
+    )
 
 # Visit each node in the tree allowing visitors to modify it. The visitors
 # dictionary follows the format:
 #
 #     {
-#         # TODO: Visit all nodes.
-#         '*': VisitorInstance,
+#         # Visit all nodes.
+#         '*': [VisitorInstance, ...],
 #
 #         # Visit only NodeType.
+#         'NodeType': [VisitorInstance, ...],
+#
+#         # Visit only NodeTypeA and NodeTypeB.
+#         'NodeTypeA | NodeTypeB': [VisitorInstance, ...],
+#
+#         # If there’s just one visitor, a list is not necessary.
 #         'NodeType': VisitorInstance,
 #
-#         # TODO: Visit only NodeTypeA and NodeTypeB.
-#         'NodeTypeA | NodeTypeB': VisitorInstance,
 #     }
 def visit(path, visitors, visited=None):
     if not isinstance(path.node, Node):
@@ -55,15 +104,16 @@ def visit(path, visitors, visited=None):
         return
 
     name = node.__class__.__name__
-    visitor = visitors.get(name, None)
+    node_visitors = get_visitors(name, visitors)
 
     # Enter.
-    if visitor:
-        visitor.enter(path)
+    if len(node_visitors):
+        for visitor in node_visitors:
+            visitor.enter(path)
 
-        # Node changed, revisit.
-        if path.node is not node:
-            return visit(path, visitors, visited)
+            # Node changed, revisit.
+            if path.node is not node:
+                return visit(path, visitors, visited)
 
     # Visit the subnodes.
     for subnode_path in node.get_subnodes():
@@ -109,9 +159,10 @@ def visit(path, visitors, visited=None):
             )
 
     # Exit.
-    if visitor:
-        visitor.exit(path)
+    if len(node_visitors):
+        for visitor in node_visitors:
+            visitor.exit(path)
 
-    # Node changed, revisit.
-    if path.node is not node:
-        return visit(path, visitors, visited)
+            # Node changed, revisit.
+            if path.node is not node:
+                return visit(path, visitors, visited)

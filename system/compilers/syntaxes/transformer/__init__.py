@@ -66,10 +66,7 @@ def transform(root):
         'FunctionCall': ExecuteFunctionCall(),
         'VariableRequest': ResolveVariableRequest(),
     }
-    visit(
-        Path(node=root),
-        prepare_visitors(visitors),
-    )
+    visit(Path(node=root), visitors)
 
 # Visit each node in the tree allowing visitors to modify it. The visitors
 # dictionary follows the format:
@@ -92,8 +89,10 @@ def visit(path, visitors, visited=None):
     if not isinstance(path.node, Node):
         return
 
+    # This is the first node being visited.
     if visited is None:
         visited = {}
+        visitors = prepare_visitors(visitors)
 
     node = path.node
     node_hash = hash(node)
@@ -116,8 +115,8 @@ def visit(path, visitors, visited=None):
                 return visit(path, visitors, visited)
 
     # Visit the subnodes.
-    for subnode_path in node.get_subnodes():
-        subnode = getattr(node, subnode_path)
+    for subnode_name in node.get_subnodes():
+        subnode = getattr(node, subnode_name)
 
         if not isinstance(subnode, (Node, OrderedDict, list)):
             continue
@@ -127,7 +126,7 @@ def visit(path, visitors, visited=None):
             visit(
                 Path(
                     parent=node,
-                    node_path=subnode_path,
+                    node_name=subnode_name,
                     node=subnode,
                 ),
                 visitors,
@@ -150,7 +149,7 @@ def visit(path, visitors, visited=None):
             visit(
                 Path(
                     parent=node,
-                    node_path=subnode_path,
+                    node_name=subnode_name,
                     node_index=i,
                     node=subnode,
                 ),

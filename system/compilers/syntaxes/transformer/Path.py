@@ -13,7 +13,7 @@
 class Path:
     __slots__ = [
         'parent',
-        'node_path',
+        'node_name',
         'node_index',
         'node',
     ]
@@ -21,21 +21,21 @@ class Path:
     def __init__(
         self,
         parent=None,
-        node_path=None,
+        node_name=None,
         node_index=-1,
         node=None,
     ):
         self.parent = parent
-        self.node_path = node_path
+        self.node_name = node_name
         self.node_index = node_index
         self.node = node
 
     def replace_with(self, new_node):
-        subnode_list = getattr(self.parent, self.node_path)
+        subnode_list = getattr(self.parent, self.node_name)
 
         if isinstance(subnode_list, list):
             subnode_list[self.node_index] = new_node
         else:
-            setattr(self.parent, self.node_path, new_node)
+            setattr(self.parent, self.node_name, new_node)
 
         self.node = new_node

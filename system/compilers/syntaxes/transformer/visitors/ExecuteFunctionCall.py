@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from ..TransformationError import TransformationError
 from ..Visitor import Visitor
 from borela.functions import make_words_regex
 
@@ -30,6 +31,15 @@ FUNCTIONS = {
 
 class ExecuteFunctionCall(Visitor):
     def exit(self, path):
-        name = path.node.name
-        arguments = path.node.arguments
+        node = path.node
+        name = node.name
+        arguments = node.arguments
+
+        if name not in FUNCTIONS:
+            raise TransformationError(
+                message='Function not “%s” found.' % name,
+                path=node.location.path,
+                location=node.location,
+            )
+
         path.replace_with(FUNCTIONS[name](arguments))

@@ -26,6 +26,7 @@ class VariableRequest(Node):
     ]
 
     def __init__(self, syntax, origin, path):
+        Node.__init__(self)
         self.syntax = syntax
         self.origin = origin
         self.path = path

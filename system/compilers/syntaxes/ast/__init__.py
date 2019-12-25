@@ -17,6 +17,7 @@ from .ContextRequest import * # noqa
 from .Embed import * # noqa
 from .FunctionCall import * # noqa
 from .Include import * # noqa
+from .Location import * # noqa
 from .Match import * # noqa
 from .Pop import * # noqa
 from .Push import * # noqa

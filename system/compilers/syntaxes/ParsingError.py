@@ -10,14 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-class ParsingError(Exception):
-    def __init__(self, message, syntax=None, location=None):
-        if syntax and location:
-            message = '%s (%i, %i): %s' % (
-                syntax.package_relpath,
-                location.line + 1,
-                location.col + 1,
-                message,
-            )
+from .CompilationError import CompilationError
 
-        Exception.__init__(self, message)
+class ParsingError(CompilationError):
+    pass

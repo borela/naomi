@@ -29,6 +29,7 @@ class ContextRequest(Node):
     ]
 
     def __init__(self, statement, origin, path):
+        Node.__init__(self)
         self.statement = statement
         self.origin = origin
         self.path = path

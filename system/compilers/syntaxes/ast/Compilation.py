@@ -36,6 +36,7 @@ class Statistics(Node):
     ]
 
     def __init__(self):
+        Node.__init__(self)
         self.contexts = 0
         self.contexts_inlined = 0
         self.contexts_removed = 0
@@ -76,6 +77,8 @@ class Compilation(Node):
     ]
 
     def __init__(self, settings, build_dir):
+        Node.__init__(self)
+
         self.settings = settings
         self.build_dir = build_dir
 

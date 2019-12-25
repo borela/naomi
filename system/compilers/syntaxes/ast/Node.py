@@ -10,8 +10,13 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from .Location import Location
+
 class Node:
-    __slots__ = []
+    __slots__ = ['location']
+
+    def __init__(self):
+        self.location = Location()
 
     def __repr__(self):
         return '[%s]' % self.__class__.__name__

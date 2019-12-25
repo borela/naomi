@@ -53,21 +53,26 @@ def check_embed_exists(key, statement, raw):
     if 'embed' not in raw:
         raise ParsingError(
             '“%s” without embed.' % key,
-            statement.syntax,
+            statement.syntax.package_relpath,
             key.lc,
         )
 
     if not statement.action:
         raise ParsingError(
             '“%s” must be after embed.' % key,
-            statement.syntax,
+            statement.syntax.package_relpath,
             key.lc,
         )
 
-def dict_to_function_calls(calls):
+def dict_to_function_calls(calls, syntax_path):
     result = []
     for name, args in calls.items():
-        result.append(FunctionCall(name, args))
+        function_call = FunctionCall(name, args)
+        function_call.location.path = syntax_path
+        function_call.location.line = name.lc.line
+        function_call.location.column = name.lc.col
+
+        result.append(function_call)
     return result
 
 def parse(settings):
@@ -119,12 +124,23 @@ def parse(settings):
 def parse_clear_scopes(context, raw):
     statement = ClearScopes(context)
     statement.value = raw['clear_scopes']
+
+    statement.location.path = context.syntax.path
+    statement.location.line = raw.lc.line
+    statement.location.column = raw.lc.col
+
     return statement
 
 def parse_context(syntax, name, raw):
-    context = Context(syntax)
-    context.name = name
-    return parse_context_statements(context, raw)
+    context = Context(syntax, name)
+
+    context.location.path = syntax.path
+    context.location.line = raw.lc.line
+    context.location.column = raw.lc.col
+
+    parse_context_statements(context, raw)
+
+    return context
 
 def parse_context_sequence(statement, raw):
     syntax = statement.syntax
@@ -155,10 +171,13 @@ def parse_context_sequence(statement, raw):
     for item in raw:
         # Inline context.
         if isinstance(item, list):
-            result.append(parse_context_statements(
-                Context(syntax),
-                item,
-            ))
+            context = Context(syntax)
+            context.location.path = syntax.path
+            context.location.line = item.lc.line
+            context.location.column = item.lc.col
+            result.append(context)
+
+            parse_context_statements(context, item)
         # Context reference.
         else:
             result.append(compilation.enqueue_context_request(
@@ -209,21 +228,19 @@ def parse_context_statements(context, raw):
 
         raise ParsingError(
             'Unexpected statement: %s' % statement,
-            statement.syntax,
+            statement.syntax.package_relpath,
             statement.lc,
         )
-
-    return context
 
 def parse_contexts(syntax):
     contexts = syntax.raw.get('contexts', {})
 
     for name, statements in contexts.items():
-        syntax.index_context(parse_context(
+        parse_context(
             syntax,
             name,
             statements,
-        ))
+        )
 
 VARIABLE_PATTERN = re.compile(r'(?<!\\){{(\w[\w-]*?)}}')
 COMMENT = re.compile(r'#.*?\n')
@@ -237,13 +254,13 @@ def parse_expression(syntax, origin, pattern):
     if isinstance(pattern, (list, OrderedDict)):
         # Simple function calls.
         if isinstance(pattern, OrderedDict):
-            nodes = dict_to_function_calls(pattern)
+            nodes = dict_to_function_calls(pattern, syntax.path)
         # Function calls mixed with literals.
         else:
             for item in pattern:
                 # Function call.
                 if isinstance(item, OrderedDict):
-                    nodes.extend(dict_to_function_calls(item))
+                    nodes.extend(dict_to_function_calls(item, syntax.path))
                     continue
                 # Literal.
                 nodes.append(str(item))
@@ -280,6 +297,9 @@ def parse_expression(syntax, origin, pattern):
 
     if len(nodes) > 1:
         nodes = FunctionCall('join', nodes)
+        nodes.location.path = syntax.path
+        nodes.location.line = origin.lc.line
+        nodes.location.column = origin.lc.col
     elif len(nodes) == 1:
         nodes = nodes[0]
     else:
@@ -299,11 +319,19 @@ def parse_include(context, raw):
         path=path,
     )
 
+    statement.location.path = context.syntax.path
+    statement.location.line = raw.lc.line
+    statement.location.column = raw.lc.col
+
     return statement
 
 def parse_match(context, raw):
-    statement = Match(context)
     syntax = context.syntax
+
+    statement = Match(context)
+    statement.location.path = syntax.path
+    statement.location.line = raw.lc.line
+    statement.location.column = raw.lc.col
 
     match_parsed = False
     scope_parsed = False
@@ -330,17 +358,18 @@ def parse_match(context, raw):
             match_parsed = True
             continue
 
-        if key == 'match_word':
+        if key in ['match_word', 'match_words']:
             if match_parsed:
                 raise_multiple_match(syntax, key.lc)
-            statement.pattern = FunctionCall('word', value)
-            match_parsed = True
-            continue
 
-        if key == 'match_words':
-            if match_parsed:
-                raise_multiple_match(syntax, key.lc)
-            statement.pattern = FunctionCall('words', value)
+            if key == 'match_word':
+                statement.pattern = FunctionCall('word', value)
+            elif key == 'match_words':
+                statement.pattern = FunctionCall('words', value)
+
+            statement.pattern.location.path = syntax.path
+            statement.pattern.location.line = key.lc.line
+            statement.pattern.location.column = key.lc.col
             match_parsed = True
             continue
 
@@ -366,39 +395,37 @@ def parse_match(context, raw):
             if statement.action:
                 raise ParsingError(
                     'Multiple stack actions.',
-                    syntax,
+                    syntax.package_relpath,
                     key.lc,
                 )
 
             if key == 'embed':
                 statement.action = Embed(statement)
                 statement.action.embed_context = value
-                continue
-
-            if key == 'pop':
+            elif key == 'pop':
                 statement.action = Pop(statement)
                 statement.action.value = str(value)
-                continue
-
-            if key == 'push':
+            elif key == 'push':
                 statement.action = Push(statement)
                 statement.action.sequence = parse_context_sequence(
                     statement,
                     value,
                 )
-                continue
-
-            if key == 'set':
+            elif key == 'set':
                 statement.action = Set(statement)
                 statement.action.sequence = parse_context_sequence(
                     statement,
                     value,
                 )
-                continue
+
+            statement.action.location.path = syntax.path
+            statement.action.location.line = key.lc.line
+            statement.action.location.column = key.lc.col
+            continue
 
         raise ParsingError(
             'Unexpected statement: %s' % key,
-            syntax,
+            syntax.package_relpath,
             key.lc,
         )
 
@@ -407,25 +434,33 @@ def parse_match(context, raw):
 def parse_meta_scope(context, raw):
     statement = SetMetaScope(context)
     statement.scope = raw['meta_scope']
+
+    statement.location.path = context.syntax.path
+    statement.location.line = raw.lc.line
+    statement.location.column = raw.lc.col
+
     return statement
 
 def parse_meta_content_scope(context, raw):
     statement = SetMetaContentScope(context)
     statement.scope = raw['meta_content_scope']
+
+    statement.location.path = context.syntax.path
+    statement.location.line = raw.lc.line
+    statement.location.column = raw.lc.col
+
     return statement
 
 def parse_syntax(compilation, home_dir, path):
+    raw = load_yaml(path)
+
     syntax = Syntax(
         compilation,
         home_dir,
         path,
     )
 
-    compilation.index_syntax(syntax)
-
-    raw = load_yaml(syntax.path)
     syntax.raw = raw
-
     syntax.name = raw.get('name', None)
     syntax.hidden = raw.get('hidden', False)
     syntax.scope = raw.get('scope', None)
@@ -442,37 +477,40 @@ def parse_syntax(compilation, home_dir, path):
     return syntax
 
 def parse_variable(syntax, name, value):
-    statement = Variable()
-    statement.syntax = syntax
-    statement.name = name
+    statement = Variable(syntax, name)
     statement.pattern = parse_expression(
         syntax=syntax,
         origin=name,
         pattern=value,
     )
+
+    statement.location.path = syntax.path
+    statement.location.line = name.lc.line
+    statement.location.column = name.lc.col
+
     return statement
 
 def parse_variables(syntax):
     variables = syntax.raw.get('variables', {})
 
     for name, value in variables.items():
-        syntax.index_variable(parse_variable(
+        parse_variable(
             syntax,
             name,
             value,
-        ))
+        )
 
 def raise_multiple_match(syntax, location):
     raise ParsingError(
         'Multiple match statements.',
-        syntax,
+        syntax.package_relpath,
         location,
     )
 
 def raise_multiple_scope(syntax, location):
     raise ParsingError(
         'A match must not contain both “captures” and “scope” statements.',
-        syntax,
+        syntax.package_relpath,
         location,
     )
 
@@ -526,7 +564,7 @@ def resolve_context_request(compilation, request):
     if not request.resolved:
         raise ParsingError(
             'Context not found: %s' % package_relpath(path),
-            request.syntax,
+            request.syntax.package_relpath,
             request.origin.lc,
         )
     else:
@@ -539,7 +577,7 @@ def resolve_variable_request(compilation, request):
     if not request.resolved:
         raise ParsingError(
             'Variable not found: %s' % path.split('#')[1],
-            request.syntax,
+            request.syntax.package_relpath,
             request.origin.lc,
         )
     else:

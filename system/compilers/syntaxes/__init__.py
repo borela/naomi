@@ -11,8 +11,8 @@
 # the License.
 
 from .ast import FunctionCall
+from .CompilationError import CompilationError
 from .parser import parse
-from .ParsingError import ParsingError
 from .transformer import transform
 from Naomi.system import log_error
 from ruamel.yaml.constructor import DuplicateKeyError
@@ -23,7 +23,7 @@ def compile_syntax(settings):
         transform(ast)
         # print(ast)
         # TODO: Save to a file.
-    except ParsingError as error:
+    except CompilationError as error:
         log_error(str(error))
     except DuplicateKeyError as error:
         lc = error.problem_mark

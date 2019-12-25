@@ -48,8 +48,7 @@ class Syntax(Node):
     ]
 
     def __init__(self, compilation, home_dir, path):
-        self.syntax_id = -1
-        self.compilation = compilation
+        Node.__init__(self)
 
         self.home_dir = home_dir
         self.path = path
@@ -58,6 +57,10 @@ class Syntax(Node):
 
         self.variables = OrderedDict()
         self.contexts = OrderedDict()
+
+        self.syntax_id = -1
+        self.compilation = compilation
+        self.compilation.index_syntax(self)
 
     def __repr__(self):
         variables = ''

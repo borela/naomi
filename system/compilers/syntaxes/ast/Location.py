@@ -10,26 +10,21 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .Node import Node
+class Location:
+    __slots__ = [
+        'path',
+        'column',
+        'line',
+    ]
 
-class StackAction(Node):
-    __slots__ = 'match'
-
-    def __init__(self, match):
-        Node.__init__(self)
-        self.match = match
+    def __init__(self):
+        self.path = None
+        self.column = -1
+        self.line = -1
 
     def __repr__(self):
-        return '[%s]' % self.__class__.__name__
-
-    @property
-    def compilation(self):
-        return self.match.compilation
-
-    @property
-    def context(self):
-        return self.match.context
-
-    @property
-    def syntax(self):
-        return self.match.syntax
+        return '[Location]: (%i, %i) %s' % (
+            self.line,
+            self.column,
+            self.path,
+        )

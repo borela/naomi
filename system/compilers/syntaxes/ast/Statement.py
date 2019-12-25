@@ -16,6 +16,7 @@ class Statement(Node):
     __slots__ = 'context'
 
     def __init__(self, context):
+        Node.__init__(self)
         self.context = context
 
     @property

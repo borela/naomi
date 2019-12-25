@@ -22,8 +22,13 @@ class Variable(Node):
         'references',
     ]
 
-    def __init__(self):
+    def __init__(self, syntax, name):
+        Node.__init__(self)
+        self.name = name
         self.references = []
+
+        self.syntax = syntax
+        self.syntax.index_variable(self)
 
     def __repr__(self):
         return '[Variable]: %s' % self.name

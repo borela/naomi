@@ -27,11 +27,16 @@ class Context(Node):
         'references',
     ]
 
-    def __init__(self, syntax):
+    def __init__(self, syntax, name=None):
+        Node.__init__(self)
+
         self.syntax = syntax
-        self.name = None
+        self.name = name
         self.statements = []
         self.references = []
+
+        if name is not None:
+            self.syntax.index_context(self)
 
     def __repr__(self):
         return '[Context]: %s {\n%s\n}' % (

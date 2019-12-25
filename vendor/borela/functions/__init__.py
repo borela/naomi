@@ -25,4 +25,5 @@ from .replace_path_ext import * # noqa
 from .to_json_string import * # noqa
 from .to_plist_string import * # noqa
 from .to_xml_string import * # noqa
+from .trim_whitespace import * # noqa
 from .write_text_file import * # noqa

@@ -42,8 +42,12 @@ from os.path import (
     realpath,
 )
 
+from borela.functions import (
+    load_yaml,
+    trim_whitespace,
+)
+
 from .ParsingError import ParsingError
-from borela.functions import load_yaml
 from collections import OrderedDict
 from Naomi.system.state_store import STATE_STORE
 
@@ -244,7 +248,6 @@ def parse_contexts(syntax):
 
 VARIABLE_PATTERN = re.compile(r'(?<!\\){{(\w[\w-]*?)}}')
 COMMENT = re.compile(r'#.*?\n')
-WHITESPACE = re.compile(r'\s')
 
 def parse_expression(syntax, origin, pattern):
     nodes = []
@@ -269,7 +272,7 @@ def parse_expression(syntax, origin, pattern):
         for item in re.split(r'({{\w[\w-]*?}})', str(pattern)):
             # Remove comments and whitespaces.
             item = COMMENT.sub('', item)
-            item = WHITESPACE.sub('', item)
+            item = trim_whitespace(item)
 
             if not item:
                 continue

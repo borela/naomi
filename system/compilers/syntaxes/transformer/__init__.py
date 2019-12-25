@@ -22,6 +22,7 @@ from collections import (
 
 from ..ast import Node
 from .Path import Path
+from borela import trim_whitespace
 
 import re
 
@@ -38,8 +39,6 @@ def get_visitors(name, visitors):
 
     return result
 
-WHITESPACE = re.compile(r'\s')
-
 def prepare_visitors(visitors):
     result = defaultdict(list)
 
@@ -52,7 +51,7 @@ def prepare_visitors(visitors):
             continue
 
         for node_type in key.split('|'):
-            node_type = WHITESPACE.sub('', node_type)
+            node_type = trim_whitespace(node_type)
 
             if isinstance(visitors, list):
                 result[node_type].extend(visitors)

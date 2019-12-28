@@ -37,5 +37,11 @@ class Variable(Node):
     def compilation(self):
         return self.syntax.compilation
 
+    @property
+    def full_path(self):
+        path = self.syntax.path
+        name = self.name
+        return '%s#%s' % (path, name)
+
     def get_subnodes(self):
         return ['pattern']

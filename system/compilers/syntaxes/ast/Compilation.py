@@ -44,6 +44,14 @@ class Statistics(Node):
         self.variables = 0
         self.variables_removed = 0
 
+    def __repr__(self):
+        result = ''
+        for attribute in self.__slots__:
+            if result:
+                result += '\n'
+            result += '%s: %s' % (attribute, getattr(self, attribute))
+        return result
+
 class Compilation(Node):
     __slots__ = [
         'settings',
@@ -117,16 +125,13 @@ class Compilation(Node):
         return request
 
     def get_subnodes(self):
-        return ['entry']
+        return ['syntaxes']
 
     def index_context(self, context):
         if not isinstance(context, Context):
             raise AstError('Object is not a Context: %s' % context)
 
-        path = context.syntax.path
-        name = context.name
-
-        self.contexts['%s#%s' % (path, name)] = context
+        self.contexts[context.full_path] = context
         self.statistics.contexts += 1
 
     def index_syntax(self, syntax):
@@ -146,8 +151,13 @@ class Compilation(Node):
         if not isinstance(variable, Variable):
             raise AstError('Object is not a Variable: %s' % variable)
 
-        path = variable.syntax.path
-        name = variable.name
-
-        self.variables['%s#%s' % (path, name)] = variable
+        self.variables[variable.full_path] = variable
         self.statistics.variables += 1
+
+    def remove_context(self, context_path):
+        del self.contexts[context_path]
+        self.statistics.contexts_removed += 1
+
+    def remove_variable(self, variable_path):
+        del self.variables[variable_path]
+        self.statistics.variables_removed += 1

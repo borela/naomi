@@ -12,6 +12,6 @@
 
 from ..Visitor import Visitor
 
-class ResolveVariableRequest(Visitor):
+class CollapseVariableRequest(Visitor):
     def exit(self, path):
         path.replace_with(path.node.resolved.pattern)

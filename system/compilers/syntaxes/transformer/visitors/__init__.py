@@ -10,5 +10,5 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from .CollapseVariableRequest import * # noqa
 from .ExecuteFunctionCall import * # noqa
-from .ResolveVariableRequest import * # noqa

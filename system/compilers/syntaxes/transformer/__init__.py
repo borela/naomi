@@ -11,8 +11,8 @@
 # the License.
 
 from .visitors import (
+    CollapseVariableRequest,
     ExecuteFunctionCall,
-    ResolveVariableRequest,
 )
 
 from collections import (
@@ -63,7 +63,7 @@ def prepare_visitors(visitors):
 def transform(root):
     visitors = {
         'FunctionCall': ExecuteFunctionCall(),
-        'VariableRequest': ResolveVariableRequest(),
+        'VariableRequest': CollapseVariableRequest(),
     }
     visit(Path(node=root), visitors)
 

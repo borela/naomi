@@ -15,10 +15,7 @@ from .Node import Node
 class ContextRequest(Node):
     __slots__ = [
         'statement',
-        # In most cases the instruction that requests a context is a
-        # statement e.g. “Include” which we already have a reference in the
-        # previous attribute, but we still have stack actions that are
-        # inside “Match” statements and can request them too.
+        # Exact location of the request.
         'origin',
         # Path used to import the context without any modifcation.
         'path',

@@ -16,6 +16,7 @@ from Naomi.system import package_relpath
 class VariableRequest(Node):
     __slots__ = [
         'syntax',
+        # Exact location of the request.
         'origin',
         # Path used to import the context without any modifcation.
         'path',

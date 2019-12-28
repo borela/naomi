@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from ..ParsingError import ParsingError
+from .AstError import AstError
 from .Context import Context
 from .Node import Node
 from .Variable import Variable
@@ -100,14 +100,14 @@ class Syntax(Node):
 
     def index_context(self, context):
         if not isinstance(context, Context):
-            raise ParsingError('Object is not a Context: %s' % context)
+            raise AstError('Object is not a Context: %s' % context)
 
         self.contexts[context.name] = context
         self.compilation.index_context(context)
 
     def index_variable(self, variable):
         if not isinstance(variable, Variable):
-            raise ParsingError('Object is not a Variable: %s' % variable)
+            raise AstError('Object is not a Variable: %s' % variable)
 
         self.variables[variable.name] = variable
         self.compilation.index_variable(variable)

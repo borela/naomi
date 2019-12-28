@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .CompilationError import CompilationError
+from ..CompilationError import CompilationError
 
-class ParsingError(CompilationError):
+class AstError(CompilationError):
     pass

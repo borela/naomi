@@ -15,7 +15,7 @@ from borela.functions import (
     iterable_repr,
 )
 
-from ..ParsingError import ParsingError
+from .AstError import AstError
 from .Context import Context
 from .ContextRequest import ContextRequest
 from .Node import Node
@@ -121,7 +121,7 @@ class Compilation(Node):
 
     def index_context(self, context):
         if not isinstance(context, Context):
-            raise ParsingError('Object is not a Context: %s' % context)
+            raise AstError('Object is not a Context: %s' % context)
 
         path = context.syntax.path
         name = context.name
@@ -131,7 +131,7 @@ class Compilation(Node):
 
     def index_syntax(self, syntax):
         if not isinstance(syntax, Syntax):
-            raise ParsingError('Object is not a syntax file: %s' % syntax)
+            raise AstError('Object is not a syntax file: %s' % syntax)
 
         path = syntax.path
 
@@ -144,7 +144,7 @@ class Compilation(Node):
 
     def index_variable(self, variable):
         if not isinstance(variable, Variable):
-            raise ParsingError('Object is not a Variable: %s' % variable)
+            raise AstError('Object is not a Variable: %s' % variable)
 
         path = variable.syntax.path
         name = variable.name

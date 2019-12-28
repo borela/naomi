@@ -25,11 +25,6 @@ from Naomi.system import (
     package_relpath,
 )
 
-from Naomi.system.events import (
-    building_keymaps,
-    finished_building_keymaps,
-)
-
 from Naomi.system.headers import keymap as keymap_header
 from os.path import join
 
@@ -41,12 +36,11 @@ from os.path import join
 #     Default (OSX).sublime-keymap
 #
 def compile_keymaps(src_dir, build_dir):
-    EVENT_BUS.emit(building_keymaps())
     log_debug('Cleaning: %s' % package_relpath(build_dir))
 
     delete_dir_contents(build_dir)
 
-    log_info('Compiling keymaps...')
+    log_info('Compiling keymaps: %s' % src_dir)
 
     files = [file for file, _, _ in list_files(src_dir)]
     (shared, per_os) = load_keymaps(files)
@@ -54,8 +48,7 @@ def compile_keymaps(src_dir, build_dir):
     write_shared_keymap(shared, src_dir, build_dir)
     write_per_os_keymap(per_os, src_dir, build_dir)
 
-    log_info('Done compiling keymaps...')
-    EVENT_BUS.emit(finished_building_keymaps())
+    log_info('Done compiling keymaps: %s' % src_dir)
 
 # Load keymaps, combine all shared and exclusive bindings into a single
 # result that is used later to generate the final “Default” files.

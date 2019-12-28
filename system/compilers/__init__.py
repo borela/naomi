@@ -16,7 +16,16 @@ from Naomi.system import (
 )
 
 from Naomi.system.events import (
+    building_commands,
+    building_keymaps,
+    building_menus,
+    building_preferences,
     building_syntaxes,
+
+    finished_building_commands,
+    finished_building_keymaps,
+    finished_building_menus,
+    finished_building_preferences,
     finished_building_syntaxes,
 )
 
@@ -27,32 +36,48 @@ from .menus import compile_menus # noqa
 from .preferences import compile_preferences # noqa
 
 def compile_integrated_commands():
+    EVENT_BUS.emit(building_commands())
+
     for integrated in STATE_STORE['integrated']['commands']:
         compile_commands(
             integrated['src_dir'],
             integrated['build_dir'],
         )
 
+    EVENT_BUS.emit(finished_building_commands())
+
 def compile_integrated_keymaps():
+    EVENT_BUS.emit(building_keymaps())
+
     for integrated in STATE_STORE['integrated']['keymaps']:
         compile_keymaps(
             integrated['src_dir'],
             integrated['build_dir'],
         )
 
+    EVENT_BUS.emit(finished_building_keymaps())
+
 def compile_integrated_menus():
+    EVENT_BUS.emit(building_menus())
+
     for integrated in STATE_STORE['integrated']['menus']:
         compile_menus(
             integrated['src_dir'],
             integrated['build_dir'],
         )
 
+    EVENT_BUS.emit(finished_building_menus())
+
 def compile_integrated_preferences():
+    EVENT_BUS.emit(building_preferences())
+
     for integrated in STATE_STORE['integrated']['preferences']:
         compile_preferences(
             integrated['src_dir'],
             integrated['build_dir'],
         )
+
+    EVENT_BUS.emit(finished_building_preferences())
 
 def compile_configured_syntaxes():
     EVENT_BUS.emit(building_syntaxes())

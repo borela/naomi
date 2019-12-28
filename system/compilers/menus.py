@@ -25,26 +25,22 @@ from Naomi.system import (
     package_relpath,
 )
 
-from Naomi.system.events import (
-    building_menus,
-    finished_building_menus,
-)
-
 from collections import defaultdict
 from Naomi.system.headers import menu as menu_header
 from os.path import join
 
 def compile_menus(src_dir, build_dir):
-    EVENT_BUS.emit(building_menus())
     log_debug('Cleaning: %s' % package_relpath(build_dir))
 
     delete_dir_contents(build_dir)
+
+    log_info('Building menus: %s' % src_dir)
 
     files = [file for file, _, _ in list_files(src_dir)]
     menus = load_menus(files)
 
     for location in menus:
-        log_info('Building menus for %s...' % location)
+        log_debug('Building menus for %s...' % location)
 
         destination = join(build_dir, '%s.sublime-menu' % location)
         final_string = menu_header(src_dir) + to_json_string(
@@ -55,8 +51,7 @@ def compile_menus(src_dir, build_dir):
         write_text_file(destination, final_string)
         log_debug('File generated: %s' % package_relpath(destination))
 
-    log_info('Done building menus.')
-    EVENT_BUS.emit(finished_building_menus())
+    log_info('Done building menus: %s' % src_dir)
 
 # Load all menu sources and returns the result indexed by the destination.
 def load_menus(files_paths):

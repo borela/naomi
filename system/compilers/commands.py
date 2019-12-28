@@ -26,21 +26,15 @@ from Naomi.system import (
     package_relpath,
 )
 
-from Naomi.system.events import (
-    building_commands,
-    finished_building_commands,
-)
-
 from Naomi.system.headers import command as command_header
 
 # Convert commands from “x.yml” to “x.sublime-commands”.
 def compile_commands(src_dir, build_dir):
-    EVENT_BUS.emit(building_commands())
     log_debug('Cleaning: %s' % package_relpath(build_dir))
 
     delete_dir_contents(build_dir)
 
-    log_info('Building command files...')
+    log_info('Building command files: %s' % src_dir)
 
     for file, _, _ in list_files(src_dir):
         destination = modify_path(
@@ -65,5 +59,4 @@ def compile_commands(src_dir, build_dir):
         write_text_file(destination, final_string)
         log_debug('File generated: %s' % package_relpath(destination))
 
-    log_info('Done building commands.')
-    EVENT_BUS.emit(finished_building_commands())
+    log_info('Done building commands: %s' % src_dir)

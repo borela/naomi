@@ -12,6 +12,7 @@
 
 from .delete_dir import * # noqa
 from .delete_dir_contents import * # noqa
+from .dict_to_yaml_string import * # noqa
 from .ensure_dir_exists import * # noqa
 from .indent_string import * # noqa
 from .iterable_repr import * # noqa

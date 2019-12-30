@@ -49,7 +49,6 @@ from borela.functions import (
 
 from .ParsingError import ParsingError
 from collections import OrderedDict
-from Naomi.system.state_store import STATE_STORE
 
 import re
 
@@ -79,7 +78,7 @@ def dict_to_function_calls(calls, syntax_path):
         result.append(function_call)
     return result
 
-def parse(settings):
+def parse(settings, integrated_syntaxes):
     entry = settings.get('entry', None)
 
     if not isinstance(entry, str) or not entry:
@@ -93,7 +92,10 @@ def parse(settings):
     else:
         log_info('Compiling syntax: %s %s' % (entry, names))
 
-    entry_path, home_dir, build_dir = resolve_syntax_entry(entry)
+    entry_path, home_dir, build_dir = resolve_syntax_entry(
+        entry,
+        integrated_syntaxes,
+    )
 
     compilation = Compilation(
         settings,
@@ -588,13 +590,13 @@ def resolve_variable_request(compilation, request):
 
 # Resolve relative paths to the syntaxes src directories being managed by
 # the Naomi’s system.
-def resolve_syntax_entry(path):
+def resolve_syntax_entry(path, integrated_syntaxes):
     if isfile(path):
         return realpath(path)
 
     dirs = [
         (integrated['src_dir'], integrated['build_dir'])
-        for integrated in STATE_STORE['integrated']['syntaxes']
+        for integrated in integrated_syntaxes
     ]
 
     # Allow external packages to override Naomi’s syntax files.

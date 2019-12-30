@@ -10,19 +10,49 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from borela import (
+    delete_dir_contents,
+    list_files,
+    load_yaml,
+    to_json_string,
+    write_text_file,
+)
+
 from .ast import FunctionCall
 from .CompilationError import CompilationError
+from .generator import generate_dict
+from .optimizer import optimize
 from .parser import parse
 from .transformer import transform
+from borela.functions import dict_to_yaml_string
 from Naomi.system import log_error
 from ruamel.yaml.constructor import DuplicateKeyError
 
-def compile_syntax(settings):
+def cleanup_unneed_syntaxes(hashes):
+    pass
+
+def compile_syntax(settings, integrated_syntaxes):
     try:
-        ast = parse(settings)
+        ast = parse(
+            settings,
+            integrated_syntaxes,
+        )
+
         transform(ast)
-        # print(ast)
-        # TODO: Save to a file.
+        optimize(ast)
+
+        hashes = []
+        names = settings.get('names')
+        syntax = generate_dict(ast)
+
+        if isinstance(names, list):
+            for name in names:
+                syntax['name'] = name
+                hashes.append(generate_file(syntax))
+        else:
+            hashes.append(generate_file(syntax))
+
+        cleanup_unneeded_syntaxes()
     except CompilationError as error:
         log_error(str(error))
     except DuplicateKeyError as error:
@@ -31,3 +61,6 @@ def compile_syntax(settings):
             lc.line + 1,
             lc.column + 1,
         ))
+
+def generate_file(syntax):
+    contents = dict_to_yaml_string(syntax)

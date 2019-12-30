@@ -83,6 +83,9 @@ def compile_configured_syntaxes():
     EVENT_BUS.emit(building_syntaxes())
 
     for settings in STATE_STORE['settings']['syntaxes']:
-        compile_syntax(settings)
+        compile_syntax(
+            settings,
+            STATE_STORE['integrated']['syntaxes'],
+        )
 
     EVENT_BUS.emit(finished_building_syntaxes())

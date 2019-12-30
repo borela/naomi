@@ -43,5 +43,11 @@ class Variable(Node):
         name = self.name
         return '%s#%s' % (path, name)
 
+    @property
+    def short_name(self):
+        path = self.syntax.syntax_id
+        name = self.name
+        return '%s_%s' % (path, name)
+
     def get_subnodes(self):
         return ['pattern']

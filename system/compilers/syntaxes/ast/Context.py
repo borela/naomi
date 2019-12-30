@@ -56,5 +56,15 @@ class Context(Node):
         name = self.name
         return '%s#%s' % (path, name)
 
+    @property
+    def short_name(self):
+        path = self.syntax.syntax_id
+        name = self.name
+
+        if name == 'main':
+            name = self.syntax.package_relpath
+
+        return '%s_%s' % (path, name)
+
     def get_subnodes(self):
         return ['statements']

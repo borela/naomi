@@ -10,7 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .CollapseContextRequest import * # noqa
-from .CollapseVariableRequest import * # noqa
-from .ExecuteFunctionCall import * # noqa
-from .TrimPattern import * # noqa
+from ..Visitor import Visitor
+
+class CollapseContextRequest(Visitor):
+    def exit(self, path):
+        path.replace_with(path.node.resolved.short_name)

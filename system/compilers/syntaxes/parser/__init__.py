@@ -129,7 +129,7 @@ def parse(settings, integrated_syntaxes):
 
 def parse_clear_scopes(context, raw):
     statement = ClearScopes(context)
-    statement.value = raw['clear_scopes']
+    statement.value = bool(raw['clear_scopes'])
 
     statement.location.path = context.syntax.path
     statement.location.line = raw.lc.line
@@ -381,7 +381,7 @@ def parse_match(context, raw):
         if key == 'scope':
             if scope_parsed:
                 raise_multiple_scope(syntax, key.lc)
-            statement.scope = value
+            statement.scope = str(value)
             scope_parsed = True
             continue
 
@@ -438,7 +438,7 @@ def parse_match(context, raw):
 
 def parse_meta_scope(context, raw):
     statement = SetMetaScope(context)
-    statement.scope = raw['meta_scope']
+    statement.scope = str(raw['meta_scope'])
 
     statement.location.path = context.syntax.path
     statement.location.line = raw.lc.line
@@ -448,7 +448,7 @@ def parse_meta_scope(context, raw):
 
 def parse_meta_content_scope(context, raw):
     statement = SetMetaContentScope(context)
-    statement.scope = raw['meta_content_scope']
+    statement.scope = str(raw['meta_content_scope'])
 
     statement.location.path = context.syntax.path
     statement.location.line = raw.lc.line
@@ -466,13 +466,16 @@ def parse_syntax(compilation, home_dir, path):
     )
 
     syntax.raw = raw
-    syntax.name = raw.get('name', None)
-    syntax.hidden = raw.get('hidden', False)
-    syntax.scope = raw.get('scope', None)
-    syntax.scope_prefix = raw.get('scope_prefix', None)
-    syntax.scope_suffix = raw.get('scope_suffix', None)
-    syntax.file_extensions = raw.get('file_extensions', [])
-    syntax.first_line_match = raw.get('first_line_match', None)
+    syntax.name = str(raw.get('name', None))
+    syntax.hidden = bool(raw.get('hidden', False))
+    syntax.scope = str(raw.get('scope', None))
+    syntax.scope_prefix = str(raw.get('scope_prefix', None))
+    syntax.scope_suffix = str(raw.get('scope_suffix', None))
+    syntax.first_line_match = str(raw.get('first_line_match', None))
+
+    syntax.file_extensions = []
+    for ext in raw.get('file_extensions', []):
+        syntax.file_extensions.append(str(ext))
 
     parse_variables(syntax)
     parse_contexts(syntax)

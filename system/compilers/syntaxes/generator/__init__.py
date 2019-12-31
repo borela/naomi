@@ -107,9 +107,7 @@ def generate_context(context):
 def generate_dict(compilation):
     entry = compilation.entry
     result = CommentedMap()
-    result.yaml_set_start_comment(
-        syntax_header(compilation.entry.home_dir)
-    )
+    result.yaml_set_start_comment(syntax_header(entry.path))
 
     result['name'] = entry.name
 
@@ -126,7 +124,6 @@ def generate_dict(compilation):
     result['contexts'] = OrderedDict()
 
     for variable in compilation.variables.values():
-        print(variable.pattern)
         result['variables'][variable.short_name] = variable.pattern
 
     for context in compilation.contexts.values():

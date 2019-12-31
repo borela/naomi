@@ -58,13 +58,13 @@ class Context(Node):
 
     @property
     def short_name(self):
-        path = self.syntax.syntax_id
-        name = self.name
+        if self.name == 'main':
+            return self.syntax.package_relpath.replace('\\', '/')
 
-        if name == 'main':
-            name = self.syntax.package_relpath
-
-        return '%s_%s' % (path, name)
+        return '%s_%s' % (
+            self.syntax.syntax_id,
+            self.name,
+        )
 
     def get_subnodes(self):
         return ['statements']

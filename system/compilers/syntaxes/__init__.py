@@ -25,34 +25,38 @@ from .optimizer import optimize
 from .parser import parse
 from .transformer import transform
 from borela.functions import dict_to_yaml_string
+from hashlib import sha512
 from Naomi.system import log_error
+from os.path import join
 from ruamel.yaml.constructor import DuplicateKeyError
 
-def cleanup_unneed_syntaxes(hashes):
+def cleanup_unneeded_syntaxes(hashes):
+    # TODO:..
     pass
 
 def compile_syntax(settings, integrated_syntaxes):
     try:
-        ast = parse(
+        compilation = parse(
             settings,
             integrated_syntaxes,
         )
 
-        transform(ast)
-        optimize(ast)
+        transform(compilation)
+        optimize(compilation)
 
         hashes = []
         names = settings.get('names')
-        syntax = generate_dict(ast)
+        syntax = generate_dict(compilation)
+        build_dir = compilation.build_dir
 
         if isinstance(names, list):
             for name in names:
                 syntax['name'] = name
-                hashes.append(generate_file(syntax))
+                hashes.append(generate_file(build_dir, syntax))
         else:
-            hashes.append(generate_file(syntax))
+            hashes.append(generate_file(build_dir, syntax))
 
-        cleanup_unneeded_syntaxes()
+        cleanup_unneeded_syntaxes(hashes)
     except CompilationError as error:
         log_error(str(error))
     except DuplicateKeyError as error:
@@ -62,5 +66,12 @@ def compile_syntax(settings, integrated_syntaxes):
             lc.column + 1,
         ))
 
-def generate_file(syntax):
+def generate_file(build_dir, syntax):
     contents = dict_to_yaml_string(syntax)
+    name_hash = sha512(syntax['name'].encode())
+    file_name = '%s.yml' % name_hash.hexdigest()
+    write_text_file(
+        join(build_dir, file_name),
+        contents,
+    )
+    return name_hash

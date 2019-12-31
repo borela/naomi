@@ -14,4 +14,4 @@ from ..Visitor import Visitor
 
 class CollapseVariableRequest(Visitor):
     def exit(self, path):
-        path.replace_with(path.node.resolved.pattern)
+        path.replace_with('{{%s}}' % path.node.resolved.short_name)

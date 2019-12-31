@@ -10,20 +10,6 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .visitors import (
-    RemoveDuplicatedVariables,
-    RemoveUnusedContexts,
-    RemoveUnusedVariables,
-)
-
-from ..transformer import transform
-
-def optimize(compilation):
-    visitors = {
-        'Context': RemoveUnusedContexts(),
-        'Variable': [
-            RemoveUnusedVariables(),
-            RemoveDuplicatedVariables(),
-        ],
-    }
-    transform(compilation, visitors)
+from .RemoveDuplicatedVariables import * # noqa
+from .RemoveUnusedVariables import * # noqa
+from .RemoveUnusedContexts import * # noqa

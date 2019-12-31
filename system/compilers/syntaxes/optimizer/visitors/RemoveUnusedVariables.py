@@ -10,20 +10,13 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from .visitors import (
-    RemoveDuplicatedVariables,
-    RemoveUnusedContexts,
-    RemoveUnusedVariables,
-)
+from ...Visitor import Visitor
 
-from ..transformer import transform
+import re
 
-def optimize(compilation):
-    visitors = {
-        'Context': RemoveUnusedContexts(),
-        'Variable': [
-            RemoveUnusedVariables(),
-            RemoveDuplicatedVariables(),
-        ],
-    }
-    transform(compilation, visitors)
+COMMENT = re.compile(r'#.*?\n')
+
+class RemoveUnusedVariables(Visitor):
+    def enter(self, path):
+        if len(path.node.references) < 1:
+            path.remove_node()

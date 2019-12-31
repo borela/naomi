@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from ..Visitor import Visitor
+from ...Visitor import Visitor
 
 class CollapseVariableRequest(Visitor):
     def exit(self, path):

@@ -10,8 +10,8 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from ...Visitor import Visitor
 from ..TransformationError import TransformationError
-from ..Visitor import Visitor
 from borela.functions import make_words_regex
 
 def join(arguments):

@@ -28,8 +28,9 @@ from ..ast import (
     Variable,
 )
 
-from collections import OrderedDict
 from .GenerationError import GenerationError
+from borela.functions import indent_string
+from collections import OrderedDict
 from ruamel.yaml.comments import CommentedMap
 from Naomi.system.headers import syntax as syntax_header
 
@@ -107,7 +108,15 @@ def generate_context(context):
 def generate_dict(compilation):
     entry = compilation.entry
     result = CommentedMap()
-    result.yaml_set_start_comment(syntax_header(entry.path))
+    result.yaml_set_start_comment('%s\n%s' % (
+        syntax_header(entry.path),
+        indent_string(
+            'Statistics:\n%s\n ' % indent_string(
+                text=str(compilation.statistics),
+                amount=2,
+            )
+        ),
+    ))
 
     result['name'] = entry.name
 

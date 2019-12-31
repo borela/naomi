@@ -16,6 +16,6 @@ the License.
   lost on the next build. To contribute, edit the entry point and files
   requested by it:
 
-     $1
+    $1
 
 ##############################################################################

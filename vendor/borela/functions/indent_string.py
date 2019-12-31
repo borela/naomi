@@ -14,8 +14,8 @@ from re import split
 
 def indent_string(
     text,
-    amount=1,
-    spacer='    ',
+    amount=4,
+    spacer=' ',
 ):
     result = ''
     spacer = spacer * amount

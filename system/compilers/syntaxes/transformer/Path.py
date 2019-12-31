@@ -10,6 +10,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+from ..ast import (
+    Context,
+    Variable,
+)
+
 class Path:
     __slots__ = [
         'parent',
@@ -39,3 +44,19 @@ class Path:
             setattr(self.parent, self.node_name, new_node)
 
         self.node = new_node
+
+    def remove_node(self):
+        if isinstance(self.node, (Context, Variable)):
+            if isinstance(self.node, Context) and self.node.name:
+                self.node.compilation.remove_context(self.node.full_path)
+            elif isinstance(self.node, Variable):
+                self.node.compilation.remove_variable(self.node.full_path)
+        else:
+            subnode_list = getattr(self.parent, self.node_name)
+
+            if isinstance(subnode_list, list):
+                del subnode_list[self.node_index]
+            else:
+                delattr(self.parent, self.node_name)
+
+        self.node = None

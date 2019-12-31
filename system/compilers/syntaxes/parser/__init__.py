@@ -42,12 +42,8 @@ from os.path import (
     realpath,
 )
 
-from borela.functions import (
-    load_yaml,
-    trim_whitespace,
-)
-
 from .ParsingError import ParsingError
+from borela.functions import load_yaml
 from collections import OrderedDict
 
 import re
@@ -249,7 +245,6 @@ def parse_contexts(syntax):
         )
 
 VARIABLE_PATTERN = re.compile(r'(?<!\\){{(\w[\w-]*?)}}')
-COMMENT = re.compile(r'#.*?\n')
 
 def parse_expression(syntax, origin, pattern):
     nodes = []

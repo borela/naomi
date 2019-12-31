@@ -61,12 +61,13 @@ def prepare_visitors(visitors):
 
     return result
 
-def transform(root):
-    visitors = {
-        'ContextRequest': CollapseContextRequest(),
-        'FunctionCall': ExecuteFunctionCall(),
-        'VariableRequest': CollapseVariableRequest(),
-    }
+def transform(root, visitors=None):
+    if visitors is None:
+        visitors = {
+            'ContextRequest': CollapseContextRequest(),
+            'FunctionCall': ExecuteFunctionCall(),
+            'VariableRequest': CollapseVariableRequest(),
+        }
     visit(Path(node=root), visitors)
 
 # Visit each node in the tree allowing visitors to modify it. The visitors

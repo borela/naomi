@@ -272,13 +272,6 @@ def parse_expression(syntax, origin, pattern):
     else:
         # Simple string pattern.
         for item in re.split(r'({{\w[\w-]*?}})', str(pattern)):
-            # Remove comments and whitespaces.
-            item = COMMENT.sub('', item)
-            item = trim_whitespace(item)
-
-            if not item:
-                continue
-
             found = VARIABLE_PATTERN.findall(item)
 
             # Literal.
@@ -388,7 +381,11 @@ def parse_match(context, raw):
         if key == 'captures':
             if scope_parsed:
                 raise_multiple_scope(syntax, key.lc)
-            statement.captures = value
+
+            statement.captures = OrderedDict()
+            for key, scope in value.items():
+                statement.captures[key] = str(scope)
+
             scope_parsed = True
             continue
 
@@ -466,12 +463,12 @@ def parse_syntax(compilation, home_dir, path):
     )
 
     syntax.raw = raw
-    syntax.name = str(raw.get('name', None))
+    syntax.name = str(raw.get('name', ''))
     syntax.hidden = bool(raw.get('hidden', False))
-    syntax.scope = str(raw.get('scope', None))
-    syntax.scope_prefix = str(raw.get('scope_prefix', None))
-    syntax.scope_suffix = str(raw.get('scope_suffix', None))
-    syntax.first_line_match = str(raw.get('first_line_match', None))
+    syntax.scope = str(raw.get('scope', ''))
+    syntax.scope_prefix = str(raw.get('scope_prefix', ''))
+    syntax.scope_suffix = str(raw.get('scope_suffix', ''))
+    syntax.first_line_match = str(raw.get('first_line_match', ''))
 
     syntax.file_extensions = []
     for ext in raw.get('file_extensions', []):

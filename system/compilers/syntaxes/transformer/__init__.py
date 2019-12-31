@@ -14,7 +14,6 @@ from .visitors import (
     CollapseContextRequest,
     CollapseVariableRequest,
     ExecuteFunctionCall,
-    TrimPattern,
 )
 
 from collections import (
@@ -66,7 +65,6 @@ def transform(root):
     visitors = {
         'ContextRequest': CollapseContextRequest(),
         'FunctionCall': ExecuteFunctionCall(),
-        'Match|Variable': TrimPattern(),
         'VariableRequest': CollapseVariableRequest(),
     }
     visit(Path(node=root), visitors)

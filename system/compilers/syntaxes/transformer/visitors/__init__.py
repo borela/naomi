@@ -13,4 +13,3 @@
 from .CollapseContextRequest import * # noqa
 from .CollapseVariableRequest import * # noqa
 from .ExecuteFunctionCall import * # noqa
-from .TrimPattern import * # noqa

@@ -108,10 +108,10 @@ def generate_context(context):
 def generate_dict(compilation):
     entry = compilation.entry
     result = CommentedMap()
-    result.yaml_set_start_comment('%s\n%s' % (
+    result.yaml_set_start_comment('%s---\n%s\n---' % (
         syntax_header(entry.path),
         indent_string(
-            'Statistics:\n%s\n ' % indent_string(
+            'Statistics:\n%s' % indent_string(
                 text=str(compilation.statistics),
                 amount=2,
             )

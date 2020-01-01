@@ -18,9 +18,18 @@
 #   lost on the next build. To contribute, edit the entry point and files
 #   requested by it:
 # 
-#      Naomi/integration/syntaxes/src/jest-snapshot.yml
+#     Naomi/integration/syntaxes/src/jest-snapshot.yml
 # 
 # ##############################################################################
+# ---
+#     Statistics:
+#       contexts: 956
+#       contexts_inlined: 0
+#       contexts_removed: 22
+#       files: 186
+#       variables: 203
+#       variables_removed: 20
+# ---
 name: Jest Snapshot (Naomi)
 scope: source.js.jest-snapshot
 file_extensions:

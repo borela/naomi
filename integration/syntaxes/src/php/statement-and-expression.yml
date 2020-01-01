@@ -1,0 +1,108 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+variables:
+  expressionGroupBegin: |
+    \s*(\()
+
+contexts:
+  main:
+    # Open new expression group.
+    - match: |
+        (?xi)
+        {{expressionGroupBegin}}
+      captures:
+        1: punctuation.definition.expression.group.a.begin.php.php7
+      set: open-b-close-a
+    # Expression contents.
+    - include: sequence
+
+  open-a-close-b:
+    # Open new expression group.
+    - match: |
+        (?xi)
+        {{expressionGroupBegin}}
+      captures:
+        1: punctuation.definition.expression.group.a.begin.php.php7
+      push: open-b-close-a
+    # Close current expression group.
+    - match: \s*(\))
+      captures:
+        1: punctuation.definition.expression.group.b.end.php.php7
+      pop: true
+    # Expression contents.
+    - match: ""
+      push:
+        - include: sequence
+        - match: ""
+          pop: true
+
+  open-b-close-a:
+    # Open new expression group.
+    - match: |
+        (?xi)
+        {{expressionGroupBegin}}
+      captures:
+        1: punctuation.definition.expression.group.b.begin.php.php7
+      push: open-a-close-b
+    # Close current expression group.
+    - match: \s*(\))
+      captures:
+        1: punctuation.definition.expression.group.a.end.php.php7
+      pop: true
+    # Expression contents.
+    - match: ""
+      push:
+        - include: sequence
+        - match: ""
+          pop: true
+
+  sequence:
+    - include: ~/php/terminator
+    - include: ~/php/comment
+    # Complex statements.
+    - include: ~/php/class
+    - include: ~/php/interface
+    - include: ~/php/trait
+    - include: ~/php/declare
+    - include: ~/php/namespace
+    - include: ~/php/function
+    - include: ~/php/closure
+    - include: ~/php/use
+    # Simple statements.
+    - include: ~/php/goto
+    - include: ~/php/statement/label
+    - include: ~/php/statement/hanging
+    - include: ~/php/statement/bodied
+    - include: ~/php/statement/simple
+    - include: ~/php/statement/other
+    # Other keywords.
+    - include: ~/php/modifier
+    - include: ~/php/new
+    # Expression.
+    - include: ~/php/array-access
+    - include: ~/php/literal
+    - include: ~/php/function-call
+    - include: ~/php/operator
+    # When it comes to constants and variables, there's no way to tell apart
+    # without an intellisense, so it’ll treat that anything that looks a
+    # uppercase variable as if it was a constant.
+    - include: ~/php/constant
+    # Some types can look like constants but we will give the power to the user
+    # to override types and in turn we get some predefined constants highlighted
+    # correctly..
+    - include: ~/php/type
+    # Constant matching failed, so it could be a variable.
+    - include: ~/php/variable

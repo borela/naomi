@@ -14,15 +14,10 @@
 .variable.function,
 .storage.type.function.arrow {
   foreground: $light-blue-a200;
+}
+
+.entity.name.function {
   fontStyle: bold;
-}
-
-.storage.type.function.arrow.flow {
-  foreground: $brown-200;
-}
-
-.variable.function {
-  fontStyle: none;
 }
 
 .support.function {
@@ -31,22 +26,20 @@
 }
 
 .support.function.jest.matcher {
-  foreground: rgba($pink-a100, 1);
+  foreground: $pink-a100;
 }
 
 .variable.parameter {
   foreground: $amber-a100;
 }
 
-// .meta.function {
-//   .punctuation.section.block {
-//     foreground: $light-blue-a200;
-//   }
-// }
-
-// .meta.function.parameters .punctuation {
-//   &.section.group,
-//   &.separator.comma {
-//     foreground: $light-blue-a200;
+// .meta.function,
+// .meta.function-call {
+//   .punctuation {
+//     &.section.block,
+//     &.section.group,
+//     &.separator.comma {
+//       foreground: $light-blue-a200;
+//     }
 //   }
 // }

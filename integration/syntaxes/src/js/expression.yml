@@ -1,0 +1,155 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+contexts:
+  main:
+    - include: comment-no-pop
+    - include: shared-main
+    # Start of the expression.
+    - match: (?=\S)
+      set: [ optional-tail, head ]
+
+  close-group:
+    - match: \)
+      scope: punctuation.section.group.end.js.fjsx15
+      pop: true
+
+  comma:
+    - include: ~/js/operator/comma
+
+  comment-no-pop:
+    - include: ~/js/comment.no-pop
+
+  do-expression:
+    - match: do\b
+      scope: keyword.control.do-expression.js.fjsx15
+      set: [ meta-do-expression, do-expression-body-begin ]
+
+  do-expression-body-begin:
+    - match: \{
+      scope: punctuation.section.block.begin.js.fjsx15
+      set: do-expression-body-end
+
+  do-expression-body-end:
+    - match: \}
+      scope: punctuation.section.block.end.js.fjsx15
+      pop: true
+    - match: (?=\S)
+      push: statement-or-expression
+
+  function-call:
+    - include: comment-no-pop
+    - include: main
+
+  function-call-meta-scope:
+    - meta_scope: meta.function-call.js.fjsx15
+    - match: ""
+      pop: true
+
+  globals:
+    - include: ~/js/node-js
+    - include: ~/js/react-js
+    - include: ~/js/jest
+    - include: ~/js/web
+    - include: ~/js/core
+
+  head:
+    - include: comment-no-pop
+    - include: do-expression
+    - include: globals
+    - include: ~/js/jsx1
+    - include: ~/js/literal
+    - include: ~/js/class
+    - include: ~/js/function-expression
+    - include: ~/js/function-call
+    - include: ~/js/variable#function-assigned-to-variable
+    - include: ~/js/constant
+    - include: ~/js/variable
+    # Open new expression group.
+    - match: \(
+      scope: punctuation.section.group.begin.js.fjsx15
+      set: open-group
+
+  meta-do-expression:
+    - meta_scope: meta.do-expression.js.fjsx15
+    - match: ""
+      pop: true
+
+  open-group:
+    - meta_scope: meta.group.js.fjsx15
+    - include: comment-no-pop
+    # Close the current expression group.
+    - include: close-group
+    # Type cast.
+    - match: (?=:)
+      set: [ close-group, type-cast ]
+    # Other expressions.
+    - match: (?=\S)
+      push:
+        - include: shared-main
+        # Start of the expression.
+        - match: ""
+          set: [ optional-tail, head ]
+
+  optional-tail:
+    - include: comment-no-pop
+    # Function call.
+    - match: (?=\()
+      push: [
+        function-call-meta-scope,
+        function-call
+      ]
+    # Property access.
+    - match: (?=\[)
+      push: property-access
+    # Other operators. At this point, operators will have a higher priority than
+    # regex literals.
+    - include: ~/js/operator
+    # Anything else not expected.
+    - match: (?=\S)
+      pop: true
+
+  property-access:
+    - include: comment-no-pop
+    - include: ~/js/property-access
+
+  regex-literal:
+    - include: ~/js/literal/string/regex
+
+  shared-main:
+    - include: comma
+    # At this stage, regex literals will have a higher priority than operators.
+    - match: (?=/)
+      set: [ optional-tail, regex-literal ]
+    # Arrow functions need to be detected before expression groups.
+    - include: ~/js/arrow-function
+    # At this point is possible to predict JSX tags before operators because
+    # there’s no left operand for a "<" operator to be valid.
+    - include: ~/js/jsx1-early
+    # Prevent floating point being highlighted as a dot operator followed by an
+    # integer.
+    - match: (?=\.\d)
+      set:
+        - include: ~/js/literal/number
+    # Detect operators as soon as possible.
+    - include: ~/js/operator
+
+  statement-or-expression:
+    - include: comment-no-pop
+    - include: ~/js/statement
+    - include: ~/js/expression
+
+  type-cast:
+    - include: ~/facebook-flow/cast

@@ -1,0 +1,49 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+contexts:
+  main:
+    # Types that look like constants.
+    - include: ~/mql/type/support/enums
+    # Actual constants.
+    - include: ~/mql/constant/support/align-mode
+    - include: ~/mql/constant/support/anchor
+    - include: ~/mql/constant/support/applied-price
+    - include: ~/mql/constant/support/border
+    - include: ~/mql/constant/support/chart-events
+    - include: ~/mql/constant/support/chart-properties
+    - include: ~/mql/constant/support/chart-positioning
+    - include: ~/mql/constant/support/chart-representation
+    - include: ~/mql/constant/support/color
+    - include: ~/mql/constant/support/core
+    - include: ~/mql/constant/support/corner
+    - include: ~/mql/constant/support/custom-indicator-properties
+    - include: ~/mql/constant/support/drawing-styles
+    - include: ~/mql/constant/support/error-codes
+    - include: ~/mql/constant/support/indicator-lines
+    - include: ~/mql/constant/support/init-ret-code
+    - include: ~/mql/constant/support/gann
+    - include: ~/mql/constant/support/object-periods
+    - include: ~/mql/constant/support/object-property
+    - include: ~/mql/constant/support/object-type
+    - include: ~/mql/constant/support/order-selection
+    - include: ~/mql/constant/support/order-type
+    - include: ~/mql/constant/support/other
+    - include: ~/mql/constant/support/series-identifiers
+    - include: ~/mql/constant/support/smoothing-methods
+    - include: ~/mql/constant/support/symbol-properties
+    - include: ~/mql/constant/support/timeframes
+    - include: ~/mql/constant/support/uninit-reason
+    - include: ~/mql/constant/normal

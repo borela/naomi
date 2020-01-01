@@ -1,0 +1,55 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+contexts:
+  main:
+    - match: \{
+      scope: punctuation.section.block.begin.js.fjsx15
+      set: [ meta, delimiters, optional-parameter ]
+
+  comment-no-pop:
+    - include: ~/js/comment.no-pop
+
+  delimiters:
+    - include: comment-no-pop
+    - match: \,
+      scope: punctuation.separator.comma.js.fjsx15
+      push: optional-parameter
+    - match: \}
+      scope: punctuation.section.block.end.js.fjsx15
+      set: optional-type-and-default-value
+
+  meta:
+    - meta_scope: >-
+        meta.binding.destructuring.mapping.js.fjsx15
+        meta.block.js.fjsx15
+    - match: ""
+      pop: true
+
+  optional-parameter:
+    - include: comment-no-pop
+    - match: (?=[,)\]}])
+      pop: true
+    - include: ~/js/operator/rest.no-pop
+    - include: ~/js/function/parameter/destructuring/object/property
+    - include: ~/js/function/parameter/destructuring/array
+    - include: ~/js/function/parameter/destructuring/object
+    - include: ~/js/function/parameter/simple
+
+  optional-type-and-default-value:
+    - match: (?=,)
+      pop: true
+    - include: ~/facebook-flow/associated-type.no-pop
+    - include: ~/js/optional-expression

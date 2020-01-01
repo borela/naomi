@@ -1,0 +1,82 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+contexts:
+  main:
+    - include: comment-no-pop
+    # Functions need to be detected before expression groups.
+    - include: ~/facebook-flow/function
+    # Detect operators as soon as possible.
+    - include: ~/facebook-flow/operator
+    # Open new type expression group.
+    - match: \(
+      scope: punctuation.section.group.begin.flow
+      set: open-group
+    # Start of the type expression.
+    - match: (?=\S)
+      set: [ optional-tail, head ]
+
+  close-group:
+    - match: \)
+      scope: punctuation.section.group.end.flow
+      set: optional-tail
+
+  comment-no-pop:
+    - include: ~/js/comment.no-pop
+
+  else-pop:
+    - match: (?=\S)
+      pop: true
+
+  head:
+    - include: comment-no-pop
+    - include: ~/facebook-flow/object
+    - include: ~/facebook-flow/tuple
+    - include: ~/js/literal/number
+    - include: ~/js/literal/string/double-quoted
+    - include: ~/js/literal/string/single-quoted
+    - include: ~/js/literal/string/template
+    - include: ~/facebook-flow/simple
+
+  open-group:
+    - include: comment-no-pop
+    # Functions need to be detected before expression groups.
+    - include: ~/facebook-flow/function.no-pop
+    # Open new type expression group.
+    - match: \(
+      scope: punctuation.section.group.begin.flow
+      push: open-group
+    # Close the current type expression group.
+    - include: close-group
+    # Start of the type expression.
+    - match: (?=\S)
+      push: optional-type-expression
+
+  optional-tail:
+    - include: comment-no-pop
+    # Array shorthand or generic arguments.
+    - match: (?=[\[<])
+      set: [ optional-tail, tail ]
+    # Other operators.
+    - include: ~/facebook-flow/operator
+    - include: else-pop
+
+  optional-type-expression:
+    - include: ~/facebook-flow/optional-type-expression
+
+  tail:
+    - include: comment-no-pop
+    - include: ~/facebook-flow/operator/array-shorthand
+    - include: ~/facebook-flow/generic/arguments

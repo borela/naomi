@@ -15,10 +15,6 @@
 @import 'schemes/candyman/util/repeatString';
 @import 'schemes/candyman/main';
 
-// Old scopes.
-@import 'schemes/candyman/old';
-
-// New scopes.
 @import 'schemes/candyman/array';
 @import 'schemes/candyman/annotation';
 @import 'schemes/candyman/comment';

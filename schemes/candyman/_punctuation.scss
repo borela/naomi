@@ -15,12 +15,8 @@
   &.terminator {
     foreground: $green-a400;
   }
-}
 
-// .punctuation {
-//   &.section.block,
-//   &.section.group,
-//   &.separator.key-value {
-//     foreground: $blue-gray-200;
-//   }
-// }
+  &.section.generic {
+    foreground: $brown-200;
+  }
+}

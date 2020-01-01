@@ -10,23 +10,21 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-// .meta.object-literal .punctuation {
+// .meta.object-literal .meta.block .punctuation {
 //   &.section.block,
-//   &.separator.comma,
+//   &.separator.comma {
+//     foreground: $light-green-400;
+//   }
+
+//   &.section.brackets,
 //   &.separator.key-value {
-//     foreground: $green-300;
+//     foreground: $purple-a100;
 //   }
 // }
 
 .meta.object-literal.key {
   .string.unquoted {
-    foreground: $green-300;
+    foreground: $brown-200;
     background: $blue-gray-900;
   }
 }
-
-// .meta.object-literal.key.computed {
-//   .punctuation.section.brackets {
-//     foreground: $green-300;
-//   }
-// }

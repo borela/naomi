@@ -1,0 +1,294 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
+  constantIdentifier: |
+    [$_[:upper:]]
+    [$_[:upper:][:digit:]]*
+
+  keyIdentifier: |
+    (?> {{string}}
+      | [$_[:alnum:]]
+        [$_[:alnum:]]*
+    )
+
+  indexer: |
+    (\[
+      (?> {{string}}
+        | \g<-1>
+        | [^\[\]]
+      )*
+    \])
+
+  genericArguments: |
+    (<
+      (?> {{string}}
+        | \g<-1>
+        | [^<>]
+      )*
+    >)
+
+  parameters: |
+    (\(
+      (?> {{string}}
+        | \g<-1>
+        | [^()]
+      )*
+    \))
+
+  flowOperators: |
+    (?> &(?!\s*&)
+      | \|(?!\s*\|)
+    )
+
+  string: |
+    (?> '(?:\'|[^'])*?'
+      | "(?:\"|[^"])*?"
+      | `(?:\`|[^`])*?`
+    )
+
+  flowObject: |
+    (\{
+      (?> {{string}}
+        | \g<-1>
+        | [^{}]
+      )*
+    })
+
+  simpleFlowType: |
+    (?> {{string}}
+      | {{flowObject}}
+      | [$_[:alpha:]][$_[:alnum:].]*
+    )
+    (?:\s*{{genericArguments}})?
+    (?:\s*\[\s*\])?
+
+  flowFunction: |
+    (
+      {{parameters}}
+      \s*=>\s*
+      (?> (?:\?\s*){{simpleFlowType}}
+        | \g<-1>
+      )
+    )
+
+  complexType: |
+    (?:\?\s*)?
+    (
+      (?> {{simpleFlowType}}
+        | {{flowFunction}}
+        | \g<-1>
+      )
+    )
+
+  multipleTypes: |
+    (
+      (?> \s*{{flowOperators}}
+        | \s*{{complexType}}
+        | \g<-1>
+      )+
+    )
+
+  flowComment: /\*\s*:.*?\*/
+
+  type: |
+    (?> {{flowComment}}
+      | \:\s*{{multipleTypes}}
+    )
+
+  normalArrowFunction: |
+    (?:async\b\s*)?
+    (?:{{genericArguments}}\s*)?
+    {{parameters}}
+    (?:\s*{{type}})?
+    \s*=>
+
+  singleParameterArrowFunction: |
+    (?:async\b\s+)?
+    {{commonIdentifier}}
+    (?:\s*{{type}})?
+    \s*=>
+
+  anyArrowFunction: |
+    (?> {{normalArrowFunction}}
+      | {{singleParameterArrowFunction}}
+    )
+
+  normalArrowFunctionAssignedToVariable: |
+    {{commonIdentifier}}
+    (?:\s*{{type}})?
+    \s*=\s*
+    {{normalArrowFunction}}
+
+  singleParameterArrowFunctionAssignedToVariable: |
+    {{commonIdentifier}}
+    (?:\s*{{type}})?
+    \s*=\s*
+    {{singleParameterArrowFunction}}
+
+  anyArrowFunctionAssignedToVariable: |
+    {{commonIdentifier}}
+    (?:\s*{{type}})?
+    \s*=\s*
+    (?> {{normalArrowFunction}}
+      | {{singleParameterArrowFunction}}
+    )
+
+contexts:
+  main:
+    # Function assigned to property.
+    - match: |
+        (?xi)
+        (?=
+          {{keyIdentifier}}
+          \s*:\s*
+          (?:async\b\s+)?
+          function
+          (?> \s+{{commonIdentifier}}
+            | \(
+          )
+        )
+      set: [
+        function-declaration,
+        meta-declaration-function,
+        function-keyword,
+        meta-key,
+        method-identifier
+      ]
+    # Single parameter arrow function assigned to property.
+    - match: |
+        (?xi)
+        (?=
+          {{keyIdentifier}}
+          \s*:\s*
+          {{singleParameterArrowFunction}}
+        )
+      set: [
+        arrow-function,
+        meta-key,
+        method-identifier
+      ]
+    # Arrow function assigned to property.
+    - match: |
+        (?xi)
+        (?=
+          {{keyIdentifier}}
+          \s*:\s*
+          {{normalArrowFunction}}
+        )
+      set: [
+        arrow-function,
+        meta-key,
+        method-identifier
+      ]
+    # Computed property name.
+    - match: \[
+      scope: punctuation.section.brackets.begin.js.fjsx15
+      set: [
+        associated-value,
+        meta-computed-key,
+        computed-property-end,
+        optional-expression
+      ]
+    # Other keys.
+    - match: |
+        (?xi)
+        (?=
+          {{keyIdentifier}}
+          \s*:
+        )
+      set: [
+        associated-value,
+        meta-key,
+        any-key
+      ]
+
+  any-key:
+    - include: string
+    - include: number
+    # TODO: The correct option in this case is to highlight keys as unquoted
+    # strings but some users will prefer the old behavior and so a configurable
+    # property is desired in this case.
+    - match: "[^:]*"
+      scope: string.unquoted.js.fjsx15
+      pop: true
+    # - include: constant
+    # - include: variable
+
+  arrow-function:
+    - include: ~/js/arrow-function
+
+  associated-value:
+    - match: ":"
+      scope: punctuation.separator.key-value.js.fjsx15
+      set: optional-expression
+
+  constant:
+    - include: ~/js/variable
+
+  computed-property-end:
+    - match: \]
+      scope: punctuation.section.brackets.end.js.fjsx15
+      pop: true
+
+  function-declaration:
+    - include: ~/js/function#declaration
+
+  function-keyword:
+    - include: ~/js/function#keyword
+
+  meta-computed-key:
+    - meta_scope: meta.object-literal.key.computed.js.fjsx15
+    - include: pop-now
+
+  meta-declaration-function:
+    - meta_scope: meta.declaration.function.js.fjsx15
+    - include: pop-now
+
+  meta-key:
+    - meta_scope: meta.object-literal.key.js.fjsx15
+    - include: pop-now
+
+  method-identifier:
+    - match: |
+        (?xi)
+        ({{keyIdentifier}})
+        \s*(:)
+      captures:
+        1: entity.name.function.js.fjsx15
+        2: punctuation.separator.key-value.js.fjsx15
+      pop: true
+
+  number:
+    - include: ~/js/literal/number
+
+  optional-expression:
+    - include: ~/js/optional-expression
+
+  pop-now:
+    - match: ""
+      pop: true
+
+  string:
+    - include: ~/js/literal/string/double-quoted
+    - include: ~/js/literal/string/single-quoted
+    - include: ~/js/literal/string/template
+
+  variable:
+    - include: ~/js/variable

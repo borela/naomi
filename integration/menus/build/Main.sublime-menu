@@ -1,0 +1,247 @@
+// Licensed under the Apache License, Version 2.0 (the “License”); you may not
+// use this file except in compliance with the License. You may obtain a copy of
+// the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations under
+// the License.
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//  This code was auto generated, be aware that changes to this file will be
+//  lost on the next build. To contribute, edit the files in:
+//
+//    Naomi/integration/menus/src
+//
+////////////////////////////////////////////////////////////////////////////////
+[
+  {
+    "id": "preferences",
+    "children": [
+      {
+        "id": "package-settings",
+        "children": [
+          {
+            "caption": "Naomi",
+            "children": [
+              {
+                "caption": "Settings",
+                "command": "edit_settings",
+                "args": {
+                  "base_file": "${packages}/Naomi/Naomi.sublime-settings",
+                  "default": "{\n\t$0\n}\n"
+                }
+              },
+              {
+                "caption": "-"
+              },
+              {
+                "caption": "Github",
+                "children": [
+                  {
+                    "caption": "Fork",
+                    "command": "open_url",
+                    "args": {
+                      "url": "https://github.com/borela/naomi/fork"
+                    }
+                  },
+                  {
+                    "caption": "-"
+                  },
+                  {
+                    "caption": "Repository",
+                    "command": "open_url",
+                    "args": {
+                      "url": "https://github.com/borela/naomi"
+                    }
+                  },
+                  {
+                    "caption": "Issues",
+                    "command": "open_url",
+                    "args": {
+                      "url": "https://github.com/borela/naomi/issues"
+                    }
+                  },
+                  {
+                    "caption": "Pull Requests",
+                    "command": "open_url",
+                    "args": {
+                      "url": "https://github.com/borela/naomi/pulls"
+                    }
+                  },
+                  {
+                    "caption": "Stars",
+                    "command": "open_url",
+                    "args": {
+                      "url": "https://github.com/borela/naomi/stargazers"
+                    }
+                  },
+                  {
+                    "caption": "Watchers",
+                    "command": "open_url",
+                    "args": {
+                      "url": "https://github.com/borela/naomi/watchers"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "caption": "Naomi",
+    "id": "naomi-main-menu",
+    "mnemonic": "a",
+    "children": [
+      {
+        "caption": "Settings",
+        "command": "edit_settings",
+        "args": {
+          "base_file": "${packages}/Naomi/Naomi.sublime-settings",
+          "default": "{\n\t$0\n}\n"
+        }
+      },
+      {
+        "caption": "-"
+      },
+      {
+        "command": "naomi_build",
+        "args": {
+          "what": "commands"
+        }
+      },
+      {
+        "command": "naomi_build",
+        "args": {
+          "what": "keymaps"
+        }
+      },
+      {
+        "command": "naomi_build",
+        "args": {
+          "what": "preferences"
+        }
+      },
+      {
+        "command": "naomi_build",
+        "args": {
+          "what": "menus"
+        }
+      },
+      {
+        "command": "naomi_build",
+        "args": {
+          "what": "syntaxes"
+        }
+      },
+      {
+        "caption": "-"
+      },
+      {
+        "command": "naomi_watch",
+        "args": {
+          "what": "commands"
+        }
+      },
+      {
+        "command": "naomi_watch",
+        "args": {
+          "what": "preferences"
+        }
+      },
+      {
+        "command": "naomi_watch",
+        "args": {
+          "what": "keymaps"
+        }
+      },
+      {
+        "command": "naomi_watch",
+        "args": {
+          "what": "menus"
+        }
+      },
+      {
+        "command": "naomi_watch",
+        "args": {
+          "what": "syntaxes"
+        }
+      },
+      {
+        "caption": "-"
+      },
+      {
+        "command": "naomi_run_tests",
+        "args": {
+          "test_type": "plugin"
+        }
+      },
+      {
+        "command": "naomi_run_tests",
+        "args": {
+          "test_type": "syntax"
+        }
+      },
+      {
+        "caption": "-"
+      },
+      {
+        "caption": "Github",
+        "children": [
+          {
+            "caption": "Fork",
+            "command": "open_url",
+            "args": {
+              "url": "https://github.com/borela/naomi/fork"
+            }
+          },
+          {
+            "caption": "-"
+          },
+          {
+            "caption": "Repository",
+            "command": "open_url",
+            "args": {
+              "url": "https://github.com/borela/naomi"
+            }
+          },
+          {
+            "caption": "Issues",
+            "command": "open_url",
+            "args": {
+              "url": "https://github.com/borela/naomi/issues"
+            }
+          },
+          {
+            "caption": "Pull Requests",
+            "command": "open_url",
+            "args": {
+              "url": "https://github.com/borela/naomi/pulls"
+            }
+          },
+          {
+            "caption": "Stars",
+            "command": "open_url",
+            "args": {
+              "url": "https://github.com/borela/naomi/stargazers"
+            }
+          },
+          {
+            "caption": "Watchers",
+            "command": "open_url",
+            "args": {
+              "url": "https://github.com/borela/naomi/watchers"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -13,19 +13,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: Markdown (Github) (Naomi)
-scope: text.html.markdown
-
-file_extensions:
-  - md
+name: Placeholder
+scope: text
+hidden: true
 
 contexts:
   main:
-    - match: ""
-      push: [ entry ]
-
-  entry:
-    - include: Packages/Naomi/syntaxes/md1/header.sublime-syntax
-    - include: Packages/Naomi/syntaxes/md1/code-block.sublime-syntax
-    - match: ""
+    - match: .
       pop: true

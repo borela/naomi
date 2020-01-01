@@ -21,7 +21,7 @@
 
 .string.regexp {
   foreground: $teal-400;
-  background: $blue-gray-900;
+  background: rgba($teal-400, .1);
 
   .punctuation.definition.string {
     foreground: $teal-400;
@@ -34,5 +34,5 @@
 }
 
 .punctuation.definition.string {
-  foreground: rgba($pink-a200, .5);
+  foreground: $pink-a200;
 }

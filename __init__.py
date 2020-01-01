@@ -10,12 +10,18 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-from Naomi.plugin.commands.CloseJsxTag import NaomiCloseJsxTagCommand
-from Naomi.plugin.commands.RunSyntaxTests import NaomiRunSyntaxTestsCommand
-from Naomi.plugin.commands.ToggleJsxComment import NaomiToggleJsxCommentCommand
+import sys
+from os.path import (
+    dirname,
+    join,
+)
 
-__all__ = [
-  NaomiCloseJsxTagCommand,
-  NaomiRunSyntaxTestsCommand,
-  NaomiToggleJsxCommentCommand
-]
+PARENT_DIR = dirname(__file__)
+VENDOR_PATH = join(PARENT_DIR, 'vendor')
+
+# Add the “Naomi/vendor” dir to the paths to enable easy imports.
+if VENDOR_PATH not in sys.path:
+    sys.path.append(VENDOR_PATH)
+
+# Import the commands to the Naomi namespace to enable sublime to use them.
+from Naomi.system.commands import * # noqa

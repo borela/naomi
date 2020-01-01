@@ -13,19 +13,11 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-name: Flow Statements and Expressions (Naomi)
+name: Placeholder
+scope: text
 hidden: true
-scope: source.flow
 
 contexts:
   main:
-    - match: ""
-      push: [ entry ]
-
-  entry:
-    - include: Packages/Naomi/syntaxes/flow1/declare.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/interface.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/module.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/prolog.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/type-aliasing.sublime-syntax
-    - include: Packages/Naomi/syntaxes/flow1/type-expression.sublime-syntax
+    - match: .
+      pop: true

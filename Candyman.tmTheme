@@ -43,870 +43,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.tag.embedded .entity.name.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4dd0e1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.tag.embedded .punctuation.definition.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4DD0E1B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.tag.form .entity.name.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffecb3</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.tag.form .punctuation.definition.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FFECB3B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.definition.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#BCAAA4B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.tag.sectioning .entity.name.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#f48fb1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.tag.sectioning .punctuation.definition.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#F48FB1B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.tag.sectioning.root .entity.name.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ce93d8</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.tag.sectioning.root .punctuation.definition.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#CE93D8B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.tag.style .entity.name.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff8a65</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.tag.style .punctuation.definition.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF8A65B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.flowtype .entity.name.module</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#aed581</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.flowtype .keyword.operator.other.association, .flowtype .keyword.operator.other.cast, .flowtype .keyword.operator.other.contravariant, .flowtype .keyword.operator.other.covariant, .flowtype .keyword.operator.other.existential, .flowtype .keyword.operator.other.intersection, .flowtype .keyword.operator.other.nullable, .flowtype .keyword.operator.other.optional, .flowtype .keyword.operator.other.rest, .flowtype .keyword.operator.other.union</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.flowtype .word .keyword.operator.other</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.flowtype .keyword.operator.other.utility</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.flowtype .comment .keyword.operator.other.association, .flowtype .comment .keyword.operator.other.cast, .flowtype .comment .keyword.operator.other.contravariant, .flowtype .comment .keyword.operator.other.covariant, .flowtype .comment .keyword.operator.other.existential, .flowtype .comment .keyword.operator.other.intersection, .flowtype .comment .keyword.operator.other.nullable, .flowtype .comment .keyword.operator.other.optional, .flowtype .comment .keyword.operator.other.union</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#BCAAA4B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.flowtype .comment .keyword.operator.other.utility</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF80ABB2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.flowtype .comment .word .keyword.operator.other</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF80ABB2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.flowtype .punctuation.definition.array, .flowtype .punctuation.definition.array.begin, .flowtype .punctuation.definition.array.end, .flowtype .punctuation.definition.cast.begin, .flowtype .punctuation.definition.cast.end, .flowtype .punctuation.definition.function.parameters.begin, .flowtype .punctuation.definition.function.parameters.end, .flowtype .punctuation.definition.function.parameters, .flowtype .punctuation.definition.function.result, .flowtype .punctuation.definition.module.body.begin, .flowtype .punctuation.definition.module.body.end, .flowtype .punctuation.definition.nullable.begin, .flowtype .punctuation.definition.nullable.end, .flowtype .punctuation.definition.object.begin, .flowtype .punctuation.definition.object.end, .flowtype .punctuation.definition.object, .flowtype .punctuation.definition.template.arguments.begin, .flowtype .punctuation.definition.template.arguments, .flowtype .punctuation.definition.template.parameters.begin, .flowtype .punctuation.definition.template.parameters.end, .flowtype .punctuation.definition.template.parameters, .flowtype .punctuation.definition.template.arguments.end</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.flowtype .comment.block .punctuation.definition</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#BCAAA4B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.flowtype .comment.block .punctuation.definition.array, .flowtype .comment.block .punctuation.definition.array.begin, .flowtype .comment.block .punctuation.definition.array.end, .flowtype .comment.block .punctuation.definition.cast.begin, .flowtype .comment.block .punctuation.definition.cast.end, .flowtype .comment.block .punctuation.definition.function.parameters.begin, .flowtype .comment.block .punctuation.definition.function.parameters.end, .flowtype .comment.block .punctuation.definition.function.parameters, .flowtype .comment.block .punctuation.definition.function.result, .flowtype .comment.block .punctuation.definition.module.body.begin, .flowtype .comment.block .punctuation.definition.module.body.end, .flowtype .comment.block .punctuation.definition.nullable.begin, .flowtype .comment.block .punctuation.definition.nullable.end, .flowtype .comment.block .punctuation.definition.object.begin, .flowtype .comment.block .punctuation.definition.object.end, .flowtype .comment.block .punctuation.definition.object, .flowtype .comment.block .punctuation.definition.template.arguments.begin, .flowtype .comment.block .punctuation.definition.template.arguments, .flowtype .comment.block .punctuation.definition.template.parameters.begin, .flowtype .comment.block .punctuation.definition.template.parameters.end, .flowtype .comment.block .punctuation.definition.template.parameters, .flowtype .comment.block .punctuation.definition.template.arguments.end</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#BCAAA4B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.decorator, .punctuation.definition.decorator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#b39ddb</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.destructuring .keyword, .destructuring .keyword.operator.other.association, .destructuring .punctuation.definition, .destructuring .punctuation.definition.array, .destructuring .punctuation.definition.object, .destructuring .punctuation.definition.property</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.destructuring .object.property .entity.name.variable</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.eslint .keyword.other, .eslint .punctuation.definition</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.eslint-rule</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#b39ddb</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.export .entity.name.aliased, .export .entity.name.ambiguous</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.definition.export</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.import .entity.name.aliased, .import .entity.name.ambiguous</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.definition.import</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.operator.other.generator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#b39ddb</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.operator.other.rest, .keyword.operator.other.spread</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.keyword.operator.other.association.json</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-1 .punctuation.definition.object.json, .level-1 .punctuation.definition.object.begin.json, .level-1 .punctuation.definition.object.end.json</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ce93d8</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-1 .string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4dd0e1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-1 .punctuation.definition.string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4DD0E180</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-2 .punctuation.definition.object.json, .level-2 .punctuation.definition.object.begin.json, .level-2 .punctuation.definition.object.end.json</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4dd0e1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-2 .string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#9ccc65</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-2 .punctuation.definition.string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#AED58180</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-3 .punctuation.definition.object.json, .level-3 .punctuation.definition.object.begin.json, .level-3 .punctuation.definition.object.end.json</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#9ccc65</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-3 .string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4db6ac</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-3 .punctuation.definition.string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4DB6ACB2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-4 .punctuation.definition.object.json, .level-4 .punctuation.definition.object.begin.json, .level-4 .punctuation.definition.object.end.json</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4db6ac</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-4 .string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffab91</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-4 .punctuation.definition.string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FFAB9180</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-5 .punctuation.definition.object.json, .level-5 .punctuation.definition.object.begin.json, .level-5 .punctuation.definition.object.end.json</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffab91</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-5 .string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffe082</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-5 .punctuation.definition.string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FFE08280</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-6 .punctuation.definition.object.json, .level-6 .punctuation.definition.object.begin.json, .level-6 .punctuation.definition.object.end.json</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffe082</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-6 .string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#f48fb1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-6 .punctuation.definition.string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#F48FB180</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-7 .punctuation.definition.object.json, .level-7 .punctuation.definition.object.begin.json, .level-7 .punctuation.definition.object.end.json</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#f48fb1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-7 .string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ce93d8</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-7 .punctuation.definition.string</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#CE93D880</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.component.jsx .entity.name.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffe082</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.component.jsx .punctuation.definition.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FFE082B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.source.jsx .keyword.operator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#CE93D8B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.attribute</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#9ccc65</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.section.cdata</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.section.cdata .entity.name</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.section.cdata .punctuation.definition</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF80ABB2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.data-attribute</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.declaration.doctype</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.declaration.doctype .entity.name</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.declaration.doctype .punctuation.definition.declaration</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF80ABB2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.text.html .keyword.operator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#CE93D8B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.instruction.prolog</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.instruction.prolog .entity.name</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.instruction.prolog .punctuation.definition.instruction</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF80ABB2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.definition.code-block</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-1 .entity.name.header, .level-1 .punctuation.definition.header</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ce93d8</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-2 .entity.name.header, .level-2 .punctuation.definition.header</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4dd0e1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-3 .entity.name.header, .level-3 .punctuation.definition.header</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#9ccc65</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-4 .entity.name.header, .level-4 .punctuation.definition.header</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4db6ac</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-5 .entity.name.header, .level-5 .punctuation.definition.header</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffab91</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.level-6 .entity.name.header, .level-6 .punctuation.definition.header</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffe082</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.support .entity.name.property.mql</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff9e80</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.selector</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff80ab</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.definition.selector</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF80AB80</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.extension .entity.name.selector</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#e0e0e0</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.extension .punctuation.definition.selector</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#E0E0E0B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.selector.class</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4dd0e1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.definition.selector.class</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4DD0E1B2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.selector.id</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ec407a</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.definition.selector.id</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#EC407AB2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.selector.placeholder</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffcc80</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.definition.selector.placeholder</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FFCC8080</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.selector.tag</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.source.css .support .entity.name.attribute, .source.scss .support .entity.name.attribute</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#aed581</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.source.css .extension .entity.name.attribute, .source.scss .extension .entity.name.attribute</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#e0e0e0</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.entity.name.mixin, .punctuation.definition.mixin</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#4fc3f7</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.source.scss .keyword.operator.other.comma, .source.scss .keyword.operator.other.association, .source.scss .keyword.other.terminator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.source.scss .punctuation.definition.body</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffffff</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>source.scss .keyword.modifier.unit</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff9e80</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.source.scss .declaration .entity.name.variable</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.meta.annotation .variable.annotation, .meta.annotation .punctuation.definition</string>
 			<key>settings</key>
 			<dict>
@@ -919,6 +55,8 @@
 			<string>.comment, .comment .punctuation.definition</string>
 			<key>settings</key>
 			<dict>
+				<key>background</key>
+				<string>#607D8B0D</string>
 				<key>foreground</key>
 				<string>#607d8b</string>
 			</dict>
@@ -974,6 +112,24 @@
 			<dict>
 				<key>foreground</key>
 				<string>#ff9e80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.other.color</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#e57373</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.constant.other.color .punctuation.definition.constant</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#E5737380</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1050,15 +206,6 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.constant.other.color, .punctuation.definition.constant</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#b39ddb</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
 			<string>.support.constant</string>
 			<key>settings</key>
 			<dict>
@@ -1079,16 +226,43 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.source.css .entity.other.attribute-name</string>
+			<string>.source.css .entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ea80fc</string>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.source.css .meta.attribute.builtin .entity.other.attribute-name</string>
+			<string>.source.css .entity.other.attribute-name.class</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#aed581</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .entity.other.attribute-name.class .punctuation</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#AED581B2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .entity.other.attribute-name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#b39ddb</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.css .entity.other.pseudo-class</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1205,28 +379,17 @@
 			<string>.entity.name.function, .variable.function, .storage.type.function.arrow</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
 				<key>foreground</key>
 				<string>#40c4ff</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.storage.type.function.arrow.flow</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.variable.function</string>
+			<string>.entity.name.function</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string></string>
+				<string>bold</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1269,56 +432,11 @@
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.punctuation.section.generic.begin.flow, .punctuation.section.generic.end.flow</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#9ccc65</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.binding.flow, .punctuation.section.brackets.begin.flow, .punctuation.section.brackets.end.flow</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ea80fc</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.section.block.begin.flow, .punctuation.section.block.end.flow</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ffe57f</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.punctuation.separator.comma.flow, .punctuation.section.group.begin.flow, .punctuation.section.group.end.flow</string>
+			<string>.storage.type.function.arrow.flow</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.string.unquoted.flow</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#bcaaa4</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scope</key>
-			<string>.variable.parameter.generic</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#ff4081</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1660,6 +778,24 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.punctuation.separator.key-value.html</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>.source.jsx .punctuation.definition.template-expression</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.constant.character.entity</string>
 			<key>settings</key>
 			<dict>
@@ -1745,7 +881,7 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>italic</string>
+				<string>italic bold</string>
 				<key>foreground</key>
 				<string>#cfd8dc</string>
 			</dict>
@@ -1832,7 +968,7 @@
 				<key>background</key>
 				<string>#263238</string>
 				<key>foreground</key>
-				<string>#81c784</string>
+				<string>#bcaaa4</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1893,6 +1029,15 @@
 		</dict>
 		<dict>
 			<key>scope</key>
+			<string>.punctuation.section.generic</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#bcaaa4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
 			<string>.source.yaml .string</string>
 			<key>settings</key>
 			<dict>
@@ -1917,7 +1062,7 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#263238</string>
+				<string>#26A69A1A</string>
 				<key>foreground</key>
 				<string>#26a69a</string>
 			</dict>
@@ -1946,12 +1091,12 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#FF408180</string>
+				<string>#ff4081</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>scope</key>
-			<string>.entity.name, .entity.other</string>
+			<string>.entity.name</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -2027,7 +1172,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff9e80</string>
+				<string>#e0e0e0</string>
 			</dict>
 		</dict>
 		<dict>

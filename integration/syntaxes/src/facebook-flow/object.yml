@@ -1,0 +1,180 @@
+%YAML1.2
+---
+
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+variables:
+  commonIdentifier: |
+    [$_[:alpha:]]
+    [$_[:alnum:]]*
+
+  constantIdentifier: |
+    [$_[:upper:]]
+    [$_[:upper:][:digit:]]*
+
+contexts:
+  main:
+    # Exact.
+    - match: ({)\s*(\|)
+      captures:
+        1: punctuation.section.block.begin.flow
+        2: punctuation.section.block.begin.flow
+      set: [
+        meta-exact,
+        delimiters,
+        optional-property-or-method
+      ]
+    # Normal.
+    - match: \{
+      scope: punctuation.section.block.begin.flow
+      set: [
+        meta-scope,
+        delimiters,
+        optional-property-or-method
+      ]
+
+  associated-type:
+    - include: ~/facebook-flow/associated-type
+
+  comment-no-pop:
+    - include: ~/js/comment.no-pop
+
+  co-contra-variant-no-pop:
+    - include: ~/facebook-flow/operator/covariant.no-pop
+    - include: ~/facebook-flow/operator/contravariant.no-pop
+
+  constant:
+    # Single character.
+    - match: |
+        (?x)
+        ([_[:upper:]])\b
+        (?:\s*(\?\B))?
+      captures:
+        1: >-
+          meta.object-literal.key.flow
+          string.unquoted.flow
+        2: storage.modifier.optional.flow
+      set: associated-type
+    # Two or more characters.
+    - match: |
+        (?x)
+        (
+          {{constantIdentifier}}
+          (?> \$\B
+            | [_[:upper:]]\b
+          )
+        )
+        (?:\s*(\?\B))?
+      captures:
+        1: >-
+          meta.object-literal.key.flow
+          string.unquoted.flow
+        2: storage.modifier.optional.flow
+      set: associated-type
+
+  delimiters:
+    - match: (?:(,)|(;))
+      captures:
+        1: punctuation.separator.comma.flow
+        2: punctuation.terminator.flow
+      push: optional-property-or-method
+    # Exact.
+    - match: (\|)\s*(})
+      captures:
+        1: punctuation.section.block.end.flow
+        2: punctuation.section.block.end.flow
+      pop: true
+    # Normal.
+    - match: \}
+      scope: punctuation.section.block.end.flow
+      pop: true
+
+  else-pop:
+    - match: (?=\S)
+      pop: true
+
+  meta-scope:
+    - meta_scope: >-
+        meta.object-literal.flow
+        meta.block.flow
+    - include: pop-now
+
+  meta-exact:
+    - meta_scope: >-
+        meta.object-literal.exact.flow
+        meta.block.flow
+    - include: pop-now
+
+  optional-property-or-method:
+    - include: comment-no-pop
+    - match: (?=[|}])
+      pop: true
+    - include: co-contra-variant-no-pop
+    - match: \.{3}
+      scope: keyword.operator.spread.flow
+      set: type-expression
+    - include: ~/js/class/modifier
+    - include: ~/js/class/method
+    - include: ~/facebook-flow/indexer
+    - include: constant
+    - include: variable
+    # String property name.
+    - match: (?=(?>'|"|`))
+      set: [
+        associated-type,
+        string
+      ]
+    - include: else-pop
+
+  pop-now:
+    - match: ""
+      pop: true
+
+  string:
+    - include: ~/js/literal/string/double-quoted
+    - include: ~/js/literal/string/single-quoted
+    - include: ~/js/literal/string/template
+
+  type-expression:
+    - include: ~/facebook-flow/type-expression
+
+  variable:
+    # Single character.
+    - match: |
+        (?xi)
+        ((?> \$\B
+          | [_[:alpha:]]\b
+        ))
+        (?:\s*(\?))?
+      captures:
+        1: >-
+          meta.object-literal.key.flow
+          string.unquoted.flow
+        2: storage.modifier.optional.flow
+      set: associated-type
+    # Two or more characters.
+    - match: |
+        (?xi)
+        (
+          {{commonIdentifier}}
+          (?> \$\B
+            | [_[:alnum:]]\b
+          )
+        )
+        (?:\s*(\?))?
+      captures:
+        1: >-
+          meta.object-literal.key.flow
+          string.unquoted.flow
+        2: storage.modifier.optional.flow
+      set: associated-type

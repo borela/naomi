@@ -417,6 +417,10 @@
     "operand": true,
     "match_all": true
   }, {
+    "key": "following_text",
+    "operator": "not_regex_contains",
+    "operand": ">"
+  }, {
     "key": "setting.command_mode",
     "operand": false
   }]
